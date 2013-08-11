@@ -1,0 +1,1 @@
+with-local-quit is a Lisp macro in `subr.el'.<br/><br/>(with-local-quit &rest BODY)<br/><br/>Execute BODY, allowing quits to terminate BODY but not escape further.<br/>When a quit terminates BODY, `with-local-quit' returns nil but<br/>requests another quit.  That quit will be processed as soon as quitting<br/>is allowed once again.  (Immediately, if `inhibit-quit' is nil.)

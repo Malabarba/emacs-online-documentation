@@ -35,6 +35,7 @@
 
 (eval-when-compile (require 'cl))
 (require 'cl)
+(load "full-feature-lister")
 
 (defconst dg/version "0.1" "Version of the documentation-generator.el package.")
 (defconst dg/version-int 1 "Version of the documentation-generator.el package, as an integer.")
@@ -45,7 +46,7 @@
   (message "Your dg/version is: %s, and your emacs version is: %s.\nPlease include this in your report!"
            dg/version emacs-version))
 
-(defcustom dg/symbol-list '(documentation-generator dg/cons-to-item dg/cons-list-to-item-list dg/file-list-function dg/file-list-variable dg/my-unique-var dg/variable-list dg/-list-all dg/function-list dg/file-list dg/doc-to-html dg/clean-symbol dg/format dg/symbol-to-file dg/description dg/dir dg/symbol-list dg/customize dg/bug-report dg/version-int dg/version dg/convert dg/predicate dg/verbose dg/count dg/total dg/url-string)
+(defcustom dg/symbol-list '(documentation-generator dg/cons-to-item dg/cons-list-to-item-list dg/file-list-function dg/file-list-variable dg/my-unique-var dg/variable-list dg/-list-all dg/function-list dg/file-list dg/doc-to-html dg/clean-symbol dg/format dg/symbol-to-file dg/description dg/dir dg/symbol-list dg/customize dg/bug-report dg/version-int dg/version dg/convert dg/predicate dg/verbose dg/count dg/total dg/url-string ffl/update-hash full-feature-lister)
   "This a list of all symbols we define here. It is used to filter them out from the results since these are not built-in."
   :type '(repeat symbol)
   :group 'documentation-generator
@@ -64,6 +65,47 @@
   :type 'boolean
   :group 'documentation-generator
   :package-version '(documentation-generator . "0.1"))
+
+
+(defun dg/convert ()
+  "Do the whole thing. I'll comment this more when I have time."
+  (interactive)
+  ;; First, let's require all built-in features. So we know everything is defined.
+  (mapc
+   (lambda (f) (require f nil t)) ;;no-error because some features are obsolete and throw errors.
+   (full-feature-lister))
+  ;; These lists will be used to create the functions.html and variables.html files
+  (setq dg/file-list-variable nil
+        dg/file-list-function nil)
+  ;; Generate the doc for functions
+  (let ((fill-column 1000) ;;This is to avoid artificial line breaks in the description.
+        (dg/description 'describe-function) ;;This tells `dg/doc-to-html' what describing function to use.
+        (dg/format "Fun/%s.html")
+        (dg/file-list 'dg/file-list-function))
+    (mapc 'dg/symbol-to-file (dg/function-list))) ;;This creates a file for each fbound symbol.
+  ;; Generate the doc for variables
+  (let ((dg/description 'describe-variable)
+        (dg/format "Var/%s.html")
+        (fill-column 1000)
+        (dg/file-list 'dg/file-list-variable))
+    (mapc 'dg/symbol-to-file (dg/variable-list)))
+  ;; Recreate the index.html
+  (let ((fun    (concat dg/dir "functions.html"))
+        (var    (concat dg/dir "variables.html"))
+        (header (concat dg/dir "header.htmlt"))
+        (footer (concat dg/dir "footer.htmlt")))
+    (with-temp-file fun
+      (insert-file-contents-literally header)
+      (goto-char (point-max))
+      (insert (dg/cons-list-to-item-list dg/file-list-function "Functions"))
+      (goto-char (point-max))
+      (insert-file-contents-literally footer))
+    (with-temp-file var
+      (insert-file-contents-literally header)
+      (goto-char (point-max))
+      (insert (dg/cons-list-to-item-list dg/file-list-variable "Variables"))
+      (goto-char (point-max))
+      (insert-file-contents-literally footer))))
 
 (defun dg/symbol-to-file (s)
   "Takes a symbol, produces an html file with the description.
@@ -180,42 +222,6 @@ internalize) is far from optimized. But the rest of the script is
 Right now it only fixes the line breaks. Improvements are planned here:
 https://github.com/Bruce-Connor/emacs-online-documentation/issues/2"
   (replace-regexp-in-string "\n" "<br/>" doc))
-
-(defun dg/convert ()
-  "Do the whole thing. I'll comment this more when I have time."
-  (interactive)
-  ;; These lists will be used to create the index.html file
-  (setq dg/file-list-variable nil
-        dg/file-list-function nil)
-  ;; Generate the doc for functions
-  (let ((dg/description 'describe-function)
-        (dg/format "Fun/%s.html")
-        (fill-column 1000)
-        (dg/file-list 'dg/file-list-function))
-    (mapc 'dg/symbol-to-file (dg/function-list)))
-  ;; Generate the doc for variables
-  (let ((dg/description 'describe-variable)
-        (dg/format "Var/%s.html")
-        (fill-column 1000)
-        (dg/file-list 'dg/file-list-variable))
-    (mapc 'dg/symbol-to-file (dg/variable-list)))
-  ;; Recreate the index.html
-  (let ((fun    (concat dg/dir "functions.html"))
-        (var    (concat dg/dir "variables.html"))
-        (header (concat dg/dir "header.htmlt"))
-        (footer (concat dg/dir "footer.htmlt")))
-    (with-temp-file fun
-      (insert-file-contents-literally header)
-      (goto-char (point-max))
-      (insert (dg/cons-list-to-item-list dg/file-list-function "Functions"))
-      (goto-char (point-max))
-      (insert-file-contents-literally footer))
-    (with-temp-file var
-      (insert-file-contents-literally header)
-      (goto-char (point-max))
-      (insert (dg/cons-list-to-item-list dg/file-list-variable "Variables"))
-      (goto-char (point-max))
-      (insert-file-contents-literally footer))))
 
 (defun dg/cons-list-to-item-list (li type)
   "Convert the list of (SYMBOLNAME . FILE) generated in `dg/symbol-to-file' to an html list of html links."

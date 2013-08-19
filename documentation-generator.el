@@ -4,7 +4,7 @@
 
 ;; Author: Artur Malabarba <bruce.connor.am@gmail.com>
 ;; URL: https://github.com/Bruce-Connor/emacs-online-documentation/
-;; Version: 0.1
+;; Version: 0.5
 ;; Keywords: 
 ;; ShortName: dg
 ;; Separator: /
@@ -29,6 +29,7 @@
 ;; 
 
 ;;; Change Log:
+;; 0.5 - 20130819 - Use built-in url-hexify instead of concoting one.
 ;; 0.1 - 20130813 - Uploaded the file.
 ;; 0.1 - 20130811 - Created File.
 ;;; Code:
@@ -37,8 +38,8 @@
 (require 'cl)
 (load "full-feature-lister")
 
-(defconst dg/version "0.1" "Version of the documentation-generator.el package.")
-(defconst dg/version-int 1 "Version of the documentation-generator.el package, as an integer.")
+(defconst dg/version "0.5" "Version of the documentation-generator.el package.")
+(defconst dg/version-int 2 "Version of the documentation-generator.el package, as an integer.")
 (defun dg/bug-report ()
   "Opens github issues page in a web browser. Please send me any bugs you find, and please inclue your emacs and dg versions."
   (interactive)
@@ -128,54 +129,15 @@ in the variable `dg/file-list'."
                 (error nil))))
     (when doc
       (when dg/verbose
-        (message "%5d / %d - %s"
-                 (setq dg/count (1+ dg/count))
-                 dg/total s))
+        (message "%5d / %d - %s" (setq dg/count (1+ dg/count)) dg/total s))
       (with-temp-file path
         (insert (dg/doc-to-html doc))
         (set-buffer-file-coding-system 'no-conversion))
-      (add-to-list dg/file-list (cons (dg/url-string (symbol-name s)) file)))))
+      (add-to-list dg/file-list (cons (symbol-name s) (url-hexify-string file))))))
 
-(defun dg/url-string (s)
-  "Convert reserved characters from S into their % encoding for use as URL."
-  (replace-regexp-in-string
-   "!" "%21"
-   (replace-regexp-in-string
-    "#" "%23"
-    (replace-regexp-in-string
-     "\\$" "%24"
-     (replace-regexp-in-string
-      "&" "%26"
-      (replace-regexp-in-string
-       "'" "%27"
-       (replace-regexp-in-string
-        "(" "%28"
-        (replace-regexp-in-string
-         ")" "%29"
-         (replace-regexp-in-string
-          "\\*" "%2A"
-          (replace-regexp-in-string
-           "\\+" "%2B"
-           (replace-regexp-in-string
-            "," "%2C"
-            (replace-regexp-in-string
-             "/" "%2F"
-             (replace-regexp-in-string
-              ":" "%3A"
-              (replace-regexp-in-string
-               ";" "%3B"
-               (replace-regexp-in-string
-                "=" "%3D"
-                (replace-regexp-in-string
-                 "\\?" "%3F"
-                 (replace-regexp-in-string
-                  "@" "%40"
-                  (replace-regexp-in-string
-                   "\\[" "%5B"
-                   (replace-regexp-in-string
-                    "\\]" "%5D"
-                    (replace-regexp-in-string
-                    "%" "%25" s))))))))))))))))))))
+;; (defun dg/url-string (s)
+;;   "Convert reserved characters from S into their % encoding for use as URL."
+;;   (replace-regexp-in-string "!" "%21" (replace-regexp-in-string "#" "%23" (replace-regexp-in-string "\\$" "%24" (replace-regexp-in-string "&" "%26" (replace-regexp-in-string "'" "%27" (replace-regexp-in-string "(" "%28" (replace-regexp-in-string ")" "%29" (replace-regexp-in-string "\\*" "%2A" (replace-regexp-in-string "\\+" "%2B" (replace-regexp-in-string "," "%2C" (replace-regexp-in-string "/" "%2F" (replace-regexp-in-string ":" "%3A" (replace-regexp-in-string ";" "%3B" (replace-regexp-in-string "=" "%3D" (replace-regexp-in-string "\\?" "%3F" (replace-regexp-in-string "@" "%40" (replace-regexp-in-string "\\[" "%5B" (replace-regexp-in-string "\\]" "%5D" (replace-regexp-in-string "%" "%25" s))))))))))))))))))))
 
 
 (defun dg/clean-symbol (s)

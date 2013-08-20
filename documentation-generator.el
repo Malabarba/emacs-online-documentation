@@ -221,7 +221,20 @@ internalize) is far from optimized. But the rest of the script is
   "This function takes the doc string (using standard unix line breaks), and converts it to an html format.
 Right now it only fixes the line breaks. Improvements are planned here:
 https://github.com/Bruce-Connor/emacs-online-documentation/issues/2"
-  (replace-regexp-in-string "\n" "<br/>" doc))
+  (replace-regexp-in-string
+   "\n" "<br/>\n"
+   (with-temp-buffer
+     (insert doc)
+     (goto-char (point-min))
+     (insert "<strong>")
+     (forward-sexp 1)
+     (insert "</strong>")
+     (when (search-forward-regexp "in `.*'\.$" (line-end-position) t)
+       (forward-char -2)
+       (insert "</code>")
+       (forward-line 0)
+       (search-forward-regexp "in `" (line-end-position) t)       
+       (insert "<code>")))))
 
 (defun dg/cons-list-to-item-list (li type)
   "Convert the list of (SYMBOLNAME . FILE) generated in `dg/symbol-to-file' to an html list of html links."

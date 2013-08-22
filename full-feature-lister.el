@@ -6,8 +6,7 @@
 ;; URL: http://github.com/Bruce-Connor/full-feature-lister
 ;; Version: 0.1
 ;; Keywords: convenience
-;; ShortName: ffl
-;; Separator: /
+;; Separator: //
 
 ;;; Commentary:
 ;;
@@ -35,7 +34,7 @@
 (require 'finder)
 (require 'cl)
 
-(defun ffl/update-hash ()
+(defun docgen//update-hash ()
   ""
   (setq package--builtins nil)
   (setq finder-keywords-hash (make-hash-table :test 'eq))
@@ -91,7 +90,7 @@
 	      (lambda (a b) (string< (symbol-name (car a))
 				     (symbol-name (car b)))))))
 ;;;###autoload
-(defun full-feature-lister (&optional rescan include-loaded sort)
+(defun docgen//full-feature-lister (&optional rescan include-loaded sort)
   "List all features available for requiring.
 
 From lisp code, the list is returned (sorted if SORT is non-nil).
@@ -107,7 +106,7 @@ Normally returns only features from `load-path'.
 With INCLUDE-LOADED non-nil, combines features available in
 `load-path' with those already loaded (listed in `features')."
   (interactive "P")
-  (when rescan (ffl/update-hash))
+  (when rescan (docgen//update-hash))
   (let ((out (if include-loaded features nil)))
     (maphash (lambda (k v) (setq out (append out v)))
              finder-keywords-hash)
@@ -117,5 +116,3 @@ With INCLUDE-LOADED non-nil, combines features available in
         (insert (format "%S" (sort out 'string<)))
       out)))
 
-(provide 'full-feature-lister)
-;;; full-feature-lister.el ends here.

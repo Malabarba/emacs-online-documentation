@@ -4,7 +4,7 @@
 
 ;; Author: Artur Malabarba <bruce.connor.am@gmail.com>
 ;; URL: https://github.com/Bruce-Connor/emacs-online-documentation/
-;; Version: 0.2
+;; Version: 0.5
 ;; Keywords: 
 ;; ShortName: docgen
 ;; Separator: //
@@ -29,8 +29,9 @@
 ;; 
 
 ;;; Change Log:
-;; 0.2 - 20130822 - Improved removal of our own symbols
-;; 0.2 - 20130822 - Implemented creation of an sqlite script
+;; 0.5 - 20130822 - Improved removal of our own symbols
+;; 0.5 - 20130822 - Implemented creation of an sqlite script
+;; 0.5 - 20130819 - Use built-in url-hexify instead of concoting one.
 ;; 0.1 - 20130813 - Uploaded the file.
 ;; 0.1 - 20130811 - Created File.
 ;;; Code:
@@ -39,8 +40,8 @@
 (require 'cl-lib)
 (load "full-feature-lister")
 
-(defconst docgen//version "0.1" "Version of the documentation-generator.el package.")
-(defconst docgen//version-int 1 "Version of the documentation-generator.el package, as an integer.")
+(defconst docgen//version "0.5" "Version of the documentation-generator.el package.")
+(defconst docgen//version-int 3 "Version of the documentation-generator.el package, as an integer.")
 (defun docgen//bug-report ()
   "Opens github issues page in a web browser. Please send me any bugs you find, and please inclue your emacs and dg versions."
   (interactive)
@@ -48,37 +49,17 @@
   (message "Your docgen//version is: %s, and your emacs version is: %s.\nPlease include this in your report!"
            docgen//version emacs-version))
 
-(defcustom docgen//dir (expand-file-name "~/Git-Projects/online-documentation-pages/")
-  ""
-  :type 'directory
-  :group 'documentation-generator
-  :package-version '(documentation-generator . "0.1"))
+(defcustom docgen//dir (expand-file-name "~/Git-Projects/online-documentation-pages/") "" :type 'directory)
 
-(defcustom docgen//sql-script-file (concat docgen//dir "renew-tables.sql")
-  ""
-  :type 'file
-  :group 'documentation-generator
-  :package-version '(documentation-generator . "0.1"))
-
-(defcustom docgen//sql-insert-string "INSERT INTO %s VALUES('%s', '%s', %s);" 
-  ""
-  :type 'string
-  :group 'documentation-generator
-  :package-version '(documentation-generator . "0.1"))
-
-(defcustom docgen//sql-create-string "CREATE TABLE %s(Name text UNIQUE NOT NULL, Place text NOT NULL, External integer);"
-  ""
-  :type 'string
-  :group 'documentation-generator
-  :package-version '(documentation-generator . "0.1"))
+(defcustom docgen//sql-script-file (concat docgen//dir "renew-tables.sql") "" :type 'file)
+(defcustom docgen//sql-insert-string "INSERT INTO %s VALUES('%s', '%s', %s);" "" :type 'string)
+(defcustom docgen//sql-create-string "CREATE TABLE %s(Name text UNIQUE NOT NULL, Place text NOT NULL, External integer);" "" :type 'string)
 
 (defvar docgen//description nil "The description function used.")
 (defvar docgen//count 0 "Used for reporting the progress of the conversion.")
 (defvar docgen//total 0 "Used for reporting the progress of the conversion.")
 (defcustom docgen//verbose t "Whether we should report the progress of the conversion."
-  :type 'boolean
-  :group 'documentation-generator
-  :package-version '(documentation-generator . "0.1"))
+  :type 'boolean)
 
 
 (defun docgen//convert ()
@@ -149,16 +130,14 @@ in the variable `docgen//file-list'."
                 (error nil))))
     (when doc
       (when docgen//verbose
-        (message "%5d / %d - %s"
-                 (setq docgen//count (1+ docgen//count))
-                 docgen//total s))
+        (message "%5d / %d - %s" (setq docgen//count (1+ docgen//count)) docgen//total s))
       (with-temp-file path
         (insert (docgen//doc-to-html doc))
         (set-buffer-file-coding-system 'no-conversion))
-      (add-to-list docgen//file-list (cons (docgen//url-string (symbol-name s)) file))
+      (add-to-list docgen//file-list (cons (symbol-name s) (url-hexify-string file)))
       (append-to-file
        (docgen//format-sql-command docgen//sql-insert-string docgen//sql-table-name
-                              (symbol-name s) file 0) nil docgen//sql-script-file))))
+                                   (symbol-name s) file 0) nil docgen//sql-script-file))))
 
 (defun docgen//format-sql-command (fs &rest strings)
   "Double any quotes inside STRINGS, then use them in FS as a regular format string."
@@ -166,48 +145,6 @@ in the variable `docgen//file-list'."
          (mapcar
           (lambda (x) (replace-regexp-in-string "'" "''" (format "%s" x)))
           strings)))
-
-(defun docgen//url-string (s)
-  "Convert reserved characters from S into their % encoding for use as URL."
-  (replace-regexp-in-string
-   "!" "%21"
-   (replace-regexp-in-string
-    "#" "%23"
-    (replace-regexp-in-string
-     "\\$" "%24"
-     (replace-regexp-in-string
-      "&" "%26"
-      (replace-regexp-in-string
-       "'" "%27"
-       (replace-regexp-in-string
-        "(" "%28"
-        (replace-regexp-in-string
-         ")" "%29"
-         (replace-regexp-in-string
-          "\\*" "%2A"
-          (replace-regexp-in-string
-           "\\+" "%2B"
-           (replace-regexp-in-string
-            "," "%2C"
-            (replace-regexp-in-string
-             "/" "%2F"
-             (replace-regexp-in-string
-              ":" "%3A"
-              (replace-regexp-in-string
-               ";" "%3B"
-               (replace-regexp-in-string
-                "=" "%3D"
-                (replace-regexp-in-string
-                 "\\?" "%3F"
-                 (replace-regexp-in-string
-                  "@" "%40"
-                  (replace-regexp-in-string
-                   "\\[" "%5B"
-                   (replace-regexp-in-string
-                    "\\]" "%5D"
-                    (replace-regexp-in-string
-                    "%" "%25" s))))))))))))))))))))
-
 
 (defun docgen//clean-symbol (s)
   "This cleans the symbol a little bit, so it can be used as a file name.

@@ -55,8 +55,8 @@
 
 (defcustom docgen//sql-script-file (concat docgen//dir "renew-tables.sql") "" :type 'file)
 (defconst docgen//sql-insert-string "\nINSERT INTO %s(Name, External) VALUES('%s', %s);")
-(defconst docgen//sql-delete-string "\nDROP TABLE IF EXISTS %s;")
-(defconst docgen//sql-create-string "\nCREATE VIRTUAL TABLE %s USING fts4(Name text UNIQUE NOT NULL, External integer);")
+;; (defconst docgen//sql-delete-string "\nDROP TABLE IF EXISTS %s;")
+;; (defconst docgen//sql-create-string "\nCREATE VIRTUAL TABLE %s USING fts4(Name text UNIQUE NOT NULL, External integer);")
 
 (defvar docgen//description nil "The description function used.")
 (defvar docgen//count 0 "Used for reporting the progress of the conversion.")
@@ -78,12 +78,17 @@
   (setq docgen//file-list-variable nil
         docgen//file-list-function nil)
   (docgen//log "Erase the sql-script, so we can make a new one.")
-  (when (file-readable-p docgen//sql-script-file)
-    (delete-file docgen//sql-script-file t))
-  (append-to-file (format docgen//sql-delete-string "Functions") nil docgen//sql-script-file)
-  (append-to-file (format docgen//sql-delete-string "Variables") nil docgen//sql-script-file)
-  (append-to-file (format docgen//sql-create-string "Functions") nil docgen//sql-script-file)
-  (append-to-file (format docgen//sql-create-string "Variables") nil docgen//sql-script-file)
+  ;; (when (file-readable-p docgen//sql-script-file)
+  ;;   (delete-file docgen//sql-script-file t))
+  (unless (file-writable-p docgen//sql-script-file)
+    (error "Can't access sql script file %s" docgen//sql-script-file))
+  (with-temp-file docgen//sql-script-file
+    (erase-buffer)
+    (insert-file-contents-literally (concat docgen//dir "sql-header.sqlt")))
+  ;; (append-to-file (format docgen//sql-delete-string "Functions") nil docgen//sql-script-file)
+  ;; (append-to-file (format docgen//sql-delete-string "Variables") nil docgen//sql-script-file)
+  ;; (append-to-file (format docgen//sql-create-string "Functions") nil docgen//sql-script-file)
+  ;; (append-to-file (format docgen//sql-create-string "Variables") nil docgen//sql-script-file)
   (docgen//log "Generate the doc for functions")
   (let ((fill-column 1000) ;;This is to avoid artificial line breaks in the description.
         (docgen//sql-table-name "Functions")

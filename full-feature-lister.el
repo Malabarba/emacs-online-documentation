@@ -32,7 +32,7 @@
 ;;; Code:
 
 (require 'finder)
-(require 'cl)
+(require 'cl-lib)
 
 (defun docgen//update-hash ()
   ""
@@ -110,7 +110,7 @@ With INCLUDE-LOADED non-nil, combines features available in
   (let ((out (if include-loaded features nil)))
     (maphash (lambda (k v) (setq out (append out v)))
              finder-keywords-hash)
-    (setq out (delete-duplicates out))
+    (setq out (delete 'dunnnet (cl-delete-duplicates out)))
     (when sort (setq out (sort out 'string<)))
     (if (called-interactively-p 'interactive)
         (insert (format "%S" (sort out 'string<)))

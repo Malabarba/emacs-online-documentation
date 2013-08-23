@@ -11,7 +11,9 @@
 
 ;;; Commentary:
 ;;
-;; 
+;; To run this, do:
+;;
+;;     emacs --batch -l documentation-generator.el -f docgen//convert
 
 ;;; License:
 ;;
@@ -38,7 +40,7 @@
 
 (eval-when-compile (require 'cl-lib))
 (require 'cl-lib)
-(load "full-feature-lister")
+(load-file "./full-feature-lister.elc")
 
 (defconst docgen//version "0.5" "Version of the documentation-generator.el package.")
 (defconst docgen//version-int 3 "Version of the documentation-generator.el package, as an integer.")
@@ -52,8 +54,9 @@
 (defcustom docgen//dir (expand-file-name "~/Git-Projects/online-documentation-pages/") "" :type 'directory)
 
 (defcustom docgen//sql-script-file (concat docgen//dir "renew-tables.sql") "" :type 'file)
-(defcustom docgen//sql-insert-string "INSERT INTO %s VALUES('%s', '%s', %s);" "" :type 'string)
-(defcustom docgen//sql-create-string "CREATE TABLE %s(Name text UNIQUE NOT NULL, Place text NOT NULL, External integer);" "" :type 'string)
+(defconst docgen//sql-insert-string "\nINSERT INTO %s(Name, External) VALUES('%s', %s);")
+(defconst docgen//sql-delete-string "\nDROP TABLE IF EXISTS %s;")
+(defconst docgen//sql-create-string "\nCREATE VIRTUAL TABLE %s USING fts4(Name text UNIQUE NOT NULL, External integer);")
 
 (defvar docgen//description nil "The description function used.")
 (defvar docgen//count 0 "Used for reporting the progress of the conversion.")
@@ -61,37 +64,41 @@
 (defcustom docgen//verbose t "Whether we should report the progress of the conversion."
   :type 'boolean)
 
-
 (defun docgen//convert ()
   "Do the whole thing. I'll comment this more when I have time."
   (interactive)
-  ;; First, let's require all built-in features. So we know everything is defined.
+  (docgen//log "First, let's require all built-in features. So we know everything is defined.")
   (mapc
-   (lambda (f) (require f nil t)) ;;no-error because some features are obsolete and throw errors.
-   (full-feature-lister))
+   (lambda (f) (condition-case nil
+                   (progn (message "%s" f)
+                          (require f nil t))
+                 (error nil))) ;;no-error because some features are obsolete and throw errors.
+   (docgen//full-feature-lister))
   ;; These lists will be used to create the functions.html and variables.html files
   (setq docgen//file-list-variable nil
         docgen//file-list-function nil)
-  ;; Generate the doc for functions
+  (docgen//log "Erase the sql-script, so we can make a new one.")
+  (when (file-readable-p docgen//sql-script-file)
+    (delete-file docgen//sql-script-file t))
+  (append-to-file (format docgen//sql-delete-string "Functions") nil docgen//sql-script-file)
+  (append-to-file (format docgen//sql-delete-string "Variables") nil docgen//sql-script-file)
+  (append-to-file (format docgen//sql-create-string "Functions") nil docgen//sql-script-file)
+  (append-to-file (format docgen//sql-create-string "Variables") nil docgen//sql-script-file)
+  (docgen//log "Generate the doc for functions")
   (let ((fill-column 1000) ;;This is to avoid artificial line breaks in the description.
         (docgen//sql-table-name "Functions")
         (docgen//description 'describe-function) ;;This tells `docgen//doc-to-html' what describing function to use.
         (docgen//format "Fun/%s.html")
         (docgen//file-list 'docgen//file-list-function))
     (mapc 'docgen//symbol-to-file (docgen//function-list))) ;;This creates a file for each fbound symbol.
-  ;; Generate the doc for variables
+  (docgen//log "Generate the doc for variables")
   (let ((docgen//sql-table-name "Variables")
         (docgen//description 'describe-variable)
         (docgen//format "Var/%s.html")
         (fill-column 1000)
         (docgen//file-list 'docgen//file-list-variable))
     (mapc 'docgen//symbol-to-file (docgen//variable-list)))
-  ;; Erase the sql-script, so we can make a new one.
-  (when (file-readable-p docgen//sql-script-file)
-    (delete-file docgen//sql-script-file t))
-  (append-to-file (format docgen//sql-create-string "Functions") nil docgen//sql-script-file)
-  (append-to-file (format docgen//sql-create-string "Variables") nil docgen//sql-script-file)
-  ;; Recreate the index.html
+  (docgen//log "Recreate the index.html")
   (let ((fun    (concat docgen//dir "functions.html"))
         (var    (concat docgen//dir "variables.html"))
         (header (concat docgen//dir "header.htmlt"))
@@ -108,6 +115,11 @@
       (insert (docgen//cons-list-to-item-list docgen//file-list-variable "Variables"))
       (goto-char (point-max))
       (insert-file-contents-literally footer))))
+
+(defun docgen//log (&rest r)
+  ""
+  (when docgen//verbose
+    (apply 'message r)))
 
 (defun docgen//symbol-to-file (s)
   "Takes a symbol, produces an html file with the description.
@@ -129,15 +141,15 @@ in the variable `docgen//file-list'."
          (doc (condition-case nil (funcall docgen//description s)
                 (error nil))))
     (when doc
-      (when docgen//verbose
-        (message "%5d / %d - %s" (setq docgen//count (1+ docgen//count)) docgen//total s))
+      (docgen//log "%5d / %d - %s" (setq docgen//count (1+ docgen//count)) docgen//total s)
       (with-temp-file path
         (insert (docgen//doc-to-html doc))
         (set-buffer-file-coding-system 'no-conversion))
       (add-to-list docgen//file-list (cons (symbol-name s) (url-hexify-string file)))
       (append-to-file
-       (docgen//format-sql-command docgen//sql-insert-string docgen//sql-table-name
-                                   (symbol-name s) file 0) nil docgen//sql-script-file))))
+       (docgen//format-sql-command docgen//sql-insert-string
+                                   docgen//sql-table-name (symbol-name s) 0)
+       nil docgen//sql-script-file))))
 
 (defun docgen//format-sql-command (fs &rest strings)
   "Double any quotes inside STRINGS, then use them in FS as a regular format string."
@@ -173,7 +185,7 @@ internalize) is far from optimized. But the rest of the script is
          (mapcar
           'intern-soft
           (nreverse ;;Reversing the sort order guarantees the links will be created in the right order later.
-           (sort* ;;We sort now because it's easier, so the final list of links will be sorted.
+           (cl-sort ;;We sort now because it's easier, so the final list of links will be sorted.
             (loop for docgen//my-unique-var being the symbols
                   if (and (null (string-match "\\`docgen//" (symbol-name docgen//my-unique-var)))
                           (funcall docgen//predicate docgen//my-unique-var))
@@ -201,7 +213,8 @@ https://github.com/Bruce-Connor/emacs-online-documentation/issues/2"
        (insert "</code>")
        (forward-line 0)
        (search-forward-regexp "in `" (line-end-position) t)       
-       (insert "<code>")))))
+       (insert "<code>"))
+     (buffer-string))))
 
 (defun docgen//cons-list-to-item-list (li type)
   "Convert the list of (SYMBOLNAME . FILE) generated in `docgen//symbol-to-file' to an html list of html links."
@@ -214,5 +227,4 @@ https://github.com/Bruce-Connor/emacs-online-documentation/issues/2"
   "Convert a cons cell with (NAME . FILE) to an html item with a link."
   (concat "<li><a href=\"" (cdr cell) "\">" (car cell) "</a>"))
 
-(provide 'documentation-generator)
-;;; documentation-generator.el ends here.
+

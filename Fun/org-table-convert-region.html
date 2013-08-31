@@ -1,1 +1,19 @@
-org-table-convert-region is an interactive autoloaded compiled Lisp function in `org-table.el'.<br/><br/>(org-table-convert-region BEG0 END0 &optional SEPARATOR)<br/><br/>Convert region to a table.<br/>The region goes from BEG0 to END0, but these borders will be moved<br/>slightly, to make sure a beginning of line in the first line is included.<br/><br/>SEPARATOR specifies the field separator in the lines.  It can have the<br/>following values:<br/><br/>'(4)     Use the comma as a field separator<br/>'(16)    Use a TAB as field separator<br/>integer  When a number, use that many spaces as field separator<br/>nil      When nil, the command tries to be smart and figure out the<br/>         separator in the following way:<br/>         - when each line contains a TAB, assume TAB-separated material<br/>         - when each line contains a comma, assume CSV material<br/>         - else, assume one or more SPACE characters as separator.
+<strong>org-table-convert-region</strong> is an interactive autoloaded compiled Lisp function in `<code>org-table.el</code>'.<br/>
+<br/>
+(org-table-convert-region BEG0 END0 &optional SEPARATOR)<br/>
+<br/>
+Convert region to a table.<br/>
+The region goes from BEG0 to END0, but these borders will be moved<br/>
+slightly, to make sure a beginning of line in the first line is included.<br/>
+<br/>
+SEPARATOR specifies the field separator in the lines.  It can have the<br/>
+following values:<br/>
+<br/>
+'(4)     Use the comma as a field separator<br/>
+'(16)    Use a TAB as field separator<br/>
+integer  When a number, use that many spaces as field separator<br/>
+nil      When nil, the command tries to be smart and figure out the<br/>
+         separator in the following way:<br/>
+         - when each line contains a TAB, assume TAB-separated material<br/>
+         - when each line contains a comma, assume CSV material<br/>
+         - else, assume one or more SPACE characters as separator.

@@ -1,1 +1,14 @@
-posn-at-x-y is a built-in function in `C source code'.<br/><br/>(posn-at-x-y X Y &optional FRAME-OR-WINDOW WHOLE)<br/><br/>Return position information for pixel coordinates X and Y.<br/>By default, X and Y are relative to text area of the selected window.<br/>Optional third arg FRAME-OR-WINDOW non-nil specifies frame or window.<br/>If optional fourth arg WHOLE is non-nil, X is relative to the left<br/>edge of the window.<br/><br/>The return value is similar to a mouse click position:<br/>   (WINDOW AREA-OR-POS (X . Y) TIMESTAMP OBJECT POS (COL . ROW)<br/>    IMAGE (DX . DY) (WIDTH . HEIGHT))<br/>The `posn-' functions access elements of such lists.
+<strong>posn-at-x-y</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(posn-at-x-y X Y &optional FRAME-OR-WINDOW WHOLE)<br/>
+<br/>
+Return position information for pixel coordinates X and Y.<br/>
+By default, X and Y are relative to text area of the selected window.<br/>
+Optional third arg FRAME-OR-WINDOW non-nil specifies frame or window.<br/>
+If optional fourth arg WHOLE is non-nil, X is relative to the left<br/>
+edge of the window.<br/>
+<br/>
+The return value is similar to a mouse click position:<br/>
+   (WINDOW AREA-OR-POS (X . Y) TIMESTAMP OBJECT POS (COL . ROW)<br/>
+    IMAGE (DX . DY) (WIDTH . HEIGHT))<br/>
+The `posn-' functions access elements of such lists.

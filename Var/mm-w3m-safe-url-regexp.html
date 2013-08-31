@@ -1,1 +1,20 @@
-mm-w3m-safe-url-regexp is a variable defined in `mm-decode.el'.<br/>Its value is "\\`cid:"<br/><br/>Documentation:<br/>Regexp matching URLs which are considered to be safe.<br/>Some HTML mails might contain a nasty trick used by spammers, using<br/>the <img> tag which is far more evil than the [Click Here!] button.<br/>It is most likely intended to check whether the ominous spam mail has<br/>reached your eyes or not, in which case the spammer knows for sure<br/>that your email address is valid.  It is done by embedding an<br/>identifier string into a URL that you might automatically retrieve<br/>when displaying the image.  The default value is "\\`cid:" which only<br/>matches parts embedded to the Multipart/Related type MIME contents and<br/>Gnus will never connect to the spammer's site arbitrarily.  You may<br/>set this variable to nil if you consider all urls to be safe.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22.1 of Emacs.<br/>
+<strong>mm-w3m-safe-url-regexp</strong> is a variable defined in `<code>mm-decode.el</code>'.<br/>
+Its value is "\\`cid:"<br/>
+<br/>
+Documentation:<br/>
+Regexp matching URLs which are considered to be safe.<br/>
+Some HTML mails might contain a nasty trick used by spammers, using<br/>
+the <img> tag which is far more evil than the [Click Here!] button.<br/>
+It is most likely intended to check whether the ominous spam mail has<br/>
+reached your eyes or not, in which case the spammer knows for sure<br/>
+that your email address is valid.  It is done by embedding an<br/>
+identifier string into a URL that you might automatically retrieve<br/>
+when displaying the image.  The default value is "\\`cid:" which only<br/>
+matches parts embedded to the Multipart/Related type MIME contents and<br/>
+Gnus will never connect to the spammer's site arbitrarily.  You may<br/>
+set this variable to nil if you consider all urls to be safe.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22.1 of Emacs.<br/>

@@ -1,1 +1,21 @@
-how-many is an interactive compiled Lisp function in `replace.el'.<br/><br/>(how-many REGEXP &optional RSTART REND INTERACTIVE)<br/><br/>Print and return number of matches for REGEXP following point.<br/>When called from Lisp and INTERACTIVE is omitted or nil, just return<br/>the number, do not print it; if INTERACTIVE is t, the function behaves<br/>in all respects as if it had been called interactively.<br/><br/>If REGEXP contains upper case characters (excluding those preceded by `\')<br/>and `search-upper-case' is non-nil, the matching is case-sensitive.<br/><br/>Second and third arg RSTART and REND specify the region to operate on.<br/><br/>Interactively, in Transient Mark mode when the mark is active, operate<br/>on the contents of the region.  Otherwise, operate from point to the<br/>end of (the accessible portion of) the buffer.<br/><br/>This function starts looking for the next match from the end of<br/>the previous match.  Hence, it ignores matches that overlap<br/>a previously found match.
+<strong>how-many</strong> is an interactive compiled Lisp function in `<code>replace.el</code>'.<br/>
+<br/>
+(how-many REGEXP &optional RSTART REND INTERACTIVE)<br/>
+<br/>
+Print and return number of matches for REGEXP following point.<br/>
+When called from Lisp and INTERACTIVE is omitted or nil, just return<br/>
+the number, do not print it; if INTERACTIVE is t, the function behaves<br/>
+in all respects as if it had been called interactively.<br/>
+<br/>
+If REGEXP contains upper case characters (excluding those preceded by `\')<br/>
+and `search-upper-case' is non-nil, the matching is case-sensitive.<br/>
+<br/>
+Second and third arg RSTART and REND specify the region to operate on.<br/>
+<br/>
+Interactively, in Transient Mark mode when the mark is active, operate<br/>
+on the contents of the region.  Otherwise, operate from point to the<br/>
+end of (the accessible portion of) the buffer.<br/>
+<br/>
+This function starts looking for the next match from the end of<br/>
+the previous match.  Hence, it ignores matches that overlap<br/>
+a previously found match.

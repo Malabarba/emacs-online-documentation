@@ -1,1 +1,16 @@
-tramp-message is a compiled Lisp function in `tramp.el'.<br/><br/>(tramp-message VEC-OR-PROC LEVEL FMT-STRING &rest ARGS)<br/><br/>Emit a message depending on verbosity level.<br/>VEC-OR-PROC identifies the Tramp buffer to use.  It can be either a<br/>vector or a process.  LEVEL says to be quiet if `tramp-verbose' is<br/>less than LEVEL.  The message is emitted only if `tramp-verbose' is<br/>greater than or equal to LEVEL.<br/><br/>The message is also logged into the debug buffer when `tramp-verbose'<br/>is greater than or equal 4.<br/><br/>Calls functions `message' and `tramp-debug-message' with FMT-STRING as<br/>control string and the remaining ARGS to actually emit the message (if<br/>applicable).
+<strong>tramp-message</strong> is a compiled Lisp function in `<code>tramp.el</code>'.<br/>
+<br/>
+(tramp-message VEC-OR-PROC LEVEL FMT-STRING &rest ARGS)<br/>
+<br/>
+Emit a message depending on verbosity level.<br/>
+VEC-OR-PROC identifies the Tramp buffer to use.  It can be either a<br/>
+vector or a process.  LEVEL says to be quiet if `tramp-verbose' is<br/>
+less than LEVEL.  The message is emitted only if `tramp-verbose' is<br/>
+greater than or equal to LEVEL.<br/>
+<br/>
+The message is also logged into the debug buffer when `tramp-verbose'<br/>
+is greater than or equal 4.<br/>
+<br/>
+Calls functions `message' and `tramp-debug-message' with FMT-STRING as<br/>
+control string and the remaining ARGS to actually emit the message (if<br/>
+applicable).

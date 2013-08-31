@@ -1,1 +1,27 @@
-reporter-dump-state is a compiled Lisp function in `reporter.el'.<br/><br/>(reporter-dump-state PKGNAME VARLIST PRE-HOOKS POST-HOOKS)<br/><br/>Dump the state of the mode specific variables.<br/>PKGNAME contains the name of the mode as it will appear in the bug<br/>report (you must explicitly concat any version numbers).<br/><br/>VARLIST is the list of variables to dump.  Each element in<br/>VARLIST can be a variable symbol, or a cons cell.  If a symbol,<br/>this will be passed to `reporter-dump-variable' for insertion<br/>into the mail buffer.  If a cons cell, the car must be a variable<br/>symbol and the cdr must be a function which will be `funcall'd<br/>with arguments the symbol and the mail buffer being composed.  Use<br/>this to write your own custom variable value printers for<br/>specific variables.<br/><br/>Note that the global variable `reporter-eval-buffer' will be bound to<br/>the buffer in which `reporter-submit-bug-report' was invoked.  If you<br/>want to print the value of a buffer local variable, you should wrap<br/>the `eval' call in your custom printer inside a `set-buffer' (and<br/>probably a `save-excursion').  `reporter-dump-variable' handles this<br/>properly.<br/><br/>PRE-HOOKS is run after the Emacs version and PKGNAME are inserted, but<br/>before the VARLIST is dumped.  POST-HOOKS is run after the VARLIST is<br/>dumped.
+<strong>reporter-dump-state</strong> is a compiled Lisp function in `<code>reporter.el</code>'.<br/>
+<br/>
+(reporter-dump-state PKGNAME VARLIST PRE-HOOKS POST-HOOKS)<br/>
+<br/>
+Dump the state of the mode specific variables.<br/>
+PKGNAME contains the name of the mode as it will appear in the bug<br/>
+report (you must explicitly concat any version numbers).<br/>
+<br/>
+VARLIST is the list of variables to dump.  Each element in<br/>
+VARLIST can be a variable symbol, or a cons cell.  If a symbol,<br/>
+this will be passed to `reporter-dump-variable' for insertion<br/>
+into the mail buffer.  If a cons cell, the car must be a variable<br/>
+symbol and the cdr must be a function which will be `funcall'd<br/>
+with arguments the symbol and the mail buffer being composed.  Use<br/>
+this to write your own custom variable value printers for<br/>
+specific variables.<br/>
+<br/>
+Note that the global variable `reporter-eval-buffer' will be bound to<br/>
+the buffer in which `reporter-submit-bug-report' was invoked.  If you<br/>
+want to print the value of a buffer local variable, you should wrap<br/>
+the `eval' call in your custom printer inside a `set-buffer' (and<br/>
+probably a `save-excursion').  `reporter-dump-variable' handles this<br/>
+properly.<br/>
+<br/>
+PRE-HOOKS is run after the Emacs version and PKGNAME are inserted, but<br/>
+before the VARLIST is dumped.  POST-HOOKS is run after the VARLIST is<br/>
+dumped.

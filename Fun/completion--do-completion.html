@@ -1,1 +1,22 @@
-completion--do-completion is a compiled Lisp function in `minibuffer.el'.<br/><br/>(completion--do-completion &optional TRY-COMPLETION-FUNCTION EXPECT-EXACT)<br/><br/>Do the completion and return a summary of what happened.<br/>M = completion was performed, the text was Modified.<br/>C = there were available Completions.<br/>E = after completion we now have an Exact match.<br/><br/> MCE<br/> 000  0 no possible completion<br/> 001  1 was already an exact and unique completion<br/> 010  2 no completion happened<br/> 011  3 was already an exact completion<br/> 100  4 ??? impossible<br/> 101  5 ??? impossible<br/> 110  6 some completion happened<br/> 111  7 completed to an exact completion<br/><br/>TRY-COMPLETION-FUNCTION is a function to use in place of `try-completion'.<br/>EXPECT-EXACT, if non-nil, means that there is no need to tell the user<br/>when the buffer's text is already an exact match.
+<strong>completion--do-completion</strong> is a compiled Lisp function in `<code>minibuffer.el</code>'.<br/>
+<br/>
+(completion--do-completion &optional TRY-COMPLETION-FUNCTION EXPECT-EXACT)<br/>
+<br/>
+Do the completion and return a summary of what happened.<br/>
+M = completion was performed, the text was Modified.<br/>
+C = there were available Completions.<br/>
+E = after completion we now have an Exact match.<br/>
+<br/>
+ MCE<br/>
+ 000  0 no possible completion<br/>
+ 001  1 was already an exact and unique completion<br/>
+ 010  2 no completion happened<br/>
+ 011  3 was already an exact completion<br/>
+ 100  4 ??? impossible<br/>
+ 101  5 ??? impossible<br/>
+ 110  6 some completion happened<br/>
+ 111  7 completed to an exact completion<br/>
+<br/>
+TRY-COMPLETION-FUNCTION is a function to use in place of `try-completion'.<br/>
+EXPECT-EXACT, if non-nil, means that there is no need to tell the user<br/>
+when the buffer's text is already an exact match.

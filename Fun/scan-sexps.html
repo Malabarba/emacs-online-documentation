@@ -1,1 +1,14 @@
-scan-sexps is a built-in function in `C source code'.<br/><br/>(scan-sexps FROM COUNT)<br/><br/>Scan from character number FROM by COUNT balanced expressions.<br/>If COUNT is negative, scan backwards.<br/>Returns the character number of the position thus found.<br/><br/>Comments are ignored if `parse-sexp-ignore-comments' is non-nil.<br/><br/>If the beginning or end of (the accessible part of) the buffer is reached<br/>in the middle of a parenthetical grouping, an error is signaled.<br/>If the beginning or end is reached between groupings<br/>but before count is used up, nil is returned.
+<strong>scan-sexps</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(scan-sexps FROM COUNT)<br/>
+<br/>
+Scan from character number FROM by COUNT balanced expressions.<br/>
+If COUNT is negative, scan backwards.<br/>
+Returns the character number of the position thus found.<br/>
+<br/>
+Comments are ignored if `parse-sexp-ignore-comments' is non-nil.<br/>
+<br/>
+If the beginning or end of (the accessible part of) the buffer is reached<br/>
+in the middle of a parenthetical grouping, an error is signaled.<br/>
+If the beginning or end is reached between groupings<br/>
+but before count is used up, nil is returned.

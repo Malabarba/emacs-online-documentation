@@ -1,1 +1,32 @@
-change-log-font-lock-keywords is a variable defined in `add-log.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Additional expressions to highlight in Change Log mode.<br/><br/>Value:<br/>(("^[0-9-]+ +\\|^ \\{11,\\}\\|^	 \\{3,\\}\\|^\\(Sun\\|Mon\\|Tue\\|Wed\\|Thu\\|Fri\\|Sat\\) [A-z][a-z][a-z] [0-9:+ ]+"<br/>  (0 'change-log-date-face)<br/>  ("\\([^<(]+?\\)[ 	]*[(<]\\([A-Za-z0-9_.+-]+@[A-Za-z0-9_.-]+\\)[>)]" nil nil<br/>   (1 'change-log-name)<br/>   (2 'change-log-email)))<br/> ("^\\( +\\|	\\)\\* \\([^ ,:([\n]+\\)"<br/>  (2 'change-log-file)<br/>  ("\\=, \\([^ ,:([\n]+\\)" nil nil<br/>   (1 'change-log-file))<br/>  ("\\= (\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)" nil nil<br/>   (1 'change-log-list))<br/>  ("\\=, *\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)" nil nil<br/>   (1 'change-log-list)))<br/> ("^\\( +\\|	\\)(\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)"<br/>  (2 'change-log-list)<br/>  ("\\=, *\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)" nil nil<br/>   (1 'change-log-list)))<br/> ("\\[!?\\([^]\n]+\\)\\]\\(:\\| (\\)"<br/>  (1 'change-log-conditionals))<br/> ("<\\([^>\n]+\\)>\\(:\\| (\\)"<br/>  (1 'change-log-function))<br/> ("\\(^\\( +\\|	\\)\\|  \\)\\(Thanks to\\|Patch\\(es\\)? by\\|Report\\(ed by\\| from\\)\\|Suggest\\(ed by\\|ion from\\)\\)" 3 'change-log-acknowledgment))<br/><br/>
+<strong>change-log-font-lock-keywords</strong> is a variable defined in `<code>add-log.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Additional expressions to highlight in Change Log mode.<br/>
+<br/>
+Value:<br/>
+(("^[0-9-]+ +\\|^ \\{11,\\}\\|^	 \\{3,\\}\\|^\\(Sun\\|Mon\\|Tue\\|Wed\\|Thu\\|Fri\\|Sat\\) [A-z][a-z][a-z] [0-9:+ ]+"<br/>
+  (0 'change-log-date-face)<br/>
+  ("\\([^<(]+?\\)[ 	]*[(<]\\([A-Za-z0-9_.+-]+@[A-Za-z0-9_.-]+\\)[>)]" nil nil<br/>
+   (1 'change-log-name)<br/>
+   (2 'change-log-email)))<br/>
+ ("^\\( +\\|	\\)\\* \\([^ ,:([\n]+\\)"<br/>
+  (2 'change-log-file)<br/>
+  ("\\=, \\([^ ,:([\n]+\\)" nil nil<br/>
+   (1 'change-log-file))<br/>
+  ("\\= (\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)" nil nil<br/>
+   (1 'change-log-list))<br/>
+  ("\\=, *\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)" nil nil<br/>
+   (1 'change-log-list)))<br/>
+ ("^\\( +\\|	\\)(\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)"<br/>
+  (2 'change-log-list)<br/>
+  ("\\=, *\\([^(),\n]+\\|(\\(setf\\|SETF\\) [^() ,\n]+)\\)" nil nil<br/>
+   (1 'change-log-list)))<br/>
+ ("\\[!?\\([^]\n]+\\)\\]\\(:\\| (\\)"<br/>
+  (1 'change-log-conditionals))<br/>
+ ("<\\([^>\n]+\\)>\\(:\\| (\\)"<br/>
+  (1 'change-log-function))<br/>
+ ("\\(^\\( +\\|	\\)\\|  \\)\\(Thanks to\\|Patch\\(es\\)? by\\|Report\\(ed by\\| from\\)\\|Suggest\\(ed by\\|ion from\\)\\)" 3 'change-log-acknowledgment))<br/>
+<br/>

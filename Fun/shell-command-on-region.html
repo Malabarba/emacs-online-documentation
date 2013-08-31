@@ -1,1 +1,53 @@
-shell-command-on-region is an interactive compiled Lisp function in `simple.el'.<br/><br/>It is bound to M-|, <menu-bar> <tools> <shell-on-region>.<br/><br/>(shell-command-on-region START END COMMAND &optional OUTPUT-BUFFER REPLACE ERROR-BUFFER DISPLAY-ERROR-BUFFER)<br/><br/>Execute string COMMAND in inferior shell with region as input.<br/>Normally display output (if any) in temp buffer `*Shell Command Output*';<br/>Prefix arg means replace the region with it.  Return the exit code of<br/>COMMAND.<br/><br/>To specify a coding system for converting non-ASCII characters<br/>in the input and output to the shell command, use C-x RET c<br/>before this command.  By default, the input (from the current buffer)<br/>is encoded using coding-system specified by `process-coding-system-alist',<br/>falling back to `default-process-coding-system' if no match for COMMAND<br/>is found in `process-coding-system-alist'.<br/><br/>Noninteractive callers can specify coding systems by binding<br/>`coding-system-for-read' and `coding-system-for-write'.<br/><br/>If the command generates output, the output may be displayed<br/>in the echo area or in a buffer.<br/>If the output is short enough to display in the echo area<br/>(determined by the variable `max-mini-window-height' if<br/>`resize-mini-windows' is non-nil), it is shown there.<br/>Otherwise it is displayed in the buffer `*Shell Command Output*'.<br/>The output is available in that buffer in both cases.<br/><br/>If there is output and an error, a message about the error<br/>appears at the end of the output.  If there is no output, or if<br/>output is inserted in the current buffer, the buffer `*Shell<br/>Command Output*' is deleted.<br/><br/>Optional fourth arg OUTPUT-BUFFER specifies where to put the<br/>command's output.  If the value is a buffer or buffer name, put<br/>the output there.  Any other value, including nil, means to<br/>insert the output in the current buffer.  In either case, the<br/>output is inserted after point (leaving mark after it).<br/><br/>Optional fifth arg REPLACE, if non-nil, means to insert the<br/>output in place of text from START to END, putting point and mark<br/>around it.<br/><br/>Optional sixth arg ERROR-BUFFER, if non-nil, specifies a buffer<br/>or buffer name to which to direct the command's standard error<br/>output.  If nil, error output is mingled with regular output.<br/>When called interactively, `shell-command-default-error-buffer'<br/>is used for ERROR-BUFFER.<br/><br/>Optional seventh arg DISPLAY-ERROR-BUFFER, if non-nil, means to<br/>display the error buffer if there were any errors.  When called<br/>interactively, this is t.
+<strong>shell-command-on-region</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+It is bound to M-|, <menu-bar> <tools> <shell-on-region>.<br/>
+<br/>
+(shell-command-on-region START END COMMAND &optional OUTPUT-BUFFER REPLACE ERROR-BUFFER DISPLAY-ERROR-BUFFER)<br/>
+<br/>
+Execute string COMMAND in inferior shell with region as input.<br/>
+Normally display output (if any) in temp buffer `*Shell Command Output*';<br/>
+Prefix arg means replace the region with it.  Return the exit code of<br/>
+COMMAND.<br/>
+<br/>
+To specify a coding system for converting non-ASCII characters<br/>
+in the input and output to the shell command, use C-x RET c<br/>
+before this command.  By default, the input (from the current buffer)<br/>
+is encoded using coding-system specified by `process-coding-system-alist',<br/>
+falling back to `default-process-coding-system' if no match for COMMAND<br/>
+is found in `process-coding-system-alist'.<br/>
+<br/>
+Noninteractive callers can specify coding systems by binding<br/>
+`coding-system-for-read' and `coding-system-for-write'.<br/>
+<br/>
+If the command generates output, the output may be displayed<br/>
+in the echo area or in a buffer.<br/>
+If the output is short enough to display in the echo area<br/>
+(determined by the variable `max-mini-window-height' if<br/>
+`resize-mini-windows' is non-nil), it is shown there.<br/>
+Otherwise it is displayed in the buffer `*Shell Command Output*'.<br/>
+The output is available in that buffer in both cases.<br/>
+<br/>
+If there is output and an error, a message about the error<br/>
+appears at the end of the output.  If there is no output, or if<br/>
+output is inserted in the current buffer, the buffer `*Shell<br/>
+Command Output*' is deleted.<br/>
+<br/>
+Optional fourth arg OUTPUT-BUFFER specifies where to put the<br/>
+command's output.  If the value is a buffer or buffer name, put<br/>
+the output there.  Any other value, including nil, means to<br/>
+insert the output in the current buffer.  In either case, the<br/>
+output is inserted after point (leaving mark after it).<br/>
+<br/>
+Optional fifth arg REPLACE, if non-nil, means to insert the<br/>
+output in place of text from START to END, putting point and mark<br/>
+around it.<br/>
+<br/>
+Optional sixth arg ERROR-BUFFER, if non-nil, specifies a buffer<br/>
+or buffer name to which to direct the command's standard error<br/>
+output.  If nil, error output is mingled with regular output.<br/>
+When called interactively, `shell-command-default-error-buffer'<br/>
+is used for ERROR-BUFFER.<br/>
+<br/>
+Optional seventh arg DISPLAY-ERROR-BUFFER, if non-nil, means to<br/>
+display the error buffer if there were any errors.  When called<br/>
+interactively, this is t.

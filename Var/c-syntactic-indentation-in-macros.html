@@ -1,1 +1,23 @@
-c-syntactic-indentation-in-macros is a variable defined in `cc-vars.el'.<br/>Its value is t<br/><br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate `booleanp'.<br/><br/>Documentation:<br/>*Enable syntactic analysis inside macros.<br/>If this is nil, all lines inside macro definitions are analyzed as<br/>`cpp-macro-cont'.  Otherwise they are analyzed syntactically, just<br/>like normal code, and `cpp-define-intro' is used to create the<br/>additional indentation of the bodies of "#define" macros.<br/><br/>Having this enabled simplifies editing of large multiline macros, but<br/>it might complicate editing if CC Mode doesn't recognize the context<br/>of the macro content.  The default context inside the macro is the<br/>same as the top level, so if it contains "bare" statements they<br/>might be indented wrongly, although there are special cases that<br/>handle this in most cases.  If this problem occurs, it's usually<br/>countered easily by surrounding the statements by a block (or even<br/>better with the "do { ... } while (0)" trick).<br/><br/>You can customize this variable.
+<strong>c-syntactic-indentation-in-macros</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate `booleanp'.<br/>
+<br/>
+Documentation:<br/>
+*Enable syntactic analysis inside macros.<br/>
+If this is nil, all lines inside macro definitions are analyzed as<br/>
+`cpp-macro-cont'.  Otherwise they are analyzed syntactically, just<br/>
+like normal code, and `cpp-define-intro' is used to create the<br/>
+additional indentation of the bodies of "#define" macros.<br/>
+<br/>
+Having this enabled simplifies editing of large multiline macros, but<br/>
+it might complicate editing if CC Mode doesn't recognize the context<br/>
+of the macro content.  The default context inside the macro is the<br/>
+same as the top level, so if it contains "bare" statements they<br/>
+might be indented wrongly, although there are special cases that<br/>
+handle this in most cases.  If this problem occurs, it's usually<br/>
+countered easily by surrounding the statements by a block (or even<br/>
+better with the "do { ... } while (0)" trick).<br/>
+<br/>
+You can customize this variable.

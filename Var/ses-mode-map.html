@@ -1,1 +1,50 @@
-ses-mode-map is a variable defined in `ses.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Local keymap for Simple Emacs Spreadsheet.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (SES menu-item "SES"<br/>		(keymap "SES"<br/>			(Insert\ row menu-item "Insert row" ses-insert-row :enable<br/>				     (ses-in-print-area))<br/>			(Delete\ row menu-item "Delete row" ses-delete-row :enable<br/>				     (ses-in-print-area))<br/>			(Insert\ column menu-item "Insert column" ses-insert-column :enable<br/>					(ses-in-print-area))<br/>			(Delete\ column menu-item "Delete column" ses-delete-column :enable<br/>					(ses-in-print-area))<br/>			(Set\ column\ printer menu-item "Set column printer" ses-read-column-printer)<br/>			(Set\ column\ width menu-item "Set column width" ses-set-column-width)<br/>			(Set\ default\ printer menu-item "Set default printer" ses-read-default-printer)<br/>			(Jump\ to\ cell menu-item "Jump to cell" ses-jump)<br/>			(Set\ cell\ printer menu-item "Set cell printer" ses-read-cell-printer)<br/>			(Recalculate\ cell menu-item "Recalculate cell" ses-recalculate-cell)<br/>			(Truncate\ cell\ display menu-item "Truncate cell display" ses-truncate-cell)<br/>			(Export\ values menu-item "Export values" ses-export-tsv)<br/>			(Export\ formulas menu-item "Export formulas" ses-export-tsf))))<br/> (header-line keymap<br/>	      (mouse-2 . ses-sort-column-click)<br/>	      (down-mouse-3 keymap "SES header row"<br/>			    (Set\ current\ row menu-item "Set current row" ses-set-header-row)<br/>			    (Unset\ row menu-item "Unset row" ses-unset-header-row :enable<br/>					(> ses--header-row 0))))<br/> (33554444 . ses-reprint-all)<br/> (27 keymap<br/>     (12 . ses-reprint-all))<br/> (3 keymap<br/>    (16 . ses-read-default-printer)<br/>    (10 . ses-jump)<br/>    (20 . ses-truncate-cell)<br/>    (3 . ses-recalculate-cell)<br/>    (14 . ses-renarrow-buffer)<br/>    (12 . ses-recalculate-all)<br/>    (27 keymap<br/>	(8 . ses-set-header-row)<br/>	(19 . ses-sort-column)<br/>	(12 . ses-reconstruct-all))))<br/><br/>
+<strong>ses-mode-map</strong> is a variable defined in `<code>ses.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Local keymap for Simple Emacs Spreadsheet.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (SES menu-item "SES"<br/>
+		(keymap "SES"<br/>
+			(Insert\ row menu-item "Insert row" ses-insert-row :enable<br/>
+				     (ses-in-print-area))<br/>
+			(Delete\ row menu-item "Delete row" ses-delete-row :enable<br/>
+				     (ses-in-print-area))<br/>
+			(Insert\ column menu-item "Insert column" ses-insert-column :enable<br/>
+					(ses-in-print-area))<br/>
+			(Delete\ column menu-item "Delete column" ses-delete-column :enable<br/>
+					(ses-in-print-area))<br/>
+			(Set\ column\ printer menu-item "Set column printer" ses-read-column-printer)<br/>
+			(Set\ column\ width menu-item "Set column width" ses-set-column-width)<br/>
+			(Set\ default\ printer menu-item "Set default printer" ses-read-default-printer)<br/>
+			(Jump\ to\ cell menu-item "Jump to cell" ses-jump)<br/>
+			(Set\ cell\ printer menu-item "Set cell printer" ses-read-cell-printer)<br/>
+			(Recalculate\ cell menu-item "Recalculate cell" ses-recalculate-cell)<br/>
+			(Truncate\ cell\ display menu-item "Truncate cell display" ses-truncate-cell)<br/>
+			(Export\ values menu-item "Export values" ses-export-tsv)<br/>
+			(Export\ formulas menu-item "Export formulas" ses-export-tsf))))<br/>
+ (header-line keymap<br/>
+	      (mouse-2 . ses-sort-column-click)<br/>
+	      (down-mouse-3 keymap "SES header row"<br/>
+			    (Set\ current\ row menu-item "Set current row" ses-set-header-row)<br/>
+			    (Unset\ row menu-item "Unset row" ses-unset-header-row :enable<br/>
+					(> ses--header-row 0))))<br/>
+ (33554444 . ses-reprint-all)<br/>
+ (27 keymap<br/>
+     (12 . ses-reprint-all))<br/>
+ (3 keymap<br/>
+    (16 . ses-read-default-printer)<br/>
+    (10 . ses-jump)<br/>
+    (20 . ses-truncate-cell)<br/>
+    (3 . ses-recalculate-cell)<br/>
+    (14 . ses-renarrow-buffer)<br/>
+    (12 . ses-recalculate-all)<br/>
+    (27 keymap<br/>
+	(8 . ses-set-header-row)<br/>
+	(19 . ses-sort-column)<br/>
+	(12 . ses-reconstruct-all))))<br/>
+<br/>

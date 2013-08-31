@@ -1,1 +1,17 @@
-define-lex-block-analyzer is a Lisp macro in `lex.el'.<br/><br/>(define-lex-block-analyzer NAME DOC SPEC1 &rest SPECS)<br/><br/>Create a lexical analyzer NAME for paired delimiters blocks.<br/>It detects a paired delimiters block or the corresponding open or<br/>close delimiter depending on the value of the variable<br/>`semantic-lex-current-depth'.  DOC is the documentation string of the lexical<br/>analyzer.  SPEC1 and SPECS specify the token symbols and open, close<br/>delimiters used.  Each SPEC has the form:<br/><br/>(BLOCK-SYM (OPEN-DELIM OPEN-SYM) (CLOSE-DELIM CLOSE-SYM))<br/><br/>where BLOCK-SYM is the symbol returned in a block token.  OPEN-DELIM<br/>and CLOSE-DELIM are respectively the open and close delimiters<br/>identifying a block.  OPEN-SYM and CLOSE-SYM are respectively the<br/>symbols returned in open and close tokens.
+<strong>define-lex-block-analyzer</strong> is a Lisp macro in `<code>lex.el</code>'.<br/>
+<br/>
+(define-lex-block-analyzer NAME DOC SPEC1 &rest SPECS)<br/>
+<br/>
+Create a lexical analyzer NAME for paired delimiters blocks.<br/>
+It detects a paired delimiters block or the corresponding open or<br/>
+close delimiter depending on the value of the variable<br/>
+`semantic-lex-current-depth'.  DOC is the documentation string of the lexical<br/>
+analyzer.  SPEC1 and SPECS specify the token symbols and open, close<br/>
+delimiters used.  Each SPEC has the form:<br/>
+<br/>
+(BLOCK-SYM (OPEN-DELIM OPEN-SYM) (CLOSE-DELIM CLOSE-SYM))<br/>
+<br/>
+where BLOCK-SYM is the symbol returned in a block token.  OPEN-DELIM<br/>
+and CLOSE-DELIM are respectively the open and close delimiters<br/>
+identifying a block.  OPEN-SYM and CLOSE-SYM are respectively the<br/>
+symbols returned in open and close tokens.

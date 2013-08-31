@@ -1,1 +1,17 @@
-read-char-exclusive is a built-in function in `C source code'.<br/><br/>(read-char-exclusive &optional PROMPT INHERIT-INPUT-METHOD SECONDS)<br/><br/>Read a character from the command input (keyboard or macro).<br/>It is returned as a number.  Non-character events are ignored.<br/>If the character has modifiers, they are resolved and reflected to the<br/>character code if possible (e.g. C-SPC -> 0).<br/><br/>If the optional argument PROMPT is non-nil, display that as a prompt.<br/>If the optional argument INHERIT-INPUT-METHOD is non-nil and some<br/>input method is turned on in the current buffer, that input method<br/>is used for reading a character.<br/>If the optional argument SECONDS is non-nil, it should be a number<br/>specifying the maximum number of seconds to wait for input.  If no<br/>input arrives in that time, return nil.  SECONDS may be a<br/>floating-point value.
+<strong>read-char-exclusive</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(read-char-exclusive &optional PROMPT INHERIT-INPUT-METHOD SECONDS)<br/>
+<br/>
+Read a character from the command input (keyboard or macro).<br/>
+It is returned as a number.  Non-character events are ignored.<br/>
+If the character has modifiers, they are resolved and reflected to the<br/>
+character code if possible (e.g. C-SPC -> 0).<br/>
+<br/>
+If the optional argument PROMPT is non-nil, display that as a prompt.<br/>
+If the optional argument INHERIT-INPUT-METHOD is non-nil and some<br/>
+input method is turned on in the current buffer, that input method<br/>
+is used for reading a character.<br/>
+If the optional argument SECONDS is non-nil, it should be a number<br/>
+specifying the maximum number of seconds to wait for input.  If no<br/>
+input arrives in that time, return nil.  SECONDS may be a<br/>
+floating-point value.

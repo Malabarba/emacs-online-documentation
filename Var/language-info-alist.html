@@ -1,1 +1,663 @@
-language-info-alist is a variable defined in `mule-cmds.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Alist of language environment definitions.<br/>Each element looks like:<br/>	(LANGUAGE-NAME . ((KEY . INFO) ...))<br/>where LANGUAGE-NAME is a string, the name of the language environment,<br/>KEY is a symbol denoting the kind of information, and<br/>INFO is the data associated with KEY.<br/>Meaningful values for KEY include<br/><br/>  documentation      value is documentation of what this language environment<br/>			is meant for, and how to use it.<br/>  charset	     value is a list of the character sets mainly used<br/>			by this language environment.<br/>  sample-text	     value is an expression which is evalled to generate<br/>                        a line of text written using characters appropriate<br/>                        for this language environment.<br/>  setup-function     value is a function to call to switch to this<br/>			language environment.<br/>  exit-function      value is a function to call to leave this<br/>		        language environment.<br/>  coding-system      value is a list of coding systems that are good for<br/>			saving text written in this language environment.<br/>			This list serves as suggestions to the user;<br/>			in effect, as a kind of documentation.<br/>  coding-priority    value is a list of coding systems for this language<br/>			environment, in order of decreasing priority.<br/>			This is used to set up the coding system priority<br/>			list when you switch to this language environment.<br/>  nonascii-translation<br/>		     value is a charset of dimension one to use for<br/>			converting a unibyte character to multibyte<br/>			and vice versa.<br/>  input-method       value is a default input method for this language<br/>			environment.<br/>  features           value is a list of features requested in this<br/>			language environment.<br/>  ctext-non-standard-encodings<br/>		     value is a list of non-standard encoding names used<br/>			in extended segments of CTEXT.  See the variable<br/>			`ctext-non-standard-encodings' for more detail.<br/><br/>The following key takes effect only when multibyte characters are<br/>globally disabled, i.e. the default value of `enable-multibyte-characters'<br/>is nil (which is an obsolete and deprecated use):<br/><br/>  unibyte-display    value is a coding system to encode characters for<br/>			the terminal.  Characters in the range of 160 to<br/>			255 display not as octal escapes, but as non-ASCII<br/>			characters in this language environment.<br/><br/>Value: (("Cham"<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Burmese"<br/>  (documentation . t)<br/>  (sample-text . "Burmese (မ္ရန္‌မာ)	မင္‍ဂလာပာ")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Khmer"<br/>  (documentation . t)<br/>  (sample-text . "Khmer (ភាសាខ្មែរ)	ជំរាបសួរ")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Georgian"<br/>  (documentation . "Support for georgian-ps character set.")<br/>  (nonascii-translation . georgian-ps)<br/>  (input-method . "georgian")<br/>  (coding-priority georgian-ps)<br/>  (coding-system georgian-ps))<br/> ("UTF-8"<br/>  (documentation . "This language environment is a generic one for the Unicode character set\nencoded in UTF-8.")<br/>  (input-method . "rfc1345")<br/>  (charset unicode-bmp unicode)<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8))<br/> ("Persian"<br/>  (documentation . "Bidirectional editing is supported.")<br/>  (sample-text . "Persian	فارسی")<br/>  (input-method . "farsi-transliterate-banan")<br/>  (coding-priority utf-8 iso-8859-6 windows-1256)<br/>  (coding-system utf-8 iso-8859-6 windows-1256)<br/>  (charset unicode))<br/> ("Arabic"<br/>  (documentation . "Bidirectional editing is supported.")<br/>  (sample-text . "Arabic	السّلام عليكم")<br/>  (input-method . "arabic")<br/>  (coding-priority utf-8 iso-8859-6 windows-1256)<br/>  (coding-system utf-8 iso-8859-6 windows-1256)<br/>  (charset unicode))<br/> ("IPA"<br/>  (documentation . "IPA is International Phonetic Alphabet for English, French, German\nand Italian.")<br/>  (nonascii-translation . ipa)<br/>  (input-method . "ipa")<br/>  (coding-system utf-8)<br/>  (coding-priority utf-8)<br/>  (charset ipa))<br/> ("Vietnamese"<br/>  (documentation . "For Vietnamese, Emacs uses special charsets internally.\nThey can be decoded from and encoded to VISCII, VSCII, TCVN-5712, VIQR\nand windows-1258.  VSCII is deprecated in favor of TCVN-5712.  The\nCurrent setting gives higher priority to the coding system VISCII than\nTCVN-5712.  If you prefer TCVN-5712, please do: (prefer-coding-system\n'vietnamese-tcvn).  There are two Vietnamese input methods: VIQR and\nTelex, VIQR is the default setting.")<br/>  (sample-text . "Vietnamese (Tiếng Việt)	Chào bạn")<br/>  (features viet-util)<br/>  (unibyte-display . vietnamese-viscii)<br/>  (input-method . "vietnamese-viqr")<br/>  (coding-priority vietnamese-viscii)<br/>  (nonascii-translation . viscii)<br/>  (coding-system vietnamese-viscii vietnamese-vscii vietnamese-tcvn vietnamese-viqr windows-1258)<br/>  (charset viscii))<br/> ("Tibetan"<br/>  (sample-text . "Tibetan (བོད་སྐ����ད་) ༄༅༅༎བཀྲ����་ཤིས་བདེ་ལེགས༎ཨོཾ་མ����་ཎི་པ����དྨེ་ཧའུྂ༎")<br/>  (documentation . t)<br/>  (features tibet-util)<br/>  (input-method . "tibetan-wylie")<br/>  (coding-priority iso-2022-7bit tibetan-iso-8bit)<br/>  (coding-system tibetan-iso-8bit)<br/>  (charset tibetan tibetan-1-column))<br/> ("Thai"<br/>  (documentation . t)<br/>  (sample-text thai-compose-string<br/>	       (copy-sequence "Thai (ภาษาไทย)		สวัสดีครับ, สวัสดีค่ะ"))<br/>  (exit-function . exit-thai-language-environment-internal)<br/>  (setup-function . setup-thai-language-environment-internal)<br/>  (features thai-util)<br/>  (unibyte-display . thai-tis620)<br/>  (input-method . "thai-kesmanee")<br/>  (nonascii-translation . tis620-2533)<br/>  (coding-priority thai-tis620)<br/>  (coding-system thai-tis620 iso-8859-11 cp874)<br/>  (charset thai-tis620)<br/>  (tutorial . "TUTORIAL.th"))<br/> ("TaiViet"<br/>  (documentation . "TaiViet refers to the Tai language used by Tai people in\nVietnam, and also refers to the script used for this language.\nBoth the script and language have the same origin as that of Thai\nlanguage/script used in Thailand, but now they differ from each\nother in a significant way (especially the scripts are).\n\nThe language name is spelled as \"ꪁꪫꪱꪣ ꪼꪕ\", and the script name is\nspelled as \"ꪎ ꪼꪕ\" in the modern form, \"ꪎꪳ ꪼꪕ\" in the traditional\nform.\n\nAs the proposal for TaiViet script to the Unicode is still on\nthe progress, we use the Private Use Area for TaiViet\ncharacters (U+F000..U+F07E).  A TaiViet font encoded accordingly\nis available at this web page:\n    http://www.m17n.org/viettai/\n")<br/>  (sample-text . "TaiViet (ꪁꪫꪱꪣ ꪼꪕ)		ꪅꪰꪙꫂ ꪨꪮꫂ ꪁꪫꪱ / ꪅꪽ ꪨꪷ ꪁꪫꪱ")<br/>  (input-method . "tai-sonla")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Lao"<br/>  (documentation . t)<br/>  (features lao-util)<br/>  (unibyte-display . lao)<br/>  (input-method . "lao")<br/>  (coding-priority lao)<br/>  (coding-system lao)<br/>  (charset lao))<br/> ("Korean"<br/>  (documentation . "The following key bindings are available for controlling Korean input methods:\n  Shift-SPC, Hangul:	toggle-korean-input-method\n  Control-F9:		quail-hangul-switch-symbol-ksc\n  F9:			quail-hangul-switch-hanja\nand the following key bindings are available within Korean input methods:\n  F9, Hangul_Hanja:	hangul-to-hanja-conversion")<br/>  (sample-text . "Hangul (한글)	안녕하세요, 안녕하십니까")<br/>  (coding-priority korean-iso-8bit korean-cp949 iso-2022-kr)<br/>  (features korea-util)<br/>  (input-method . "korean-hangul")<br/>  (coding-system iso-2022-kr korean-iso-8bit korean-cp949)<br/>  (charset korean-ksc5601 cp949)<br/>  (tutorial . "TUTORIAL.ko")<br/>  (iso639-language . ko)<br/>  (exit-function . exit-korean-environment)<br/>  (setup-function . setup-korean-environment-internal))<br/> ("Japanese"<br/>  (documentation . t)<br/>  (sample-text . "Japanese (日本語)	こんにちは, ｺﾝﾆﾁﾊ")<br/>  (features japan-util)<br/>  (input-method . "japanese")<br/>  (coding-priority iso-2022-jp japanese-iso-8bit japanese-shift-jis iso-2022-jp-2004 euc-jis-2004 japanese-shift-jis-2004 iso-2022-jp-2)<br/>  (coding-system iso-2022-jp japanese-iso-8bit japanese-shift-jis japanese-iso-7bit-1978-irv iso-2022-jp-2004 japanese-shift-jis-2004 euc-jis-2004)<br/>  (charset japanese-jisx0208 japanese-jisx0212 latin-jisx0201 katakana-jisx0201 japanese-jisx0213\.2004-1 japanese-jisx0213-1 japanese-jisx0213-2 japanese-jisx0208-1978)<br/>  (tutorial . "TUTORIAL.ja")<br/>  (iso639-language . ja)<br/>  (exit-function . use-default-char-width-table)<br/>  (setup-function . setup-japanese-environment-internal))<br/> ("Windows-1255"<br/>  (documentation . "Support for Windows-1255 encoding, e.g. for Yiddish.\nBidirectional editing is supported.")<br/>  (coding-system windows-1255)<br/>  (coding-priority windows-1255))<br/> ("Hebrew"<br/>  (documentation . "Bidirectional editing is supported.")<br/>  (sample-text . "Hebrew	שלום")<br/>  (unibyte-display . hebrew-iso-8bit)<br/>  (input-method . "hebrew")<br/>  (nonascii-translation . iso-8859-8)<br/>  (coding-system hebrew-iso-8bit windows-1255 cp862)<br/>  (coding-priority hebrew-iso-8bit)<br/>  (charset iso-8859-8)<br/>  (tutorial . "TUTORIAL.he"))<br/> ("Greek"<br/>  (documentation . t)<br/>  (input-method . "greek")<br/>  (nonascii-translation . iso-8859-7)<br/>  (coding-priority greek-iso-8bit)<br/>  (coding-system greek-iso-8bit windows-1253 cp851 cp869)<br/>  (charset iso-8859-7))<br/> ("Romanian"<br/>  (documentation . "Romanian environment using Latin-2 encoding.\nAn environment for generic Latin-10 encoding is also available.")<br/>  (sample-text . "Bună ziua, bine aţi venit!")<br/>  (tutorial . "TUTORIAL.ro")<br/>  (unibyte-display . iso-8859-2)<br/>  (input-method . "latin-2-postfix")<br/>  (nonascii-translation . iso-8859-2)<br/>  (coding-priority iso-8859-2)<br/>  (coding-system iso-8859-2 iso-latin-10)<br/>  (charset iso-8859-2))<br/> ("Slovak"<br/>  (documentation . "This language environment is almost the same as Latin-2,\nbut sets the default input method to \"slovak\",\nand selects the Slovak tutorial.")<br/>  (sample-text . "Prajeme Vám príjemný deň!")<br/>  (tutorial . "TUTORIAL.sk")<br/>  (unibyte-display . iso-8859-2)<br/>  (input-method . "slovak")<br/>  (nonascii-translation . iso-8859-2)<br/>  (coding-priority iso-8859-2)<br/>  (coding-system iso-8859-2)<br/>  (charset ascii latin-iso8859-2))<br/> ("Czech"<br/>  (documentation . "This language environment is almost the same as Latin-2,\nbut sets the default input method to \"czech\",\nand selects the Czech tutorial.")<br/>  (sample-text . "Přejeme vám hezký den!")<br/>  (tutorial . "TUTORIAL.cs")<br/>  (unibyte-display . iso-8859-2)<br/>  (nonascii-translation . iso-8859-2)<br/>  (input-method . "czech")<br/>  (coding-priority iso-8859-2)<br/>  (coding-system iso-8859-2)<br/>  (charset ascii latin-iso8859-2))<br/> ("Brazilian Portuguese"<br/>  (documentation . "Support for Brazilian Portuguese.")<br/>  (sample-text . "Oi")<br/>  (input-method . "latin-1-prefix")<br/>  (unibyte-display . iso-8859-1)<br/>  (nonascii-translation . iso-8859-1)<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1 iso-latin-9)<br/>  (charset iso-8859-1)<br/>  (tutorial . "TUTORIAL.pt_BR"))<br/> ("Croatian"<br/>  (documentation . "Support for Croatian with Latin-2 encoding.")<br/>  (unibyte-display . iso-8859-2)<br/>  (nonascii-translation . iso-8859-2)<br/>  (input-method . "croatian")<br/>  (coding-priority iso-8859-2)<br/>  (coding-system iso-8859-2)<br/>  (charset iso-8859-2))<br/> ("Swedish"<br/>  (documentation . "Support for Swedish")<br/>  (sample-text . "Goddag Hej")<br/>  (unibyte-display . iso-latin-1)<br/>  (nonascii-translation . iso-8859-1)<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1)<br/>  (charset iso-8859-1)<br/>  (tutorial . "TUTORIAL.sv"))<br/> ("Latvian"<br/>  (documentation . "Support for Latvian.")<br/>  (input-method . "latvian-keyboard")<br/>  (nonascii-translation . iso-8859-13)<br/>  (coding-priority latin-7)<br/>  (coding-system latin-7 windows-1257))<br/> ("Lithuanian"<br/>  (documentation . "Support for Lithuanian.")<br/>  (input-method . "lithuanian-keyboard")<br/>  (nonascii-translation . iso-8859-13)<br/>  (coding-priority latin-7)<br/>  (coding-system latin-7 windows-1257))<br/> ("Welsh"<br/>  (documentation . "Support for Welsh, using Unicode.")<br/>  (input-method . "welsh")<br/>  (nonascii-translation . iso-8859-14)<br/>  (coding-priority utf-8 latin-8)<br/>  (coding-system utf-8 latin-8))<br/> ("Polish"<br/>  (documentation . t)<br/>  (sample-text . "Pójdź, kiń-że tę chmurność w głąb flaszy")<br/>  (tutorial . "TUTORIAL.pl")<br/>  (unibyte-display . iso-8859-2)<br/>  (nonascii-translation . iso-8859-2)<br/>  (input-method . "polish-slash")<br/>  (coding-priority iso-8859-2)<br/>  (coding-system iso-8859-2 windows-1250)<br/>  (charset iso-8859-2))<br/> ("Turkish"<br/>  (documentation . "Support for Turkish.\nDiffers from the Latin-5 environment in using the `turkish-postfix' input\nmethod and applying Turkish case rules for the characters i, I, ı, İ.")<br/>  (setup-function . turkish-case-conversion-disable)<br/>  (sample-text . "Turkish (Türkçe)	Merhaba")<br/>  (input-method . "turkish-postfix")<br/>  (unibyte-display . iso-latin-5)<br/>  (nonascii-translation . iso-8859-9)<br/>  (coding-priority iso-latin-5)<br/>  (coding-system iso-latin-5 windows-1254 iso-latin-3)<br/>  (charset iso-8859-9))<br/> ("Spanish"<br/>  (documentation . "This language environment is almost the same as Latin-1,\nbut it sets the default input method to \"spanish-postfix\",\nand it selects the Spanish tutorial.")<br/>  (sample-text . "Spanish (Español)	¡Hola!")<br/>  (unibyte-display . iso-latin-1)<br/>  (nonascii-translation . iso-8859-1)<br/>  (input-method . "spanish-postfix")<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1 iso-latin-9)<br/>  (charset iso-8859-1)<br/>  (tutorial . "TUTORIAL.es"))<br/> ("Slovenian"<br/>  (documentation . "This language environment is almost the same as Latin-2,\nbut it selects the Slovenian tutorial and input method.")<br/>  (sample-text . "Želimo vam uspešen dan!")<br/>  (tutorial . "TUTORIAL.sl")<br/>  (unibyte-display . iso-8859-2)<br/>  (input-method . "slovenian")<br/>  (nonascii-translation . iso-8859-2)<br/>  (coding-priority iso-8859-2)<br/>  (coding-system iso-8859-2 windows-1250)<br/>  (charset iso-8859-2))<br/> ("Italian"<br/>  (documentation . "This language environment is almost the same as Latin-1,\nbut sets the default input method to \"italian-postfix\".\nAdditionally, it selects the Italian tutorial.")<br/>  (sample-text . "Salve, ciao!")<br/>  (input-method . "italian-postfix")<br/>  (unibyte-display . iso-latin-1)<br/>  (nonascii-translation . iso-8859-1)<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1 iso-latin-9)<br/>  (charset iso-8859-1)<br/>  (tutorial . "TUTORIAL.it"))<br/> ("French"<br/>  (documentation . "This language environment is almost the same as Latin-1,\nbut it selects the French tutorial and input method.")<br/>  (sample-text . "French (Français)	Bonjour, Salut")<br/>  (input-method . "latin-1-prefix")<br/>  (unibyte-display . iso-latin-1)<br/>  (nonascii-translation . iso-8859-1)<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1 iso-latin-9)<br/>  (charset iso-8859-1)<br/>  (tutorial . "TUTORIAL.fr"))<br/> ("German"<br/>  (documentation . "This language environment is almost the same as Latin-1,\nbut sets the default input method to \"german-postfix\".\nAdditionally, it selects the German tutorial.")<br/>  (sample-text . "German (Deutsch Nord)	Guten Tag\nGerman (Deutsch Süd)	Grüß Gott")<br/>  (unibyte-display . iso-latin-1)<br/>  (input-method . "german-postfix")<br/>  (nonascii-translation . iso-8859-1)<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1 iso-latin-9)<br/>  (charset iso-8859-1)<br/>  (tutorial . "TUTORIAL.de"))<br/> ("Dutch"<br/>  (documentation . "This language environment is almost the same as Latin-1,\nbut it selects the Dutch tutorial and input method.")<br/>  (sample-text . "Er is een aantal manieren waarop je dit kan doen")<br/>  (input-method . "dutch")<br/>  (unibyte-display . iso-latin-1)<br/>  (nonascii-translation . iso-8859-1)<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1 iso-latin-9)<br/>  (charset iso-8859-1)<br/>  (tutorial . "TUTORIAL.nl"))<br/> ("Esperanto"<br/>  (documentation . "Support for Esperanto with ISO-8859-3 character set.")<br/>  (input-method . "latin-3-prefix")<br/>  (unibyte-display . iso-latin-3)<br/>  (unibyte-syntax . "latin-3")<br/>  (nonascii-translation . latin-iso8859-3)<br/>  (coding-priority iso-latin-3)<br/>  (coding-system iso-latin-3)<br/>  (charset iso-8859-3)<br/>  (tutorial . "TUTORIAL.eo"))<br/> ("Latin-9"<br/>  (documentation . "This language environment is a generic one for the Latin-9 (ISO-8859-15)\ncharacter set which supports the same languages as Latin-1 with the\naddition of the Euro sign and some additional French and Finnish letters.\nLatin-9 is sometimes nicknamed `Latin-0'.")<br/>  (sample-text . "AVE. ŠšŽžŒœŸ €")<br/>  (input-method . "latin-9-prefix")<br/>  (unibyte-display . iso-latin-9)<br/>  (nonascii-translation . iso-8859-15)<br/>  (coding-priority iso-latin-9)<br/>  (coding-system iso-latin-9)<br/>  (charset iso-8859-15))<br/> ("Latin-8"<br/>  (documentation . "This language environment is a generic one for the Latin-8 (ISO-8859-14)\ncharacter set which supports the Celtic languages, including those not\ncovered by other ISO-8859 character sets:\n Welsh, Manx Gaelic and Irish Gaelic (old orthography).")<br/>  (sample-text . "ḃ ŵ Ŷ")<br/>  (input-method . "latin-8-prefix")<br/>  (unibyte-display . iso-latin-8)<br/>  (nonascii-translation . iso-8859-14)<br/>  (coding-priority iso-latin-8)<br/>  (coding-system iso-latin-8)<br/>  (charset iso-8859-14))<br/> ("Latin-7"<br/>  (input-method . "latin-prefix")<br/>  (documentation . "Support for Latin-7, e.g. Latvian, Lithuanian.")<br/>  (unibyte-display . iso-latin-7)<br/>  (nonascii-translation . iso-8859-13)<br/>  (coding-priority latin-7)<br/>  (coding-system latin-7)<br/>  (charset iso-8859-13))<br/> ("Latin-6"<br/>  (features code-pages)<br/>  (input-method . "latin-prefix")<br/>  (documentation . "Support for Latin-6.")<br/>  (unibyte-display . iso-latin-6)<br/>  (nonascii-translation)<br/>  (coding-priority latin-6)<br/>  (coding-system latin-6)<br/>  (charset iso-8859-10))<br/> ("Latin-5"<br/>  (documentation . "Support for Latin-5.See also the Turkish environment.")<br/>  (input-method . "latin-5-postfix")<br/>  (unibyte-display . iso-latin-5)<br/>  (nonascii-translation . iso-8859-9)<br/>  (coding-priority iso-latin-5)<br/>  (coding-system iso-latin-5)<br/>  (charset iso-8859-9))<br/> ("Latin-4"<br/>  (documentation . "These languages are supported with the Latin-4 (ISO-8859-4) character set:\n Danish, English, Estonian, Finnish, German, Greenlandic, Latvian,\n Lithuanian, Norwegian, and Sami.")<br/>  (input-method . "latin-4-postfix")<br/>  (unibyte-display . iso-8859-4)<br/>  (nonascii-translation . iso-8859-4)<br/>  (coding-priority iso-8859-4)<br/>  (coding-system iso-8859-4)<br/>  (charset iso-8859-4))<br/> ("Latin-3"<br/>  (documentation . "These languages are supported with the Latin-3 (ISO-8859-3) character set:\n Afrikaans, Catalan, Dutch, English, Esperanto, French, Galician,\n German, Italian, Maltese, Spanish, and Turkish.")<br/>  (input-method . "latin-3-prefix")<br/>  (unibyte-display . iso-latin-3)<br/>  (nonascii-translation . iso-8859-3)<br/>  (coding-priority iso-latin-3)<br/>  (coding-system iso-latin-3)<br/>  (charset iso-8859-3))<br/> ("Latin-2"<br/>  (documentation . "This language environment is a generic one for the Latin-2 (ISO-8859-2)\ncharacter set which supports the following languages:\n Albanian, Czech, English, German, Hungarian, Polish, Romanian,\n Serbo-Croatian or Croatian, Slovak, Slovene, Sorbian (upper and lower),\n and Swedish.\nWe also have specific language environments for the following languages:\n  For Czech, \"Czech\".\n  For Croatian, \"Croatian\".\n  For Polish, \"Polish\".\n  For Romanian, \"Romanian\".\n  For Slovak, \"Slovak\".")<br/>  (input-method . "latin-2-prefix")<br/>  (unibyte-display . iso-latin-2)<br/>  (nonascii-translation . iso-8859-2)<br/>  (coding-priority iso-latin-2)<br/>  (coding-system iso-latin-2 windows-1250)<br/>  (charset iso-8859-2))<br/> ("Latin-1"<br/>  (documentation . "This language environment is a generic one for the Latin-1 (ISO-8859-1)\ncharacter set which supports the following European languages:\n Albanian, Basque, Breton, Catalan, Danish, Dutch, English, Faeroese,\n Finnish, French (with restrictions -- see Latin-9), Frisian, Galician,\n German, Greenlandic, Icelandic, Irish Gaelic (new orthography),\n Italian, Latin, Luxemburgish, Norwegian, Portuguese, Rhaeto-Romanic,\n Scottish Gaelic, Spanish, and Swedish.\nWe also have specific language environments for the following languages:\n  For Dutch, \"Dutch\".\n  For German, \"German\".\n  For French, \"French\".\n  For Italian, \"Italian\".\n  For Slovenian, \"Slovenian\".\n  For Spanish, \"Spanish\".\n\nLatin-1 also covers several written languages outside Europe, including\nIndonesian/Malay, Tagalog (Philippines), Swahili and Afrikaans.")<br/>  (sample-text . "Hello, Hej, Tere, Hei, Bonjour, Grüß Gott, Ciao, ¡Hola!")<br/>  (input-method . "latin-1-prefix")<br/>  (unibyte-display . iso-latin-1)<br/>  (nonascii-translation . iso-8859-1)<br/>  (coding-priority iso-latin-1)<br/>  (coding-system iso-latin-1 iso-latin-9 windows-1252)<br/>  (charset iso-8859-1))<br/> ("Ethiopic"<br/>  (documentation . "This language environment provides these function key bindings:\n    [f3]   ethio-fidel-to-sera-buffer\n    [S-f3] ethio-fidel-to-sera-region\n    [C-f3] ethio-fidel-to-sera-marker\n\n    [f4]   ethio-sera-to-fidel-buffer\n    [S-f4] ethio-sera-to-fidel-region\n    [C-f4] ethio-sera-to-fidel-marker\n\n    [S-f5] ethio-toggle-punctuation\n    [S-f6] ethio-modify-vowel\n    [S-f7] ethio-replace-space\n\n    [S-f9] ethio-replace-space\n    [C-f9] ethio-toggle-space")<br/>  (sample-text . "ፊደል")<br/>  (features ethio-util)<br/>  (input-method . "ethiopic")<br/>  (coding-priority utf-8-emacs)<br/>  (coding-system utf-8-emacs)<br/>  (charset ethiopic)<br/>  (exit-function . exit-ethiopic-environment)<br/>  (setup-function . setup-ethiopic-environment-internal))<br/> ("ASCII"<br/>  (tutorial . "TUTORIAL")<br/>  (charset ascii)<br/>  (sample-text . "Hello!, Hi!, How are you?")<br/>  (documentation . "Nothing special is needed to handle English."))<br/> ("English"<br/>  (documentation . "Nothing special is needed to handle English.")<br/>  (sample-text . "Hello!, Hi!, How are you?")<br/>  (charset ascii)<br/>  (tutorial . "TUTORIAL"))<br/> ("Sinhala"<br/>  (documentation . t)<br/>  (sample-text . "Sinhala (සිංහල)	ආයුබෝවන්")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Malayalam"<br/>  (documentation . "South Indian language Malayalam is supported in this language environment.")<br/>  (input-method . "malayalam-itrans")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Kannada"<br/>  (documentation . "Kannada language and script is supported in this language\nenvironment.")<br/>  (sample-text . "Kannada (ಕನ್ನಡ)	ನಮಸ್ಕಾರ")<br/>  (input-method . "kannada-itrans")<br/>  (coding-priority mule-utf-8)<br/>  (coding-system mule-utf-8)<br/>  (charset unicode))<br/> ("Telugu"<br/>  (documentation . "South Indian Language Telugu is supported in this language environment.")<br/>  (input-method . "telugu-itrans")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Tamil"<br/>  (documentation . "South Indian Language Tamil is supported in this language environment.")<br/>  (input-method . "tamil-itrans")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Oriya"<br/>  (documentation . "Such languages using Oriya script as Oriya, Khonti, and Santali\nare supported in this language environment.")<br/>  (input-method . "oriya-itrans")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Gujarati"<br/>  (documentation . "North Indian language Gujarati is supported in this language environment.")<br/>  (input-method . "gujarati-itrans")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Punjabi"<br/>  (documentation . "North Indian language Punjabi is supported in this language environment.")<br/>  (input-method . "punjabi-itrans")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Bengali"<br/>  (documentation . "Such languages using Bengali script as Bengali and Assamese\nare supported in this language environment.")<br/>  (input-method . "bengali-itrans")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Devanagari"<br/>  (documentation . "Such languages using Devanagari script as Hindi and Marathi\nare supported in this language environment.")<br/>  (input-method . "devanagari-aiba")<br/>  (coding-priority utf-8)<br/>  (coding-system utf-8)<br/>  (charset unicode))<br/> ("Belarusian"<br/>  (documentation . "Support for Belarusian with windows-1251 character set.\n(The name Belarusian replaced Byelorussian in the early 1990s.)")<br/>  (input-method . "belarusian")<br/>  (ctext-non-standard-encodings "microsoft-cp1251")<br/>  (charset windows-1251)<br/>  (nonascii-translation . windows-1251)<br/>  (coding-priority windows-1251)<br/>  (coding-system windows-1251))<br/> ("Bulgarian"<br/>  (documentation . "Support for Bulgarian with windows-1251 character set.")<br/>  (input-method . "bulgarian-bds")<br/>  (ctext-non-standard-encodings "microsoft-cp1251")<br/>  (charset windows-1251)<br/>  (nonascii-translation . windows-1251)<br/>  (coding-priority windows-1251)<br/>  (coding-system windows-1251))<br/> ("Tajik"<br/>  (documentation . "Support for Tajik using KOI8-T.")<br/>  (features code-pages)<br/>  (input-method . "russian-typewriter")<br/>  (charset koi8-t)<br/>  (nonascii-translation . cyrillic-koi8-t)<br/>  (coding-priority koi8-t)<br/>  (coding-system koi8-t))<br/> ("Cyrillic-ALT"<br/>  (documentation . "Support for Cyrillic ALTERNATIVNYJ.")<br/>  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>  (unibyte-display . cyrillic-alternativnyj)<br/>  (features cyril-util)<br/>  (input-method . "russian-typewriter")<br/>  (nonascii-translation . alternativnyj)<br/>  (coding-priority cyrillic-alternativnyj)<br/>  (coding-system cyrillic-alternativnyj)<br/>  (charset alternativnyj))<br/> ("Ukrainian"<br/>  (documentation . "Support for Ukrainian with koi8-u character set.")<br/>  (input-method . "ukrainian-computer")<br/>  (nonascii-translation . koi8-u)<br/>  (coding-priority koi8-u)<br/>  (coding-system koi8-u)<br/>  (charset koi8-u))<br/> ("Russian"<br/>  (tutorial . "TUTORIAL.ru")<br/>  (documentation . "Support for Russian using koi8-r and the russian-computer input method.")<br/>  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>  (unibyte-display . cyrillic-koi8)<br/>  (features cyril-util)<br/>  (input-method . "russian-computer")<br/>  (coding-priority cyrillic-koi8 cyrillic-iso-8bit)<br/>  (coding-system cyrillic-koi8)<br/>  (nonascii-translation)<br/>  (charset cyrillic-iso8859-5))<br/> ("Cyrillic-KOI8"<br/>  (documentation . "Support for Cyrillic KOI8-R.")<br/>  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>  (unibyte-display . cyrillic-koi8)<br/>  (features cyril-util)<br/>  (input-method . "russian-typewriter")<br/>  (nonascii-translation . koi8)<br/>  (ctext-non-standard-encodings "koi8-r")<br/>  (coding-priority cyrillic-koi8 cyrillic-iso-8bit)<br/>  (coding-system cyrillic-koi8)<br/>  (charset koi8))<br/> ("Cyrillic-ISO"<br/>  (documentation . "Support for Cyrillic ISO-8859-5.")<br/>  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>  (features cyril-util)<br/>  (unibyte-display . cyrillic-iso-8bit)<br/>  (nonascii-translation . iso-8859-5)<br/>  (input-method . "cyrillic-yawerty")<br/>  (coding-priority cyrillic-iso-8bit)<br/>  (coding-system cyrillic-iso-8bit)<br/>  (charset iso-8859-5))<br/> ("Chinese-GB18030"<br/>  (tutorial . "TUTORIAL.cn")<br/>  (documentation . "Support for Chinese GB18030 character set.")<br/>  (features china-util)<br/>  (sample-text . "Chinese (中文,普通话,汉语) 你好")<br/>  (input-method . "chinese-py-punct")<br/>  (coding-priority gb18030 gbk iso-2022-cn chinese-big5 chinese-iso-8bit)<br/>  (coding-system chinese-gb18030)<br/>  (iso639-language . zh)<br/>  (charset gb18030))<br/> ("Chinese-GBK"<br/>  (tutorial . "TUTORIAL.cn")<br/>  (documentation . "Support for Chinese GBK character set.")<br/>  (features china-util)<br/>  (sample-text . "Chinese (中文,普通话,汉语) 妳好")<br/>  (input-method . "chinese-py-punct")<br/>  (ctext-non-standard-encodings "gbk-0")<br/>  (coding-priority gbk iso-2022-cn chinese-big5 chinese-iso-8bit)<br/>  (coding-system chinese-gbk)<br/>  (exit-function . use-default-char-width-table)<br/>  (setup-function lambda nil<br/>		  (use-cjk-char-width-table 'zh_CN))<br/>  (iso639-language . zh)<br/>  (charset chinese-gbk))<br/> ("Chinese-EUC-TW"<br/>  (documentation . "Support for Chinese, preferring the EUC-TW character set.  Note that\nthe EUC-TW coding system accepts Big5 for input also (which is then\nconverted to CNS).")<br/>  (input-method . "chinese-cns-quick")<br/>  (features china-util)<br/>  (coding-priority euc-tw chinese-big5 iso-2022-cn chinese-iso-8bit chinese-gbk)<br/>  (coding-system euc-tw iso-2022-cn)<br/>  (exit-function . use-default-char-width-table)<br/>  (setup-function lambda nil<br/>		  (use-cjk-char-width-table 'zh_TW))<br/>  (iso639-language . zh)<br/>  (charset chinese-cns11643-1 chinese-cns11643-2 chinese-cns11643-3 chinese-cns11643-4 chinese-cns11643-5 chinese-cns11643-6 chinese-cns11643-7 chinese-big5-1 chinese-big5-2))<br/> ("Chinese-CNS"<br/>  (documentation . "Support for Chinese CNS character sets.  Note that the EUC-TW coding system\naccepts Big5 for input also (which is then converted to CNS).")<br/>  (input-method . "chinese-cns-quick")<br/>  (features china-util)<br/>  (coding-priority iso-2022-cn euc-tw chinese-big5 chinese-iso-8bit chinese-gbk)<br/>  (coding-system iso-2022-cn euc-tw)<br/>  (exit-function . use-default-char-width-table)<br/>  (setup-function lambda nil<br/>		  (use-cjk-char-width-table 'zh_TW))<br/>  (iso639-language . zh)<br/>  (charset chinese-cns11643-1 chinese-cns11643-2 chinese-cns11643-3 chinese-cns11643-4 chinese-cns11643-5 chinese-cns11643-6 chinese-cns11643-7))<br/> ("Chinese-BIG5"<br/>  (tutorial . "TUTORIAL.zh")<br/>  (documentation . "Support for Chinese Big5 character set.")<br/>  (sample-text . "Cantonese (粵語,廣東話)	早晨, 你好")<br/>  (features china-util)<br/>  (ctext-non-standard-encodings "big5-0")<br/>  (input-method . "chinese-py-punct-b5")<br/>  (coding-priority chinese-big5 iso-2022-cn chinese-iso-8bit chinese-gbk)<br/>  (coding-system chinese-big5 chinese-iso-7bit)<br/>  (exit-function . use-default-char-width-table)<br/>  (setup-function lambda nil<br/>		  (use-cjk-char-width-table 'zh_HK))<br/>  (iso639-language . zh)<br/>  (charset chinese-big5-1 chinese-big5-2))<br/> ("Chinese-GB"<br/>  (tutorial . "TUTORIAL.cn")<br/>  (documentation . "Support for Chinese GB2312 character set.")<br/>  (sample-text . "Chinese (中文,普通话,汉语)	你好")<br/>  (features china-util)<br/>  (input-method . "chinese-py-punct")<br/>  (coding-priority chinese-iso-8bit chinese-gbk chinese-big5 iso-2022-cn)<br/>  (coding-system chinese-iso-8bit iso-2022-cn chinese-hz)<br/>  (exit-function . use-default-char-width-table)<br/>  (setup-function lambda nil<br/>		  (use-cjk-char-width-table 'zh_CN))<br/>  (iso639-language . zh)<br/>  (charset chinese-gb2312 chinese-sisheng)))<br/><br/>
+<strong>language-info-alist</strong> is a variable defined in `<code>mule-cmds.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Alist of language environment definitions.<br/>
+Each element looks like:<br/>
+	(LANGUAGE-NAME . ((KEY . INFO) ...))<br/>
+where LANGUAGE-NAME is a string, the name of the language environment,<br/>
+KEY is a symbol denoting the kind of information, and<br/>
+INFO is the data associated with KEY.<br/>
+Meaningful values for KEY include<br/>
+<br/>
+  documentation      value is documentation of what this language environment<br/>
+			is meant for, and how to use it.<br/>
+  charset	     value is a list of the character sets mainly used<br/>
+			by this language environment.<br/>
+  sample-text	     value is an expression which is evalled to generate<br/>
+                        a line of text written using characters appropriate<br/>
+                        for this language environment.<br/>
+  setup-function     value is a function to call to switch to this<br/>
+			language environment.<br/>
+  exit-function      value is a function to call to leave this<br/>
+		        language environment.<br/>
+  coding-system      value is a list of coding systems that are good for<br/>
+			saving text written in this language environment.<br/>
+			This list serves as suggestions to the user;<br/>
+			in effect, as a kind of documentation.<br/>
+  coding-priority    value is a list of coding systems for this language<br/>
+			environment, in order of decreasing priority.<br/>
+			This is used to set up the coding system priority<br/>
+			list when you switch to this language environment.<br/>
+  nonascii-translation<br/>
+		     value is a charset of dimension one to use for<br/>
+			converting a unibyte character to multibyte<br/>
+			and vice versa.<br/>
+  input-method       value is a default input method for this language<br/>
+			environment.<br/>
+  features           value is a list of features requested in this<br/>
+			language environment.<br/>
+  ctext-non-standard-encodings<br/>
+		     value is a list of non-standard encoding names used<br/>
+			in extended segments of CTEXT.  See the variable<br/>
+			`ctext-non-standard-encodings' for more detail.<br/>
+<br/>
+The following key takes effect only when multibyte characters are<br/>
+globally disabled, i.e. the default value of `enable-multibyte-characters'<br/>
+is nil (which is an obsolete and deprecated use):<br/>
+<br/>
+  unibyte-display    value is a coding system to encode characters for<br/>
+			the terminal.  Characters in the range of 160 to<br/>
+			255 display not as octal escapes, but as non-ASCII<br/>
+			characters in this language environment.<br/>
+<br/>
+Value: (("Cham"<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Burmese"<br/>
+  (documentation . t)<br/>
+  (sample-text . "Burmese (မ္ရန္‌မာ)	မင္‍ဂလာပာ")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Khmer"<br/>
+  (documentation . t)<br/>
+  (sample-text . "Khmer (ភាសាខ្មែរ)	ជំរាបសួរ")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Georgian"<br/>
+  (documentation . "Support for georgian-ps character set.")<br/>
+  (nonascii-translation . georgian-ps)<br/>
+  (input-method . "georgian")<br/>
+  (coding-priority georgian-ps)<br/>
+  (coding-system georgian-ps))<br/>
+ ("UTF-8"<br/>
+  (documentation . "This language environment is a generic one for the Unicode character set\nencoded in UTF-8.")<br/>
+  (input-method . "rfc1345")<br/>
+  (charset unicode-bmp unicode)<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8))<br/>
+ ("Persian"<br/>
+  (documentation . "Bidirectional editing is supported.")<br/>
+  (sample-text . "Persian	فارسی")<br/>
+  (input-method . "farsi-transliterate-banan")<br/>
+  (coding-priority utf-8 iso-8859-6 windows-1256)<br/>
+  (coding-system utf-8 iso-8859-6 windows-1256)<br/>
+  (charset unicode))<br/>
+ ("Arabic"<br/>
+  (documentation . "Bidirectional editing is supported.")<br/>
+  (sample-text . "Arabic	السّلام عليكم")<br/>
+  (input-method . "arabic")<br/>
+  (coding-priority utf-8 iso-8859-6 windows-1256)<br/>
+  (coding-system utf-8 iso-8859-6 windows-1256)<br/>
+  (charset unicode))<br/>
+ ("IPA"<br/>
+  (documentation . "IPA is International Phonetic Alphabet for English, French, German\nand Italian.")<br/>
+  (nonascii-translation . ipa)<br/>
+  (input-method . "ipa")<br/>
+  (coding-system utf-8)<br/>
+  (coding-priority utf-8)<br/>
+  (charset ipa))<br/>
+ ("Vietnamese"<br/>
+  (documentation . "For Vietnamese, Emacs uses special charsets internally.\nThey can be decoded from and encoded to VISCII, VSCII, TCVN-5712, VIQR\nand windows-1258.  VSCII is deprecated in favor of TCVN-5712.  The\nCurrent setting gives higher priority to the coding system VISCII than\nTCVN-5712.  If you prefer TCVN-5712, please do: (prefer-coding-system\n'vietnamese-tcvn).  There are two Vietnamese input methods: VIQR and\nTelex, VIQR is the default setting.")<br/>
+  (sample-text . "Vietnamese (Tiếng Việt)	Chào bạn")<br/>
+  (features viet-util)<br/>
+  (unibyte-display . vietnamese-viscii)<br/>
+  (input-method . "vietnamese-viqr")<br/>
+  (coding-priority vietnamese-viscii)<br/>
+  (nonascii-translation . viscii)<br/>
+  (coding-system vietnamese-viscii vietnamese-vscii vietnamese-tcvn vietnamese-viqr windows-1258)<br/>
+  (charset viscii))<br/>
+ ("Tibetan"<br/>
+  (sample-text . "Tibetan (བོད་སྐ����ད་) ༄༅༅༎བཀྲ����་ཤིས་བདེ་ལེགས༎ཨོཾ་མ����་ཎི་པ����དྨེ་ཧའུྂ༎")<br/>
+  (documentation . t)<br/>
+  (features tibet-util)<br/>
+  (input-method . "tibetan-wylie")<br/>
+  (coding-priority iso-2022-7bit tibetan-iso-8bit)<br/>
+  (coding-system tibetan-iso-8bit)<br/>
+  (charset tibetan tibetan-1-column))<br/>
+ ("Thai"<br/>
+  (documentation . t)<br/>
+  (sample-text thai-compose-string<br/>
+	       (copy-sequence "Thai (ภาษาไทย)		สวัสดีครับ, สวัสดีค่ะ"))<br/>
+  (exit-function . exit-thai-language-environment-internal)<br/>
+  (setup-function . setup-thai-language-environment-internal)<br/>
+  (features thai-util)<br/>
+  (unibyte-display . thai-tis620)<br/>
+  (input-method . "thai-kesmanee")<br/>
+  (nonascii-translation . tis620-2533)<br/>
+  (coding-priority thai-tis620)<br/>
+  (coding-system thai-tis620 iso-8859-11 cp874)<br/>
+  (charset thai-tis620)<br/>
+  (tutorial . "TUTORIAL.th"))<br/>
+ ("TaiViet"<br/>
+  (documentation . "TaiViet refers to the Tai language used by Tai people in\nVietnam, and also refers to the script used for this language.\nBoth the script and language have the same origin as that of Thai\nlanguage/script used in Thailand, but now they differ from each\nother in a significant way (especially the scripts are).\n\nThe language name is spelled as \"ꪁꪫꪱꪣ ꪼꪕ\", and the script name is\nspelled as \"ꪎ ꪼꪕ\" in the modern form, \"ꪎꪳ ꪼꪕ\" in the traditional\nform.\n\nAs the proposal for TaiViet script to the Unicode is still on\nthe progress, we use the Private Use Area for TaiViet\ncharacters (U+F000..U+F07E).  A TaiViet font encoded accordingly\nis available at this web page:\n    http://www.m17n.org/viettai/\n")<br/>
+  (sample-text . "TaiViet (ꪁꪫꪱꪣ ꪼꪕ)		ꪅꪰꪙꫂ ꪨꪮꫂ ꪁꪫꪱ / ꪅꪽ ꪨꪷ ꪁꪫꪱ")<br/>
+  (input-method . "tai-sonla")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Lao"<br/>
+  (documentation . t)<br/>
+  (features lao-util)<br/>
+  (unibyte-display . lao)<br/>
+  (input-method . "lao")<br/>
+  (coding-priority lao)<br/>
+  (coding-system lao)<br/>
+  (charset lao))<br/>
+ ("Korean"<br/>
+  (documentation . "The following key bindings are available for controlling Korean input methods:\n  Shift-SPC, Hangul:	toggle-korean-input-method\n  Control-F9:		quail-hangul-switch-symbol-ksc\n  F9:			quail-hangul-switch-hanja\nand the following key bindings are available within Korean input methods:\n  F9, Hangul_Hanja:	hangul-to-hanja-conversion")<br/>
+  (sample-text . "Hangul (한글)	안녕하세요, 안녕하십니까")<br/>
+  (coding-priority korean-iso-8bit korean-cp949 iso-2022-kr)<br/>
+  (features korea-util)<br/>
+  (input-method . "korean-hangul")<br/>
+  (coding-system iso-2022-kr korean-iso-8bit korean-cp949)<br/>
+  (charset korean-ksc5601 cp949)<br/>
+  (tutorial . "TUTORIAL.ko")<br/>
+  (iso639-language . ko)<br/>
+  (exit-function . exit-korean-environment)<br/>
+  (setup-function . setup-korean-environment-internal))<br/>
+ ("Japanese"<br/>
+  (documentation . t)<br/>
+  (sample-text . "Japanese (日本語)	こんにちは, ｺﾝﾆﾁﾊ")<br/>
+  (features japan-util)<br/>
+  (input-method . "japanese")<br/>
+  (coding-priority iso-2022-jp japanese-iso-8bit japanese-shift-jis iso-2022-jp-2004 euc-jis-2004 japanese-shift-jis-2004 iso-2022-jp-2)<br/>
+  (coding-system iso-2022-jp japanese-iso-8bit japanese-shift-jis japanese-iso-7bit-1978-irv iso-2022-jp-2004 japanese-shift-jis-2004 euc-jis-2004)<br/>
+  (charset japanese-jisx0208 japanese-jisx0212 latin-jisx0201 katakana-jisx0201 japanese-jisx0213\.2004-1 japanese-jisx0213-1 japanese-jisx0213-2 japanese-jisx0208-1978)<br/>
+  (tutorial . "TUTORIAL.ja")<br/>
+  (iso639-language . ja)<br/>
+  (exit-function . use-default-char-width-table)<br/>
+  (setup-function . setup-japanese-environment-internal))<br/>
+ ("Windows-1255"<br/>
+  (documentation . "Support for Windows-1255 encoding, e.g. for Yiddish.\nBidirectional editing is supported.")<br/>
+  (coding-system windows-1255)<br/>
+  (coding-priority windows-1255))<br/>
+ ("Hebrew"<br/>
+  (documentation . "Bidirectional editing is supported.")<br/>
+  (sample-text . "Hebrew	שלום")<br/>
+  (unibyte-display . hebrew-iso-8bit)<br/>
+  (input-method . "hebrew")<br/>
+  (nonascii-translation . iso-8859-8)<br/>
+  (coding-system hebrew-iso-8bit windows-1255 cp862)<br/>
+  (coding-priority hebrew-iso-8bit)<br/>
+  (charset iso-8859-8)<br/>
+  (tutorial . "TUTORIAL.he"))<br/>
+ ("Greek"<br/>
+  (documentation . t)<br/>
+  (input-method . "greek")<br/>
+  (nonascii-translation . iso-8859-7)<br/>
+  (coding-priority greek-iso-8bit)<br/>
+  (coding-system greek-iso-8bit windows-1253 cp851 cp869)<br/>
+  (charset iso-8859-7))<br/>
+ ("Romanian"<br/>
+  (documentation . "Romanian environment using Latin-2 encoding.\nAn environment for generic Latin-10 encoding is also available.")<br/>
+  (sample-text . "Bună ziua, bine aţi venit!")<br/>
+  (tutorial . "TUTORIAL.ro")<br/>
+  (unibyte-display . iso-8859-2)<br/>
+  (input-method . "latin-2-postfix")<br/>
+  (nonascii-translation . iso-8859-2)<br/>
+  (coding-priority iso-8859-2)<br/>
+  (coding-system iso-8859-2 iso-latin-10)<br/>
+  (charset iso-8859-2))<br/>
+ ("Slovak"<br/>
+  (documentation . "This language environment is almost the same as Latin-2,\nbut sets the default input method to \"slovak\",\nand selects the Slovak tutorial.")<br/>
+  (sample-text . "Prajeme Vám príjemný deň!")<br/>
+  (tutorial . "TUTORIAL.sk")<br/>
+  (unibyte-display . iso-8859-2)<br/>
+  (input-method . "slovak")<br/>
+  (nonascii-translation . iso-8859-2)<br/>
+  (coding-priority iso-8859-2)<br/>
+  (coding-system iso-8859-2)<br/>
+  (charset ascii latin-iso8859-2))<br/>
+ ("Czech"<br/>
+  (documentation . "This language environment is almost the same as Latin-2,\nbut sets the default input method to \"czech\",\nand selects the Czech tutorial.")<br/>
+  (sample-text . "Přejeme vám hezký den!")<br/>
+  (tutorial . "TUTORIAL.cs")<br/>
+  (unibyte-display . iso-8859-2)<br/>
+  (nonascii-translation . iso-8859-2)<br/>
+  (input-method . "czech")<br/>
+  (coding-priority iso-8859-2)<br/>
+  (coding-system iso-8859-2)<br/>
+  (charset ascii latin-iso8859-2))<br/>
+ ("Brazilian Portuguese"<br/>
+  (documentation . "Support for Brazilian Portuguese.")<br/>
+  (sample-text . "Oi")<br/>
+  (input-method . "latin-1-prefix")<br/>
+  (unibyte-display . iso-8859-1)<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1 iso-latin-9)<br/>
+  (charset iso-8859-1)<br/>
+  (tutorial . "TUTORIAL.pt_BR"))<br/>
+ ("Croatian"<br/>
+  (documentation . "Support for Croatian with Latin-2 encoding.")<br/>
+  (unibyte-display . iso-8859-2)<br/>
+  (nonascii-translation . iso-8859-2)<br/>
+  (input-method . "croatian")<br/>
+  (coding-priority iso-8859-2)<br/>
+  (coding-system iso-8859-2)<br/>
+  (charset iso-8859-2))<br/>
+ ("Swedish"<br/>
+  (documentation . "Support for Swedish")<br/>
+  (sample-text . "Goddag Hej")<br/>
+  (unibyte-display . iso-latin-1)<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1)<br/>
+  (charset iso-8859-1)<br/>
+  (tutorial . "TUTORIAL.sv"))<br/>
+ ("Latvian"<br/>
+  (documentation . "Support for Latvian.")<br/>
+  (input-method . "latvian-keyboard")<br/>
+  (nonascii-translation . iso-8859-13)<br/>
+  (coding-priority latin-7)<br/>
+  (coding-system latin-7 windows-1257))<br/>
+ ("Lithuanian"<br/>
+  (documentation . "Support for Lithuanian.")<br/>
+  (input-method . "lithuanian-keyboard")<br/>
+  (nonascii-translation . iso-8859-13)<br/>
+  (coding-priority latin-7)<br/>
+  (coding-system latin-7 windows-1257))<br/>
+ ("Welsh"<br/>
+  (documentation . "Support for Welsh, using Unicode.")<br/>
+  (input-method . "welsh")<br/>
+  (nonascii-translation . iso-8859-14)<br/>
+  (coding-priority utf-8 latin-8)<br/>
+  (coding-system utf-8 latin-8))<br/>
+ ("Polish"<br/>
+  (documentation . t)<br/>
+  (sample-text . "Pójdź, kiń-że tę chmurność w głąb flaszy")<br/>
+  (tutorial . "TUTORIAL.pl")<br/>
+  (unibyte-display . iso-8859-2)<br/>
+  (nonascii-translation . iso-8859-2)<br/>
+  (input-method . "polish-slash")<br/>
+  (coding-priority iso-8859-2)<br/>
+  (coding-system iso-8859-2 windows-1250)<br/>
+  (charset iso-8859-2))<br/>
+ ("Turkish"<br/>
+  (documentation . "Support for Turkish.\nDiffers from the Latin-5 environment in using the `turkish-postfix' input\nmethod and applying Turkish case rules for the characters i, I, ı, İ.")<br/>
+  (setup-function . turkish-case-conversion-disable)<br/>
+  (sample-text . "Turkish (Türkçe)	Merhaba")<br/>
+  (input-method . "turkish-postfix")<br/>
+  (unibyte-display . iso-latin-5)<br/>
+  (nonascii-translation . iso-8859-9)<br/>
+  (coding-priority iso-latin-5)<br/>
+  (coding-system iso-latin-5 windows-1254 iso-latin-3)<br/>
+  (charset iso-8859-9))<br/>
+ ("Spanish"<br/>
+  (documentation . "This language environment is almost the same as Latin-1,\nbut it sets the default input method to \"spanish-postfix\",\nand it selects the Spanish tutorial.")<br/>
+  (sample-text . "Spanish (Español)	¡Hola!")<br/>
+  (unibyte-display . iso-latin-1)<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (input-method . "spanish-postfix")<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1 iso-latin-9)<br/>
+  (charset iso-8859-1)<br/>
+  (tutorial . "TUTORIAL.es"))<br/>
+ ("Slovenian"<br/>
+  (documentation . "This language environment is almost the same as Latin-2,\nbut it selects the Slovenian tutorial and input method.")<br/>
+  (sample-text . "Želimo vam uspešen dan!")<br/>
+  (tutorial . "TUTORIAL.sl")<br/>
+  (unibyte-display . iso-8859-2)<br/>
+  (input-method . "slovenian")<br/>
+  (nonascii-translation . iso-8859-2)<br/>
+  (coding-priority iso-8859-2)<br/>
+  (coding-system iso-8859-2 windows-1250)<br/>
+  (charset iso-8859-2))<br/>
+ ("Italian"<br/>
+  (documentation . "This language environment is almost the same as Latin-1,\nbut sets the default input method to \"italian-postfix\".\nAdditionally, it selects the Italian tutorial.")<br/>
+  (sample-text . "Salve, ciao!")<br/>
+  (input-method . "italian-postfix")<br/>
+  (unibyte-display . iso-latin-1)<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1 iso-latin-9)<br/>
+  (charset iso-8859-1)<br/>
+  (tutorial . "TUTORIAL.it"))<br/>
+ ("French"<br/>
+  (documentation . "This language environment is almost the same as Latin-1,\nbut it selects the French tutorial and input method.")<br/>
+  (sample-text . "French (Français)	Bonjour, Salut")<br/>
+  (input-method . "latin-1-prefix")<br/>
+  (unibyte-display . iso-latin-1)<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1 iso-latin-9)<br/>
+  (charset iso-8859-1)<br/>
+  (tutorial . "TUTORIAL.fr"))<br/>
+ ("German"<br/>
+  (documentation . "This language environment is almost the same as Latin-1,\nbut sets the default input method to \"german-postfix\".\nAdditionally, it selects the German tutorial.")<br/>
+  (sample-text . "German (Deutsch Nord)	Guten Tag\nGerman (Deutsch Süd)	Grüß Gott")<br/>
+  (unibyte-display . iso-latin-1)<br/>
+  (input-method . "german-postfix")<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1 iso-latin-9)<br/>
+  (charset iso-8859-1)<br/>
+  (tutorial . "TUTORIAL.de"))<br/>
+ ("Dutch"<br/>
+  (documentation . "This language environment is almost the same as Latin-1,\nbut it selects the Dutch tutorial and input method.")<br/>
+  (sample-text . "Er is een aantal manieren waarop je dit kan doen")<br/>
+  (input-method . "dutch")<br/>
+  (unibyte-display . iso-latin-1)<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1 iso-latin-9)<br/>
+  (charset iso-8859-1)<br/>
+  (tutorial . "TUTORIAL.nl"))<br/>
+ ("Esperanto"<br/>
+  (documentation . "Support for Esperanto with ISO-8859-3 character set.")<br/>
+  (input-method . "latin-3-prefix")<br/>
+  (unibyte-display . iso-latin-3)<br/>
+  (unibyte-syntax . "latin-3")<br/>
+  (nonascii-translation . latin-iso8859-3)<br/>
+  (coding-priority iso-latin-3)<br/>
+  (coding-system iso-latin-3)<br/>
+  (charset iso-8859-3)<br/>
+  (tutorial . "TUTORIAL.eo"))<br/>
+ ("Latin-9"<br/>
+  (documentation . "This language environment is a generic one for the Latin-9 (ISO-8859-15)\ncharacter set which supports the same languages as Latin-1 with the\naddition of the Euro sign and some additional French and Finnish letters.\nLatin-9 is sometimes nicknamed `Latin-0'.")<br/>
+  (sample-text . "AVE. ŠšŽžŒœŸ €")<br/>
+  (input-method . "latin-9-prefix")<br/>
+  (unibyte-display . iso-latin-9)<br/>
+  (nonascii-translation . iso-8859-15)<br/>
+  (coding-priority iso-latin-9)<br/>
+  (coding-system iso-latin-9)<br/>
+  (charset iso-8859-15))<br/>
+ ("Latin-8"<br/>
+  (documentation . "This language environment is a generic one for the Latin-8 (ISO-8859-14)\ncharacter set which supports the Celtic languages, including those not\ncovered by other ISO-8859 character sets:\n Welsh, Manx Gaelic and Irish Gaelic (old orthography).")<br/>
+  (sample-text . "ḃ ŵ Ŷ")<br/>
+  (input-method . "latin-8-prefix")<br/>
+  (unibyte-display . iso-latin-8)<br/>
+  (nonascii-translation . iso-8859-14)<br/>
+  (coding-priority iso-latin-8)<br/>
+  (coding-system iso-latin-8)<br/>
+  (charset iso-8859-14))<br/>
+ ("Latin-7"<br/>
+  (input-method . "latin-prefix")<br/>
+  (documentation . "Support for Latin-7, e.g. Latvian, Lithuanian.")<br/>
+  (unibyte-display . iso-latin-7)<br/>
+  (nonascii-translation . iso-8859-13)<br/>
+  (coding-priority latin-7)<br/>
+  (coding-system latin-7)<br/>
+  (charset iso-8859-13))<br/>
+ ("Latin-6"<br/>
+  (features code-pages)<br/>
+  (input-method . "latin-prefix")<br/>
+  (documentation . "Support for Latin-6.")<br/>
+  (unibyte-display . iso-latin-6)<br/>
+  (nonascii-translation)<br/>
+  (coding-priority latin-6)<br/>
+  (coding-system latin-6)<br/>
+  (charset iso-8859-10))<br/>
+ ("Latin-5"<br/>
+  (documentation . "Support for Latin-5.See also the Turkish environment.")<br/>
+  (input-method . "latin-5-postfix")<br/>
+  (unibyte-display . iso-latin-5)<br/>
+  (nonascii-translation . iso-8859-9)<br/>
+  (coding-priority iso-latin-5)<br/>
+  (coding-system iso-latin-5)<br/>
+  (charset iso-8859-9))<br/>
+ ("Latin-4"<br/>
+  (documentation . "These languages are supported with the Latin-4 (ISO-8859-4) character set:\n Danish, English, Estonian, Finnish, German, Greenlandic, Latvian,\n Lithuanian, Norwegian, and Sami.")<br/>
+  (input-method . "latin-4-postfix")<br/>
+  (unibyte-display . iso-8859-4)<br/>
+  (nonascii-translation . iso-8859-4)<br/>
+  (coding-priority iso-8859-4)<br/>
+  (coding-system iso-8859-4)<br/>
+  (charset iso-8859-4))<br/>
+ ("Latin-3"<br/>
+  (documentation . "These languages are supported with the Latin-3 (ISO-8859-3) character set:\n Afrikaans, Catalan, Dutch, English, Esperanto, French, Galician,\n German, Italian, Maltese, Spanish, and Turkish.")<br/>
+  (input-method . "latin-3-prefix")<br/>
+  (unibyte-display . iso-latin-3)<br/>
+  (nonascii-translation . iso-8859-3)<br/>
+  (coding-priority iso-latin-3)<br/>
+  (coding-system iso-latin-3)<br/>
+  (charset iso-8859-3))<br/>
+ ("Latin-2"<br/>
+  (documentation . "This language environment is a generic one for the Latin-2 (ISO-8859-2)\ncharacter set which supports the following languages:\n Albanian, Czech, English, German, Hungarian, Polish, Romanian,\n Serbo-Croatian or Croatian, Slovak, Slovene, Sorbian (upper and lower),\n and Swedish.\nWe also have specific language environments for the following languages:\n  For Czech, \"Czech\".\n  For Croatian, \"Croatian\".\n  For Polish, \"Polish\".\n  For Romanian, \"Romanian\".\n  For Slovak, \"Slovak\".")<br/>
+  (input-method . "latin-2-prefix")<br/>
+  (unibyte-display . iso-latin-2)<br/>
+  (nonascii-translation . iso-8859-2)<br/>
+  (coding-priority iso-latin-2)<br/>
+  (coding-system iso-latin-2 windows-1250)<br/>
+  (charset iso-8859-2))<br/>
+ ("Latin-1"<br/>
+  (documentation . "This language environment is a generic one for the Latin-1 (ISO-8859-1)\ncharacter set which supports the following European languages:\n Albanian, Basque, Breton, Catalan, Danish, Dutch, English, Faeroese,\n Finnish, French (with restrictions -- see Latin-9), Frisian, Galician,\n German, Greenlandic, Icelandic, Irish Gaelic (new orthography),\n Italian, Latin, Luxemburgish, Norwegian, Portuguese, Rhaeto-Romanic,\n Scottish Gaelic, Spanish, and Swedish.\nWe also have specific language environments for the following languages:\n  For Dutch, \"Dutch\".\n  For German, \"German\".\n  For French, \"French\".\n  For Italian, \"Italian\".\n  For Slovenian, \"Slovenian\".\n  For Spanish, \"Spanish\".\n\nLatin-1 also covers several written languages outside Europe, including\nIndonesian/Malay, Tagalog (Philippines), Swahili and Afrikaans.")<br/>
+  (sample-text . "Hello, Hej, Tere, Hei, Bonjour, Grüß Gott, Ciao, ¡Hola!")<br/>
+  (input-method . "latin-1-prefix")<br/>
+  (unibyte-display . iso-latin-1)<br/>
+  (nonascii-translation . iso-8859-1)<br/>
+  (coding-priority iso-latin-1)<br/>
+  (coding-system iso-latin-1 iso-latin-9 windows-1252)<br/>
+  (charset iso-8859-1))<br/>
+ ("Ethiopic"<br/>
+  (documentation . "This language environment provides these function key bindings:\n    [f3]   ethio-fidel-to-sera-buffer\n    [S-f3] ethio-fidel-to-sera-region\n    [C-f3] ethio-fidel-to-sera-marker\n\n    [f4]   ethio-sera-to-fidel-buffer\n    [S-f4] ethio-sera-to-fidel-region\n    [C-f4] ethio-sera-to-fidel-marker\n\n    [S-f5] ethio-toggle-punctuation\n    [S-f6] ethio-modify-vowel\n    [S-f7] ethio-replace-space\n\n    [S-f9] ethio-replace-space\n    [C-f9] ethio-toggle-space")<br/>
+  (sample-text . "ፊደል")<br/>
+  (features ethio-util)<br/>
+  (input-method . "ethiopic")<br/>
+  (coding-priority utf-8-emacs)<br/>
+  (coding-system utf-8-emacs)<br/>
+  (charset ethiopic)<br/>
+  (exit-function . exit-ethiopic-environment)<br/>
+  (setup-function . setup-ethiopic-environment-internal))<br/>
+ ("ASCII"<br/>
+  (tutorial . "TUTORIAL")<br/>
+  (charset ascii)<br/>
+  (sample-text . "Hello!, Hi!, How are you?")<br/>
+  (documentation . "Nothing special is needed to handle English."))<br/>
+ ("English"<br/>
+  (documentation . "Nothing special is needed to handle English.")<br/>
+  (sample-text . "Hello!, Hi!, How are you?")<br/>
+  (charset ascii)<br/>
+  (tutorial . "TUTORIAL"))<br/>
+ ("Sinhala"<br/>
+  (documentation . t)<br/>
+  (sample-text . "Sinhala (සිංහල)	ආයුබෝවන්")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Malayalam"<br/>
+  (documentation . "South Indian language Malayalam is supported in this language environment.")<br/>
+  (input-method . "malayalam-itrans")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Kannada"<br/>
+  (documentation . "Kannada language and script is supported in this language\nenvironment.")<br/>
+  (sample-text . "Kannada (ಕನ್ನಡ)	ನಮಸ್ಕಾರ")<br/>
+  (input-method . "kannada-itrans")<br/>
+  (coding-priority mule-utf-8)<br/>
+  (coding-system mule-utf-8)<br/>
+  (charset unicode))<br/>
+ ("Telugu"<br/>
+  (documentation . "South Indian Language Telugu is supported in this language environment.")<br/>
+  (input-method . "telugu-itrans")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Tamil"<br/>
+  (documentation . "South Indian Language Tamil is supported in this language environment.")<br/>
+  (input-method . "tamil-itrans")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Oriya"<br/>
+  (documentation . "Such languages using Oriya script as Oriya, Khonti, and Santali\nare supported in this language environment.")<br/>
+  (input-method . "oriya-itrans")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Gujarati"<br/>
+  (documentation . "North Indian language Gujarati is supported in this language environment.")<br/>
+  (input-method . "gujarati-itrans")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Punjabi"<br/>
+  (documentation . "North Indian language Punjabi is supported in this language environment.")<br/>
+  (input-method . "punjabi-itrans")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Bengali"<br/>
+  (documentation . "Such languages using Bengali script as Bengali and Assamese\nare supported in this language environment.")<br/>
+  (input-method . "bengali-itrans")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Devanagari"<br/>
+  (documentation . "Such languages using Devanagari script as Hindi and Marathi\nare supported in this language environment.")<br/>
+  (input-method . "devanagari-aiba")<br/>
+  (coding-priority utf-8)<br/>
+  (coding-system utf-8)<br/>
+  (charset unicode))<br/>
+ ("Belarusian"<br/>
+  (documentation . "Support for Belarusian with windows-1251 character set.\n(The name Belarusian replaced Byelorussian in the early 1990s.)")<br/>
+  (input-method . "belarusian")<br/>
+  (ctext-non-standard-encodings "microsoft-cp1251")<br/>
+  (charset windows-1251)<br/>
+  (nonascii-translation . windows-1251)<br/>
+  (coding-priority windows-1251)<br/>
+  (coding-system windows-1251))<br/>
+ ("Bulgarian"<br/>
+  (documentation . "Support for Bulgarian with windows-1251 character set.")<br/>
+  (input-method . "bulgarian-bds")<br/>
+  (ctext-non-standard-encodings "microsoft-cp1251")<br/>
+  (charset windows-1251)<br/>
+  (nonascii-translation . windows-1251)<br/>
+  (coding-priority windows-1251)<br/>
+  (coding-system windows-1251))<br/>
+ ("Tajik"<br/>
+  (documentation . "Support for Tajik using KOI8-T.")<br/>
+  (features code-pages)<br/>
+  (input-method . "russian-typewriter")<br/>
+  (charset koi8-t)<br/>
+  (nonascii-translation . cyrillic-koi8-t)<br/>
+  (coding-priority koi8-t)<br/>
+  (coding-system koi8-t))<br/>
+ ("Cyrillic-ALT"<br/>
+  (documentation . "Support for Cyrillic ALTERNATIVNYJ.")<br/>
+  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>
+  (unibyte-display . cyrillic-alternativnyj)<br/>
+  (features cyril-util)<br/>
+  (input-method . "russian-typewriter")<br/>
+  (nonascii-translation . alternativnyj)<br/>
+  (coding-priority cyrillic-alternativnyj)<br/>
+  (coding-system cyrillic-alternativnyj)<br/>
+  (charset alternativnyj))<br/>
+ ("Ukrainian"<br/>
+  (documentation . "Support for Ukrainian with koi8-u character set.")<br/>
+  (input-method . "ukrainian-computer")<br/>
+  (nonascii-translation . koi8-u)<br/>
+  (coding-priority koi8-u)<br/>
+  (coding-system koi8-u)<br/>
+  (charset koi8-u))<br/>
+ ("Russian"<br/>
+  (tutorial . "TUTORIAL.ru")<br/>
+  (documentation . "Support for Russian using koi8-r and the russian-computer input method.")<br/>
+  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>
+  (unibyte-display . cyrillic-koi8)<br/>
+  (features cyril-util)<br/>
+  (input-method . "russian-computer")<br/>
+  (coding-priority cyrillic-koi8 cyrillic-iso-8bit)<br/>
+  (coding-system cyrillic-koi8)<br/>
+  (nonascii-translation)<br/>
+  (charset cyrillic-iso8859-5))<br/>
+ ("Cyrillic-KOI8"<br/>
+  (documentation . "Support for Cyrillic KOI8-R.")<br/>
+  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>
+  (unibyte-display . cyrillic-koi8)<br/>
+  (features cyril-util)<br/>
+  (input-method . "russian-typewriter")<br/>
+  (nonascii-translation . koi8)<br/>
+  (ctext-non-standard-encodings "koi8-r")<br/>
+  (coding-priority cyrillic-koi8 cyrillic-iso-8bit)<br/>
+  (coding-system cyrillic-koi8)<br/>
+  (charset koi8))<br/>
+ ("Cyrillic-ISO"<br/>
+  (documentation . "Support for Cyrillic ISO-8859-5.")<br/>
+  (sample-text . "Russian (Русский)	Здравствуйте!")<br/>
+  (features cyril-util)<br/>
+  (unibyte-display . cyrillic-iso-8bit)<br/>
+  (nonascii-translation . iso-8859-5)<br/>
+  (input-method . "cyrillic-yawerty")<br/>
+  (coding-priority cyrillic-iso-8bit)<br/>
+  (coding-system cyrillic-iso-8bit)<br/>
+  (charset iso-8859-5))<br/>
+ ("Chinese-GB18030"<br/>
+  (tutorial . "TUTORIAL.cn")<br/>
+  (documentation . "Support for Chinese GB18030 character set.")<br/>
+  (features china-util)<br/>
+  (sample-text . "Chinese (中文,普通话,汉语) 你好")<br/>
+  (input-method . "chinese-py-punct")<br/>
+  (coding-priority gb18030 gbk iso-2022-cn chinese-big5 chinese-iso-8bit)<br/>
+  (coding-system chinese-gb18030)<br/>
+  (iso639-language . zh)<br/>
+  (charset gb18030))<br/>
+ ("Chinese-GBK"<br/>
+  (tutorial . "TUTORIAL.cn")<br/>
+  (documentation . "Support for Chinese GBK character set.")<br/>
+  (features china-util)<br/>
+  (sample-text . "Chinese (中文,普通话,汉语) 妳好")<br/>
+  (input-method . "chinese-py-punct")<br/>
+  (ctext-non-standard-encodings "gbk-0")<br/>
+  (coding-priority gbk iso-2022-cn chinese-big5 chinese-iso-8bit)<br/>
+  (coding-system chinese-gbk)<br/>
+  (exit-function . use-default-char-width-table)<br/>
+  (setup-function lambda nil<br/>
+		  (use-cjk-char-width-table 'zh_CN))<br/>
+  (iso639-language . zh)<br/>
+  (charset chinese-gbk))<br/>
+ ("Chinese-EUC-TW"<br/>
+  (documentation . "Support for Chinese, preferring the EUC-TW character set.  Note that\nthe EUC-TW coding system accepts Big5 for input also (which is then\nconverted to CNS).")<br/>
+  (input-method . "chinese-cns-quick")<br/>
+  (features china-util)<br/>
+  (coding-priority euc-tw chinese-big5 iso-2022-cn chinese-iso-8bit chinese-gbk)<br/>
+  (coding-system euc-tw iso-2022-cn)<br/>
+  (exit-function . use-default-char-width-table)<br/>
+  (setup-function lambda nil<br/>
+		  (use-cjk-char-width-table 'zh_TW))<br/>
+  (iso639-language . zh)<br/>
+  (charset chinese-cns11643-1 chinese-cns11643-2 chinese-cns11643-3 chinese-cns11643-4 chinese-cns11643-5 chinese-cns11643-6 chinese-cns11643-7 chinese-big5-1 chinese-big5-2))<br/>
+ ("Chinese-CNS"<br/>
+  (documentation . "Support for Chinese CNS character sets.  Note that the EUC-TW coding system\naccepts Big5 for input also (which is then converted to CNS).")<br/>
+  (input-method . "chinese-cns-quick")<br/>
+  (features china-util)<br/>
+  (coding-priority iso-2022-cn euc-tw chinese-big5 chinese-iso-8bit chinese-gbk)<br/>
+  (coding-system iso-2022-cn euc-tw)<br/>
+  (exit-function . use-default-char-width-table)<br/>
+  (setup-function lambda nil<br/>
+		  (use-cjk-char-width-table 'zh_TW))<br/>
+  (iso639-language . zh)<br/>
+  (charset chinese-cns11643-1 chinese-cns11643-2 chinese-cns11643-3 chinese-cns11643-4 chinese-cns11643-5 chinese-cns11643-6 chinese-cns11643-7))<br/>
+ ("Chinese-BIG5"<br/>
+  (tutorial . "TUTORIAL.zh")<br/>
+  (documentation . "Support for Chinese Big5 character set.")<br/>
+  (sample-text . "Cantonese (粵語,廣東話)	早晨, 你好")<br/>
+  (features china-util)<br/>
+  (ctext-non-standard-encodings "big5-0")<br/>
+  (input-method . "chinese-py-punct-b5")<br/>
+  (coding-priority chinese-big5 iso-2022-cn chinese-iso-8bit chinese-gbk)<br/>
+  (coding-system chinese-big5 chinese-iso-7bit)<br/>
+  (exit-function . use-default-char-width-table)<br/>
+  (setup-function lambda nil<br/>
+		  (use-cjk-char-width-table 'zh_HK))<br/>
+  (iso639-language . zh)<br/>
+  (charset chinese-big5-1 chinese-big5-2))<br/>
+ ("Chinese-GB"<br/>
+  (tutorial . "TUTORIAL.cn")<br/>
+  (documentation . "Support for Chinese GB2312 character set.")<br/>
+  (sample-text . "Chinese (中文,普通话,汉语)	你好")<br/>
+  (features china-util)<br/>
+  (input-method . "chinese-py-punct")<br/>
+  (coding-priority chinese-iso-8bit chinese-gbk chinese-big5 iso-2022-cn)<br/>
+  (coding-system chinese-iso-8bit iso-2022-cn chinese-hz)<br/>
+  (exit-function . use-default-char-width-table)<br/>
+  (setup-function lambda nil<br/>
+		  (use-cjk-char-width-table 'zh_CN))<br/>
+  (iso639-language . zh)<br/>
+  (charset chinese-gb2312 chinese-sisheng)))<br/>
+<br/>

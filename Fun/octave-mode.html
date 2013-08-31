@@ -1,1 +1,121 @@
-octave-mode is an interactive autoloaded compiled Lisp function in `octave-mod.el'.<br/><br/>(octave-mode)<br/><br/>Parent mode: `prog-mode'.<br/><br/>Major mode for editing Octave code.<br/><br/>This mode makes it easier to write Octave code by helping with<br/>indentation, doing some of the typing for you (with Abbrev mode) and by<br/>showing keywords, comments, strings, etc. in different faces (with<br/>Font Lock mode on terminals that support it).<br/><br/>Octave itself is a high-level language, primarily intended for numerical<br/>computations.  It provides a convenient command line interface for<br/>solving linear and nonlinear problems numerically.  Function definitions<br/>can also be stored in files, and it can be used in a batch mode (which<br/>is why you need this mode!).<br/><br/>The latest released version of Octave is always available via anonymous<br/>ftp from ftp.octave.org in the directory `/pub/octave'.  Complete<br/>source and binaries for several popular systems are available.<br/><br/>Type M-x list-abbrevs to display the built-in abbrevs for Octave keywords.<br/><br/>Keybindings<br/>===========<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>ESC		Prefix Command<br/>`		octave-abbrev-start<br/><remap>		Prefix Command<br/><br/><remap> <down-list>		smie-down-list<br/><br/>C-c C-a		octave-beginning-of-line<br/>C-c C-b		octave-submit-bug-report<br/>C-c C-e		octave-end-of-line<br/>C-c C-f		octave-insert-defun<br/>C-c C-h		info-lookup-symbol<br/>C-c TAB		Prefix Command<br/>C-c C-n		octave-next-code-line<br/>C-c C-p		octave-previous-code-line<br/>C-c ESC		Prefix Command<br/>C-c /		smie-close-block<br/>C-c ]		smie-close-block<br/><br/>C-M-j		octave-indent-new-comment-line<br/>C-M-q		octave-indent-defun<br/><br/>C-c TAB C-b	octave-send-block<br/>C-c TAB C-f	octave-send-defun<br/>C-c TAB C-h	octave-hide-process-buffer<br/>C-c TAB C-k	octave-kill-process<br/>C-c TAB C-l	octave-send-line<br/>C-c TAB C-r	octave-send-region<br/>C-c TAB C-s	octave-show-process-buffer<br/>C-c TAB b	octave-send-block<br/>C-c TAB f	octave-send-defun<br/>C-c TAB h	octave-hide-process-buffer<br/>C-c TAB k	octave-kill-process<br/>C-c TAB l	octave-send-line<br/>C-c TAB r	octave-send-region<br/>C-c TAB s	octave-show-process-buffer<br/><br/>C-c C-M-h	octave-mark-block<br/><br/><br/><br/>Variables you can use to customize Octave mode<br/>==============================================<br/><br/>`octave-blink-matching-block'<br/>  Non-nil means show matching begin of block when inserting a space,<br/>  newline or semicolon after an else or end keyword.  Default is t.<br/><br/>`octave-block-offset'<br/>  Extra indentation applied to statements in block structures.<br/>  Default is 2.<br/><br/>`octave-continuation-offset'<br/>  Extra indentation applied to Octave continuation lines.<br/>  Default is 4.<br/><br/>`octave-continuation-string'<br/>  String used for Octave continuation lines.<br/>  Default is a backslash.<br/><br/>`octave-send-echo-input'<br/>  Non-nil means always display `inferior-octave-buffer' after sending a<br/>  command to the inferior Octave process.<br/><br/>`octave-send-line-auto-forward'<br/>  Non-nil means always go to the next unsent line of Octave code after<br/>  sending a line to the inferior Octave process.<br/><br/>`octave-send-echo-input'<br/>  Non-nil means echo input sent to the inferior Octave process.<br/><br/>Turning on Octave mode runs the hook `octave-mode-hook'.<br/><br/>To begin using this mode for all `.m' files that you edit, add the<br/>following lines to your init file:<br/><br/>  (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))<br/><br/>To automatically turn on the abbrev and auto-fill features,<br/>add the following lines to your init file as well:<br/><br/>  (add-hook 'octave-mode-hook<br/>	    (lambda ()<br/>	      (abbrev-mode 1)<br/>	      (auto-fill-mode 1)))<br/><br/>To submit a problem report, enter M-x octave-submit-bug-report from an Octave mode buffer.<br/>This automatically sets up a mail buffer with version information<br/>already added.  You just need to add a description of the problem,<br/>including a reproducible test case and send the message.
+<strong>octave-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>octave-mod.el</code>'.<br/>
+<br/>
+(octave-mode)<br/>
+<br/>
+Parent mode: `prog-mode'.<br/>
+<br/>
+Major mode for editing Octave code.<br/>
+<br/>
+This mode makes it easier to write Octave code by helping with<br/>
+indentation, doing some of the typing for you (with Abbrev mode) and by<br/>
+showing keywords, comments, strings, etc. in different faces (with<br/>
+Font Lock mode on terminals that support it).<br/>
+<br/>
+Octave itself is a high-level language, primarily intended for numerical<br/>
+computations.  It provides a convenient command line interface for<br/>
+solving linear and nonlinear problems numerically.  Function definitions<br/>
+can also be stored in files, and it can be used in a batch mode (which<br/>
+is why you need this mode!).<br/>
+<br/>
+The latest released version of Octave is always available via anonymous<br/>
+ftp from ftp.octave.org in the directory `/pub/octave'.  Complete<br/>
+source and binaries for several popular systems are available.<br/>
+<br/>
+Type M-x list-abbrevs to display the built-in abbrevs for Octave keywords.<br/>
+<br/>
+Keybindings<br/>
+===========<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+ESC		Prefix Command<br/>
+`		octave-abbrev-start<br/>
+<remap>		Prefix Command<br/>
+<br/>
+<remap> <down-list>		smie-down-list<br/>
+<br/>
+C-c C-a		octave-beginning-of-line<br/>
+C-c C-b		octave-submit-bug-report<br/>
+C-c C-e		octave-end-of-line<br/>
+C-c C-f		octave-insert-defun<br/>
+C-c C-h		info-lookup-symbol<br/>
+C-c TAB		Prefix Command<br/>
+C-c C-n		octave-next-code-line<br/>
+C-c C-p		octave-previous-code-line<br/>
+C-c ESC		Prefix Command<br/>
+C-c /		smie-close-block<br/>
+C-c ]		smie-close-block<br/>
+<br/>
+C-M-j		octave-indent-new-comment-line<br/>
+C-M-q		octave-indent-defun<br/>
+<br/>
+C-c TAB C-b	octave-send-block<br/>
+C-c TAB C-f	octave-send-defun<br/>
+C-c TAB C-h	octave-hide-process-buffer<br/>
+C-c TAB C-k	octave-kill-process<br/>
+C-c TAB C-l	octave-send-line<br/>
+C-c TAB C-r	octave-send-region<br/>
+C-c TAB C-s	octave-show-process-buffer<br/>
+C-c TAB b	octave-send-block<br/>
+C-c TAB f	octave-send-defun<br/>
+C-c TAB h	octave-hide-process-buffer<br/>
+C-c TAB k	octave-kill-process<br/>
+C-c TAB l	octave-send-line<br/>
+C-c TAB r	octave-send-region<br/>
+C-c TAB s	octave-show-process-buffer<br/>
+<br/>
+C-c C-M-h	octave-mark-block<br/>
+<br/>
+<br/>
+<br/>
+Variables you can use to customize Octave mode<br/>
+==============================================<br/>
+<br/>
+`octave-blink-matching-block'<br/>
+  Non-nil means show matching begin of block when inserting a space,<br/>
+  newline or semicolon after an else or end keyword.  Default is t.<br/>
+<br/>
+`octave-block-offset'<br/>
+  Extra indentation applied to statements in block structures.<br/>
+  Default is 2.<br/>
+<br/>
+`octave-continuation-offset'<br/>
+  Extra indentation applied to Octave continuation lines.<br/>
+  Default is 4.<br/>
+<br/>
+`octave-continuation-string'<br/>
+  String used for Octave continuation lines.<br/>
+  Default is a backslash.<br/>
+<br/>
+`octave-send-echo-input'<br/>
+  Non-nil means always display `inferior-octave-buffer' after sending a<br/>
+  command to the inferior Octave process.<br/>
+<br/>
+`octave-send-line-auto-forward'<br/>
+  Non-nil means always go to the next unsent line of Octave code after<br/>
+  sending a line to the inferior Octave process.<br/>
+<br/>
+`octave-send-echo-input'<br/>
+  Non-nil means echo input sent to the inferior Octave process.<br/>
+<br/>
+Turning on Octave mode runs the hook `octave-mode-hook'.<br/>
+<br/>
+To begin using this mode for all `.m' files that you edit, add the<br/>
+following lines to your init file:<br/>
+<br/>
+  (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))<br/>
+<br/>
+To automatically turn on the abbrev and auto-fill features,<br/>
+add the following lines to your init file as well:<br/>
+<br/>
+  (add-hook 'octave-mode-hook<br/>
+	    (lambda ()<br/>
+	      (abbrev-mode 1)<br/>
+	      (auto-fill-mode 1)))<br/>
+<br/>
+To submit a problem report, enter M-x octave-submit-bug-report from an Octave mode buffer.<br/>
+This automatically sets up a mail buffer with version information<br/>
+already added.  You just need to add a description of the problem,<br/>
+including a reproducible test case and send the message.

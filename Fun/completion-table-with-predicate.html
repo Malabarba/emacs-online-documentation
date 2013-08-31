@@ -1,1 +1,12 @@
-completion-table-with-predicate is a compiled Lisp function in `minibuffer.el'.<br/><br/>(completion-table-with-predicate TABLE PRED1 STRICT STRING PRED2 ACTION)<br/><br/>Make a completion table equivalent to TABLE but filtered through PRED1.<br/>PRED1 is a function of one argument which returns non-nil if and only if the<br/>argument is an element of TABLE which should be considered for completion.<br/>STRING, PRED2, and ACTION are the usual arguments to completion tables,<br/>as described in `try-completion', `all-completions', and `test-completion'.<br/>If STRICT is t, the predicate always applies; if nil it only applies if<br/>it does not reduce the set of possible completions to nothing.<br/>Note: TABLE needs to be a proper completion table which obeys predicates.
+<strong>completion-table-with-predicate</strong> is a compiled Lisp function in `<code>minibuffer.el</code>'.<br/>
+<br/>
+(completion-table-with-predicate TABLE PRED1 STRICT STRING PRED2 ACTION)<br/>
+<br/>
+Make a completion table equivalent to TABLE but filtered through PRED1.<br/>
+PRED1 is a function of one argument which returns non-nil if and only if the<br/>
+argument is an element of TABLE which should be considered for completion.<br/>
+STRING, PRED2, and ACTION are the usual arguments to completion tables,<br/>
+as described in `try-completion', `all-completions', and `test-completion'.<br/>
+If STRICT is t, the predicate always applies; if nil it only applies if<br/>
+it does not reduce the set of possible completions to nothing.<br/>
+Note: TABLE needs to be a proper completion table which obeys predicates.

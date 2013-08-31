@@ -1,1 +1,17 @@
-set-mouse-position is a built-in function in `C source code'.<br/><br/>(set-mouse-position FRAME X Y)<br/><br/>Move the mouse pointer to the center of character cell (X,Y) in FRAME.<br/>Coordinates are relative to the frame, not a window,<br/>so the coordinates of the top left character in the frame<br/>may be nonzero due to left-hand scroll bars or the menu bar.<br/><br/>The position is given in character cells, where (0, 0) is the<br/>upper-left corner of the frame, X is the horizontal offset, and Y is<br/>the vertical offset.<br/><br/>This function is a no-op for an X frame that is not visible.<br/>If you have just created a frame, you must wait for it to become visible<br/>before calling this function on it, like this.<br/>  (while (not (frame-visible-p frame)) (sleep-for .5))
+<strong>set-mouse-position</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(set-mouse-position FRAME X Y)<br/>
+<br/>
+Move the mouse pointer to the center of character cell (X,Y) in FRAME.<br/>
+Coordinates are relative to the frame, not a window,<br/>
+so the coordinates of the top left character in the frame<br/>
+may be nonzero due to left-hand scroll bars or the menu bar.<br/>
+<br/>
+The position is given in character cells, where (0, 0) is the<br/>
+upper-left corner of the frame, X is the horizontal offset, and Y is<br/>
+the vertical offset.<br/>
+<br/>
+This function is a no-op for an X frame that is not visible.<br/>
+If you have just created a frame, you must wait for it to become visible<br/>
+before calling this function on it, like this.<br/>
+  (while (not (frame-visible-p frame)) (sleep-for .5))

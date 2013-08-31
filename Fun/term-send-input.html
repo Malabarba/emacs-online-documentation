@@ -1,1 +1,42 @@
-term-send-input is an interactive compiled Lisp function in `term.el'.<br/><br/>(term-send-input)<br/><br/>Send input to process.<br/>After the process output mark, sends all text from the process mark to<br/>point as input to the process.  Before the process output mark, calls value<br/>of variable `term-get-old-input' to retrieve old input, copies it to the<br/>process mark, and sends it.  A terminal newline is also inserted into the<br/>buffer and sent to the process.  The list of function names contained in the<br/>value of `term-input-filter-functions' is called on the input before sending<br/>it.  The input is entered into the input history ring, if the value of variable<br/>`term-input-filter' returns non-nil when called on the input.<br/><br/>Any history reference may be expanded depending on the value of the variable<br/>`term-input-autoexpand'.  The list of function names contained in the value<br/>of `term-input-filter-functions' is called on the input before sending it.<br/>The input is entered into the input history ring, if the value of variable<br/>`term-input-filter' returns non-nil when called on the input.<br/><br/>If variable `term-eol-on-send' is non-nil, then point is moved to the<br/>end of line before sending the input.<br/><br/>The values of `term-get-old-input', `term-input-filter-functions', and<br/>`term-input-filter' are chosen according to the command interpreter running<br/>in the buffer.  E.g.,<br/><br/>If the interpreter is the csh,<br/>    term-get-old-input is the default: take the current line, discard any<br/>        initial string matching regexp term-prompt-regexp.<br/>    term-input-filter-functions monitors input for "cd", "pushd", and<br/>	"popd" commands.  When it sees one, it cd's the buffer.<br/>    term-input-filter is the default: returns t if the input isn't all white<br/>	space.<br/><br/>If the term is Lucid Common Lisp,<br/>    term-get-old-input snarfs the sexp ending at point.<br/>    term-input-filter-functions does nothing.<br/>    term-input-filter returns nil if the input matches input-filter-regexp,<br/>        which matches (1) all whitespace (2) :a, :c, etc.<br/><br/>Similarly for Soar, Scheme, etc.
+<strong>term-send-input</strong> is an interactive compiled Lisp function in `<code>term.el</code>'.<br/>
+<br/>
+(term-send-input)<br/>
+<br/>
+Send input to process.<br/>
+After the process output mark, sends all text from the process mark to<br/>
+point as input to the process.  Before the process output mark, calls value<br/>
+of variable `term-get-old-input' to retrieve old input, copies it to the<br/>
+process mark, and sends it.  A terminal newline is also inserted into the<br/>
+buffer and sent to the process.  The list of function names contained in the<br/>
+value of `term-input-filter-functions' is called on the input before sending<br/>
+it.  The input is entered into the input history ring, if the value of variable<br/>
+`term-input-filter' returns non-nil when called on the input.<br/>
+<br/>
+Any history reference may be expanded depending on the value of the variable<br/>
+`term-input-autoexpand'.  The list of function names contained in the value<br/>
+of `term-input-filter-functions' is called on the input before sending it.<br/>
+The input is entered into the input history ring, if the value of variable<br/>
+`term-input-filter' returns non-nil when called on the input.<br/>
+<br/>
+If variable `term-eol-on-send' is non-nil, then point is moved to the<br/>
+end of line before sending the input.<br/>
+<br/>
+The values of `term-get-old-input', `term-input-filter-functions', and<br/>
+`term-input-filter' are chosen according to the command interpreter running<br/>
+in the buffer.  E.g.,<br/>
+<br/>
+If the interpreter is the csh,<br/>
+    term-get-old-input is the default: take the current line, discard any<br/>
+        initial string matching regexp term-prompt-regexp.<br/>
+    term-input-filter-functions monitors input for "cd", "pushd", and<br/>
+	"popd" commands.  When it sees one, it cd's the buffer.<br/>
+    term-input-filter is the default: returns t if the input isn't all white<br/>
+	space.<br/>
+<br/>
+If the term is Lucid Common Lisp,<br/>
+    term-get-old-input snarfs the sexp ending at point.<br/>
+    term-input-filter-functions does nothing.<br/>
+    term-input-filter returns nil if the input matches input-filter-regexp,<br/>
+        which matches (1) all whitespace (2) :a, :c, etc.<br/>
+<br/>
+Similarly for Soar, Scheme, etc.

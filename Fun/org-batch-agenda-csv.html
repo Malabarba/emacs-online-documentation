@@ -1,1 +1,37 @@
-org-batch-agenda-csv is an autoloaded Lisp macro in `org-agenda.el'.<br/><br/>(org-batch-agenda-csv CMD-KEY &rest PARAMETERS)<br/><br/>Run an agenda command in batch mode and send the result to STDOUT.<br/>If CMD-KEY is a string of length 1, it is used as a key in<br/>`org-agenda-custom-commands' and triggers this command.  If it is a<br/>longer string it is used as a tags/todo match string.<br/>Parameters are alternating variable names and values that will be bound<br/>before running the agenda command.<br/><br/>The output gives a line for each selected agenda item.  Each<br/>item is a list of comma-separated values, like this:<br/><br/>category,head,type,todo,tags,date,time,extra,priority-l,priority-n<br/><br/>category     The category of the item<br/>head         The headline, without TODO kwd, TAGS and PRIORITY<br/>type         The type of the agenda entry, can be<br/>                todo               selected in TODO match<br/>                tagsmatch          selected in tags match<br/>                diary              imported from diary<br/>                deadline           a deadline on given date<br/>                scheduled          scheduled on given date<br/>                timestamp          entry has timestamp on given date<br/>                closed             entry was closed on given date<br/>                upcoming-deadline  warning about deadline<br/>                past-scheduled     forwarded scheduled item<br/>                block              entry has date block including g. date<br/>todo         The todo keyword, if any<br/>tags         All tags including inherited ones, separated by colons<br/>date         The relevant date, like 2007-2-14<br/>time         The time, like 15:00-16:50<br/>extra        Sting with extra planning info<br/>priority-l   The priority letter if any was given<br/>priority-n   The computed numerical priority<br/>agenda-day   The day in the agenda where this is listed
+<strong>org-batch-agenda-csv</strong> is an autoloaded Lisp macro in `<code>org-agenda.el</code>'.<br/>
+<br/>
+(org-batch-agenda-csv CMD-KEY &rest PARAMETERS)<br/>
+<br/>
+Run an agenda command in batch mode and send the result to STDOUT.<br/>
+If CMD-KEY is a string of length 1, it is used as a key in<br/>
+`org-agenda-custom-commands' and triggers this command.  If it is a<br/>
+longer string it is used as a tags/todo match string.<br/>
+Parameters are alternating variable names and values that will be bound<br/>
+before running the agenda command.<br/>
+<br/>
+The output gives a line for each selected agenda item.  Each<br/>
+item is a list of comma-separated values, like this:<br/>
+<br/>
+category,head,type,todo,tags,date,time,extra,priority-l,priority-n<br/>
+<br/>
+category     The category of the item<br/>
+head         The headline, without TODO kwd, TAGS and PRIORITY<br/>
+type         The type of the agenda entry, can be<br/>
+                todo               selected in TODO match<br/>
+                tagsmatch          selected in tags match<br/>
+                diary              imported from diary<br/>
+                deadline           a deadline on given date<br/>
+                scheduled          scheduled on given date<br/>
+                timestamp          entry has timestamp on given date<br/>
+                closed             entry was closed on given date<br/>
+                upcoming-deadline  warning about deadline<br/>
+                past-scheduled     forwarded scheduled item<br/>
+                block              entry has date block including g. date<br/>
+todo         The todo keyword, if any<br/>
+tags         All tags including inherited ones, separated by colons<br/>
+date         The relevant date, like 2007-2-14<br/>
+time         The time, like 15:00-16:50<br/>
+extra        Sting with extra planning info<br/>
+priority-l   The priority letter if any was given<br/>
+priority-n   The computed numerical priority<br/>
+agenda-day   The day in the agenda where this is listed

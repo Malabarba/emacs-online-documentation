@@ -1,1 +1,24 @@
-org-agenda-before-sorting-filter-function is a variable defined in `org-agenda.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Function to be applied to agenda items prior to sorting.<br/>Prior to sorting also means just before they are inserted into the agenda.<br/><br/>To aid sorting, you may revisit the original entries and add more text<br/>properties which will later be used by the sorting functions.<br/><br/>The function should take a string argument, an agenda line.<br/>It has access to the text properties in that line, which contain among<br/>other things, the property `org-hd-marker' that points to the entry<br/>where the line comes from.  Note that not all lines going into the agenda<br/>have this property, only most.<br/><br/>The function should return the modified string.  It is probably best<br/>to ONLY change text properties.<br/><br/>You can also use this function as a filter, by returning nil for lines<br/>you don't want to have in the agenda at all.  For this application, you<br/>could bind the variable in the options section of a custom command.
+<strong>org-agenda-before-sorting-filter-function</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Function to be applied to agenda items prior to sorting.<br/>
+Prior to sorting also means just before they are inserted into the agenda.<br/>
+<br/>
+To aid sorting, you may revisit the original entries and add more text<br/>
+properties which will later be used by the sorting functions.<br/>
+<br/>
+The function should take a string argument, an agenda line.<br/>
+It has access to the text properties in that line, which contain among<br/>
+other things, the property `org-hd-marker' that points to the entry<br/>
+where the line comes from.  Note that not all lines going into the agenda<br/>
+have this property, only most.<br/>
+<br/>
+The function should return the modified string.  It is probably best<br/>
+to ONLY change text properties.<br/>
+<br/>
+You can also use this function as a filter, by returning nil for lines<br/>
+you don't want to have in the agenda at all.  For this application, you<br/>
+could bind the variable in the options section of a custom command.

@@ -1,1 +1,13 @@
-js--js-funcall is a compiled Lisp function in `js.el'.<br/><br/>(js--js-funcall FUNCTION &rest ARGUMENTS)<br/><br/>Call the Mozilla function FUNCTION with arguments ARGUMENTS.<br/>If function is a string, look it up as a property on the global<br/>object and use the global object for `this'.<br/>If FUNCTION is a list with one element, use that element as the<br/>function with the global object for `this', except that if that<br/>single element is a string, look it up on the global object.<br/>If FUNCTION is a list with more than one argument, use the list<br/>up to the last value as a property descriptor and the last<br/>argument as a function.
+<strong>js--js-funcall</strong> is a compiled Lisp function in `<code>js.el</code>'.<br/>
+<br/>
+(js--js-funcall FUNCTION &rest ARGUMENTS)<br/>
+<br/>
+Call the Mozilla function FUNCTION with arguments ARGUMENTS.<br/>
+If function is a string, look it up as a property on the global<br/>
+object and use the global object for `this'.<br/>
+If FUNCTION is a list with one element, use that element as the<br/>
+function with the global object for `this', except that if that<br/>
+single element is a string, look it up on the global object.<br/>
+If FUNCTION is a list with more than one argument, use the list<br/>
+up to the last value as a property descriptor and the last<br/>
+argument as a function.

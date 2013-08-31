@@ -1,1 +1,11 @@
-file-selinux-context is a built-in function in `C source code'.<br/><br/>(file-selinux-context FILENAME)<br/><br/>Return SELinux context of file named FILENAME.<br/>The return value is a list (USER ROLE TYPE RANGE), where the list<br/>elements are strings naming the user, role, type, and range of the<br/>file's SELinux security context.<br/><br/>Return (nil nil nil nil) if the file is nonexistent or inaccessible,<br/>or if SELinux is disabled, or if Emacs lacks SELinux support.
+<strong>file-selinux-context</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(file-selinux-context FILENAME)<br/>
+<br/>
+Return SELinux context of file named FILENAME.<br/>
+The return value is a list (USER ROLE TYPE RANGE), where the list<br/>
+elements are strings naming the user, role, type, and range of the<br/>
+file's SELinux security context.<br/>
+<br/>
+Return (nil nil nil nil) if the file is nonexistent or inaccessible,<br/>
+or if SELinux is disabled, or if Emacs lacks SELinux support.

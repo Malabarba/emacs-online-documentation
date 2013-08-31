@@ -1,1 +1,28 @@
-condition-case is a special form in `C source code'.<br/><br/>(condition-case VAR BODYFORM &rest HANDLERS)<br/><br/>Regain control when an error is signaled.<br/>Executes BODYFORM and returns its value if no error happens.<br/>Each element of HANDLERS looks like (CONDITION-NAME BODY...)<br/>where the BODY is made of Lisp expressions.<br/><br/>A handler is applicable to an error<br/>if CONDITION-NAME is one of the error's condition names.<br/>If an error happens, the first applicable handler is run.<br/><br/>The car of a handler may be a list of condition names instead of a<br/>single condition name; then it handles all of them.  If the special<br/>condition name `debug' is present in this list, it allows another<br/>condition in the list to run the debugger if `debug-on-error' and the<br/>other usual mechanisms says it should (otherwise, `condition-case'<br/>suppresses the debugger).<br/><br/>When a handler handles an error, control returns to the `condition-case'<br/>and it executes the handler's BODY...<br/>with VAR bound to (ERROR-SYMBOL . SIGNAL-DATA) from the error.<br/>(If VAR is nil, the handler can't access that information.)<br/>Then the value of the last BODY form is returned from the `condition-case'<br/>expression.<br/><br/>See also the function `signal' for more info.
+<strong>condition-case</strong> is a special form in `<code>C source code</code>'.<br/>
+<br/>
+(condition-case VAR BODYFORM &rest HANDLERS)<br/>
+<br/>
+Regain control when an error is signaled.<br/>
+Executes BODYFORM and returns its value if no error happens.<br/>
+Each element of HANDLERS looks like (CONDITION-NAME BODY...)<br/>
+where the BODY is made of Lisp expressions.<br/>
+<br/>
+A handler is applicable to an error<br/>
+if CONDITION-NAME is one of the error's condition names.<br/>
+If an error happens, the first applicable handler is run.<br/>
+<br/>
+The car of a handler may be a list of condition names instead of a<br/>
+single condition name; then it handles all of them.  If the special<br/>
+condition name `debug' is present in this list, it allows another<br/>
+condition in the list to run the debugger if `debug-on-error' and the<br/>
+other usual mechanisms says it should (otherwise, `condition-case'<br/>
+suppresses the debugger).<br/>
+<br/>
+When a handler handles an error, control returns to the `condition-case'<br/>
+and it executes the handler's BODY...<br/>
+with VAR bound to (ERROR-SYMBOL . SIGNAL-DATA) from the error.<br/>
+(If VAR is nil, the handler can't access that information.)<br/>
+Then the value of the last BODY form is returned from the `condition-case'<br/>
+expression.<br/>
+<br/>
+See also the function `signal' for more info.

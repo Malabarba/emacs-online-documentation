@@ -1,1 +1,16 @@
-org-apply-on-list is a compiled Lisp function in `org-list.el'.<br/><br/>(org-apply-on-list FUNCTION INIT-VALUE &rest ARGS)<br/><br/>Call FUNCTION on each item of the list at point.<br/>FUNCTION must be called with at least one argument: INIT-VALUE,<br/>that will contain the value returned by the function at the<br/>previous item, plus ARGS extra arguments.<br/><br/>FUNCTION is applied on items in reverse order.<br/><br/>As an example, (org-apply-on-list (lambda (result) (1+ result)) 0)<br/>will return the number of items in the current list.<br/><br/>Sublists of the list are skipped.  Cursor is always at the<br/>beginning of the item.
+<strong>org-apply-on-list</strong> is a compiled Lisp function in `<code>org-list.el</code>'.<br/>
+<br/>
+(org-apply-on-list FUNCTION INIT-VALUE &rest ARGS)<br/>
+<br/>
+Call FUNCTION on each item of the list at point.<br/>
+FUNCTION must be called with at least one argument: INIT-VALUE,<br/>
+that will contain the value returned by the function at the<br/>
+previous item, plus ARGS extra arguments.<br/>
+<br/>
+FUNCTION is applied on items in reverse order.<br/>
+<br/>
+As an example, (org-apply-on-list (lambda (result) (1+ result)) 0)<br/>
+will return the number of items in the current list.<br/>
+<br/>
+Sublists of the list are skipped.  Cursor is always at the<br/>
+beginning of the item.

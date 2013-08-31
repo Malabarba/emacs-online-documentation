@@ -1,1 +1,39 @@
-feedmail-binmail-template is a variable defined in `feedmail.el'.<br/>Its value is "/bin/mail %s"<br/><br/>Documentation:<br/>Command template for the subprocess which will get rid of the mail.<br/>It can result in any command understandable by /bin/sh.  Might not<br/>work at all in non-UNIX environments.  The single '%s', if present,<br/>gets replaced by the space-separated, simplified list of addressees.<br/>Used in `feedmail-buffer-to-binmail' to form the shell command which<br/>will receive the contents of the prepped buffer as stdin.  The default<br/>value uses /bin/rmail (if it exists) unless `mail-interactive' has been<br/>set non-nil.<br/><br/>If you'd like your errors to come back as mail instead of immediately<br/>in a buffer, try /bin/rmail instead of /bin/mail.  If /bin/rmail<br/>exists, this can be accomplished by keeping the default nil setting of<br/>`mail-interactive'.  You might also like to consult local mail experts<br/>for any other interesting command line possibilities.  Some versions<br/>of UNIX have an rmail program which behaves differently than<br/>/bin/rmail and complains if feedmail gives it a message on stdin.  If<br/>you don't know about such things and if there is no local expert to<br/>consult, stick with /bin/mail or use one of the other buffer eating<br/>functions.<br/><br/>The above description applies to "classic" UNIX /bin/mail and /bin/rmail.<br/>On most GNU/Linux systems and perhaps other places, /bin/mail behaves<br/>completely differently and shouldn't be used at all in this template.<br/>Instead of /bin/rmail, there is a /usr/bin/rmail, and it can be used<br/>with a wrapper.  The wrapper is necessary because /usr/bin/rmail on such<br/>systems requires that the first line of the message appearing on standard<br/>input have a UNIX-style From_ postmark.  If you have such a system, the<br/>wrapping can be accomplished by setting the value of `feedmail-binmail-template'<br/>to `feedmail-binmail-gnulinuxish-template'.  You should then send some test<br/>messages to make sure it works as expected.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>feedmail-binmail-template</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
+Its value is "/bin/mail %s"<br/>
+<br/>
+Documentation:<br/>
+Command template for the subprocess which will get rid of the mail.<br/>
+It can result in any command understandable by /bin/sh.  Might not<br/>
+work at all in non-UNIX environments.  The single '%s', if present,<br/>
+gets replaced by the space-separated, simplified list of addressees.<br/>
+Used in `feedmail-buffer-to-binmail' to form the shell command which<br/>
+will receive the contents of the prepped buffer as stdin.  The default<br/>
+value uses /bin/rmail (if it exists) unless `mail-interactive' has been<br/>
+set non-nil.<br/>
+<br/>
+If you'd like your errors to come back as mail instead of immediately<br/>
+in a buffer, try /bin/rmail instead of /bin/mail.  If /bin/rmail<br/>
+exists, this can be accomplished by keeping the default nil setting of<br/>
+`mail-interactive'.  You might also like to consult local mail experts<br/>
+for any other interesting command line possibilities.  Some versions<br/>
+of UNIX have an rmail program which behaves differently than<br/>
+/bin/rmail and complains if feedmail gives it a message on stdin.  If<br/>
+you don't know about such things and if there is no local expert to<br/>
+consult, stick with /bin/mail or use one of the other buffer eating<br/>
+functions.<br/>
+<br/>
+The above description applies to "classic" UNIX /bin/mail and /bin/rmail.<br/>
+On most GNU/Linux systems and perhaps other places, /bin/mail behaves<br/>
+completely differently and shouldn't be used at all in this template.<br/>
+Instead of /bin/rmail, there is a /usr/bin/rmail, and it can be used<br/>
+with a wrapper.  The wrapper is necessary because /usr/bin/rmail on such<br/>
+systems requires that the first line of the message appearing on standard<br/>
+input have a UNIX-style From_ postmark.  If you have such a system, the<br/>
+wrapping can be accomplished by setting the value of `feedmail-binmail-template'<br/>
+to `feedmail-binmail-gnulinuxish-template'.  You should then send some test<br/>
+messages to make sure it works as expected.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

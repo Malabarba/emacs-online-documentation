@@ -1,1 +1,15 @@
-easy-menu-define-key is a compiled Lisp function in `easymenu.el'.<br/><br/>(easy-menu-define-key MENU KEY ITEM &optional BEFORE)<br/><br/>Add binding in MENU for KEY => ITEM.  Similar to `define-key-after'.<br/>If KEY is not nil then delete any duplications.<br/>If ITEM is nil, then delete the definition of KEY.<br/><br/>Optional argument BEFORE is nil or a key in MENU.  If BEFORE is not nil,<br/>put binding before the item in MENU named BEFORE; otherwise,<br/>if a binding for KEY is already present in MENU, just change it;<br/>otherwise put the new binding last in MENU.<br/>BEFORE can be either a string (menu item name) or a symbol<br/>(the fake function key for the menu item).<br/>KEY does not have to be a symbol, and comparison is done with equal.
+<strong>easy-menu-define-key</strong> is a compiled Lisp function in `<code>easymenu.el</code>'.<br/>
+<br/>
+(easy-menu-define-key MENU KEY ITEM &optional BEFORE)<br/>
+<br/>
+Add binding in MENU for KEY => ITEM.  Similar to `define-key-after'.<br/>
+If KEY is not nil then delete any duplications.<br/>
+If ITEM is nil, then delete the definition of KEY.<br/>
+<br/>
+Optional argument BEFORE is nil or a key in MENU.  If BEFORE is not nil,<br/>
+put binding before the item in MENU named BEFORE; otherwise,<br/>
+if a binding for KEY is already present in MENU, just change it;<br/>
+otherwise put the new binding last in MENU.<br/>
+BEFORE can be either a string (menu item name) or a symbol<br/>
+(the fake function key for the menu item).<br/>
+KEY does not have to be a symbol, and comparison is done with equal.

@@ -1,1 +1,36 @@
-nnmail-read-incoming-hook is a variable defined in `nnmail.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>*Hook that will be run after the incoming mail has been transferred.<br/>The incoming mail is moved from the specified spool file (which normally is<br/>something like "/usr/spool/mail/$user") to the user's home<br/>directory.  This hook is called after the incoming mail box has been<br/>emptied, and can be used to call any mail box programs you have<br/>running ("xwatch", etc.)<br/><br/>E.g.:<br/><br/>(add-hook 'nnmail-read-incoming-hook<br/>	  (lambda ()<br/>	    (call-process "/local/bin/mailsend" nil nil nil<br/>			  "read"<br/>			  ;; The incoming mail box file.<br/>			  (expand-file-name (user-login-name)<br/>					    rmail-spool-directory))))<br/><br/>If you have xwatch running, this will alert it that mail has been<br/>read.<br/><br/>If you use `display-time', you could use something like this:<br/><br/>(add-hook 'nnmail-read-incoming-hook<br/>	  (lambda ()<br/>	    ;; Update the displayed time, since that will clear out<br/>	    ;; the flag that says you have mail.<br/>	    (when (eq (process-status "display-time") 'run)<br/>	      (display-time-filter display-time-process ""))))<br/><br/>You can customize this variable.
+<strong>nnmail-read-incoming-hook</strong> is a variable defined in `<code>nnmail.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+*Hook that will be run after the incoming mail has been transferred.<br/>
+The incoming mail is moved from the specified spool file (which normally is<br/>
+something like "/usr/spool/mail/$user") to the user's home<br/>
+directory.  This hook is called after the incoming mail box has been<br/>
+emptied, and can be used to call any mail box programs you have<br/>
+running ("xwatch", etc.)<br/>
+<br/>
+E.g.:<br/>
+<br/>
+(add-hook 'nnmail-read-incoming-hook<br/>
+	  (lambda ()<br/>
+	    (call-process "/local/bin/mailsend" nil nil nil<br/>
+			  "read"<br/>
+			  ;; The incoming mail box file.<br/>
+			  (expand-file-name (user-login-name)<br/>
+					    rmail-spool-directory))))<br/>
+<br/>
+If you have xwatch running, this will alert it that mail has been<br/>
+read.<br/>
+<br/>
+If you use `display-time', you could use something like this:<br/>
+<br/>
+(add-hook 'nnmail-read-incoming-hook<br/>
+	  (lambda ()<br/>
+	    ;; Update the displayed time, since that will clear out<br/>
+	    ;; the flag that says you have mail.<br/>
+	    (when (eq (process-status "display-time") 'run)<br/>
+	      (display-time-filter display-time-process ""))))<br/>
+<br/>
+You can customize this variable.

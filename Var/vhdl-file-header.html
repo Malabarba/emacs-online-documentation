@@ -1,1 +1,34 @@
-vhdl-file-header is a variable defined in `vhdl-mode.el'.<br/>Its value is<br/>"-------------------------------------------------------------------------------\n-- Title      : <title string>\n-- Project    : <project>\n-------------------------------------------------------------------------------\n-- File       : <filename>\n-- Author     : <author>\n-- Company    : <company>\n-- Created    : <date>\n-- Last update: <date>\n-- Platform   : <platform>\n-- Standard   : <standard>\n<projectdesc>-------------------------------------------------------------------------------\n-- Description: <cursor>\n<copyright>-------------------------------------------------------------------------------\n-- Revisions  :\n-- Date        Version  Author  Description\n-- <date>  1.0      <login>	Created\n-------------------------------------------------------------------------------\n\n"<br/><br/>Documentation:<br/>String or file to insert as file header.<br/>If the string specifies an existing file name, the contents of the file is<br/>inserted, otherwise the string itself is inserted as file header.<br/>Type `C-j' for newlines.<br/>If the header contains RCS keywords, they may be written as <RCS>Keyword<RCS><br/>if the header needs to be version controlled.<br/><br/>The following keywords for template generation are supported:<br/>  <filename>    : replaced by the name of the buffer<br/>  <author>      : replaced by the user name and email address<br/>                  (`user-full-name',`mail-host-address', `user-mail-address')<br/>  <authorfull>  : replaced by the user full name (`user-full-name')<br/>  <login>       : replaced by user login name (`user-login-name')<br/>  <company>     : replaced by contents of option `vhdl-company-name'<br/>  <date>        : replaced by the current date<br/>  <year>        : replaced by the current year<br/>  <project>     : replaced by title of current project (`vhdl-project')<br/>  <projectdesc> : replaced by description of current project (`vhdl-project')<br/>  <copyright>   : replaced by copyright string (`vhdl-copyright-string')<br/>  <platform>    : replaced by contents of option `vhdl-platform-spec'<br/>  <standard>    : replaced by the VHDL language standard(s) used<br/>  <... string>  : replaced by a queried string ("..." is the prompt word)<br/>  <title string>: replaced by file title in automatically generated files<br/>  <cursor>      : final cursor position<br/><br/>The (multi-line) project description <projectdesc> can be used as a project<br/>dependent part of the file header and can also contain the above keywords.<br/><br/>You can customize this variable.
+<strong>vhdl-file-header</strong> is a variable defined in `<code>vhdl-mode.el</code>'.<br/>
+Its value is<br/>
+"-------------------------------------------------------------------------------\n-- Title      : <title string>\n-- Project    : <project>\n-------------------------------------------------------------------------------\n-- File       : <filename>\n-- Author     : <author>\n-- Company    : <company>\n-- Created    : <date>\n-- Last update: <date>\n-- Platform   : <platform>\n-- Standard   : <standard>\n<projectdesc>-------------------------------------------------------------------------------\n-- Description: <cursor>\n<copyright>-------------------------------------------------------------------------------\n-- Revisions  :\n-- Date        Version  Author  Description\n-- <date>  1.0      <login>	Created\n-------------------------------------------------------------------------------\n\n"<br/>
+<br/>
+Documentation:<br/>
+String or file to insert as file header.<br/>
+If the string specifies an existing file name, the contents of the file is<br/>
+inserted, otherwise the string itself is inserted as file header.<br/>
+Type `C-j' for newlines.<br/>
+If the header contains RCS keywords, they may be written as <RCS>Keyword<RCS><br/>
+if the header needs to be version controlled.<br/>
+<br/>
+The following keywords for template generation are supported:<br/>
+  <filename>    : replaced by the name of the buffer<br/>
+  <author>      : replaced by the user name and email address<br/>
+                  (`user-full-name',`mail-host-address', `user-mail-address')<br/>
+  <authorfull>  : replaced by the user full name (`user-full-name')<br/>
+  <login>       : replaced by user login name (`user-login-name')<br/>
+  <company>     : replaced by contents of option `vhdl-company-name'<br/>
+  <date>        : replaced by the current date<br/>
+  <year>        : replaced by the current year<br/>
+  <project>     : replaced by title of current project (`vhdl-project')<br/>
+  <projectdesc> : replaced by description of current project (`vhdl-project')<br/>
+  <copyright>   : replaced by copyright string (`vhdl-copyright-string')<br/>
+  <platform>    : replaced by contents of option `vhdl-platform-spec'<br/>
+  <standard>    : replaced by the VHDL language standard(s) used<br/>
+  <... string>  : replaced by a queried string ("..." is the prompt word)<br/>
+  <title string>: replaced by file title in automatically generated files<br/>
+  <cursor>      : final cursor position<br/>
+<br/>
+The (multi-line) project description <projectdesc> can be used as a project<br/>
+dependent part of the file header and can also contain the above keywords.<br/>
+<br/>
+You can customize this variable.

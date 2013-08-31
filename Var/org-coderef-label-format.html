@@ -1,1 +1,19 @@
-org-coderef-label-format is a variable defined in `org-src.el'.<br/>Its value is "(ref:%s)"<br/><br/>Documentation:<br/>The default coderef format.<br/>This format string will be used to search for coderef labels in literal<br/>examples (EXAMPLE and SRC blocks).  The format can be overwritten in<br/>an individual literal example with the -l option, like<br/><br/>#+BEGIN_SRC pascal +n -r -l "((%s))"<br/>...<br/>#+END_SRC<br/><br/>If you want to use this for HTML export, make sure that the format does<br/>not introduce special font-locking, and avoid the HTML special<br/>characters `<', `>', and `&'.  The reason for this restriction is that<br/>the labels are searched for only after htmlize has done its job.<br/><br/>You can customize this variable.
+<strong>org-coderef-label-format</strong> is a variable defined in `<code>org-src.el</code>'.<br/>
+Its value is "(ref:%s)"<br/>
+<br/>
+Documentation:<br/>
+The default coderef format.<br/>
+This format string will be used to search for coderef labels in literal<br/>
+examples (EXAMPLE and SRC blocks).  The format can be overwritten in<br/>
+an individual literal example with the -l option, like<br/>
+<br/>
+#+BEGIN_SRC pascal +n -r -l "((%s))"<br/>
+...<br/>
+#+END_SRC<br/>
+<br/>
+If you want to use this for HTML export, make sure that the format does<br/>
+not introduce special font-locking, and avoid the HTML special<br/>
+characters `<', `>', and `&'.  The reason for this restriction is that<br/>
+the labels are searched for only after htmlize has done its job.<br/>
+<br/>
+You can customize this variable.

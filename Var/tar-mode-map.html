@@ -1,1 +1,46 @@
-tar-mode-map is a variable defined in `tar-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Local keymap for Tar mode listings.<br/><br/>Value: (keymap<br/> #^[nil nil keymap<br/>	#^^[3 0 nil nil nil nil tar-flag-deleted nil nil nil nil nil nil nil nil tar-extract tar-next-line nil tar-previous-line nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil tar-copy nil tar-extract-other-window nil tar-chgrp-entry nil nil nil nil nil tar-chmod-entry nil tar-chown-entry nil nil tar-rename-entry nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-flag-deleted tar-extract tar-extract revert-buffer nil nil nil nil nil nil tar-next-line tar-extract-other-window tar-previous-line nil nil nil nil tar-unflag tar-view woman-tar-extract-file tar-expunge nil nil nil nil nil nil tar-unflag-backwards]<br/>	#^^[1 0<br/>	      #^^[2 0<br/>		    #^^[3 0 nil nil nil nil tar-flag-deleted nil nil nil nil nil nil nil nil tar-extract tar-next-line nil tar-previous-line nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil tar-copy nil tar-extract-other-window nil tar-chgrp-entry nil nil nil nil nil tar-chmod-entry nil tar-chown-entry nil nil tar-rename-entry nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-flag-deleted tar-extract tar-extract revert-buffer nil nil nil nil nil nil tar-next-line tar-extract-other-window tar-previous-line nil nil nil nil tar-unflag tar-view woman-tar-extract-file tar-expunge nil nil nil nil nil nil tar-unflag-backwards]<br/>		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/> (menu-bar keymap<br/>	   (operate "Operate" keymap<br/>		    (expunge "Expunge Marked Files" . tar-expunge)<br/>		    (copy "Copy to..." . tar-copy)<br/>		    (rename "Rename to..." . tar-rename-entry)<br/>		    (chmod "Change Mode..." . tar-chmod-entry)<br/>		    (chgrp "Change Group..." . tar-chgrp-entry)<br/>		    (chown "Change Owner..." . tar-chown-entry)<br/>		    "Operate")<br/>	   (mark "Mark" keymap<br/>		 (unmark "Unflag" . tar-unflag)<br/>		 (deletion "Flag" . tar-flag-deleted)<br/>		 (unmark-all "Unmark All" . tar-clear-modification-flags)<br/>		 "Mark")<br/>	   (immediate "Immediate" keymap<br/>		      (find-file "Find This File" . tar-extract)<br/>		      (find-file-other-window "Find in Other Window" . tar-extract-other-window)<br/>		      (display "Display in Other Window" . tar-display-other-window)<br/>		      (view "View This File" . tar-view)<br/>		      (woman "Read Man Page (WoMan)" . woman-tar-extract-file)<br/>		      "Immediate")<br/>	   (edit . undefined))<br/> (follow-link . mouse-face)<br/> (up . tar-previous-line)<br/> (down . tar-next-line)<br/> (mouse-2 . tar-mouse-extract)<br/> (remap keymap<br/>	(self-insert-command . undefined)))<br/><br/>
+<strong>tar-mode-map</strong> is a variable defined in `<code>tar-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Local keymap for Tar mode listings.<br/>
+<br/>
+Value: (keymap<br/>
+ #^[nil nil keymap<br/>
+	#^^[3 0 nil nil nil nil tar-flag-deleted nil nil nil nil nil nil nil nil tar-extract tar-next-line nil tar-previous-line nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil tar-copy nil tar-extract-other-window nil tar-chgrp-entry nil nil nil nil nil tar-chmod-entry nil tar-chown-entry nil nil tar-rename-entry nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-flag-deleted tar-extract tar-extract revert-buffer nil nil nil nil nil nil tar-next-line tar-extract-other-window tar-previous-line nil nil nil nil tar-unflag tar-view woman-tar-extract-file tar-expunge nil nil nil nil nil nil tar-unflag-backwards]<br/>
+	#^^[1 0<br/>
+	      #^^[2 0<br/>
+		    #^^[3 0 nil nil nil nil tar-flag-deleted nil nil nil nil nil nil nil nil tar-extract tar-next-line nil tar-previous-line nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil tar-copy nil tar-extract-other-window nil tar-chgrp-entry nil nil nil nil nil tar-chmod-entry nil tar-chown-entry nil nil tar-rename-entry nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil tar-flag-deleted tar-extract tar-extract revert-buffer nil nil nil nil nil nil tar-next-line tar-extract-other-window tar-previous-line nil nil nil nil tar-unflag tar-view woman-tar-extract-file tar-expunge nil nil nil nil nil nil tar-unflag-backwards]<br/>
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+ (menu-bar keymap<br/>
+	   (operate "Operate" keymap<br/>
+		    (expunge "Expunge Marked Files" . tar-expunge)<br/>
+		    (copy "Copy to..." . tar-copy)<br/>
+		    (rename "Rename to..." . tar-rename-entry)<br/>
+		    (chmod "Change Mode..." . tar-chmod-entry)<br/>
+		    (chgrp "Change Group..." . tar-chgrp-entry)<br/>
+		    (chown "Change Owner..." . tar-chown-entry)<br/>
+		    "Operate")<br/>
+	   (mark "Mark" keymap<br/>
+		 (unmark "Unflag" . tar-unflag)<br/>
+		 (deletion "Flag" . tar-flag-deleted)<br/>
+		 (unmark-all "Unmark All" . tar-clear-modification-flags)<br/>
+		 "Mark")<br/>
+	   (immediate "Immediate" keymap<br/>
+		      (find-file "Find This File" . tar-extract)<br/>
+		      (find-file-other-window "Find in Other Window" . tar-extract-other-window)<br/>
+		      (display "Display in Other Window" . tar-display-other-window)<br/>
+		      (view "View This File" . tar-view)<br/>
+		      (woman "Read Man Page (WoMan)" . woman-tar-extract-file)<br/>
+		      "Immediate")<br/>
+	   (edit . undefined))<br/>
+ (follow-link . mouse-face)<br/>
+ (up . tar-previous-line)<br/>
+ (down . tar-next-line)<br/>
+ (mouse-2 . tar-mouse-extract)<br/>
+ (remap keymap<br/>
+	(self-insert-command . undefined)))<br/>
+<br/>

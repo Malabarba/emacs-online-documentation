@@ -1,1 +1,26 @@
-gnus-face-properties-alist is a variable defined in `gnus-art.el'.<br/>Its value is ((pbm :face gnus-x-face) (png))<br/><br/>Documentation:<br/>Alist of image types and properties applied to Face and X-Face images.<br/>Here are examples:<br/><br/>;; Specify the altitude of Face images in the From header.<br/>(setq gnus-face-properties-alist<br/>      '((pbm . (:face gnus-x-face :ascent 80))<br/>	(png . (:ascent 80))))<br/><br/>;; Show Face images as pressed buttons.<br/>(setq gnus-face-properties-alist<br/>      '((pbm . (:face gnus-x-face :relief -2))<br/>	(png . (:relief -2))))<br/><br/>See the manual for the valid properties for various image types.<br/>Currently, `pbm' is used for X-Face images and `png' is used for Face<br/>images in Emacs.  Only the `:face' property is effective on the `xface'<br/>image type in XEmacs if it is built with the libcompface library.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/>
+<strong>gnus-face-properties-alist</strong> is a variable defined in `<code>gnus-art.el</code>'.<br/>
+Its value is ((pbm :face gnus-x-face) (png))<br/>
+<br/>
+Documentation:<br/>
+Alist of image types and properties applied to Face and X-Face images.<br/>
+Here are examples:<br/>
+<br/>
+;; Specify the altitude of Face images in the From header.<br/>
+(setq gnus-face-properties-alist<br/>
+      '((pbm . (:face gnus-x-face :ascent 80))<br/>
+	(png . (:ascent 80))))<br/>
+<br/>
+;; Show Face images as pressed buttons.<br/>
+(setq gnus-face-properties-alist<br/>
+      '((pbm . (:face gnus-x-face :relief -2))<br/>
+	(png . (:relief -2))))<br/>
+<br/>
+See the manual for the valid properties for various image types.<br/>
+Currently, `pbm' is used for X-Face images and `png' is used for Face<br/>
+images in Emacs.  Only the `:face' property is effective on the `xface'<br/>
+image type in XEmacs if it is built with the libcompface library.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>

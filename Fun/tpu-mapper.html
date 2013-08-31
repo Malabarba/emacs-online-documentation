@@ -1,1 +1,29 @@
-tpu-mapper is an interactive autoloaded Lisp function in `tpu-mapper.el'.<br/><br/>(tpu-mapper)<br/><br/>Create an Emacs lisp file defining the TPU-edt keypad for X-windows.<br/><br/>This command displays an instruction screen showing the TPU-edt keypad<br/>and asks you to press the TPU-edt editing keys.  It uses the keys you<br/>press to create an Emacs Lisp file that will define a TPU-edt keypad<br/>for your X server.  You can even re-arrange the standard EDT keypad to<br/>suit your tastes (or to cope with those silly Sun and PC keypads).<br/><br/>Finally, you will be prompted for the name of the file to store the key<br/>definitions.  If you chose the default, TPU-edt will find it and load it<br/>automatically.  If you specify a different file name, you will need to<br/>set the variable ``tpu-xkeys-file'' before starting TPU-edt.  Here's how<br/>you might go about doing that in your init file.<br/><br/>  (setq tpu-xkeys-file (expand-file-name "~/.my-emacs-x-keys"))<br/>  (tpu-edt)<br/><br/>Known Problems:<br/><br/>Sometimes, tpu-mapper will ignore a key you press, and just continue to<br/>prompt for the same key.  This can happen when your window manager sucks<br/>up the key and doesn't pass it on to Emacs, or it could be an Emacs bug.<br/>Either way, there's nothing that tpu-mapper can do about it.  You must<br/>press RETURN, to skip the current key and continue.  Later, you and/or<br/>your local X guru can try to figure out why the key is being ignored.
+<strong>tpu-mapper</strong> is an interactive autoloaded Lisp function in `<code>tpu-mapper.el</code>'.<br/>
+<br/>
+(tpu-mapper)<br/>
+<br/>
+Create an Emacs lisp file defining the TPU-edt keypad for X-windows.<br/>
+<br/>
+This command displays an instruction screen showing the TPU-edt keypad<br/>
+and asks you to press the TPU-edt editing keys.  It uses the keys you<br/>
+press to create an Emacs Lisp file that will define a TPU-edt keypad<br/>
+for your X server.  You can even re-arrange the standard EDT keypad to<br/>
+suit your tastes (or to cope with those silly Sun and PC keypads).<br/>
+<br/>
+Finally, you will be prompted for the name of the file to store the key<br/>
+definitions.  If you chose the default, TPU-edt will find it and load it<br/>
+automatically.  If you specify a different file name, you will need to<br/>
+set the variable ``tpu-xkeys-file'' before starting TPU-edt.  Here's how<br/>
+you might go about doing that in your init file.<br/>
+<br/>
+  (setq tpu-xkeys-file (expand-file-name "~/.my-emacs-x-keys"))<br/>
+  (tpu-edt)<br/>
+<br/>
+Known Problems:<br/>
+<br/>
+Sometimes, tpu-mapper will ignore a key you press, and just continue to<br/>
+prompt for the same key.  This can happen when your window manager sucks<br/>
+up the key and doesn't pass it on to Emacs, or it could be an Emacs bug.<br/>
+Either way, there's nothing that tpu-mapper can do about it.  You must<br/>
+press RETURN, to skip the current key and continue.  Later, you and/or<br/>
+your local X guru can try to figure out why the key is being ignored.

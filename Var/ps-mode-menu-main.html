@@ -1,1 +1,168 @@
-ps-mode-menu-main is a variable defined in `ps-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: ("PostScript"<br/> ["EPSF Template, Sparse" ps-mode-epsf-sparse t]<br/> ["EPSF Template, Rich" ps-mode-epsf-rich t]<br/> "---"<br/> ("Cookbook"<br/>  ["RE" ps-mode-RE t]<br/>  ["ISOLatin1Extended" ps-mode-latin-extended t]<br/>  ["center" ps-mode-center t]<br/>  ["right" ps-mode-right t]<br/>  ["Heapsort" ps-mode-heapsort t])<br/> ("Fonts (1)"<br/>  ["Times-Roman"<br/>   (insert "/Times-Roman ")<br/>   t]<br/>  ["Times-Bold"<br/>   (insert "/Times-Bold ")<br/>   t]<br/>  ["Times-Italic"<br/>   (insert "/Times-Italic ")<br/>   t]<br/>  ["Times-BoldItalic"<br/>   (insert "/Times-BoldItalic ")<br/>   t]<br/>  ["Helvetica"<br/>   (insert "/Helvetica ")<br/>   t]<br/>  ["Helvetica-Bold"<br/>   (insert "/Helvetica-Bold ")<br/>   t]<br/>  ["Helvetica-Oblique"<br/>   (insert "/Helvetica-Oblique ")<br/>   t]<br/>  ["Helvetica-BoldOblique"<br/>   (insert "/Helvetica-BoldOblique ")<br/>   t]<br/>  ["Courier"<br/>   (insert "/Courier ")<br/>   t]<br/>  ["Courier-Bold"<br/>   (insert "/Courier-Bold ")<br/>   t]<br/>  ["Courier-Oblique"<br/>   (insert "/Courier-Oblique ")<br/>   t]<br/>  ["Courier-BoldOblique"<br/>   (insert "/Courier-BoldOblique ")<br/>   t]<br/>  ["Symbol"<br/>   (insert "/Symbol")<br/>   t])<br/> ("Fonts (2)"<br/>  ["AvantGarde-Book"<br/>   (insert "/AvantGarde-Book ")<br/>   t]<br/>  ["AvantGarde-Demi"<br/>   (insert "/AvantGarde-Demi ")<br/>   t]<br/>  ["AvantGarde-BookOblique"<br/>   (insert "/AvantGarde-BookOblique ")<br/>   t]<br/>  ["AvantGarde-DemiOblique"<br/>   (insert "/AvantGarde-DemiOblique ")<br/>   t]<br/>  ["Bookman-Light"<br/>   (insert "/Bookman-Light ")<br/>   t]<br/>  ["Bookman-Demi"<br/>   (insert "/Bookman-Demi ")<br/>   t]<br/>  ["Bookman-LightItalic"<br/>   (insert "/Bookman-LightItalic ")<br/>   t]<br/>  ["Bookman-DemiItalic"<br/>   (insert "/Bookman-DemiItalic ")<br/>   t]<br/>  ["Helvetica-Narrow"<br/>   (insert "/Helvetica-Narrow ")<br/>   t]<br/>  ["Helvetica-Narrow-Bold"<br/>   (insert "/Helvetica-Narrow-Bold ")<br/>   t]<br/>  ["Helvetica-Narrow-Oblique"<br/>   (insert "/Helvetica-Narrow-Oblique ")<br/>   t]<br/>  ["Helvetica-Narrow-BoldOblique"<br/>   (insert "/Helvetica-Narrow-BoldOblique ")<br/>   t]<br/>  ["NewCenturySchlbk-Roman"<br/>   (insert "/NewCenturySchlbk-Roman ")<br/>   t]<br/>  ["NewCenturySchlbk-Bold"<br/>   (insert "/NewCenturySchlbk-Bold ")<br/>   t]<br/>  ["NewCenturySchlbk-Italic"<br/>   (insert "/NewCenturySchlbk-Italic ")<br/>   t]<br/>  ["NewCenturySchlbk-BoldItalic"<br/>   (insert "/NewCenturySchlbk-BoldItalic ")<br/>   t]<br/>  ["Palatino-Roman"<br/>   (insert "/Palatino-Roman ")<br/>   t]<br/>  ["Palatino-Bold"<br/>   (insert "/Palatino-Bold ")<br/>   t]<br/>  ["Palatino-Italic"<br/>   (insert "/Palatino-Italic ")<br/>   t]<br/>  ["Palatino-BoldItalic"<br/>   (insert "/Palatino-BoldItalic ")<br/>   t]<br/>  ["ZapfChancery-MediumItalic"<br/>   (insert "/ZapfChancery-MediumItalic ")<br/>   t]<br/>  ["ZapfDingbats"<br/>   (insert "/ZapfDingbats ")<br/>   t])<br/> "---"<br/> ["Comment Out Region" ps-mode-comment-out-region<br/>  (mark t)]<br/> ["Uncomment Region" ps-mode-uncomment-region<br/>  (mark t)]<br/> "---"<br/> ["8-bit to Octal Buffer" ps-mode-octal-buffer t]<br/> ["8-bit to Octal Region" ps-mode-octal-region<br/>  (mark t)]<br/> "---"<br/> ["Auto Indent"<br/>  (setq ps-mode-auto-indent<br/>	(not ps-mode-auto-indent))<br/>  :style toggle :selected ps-mode-auto-indent]<br/> "---"<br/> ["Start PostScript" ps-run-start t]<br/> ["Quit PostScript" ps-run-quit<br/>  (process-status "ps-run")]<br/> ["Kill PostScript" ps-run-kill<br/>  (process-status "ps-run")]<br/> ["Send Buffer to Interpreter" ps-run-buffer<br/>  (process-status "ps-run")]<br/> ["Send Region to Interpreter" ps-run-region<br/>  (and<br/>   (mark t)<br/>   (process-status "ps-run"))]<br/> ["Send Newline to Interpreter" ps-mode-other-newline<br/>  (process-status "ps-run")]<br/> ["View BoundingBox" ps-run-boundingbox<br/>  (process-status "ps-run")]<br/> ["Clear/Reset PostScript Graphics" ps-run-clear<br/>  (process-status "ps-run")]<br/> "---"<br/> ["Print Buffer as PostScript" ps-mode-print-buffer t]<br/> ["Print Region as PostScript" ps-mode-print-region<br/>  (mark t)]<br/> "---"<br/> ["Customize for PostScript"<br/>  (customize-group "PostScript")<br/>  t]<br/> "---"<br/> ["Submit Bug Report" ps-mode-submit-bug-report t])<br/><br/>
+<strong>ps-mode-menu-main</strong> is a variable defined in `<code>ps-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: ("PostScript"<br/>
+ ["EPSF Template, Sparse" ps-mode-epsf-sparse t]<br/>
+ ["EPSF Template, Rich" ps-mode-epsf-rich t]<br/>
+ "---"<br/>
+ ("Cookbook"<br/>
+  ["RE" ps-mode-RE t]<br/>
+  ["ISOLatin1Extended" ps-mode-latin-extended t]<br/>
+  ["center" ps-mode-center t]<br/>
+  ["right" ps-mode-right t]<br/>
+  ["Heapsort" ps-mode-heapsort t])<br/>
+ ("Fonts (1)"<br/>
+  ["Times-Roman"<br/>
+   (insert "/Times-Roman ")<br/>
+   t]<br/>
+  ["Times-Bold"<br/>
+   (insert "/Times-Bold ")<br/>
+   t]<br/>
+  ["Times-Italic"<br/>
+   (insert "/Times-Italic ")<br/>
+   t]<br/>
+  ["Times-BoldItalic"<br/>
+   (insert "/Times-BoldItalic ")<br/>
+   t]<br/>
+  ["Helvetica"<br/>
+   (insert "/Helvetica ")<br/>
+   t]<br/>
+  ["Helvetica-Bold"<br/>
+   (insert "/Helvetica-Bold ")<br/>
+   t]<br/>
+  ["Helvetica-Oblique"<br/>
+   (insert "/Helvetica-Oblique ")<br/>
+   t]<br/>
+  ["Helvetica-BoldOblique"<br/>
+   (insert "/Helvetica-BoldOblique ")<br/>
+   t]<br/>
+  ["Courier"<br/>
+   (insert "/Courier ")<br/>
+   t]<br/>
+  ["Courier-Bold"<br/>
+   (insert "/Courier-Bold ")<br/>
+   t]<br/>
+  ["Courier-Oblique"<br/>
+   (insert "/Courier-Oblique ")<br/>
+   t]<br/>
+  ["Courier-BoldOblique"<br/>
+   (insert "/Courier-BoldOblique ")<br/>
+   t]<br/>
+  ["Symbol"<br/>
+   (insert "/Symbol")<br/>
+   t])<br/>
+ ("Fonts (2)"<br/>
+  ["AvantGarde-Book"<br/>
+   (insert "/AvantGarde-Book ")<br/>
+   t]<br/>
+  ["AvantGarde-Demi"<br/>
+   (insert "/AvantGarde-Demi ")<br/>
+   t]<br/>
+  ["AvantGarde-BookOblique"<br/>
+   (insert "/AvantGarde-BookOblique ")<br/>
+   t]<br/>
+  ["AvantGarde-DemiOblique"<br/>
+   (insert "/AvantGarde-DemiOblique ")<br/>
+   t]<br/>
+  ["Bookman-Light"<br/>
+   (insert "/Bookman-Light ")<br/>
+   t]<br/>
+  ["Bookman-Demi"<br/>
+   (insert "/Bookman-Demi ")<br/>
+   t]<br/>
+  ["Bookman-LightItalic"<br/>
+   (insert "/Bookman-LightItalic ")<br/>
+   t]<br/>
+  ["Bookman-DemiItalic"<br/>
+   (insert "/Bookman-DemiItalic ")<br/>
+   t]<br/>
+  ["Helvetica-Narrow"<br/>
+   (insert "/Helvetica-Narrow ")<br/>
+   t]<br/>
+  ["Helvetica-Narrow-Bold"<br/>
+   (insert "/Helvetica-Narrow-Bold ")<br/>
+   t]<br/>
+  ["Helvetica-Narrow-Oblique"<br/>
+   (insert "/Helvetica-Narrow-Oblique ")<br/>
+   t]<br/>
+  ["Helvetica-Narrow-BoldOblique"<br/>
+   (insert "/Helvetica-Narrow-BoldOblique ")<br/>
+   t]<br/>
+  ["NewCenturySchlbk-Roman"<br/>
+   (insert "/NewCenturySchlbk-Roman ")<br/>
+   t]<br/>
+  ["NewCenturySchlbk-Bold"<br/>
+   (insert "/NewCenturySchlbk-Bold ")<br/>
+   t]<br/>
+  ["NewCenturySchlbk-Italic"<br/>
+   (insert "/NewCenturySchlbk-Italic ")<br/>
+   t]<br/>
+  ["NewCenturySchlbk-BoldItalic"<br/>
+   (insert "/NewCenturySchlbk-BoldItalic ")<br/>
+   t]<br/>
+  ["Palatino-Roman"<br/>
+   (insert "/Palatino-Roman ")<br/>
+   t]<br/>
+  ["Palatino-Bold"<br/>
+   (insert "/Palatino-Bold ")<br/>
+   t]<br/>
+  ["Palatino-Italic"<br/>
+   (insert "/Palatino-Italic ")<br/>
+   t]<br/>
+  ["Palatino-BoldItalic"<br/>
+   (insert "/Palatino-BoldItalic ")<br/>
+   t]<br/>
+  ["ZapfChancery-MediumItalic"<br/>
+   (insert "/ZapfChancery-MediumItalic ")<br/>
+   t]<br/>
+  ["ZapfDingbats"<br/>
+   (insert "/ZapfDingbats ")<br/>
+   t])<br/>
+ "---"<br/>
+ ["Comment Out Region" ps-mode-comment-out-region<br/>
+  (mark t)]<br/>
+ ["Uncomment Region" ps-mode-uncomment-region<br/>
+  (mark t)]<br/>
+ "---"<br/>
+ ["8-bit to Octal Buffer" ps-mode-octal-buffer t]<br/>
+ ["8-bit to Octal Region" ps-mode-octal-region<br/>
+  (mark t)]<br/>
+ "---"<br/>
+ ["Auto Indent"<br/>
+  (setq ps-mode-auto-indent<br/>
+	(not ps-mode-auto-indent))<br/>
+  :style toggle :selected ps-mode-auto-indent]<br/>
+ "---"<br/>
+ ["Start PostScript" ps-run-start t]<br/>
+ ["Quit PostScript" ps-run-quit<br/>
+  (process-status "ps-run")]<br/>
+ ["Kill PostScript" ps-run-kill<br/>
+  (process-status "ps-run")]<br/>
+ ["Send Buffer to Interpreter" ps-run-buffer<br/>
+  (process-status "ps-run")]<br/>
+ ["Send Region to Interpreter" ps-run-region<br/>
+  (and<br/>
+   (mark t)<br/>
+   (process-status "ps-run"))]<br/>
+ ["Send Newline to Interpreter" ps-mode-other-newline<br/>
+  (process-status "ps-run")]<br/>
+ ["View BoundingBox" ps-run-boundingbox<br/>
+  (process-status "ps-run")]<br/>
+ ["Clear/Reset PostScript Graphics" ps-run-clear<br/>
+  (process-status "ps-run")]<br/>
+ "---"<br/>
+ ["Print Buffer as PostScript" ps-mode-print-buffer t]<br/>
+ ["Print Region as PostScript" ps-mode-print-region<br/>
+  (mark t)]<br/>
+ "---"<br/>
+ ["Customize for PostScript"<br/>
+  (customize-group "PostScript")<br/>
+  t]<br/>
+ "---"<br/>
+ ["Submit Bug Report" ps-mode-submit-bug-report t])<br/>
+<br/>

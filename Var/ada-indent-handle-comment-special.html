@@ -1,1 +1,25 @@
-ada-indent-handle-comment-special is a variable defined in `ada-mode.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Non-nil if comment lines should be handled specially inside parenthesis.<br/>By default, if the line that contains the open parenthesis has some<br/>text following it, then the following lines will be indented in the<br/>same column as this text.  This will not be true if the first line is<br/>a comment and `ada-indent-handle-comment-special' is t.<br/><br/>type A is<br/>  (   Value_1,    --  common behavior, when not a comment<br/>      Value_2);<br/><br/>type A is<br/>  (   --  `ada-indent-handle-comment-special' is nil<br/>      Value_1,<br/>      Value_2);<br/><br/>type A is<br/>  (   --  `ada-indent-handle-comment-special' is non-nil<br/>   Value_1,<br/>   Value_2);<br/><br/>You can customize this variable.
+<strong>ada-indent-handle-comment-special</strong> is a variable defined in `<code>ada-mode.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Non-nil if comment lines should be handled specially inside parenthesis.<br/>
+By default, if the line that contains the open parenthesis has some<br/>
+text following it, then the following lines will be indented in the<br/>
+same column as this text.  This will not be true if the first line is<br/>
+a comment and `ada-indent-handle-comment-special' is t.<br/>
+<br/>
+type A is<br/>
+  (   Value_1,    --  common behavior, when not a comment<br/>
+      Value_2);<br/>
+<br/>
+type A is<br/>
+  (   --  `ada-indent-handle-comment-special' is nil<br/>
+      Value_1,<br/>
+      Value_2);<br/>
+<br/>
+type A is<br/>
+  (   --  `ada-indent-handle-comment-special' is non-nil<br/>
+   Value_1,<br/>
+   Value_2);<br/>
+<br/>
+You can customize this variable.

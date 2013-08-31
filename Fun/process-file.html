@@ -1,1 +1,18 @@
-process-file is a compiled Lisp function in `simple.el'.<br/><br/>(process-file PROGRAM &optional INFILE BUFFER DISPLAY &rest ARGS)<br/><br/>Process files synchronously in a separate process.<br/>Similar to `call-process', but may invoke a file handler based on<br/>`default-directory'.  The current working directory of the<br/>subprocess is `default-directory'.<br/><br/>File names in INFILE and BUFFER are handled normally, but file<br/>names in ARGS should be relative to `default-directory', as they<br/>are passed to the process verbatim.  (This is a difference to<br/>`call-process' which does not support file handlers for INFILE<br/>and BUFFER.)<br/><br/>Some file handlers might not support all variants, for example<br/>they might behave as if DISPLAY was nil, regardless of the actual<br/>value passed.
+<strong>process-file</strong> is a compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+(process-file PROGRAM &optional INFILE BUFFER DISPLAY &rest ARGS)<br/>
+<br/>
+Process files synchronously in a separate process.<br/>
+Similar to `call-process', but may invoke a file handler based on<br/>
+`default-directory'.  The current working directory of the<br/>
+subprocess is `default-directory'.<br/>
+<br/>
+File names in INFILE and BUFFER are handled normally, but file<br/>
+names in ARGS should be relative to `default-directory', as they<br/>
+are passed to the process verbatim.  (This is a difference to<br/>
+`call-process' which does not support file handlers for INFILE<br/>
+and BUFFER.)<br/>
+<br/>
+Some file handlers might not support all variants, for example<br/>
+they might behave as if DISPLAY was nil, regardless of the actual<br/>
+value passed.

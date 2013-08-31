@@ -1,1 +1,24 @@
-paragraph-start is a variable defined in `paragraphs.el'.<br/>Its value is "\\|[ 	]*$"<br/><br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate `stringp'.<br/><br/>Documentation:<br/>Regexp for beginning of a line that starts OR separates paragraphs.<br/>This regexp should match lines that separate paragraphs<br/>and should also match lines that start a paragraph<br/>(and are part of that paragraph).<br/><br/>This is matched against the text at the left margin, which is not necessarily<br/>the beginning of the line, so it should never use "^" as an anchor.  This<br/>ensures that the paragraph functions will work equally well within a region<br/>of text indented by a margin setting.<br/><br/>The variable `paragraph-separate' specifies how to distinguish<br/>lines that start paragraphs from lines that separate them.<br/><br/>If the variable `use-hard-newlines' is non-nil, then only lines following a<br/>hard newline are considered to match.<br/><br/>You can customize this variable.
+<strong>paragraph-start</strong> is a variable defined in `<code>paragraphs.el</code>'.<br/>
+Its value is "\\|[ 	]*$"<br/>
+<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate `stringp'.<br/>
+<br/>
+Documentation:<br/>
+Regexp for beginning of a line that starts OR separates paragraphs.<br/>
+This regexp should match lines that separate paragraphs<br/>
+and should also match lines that start a paragraph<br/>
+(and are part of that paragraph).<br/>
+<br/>
+This is matched against the text at the left margin, which is not necessarily<br/>
+the beginning of the line, so it should never use "^" as an anchor.  This<br/>
+ensures that the paragraph functions will work equally well within a region<br/>
+of text indented by a margin setting.<br/>
+<br/>
+The variable `paragraph-separate' specifies how to distinguish<br/>
+lines that start paragraphs from lines that separate them.<br/>
+<br/>
+If the variable `use-hard-newlines' is non-nil, then only lines following a<br/>
+hard newline are considered to match.<br/>
+<br/>
+You can customize this variable.

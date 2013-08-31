@@ -1,1 +1,25 @@
-antlr-indent-line is a compiled Lisp function in `antlr-mode.el'.<br/><br/>(antlr-indent-line)<br/><br/>Indent the current line as ANTLR grammar code.<br/>The indentation of grammar lines are calculated by `c-basic-offset',<br/>multiplied by:<br/> - the level of the paren/brace/bracket depth,<br/> - plus 0/2/1, depending on the position inside the rule: header, body,<br/>   exception part,<br/> - minus 1 if `antlr-indent-item-regexp' matches the beginning of the<br/>   line starting from the first non-whitespace.<br/><br/>Lines inside block comments are indented by `c-indent-line' according to<br/>`antlr-indent-comment'.<br/><br/>Lines in actions except top-level actions in a header part or an option<br/>area are indented by `c-indent-line'.<br/><br/>Lines in header actions are indented at column 0 if `antlr-language'<br/>equals to a key in `antlr-indent-at-bol-alist' and the line starting at<br/>the first non-whitespace is matched by the corresponding value.<br/><br/>For the initialization of `c-basic-offset', see `antlr-indent-style' and,<br/>to a lesser extent, `antlr-tab-offset-alist'.
+<strong>antlr-indent-line</strong> is a compiled Lisp function in `<code>antlr-mode.el</code>'.<br/>
+<br/>
+(antlr-indent-line)<br/>
+<br/>
+Indent the current line as ANTLR grammar code.<br/>
+The indentation of grammar lines are calculated by `c-basic-offset',<br/>
+multiplied by:<br/>
+ - the level of the paren/brace/bracket depth,<br/>
+ - plus 0/2/1, depending on the position inside the rule: header, body,<br/>
+   exception part,<br/>
+ - minus 1 if `antlr-indent-item-regexp' matches the beginning of the<br/>
+   line starting from the first non-whitespace.<br/>
+<br/>
+Lines inside block comments are indented by `c-indent-line' according to<br/>
+`antlr-indent-comment'.<br/>
+<br/>
+Lines in actions except top-level actions in a header part or an option<br/>
+area are indented by `c-indent-line'.<br/>
+<br/>
+Lines in header actions are indented at column 0 if `antlr-language'<br/>
+equals to a key in `antlr-indent-at-bol-alist' and the line starting at<br/>
+the first non-whitespace is matched by the corresponding value.<br/>
+<br/>
+For the initialization of `c-basic-offset', see `antlr-indent-style' and,<br/>
+to a lesser extent, `antlr-tab-offset-alist'.

@@ -1,1 +1,21 @@
-mode-local-bind is a compiled Lisp function in `mode-local.el'.<br/><br/>(mode-local-bind BINDINGS &optional PLIST MODE)<br/><br/>Define BINDINGS in the specified environment.<br/>BINDINGS is a list of (VARIABLE . VALUE).<br/>Optional argument PLIST is a property list each VARIABLE symbol will<br/>be set to.  The following properties have special meaning:<br/><br/>- `constant-flag' if non-nil, prevent to rebind variables.<br/>- `mode-variable-flag' if non-nil, define mode variables.<br/>- `override-flag' if non-nil, define override functions.<br/><br/>The `override-flag' and `mode-variable-flag' properties are mutually<br/>exclusive.<br/><br/>If optional argument MODE is non-nil, it must be a major mode symbol.<br/>BINDINGS will be defined globally for this major mode.  If MODE is<br/>nil, BINDINGS will be defined locally in the current buffer, in<br/>variable `mode-local-symbol-table'.  The later should be done in MODE<br/>hook.
+<strong>mode-local-bind</strong> is a compiled Lisp function in `<code>mode-local.el</code>'.<br/>
+<br/>
+(mode-local-bind BINDINGS &optional PLIST MODE)<br/>
+<br/>
+Define BINDINGS in the specified environment.<br/>
+BINDINGS is a list of (VARIABLE . VALUE).<br/>
+Optional argument PLIST is a property list each VARIABLE symbol will<br/>
+be set to.  The following properties have special meaning:<br/>
+<br/>
+- `constant-flag' if non-nil, prevent to rebind variables.<br/>
+- `mode-variable-flag' if non-nil, define mode variables.<br/>
+- `override-flag' if non-nil, define override functions.<br/>
+<br/>
+The `override-flag' and `mode-variable-flag' properties are mutually<br/>
+exclusive.<br/>
+<br/>
+If optional argument MODE is non-nil, it must be a major mode symbol.<br/>
+BINDINGS will be defined globally for this major mode.  If MODE is<br/>
+nil, BINDINGS will be defined locally in the current buffer, in<br/>
+variable `mode-local-symbol-table'.  The later should be done in MODE<br/>
+hook.

@@ -1,1 +1,23 @@
-help-make-xrefs is an interactive autoloaded compiled Lisp function in `help-mode.el'.<br/><br/>(help-make-xrefs &optional BUFFER)<br/><br/>Parse and hyperlink documentation cross-references in the given BUFFER.<br/><br/>Find cross-reference information in a buffer and activate such cross<br/>references for selection with `help-follow'.  Cross-references have<br/>the canonical form `...'  and the type of reference may be<br/>disambiguated by the preceding word(s) used in<br/>`help-xref-symbol-regexp'.  Faces only get cross-referenced if<br/>preceded or followed by the word `face'.  Variables without<br/>variable documentation do not get cross-referenced, unless<br/>preceded by the word `variable' or `option'.<br/><br/>If the variable `help-xref-mule-regexp' is non-nil, find also<br/>cross-reference information related to multilingual environment<br/>(e.g., coding-systems).  This variable is also used to disambiguate<br/>the type of reference as the same way as `help-xref-symbol-regexp'.<br/><br/>A special reference `back' is made to return back through a stack of<br/>help buffers.  Variable `help-back-label' specifies the text for<br/>that.
+<strong>help-make-xrefs</strong> is an interactive autoloaded compiled Lisp function in `<code>help-mode.el</code>'.<br/>
+<br/>
+(help-make-xrefs &optional BUFFER)<br/>
+<br/>
+Parse and hyperlink documentation cross-references in the given BUFFER.<br/>
+<br/>
+Find cross-reference information in a buffer and activate such cross<br/>
+references for selection with `help-follow'.  Cross-references have<br/>
+the canonical form `...'  and the type of reference may be<br/>
+disambiguated by the preceding word(s) used in<br/>
+`help-xref-symbol-regexp'.  Faces only get cross-referenced if<br/>
+preceded or followed by the word `face'.  Variables without<br/>
+variable documentation do not get cross-referenced, unless<br/>
+preceded by the word `variable' or `option'.<br/>
+<br/>
+If the variable `help-xref-mule-regexp' is non-nil, find also<br/>
+cross-reference information related to multilingual environment<br/>
+(e.g., coding-systems).  This variable is also used to disambiguate<br/>
+the type of reference as the same way as `help-xref-symbol-regexp'.<br/>
+<br/>
+A special reference `back' is made to return back through a stack of<br/>
+help buffers.  Variable `help-back-label' specifies the text for<br/>
+that.

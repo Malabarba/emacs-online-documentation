@@ -1,1 +1,12 @@
-repeat-is-really-this-command is a compiled Lisp function in `repeat.el'.<br/><br/>(repeat-is-really-this-command)<br/><br/>Return t if this command is happening because user invoked `repeat'.<br/>Usually, when a command is executing, the Emacs builtin variable<br/>`this-command' identifies the command the user invoked.  Some commands modify<br/>that variable on the theory they're doing more good than harm; `repeat' does<br/>that, and usually does do more good than harm.  However, like all do-gooders,<br/>sometimes `repeat' gets surprising results from its altruism.  The value of<br/>this function is always whether the value of `this-command' would've been<br/>'repeat if `repeat' hadn't modified it.
+<strong>repeat-is-really-this-command</strong> is a compiled Lisp function in `<code>repeat.el</code>'.<br/>
+<br/>
+(repeat-is-really-this-command)<br/>
+<br/>
+Return t if this command is happening because user invoked `repeat'.<br/>
+Usually, when a command is executing, the Emacs builtin variable<br/>
+`this-command' identifies the command the user invoked.  Some commands modify<br/>
+that variable on the theory they're doing more good than harm; `repeat' does<br/>
+that, and usually does do more good than harm.  However, like all do-gooders,<br/>
+sometimes `repeat' gets surprising results from its altruism.  The value of<br/>
+this function is always whether the value of `this-command' would've been<br/>
+'repeat if `repeat' hadn't modified it.

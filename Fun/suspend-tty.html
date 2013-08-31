@@ -1,1 +1,22 @@
-suspend-tty is a built-in function in `C source code'.<br/><br/>(suspend-tty &optional TTY)<br/><br/>Suspend the terminal device TTY.<br/><br/>The device is restored to its default state, and Emacs ceases all<br/>access to the tty device.  Frames that use the device are not deleted,<br/>but input is not read from them and if they change, their display is<br/>not updated.<br/><br/>TTY may be a terminal object, a frame, or nil for the terminal device<br/>of the currently selected frame.<br/><br/>This function runs `suspend-tty-functions' after suspending the<br/>device.  The functions are run with one arg, the id of the suspended<br/>terminal device.<br/><br/>`suspend-tty' does nothing if it is called on a device that is already<br/>suspended.<br/><br/>A suspended tty may be resumed by calling `resume-tty' on it.
+<strong>suspend-tty</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(suspend-tty &optional TTY)<br/>
+<br/>
+Suspend the terminal device TTY.<br/>
+<br/>
+The device is restored to its default state, and Emacs ceases all<br/>
+access to the tty device.  Frames that use the device are not deleted,<br/>
+but input is not read from them and if they change, their display is<br/>
+not updated.<br/>
+<br/>
+TTY may be a terminal object, a frame, or nil for the terminal device<br/>
+of the currently selected frame.<br/>
+<br/>
+This function runs `suspend-tty-functions' after suspending the<br/>
+device.  The functions are run with one arg, the id of the suspended<br/>
+terminal device.<br/>
+<br/>
+`suspend-tty' does nothing if it is called on a device that is already<br/>
+suspended.<br/>
+<br/>
+A suspended tty may be resumed by calling `resume-tty' on it.

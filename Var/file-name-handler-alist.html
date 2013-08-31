@@ -1,1 +1,30 @@
-file-name-handler-alist is a variable defined in `C source code'.<br/>Its value is (("\\(?:\\.dz\\|\\.xz\\|\\.lzma\\|\\.lz\\|\\.g?z\\|\\.\\(?:tgz\\|svgz\\|sifz\\)\\|\\.tbz2?\\|\\.bz2\\|\\.Z\\)\\(?:~\\|\\.~[-[:alnum:]:#@^._]+\\(?:~[[:digit:]]+\\)?~\\)?\\'" . jka-compr-handler)<br/> ("\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'" . epa-file-handler)<br/> ("\\`/[^/]*\\'" . tramp-completion-file-name-handler)<br/> ("\\`/\\([^[/|:]+\\|[^/|]+]\\):" . tramp-file-name-handler)<br/> ("\\`/:" . file-name-non-special))<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of elements (REGEXP . HANDLER) for file names handled specially.<br/>If a file name matches REGEXP, all I/O on that file is done by calling<br/>HANDLER.  If a file name matches more than one handler, the handler<br/>whose match starts last in the file name gets precedence.  The<br/>function `find-file-name-handler' checks this list for a handler for<br/>its argument.<br/><br/>HANDLER should be a function.  The first argument given to it is the<br/>name of the I/O primitive to be handled; the remaining arguments are<br/>the arguments that were passed to that primitive.  For example, if you<br/>do (file-exists-p FILENAME) and FILENAME is handled by HANDLER, then<br/>HANDLER is called like this:<br/><br/>  (funcall HANDLER 'file-exists-p FILENAME)<br/><br/>Note that HANDLER must be able to handle all I/O primitives; if it has<br/>nothing special to do for a primitive, it should reinvoke the<br/>primitive to handle the operation "the usual way".<br/>See Info node `(elisp)Magic File Names' for more details.
+<strong>file-name-handler-alist</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is (("\\(?:\\.dz\\|\\.xz\\|\\.lzma\\|\\.lz\\|\\.g?z\\|\\.\\(?:tgz\\|svgz\\|sifz\\)\\|\\.tbz2?\\|\\.bz2\\|\\.Z\\)\\(?:~\\|\\.~[-[:alnum:]:#@^._]+\\(?:~[[:digit:]]+\\)?~\\)?\\'" . jka-compr-handler)<br/>
+ ("\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'" . epa-file-handler)<br/>
+ ("\\`/[^/]*\\'" . tramp-completion-file-name-handler)<br/>
+ ("\\`/\\([^[/|:]+\\|[^/|]+]\\):" . tramp-file-name-handler)<br/>
+ ("\\`/:" . file-name-non-special))<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of elements (REGEXP . HANDLER) for file names handled specially.<br/>
+If a file name matches REGEXP, all I/O on that file is done by calling<br/>
+HANDLER.  If a file name matches more than one handler, the handler<br/>
+whose match starts last in the file name gets precedence.  The<br/>
+function `find-file-name-handler' checks this list for a handler for<br/>
+its argument.<br/>
+<br/>
+HANDLER should be a function.  The first argument given to it is the<br/>
+name of the I/O primitive to be handled; the remaining arguments are<br/>
+the arguments that were passed to that primitive.  For example, if you<br/>
+do (file-exists-p FILENAME) and FILENAME is handled by HANDLER, then<br/>
+HANDLER is called like this:<br/>
+<br/>
+  (funcall HANDLER 'file-exists-p FILENAME)<br/>
+<br/>
+Note that HANDLER must be able to handle all I/O primitives; if it has<br/>
+nothing special to do for a primitive, it should reinvoke the<br/>
+primitive to handle the operation "the usual way".<br/>
+See Info node `(elisp)Magic File Names' for more details.

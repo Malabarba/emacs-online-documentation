@@ -1,1 +1,54 @@
-c-c-menu is a variable defined in `cc-mode.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>C Mode Commands<br/><br/>Value: (keymap "C"<br/>	(Comment\ Out\ Region menu-item "Comment Out Region" comment-region :enable<br/>			      (c-fn-region-is-active-p))<br/>	(Uncomment\ Region menu-item "Uncomment Region" menu-function-137 :key-sequence nil :enable<br/>			   (c-fn-region-is-active-p))<br/>	(Indent\ Expression menu-item "Indent Expression" c-indent-exp :enable<br/>			    (memq<br/>			     (char-after)<br/>			     '(40 91 123)))<br/>	(Indent\ Line\ or\ Region menu-item "Indent Line or Region" c-indent-line-or-region)<br/>	(Fill\ Comment\ Paragraph menu-item "Fill Comment Paragraph" c-fill-paragraph)<br/>	(nil menu-item "----")<br/>	(Backward\ Statement menu-item "Backward Statement" c-beginning-of-statement)<br/>	(Forward\ Statement menu-item "Forward Statement" c-end-of-statement)<br/>	(Up\ Conditional menu-item "Up Conditional" c-up-conditional)<br/>	(Backward\ Conditional menu-item "Backward Conditional" c-backward-conditional)<br/>	(Forward\ Conditional menu-item "Forward Conditional" c-forward-conditional)<br/>	(nil-11 menu-item "----")<br/>	(Macro\ Expand\ Region menu-item "Macro Expand Region" c-macro-expand :enable<br/>			       (c-fn-region-is-active-p))<br/>	(Backslashify menu-item "Backslashify" c-backslash-region :enable<br/>		      (c-fn-region-is-active-p))<br/>	(nil-14 menu-item "----")<br/>	(Style\.\.\. menu-item "Style..."<br/>		     (keymap "Style..."<br/>			     (Set\ Style\.\.\. menu-item "Set Style..." c-set-style)<br/>			     (Show\ Current\ Style\ Name menu-item "Show Current Style Name" menu-function-138 :key-sequence nil)<br/>			     (Guess\ Style\ from\ this\ Buffer menu-item "Guess Style from this Buffer" c-guess-buffer-no-install)<br/>			     (Install\ the\ Last\ Guessed\ Style\.\.\. menu-item "Install the Last Guessed Style..." c-guess-install :enable<br/>								       (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))<br/>			     (View\ the\ Last\ Guessed\ Style menu-item "View the Last Guessed Style" c-guess-view :enable<br/>							      (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))))<br/>	(nil-16 menu-item "----")<br/>	(Toggle\.\.\. menu-item "Toggle..."<br/>		      (keymap "Toggle..."<br/>			      (Syntactic\ indentation menu-item "Syntactic indentation" c-toggle-syntactic-indentation :button<br/>						      (:toggle . c-syntactic-indentation))<br/>			      (Electric\ mode menu-item "Electric mode" c-toggle-electric-state :button<br/>					      (:toggle . c-electric-flag))<br/>			      (Auto\ newline menu-item "Auto newline" c-toggle-auto-newline :button<br/>					     (:toggle . c-auto-newline))<br/>			      (Hungry\ delete menu-item "Hungry delete" c-toggle-hungry-state :button<br/>					      (:toggle . c-hungry-delete-key))<br/>			      (Subword\ mode menu-item "Subword mode" subword-mode :button<br/>					     (:toggle and<br/>						      (boundp 'subword-mode)<br/>						      subword-mode)))))<br/><br/>
+<strong>c-c-menu</strong> is a variable defined in `<code>cc-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+C Mode Commands<br/>
+<br/>
+Value: (keymap "C"<br/>
+	(Comment\ Out\ Region menu-item "Comment Out Region" comment-region :enable<br/>
+			      (c-fn-region-is-active-p))<br/>
+	(Uncomment\ Region menu-item "Uncomment Region" menu-function-137 :key-sequence nil :enable<br/>
+			   (c-fn-region-is-active-p))<br/>
+	(Indent\ Expression menu-item "Indent Expression" c-indent-exp :enable<br/>
+			    (memq<br/>
+			     (char-after)<br/>
+			     '(40 91 123)))<br/>
+	(Indent\ Line\ or\ Region menu-item "Indent Line or Region" c-indent-line-or-region)<br/>
+	(Fill\ Comment\ Paragraph menu-item "Fill Comment Paragraph" c-fill-paragraph)<br/>
+	(nil menu-item "----")<br/>
+	(Backward\ Statement menu-item "Backward Statement" c-beginning-of-statement)<br/>
+	(Forward\ Statement menu-item "Forward Statement" c-end-of-statement)<br/>
+	(Up\ Conditional menu-item "Up Conditional" c-up-conditional)<br/>
+	(Backward\ Conditional menu-item "Backward Conditional" c-backward-conditional)<br/>
+	(Forward\ Conditional menu-item "Forward Conditional" c-forward-conditional)<br/>
+	(nil-11 menu-item "----")<br/>
+	(Macro\ Expand\ Region menu-item "Macro Expand Region" c-macro-expand :enable<br/>
+			       (c-fn-region-is-active-p))<br/>
+	(Backslashify menu-item "Backslashify" c-backslash-region :enable<br/>
+		      (c-fn-region-is-active-p))<br/>
+	(nil-14 menu-item "----")<br/>
+	(Style\.\.\. menu-item "Style..."<br/>
+		     (keymap "Style..."<br/>
+			     (Set\ Style\.\.\. menu-item "Set Style..." c-set-style)<br/>
+			     (Show\ Current\ Style\ Name menu-item "Show Current Style Name" menu-function-138 :key-sequence nil)<br/>
+			     (Guess\ Style\ from\ this\ Buffer menu-item "Guess Style from this Buffer" c-guess-buffer-no-install)<br/>
+			     (Install\ the\ Last\ Guessed\ Style\.\.\. menu-item "Install the Last Guessed Style..." c-guess-install :enable<br/>
+								       (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))<br/>
+			     (View\ the\ Last\ Guessed\ Style menu-item "View the Last Guessed Style" c-guess-view :enable<br/>
+							      (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))))<br/>
+	(nil-16 menu-item "----")<br/>
+	(Toggle\.\.\. menu-item "Toggle..."<br/>
+		      (keymap "Toggle..."<br/>
+			      (Syntactic\ indentation menu-item "Syntactic indentation" c-toggle-syntactic-indentation :button<br/>
+						      (:toggle . c-syntactic-indentation))<br/>
+			      (Electric\ mode menu-item "Electric mode" c-toggle-electric-state :button<br/>
+					      (:toggle . c-electric-flag))<br/>
+			      (Auto\ newline menu-item "Auto newline" c-toggle-auto-newline :button<br/>
+					     (:toggle . c-auto-newline))<br/>
+			      (Hungry\ delete menu-item "Hungry delete" c-toggle-hungry-state :button<br/>
+					      (:toggle . c-hungry-delete-key))<br/>
+			      (Subword\ mode menu-item "Subword mode" subword-mode :button<br/>
+					     (:toggle and<br/>
+						      (boundp 'subword-mode)<br/>
+						      subword-mode)))))<br/>
+<br/>

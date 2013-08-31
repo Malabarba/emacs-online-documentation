@@ -1,1 +1,28 @@
-locate-command is a variable defined in `locate.el'.<br/>Its value is "locate"<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Executable program for searching a database of files.<br/>The Emacs commands `locate' and `locate-with-filter' use this.<br/>The value should be a program that can be called from a shell<br/>with one argument, SEARCH-STRING.  The program determines which<br/>database it searches.  The output of the program should consist<br/>of those file names in the database that match SEARCH-STRING,<br/>listed one per line, possibly with leading or trailing<br/>whitespace.  If the output is in another form, you may have to<br/>redefine the function `locate-get-file-positions'.<br/><br/>The program may interpret SEARCH-STRING as a literal string, a<br/>shell pattern or a regular expression.  The exact rules of what<br/>constitutes a match may also depend on the program.<br/><br/>The standard value of this variable is "locate".<br/>This program normally searches a database of all files on your<br/>system, or of all files that you have access to.  Consult the<br/>documentation of that program for the details about how it determines<br/>which file names match SEARCH-STRING.  (Those details vary highly with<br/>the version.)<br/><br/>You can customize this variable.
+<strong>locate-command</strong> is a variable defined in `<code>locate.el</code>'.<br/>
+Its value is "locate"<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Executable program for searching a database of files.<br/>
+The Emacs commands `locate' and `locate-with-filter' use this.<br/>
+The value should be a program that can be called from a shell<br/>
+with one argument, SEARCH-STRING.  The program determines which<br/>
+database it searches.  The output of the program should consist<br/>
+of those file names in the database that match SEARCH-STRING,<br/>
+listed one per line, possibly with leading or trailing<br/>
+whitespace.  If the output is in another form, you may have to<br/>
+redefine the function `locate-get-file-positions'.<br/>
+<br/>
+The program may interpret SEARCH-STRING as a literal string, a<br/>
+shell pattern or a regular expression.  The exact rules of what<br/>
+constitutes a match may also depend on the program.<br/>
+<br/>
+The standard value of this variable is "locate".<br/>
+This program normally searches a database of all files on your<br/>
+system, or of all files that you have access to.  Consult the<br/>
+documentation of that program for the details about how it determines<br/>
+which file names match SEARCH-STRING.  (Those details vary highly with<br/>
+the version.)<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,21 @@
-dcl-calc-command-indent-multiple is a compiled Lisp function in `dcl-mode.el'.<br/><br/>(dcl-calc-command-indent-multiple INDENT-TYPE CUR-INDENT EXTRA-INDENT LAST-POINT THIS-POINT)<br/><br/>Indent lines to a multiple of dcl-basic-offset.<br/><br/>Set dcl-calc-command-indent-function to this function to customize<br/>indentation of command lines.<br/><br/>Command lines that need to be indented beyond the left margin are<br/>always indented to a column that is a multiple of dcl-basic-offset, as<br/>if tab stops were set at 4, 8, 12, etc.<br/><br/>This supports a formatting style like this (dcl-margin offset = 2,<br/>dcl-basic-offset = 4):<br/><br/>$ if cond<br/>$ then<br/>$   if cond<br/>$   then<br/>$       ! etc<br/>
+<strong>dcl-calc-command-indent-multiple</strong> is a compiled Lisp function in `<code>dcl-mode.el</code>'.<br/>
+<br/>
+(dcl-calc-command-indent-multiple INDENT-TYPE CUR-INDENT EXTRA-INDENT LAST-POINT THIS-POINT)<br/>
+<br/>
+Indent lines to a multiple of dcl-basic-offset.<br/>
+<br/>
+Set dcl-calc-command-indent-function to this function to customize<br/>
+indentation of command lines.<br/>
+<br/>
+Command lines that need to be indented beyond the left margin are<br/>
+always indented to a column that is a multiple of dcl-basic-offset, as<br/>
+if tab stops were set at 4, 8, 12, etc.<br/>
+<br/>
+This supports a formatting style like this (dcl-margin offset = 2,<br/>
+dcl-basic-offset = 4):<br/>
+<br/>
+$ if cond<br/>
+$ then<br/>
+$   if cond<br/>
+$   then<br/>
+$       ! etc<br/>

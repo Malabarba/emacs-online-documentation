@@ -1,1 +1,32 @@
-define-key is a built-in function in `C source code'.<br/><br/>(define-key KEYMAP KEY DEF)<br/><br/>In KEYMAP, define key sequence KEY as DEF.<br/>KEYMAP is a keymap.<br/><br/>KEY is a string or a vector of symbols and characters, representing a<br/>sequence of keystrokes and events.  Non-ASCII characters with codes<br/>above 127 (such as ISO Latin-1) can be represented by vectors.<br/>Two types of vector have special meanings:<br/> [remap COMMAND] remaps any key binding for COMMAND.<br/> [t] creates a default definition, which applies to any event with no<br/>    other definition in KEYMAP.<br/><br/>DEF is anything that can be a key's definition:<br/> nil (means key is undefined in this keymap),<br/> a command (a Lisp function suitable for interactive calling),<br/> a string (treated as a keyboard macro),<br/> a keymap (to define a prefix key),<br/> a symbol (when the key is looked up, the symbol will stand for its<br/>    function definition, which should at that time be one of the above,<br/>    or another symbol whose function definition is used, etc.),<br/> a cons (STRING . DEFN), meaning that DEFN is the definition<br/>    (DEFN should be a valid definition in its own right),<br/> or a cons (MAP . CHAR), meaning use definition of CHAR in keymap MAP,<br/> or an extended menu item definition.<br/> (See info node `(elisp)Extended Menu Items'.)<br/><br/>If KEYMAP is a sparse keymap with a binding for KEY, the existing<br/>binding is altered.  If there is no binding for KEY, the new pair<br/>binding KEY to DEF is added at the front of KEYMAP.
+<strong>define-key</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(define-key KEYMAP KEY DEF)<br/>
+<br/>
+In KEYMAP, define key sequence KEY as DEF.<br/>
+KEYMAP is a keymap.<br/>
+<br/>
+KEY is a string or a vector of symbols and characters, representing a<br/>
+sequence of keystrokes and events.  Non-ASCII characters with codes<br/>
+above 127 (such as ISO Latin-1) can be represented by vectors.<br/>
+Two types of vector have special meanings:<br/>
+ [remap COMMAND] remaps any key binding for COMMAND.<br/>
+ [t] creates a default definition, which applies to any event with no<br/>
+    other definition in KEYMAP.<br/>
+<br/>
+DEF is anything that can be a key's definition:<br/>
+ nil (means key is undefined in this keymap),<br/>
+ a command (a Lisp function suitable for interactive calling),<br/>
+ a string (treated as a keyboard macro),<br/>
+ a keymap (to define a prefix key),<br/>
+ a symbol (when the key is looked up, the symbol will stand for its<br/>
+    function definition, which should at that time be one of the above,<br/>
+    or another symbol whose function definition is used, etc.),<br/>
+ a cons (STRING . DEFN), meaning that DEFN is the definition<br/>
+    (DEFN should be a valid definition in its own right),<br/>
+ or a cons (MAP . CHAR), meaning use definition of CHAR in keymap MAP,<br/>
+ or an extended menu item definition.<br/>
+ (See info node `(elisp)Extended Menu Items'.)<br/>
+<br/>
+If KEYMAP is a sparse keymap with a binding for KEY, the existing<br/>
+binding is altered.  If there is no binding for KEY, the new pair<br/>
+binding KEY to DEF is added at the front of KEYMAP.

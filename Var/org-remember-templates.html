@@ -1,1 +1,84 @@
-org-remember-templates is a variable defined in `org-remember.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Templates for the creation of remember buffers.<br/>When nil, just let remember make the buffer.<br/>When non-nil, this is a list of (up to) 6-element lists.  In each entry,<br/>the first element is the name of the template, which should be a single<br/>short word.  The second element is a character, a unique key to select<br/>this template.  The third element is the template.<br/><br/>The fourth element is optional and can specify a destination file for<br/>remember items created with this template.  The default file is given<br/>by `org-default-notes-file'.  If the file name is not an absolute path,<br/>it will be interpreted relative to `org-directory'.<br/><br/>An optional fifth element can specify the headline in that file that should<br/>be offered first when the user is asked to file the entry.  The default<br/>headline is given in the variable `org-remember-default-headline'.  When<br/>this element is `top' or `bottom', the note will be placed as a level-1<br/>entry at the beginning or end of the file, respectively.<br/><br/>An optional sixth element specifies the contexts in which the template<br/>will be offered to the user.  This element can be a list of major modes<br/>or a function, and the template will only be offered if `org-remember'<br/>is called from a mode in the list, or if the function returns t.<br/>Templates that specify t or nil for the context will always be added<br/>to the list of selectable templates.<br/><br/>The template specifies the structure of the remember buffer.  It should have<br/>a first line starting with a star, to act as the org-mode headline.<br/>Furthermore, the following %-escapes will be replaced with content:<br/><br/>  %^{PROMPT}  prompt the user for a string and replace this sequence with it.<br/>              A default value and a completion table can be specified like this:<br/>              %^{prompt|default|completion2|completion3|...}<br/>              The arrow keys access a prompt-specific history.<br/>  %a          annotation, normally the link created with `org-store-link'<br/>  %A          like %a, but prompt for the description part<br/>  %i          initial content, copied from the active region.  If %i is<br/>              indented, the entire inserted text will be indented as well.<br/>  %t          time stamp, date only<br/>  %T          time stamp with date and time<br/>  %u, %U      like the above, but inactive time stamps<br/>  %^t         like %t, but prompt for date.  Similarly %^T, %^u, %^U.<br/>              You may define a prompt like %^{Please specify birthday}t<br/>  %n          user name (taken from `user-full-name')<br/>  %c          current kill ring head<br/>  %x          content of the X clipboard<br/>  %:keyword   specific information for certain link types, see below<br/>  %^C         interactive selection of which kill or clip to use<br/>  %^L         like %^C, but insert as link<br/>  %k          title of the currently clocked task<br/>  %K          link to the currently clocked task<br/>  %^g         prompt for tags, completing tags in the target file<br/>  %^G         prompt for tags, completing all tags in all agenda files<br/>  %^{PROP}p   Prompt the user for a value for property PROP<br/>  %[PATHNAME] insert the contents of the file given by PATHNAME<br/>  %(SEXP)     evaluate elisp `(SEXP)' and replace with the result<br/>  %!          store this note immediately after completing the template              <br/>              (skipping the C-c C-c that normally triggers storing)<br/>  %&          jump to target location immediately after storing note<br/>  %?          after completing the template, position cursor here.<br/><br/>Apart from these general escapes, you can access information specific to the<br/>link type that is created.  For example, calling `remember' in emails or gnus<br/>will record the author and the subject of the message, which you can access<br/>with %:fromname and %:subject, respectively.  Here is a complete list of what<br/>is recorded for each link type.<br/><br/>Link type          |  Available information<br/>-------------------+------------------------------------------------------<br/>bbdb               |  %:type %:name %:company<br/>vm, wl, mh, rmail  |  %:type %:subject %:message-id<br/>                   |  %:from %:fromname %:fromaddress<br/>                   |  %:to   %:toname   %:toaddress<br/>                   |  %:fromto (either "to NAME" or "from NAME")<br/>gnus               |  %:group, for messages also all email fields and<br/>                   |  %:org-date (the Date: header in Org format)<br/>w3, w3m            |  %:type %:url<br/>info               |  %:type %:file %:node<br/>calendar           |  %:type %:date<br/><br/>You can customize this variable.
+<strong>org-remember-templates</strong> is a variable defined in `<code>org-remember.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Templates for the creation of remember buffers.<br/>
+When nil, just let remember make the buffer.<br/>
+When non-nil, this is a list of (up to) 6-element lists.  In each entry,<br/>
+the first element is the name of the template, which should be a single<br/>
+short word.  The second element is a character, a unique key to select<br/>
+this template.  The third element is the template.<br/>
+<br/>
+The fourth element is optional and can specify a destination file for<br/>
+remember items created with this template.  The default file is given<br/>
+by `org-default-notes-file'.  If the file name is not an absolute path,<br/>
+it will be interpreted relative to `org-directory'.<br/>
+<br/>
+An optional fifth element can specify the headline in that file that should<br/>
+be offered first when the user is asked to file the entry.  The default<br/>
+headline is given in the variable `org-remember-default-headline'.  When<br/>
+this element is `top' or `bottom', the note will be placed as a level-1<br/>
+entry at the beginning or end of the file, respectively.<br/>
+<br/>
+An optional sixth element specifies the contexts in which the template<br/>
+will be offered to the user.  This element can be a list of major modes<br/>
+or a function, and the template will only be offered if `org-remember'<br/>
+is called from a mode in the list, or if the function returns t.<br/>
+Templates that specify t or nil for the context will always be added<br/>
+to the list of selectable templates.<br/>
+<br/>
+The template specifies the structure of the remember buffer.  It should have<br/>
+a first line starting with a star, to act as the org-mode headline.<br/>
+Furthermore, the following %-escapes will be replaced with content:<br/>
+<br/>
+  %^{PROMPT}  prompt the user for a string and replace this sequence with it.<br/>
+              A default value and a completion table can be specified like this:<br/>
+              %^{prompt|default|completion2|completion3|...}<br/>
+              The arrow keys access a prompt-specific history.<br/>
+  %a          annotation, normally the link created with `org-store-link'<br/>
+  %A          like %a, but prompt for the description part<br/>
+  %i          initial content, copied from the active region.  If %i is<br/>
+              indented, the entire inserted text will be indented as well.<br/>
+  %t          time stamp, date only<br/>
+  %T          time stamp with date and time<br/>
+  %u, %U      like the above, but inactive time stamps<br/>
+  %^t         like %t, but prompt for date.  Similarly %^T, %^u, %^U.<br/>
+              You may define a prompt like %^{Please specify birthday}t<br/>
+  %n          user name (taken from `user-full-name')<br/>
+  %c          current kill ring head<br/>
+  %x          content of the X clipboard<br/>
+  %:keyword   specific information for certain link types, see below<br/>
+  %^C         interactive selection of which kill or clip to use<br/>
+  %^L         like %^C, but insert as link<br/>
+  %k          title of the currently clocked task<br/>
+  %K          link to the currently clocked task<br/>
+  %^g         prompt for tags, completing tags in the target file<br/>
+  %^G         prompt for tags, completing all tags in all agenda files<br/>
+  %^{PROP}p   Prompt the user for a value for property PROP<br/>
+  %[PATHNAME] insert the contents of the file given by PATHNAME<br/>
+  %(SEXP)     evaluate elisp `(SEXP)' and replace with the result<br/>
+  %!          store this note immediately after completing the template              <br/>
+              (skipping the C-c C-c that normally triggers storing)<br/>
+  %&          jump to target location immediately after storing note<br/>
+  %?          after completing the template, position cursor here.<br/>
+<br/>
+Apart from these general escapes, you can access information specific to the<br/>
+link type that is created.  For example, calling `remember' in emails or gnus<br/>
+will record the author and the subject of the message, which you can access<br/>
+with %:fromname and %:subject, respectively.  Here is a complete list of what<br/>
+is recorded for each link type.<br/>
+<br/>
+Link type          |  Available information<br/>
+-------------------+------------------------------------------------------<br/>
+bbdb               |  %:type %:name %:company<br/>
+vm, wl, mh, rmail  |  %:type %:subject %:message-id<br/>
+                   |  %:from %:fromname %:fromaddress<br/>
+                   |  %:to   %:toname   %:toaddress<br/>
+                   |  %:fromto (either "to NAME" or "from NAME")<br/>
+gnus               |  %:group, for messages also all email fields and<br/>
+                   |  %:org-date (the Date: header in Org format)<br/>
+w3, w3m            |  %:type %:url<br/>
+info               |  %:type %:file %:node<br/>
+calendar           |  %:type %:date<br/>
+<br/>
+You can customize this variable.

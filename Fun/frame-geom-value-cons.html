@@ -1,1 +1,27 @@
-frame-geom-value-cons is a compiled Lisp function in `frame.el'.<br/><br/>(frame-geom-value-cons TYPE VALUE &optional FRAME)<br/><br/>Return equivalent geometry value for FRAME as a cons with car `+'.<br/>A geometry value equivalent to VALUE for FRAME is returned,<br/>where the value is a cons with car `+', not numeric.<br/>TYPE is the car of the original geometry spec (TYPE . VALUE).<br/>   It is `top' or `left', depending on which edge VALUE is related to.<br/>VALUE is the cdr of a frame geometry spec: (left/top . VALUE).<br/>If VALUE is a number, then it is converted to a cons value, perhaps<br/>   relative to the opposite frame edge from that in the original spec.<br/>FRAME defaults to the selected frame.<br/><br/>Examples (measures in pixels) -<br/> Assuming display height/width=1024, frame height/width=600:<br/> 300 inside display edge:                   300  => (+  300)<br/>                                        (+  300) => (+  300)<br/> 300 inside opposite display edge:      (-  300) => (+  124)<br/>                                           -300  => (+  124)<br/> 300 beyond display edge<br/>  (= 724 inside opposite display edge): (+ -300) => (+ -300)<br/> 300 beyond display edge<br/>  (= 724 inside opposite display edge): (- -300) => (+  724)<br/><br/>In the 3rd, 4th, and 6th examples, the returned value is relative to<br/>the opposite frame edge from the edge indicated in the input spec.
+<strong>frame-geom-value-cons</strong> is a compiled Lisp function in `<code>frame.el</code>'.<br/>
+<br/>
+(frame-geom-value-cons TYPE VALUE &optional FRAME)<br/>
+<br/>
+Return equivalent geometry value for FRAME as a cons with car `+'.<br/>
+A geometry value equivalent to VALUE for FRAME is returned,<br/>
+where the value is a cons with car `+', not numeric.<br/>
+TYPE is the car of the original geometry spec (TYPE . VALUE).<br/>
+   It is `top' or `left', depending on which edge VALUE is related to.<br/>
+VALUE is the cdr of a frame geometry spec: (left/top . VALUE).<br/>
+If VALUE is a number, then it is converted to a cons value, perhaps<br/>
+   relative to the opposite frame edge from that in the original spec.<br/>
+FRAME defaults to the selected frame.<br/>
+<br/>
+Examples (measures in pixels) -<br/>
+ Assuming display height/width=1024, frame height/width=600:<br/>
+ 300 inside display edge:                   300  => (+  300)<br/>
+                                        (+  300) => (+  300)<br/>
+ 300 inside opposite display edge:      (-  300) => (+  124)<br/>
+                                           -300  => (+  124)<br/>
+ 300 beyond display edge<br/>
+  (= 724 inside opposite display edge): (+ -300) => (+ -300)<br/>
+ 300 beyond display edge<br/>
+  (= 724 inside opposite display edge): (- -300) => (+  724)<br/>
+<br/>
+In the 3rd, 4th, and 6th examples, the returned value is relative to<br/>
+the opposite frame edge from the edge indicated in the input spec.

@@ -1,1 +1,23 @@
-find-ls-option is a variable defined in `find-dired.el'.<br/>Its value is ("-ls" . "-dilsb")<br/><br/>Documentation:<br/>A pair of options to produce and parse an `ls -l'-type list from `find'.<br/>This is a cons of two strings (FIND-OPTION . LS-SWITCHES).<br/>FIND-OPTION is the option (or options) passed to `find' to produce<br/>a file listing in the desired format.  LS-SWITCHES is a set of<br/>`ls' switches that tell dired how to parse the output of `find'.<br/><br/>The two options must be set to compatible values.<br/>For example, to use human-readable file sizes with GNU ls:<br/>   ("-exec ls -ldh {} +" . "-ldh")<br/><br/>To use GNU find's inbuilt "-ls" option to list files:<br/>   ("-ls" . "-dilsb")<br/>since GNU find's output has the same format as using GNU ls with<br/>the options "-dilsb".<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>find-ls-option</strong> is a variable defined in `<code>find-dired.el</code>'.<br/>
+Its value is ("-ls" . "-dilsb")<br/>
+<br/>
+Documentation:<br/>
+A pair of options to produce and parse an `ls -l'-type list from `find'.<br/>
+This is a cons of two strings (FIND-OPTION . LS-SWITCHES).<br/>
+FIND-OPTION is the option (or options) passed to `find' to produce<br/>
+a file listing in the desired format.  LS-SWITCHES is a set of<br/>
+`ls' switches that tell dired how to parse the output of `find'.<br/>
+<br/>
+The two options must be set to compatible values.<br/>
+For example, to use human-readable file sizes with GNU ls:<br/>
+   ("-exec ls -ldh {} +" . "-ldh")<br/>
+<br/>
+To use GNU find's inbuilt "-ls" option to list files:<br/>
+   ("-ls" . "-dilsb")<br/>
+since GNU find's output has the same format as using GNU ls with<br/>
+the options "-dilsb".<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

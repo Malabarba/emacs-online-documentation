@@ -1,1 +1,22 @@
-play-sound is a compiled Lisp function in `subr.el'.<br/><br/>(play-sound SOUND)<br/><br/>SOUND is a list of the form `(sound KEYWORD VALUE...)'.<br/>The following keywords are recognized:<br/><br/>  :file FILE - read sound data from FILE.  If FILE isn't an<br/>absolute file name, it is searched in `data-directory'.<br/><br/>  :data DATA - read sound data from string DATA.<br/><br/>Exactly one of :file or :data must be present.<br/><br/>  :volume VOL - set volume to VOL.  VOL must an integer in the<br/>range 0..100 or a float in the range 0..1.0.  If not specified,<br/>don't change the volume setting of the sound device.<br/><br/>  :device DEVICE - play sound on DEVICE.  If not specified,<br/>a system-dependent default device name is used.<br/><br/>Note: :data and :device are currently not supported on Windows.
+<strong>play-sound</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
+<br/>
+(play-sound SOUND)<br/>
+<br/>
+SOUND is a list of the form `(sound KEYWORD VALUE...)'.<br/>
+The following keywords are recognized:<br/>
+<br/>
+  :file FILE - read sound data from FILE.  If FILE isn't an<br/>
+absolute file name, it is searched in `data-directory'.<br/>
+<br/>
+  :data DATA - read sound data from string DATA.<br/>
+<br/>
+Exactly one of :file or :data must be present.<br/>
+<br/>
+  :volume VOL - set volume to VOL.  VOL must an integer in the<br/>
+range 0..100 or a float in the range 0..1.0.  If not specified,<br/>
+don't change the volume setting of the sound device.<br/>
+<br/>
+  :device DEVICE - play sound on DEVICE.  If not specified,<br/>
+a system-dependent default device name is used.<br/>
+<br/>
+Note: :data and :device are currently not supported on Windows.

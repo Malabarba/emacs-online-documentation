@@ -1,1 +1,20 @@
-easy-menu-change is an autoloaded compiled Lisp function in `easymenu.el'.<br/><br/>(easy-menu-change PATH NAME ITEMS &optional BEFORE MAP)<br/><br/>Change menu found at PATH as item NAME to contain ITEMS.<br/>PATH is a list of strings for locating the menu that<br/>should contain a submenu named NAME.<br/>ITEMS is a list of menu items, as in `easy-menu-define'.<br/>These items entirely replace the previous items in that submenu.<br/><br/>If MAP is specified, it should normally be a keymap; nil stands for the local<br/>menu-bar keymap.  It can also be a symbol, which has earlier been used as the<br/>first argument in a call to `easy-menu-define', or the value of such a symbol.<br/><br/>If the menu located by PATH has no submenu named NAME, add one.<br/>If the optional argument BEFORE is present, add it just before<br/>the submenu named BEFORE, otherwise add it at the end of the menu.<br/><br/>To implement dynamic menus, either call this from<br/>`menu-bar-update-hook' or use a menu filter.
+<strong>easy-menu-change</strong> is an autoloaded compiled Lisp function in `<code>easymenu.el</code>'.<br/>
+<br/>
+(easy-menu-change PATH NAME ITEMS &optional BEFORE MAP)<br/>
+<br/>
+Change menu found at PATH as item NAME to contain ITEMS.<br/>
+PATH is a list of strings for locating the menu that<br/>
+should contain a submenu named NAME.<br/>
+ITEMS is a list of menu items, as in `easy-menu-define'.<br/>
+These items entirely replace the previous items in that submenu.<br/>
+<br/>
+If MAP is specified, it should normally be a keymap; nil stands for the local<br/>
+menu-bar keymap.  It can also be a symbol, which has earlier been used as the<br/>
+first argument in a call to `easy-menu-define', or the value of such a symbol.<br/>
+<br/>
+If the menu located by PATH has no submenu named NAME, add one.<br/>
+If the optional argument BEFORE is present, add it just before<br/>
+the submenu named BEFORE, otherwise add it at the end of the menu.<br/>
+<br/>
+To implement dynamic menus, either call this from<br/>
+`menu-bar-update-hook' or use a menu filter.

@@ -1,1 +1,15 @@
-make-backup-file-name is a compiled Lisp function in `files.el'.<br/><br/>(make-backup-file-name FILE)<br/><br/>Create the non-numeric backup file name for FILE.<br/>Normally this will just be the file's name with `~' appended.<br/>Customization hooks are provided as follows.<br/><br/>If the variable `make-backup-file-name-function' is non-nil, its value<br/>should be a function which will be called with FILE as its argument;<br/>the resulting name is used.<br/><br/>Otherwise a match for FILE is sought in `backup-directory-alist'; see<br/>the documentation of that variable.  If the directory for the backup<br/>doesn't exist, it is created.
+<strong>make-backup-file-name</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
+<br/>
+(make-backup-file-name FILE)<br/>
+<br/>
+Create the non-numeric backup file name for FILE.<br/>
+Normally this will just be the file's name with `~' appended.<br/>
+Customization hooks are provided as follows.<br/>
+<br/>
+If the variable `make-backup-file-name-function' is non-nil, its value<br/>
+should be a function which will be called with FILE as its argument;<br/>
+the resulting name is used.<br/>
+<br/>
+Otherwise a match for FILE is sought in `backup-directory-alist'; see<br/>
+the documentation of that variable.  If the directory for the backup<br/>
+doesn't exist, it is created.

@@ -1,1 +1,54 @@
-org-read-date is a compiled Lisp function in `org.el'.<br/><br/>(org-read-date &optional ORG-WITH-TIME TO-TIME FROM-STRING PROMPT DEFAULT-TIME DEFAULT-INPUT INACTIVE)<br/><br/>Read a date, possibly a time, and make things smooth for the user.<br/>The prompt will suggest to enter an ISO date, but you can also enter anything<br/>which will at least partially be understood by `parse-time-string'.<br/>Unrecognized parts of the date will default to the current day, month, year,<br/>hour and minute.  If this command is called to replace a timestamp at point,<br/>or to enter the second timestamp of a range, the default time is taken<br/>from the existing stamp.  Furthermore, the command prefers the future,<br/>so if you are giving a date where the year is not given, and the day-month<br/>combination is already past in the current year, it will assume you<br/>mean next year.  For details, see the manual.  A few examples:<br/><br/>  3-2-5         --> 2003-02-05<br/>  feb 15        --> currentyear-02-15<br/>  2/15          --> currentyear-02-15<br/>  sep 12 9      --> 2009-09-12<br/>  12:45         --> today 12:45<br/>  22 sept 0:34  --> currentyear-09-22 0:34<br/>  12            --> currentyear-currentmonth-12<br/>  Fri           --> nearest Friday (today or later)<br/>  etc.<br/><br/>Furthermore you can specify a relative date by giving, as the *first* thing<br/>in the input:  a plus/minus sign, a number and a letter [hdwmy] to indicate<br/>change in days weeks, months, years.<br/>With a single plus or minus, the date is relative to today.  With a double<br/>plus or minus, it is relative to the date in DEFAULT-TIME.  E.g.<br/>  +4d           --> four days from today<br/>  +4            --> same as above<br/>  +2w           --> two weeks from today<br/>  ++5           --> five days from default date<br/><br/>The function understands only English month and weekday abbreviations.<br/><br/>While prompting, a calendar is popped up - you can also select the<br/>date with the mouse (button 1).  The calendar shows a period of three<br/>months.  To scroll it to other months, use the keys `>' and `<'.<br/>If you don't like the calendar, turn it off with<br/>       (setq org-read-date-popup-calendar nil)<br/><br/>With optional argument TO-TIME, the date will immediately be converted<br/>to an internal time.<br/>With an optional argument ORG-WITH-TIME, the prompt will suggest to<br/>also insert a time.  Note that when ORG-WITH-TIME is not set, you can<br/>still enter a time, and this function will inform the calling routine<br/>about this change.  The calling routine may then choose to change the<br/>format used to insert the time stamp into the buffer to include the time.<br/>With optional argument FROM-STRING, read from this string instead from<br/>the user.  PROMPT can overwrite the default prompt.  DEFAULT-TIME is<br/>the time/date that is used for everything that is not specified by the<br/>user.
+<strong>org-read-date</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-read-date &optional ORG-WITH-TIME TO-TIME FROM-STRING PROMPT DEFAULT-TIME DEFAULT-INPUT INACTIVE)<br/>
+<br/>
+Read a date, possibly a time, and make things smooth for the user.<br/>
+The prompt will suggest to enter an ISO date, but you can also enter anything<br/>
+which will at least partially be understood by `parse-time-string'.<br/>
+Unrecognized parts of the date will default to the current day, month, year,<br/>
+hour and minute.  If this command is called to replace a timestamp at point,<br/>
+or to enter the second timestamp of a range, the default time is taken<br/>
+from the existing stamp.  Furthermore, the command prefers the future,<br/>
+so if you are giving a date where the year is not given, and the day-month<br/>
+combination is already past in the current year, it will assume you<br/>
+mean next year.  For details, see the manual.  A few examples:<br/>
+<br/>
+  3-2-5         --> 2003-02-05<br/>
+  feb 15        --> currentyear-02-15<br/>
+  2/15          --> currentyear-02-15<br/>
+  sep 12 9      --> 2009-09-12<br/>
+  12:45         --> today 12:45<br/>
+  22 sept 0:34  --> currentyear-09-22 0:34<br/>
+  12            --> currentyear-currentmonth-12<br/>
+  Fri           --> nearest Friday (today or later)<br/>
+  etc.<br/>
+<br/>
+Furthermore you can specify a relative date by giving, as the *first* thing<br/>
+in the input:  a plus/minus sign, a number and a letter [hdwmy] to indicate<br/>
+change in days weeks, months, years.<br/>
+With a single plus or minus, the date is relative to today.  With a double<br/>
+plus or minus, it is relative to the date in DEFAULT-TIME.  E.g.<br/>
+  +4d           --> four days from today<br/>
+  +4            --> same as above<br/>
+  +2w           --> two weeks from today<br/>
+  ++5           --> five days from default date<br/>
+<br/>
+The function understands only English month and weekday abbreviations.<br/>
+<br/>
+While prompting, a calendar is popped up - you can also select the<br/>
+date with the mouse (button 1).  The calendar shows a period of three<br/>
+months.  To scroll it to other months, use the keys `>' and `<'.<br/>
+If you don't like the calendar, turn it off with<br/>
+       (setq org-read-date-popup-calendar nil)<br/>
+<br/>
+With optional argument TO-TIME, the date will immediately be converted<br/>
+to an internal time.<br/>
+With an optional argument ORG-WITH-TIME, the prompt will suggest to<br/>
+also insert a time.  Note that when ORG-WITH-TIME is not set, you can<br/>
+still enter a time, and this function will inform the calling routine<br/>
+about this change.  The calling routine may then choose to change the<br/>
+format used to insert the time stamp into the buffer to include the time.<br/>
+With optional argument FROM-STRING, read from this string instead from<br/>
+the user.  PROMPT can overwrite the default prompt.  DEFAULT-TIME is<br/>
+the time/date that is used for everything that is not specified by the<br/>
+user.

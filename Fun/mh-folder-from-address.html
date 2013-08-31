@@ -1,1 +1,21 @@
-mh-folder-from-address is an autoloaded compiled Lisp function in `mh-folder.el'.<br/><br/>(mh-folder-from-address)<br/><br/>Derive folder name from sender.<br/><br/>The name of the folder is derived as follows:<br/><br/>  a) The folder name associated with the first address found in<br/>     the list `mh-default-folder-list' is used. Each element in<br/>     this list contains a "Check Recipient" item. If this item is<br/>     turned on, then the address is checked against the recipient<br/>     instead of the sender. This is useful for mailing lists.<br/><br/>  b) An alias prefixed by `mh-default-folder-prefix'<br/>     corresponding to the address is used. The prefix is used to<br/>     prevent clutter in your mail directory.<br/><br/>Return nil if a folder name was not derived, or if the variable<br/>`mh-default-folder-must-exist-flag' is t and the folder does not<br/>exist.
+<strong>mh-folder-from-address</strong> is an autoloaded compiled Lisp function in `<code>mh-folder.el</code>'.<br/>
+<br/>
+(mh-folder-from-address)<br/>
+<br/>
+Derive folder name from sender.<br/>
+<br/>
+The name of the folder is derived as follows:<br/>
+<br/>
+  a) The folder name associated with the first address found in<br/>
+     the list `mh-default-folder-list' is used. Each element in<br/>
+     this list contains a "Check Recipient" item. If this item is<br/>
+     turned on, then the address is checked against the recipient<br/>
+     instead of the sender. This is useful for mailing lists.<br/>
+<br/>
+  b) An alias prefixed by `mh-default-folder-prefix'<br/>
+     corresponding to the address is used. The prefix is used to<br/>
+     prevent clutter in your mail directory.<br/>
+<br/>
+Return nil if a folder name was not derived, or if the variable<br/>
+`mh-default-folder-must-exist-flag' is t and the folder does not<br/>
+exist.

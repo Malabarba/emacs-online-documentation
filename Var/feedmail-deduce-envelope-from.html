@@ -1,1 +1,29 @@
-feedmail-deduce-envelope-from is a variable defined in `feedmail.el'.<br/>Its value is t<br/><br/>Documentation:<br/>If non-nil, deduce message envelope "from" from header From: or Sender:.<br/>In other words, if there is a Sender: header in the message, temporarily<br/>change the value of `user-mail-address' to be the same while the message<br/>is being sent.  If there is no Sender: header, use the From: header,<br/>if any.  Address values are taken from the actual message just before<br/>it is sent, and the process is independent of the values of<br/>`feedmail-from-line' and/or `feedmail-sender-line'.<br/><br/>There are many and good reasons for having the message header<br/>From:/Sender: be different from the message envelope "from"<br/>information.  However, for most people and for most circumstances, it<br/>is usual for them to be the same (this is probably especially true for<br/>the case where the user doesn't understand the difference between the<br/>two in the first place).<br/><br/>The idea behind this feature is that you can have everything set up<br/>some normal way for yourself.  If for some reason you want to send a<br/>message with another From: line, you can just type it at the top of<br/>the message, and feedmail will take care of "fixing up" the envelope<br/>"from".  This only works for mail senders which make use of<br/>`user-mail-address' as the envelope "from" value.  For some mail<br/>senders (e.g., feedmail-buffer-to-bin-mail), there is no simple way to<br/>influence what they will use as the envelope.<br/><br/>You can customize this variable.
+<strong>feedmail-deduce-envelope-from</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+Documentation:<br/>
+If non-nil, deduce message envelope "from" from header From: or Sender:.<br/>
+In other words, if there is a Sender: header in the message, temporarily<br/>
+change the value of `user-mail-address' to be the same while the message<br/>
+is being sent.  If there is no Sender: header, use the From: header,<br/>
+if any.  Address values are taken from the actual message just before<br/>
+it is sent, and the process is independent of the values of<br/>
+`feedmail-from-line' and/or `feedmail-sender-line'.<br/>
+<br/>
+There are many and good reasons for having the message header<br/>
+From:/Sender: be different from the message envelope "from"<br/>
+information.  However, for most people and for most circumstances, it<br/>
+is usual for them to be the same (this is probably especially true for<br/>
+the case where the user doesn't understand the difference between the<br/>
+two in the first place).<br/>
+<br/>
+The idea behind this feature is that you can have everything set up<br/>
+some normal way for yourself.  If for some reason you want to send a<br/>
+message with another From: line, you can just type it at the top of<br/>
+the message, and feedmail will take care of "fixing up" the envelope<br/>
+"from".  This only works for mail senders which make use of<br/>
+`user-mail-address' as the envelope "from" value.  For some mail<br/>
+senders (e.g., feedmail-buffer-to-bin-mail), there is no simple way to<br/>
+influence what they will use as the envelope.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,20 @@
-eshell-rewrite-command-hook is a variable defined in `esh-cmd.el'.<br/>Its value is<br/>(eshell-rewrite-for-command eshell-rewrite-while-command eshell-rewrite-if-command eshell-rewrite-sexp-command eshell-rewrite-initial-subcommand eshell-rewrite-named-command)<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>A set of functions used to rewrite the command argument.<br/>Once parsing of a command line is completed, the next step is to<br/>rewrite the initial argument into something runnable.<br/><br/>A module may wish to associate special behavior with certain argument<br/>syntaxes at the beginning of a command line.  They are welcome to do<br/>so by adding a function to this hook.  The first function to return a<br/>substitute command form is the one used.  Each function is passed the<br/>command's full argument list, which is a list of sexps (typically<br/>forms or strings).<br/><br/>You can customize this variable.
+<strong>eshell-rewrite-command-hook</strong> is a variable defined in `<code>esh-cmd.el</code>'.<br/>
+Its value is<br/>
+(eshell-rewrite-for-command eshell-rewrite-while-command eshell-rewrite-if-command eshell-rewrite-sexp-command eshell-rewrite-initial-subcommand eshell-rewrite-named-command)<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+A set of functions used to rewrite the command argument.<br/>
+Once parsing of a command line is completed, the next step is to<br/>
+rewrite the initial argument into something runnable.<br/>
+<br/>
+A module may wish to associate special behavior with certain argument<br/>
+syntaxes at the beginning of a command line.  They are welcome to do<br/>
+so by adding a function to this hook.  The first function to return a<br/>
+substitute command form is the one used.  Each function is passed the<br/>
+command's full argument list, which is a list of sexps (typically<br/>
+forms or strings).<br/>
+<br/>
+You can customize this variable.

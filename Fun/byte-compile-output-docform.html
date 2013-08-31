@@ -1,1 +1,14 @@
-byte-compile-output-docform is a compiled Lisp function in `bytecomp.el'.<br/><br/>(byte-compile-output-docform PREFACE NAME INFO FORM SPECINDEX QUOTED)<br/><br/>Print a form with a doc string.  INFO is (prefix doc-index postfix).<br/>If PREFACE and NAME are non-nil, print them too,<br/>before INFO and the FORM but after the doc string itself.<br/>If SPECINDEX is non-nil, it is the index in FORM<br/>of the function bytecode string.  In that case,<br/>we output that argument and the following argument<br/>(the constants vector) together, for lazy loading.<br/>QUOTED says that we have to put a quote before the<br/>list that represents a doc string reference.<br/>`defvaralias', `autoload' and `custom-declare-variable' need that.
+<strong>byte-compile-output-docform</strong> is a compiled Lisp function in `<code>bytecomp.el</code>'.<br/>
+<br/>
+(byte-compile-output-docform PREFACE NAME INFO FORM SPECINDEX QUOTED)<br/>
+<br/>
+Print a form with a doc string.  INFO is (prefix doc-index postfix).<br/>
+If PREFACE and NAME are non-nil, print them too,<br/>
+before INFO and the FORM but after the doc string itself.<br/>
+If SPECINDEX is non-nil, it is the index in FORM<br/>
+of the function bytecode string.  In that case,<br/>
+we output that argument and the following argument<br/>
+(the constants vector) together, for lazy loading.<br/>
+QUOTED says that we have to put a quote before the<br/>
+list that represents a doc string reference.<br/>
+`defvaralias', `autoload' and `custom-declare-variable' need that.

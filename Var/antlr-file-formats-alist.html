@@ -1,1 +1,22 @@
-antlr-file-formats-alist is a variable defined in `antlr-mode.el'.<br/>Its value is ((java-mode<br/>  ("%sTokenTypes.java")<br/>  ("%s.java"))<br/> (c++-mode<br/>  ("%sTokenTypes.hpp")<br/>  ("%s.cpp" "%s.hpp")))<br/><br/><br/>Documentation:<br/>Language dependent formats which specify generated files.<br/>Each element in this list looks looks like<br/>  (MAJOR-MODE (VOCAB-FILE-FORMAT...) (CLASS-FILE-FORMAT...)).<br/><br/>The element whose MAJOR-MODE is equal to `antlr-language' is used to<br/>specify the generated files which are language dependent.  See variable<br/>`antlr-special-file-formats' for language independent files.<br/><br/>VOCAB-FILE-FORMAT is a format string, it specifies with substitution<br/>VOCAB/%s the generated file for each export vocabulary VOCAB.<br/>CLASS-FILE-FORMAT is a format string, it specifies with substitution<br/>CLASS/%s the generated file for each grammar class CLASS.
+<strong>antlr-file-formats-alist</strong> is a variable defined in `<code>antlr-mode.el</code>'.<br/>
+Its value is ((java-mode<br/>
+  ("%sTokenTypes.java")<br/>
+  ("%s.java"))<br/>
+ (c++-mode<br/>
+  ("%sTokenTypes.hpp")<br/>
+  ("%s.cpp" "%s.hpp")))<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Language dependent formats which specify generated files.<br/>
+Each element in this list looks looks like<br/>
+  (MAJOR-MODE (VOCAB-FILE-FORMAT...) (CLASS-FILE-FORMAT...)).<br/>
+<br/>
+The element whose MAJOR-MODE is equal to `antlr-language' is used to<br/>
+specify the generated files which are language dependent.  See variable<br/>
+`antlr-special-file-formats' for language independent files.<br/>
+<br/>
+VOCAB-FILE-FORMAT is a format string, it specifies with substitution<br/>
+VOCAB/%s the generated file for each export vocabulary VOCAB.<br/>
+CLASS-FILE-FORMAT is a format string, it specifies with substitution<br/>
+CLASS/%s the generated file for each grammar class CLASS.

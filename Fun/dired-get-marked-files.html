@@ -1,1 +1,20 @@
-dired-get-marked-files is a compiled Lisp function in `dired.el'.<br/><br/>(dired-get-marked-files &optional LOCALP ARG FILTER DISTINGUISH-ONE-MARKED)<br/><br/>Return the marked files' names as list of strings.<br/>The list is in the same order as the buffer, that is, the car is the<br/>  first marked file.<br/>Values returned are normally absolute file names.<br/>Optional arg LOCALP as in `dired-get-filename'.<br/>Optional second argument ARG, if non-nil, specifies files near<br/> point instead of marked files.  It usually comes from the prefix<br/> argument.<br/>  If ARG is an integer, use the next ARG files.<br/>  Any other non-nil value means to use the current file instead.<br/>Optional third argument FILTER, if non-nil, is a function to select<br/>  some of the files--those for which (funcall FILTER FILENAME) is non-nil.<br/><br/>If DISTINGUISH-ONE-MARKED is non-nil, then if we find just one marked file,<br/>return (t FILENAME) instead of (FILENAME).<br/>Don't use that together with FILTER.
+<strong>dired-get-marked-files</strong> is a compiled Lisp function in `<code>dired.el</code>'.<br/>
+<br/>
+(dired-get-marked-files &optional LOCALP ARG FILTER DISTINGUISH-ONE-MARKED)<br/>
+<br/>
+Return the marked files' names as list of strings.<br/>
+The list is in the same order as the buffer, that is, the car is the<br/>
+  first marked file.<br/>
+Values returned are normally absolute file names.<br/>
+Optional arg LOCALP as in `dired-get-filename'.<br/>
+Optional second argument ARG, if non-nil, specifies files near<br/>
+ point instead of marked files.  It usually comes from the prefix<br/>
+ argument.<br/>
+  If ARG is an integer, use the next ARG files.<br/>
+  Any other non-nil value means to use the current file instead.<br/>
+Optional third argument FILTER, if non-nil, is a function to select<br/>
+  some of the files--those for which (funcall FILTER FILENAME) is non-nil.<br/>
+<br/>
+If DISTINGUISH-ONE-MARKED is non-nil, then if we find just one marked file,<br/>
+return (t FILENAME) instead of (FILENAME).<br/>
+Don't use that together with FILTER.

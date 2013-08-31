@@ -1,1 +1,15 @@
-imap-gssapi-program is a variable defined in `imap.el'.<br/>Its value is<br/>("gsasl %s %p --mechanism GSSAPI --authentication-id %l" "imtest -m gssapi -u %l -p %p %s")<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of strings containing commands for GSSAPI (krb5) authentication.<br/>%s is replaced with server hostname, %p with port to connect to, and<br/>%l with the value of `imap-default-user'.  The program should accept<br/>IMAP commands on stdin and return responses to stdout.  Each entry in<br/>the list is tried until a successful connection is made.<br/><br/>You can customize this variable.
+<strong>imap-gssapi-program</strong> is a variable defined in `<code>imap.el</code>'.<br/>
+Its value is<br/>
+("gsasl %s %p --mechanism GSSAPI --authentication-id %l" "imtest -m gssapi -u %l -p %p %s")<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of strings containing commands for GSSAPI (krb5) authentication.<br/>
+%s is replaced with server hostname, %p with port to connect to, and<br/>
+%l with the value of `imap-default-user'.  The program should accept<br/>
+IMAP commands on stdin and return responses to stdout.  Each entry in<br/>
+the list is tried until a successful connection is made.<br/>
+<br/>
+You can customize this variable.

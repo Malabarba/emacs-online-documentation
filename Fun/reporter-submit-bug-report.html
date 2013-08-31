@@ -1,1 +1,26 @@
-reporter-submit-bug-report is an autoloaded compiled Lisp function in `reporter.el'.<br/><br/>(reporter-submit-bug-report ADDRESS PKGNAME VARLIST &optional PRE-HOOKS POST-HOOKS SALUTATION)<br/><br/>Begin submitting a bug report via email.<br/><br/>ADDRESS is the email address for the package's maintainer.  PKGNAME is<br/>the name of the package (if you want to include version numbers,<br/>you must put them into PKGNAME before calling this function).<br/>Optional PRE-HOOKS and POST-HOOKS are passed to `reporter-dump-state'.<br/>Optional SALUTATION is inserted at the top of the mail buffer,<br/>and point is left after the salutation.<br/><br/>VARLIST is the list of variables to dump (see `reporter-dump-state'<br/>for details).  The optional argument PRE-HOOKS and POST-HOOKS are<br/>passed to `reporter-dump-state'.  Optional argument SALUTATION is text<br/>to be inserted at the top of the mail buffer; in that case, point is<br/>left after that text.<br/><br/>This function prompts for a summary if `reporter-prompt-for-summary-p'<br/>is non-nil.<br/><br/>This function does not send a message; it uses the given information<br/>to initialize a message, which the user can then edit and finally send<br/>(or decline to send).  The variable `mail-user-agent' controls which<br/>mail-sending package is used for editing and sending the message.
+<strong>reporter-submit-bug-report</strong> is an autoloaded compiled Lisp function in `<code>reporter.el</code>'.<br/>
+<br/>
+(reporter-submit-bug-report ADDRESS PKGNAME VARLIST &optional PRE-HOOKS POST-HOOKS SALUTATION)<br/>
+<br/>
+Begin submitting a bug report via email.<br/>
+<br/>
+ADDRESS is the email address for the package's maintainer.  PKGNAME is<br/>
+the name of the package (if you want to include version numbers,<br/>
+you must put them into PKGNAME before calling this function).<br/>
+Optional PRE-HOOKS and POST-HOOKS are passed to `reporter-dump-state'.<br/>
+Optional SALUTATION is inserted at the top of the mail buffer,<br/>
+and point is left after the salutation.<br/>
+<br/>
+VARLIST is the list of variables to dump (see `reporter-dump-state'<br/>
+for details).  The optional argument PRE-HOOKS and POST-HOOKS are<br/>
+passed to `reporter-dump-state'.  Optional argument SALUTATION is text<br/>
+to be inserted at the top of the mail buffer; in that case, point is<br/>
+left after that text.<br/>
+<br/>
+This function prompts for a summary if `reporter-prompt-for-summary-p'<br/>
+is non-nil.<br/>
+<br/>
+This function does not send a message; it uses the given information<br/>
+to initialize a message, which the user can then edit and finally send<br/>
+(or decline to send).  The variable `mail-user-agent' controls which<br/>
+mail-sending package is used for editing and sending the message.

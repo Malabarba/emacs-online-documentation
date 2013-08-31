@@ -1,1 +1,18 @@
-bibtex-search-entries is an interactive compiled Lisp function in `bibtex.el'.<br/><br/>(bibtex-search-entries FIELD REGEXP &optional GLOBAL DISPLAY)<br/><br/>Search BibTeX entries for FIELD matching REGEXP.<br/>REGEXP may be a regexp to search for.<br/>If REGEXP is a function, it is called for each entry with two args,<br/>the buffer positions of beginning and end of entry.  Then an entry<br/>is accepted if this function returns non-nil.<br/>If FIELD is an empty string perform search for REGEXP in whole entry.<br/>With GLOBAL non-nil, search in `bibtex-files'.  Otherwise the search<br/>is limited to the current buffer.<br/>If DISPLAY is non-nil, display search results in `bibtex-search-buffer'.<br/>When called interactively, DISPLAY is t.<br/>Also, GLOBAL is t if `bibtex-search-entry-globally' is non-nil.<br/>A prefix arg negates the value of `bibtex-search-entry-globally'.<br/>Return alist with elements (KEY FILE ENTRY),<br/>where FILE is the BibTeX file of ENTRY.
+<strong>bibtex-search-entries</strong> is an interactive compiled Lisp function in `<code>bibtex.el</code>'.<br/>
+<br/>
+(bibtex-search-entries FIELD REGEXP &optional GLOBAL DISPLAY)<br/>
+<br/>
+Search BibTeX entries for FIELD matching REGEXP.<br/>
+REGEXP may be a regexp to search for.<br/>
+If REGEXP is a function, it is called for each entry with two args,<br/>
+the buffer positions of beginning and end of entry.  Then an entry<br/>
+is accepted if this function returns non-nil.<br/>
+If FIELD is an empty string perform search for REGEXP in whole entry.<br/>
+With GLOBAL non-nil, search in `bibtex-files'.  Otherwise the search<br/>
+is limited to the current buffer.<br/>
+If DISPLAY is non-nil, display search results in `bibtex-search-buffer'.<br/>
+When called interactively, DISPLAY is t.<br/>
+Also, GLOBAL is t if `bibtex-search-entry-globally' is non-nil.<br/>
+A prefix arg negates the value of `bibtex-search-entry-globally'.<br/>
+Return alist with elements (KEY FILE ENTRY),<br/>
+where FILE is the BibTeX file of ENTRY.

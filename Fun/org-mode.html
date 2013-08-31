@@ -1,1 +1,278 @@
-org-mode is an interactive autoloaded compiled Lisp function in `org.el'.<br/><br/>(org-mode)<br/><br/>Parent mode: `outline-mode'.<br/><br/>Outline-based notes management and organizer, alias<br/>"Carsten's outline-mode for keeping track of everything."<br/><br/>Org-mode develops organizational tasks around a NOTES file which<br/>contains information about projects as plain text.  Org-mode is<br/>implemented on top of outline-mode, which is ideal to keep the content<br/>of large files well structured.  It supports ToDo items, deadlines and<br/>time stamps, which magically appear in the diary listing of the Emacs<br/>calendar.  Tables are easily created with a built-in table editor.<br/>Plain text URL-like links connect to websites, emails (VM), Usenet<br/>messages (Gnus), BBDB entries, and any files related to the project.<br/>For printing and sharing of notes, an Org-mode file (or a part of it)<br/>can be exported as a structured ASCII or HTML file.<br/><br/>The following commands are available:<br/><br/>key             binding<br/>---             -------<br/><br/>C-a		org-beginning-of-line<br/>C-c		Prefix Command<br/>C-e		org-end-of-line<br/>TAB		org-cycle<br/>C-j		org-return-indent<br/>C-k		org-kill-line<br/>RET		org-return<br/>C-y		org-yank<br/>ESC		Prefix Command<br/>|		org-force-self-insert<br/>C-#		org-table-rotate-recalc-marks<br/>C-'		org-cycle-agenda-files<br/>C-,		org-cycle-agenda-files<br/><C-S-down>	org-shiftcontroldown<br/><C-S-left>	org-shiftcontrolleft<br/><C-S-return>	org-insert-todo-heading-respect-content<br/><C-S-right>	org-shiftcontrolright<br/><C-S-up>	org-shiftcontrolup<br/><C-return>	org-insert-heading-respect-content<br/><C-tab>		org-force-cycle-archived<br/><M-S-down>	org-shiftmetadown<br/><M-S-left>	org-shiftmetaleft<br/><M-S-return>	org-insert-todo-heading<br/><M-S-right>	org-shiftmetaright<br/><M-S-up>	org-shiftmetaup<br/><M-down>	org-metadown<br/><M-left>	org-metaleft<br/><M-return>	org-meta-return<br/><M-right>	org-metaright<br/><M-up>		org-metaup<br/><S-down>	org-shiftdown<br/><S-iso-lefttab>			org-shifttab<br/><S-left>	org-shiftleft<br/><S-return>	org-table-copy-down<br/><S-right>	org-shiftright<br/><S-tab>		org-shifttab<br/><S-up>		org-shiftup<br/><backtab>	org-shifttab<br/><remap>		Prefix Command<br/><tab>		org-cycle<br/><br/>C-M-i		pcomplete<br/>M-RET		org-insert-heading<br/>C-M-t		org-transpose-element<br/>M-a		org-backward-sentence<br/>M-e		org-forward-sentence<br/>M-h		org-mark-element<br/>M-{		org-backward-element<br/>M-}		org-forward-element<br/><br/>C-c C-a		org-attach<br/>C-c C-b		org-backward-heading-same-level<br/>C-c C-c		org-ctrl-c-ctrl-c<br/>C-c C-d		org-deadline<br/>C-c C-e		org-export<br/>C-c C-f		org-forward-heading-same-level<br/>C-c C-j		org-goto<br/>C-c C-k		org-kill-note-or-show-branches<br/>C-c C-l		org-insert-link<br/>C-c RET		org-ctrl-c-ret<br/>C-c C-o		org-open-at-point<br/>C-c C-q		org-set-tags-command<br/>C-c C-r		org-reveal<br/>C-c C-s		org-schedule<br/>C-c C-t		org-todo<br/>C-c C-v		Prefix Command<br/>C-c C-w		org-refile<br/>C-c C-x		Prefix Command<br/>C-c C-y		org-evaluate-time-range<br/>C-c C-z		org-add-note<br/>C-c ESC		Prefix Command<br/>C-c C-^		org-up-element<br/>C-c C-_		org-down-element<br/>C-c SPC		org-table-blank-field<br/>C-c !		org-time-stamp-inactive<br/>C-c #		org-update-statistics-cookies<br/>C-c $		org-archive-subtree<br/>C-c %		org-mark-ring-push<br/>C-c &		org-mark-ring-goto<br/>C-c '		org-edit-special<br/>C-c *		org-ctrl-c-star<br/>C-c +		org-table-sum<br/>C-c ,		org-priority<br/>C-c -		org-ctrl-c-minus<br/>C-c .		org-time-stamp<br/>C-c /		org-sparse-tree<br/>C-c :		org-toggle-fixed-width-section<br/>C-c ;		org-toggle-comment<br/>C-c <		org-date-from-calendar<br/>C-c =		org-table-eval-formula<br/>C-c >		org-goto-calendar<br/>C-c ?		org-table-field-info<br/>C-c @		org-mark-subtree<br/>C-c [		org-agenda-file-to-front<br/>C-c \		org-match-sparse-tree<br/>C-c ]		org-remove-file<br/>C-c ^		org-sort<br/>C-c `		org-table-edit-field<br/>C-c {		org-table-toggle-formula-debugger<br/>C-c |		org-table-create-or-convert-from-region<br/>C-c }		org-table-toggle-coordinate-overlays<br/>C-c ~		org-table-create-with-table.el<br/>C-c C-*		org-list-make-subtree<br/><br/><remap> <delete-backward-char>	org-delete-backward-char<br/><remap> <delete-char>		org-delete-char<br/><remap> <outline-backward-same-level><br/>				org-backward-heading-same-level<br/><remap> <outline-demote>	org-demote-subtree<br/><remap> <outline-forward-same-level><br/>				org-forward-heading-same-level<br/><remap> <outline-insert-heading><br/>				org-ctrl-c-ret<br/><remap> <outline-mark-subtree>	org-mark-subtree<br/><remap> <outline-promote>	org-promote-subtree<br/><remap> <self-insert-command>	org-self-insert-command<br/><remap> <show-branches>		org-kill-note-or-show-branches<br/><remap> <show-subtree>		org-show-subtree<br/><br/>C-c C-M-l	org-insert-all-links<br/><br/>C-c C-v C-a	org-babel-sha1-hash<br/>C-c C-v C-b	org-babel-execute-buffer<br/>C-c C-v C-c	org-babel-check-src-block<br/>C-c C-v C-d	org-babel-demarcate-block<br/>C-c C-v C-e	org-babel-execute-maybe<br/>C-c C-v C-f	org-babel-tangle-file<br/>C-c C-v TAB	org-babel-view-src-block-info<br/>C-c C-v C-j	org-babel-insert-header-arg<br/>C-c C-v C-l	org-babel-load-in-session<br/>C-c C-v C-n	org-babel-next-src-block<br/>C-c C-v C-o	org-babel-open-src-block-result<br/>C-c C-v C-p	org-babel-previous-src-block<br/>C-c C-v C-r	org-babel-goto-named-result<br/>C-c C-v C-s	org-babel-execute-subtree<br/>C-c C-v C-t	org-babel-tangle<br/>C-c C-v C-u	org-babel-goto-src-block-head<br/>C-c C-v C-v	org-babel-expand-src-block<br/>C-c C-v C-x	org-babel-do-key-sequence-in-edit-buffer<br/>C-c C-v C-z	org-babel-switch-to-session<br/>C-c C-v ESC	Prefix Command<br/>C-c C-v I	org-babel-view-src-block-info<br/>C-c C-v a	org-babel-sha1-hash<br/>C-c C-v b	org-babel-execute-buffer<br/>C-c C-v c	org-babel-check-src-block<br/>C-c C-v d	org-babel-demarcate-block<br/>C-c C-v e	org-babel-execute-maybe<br/>C-c C-v f	org-babel-tangle-file<br/>C-c C-v g	org-babel-goto-named-src-block<br/>C-c C-v h	org-babel-describe-bindings<br/>C-c C-v i	org-babel-lob-ingest<br/>C-c C-v j	org-babel-insert-header-arg<br/>C-c C-v l	org-babel-load-in-session<br/>C-c C-v n	org-babel-next-src-block<br/>C-c C-v o	org-babel-open-src-block-result<br/>C-c C-v p	org-babel-previous-src-block<br/>C-c C-v r	org-babel-goto-named-result<br/>C-c C-v s	org-babel-execute-subtree<br/>C-c C-v t	org-babel-tangle<br/>C-c C-v u	org-babel-goto-src-block-head<br/>C-c C-v v	org-babel-expand-src-block<br/>C-c C-v x	org-babel-do-key-sequence-in-edit-buffer<br/>C-c C-v z	org-babel-switch-to-session-with-code<br/><br/>C-c C-x C-a	org-archive-subtree-default<br/>C-c C-x C-b	org-toggle-checkbox<br/>C-c C-x C-c	org-columns<br/>C-c C-x C-d	org-clock-display<br/>C-c C-x C-f	org-emphasize<br/>C-c C-x TAB	org-clock-in<br/>C-c C-x C-j	org-clock-goto<br/>C-c C-x C-l	org-preview-latex-fragment<br/>C-c C-x RET	Prefix Command<br/>C-c C-x C-n	org-next-link<br/>C-c C-x C-o	org-clock-out<br/>C-c C-x C-p	org-previous-link<br/>C-c C-x C-q	org-clock-cancel<br/>C-c C-x C-r	org-clock-report<br/>C-c C-x C-s	org-advertized-archive-subtree<br/>C-c C-x C-t	org-toggle-time-stamp-overlays<br/>C-c C-x C-u	org-dblock-update<br/>C-c C-x C-v	org-toggle-inline-images<br/>C-c C-x C-w	org-cut-special<br/>C-c C-x C-x	org-clock-in-last<br/>C-c C-x C-y	org-paste-special<br/>C-c C-x C-z	org-resolve-clocks<br/>C-c C-x ESC	Prefix Command<br/>C-c C-x !	org-reload<br/>C-c C-x ,	org-timer-pause-or-continue<br/>C-c C-x -	org-timer-item<br/>C-c C-x .	org-timer<br/>C-c C-x 0	org-timer-start<br/>C-c C-x :	org-timer-cancel-timer<br/>C-c C-x ;	org-timer-set-timer<br/>C-c C-x <	org-agenda-set-restriction-lock<br/>C-c C-x >	org-agenda-remove-restriction-lock<br/>C-c C-x A	org-archive-to-archive-sibling<br/>C-c C-x E	org-inc-effort<br/>C-c C-x G	org-feed-goto-inbox<br/>C-c C-x [	org-reftex-citation<br/>C-c C-x \	org-toggle-pretty-entities<br/>C-c C-x _	org-timer-stop<br/>C-c C-x a	org-toggle-archive-tag<br/>C-c C-x b	org-tree-to-indirect-buffer<br/>C-c C-x c	org-clone-subtree-with-time-shift<br/>C-c C-x d	org-insert-drawer<br/>C-c C-x e	org-set-effort<br/>C-c C-x f	org-footnote-action<br/>C-c C-x g	org-feed-update-all<br/>C-c C-x i	org-insert-columns-dblock<br/>C-c C-x o	org-toggle-ordered-property<br/>C-c C-x p	org-set-property<br/>C-c C-x v	org-copy-visible<br/><br/>C-c C-v C-M-h	org-babel-mark-block<br/><br/>C-c C-x C-M-v	org-redisplay-inline-images<br/>C-c C-x M-w	org-copy-special<br/><br/>C-c C-x RET g	org-mobile-pull<br/>C-c C-x RET p	org-mobile-push<br/><br/><br/><br/>In addition to any hooks its parent mode `outline-mode' might have run,<br/>this mode runs the hook `org-mode-hook', as the final step<br/>during initialization.
+<strong>org-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-mode)<br/>
+<br/>
+Parent mode: `outline-mode'.<br/>
+<br/>
+Outline-based notes management and organizer, alias<br/>
+"Carsten's outline-mode for keeping track of everything."<br/>
+<br/>
+Org-mode develops organizational tasks around a NOTES file which<br/>
+contains information about projects as plain text.  Org-mode is<br/>
+implemented on top of outline-mode, which is ideal to keep the content<br/>
+of large files well structured.  It supports ToDo items, deadlines and<br/>
+time stamps, which magically appear in the diary listing of the Emacs<br/>
+calendar.  Tables are easily created with a built-in table editor.<br/>
+Plain text URL-like links connect to websites, emails (VM), Usenet<br/>
+messages (Gnus), BBDB entries, and any files related to the project.<br/>
+For printing and sharing of notes, an Org-mode file (or a part of it)<br/>
+can be exported as a structured ASCII or HTML file.<br/>
+<br/>
+The following commands are available:<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-a		org-beginning-of-line<br/>
+C-c		Prefix Command<br/>
+C-e		org-end-of-line<br/>
+TAB		org-cycle<br/>
+C-j		org-return-indent<br/>
+C-k		org-kill-line<br/>
+RET		org-return<br/>
+C-y		org-yank<br/>
+ESC		Prefix Command<br/>
+|		org-force-self-insert<br/>
+C-#		org-table-rotate-recalc-marks<br/>
+C-'		org-cycle-agenda-files<br/>
+C-,		org-cycle-agenda-files<br/>
+<C-S-down>	org-shiftcontroldown<br/>
+<C-S-left>	org-shiftcontrolleft<br/>
+<C-S-return>	org-insert-todo-heading-respect-content<br/>
+<C-S-right>	org-shiftcontrolright<br/>
+<C-S-up>	org-shiftcontrolup<br/>
+<C-return>	org-insert-heading-respect-content<br/>
+<C-tab>		org-force-cycle-archived<br/>
+<M-S-down>	org-shiftmetadown<br/>
+<M-S-left>	org-shiftmetaleft<br/>
+<M-S-return>	org-insert-todo-heading<br/>
+<M-S-right>	org-shiftmetaright<br/>
+<M-S-up>	org-shiftmetaup<br/>
+<M-down>	org-metadown<br/>
+<M-left>	org-metaleft<br/>
+<M-return>	org-meta-return<br/>
+<M-right>	org-metaright<br/>
+<M-up>		org-metaup<br/>
+<S-down>	org-shiftdown<br/>
+<S-iso-lefttab>			org-shifttab<br/>
+<S-left>	org-shiftleft<br/>
+<S-return>	org-table-copy-down<br/>
+<S-right>	org-shiftright<br/>
+<S-tab>		org-shifttab<br/>
+<S-up>		org-shiftup<br/>
+<backtab>	org-shifttab<br/>
+<remap>		Prefix Command<br/>
+<tab>		org-cycle<br/>
+<br/>
+C-M-i		pcomplete<br/>
+M-RET		org-insert-heading<br/>
+C-M-t		org-transpose-element<br/>
+M-a		org-backward-sentence<br/>
+M-e		org-forward-sentence<br/>
+M-h		org-mark-element<br/>
+M-{		org-backward-element<br/>
+M-}		org-forward-element<br/>
+ESC <S-down>	org-shiftmetadown<br/>
+ESC <S-left>	org-shiftmetaleft<br/>
+ESC <S-return>	org-insert-todo-heading<br/>
+ESC <S-right>	org-shiftmetaright<br/>
+ESC <S-up>	org-shiftmetaup<br/>
+ESC <down>	org-metadown<br/>
+ESC <left>	org-metaleft<br/>
+ESC <return>	org-meta-return<br/>
+ESC <right>	org-metaright<br/>
+ESC <tab>	pcomplete<br/>
+ESC <up>	org-metaup<br/>
+<br/>
+C-c C-a		org-attach<br/>
+C-c C-b		org-backward-heading-same-level<br/>
+C-c C-c		org-ctrl-c-ctrl-c<br/>
+C-c C-d		org-deadline<br/>
+C-c C-e		org-export<br/>
+C-c C-f		org-forward-heading-same-level<br/>
+C-c C-j		org-goto<br/>
+C-c C-k		org-kill-note-or-show-branches<br/>
+C-c C-l		org-insert-link<br/>
+C-c RET		org-ctrl-c-ret<br/>
+C-c C-o		org-open-at-point<br/>
+C-c C-q		org-set-tags-command<br/>
+C-c C-r		org-reveal<br/>
+C-c C-s		org-schedule<br/>
+C-c C-t		org-todo<br/>
+C-c C-v		Prefix Command<br/>
+C-c C-w		org-refile<br/>
+C-c C-x		Prefix Command<br/>
+C-c C-y		org-evaluate-time-range<br/>
+C-c C-z		org-add-note<br/>
+C-c ESC		Prefix Command<br/>
+C-c C-^		org-up-element<br/>
+C-c C-_		org-down-element<br/>
+C-c SPC		org-table-blank-field<br/>
+C-c !		org-time-stamp-inactive<br/>
+C-c #		org-update-statistics-cookies<br/>
+C-c $		org-archive-subtree<br/>
+C-c %		org-mark-ring-push<br/>
+C-c &		org-mark-ring-goto<br/>
+C-c '		org-edit-special<br/>
+C-c *		org-ctrl-c-star<br/>
+C-c +		org-table-sum<br/>
+C-c ,		org-priority<br/>
+C-c -		org-ctrl-c-minus<br/>
+C-c .		org-time-stamp<br/>
+C-c /		org-sparse-tree<br/>
+C-c :		org-toggle-fixed-width-section<br/>
+C-c ;		org-toggle-comment<br/>
+C-c <		org-date-from-calendar<br/>
+C-c =		org-table-eval-formula<br/>
+C-c >		org-goto-calendar<br/>
+C-c ?		org-table-field-info<br/>
+C-c @		org-mark-subtree<br/>
+C-c [		org-agenda-file-to-front<br/>
+C-c \		org-match-sparse-tree<br/>
+C-c ]		org-remove-file<br/>
+C-c ^		org-sort<br/>
+C-c `		org-table-edit-field<br/>
+C-c {		org-table-toggle-formula-debugger<br/>
+C-c |		org-table-create-or-convert-from-region<br/>
+C-c }		org-table-toggle-coordinate-overlays<br/>
+C-c ~		org-table-create-with-table.el<br/>
+C-c C-*		org-list-make-subtree<br/>
+C-c <down>	org-shiftdown<br/>
+C-c <left>	org-shiftleft<br/>
+C-c <right>	org-shiftright<br/>
+C-c <up>	org-shiftup<br/>
+<br/>
+<remap> <delete-backward-char>	org-delete-backward-char<br/>
+<remap> <delete-char>		org-delete-char<br/>
+<remap> <outline-backward-same-level><br/>
+				org-backward-heading-same-level<br/>
+<remap> <outline-demote>	org-demote-subtree<br/>
+<remap> <outline-forward-same-level><br/>
+				org-forward-heading-same-level<br/>
+<remap> <outline-insert-heading><br/>
+				org-ctrl-c-ret<br/>
+<remap> <outline-mark-subtree>	org-mark-subtree<br/>
+<remap> <outline-promote>	org-promote-subtree<br/>
+<remap> <self-insert-command>	org-self-insert-command<br/>
+<remap> <show-branches>		org-kill-note-or-show-branches<br/>
+<remap> <show-subtree>		org-show-subtree<br/>
+<br/>
+C-c C-M-l	org-insert-all-links<br/>
+<br/>
+C-c C-v C-a	org-babel-sha1-hash<br/>
+C-c C-v C-b	org-babel-execute-buffer<br/>
+C-c C-v C-c	org-babel-check-src-block<br/>
+C-c C-v C-d	org-babel-demarcate-block<br/>
+C-c C-v C-e	org-babel-execute-maybe<br/>
+C-c C-v C-f	org-babel-tangle-file<br/>
+C-c C-v TAB	org-babel-view-src-block-info<br/>
+C-c C-v C-j	org-babel-insert-header-arg<br/>
+C-c C-v C-l	org-babel-load-in-session<br/>
+C-c C-v C-n	org-babel-next-src-block<br/>
+C-c C-v C-o	org-babel-open-src-block-result<br/>
+C-c C-v C-p	org-babel-previous-src-block<br/>
+C-c C-v C-r	org-babel-goto-named-result<br/>
+C-c C-v C-s	org-babel-execute-subtree<br/>
+C-c C-v C-t	org-babel-tangle<br/>
+C-c C-v C-u	org-babel-goto-src-block-head<br/>
+C-c C-v C-v	org-babel-expand-src-block<br/>
+C-c C-v C-x	org-babel-do-key-sequence-in-edit-buffer<br/>
+C-c C-v C-z	org-babel-switch-to-session<br/>
+C-c C-v ESC	Prefix Command<br/>
+C-c C-v I	org-babel-view-src-block-info<br/>
+C-c C-v a	org-babel-sha1-hash<br/>
+C-c C-v b	org-babel-execute-buffer<br/>
+C-c C-v c	org-babel-check-src-block<br/>
+C-c C-v d	org-babel-demarcate-block<br/>
+C-c C-v e	org-babel-execute-maybe<br/>
+C-c C-v f	org-babel-tangle-file<br/>
+C-c C-v g	org-babel-goto-named-src-block<br/>
+C-c C-v h	org-babel-describe-bindings<br/>
+C-c C-v i	org-babel-lob-ingest<br/>
+C-c C-v j	org-babel-insert-header-arg<br/>
+C-c C-v l	org-babel-load-in-session<br/>
+C-c C-v n	org-babel-next-src-block<br/>
+C-c C-v o	org-babel-open-src-block-result<br/>
+C-c C-v p	org-babel-previous-src-block<br/>
+C-c C-v r	org-babel-goto-named-result<br/>
+C-c C-v s	org-babel-execute-subtree<br/>
+C-c C-v t	org-babel-tangle<br/>
+C-c C-v u	org-babel-goto-src-block-head<br/>
+C-c C-v v	org-babel-expand-src-block<br/>
+C-c C-v x	org-babel-do-key-sequence-in-edit-buffer<br/>
+C-c C-v z	org-babel-switch-to-session-with-code<br/>
+<br/>
+C-c C-x C-a	org-archive-subtree-default<br/>
+C-c C-x C-b	org-toggle-checkbox<br/>
+C-c C-x C-c	org-columns<br/>
+C-c C-x C-d	org-clock-display<br/>
+C-c C-x C-f	org-emphasize<br/>
+C-c C-x TAB	org-clock-in<br/>
+C-c C-x C-j	org-clock-goto<br/>
+C-c C-x C-l	org-preview-latex-fragment<br/>
+C-c C-x RET	Prefix Command<br/>
+C-c C-x C-n	org-next-link<br/>
+C-c C-x C-o	org-clock-out<br/>
+C-c C-x C-p	org-previous-link<br/>
+C-c C-x C-q	org-clock-cancel<br/>
+C-c C-x C-r	org-clock-report<br/>
+C-c C-x C-s	org-advertized-archive-subtree<br/>
+C-c C-x C-t	org-toggle-time-stamp-overlays<br/>
+C-c C-x C-u	org-dblock-update<br/>
+C-c C-x C-v	org-toggle-inline-images<br/>
+C-c C-x C-w	org-cut-special<br/>
+C-c C-x C-x	org-clock-in-last<br/>
+C-c C-x C-y	org-paste-special<br/>
+C-c C-x C-z	org-resolve-clocks<br/>
+C-c C-x ESC	Prefix Command<br/>
+C-c C-x !	org-reload<br/>
+C-c C-x ,	org-timer-pause-or-continue<br/>
+C-c C-x -	org-timer-item<br/>
+C-c C-x .	org-timer<br/>
+C-c C-x 0	org-timer-start<br/>
+C-c C-x :	org-timer-cancel-timer<br/>
+C-c C-x ;	org-timer-set-timer<br/>
+C-c C-x <	org-agenda-set-restriction-lock<br/>
+C-c C-x >	org-agenda-remove-restriction-lock<br/>
+C-c C-x A	org-archive-to-archive-sibling<br/>
+C-c C-x D	org-shiftmetadown<br/>
+C-c C-x E	org-inc-effort<br/>
+C-c C-x G	org-feed-goto-inbox<br/>
+C-c C-x L	org-shiftmetaleft<br/>
+C-c C-x M	org-insert-todo-heading<br/>
+C-c C-x R	org-shiftmetaright<br/>
+C-c C-x U	org-shiftmetaup<br/>
+C-c C-x [	org-reftex-citation<br/>
+C-c C-x \	org-toggle-pretty-entities<br/>
+C-c C-x _	org-timer-stop<br/>
+C-c C-x a	org-toggle-archive-tag<br/>
+C-c C-x b	org-tree-to-indirect-buffer<br/>
+C-c C-x c	org-clone-subtree-with-time-shift<br/>
+C-c C-x d	org-insert-drawer<br/>
+C-c C-x e	org-set-effort<br/>
+C-c C-x f	org-footnote-action<br/>
+C-c C-x g	org-feed-update-all<br/>
+C-c C-x i	org-insert-columns-dblock<br/>
+C-c C-x l	org-metaleft<br/>
+C-c C-x m	org-meta-return<br/>
+C-c C-x o	org-toggle-ordered-property<br/>
+C-c C-x p	org-set-property<br/>
+C-c C-x r	org-metaright<br/>
+C-c C-x u	org-metaup<br/>
+C-c C-x v	org-copy-visible<br/>
+C-c C-x <left>	org-shiftcontrolleft<br/>
+C-c C-x <right>			org-shiftcontrolright<br/>
+<br/>
+C-c C-v C-M-h	org-babel-mark-block<br/>
+<br/>
+C-c C-x C-M-v	org-redisplay-inline-images<br/>
+C-c C-x M-w	org-copy-special<br/>
+<br/>
+C-c C-x RET g	org-mobile-pull<br/>
+C-c C-x RET p	org-mobile-push<br/>
+<br/>
+<br/>
+<br/>
+In addition to any hooks its parent mode `outline-mode' might have run,<br/>
+this mode runs the hook `org-mode-hook', as the final step<br/>
+during initialization.

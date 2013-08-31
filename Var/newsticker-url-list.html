@@ -1,1 +1,39 @@
-newsticker-url-list is a variable defined in `newst-backend.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>The news feeds which you like to watch.<br/><br/>This alist will be used in addition to selection made customizing<br/>`newsticker-url-list-defaults'.<br/><br/>This is an alist.  Each element consists of two items: a LABEL and a URL,<br/>optionally followed by a START-TIME, INTERVAL specifier and WGET-ARGUMENTS.<br/><br/>The LABEL gives the name of the news feed.  It can be an arbitrary string.<br/><br/>The URL gives the location of the news feed.  It must point to a valid<br/>RSS or Atom file.  The file is retrieved by calling wget, or whatever you<br/>specify as `newsticker-wget-name'.<br/><br/>URL may also be a function which returns news data.  In this case<br/>`newsticker-retrieval-method' etc.  are ignored for this feed.<br/><br/>The START-TIME can be either a string, or nil.  If it is a string it<br/>specifies a fixed time at which this feed shall be retrieved for the<br/>first time.  (Examples: "11:00pm", "23:00".)  If it is nil (or<br/>unspecified), this feed will be retrieved immediately after calling<br/>`newsticker-start'.<br/><br/>The INTERVAL specifies the time between retrievals for this feed.  If it<br/>is nil (or unspecified) the default interval value as set in<br/>`newsticker-retrieval-interval' is used.<br/><br/>(newsticker.el calls `run-at-time'. The newsticker-parameters START-TIME<br/>and INTERVAL correspond to the `run-at-time'-parameters TIME and REPEAT.)<br/><br/>WGET-ARGUMENTS specifies arguments for wget (see `newsticker-wget-name')<br/>which apply for this feed only, overriding the value of<br/>`newsticker-wget-arguments'.<br/><br/>You can customize this variable.
+<strong>newsticker-url-list</strong> is a variable defined in `<code>newst-backend.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+The news feeds which you like to watch.<br/>
+<br/>
+This alist will be used in addition to selection made customizing<br/>
+`newsticker-url-list-defaults'.<br/>
+<br/>
+This is an alist.  Each element consists of two items: a LABEL and a URL,<br/>
+optionally followed by a START-TIME, INTERVAL specifier and WGET-ARGUMENTS.<br/>
+<br/>
+The LABEL gives the name of the news feed.  It can be an arbitrary string.<br/>
+<br/>
+The URL gives the location of the news feed.  It must point to a valid<br/>
+RSS or Atom file.  The file is retrieved by calling wget, or whatever you<br/>
+specify as `newsticker-wget-name'.<br/>
+<br/>
+URL may also be a function which returns news data.  In this case<br/>
+`newsticker-retrieval-method' etc.  are ignored for this feed.<br/>
+<br/>
+The START-TIME can be either a string, or nil.  If it is a string it<br/>
+specifies a fixed time at which this feed shall be retrieved for the<br/>
+first time.  (Examples: "11:00pm", "23:00".)  If it is nil (or<br/>
+unspecified), this feed will be retrieved immediately after calling<br/>
+`newsticker-start'.<br/>
+<br/>
+The INTERVAL specifies the time between retrievals for this feed.  If it<br/>
+is nil (or unspecified) the default interval value as set in<br/>
+`newsticker-retrieval-interval' is used.<br/>
+<br/>
+(newsticker.el calls `run-at-time'. The newsticker-parameters START-TIME<br/>
+and INTERVAL correspond to the `run-at-time'-parameters TIME and REPEAT.)<br/>
+<br/>
+WGET-ARGUMENTS specifies arguments for wget (see `newsticker-wget-name')<br/>
+which apply for this feed only, overriding the value of<br/>
+`newsticker-wget-arguments'.<br/>
+<br/>
+You can customize this variable.

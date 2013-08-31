@@ -1,1 +1,24 @@
-ispell-message is an interactive autoloaded compiled Lisp function in `ispell.el'.<br/><br/>It is bound to <menu-bar> <tools> <spell> <ispell-message>.<br/><br/>(ispell-message)<br/><br/>Check the spelling of a mail message or news post.<br/>Don't check spelling of message headers except the Subject field.<br/>Don't check included messages.<br/><br/>To abort spell checking of a message region and send the message anyway,<br/>use the `x' command.  (Any subsequent regions will be checked.)<br/>The `X' command aborts sending the message so that you can edit the buffer.<br/><br/>To spell-check whenever a message is sent, include the appropriate lines<br/>in your init file:<br/>   (add-hook 'message-send-hook 'ispell-message)  ;; GNUS 5<br/>   (add-hook 'news-inews-hook 'ispell-message)    ;; GNUS 4<br/>   (add-hook 'mail-send-hook  'ispell-message)<br/>   (add-hook 'mh-before-send-letter-hook 'ispell-message)<br/><br/>You can bind this to the key C-c i in GNUS or mail by adding to<br/>`news-reply-mode-hook' or `mail-mode-hook' the following lambda expression:<br/>   (function (lambda () (local-set-key "\C-ci" 'ispell-message)))
+<strong>ispell-message</strong> is an interactive autoloaded compiled Lisp function in `<code>ispell.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <tools> <spell> <ispell-message>.<br/>
+<br/>
+(ispell-message)<br/>
+<br/>
+Check the spelling of a mail message or news post.<br/>
+Don't check spelling of message headers except the Subject field.<br/>
+Don't check included messages.<br/>
+<br/>
+To abort spell checking of a message region and send the message anyway,<br/>
+use the `x' command.  (Any subsequent regions will be checked.)<br/>
+The `X' command aborts sending the message so that you can edit the buffer.<br/>
+<br/>
+To spell-check whenever a message is sent, include the appropriate lines<br/>
+in your init file:<br/>
+   (add-hook 'message-send-hook 'ispell-message)  ;; GNUS 5<br/>
+   (add-hook 'news-inews-hook 'ispell-message)    ;; GNUS 4<br/>
+   (add-hook 'mail-send-hook  'ispell-message)<br/>
+   (add-hook 'mh-before-send-letter-hook 'ispell-message)<br/>
+<br/>
+You can bind this to the key C-c i in GNUS or mail by adding to<br/>
+`news-reply-mode-hook' or `mail-mode-hook' the following lambda expression:<br/>
+   (function (lambda () (local-set-key "\C-ci" 'ispell-message)))

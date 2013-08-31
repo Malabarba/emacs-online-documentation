@@ -1,1 +1,23 @@
-encode-time is a built-in function in `C source code'.<br/><br/>(encode-time SECOND MINUTE HOUR DAY MONTH YEAR &optional ZONE)<br/><br/>Convert SECOND, MINUTE, HOUR, DAY, MONTH, YEAR and ZONE to internal time.<br/>This is the reverse operation of `decode-time', which see.<br/>ZONE defaults to the current time zone rule.  This can<br/>be a string or t (as from `set-time-zone-rule'), or it can be a list<br/>(as from `current-time-zone') or an integer (as from `decode-time')<br/>applied without consideration for daylight saving time.<br/><br/>You can pass more than 7 arguments; then the first six arguments<br/>are used as SECOND through YEAR, and the *last* argument is used as ZONE.<br/>The intervening arguments are ignored.<br/>This feature lets (apply 'encode-time (decode-time ...)) work.<br/><br/>Out-of-range values for SECOND, MINUTE, HOUR, DAY, or MONTH are allowed;<br/>for example, a DAY of 0 means the day preceding the given month.<br/>Year numbers less than 100 are treated just like other year numbers.<br/>If you want them to stand for years in this century, you must do that yourself.<br/><br/>Years before 1970 are not guaranteed to work.  On some systems,<br/>year values as low as 1901 do work.
+<strong>encode-time</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(encode-time SECOND MINUTE HOUR DAY MONTH YEAR &optional ZONE)<br/>
+<br/>
+Convert SECOND, MINUTE, HOUR, DAY, MONTH, YEAR and ZONE to internal time.<br/>
+This is the reverse operation of `decode-time', which see.<br/>
+ZONE defaults to the current time zone rule.  This can<br/>
+be a string or t (as from `set-time-zone-rule'), or it can be a list<br/>
+(as from `current-time-zone') or an integer (as from `decode-time')<br/>
+applied without consideration for daylight saving time.<br/>
+<br/>
+You can pass more than 7 arguments; then the first six arguments<br/>
+are used as SECOND through YEAR, and the *last* argument is used as ZONE.<br/>
+The intervening arguments are ignored.<br/>
+This feature lets (apply 'encode-time (decode-time ...)) work.<br/>
+<br/>
+Out-of-range values for SECOND, MINUTE, HOUR, DAY, or MONTH are allowed;<br/>
+for example, a DAY of 0 means the day preceding the given month.<br/>
+Year numbers less than 100 are treated just like other year numbers.<br/>
+If you want them to stand for years in this century, you must do that yourself.<br/>
+<br/>
+Years before 1970 are not guaranteed to work.  On some systems,<br/>
+year values as low as 1901 do work.

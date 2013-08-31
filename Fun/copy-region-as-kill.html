@@ -1,1 +1,20 @@
-copy-region-as-kill is an interactive compiled Lisp function in `simple.el'.<br/><br/>(copy-region-as-kill BEG END)<br/><br/>Save the region as if killed, but don't kill it.<br/>In Transient Mark mode, deactivate the mark.<br/>If `interprogram-cut-function' is non-nil, also save the text for a window<br/>system cut and paste.<br/><br/>This command's old key binding has been given to `kill-ring-save'.<br/><br/>This function is advised.<br/><br/>Around-advice `ses-copy-region-as-kill':<br/>It doesn't make sense to copy read-only or intangible attributes into the<br/>kill ring.  It probably doesn't make sense to copy keymap properties.<br/>We'll assume copying front-sticky properties doesn't make sense, either.<br/><br/>This advice also includes some SES-specific code because otherwise it's too<br/>hard to override how mouse-1 works.
+<strong>copy-region-as-kill</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+(copy-region-as-kill BEG END)<br/>
+<br/>
+Save the region as if killed, but don't kill it.<br/>
+In Transient Mark mode, deactivate the mark.<br/>
+If `interprogram-cut-function' is non-nil, also save the text for a window<br/>
+system cut and paste.<br/>
+<br/>
+This command's old key binding has been given to `kill-ring-save'.<br/>
+<br/>
+This function is advised.<br/>
+<br/>
+Around-advice `ses-copy-region-as-kill':<br/>
+It doesn't make sense to copy read-only or intangible attributes into the<br/>
+kill ring.  It probably doesn't make sense to copy keymap properties.<br/>
+We'll assume copying front-sticky properties doesn't make sense, either.<br/>
+<br/>
+This advice also includes some SES-specific code because otherwise it's too<br/>
+hard to override how mouse-1 works.

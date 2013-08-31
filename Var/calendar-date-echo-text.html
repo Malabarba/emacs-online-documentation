@@ -1,1 +1,23 @@
-calendar-date-echo-text is a variable defined in `calendar.el'.<br/>Its value is "mouse-2: general menu<br/>mouse-3: menu for this date"<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>String displayed when the cursor is over a date in the calendar.<br/>Can be either a fixed string, or a lisp expression that returns one.<br/>When this expression is evaluated, DAY, MONTH, and YEAR are<br/>integers appropriate to the relevant date.  For example, to<br/>display the ISO date:<br/><br/>  (setq calendar-date-echo-text '(format "ISO date: %s"<br/>                                         (calendar-iso-date-string<br/>                                          (list month day year))))<br/>Changing this variable without using customize has no effect on<br/>pre-existing calendar windows.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/>
+<strong>calendar-date-echo-text</strong> is a variable defined in `<code>calendar.el</code>'.<br/>
+Its value is "mouse-2: general menu<br/>
+mouse-3: menu for this date"<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+String displayed when the cursor is over a date in the calendar.<br/>
+Can be either a fixed string, or a lisp expression that returns one.<br/>
+When this expression is evaluated, DAY, MONTH, and YEAR are<br/>
+integers appropriate to the relevant date.  For example, to<br/>
+display the ISO date:<br/>
+<br/>
+  (setq calendar-date-echo-text '(format "ISO date: %s"<br/>
+                                         (calendar-iso-date-string<br/>
+                                          (list month day year))))<br/>
+Changing this variable without using customize has no effect on<br/>
+pre-existing calendar windows.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>

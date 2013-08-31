@@ -1,1 +1,46 @@
-split-window is an interactive compiled Lisp function in `window.el'.<br/><br/>(split-window &optional WINDOW SIZE SIDE)<br/><br/>Make a new window adjacent to WINDOW.<br/>WINDOW must be a valid window and defaults to the selected one.<br/>Return the new window which is always a live window.<br/><br/>Optional argument SIZE a positive number means make WINDOW SIZE<br/>lines or columns tall.  If SIZE is negative, make the new window<br/>-SIZE lines or columns tall.  If and only if SIZE is non-nil, its<br/>absolute value can be less than `window-min-height' or<br/>`window-min-width'; so this command can make a new window as<br/>small as one line or two columns.  SIZE defaults to half of<br/>WINDOW's size.  Interactively, SIZE is the prefix argument.<br/><br/>Optional third argument SIDE nil (or `below') specifies that the<br/>new window shall be located below WINDOW.  SIDE `above' means the<br/>new window shall be located above WINDOW.  In both cases SIZE<br/>specifies the new number of lines for WINDOW (or the new window<br/>if SIZE is negative) including space reserved for the mode and/or<br/>header line.<br/><br/>SIDE t (or `right') specifies that the new window shall be<br/>located on the right side of WINDOW.  SIDE `left' means the new<br/>window shall be located on the left of WINDOW.  In both cases<br/>SIZE specifies the new number of columns for WINDOW (or the new<br/>window provided SIZE is negative) including space reserved for<br/>fringes and the scrollbar or a divider column.  Any other non-nil<br/>value for SIDE is currently handled like t (or `right').<br/><br/>If the variable `ignore-window-parameters' is non-nil or the<br/>`split-window' parameter of WINDOW equals t, do not process any<br/>parameters of WINDOW.  Otherwise, if the `split-window' parameter<br/>of WINDOW specifies a function, call that function with all three<br/>arguments and return the value returned by that function.<br/><br/>Otherwise, if WINDOW is part of an atomic window, "split" the<br/>root of that atomic window.  The new window does not become a<br/>member of that atomic window.<br/><br/>If WINDOW is live, properties of the new window like margins and<br/>scrollbars are inherited from WINDOW.  If WINDOW is an internal<br/>window, these properties as well as the buffer displayed in the<br/>new window are inherited from the window selected on WINDOW's<br/>frame.  The selected window is not changed by this function.
+<strong>split-window</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(split-window &optional WINDOW SIZE SIDE)<br/>
+<br/>
+Make a new window adjacent to WINDOW.<br/>
+WINDOW must be a valid window and defaults to the selected one.<br/>
+Return the new window which is always a live window.<br/>
+<br/>
+Optional argument SIZE a positive number means make WINDOW SIZE<br/>
+lines or columns tall.  If SIZE is negative, make the new window<br/>
+-SIZE lines or columns tall.  If and only if SIZE is non-nil, its<br/>
+absolute value can be less than `window-min-height' or<br/>
+`window-min-width'; so this command can make a new window as<br/>
+small as one line or two columns.  SIZE defaults to half of<br/>
+WINDOW's size.  Interactively, SIZE is the prefix argument.<br/>
+<br/>
+Optional third argument SIDE nil (or `below') specifies that the<br/>
+new window shall be located below WINDOW.  SIDE `above' means the<br/>
+new window shall be located above WINDOW.  In both cases SIZE<br/>
+specifies the new number of lines for WINDOW (or the new window<br/>
+if SIZE is negative) including space reserved for the mode and/or<br/>
+header line.<br/>
+<br/>
+SIDE t (or `right') specifies that the new window shall be<br/>
+located on the right side of WINDOW.  SIDE `left' means the new<br/>
+window shall be located on the left of WINDOW.  In both cases<br/>
+SIZE specifies the new number of columns for WINDOW (or the new<br/>
+window provided SIZE is negative) including space reserved for<br/>
+fringes and the scrollbar or a divider column.  Any other non-nil<br/>
+value for SIDE is currently handled like t (or `right').<br/>
+<br/>
+If the variable `ignore-window-parameters' is non-nil or the<br/>
+`split-window' parameter of WINDOW equals t, do not process any<br/>
+parameters of WINDOW.  Otherwise, if the `split-window' parameter<br/>
+of WINDOW specifies a function, call that function with all three<br/>
+arguments and return the value returned by that function.<br/>
+<br/>
+Otherwise, if WINDOW is part of an atomic window, "split" the<br/>
+root of that atomic window.  The new window does not become a<br/>
+member of that atomic window.<br/>
+<br/>
+If WINDOW is live, properties of the new window like margins and<br/>
+scrollbars are inherited from WINDOW.  If WINDOW is an internal<br/>
+window, these properties as well as the buffer displayed in the<br/>
+new window are inherited from the window selected on WINDOW's<br/>
+frame.  The selected window is not changed by this function.

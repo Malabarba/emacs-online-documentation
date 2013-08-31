@@ -1,1 +1,40 @@
-diary-date-forms is a variable defined in `calendar.el'.<br/>Its value is ((month "/" day "[^/0-9]")<br/> (month "/" day "/" year "[^0-9]")<br/> (monthname " *" day "[^,0-9]")<br/> (monthname " *" day ", *" year "[^0-9]")<br/> (dayname "\\W"))<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of pseudo-patterns describing the forms of date used in the diary.<br/>The patterns on the list must be MUTUALLY EXCLUSIVE and should not match<br/>any portion of the diary entry itself, just the date component.<br/><br/>A pseudo-pattern is a list of regular expressions and the keywords `month',<br/>`day', `year', `monthname', and `dayname'.  The keyword `monthname' will<br/>match the name of the month (see `calendar-month-name-array'), capitalized<br/>or not, or its user-specified abbreviation (see `calendar-month-abbrev-array'),<br/>followed by a period or not; it will also match `*'.  Similarly, `dayname'<br/>will match the name of the day (see `calendar-day-name-array'), capitalized or<br/>not, or its user-specified abbreviation (see `calendar-day-abbrev-array'),<br/>followed by a period or not.  The keywords `month', `day', and `year' will<br/>match those numerical values, preceded by arbitrarily many zeros; they will<br/>also match `*'.<br/><br/>The matching of the diary entries with the date forms is done with the<br/>standard syntax table from Fundamental mode, but with the `*' changed so<br/>that it is a word constituent.<br/><br/>If, to be mutually exclusive, a pseudo-pattern must match a portion of the<br/>diary entry itself, the first element of the pattern MUST be `backup'.  This<br/>directive causes the date recognizer to back up to the beginning of the<br/>current word of the diary entry, so in no case can the pattern match more than<br/>a portion of the first word of the diary entry.<br/><br/>For examples of three common styles, see `diary-american-date-forms',<br/>`diary-european-date-forms', and `diary-iso-date-forms'.<br/><br/>You can customize this variable.
+<strong>diary-date-forms</strong> is a variable defined in `<code>calendar.el</code>'.<br/>
+Its value is ((month "/" day "[^/0-9]")<br/>
+ (month "/" day "/" year "[^0-9]")<br/>
+ (monthname " *" day "[^,0-9]")<br/>
+ (monthname " *" day ", *" year "[^0-9]")<br/>
+ (dayname "\\W"))<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of pseudo-patterns describing the forms of date used in the diary.<br/>
+The patterns on the list must be MUTUALLY EXCLUSIVE and should not match<br/>
+any portion of the diary entry itself, just the date component.<br/>
+<br/>
+A pseudo-pattern is a list of regular expressions and the keywords `month',<br/>
+`day', `year', `monthname', and `dayname'.  The keyword `monthname' will<br/>
+match the name of the month (see `calendar-month-name-array'), capitalized<br/>
+or not, or its user-specified abbreviation (see `calendar-month-abbrev-array'),<br/>
+followed by a period or not; it will also match `*'.  Similarly, `dayname'<br/>
+will match the name of the day (see `calendar-day-name-array'), capitalized or<br/>
+not, or its user-specified abbreviation (see `calendar-day-abbrev-array'),<br/>
+followed by a period or not.  The keywords `month', `day', and `year' will<br/>
+match those numerical values, preceded by arbitrarily many zeros; they will<br/>
+also match `*'.<br/>
+<br/>
+The matching of the diary entries with the date forms is done with the<br/>
+standard syntax table from Fundamental mode, but with the `*' changed so<br/>
+that it is a word constituent.<br/>
+<br/>
+If, to be mutually exclusive, a pseudo-pattern must match a portion of the<br/>
+diary entry itself, the first element of the pattern MUST be `backup'.  This<br/>
+directive causes the date recognizer to back up to the beginning of the<br/>
+current word of the diary entry, so in no case can the pattern match more than<br/>
+a portion of the first word of the diary entry.<br/>
+<br/>
+For examples of three common styles, see `diary-american-date-forms',<br/>
+`diary-european-date-forms', and `diary-iso-date-forms'.<br/>
+<br/>
+You can customize this variable.

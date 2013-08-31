@@ -1,1 +1,33 @@
-debugger-bury-or-kill is a variable defined in `debug.el'.<br/>Its value is bury<br/><br/>Documentation:<br/>What to do with the debugger buffer when exiting `debug'.<br/>The value affects the behavior of operations on any window<br/>previously showing the debugger buffer.<br/><br/>`nil' means that if its window is not deleted when exiting the<br/>  debugger, invoking `switch-to-prev-buffer' will usually show<br/>  the debugger buffer again.<br/><br/>`append' means that if the window is not deleted, the debugger<br/>  buffer moves to the end of the window's previous buffers so<br/>  it's less likely that a future invocation of<br/>  `switch-to-prev-buffer' will switch to it.  Also, it moves the<br/>  buffer to the end of the frame's buffer list.<br/><br/>`bury' means that if the window is not deleted, its buffer is<br/>  removed from the window's list of previous buffers.  Also, it<br/>  moves the buffer to the end of the frame's buffer list.  This<br/>  value provides the most reliable remedy to not have<br/>  `switch-to-prev-buffer' switch to the debugger buffer again<br/>  without killing the buffer.<br/><br/>`kill' means to kill the debugger buffer.<br/><br/>The value used here is passed to `quit-restore-window'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.3 of Emacs.<br/>
+<strong>debugger-bury-or-kill</strong> is a variable defined in `<code>debug.el</code>'.<br/>
+Its value is bury<br/>
+<br/>
+Documentation:<br/>
+What to do with the debugger buffer when exiting `debug'.<br/>
+The value affects the behavior of operations on any window<br/>
+previously showing the debugger buffer.<br/>
+<br/>
+`nil' means that if its window is not deleted when exiting the<br/>
+  debugger, invoking `switch-to-prev-buffer' will usually show<br/>
+  the debugger buffer again.<br/>
+<br/>
+`append' means that if the window is not deleted, the debugger<br/>
+  buffer moves to the end of the window's previous buffers so<br/>
+  it's less likely that a future invocation of<br/>
+  `switch-to-prev-buffer' will switch to it.  Also, it moves the<br/>
+  buffer to the end of the frame's buffer list.<br/>
+<br/>
+`bury' means that if the window is not deleted, its buffer is<br/>
+  removed from the window's list of previous buffers.  Also, it<br/>
+  moves the buffer to the end of the frame's buffer list.  This<br/>
+  value provides the most reliable remedy to not have<br/>
+  `switch-to-prev-buffer' switch to the debugger buffer again<br/>
+  without killing the buffer.<br/>
+<br/>
+`kill' means to kill the debugger buffer.<br/>
+<br/>
+The value used here is passed to `quit-restore-window'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.3 of Emacs.<br/>

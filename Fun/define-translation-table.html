@@ -1,1 +1,19 @@
-define-translation-table is a compiled Lisp function in `mule.el'.<br/><br/>(define-translation-table SYMBOL &rest ARGS)<br/><br/>Define SYMBOL as the name of translation table made by ARGS.<br/>This sets up information so that the table can be used for<br/>translations in a CCL program.<br/><br/>If the first element of ARGS is a char-table whose purpose is<br/>`translation-table', just define SYMBOL to name it.  (Note that this<br/>function does not bind SYMBOL.)<br/><br/>Any other ARGS should be suitable as arguments of the function<br/>`make-translation-table' (which see).<br/><br/>This function sets properties `translation-table' and<br/>`translation-table-id' of SYMBOL to the created table itself and the<br/>identification number of the table respectively.  It also registers<br/>the table in `translation-table-vector'.
+<strong>define-translation-table</strong> is a compiled Lisp function in `<code>mule.el</code>'.<br/>
+<br/>
+(define-translation-table SYMBOL &rest ARGS)<br/>
+<br/>
+Define SYMBOL as the name of translation table made by ARGS.<br/>
+This sets up information so that the table can be used for<br/>
+translations in a CCL program.<br/>
+<br/>
+If the first element of ARGS is a char-table whose purpose is<br/>
+`translation-table', just define SYMBOL to name it.  (Note that this<br/>
+function does not bind SYMBOL.)<br/>
+<br/>
+Any other ARGS should be suitable as arguments of the function<br/>
+`make-translation-table' (which see).<br/>
+<br/>
+This function sets properties `translation-table' and<br/>
+`translation-table-id' of SYMBOL to the created table itself and the<br/>
+identification number of the table respectively.  It also registers<br/>
+the table in `translation-table-vector'.

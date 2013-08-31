@@ -1,1 +1,46 @@
-sc-default-cite-frame is a variable defined in `supercite.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Default REGI frame for citing a region.<br/><br/>You can customize this variable.<br/><br/>Value: ((begin<br/>  (progn<br/>    (sc-fill-if-different)<br/>    (setq sc-tmp-nested-regexp<br/>	  (sc-cite-regexp "")<br/>	  sc-tmp-nonnested-regexp<br/>	  (sc-cite-regexp)<br/>	  sc-tmp-dumb-regexp<br/>	  (concat "\\("<br/>		  (sc-cite-regexp "")<br/>		  "\\)"<br/>		  (sc-cite-regexp sc-citation-nonnested-root-regexp)))))<br/> ("^[ 	]*$"<br/>  (if sc-cite-blank-lines-p<br/>      (if sc-nested-citation-p<br/>	  (sc-add-citation-level)<br/>	(sc-cite-line))<br/>    (sc-fill-if-different "")))<br/> (sc-reference-tag-string<br/>  (if<br/>      (string= sc-reference-tag-string "")<br/>      (list 'continue)<br/>    nil))<br/> (sc-tmp-dumb-regexp<br/>  (sc-cite-coerce-dumb-citer))<br/> (sc-tmp-nested-regexp<br/>  (sc-add-citation-level))<br/> (sc-tmp-nonnested-regexp<br/>  (sc-cite-coerce-cited-line))<br/> (sc-nested-citation-p<br/>  (sc-add-citation-level))<br/> (t<br/>  (sc-cite-line))<br/> (end<br/>  (sc-fill-if-different "")))<br/><br/>
+<strong>sc-default-cite-frame</strong> is a variable defined in `<code>supercite.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Default REGI frame for citing a region.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+Value: ((begin<br/>
+  (progn<br/>
+    (sc-fill-if-different)<br/>
+    (setq sc-tmp-nested-regexp<br/>
+	  (sc-cite-regexp "")<br/>
+	  sc-tmp-nonnested-regexp<br/>
+	  (sc-cite-regexp)<br/>
+	  sc-tmp-dumb-regexp<br/>
+	  (concat "\\("<br/>
+		  (sc-cite-regexp "")<br/>
+		  "\\)"<br/>
+		  (sc-cite-regexp sc-citation-nonnested-root-regexp)))))<br/>
+ ("^[ 	]*$"<br/>
+  (if sc-cite-blank-lines-p<br/>
+      (if sc-nested-citation-p<br/>
+	  (sc-add-citation-level)<br/>
+	(sc-cite-line))<br/>
+    (sc-fill-if-different "")))<br/>
+ (sc-reference-tag-string<br/>
+  (if<br/>
+      (string= sc-reference-tag-string "")<br/>
+      (list 'continue)<br/>
+    nil))<br/>
+ (sc-tmp-dumb-regexp<br/>
+  (sc-cite-coerce-dumb-citer))<br/>
+ (sc-tmp-nested-regexp<br/>
+  (sc-add-citation-level))<br/>
+ (sc-tmp-nonnested-regexp<br/>
+  (sc-cite-coerce-cited-line))<br/>
+ (sc-nested-citation-p<br/>
+  (sc-add-citation-level))<br/>
+ (t<br/>
+  (sc-cite-line))<br/>
+ (end<br/>
+  (sc-fill-if-different "")))<br/>
+<br/>

@@ -1,1 +1,34 @@
-ielm-prompt-read-only is a variable defined in `ielm.el'.<br/>Its value is t<br/><br/>Documentation:<br/>If non-nil, the IELM prompt is read only.<br/>The read only region includes the newline before the prompt.<br/>Setting this variable does not affect existing IELM runs.<br/>This works by setting the buffer-local value of `comint-prompt-read-only'.<br/>Setting that value directly affects new prompts in the current buffer.<br/><br/>If this option is enabled, then the safe way to temporarily<br/>override the read-only-ness of IELM prompts is to call<br/>`comint-kill-whole-line' or `comint-kill-region' with no<br/>narrowing in effect.  This way you will be certain that none of<br/>the remaining prompts will be accidentally messed up.  You may<br/>wish to put something like the following in your init file:<br/><br/>(add-hook 'ielm-mode-hook<br/>	  (lambda ()<br/>	     (define-key ielm-map "\C-w" 'comint-kill-region)<br/>	     (define-key ielm-map [C-S-backspace]<br/>	       'comint-kill-whole-line)))<br/><br/>If you set `comint-prompt-read-only' to t, you might wish to use<br/>`comint-mode-hook' and `comint-mode-map' instead of<br/>`ielm-mode-hook' and `ielm-map'.  That will affect all comint<br/>buffers, including IELM buffers.  If you sometimes use IELM on<br/>text-only terminals or with `emacs -nw', you might wish to use<br/>another binding for `comint-kill-whole-line'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22.1 of Emacs.<br/>
+<strong>ielm-prompt-read-only</strong> is a variable defined in `<code>ielm.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+Documentation:<br/>
+If non-nil, the IELM prompt is read only.<br/>
+The read only region includes the newline before the prompt.<br/>
+Setting this variable does not affect existing IELM runs.<br/>
+This works by setting the buffer-local value of `comint-prompt-read-only'.<br/>
+Setting that value directly affects new prompts in the current buffer.<br/>
+<br/>
+If this option is enabled, then the safe way to temporarily<br/>
+override the read-only-ness of IELM prompts is to call<br/>
+`comint-kill-whole-line' or `comint-kill-region' with no<br/>
+narrowing in effect.  This way you will be certain that none of<br/>
+the remaining prompts will be accidentally messed up.  You may<br/>
+wish to put something like the following in your init file:<br/>
+<br/>
+(add-hook 'ielm-mode-hook<br/>
+	  (lambda ()<br/>
+	     (define-key ielm-map "\C-w" 'comint-kill-region)<br/>
+	     (define-key ielm-map [C-S-backspace]<br/>
+	       'comint-kill-whole-line)))<br/>
+<br/>
+If you set `comint-prompt-read-only' to t, you might wish to use<br/>
+`comint-mode-hook' and `comint-mode-map' instead of<br/>
+`ielm-mode-hook' and `ielm-map'.  That will affect all comint<br/>
+buffers, including IELM buffers.  If you sometimes use IELM on<br/>
+text-only terminals or with `emacs -nw', you might wish to use<br/>
+another binding for `comint-kill-whole-line'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22.1 of Emacs.<br/>

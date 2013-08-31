@@ -1,1 +1,34 @@
-message-tool-bar-gnome is a variable defined in `message.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>List of items for the message tool bar (GNOME style).<br/><br/>See `gmm-tool-bar-from-list' for details on the format of the list.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/><br/><br/>Value:<br/>((ispell-message "spell" nil :vert-only t :visible<br/>		 (or<br/>		  (not<br/>		   (boundp 'flyspell-mode))<br/>		  (not flyspell-mode)))<br/> (flyspell-buffer "spell" t :vert-only t :visible<br/>		  (and<br/>		   (boundp 'flyspell-mode)<br/>		   flyspell-mode)<br/>		  :help "Flyspell whole buffer")<br/> (message-send-and-exit "mail/send" t :label "Send")<br/> (message-dont-send "mail/save-draft")<br/> (mml-attach-file "attach" mml-mode-map :vert-only t)<br/> (mml-preview "mail/preview" mml-mode-map)<br/> (mml-secure-message-sign-encrypt "lock" mml-mode-map :visible nil)<br/> (message-insert-importance-high "important" nil :visible nil)<br/> (message-insert-importance-low "unimportant" nil :visible nil)<br/> (message-insert-disposition-notification-to "receipt" nil :visible nil))<br/><br/>
+<strong>message-tool-bar-gnome</strong> is a variable defined in `<code>message.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+List of items for the message tool bar (GNOME style).<br/>
+<br/>
+See `gmm-tool-bar-from-list' for details on the format of the list.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>
+<br/>
+<br/>
+Value:<br/>
+((ispell-message "spell" nil :vert-only t :visible<br/>
+		 (or<br/>
+		  (not<br/>
+		   (boundp 'flyspell-mode))<br/>
+		  (not flyspell-mode)))<br/>
+ (flyspell-buffer "spell" t :vert-only t :visible<br/>
+		  (and<br/>
+		   (boundp 'flyspell-mode)<br/>
+		   flyspell-mode)<br/>
+		  :help "Flyspell whole buffer")<br/>
+ (message-send-and-exit "mail/send" t :label "Send")<br/>
+ (message-dont-send "mail/save-draft")<br/>
+ (mml-attach-file "attach" mml-mode-map :vert-only t)<br/>
+ (mml-preview "mail/preview" mml-mode-map)<br/>
+ (mml-secure-message-sign-encrypt "lock" mml-mode-map :visible nil)<br/>
+ (message-insert-importance-high "important" nil :visible nil)<br/>
+ (message-insert-importance-low "unimportant" nil :visible nil)<br/>
+ (message-insert-disposition-notification-to "receipt" nil :visible nil))<br/>
+<br/>

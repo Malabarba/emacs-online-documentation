@@ -1,1 +1,17 @@
-ispell-command-loop is a compiled Lisp function in `ispell.el'.<br/><br/>(ispell-command-loop MISS GUESS WORD START END)<br/><br/>Display possible corrections from list MISS.<br/>GUESS lists possibly valid affix construction of WORD.<br/>Returns nil to keep word.<br/>Returns 0 to insert locally into buffer-local dictionary.<br/>Returns string for new chosen word.<br/>Returns list for new replacement word (will be rechecked).<br/>  Query-replace when list length is 2.<br/>  Automatic query-replace when second element is `query-replace'.<br/>Highlights the word, which is assumed to run from START to END.<br/>Global `ispell-pdict-modified-p' becomes a list where the only value<br/>indicates whether the dictionary has been modified when option `a'<br/>or `i' is used.<br/>Global `ispell-quit' set to start location to continue spell session.
+<strong>ispell-command-loop</strong> is a compiled Lisp function in `<code>ispell.el</code>'.<br/>
+<br/>
+(ispell-command-loop MISS GUESS WORD START END)<br/>
+<br/>
+Display possible corrections from list MISS.<br/>
+GUESS lists possibly valid affix construction of WORD.<br/>
+Returns nil to keep word.<br/>
+Returns 0 to insert locally into buffer-local dictionary.<br/>
+Returns string for new chosen word.<br/>
+Returns list for new replacement word (will be rechecked).<br/>
+  Query-replace when list length is 2.<br/>
+  Automatic query-replace when second element is `query-replace'.<br/>
+Highlights the word, which is assumed to run from START to END.<br/>
+Global `ispell-pdict-modified-p' becomes a list where the only value<br/>
+indicates whether the dictionary has been modified when option `a'<br/>
+or `i' is used.<br/>
+Global `ispell-quit' set to start location to continue spell session.

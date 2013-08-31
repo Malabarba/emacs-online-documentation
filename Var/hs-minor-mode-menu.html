@@ -1,1 +1,33 @@
-hs-minor-mode-menu is a variable defined in `hideshow.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Menu used when hideshow minor mode is active.<br/><br/>Value:<br/>(keymap "Hide/Show"<br/>	(Hide\ Block menu-item "Hide Block" hs-hide-block :help "Hide the code or comment block at point")<br/>	(Show\ Block menu-item "Show Block" hs-show-block :help "Show the code or comment block at point")<br/>	(Hide\ All menu-item "Hide All" hs-hide-all :help "Hide all the blocks in the buffer")<br/>	(Show\ All menu-item "Show All" hs-show-all :help "Show all the blocks in the buffer")<br/>	(Hide\ Level menu-item "Hide Level" hs-hide-level :help "Hide all block at levels below the current block")<br/>	(Toggle\ Hiding menu-item "Toggle Hiding" hs-toggle-hiding :help "Toggle the hiding state of the current block")<br/>	(nil menu-item "----")<br/>	(Hide\ comments\ when\ hiding\ all menu-item "Hide comments when hiding all" menu-function-257 :key-sequence nil :button<br/>					   (:toggle . hs-hide-comments-when-hiding-all)<br/>					   :help "If t also hide comment blocks when doing `hs-hide-all'")<br/>	(Reveal\ on\ isearch menu-item "Reveal on isearch"<br/>			     (keymap "Reveal on isearch"<br/>				     (Code\ blocks menu-item "Code blocks" menu-function-258 :key-sequence nil :button<br/>						   (:radio eq hs-isearch-open 'code)<br/>						   :help "Show hidden code blocks when isearch matches inside them")<br/>				     (Comment\ blocks menu-item "Comment blocks" menu-function-259 :key-sequence nil :button<br/>						      (:radio eq hs-isearch-open 'comment)<br/>						      :help "Show hidden comment blocks when isearch matches inside them")<br/>				     (Code\ and\ Comment\ blocks menu-item "Code and Comment blocks" menu-function-260 :key-sequence nil :button<br/>								 (:radio eq hs-isearch-open t)<br/>								 :help "Show both hidden code and comment blocks when isearch matches inside them")<br/>				     (None menu-item "None" menu-function-261 :key-sequence nil :button<br/>					   (:radio eq hs-isearch-open nil)<br/>					   :help "Do not hidden code or comment blocks when isearch matches inside them"))))<br/><br/>
+<strong>hs-minor-mode-menu</strong> is a variable defined in `<code>hideshow.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Menu used when hideshow minor mode is active.<br/>
+<br/>
+Value:<br/>
+(keymap "Hide/Show"<br/>
+	(Hide\ Block menu-item "Hide Block" hs-hide-block :help "Hide the code or comment block at point")<br/>
+	(Show\ Block menu-item "Show Block" hs-show-block :help "Show the code or comment block at point")<br/>
+	(Hide\ All menu-item "Hide All" hs-hide-all :help "Hide all the blocks in the buffer")<br/>
+	(Show\ All menu-item "Show All" hs-show-all :help "Show all the blocks in the buffer")<br/>
+	(Hide\ Level menu-item "Hide Level" hs-hide-level :help "Hide all block at levels below the current block")<br/>
+	(Toggle\ Hiding menu-item "Toggle Hiding" hs-toggle-hiding :help "Toggle the hiding state of the current block")<br/>
+	(nil menu-item "----")<br/>
+	(Hide\ comments\ when\ hiding\ all menu-item "Hide comments when hiding all" menu-function-257 :key-sequence nil :button<br/>
+					   (:toggle . hs-hide-comments-when-hiding-all)<br/>
+					   :help "If t also hide comment blocks when doing `hs-hide-all'")<br/>
+	(Reveal\ on\ isearch menu-item "Reveal on isearch"<br/>
+			     (keymap "Reveal on isearch"<br/>
+				     (Code\ blocks menu-item "Code blocks" menu-function-258 :key-sequence nil :button<br/>
+						   (:radio eq hs-isearch-open 'code)<br/>
+						   :help "Show hidden code blocks when isearch matches inside them")<br/>
+				     (Comment\ blocks menu-item "Comment blocks" menu-function-259 :key-sequence nil :button<br/>
+						      (:radio eq hs-isearch-open 'comment)<br/>
+						      :help "Show hidden comment blocks when isearch matches inside them")<br/>
+				     (Code\ and\ Comment\ blocks menu-item "Code and Comment blocks" menu-function-260 :key-sequence nil :button<br/>
+								 (:radio eq hs-isearch-open t)<br/>
+								 :help "Show both hidden code and comment blocks when isearch matches inside them")<br/>
+				     (None menu-item "None" menu-function-261 :key-sequence nil :button<br/>
+					   (:radio eq hs-isearch-open nil)<br/>
+					   :help "Do not hidden code or comment blocks when isearch matches inside them"))))<br/>
+<br/>

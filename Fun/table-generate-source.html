@@ -1,1 +1,28 @@
-table-generate-source is an interactive autoloaded compiled Lisp function in `table.el'.<br/><br/>(table-generate-source LANGUAGE &optional DEST-BUFFER CAPTION)<br/><br/>Generate source of the current table in the specified language.<br/>LANGUAGE is a symbol that specifies the language to describe the<br/>structure of the table.  It must be either 'html, 'latex or 'cals.<br/>The resulted source text is inserted into DEST-BUFFER and the buffer<br/>object is returned.  When DEST-BUFFER is omitted or nil the default<br/>buffer specified in `table-dest-buffer-name' is used.  In this case<br/>the content of the default buffer is erased prior to the generation.<br/>When DEST-BUFFER is non-nil it is expected to be either a destination<br/>buffer or a name of the destination buffer.  In this case the<br/>generated result is inserted at the current point in the destination<br/>buffer and the previously existing contents in the buffer are<br/>untouched.<br/><br/>References used for this implementation:<br/><br/>HTML:<br/>        URL `http://www.w3.org'<br/><br/>LaTeX:<br/>        URL `http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/Tables.html'<br/><br/>CALS (DocBook DTD):<br/>        URL `http://www.oasis-open.org/html/a502.htm'<br/>        URL `http://www.oreilly.com/catalog/docbook/chapter/book/table.html#AEN114751'
+<strong>table-generate-source</strong> is an interactive autoloaded compiled Lisp function in `<code>table.el</code>'.<br/>
+<br/>
+(table-generate-source LANGUAGE &optional DEST-BUFFER CAPTION)<br/>
+<br/>
+Generate source of the current table in the specified language.<br/>
+LANGUAGE is a symbol that specifies the language to describe the<br/>
+structure of the table.  It must be either 'html, 'latex or 'cals.<br/>
+The resulted source text is inserted into DEST-BUFFER and the buffer<br/>
+object is returned.  When DEST-BUFFER is omitted or nil the default<br/>
+buffer specified in `table-dest-buffer-name' is used.  In this case<br/>
+the content of the default buffer is erased prior to the generation.<br/>
+When DEST-BUFFER is non-nil it is expected to be either a destination<br/>
+buffer or a name of the destination buffer.  In this case the<br/>
+generated result is inserted at the current point in the destination<br/>
+buffer and the previously existing contents in the buffer are<br/>
+untouched.<br/>
+<br/>
+References used for this implementation:<br/>
+<br/>
+HTML:<br/>
+        URL `http://www.w3.org'<br/>
+<br/>
+LaTeX:<br/>
+        URL `http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/Tables.html'<br/>
+<br/>
+CALS (DocBook DTD):<br/>
+        URL `http://www.oasis-open.org/html/a502.htm'<br/>
+        URL `http://www.oreilly.com/catalog/docbook/chapter/book/table.html#AEN114751'

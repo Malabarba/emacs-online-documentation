@@ -1,1 +1,56 @@
-nxml-mode is an interactive autoloaded Lisp function in `nxml-mode.el'.<br/><br/>(nxml-mode)<br/><br/>Parent mode: `text-mode'.<br/><br/>Major mode for editing XML.<br/><br/>M-x nxml-finish-element finishes the current element by inserting an end-tag.<br/>C-c C-i closes a start-tag with `>' and then inserts a balancing end-tag<br/>leaving point between the start-tag and end-tag.<br/>M-x nxml-balanced-close-start-tag-block is similar but for block rather than inline elements:<br/>the start-tag, point, and end-tag are all left on separate lines.<br/>If `nxml-slash-auto-complete-flag' is non-nil, then inserting a `</'<br/>automatically inserts the rest of the end-tag.<br/><br/>C-M-i performs completion on the symbol preceding point.<br/><br/>M-x nxml-dynamic-markup-word uses the contents of the current buffer<br/>to choose a tag to put around the word preceding point.<br/><br/>Sections of the document can be displayed in outline form.  The<br/>variable `nxml-section-element-name-regexp' controls when an element<br/>is recognized as a section.  The same key sequences that change<br/>visibility in outline mode are used except that they start with C-c C-o<br/>instead of C-c.<br/><br/>Validation is provided by the related minor-mode `rng-validate-mode'.<br/>This also makes completion schema- and context- sensitive.  Element<br/>names, attribute names, attribute values and namespace URIs can all be<br/>completed. By default, `rng-validate-mode' is automatically enabled.<br/>You can toggle it using M-x rng-validate-mode or change the default by<br/>customizing `rng-nxml-auto-validate-flag'.<br/><br/>TAB indents the current line appropriately.<br/>This can be customized using the variable `nxml-child-indent'<br/>and the variable `nxml-attribute-indent'.<br/><br/>M-x nxml-insert-named-char inserts a character reference using<br/>the character's name (by default, the Unicode name).<br/>C-u M-x nxml-insert-named-char inserts the character directly.<br/><br/>The Emacs commands that normally operate on balanced expressions will<br/>operate on XML markup items.  Thus C-M-f will move forward<br/>across one markup item; C-M-b will move backward across<br/>one markup item; C-M-k will kill the following markup item;<br/>C-M-@ will mark the following markup item.  By default, each<br/>tag each treated as a single markup item; to make the complete element<br/>be treated as a single markup item, set the variable<br/>`nxml-sexp-element-flag' to t.  For more details, see the function<br/>`nxml-forward-balanced-item'.<br/><br/>M-x nxml-backward-up-element and M-x nxml-down-element move up and down the element structure.<br/><br/>Many aspects this mode can be customized using<br/>M-x customize-group nxml RET.
+<strong>nxml-mode</strong> is an interactive autoloaded Lisp function in `<code>nxml-mode.el</code>'.<br/>
+<br/>
+(nxml-mode)<br/>
+<br/>
+Parent mode: `text-mode'.<br/>
+<br/>
+Major mode for editing XML.<br/>
+<br/>
+M-x nxml-finish-element finishes the current element by inserting an end-tag.<br/>
+C-c C-i closes a start-tag with `>' and then inserts a balancing end-tag<br/>
+leaving point between the start-tag and end-tag.<br/>
+M-x nxml-balanced-close-start-tag-block is similar but for block rather than inline elements:<br/>
+the start-tag, point, and end-tag are all left on separate lines.<br/>
+If `nxml-slash-auto-complete-flag' is non-nil, then inserting a `</'<br/>
+automatically inserts the rest of the end-tag.<br/>
+<br/>
+C-M-i performs completion on the symbol preceding point.<br/>
+<br/>
+M-x nxml-dynamic-markup-word uses the contents of the current buffer<br/>
+to choose a tag to put around the word preceding point.<br/>
+<br/>
+Sections of the document can be displayed in outline form.  The<br/>
+variable `nxml-section-element-name-regexp' controls when an element<br/>
+is recognized as a section.  The same key sequences that change<br/>
+visibility in outline mode are used except that they start with C-c C-o<br/>
+instead of C-c.<br/>
+<br/>
+Validation is provided by the related minor-mode `rng-validate-mode'.<br/>
+This also makes completion schema- and context- sensitive.  Element<br/>
+names, attribute names, attribute values and namespace URIs can all be<br/>
+completed. By default, `rng-validate-mode' is automatically enabled.<br/>
+You can toggle it using M-x rng-validate-mode or change the default by<br/>
+customizing `rng-nxml-auto-validate-flag'.<br/>
+<br/>
+TAB indents the current line appropriately.<br/>
+This can be customized using the variable `nxml-child-indent'<br/>
+and the variable `nxml-attribute-indent'.<br/>
+<br/>
+M-x nxml-insert-named-char inserts a character reference using<br/>
+the character's name (by default, the Unicode name).<br/>
+C-u M-x nxml-insert-named-char inserts the character directly.<br/>
+<br/>
+The Emacs commands that normally operate on balanced expressions will<br/>
+operate on XML markup items.  Thus C-M-f will move forward<br/>
+across one markup item; C-M-b will move backward across<br/>
+one markup item; C-M-k will kill the following markup item;<br/>
+C-M-@ will mark the following markup item.  By default, each<br/>
+tag each treated as a single markup item; to make the complete element<br/>
+be treated as a single markup item, set the variable<br/>
+`nxml-sexp-element-flag' to t.  For more details, see the function<br/>
+`nxml-forward-balanced-item'.<br/>
+<br/>
+M-x nxml-backward-up-element and M-x nxml-down-element move up and down the element structure.<br/>
+<br/>
+Many aspects this mode can be customized using<br/>
+M-x customize-group nxml RET.

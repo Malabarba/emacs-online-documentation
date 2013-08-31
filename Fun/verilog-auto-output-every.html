@@ -1,1 +1,35 @@
-verilog-auto-output-every is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-output-every)<br/><br/>Expand AUTOOUTPUTEVERY statements, as part of M-x verilog-auto.<br/>Make output statements for any signals that aren't primary inputs or<br/>outputs already.  This makes every signal in the design an output.  This is<br/>useful to get Synopsys to preserve every signal in the design, since it<br/>won't optimize away the outputs.<br/><br/>An example:<br/><br/>	module ExampOutputEvery (o,i,tempa,tempb);<br/>	   output o;<br/>	   input i;<br/>	   /*AUTOOUTPUTEVERY*/<br/>	   wire tempa = i;<br/>	   wire tempb = tempa;<br/>	   wire o = tempb;<br/>	endmodule<br/><br/>Typing M-x verilog-auto will make this into:<br/><br/>	module ExampOutputEvery (o,i,tempa,tempb);<br/>	   output o;<br/>	   input i;<br/>	   /*AUTOOUTPUTEVERY*/<br/>	   // Beginning of automatic outputs (every signal)<br/>	   output	tempb;<br/>	   output	tempa;<br/>	   // End of automatics<br/>	   wire tempa = i;<br/>	   wire tempb = tempa;<br/>	   wire o = tempb;<br/>	endmodule
+<strong>verilog-auto-output-every</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-output-every)<br/>
+<br/>
+Expand AUTOOUTPUTEVERY statements, as part of M-x verilog-auto.<br/>
+Make output statements for any signals that aren't primary inputs or<br/>
+outputs already.  This makes every signal in the design an output.  This is<br/>
+useful to get Synopsys to preserve every signal in the design, since it<br/>
+won't optimize away the outputs.<br/>
+<br/>
+An example:<br/>
+<br/>
+	module ExampOutputEvery (o,i,tempa,tempb);<br/>
+	   output o;<br/>
+	   input i;<br/>
+	   /*AUTOOUTPUTEVERY*/<br/>
+	   wire tempa = i;<br/>
+	   wire tempb = tempa;<br/>
+	   wire o = tempb;<br/>
+	endmodule<br/>
+<br/>
+Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	module ExampOutputEvery (o,i,tempa,tempb);<br/>
+	   output o;<br/>
+	   input i;<br/>
+	   /*AUTOOUTPUTEVERY*/<br/>
+	   // Beginning of automatic outputs (every signal)<br/>
+	   output	tempb;<br/>
+	   output	tempa;<br/>
+	   // End of automatics<br/>
+	   wire tempa = i;<br/>
+	   wire tempb = tempa;<br/>
+	   wire o = tempb;<br/>
+	endmodule

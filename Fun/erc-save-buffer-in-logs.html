@@ -1,1 +1,14 @@
-erc-save-buffer-in-logs is an interactive autoloaded Lisp function in `erc-log.el'.<br/><br/>(erc-save-buffer-in-logs &optional BUFFER)<br/><br/>Append BUFFER contents to the log file, if logging is enabled.<br/>If BUFFER is not provided, current buffer is used.<br/>Logging is enabled if `erc-logging-enabled' returns non-nil.<br/><br/>This is normally done on exit, to save the unsaved portion of the<br/>buffer, since only the text that runs off the buffer limit is logged<br/>automatically.<br/><br/>You can save every individual message by putting this function on<br/>`erc-insert-post-hook'.
+<strong>erc-save-buffer-in-logs</strong> is an interactive autoloaded Lisp function in `<code>erc-log.el</code>'.<br/>
+<br/>
+(erc-save-buffer-in-logs &optional BUFFER)<br/>
+<br/>
+Append BUFFER contents to the log file, if logging is enabled.<br/>
+If BUFFER is not provided, current buffer is used.<br/>
+Logging is enabled if `erc-logging-enabled' returns non-nil.<br/>
+<br/>
+This is normally done on exit, to save the unsaved portion of the<br/>
+buffer, since only the text that runs off the buffer limit is logged<br/>
+automatically.<br/>
+<br/>
+You can save every individual message by putting this function on<br/>
+`erc-insert-post-hook'.

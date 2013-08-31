@@ -1,1 +1,13 @@
-sql-execute is a compiled Lisp function in `sql.el'.<br/><br/>(sql-execute SQLBUF OUTBUF COMMAND ENHANCED ARG)<br/><br/>Executes a command in a SQL interactive buffer and captures the output.<br/><br/>The commands are run in SQLBUF and the output saved in OUTBUF.<br/>COMMAND must be a string, a function or a list of such elements.<br/>Functions are called with SQLBUF, OUTBUF and ARG as parameters;<br/>strings are formatted with ARG and executed.<br/><br/>If the results are empty the OUTBUF is deleted, otherwise the<br/>buffer is popped into a view window. 
+<strong>sql-execute</strong> is a compiled Lisp function in `<code>sql.el</code>'.<br/>
+<br/>
+(sql-execute SQLBUF OUTBUF COMMAND ENHANCED ARG)<br/>
+<br/>
+Executes a command in a SQL interactive buffer and captures the output.<br/>
+<br/>
+The commands are run in SQLBUF and the output saved in OUTBUF.<br/>
+COMMAND must be a string, a function or a list of such elements.<br/>
+Functions are called with SQLBUF, OUTBUF and ARG as parameters;<br/>
+strings are formatted with ARG and executed.<br/>
+<br/>
+If the results are empty the OUTBUF is deleted, otherwise the<br/>
+buffer is popped into a view window. 

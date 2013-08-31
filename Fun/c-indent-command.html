@@ -1,1 +1,28 @@
-c-indent-command is an interactive compiled Lisp function in `cc-cmds.el'.<br/><br/>(c-indent-command &optional ARG)<br/><br/>Indent current line as C code, and/or insert some whitespace.<br/><br/>If `c-tab-always-indent' is t, always just indent the current line.<br/>If nil, indent the current line only if point is at the left margin or<br/>in the line's indentation; otherwise insert some whitespace[*].  If<br/>other than nil or t, then some whitespace[*] is inserted only within<br/>literals (comments and strings), but the line is always reindented.<br/><br/>If `c-syntactic-indentation' is t, indentation is done according to<br/>the syntactic context.  A numeric argument, regardless of its value,<br/>means indent rigidly all the lines of the expression starting after<br/>point so that this line becomes properly indented.  The relative<br/>indentation among the lines of the expression is preserved.<br/><br/>If `c-syntactic-indentation' is nil, the line is just indented one<br/>step according to `c-basic-offset'.  In this mode, a numeric argument<br/>indents a number of such steps, positive or negative, and an empty<br/>prefix argument is equivalent to -1.<br/><br/>  [*] The amount and kind of whitespace inserted is controlled by the<br/>  variable `c-insert-tab-function', which is called to do the actual<br/>  insertion of whitespace.  Normally the function in this variable<br/>  just inserts a tab character, or the equivalent number of spaces,<br/>  depending on the variable `indent-tabs-mode'.
+<strong>c-indent-command</strong> is an interactive compiled Lisp function in `<code>cc-cmds.el</code>'.<br/>
+<br/>
+(c-indent-command &optional ARG)<br/>
+<br/>
+Indent current line as C code, and/or insert some whitespace.<br/>
+<br/>
+If `c-tab-always-indent' is t, always just indent the current line.<br/>
+If nil, indent the current line only if point is at the left margin or<br/>
+in the line's indentation; otherwise insert some whitespace[*].  If<br/>
+other than nil or t, then some whitespace[*] is inserted only within<br/>
+literals (comments and strings), but the line is always reindented.<br/>
+<br/>
+If `c-syntactic-indentation' is t, indentation is done according to<br/>
+the syntactic context.  A numeric argument, regardless of its value,<br/>
+means indent rigidly all the lines of the expression starting after<br/>
+point so that this line becomes properly indented.  The relative<br/>
+indentation among the lines of the expression is preserved.<br/>
+<br/>
+If `c-syntactic-indentation' is nil, the line is just indented one<br/>
+step according to `c-basic-offset'.  In this mode, a numeric argument<br/>
+indents a number of such steps, positive or negative, and an empty<br/>
+prefix argument is equivalent to -1.<br/>
+<br/>
+  [*] The amount and kind of whitespace inserted is controlled by the<br/>
+  variable `c-insert-tab-function', which is called to do the actual<br/>
+  insertion of whitespace.  Normally the function in this variable<br/>
+  just inserts a tab character, or the equivalent number of spaces,<br/>
+  depending on the variable `indent-tabs-mode'.

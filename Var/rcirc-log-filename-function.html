@@ -1,1 +1,21 @@
-rcirc-log-filename-function is a variable defined in `rcirc.el'.<br/>Its value is rcirc-generate-log-filename<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>A function to generate the filename used by rcirc's logging facility.<br/><br/>It is called with two arguments, PROCESS and TARGET (see<br/>`rcirc-generate-new-buffer-name' for their meaning), and should<br/>return the filename, or nil if no logging is desired for this<br/>session.<br/><br/>If the returned filename is absolute (`file-name-absolute-p'<br/>returns t), then it is used as-is, otherwise the resulting file<br/>is put into `rcirc-log-directory'.<br/><br/>The filename is then cleaned using `convert-standard-filename' to<br/>guarantee valid filenames for the current OS.<br/><br/>You can customize this variable.
+<strong>rcirc-log-filename-function</strong> is a variable defined in `<code>rcirc.el</code>'.<br/>
+Its value is rcirc-generate-log-filename<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+A function to generate the filename used by rcirc's logging facility.<br/>
+<br/>
+It is called with two arguments, PROCESS and TARGET (see<br/>
+`rcirc-generate-new-buffer-name' for their meaning), and should<br/>
+return the filename, or nil if no logging is desired for this<br/>
+session.<br/>
+<br/>
+If the returned filename is absolute (`file-name-absolute-p'<br/>
+returns t), then it is used as-is, otherwise the resulting file<br/>
+is put into `rcirc-log-directory'.<br/>
+<br/>
+The filename is then cleaned using `convert-standard-filename' to<br/>
+guarantee valid filenames for the current OS.<br/>
+<br/>
+You can customize this variable.

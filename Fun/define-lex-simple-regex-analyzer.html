@@ -1,1 +1,12 @@
-define-lex-simple-regex-analyzer is a Lisp macro in `lex.el'.<br/><br/>(define-lex-simple-regex-analyzer NAME DOC REGEXP TOKSYM &optional INDEX &rest FORMS)<br/><br/>Create a lexical analyzer with NAME and DOC that match REGEXP.<br/>TOKSYM is the symbol to use when creating a semantic lexical token.<br/>INDEX is the index into the match that defines the bounds of the token.<br/>Index should be a plain integer, and not specified in the macro as an<br/>expression.<br/>FORMS are evaluated upon a successful match BEFORE the new token is<br/>created.  It is valid to ignore FORMS.<br/>See `define-lex-analyzer' for more about analyzers.
+<strong>define-lex-simple-regex-analyzer</strong> is a Lisp macro in `<code>lex.el</code>'.<br/>
+<br/>
+(define-lex-simple-regex-analyzer NAME DOC REGEXP TOKSYM &optional INDEX &rest FORMS)<br/>
+<br/>
+Create a lexical analyzer with NAME and DOC that match REGEXP.<br/>
+TOKSYM is the symbol to use when creating a semantic lexical token.<br/>
+INDEX is the index into the match that defines the bounds of the token.<br/>
+Index should be a plain integer, and not specified in the macro as an<br/>
+expression.<br/>
+FORMS are evaluated upon a successful match BEFORE the new token is<br/>
+created.  It is valid to ignore FORMS.<br/>
+See `define-lex-analyzer' for more about analyzers.

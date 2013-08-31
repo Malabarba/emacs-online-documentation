@@ -1,1 +1,41 @@
-verilog-auto-inst-param-value is a variable defined in `verilog-mode.el'.<br/>Its value is nil<br/><br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate `verilog-booleanp'.<br/><br/>Documentation:<br/>Non-nil means AUTOINST will replace parameters with the parameter value.<br/>If nil, leave parameters as symbolic names.<br/><br/>Parameters must be in Verilog 2001 format #(...), and if a parameter is not<br/>listed as such there (as when the default value is acceptable), it will not<br/>be replaced, and will remain symbolic.<br/><br/>For example, imagine a submodule uses parameters to declare the size of its<br/>inputs.  This is then used by an upper module:<br/><br/>	module InstModule (o,i);<br/>	   parameter WIDTH;<br/>	   input [WIDTH-1:0] i;<br/>	endmodule<br/><br/>	module ExampInst;<br/>	   InstModule<br/> 	     #(PARAM(10))<br/>	    instName<br/>	     (/*AUTOINST*/<br/>	      .i 	(i[PARAM-1:0]));<br/><br/>Note even though PARAM=10, the AUTOINST has left the parameter as a<br/>symbolic name.  If `verilog-auto-inst-param-value' is set, this will<br/>instead expand to:<br/><br/>	module ExampInst;<br/>	   InstModule<br/> 	     #(PARAM(10))<br/>	    instName<br/>	     (/*AUTOINST*/<br/>	      .i 	(i[9:0]));<br/><br/>You can customize this variable.
+<strong>verilog-auto-inst-param-value</strong> is a variable defined in `<code>verilog-mode.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate `verilog-booleanp'.<br/>
+<br/>
+Documentation:<br/>
+Non-nil means AUTOINST will replace parameters with the parameter value.<br/>
+If nil, leave parameters as symbolic names.<br/>
+<br/>
+Parameters must be in Verilog 2001 format #(...), and if a parameter is not<br/>
+listed as such there (as when the default value is acceptable), it will not<br/>
+be replaced, and will remain symbolic.<br/>
+<br/>
+For example, imagine a submodule uses parameters to declare the size of its<br/>
+inputs.  This is then used by an upper module:<br/>
+<br/>
+	module InstModule (o,i);<br/>
+	   parameter WIDTH;<br/>
+	   input [WIDTH-1:0] i;<br/>
+	endmodule<br/>
+<br/>
+	module ExampInst;<br/>
+	   InstModule<br/>
+ 	     #(PARAM(10))<br/>
+	    instName<br/>
+	     (/*AUTOINST*/<br/>
+	      .i 	(i[PARAM-1:0]));<br/>
+<br/>
+Note even though PARAM=10, the AUTOINST has left the parameter as a<br/>
+symbolic name.  If `verilog-auto-inst-param-value' is set, this will<br/>
+instead expand to:<br/>
+<br/>
+	module ExampInst;<br/>
+	   InstModule<br/>
+ 	     #(PARAM(10))<br/>
+	    instName<br/>
+	     (/*AUTOINST*/<br/>
+	      .i 	(i[9:0]));<br/>
+<br/>
+You can customize this variable.

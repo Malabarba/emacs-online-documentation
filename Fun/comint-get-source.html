@@ -1,1 +1,19 @@
-comint-get-source is a compiled Lisp function in `comint.el'.<br/><br/>(comint-get-source PROMPT PREV-DIR/FILE SOURCE-MODES MUSTMATCH-P)<br/><br/>Prompt for filenames in commands that process source files,<br/>e.g. loading or compiling a file.<br/>Provides a default, if there is one, and returns the result filename.<br/><br/>See `comint-source-default' for more on determining defaults.<br/><br/>PROMPT is the prompt string.  PREV-DIR/FILE is the (DIRECTORY . FILE) pair<br/>from the last source processing command.  SOURCE-MODES is a list of major<br/>modes used to determine what file buffers contain source files.  (These<br/>two arguments are used for determining defaults.)  If MUSTMATCH-P is true,<br/>then the filename reader will only accept a file that exists.<br/><br/>A typical use:<br/> (interactive (comint-get-source "Compile file: " prev-lisp-dir/file<br/>                                 '(lisp-mode) t))
+<strong>comint-get-source</strong> is a compiled Lisp function in `<code>comint.el</code>'.<br/>
+<br/>
+(comint-get-source PROMPT PREV-DIR/FILE SOURCE-MODES MUSTMATCH-P)<br/>
+<br/>
+Prompt for filenames in commands that process source files,<br/>
+e.g. loading or compiling a file.<br/>
+Provides a default, if there is one, and returns the result filename.<br/>
+<br/>
+See `comint-source-default' for more on determining defaults.<br/>
+<br/>
+PROMPT is the prompt string.  PREV-DIR/FILE is the (DIRECTORY . FILE) pair<br/>
+from the last source processing command.  SOURCE-MODES is a list of major<br/>
+modes used to determine what file buffers contain source files.  (These<br/>
+two arguments are used for determining defaults.)  If MUSTMATCH-P is true,<br/>
+then the filename reader will only accept a file that exists.<br/>
+<br/>
+A typical use:<br/>
+ (interactive (comint-get-source "Compile file: " prev-lisp-dir/file<br/>
+                                 '(lisp-mode) t))

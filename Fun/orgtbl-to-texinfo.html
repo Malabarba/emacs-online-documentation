@@ -1,1 +1,28 @@
-orgtbl-to-texinfo is an autoloaded Lisp function in `org-table.el'.<br/><br/>(orgtbl-to-texinfo TABLE PARAMS)<br/><br/>Convert the orgtbl-mode TABLE to TeXInfo.<br/>TABLE is a list, each entry either the symbol `hline' for a horizontal<br/>separator line, or a list of fields for that line.<br/>PARAMS is a property list of parameters that can influence the conversion.<br/>Supports all parameters from `orgtbl-to-generic'.  Most important for<br/>TeXInfo are:<br/><br/>:splice nil/t      When set to t, return only table body lines, don't wrap<br/>                   them into a multitable environment.  Default is nil.<br/><br/>:fmt fmt           A format to be used to wrap the field, should contain<br/>                   %s for the original field value.  For example, to wrap<br/>                   everything in @kbd{}, you could use :fmt "@kbd{%s}".<br/>                   This may also be a property list with column numbers and<br/>                   formats.  For example :fmt (2 "@kbd{%s}" 4 "@code{%s}").<br/>                   Each format also may be a function that formats its one<br/>                   argument.<br/><br/>:cf "f1 f2.."    The column fractions for the table.  By default these<br/>                   are computed automatically from the width of the columns<br/>                   under org-mode.<br/><br/>The general parameters :skip and :skipcols have already been applied when<br/>this function is called.
+<strong>orgtbl-to-texinfo</strong> is an autoloaded Lisp function in `<code>org-table.el</code>'.<br/>
+<br/>
+(orgtbl-to-texinfo TABLE PARAMS)<br/>
+<br/>
+Convert the orgtbl-mode TABLE to TeXInfo.<br/>
+TABLE is a list, each entry either the symbol `hline' for a horizontal<br/>
+separator line, or a list of fields for that line.<br/>
+PARAMS is a property list of parameters that can influence the conversion.<br/>
+Supports all parameters from `orgtbl-to-generic'.  Most important for<br/>
+TeXInfo are:<br/>
+<br/>
+:splice nil/t      When set to t, return only table body lines, don't wrap<br/>
+                   them into a multitable environment.  Default is nil.<br/>
+<br/>
+:fmt fmt           A format to be used to wrap the field, should contain<br/>
+                   %s for the original field value.  For example, to wrap<br/>
+                   everything in @kbd{}, you could use :fmt "@kbd{%s}".<br/>
+                   This may also be a property list with column numbers and<br/>
+                   formats.  For example :fmt (2 "@kbd{%s}" 4 "@code{%s}").<br/>
+                   Each format also may be a function that formats its one<br/>
+                   argument.<br/>
+<br/>
+:cf "f1 f2.."    The column fractions for the table.  By default these<br/>
+                   are computed automatically from the width of the columns<br/>
+                   under org-mode.<br/>
+<br/>
+The general parameters :skip and :skipcols have already been applied when<br/>
+this function is called.

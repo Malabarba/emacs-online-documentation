@@ -1,1 +1,11 @@
-minibuffer-with-setup-hook is a Lisp macro in `files.el'.<br/><br/>(minibuffer-with-setup-hook FUN &rest BODY)<br/><br/>Temporarily add FUN to `minibuffer-setup-hook' while executing BODY.<br/>BODY should use the minibuffer at most once.<br/>Recursive uses of the minibuffer are unaffected (FUN is not<br/>called additional times).<br/><br/>This macro actually adds an auxiliary function that calls FUN,<br/>rather than FUN itself, to `minibuffer-setup-hook'.
+<strong>minibuffer-with-setup-hook</strong> is a Lisp macro in `<code>files.el</code>'.<br/>
+<br/>
+(minibuffer-with-setup-hook FUN &rest BODY)<br/>
+<br/>
+Temporarily add FUN to `minibuffer-setup-hook' while executing BODY.<br/>
+BODY should use the minibuffer at most once.<br/>
+Recursive uses of the minibuffer are unaffected (FUN is not<br/>
+called additional times).<br/>
+<br/>
+This macro actually adds an auxiliary function that calls FUN,<br/>
+rather than FUN itself, to `minibuffer-setup-hook'.

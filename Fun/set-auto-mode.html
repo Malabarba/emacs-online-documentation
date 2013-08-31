@@ -1,1 +1,21 @@
-set-auto-mode is a compiled Lisp function in `files.el'.<br/><br/>(set-auto-mode &optional KEEP-MODE-IF-SAME)<br/><br/>Select major mode appropriate for current buffer.<br/><br/>To find the right major mode, this function checks for a -*- mode tag<br/>checks for a `mode:' entry in the Local Variables section of the file,<br/>checks if it uses an interpreter listed in `interpreter-mode-alist',<br/>matches the buffer beginning against `magic-mode-alist',<br/>compares the filename against the entries in `auto-mode-alist',<br/>then matches the buffer beginning against `magic-fallback-mode-alist'.<br/><br/>If `enable-local-variables' is nil, or if the file name matches<br/>`inhibit-local-variables-regexps', this function does not check<br/>for any mode: tag anywhere in the file.  If `local-enable-local-variables'<br/>is nil, then the only mode: tag that can be relevant is a -*- one.<br/><br/>If the optional argument KEEP-MODE-IF-SAME is non-nil, then we<br/>set the major mode only if that would change it.  In other words<br/>we don't actually set it to the same mode the buffer already has.
+<strong>set-auto-mode</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
+<br/>
+(set-auto-mode &optional KEEP-MODE-IF-SAME)<br/>
+<br/>
+Select major mode appropriate for current buffer.<br/>
+<br/>
+To find the right major mode, this function checks for a -*- mode tag<br/>
+checks for a `mode:' entry in the Local Variables section of the file,<br/>
+checks if it uses an interpreter listed in `interpreter-mode-alist',<br/>
+matches the buffer beginning against `magic-mode-alist',<br/>
+compares the filename against the entries in `auto-mode-alist',<br/>
+then matches the buffer beginning against `magic-fallback-mode-alist'.<br/>
+<br/>
+If `enable-local-variables' is nil, or if the file name matches<br/>
+`inhibit-local-variables-regexps', this function does not check<br/>
+for any mode: tag anywhere in the file.  If `local-enable-local-variables'<br/>
+is nil, then the only mode: tag that can be relevant is a -*- one.<br/>
+<br/>
+If the optional argument KEEP-MODE-IF-SAME is non-nil, then we<br/>
+set the major mode only if that would change it.  In other words<br/>
+we don't actually set it to the same mode the buffer already has.

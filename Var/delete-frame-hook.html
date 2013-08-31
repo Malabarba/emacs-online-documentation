@@ -1,1 +1,17 @@
-delete-frame-hook is a variable defined in `frame.el'.<br/>Its value is nil<br/><br/>  This variable is an alias for `delete-frame-functions'.<br/>  This variable is obsolete since 22.1;<br/>  use `delete-frame-functions' instead.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Functions run before deleting a frame.<br/>The functions are run with one arg, the frame to be deleted.<br/>See `delete-frame'.<br/><br/>Note that functions in this list may be called just before the frame is<br/>actually deleted, or some time later (or even both when an earlier function<br/>in `delete-frame-functions' (indirectly) calls `delete-frame'<br/>recursively).
+<strong>delete-frame-hook</strong> is a variable defined in `<code>frame.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable is an alias for `delete-frame-functions'.<br/>
+  This variable is obsolete since 22.1;<br/>
+  use `delete-frame-functions' instead.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Functions run before deleting a frame.<br/>
+The functions are run with one arg, the frame to be deleted.<br/>
+See `delete-frame'.<br/>
+<br/>
+Note that functions in this list may be called just before the frame is<br/>
+actually deleted, or some time later (or even both when an earlier function<br/>
+in `delete-frame-functions' (indirectly) calls `delete-frame'<br/>
+recursively).

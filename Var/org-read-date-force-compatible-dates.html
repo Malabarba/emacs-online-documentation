@@ -1,1 +1,35 @@
-org-read-date-force-compatible-dates is a variable defined in `org.el'.<br/>Its value is t<br/><br/>Documentation:<br/>Should date/time prompt force dates that are guaranteed to work in Emacs?<br/><br/>Depending on the system Emacs is running on, certain dates cannot<br/>be represented with the type used internally to represent time.<br/>Dates between 1970-1-1 and 2038-1-1 can always be represented<br/>correctly.  Some systems allow for earlier dates, some for later,<br/>some for both.  One way to find out it to insert any date into an<br/>Org buffer, putting the cursor on the year and hitting S-up and<br/>S-down to test the range.<br/><br/>When this variable is set to t, the date/time prompt will not let<br/>you specify dates outside the 1970-2037 range, so it is certain that<br/>these dates will work in whatever version of Emacs you are<br/>running, and also that you can move a file from one Emacs implementation<br/>to another.  WHenever Org is forcing the year for you, it will display<br/>a message and beep.<br/><br/>When this variable is nil, Org will check if the date is<br/>representable in the specific Emacs implementation you are using.<br/>If not, it will force a year, usually the current year, and beep<br/>to remind you.  Currently this setting is not recommended because<br/>the likelihood that you will open your Org files in an Emacs that<br/>has limited date range is not negligible.<br/><br/>A workaround for this problem is to use diary sexp dates for time<br/>stamps outside of this range.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>org-read-date-force-compatible-dates</strong> is a variable defined in `<code>org.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+Documentation:<br/>
+Should date/time prompt force dates that are guaranteed to work in Emacs?<br/>
+<br/>
+Depending on the system Emacs is running on, certain dates cannot<br/>
+be represented with the type used internally to represent time.<br/>
+Dates between 1970-1-1 and 2038-1-1 can always be represented<br/>
+correctly.  Some systems allow for earlier dates, some for later,<br/>
+some for both.  One way to find out it to insert any date into an<br/>
+Org buffer, putting the cursor on the year and hitting S-up and<br/>
+S-down to test the range.<br/>
+<br/>
+When this variable is set to t, the date/time prompt will not let<br/>
+you specify dates outside the 1970-2037 range, so it is certain that<br/>
+these dates will work in whatever version of Emacs you are<br/>
+running, and also that you can move a file from one Emacs implementation<br/>
+to another.  WHenever Org is forcing the year for you, it will display<br/>
+a message and beep.<br/>
+<br/>
+When this variable is nil, Org will check if the date is<br/>
+representable in the specific Emacs implementation you are using.<br/>
+If not, it will force a year, usually the current year, and beep<br/>
+to remind you.  Currently this setting is not recommended because<br/>
+the likelihood that you will open your Org files in an Emacs that<br/>
+has limited date range is not negligible.<br/>
+<br/>
+A workaround for this problem is to use diary sexp dates for time<br/>
+stamps outside of this range.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

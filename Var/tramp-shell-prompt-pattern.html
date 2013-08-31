@@ -1,1 +1,18 @@
-tramp-shell-prompt-pattern is a variable defined in `tramp.el'.<br/>Its value is<br/>"\\(?:^\\|\\)[^]#$%>\n]*#?[]#$%>] *\\(\\[[0-9;]*[a-zA-Z] *\\)*"<br/><br/>Documentation:<br/>Regexp to match prompts from remote shell.<br/>Normally, Tramp expects you to configure `shell-prompt-pattern'<br/>correctly, but sometimes it happens that you are connecting to a<br/>remote host which sends a different kind of shell prompt.  Therefore,<br/>Tramp recognizes things matched by `shell-prompt-pattern' as prompt,<br/>and also things matched by this variable.  The default value of this<br/>variable is similar to the default value of `shell-prompt-pattern',<br/>which should work well in many cases.<br/><br/>This regexp must match both `tramp-initial-end-of-output' and<br/>`tramp-end-of-output'.<br/><br/>You can customize this variable.
+<strong>tramp-shell-prompt-pattern</strong> is a variable defined in `<code>tramp.el</code>'.<br/>
+Its value is<br/>
+"\\(?:^\\|\\)[^]#$%>\n]*#?[]#$%>] *\\(\\[[0-9;]*[a-zA-Z] *\\)*"<br/>
+<br/>
+Documentation:<br/>
+Regexp to match prompts from remote shell.<br/>
+Normally, Tramp expects you to configure `shell-prompt-pattern'<br/>
+correctly, but sometimes it happens that you are connecting to a<br/>
+remote host which sends a different kind of shell prompt.  Therefore,<br/>
+Tramp recognizes things matched by `shell-prompt-pattern' as prompt,<br/>
+and also things matched by this variable.  The default value of this<br/>
+variable is similar to the default value of `shell-prompt-pattern',<br/>
+which should work well in many cases.<br/>
+<br/>
+This regexp must match both `tramp-initial-end-of-output' and<br/>
+`tramp-end-of-output'.<br/>
+<br/>
+You can customize this variable.

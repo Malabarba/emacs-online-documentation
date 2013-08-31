@@ -1,1 +1,20 @@
-mm-set-buffer-file-coding-system is an alias for `set-buffer-file-coding-system' in `mm-util.el'.<br/><br/>(mm-set-buffer-file-coding-system CODING-SYSTEM &optional FORCE NOMODIFY)<br/><br/>Set the file coding-system of the current buffer to CODING-SYSTEM.<br/>This means that when you save the buffer, it will be converted<br/>according to CODING-SYSTEM.  For a list of possible values of<br/>CODING-SYSTEM, use M-x list-coding-systems.<br/><br/>If CODING-SYSTEM leaves the text conversion unspecified, or if it leaves<br/>the end-of-line conversion unspecified, FORCE controls what to do.<br/>If FORCE is nil, get the unspecified aspect (or aspects) from the buffer's<br/>previous `buffer-file-coding-system' value (if it is specified there).<br/>Otherwise, leave it unspecified.<br/><br/>This marks the buffer modified so that the succeeding C-x C-s<br/>surely saves the buffer with CODING-SYSTEM.  From a program, if you<br/>don't want to mark the buffer modified, specify t for NOMODIFY.<br/>If you know exactly what coding system you want to use,<br/>just set the variable `buffer-file-coding-system' directly.
+<strong>mm-set-buffer-file-coding-system</strong> is an alias for `set-buffer-file-coding-system' in `<code>mm-util.el</code>'.<br/>
+<br/>
+(mm-set-buffer-file-coding-system CODING-SYSTEM &optional FORCE NOMODIFY)<br/>
+<br/>
+Set the file coding-system of the current buffer to CODING-SYSTEM.<br/>
+This means that when you save the buffer, it will be converted<br/>
+according to CODING-SYSTEM.  For a list of possible values of<br/>
+CODING-SYSTEM, use M-x list-coding-systems.<br/>
+<br/>
+If CODING-SYSTEM leaves the text conversion unspecified, or if it leaves<br/>
+the end-of-line conversion unspecified, FORCE controls what to do.<br/>
+If FORCE is nil, get the unspecified aspect (or aspects) from the buffer's<br/>
+previous `buffer-file-coding-system' value (if it is specified there).<br/>
+Otherwise, leave it unspecified.<br/>
+<br/>
+This marks the buffer modified so that the succeeding C-x C-s<br/>
+surely saves the buffer with CODING-SYSTEM.  From a program, if you<br/>
+don't want to mark the buffer modified, specify t for NOMODIFY.<br/>
+If you know exactly what coding system you want to use,<br/>
+just set the variable `buffer-file-coding-system' directly.

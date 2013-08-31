@@ -1,1 +1,36 @@
-ert-select-tests is a compiled Lisp function in `ert.el'.<br/><br/>(ert-select-tests SELECTOR UNIVERSE)<br/><br/>Return a list of tests that match SELECTOR.<br/><br/>UNIVERSE specifies the set of tests to select from; it should be a list<br/>of tests, or t, which refers to all tests named by symbols in `obarray'.<br/><br/>Valid SELECTORs:<br/><br/>nil  -- Selects the empty set.<br/>t    -- Selects UNIVERSE.<br/>:new -- Selects all tests that have not been run yet.<br/>:failed, :passed       -- Select tests according to their most recent result.<br/>:expected, :unexpected -- Select tests according to their most recent result.<br/>a string -- A regular expression selecting all tests with matching names.<br/>a test   -- (i.e., an object of the ert-test data-type) Selects that test.<br/>a symbol -- Selects the test that the symbol names, errors if none.<br/>(member TESTS...) -- Selects the elements of TESTS, a list of tests<br/>    or symbols naming tests.<br/>(eql TEST) -- Selects TEST, a test or a symbol naming a test.<br/>(and SELECTORS...) -- Selects the tests that match all SELECTORS.<br/>(or SELECTORS...)  -- Selects the tests that match any of the SELECTORS.<br/>(not SELECTOR)     -- Selects all tests that do not match SELECTOR.<br/>(tag TAG) -- Selects all tests that have TAG on their tags list.<br/>    A tag is an arbitrary label you can apply when you define a test.<br/>(satisfies PREDICATE) -- Selects all tests that satisfy PREDICATE.<br/>    PREDICATE is a function that takes an ert-test object as argument,<br/>    and returns non-nil if it is selected.<br/><br/>Only selectors that require a superset of tests, such<br/>as (satisfies ...), strings, :new, etc. make use of UNIVERSE.<br/>Selectors that do not, such as (member ...), just return the<br/>set implied by them without checking whether it is really<br/>contained in UNIVERSE.
+<strong>ert-select-tests</strong> is a compiled Lisp function in `<code>ert.el</code>'.<br/>
+<br/>
+(ert-select-tests SELECTOR UNIVERSE)<br/>
+<br/>
+Return a list of tests that match SELECTOR.<br/>
+<br/>
+UNIVERSE specifies the set of tests to select from; it should be a list<br/>
+of tests, or t, which refers to all tests named by symbols in `obarray'.<br/>
+<br/>
+Valid SELECTORs:<br/>
+<br/>
+nil  -- Selects the empty set.<br/>
+t    -- Selects UNIVERSE.<br/>
+:new -- Selects all tests that have not been run yet.<br/>
+:failed, :passed       -- Select tests according to their most recent result.<br/>
+:expected, :unexpected -- Select tests according to their most recent result.<br/>
+a string -- A regular expression selecting all tests with matching names.<br/>
+a test   -- (i.e., an object of the ert-test data-type) Selects that test.<br/>
+a symbol -- Selects the test that the symbol names, errors if none.<br/>
+(member TESTS...) -- Selects the elements of TESTS, a list of tests<br/>
+    or symbols naming tests.<br/>
+(eql TEST) -- Selects TEST, a test or a symbol naming a test.<br/>
+(and SELECTORS...) -- Selects the tests that match all SELECTORS.<br/>
+(or SELECTORS...)  -- Selects the tests that match any of the SELECTORS.<br/>
+(not SELECTOR)     -- Selects all tests that do not match SELECTOR.<br/>
+(tag TAG) -- Selects all tests that have TAG on their tags list.<br/>
+    A tag is an arbitrary label you can apply when you define a test.<br/>
+(satisfies PREDICATE) -- Selects all tests that satisfy PREDICATE.<br/>
+    PREDICATE is a function that takes an ert-test object as argument,<br/>
+    and returns non-nil if it is selected.<br/>
+<br/>
+Only selectors that require a superset of tests, such<br/>
+as (satisfies ...), strings, :new, etc. make use of UNIVERSE.<br/>
+Selectors that do not, such as (member ...), just return the<br/>
+set implied by them without checking whether it is really<br/>
+contained in UNIVERSE.

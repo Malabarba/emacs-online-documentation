@@ -1,1 +1,19 @@
-c-crosses-statement-barrier-p is a compiled Lisp function in `cc-engine.el'.<br/><br/>(c-crosses-statement-barrier-p FROM TO)<br/><br/>Return non-nil if buffer positions FROM to TO cross one or more<br/>statement or declaration boundaries.  The returned value is actually<br/>the position of the earliest boundary char.  FROM must not be within<br/>a string or comment.<br/><br/>The variable `c-maybe-labelp' is set to the position of the first `:' that<br/>might start a label (i.e. not part of `::' and not preceded by `?').  If a<br/>single `?' is found, then `c-maybe-labelp' is cleared.<br/><br/>For AWK, a statement which is terminated by an EOL (not a ; or a }) is<br/>regarded as having a "virtual semicolon" immediately after the last token on<br/>the line.  If this virtual semicolon is _at_ from, the function recognizes it.<br/><br/>Note that this function might do hidden buffer changes.  See the<br/>comment at the start of cc-engine.el for more info.
+<strong>c-crosses-statement-barrier-p</strong> is a compiled Lisp function in `<code>cc-engine.el</code>'.<br/>
+<br/>
+(c-crosses-statement-barrier-p FROM TO)<br/>
+<br/>
+Return non-nil if buffer positions FROM to TO cross one or more<br/>
+statement or declaration boundaries.  The returned value is actually<br/>
+the position of the earliest boundary char.  FROM must not be within<br/>
+a string or comment.<br/>
+<br/>
+The variable `c-maybe-labelp' is set to the position of the first `:' that<br/>
+might start a label (i.e. not part of `::' and not preceded by `?').  If a<br/>
+single `?' is found, then `c-maybe-labelp' is cleared.<br/>
+<br/>
+For AWK, a statement which is terminated by an EOL (not a ; or a }) is<br/>
+regarded as having a "virtual semicolon" immediately after the last token on<br/>
+the line.  If this virtual semicolon is _at_ from, the function recognizes it.<br/>
+<br/>
+Note that this function might do hidden buffer changes.  See the<br/>
+comment at the start of cc-engine.el for more info.

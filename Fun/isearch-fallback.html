@@ -1,1 +1,16 @@
-isearch-fallback is a compiled Lisp function in `isearch.el'.<br/><br/>(isearch-fallback WANT-BACKSLASH &optional ALLOW-INVALID TO-BARRIER)<br/><br/>Return point to previous successful match to allow regexp liberalization.<br/><br/>Respects C-s and C-r by stopping at `isearch-barrier' as needed.<br/><br/>Do nothing if a backslash is escaping the liberalizing character.<br/>If WANT-BACKSLASH is non-nil, invert this behavior (for \} and \|).<br/><br/>Do nothing if regexp has recently been invalid unless optional<br/>ALLOW-INVALID non-nil.<br/><br/>If optional TO-BARRIER non-nil, ignore previous matches and go exactly<br/>to the barrier.
+<strong>isearch-fallback</strong> is a compiled Lisp function in `<code>isearch.el</code>'.<br/>
+<br/>
+(isearch-fallback WANT-BACKSLASH &optional ALLOW-INVALID TO-BARRIER)<br/>
+<br/>
+Return point to previous successful match to allow regexp liberalization.<br/>
+<br/>
+Respects C-s and C-r by stopping at `isearch-barrier' as needed.<br/>
+<br/>
+Do nothing if a backslash is escaping the liberalizing character.<br/>
+If WANT-BACKSLASH is non-nil, invert this behavior (for \} and \|).<br/>
+<br/>
+Do nothing if regexp has recently been invalid unless optional<br/>
+ALLOW-INVALID non-nil.<br/>
+<br/>
+If optional TO-BARRIER non-nil, ignore previous matches and go exactly<br/>
+to the barrier.

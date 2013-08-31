@@ -1,1 +1,18 @@
-url-dav-request is an autoloaded Lisp function in `url-dav.el'.<br/><br/>(url-dav-request URL METHOD TAG BODY &optional DEPTH HEADERS NAMESPACES)<br/><br/>Perform WebDAV operation METHOD on URL.  Return the parsed responses.<br/>Automatically creates an XML request body if TAG is non-nil.<br/>BODY is the XML document fragment to be enclosed by <TAG></TAG>.<br/><br/>DEPTH is how deep the request should propagate.  Default is 0, meaning<br/>it should apply only to URL.  A negative number means to use<br/>`Infinity' for the depth.  Not all WebDAV servers support this depth<br/>though.<br/><br/>HEADERS is an assoc list of extra headers to send in the request.<br/><br/>NAMESPACES is an assoc list of (NAMESPACE . EXPANSION), and these are<br/>added to the <TAG> element.  The DAV=DAV: namespace is automatically<br/>added to this list, so most requests can just pass in nil.
+<strong>url-dav-request</strong> is an autoloaded Lisp function in `<code>url-dav.el</code>'.<br/>
+<br/>
+(url-dav-request URL METHOD TAG BODY &optional DEPTH HEADERS NAMESPACES)<br/>
+<br/>
+Perform WebDAV operation METHOD on URL.  Return the parsed responses.<br/>
+Automatically creates an XML request body if TAG is non-nil.<br/>
+BODY is the XML document fragment to be enclosed by <TAG></TAG>.<br/>
+<br/>
+DEPTH is how deep the request should propagate.  Default is 0, meaning<br/>
+it should apply only to URL.  A negative number means to use<br/>
+`Infinity' for the depth.  Not all WebDAV servers support this depth<br/>
+though.<br/>
+<br/>
+HEADERS is an assoc list of extra headers to send in the request.<br/>
+<br/>
+NAMESPACES is an assoc list of (NAMESPACE . EXPANSION), and these are<br/>
+added to the <TAG> element.  The DAV=DAV: namespace is automatically<br/>
+added to this list, so most requests can just pass in nil.

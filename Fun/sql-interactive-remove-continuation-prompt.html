@@ -1,1 +1,19 @@
-sql-interactive-remove-continuation-prompt is a compiled Lisp function in `sql.el'.<br/><br/>(sql-interactive-remove-continuation-prompt OLINE)<br/><br/>Strip out continuation prompts out of the OLINE.<br/><br/>Added to the `comint-preoutput-filter-functions' hook in a SQL<br/>interactive buffer.  If `sql-output-newline-count' is greater than<br/>zero, then an output line matching the continuation prompt is filtered<br/>out.  If the count is zero, then a newline is inserted into the output<br/>to force the output from the query to appear on a new line.<br/><br/>The complication to this filter is that the continuation prompts<br/>may arrive in multiple chunks.  If they do, then the function<br/>saves any unfiltered output in a buffer and prepends that buffer<br/>to the next chunk to properly match the broken-up prompt.<br/><br/>If the filter gets confused, it should reset and stop filtering<br/>to avoid deleting non-prompt output.
+<strong>sql-interactive-remove-continuation-prompt</strong> is a compiled Lisp function in `<code>sql.el</code>'.<br/>
+<br/>
+(sql-interactive-remove-continuation-prompt OLINE)<br/>
+<br/>
+Strip out continuation prompts out of the OLINE.<br/>
+<br/>
+Added to the `comint-preoutput-filter-functions' hook in a SQL<br/>
+interactive buffer.  If `sql-output-newline-count' is greater than<br/>
+zero, then an output line matching the continuation prompt is filtered<br/>
+out.  If the count is zero, then a newline is inserted into the output<br/>
+to force the output from the query to appear on a new line.<br/>
+<br/>
+The complication to this filter is that the continuation prompts<br/>
+may arrive in multiple chunks.  If they do, then the function<br/>
+saves any unfiltered output in a buffer and prepends that buffer<br/>
+to the next chunk to properly match the broken-up prompt.<br/>
+<br/>
+If the filter gets confused, it should reset and stop filtering<br/>
+to avoid deleting non-prompt output.

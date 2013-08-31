@@ -1,1 +1,824 @@
-vhdl-mode is an interactive autoloaded compiled Lisp function in `vhdl-mode.el'.<br/><br/>(vhdl-mode)<br/><br/>Parent mode: `prog-mode'.<br/><br/>Major mode for editing VHDL code.<br/><br/>Usage:<br/>------<br/><br/>  TEMPLATE INSERTION (electrification):<br/>    After typing a VHDL keyword and entering `SPC', you are prompted for<br/>    arguments while a template is generated for that VHDL construct.  Typing<br/>    `RET' or `C-g' at the first (mandatory) prompt aborts the current<br/>    template generation.  Optional arguments are indicated by square<br/>    brackets and removed if the queried string is left empty.  Prompts for<br/>    mandatory arguments remain in the code if the queried string is left<br/>    empty.  They can be queried again by `C-c C-t C-q'.  Enabled<br/>    electrification is indicated by `/e' in the mode line.<br/><br/>      Typing `M-SPC' after a keyword inserts a space without calling the<br/>    template generator.  Automatic template generation (i.e.<br/>    electrification) can be disabled (enabled) by typing `C-c C-m C-e' or by<br/>    setting option `vhdl-electric-mode' (see OPTIONS).<br/><br/>      Template generators can be invoked from the VHDL menu, by key<br/>    bindings, by typing `C-c C-i C-c' and choosing a construct, or by typing<br/>    the keyword (i.e. first word of menu entry not in parenthesis) and<br/>    `SPC'.  The following abbreviations can also be used: arch, attr, cond,<br/>    conf, comp, cons, func, inst, pack, sig, var.<br/><br/>      Template styles can be customized in customization group<br/>    `vhdl-template' (see OPTIONS).<br/><br/><br/>  HEADER INSERTION:<br/>    A file header can be inserted by `C-c C-t C-h'.  A file footer<br/>    (template at the end of the file) can be inserted by `C-c C-t C-f'.<br/>    See customization group `vhdl-header'.<br/><br/><br/>  STUTTERING:<br/>    Double striking of some keys inserts cumbersome VHDL syntax elements.<br/>    Stuttering can be disabled (enabled) by typing `C-c C-m C-s' or by<br/>    option `vhdl-stutter-mode'.  Enabled stuttering is indicated by `/s' in<br/>    the mode line.  The stuttering keys and their effects are:<br/><br/>      ;;   -->  " : "       [   -->  (        --    -->  comment<br/>      ;;;  -->  " := "      [[  -->  [        --CR  -->  comment-out code<br/>      ..   -->  " => "      ]   -->  )        ---   -->  horizontal line<br/>      ,,   -->  " <= "      ]]  -->  ]        ----  -->  display comment<br/>      ==   -->  " == "      ''  -->  \"<br/><br/><br/>  WORD COMPLETION:<br/>    Typing `TAB' after a (not completed) word looks for a VHDL keyword or a<br/>    word in the buffer that starts alike, inserts it and adjusts case.<br/>    Re-typing `TAB' toggles through alternative word completions.  This also<br/>    works in the minibuffer (i.e. in template generator prompts).<br/><br/>      Typing `TAB' after `(' looks for and inserts complete parenthesized<br/>    expressions (e.g. for array index ranges).  All keywords as well as<br/>    standard types and subprograms of VHDL have predefined abbreviations<br/>    (e.g. type "std" and `TAB' will toggle through all standard types<br/>    beginning with "std").<br/><br/>      Typing `TAB' after a non-word character indents the line if at the<br/>    beginning of a line (i.e. no preceding non-blank characters), and<br/>    inserts a tabulator stop otherwise.  `M-TAB' always inserts a tabulator<br/>    stop.<br/><br/><br/>  COMMENTS:<br/>        `--'       puts a single comment.<br/>        `---'      draws a horizontal line for separating code segments.<br/>        `----'     inserts a display comment, i.e. two horizontal lines<br/>                   with a comment in between.<br/>        `--CR'     comments out code on that line.  Re-hitting CR comments<br/>                   out following lines.<br/>        `C-c C-c'  comments out a region if not commented out,<br/>                   uncomments a region if already commented out.  Option<br/>                   `comment-style' defines where the comment characters<br/>                   should be placed (beginning of line, indent, etc.).<br/><br/>      You are prompted for comments after object definitions (i.e. signals,<br/>    variables, constants, ports) and after subprogram and process<br/>    specifications if option `vhdl-prompt-for-comments' is non-nil.<br/>    Comments are automatically inserted as additional labels (e.g. after<br/>    begin statements) and as help comments if `vhdl-self-insert-comments' is<br/>    non-nil.<br/><br/>      Inline comments (i.e. comments after a piece of code on the same line)<br/>    are indented at least to `vhdl-inline-comment-column'.  Comments go at<br/>    maximum to `vhdl-end-comment-column'.  `RET' after a space in a comment<br/>    will open a new comment line.  Typing beyond `vhdl-end-comment-column'<br/>    in a comment automatically opens a new comment line.  `M-q' re-fills<br/>    multi-line comments.<br/><br/><br/>  INDENTATION:<br/>    `TAB' indents a line if at the beginning of the line.  The amount of<br/>    indentation is specified by option `vhdl-basic-offset'.  `C-c C-i C-l'<br/>    always indents the current line (is bound to `TAB' if option<br/>    `vhdl-intelligent-tab' is nil).  If a region is active, `TAB' indents<br/>    the entire region.<br/><br/>      Indentation can be done for a group of lines (`C-c C-i C-g'), a region<br/>    (`M-C-\') or the entire buffer (menu).  Argument and port lists are<br/>    indented normally (nil) or relative to the opening parenthesis (non-nil)<br/>    according to option `vhdl-argument-list-indent'.<br/><br/>      If option `vhdl-indent-tabs-mode' is nil, spaces are used instead of<br/>    tabs.  `M-x tabify' and `M-x untabify' allow to convert spaces to tabs<br/>    and vice versa.<br/><br/>      Syntax-based indentation can be very slow in large files.  Option<br/>    `vhdl-indent-syntax-based' allows to use faster but simpler indentation.<br/><br/>      Option `vhdl-indent-comment-like-next-code-line' controls whether<br/>    comment lines are indented like the preceding or like the following code<br/>    line.<br/><br/><br/>  ALIGNMENT:<br/>    The alignment functions align operators, keywords, and inline comments<br/>    to beautify the code.  `C-c C-a C-a' aligns a group of consecutive lines<br/>    separated by blank lines, `C-c C-a C-i' a block of lines with same<br/>    indent.  `C-c C-a C-l' aligns all lines belonging to a list enclosed by<br/>    a pair of parentheses (e.g. port clause/map, argument list), and `C-c<br/>    C-a C-d' all lines within the declarative part of a design unit.  `C-c<br/>    C-a M-a' aligns an entire region.  `C-c C-a C-c' aligns inline comments<br/>    for a group of lines, and `C-c C-a M-c' for a region.<br/><br/>      If option `vhdl-align-groups' is non-nil, groups of code lines<br/>    separated by special lines (see option `vhdl-align-group-separate') are<br/>    aligned individually.  If option `vhdl-align-same-indent' is non-nil,<br/>    blocks of lines with same indent are aligned separately.  Some templates<br/>    are automatically aligned after generation if option `vhdl-auto-align'<br/>    is non-nil.<br/><br/>      Alignment tries to align inline comments at<br/>    `vhdl-inline-comment-column' and tries inline comment not to exceed<br/>    `vhdl-end-comment-column'.<br/><br/>      `C-c C-x M-w' fixes up whitespace in a region.  That is, operator<br/>    symbols are surrounded by one space, and multiple spaces are eliminated.<br/><br/><br/>  CODE FILLING:<br/>    Code filling allows to condense code (e.g. sensitivity lists or port<br/>    maps) by removing comments and newlines and re-wrapping so that all<br/>    lines are maximally filled (block filling).  `C-c C-f C-f' fills a list<br/>    enclosed by parenthesis, `C-c C-f C-g' a group of lines separated by<br/>    blank lines, `C-c C-f C-i' a block of lines with same indent, and<br/>    `C-c C-f M-f' an entire region.<br/><br/><br/>  CODE BEAUTIFICATION:<br/>    `C-c M-b' and `C-c C-b' beautify the code of a region or of the entire<br/>    buffer respectively.  This includes indentation, alignment, and case<br/>    fixing.  Code beautification can also be run non-interactively using the<br/>    command:<br/><br/>      emacs -batch -l ~/.emacs filename.vhd -f vhdl-beautify-buffer<br/><br/><br/>  PORT TRANSLATION:<br/>    Generic and port clauses from entity or component declarations can be<br/>    copied (`C-c C-p C-w') and pasted as entity and component declarations,<br/>    as component instantiations and corresponding internal constants and<br/>    signals, as a generic map with constants as actual generics, and as<br/>    internal signal initializations (menu).<br/><br/>      To include formals in component instantiations, see option<br/>    `vhdl-association-list-with-formals'.  To include comments in pasting,<br/>    see options `vhdl-include-...-comments'.<br/><br/>      A clause with several generic/port names on the same line can be<br/>    flattened (`C-c C-p C-f') so that only one name per line exists.  The<br/>    direction of ports can be reversed (`C-c C-p C-r'), i.e., inputs become<br/>    outputs and vice versa, which can be useful in testbenches.  (This<br/>    reversion is done on the internal data structure and is only reflected<br/>    in subsequent paste operations.)<br/><br/>      Names for actual ports, instances, testbenches, and<br/>    design-under-test instances can be derived from existing names according<br/>    to options `vhdl-...-name'.  See customization group `vhdl-port'.<br/><br/><br/>  SUBPROGRAM TRANSLATION:<br/>    Similar functionality exists for copying/pasting the interface of<br/>    subprograms (function/procedure).  A subprogram interface can be copied<br/>    and then pasted as a subprogram declaration, body or call (uses<br/>    association list with formals).<br/><br/><br/>  TESTBENCH GENERATION:<br/>    A copied port can also be pasted as a testbench.  The generated<br/>    testbench includes an entity, an architecture, and an optional<br/>    configuration.  The architecture contains the component declaration and<br/>    instantiation of the DUT as well as internal constant and signal<br/>    declarations.  Additional user-defined templates can be inserted.  The<br/>    names used for entity/architecture/configuration/DUT as well as the file<br/>    structure to be generated can be customized. See customization group<br/>   `vhdl-testbench'.<br/><br/><br/>  KEY BINDINGS:<br/>    Key bindings (`C-c ...') exist for most commands (see in menu).<br/><br/><br/>  VHDL MENU:<br/>    All commands can be found in the VHDL menu including their key bindings.<br/><br/><br/>  FILE BROWSER:<br/>    The speedbar allows browsing of directories and file contents.  It can<br/>    be accessed from the VHDL menu and is automatically opened if option<br/>    `vhdl-speedbar-auto-open' is non-nil.<br/><br/>      In speedbar, open files and directories with `mouse-2' on the name and<br/>    browse/rescan their contents with `mouse-2'/`S-mouse-2' on the `+'.<br/><br/><br/>  DESIGN HIERARCHY BROWSER:<br/>    The speedbar can also be used for browsing the hierarchy of design units<br/>    contained in the source files of the current directory or the specified<br/>    projects (see option `vhdl-project-alist').<br/><br/>      The speedbar can be switched between file, directory hierarchy and<br/>    project hierarchy browsing mode in the speedbar menu or by typing `f',<br/>    `h' or `H' in speedbar.<br/><br/>      In speedbar, open design units with `mouse-2' on the name and browse<br/>    their hierarchy with `mouse-2' on the `+'.  Ports can directly be copied<br/>    from entities and components (in packages).  Individual design units and<br/>    complete designs can directly be compiled ("Make" menu entry).<br/><br/>      The hierarchy is automatically updated upon saving a modified source<br/>    file when option `vhdl-speedbar-update-on-saving' is non-nil.  The<br/>    hierarchy is only updated for projects that have been opened once in the<br/>    speedbar.  The hierarchy is cached between Emacs sessions in a file (see<br/>    options in group `vhdl-speedbar').<br/><br/>      Simple design consistency checks are done during scanning, such as<br/>    multiple declarations of the same unit or missing primary units that are<br/>    required by secondary units.<br/><br/><br/>  STRUCTURAL COMPOSITION:<br/>    Enables simple structural composition.  `C-c C-m C-n' creates a skeleton<br/>    for a new component.  Subcomponents (i.e. component declaration and<br/>    instantiation) can be automatically placed from a previously read port<br/>    (`C-c C-m C-p') or directly from the hierarchy browser (`P').  Finally,<br/>    all subcomponents can be automatically connected using internal signals<br/>    and ports (`C-c C-m C-w') following these rules:<br/>      - subcomponent actual ports with same name are considered to be<br/>        connected by a signal (internal signal or port)<br/>      - signals that are only inputs to subcomponents are considered as<br/>        inputs to this component -> input port created<br/>      - signals that are only outputs from subcomponents are considered as<br/>        outputs from this component -> output port created<br/>      - signals that are inputs to AND outputs from subcomponents are<br/>        considered as internal connections -> internal signal created<br/><br/>      Purpose:  With appropriate naming conventions it is possible to<br/>    create higher design levels with only a few mouse clicks or key<br/>    strokes.  A new design level can be created by simply generating a new<br/>    component, placing the required subcomponents from the hierarchy<br/>    browser, and wiring everything automatically.<br/><br/>      Note: Automatic wiring only works reliably on templates of new<br/>    components and component instantiations that were created by VHDL mode.<br/><br/>      Component declarations can be placed in a components package (option<br/>    `vhdl-use-components-package') which can be automatically generated for<br/>    an entire directory or project (`C-c C-m M-p').  The VHDL'93 direct<br/>    component instantiation is also supported (option<br/>    `vhdl-use-direct-instantiation').<br/><br/>      Configuration declarations can automatically be generated either from<br/>    the menu (`C-c C-m C-f') (for the architecture the cursor is in) or from<br/>    the speedbar menu (for the architecture under the cursor).  The<br/>    configurations can optionally be hierarchical (i.e. include all<br/>    component levels of a hierarchical design, option<br/>    `vhdl-compose-configuration-hierarchical') or include subconfigurations<br/>    (option `vhdl-compose-configuration-use-subconfiguration').  For<br/>    subcomponents in hierarchical configurations, the most-recently-analyzed<br/>    (mra) architecture is selected.  If another architecture is desired, it<br/>    can be marked as most-recently-analyzed (speedbar menu) before<br/>    generating the configuration.<br/><br/>      Note: Configurations of subcomponents (i.e. hierarchical configuration<br/>    declarations) are currently not considered when displaying<br/>    configurations in speedbar.<br/><br/>      See the options group `vhdl-compose' for all relevant user options.<br/><br/><br/>  SOURCE FILE COMPILATION:<br/>    The syntax of the current buffer can be analyzed by calling a VHDL<br/>    compiler (menu, `C-c C-k').  The compiler to be used is specified by<br/>    option `vhdl-compiler'.  The available compilers are listed in option<br/>    `vhdl-compiler-alist' including all required compilation command,<br/>    command options, compilation directory, and error message syntax<br/>    information.  New compilers can be added.<br/><br/>      All the source files of an entire design can be compiled by the `make'<br/>    command (menu, `C-c M-C-k') if an appropriate Makefile exists.<br/><br/><br/>  MAKEFILE GENERATION:<br/>    Makefiles can be generated automatically by an internal generation<br/>    routine (`C-c M-k').  The library unit dependency information is<br/>    obtained from the hierarchy browser.  Makefile generation can be<br/>    customized for each compiler in option `vhdl-compiler-alist'.<br/><br/>      Makefile generation can also be run non-interactively using the<br/>    command:<br/><br/>        emacs -batch -l ~/.emacs -l vhdl-mode<br/>              [-compiler compilername] [-project projectname]<br/>              -f vhdl-generate-makefile<br/><br/>      The Makefile's default target "all" compiles the entire design, the<br/>    target "clean" removes it and the target "library" creates the<br/>    library directory if not existent.  These target names can be customized<br/>    by option `vhdl-makefile-default-targets'.  The Makefile also includes a<br/>    target for each primary library unit which allows selective compilation<br/>    of this unit, its secondary units and its subhierarchy (example:<br/>    compilation of a design specified by a configuration).  User specific<br/>    parts can be inserted into a Makefile with option<br/>    `vhdl-makefile-generation-hook'.<br/><br/>    Limitations:<br/>      - Only library units and dependencies within the current library are<br/>        considered.  Makefiles for designs that span multiple libraries are<br/>        not (yet) supported.<br/>      - Only one-level configurations are supported (also hierarchical),<br/>        but configurations that go down several levels are not.<br/>      - The "others" keyword in configurations is not supported.<br/><br/><br/>  PROJECTS:<br/>    Projects can be defined in option `vhdl-project-alist' and a current<br/>    project be selected using option `vhdl-project' (permanently) or from<br/>    the menu or speedbar (temporarily).  For each project, title and<br/>    description strings (for the file headers), source files/directories<br/>    (for the hierarchy browser and Makefile generation), library name, and<br/>    compiler-dependent options, exceptions and compilation directory can be<br/>    specified.  Compilation settings overwrite the settings of option<br/>    `vhdl-compiler-alist'.<br/><br/>      Project setups can be exported (i.e. written to a file) and imported.<br/>    Imported setups are not automatically saved in `vhdl-project-alist' but<br/>    can be saved afterwards in its customization buffer.  When starting<br/>    Emacs with VHDL Mode (i.e. load a VHDL file or use "emacs -l<br/>    vhdl-mode") in a directory with an existing project setup file, it is<br/>    automatically loaded and its project activated if option<br/>    `vhdl-project-auto-load' is non-nil.  Names/paths of the project setup<br/>    files can be specified in option `vhdl-project-file-name'.  Multiple<br/>    project setups can be automatically loaded from global directories.<br/>    This is an alternative to specifying project setups with option<br/>    `vhdl-project-alist'.<br/><br/><br/>  SPECIAL MENUES:<br/>    As an alternative to the speedbar, an index menu can be added (set<br/>    option `vhdl-index-menu' to non-nil) or made accessible as a mouse menu<br/>    (e.g. add "(global-set-key '[S-down-mouse-3] 'imenu)" to your start-up<br/>    file) for browsing the file contents (is not populated if buffer is<br/>    larger than `font-lock-maximum-size').  Also, a source file menu can be<br/>    added (set option `vhdl-source-file-menu' to non-nil) for browsing the<br/>    current directory for VHDL source files.<br/><br/><br/>  VHDL STANDARDS:<br/>    The VHDL standards to be used are specified in option `vhdl-standard'.<br/>    Available standards are: VHDL'87/'93(02), VHDL-AMS, and Math Packages.<br/><br/><br/>  KEYWORD CASE:<br/>    Lower and upper case for keywords and standardized types, attributes,<br/>    and enumeration values is supported.  If the option<br/>    `vhdl-upper-case-keywords' is set to non-nil, keywords can be typed in<br/>    lower case and are converted into upper case automatically (not for<br/>    types, attributes, and enumeration values).  The case of keywords,<br/>    types, attributes,and enumeration values can be fixed for an entire<br/>    region (menu) or buffer (`C-c C-x C-c') according to the options<br/>    `vhdl-upper-case-{keywords,types,attributes,enum-values}'.<br/><br/><br/>  HIGHLIGHTING (fontification):<br/>    Keywords and standardized types, attributes, enumeration values, and<br/>    function names (controlled by option `vhdl-highlight-keywords'), as well<br/>    as comments, strings, and template prompts are highlighted using<br/>    different colors.  Unit, subprogram, signal, variable, constant,<br/>    parameter and generic/port names in declarations as well as labels are<br/>    highlighted if option `vhdl-highlight-names' is non-nil.<br/><br/>      Additional reserved words or words with a forbidden syntax (e.g. words<br/>    that should be avoided) can be specified in option<br/>    `vhdl-forbidden-words' or `vhdl-forbidden-syntax' and be highlighted in<br/>    a warning color (option `vhdl-highlight-forbidden-words').  Verilog<br/>    keywords are highlighted as forbidden words if option<br/>    `vhdl-highlight-verilog-keywords' is non-nil.<br/><br/>      Words with special syntax can be highlighted by specifying their<br/>    syntax and color in option `vhdl-special-syntax-alist' and by setting<br/>    option `vhdl-highlight-special-words' to non-nil.  This allows to<br/>    establish some naming conventions (e.g. to distinguish different kinds<br/>    of signals or other objects by using name suffices) and to support them<br/>    visually.<br/><br/>      Option `vhdl-highlight-case-sensitive' can be set to non-nil in order<br/>    to support case-sensitive highlighting.  However, keywords are then only<br/>    highlighted if written in lower case.<br/><br/>      Code between "translate_off" and "translate_on" pragmas is<br/>    highlighted using a different background color if option<br/>    `vhdl-highlight-translate-off' is non-nil.<br/><br/>      For documentation and customization of the used colors see<br/>    customization group `vhdl-highlight-faces' (`M-x customize-group').  For<br/>    highlighting of matching parenthesis, see customization group<br/>    `paren-showing'.  Automatic buffer highlighting is turned on/off by<br/>    option `global-font-lock-mode' (`font-lock-auto-fontify' in XEmacs).<br/><br/><br/>  USER MODELS:<br/>    VHDL models (templates) can be specified by the user and made accessible<br/>    in the menu, through key bindings (`C-c C-m ...'), or by keyword<br/>    electrification.  See option `vhdl-model-alist'.<br/><br/><br/>  HIDE/SHOW:<br/>    The code of blocks, processes, subprograms, component declarations and<br/>    instantiations, generic/port clauses, and configuration declarations can<br/>    be hidden using the `Hide/Show' menu or by pressing `S-mouse-2' within<br/>    the code (see customization group `vhdl-menu').  XEmacs: limited<br/>    functionality due to old `hideshow.el' package.<br/><br/><br/>  CODE UPDATING:<br/>    - Sensitivity List: `C-c C-u C-s' updates the sensitivity list of the<br/>      current process, `C-c C-u M-s' of all processes in the current buffer.<br/>      Limitations:<br/>        - Only declared local signals (ports, signals declared in<br/>          architecture and blocks) are automatically inserted.<br/>        - Global signals declared in packages are not automatically inserted.<br/>          Insert them once manually (will be kept afterwards).<br/>        - Out parameters of procedures are considered to be read.<br/>      Use option `vhdl-entity-file-name' to specify the entity file name<br/>      (used to obtain the port names).<br/>      Use option `vhdl-array-index-record-field-in-sensitivity-list' to<br/>      specify whether to include array indices and record fields in<br/>      sensitivity lists.<br/><br/><br/>  CODE FIXING:<br/>    `C-c C-x C-p' fixes the closing parenthesis of a generic/port clause<br/>    (e.g. if the closing parenthesis is on the wrong line or is missing).<br/><br/><br/>  PRINTING:<br/>    PostScript printing with different faces (an optimized set of faces is<br/>    used if `vhdl-print-customize-faces' is non-nil) or colors (if<br/>    `ps-print-color-p' is non-nil) is possible using the standard Emacs<br/>    PostScript printing commands.  Option `vhdl-print-two-column' defines<br/>    appropriate default settings for nice landscape two-column printing.<br/>    The paper format can be set by option `ps-paper-type'.  Do not forget to<br/>    switch `ps-print-color-p' to nil for printing on black-and-white<br/>    printers.<br/><br/><br/>  OPTIONS:<br/>    User options allow customization of VHDL Mode.  All options are<br/>    accessible from the "Options" menu entry.  Simple options (switches<br/>    and choices) can directly be changed, while for complex options a<br/>    customization buffer is opened.  Changed options can be saved for future<br/>    sessions using the "Save Options" menu entry.<br/><br/>      Options and their detailed descriptions can also be accessed by using<br/>    the "Customize" menu entry or the command `M-x customize-option' (`M-x<br/>    customize-group' for groups).  Some customizations only take effect<br/>    after some action (read the NOTE in the option documentation).<br/>    Customization can also be done globally (i.e. site-wide, read the<br/>    INSTALL file).<br/><br/>      Not all options are described in this documentation, so go and see<br/>    what other useful user options there are (`M-x vhdl-customize' or menu)!<br/><br/><br/>  FILE EXTENSIONS:<br/>    As default, files with extensions ".vhd" and ".vhdl" are<br/>    automatically recognized as VHDL source files.  To add an extension<br/>    ".xxx", add the following line to your Emacs start-up file (`.emacs'):<br/><br/>      (setq auto-mode-alist (cons '("\\.xxx\\'" . vhdl-mode) auto-mode-alist))<br/><br/><br/>  HINTS:<br/>    - To start Emacs with open VHDL hierarchy browser without having to load<br/>      a VHDL file first, use the command:<br/><br/>        emacs -l vhdl-mode -f speedbar-frame-mode<br/><br/>    - Type `C-g C-g' to interrupt long operations or if Emacs hangs.<br/><br/>    - Some features only work on properly indented code.<br/><br/><br/>  RELEASE NOTES:<br/>    See also the release notes (menu) for added features in new releases.<br/><br/><br/>Maintenance:<br/>------------<br/><br/>To submit a bug report, enter `M-x vhdl-submit-bug-report' within VHDL Mode.<br/>Add a description of the problem and include a reproducible test case.<br/><br/>Questions and enhancement requests can be sent to <reto@gnu.org>.<br/><br/>The `vhdl-mode-announce' mailing list informs about new VHDL Mode releases.<br/>The `vhdl-mode-victims' mailing list informs about new VHDL Mode beta<br/>releases.  You are kindly invited to participate in beta testing.  Subscribe<br/>to above mailing lists by sending an email to <reto@gnu.org>.<br/><br/>VHDL Mode is officially distributed at<br/>http://www.iis.ee.ethz.ch/~zimmi/emacs/vhdl-mode.html<br/>where the latest version can be found.<br/><br/><br/>Known problems:<br/>---------------<br/><br/>- XEmacs: Incorrect start-up when automatically opening speedbar.<br/>- XEmacs: Indentation in XEmacs 21.4 (and higher).<br/>- Indentation incorrect for new 'postponed' VHDL keyword.<br/>- Indentation incorrect for 'protected body' construct.<br/><br/><br/>                                                The VHDL Mode Authors<br/>                                            Reto Zimmermann and Rod Whitby<br/><br/>Key bindings:<br/>-------------<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>TAB		vhdl-electric-tab<br/>RET		vhdl-electric-return<br/>ESC		Prefix Command<br/>SPC		vhdl-electric-space<br/>'		vhdl-electric-quote<br/>,		vhdl-electric-comma<br/>-		vhdl-electric-dash<br/>.		vhdl-electric-period<br/>;		vhdl-electric-semicolon<br/>[		vhdl-electric-open-bracket<br/>]		vhdl-electric-close-bracket<br/><M-delete>	kill-word<br/><backspace>	backward-delete-char-untabify<br/><delete>	delete-char<br/><br/>C-M-a		vhdl-backward-same-indent<br/>C-M-b		vhdl-backward-sexp<br/>C-M-e		vhdl-forward-same-indent<br/>C-M-f		vhdl-forward-sexp<br/>C-M-h		vhdl-mark-defun<br/>C-M-i		insert-tab<br/>C-M-q		vhdl-indent-sexp<br/>C-M-u		vhdl-backward-up-list<br/>C-M-\		vhdl-indent-region<br/>M-^		vhdl-delete-indentation<br/>M-a		vhdl-beginning-of-statement<br/>M-e		vhdl-end-of-statement<br/><br/>C-c C-a		Prefix Command<br/>C-c C-b		vhdl-beautify-buffer<br/>C-c C-c		vhdl-comment-uncomment-region<br/>C-c C-f		Prefix Command<br/>C-c C-h		vhdl-doc-mode<br/>C-c TAB		Prefix Command<br/>C-c C-k		vhdl-compile<br/>C-c C-l		Prefix Command<br/>C-c RET		Prefix Command<br/>C-c C-p		Prefix Command<br/>C-c C-s		Prefix Command<br/>C-c C-t		Prefix Command<br/>C-c C-u		Prefix Command<br/>C-c C-v		vhdl-version<br/>C-c C-x		Prefix Command<br/>C-c ESC		Prefix Command<br/>C-c -		vhdl-comment-append-inline<br/><br/>C-c C-u C-s	vhdl-update-sensitivity-list-process<br/>C-c C-u ESC	Prefix Command<br/><br/>C-c C-x C-c	vhdl-fix-case-buffer<br/>C-c C-x C-p	vhdl-fix-clause<br/>C-c C-x C-w	vhdl-fixup-whitespace-buffer<br/>C-c C-x ESC	Prefix Command<br/><br/>C-c C-l C-c	vhdl-comment-uncomment-line<br/>C-c C-l C-g	goto-line<br/>C-c C-l TAB	vhdl-line-expand<br/>C-c C-l C-n	vhdl-line-transpose-next<br/>C-c C-l C-o	vhdl-line-open<br/>C-c C-l C-p	vhdl-line-transpose-previous<br/>C-c C-l C-w	vhdl-line-kill<br/>C-c C-l C-y	vhdl-line-yank<br/>C-c C-l ESC	Prefix Command<br/><br/>C-c C-f C-f	vhdl-fill-list<br/>C-c C-f C-g	vhdl-fill-group<br/>C-c C-f TAB	vhdl-fill-same-indent<br/>C-c C-f C-l	vhdl-fill-list<br/>C-c C-f ESC	Prefix Command<br/><br/>C-c C-a C-a	vhdl-align-group<br/>C-c C-a C-b	vhdl-align-buffer<br/>C-c C-a C-c	vhdl-align-inline-comment-group<br/>C-c C-a C-d	vhdl-align-declarations<br/>C-c C-a C-g	vhdl-align-group<br/>C-c C-a TAB	vhdl-align-same-indent<br/>C-c C-a C-l	vhdl-align-list<br/>C-c C-a ESC	Prefix Command<br/><br/>C-c TAB C-b	vhdl-indent-buffer<br/>C-c TAB C-d	vhdl-template-insert-directive<br/>C-c TAB C-f	vhdl-fontify-buffer<br/>C-c TAB C-g	vhdl-indent-group<br/>C-c TAB C-l	indent-according-to-mode<br/>C-c TAB RET	vhdl-model-insert<br/>C-c TAB C-p	vhdl-template-insert-package<br/>C-c TAB C-s	vhdl-statistics-buffer<br/>C-c TAB C-t	vhdl-template-insert-construct<br/><br/>C-c C-M-k	vhdl-make<br/>C-c M--		vhdl-comment-display-line<br/>C-c M-b		vhdl-beautify-region<br/>C-c M-k		vhdl-generate-makefile<br/>C-c M-m		vhdl-show-messages<br/><br/>C-c C-p C-c	vhdl-port-paste-component<br/>C-c C-p C-d	vhdl-duplicate-project<br/>C-c C-p C-e	vhdl-port-paste-entity<br/>C-c C-p C-f	vhdl-port-flatten<br/>C-c C-p C-g	vhdl-port-paste-generic-map<br/>C-c C-p TAB	vhdl-port-paste-instance<br/>C-c C-p RET	vhdl-import-project<br/>C-c C-p C-r	vhdl-port-reverse-direction<br/>C-c C-p C-s	vhdl-port-paste-signals<br/>C-c C-p C-t	vhdl-port-paste-testbench<br/>C-c C-p C-w	vhdl-port-copy<br/>C-c C-p C-x	vhdl-export-project<br/>C-c C-p C-z	vhdl-port-paste-initializations<br/>C-c C-p ESC	Prefix Command<br/><br/>C-c C-s C-b	vhdl-subprog-paste-body<br/>C-c C-s C-c	vhdl-subprog-paste-call<br/>C-c C-s C-d	vhdl-subprog-paste-declaration<br/>C-c C-s C-f	vhdl-subprog-flatten<br/>C-c C-s C-k	vhdl-set-compiler<br/>C-c C-s C-p	vhdl-set-project<br/>C-c C-s C-w	vhdl-subprog-copy<br/>C-c C-s ESC	Prefix Command<br/><br/>C-c RET C-e	vhdl-electric-mode<br/>C-c RET C-f	vhdl-compose-configuration<br/>C-c RET C-k	vhdl-compose-components-package<br/>C-c RET C-n	vhdl-compose-new-component<br/>C-c RET C-p	vhdl-compose-place-component<br/>C-c RET C-s	vhdl-stutter-mode<br/>C-c RET C-w	vhdl-compose-wire-components<br/>C-c RET e	vhdl-model-example-model<br/><br/>C-c C-t C-d	Prefix Command<br/>C-c C-t C-f	vhdl-template-footer<br/>C-c C-t C-h	vhdl-template-header<br/>C-c C-t RET	vhdl-template-modify<br/>C-c C-t C-p	Prefix Command<br/>C-c C-t C-q	vhdl-template-search-prompt<br/>C-c C-t C-t	vhdl-template-insert-date<br/>C-c C-t (	vhdl-template-paired-parens<br/>C-c C-t C	Prefix Command<br/>C-c C-t P	Prefix Command<br/>C-c C-t a	Prefix Command<br/>C-c C-t b	Prefix Command<br/>C-c C-t c	Prefix Command<br/>C-c C-t d	Prefix Command<br/>C-c C-t e	Prefix Command<br/>C-c C-t f	Prefix Command<br/>C-c C-t g	Prefix Command<br/>C-c C-t i	Prefix Command<br/>C-c C-t l	Prefix Command<br/>C-c C-t m	Prefix Command<br/>C-c C-t n	Prefix Command<br/>C-c C-t o	Prefix Command<br/>C-c C-t p	Prefix Command<br/>C-c C-t r	Prefix Command<br/>C-c C-t s	Prefix Command<br/>C-c C-t t	Prefix Command<br/>C-c C-t u	Prefix Command<br/>C-c C-t v	Prefix Command<br/>C-c C-t w	Prefix Command<br/><br/>C-c C-u M-s	vhdl-update-sensitivity-list-buffer<br/><br/>C-c C-x M-c	vhdl-fix-case-region<br/>C-c C-x M-w	vhdl-fixup-whitespace-region<br/><br/>C-c C-l M-w	vhdl-line-copy<br/><br/>C-c C-f M-f	vhdl-fill-region<br/><br/>C-c C-a M-a	vhdl-align-region<br/>C-c C-a M-c	vhdl-align-inline-comment-region<br/><br/>C-c C-p M-c	vhdl-port-paste-constants<br/>C-c C-p M-w	vhdl-port-copy<br/><br/>C-c C-s M-w	vhdl-subprog-copy<br/><br/>C-c C-t C-d F	vhdl-template-directive-synthesis-off<br/>C-c C-t C-d N	vhdl-template-directive-synthesis-on<br/>C-c C-t C-d f	vhdl-template-directive-translate-off<br/>C-c C-t C-d n	vhdl-template-directive-translate-on<br/><br/>C-c C-t C-p A	vhdl-template-package-std-logic-arith<br/>C-c C-t C-p M	vhdl-template-package-std-logic-misc<br/>C-c C-t C-p S	vhdl-template-package-std-logic-signed<br/>C-c C-t C-p T	vhdl-template-package-std-logic-textio<br/>C-c C-t C-p U	vhdl-template-package-std-logic-unsigned<br/>C-c C-t C-p b	vhdl-template-package-numeric-bit<br/>C-c C-t C-p n	vhdl-template-package-numeric-std<br/>C-c C-t C-p s	vhdl-template-package-std-logic-1164<br/>C-c C-t C-p t	vhdl-template-package-textio<br/><br/>C-c C-t w a	vhdl-template-wait<br/>C-c C-t w c	vhdl-template-clocked-wait<br/>C-c C-t w i	vhdl-template-with<br/>C-c C-t w l	vhdl-template-while-loop<br/><br/>C-c C-t v a	vhdl-template-variable<br/><br/>C-c C-t u s	vhdl-template-use<br/><br/>C-c C-t t y	vhdl-template-type<br/><br/>C-c C-t s i	vhdl-template-signal<br/>C-c C-t s s	vhdl-template-selected-signal-asst<br/>C-c C-t s u	vhdl-template-subtype<br/><br/>C-c C-t r p	vhdl-template-report<br/>C-c C-t r t	vhdl-template-return<br/><br/>C-c C-t p b	vhdl-template-procedure-body<br/>C-c C-t p c	vhdl-template-process-comb<br/>C-c C-t p d	vhdl-template-procedure-decl<br/>C-c C-t p o	vhdl-template-port<br/>C-c C-t p s	vhdl-template-process-seq<br/><br/>C-c C-t P b	vhdl-template-package-body<br/>C-c C-t P d	vhdl-template-package-decl<br/><br/>C-c C-t o t	vhdl-template-others<br/><br/>C-c C-t n e	vhdl-template-next<br/><br/>C-c C-t m a	vhdl-template-map<br/><br/>C-c C-t l i	vhdl-template-library<br/>C-c C-t l o	vhdl-template-bare-loop<br/><br/>C-c C-t i g	vhdl-template-if-generate<br/>C-c C-t i t	vhdl-template-if-then<br/><br/>C-c C-t g d	vhdl-template-group-decl<br/>C-c C-t g e	vhdl-template-generic<br/>C-c C-t g t	vhdl-template-group-template<br/><br/>C-c C-t f b	vhdl-template-function-body<br/>C-c C-t f d	vhdl-template-function-decl<br/>C-c C-t f g	vhdl-template-for-generate<br/>C-c C-t f i	vhdl-template-file<br/>C-c C-t f l	vhdl-template-for-loop<br/><br/>C-c C-t e i	vhdl-template-elsif<br/>C-c C-t e l	vhdl-template-else<br/>C-c C-t e n	vhdl-template-entity<br/>C-c C-t e x	vhdl-template-exit<br/><br/>C-c C-t d i	vhdl-template-disconnect<br/><br/>C-c C-t C b	vhdl-template-block-configuration<br/>C-c C-t C c	vhdl-template-component-conf<br/>C-c C-t C d	vhdl-template-configuration-decl<br/>C-c C-t C s	vhdl-template-configuration-spec<br/><br/>C-c C-t c a	vhdl-template-case-is<br/>C-c C-t c d	vhdl-template-component-decl<br/>C-c C-t c i	vhdl-template-component-inst<br/>C-c C-t c o	vhdl-template-constant<br/>C-c C-t c s	vhdl-template-conditional-signal-asst<br/><br/>C-c C-t b l	vhdl-template-block<br/><br/>C-c C-t a d	vhdl-template-attribute-decl<br/>C-c C-t a l	vhdl-template-alias<br/>C-c C-t a r	vhdl-template-architecture<br/>C-c C-t a s	vhdl-template-attribute-spec<br/>C-c C-t a t	vhdl-template-assert<br/><br/><br/><br/>In addition to any hooks its parent mode `prog-mode' might have run,<br/>this mode runs the hook `vhdl-mode-hook', as the final step<br/>during initialization.
+<strong>vhdl-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>vhdl-mode.el</code>'.<br/>
+<br/>
+(vhdl-mode)<br/>
+<br/>
+Parent mode: `prog-mode'.<br/>
+<br/>
+Major mode for editing VHDL code.<br/>
+<br/>
+Usage:<br/>
+------<br/>
+<br/>
+  TEMPLATE INSERTION (electrification):<br/>
+    After typing a VHDL keyword and entering `SPC', you are prompted for<br/>
+    arguments while a template is generated for that VHDL construct.  Typing<br/>
+    `RET' or `C-g' at the first (mandatory) prompt aborts the current<br/>
+    template generation.  Optional arguments are indicated by square<br/>
+    brackets and removed if the queried string is left empty.  Prompts for<br/>
+    mandatory arguments remain in the code if the queried string is left<br/>
+    empty.  They can be queried again by `C-c C-t C-q'.  Enabled<br/>
+    electrification is indicated by `/e' in the mode line.<br/>
+<br/>
+      Typing `M-SPC' after a keyword inserts a space without calling the<br/>
+    template generator.  Automatic template generation (i.e.<br/>
+    electrification) can be disabled (enabled) by typing `C-c C-m C-e' or by<br/>
+    setting option `vhdl-electric-mode' (see OPTIONS).<br/>
+<br/>
+      Template generators can be invoked from the VHDL menu, by key<br/>
+    bindings, by typing `C-c C-i C-c' and choosing a construct, or by typing<br/>
+    the keyword (i.e. first word of menu entry not in parenthesis) and<br/>
+    `SPC'.  The following abbreviations can also be used: arch, attr, cond,<br/>
+    conf, comp, cons, func, inst, pack, sig, var.<br/>
+<br/>
+      Template styles can be customized in customization group<br/>
+    `vhdl-template' (see OPTIONS).<br/>
+<br/>
+<br/>
+  HEADER INSERTION:<br/>
+    A file header can be inserted by `C-c C-t C-h'.  A file footer<br/>
+    (template at the end of the file) can be inserted by `C-c C-t C-f'.<br/>
+    See customization group `vhdl-header'.<br/>
+<br/>
+<br/>
+  STUTTERING:<br/>
+    Double striking of some keys inserts cumbersome VHDL syntax elements.<br/>
+    Stuttering can be disabled (enabled) by typing `C-c C-m C-s' or by<br/>
+    option `vhdl-stutter-mode'.  Enabled stuttering is indicated by `/s' in<br/>
+    the mode line.  The stuttering keys and their effects are:<br/>
+<br/>
+      ;;   -->  " : "       [   -->  (        --    -->  comment<br/>
+      ;;;  -->  " := "      [[  -->  [        --CR  -->  comment-out code<br/>
+      ..   -->  " => "      ]   -->  )        ---   -->  horizontal line<br/>
+      ,,   -->  " <= "      ]]  -->  ]        ----  -->  display comment<br/>
+      ==   -->  " == "      ''  -->  \"<br/>
+<br/>
+<br/>
+  WORD COMPLETION:<br/>
+    Typing `TAB' after a (not completed) word looks for a VHDL keyword or a<br/>
+    word in the buffer that starts alike, inserts it and adjusts case.<br/>
+    Re-typing `TAB' toggles through alternative word completions.  This also<br/>
+    works in the minibuffer (i.e. in template generator prompts).<br/>
+<br/>
+      Typing `TAB' after `(' looks for and inserts complete parenthesized<br/>
+    expressions (e.g. for array index ranges).  All keywords as well as<br/>
+    standard types and subprograms of VHDL have predefined abbreviations<br/>
+    (e.g. type "std" and `TAB' will toggle through all standard types<br/>
+    beginning with "std").<br/>
+<br/>
+      Typing `TAB' after a non-word character indents the line if at the<br/>
+    beginning of a line (i.e. no preceding non-blank characters), and<br/>
+    inserts a tabulator stop otherwise.  `M-TAB' always inserts a tabulator<br/>
+    stop.<br/>
+<br/>
+<br/>
+  COMMENTS:<br/>
+        `--'       puts a single comment.<br/>
+        `---'      draws a horizontal line for separating code segments.<br/>
+        `----'     inserts a display comment, i.e. two horizontal lines<br/>
+                   with a comment in between.<br/>
+        `--CR'     comments out code on that line.  Re-hitting CR comments<br/>
+                   out following lines.<br/>
+        `C-c C-c'  comments out a region if not commented out,<br/>
+                   uncomments a region if already commented out.  Option<br/>
+                   `comment-style' defines where the comment characters<br/>
+                   should be placed (beginning of line, indent, etc.).<br/>
+<br/>
+      You are prompted for comments after object definitions (i.e. signals,<br/>
+    variables, constants, ports) and after subprogram and process<br/>
+    specifications if option `vhdl-prompt-for-comments' is non-nil.<br/>
+    Comments are automatically inserted as additional labels (e.g. after<br/>
+    begin statements) and as help comments if `vhdl-self-insert-comments' is<br/>
+    non-nil.<br/>
+<br/>
+      Inline comments (i.e. comments after a piece of code on the same line)<br/>
+    are indented at least to `vhdl-inline-comment-column'.  Comments go at<br/>
+    maximum to `vhdl-end-comment-column'.  `RET' after a space in a comment<br/>
+    will open a new comment line.  Typing beyond `vhdl-end-comment-column'<br/>
+    in a comment automatically opens a new comment line.  `M-q' re-fills<br/>
+    multi-line comments.<br/>
+<br/>
+<br/>
+  INDENTATION:<br/>
+    `TAB' indents a line if at the beginning of the line.  The amount of<br/>
+    indentation is specified by option `vhdl-basic-offset'.  `C-c C-i C-l'<br/>
+    always indents the current line (is bound to `TAB' if option<br/>
+    `vhdl-intelligent-tab' is nil).  If a region is active, `TAB' indents<br/>
+    the entire region.<br/>
+<br/>
+      Indentation can be done for a group of lines (`C-c C-i C-g'), a region<br/>
+    (`M-C-\') or the entire buffer (menu).  Argument and port lists are<br/>
+    indented normally (nil) or relative to the opening parenthesis (non-nil)<br/>
+    according to option `vhdl-argument-list-indent'.<br/>
+<br/>
+      If option `vhdl-indent-tabs-mode' is nil, spaces are used instead of<br/>
+    tabs.  `M-x tabify' and `M-x untabify' allow to convert spaces to tabs<br/>
+    and vice versa.<br/>
+<br/>
+      Syntax-based indentation can be very slow in large files.  Option<br/>
+    `vhdl-indent-syntax-based' allows to use faster but simpler indentation.<br/>
+<br/>
+      Option `vhdl-indent-comment-like-next-code-line' controls whether<br/>
+    comment lines are indented like the preceding or like the following code<br/>
+    line.<br/>
+<br/>
+<br/>
+  ALIGNMENT:<br/>
+    The alignment functions align operators, keywords, and inline comments<br/>
+    to beautify the code.  `C-c C-a C-a' aligns a group of consecutive lines<br/>
+    separated by blank lines, `C-c C-a C-i' a block of lines with same<br/>
+    indent.  `C-c C-a C-l' aligns all lines belonging to a list enclosed by<br/>
+    a pair of parentheses (e.g. port clause/map, argument list), and `C-c<br/>
+    C-a C-d' all lines within the declarative part of a design unit.  `C-c<br/>
+    C-a M-a' aligns an entire region.  `C-c C-a C-c' aligns inline comments<br/>
+    for a group of lines, and `C-c C-a M-c' for a region.<br/>
+<br/>
+      If option `vhdl-align-groups' is non-nil, groups of code lines<br/>
+    separated by special lines (see option `vhdl-align-group-separate') are<br/>
+    aligned individually.  If option `vhdl-align-same-indent' is non-nil,<br/>
+    blocks of lines with same indent are aligned separately.  Some templates<br/>
+    are automatically aligned after generation if option `vhdl-auto-align'<br/>
+    is non-nil.<br/>
+<br/>
+      Alignment tries to align inline comments at<br/>
+    `vhdl-inline-comment-column' and tries inline comment not to exceed<br/>
+    `vhdl-end-comment-column'.<br/>
+<br/>
+      `C-c C-x M-w' fixes up whitespace in a region.  That is, operator<br/>
+    symbols are surrounded by one space, and multiple spaces are eliminated.<br/>
+<br/>
+<br/>
+  CODE FILLING:<br/>
+    Code filling allows to condense code (e.g. sensitivity lists or port<br/>
+    maps) by removing comments and newlines and re-wrapping so that all<br/>
+    lines are maximally filled (block filling).  `C-c C-f C-f' fills a list<br/>
+    enclosed by parenthesis, `C-c C-f C-g' a group of lines separated by<br/>
+    blank lines, `C-c C-f C-i' a block of lines with same indent, and<br/>
+    `C-c C-f M-f' an entire region.<br/>
+<br/>
+<br/>
+  CODE BEAUTIFICATION:<br/>
+    `C-c M-b' and `C-c C-b' beautify the code of a region or of the entire<br/>
+    buffer respectively.  This includes indentation, alignment, and case<br/>
+    fixing.  Code beautification can also be run non-interactively using the<br/>
+    command:<br/>
+<br/>
+      emacs -batch -l ~/.emacs filename.vhd -f vhdl-beautify-buffer<br/>
+<br/>
+<br/>
+  PORT TRANSLATION:<br/>
+    Generic and port clauses from entity or component declarations can be<br/>
+    copied (`C-c C-p C-w') and pasted as entity and component declarations,<br/>
+    as component instantiations and corresponding internal constants and<br/>
+    signals, as a generic map with constants as actual generics, and as<br/>
+    internal signal initializations (menu).<br/>
+<br/>
+      To include formals in component instantiations, see option<br/>
+    `vhdl-association-list-with-formals'.  To include comments in pasting,<br/>
+    see options `vhdl-include-...-comments'.<br/>
+<br/>
+      A clause with several generic/port names on the same line can be<br/>
+    flattened (`C-c C-p C-f') so that only one name per line exists.  The<br/>
+    direction of ports can be reversed (`C-c C-p C-r'), i.e., inputs become<br/>
+    outputs and vice versa, which can be useful in testbenches.  (This<br/>
+    reversion is done on the internal data structure and is only reflected<br/>
+    in subsequent paste operations.)<br/>
+<br/>
+      Names for actual ports, instances, testbenches, and<br/>
+    design-under-test instances can be derived from existing names according<br/>
+    to options `vhdl-...-name'.  See customization group `vhdl-port'.<br/>
+<br/>
+<br/>
+  SUBPROGRAM TRANSLATION:<br/>
+    Similar functionality exists for copying/pasting the interface of<br/>
+    subprograms (function/procedure).  A subprogram interface can be copied<br/>
+    and then pasted as a subprogram declaration, body or call (uses<br/>
+    association list with formals).<br/>
+<br/>
+<br/>
+  TESTBENCH GENERATION:<br/>
+    A copied port can also be pasted as a testbench.  The generated<br/>
+    testbench includes an entity, an architecture, and an optional<br/>
+    configuration.  The architecture contains the component declaration and<br/>
+    instantiation of the DUT as well as internal constant and signal<br/>
+    declarations.  Additional user-defined templates can be inserted.  The<br/>
+    names used for entity/architecture/configuration/DUT as well as the file<br/>
+    structure to be generated can be customized. See customization group<br/>
+   `vhdl-testbench'.<br/>
+<br/>
+<br/>
+  KEY BINDINGS:<br/>
+    Key bindings (`C-c ...') exist for most commands (see in menu).<br/>
+<br/>
+<br/>
+  VHDL MENU:<br/>
+    All commands can be found in the VHDL menu including their key bindings.<br/>
+<br/>
+<br/>
+  FILE BROWSER:<br/>
+    The speedbar allows browsing of directories and file contents.  It can<br/>
+    be accessed from the VHDL menu and is automatically opened if option<br/>
+    `vhdl-speedbar-auto-open' is non-nil.<br/>
+<br/>
+      In speedbar, open files and directories with `mouse-2' on the name and<br/>
+    browse/rescan their contents with `mouse-2'/`S-mouse-2' on the `+'.<br/>
+<br/>
+<br/>
+  DESIGN HIERARCHY BROWSER:<br/>
+    The speedbar can also be used for browsing the hierarchy of design units<br/>
+    contained in the source files of the current directory or the specified<br/>
+    projects (see option `vhdl-project-alist').<br/>
+<br/>
+      The speedbar can be switched between file, directory hierarchy and<br/>
+    project hierarchy browsing mode in the speedbar menu or by typing `f',<br/>
+    `h' or `H' in speedbar.<br/>
+<br/>
+      In speedbar, open design units with `mouse-2' on the name and browse<br/>
+    their hierarchy with `mouse-2' on the `+'.  Ports can directly be copied<br/>
+    from entities and components (in packages).  Individual design units and<br/>
+    complete designs can directly be compiled ("Make" menu entry).<br/>
+<br/>
+      The hierarchy is automatically updated upon saving a modified source<br/>
+    file when option `vhdl-speedbar-update-on-saving' is non-nil.  The<br/>
+    hierarchy is only updated for projects that have been opened once in the<br/>
+    speedbar.  The hierarchy is cached between Emacs sessions in a file (see<br/>
+    options in group `vhdl-speedbar').<br/>
+<br/>
+      Simple design consistency checks are done during scanning, such as<br/>
+    multiple declarations of the same unit or missing primary units that are<br/>
+    required by secondary units.<br/>
+<br/>
+<br/>
+  STRUCTURAL COMPOSITION:<br/>
+    Enables simple structural composition.  `C-c C-m C-n' creates a skeleton<br/>
+    for a new component.  Subcomponents (i.e. component declaration and<br/>
+    instantiation) can be automatically placed from a previously read port<br/>
+    (`C-c C-m C-p') or directly from the hierarchy browser (`P').  Finally,<br/>
+    all subcomponents can be automatically connected using internal signals<br/>
+    and ports (`C-c C-m C-w') following these rules:<br/>
+      - subcomponent actual ports with same name are considered to be<br/>
+        connected by a signal (internal signal or port)<br/>
+      - signals that are only inputs to subcomponents are considered as<br/>
+        inputs to this component -> input port created<br/>
+      - signals that are only outputs from subcomponents are considered as<br/>
+        outputs from this component -> output port created<br/>
+      - signals that are inputs to AND outputs from subcomponents are<br/>
+        considered as internal connections -> internal signal created<br/>
+<br/>
+      Purpose:  With appropriate naming conventions it is possible to<br/>
+    create higher design levels with only a few mouse clicks or key<br/>
+    strokes.  A new design level can be created by simply generating a new<br/>
+    component, placing the required subcomponents from the hierarchy<br/>
+    browser, and wiring everything automatically.<br/>
+<br/>
+      Note: Automatic wiring only works reliably on templates of new<br/>
+    components and component instantiations that were created by VHDL mode.<br/>
+<br/>
+      Component declarations can be placed in a components package (option<br/>
+    `vhdl-use-components-package') which can be automatically generated for<br/>
+    an entire directory or project (`C-c C-m M-p').  The VHDL'93 direct<br/>
+    component instantiation is also supported (option<br/>
+    `vhdl-use-direct-instantiation').<br/>
+<br/>
+      Configuration declarations can automatically be generated either from<br/>
+    the menu (`C-c C-m C-f') (for the architecture the cursor is in) or from<br/>
+    the speedbar menu (for the architecture under the cursor).  The<br/>
+    configurations can optionally be hierarchical (i.e. include all<br/>
+    component levels of a hierarchical design, option<br/>
+    `vhdl-compose-configuration-hierarchical') or include subconfigurations<br/>
+    (option `vhdl-compose-configuration-use-subconfiguration').  For<br/>
+    subcomponents in hierarchical configurations, the most-recently-analyzed<br/>
+    (mra) architecture is selected.  If another architecture is desired, it<br/>
+    can be marked as most-recently-analyzed (speedbar menu) before<br/>
+    generating the configuration.<br/>
+<br/>
+      Note: Configurations of subcomponents (i.e. hierarchical configuration<br/>
+    declarations) are currently not considered when displaying<br/>
+    configurations in speedbar.<br/>
+<br/>
+      See the options group `vhdl-compose' for all relevant user options.<br/>
+<br/>
+<br/>
+  SOURCE FILE COMPILATION:<br/>
+    The syntax of the current buffer can be analyzed by calling a VHDL<br/>
+    compiler (menu, `C-c C-k').  The compiler to be used is specified by<br/>
+    option `vhdl-compiler'.  The available compilers are listed in option<br/>
+    `vhdl-compiler-alist' including all required compilation command,<br/>
+    command options, compilation directory, and error message syntax<br/>
+    information.  New compilers can be added.<br/>
+<br/>
+      All the source files of an entire design can be compiled by the `make'<br/>
+    command (menu, `C-c M-C-k') if an appropriate Makefile exists.<br/>
+<br/>
+<br/>
+  MAKEFILE GENERATION:<br/>
+    Makefiles can be generated automatically by an internal generation<br/>
+    routine (`C-c M-k').  The library unit dependency information is<br/>
+    obtained from the hierarchy browser.  Makefile generation can be<br/>
+    customized for each compiler in option `vhdl-compiler-alist'.<br/>
+<br/>
+      Makefile generation can also be run non-interactively using the<br/>
+    command:<br/>
+<br/>
+        emacs -batch -l ~/.emacs -l vhdl-mode<br/>
+              [-compiler compilername] [-project projectname]<br/>
+              -f vhdl-generate-makefile<br/>
+<br/>
+      The Makefile's default target "all" compiles the entire design, the<br/>
+    target "clean" removes it and the target "library" creates the<br/>
+    library directory if not existent.  These target names can be customized<br/>
+    by option `vhdl-makefile-default-targets'.  The Makefile also includes a<br/>
+    target for each primary library unit which allows selective compilation<br/>
+    of this unit, its secondary units and its subhierarchy (example:<br/>
+    compilation of a design specified by a configuration).  User specific<br/>
+    parts can be inserted into a Makefile with option<br/>
+    `vhdl-makefile-generation-hook'.<br/>
+<br/>
+    Limitations:<br/>
+      - Only library units and dependencies within the current library are<br/>
+        considered.  Makefiles for designs that span multiple libraries are<br/>
+        not (yet) supported.<br/>
+      - Only one-level configurations are supported (also hierarchical),<br/>
+        but configurations that go down several levels are not.<br/>
+      - The "others" keyword in configurations is not supported.<br/>
+<br/>
+<br/>
+  PROJECTS:<br/>
+    Projects can be defined in option `vhdl-project-alist' and a current<br/>
+    project be selected using option `vhdl-project' (permanently) or from<br/>
+    the menu or speedbar (temporarily).  For each project, title and<br/>
+    description strings (for the file headers), source files/directories<br/>
+    (for the hierarchy browser and Makefile generation), library name, and<br/>
+    compiler-dependent options, exceptions and compilation directory can be<br/>
+    specified.  Compilation settings overwrite the settings of option<br/>
+    `vhdl-compiler-alist'.<br/>
+<br/>
+      Project setups can be exported (i.e. written to a file) and imported.<br/>
+    Imported setups are not automatically saved in `vhdl-project-alist' but<br/>
+    can be saved afterwards in its customization buffer.  When starting<br/>
+    Emacs with VHDL Mode (i.e. load a VHDL file or use "emacs -l<br/>
+    vhdl-mode") in a directory with an existing project setup file, it is<br/>
+    automatically loaded and its project activated if option<br/>
+    `vhdl-project-auto-load' is non-nil.  Names/paths of the project setup<br/>
+    files can be specified in option `vhdl-project-file-name'.  Multiple<br/>
+    project setups can be automatically loaded from global directories.<br/>
+    This is an alternative to specifying project setups with option<br/>
+    `vhdl-project-alist'.<br/>
+<br/>
+<br/>
+  SPECIAL MENUES:<br/>
+    As an alternative to the speedbar, an index menu can be added (set<br/>
+    option `vhdl-index-menu' to non-nil) or made accessible as a mouse menu<br/>
+    (e.g. add "(global-set-key '[S-down-mouse-3] 'imenu)" to your start-up<br/>
+    file) for browsing the file contents (is not populated if buffer is<br/>
+    larger than `font-lock-maximum-size').  Also, a source file menu can be<br/>
+    added (set option `vhdl-source-file-menu' to non-nil) for browsing the<br/>
+    current directory for VHDL source files.<br/>
+<br/>
+<br/>
+  VHDL STANDARDS:<br/>
+    The VHDL standards to be used are specified in option `vhdl-standard'.<br/>
+    Available standards are: VHDL'87/'93(02), VHDL-AMS, and Math Packages.<br/>
+<br/>
+<br/>
+  KEYWORD CASE:<br/>
+    Lower and upper case for keywords and standardized types, attributes,<br/>
+    and enumeration values is supported.  If the option<br/>
+    `vhdl-upper-case-keywords' is set to non-nil, keywords can be typed in<br/>
+    lower case and are converted into upper case automatically (not for<br/>
+    types, attributes, and enumeration values).  The case of keywords,<br/>
+    types, attributes,and enumeration values can be fixed for an entire<br/>
+    region (menu) or buffer (`C-c C-x C-c') according to the options<br/>
+    `vhdl-upper-case-{keywords,types,attributes,enum-values}'.<br/>
+<br/>
+<br/>
+  HIGHLIGHTING (fontification):<br/>
+    Keywords and standardized types, attributes, enumeration values, and<br/>
+    function names (controlled by option `vhdl-highlight-keywords'), as well<br/>
+    as comments, strings, and template prompts are highlighted using<br/>
+    different colors.  Unit, subprogram, signal, variable, constant,<br/>
+    parameter and generic/port names in declarations as well as labels are<br/>
+    highlighted if option `vhdl-highlight-names' is non-nil.<br/>
+<br/>
+      Additional reserved words or words with a forbidden syntax (e.g. words<br/>
+    that should be avoided) can be specified in option<br/>
+    `vhdl-forbidden-words' or `vhdl-forbidden-syntax' and be highlighted in<br/>
+    a warning color (option `vhdl-highlight-forbidden-words').  Verilog<br/>
+    keywords are highlighted as forbidden words if option<br/>
+    `vhdl-highlight-verilog-keywords' is non-nil.<br/>
+<br/>
+      Words with special syntax can be highlighted by specifying their<br/>
+    syntax and color in option `vhdl-special-syntax-alist' and by setting<br/>
+    option `vhdl-highlight-special-words' to non-nil.  This allows to<br/>
+    establish some naming conventions (e.g. to distinguish different kinds<br/>
+    of signals or other objects by using name suffices) and to support them<br/>
+    visually.<br/>
+<br/>
+      Option `vhdl-highlight-case-sensitive' can be set to non-nil in order<br/>
+    to support case-sensitive highlighting.  However, keywords are then only<br/>
+    highlighted if written in lower case.<br/>
+<br/>
+      Code between "translate_off" and "translate_on" pragmas is<br/>
+    highlighted using a different background color if option<br/>
+    `vhdl-highlight-translate-off' is non-nil.<br/>
+<br/>
+      For documentation and customization of the used colors see<br/>
+    customization group `vhdl-highlight-faces' (`M-x customize-group').  For<br/>
+    highlighting of matching parenthesis, see customization group<br/>
+    `paren-showing'.  Automatic buffer highlighting is turned on/off by<br/>
+    option `global-font-lock-mode' (`font-lock-auto-fontify' in XEmacs).<br/>
+<br/>
+<br/>
+  USER MODELS:<br/>
+    VHDL models (templates) can be specified by the user and made accessible<br/>
+    in the menu, through key bindings (`C-c C-m ...'), or by keyword<br/>
+    electrification.  See option `vhdl-model-alist'.<br/>
+<br/>
+<br/>
+  HIDE/SHOW:<br/>
+    The code of blocks, processes, subprograms, component declarations and<br/>
+    instantiations, generic/port clauses, and configuration declarations can<br/>
+    be hidden using the `Hide/Show' menu or by pressing `S-mouse-2' within<br/>
+    the code (see customization group `vhdl-menu').  XEmacs: limited<br/>
+    functionality due to old `hideshow.el' package.<br/>
+<br/>
+<br/>
+  CODE UPDATING:<br/>
+    - Sensitivity List: `C-c C-u C-s' updates the sensitivity list of the<br/>
+      current process, `C-c C-u M-s' of all processes in the current buffer.<br/>
+      Limitations:<br/>
+        - Only declared local signals (ports, signals declared in<br/>
+          architecture and blocks) are automatically inserted.<br/>
+        - Global signals declared in packages are not automatically inserted.<br/>
+          Insert them once manually (will be kept afterwards).<br/>
+        - Out parameters of procedures are considered to be read.<br/>
+      Use option `vhdl-entity-file-name' to specify the entity file name<br/>
+      (used to obtain the port names).<br/>
+      Use option `vhdl-array-index-record-field-in-sensitivity-list' to<br/>
+      specify whether to include array indices and record fields in<br/>
+      sensitivity lists.<br/>
+<br/>
+<br/>
+  CODE FIXING:<br/>
+    `C-c C-x C-p' fixes the closing parenthesis of a generic/port clause<br/>
+    (e.g. if the closing parenthesis is on the wrong line or is missing).<br/>
+<br/>
+<br/>
+  PRINTING:<br/>
+    PostScript printing with different faces (an optimized set of faces is<br/>
+    used if `vhdl-print-customize-faces' is non-nil) or colors (if<br/>
+    `ps-print-color-p' is non-nil) is possible using the standard Emacs<br/>
+    PostScript printing commands.  Option `vhdl-print-two-column' defines<br/>
+    appropriate default settings for nice landscape two-column printing.<br/>
+    The paper format can be set by option `ps-paper-type'.  Do not forget to<br/>
+    switch `ps-print-color-p' to nil for printing on black-and-white<br/>
+    printers.<br/>
+<br/>
+<br/>
+  OPTIONS:<br/>
+    User options allow customization of VHDL Mode.  All options are<br/>
+    accessible from the "Options" menu entry.  Simple options (switches<br/>
+    and choices) can directly be changed, while for complex options a<br/>
+    customization buffer is opened.  Changed options can be saved for future<br/>
+    sessions using the "Save Options" menu entry.<br/>
+<br/>
+      Options and their detailed descriptions can also be accessed by using<br/>
+    the "Customize" menu entry or the command `M-x customize-option' (`M-x<br/>
+    customize-group' for groups).  Some customizations only take effect<br/>
+    after some action (read the NOTE in the option documentation).<br/>
+    Customization can also be done globally (i.e. site-wide, read the<br/>
+    INSTALL file).<br/>
+<br/>
+      Not all options are described in this documentation, so go and see<br/>
+    what other useful user options there are (`M-x vhdl-customize' or menu)!<br/>
+<br/>
+<br/>
+  FILE EXTENSIONS:<br/>
+    As default, files with extensions ".vhd" and ".vhdl" are<br/>
+    automatically recognized as VHDL source files.  To add an extension<br/>
+    ".xxx", add the following line to your Emacs start-up file (`.emacs'):<br/>
+<br/>
+      (setq auto-mode-alist (cons '("\\.xxx\\'" . vhdl-mode) auto-mode-alist))<br/>
+<br/>
+<br/>
+  HINTS:<br/>
+    - To start Emacs with open VHDL hierarchy browser without having to load<br/>
+      a VHDL file first, use the command:<br/>
+<br/>
+        emacs -l vhdl-mode -f speedbar-frame-mode<br/>
+<br/>
+    - Type `C-g C-g' to interrupt long operations or if Emacs hangs.<br/>
+<br/>
+    - Some features only work on properly indented code.<br/>
+<br/>
+<br/>
+  RELEASE NOTES:<br/>
+    See also the release notes (menu) for added features in new releases.<br/>
+<br/>
+<br/>
+Maintenance:<br/>
+------------<br/>
+<br/>
+To submit a bug report, enter `M-x vhdl-submit-bug-report' within VHDL Mode.<br/>
+Add a description of the problem and include a reproducible test case.<br/>
+<br/>
+Questions and enhancement requests can be sent to <reto@gnu.org>.<br/>
+<br/>
+The `vhdl-mode-announce' mailing list informs about new VHDL Mode releases.<br/>
+The `vhdl-mode-victims' mailing list informs about new VHDL Mode beta<br/>
+releases.  You are kindly invited to participate in beta testing.  Subscribe<br/>
+to above mailing lists by sending an email to <reto@gnu.org>.<br/>
+<br/>
+VHDL Mode is officially distributed at<br/>
+http://www.iis.ee.ethz.ch/~zimmi/emacs/vhdl-mode.html<br/>
+where the latest version can be found.<br/>
+<br/>
+<br/>
+Known problems:<br/>
+---------------<br/>
+<br/>
+- XEmacs: Incorrect start-up when automatically opening speedbar.<br/>
+- XEmacs: Indentation in XEmacs 21.4 (and higher).<br/>
+- Indentation incorrect for new 'postponed' VHDL keyword.<br/>
+- Indentation incorrect for 'protected body' construct.<br/>
+<br/>
+<br/>
+                                                The VHDL Mode Authors<br/>
+                                            Reto Zimmermann and Rod Whitby<br/>
+<br/>
+Key bindings:<br/>
+-------------<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+TAB		vhdl-electric-tab<br/>
+RET		vhdl-electric-return<br/>
+ESC		Prefix Command<br/>
+SPC		vhdl-electric-space<br/>
+'		vhdl-electric-quote<br/>
+,		vhdl-electric-comma<br/>
+-		vhdl-electric-dash<br/>
+.		vhdl-electric-period<br/>
+;		vhdl-electric-semicolon<br/>
+[		vhdl-electric-open-bracket<br/>
+]		vhdl-electric-close-bracket<br/>
+<M-delete>	kill-word<br/>
+<backspace>	backward-delete-char-untabify<br/>
+<delete>	delete-char<br/>
+<br/>
+C-M-a		vhdl-backward-same-indent<br/>
+C-M-b		vhdl-backward-sexp<br/>
+C-M-e		vhdl-forward-same-indent<br/>
+C-M-f		vhdl-forward-sexp<br/>
+C-M-h		vhdl-mark-defun<br/>
+C-M-i		insert-tab<br/>
+C-M-q		vhdl-indent-sexp<br/>
+C-M-u		vhdl-backward-up-list<br/>
+C-M-\		vhdl-indent-region<br/>
+M-^		vhdl-delete-indentation<br/>
+M-a		vhdl-beginning-of-statement<br/>
+M-e		vhdl-end-of-statement<br/>
+<br/>
+C-c C-a		Prefix Command<br/>
+C-c C-b		vhdl-beautify-buffer<br/>
+C-c C-c		vhdl-comment-uncomment-region<br/>
+C-c C-f		Prefix Command<br/>
+C-c C-h		vhdl-doc-mode<br/>
+C-c TAB		Prefix Command<br/>
+C-c C-k		vhdl-compile<br/>
+C-c C-l		Prefix Command<br/>
+C-c RET		Prefix Command<br/>
+C-c C-p		Prefix Command<br/>
+C-c C-s		Prefix Command<br/>
+C-c C-t		Prefix Command<br/>
+C-c C-u		Prefix Command<br/>
+C-c C-v		vhdl-version<br/>
+C-c C-x		Prefix Command<br/>
+C-c ESC		Prefix Command<br/>
+C-c -		vhdl-comment-append-inline<br/>
+<br/>
+C-c C-u C-s	vhdl-update-sensitivity-list-process<br/>
+C-c C-u ESC	Prefix Command<br/>
+<br/>
+C-c C-x C-c	vhdl-fix-case-buffer<br/>
+C-c C-x C-p	vhdl-fix-clause<br/>
+C-c C-x C-w	vhdl-fixup-whitespace-buffer<br/>
+C-c C-x ESC	Prefix Command<br/>
+<br/>
+C-c C-l C-c	vhdl-comment-uncomment-line<br/>
+C-c C-l C-g	goto-line<br/>
+C-c C-l TAB	vhdl-line-expand<br/>
+C-c C-l C-n	vhdl-line-transpose-next<br/>
+C-c C-l C-o	vhdl-line-open<br/>
+C-c C-l C-p	vhdl-line-transpose-previous<br/>
+C-c C-l C-w	vhdl-line-kill<br/>
+C-c C-l C-y	vhdl-line-yank<br/>
+C-c C-l ESC	Prefix Command<br/>
+<br/>
+C-c C-f C-f	vhdl-fill-list<br/>
+C-c C-f C-g	vhdl-fill-group<br/>
+C-c C-f TAB	vhdl-fill-same-indent<br/>
+C-c C-f C-l	vhdl-fill-list<br/>
+C-c C-f ESC	Prefix Command<br/>
+<br/>
+C-c C-a C-a	vhdl-align-group<br/>
+C-c C-a C-b	vhdl-align-buffer<br/>
+C-c C-a C-c	vhdl-align-inline-comment-group<br/>
+C-c C-a C-d	vhdl-align-declarations<br/>
+C-c C-a C-g	vhdl-align-group<br/>
+C-c C-a TAB	vhdl-align-same-indent<br/>
+C-c C-a C-l	vhdl-align-list<br/>
+C-c C-a ESC	Prefix Command<br/>
+<br/>
+C-c TAB C-b	vhdl-indent-buffer<br/>
+C-c TAB C-d	vhdl-template-insert-directive<br/>
+C-c TAB C-f	vhdl-fontify-buffer<br/>
+C-c TAB C-g	vhdl-indent-group<br/>
+C-c TAB C-l	indent-according-to-mode<br/>
+C-c TAB RET	vhdl-model-insert<br/>
+C-c TAB C-p	vhdl-template-insert-package<br/>
+C-c TAB C-s	vhdl-statistics-buffer<br/>
+C-c TAB C-t	vhdl-template-insert-construct<br/>
+<br/>
+C-c C-M-k	vhdl-make<br/>
+C-c M--		vhdl-comment-display-line<br/>
+C-c M-b		vhdl-beautify-region<br/>
+C-c M-k		vhdl-generate-makefile<br/>
+C-c M-m		vhdl-show-messages<br/>
+<br/>
+C-c C-p C-c	vhdl-port-paste-component<br/>
+C-c C-p C-d	vhdl-duplicate-project<br/>
+C-c C-p C-e	vhdl-port-paste-entity<br/>
+C-c C-p C-f	vhdl-port-flatten<br/>
+C-c C-p C-g	vhdl-port-paste-generic-map<br/>
+C-c C-p TAB	vhdl-port-paste-instance<br/>
+C-c C-p RET	vhdl-import-project<br/>
+C-c C-p C-r	vhdl-port-reverse-direction<br/>
+C-c C-p C-s	vhdl-port-paste-signals<br/>
+C-c C-p C-t	vhdl-port-paste-testbench<br/>
+C-c C-p C-w	vhdl-port-copy<br/>
+C-c C-p C-x	vhdl-export-project<br/>
+C-c C-p C-z	vhdl-port-paste-initializations<br/>
+C-c C-p ESC	Prefix Command<br/>
+<br/>
+C-c C-s C-b	vhdl-subprog-paste-body<br/>
+C-c C-s C-c	vhdl-subprog-paste-call<br/>
+C-c C-s C-d	vhdl-subprog-paste-declaration<br/>
+C-c C-s C-f	vhdl-subprog-flatten<br/>
+C-c C-s C-k	vhdl-set-compiler<br/>
+C-c C-s C-p	vhdl-set-project<br/>
+C-c C-s C-w	vhdl-subprog-copy<br/>
+C-c C-s ESC	Prefix Command<br/>
+<br/>
+C-c RET C-e	vhdl-electric-mode<br/>
+C-c RET C-f	vhdl-compose-configuration<br/>
+C-c RET C-k	vhdl-compose-components-package<br/>
+C-c RET C-n	vhdl-compose-new-component<br/>
+C-c RET C-p	vhdl-compose-place-component<br/>
+C-c RET C-s	vhdl-stutter-mode<br/>
+C-c RET C-w	vhdl-compose-wire-components<br/>
+C-c RET e	vhdl-model-example-model<br/>
+<br/>
+C-c C-t C-d	Prefix Command<br/>
+C-c C-t C-f	vhdl-template-footer<br/>
+C-c C-t C-h	vhdl-template-header<br/>
+C-c C-t RET	vhdl-template-modify<br/>
+C-c C-t C-p	Prefix Command<br/>
+C-c C-t C-q	vhdl-template-search-prompt<br/>
+C-c C-t C-t	vhdl-template-insert-date<br/>
+C-c C-t (	vhdl-template-paired-parens<br/>
+C-c C-t C	Prefix Command<br/>
+C-c C-t P	Prefix Command<br/>
+C-c C-t a	Prefix Command<br/>
+C-c C-t b	Prefix Command<br/>
+C-c C-t c	Prefix Command<br/>
+C-c C-t d	Prefix Command<br/>
+C-c C-t e	Prefix Command<br/>
+C-c C-t f	Prefix Command<br/>
+C-c C-t g	Prefix Command<br/>
+C-c C-t i	Prefix Command<br/>
+C-c C-t l	Prefix Command<br/>
+C-c C-t m	Prefix Command<br/>
+C-c C-t n	Prefix Command<br/>
+C-c C-t o	Prefix Command<br/>
+C-c C-t p	Prefix Command<br/>
+C-c C-t r	Prefix Command<br/>
+C-c C-t s	Prefix Command<br/>
+C-c C-t t	Prefix Command<br/>
+C-c C-t u	Prefix Command<br/>
+C-c C-t v	Prefix Command<br/>
+C-c C-t w	Prefix Command<br/>
+<br/>
+C-c C-u M-s	vhdl-update-sensitivity-list-buffer<br/>
+<br/>
+C-c C-x M-c	vhdl-fix-case-region<br/>
+C-c C-x M-w	vhdl-fixup-whitespace-region<br/>
+<br/>
+C-c C-l M-w	vhdl-line-copy<br/>
+<br/>
+C-c C-f M-f	vhdl-fill-region<br/>
+<br/>
+C-c C-a M-a	vhdl-align-region<br/>
+C-c C-a M-c	vhdl-align-inline-comment-region<br/>
+<br/>
+C-c C-p M-c	vhdl-port-paste-constants<br/>
+C-c C-p M-w	vhdl-port-copy<br/>
+<br/>
+C-c C-s M-w	vhdl-subprog-copy<br/>
+<br/>
+C-c C-t C-d F	vhdl-template-directive-synthesis-off<br/>
+C-c C-t C-d N	vhdl-template-directive-synthesis-on<br/>
+C-c C-t C-d f	vhdl-template-directive-translate-off<br/>
+C-c C-t C-d n	vhdl-template-directive-translate-on<br/>
+<br/>
+C-c C-t C-p A	vhdl-template-package-std-logic-arith<br/>
+C-c C-t C-p M	vhdl-template-package-std-logic-misc<br/>
+C-c C-t C-p S	vhdl-template-package-std-logic-signed<br/>
+C-c C-t C-p T	vhdl-template-package-std-logic-textio<br/>
+C-c C-t C-p U	vhdl-template-package-std-logic-unsigned<br/>
+C-c C-t C-p b	vhdl-template-package-numeric-bit<br/>
+C-c C-t C-p n	vhdl-template-package-numeric-std<br/>
+C-c C-t C-p s	vhdl-template-package-std-logic-1164<br/>
+C-c C-t C-p t	vhdl-template-package-textio<br/>
+<br/>
+C-c C-t w a	vhdl-template-wait<br/>
+C-c C-t w c	vhdl-template-clocked-wait<br/>
+C-c C-t w i	vhdl-template-with<br/>
+C-c C-t w l	vhdl-template-while-loop<br/>
+<br/>
+C-c C-t v a	vhdl-template-variable<br/>
+<br/>
+C-c C-t u s	vhdl-template-use<br/>
+<br/>
+C-c C-t t y	vhdl-template-type<br/>
+<br/>
+C-c C-t s i	vhdl-template-signal<br/>
+C-c C-t s s	vhdl-template-selected-signal-asst<br/>
+C-c C-t s u	vhdl-template-subtype<br/>
+<br/>
+C-c C-t r p	vhdl-template-report<br/>
+C-c C-t r t	vhdl-template-return<br/>
+<br/>
+C-c C-t p b	vhdl-template-procedure-body<br/>
+C-c C-t p c	vhdl-template-process-comb<br/>
+C-c C-t p d	vhdl-template-procedure-decl<br/>
+C-c C-t p o	vhdl-template-port<br/>
+C-c C-t p s	vhdl-template-process-seq<br/>
+<br/>
+C-c C-t P b	vhdl-template-package-body<br/>
+C-c C-t P d	vhdl-template-package-decl<br/>
+<br/>
+C-c C-t o t	vhdl-template-others<br/>
+<br/>
+C-c C-t n e	vhdl-template-next<br/>
+<br/>
+C-c C-t m a	vhdl-template-map<br/>
+<br/>
+C-c C-t l i	vhdl-template-library<br/>
+C-c C-t l o	vhdl-template-bare-loop<br/>
+<br/>
+C-c C-t i g	vhdl-template-if-generate<br/>
+C-c C-t i t	vhdl-template-if-then<br/>
+<br/>
+C-c C-t g d	vhdl-template-group-decl<br/>
+C-c C-t g e	vhdl-template-generic<br/>
+C-c C-t g t	vhdl-template-group-template<br/>
+<br/>
+C-c C-t f b	vhdl-template-function-body<br/>
+C-c C-t f d	vhdl-template-function-decl<br/>
+C-c C-t f g	vhdl-template-for-generate<br/>
+C-c C-t f i	vhdl-template-file<br/>
+C-c C-t f l	vhdl-template-for-loop<br/>
+<br/>
+C-c C-t e i	vhdl-template-elsif<br/>
+C-c C-t e l	vhdl-template-else<br/>
+C-c C-t e n	vhdl-template-entity<br/>
+C-c C-t e x	vhdl-template-exit<br/>
+<br/>
+C-c C-t d i	vhdl-template-disconnect<br/>
+<br/>
+C-c C-t C b	vhdl-template-block-configuration<br/>
+C-c C-t C c	vhdl-template-component-conf<br/>
+C-c C-t C d	vhdl-template-configuration-decl<br/>
+C-c C-t C s	vhdl-template-configuration-spec<br/>
+<br/>
+C-c C-t c a	vhdl-template-case-is<br/>
+C-c C-t c d	vhdl-template-component-decl<br/>
+C-c C-t c i	vhdl-template-component-inst<br/>
+C-c C-t c o	vhdl-template-constant<br/>
+C-c C-t c s	vhdl-template-conditional-signal-asst<br/>
+<br/>
+C-c C-t b l	vhdl-template-block<br/>
+<br/>
+C-c C-t a d	vhdl-template-attribute-decl<br/>
+C-c C-t a l	vhdl-template-alias<br/>
+C-c C-t a r	vhdl-template-architecture<br/>
+C-c C-t a s	vhdl-template-attribute-spec<br/>
+C-c C-t a t	vhdl-template-assert<br/>
+<br/>
+<br/>
+<br/>
+In addition to any hooks its parent mode `prog-mode' might have run,<br/>
+this mode runs the hook `vhdl-mode-hook', as the final step<br/>
+during initialization.

@@ -1,1 +1,160 @@
-rst-re-alist-def is a variable defined in `rst.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Definition alist of relevant regexes.<br/>Each entry consists of the symbol naming the regex and an<br/>argument list for `rst-re'.<br/><br/>Value:<br/>((hws-prt "[	 ]")<br/> (hws-tag hws-prt "*")<br/> (hws-sta hws-prt "+")<br/> (lin-beg "^" hws-tag)<br/> (lin-end hws-tag "$")<br/> (linemp-tag "^" hws-tag "$")<br/> (ell-tag "\\.\\.\\.")<br/> (bul-tag "[-*+•‣⁃]")<br/> (ltr-tag "[a-zA-Z]")<br/> (num-prt "[0-9]")<br/> (num-tag num-prt "+")<br/> (rom-prt "[IVXLCDMivxlcdm]")<br/> (rom-tag rom-prt "+")<br/> (aut-tag "#")<br/> (dcl-tag "::")<br/> (bli-sfx<br/>  (:alt hws-sta "$"))<br/> (bul-sta bul-tag bli-sfx)<br/> (exm-tag "\\.\\.")<br/> (exm-sta exm-tag hws-sta)<br/> (exm-beg lin-beg exm-sta)<br/> (cntany-tag<br/>  (:alt ltr-tag num-tag rom-tag aut-tag))<br/> (cntexp-tag<br/>  (:alt ltr-tag num-tag rom-tag))<br/> (enmany-tag<br/>  (:alt<br/>   (:seq cntany-tag "\\.")<br/>   (:seq "(?" cntany-tag ")")))<br/> (enmexp-tag<br/>  (:alt<br/>   (:seq cntexp-tag "\\.")<br/>   (:seq "(?" cntexp-tag ")")))<br/> (enmaut-tag<br/>  (:alt<br/>   (:seq aut-tag "\\.")<br/>   (:seq "(?" aut-tag ")")))<br/> (enmany-sta enmany-tag bli-sfx)<br/> (enmexp-sta enmexp-tag bli-sfx)<br/> (enmexp-beg lin-beg enmexp-sta)<br/> (itmany-tag<br/>  (:alt enmany-tag bul-tag))<br/> (itmany-sta-1<br/>  (:grp itmany-tag)<br/>  bli-sfx)<br/> (itmany-beg-1 lin-beg itmany-sta-1)<br/> (ilm-pfx<br/>  (:alt "^" hws-prt "[-'\"([{<‘“«’/:]"))<br/> (ilm-sfx<br/>  (:alt "$" hws-prt "[]-'\")}>’”»/:.,;!?\\]"))<br/> (ilcsgl-tag "\\S ")<br/> (ilcast-prt<br/>  (:alt "[^*\\]" "\\\\."))<br/> (ilcbkq-prt<br/>  (:alt "[^`\\]" "\\\\."))<br/> (ilcbkqdef-prt<br/>  (:alt "[^`\\\n]" "\\\\."))<br/> (ilcbar-prt<br/>  (:alt "[^|\\]" "\\\\."))<br/> (ilcbardef-prt<br/>  (:alt "[^|\\\n]" "\\\\."))<br/> (ilcast-sfx "[^	 *\\]")<br/> (ilcbkq-sfx "[^	 `\\]")<br/> (ilcbar-sfx "[^	 |\\]")<br/> (ilcrep-hlp "\\{0,1000\\}")<br/> (ilcast-tag<br/>  (:alt ilcsgl-tag<br/>	(:seq ilcsgl-tag ilcast-prt ilcrep-hlp ilcast-sfx)))<br/> (ilcbkq-tag<br/>  (:alt ilcsgl-tag<br/>	(:seq ilcsgl-tag ilcbkq-prt ilcrep-hlp ilcbkq-sfx)))<br/> (ilcbkqdef-tag<br/>  (:alt ilcsgl-tag<br/>	(:seq ilcsgl-tag ilcbkqdef-prt ilcrep-hlp ilcbkq-sfx)))<br/> (ilcbar-tag<br/>  (:alt ilcsgl-tag<br/>	(:seq ilcsgl-tag ilcbar-prt ilcrep-hlp ilcbar-sfx)))<br/> (ilcbardef-tag<br/>  (:alt ilcsgl-tag<br/>	(:seq ilcsgl-tag ilcbardef-prt ilcrep-hlp ilcbar-sfx)))<br/> (fldnam-prt<br/>  (:alt "[^:\n]" "\\\\:"))<br/> (fldnam-tag fldnam-prt "+")<br/> (fld-tag ":" fldnam-tag ":")<br/> (optsta-tag<br/>  (:alt "[-+/]" "--"))<br/> (optnam-tag "\\sw"<br/>	     (:alt "-" "\\sw")<br/>	     "*")<br/> (optarg-tag<br/>  (:shy "[ =]\\S +"))<br/> (optsep-tag<br/>  (:shy "," hws-prt))<br/> (opt-tag<br/>  (:shy optsta-tag optnam-tag optarg-tag "?"))<br/> (fncnam-prt "[^]\n]")<br/> (fncnam-tag fncnam-prt "+")<br/> (fnc-tag "\\[" fncnam-tag "]")<br/> (fncdef-tag-2<br/>  (:grp exm-sta)<br/>  (:grp fnc-tag))<br/> (fnc-sta-2 fncdef-tag-2 bli-sfx)<br/> (sub-tag "|" ilcbar-tag "|")<br/> (subdef-tag "|" ilcbardef-tag "|")<br/> (sym-prt "[-+.:_]")<br/> (sym-tag<br/>  (:shy "\\sw+"<br/>	(:shy sym-prt "\\sw+")<br/>	"*"))<br/> (uri-tag<br/>  (:alt "acap" "cid" "data" "dav" "fax" "file" "ftp" "gopher" "http" "https" "imap" "ldap" "mailto" "mid" "modem" "news" "nfs" "nntp" "pop" "prospero" "rtsp" "service" "sip" "tel" "telnet" "tip" "urn" "vemmi" "wais"))<br/> (ado-prt "[" "]!\"#$%&'()*+,./:;<=>?@[\\^_`{|}~-" "]")<br/> (adorep3-hlp "\\{3,\\}")<br/> (adorep2-hlp "\\{2,\\}")<br/> (ado-tag-1-1<br/>  (:grp ado-prt)<br/>  "\\1" adorep2-hlp)<br/> (ado-tag-1-2<br/>  (:grp ado-prt)<br/>  "\\2" adorep2-hlp)<br/> (ado-beg-2-1 "^"<br/>	      (:grp ado-tag-1-2)<br/>	      lin-end)<br/> (ttl-tag "\\S *\\w\\S *")<br/> (ttl-beg lin-beg ttl-tag)<br/> (dir-tag-3<br/>  (:grp exm-sta)<br/>  (:grp<br/>   (:shy subdef-tag hws-sta)<br/>   "?")<br/>  (:grp sym-tag dcl-tag))<br/> (dir-sta-3 dir-tag-3 bli-sfx)<br/> (lit-sta-2<br/>  (:grp<br/>   (:alt "[^.\n]" "\\.[^.\n]")<br/>   ".*")<br/>  "?"<br/>  (:grp dcl-tag)<br/>  "$")<br/> (cmt-sta-1<br/>  (:grp exm-sta)<br/>  "[^[|_\n]"<br/>  (:alt "[^:\n]"<br/>	(:seq ":"<br/>	      (:alt "[^:\n]" "$")))<br/>  "*$")<br/> (par-tag-<br/>  (:alt itmany-tag fld-tag opt-tag fncdef-tag-2 dir-tag-3 exm-tag)))<br/><br/>
+<strong>rst-re-alist-def</strong> is a variable defined in `<code>rst.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Definition alist of relevant regexes.<br/>
+Each entry consists of the symbol naming the regex and an<br/>
+argument list for `rst-re'.<br/>
+<br/>
+Value:<br/>
+((hws-prt "[	 ]")<br/>
+ (hws-tag hws-prt "*")<br/>
+ (hws-sta hws-prt "+")<br/>
+ (lin-beg "^" hws-tag)<br/>
+ (lin-end hws-tag "$")<br/>
+ (linemp-tag "^" hws-tag "$")<br/>
+ (ell-tag "\\.\\.\\.")<br/>
+ (bul-tag "[-*+•‣⁃]")<br/>
+ (ltr-tag "[a-zA-Z]")<br/>
+ (num-prt "[0-9]")<br/>
+ (num-tag num-prt "+")<br/>
+ (rom-prt "[IVXLCDMivxlcdm]")<br/>
+ (rom-tag rom-prt "+")<br/>
+ (aut-tag "#")<br/>
+ (dcl-tag "::")<br/>
+ (bli-sfx<br/>
+  (:alt hws-sta "$"))<br/>
+ (bul-sta bul-tag bli-sfx)<br/>
+ (exm-tag "\\.\\.")<br/>
+ (exm-sta exm-tag hws-sta)<br/>
+ (exm-beg lin-beg exm-sta)<br/>
+ (cntany-tag<br/>
+  (:alt ltr-tag num-tag rom-tag aut-tag))<br/>
+ (cntexp-tag<br/>
+  (:alt ltr-tag num-tag rom-tag))<br/>
+ (enmany-tag<br/>
+  (:alt<br/>
+   (:seq cntany-tag "\\.")<br/>
+   (:seq "(?" cntany-tag ")")))<br/>
+ (enmexp-tag<br/>
+  (:alt<br/>
+   (:seq cntexp-tag "\\.")<br/>
+   (:seq "(?" cntexp-tag ")")))<br/>
+ (enmaut-tag<br/>
+  (:alt<br/>
+   (:seq aut-tag "\\.")<br/>
+   (:seq "(?" aut-tag ")")))<br/>
+ (enmany-sta enmany-tag bli-sfx)<br/>
+ (enmexp-sta enmexp-tag bli-sfx)<br/>
+ (enmexp-beg lin-beg enmexp-sta)<br/>
+ (itmany-tag<br/>
+  (:alt enmany-tag bul-tag))<br/>
+ (itmany-sta-1<br/>
+  (:grp itmany-tag)<br/>
+  bli-sfx)<br/>
+ (itmany-beg-1 lin-beg itmany-sta-1)<br/>
+ (ilm-pfx<br/>
+  (:alt "^" hws-prt "[-'\"([{<‘“«’/:]"))<br/>
+ (ilm-sfx<br/>
+  (:alt "$" hws-prt "[]-'\")}>’”»/:.,;!?\\]"))<br/>
+ (ilcsgl-tag "\\S ")<br/>
+ (ilcast-prt<br/>
+  (:alt "[^*\\]" "\\\\."))<br/>
+ (ilcbkq-prt<br/>
+  (:alt "[^`\\]" "\\\\."))<br/>
+ (ilcbkqdef-prt<br/>
+  (:alt "[^`\\\n]" "\\\\."))<br/>
+ (ilcbar-prt<br/>
+  (:alt "[^|\\]" "\\\\."))<br/>
+ (ilcbardef-prt<br/>
+  (:alt "[^|\\\n]" "\\\\."))<br/>
+ (ilcast-sfx "[^	 *\\]")<br/>
+ (ilcbkq-sfx "[^	 `\\]")<br/>
+ (ilcbar-sfx "[^	 |\\]")<br/>
+ (ilcrep-hlp "\\{0,1000\\}")<br/>
+ (ilcast-tag<br/>
+  (:alt ilcsgl-tag<br/>
+	(:seq ilcsgl-tag ilcast-prt ilcrep-hlp ilcast-sfx)))<br/>
+ (ilcbkq-tag<br/>
+  (:alt ilcsgl-tag<br/>
+	(:seq ilcsgl-tag ilcbkq-prt ilcrep-hlp ilcbkq-sfx)))<br/>
+ (ilcbkqdef-tag<br/>
+  (:alt ilcsgl-tag<br/>
+	(:seq ilcsgl-tag ilcbkqdef-prt ilcrep-hlp ilcbkq-sfx)))<br/>
+ (ilcbar-tag<br/>
+  (:alt ilcsgl-tag<br/>
+	(:seq ilcsgl-tag ilcbar-prt ilcrep-hlp ilcbar-sfx)))<br/>
+ (ilcbardef-tag<br/>
+  (:alt ilcsgl-tag<br/>
+	(:seq ilcsgl-tag ilcbardef-prt ilcrep-hlp ilcbar-sfx)))<br/>
+ (fldnam-prt<br/>
+  (:alt "[^:\n]" "\\\\:"))<br/>
+ (fldnam-tag fldnam-prt "+")<br/>
+ (fld-tag ":" fldnam-tag ":")<br/>
+ (optsta-tag<br/>
+  (:alt "[-+/]" "--"))<br/>
+ (optnam-tag "\\sw"<br/>
+	     (:alt "-" "\\sw")<br/>
+	     "*")<br/>
+ (optarg-tag<br/>
+  (:shy "[ =]\\S +"))<br/>
+ (optsep-tag<br/>
+  (:shy "," hws-prt))<br/>
+ (opt-tag<br/>
+  (:shy optsta-tag optnam-tag optarg-tag "?"))<br/>
+ (fncnam-prt "[^]\n]")<br/>
+ (fncnam-tag fncnam-prt "+")<br/>
+ (fnc-tag "\\[" fncnam-tag "]")<br/>
+ (fncdef-tag-2<br/>
+  (:grp exm-sta)<br/>
+  (:grp fnc-tag))<br/>
+ (fnc-sta-2 fncdef-tag-2 bli-sfx)<br/>
+ (sub-tag "|" ilcbar-tag "|")<br/>
+ (subdef-tag "|" ilcbardef-tag "|")<br/>
+ (sym-prt "[-+.:_]")<br/>
+ (sym-tag<br/>
+  (:shy "\\sw+"<br/>
+	(:shy sym-prt "\\sw+")<br/>
+	"*"))<br/>
+ (uri-tag<br/>
+  (:alt "acap" "cid" "data" "dav" "fax" "file" "ftp" "gopher" "http" "https" "imap" "ldap" "mailto" "mid" "modem" "news" "nfs" "nntp" "pop" "prospero" "rtsp" "service" "sip" "tel" "telnet" "tip" "urn" "vemmi" "wais"))<br/>
+ (ado-prt "[" "]!\"#$%&'()*+,./:;<=>?@[\\^_`{|}~-" "]")<br/>
+ (adorep3-hlp "\\{3,\\}")<br/>
+ (adorep2-hlp "\\{2,\\}")<br/>
+ (ado-tag-1-1<br/>
+  (:grp ado-prt)<br/>
+  "\\1" adorep2-hlp)<br/>
+ (ado-tag-1-2<br/>
+  (:grp ado-prt)<br/>
+  "\\2" adorep2-hlp)<br/>
+ (ado-beg-2-1 "^"<br/>
+	      (:grp ado-tag-1-2)<br/>
+	      lin-end)<br/>
+ (ttl-tag "\\S *\\w\\S *")<br/>
+ (ttl-beg lin-beg ttl-tag)<br/>
+ (dir-tag-3<br/>
+  (:grp exm-sta)<br/>
+  (:grp<br/>
+   (:shy subdef-tag hws-sta)<br/>
+   "?")<br/>
+  (:grp sym-tag dcl-tag))<br/>
+ (dir-sta-3 dir-tag-3 bli-sfx)<br/>
+ (lit-sta-2<br/>
+  (:grp<br/>
+   (:alt "[^.\n]" "\\.[^.\n]")<br/>
+   ".*")<br/>
+  "?"<br/>
+  (:grp dcl-tag)<br/>
+  "$")<br/>
+ (cmt-sta-1<br/>
+  (:grp exm-sta)<br/>
+  "[^[|_\n]"<br/>
+  (:alt "[^:\n]"<br/>
+	(:seq ":"<br/>
+	      (:alt "[^:\n]" "$")))<br/>
+  "*$")<br/>
+ (par-tag-<br/>
+  (:alt itmany-tag fld-tag opt-tag fncdef-tag-2 dir-tag-3 exm-tag)))<br/>
+<br/>

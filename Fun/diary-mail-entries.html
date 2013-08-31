@@ -1,1 +1,24 @@
-diary-mail-entries is an interactive autoloaded compiled Lisp function in `diary-lib.el'.<br/><br/>(diary-mail-entries &optional NDAYS)<br/><br/>Send a mail message showing diary entries for next NDAYS days.<br/>If no prefix argument is given, NDAYS is set to `diary-mail-days'.<br/>Mail is sent to the address specified by `diary-mail-addr'.<br/><br/>Here is an example of a script to call `diary-mail-entries',<br/>suitable for regular scheduling using cron (or at).  Note that<br/>since `emacs -script' does not load your init file, you should<br/>ensure that all relevant variables are set.<br/><br/>#!/usr/bin/emacs -script<br/>;; diary-rem.el - run the Emacs diary-reminder<br/><br/>(setq diary-mail-days 3<br/>      diary-file "/path/to/diary.file"<br/>      calendar-date-style 'european<br/>      diary-mail-addr "user@host.name")<br/><br/>(diary-mail-entries)<br/><br/># diary-rem.el ends here<br/>
+<strong>diary-mail-entries</strong> is an interactive autoloaded compiled Lisp function in `<code>diary-lib.el</code>'.<br/>
+<br/>
+(diary-mail-entries &optional NDAYS)<br/>
+<br/>
+Send a mail message showing diary entries for next NDAYS days.<br/>
+If no prefix argument is given, NDAYS is set to `diary-mail-days'.<br/>
+Mail is sent to the address specified by `diary-mail-addr'.<br/>
+<br/>
+Here is an example of a script to call `diary-mail-entries',<br/>
+suitable for regular scheduling using cron (or at).  Note that<br/>
+since `emacs -script' does not load your init file, you should<br/>
+ensure that all relevant variables are set.<br/>
+<br/>
+#!/usr/bin/emacs -script<br/>
+;; diary-rem.el - run the Emacs diary-reminder<br/>
+<br/>
+(setq diary-mail-days 3<br/>
+      diary-file "/path/to/diary.file"<br/>
+      calendar-date-style 'european<br/>
+      diary-mail-addr "user@host.name")<br/>
+<br/>
+(diary-mail-entries)<br/>
+<br/>
+# diary-rem.el ends here<br/>

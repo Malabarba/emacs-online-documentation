@@ -1,1 +1,27 @@
-font-lock-support-mode is a variable defined in `font-lock.el'.<br/>Its value is jit-lock-mode<br/><br/>Documentation:<br/>Support mode for Font Lock mode.<br/>Support modes speed up Font Lock mode by being choosy about when fontification<br/>occurs.  The default support mode, Just-in-time Lock mode (symbol<br/>`jit-lock-mode'), is recommended.<br/><br/>Other, older support modes are Fast Lock mode (symbol `fast-lock-mode') and<br/>Lazy Lock mode (symbol `lazy-lock-mode').  See those modes for more info.<br/>However, they are no longer recommended, as Just-in-time Lock mode is better.<br/><br/>If nil, means support for Font Lock mode is never performed.<br/>If a symbol, use that support mode.<br/>If a list, each element should be of the form (MAJOR-MODE . SUPPORT-MODE),<br/>where MAJOR-MODE is a symbol or t (meaning the default).  For example:<br/> ((c-mode . fast-lock-mode) (c++-mode . fast-lock-mode) (t . lazy-lock-mode))<br/>means that Fast Lock mode is used to support Font Lock mode for buffers in C or<br/>C++ modes, and Lazy Lock mode is used to support Font Lock mode otherwise.<br/><br/>The value of this variable is used when Font Lock mode is turned on.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 21.1 of Emacs.<br/>
+<strong>font-lock-support-mode</strong> is a variable defined in `<code>font-lock.el</code>'.<br/>
+Its value is jit-lock-mode<br/>
+<br/>
+Documentation:<br/>
+Support mode for Font Lock mode.<br/>
+Support modes speed up Font Lock mode by being choosy about when fontification<br/>
+occurs.  The default support mode, Just-in-time Lock mode (symbol<br/>
+`jit-lock-mode'), is recommended.<br/>
+<br/>
+Other, older support modes are Fast Lock mode (symbol `fast-lock-mode') and<br/>
+Lazy Lock mode (symbol `lazy-lock-mode').  See those modes for more info.<br/>
+However, they are no longer recommended, as Just-in-time Lock mode is better.<br/>
+<br/>
+If nil, means support for Font Lock mode is never performed.<br/>
+If a symbol, use that support mode.<br/>
+If a list, each element should be of the form (MAJOR-MODE . SUPPORT-MODE),<br/>
+where MAJOR-MODE is a symbol or t (meaning the default).  For example:<br/>
+ ((c-mode . fast-lock-mode) (c++-mode . fast-lock-mode) (t . lazy-lock-mode))<br/>
+means that Fast Lock mode is used to support Font Lock mode for buffers in C or<br/>
+C++ modes, and Lazy Lock mode is used to support Font Lock mode otherwise.<br/>
+<br/>
+The value of this variable is used when Font Lock mode is turned on.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 21.1 of Emacs.<br/>

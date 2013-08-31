@@ -1,1 +1,21 @@
-sh-get-indent-info is a compiled Lisp function in `sh-script.el'.<br/><br/>(sh-get-indent-info)<br/><br/>Return indent-info for this line.<br/>This is a list.  nil means the line is to be left as is.<br/>Otherwise it contains one or more of the following sublists:<br/>(t NUMBER)   NUMBER is the base location in the buffer that indentation is<br/>	     relative to.  If present, this is always the first of the<br/>	     sublists.  The indentation of the line in question is<br/>	     derived from the indentation of this point, possibly<br/>	     modified by subsequent sublists.<br/>(+ VAR)<br/>(- VAR)      Get the value of variable VAR and add to or subtract from<br/>	     the indentation calculated so far.<br/>(= VAR)	     Get the value of variable VAR and *replace* the<br/>	     indentation with its value.  This only occurs for<br/>	     special variables such as `sh-indent-comment'.<br/>STRING	     This is ignored for the purposes of calculating<br/>	     indentation, it is printed in certain cases to help show<br/>	     what the indentation is based on.
+<strong>sh-get-indent-info</strong> is a compiled Lisp function in `<code>sh-script.el</code>'.<br/>
+<br/>
+(sh-get-indent-info)<br/>
+<br/>
+Return indent-info for this line.<br/>
+This is a list.  nil means the line is to be left as is.<br/>
+Otherwise it contains one or more of the following sublists:<br/>
+(t NUMBER)   NUMBER is the base location in the buffer that indentation is<br/>
+	     relative to.  If present, this is always the first of the<br/>
+	     sublists.  The indentation of the line in question is<br/>
+	     derived from the indentation of this point, possibly<br/>
+	     modified by subsequent sublists.<br/>
+(+ VAR)<br/>
+(- VAR)      Get the value of variable VAR and add to or subtract from<br/>
+	     the indentation calculated so far.<br/>
+(= VAR)	     Get the value of variable VAR and *replace* the<br/>
+	     indentation with its value.  This only occurs for<br/>
+	     special variables such as `sh-indent-comment'.<br/>
+STRING	     This is ignored for the purposes of calculating<br/>
+	     indentation, it is printed in certain cases to help show<br/>
+	     what the indentation is based on.

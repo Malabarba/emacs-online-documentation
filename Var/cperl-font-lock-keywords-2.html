@@ -1,1 +1,83 @@
-cperl-font-lock-keywords-2 is a variable defined in `cperl-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Additional expressions to highlight in Perl mode.  Maximal set<br/><br/>Value: (cperl-fontify-update<br/> ("[ 	]+$" 0 'underline t)<br/> ("\\(^\\|[^$@%&\\]\\)\\<\\(if\\|until\\|while\\|elsif\\|else\\|unless\\|for\\|foreach\\|continue\\|exit\\|die\\|last\\|goto\\|next\\|redo\\|return\\|local\\|exec\\|sub\\|do\\|dump\\|use\\|our\\|require\\|package\\|eval\\|my\\|BEGIN\\|END\\|CHECK\\|INIT\\)\\>" . 2)<br/> ("\\(^\\|[^$@%&\\]\\)\\<\\(a\\(bs\\|ccept\\|tan2\\|larm\\|nd\\)\\|b\\(in\\(d\\|mode\\)\\|less\\)\\|c\\(h\\(r\\(\\|oot\\)\\|dir\\|mod\\|own\\)\\|aller\\|rypt\\|lose\\(\\|dir\\)\\|mp\\|o\\(s\\|n\\(tinue\\|nect\\)\\)\\)\\|CORE\\|d\\(ie\\|bm\\(close\\|open\\)\\|ump\\)\\|e\\(x\\(p\\|it\\|ec\\)\\|q\\|nd\\(p\\(rotoent\\|went\\)\\|hostent\\|servent\\|netent\\|grent\\)\\|of\\)\\|f\\(ileno\\|cntl\\|lock\\|or\\(k\\|mline\\)\\)\\|g\\(t\\|lob\\|mtime\\|e\\(\\|t\\(p\\(pid\\|r\\(iority\\|oto\\(byn\\(ame\\|umber\\)\\|ent\\)\\)\\|eername\\|w\\(uid\\|ent\\|nam\\)\\|grp\\)\\|host\\(by\\(addr\\|name\\)\\|ent\\)\\|s\\(erv\\(by\\(port\\|name\\)\\|ent\\)\\|ock\\(name\\|opt\\)\\)\\|c\\|login\\|net\\(by\\(addr\\|name\\)\\|ent\\)\\|gr\\(ent\\|nam\\|gid\\)\\)\\)\\)\\|hex\\|i\\(n\\(t\\|dex\\)\\|octl\\)\\|join\\|kill\\|l\\(i\\(sten\\|nk\\)\\|stat\\|c\\(\\|first\\)\\|t\\|e\\(\\|ngth\\)\\|o\\(c\\(altime\\|k\\)\\|g\\)\\)\\|m\\(sg\\(rcv\\|snd\\|ctl\\|get\\)\\|kdir\\)\\|n\\(e\\|ot\\)\\|o\\(pen\\(\\|dir\\)\\|r\\(\\|d\\)\\|ct\\)\\|p\\(ipe\\|ack\\)\\|quotemeta\\|r\\(index\\|and\\|mdir\\|e\\(quire\\|ad\\(pipe\\|\\|lin\\(k\\|e\\)\\|dir\\)\\|set\\|cv\\|verse\\|f\\|winddir\\|name\\)\\)\\|s\\(printf\\|qrt\\|rand\\|tat\\|ubstr\\|e\\(t\\(p\\(r\\(iority\\|otoent\\)\\|went\\|grp\\)\\|hostent\\|s\\(ervent\\|ockopt\\)\\|netent\\|grent\\)\\|ek\\(\\|dir\\)\\|lect\\|m\\(ctl\\|op\\|get\\)\\|nd\\)\\|h\\(utdown\\|m\\(read\\|ctl\\|write\\|get\\)\\)\\|y\\(s\\(read\\|call\\|open\\|tem\\|write\\)\\|mlink\\)\\|in\\|leep\\|ocket\\(pair\\|\\)\\)\\|t\\(runcate\\|ell\\(\\|dir\\)\\|ime\\(\\|s\\)\\)\\|u\\(c\\(\\|first\\)\\|time\\|mask\\|n\\(pack\\|link\\)\\)\\|v\\(alues\\|ec\\)\\|w\\(a\\(rn\\|it\\(pid\\|\\)\\|ntarray\\)\\|rite\\)\\|x\\(\\|or\\)\\|__\\(FILE__\\|LINE__\\|PACKAGE__\\)\\)\\>" 2 font-lock-type-face)<br/> ("\\(^\\|[^$@%&\\]\\)\\<\\(AUTOLOAD\\|BEGIN\\|CHECK\\|cho\\(p\\|mp\\)\\|d\\(e\\(fined\\|lete\\)\\|o\\)\\|DESTROY\\|e\\(ach\\|val\\|xists\\|ls\\(e\\|if\\)\\)\\|END\\|for\\(\\|each\\|mat\\)\\|g\\(rep\\|oto\\)\\|INIT\\|if\\|keys\\|l\\(ast\\|ocal\\)\\|m\\(ap\\|y\\)\\|n\\(ext\\|o\\)\\|our\\|p\\(ackage\\|rint\\(\\|f\\)\\|ush\\|o\\(p\\|s\\)\\)\\|q\\(\\|q\\|w\\|x\\|r\\)\\|re\\(turn\\|do\\)\\|s\\(pli\\(ce\\|t\\)\\|calar\\|tudy\\|ub\\|hift\\|ort\\)\\|t\\(r\\|ie\\)\\|u\\(se\\|n\\(shift\\|ti\\(l\\|e\\)\\|def\\|less\\)\\)\\|while\\|y\\|__\\(END\\|DATA\\)__\\|[sm]\\)\\>" 2 cperl-nonoverridable-face)<br/> ("-[rwxoRWXOezsfdlpSbctugkTBMAC]\\>\\([ 	]+_\\>\\)?" 0 font-lock-function-name-face keep)<br/> ("\\<sub\\([ 	\n]\\|#[^\n]*\n\\)+\\([^ \n	{;()]+\\)\\([ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*([^()]*)\\)?[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*[{;]" 2<br/>  (if<br/>      (eq<br/>       (char-after<br/>	(cperl-1-<br/>	 (match-end 0)))<br/>       123)<br/>      'font-lock-function-name-face 'font-lock-variable-name-face))<br/> ("\\<\\(package\\|require\\|use\\|import\\|no\\|bootstrap\\)[ 	]+\\([a-zA-z_][a-zA-z_0-9:]*\\)[ 	;]" 2 font-lock-function-name-face)<br/> ("^[ 	]*format[ 	]+\\([a-zA-z_][a-zA-z_0-9:]*\\)[ 	]*=[ 	]*$" 1 font-lock-function-name-face)<br/> ("\\([]}\\\\%@>*&]\\|\\$[a-zA-Z0-9_:]*\\)[ 	]*{[ 	]*\\(-?[a-zA-Z0-9_:]+\\)[ 	]*}"<br/>  (2 font-lock-string-face t)<br/>  ("\\=[ 	]*{[ 	]*\\(-?[a-zA-Z0-9_:]+\\)[ 	]*}" nil nil<br/>   (1 font-lock-string-face t)))<br/> ("[[ 	{,(]\\(-?[a-zA-Z0-9_:]+\\)[ 	]*=>" 1 font-lock-string-face t)<br/> ("^[ 	]*\\([a-zA-Z0-9_]+[ 	]*:\\)[ 	]*\\($\\|{\\|\\<\\(until\\|while\\|for\\(each\\)?\\|do\\)\\>\\)" 1 font-lock-constant-face)<br/> ("\\<\\(continue\\|next\\|last\\|redo\\|goto\\)\\>[ 	]+\\([a-zA-Z0-9_:]+\\)" 2 font-lock-constant-face)<br/> ("\\<\\(my\\|local\\|our\\)[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*\\(([ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*\\)?\\([$@%*]\\([a-zA-Z0-9_:]+\\|[^a-zA-Z0-9_]\\)\\)"<br/>  (5 font-lock-variable-name-face)<br/>  ("\\=[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*,[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*\\([$@%*]\\([a-zA-Z0-9_:]+\\|[^a-zA-Z0-9_]\\)\\)"<br/>   (if<br/>       (match-beginning 3)<br/>       (save-excursion<br/>	 (goto-char<br/>	  (match-beginning 3))<br/>	 (condition-case nil<br/>	     (forward-sexp 1)<br/>	   (error<br/>	    (condition-case nil<br/>		(forward-char 200)<br/>	      (error nil))))<br/>	 (1-<br/>	  (point)))<br/>     (forward-char -2))<br/>   nil<br/>   (3 font-lock-variable-name-face)))<br/> ("\\<for\\(each\\)?\\([ 	]+\\(my\\|local\\|our\\)\\)?[ 	]*\\(\\$[a-zA-Z_][a-zA-Z_0-9]*\\)[ 	]*(" 4 font-lock-variable-name-face)<br/> ("\\(?:^\\|[^smywqrx$]\\)\\(!\\)" 1 font-lock-negation-char-face)<br/> ("\\[\\(\\^\\)" 1 font-lock-negation-char-face prepend)<br/> ("\\(\\([@%]\\|$#\\)[a-zA-Z_:][a-zA-Z0-9_:]*\\)" 1<br/>  (if<br/>      (eq<br/>       (char-after<br/>	(match-beginning 2))<br/>       37)<br/>      'cperl-hash-face 'cperl-array-face)<br/>  t)<br/> ("\\(\\([$@]+\\)[a-zA-Z_:][a-zA-Z0-9_:]*\\)[ 	]*\\([[{]\\)" 1<br/>  (if<br/>      (=<br/>       (-<br/>	(match-end 2)<br/>	(match-beginning 2))<br/>       1)<br/>      (if<br/>	  (eq<br/>	   (char-after<br/>	    (match-beginning 3))<br/>	   123)<br/>	  'cperl-hash-face 'cperl-array-face)<br/>    font-lock-variable-name-face)<br/>  t)<br/> ("\\(@\\|\\$#\\)\\(\\$+\\([a-zA-Z_:][a-zA-Z0-9_:]*\\|[^ 	\n]\\)\\)"<br/>  (1 cperl-array-face)<br/>  (2 font-lock-variable-name-face))<br/> ("\\(%\\)\\(\\$+\\([a-zA-Z_:][a-zA-Z0-9_:]*\\|[^ 	\n]\\)\\)"<br/>  (1 cperl-hash-face)<br/>  (2 font-lock-variable-name-face)))<br/><br/>
+<strong>cperl-font-lock-keywords-2</strong> is a variable defined in `<code>cperl-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Additional expressions to highlight in Perl mode.  Maximal set<br/>
+<br/>
+Value: (cperl-fontify-update<br/>
+ ("[ 	]+$" 0 'underline t)<br/>
+ ("\\(^\\|[^$@%&\\]\\)\\<\\(if\\|until\\|while\\|elsif\\|else\\|unless\\|for\\|foreach\\|continue\\|exit\\|die\\|last\\|goto\\|next\\|redo\\|return\\|local\\|exec\\|sub\\|do\\|dump\\|use\\|our\\|require\\|package\\|eval\\|my\\|BEGIN\\|END\\|CHECK\\|INIT\\)\\>" . 2)<br/>
+ ("\\(^\\|[^$@%&\\]\\)\\<\\(a\\(bs\\|ccept\\|tan2\\|larm\\|nd\\)\\|b\\(in\\(d\\|mode\\)\\|less\\)\\|c\\(h\\(r\\(\\|oot\\)\\|dir\\|mod\\|own\\)\\|aller\\|rypt\\|lose\\(\\|dir\\)\\|mp\\|o\\(s\\|n\\(tinue\\|nect\\)\\)\\)\\|CORE\\|d\\(ie\\|bm\\(close\\|open\\)\\|ump\\)\\|e\\(x\\(p\\|it\\|ec\\)\\|q\\|nd\\(p\\(rotoent\\|went\\)\\|hostent\\|servent\\|netent\\|grent\\)\\|of\\)\\|f\\(ileno\\|cntl\\|lock\\|or\\(k\\|mline\\)\\)\\|g\\(t\\|lob\\|mtime\\|e\\(\\|t\\(p\\(pid\\|r\\(iority\\|oto\\(byn\\(ame\\|umber\\)\\|ent\\)\\)\\|eername\\|w\\(uid\\|ent\\|nam\\)\\|grp\\)\\|host\\(by\\(addr\\|name\\)\\|ent\\)\\|s\\(erv\\(by\\(port\\|name\\)\\|ent\\)\\|ock\\(name\\|opt\\)\\)\\|c\\|login\\|net\\(by\\(addr\\|name\\)\\|ent\\)\\|gr\\(ent\\|nam\\|gid\\)\\)\\)\\)\\|hex\\|i\\(n\\(t\\|dex\\)\\|octl\\)\\|join\\|kill\\|l\\(i\\(sten\\|nk\\)\\|stat\\|c\\(\\|first\\)\\|t\\|e\\(\\|ngth\\)\\|o\\(c\\(altime\\|k\\)\\|g\\)\\)\\|m\\(sg\\(rcv\\|snd\\|ctl\\|get\\)\\|kdir\\)\\|n\\(e\\|ot\\)\\|o\\(pen\\(\\|dir\\)\\|r\\(\\|d\\)\\|ct\\)\\|p\\(ipe\\|ack\\)\\|quotemeta\\|r\\(index\\|and\\|mdir\\|e\\(quire\\|ad\\(pipe\\|\\|lin\\(k\\|e\\)\\|dir\\)\\|set\\|cv\\|verse\\|f\\|winddir\\|name\\)\\)\\|s\\(printf\\|qrt\\|rand\\|tat\\|ubstr\\|e\\(t\\(p\\(r\\(iority\\|otoent\\)\\|went\\|grp\\)\\|hostent\\|s\\(ervent\\|ockopt\\)\\|netent\\|grent\\)\\|ek\\(\\|dir\\)\\|lect\\|m\\(ctl\\|op\\|get\\)\\|nd\\)\\|h\\(utdown\\|m\\(read\\|ctl\\|write\\|get\\)\\)\\|y\\(s\\(read\\|call\\|open\\|tem\\|write\\)\\|mlink\\)\\|in\\|leep\\|ocket\\(pair\\|\\)\\)\\|t\\(runcate\\|ell\\(\\|dir\\)\\|ime\\(\\|s\\)\\)\\|u\\(c\\(\\|first\\)\\|time\\|mask\\|n\\(pack\\|link\\)\\)\\|v\\(alues\\|ec\\)\\|w\\(a\\(rn\\|it\\(pid\\|\\)\\|ntarray\\)\\|rite\\)\\|x\\(\\|or\\)\\|__\\(FILE__\\|LINE__\\|PACKAGE__\\)\\)\\>" 2 font-lock-type-face)<br/>
+ ("\\(^\\|[^$@%&\\]\\)\\<\\(AUTOLOAD\\|BEGIN\\|CHECK\\|cho\\(p\\|mp\\)\\|d\\(e\\(fined\\|lete\\)\\|o\\)\\|DESTROY\\|e\\(ach\\|val\\|xists\\|ls\\(e\\|if\\)\\)\\|END\\|for\\(\\|each\\|mat\\)\\|g\\(rep\\|oto\\)\\|INIT\\|if\\|keys\\|l\\(ast\\|ocal\\)\\|m\\(ap\\|y\\)\\|n\\(ext\\|o\\)\\|our\\|p\\(ackage\\|rint\\(\\|f\\)\\|ush\\|o\\(p\\|s\\)\\)\\|q\\(\\|q\\|w\\|x\\|r\\)\\|re\\(turn\\|do\\)\\|s\\(pli\\(ce\\|t\\)\\|calar\\|tudy\\|ub\\|hift\\|ort\\)\\|t\\(r\\|ie\\)\\|u\\(se\\|n\\(shift\\|ti\\(l\\|e\\)\\|def\\|less\\)\\)\\|while\\|y\\|__\\(END\\|DATA\\)__\\|[sm]\\)\\>" 2 cperl-nonoverridable-face)<br/>
+ ("-[rwxoRWXOezsfdlpSbctugkTBMAC]\\>\\([ 	]+_\\>\\)?" 0 font-lock-function-name-face keep)<br/>
+ ("\\<sub\\([ 	\n]\\|#[^\n]*\n\\)+\\([^ \n	{;()]+\\)\\([ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*([^()]*)\\)?[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*[{;]" 2<br/>
+  (if<br/>
+      (eq<br/>
+       (char-after<br/>
+	(cperl-1-<br/>
+	 (match-end 0)))<br/>
+       123)<br/>
+      'font-lock-function-name-face 'font-lock-variable-name-face))<br/>
+ ("\\<\\(package\\|require\\|use\\|import\\|no\\|bootstrap\\)[ 	]+\\([a-zA-z_][a-zA-z_0-9:]*\\)[ 	;]" 2 font-lock-function-name-face)<br/>
+ ("^[ 	]*format[ 	]+\\([a-zA-z_][a-zA-z_0-9:]*\\)[ 	]*=[ 	]*$" 1 font-lock-function-name-face)<br/>
+ ("\\([]}\\\\%@>*&]\\|\\$[a-zA-Z0-9_:]*\\)[ 	]*{[ 	]*\\(-?[a-zA-Z0-9_:]+\\)[ 	]*}"<br/>
+  (2 font-lock-string-face t)<br/>
+  ("\\=[ 	]*{[ 	]*\\(-?[a-zA-Z0-9_:]+\\)[ 	]*}" nil nil<br/>
+   (1 font-lock-string-face t)))<br/>
+ ("[[ 	{,(]\\(-?[a-zA-Z0-9_:]+\\)[ 	]*=>" 1 font-lock-string-face t)<br/>
+ ("^[ 	]*\\([a-zA-Z0-9_]+[ 	]*:\\)[ 	]*\\($\\|{\\|\\<\\(until\\|while\\|for\\(each\\)?\\|do\\)\\>\\)" 1 font-lock-constant-face)<br/>
+ ("\\<\\(continue\\|next\\|last\\|redo\\|goto\\)\\>[ 	]+\\([a-zA-Z0-9_:]+\\)" 2 font-lock-constant-face)<br/>
+ ("\\<\\(my\\|local\\|our\\)[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*\\(([ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*\\)?\\([$@%*]\\([a-zA-Z0-9_:]+\\|[^a-zA-Z0-9_]\\)\\)"<br/>
+  (5 font-lock-variable-name-face)<br/>
+  ("\\=[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*,[ 	\n]*\\(#[^\n]*\n[ 	\n]*\\)*\\([$@%*]\\([a-zA-Z0-9_:]+\\|[^a-zA-Z0-9_]\\)\\)"<br/>
+   (if<br/>
+       (match-beginning 3)<br/>
+       (save-excursion<br/>
+	 (goto-char<br/>
+	  (match-beginning 3))<br/>
+	 (condition-case nil<br/>
+	     (forward-sexp 1)<br/>
+	   (error<br/>
+	    (condition-case nil<br/>
+		(forward-char 200)<br/>
+	      (error nil))))<br/>
+	 (1-<br/>
+	  (point)))<br/>
+     (forward-char -2))<br/>
+   nil<br/>
+   (3 font-lock-variable-name-face)))<br/>
+ ("\\<for\\(each\\)?\\([ 	]+\\(my\\|local\\|our\\)\\)?[ 	]*\\(\\$[a-zA-Z_][a-zA-Z_0-9]*\\)[ 	]*(" 4 font-lock-variable-name-face)<br/>
+ ("\\(?:^\\|[^smywqrx$]\\)\\(!\\)" 1 font-lock-negation-char-face)<br/>
+ ("\\[\\(\\^\\)" 1 font-lock-negation-char-face prepend)<br/>
+ ("\\(\\([@%]\\|$#\\)[a-zA-Z_:][a-zA-Z0-9_:]*\\)" 1<br/>
+  (if<br/>
+      (eq<br/>
+       (char-after<br/>
+	(match-beginning 2))<br/>
+       37)<br/>
+      'cperl-hash-face 'cperl-array-face)<br/>
+  t)<br/>
+ ("\\(\\([$@]+\\)[a-zA-Z_:][a-zA-Z0-9_:]*\\)[ 	]*\\([[{]\\)" 1<br/>
+  (if<br/>
+      (=<br/>
+       (-<br/>
+	(match-end 2)<br/>
+	(match-beginning 2))<br/>
+       1)<br/>
+      (if<br/>
+	  (eq<br/>
+	   (char-after<br/>
+	    (match-beginning 3))<br/>
+	   123)<br/>
+	  'cperl-hash-face 'cperl-array-face)<br/>
+    font-lock-variable-name-face)<br/>
+  t)<br/>
+ ("\\(@\\|\\$#\\)\\(\\$+\\([a-zA-Z_:][a-zA-Z0-9_:]*\\|[^ 	\n]\\)\\)"<br/>
+  (1 cperl-array-face)<br/>
+  (2 font-lock-variable-name-face))<br/>
+ ("\\(%\\)\\(\\$+\\([a-zA-Z_:][a-zA-Z0-9_:]*\\|[^ 	\n]\\)\\)"<br/>
+  (1 cperl-hash-face)<br/>
+  (2 font-lock-variable-name-face)))<br/>
+<br/>

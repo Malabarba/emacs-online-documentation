@@ -1,1 +1,59 @@
-custom-magic-alist is a variable defined in `cus-edit.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of customize option states.<br/>Each entry is of the form (STATE MAGIC FACE ITEM-DESC [ GROUP-DESC ]), where<br/><br/>STATE is one of the following symbols:<br/><br/>`nil'<br/>   For internal use, should never occur.<br/>`unknown'<br/>   For internal use, should never occur.<br/>`hidden'<br/>   This item is not being displayed.<br/>`invalid'<br/>   This item is modified, but has an invalid form.<br/>`modified'<br/>   This item is modified, and has a valid form.<br/>`set'<br/>   This item has been set but not saved.<br/>`changed'<br/>   The current value of this item has been changed outside Customize.<br/>`saved'<br/>   This item is marked for saving.<br/>`rogue'<br/>   This item has no customization information.<br/>`standard'<br/>   This item is unchanged from the standard setting.<br/><br/>MAGIC is a string used to present that state.<br/><br/>FACE is a face used to present the state.<br/><br/>ITEM-DESC is a string describing the state for options.<br/><br/>GROUP-DESC is a string describing the state for groups.  If this is<br/>left out, ITEM-DESC will be used.<br/><br/>The string %c in either description will be replaced with the<br/>category of the item.  These are `group'. `option', and `face'.<br/><br/>The list should be sorted most significant first.<br/><br/>Value:<br/>((nil "#" underline "UNINITIALIZED, you should not see this.")<br/> (unknown "?" italic "UNKNOWN, you should not see this.")<br/> (hidden "-" default "HIDDEN, invoke \"Show\" in the previous line to show." "group now hidden, invoke \"Show\", above, to show contents.")<br/> (invalid "x" custom-invalid "INVALID, the displayed value cannot be set.")<br/> (modified "*" custom-modified "EDITED, shown value does not take effect until you set or save it." "something in this group has been edited but not set.")<br/> (set "+" custom-set "SET for current session only." "something in this group has been set but not saved.")<br/> (changed ":" custom-changed "CHANGED outside Customize." "something in this group has been changed outside customize.")<br/> (saved "!" custom-saved "SAVED and set." "something in this group has been set and saved.")<br/> (themed "o" custom-themed "THEMED." "visible group members are all at standard values.")<br/> (rogue "@" custom-rogue "NO CUSTOMIZATION DATA; not intended to be customized." "something in this group is not prepared for customization.")<br/> (standard " " nil "STANDARD." "visible group members are all at standard values."))<br/><br/>
+<strong>custom-magic-alist</strong> is a variable defined in `<code>cus-edit.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of customize option states.<br/>
+Each entry is of the form (STATE MAGIC FACE ITEM-DESC [ GROUP-DESC ]), where<br/>
+<br/>
+STATE is one of the following symbols:<br/>
+<br/>
+`nil'<br/>
+   For internal use, should never occur.<br/>
+`unknown'<br/>
+   For internal use, should never occur.<br/>
+`hidden'<br/>
+   This item is not being displayed.<br/>
+`invalid'<br/>
+   This item is modified, but has an invalid form.<br/>
+`modified'<br/>
+   This item is modified, and has a valid form.<br/>
+`set'<br/>
+   This item has been set but not saved.<br/>
+`changed'<br/>
+   The current value of this item has been changed outside Customize.<br/>
+`saved'<br/>
+   This item is marked for saving.<br/>
+`rogue'<br/>
+   This item has no customization information.<br/>
+`standard'<br/>
+   This item is unchanged from the standard setting.<br/>
+<br/>
+MAGIC is a string used to present that state.<br/>
+<br/>
+FACE is a face used to present the state.<br/>
+<br/>
+ITEM-DESC is a string describing the state for options.<br/>
+<br/>
+GROUP-DESC is a string describing the state for groups.  If this is<br/>
+left out, ITEM-DESC will be used.<br/>
+<br/>
+The string %c in either description will be replaced with the<br/>
+category of the item.  These are `group'. `option', and `face'.<br/>
+<br/>
+The list should be sorted most significant first.<br/>
+<br/>
+Value:<br/>
+((nil "#" underline "UNINITIALIZED, you should not see this.")<br/>
+ (unknown "?" italic "UNKNOWN, you should not see this.")<br/>
+ (hidden "-" default "HIDDEN, invoke \"Show\" in the previous line to show." "group now hidden, invoke \"Show\", above, to show contents.")<br/>
+ (invalid "x" custom-invalid "INVALID, the displayed value cannot be set.")<br/>
+ (modified "*" custom-modified "EDITED, shown value does not take effect until you set or save it." "something in this group has been edited but not set.")<br/>
+ (set "+" custom-set "SET for current session only." "something in this group has been set but not saved.")<br/>
+ (changed ":" custom-changed "CHANGED outside Customize." "something in this group has been changed outside customize.")<br/>
+ (saved "!" custom-saved "SAVED and set." "something in this group has been set and saved.")<br/>
+ (themed "o" custom-themed "THEMED." "visible group members are all at standard values.")<br/>
+ (rogue "@" custom-rogue "NO CUSTOMIZATION DATA; not intended to be customized." "something in this group is not prepared for customization.")<br/>
+ (standard " " nil "STANDARD." "visible group members are all at standard values."))<br/>
+<br/>

@@ -1,1 +1,15 @@
-set-auto-coding-function is a variable defined in `C source code'.<br/>Its value is set-auto-coding<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>If non-nil, a function to call to decide a coding system of file.<br/>Two arguments are passed to this function: the file name<br/>and the length of a file contents following the point.<br/>This function should return a coding system to decode the file contents.<br/>It should check the file name against `auto-coding-alist'.<br/>If no coding system is decided, it should check a coding system<br/>specified in the heading lines with the format:<br/>	-*- ... coding: CODING-SYSTEM; ... -*-<br/>or local variable spec of the tailing lines with `coding:' tag.
+<strong>set-auto-coding-function</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is set-auto-coding<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+If non-nil, a function to call to decide a coding system of file.<br/>
+Two arguments are passed to this function: the file name<br/>
+and the length of a file contents following the point.<br/>
+This function should return a coding system to decode the file contents.<br/>
+It should check the file name against `auto-coding-alist'.<br/>
+If no coding system is decided, it should check a coding system<br/>
+specified in the heading lines with the format:<br/>
+	-*- ... coding: CODING-SYSTEM; ... -*-<br/>
+or local variable spec of the tailing lines with `coding:' tag.

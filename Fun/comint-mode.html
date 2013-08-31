@@ -1,1 +1,81 @@
-comint-mode is an interactive compiled Lisp function in `comint.el'.<br/><br/>(comint-mode)<br/><br/>Major mode for interacting with an inferior interpreter.<br/>Interpreter name is same as buffer name, sans the asterisks.<br/>Return at end of buffer sends line as input.<br/>Return not at end copies rest of line to end and sends it.<br/>Setting variable `comint-eol-on-send' means jump to the end of the line<br/>before submitting new input.<br/><br/>This mode is customized to create major modes such as Inferior Lisp<br/>mode, Shell mode, etc.  This can be done by setting the hooks<br/>`comint-input-filter-functions', `comint-input-filter', `comint-input-sender'<br/>and `comint-get-old-input' to appropriate functions, and the variable<br/>`comint-prompt-regexp' to the appropriate regular expression.<br/><br/>The mode maintains an input history of size `comint-input-ring-size'.<br/>You can access this with the commands M-x comint-next-input,<br/>M-x comint-previous-input, and M-x comint-dynamic-list-input-ring.<br/>Input ring history expansion can be achieved with the commands<br/>M-x comint-replace-by-expanded-history or M-x comint-magic-space.<br/>Input ring expansion is controlled by the variable `comint-input-autoexpand',<br/>and addition is controlled by the variable `comint-input-ignoredups'.<br/><br/>Commands with no default key bindings include `send-invisible',<br/>`comint-dynamic-complete', `comint-dynamic-list-filename-completions', and<br/>`comint-magic-space'.<br/><br/>Input to, and output from, the subprocess can cause the window to scroll to<br/>the end of the buffer.  See variables `comint-output-filter-functions',<br/>`comint-preoutput-filter-functions', `comint-scroll-to-bottom-on-input',<br/>and `comint-move-point-for-output'.<br/><br/>If you accidentally suspend your process, use M-x comint-continue-subjob<br/>to continue it.<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>C-d		comint-delchar-or-maybe-eof<br/>RET		comint-send-input<br/>ESC		Prefix Command<br/><C-down>	comint-next-input<br/><C-up>		comint-previous-input<br/><delete>	delete-char<br/><kp-delete>	delete-char<br/><mouse-2>	comint-insert-input<br/><br/>C-c C-a		comint-bol-or-process-mark<br/>C-c C-c		comint-interrupt-subjob<br/>C-c C-d		comint-send-eof<br/>C-c C-e		comint-show-maximum-output<br/>C-c C-l		comint-dynamic-list-input-ring<br/>C-c RET		comint-copy-old-input<br/>C-c C-n		comint-next-prompt<br/>C-c C-o		comint-delete-output<br/>C-c C-p		comint-previous-prompt<br/>C-c C-r		comint-show-output<br/>C-c C-s		comint-write-output<br/>C-c C-u		comint-kill-input<br/>C-c C-w		backward-kill-word<br/>C-c C-x		comint-get-next-from-history<br/>C-c C-z		comint-stop-subjob<br/>C-c ESC		Prefix Command<br/>C-c C-\		comint-quit-subjob<br/>C-c SPC		comint-accumulate<br/>C-c .		comint-insert-previous-argument<br/><br/>C-M-l		comint-show-output<br/>M-n		comint-next-input<br/>M-p		comint-previous-input<br/>M-r		comint-history-isearch-backward-regexp<br/><br/>C-c M-r		comint-previous-matching-input-from-input<br/>C-c M-s		comint-next-matching-input-from-input<br/><br/><br/><br/>Entry to this mode runs the hooks on `comint-mode-hook'.
+<strong>comint-mode</strong> is an interactive compiled Lisp function in `<code>comint.el</code>'.<br/>
+<br/>
+(comint-mode)<br/>
+<br/>
+Major mode for interacting with an inferior interpreter.<br/>
+Interpreter name is same as buffer name, sans the asterisks.<br/>
+Return at end of buffer sends line as input.<br/>
+Return not at end copies rest of line to end and sends it.<br/>
+Setting variable `comint-eol-on-send' means jump to the end of the line<br/>
+before submitting new input.<br/>
+<br/>
+This mode is customized to create major modes such as Inferior Lisp<br/>
+mode, Shell mode, etc.  This can be done by setting the hooks<br/>
+`comint-input-filter-functions', `comint-input-filter', `comint-input-sender'<br/>
+and `comint-get-old-input' to appropriate functions, and the variable<br/>
+`comint-prompt-regexp' to the appropriate regular expression.<br/>
+<br/>
+The mode maintains an input history of size `comint-input-ring-size'.<br/>
+You can access this with the commands M-x comint-next-input,<br/>
+M-x comint-previous-input, and M-x comint-dynamic-list-input-ring.<br/>
+Input ring history expansion can be achieved with the commands<br/>
+M-x comint-replace-by-expanded-history or M-x comint-magic-space.<br/>
+Input ring expansion is controlled by the variable `comint-input-autoexpand',<br/>
+and addition is controlled by the variable `comint-input-ignoredups'.<br/>
+<br/>
+Commands with no default key bindings include `send-invisible',<br/>
+`comint-dynamic-complete', `comint-dynamic-list-filename-completions', and<br/>
+`comint-magic-space'.<br/>
+<br/>
+Input to, and output from, the subprocess can cause the window to scroll to<br/>
+the end of the buffer.  See variables `comint-output-filter-functions',<br/>
+`comint-preoutput-filter-functions', `comint-scroll-to-bottom-on-input',<br/>
+and `comint-move-point-for-output'.<br/>
+<br/>
+If you accidentally suspend your process, use M-x comint-continue-subjob<br/>
+to continue it.<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+C-d		comint-delchar-or-maybe-eof<br/>
+RET		comint-send-input<br/>
+ESC		Prefix Command<br/>
+<C-down>	comint-next-input<br/>
+<C-up>		comint-previous-input<br/>
+<delete>	delete-char<br/>
+<kp-delete>	delete-char<br/>
+<mouse-2>	comint-insert-input<br/>
+<br/>
+C-c C-a		comint-bol-or-process-mark<br/>
+C-c C-c		comint-interrupt-subjob<br/>
+C-c C-d		comint-send-eof<br/>
+C-c C-e		comint-show-maximum-output<br/>
+C-c C-l		comint-dynamic-list-input-ring<br/>
+C-c RET		comint-copy-old-input<br/>
+C-c C-n		comint-next-prompt<br/>
+C-c C-o		comint-delete-output<br/>
+C-c C-p		comint-previous-prompt<br/>
+C-c C-r		comint-show-output<br/>
+C-c C-s		comint-write-output<br/>
+C-c C-u		comint-kill-input<br/>
+C-c C-w		backward-kill-word<br/>
+C-c C-x		comint-get-next-from-history<br/>
+C-c C-z		comint-stop-subjob<br/>
+C-c ESC		Prefix Command<br/>
+C-c C-\		comint-quit-subjob<br/>
+C-c SPC		comint-accumulate<br/>
+C-c .		comint-insert-previous-argument<br/>
+<br/>
+C-M-l		comint-show-output<br/>
+M-n		comint-next-input<br/>
+M-p		comint-previous-input<br/>
+M-r		comint-history-isearch-backward-regexp<br/>
+<br/>
+C-c M-r		comint-previous-matching-input-from-input<br/>
+C-c M-s		comint-next-matching-input-from-input<br/>
+<br/>
+<br/>
+<br/>
+Entry to this mode runs the hooks on `comint-mode-hook'.

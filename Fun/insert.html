@@ -1,1 +1,18 @@
-insert is a built-in function in `C source code'.<br/><br/>(insert &rest ARGS)<br/><br/>Insert the arguments, either strings or characters, at point.<br/>Point and before-insertion markers move forward to end up<br/> after the inserted text.<br/>Any other markers at the point of insertion remain before the text.<br/><br/>If the current buffer is multibyte, unibyte strings are converted<br/>to multibyte for insertion (see `string-make-multibyte').<br/>If the current buffer is unibyte, multibyte strings are converted<br/>to unibyte for insertion (see `string-make-unibyte').<br/><br/>When operating on binary data, it may be necessary to preserve the<br/>original bytes of a unibyte string when inserting it into a multibyte<br/>buffer; to accomplish this, apply `string-as-multibyte' to the string<br/>and insert the result.
+<strong>insert</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(insert &rest ARGS)<br/>
+<br/>
+Insert the arguments, either strings or characters, at point.<br/>
+Point and before-insertion markers move forward to end up<br/>
+ after the inserted text.<br/>
+Any other markers at the point of insertion remain before the text.<br/>
+<br/>
+If the current buffer is multibyte, unibyte strings are converted<br/>
+to multibyte for insertion (see `string-make-multibyte').<br/>
+If the current buffer is unibyte, multibyte strings are converted<br/>
+to unibyte for insertion (see `string-make-unibyte').<br/>
+<br/>
+When operating on binary data, it may be necessary to preserve the<br/>
+original bytes of a unibyte string when inserting it into a multibyte<br/>
+buffer; to accomplish this, apply `string-as-multibyte' to the string<br/>
+and insert the result.

@@ -1,1 +1,36 @@
-makefile-gmake-font-lock-keywords is a variable defined in `make-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (("\\(?:^\\|^export\\|^override\\|:\\|: *override\\) *\\([^ \n	][^:#= 	\n]*\\)[ 	]*\\(?:!=\\|[*:+]?[:?]?=\\)"<br/>  (1 font-lock-variable-name-face)<br/>  (2 'makefile-shell prepend t)<br/>  (3 'font-lock-string-face prepend t))<br/> (makefile-match-action<br/>  (1 font-lock-type-face nil t)<br/>  (2 'makefile-shell prepend)<br/>  (3 font-lock-builtin-face prepend t))<br/> ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\|[@%<?^+*][FD]?\\)" 1 font-lock-variable-name-face prepend)<br/> ("[^$]\\$\\([@%<?^+*_]\\|[a-zA-Z0-9]\\>\\)" 1 font-lock-constant-face prepend)<br/> ("[^$]\\(\\$[@%*]\\)" 1 'makefile-targets append)<br/> ("^\\(?: [ 	]*\\)?\\(-\\(?:s?include\\)\\|define\\|e\\(?:lse\\|nd\\(?:[ei]f\\)\\|xport\\)\\|i\\(?:f\\(?:def\\|eq\\|n\\(?:def\\|eq\\)\\)\\|nclude\\)\\|override\\(?:[ 	]+define\\)?\\|sinclude\\|unexport\\|vpath\\)\\>[ 	]*\\([^: 	\n#]*\\)"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-variable-name-face))<br/> ("^\\(?: [ 	]*\\)?if\\(n\\)\\(?:def\\|eq\\)\\>"<br/>  (1 font-lock-negation-char-face prepend)<br/>  (2 font-lock-negation-char-face prepend t))<br/> ("^[ 	]+$" . makefile-space)<br/> ("^	+#" 0 makefile-space t)<br/> ("^\\( +\\)	" 1 makefile-space)<br/> ("[^$]\\(\\$[({][@%*][DF][})]\\)" 1 'makefile-targets append)<br/> ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\s \\)" 1 font-lock-function-name-face prepend)<br/> ("[^$]\\$\\([({]\\)shell[ 	]+" makefile-match-function-end nil nil<br/>  (1 'makefile-shell prepend t))<br/> (makefile-match-dependency<br/>  (1 'makefile-targets prepend)<br/>  (3 'makefile-shell prepend t)))<br/><br/>
+<strong>makefile-gmake-font-lock-keywords</strong> is a variable defined in `<code>make-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (("\\(?:^\\|^export\\|^override\\|:\\|: *override\\) *\\([^ \n	][^:#= 	\n]*\\)[ 	]*\\(?:!=\\|[*:+]?[:?]?=\\)"<br/>
+  (1 font-lock-variable-name-face)<br/>
+  (2 'makefile-shell prepend t)<br/>
+  (3 'font-lock-string-face prepend t))<br/>
+ (makefile-match-action<br/>
+  (1 font-lock-type-face nil t)<br/>
+  (2 'makefile-shell prepend)<br/>
+  (3 font-lock-builtin-face prepend t))<br/>
+ ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\|[@%<?^+*][FD]?\\)" 1 font-lock-variable-name-face prepend)<br/>
+ ("[^$]\\$\\([@%<?^+*_]\\|[a-zA-Z0-9]\\>\\)" 1 font-lock-constant-face prepend)<br/>
+ ("[^$]\\(\\$[@%*]\\)" 1 'makefile-targets append)<br/>
+ ("^\\(?: [ 	]*\\)?\\(-\\(?:s?include\\)\\|define\\|e\\(?:lse\\|nd\\(?:[ei]f\\)\\|xport\\)\\|i\\(?:f\\(?:def\\|eq\\|n\\(?:def\\|eq\\)\\)\\|nclude\\)\\|override\\(?:[ 	]+define\\)?\\|sinclude\\|unexport\\|vpath\\)\\>[ 	]*\\([^: 	\n#]*\\)"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-variable-name-face))<br/>
+ ("^\\(?: [ 	]*\\)?if\\(n\\)\\(?:def\\|eq\\)\\>"<br/>
+  (1 font-lock-negation-char-face prepend)<br/>
+  (2 font-lock-negation-char-face prepend t))<br/>
+ ("^[ 	]+$" . makefile-space)<br/>
+ ("^	+#" 0 makefile-space t)<br/>
+ ("^\\( +\\)	" 1 makefile-space)<br/>
+ ("[^$]\\(\\$[({][@%*][DF][})]\\)" 1 'makefile-targets append)<br/>
+ ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\s \\)" 1 font-lock-function-name-face prepend)<br/>
+ ("[^$]\\$\\([({]\\)shell[ 	]+" makefile-match-function-end nil nil<br/>
+  (1 'makefile-shell prepend t))<br/>
+ (makefile-match-dependency<br/>
+  (1 'makefile-targets prepend)<br/>
+  (3 'makefile-shell prepend t)))<br/>
+<br/>

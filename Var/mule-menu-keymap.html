@@ -1,1 +1,112 @@
-mule-menu-keymap is a variable defined in `mule-cmds.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Keymap for Mule (Multilingual environment) menu specific commands.<br/><br/>Value: (keymap<br/> (set-language-environment menu-item "Set Language Environment"<br/>			   (keymap<br/>			    (Default menu-item "Default" setup-specified-language-environment)<br/>			    "Set Language Environment"<br/>			    (Chinese "Chinese" . setup-chinese-environment-map)<br/>			    (Cyrillic "Cyrillic" . setup-cyrillic-environment-map)<br/>			    (Indian "Indian" . setup-indian-environment-map)<br/>			    (Sinhala "Sinhala" . setup-specified-language-environment)<br/>			    (English "English" . setup-specified-language-environment)<br/>			    (ASCII "ASCII" . setup-specified-language-environment)<br/>			    (Ethiopic "Ethiopic" . setup-specified-language-environment)<br/>			    (European "European" . setup-european-environment-map)<br/>			    (Turkish "Turkish" . setup-specified-language-environment)<br/>			    (Greek "Greek" . setup-specified-language-environment)<br/>			    (Hebrew "Hebrew" . setup-specified-language-environment)<br/>			    (Windows-1255 "Windows-1255" . setup-specified-language-environment)<br/>			    (Japanese "Japanese" . setup-specified-language-environment)<br/>			    (Korean "Korean" . setup-specified-language-environment)<br/>			    (Lao "Lao" . setup-specified-language-environment)<br/>			    (TaiViet "TaiViet" . setup-specified-language-environment)<br/>			    (Thai "Thai" . setup-specified-language-environment)<br/>			    (Tibetan "Tibetan" . setup-specified-language-environment)<br/>			    (Vietnamese "Vietnamese" . setup-specified-language-environment)<br/>			    (IPA "IPA" . setup-specified-language-environment)<br/>			    (Arabic "Arabic" . setup-specified-language-environment)<br/>			    (Persian "Persian" . setup-specified-language-environment)<br/>			    (UTF-8 "UTF-8" . setup-specified-language-environment)<br/>			    (Khmer "Khmer" . setup-specified-language-environment)<br/>			    (Burmese "Burmese" . setup-specified-language-environment)<br/>			    (Cham "Cham" . setup-specified-language-environment)))<br/> (separator-mule "--")<br/> (toggle-input-method menu-item "Toggle Input Method" toggle-input-method)<br/> (set-input-method menu-item "Select Input Method..." set-input-method)<br/> (separator-input-method "--")<br/> (set-various-coding-system menu-item "Set Coding Systems"<br/>			    (keymap<br/>			     (universal-coding-system-argument menu-item "For Next Command" universal-coding-system-argument :help "Coding system to be used by next command")<br/>			     (separator-1 "--")<br/>			     (set-buffer-file-coding-system menu-item "For Saving This Buffer" set-buffer-file-coding-system :help "How to encode this buffer when saved")<br/>			     (revert-buffer-with-coding-system menu-item "For Reverting This File Now" revert-buffer-with-coding-system :enable buffer-file-name :help "Revisit this file immediately using specified coding system")<br/>			     (set-file-name-coding-system menu-item "For File Name" set-file-name-coding-system :help "How to decode/encode file names")<br/>			     (separator-2 "--")<br/>			     (set-keyboard-coding-system menu-item "For Keyboard" set-keyboard-coding-system :help "How to decode keyboard input")<br/>			     (set-terminal-coding-system menu-item "For Terminal" set-terminal-coding-system :enable<br/>							 (null<br/>							  (memq initial-window-system<br/>								'(x w32 ns)))<br/>							 :help "How to encode terminal output")<br/>			     (separator-3 "--")<br/>			     (set-selection-coding-system menu-item "For X Selections/Clipboard" set-selection-coding-system :visible<br/>							  (display-selections-p)<br/>							  :help "How to en/decode data to/from selection/clipboard")<br/>			     (set-next-selection-coding-system menu-item "For Next X Selection" set-next-selection-coding-system :visible<br/>							       (display-selections-p)<br/>							       :help "How to en/decode next selection/clipboard operation")<br/>			     (set-buffer-process-coding-system menu-item "For I/O with Subprocess" set-buffer-process-coding-system :visible<br/>							       (fboundp 'start-process)<br/>							       :enable<br/>							       (get-buffer-process<br/>								(current-buffer))<br/>							       :help "How to en/decode I/O from/to subprocess connected to this buffer")<br/>			     "Set Coding System")<br/>			    :enable<br/>			    (default-value 'enable-multibyte-characters))<br/> (view-hello-file menu-item "Show Multilingual Sample Text" view-hello-file :enable<br/>		  (file-readable-p<br/>		   (expand-file-name "HELLO" data-directory))<br/>		  :help "Demonstrate various character sets")<br/> (separator-coding-system "--")<br/> (describe-language-environment menu-item "Describe Language Environment"<br/>				(keymap<br/>				 (Default menu-item "Default" describe-specified-language-support)<br/>				 "Describe Language Environment"<br/>				 (Chinese "Chinese" . describe-chinese-environment-map)<br/>				 (Cyrillic "Cyrillic" . describe-cyrillic-environment-map)<br/>				 (Indian "Indian" . describe-indian-environment-map)<br/>				 (Sinhala "Sinhala" . describe-specified-language-support)<br/>				 (English "English" . describe-specified-language-support)<br/>				 (ASCII "ASCII" . describe-specified-language-support)<br/>				 (Ethiopic "Ethiopic" . describe-specified-language-support)<br/>				 (European "European" . describe-european-environment-map)<br/>				 (Turkish "Turkish" . describe-specified-language-support)<br/>				 (Greek "Greek" . describe-specified-language-support)<br/>				 (Hebrew "Hebrew" . describe-specified-language-support)<br/>				 (Windows-1255 "Windows-1255" . describe-specified-language-support)<br/>				 (Japanese "Japanese" . describe-specified-language-support)<br/>				 (Korean "Korean" . describe-specified-language-support)<br/>				 (Lao "Lao" . describe-specified-language-support)<br/>				 (TaiViet "TaiViet" . describe-specified-language-support)<br/>				 (Thai "Thai" . describe-specified-language-support)<br/>				 (Tibetan "Tibetan" . describe-specified-language-support)<br/>				 (Vietnamese "Vietnamese" . describe-specified-language-support)<br/>				 (IPA "IPA" . describe-specified-language-support)<br/>				 (Arabic "Arabic" . describe-specified-language-support)<br/>				 (Persian "Persian" . describe-specified-language-support)<br/>				 (UTF-8 "UTF-8" . describe-specified-language-support)<br/>				 (Khmer "Khmer" . describe-specified-language-support)<br/>				 (Burmese "Burmese" . describe-specified-language-support))<br/>				:help "Show multilingual settings for a specific language")<br/> (describe-input-method menu-item "Describe Input Method" describe-input-method)<br/> (describe-coding-system menu-item "Describe Coding System..." describe-coding-system)<br/> (list-character-sets menu-item "List Character Sets" list-character-sets :help "Show table of available character sets")<br/> (mule-diag menu-item "Show All Multilingual Settings" mule-diag :help "Display multilingual environment settings")<br/> "Mule (Multilingual Environment)")<br/><br/>
+<strong>mule-menu-keymap</strong> is a variable defined in `<code>mule-cmds.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Keymap for Mule (Multilingual environment) menu specific commands.<br/>
+<br/>
+Value: (keymap<br/>
+ (set-language-environment menu-item "Set Language Environment"<br/>
+			   (keymap<br/>
+			    (Default menu-item "Default" setup-specified-language-environment)<br/>
+			    "Set Language Environment"<br/>
+			    (Chinese "Chinese" . setup-chinese-environment-map)<br/>
+			    (Cyrillic "Cyrillic" . setup-cyrillic-environment-map)<br/>
+			    (Indian "Indian" . setup-indian-environment-map)<br/>
+			    (Sinhala "Sinhala" . setup-specified-language-environment)<br/>
+			    (English "English" . setup-specified-language-environment)<br/>
+			    (ASCII "ASCII" . setup-specified-language-environment)<br/>
+			    (Ethiopic "Ethiopic" . setup-specified-language-environment)<br/>
+			    (European "European" . setup-european-environment-map)<br/>
+			    (Turkish "Turkish" . setup-specified-language-environment)<br/>
+			    (Greek "Greek" . setup-specified-language-environment)<br/>
+			    (Hebrew "Hebrew" . setup-specified-language-environment)<br/>
+			    (Windows-1255 "Windows-1255" . setup-specified-language-environment)<br/>
+			    (Japanese "Japanese" . setup-specified-language-environment)<br/>
+			    (Korean "Korean" . setup-specified-language-environment)<br/>
+			    (Lao "Lao" . setup-specified-language-environment)<br/>
+			    (TaiViet "TaiViet" . setup-specified-language-environment)<br/>
+			    (Thai "Thai" . setup-specified-language-environment)<br/>
+			    (Tibetan "Tibetan" . setup-specified-language-environment)<br/>
+			    (Vietnamese "Vietnamese" . setup-specified-language-environment)<br/>
+			    (IPA "IPA" . setup-specified-language-environment)<br/>
+			    (Arabic "Arabic" . setup-specified-language-environment)<br/>
+			    (Persian "Persian" . setup-specified-language-environment)<br/>
+			    (UTF-8 "UTF-8" . setup-specified-language-environment)<br/>
+			    (Khmer "Khmer" . setup-specified-language-environment)<br/>
+			    (Burmese "Burmese" . setup-specified-language-environment)<br/>
+			    (Cham "Cham" . setup-specified-language-environment)))<br/>
+ (separator-mule "--")<br/>
+ (toggle-input-method menu-item "Toggle Input Method" toggle-input-method)<br/>
+ (set-input-method menu-item "Select Input Method..." set-input-method)<br/>
+ (separator-input-method "--")<br/>
+ (set-various-coding-system menu-item "Set Coding Systems"<br/>
+			    (keymap<br/>
+			     (universal-coding-system-argument menu-item "For Next Command" universal-coding-system-argument :help "Coding system to be used by next command")<br/>
+			     (separator-1 "--")<br/>
+			     (set-buffer-file-coding-system menu-item "For Saving This Buffer" set-buffer-file-coding-system :help "How to encode this buffer when saved")<br/>
+			     (revert-buffer-with-coding-system menu-item "For Reverting This File Now" revert-buffer-with-coding-system :enable buffer-file-name :help "Revisit this file immediately using specified coding system")<br/>
+			     (set-file-name-coding-system menu-item "For File Name" set-file-name-coding-system :help "How to decode/encode file names")<br/>
+			     (separator-2 "--")<br/>
+			     (set-keyboard-coding-system menu-item "For Keyboard" set-keyboard-coding-system :help "How to decode keyboard input")<br/>
+			     (set-terminal-coding-system menu-item "For Terminal" set-terminal-coding-system :enable<br/>
+							 (null<br/>
+							  (memq initial-window-system<br/>
+								'(x w32 ns)))<br/>
+							 :help "How to encode terminal output")<br/>
+			     (separator-3 "--")<br/>
+			     (set-selection-coding-system menu-item "For X Selections/Clipboard" set-selection-coding-system :visible<br/>
+							  (display-selections-p)<br/>
+							  :help "How to en/decode data to/from selection/clipboard")<br/>
+			     (set-next-selection-coding-system menu-item "For Next X Selection" set-next-selection-coding-system :visible<br/>
+							       (display-selections-p)<br/>
+							       :help "How to en/decode next selection/clipboard operation")<br/>
+			     (set-buffer-process-coding-system menu-item "For I/O with Subprocess" set-buffer-process-coding-system :visible<br/>
+							       (fboundp 'start-process)<br/>
+							       :enable<br/>
+							       (get-buffer-process<br/>
+								(current-buffer))<br/>
+							       :help "How to en/decode I/O from/to subprocess connected to this buffer")<br/>
+			     "Set Coding System")<br/>
+			    :enable<br/>
+			    (default-value 'enable-multibyte-characters))<br/>
+ (view-hello-file menu-item "Show Multilingual Sample Text" view-hello-file :enable<br/>
+		  (file-readable-p<br/>
+		   (expand-file-name "HELLO" data-directory))<br/>
+		  :help "Demonstrate various character sets")<br/>
+ (separator-coding-system "--")<br/>
+ (describe-language-environment menu-item "Describe Language Environment"<br/>
+				(keymap<br/>
+				 (Default menu-item "Default" describe-specified-language-support)<br/>
+				 "Describe Language Environment"<br/>
+				 (Chinese "Chinese" . describe-chinese-environment-map)<br/>
+				 (Cyrillic "Cyrillic" . describe-cyrillic-environment-map)<br/>
+				 (Indian "Indian" . describe-indian-environment-map)<br/>
+				 (Sinhala "Sinhala" . describe-specified-language-support)<br/>
+				 (English "English" . describe-specified-language-support)<br/>
+				 (ASCII "ASCII" . describe-specified-language-support)<br/>
+				 (Ethiopic "Ethiopic" . describe-specified-language-support)<br/>
+				 (European "European" . describe-european-environment-map)<br/>
+				 (Turkish "Turkish" . describe-specified-language-support)<br/>
+				 (Greek "Greek" . describe-specified-language-support)<br/>
+				 (Hebrew "Hebrew" . describe-specified-language-support)<br/>
+				 (Windows-1255 "Windows-1255" . describe-specified-language-support)<br/>
+				 (Japanese "Japanese" . describe-specified-language-support)<br/>
+				 (Korean "Korean" . describe-specified-language-support)<br/>
+				 (Lao "Lao" . describe-specified-language-support)<br/>
+				 (TaiViet "TaiViet" . describe-specified-language-support)<br/>
+				 (Thai "Thai" . describe-specified-language-support)<br/>
+				 (Tibetan "Tibetan" . describe-specified-language-support)<br/>
+				 (Vietnamese "Vietnamese" . describe-specified-language-support)<br/>
+				 (IPA "IPA" . describe-specified-language-support)<br/>
+				 (Arabic "Arabic" . describe-specified-language-support)<br/>
+				 (Persian "Persian" . describe-specified-language-support)<br/>
+				 (UTF-8 "UTF-8" . describe-specified-language-support)<br/>
+				 (Khmer "Khmer" . describe-specified-language-support)<br/>
+				 (Burmese "Burmese" . describe-specified-language-support))<br/>
+				:help "Show multilingual settings for a specific language")<br/>
+ (describe-input-method menu-item "Describe Input Method" describe-input-method)<br/>
+ (describe-coding-system menu-item "Describe Coding System..." describe-coding-system)<br/>
+ (list-character-sets menu-item "List Character Sets" list-character-sets :help "Show table of available character sets")<br/>
+ (mule-diag menu-item "Show All Multilingual Settings" mule-diag :help "Display multilingual environment settings")<br/>
+ "Mule (Multilingual Environment)")<br/>
+<br/>

@@ -1,1 +1,58 @@
-antlr-insert-option is an interactive compiled Lisp function in `antlr-mode.el'.<br/><br/>(antlr-insert-option LEVEL OPTION &optional LOCATION)<br/><br/>Insert file/grammar/rule/subrule option near point.<br/>LEVEL determines option kind to insert: 1=file, 2=grammar, 3=rule,<br/>4=subrule.  OPTION is a string with the name of the option to insert.<br/>LOCATION can be specified for not calling `antlr-option-kind' twice.<br/><br/>Inserting an option with this command works as follows:<br/><br/> 1. When called interactively, LEVEL is determined by the prefix<br/>    argument or automatically deduced without prefix argument.<br/> 2. Signal an error if no option of that level could be inserted, e.g.,<br/>    if the buffer is read-only, the option area is outside the visible<br/>    part of the buffer or a subrule/rule option should be inserted with<br/>    point outside a subrule/rule.<br/> 3. When called interactively, OPTION is read from the minibuffer with<br/>    completion over the known options of the given LEVEL.<br/> 4. Ask user for confirmation if the given OPTION does not seem to be a<br/>    valid option to insert into the current file.<br/> 5. Find a correct position to insert the option.<br/> 6. Depending on the option, insert it the following way (inserting an<br/>    option also means inserting the option section if necessary):<br/>     - Insert the option and let user insert the value at point.<br/>     - Read a value (with completion) from the minibuffer, using a<br/>       previous value as initial contents, and insert option with value.<br/> 7. Final action depending on the option.  For example, set the language<br/>    according to a newly inserted language option.<br/><br/>The name of all options with a specification for their values are stored<br/>in `antlr-options-alists'.  The used specification also depends on the<br/>value of `antlr-tool-version', i.e., step 4 will warn you if you use an<br/>option that has been introduced in newer version of ANTLR, and step 5<br/>will offer completion using version-correct values.<br/><br/>If the option already exists inside the visible part of the buffer, this<br/>command can be used to change the value of that option.  Otherwise, find<br/>a correct position where the option can be inserted near point.<br/><br/>The search for a correct position is as follows:<br/><br/>  * If search is within an area where options can be inserted, use the<br/>    position of point.  Inside the options section and if point is in<br/>    the middle of a option definition, skip the rest of it.<br/>  * If an options section already exists, insert the options at the end.<br/>    If only the beginning of the area is visible, insert at the<br/>    beginning.<br/>  * Otherwise, find the position where an options section can be<br/>    inserted and insert a new section before any comments.  If the<br/>    position before the comments is not visible, insert the new section<br/>    after the comments.<br/><br/>This function also inserts "options {...}" and the ":" if necessary,<br/>see `antlr-options-auto-colon'.  See also `antlr-options-assign-string'.<br/><br/>This command might also set the mark like C-SPC does, see<br/>`antlr-options-push-mark'.
+<strong>antlr-insert-option</strong> is an interactive compiled Lisp function in `<code>antlr-mode.el</code>'.<br/>
+<br/>
+(antlr-insert-option LEVEL OPTION &optional LOCATION)<br/>
+<br/>
+Insert file/grammar/rule/subrule option near point.<br/>
+LEVEL determines option kind to insert: 1=file, 2=grammar, 3=rule,<br/>
+4=subrule.  OPTION is a string with the name of the option to insert.<br/>
+LOCATION can be specified for not calling `antlr-option-kind' twice.<br/>
+<br/>
+Inserting an option with this command works as follows:<br/>
+<br/>
+ 1. When called interactively, LEVEL is determined by the prefix<br/>
+    argument or automatically deduced without prefix argument.<br/>
+ 2. Signal an error if no option of that level could be inserted, e.g.,<br/>
+    if the buffer is read-only, the option area is outside the visible<br/>
+    part of the buffer or a subrule/rule option should be inserted with<br/>
+    point outside a subrule/rule.<br/>
+ 3. When called interactively, OPTION is read from the minibuffer with<br/>
+    completion over the known options of the given LEVEL.<br/>
+ 4. Ask user for confirmation if the given OPTION does not seem to be a<br/>
+    valid option to insert into the current file.<br/>
+ 5. Find a correct position to insert the option.<br/>
+ 6. Depending on the option, insert it the following way (inserting an<br/>
+    option also means inserting the option section if necessary):<br/>
+     - Insert the option and let user insert the value at point.<br/>
+     - Read a value (with completion) from the minibuffer, using a<br/>
+       previous value as initial contents, and insert option with value.<br/>
+ 7. Final action depending on the option.  For example, set the language<br/>
+    according to a newly inserted language option.<br/>
+<br/>
+The name of all options with a specification for their values are stored<br/>
+in `antlr-options-alists'.  The used specification also depends on the<br/>
+value of `antlr-tool-version', i.e., step 4 will warn you if you use an<br/>
+option that has been introduced in newer version of ANTLR, and step 5<br/>
+will offer completion using version-correct values.<br/>
+<br/>
+If the option already exists inside the visible part of the buffer, this<br/>
+command can be used to change the value of that option.  Otherwise, find<br/>
+a correct position where the option can be inserted near point.<br/>
+<br/>
+The search for a correct position is as follows:<br/>
+<br/>
+  * If search is within an area where options can be inserted, use the<br/>
+    position of point.  Inside the options section and if point is in<br/>
+    the middle of a option definition, skip the rest of it.<br/>
+  * If an options section already exists, insert the options at the end.<br/>
+    If only the beginning of the area is visible, insert at the<br/>
+    beginning.<br/>
+  * Otherwise, find the position where an options section can be<br/>
+    inserted and insert a new section before any comments.  If the<br/>
+    position before the comments is not visible, insert the new section<br/>
+    after the comments.<br/>
+<br/>
+This function also inserts "options {...}" and the ":" if necessary,<br/>
+see `antlr-options-auto-colon'.  See also `antlr-options-assign-string'.<br/>
+<br/>
+This command might also set the mark like C-SPC does, see<br/>
+`antlr-options-push-mark'.

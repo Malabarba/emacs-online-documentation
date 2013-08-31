@@ -1,1 +1,23 @@
-tls-program is a variable defined in `tls.el'.<br/>Its value is<br/>("gnutls-cli --insecure -p %p %h" "gnutls-cli --insecure -p %p %h --protocols ssl3" "openssl s_client -connect %h:%p -no_ssl2 -ign_eof")<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of strings containing commands to start TLS stream to a host.<br/>Each entry in the list is tried until a connection is successful.<br/>%h is replaced with server hostname, %p with port to connect to.<br/>The program should read input on stdin and write output to<br/>stdout.<br/><br/>See `tls-checktrust' on how to check trusted root certs.<br/><br/>Also see `tls-success' for what the program should output after<br/>successful negotiation.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22.1 of Emacs.<br/>
+<strong>tls-program</strong> is a variable defined in `<code>tls.el</code>'.<br/>
+Its value is<br/>
+("gnutls-cli --insecure -p %p %h" "gnutls-cli --insecure -p %p %h --protocols ssl3" "openssl s_client -connect %h:%p -no_ssl2 -ign_eof")<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of strings containing commands to start TLS stream to a host.<br/>
+Each entry in the list is tried until a connection is successful.<br/>
+%h is replaced with server hostname, %p with port to connect to.<br/>
+The program should read input on stdin and write output to<br/>
+stdout.<br/>
+<br/>
+See `tls-checktrust' on how to check trusted root certs.<br/>
+<br/>
+Also see `tls-success' for what the program should output after<br/>
+successful negotiation.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22.1 of Emacs.<br/>

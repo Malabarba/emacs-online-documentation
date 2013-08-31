@@ -1,1 +1,17 @@
-tramp-equal-remote is a compiled Lisp function in `tramp.el'.<br/><br/>(tramp-equal-remote FILE1 FILE2)<br/><br/>Check, whether the remote parts of FILE1 and FILE2 are identical.<br/>The check depends on method, user and host name of the files.  If<br/>one of the components is missing, the default values are used.<br/>The local file name parts of FILE1 and FILE2 are not taken into<br/>account.<br/><br/>Example:<br/><br/>  (tramp-equal-remote "/ssh::/etc" "/<your host name>:/home")<br/><br/>would yield `t'.  On the other hand, the following check results in nil:<br/><br/>  (tramp-equal-remote "/sudo::/etc" "/su::/etc")
+<strong>tramp-equal-remote</strong> is a compiled Lisp function in `<code>tramp.el</code>'.<br/>
+<br/>
+(tramp-equal-remote FILE1 FILE2)<br/>
+<br/>
+Check, whether the remote parts of FILE1 and FILE2 are identical.<br/>
+The check depends on method, user and host name of the files.  If<br/>
+one of the components is missing, the default values are used.<br/>
+The local file name parts of FILE1 and FILE2 are not taken into<br/>
+account.<br/>
+<br/>
+Example:<br/>
+<br/>
+  (tramp-equal-remote "/ssh::/etc" "/<your host name>:/home")<br/>
+<br/>
+would yield `t'.  On the other hand, the following check results in nil:<br/>
+<br/>
+  (tramp-equal-remote "/sudo::/etc" "/su::/etc")

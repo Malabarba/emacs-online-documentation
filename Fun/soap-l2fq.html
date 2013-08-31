@@ -1,1 +1,16 @@
-soap-l2fq is a compiled Lisp function in `soap-client.el'.<br/><br/>(soap-l2fq LOCAL-NAME &optional USE-TNS)<br/><br/>Convert LOCAL-NAME into a fully qualified name.<br/>A fully qualified name is a cons of the namespace name and the<br/>name of the element itself.  For example "xsd:string" is<br/>converted to ("http://www.w3.org/2001/XMLSchema" . "string").<br/><br/>The USE-TNS argument specifies what to do when LOCAL-NAME has no<br/>namespace tag.  If USE-TNS is non-nil, the `soap-target-xmlns'<br/>will be used as the element's namespace, otherwise<br/>`soap-default-xmlns' will be used.<br/><br/>This is needed because different parts of a WSDL document can use<br/>different namespace aliases for the same element.
+<strong>soap-l2fq</strong> is a compiled Lisp function in `<code>soap-client.el</code>'.<br/>
+<br/>
+(soap-l2fq LOCAL-NAME &optional USE-TNS)<br/>
+<br/>
+Convert LOCAL-NAME into a fully qualified name.<br/>
+A fully qualified name is a cons of the namespace name and the<br/>
+name of the element itself.  For example "xsd:string" is<br/>
+converted to ("http://www.w3.org/2001/XMLSchema" . "string").<br/>
+<br/>
+The USE-TNS argument specifies what to do when LOCAL-NAME has no<br/>
+namespace tag.  If USE-TNS is non-nil, the `soap-target-xmlns'<br/>
+will be used as the element's namespace, otherwise<br/>
+`soap-default-xmlns' will be used.<br/>
+<br/>
+This is needed because different parts of a WSDL document can use<br/>
+different namespace aliases for the same element.

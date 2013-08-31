@@ -1,1 +1,299 @@
-verilog-auto-inst is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-inst)<br/><br/>Expand AUTOINST statements, as part of M-x verilog-auto.<br/>Replace the pin connections to an instantiation or interface<br/>declaration with ones automatically derived from the module or<br/>interface header of the instantiated item.<br/><br/>If `verilog-auto-star-expand' is set, also expand SystemVerilog .* ports,<br/>and delete them before saving unless `verilog-auto-star-save' is set.<br/>See `verilog-auto-star' for more information.<br/><br/>The pins are printed in declaration order or alphabetically,<br/>based on the `verilog-auto-inst-sort' variable.<br/><br/>Limitations:<br/>  Module names must be resolvable to filenames by adding a<br/>  `verilog-library-extensions', and being found in the same directory, or<br/>  by changing the variable `verilog-library-flags' or<br/>  `verilog-library-directories'.  Macros `modname are translated through the<br/>  vh-{name} Emacs variable, if that is not found, it just ignores the `.<br/><br/>  In templates you must have one signal per line, ending in a ), or ));,<br/>  and have proper () nesting, including a final ); to end the template.<br/><br/>  Typedefs must match `verilog-typedef-regexp', which is disabled by default.<br/><br/>  SystemVerilog multidimensional input/output has only experimental support.<br/><br/>  SystemVerilog .name syntax is used if `verilog-auto-inst-dot-name' is set.<br/><br/>  Parameters referenced by the instantiation will remain symbolic, unless<br/>  `verilog-auto-inst-param-value' is set.<br/><br/>  Gate primitives (and/or) may have AUTOINST for the purpose of<br/>  AUTOWIRE declarations, etc.  Gates are the only case when<br/>  position based connections are passed.<br/><br/>For example, first take the submodule InstModule.v:<br/><br/>	module InstModule (o,i);<br/>	   output [31:0] o;<br/>	   input i;<br/>	   wire [31:0] o = {32{i}};<br/>	endmodule<br/><br/>This is then used in an upper level module:<br/><br/>	module ExampInst (o,i);<br/>	   output o;<br/>	   input i;<br/>	   InstModule instName<br/>	     (/*AUTOINST*/);<br/>	endmodule<br/><br/>Typing M-x verilog-auto will make this into:<br/><br/>	module ExampInst (o,i);<br/>	   output o;<br/>	   input i;<br/>	   InstModule instName<br/>	     (/*AUTOINST*/<br/>	      // Outputs<br/>	      .ov	(ov[31:0]),<br/>	      // Inputs<br/>	      .i	(i));<br/>	endmodule<br/><br/>Where the list of inputs and outputs came from the inst module.<br/><br/>Exceptions:<br/><br/>  Unless you are instantiating a module multiple times, or the module is<br/>  something trivial like an adder, DO NOT CHANGE SIGNAL NAMES ACROSS HIERARCHY.<br/>  It just makes for unmaintainable code.  To sanitize signal names, try<br/>  vrename from URL `http://www.veripool.org'.<br/><br/>  When you need to violate this suggestion there are two ways to list<br/>  exceptions, placing them before the AUTOINST, or using templates.<br/><br/>  Any ports defined before the /*AUTOINST*/ are not included in the list of<br/>  automatics.  This is similar to making a template as described below, but<br/>  is restricted to simple connections just like you normally make.  Also note<br/>  that any signals before the AUTOINST will only be picked up by AUTOWIRE if<br/>  you have the appropriate // Input or // Output comment, and exactly the<br/>  same line formatting as AUTOINST itself uses.<br/><br/>	InstModule instName<br/>          (// Inputs<br/>	   .i		(my_i_dont_mess_with_it),<br/>	   /*AUTOINST*/<br/>	   // Outputs<br/>	   .ov		(ov[31:0]));<br/><br/><br/>Templates:<br/><br/>  For multiple instantiations based upon a single template, create a<br/>  commented out template:<br/><br/>	/* InstModule AUTO_TEMPLATE (<br/>		.sig3	(sigz[]),<br/>		);<br/>	*/<br/><br/>  Templates go ABOVE the instantiation(s).  When an instantiation is<br/>  expanded `verilog-mode' simply searches up for the closest template.<br/>  Thus you can have multiple templates for the same module, just alternate<br/>  between the template for an instantiation and the instantiation itself.<br/>  (For backward compatibility if no template is found above, it<br/>  will also look below, but do not use this behavior in new designs.)<br/><br/>  The module name must be the same as the name of the module in the<br/>  instantiation name, and the code "AUTO_TEMPLATE" must be in these exact<br/>  words and capitalized.  Only signals that must be different for each<br/>  instantiation need to be listed.<br/><br/>  Inside a template, a [] in a connection name (with nothing else inside<br/>  the brackets) will be replaced by the same bus subscript as it is being<br/>  connected to, or the [] will be removed if it is a single bit signal.<br/>  Generally it is a good idea to do this for all connections in a template,<br/>  as then they will work for any width signal, and with AUTOWIRE.  See<br/>  PTL_BUS becoming PTL_BUSNEW below.<br/><br/>  If you have a complicated template, set `verilog-auto-inst-template-numbers'<br/>  to see which regexps are matching.  Don't leave that mode set after<br/>  debugging is completed though, it will result in lots of extra differences<br/>  and merge conflicts.<br/><br/>  Setting `verilog-auto-template-warn-unused' will report errors<br/>  if any template lines are unused.<br/><br/>  For example:<br/><br/>	/* InstModule AUTO_TEMPLATE (<br/>		.ptl_bus	(ptl_busnew[]),<br/>		);<br/>	*/<br/>	InstModule ms2m (/*AUTOINST*/);<br/><br/>  Typing M-x verilog-auto will make this into:<br/><br/>	InstModule ms2m (/*AUTOINST*/<br/>	    // Outputs<br/>	    .NotInTemplate	(NotInTemplate),<br/>	    .ptl_bus		(ptl_busnew[3:0]),  // Templated<br/>	    ....<br/><br/><br/>Multiple Module Templates:<br/><br/>  The same template lines can be applied to multiple modules with<br/>  the syntax as follows:<br/><br/>	/* InstModuleA AUTO_TEMPLATE<br/>	   InstModuleB AUTO_TEMPLATE<br/>	   InstModuleC AUTO_TEMPLATE<br/>	   InstModuleD AUTO_TEMPLATE (<br/>		.ptl_bus	(ptl_busnew[]),<br/>		);<br/>	*/<br/><br/>  Note there is only one AUTO_TEMPLATE opening parenthesis.<br/><br/>@ Templates:<br/><br/>  It is common to instantiate a cell multiple times, so templates make it<br/>  trivial to substitute part of the cell name into the connection name.<br/><br/>	/* InstName AUTO_TEMPLATE <optional "REGEXP"> (<br/>		.sig1	(sigx[@]),<br/>		.sig2	(sigy[@"(% (+ 1 @) 4)"]),<br/>		);<br/>	*/<br/><br/>  If no regular expression is provided immediately after the AUTO_TEMPLATE<br/>  keyword, then the @ character in any connection names will be replaced<br/>  with the instantiation number; the first digits found in the cell's<br/>  instantiation name.<br/><br/>  If a regular expression is provided, the @ character will be replaced<br/>  with the first () grouping that matches against the cell name.  Using a<br/>  regexp of "\([0-9]+\)" provides identical values for @ as when no<br/>  regexp is provided.  If you use multiple layers of parenthesis,<br/>  "test\([^0-9]+\)_\([0-9]+\)" would replace @ with non-number<br/>  characters after test and before _, whereas<br/>  "\(test\([a-z]+\)_\([0-9]+\)\)" would replace @ with the entire<br/>  match.<br/><br/>  For example:<br/><br/>	/* InstModule AUTO_TEMPLATE (<br/>		.ptl_mapvalidx		(ptl_mapvalid[@]),<br/>		.ptl_mapvalidp1x	(ptl_mapvalid[@"(% (+ 1 @) 4)"]),<br/>		);<br/>	*/<br/>	InstModule ms2m (/*AUTOINST*/);<br/><br/>  Typing M-x verilog-auto will make this into:<br/><br/>	InstModule ms2m (/*AUTOINST*/<br/>	    // Outputs<br/>	    .ptl_mapvalidx		(ptl_mapvalid[2]),<br/>	    .ptl_mapvalidp1x		(ptl_mapvalid[3]));<br/><br/>  Note the @ character was replaced with the 2 from "ms2m".<br/><br/>  Alternatively, using a regular expression for @:<br/><br/>	/* InstModule AUTO_TEMPLATE "_\([a-z]+\)" (<br/>		.ptl_mapvalidx		(@_ptl_mapvalid),<br/>		.ptl_mapvalidp1x	(ptl_mapvalid_@),<br/>		);<br/>	*/<br/>	InstModule ms2_FOO (/*AUTOINST*/);<br/>	InstModule ms2_BAR (/*AUTOINST*/);<br/><br/>  Typing M-x verilog-auto will make this into:<br/><br/>	InstModule ms2_FOO (/*AUTOINST*/<br/>	    // Outputs<br/>	    .ptl_mapvalidx		(FOO_ptl_mapvalid),<br/>	    .ptl_mapvalidp1x		(ptl_mapvalid_FOO));<br/>	InstModule ms2_BAR (/*AUTOINST*/<br/>	    // Outputs<br/>	    .ptl_mapvalidx		(BAR_ptl_mapvalid),<br/>	    .ptl_mapvalidp1x		(ptl_mapvalid_BAR));<br/><br/><br/>Regexp Templates:<br/><br/>  A template entry of the form<br/><br/>	    .pci_req\([0-9]+\)_l	(pci_req_jtag_[\1]),<br/><br/>  will apply an Emacs style regular expression search for any port beginning<br/>  in pci_req followed by numbers and ending in _l and connecting that to<br/>  the pci_req_jtag_[] net, with the bus subscript coming from what matches<br/>  inside the first set of \( \).  Thus pci_req2_l becomes pci_req_jtag_[2].<br/><br/>  Since \([0-9]+\) is so common and ugly to read, a @ in the port name<br/>  does the same thing.  (Note a @ in the connection/replacement text is<br/>  completely different -- still use \1 there!)  Thus this is the same as<br/>  the above template:<br/><br/>	    .pci_req@_l		(pci_req_jtag_[\1]),<br/><br/>  Here's another example to remove the _l, useful when naming conventions<br/>  specify _ alone to mean active low.  Note the use of [] to keep the bus<br/>  subscript:<br/><br/>	    .\(.*\)_l		(\1_[]),<br/><br/>Lisp Templates:<br/><br/>  First any regular expression template is expanded.<br/><br/>  If the syntax @"( ... )" is found in a connection, the expression in<br/>  quotes will be evaluated as a Lisp expression, with @ replaced by the<br/>  instantiation number.  The MAPVALIDP1X example above would put @+1 modulo<br/>  4 into the brackets.  Quote all double-quotes inside the expression with<br/>  a leading backslash (\"...\"); or if the Lisp template is also a<br/>  regexp template backslash the backslash quote (\\"...\\").<br/><br/>  There are special variables defined that are useful in these<br/>  Lisp functions:<br/><br/>	vl-name        Name portion of the input/output port.<br/>	vl-bits        Bus bits portion of the input/output port ('[2:0]').<br/>	vl-mbits       Multidimensional array bits for port ('[2:0][3:0]').<br/>	vl-width       Width of the input/output port ('3' for [2:0]).<br/>                       May be a (...) expression if bits isn't a constant.<br/>	vl-dir         Direction of the pin input/output/inout/interface.<br/>	vl-modport     The modport, if an interface with a modport.<br/>	vl-cell-type   Module name/type of the cell ('InstModule').<br/>	vl-cell-name   Instance name of the cell ('instName').<br/><br/>  Normal Lisp variables may be used in expressions.  See<br/>  `verilog-read-defines' which can set vh-{definename} variables for use<br/>  here.  Also, any comments of the form:<br/><br/>	/*AUTO_LISP(setq foo 1)*/<br/><br/>  will evaluate any Lisp expression inside the parenthesis between the<br/>  beginning of the buffer and the point of the AUTOINST.  This allows<br/>  functions to be defined or variables to be changed between instantiations.<br/>  (See also `verilog-auto-insert-lisp' if you want the output from your<br/>  lisp function to be inserted.)<br/><br/>  Note that when using lisp expressions errors may occur when @ is not a<br/>  number; you may need to use the standard Emacs Lisp functions<br/>  `number-to-string' and `string-to-number'.<br/><br/>  After the evaluation is completed, @ substitution and [] substitution<br/>  occur.<br/><br/>For more information see the M-x verilog-faq and forums at URL<br/>`http://www.veripool.org'.
+<strong>verilog-auto-inst</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-inst)<br/>
+<br/>
+Expand AUTOINST statements, as part of M-x verilog-auto.<br/>
+Replace the pin connections to an instantiation or interface<br/>
+declaration with ones automatically derived from the module or<br/>
+interface header of the instantiated item.<br/>
+<br/>
+If `verilog-auto-star-expand' is set, also expand SystemVerilog .* ports,<br/>
+and delete them before saving unless `verilog-auto-star-save' is set.<br/>
+See `verilog-auto-star' for more information.<br/>
+<br/>
+The pins are printed in declaration order or alphabetically,<br/>
+based on the `verilog-auto-inst-sort' variable.<br/>
+<br/>
+Limitations:<br/>
+  Module names must be resolvable to filenames by adding a<br/>
+  `verilog-library-extensions', and being found in the same directory, or<br/>
+  by changing the variable `verilog-library-flags' or<br/>
+  `verilog-library-directories'.  Macros `modname are translated through the<br/>
+  vh-{name} Emacs variable, if that is not found, it just ignores the `.<br/>
+<br/>
+  In templates you must have one signal per line, ending in a ), or ));,<br/>
+  and have proper () nesting, including a final ); to end the template.<br/>
+<br/>
+  Typedefs must match `verilog-typedef-regexp', which is disabled by default.<br/>
+<br/>
+  SystemVerilog multidimensional input/output has only experimental support.<br/>
+<br/>
+  SystemVerilog .name syntax is used if `verilog-auto-inst-dot-name' is set.<br/>
+<br/>
+  Parameters referenced by the instantiation will remain symbolic, unless<br/>
+  `verilog-auto-inst-param-value' is set.<br/>
+<br/>
+  Gate primitives (and/or) may have AUTOINST for the purpose of<br/>
+  AUTOWIRE declarations, etc.  Gates are the only case when<br/>
+  position based connections are passed.<br/>
+<br/>
+For example, first take the submodule InstModule.v:<br/>
+<br/>
+	module InstModule (o,i);<br/>
+	   output [31:0] o;<br/>
+	   input i;<br/>
+	   wire [31:0] o = {32{i}};<br/>
+	endmodule<br/>
+<br/>
+This is then used in an upper level module:<br/>
+<br/>
+	module ExampInst (o,i);<br/>
+	   output o;<br/>
+	   input i;<br/>
+	   InstModule instName<br/>
+	     (/*AUTOINST*/);<br/>
+	endmodule<br/>
+<br/>
+Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	module ExampInst (o,i);<br/>
+	   output o;<br/>
+	   input i;<br/>
+	   InstModule instName<br/>
+	     (/*AUTOINST*/<br/>
+	      // Outputs<br/>
+	      .ov	(ov[31:0]),<br/>
+	      // Inputs<br/>
+	      .i	(i));<br/>
+	endmodule<br/>
+<br/>
+Where the list of inputs and outputs came from the inst module.<br/>
+<br/>
+Exceptions:<br/>
+<br/>
+  Unless you are instantiating a module multiple times, or the module is<br/>
+  something trivial like an adder, DO NOT CHANGE SIGNAL NAMES ACROSS HIERARCHY.<br/>
+  It just makes for unmaintainable code.  To sanitize signal names, try<br/>
+  vrename from URL `http://www.veripool.org'.<br/>
+<br/>
+  When you need to violate this suggestion there are two ways to list<br/>
+  exceptions, placing them before the AUTOINST, or using templates.<br/>
+<br/>
+  Any ports defined before the /*AUTOINST*/ are not included in the list of<br/>
+  automatics.  This is similar to making a template as described below, but<br/>
+  is restricted to simple connections just like you normally make.  Also note<br/>
+  that any signals before the AUTOINST will only be picked up by AUTOWIRE if<br/>
+  you have the appropriate // Input or // Output comment, and exactly the<br/>
+  same line formatting as AUTOINST itself uses.<br/>
+<br/>
+	InstModule instName<br/>
+          (// Inputs<br/>
+	   .i		(my_i_dont_mess_with_it),<br/>
+	   /*AUTOINST*/<br/>
+	   // Outputs<br/>
+	   .ov		(ov[31:0]));<br/>
+<br/>
+<br/>
+Templates:<br/>
+<br/>
+  For multiple instantiations based upon a single template, create a<br/>
+  commented out template:<br/>
+<br/>
+	/* InstModule AUTO_TEMPLATE (<br/>
+		.sig3	(sigz[]),<br/>
+		);<br/>
+	*/<br/>
+<br/>
+  Templates go ABOVE the instantiation(s).  When an instantiation is<br/>
+  expanded `verilog-mode' simply searches up for the closest template.<br/>
+  Thus you can have multiple templates for the same module, just alternate<br/>
+  between the template for an instantiation and the instantiation itself.<br/>
+  (For backward compatibility if no template is found above, it<br/>
+  will also look below, but do not use this behavior in new designs.)<br/>
+<br/>
+  The module name must be the same as the name of the module in the<br/>
+  instantiation name, and the code "AUTO_TEMPLATE" must be in these exact<br/>
+  words and capitalized.  Only signals that must be different for each<br/>
+  instantiation need to be listed.<br/>
+<br/>
+  Inside a template, a [] in a connection name (with nothing else inside<br/>
+  the brackets) will be replaced by the same bus subscript as it is being<br/>
+  connected to, or the [] will be removed if it is a single bit signal.<br/>
+  Generally it is a good idea to do this for all connections in a template,<br/>
+  as then they will work for any width signal, and with AUTOWIRE.  See<br/>
+  PTL_BUS becoming PTL_BUSNEW below.<br/>
+<br/>
+  If you have a complicated template, set `verilog-auto-inst-template-numbers'<br/>
+  to see which regexps are matching.  Don't leave that mode set after<br/>
+  debugging is completed though, it will result in lots of extra differences<br/>
+  and merge conflicts.<br/>
+<br/>
+  Setting `verilog-auto-template-warn-unused' will report errors<br/>
+  if any template lines are unused.<br/>
+<br/>
+  For example:<br/>
+<br/>
+	/* InstModule AUTO_TEMPLATE (<br/>
+		.ptl_bus	(ptl_busnew[]),<br/>
+		);<br/>
+	*/<br/>
+	InstModule ms2m (/*AUTOINST*/);<br/>
+<br/>
+  Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	InstModule ms2m (/*AUTOINST*/<br/>
+	    // Outputs<br/>
+	    .NotInTemplate	(NotInTemplate),<br/>
+	    .ptl_bus		(ptl_busnew[3:0]),  // Templated<br/>
+	    ....<br/>
+<br/>
+<br/>
+Multiple Module Templates:<br/>
+<br/>
+  The same template lines can be applied to multiple modules with<br/>
+  the syntax as follows:<br/>
+<br/>
+	/* InstModuleA AUTO_TEMPLATE<br/>
+	   InstModuleB AUTO_TEMPLATE<br/>
+	   InstModuleC AUTO_TEMPLATE<br/>
+	   InstModuleD AUTO_TEMPLATE (<br/>
+		.ptl_bus	(ptl_busnew[]),<br/>
+		);<br/>
+	*/<br/>
+<br/>
+  Note there is only one AUTO_TEMPLATE opening parenthesis.<br/>
+<br/>
+@ Templates:<br/>
+<br/>
+  It is common to instantiate a cell multiple times, so templates make it<br/>
+  trivial to substitute part of the cell name into the connection name.<br/>
+<br/>
+	/* InstName AUTO_TEMPLATE <optional "REGEXP"> (<br/>
+		.sig1	(sigx[@]),<br/>
+		.sig2	(sigy[@"(% (+ 1 @) 4)"]),<br/>
+		);<br/>
+	*/<br/>
+<br/>
+  If no regular expression is provided immediately after the AUTO_TEMPLATE<br/>
+  keyword, then the @ character in any connection names will be replaced<br/>
+  with the instantiation number; the first digits found in the cell's<br/>
+  instantiation name.<br/>
+<br/>
+  If a regular expression is provided, the @ character will be replaced<br/>
+  with the first () grouping that matches against the cell name.  Using a<br/>
+  regexp of "\([0-9]+\)" provides identical values for @ as when no<br/>
+  regexp is provided.  If you use multiple layers of parenthesis,<br/>
+  "test\([^0-9]+\)_\([0-9]+\)" would replace @ with non-number<br/>
+  characters after test and before _, whereas<br/>
+  "\(test\([a-z]+\)_\([0-9]+\)\)" would replace @ with the entire<br/>
+  match.<br/>
+<br/>
+  For example:<br/>
+<br/>
+	/* InstModule AUTO_TEMPLATE (<br/>
+		.ptl_mapvalidx		(ptl_mapvalid[@]),<br/>
+		.ptl_mapvalidp1x	(ptl_mapvalid[@"(% (+ 1 @) 4)"]),<br/>
+		);<br/>
+	*/<br/>
+	InstModule ms2m (/*AUTOINST*/);<br/>
+<br/>
+  Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	InstModule ms2m (/*AUTOINST*/<br/>
+	    // Outputs<br/>
+	    .ptl_mapvalidx		(ptl_mapvalid[2]),<br/>
+	    .ptl_mapvalidp1x		(ptl_mapvalid[3]));<br/>
+<br/>
+  Note the @ character was replaced with the 2 from "ms2m".<br/>
+<br/>
+  Alternatively, using a regular expression for @:<br/>
+<br/>
+	/* InstModule AUTO_TEMPLATE "_\([a-z]+\)" (<br/>
+		.ptl_mapvalidx		(@_ptl_mapvalid),<br/>
+		.ptl_mapvalidp1x	(ptl_mapvalid_@),<br/>
+		);<br/>
+	*/<br/>
+	InstModule ms2_FOO (/*AUTOINST*/);<br/>
+	InstModule ms2_BAR (/*AUTOINST*/);<br/>
+<br/>
+  Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	InstModule ms2_FOO (/*AUTOINST*/<br/>
+	    // Outputs<br/>
+	    .ptl_mapvalidx		(FOO_ptl_mapvalid),<br/>
+	    .ptl_mapvalidp1x		(ptl_mapvalid_FOO));<br/>
+	InstModule ms2_BAR (/*AUTOINST*/<br/>
+	    // Outputs<br/>
+	    .ptl_mapvalidx		(BAR_ptl_mapvalid),<br/>
+	    .ptl_mapvalidp1x		(ptl_mapvalid_BAR));<br/>
+<br/>
+<br/>
+Regexp Templates:<br/>
+<br/>
+  A template entry of the form<br/>
+<br/>
+	    .pci_req\([0-9]+\)_l	(pci_req_jtag_[\1]),<br/>
+<br/>
+  will apply an Emacs style regular expression search for any port beginning<br/>
+  in pci_req followed by numbers and ending in _l and connecting that to<br/>
+  the pci_req_jtag_[] net, with the bus subscript coming from what matches<br/>
+  inside the first set of \( \).  Thus pci_req2_l becomes pci_req_jtag_[2].<br/>
+<br/>
+  Since \([0-9]+\) is so common and ugly to read, a @ in the port name<br/>
+  does the same thing.  (Note a @ in the connection/replacement text is<br/>
+  completely different -- still use \1 there!)  Thus this is the same as<br/>
+  the above template:<br/>
+<br/>
+	    .pci_req@_l		(pci_req_jtag_[\1]),<br/>
+<br/>
+  Here's another example to remove the _l, useful when naming conventions<br/>
+  specify _ alone to mean active low.  Note the use of [] to keep the bus<br/>
+  subscript:<br/>
+<br/>
+	    .\(.*\)_l		(\1_[]),<br/>
+<br/>
+Lisp Templates:<br/>
+<br/>
+  First any regular expression template is expanded.<br/>
+<br/>
+  If the syntax @"( ... )" is found in a connection, the expression in<br/>
+  quotes will be evaluated as a Lisp expression, with @ replaced by the<br/>
+  instantiation number.  The MAPVALIDP1X example above would put @+1 modulo<br/>
+  4 into the brackets.  Quote all double-quotes inside the expression with<br/>
+  a leading backslash (\"...\"); or if the Lisp template is also a<br/>
+  regexp template backslash the backslash quote (\\"...\\").<br/>
+<br/>
+  There are special variables defined that are useful in these<br/>
+  Lisp functions:<br/>
+<br/>
+	vl-name        Name portion of the input/output port.<br/>
+	vl-bits        Bus bits portion of the input/output port ('[2:0]').<br/>
+	vl-mbits       Multidimensional array bits for port ('[2:0][3:0]').<br/>
+	vl-width       Width of the input/output port ('3' for [2:0]).<br/>
+                       May be a (...) expression if bits isn't a constant.<br/>
+	vl-dir         Direction of the pin input/output/inout/interface.<br/>
+	vl-modport     The modport, if an interface with a modport.<br/>
+	vl-cell-type   Module name/type of the cell ('InstModule').<br/>
+	vl-cell-name   Instance name of the cell ('instName').<br/>
+<br/>
+  Normal Lisp variables may be used in expressions.  See<br/>
+  `verilog-read-defines' which can set vh-{definename} variables for use<br/>
+  here.  Also, any comments of the form:<br/>
+<br/>
+	/*AUTO_LISP(setq foo 1)*/<br/>
+<br/>
+  will evaluate any Lisp expression inside the parenthesis between the<br/>
+  beginning of the buffer and the point of the AUTOINST.  This allows<br/>
+  functions to be defined or variables to be changed between instantiations.<br/>
+  (See also `verilog-auto-insert-lisp' if you want the output from your<br/>
+  lisp function to be inserted.)<br/>
+<br/>
+  Note that when using lisp expressions errors may occur when @ is not a<br/>
+  number; you may need to use the standard Emacs Lisp functions<br/>
+  `number-to-string' and `string-to-number'.<br/>
+<br/>
+  After the evaluation is completed, @ substitution and [] substitution<br/>
+  occur.<br/>
+<br/>
+For more information see the M-x verilog-faq and forums at URL<br/>
+`http://www.veripool.org'.

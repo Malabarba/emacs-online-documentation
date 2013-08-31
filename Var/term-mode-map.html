@@ -1,1 +1,83 @@
-term-mode-map is a variable defined in `term.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap for Term mode.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (Signals menu-item "Signals"<br/>		    (keymap "Signals"<br/>			    (BREAK menu-item "BREAK" term-interrupt-subjob :help "Interrupt the current subjob")<br/>			    (STOP menu-item "STOP" term-stop-subjob :help "Stop the current subjob")<br/>			    (CONT menu-item "CONT" term-continue-subjob :help "Send CONT signal to process buffer's process group")<br/>			    (QUIT menu-item "QUIT" term-quit-subjob :help "Send quit signal to the current subjob")<br/>			    (KILL menu-item "KILL" term-kill-subjob :help "Send kill signal to the current subjob")<br/>			    (EOF menu-item "EOF" term-send-eof :help "Send an EOF to the current buffer's process")))<br/>	   (Terminal menu-item "Terminal"<br/>		     (keymap "Terminal"<br/>			     (Line\ mode menu-item "Line mode" term-line-mode :enable<br/>					 (term-in-char-mode)<br/>					 :help "Switch to line (cooked) sub-mode of term mode")<br/>			     (Character\ mode menu-item "Character mode" term-char-mode :enable<br/>					      (term-in-line-mode)<br/>					      :help "Switch to char (raw) sub-mode of term mode")<br/>			     (Paging menu-item "Paging" term-pager-toggle :button<br/>				     (:toggle . term-pager-count)<br/>				     :help "Toggle paging feature")))<br/>	   (In/Out menu-item "In/Out"<br/>		   (keymap "In/Out"<br/>			   (Expand\ History\ Before\ Point menu-item "Expand History Before Point" term-replace-by-expanded-history :enable term-input-autoexpand)<br/>			   (List\ Input\ History menu-item "List Input History" term-dynamic-list-input-ring)<br/>			   (Previous\ Input menu-item "Previous Input" term-previous-input)<br/>			   (Next\ Input menu-item "Next Input" term-next-input)<br/>			   (Previous\ Matching\ Current\ Input menu-item "Previous Matching Current Input" term-previous-matching-input-from-input)<br/>			   (Next\ Matching\ Current\ Input menu-item "Next Matching Current Input" term-next-matching-input-from-input)<br/>			   (Previous\ Matching\ Input\.\.\. menu-item "Previous Matching Input..." term-previous-matching-input)<br/>			   (Next\ Matching\ Input\.\.\. menu-item "Next Matching Input..." term-next-matching-input)<br/>			   (Backward\ Matching\ Input\.\.\. menu-item "Backward Matching Input..." term-backward-matching-input)<br/>			   (Forward\ Matching\ Input\.\.\. menu-item "Forward Matching Input..." term-forward-matching-input)<br/>			   (Copy\ Old\ Input menu-item "Copy Old Input" term-copy-old-input)<br/>			   (Kill\ Current\ Input menu-item "Kill Current Input" term-kill-input)<br/>			   (Show\ Current\ Output\ Group menu-item "Show Current Output Group" term-show-output)<br/>			   (Show\ Maximum\ Output menu-item "Show Maximum Output" term-show-maximum-output)<br/>			   (Backward\ Output\ Group menu-item "Backward Output Group" term-previous-prompt)<br/>			   (Forward\ Output\ Group menu-item "Forward Output Group" term-next-prompt)<br/>			   (Kill\ Current\ Output\ Group menu-item "Kill Current Output Group" term-kill-output)))<br/>	   (Complete menu-item "Complete"<br/>		     (keymap "Complete"<br/>			     (Complete\ Before\ Point menu-item "Complete Before Point" term-dynamic-complete)<br/>			     (Complete\ File\ Name menu-item "Complete File Name" term-dynamic-complete-filename)<br/>			     (File\ Completion\ Listing menu-item "File Completion Listing" term-dynamic-list-filename-completions)<br/>			     (Expand\ File\ Name menu-item "Expand File Name" term-replace-by-expanded-filename))))<br/> (3 keymap<br/>    (17 . term-pager-toggle)<br/>    (10 . term-line-mode)<br/>    (11 . term-char-mode)<br/>    (4 . term-send-eof)<br/>    (16 . term-previous-prompt)<br/>    (14 . term-next-prompt)<br/>    (12 . term-dynamic-list-input-ring)<br/>    (5 . term-show-maximum-output)<br/>    (18 . term-show-output)<br/>    (15 . term-kill-output)<br/>    (13 . term-copy-old-input)<br/>    (28 . term-quit-subjob)<br/>    (26 . term-stop-subjob)<br/>    (3 . term-interrupt-subjob)<br/>    (23 . backward-kill-word)<br/>    (21 . term-kill-input)<br/>    (1 . term-bol))<br/> (4 . term-delchar-or-maybe-eof)<br/> (13 . term-send-input)<br/> (27 keymap<br/>     (12 . term-show-output)<br/>     (4194419 . term-next-matching-input-from-input)<br/>     (4194418 . term-previous-matching-input-from-input)<br/>     (115 . term-next-matching-input)<br/>     (114 . term-previous-matching-input)<br/>     (110 . term-next-input)<br/>     (112 . term-previous-input)))<br/><br/>
+<strong>term-mode-map</strong> is a variable defined in `<code>term.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap for Term mode.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (Signals menu-item "Signals"<br/>
+		    (keymap "Signals"<br/>
+			    (BREAK menu-item "BREAK" term-interrupt-subjob :help "Interrupt the current subjob")<br/>
+			    (STOP menu-item "STOP" term-stop-subjob :help "Stop the current subjob")<br/>
+			    (CONT menu-item "CONT" term-continue-subjob :help "Send CONT signal to process buffer's process group")<br/>
+			    (QUIT menu-item "QUIT" term-quit-subjob :help "Send quit signal to the current subjob")<br/>
+			    (KILL menu-item "KILL" term-kill-subjob :help "Send kill signal to the current subjob")<br/>
+			    (EOF menu-item "EOF" term-send-eof :help "Send an EOF to the current buffer's process")))<br/>
+	   (Terminal menu-item "Terminal"<br/>
+		     (keymap "Terminal"<br/>
+			     (Line\ mode menu-item "Line mode" term-line-mode :enable<br/>
+					 (term-in-char-mode)<br/>
+					 :help "Switch to line (cooked) sub-mode of term mode")<br/>
+			     (Character\ mode menu-item "Character mode" term-char-mode :enable<br/>
+					      (term-in-line-mode)<br/>
+					      :help "Switch to char (raw) sub-mode of term mode")<br/>
+			     (Paging menu-item "Paging" term-pager-toggle :button<br/>
+				     (:toggle . term-pager-count)<br/>
+				     :help "Toggle paging feature")))<br/>
+	   (In/Out menu-item "In/Out"<br/>
+		   (keymap "In/Out"<br/>
+			   (Expand\ History\ Before\ Point menu-item "Expand History Before Point" term-replace-by-expanded-history :enable term-input-autoexpand)<br/>
+			   (List\ Input\ History menu-item "List Input History" term-dynamic-list-input-ring)<br/>
+			   (Previous\ Input menu-item "Previous Input" term-previous-input)<br/>
+			   (Next\ Input menu-item "Next Input" term-next-input)<br/>
+			   (Previous\ Matching\ Current\ Input menu-item "Previous Matching Current Input" term-previous-matching-input-from-input)<br/>
+			   (Next\ Matching\ Current\ Input menu-item "Next Matching Current Input" term-next-matching-input-from-input)<br/>
+			   (Previous\ Matching\ Input\.\.\. menu-item "Previous Matching Input..." term-previous-matching-input)<br/>
+			   (Next\ Matching\ Input\.\.\. menu-item "Next Matching Input..." term-next-matching-input)<br/>
+			   (Backward\ Matching\ Input\.\.\. menu-item "Backward Matching Input..." term-backward-matching-input)<br/>
+			   (Forward\ Matching\ Input\.\.\. menu-item "Forward Matching Input..." term-forward-matching-input)<br/>
+			   (Copy\ Old\ Input menu-item "Copy Old Input" term-copy-old-input)<br/>
+			   (Kill\ Current\ Input menu-item "Kill Current Input" term-kill-input)<br/>
+			   (Show\ Current\ Output\ Group menu-item "Show Current Output Group" term-show-output)<br/>
+			   (Show\ Maximum\ Output menu-item "Show Maximum Output" term-show-maximum-output)<br/>
+			   (Backward\ Output\ Group menu-item "Backward Output Group" term-previous-prompt)<br/>
+			   (Forward\ Output\ Group menu-item "Forward Output Group" term-next-prompt)<br/>
+			   (Kill\ Current\ Output\ Group menu-item "Kill Current Output Group" term-kill-output)))<br/>
+	   (Complete menu-item "Complete"<br/>
+		     (keymap "Complete"<br/>
+			     (Complete\ Before\ Point menu-item "Complete Before Point" term-dynamic-complete)<br/>
+			     (Complete\ File\ Name menu-item "Complete File Name" term-dynamic-complete-filename)<br/>
+			     (File\ Completion\ Listing menu-item "File Completion Listing" term-dynamic-list-filename-completions)<br/>
+			     (Expand\ File\ Name menu-item "Expand File Name" term-replace-by-expanded-filename))))<br/>
+ (3 keymap<br/>
+    (17 . term-pager-toggle)<br/>
+    (10 . term-line-mode)<br/>
+    (11 . term-char-mode)<br/>
+    (4 . term-send-eof)<br/>
+    (16 . term-previous-prompt)<br/>
+    (14 . term-next-prompt)<br/>
+    (12 . term-dynamic-list-input-ring)<br/>
+    (5 . term-show-maximum-output)<br/>
+    (18 . term-show-output)<br/>
+    (15 . term-kill-output)<br/>
+    (13 . term-copy-old-input)<br/>
+    (28 . term-quit-subjob)<br/>
+    (26 . term-stop-subjob)<br/>
+    (3 . term-interrupt-subjob)<br/>
+    (23 . backward-kill-word)<br/>
+    (21 . term-kill-input)<br/>
+    (1 . term-bol))<br/>
+ (4 . term-delchar-or-maybe-eof)<br/>
+ (13 . term-send-input)<br/>
+ (27 keymap<br/>
+     (12 . term-show-output)<br/>
+     (4194419 . term-next-matching-input-from-input)<br/>
+     (4194418 . term-previous-matching-input-from-input)<br/>
+     (115 . term-next-matching-input)<br/>
+     (114 . term-previous-matching-input)<br/>
+     (110 . term-next-input)<br/>
+     (112 . term-previous-input)))<br/>
+<br/>

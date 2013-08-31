@@ -1,1 +1,32 @@
-make-progress-reporter is a compiled Lisp function in `subr.el'.<br/><br/>(make-progress-reporter MESSAGE &optional MIN-VALUE MAX-VALUE CURRENT-VALUE MIN-CHANGE MIN-TIME)<br/><br/>Return progress reporter object for use with `progress-reporter-update'.<br/><br/>MESSAGE is shown in the echo area, with a status indicator<br/>appended to the end.  When you call `progress-reporter-done', the<br/>word "done" is printed after the MESSAGE.  You can change the<br/>MESSAGE of an existing progress reporter by calling<br/>`progress-reporter-force-update'.<br/><br/>MIN-VALUE and MAX-VALUE, if non-nil, are starting (0% complete)<br/>and final (100% complete) states of operation; the latter should<br/>be larger.  In this case, the status message shows the percentage<br/>progress.<br/><br/>If MIN-VALUE and/or MAX-VALUE is omitted or nil, the status<br/>message shows a "spinning", non-numeric indicator.<br/><br/>Optional CURRENT-VALUE is the initial progress; the default is<br/>MIN-VALUE.<br/>Optional MIN-CHANGE is the minimal change in percents to report;<br/>the default is 1%.<br/>CURRENT-VALUE and MIN-CHANGE do not have any effect if MIN-VALUE<br/>and/or MAX-VALUE are nil.<br/><br/>Optional MIN-TIME specifies the minimum interval time between<br/>echo area updates (default is 0.2 seconds.)  If the function<br/>`float-time' is not present, time is not tracked at all.  If the<br/>OS is not capable of measuring fractions of seconds, this<br/>parameter is effectively rounded up.
+<strong>make-progress-reporter</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
+<br/>
+(make-progress-reporter MESSAGE &optional MIN-VALUE MAX-VALUE CURRENT-VALUE MIN-CHANGE MIN-TIME)<br/>
+<br/>
+Return progress reporter object for use with `progress-reporter-update'.<br/>
+<br/>
+MESSAGE is shown in the echo area, with a status indicator<br/>
+appended to the end.  When you call `progress-reporter-done', the<br/>
+word "done" is printed after the MESSAGE.  You can change the<br/>
+MESSAGE of an existing progress reporter by calling<br/>
+`progress-reporter-force-update'.<br/>
+<br/>
+MIN-VALUE and MAX-VALUE, if non-nil, are starting (0% complete)<br/>
+and final (100% complete) states of operation; the latter should<br/>
+be larger.  In this case, the status message shows the percentage<br/>
+progress.<br/>
+<br/>
+If MIN-VALUE and/or MAX-VALUE is omitted or nil, the status<br/>
+message shows a "spinning", non-numeric indicator.<br/>
+<br/>
+Optional CURRENT-VALUE is the initial progress; the default is<br/>
+MIN-VALUE.<br/>
+Optional MIN-CHANGE is the minimal change in percents to report;<br/>
+the default is 1%.<br/>
+CURRENT-VALUE and MIN-CHANGE do not have any effect if MIN-VALUE<br/>
+and/or MAX-VALUE are nil.<br/>
+<br/>
+Optional MIN-TIME specifies the minimum interval time between<br/>
+echo area updates (default is 0.2 seconds.)  If the function<br/>
+`float-time' is not present, time is not tracked at all.  If the<br/>
+OS is not capable of measuring fractions of seconds, this<br/>
+parameter is effectively rounded up.

@@ -1,1 +1,68 @@
-reftex-special-environment-functions is a variable defined in `reftex-vars.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of functions to be called when trying to figure out current environment.<br/>These are special functions to detect "environments" which do not<br/>start with \begin and end with \end.  Some LaTeX packages seem to<br/>use such non-standard ways to set up environment-like constructs.  The<br/>purpose of each function in this list is to detect if point is<br/>currently inside such a special "environment".  If the environment<br/>carries a label, you must also set up an entry for it in<br/>`reftex-label-alist'.<br/><br/>The function should check if point is currently in the special<br/>environment it was written to detect.  If so, the function must return<br/>a cons cell (NAME . POSITION).  NAME is the name of the environment<br/>detected and POSITION is the buffer position where the environment<br/>starts.  The function must return nil on failure to detect the<br/>environment.<br/><br/>The function must take an argument BOUND.  If non-nil, BOUND is a<br/>boundary for backwards searches which should be observed.<br/><br/>Here is an example.  The LaTeX package linguex.sty defines list macros<br/>`\ex.', `\a.', etc for lists which are terminated by `\z.' or an empty<br/>line.<br/><br/>    \ex.  \label{ex:12} Some text in an exotic language ...<br/>          \a. \label{ex:13} more stuff<br/>          \b. \label{ex:14} still more stuff<br/><br/>    ... more text after the empty line terminating all lists<br/><br/>And here is the setup for RefTeX:<br/><br/>1. Define a dummy environment for this in `reftex-label-alist'.  Dummy means,<br/>   make up an environment name even though it is not used with \begin and<br/>   \end.  Here we use "linguex" as this name.<br/><br/>   (setq reftex-label-alist<br/>         '(("linguex" ?x "ex:" "~\\ref{%s}" nil ("Example" "Ex."))))<br/><br/>2. Write a function to detect the list macros and the determinators as well.<br/><br/>   (defun my-detect-linguex-list (bound)<br/>     (let ((pos (point)) p1)<br/>       (save-excursion<br/>         ;; Search for any of the linguex item macros at the beginning of a line<br/>         (if (re-search-backward<br/>              "^[ \t]*\\(\\\\\\(ex\\|a\\|b\\|c\\|d\\|e\\|f\\)g?\\.\\)" bound t)<br/>             (progn<br/>               (setq p1 (match-beginning 1))<br/>               ;; Make sure no empty line or \z. is between us and the item macro<br/>               (if (re-search-forward "\n[ \t]*\n\\|\\\\z\\." pos t)<br/>                   ;; Return nil because list was already closed<br/>                   nil<br/>                 ;; OK, we got it<br/>                 (cons "linguex" p1)))<br/>           ;; Return nil for not found<br/>           nil))))<br/><br/>3. Tell RefTeX to use this function<br/><br/>   (setq reftex-special-environment-functions '(my-detect-linguex-list))<br/><br/>You can customize this variable.
+<strong>reftex-special-environment-functions</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of functions to be called when trying to figure out current environment.<br/>
+These are special functions to detect "environments" which do not<br/>
+start with \begin and end with \end.  Some LaTeX packages seem to<br/>
+use such non-standard ways to set up environment-like constructs.  The<br/>
+purpose of each function in this list is to detect if point is<br/>
+currently inside such a special "environment".  If the environment<br/>
+carries a label, you must also set up an entry for it in<br/>
+`reftex-label-alist'.<br/>
+<br/>
+The function should check if point is currently in the special<br/>
+environment it was written to detect.  If so, the function must return<br/>
+a cons cell (NAME . POSITION).  NAME is the name of the environment<br/>
+detected and POSITION is the buffer position where the environment<br/>
+starts.  The function must return nil on failure to detect the<br/>
+environment.<br/>
+<br/>
+The function must take an argument BOUND.  If non-nil, BOUND is a<br/>
+boundary for backwards searches which should be observed.<br/>
+<br/>
+Here is an example.  The LaTeX package linguex.sty defines list macros<br/>
+`\ex.', `\a.', etc for lists which are terminated by `\z.' or an empty<br/>
+line.<br/>
+<br/>
+    \ex.  \label{ex:12} Some text in an exotic language ...<br/>
+          \a. \label{ex:13} more stuff<br/>
+          \b. \label{ex:14} still more stuff<br/>
+<br/>
+    ... more text after the empty line terminating all lists<br/>
+<br/>
+And here is the setup for RefTeX:<br/>
+<br/>
+1. Define a dummy environment for this in `reftex-label-alist'.  Dummy means,<br/>
+   make up an environment name even though it is not used with \begin and<br/>
+   \end.  Here we use "linguex" as this name.<br/>
+<br/>
+   (setq reftex-label-alist<br/>
+         '(("linguex" ?x "ex:" "~\\ref{%s}" nil ("Example" "Ex."))))<br/>
+<br/>
+2. Write a function to detect the list macros and the determinators as well.<br/>
+<br/>
+   (defun my-detect-linguex-list (bound)<br/>
+     (let ((pos (point)) p1)<br/>
+       (save-excursion<br/>
+         ;; Search for any of the linguex item macros at the beginning of a line<br/>
+         (if (re-search-backward<br/>
+              "^[ \t]*\\(\\\\\\(ex\\|a\\|b\\|c\\|d\\|e\\|f\\)g?\\.\\)" bound t)<br/>
+             (progn<br/>
+               (setq p1 (match-beginning 1))<br/>
+               ;; Make sure no empty line or \z. is between us and the item macro<br/>
+               (if (re-search-forward "\n[ \t]*\n\\|\\\\z\\." pos t)<br/>
+                   ;; Return nil because list was already closed<br/>
+                   nil<br/>
+                 ;; OK, we got it<br/>
+                 (cons "linguex" p1)))<br/>
+           ;; Return nil for not found<br/>
+           nil))))<br/>
+<br/>
+3. Tell RefTeX to use this function<br/>
+<br/>
+   (setq reftex-special-environment-functions '(my-detect-linguex-list))<br/>
+<br/>
+You can customize this variable.

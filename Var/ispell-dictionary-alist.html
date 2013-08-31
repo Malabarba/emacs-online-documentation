@@ -1,1 +1,57 @@
-ispell-dictionary-alist is a variable defined in `ispell.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>An alist of dictionaries and their associated parameters.<br/><br/>Each element of this list is also a list:<br/><br/>(DICTIONARY-NAME CASECHARS NOT-CASECHARS OTHERCHARS MANY-OTHERCHARS-P<br/>        ISPELL-ARGS EXTENDED-CHARACTER-MODE CHARACTER-SET)<br/><br/>DICTIONARY-NAME is a possible string value of variable `ispell-dictionary',<br/>nil means the default dictionary.<br/><br/>CASECHARS is a regular expression of valid characters that comprise a word.<br/><br/>NOT-CASECHARS is the opposite regexp of CASECHARS.<br/><br/>OTHERCHARS is a regexp of characters in the NOT-CASECHARS set but which can be<br/>used to construct words in some special way.  If OTHERCHARS characters follow<br/>and precede characters from CASECHARS, they are parsed as part of a word,<br/>otherwise they become word-breaks.  As an example in English, assume the<br/>regular expression "[']" for OTHERCHARS.  Then "they're" and<br/>"Steven's" are parsed as single words including the "'" character, but<br/>"Stevens'" does not include the quote character as part of the word.<br/>If you want OTHERCHARS to be empty, use the empty string.<br/>Hint: regexp syntax requires the hyphen to be declared first here.<br/><br/>CASECHARS, NOT-CASECHARS, and OTHERCHARS must be unibyte strings<br/>containing bytes of CHARACTER-SET.  In addition, if they contain<br/>non-ASCII bytes, the regular expression must be a single<br/>`character set' construct that doesn't specify a character range<br/>for non-ASCII bytes.<br/><br/>MANY-OTHERCHARS-P is non-nil when multiple OTHERCHARS are allowed in a word.<br/>Otherwise only a single OTHERCHARS character is allowed to be part of any<br/>single word.<br/><br/>ISPELL-ARGS is a list of additional arguments passed to the ispell<br/>subprocess.<br/><br/>EXTENDED-CHARACTER-MODE should be used when dictionaries are used which<br/>have been configured in an Ispell affix file.  (For example, umlauts<br/>can be encoded as \"a, a\", "a, ...)  Defaults are ~tex and ~nroff<br/>in English.  This has the same effect as the command-line `-T' option.<br/>The buffer Major Mode controls Ispell's parsing in tex or nroff mode,<br/>but the dictionary can control the extended character mode.<br/>Both defaults can be overruled in a buffer-local fashion.  See<br/>`ispell-parsing-keyword' for details on this.<br/><br/>CHARACTER-SET used to encode text sent to the ispell subprocess<br/>when the language uses non-ASCII characters.<br/><br/>Note that with "ispell" as the speller, the CASECHARS and<br/>OTHERCHARS slots of the alist should contain the same character<br/>set as casechars and otherchars in the LANGUAGE.aff file (e.g.,<br/>english.aff).  aspell and hunspell don't have this limitation.
+<strong>ispell-dictionary-alist</strong> is a variable defined in `<code>ispell.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+An alist of dictionaries and their associated parameters.<br/>
+<br/>
+Each element of this list is also a list:<br/>
+<br/>
+(DICTIONARY-NAME CASECHARS NOT-CASECHARS OTHERCHARS MANY-OTHERCHARS-P<br/>
+        ISPELL-ARGS EXTENDED-CHARACTER-MODE CHARACTER-SET)<br/>
+<br/>
+DICTIONARY-NAME is a possible string value of variable `ispell-dictionary',<br/>
+nil means the default dictionary.<br/>
+<br/>
+CASECHARS is a regular expression of valid characters that comprise a word.<br/>
+<br/>
+NOT-CASECHARS is the opposite regexp of CASECHARS.<br/>
+<br/>
+OTHERCHARS is a regexp of characters in the NOT-CASECHARS set but which can be<br/>
+used to construct words in some special way.  If OTHERCHARS characters follow<br/>
+and precede characters from CASECHARS, they are parsed as part of a word,<br/>
+otherwise they become word-breaks.  As an example in English, assume the<br/>
+regular expression "[']" for OTHERCHARS.  Then "they're" and<br/>
+"Steven's" are parsed as single words including the "'" character, but<br/>
+"Stevens'" does not include the quote character as part of the word.<br/>
+If you want OTHERCHARS to be empty, use the empty string.<br/>
+Hint: regexp syntax requires the hyphen to be declared first here.<br/>
+<br/>
+CASECHARS, NOT-CASECHARS, and OTHERCHARS must be unibyte strings<br/>
+containing bytes of CHARACTER-SET.  In addition, if they contain<br/>
+non-ASCII bytes, the regular expression must be a single<br/>
+`character set' construct that doesn't specify a character range<br/>
+for non-ASCII bytes.<br/>
+<br/>
+MANY-OTHERCHARS-P is non-nil when multiple OTHERCHARS are allowed in a word.<br/>
+Otherwise only a single OTHERCHARS character is allowed to be part of any<br/>
+single word.<br/>
+<br/>
+ISPELL-ARGS is a list of additional arguments passed to the ispell<br/>
+subprocess.<br/>
+<br/>
+EXTENDED-CHARACTER-MODE should be used when dictionaries are used which<br/>
+have been configured in an Ispell affix file.  (For example, umlauts<br/>
+can be encoded as \"a, a\", "a, ...)  Defaults are ~tex and ~nroff<br/>
+in English.  This has the same effect as the command-line `-T' option.<br/>
+The buffer Major Mode controls Ispell's parsing in tex or nroff mode,<br/>
+but the dictionary can control the extended character mode.<br/>
+Both defaults can be overruled in a buffer-local fashion.  See<br/>
+`ispell-parsing-keyword' for details on this.<br/>
+<br/>
+CHARACTER-SET used to encode text sent to the ispell subprocess<br/>
+when the language uses non-ASCII characters.<br/>
+<br/>
+Note that with "ispell" as the speller, the CASECHARS and<br/>
+OTHERCHARS slots of the alist should contain the same character<br/>
+set as casechars and otherchars in the LANGUAGE.aff file (e.g.,<br/>
+english.aff).  aspell and hunspell don't have this limitation.

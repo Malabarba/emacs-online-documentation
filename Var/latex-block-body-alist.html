@@ -1,1 +1,33 @@
-latex-block-body-alist is a variable defined in `tex-mode.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Skeleton element to use for the body of particular environments.<br/>Every element of the list has the form (NAME . SKEL-ELEM) where NAME is<br/>the name of the environment and SKEL-ELEM is an element to use in<br/>a skeleton (see `skeleton-insert').<br/><br/>Value: (("enumerate" nil<br/>  '(latex-insert-item)<br/>  > _)<br/> ("itemize" nil<br/>  '(latex-insert-item)<br/>  > _)<br/> ("table" nil "\\caption{" ><br/>  (skeleton-read "Caption: ")<br/>  "}" > n<br/>  '(if<br/>       (and<br/>	(boundp 'reftex-mode)<br/>	reftex-mode)<br/>       (reftex-label "table"))<br/>  n _)<br/> ("figure" nil > _ n "\\caption{" ><br/>  (skeleton-read "Caption: ")<br/>  "}" > n<br/>  '(if<br/>       (and<br/>	(boundp 'reftex-mode)<br/>	reftex-mode)<br/>       (reftex-label "table"))))<br/><br/>
+<strong>latex-block-body-alist</strong> is a variable defined in `<code>tex-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Skeleton element to use for the body of particular environments.<br/>
+Every element of the list has the form (NAME . SKEL-ELEM) where NAME is<br/>
+the name of the environment and SKEL-ELEM is an element to use in<br/>
+a skeleton (see `skeleton-insert').<br/>
+<br/>
+Value: (("enumerate" nil<br/>
+  '(latex-insert-item)<br/>
+  > _)<br/>
+ ("itemize" nil<br/>
+  '(latex-insert-item)<br/>
+  > _)<br/>
+ ("table" nil "\\caption{" ><br/>
+  (skeleton-read "Caption: ")<br/>
+  "}" > n<br/>
+  '(if<br/>
+       (and<br/>
+	(boundp 'reftex-mode)<br/>
+	reftex-mode)<br/>
+       (reftex-label "table"))<br/>
+  n _)<br/>
+ ("figure" nil > _ n "\\caption{" ><br/>
+  (skeleton-read "Caption: ")<br/>
+  "}" > n<br/>
+  '(if<br/>
+       (and<br/>
+	(boundp 'reftex-mode)<br/>
+	reftex-mode)<br/>
+       (reftex-label "table"))))<br/>
+<br/>

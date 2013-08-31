@@ -1,1 +1,17 @@
-backquote is a Lisp macro in `backquote.el'.<br/><br/>(backquote STRUCTURE)<br/><br/>Argument STRUCTURE describes a template to build.<br/><br/>The whole structure acts as if it were quoted except for certain<br/>places where expressions are evaluated and inserted or spliced in.<br/><br/>For example:<br/><br/>b              => (ba bb bc)		; assume b has this value<br/>`(a b c)       => (a b c)		; backquote acts like quote<br/>`(a ,b c)      => (a (ba bb bc) c)	; insert the value of b<br/>`(a ,@b c)     => (a ba bb bc c)	; splice in the value of b<br/><br/>Vectors work just like lists.  Nested backquotes are permitted.
+<strong>backquote</strong> is a Lisp macro in `<code>backquote.el</code>'.<br/>
+<br/>
+(backquote STRUCTURE)<br/>
+<br/>
+Argument STRUCTURE describes a template to build.<br/>
+<br/>
+The whole structure acts as if it were quoted except for certain<br/>
+places where expressions are evaluated and inserted or spliced in.<br/>
+<br/>
+For example:<br/>
+<br/>
+b              => (ba bb bc)		; assume b has this value<br/>
+`(a b c)       => (a b c)		; backquote acts like quote<br/>
+`(a ,b c)      => (a (ba bb bc) c)	; insert the value of b<br/>
+`(a ,@b c)     => (a ba bb bc c)	; splice in the value of b<br/>
+<br/>
+Vectors work just like lists.  Nested backquotes are permitted.

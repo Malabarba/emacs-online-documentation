@@ -1,1 +1,49 @@
-gnutls-negotiate is an autoloaded compiled Lisp function in `gnutls.el'.<br/><br/>(gnutls-negotiate &rest SPEC &key PROCESS TYPE HOSTNAME PRIORITY-STRING TRUSTFILES CRLFILES KEYLIST MIN-PRIME-BITS VERIFY-FLAGS VERIFY-ERROR VERIFY-HOSTNAME-ERROR &allow-other-keys)<br/><br/>Negotiate a SSL/TLS connection.  Returns proc.  Signals gnutls-error.<br/><br/>Note arguments are passed CL style, :type TYPE instead of just TYPE.<br/><br/>TYPE is `gnutls-x509pki' (default) or `gnutls-anon'.  Use nil for the default.<br/>PROCESS is a process returned by `open-network-stream'.<br/>HOSTNAME is the remote hostname.  It must be a valid string.<br/>PRIORITY-STRING is as per the GnuTLS docs, default is "NORMAL".<br/>TRUSTFILES is a list of CA bundles.  It defaults to `gnutls-trustfiles'.<br/>CRLFILES is a list of CRL files.<br/>KEYLIST is an alist of (client key file, client cert file) pairs.<br/>MIN-PRIME-BITS is the minimum acceptable size of Diffie-Hellman keys<br/>(see `gnutls-min-prime-bits' for more information).  Use nil for the<br/>default.<br/><br/>When VERIFY-HOSTNAME-ERROR is not nil, an error will be raised<br/>when the hostname does not match the presented certificate's host<br/>name.  The exact verification algorithm is a basic implementation<br/>of the matching described in RFC2818 (HTTPS), which takes into<br/>account wildcards, and the DNSName/IPAddress subject alternative<br/>name PKIX extension.  See GnuTLS' gnutls_x509_crt_check_hostname<br/>for details.  When VERIFY-HOSTNAME-ERROR is nil, only a warning<br/>will be issued.<br/><br/>When VERIFY-ERROR is not nil, an error will be raised when the<br/>peer certificate verification fails as per GnuTLS'<br/>gnutls_certificate_verify_peers2.  Otherwise, only warnings will<br/>be shown about the verification failure.<br/><br/>VERIFY-FLAGS is a numeric OR of verification flags only for<br/>`gnutls-x509pki' connections.  See GnuTLS' x509.h for details;<br/>here's a recent version of the list.<br/><br/>    GNUTLS_VERIFY_DISABLE_CA_SIGN = 1,<br/>    GNUTLS_VERIFY_ALLOW_X509_V1_CA_CRT = 2,<br/>    GNUTLS_VERIFY_DO_NOT_ALLOW_SAME = 4,<br/>    GNUTLS_VERIFY_ALLOW_ANY_X509_V1_CA_CRT = 8,<br/>    GNUTLS_VERIFY_ALLOW_SIGN_RSA_MD2 = 16,<br/>    GNUTLS_VERIFY_ALLOW_SIGN_RSA_MD5 = 32,<br/>    GNUTLS_VERIFY_DISABLE_TIME_CHECKS = 64,<br/>    GNUTLS_VERIFY_DISABLE_TRUSTED_TIME_CHECKS = 128,<br/>    GNUTLS_VERIFY_DO_NOT_ALLOW_X509_V1_CA_CRT = 256<br/><br/>It must be omitted, a number, or nil; if omitted or nil it<br/>defaults to GNUTLS_VERIFY_ALLOW_X509_V1_CA_CRT.
+<strong>gnutls-negotiate</strong> is an autoloaded compiled Lisp function in `<code>gnutls.el</code>'.<br/>
+<br/>
+(gnutls-negotiate &rest SPEC &key PROCESS TYPE HOSTNAME PRIORITY-STRING TRUSTFILES CRLFILES KEYLIST MIN-PRIME-BITS VERIFY-FLAGS VERIFY-ERROR VERIFY-HOSTNAME-ERROR &allow-other-keys)<br/>
+<br/>
+Negotiate a SSL/TLS connection.  Returns proc.  Signals gnutls-error.<br/>
+<br/>
+Note arguments are passed CL style, :type TYPE instead of just TYPE.<br/>
+<br/>
+TYPE is `gnutls-x509pki' (default) or `gnutls-anon'.  Use nil for the default.<br/>
+PROCESS is a process returned by `open-network-stream'.<br/>
+HOSTNAME is the remote hostname.  It must be a valid string.<br/>
+PRIORITY-STRING is as per the GnuTLS docs, default is "NORMAL".<br/>
+TRUSTFILES is a list of CA bundles.  It defaults to `gnutls-trustfiles'.<br/>
+CRLFILES is a list of CRL files.<br/>
+KEYLIST is an alist of (client key file, client cert file) pairs.<br/>
+MIN-PRIME-BITS is the minimum acceptable size of Diffie-Hellman keys<br/>
+(see `gnutls-min-prime-bits' for more information).  Use nil for the<br/>
+default.<br/>
+<br/>
+When VERIFY-HOSTNAME-ERROR is not nil, an error will be raised<br/>
+when the hostname does not match the presented certificate's host<br/>
+name.  The exact verification algorithm is a basic implementation<br/>
+of the matching described in RFC2818 (HTTPS), which takes into<br/>
+account wildcards, and the DNSName/IPAddress subject alternative<br/>
+name PKIX extension.  See GnuTLS' gnutls_x509_crt_check_hostname<br/>
+for details.  When VERIFY-HOSTNAME-ERROR is nil, only a warning<br/>
+will be issued.<br/>
+<br/>
+When VERIFY-ERROR is not nil, an error will be raised when the<br/>
+peer certificate verification fails as per GnuTLS'<br/>
+gnutls_certificate_verify_peers2.  Otherwise, only warnings will<br/>
+be shown about the verification failure.<br/>
+<br/>
+VERIFY-FLAGS is a numeric OR of verification flags only for<br/>
+`gnutls-x509pki' connections.  See GnuTLS' x509.h for details;<br/>
+here's a recent version of the list.<br/>
+<br/>
+    GNUTLS_VERIFY_DISABLE_CA_SIGN = 1,<br/>
+    GNUTLS_VERIFY_ALLOW_X509_V1_CA_CRT = 2,<br/>
+    GNUTLS_VERIFY_DO_NOT_ALLOW_SAME = 4,<br/>
+    GNUTLS_VERIFY_ALLOW_ANY_X509_V1_CA_CRT = 8,<br/>
+    GNUTLS_VERIFY_ALLOW_SIGN_RSA_MD2 = 16,<br/>
+    GNUTLS_VERIFY_ALLOW_SIGN_RSA_MD5 = 32,<br/>
+    GNUTLS_VERIFY_DISABLE_TIME_CHECKS = 64,<br/>
+    GNUTLS_VERIFY_DISABLE_TRUSTED_TIME_CHECKS = 128,<br/>
+    GNUTLS_VERIFY_DO_NOT_ALLOW_X509_V1_CA_CRT = 256<br/>
+<br/>
+It must be omitted, a number, or nil; if omitted or nil it<br/>
+defaults to GNUTLS_VERIFY_ALLOW_X509_V1_CA_CRT.

@@ -1,1 +1,30 @@
-org-enable-table-editor is a variable defined in `org.el'.<br/>Its value is optimized<br/><br/>Documentation:<br/>Non-nil means lines starting with "|" are handled by the table editor.<br/>When nil, such lines will be treated like ordinary lines.<br/><br/>When equal to the symbol `optimized', the table editor will be optimized to<br/>do the following:<br/>- Automatic overwrite mode in front of whitespace in table fields.<br/>  This makes the structure of the table stay in tact as long as the edited<br/>  field does not exceed the column width.<br/>- Minimize the number of realigns.  Normally, the table is aligned each time<br/>  TAB or RET are pressed to move to another field.  With optimization this<br/>  happens only if changes to a field might have changed the column width.<br/>Optimization requires replacing the functions `self-insert-command',<br/>`delete-char', and `backward-delete-char' in Org-mode buffers, with a<br/>slight (in fact: unnoticeable) speed impact for normal typing.  Org-mode is<br/>very good at guessing when a re-align will be necessary, but you can always<br/>force one with M-x org-ctrl-c-ctrl-c.<br/><br/>If you would like to use the optimized version in Org-mode, but the<br/>un-optimized version in OrgTbl-mode, see the variable `orgtbl-optimized'.<br/><br/>This variable can be used to turn on and off the table editor during a session,<br/>but in order to toggle optimization, a restart is required.<br/><br/>See also the variable `org-table-auto-blank-field'.<br/><br/>You can customize this variable.
+<strong>org-enable-table-editor</strong> is a variable defined in `<code>org.el</code>'.<br/>
+Its value is optimized<br/>
+<br/>
+Documentation:<br/>
+Non-nil means lines starting with "|" are handled by the table editor.<br/>
+When nil, such lines will be treated like ordinary lines.<br/>
+<br/>
+When equal to the symbol `optimized', the table editor will be optimized to<br/>
+do the following:<br/>
+- Automatic overwrite mode in front of whitespace in table fields.<br/>
+  This makes the structure of the table stay in tact as long as the edited<br/>
+  field does not exceed the column width.<br/>
+- Minimize the number of realigns.  Normally, the table is aligned each time<br/>
+  TAB or RET are pressed to move to another field.  With optimization this<br/>
+  happens only if changes to a field might have changed the column width.<br/>
+Optimization requires replacing the functions `self-insert-command',<br/>
+`delete-char', and `backward-delete-char' in Org-mode buffers, with a<br/>
+slight (in fact: unnoticeable) speed impact for normal typing.  Org-mode is<br/>
+very good at guessing when a re-align will be necessary, but you can always<br/>
+force one with M-x org-ctrl-c-ctrl-c.<br/>
+<br/>
+If you would like to use the optimized version in Org-mode, but the<br/>
+un-optimized version in OrgTbl-mode, see the variable `orgtbl-optimized'.<br/>
+<br/>
+This variable can be used to turn on and off the table editor during a session,<br/>
+but in order to toggle optimization, a restart is required.<br/>
+<br/>
+See also the variable `org-table-auto-blank-field'.<br/>
+<br/>
+You can customize this variable.

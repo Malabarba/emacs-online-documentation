@@ -1,1 +1,18 @@
-semantic-expand-nonterminal is a variable defined in `semantic.el'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/>  This variable is an alias for `semantic-tag-expand-function'.<br/>  This variable is obsolete since 23.2;<br/>  use `semantic-tag-expand-function' instead.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Function to call for each nonterminal production.<br/>Return a list of non-terminals derived from the first argument, or nil<br/>if it does not need to be expanded.<br/>Languages with compound definitions should use this function to expand<br/>from one compound symbol into several.  For example, in C the definition<br/>  int a, b;<br/>is easily parsed into one tag.  This function should take this<br/>compound tag and turn it into two tags, one for A, and the other for B.
+<strong>semantic-expand-nonterminal</strong> is a variable defined in `<code>semantic.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+  This variable is an alias for `semantic-tag-expand-function'.<br/>
+  This variable is obsolete since 23.2;<br/>
+  use `semantic-tag-expand-function' instead.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Function to call for each nonterminal production.<br/>
+Return a list of non-terminals derived from the first argument, or nil<br/>
+if it does not need to be expanded.<br/>
+Languages with compound definitions should use this function to expand<br/>
+from one compound symbol into several.  For example, in C the definition<br/>
+  int a, b;<br/>
+is easily parsed into one tag.  This function should take this<br/>
+compound tag and turn it into two tags, one for A, and the other for B.

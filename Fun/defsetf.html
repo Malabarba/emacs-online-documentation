@@ -1,1 +1,29 @@
-defsetf is a Lisp macro in `cl.el'.<br/><br/>(defsetf NAME [FUNC | ARGLIST (STORE) BODY...])<br/><br/>Define a `setf' method.<br/>This macro is an easy-to-use substitute for `define-setf-expander'<br/>that works well for simple place forms.<br/><br/>In the simple `defsetf' form, `setf's of the form (setf (NAME<br/>ARGS...) VAL) are transformed to function or macro calls of the<br/>form (FUNC ARGS... VAL).  For example:<br/><br/>  (defsetf aref aset)<br/><br/>You can replace this form with `gv-define-simple-setter'.<br/><br/>Alternate form: (defsetf NAME ARGLIST (STORE) BODY...).<br/><br/>Here, the above `setf' call is expanded by binding the argument<br/>forms ARGS according to ARGLIST, binding the value form VAL to<br/>STORE, then executing BODY, which must return a Lisp form that<br/>does the necessary `setf' operation.  Actually, ARGLIST and STORE<br/>may be bound to temporary variables which are introduced<br/>automatically to preserve proper execution order of the arguments.<br/>For example:<br/><br/>  (defsetf nth (n x) (v) `(setcar (nthcdr ,n ,x) ,v))<br/><br/>You can replace this form with `gv-define-setter'.
+<strong>defsetf</strong> is a Lisp macro in `<code>cl.el</code>'.<br/>
+<br/>
+(defsetf NAME [FUNC | ARGLIST (STORE) BODY...])<br/>
+<br/>
+Define a `setf' method.<br/>
+This macro is an easy-to-use substitute for `define-setf-expander'<br/>
+that works well for simple place forms.<br/>
+<br/>
+In the simple `defsetf' form, `setf's of the form (setf (NAME<br/>
+ARGS...) VAL) are transformed to function or macro calls of the<br/>
+form (FUNC ARGS... VAL).  For example:<br/>
+<br/>
+  (defsetf aref aset)<br/>
+<br/>
+You can replace this form with `gv-define-simple-setter'.<br/>
+<br/>
+Alternate form: (defsetf NAME ARGLIST (STORE) BODY...).<br/>
+<br/>
+Here, the above `setf' call is expanded by binding the argument<br/>
+forms ARGS according to ARGLIST, binding the value form VAL to<br/>
+STORE, then executing BODY, which must return a Lisp form that<br/>
+does the necessary `setf' operation.  Actually, ARGLIST and STORE<br/>
+may be bound to temporary variables which are introduced<br/>
+automatically to preserve proper execution order of the arguments.<br/>
+For example:<br/>
+<br/>
+  (defsetf nth (n x) (v) `(setcar (nthcdr ,n ,x) ,v))<br/>
+<br/>
+You can replace this form with `gv-define-setter'.

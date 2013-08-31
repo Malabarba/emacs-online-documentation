@@ -1,1 +1,18 @@
-buffer-substring-filters is a variable defined in `simple.el'.<br/>Its value is nil<br/><br/>  This variable is obsolete since 24.1;<br/>  use `filter-buffer-substring-functions' instead.<br/><br/>Documentation:<br/>List of filter functions for `filter-buffer-substring'.<br/>Each function must accept a single argument, a string, and return<br/>a string.  The buffer substring is passed to the first function<br/>in the list, and the return value of each function is passed to<br/>the next.  The final result (if `buffer-substring-filters' is<br/>nil, this is the unfiltered buffer-substring) is passed to the<br/>first function on `filter-buffer-substring-functions'.<br/><br/>As a special convention, point is set to the start of the buffer text<br/>being operated on (i.e., the first argument of `filter-buffer-substring')<br/>before these functions are called.
+<strong>buffer-substring-filters</strong> is a variable defined in `<code>simple.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable is obsolete since 24.1;<br/>
+  use `filter-buffer-substring-functions' instead.<br/>
+<br/>
+Documentation:<br/>
+List of filter functions for `filter-buffer-substring'.<br/>
+Each function must accept a single argument, a string, and return<br/>
+a string.  The buffer substring is passed to the first function<br/>
+in the list, and the return value of each function is passed to<br/>
+the next.  The final result (if `buffer-substring-filters' is<br/>
+nil, this is the unfiltered buffer-substring) is passed to the<br/>
+first function on `filter-buffer-substring-functions'.<br/>
+<br/>
+As a special convention, point is set to the start of the buffer text<br/>
+being operated on (i.e., the first argument of `filter-buffer-substring')<br/>
+before these functions are called.

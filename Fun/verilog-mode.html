@@ -1,1 +1,206 @@
-verilog-mode is an interactive autoloaded compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-mode)<br/><br/>Parent mode: `prog-mode'.<br/><br/>Major mode for editing Verilog code.<br/><br/>See C-h f verilog-auto (C-c C-a) for details on how<br/>AUTOs can improve coding efficiency.<br/><br/>Use M-x verilog-faq for a pointer to frequently asked questions.<br/><br/>NEWLINE, TAB indents for Verilog code.<br/>Delete converts tabs to spaces as it moves back.<br/><br/>Supports highlighting.<br/><br/>Turning on Verilog mode calls the value of the variable `verilog-mode-hook'<br/>with no args, if that value is non-nil.<br/><br/>Variables controlling indentation/edit style:<br/><br/> variable `verilog-indent-level'      (default 3)<br/>   Indentation of Verilog statements with respect to containing block.<br/> `verilog-indent-level-module'        (default 3)<br/>   Absolute indentation of Module level Verilog statements.<br/>   Set to 0 to get initial and always statements lined up<br/>   on the left side of your screen.<br/> `verilog-indent-level-declaration'   (default 3)<br/>   Indentation of declarations with respect to containing block.<br/>   Set to 0 to get them list right under containing block.<br/> `verilog-indent-level-behavioral'    (default 3)<br/>   Indentation of first begin in a task or function block<br/>   Set to 0 to get such code to lined up underneath the task or<br/>   function keyword.<br/> `verilog-indent-level-directive'     (default 1)<br/>   Indentation of `ifdef/`endif blocks.<br/> `verilog-cexp-indent'              (default 1)<br/>   Indentation of Verilog statements broken across lines i.e.:<br/>      if (a)<br/>        begin<br/> `verilog-case-indent'              (default 2)<br/>   Indentation for case statements.<br/> `verilog-auto-newline'             (default nil)<br/>   Non-nil means automatically newline after semicolons and the punctuation<br/>   mark after an end.<br/> `verilog-auto-indent-on-newline'   (default t)<br/>   Non-nil means automatically indent line after newline.<br/> `verilog-tab-always-indent'        (default t)<br/>   Non-nil means TAB in Verilog mode should always reindent the current line,<br/>   regardless of where in the line point is when the TAB command is used.<br/> `verilog-indent-begin-after-if'    (default t)<br/>   Non-nil means to indent begin statements following a preceding<br/>   if, else, while, for and repeat statements, if any.  Otherwise,<br/>   the begin is lined up with the preceding token.  If t, you get:<br/>      if (a)<br/>         begin // amount of indent based on `verilog-cexp-indent'<br/>   otherwise you get:<br/>      if (a)<br/>      begin<br/> `verilog-auto-endcomments'         (default t)<br/>   Non-nil means a comment /* ... */ is set after the ends which ends<br/>   cases, tasks, functions and modules.<br/>   The type and name of the object will be set between the braces.<br/> `verilog-minimum-comment-distance' (default 10)<br/>   Minimum distance (in lines) between begin and end required before a comment<br/>   will be inserted.  Setting this variable to zero results in every<br/>   end acquiring a comment; the default avoids too many redundant<br/>   comments in tight quarters.<br/> `verilog-auto-lineup'              (default 'declarations)<br/>   List of contexts where auto lineup of code should be done.<br/><br/>Variables controlling other actions:<br/><br/> `verilog-linter'                   (default surelint)<br/>   Unix program to call to run the lint checker.  This is the default<br/>   command for M-x compile-command and C-c C-s.<br/><br/>See M-x customize for the complete list of variables.<br/><br/>AUTO expansion functions are, in part:<br/><br/>    C-c C-a  Expand AUTO statements.<br/>    C-c C-k  Remove the AUTOs.<br/>    C-c C-z  Insert AUTOs for the first time.<br/><br/>Some other functions are:<br/><br/>    C-M-i    Complete word with appropriate possibilities.<br/>    M-x verilog-mark-defun  Mark function.<br/>    M-x verilog-beg-of-defun  Move to beginning of current function.<br/>    M-x verilog-end-of-defun  Move to end of current function.<br/>    C-c C-r  Label matching begin ... end, fork ... join, etc statements.<br/><br/>    C-c C-c  Put marked area in a comment.<br/>    C-c C-u  Uncomment an area commented with C-c C-c.<br/>    M-x verilog-insert-block  Insert begin ... end.<br/>    M-*    Insert /* ... */.<br/><br/>    C-c C-t a  Insert an always @(AS) begin .. end block.<br/>    C-c C-t b  Insert a begin .. end block.<br/>    C-c C-t c  Insert a case block, prompting for details.<br/>    C-c C-t f  Insert a for (...) begin .. end block, prompting for details.<br/>    C-c C-t g  Insert a generate .. endgenerate block.<br/>    C-c C-t h  Insert a header block at the top of file.<br/>    C-c C-t i  Insert an initial begin .. end block.<br/>    C-c C-t j  Insert a fork begin .. end .. join block.<br/>    C-c C-t m  Insert a module .. (/*AUTOARG*/);.. endmodule block.<br/>    C-c C-t o  Insert an OVM Class block.<br/>    C-c C-t u  Insert an UVM Class block.<br/>    C-c C-t p  Insert a primitive .. (.. );.. endprimitive block.<br/>    C-c C-t r  Insert a repeat (..) begin .. end block.<br/>    C-c C-t s  Insert a specify .. endspecify block.<br/>    C-c C-t t  Insert a task .. begin .. end endtask block.<br/>    C-c C-t w  Insert a while (...) begin .. end block, prompting for details.<br/>    C-c C-t x  Insert a casex (...) item: begin.. end endcase block, prompting for details.<br/>    C-c C-t z  Insert a casez (...) item: begin.. end endcase block, prompting for details.<br/>    C-c C-t ?  Insert an if (..) begin .. end block.<br/>    C-c C-t :  Insert an else if (..) begin .. end block.<br/>    C-c C-t /  Insert a comment block.<br/>    C-c C-t A  Insert an assign .. = ..; statement.<br/>    C-c C-t F  Insert a function .. begin .. end endfunction block.<br/>    C-c C-t I  Insert an input declaration, prompting for details.<br/>    C-c C-t O  Insert an output declaration, prompting for details.<br/>    C-c C-t S  Insert a state machine definition, prompting for details.<br/>    C-c C-t =  Insert an inout declaration, prompting for details.<br/>    C-c C-t W  Insert a wire declaration, prompting for details.<br/>    C-c C-t R  Insert a register declaration, prompting for details.<br/>    C-c C-t D  Define signal under point as a register at the top of the module.<br/><br/>All key bindings can be seen in a Verilog-buffer with C-h b.<br/>Key bindings specific to `verilog-mode-map' are:<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>TAB		electric-verilog-tab<br/>RET		electric-verilog-terminate-line<br/>ESC		Prefix Command<br/>:		electric-verilog-colon<br/>;		electric-verilog-semi<br/>`		electric-verilog-tick<br/>C-;		electric-verilog-semi-with-comment<br/><M-delete>	kill-word<br/><backspace>	backward-delete-char-untabify<br/><delete>	delete-char<br/><br/>C-c C-a		verilog-auto<br/>C-c C-b		verilog-submit-bug-report<br/>C-c C-c		verilog-comment-region<br/>C-c C-d		verilog-goto-defun<br/>C-c C-e		verilog-expand-vector<br/>C-c C-h		verilog-header<br/>C-c TAB		verilog-pretty-declarations<br/>C-c C-k		verilog-delete-auto<br/>C-c C-p		verilog-preprocess<br/>C-c C-r		verilog-label-be<br/>C-c C-s		verilog-auto-save-compile<br/>C-c C-t		Prefix Command<br/>C-c C-u		verilog-uncomment-region<br/>C-c C-z		verilog-inject-auto<br/>C-c *		verilog-delete-auto-star-implicit<br/>C-c =		verilog-pretty-expr<br/>C-c ?		verilog-diff-auto<br/>C-c `		verilog-lint-off<br/><br/>C-M-b		electric-verilog-backward-sexp<br/>C-M-f		electric-verilog-forward-sexp<br/>C-M-i		verilog-complete-word<br/>M-RET		electric-verilog-terminate-and-indent<br/>M-*		verilog-star-comment<br/>M-?		verilog-show-completions<br/><br/>C-c C-t /	verilog-sk-comment<br/>C-c C-t :	verilog-sk-else-if<br/>C-c C-t =	verilog-sk-inout<br/>C-c C-t ?	verilog-sk-if<br/>C-c C-t A	verilog-sk-assign<br/>C-c C-t D	verilog-sk-define-signal<br/>C-c C-t F	verilog-sk-function<br/>C-c C-t I	verilog-sk-input<br/>C-c C-t O	verilog-sk-output<br/>C-c C-t R	verilog-sk-reg<br/>C-c C-t S	verilog-sk-state-machine<br/>C-c C-t W	verilog-sk-wire<br/>C-c C-t a	verilog-sk-always<br/>C-c C-t b	verilog-sk-begin<br/>C-c C-t c	verilog-sk-case<br/>C-c C-t f	verilog-sk-for<br/>C-c C-t g	verilog-sk-generate<br/>C-c C-t h	verilog-sk-header<br/>C-c C-t i	verilog-sk-initial<br/>C-c C-t j	verilog-sk-fork<br/>C-c C-t m	verilog-sk-module<br/>C-c C-t o	verilog-sk-ovm-class<br/>C-c C-t p	verilog-sk-primitive<br/>C-c C-t r	verilog-sk-repeat<br/>C-c C-t s	verilog-sk-specify<br/>C-c C-t t	verilog-sk-task<br/>C-c C-t u	verilog-sk-uvm-class<br/>C-c C-t w	verilog-sk-while<br/>C-c C-t x	verilog-sk-casex<br/>C-c C-t z	verilog-sk-casez<br/><br/>
+<strong>verilog-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-mode)<br/>
+<br/>
+Parent mode: `prog-mode'.<br/>
+<br/>
+Major mode for editing Verilog code.<br/>
+<br/>
+See C-h f verilog-auto (C-c C-a) for details on how<br/>
+AUTOs can improve coding efficiency.<br/>
+<br/>
+Use M-x verilog-faq for a pointer to frequently asked questions.<br/>
+<br/>
+NEWLINE, TAB indents for Verilog code.<br/>
+Delete converts tabs to spaces as it moves back.<br/>
+<br/>
+Supports highlighting.<br/>
+<br/>
+Turning on Verilog mode calls the value of the variable `verilog-mode-hook'<br/>
+with no args, if that value is non-nil.<br/>
+<br/>
+Variables controlling indentation/edit style:<br/>
+<br/>
+ variable `verilog-indent-level'      (default 3)<br/>
+   Indentation of Verilog statements with respect to containing block.<br/>
+ `verilog-indent-level-module'        (default 3)<br/>
+   Absolute indentation of Module level Verilog statements.<br/>
+   Set to 0 to get initial and always statements lined up<br/>
+   on the left side of your screen.<br/>
+ `verilog-indent-level-declaration'   (default 3)<br/>
+   Indentation of declarations with respect to containing block.<br/>
+   Set to 0 to get them list right under containing block.<br/>
+ `verilog-indent-level-behavioral'    (default 3)<br/>
+   Indentation of first begin in a task or function block<br/>
+   Set to 0 to get such code to lined up underneath the task or<br/>
+   function keyword.<br/>
+ `verilog-indent-level-directive'     (default 1)<br/>
+   Indentation of `ifdef/`endif blocks.<br/>
+ `verilog-cexp-indent'              (default 1)<br/>
+   Indentation of Verilog statements broken across lines i.e.:<br/>
+      if (a)<br/>
+        begin<br/>
+ `verilog-case-indent'              (default 2)<br/>
+   Indentation for case statements.<br/>
+ `verilog-auto-newline'             (default nil)<br/>
+   Non-nil means automatically newline after semicolons and the punctuation<br/>
+   mark after an end.<br/>
+ `verilog-auto-indent-on-newline'   (default t)<br/>
+   Non-nil means automatically indent line after newline.<br/>
+ `verilog-tab-always-indent'        (default t)<br/>
+   Non-nil means TAB in Verilog mode should always reindent the current line,<br/>
+   regardless of where in the line point is when the TAB command is used.<br/>
+ `verilog-indent-begin-after-if'    (default t)<br/>
+   Non-nil means to indent begin statements following a preceding<br/>
+   if, else, while, for and repeat statements, if any.  Otherwise,<br/>
+   the begin is lined up with the preceding token.  If t, you get:<br/>
+      if (a)<br/>
+         begin // amount of indent based on `verilog-cexp-indent'<br/>
+   otherwise you get:<br/>
+      if (a)<br/>
+      begin<br/>
+ `verilog-auto-endcomments'         (default t)<br/>
+   Non-nil means a comment /* ... */ is set after the ends which ends<br/>
+   cases, tasks, functions and modules.<br/>
+   The type and name of the object will be set between the braces.<br/>
+ `verilog-minimum-comment-distance' (default 10)<br/>
+   Minimum distance (in lines) between begin and end required before a comment<br/>
+   will be inserted.  Setting this variable to zero results in every<br/>
+   end acquiring a comment; the default avoids too many redundant<br/>
+   comments in tight quarters.<br/>
+ `verilog-auto-lineup'              (default 'declarations)<br/>
+   List of contexts where auto lineup of code should be done.<br/>
+<br/>
+Variables controlling other actions:<br/>
+<br/>
+ `verilog-linter'                   (default surelint)<br/>
+   Unix program to call to run the lint checker.  This is the default<br/>
+   command for M-x compile-command and C-c C-s.<br/>
+<br/>
+See M-x customize for the complete list of variables.<br/>
+<br/>
+AUTO expansion functions are, in part:<br/>
+<br/>
+    C-c C-a  Expand AUTO statements.<br/>
+    C-c C-k  Remove the AUTOs.<br/>
+    C-c C-z  Insert AUTOs for the first time.<br/>
+<br/>
+Some other functions are:<br/>
+<br/>
+    C-M-i    Complete word with appropriate possibilities.<br/>
+    M-x verilog-mark-defun  Mark function.<br/>
+    M-x verilog-beg-of-defun  Move to beginning of current function.<br/>
+    M-x verilog-end-of-defun  Move to end of current function.<br/>
+    C-c C-r  Label matching begin ... end, fork ... join, etc statements.<br/>
+<br/>
+    C-c C-c  Put marked area in a comment.<br/>
+    C-c C-u  Uncomment an area commented with C-c C-c.<br/>
+    M-x verilog-insert-block  Insert begin ... end.<br/>
+    M-*    Insert /* ... */.<br/>
+<br/>
+    C-c C-t a  Insert an always @(AS) begin .. end block.<br/>
+    C-c C-t b  Insert a begin .. end block.<br/>
+    C-c C-t c  Insert a case block, prompting for details.<br/>
+    C-c C-t f  Insert a for (...) begin .. end block, prompting for details.<br/>
+    C-c C-t g  Insert a generate .. endgenerate block.<br/>
+    C-c C-t h  Insert a header block at the top of file.<br/>
+    C-c C-t i  Insert an initial begin .. end block.<br/>
+    C-c C-t j  Insert a fork begin .. end .. join block.<br/>
+    C-c C-t m  Insert a module .. (/*AUTOARG*/);.. endmodule block.<br/>
+    C-c C-t o  Insert an OVM Class block.<br/>
+    C-c C-t u  Insert an UVM Class block.<br/>
+    C-c C-t p  Insert a primitive .. (.. );.. endprimitive block.<br/>
+    C-c C-t r  Insert a repeat (..) begin .. end block.<br/>
+    C-c C-t s  Insert a specify .. endspecify block.<br/>
+    C-c C-t t  Insert a task .. begin .. end endtask block.<br/>
+    C-c C-t w  Insert a while (...) begin .. end block, prompting for details.<br/>
+    C-c C-t x  Insert a casex (...) item: begin.. end endcase block, prompting for details.<br/>
+    C-c C-t z  Insert a casez (...) item: begin.. end endcase block, prompting for details.<br/>
+    C-c C-t ?  Insert an if (..) begin .. end block.<br/>
+    C-c C-t :  Insert an else if (..) begin .. end block.<br/>
+    C-c C-t /  Insert a comment block.<br/>
+    C-c C-t A  Insert an assign .. = ..; statement.<br/>
+    C-c C-t F  Insert a function .. begin .. end endfunction block.<br/>
+    C-c C-t I  Insert an input declaration, prompting for details.<br/>
+    C-c C-t O  Insert an output declaration, prompting for details.<br/>
+    C-c C-t S  Insert a state machine definition, prompting for details.<br/>
+    C-c C-t =  Insert an inout declaration, prompting for details.<br/>
+    C-c C-t W  Insert a wire declaration, prompting for details.<br/>
+    C-c C-t R  Insert a register declaration, prompting for details.<br/>
+    C-c C-t D  Define signal under point as a register at the top of the module.<br/>
+<br/>
+All key bindings can be seen in a Verilog-buffer with C-h b.<br/>
+Key bindings specific to `verilog-mode-map' are:<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+TAB		electric-verilog-tab<br/>
+RET		electric-verilog-terminate-line<br/>
+ESC		Prefix Command<br/>
+:		electric-verilog-colon<br/>
+;		electric-verilog-semi<br/>
+`		electric-verilog-tick<br/>
+C-;		electric-verilog-semi-with-comment<br/>
+<M-delete>	kill-word<br/>
+<backspace>	backward-delete-char-untabify<br/>
+<delete>	delete-char<br/>
+<br/>
+C-c C-a		verilog-auto<br/>
+C-c C-b		verilog-submit-bug-report<br/>
+C-c C-c		verilog-comment-region<br/>
+C-c C-d		verilog-goto-defun<br/>
+C-c C-e		verilog-expand-vector<br/>
+C-c C-h		verilog-header<br/>
+C-c TAB		verilog-pretty-declarations<br/>
+C-c C-k		verilog-delete-auto<br/>
+C-c C-p		verilog-preprocess<br/>
+C-c C-r		verilog-label-be<br/>
+C-c C-s		verilog-auto-save-compile<br/>
+C-c C-t		Prefix Command<br/>
+C-c C-u		verilog-uncomment-region<br/>
+C-c C-z		verilog-inject-auto<br/>
+C-c *		verilog-delete-auto-star-implicit<br/>
+C-c =		verilog-pretty-expr<br/>
+C-c ?		verilog-diff-auto<br/>
+C-c `		verilog-lint-off<br/>
+<br/>
+C-M-b		electric-verilog-backward-sexp<br/>
+C-M-f		electric-verilog-forward-sexp<br/>
+C-M-i		verilog-complete-word<br/>
+M-RET		electric-verilog-terminate-and-indent<br/>
+M-*		verilog-star-comment<br/>
+M-?		verilog-show-completions<br/>
+<br/>
+C-c C-t /	verilog-sk-comment<br/>
+C-c C-t :	verilog-sk-else-if<br/>
+C-c C-t =	verilog-sk-inout<br/>
+C-c C-t ?	verilog-sk-if<br/>
+C-c C-t A	verilog-sk-assign<br/>
+C-c C-t D	verilog-sk-define-signal<br/>
+C-c C-t F	verilog-sk-function<br/>
+C-c C-t I	verilog-sk-input<br/>
+C-c C-t O	verilog-sk-output<br/>
+C-c C-t R	verilog-sk-reg<br/>
+C-c C-t S	verilog-sk-state-machine<br/>
+C-c C-t W	verilog-sk-wire<br/>
+C-c C-t a	verilog-sk-always<br/>
+C-c C-t b	verilog-sk-begin<br/>
+C-c C-t c	verilog-sk-case<br/>
+C-c C-t f	verilog-sk-for<br/>
+C-c C-t g	verilog-sk-generate<br/>
+C-c C-t h	verilog-sk-header<br/>
+C-c C-t i	verilog-sk-initial<br/>
+C-c C-t j	verilog-sk-fork<br/>
+C-c C-t m	verilog-sk-module<br/>
+C-c C-t o	verilog-sk-ovm-class<br/>
+C-c C-t p	verilog-sk-primitive<br/>
+C-c C-t r	verilog-sk-repeat<br/>
+C-c C-t s	verilog-sk-specify<br/>
+C-c C-t t	verilog-sk-task<br/>
+C-c C-t u	verilog-sk-uvm-class<br/>
+C-c C-t w	verilog-sk-while<br/>
+C-c C-t x	verilog-sk-casex<br/>
+C-c C-t z	verilog-sk-casez<br/>
+<br/>

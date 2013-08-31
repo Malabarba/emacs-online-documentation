@@ -1,1 +1,69 @@
-pr-path-alist is a variable defined in `printing.el'.<br/>Its value is ((unix PATH) (cygwin PATH) (windows PATH))<br/><br/>Documentation:<br/>Specify an alist for command paths.<br/><br/>It's used to find commands used for printing package, like gv, gs, gsview.exe,<br/>mpage, print.exe, etc.  See also `pr-command' function.<br/><br/>Each element has the form:<br/><br/>   (ENTRY DIRECTORY...)<br/><br/>Where:<br/><br/>ENTRY		It's a symbol, used to identify this entry.<br/>		There must exist at least one of the following entries:<br/><br/>		unix	this entry is used when Emacs is running on GNU or<br/>			Unix system.<br/><br/>		cygwin	this entry is used when Emacs is running on Windows<br/>			95/98/NT/2000 with Cygwin.<br/><br/>		windows	this entry is used when Emacs is running on Windows<br/>			95/98/NT/2000.<br/><br/>DIRECTORY	It should be a string or a symbol.  If it's a symbol, it should<br/>		exist an equal entry in `pr-path-alist'.  If it's a string,<br/>		it's considered a directory specification.<br/><br/>		The directory specification may contain:<br/>		$var	environment variable expansion<br/>		~/	tilde expansion<br/>		./	current directory<br/>		../	previous directory<br/><br/>		For example, let's say the home directory is /home/my and the<br/>		current directory is /home/my/dir, so:<br/><br/>		THE ENTRY			IS EXPANDED TO<br/>		~/entry				/home/my/entry<br/>		./entry				/home/my/dir/entry<br/>		../entry			/home/my/entry<br/>		$HOME/entry			/home/my/entry<br/>		$HOME/~/other/../my/entry	/home/my/entry<br/><br/>		SPECIAL SYMBOL: If the symbol `PATH' is used in the directory<br/>		list and there isn't a `PATH' entry in `pr-path-alist' or the<br/>		`PATH' entry has a null directory list, the PATH environment<br/>		variable is used.<br/><br/>Examples:<br/><br/>* On GNU or Unix system:<br/><br/>   '((unix      "." "~/bin" ghostview mpage PATH)<br/>     (ghostview "$HOME/bin/gsview-dir")<br/>     (mpage     "$HOME/bin/mpage-dir")<br/>     )<br/><br/>* On Windows system:<br/><br/>   '((windows   "c:/applications/executables" PATH ghostview mpage)<br/>     (ghostview "c:/gs/gsview-dir")<br/>     (mpage     "c:/mpage-dir")<br/>     )<br/><br/>You can customize this variable.
+<strong>pr-path-alist</strong> is a variable defined in `<code>printing.el</code>'.<br/>
+Its value is ((unix PATH) (cygwin PATH) (windows PATH))<br/>
+<br/>
+Documentation:<br/>
+Specify an alist for command paths.<br/>
+<br/>
+It's used to find commands used for printing package, like gv, gs, gsview.exe,<br/>
+mpage, print.exe, etc.  See also `pr-command' function.<br/>
+<br/>
+Each element has the form:<br/>
+<br/>
+   (ENTRY DIRECTORY...)<br/>
+<br/>
+Where:<br/>
+<br/>
+ENTRY		It's a symbol, used to identify this entry.<br/>
+		There must exist at least one of the following entries:<br/>
+<br/>
+		unix	this entry is used when Emacs is running on GNU or<br/>
+			Unix system.<br/>
+<br/>
+		cygwin	this entry is used when Emacs is running on Windows<br/>
+			95/98/NT/2000 with Cygwin.<br/>
+<br/>
+		windows	this entry is used when Emacs is running on Windows<br/>
+			95/98/NT/2000.<br/>
+<br/>
+DIRECTORY	It should be a string or a symbol.  If it's a symbol, it should<br/>
+		exist an equal entry in `pr-path-alist'.  If it's a string,<br/>
+		it's considered a directory specification.<br/>
+<br/>
+		The directory specification may contain:<br/>
+		$var	environment variable expansion<br/>
+		~/	tilde expansion<br/>
+		./	current directory<br/>
+		../	previous directory<br/>
+<br/>
+		For example, let's say the home directory is /home/my and the<br/>
+		current directory is /home/my/dir, so:<br/>
+<br/>
+		THE ENTRY			IS EXPANDED TO<br/>
+		~/entry				/home/my/entry<br/>
+		./entry				/home/my/dir/entry<br/>
+		../entry			/home/my/entry<br/>
+		$HOME/entry			/home/my/entry<br/>
+		$HOME/~/other/../my/entry	/home/my/entry<br/>
+<br/>
+		SPECIAL SYMBOL: If the symbol `PATH' is used in the directory<br/>
+		list and there isn't a `PATH' entry in `pr-path-alist' or the<br/>
+		`PATH' entry has a null directory list, the PATH environment<br/>
+		variable is used.<br/>
+<br/>
+Examples:<br/>
+<br/>
+* On GNU or Unix system:<br/>
+<br/>
+   '((unix      "." "~/bin" ghostview mpage PATH)<br/>
+     (ghostview "$HOME/bin/gsview-dir")<br/>
+     (mpage     "$HOME/bin/mpage-dir")<br/>
+     )<br/>
+<br/>
+* On Windows system:<br/>
+<br/>
+   '((windows   "c:/applications/executables" PATH ghostview mpage)<br/>
+     (ghostview "c:/gs/gsview-dir")<br/>
+     (mpage     "c:/mpage-dir")<br/>
+     )<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,16 @@
-imap-shell-program is a variable defined in `imap.el'.<br/>Its value is<br/>("ssh %s imapd" "rsh %s imapd" "ssh %g ssh %s imapd" "rsh %g rsh %s imapd")<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>A list of strings, containing commands for IMAP connection.<br/>Within a string, %s is replaced with the server address, %p with port<br/>number on server, %g with `imap-shell-host', and %l with<br/>`imap-default-user'.  The program should read IMAP commands from stdin<br/>and write IMAP response to stdout.  Each entry in the list is tried<br/>until a successful connection is made.<br/><br/>You can customize this variable.
+<strong>imap-shell-program</strong> is a variable defined in `<code>imap.el</code>'.<br/>
+Its value is<br/>
+("ssh %s imapd" "rsh %s imapd" "ssh %g ssh %s imapd" "rsh %g rsh %s imapd")<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+A list of strings, containing commands for IMAP connection.<br/>
+Within a string, %s is replaced with the server address, %p with port<br/>
+number on server, %g with `imap-shell-host', and %l with<br/>
+`imap-default-user'.  The program should read IMAP commands from stdin<br/>
+and write IMAP response to stdout.  Each entry in the list is tried<br/>
+until a successful connection is made.<br/>
+<br/>
+You can customize this variable.

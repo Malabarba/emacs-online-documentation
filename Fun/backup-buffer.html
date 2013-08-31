@@ -1,1 +1,20 @@
-backup-buffer is a compiled Lisp function in `files.el'.<br/><br/>(backup-buffer)<br/><br/>Make a backup of the disk file visited by the current buffer, if appropriate.<br/>This is normally done before saving the buffer the first time.<br/><br/>A backup may be done by renaming or by copying; see documentation of<br/>variable `make-backup-files'.  If it's done by renaming, then the file is<br/>no longer accessible under its old name.<br/><br/>The value is non-nil after a backup was made by renaming.<br/>It has the form (MODES SELINUXCONTEXT BACKUPNAME).<br/>MODES is the result of `file-modes' on the original<br/>file; this means that the caller, after saving the buffer, should change<br/>the modes of the new file to agree with the old modes.<br/>SELINUXCONTEXT is the result of `file-selinux-context' on the original<br/>file; this means that the caller, after saving the buffer, should change<br/>the SELinux context of the new file to agree with the old context.<br/>BACKUPNAME is the backup file name, which is the old file renamed.
+<strong>backup-buffer</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
+<br/>
+(backup-buffer)<br/>
+<br/>
+Make a backup of the disk file visited by the current buffer, if appropriate.<br/>
+This is normally done before saving the buffer the first time.<br/>
+<br/>
+A backup may be done by renaming or by copying; see documentation of<br/>
+variable `make-backup-files'.  If it's done by renaming, then the file is<br/>
+no longer accessible under its old name.<br/>
+<br/>
+The value is non-nil after a backup was made by renaming.<br/>
+It has the form (MODES SELINUXCONTEXT BACKUPNAME).<br/>
+MODES is the result of `file-modes' on the original<br/>
+file; this means that the caller, after saving the buffer, should change<br/>
+the modes of the new file to agree with the old modes.<br/>
+SELINUXCONTEXT is the result of `file-selinux-context' on the original<br/>
+file; this means that the caller, after saving the buffer, should change<br/>
+the SELinux context of the new file to agree with the old context.<br/>
+BACKUPNAME is the backup file name, which is the old file renamed.

@@ -1,1 +1,47 @@
-bubbles-menu is a variable defined in `bubbles.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Map for bubbles menu.<br/><br/>Value: (keymap<br/> (bubbles-undo menu-item "Undo last move" bubbles-undo :enable<br/>	       (and bubbles--playing<br/>		    (listp buffer-undo-list)))<br/> (bubbles-separator-2 "--")<br/> (bubbles-graphics-theme-menu menu-item "Graphics Theme"<br/>			      (keymap<br/>			       (bubbles-set-graphics-theme-circles menu-item "Circles" bubbles-set-graphics-theme-circles :button<br/>								   (:radio eq bubbles-graphics-theme 'circles))<br/>			       (bubbles-set-graphics-theme-squares menu-item "Squares" bubbles-set-graphics-theme-squares :button<br/>								   (:radio eq bubbles-graphics-theme 'squares))<br/>			       (bubbles-set-graphics-theme-diamonds menu-item "Diamonds" bubbles-set-graphics-theme-diamonds :button<br/>								    (:radio eq bubbles-graphics-theme 'diamonds))<br/>			       (bubbles-set-graphics-theme-balls menu-item "Balls" bubbles-set-graphics-theme-balls :button<br/>								 (:radio eq bubbles-graphics-theme 'balls))<br/>			       (bubbles-set-graphics-theme-emacs menu-item "Emacs" bubbles-set-graphics-theme-emacs :button<br/>								 (:radio eq bubbles-graphics-theme 'emacs))<br/>			       (bubbles-set-graphics-theme-ascii menu-item "ASCII" bubbles-set-graphics-theme-ascii :button<br/>								 (:radio eq bubbles-graphics-theme 'ascii))<br/>			       "Graphics Theme")<br/>			      :enable bubbles--playing)<br/> (bubbles-game-theme-menu menu-item "Game Theme"<br/>			  (keymap<br/>			   (bubbles-set-game-easy menu-item "Easy" bubbles-set-game-easy :button<br/>						  (:radio eq bubbles-game-theme 'easy))<br/>			   (bubbles-set-game-medium menu-item "Medium" bubbles-set-game-medium :button<br/>						    (:radio eq bubbles-game-theme 'medium))<br/>			   (bubbles-set-game-difficult menu-item "Difficult" bubbles-set-game-difficult :button<br/>						       (:radio eq bubbles-game-theme 'difficult))<br/>			   (bubbles-set-game-hard menu-item "Hard" bubbles-set-game-hard :button<br/>						  (:radio eq bubbles-game-theme 'hard))<br/>			   (bubbles-set-game-userdefined menu-item "User defined" bubbles-set-game-userdefined :button<br/>							 (:radio eq bubbles-game-theme 'user-defined))<br/>			   "Game Theme"))<br/> (bubbles-customize menu-item "Edit all settings" bubbles-customize)<br/> (bubbles-save-settings menu-item "Save all settings" bubbles-save-settings)<br/> (bubbles-separator-1 "--")<br/> (bubbles menu-item "New game" bubbles)<br/> (bubbles-quit menu-item "Quit" bubbles-quit)<br/> "Bubbles")<br/><br/>
+<strong>bubbles-menu</strong> is a variable defined in `<code>bubbles.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Map for bubbles menu.<br/>
+<br/>
+Value: (keymap<br/>
+ (bubbles-undo menu-item "Undo last move" bubbles-undo :enable<br/>
+	       (and bubbles--playing<br/>
+		    (listp buffer-undo-list)))<br/>
+ (bubbles-separator-2 "--")<br/>
+ (bubbles-graphics-theme-menu menu-item "Graphics Theme"<br/>
+			      (keymap<br/>
+			       (bubbles-set-graphics-theme-circles menu-item "Circles" bubbles-set-graphics-theme-circles :button<br/>
+								   (:radio eq bubbles-graphics-theme 'circles))<br/>
+			       (bubbles-set-graphics-theme-squares menu-item "Squares" bubbles-set-graphics-theme-squares :button<br/>
+								   (:radio eq bubbles-graphics-theme 'squares))<br/>
+			       (bubbles-set-graphics-theme-diamonds menu-item "Diamonds" bubbles-set-graphics-theme-diamonds :button<br/>
+								    (:radio eq bubbles-graphics-theme 'diamonds))<br/>
+			       (bubbles-set-graphics-theme-balls menu-item "Balls" bubbles-set-graphics-theme-balls :button<br/>
+								 (:radio eq bubbles-graphics-theme 'balls))<br/>
+			       (bubbles-set-graphics-theme-emacs menu-item "Emacs" bubbles-set-graphics-theme-emacs :button<br/>
+								 (:radio eq bubbles-graphics-theme 'emacs))<br/>
+			       (bubbles-set-graphics-theme-ascii menu-item "ASCII" bubbles-set-graphics-theme-ascii :button<br/>
+								 (:radio eq bubbles-graphics-theme 'ascii))<br/>
+			       "Graphics Theme")<br/>
+			      :enable bubbles--playing)<br/>
+ (bubbles-game-theme-menu menu-item "Game Theme"<br/>
+			  (keymap<br/>
+			   (bubbles-set-game-easy menu-item "Easy" bubbles-set-game-easy :button<br/>
+						  (:radio eq bubbles-game-theme 'easy))<br/>
+			   (bubbles-set-game-medium menu-item "Medium" bubbles-set-game-medium :button<br/>
+						    (:radio eq bubbles-game-theme 'medium))<br/>
+			   (bubbles-set-game-difficult menu-item "Difficult" bubbles-set-game-difficult :button<br/>
+						       (:radio eq bubbles-game-theme 'difficult))<br/>
+			   (bubbles-set-game-hard menu-item "Hard" bubbles-set-game-hard :button<br/>
+						  (:radio eq bubbles-game-theme 'hard))<br/>
+			   (bubbles-set-game-userdefined menu-item "User defined" bubbles-set-game-userdefined :button<br/>
+							 (:radio eq bubbles-game-theme 'user-defined))<br/>
+			   "Game Theme"))<br/>
+ (bubbles-customize menu-item "Edit all settings" bubbles-customize)<br/>
+ (bubbles-save-settings menu-item "Save all settings" bubbles-save-settings)<br/>
+ (bubbles-separator-1 "--")<br/>
+ (bubbles menu-item "New game" bubbles)<br/>
+ (bubbles-quit menu-item "Quit" bubbles-quit)<br/>
+ "Bubbles")<br/>
+<br/>

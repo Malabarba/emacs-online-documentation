@@ -1,1 +1,33 @@
-org-babel-expand-noweb-references is a compiled Lisp function in `ob.el'.<br/><br/>(org-babel-expand-noweb-references &optional INFO PARENT-BUFFER)<br/><br/>Expand Noweb references in the body of the current source code block.<br/><br/>For example the following reference would be replaced with the<br/>body of the source-code block named 'example-block'.<br/><br/><<example-block>><br/><br/>Note that any text preceding the <<foo>> construct on a line will<br/>be interposed between the lines of the replacement text.  So for<br/>example if <<foo>> is placed behind a comment, then the entire<br/>replacement text will also be commented.<br/><br/>This function must be called from inside of the buffer containing<br/>the source-code block which holds BODY.<br/><br/>In addition the following syntax can be used to insert the<br/>results of evaluating the source-code block named 'example-block'.<br/><br/><<example-block()>><br/><br/>Any optional arguments can be passed to example-block by placing<br/>the arguments inside the parenthesis following the convention<br/>defined by `org-babel-lob'.  For example<br/><br/><<example-block(a=9)>><br/><br/>would set the value of argument "a" equal to "9".  Note that<br/>these arguments are not evaluated in the current source-code<br/>block but are passed literally to the "example-block".
+<strong>org-babel-expand-noweb-references</strong> is a compiled Lisp function in `<code>ob.el</code>'.<br/>
+<br/>
+(org-babel-expand-noweb-references &optional INFO PARENT-BUFFER)<br/>
+<br/>
+Expand Noweb references in the body of the current source code block.<br/>
+<br/>
+For example the following reference would be replaced with the<br/>
+body of the source-code block named 'example-block'.<br/>
+<br/>
+<<example-block>><br/>
+<br/>
+Note that any text preceding the <<foo>> construct on a line will<br/>
+be interposed between the lines of the replacement text.  So for<br/>
+example if <<foo>> is placed behind a comment, then the entire<br/>
+replacement text will also be commented.<br/>
+<br/>
+This function must be called from inside of the buffer containing<br/>
+the source-code block which holds BODY.<br/>
+<br/>
+In addition the following syntax can be used to insert the<br/>
+results of evaluating the source-code block named 'example-block'.<br/>
+<br/>
+<<example-block()>><br/>
+<br/>
+Any optional arguments can be passed to example-block by placing<br/>
+the arguments inside the parenthesis following the convention<br/>
+defined by `org-babel-lob'.  For example<br/>
+<br/>
+<<example-block(a=9)>><br/>
+<br/>
+would set the value of argument "a" equal to "9".  Note that<br/>
+these arguments are not evaluated in the current source-code<br/>
+block but are passed literally to the "example-block".

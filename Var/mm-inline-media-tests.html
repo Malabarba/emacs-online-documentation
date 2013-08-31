@@ -1,1 +1,128 @@
-mm-inline-media-tests is a variable defined in `mm-decode.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Alist of media types/tests saying whether types can be displayed inline.<br/><br/>You can customize this variable.<br/><br/>Value: (("image/p?jpeg" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'jpeg handle)))<br/> ("image/png" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'png handle)))<br/> ("image/gif" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'gif handle)))<br/> ("image/tiff" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'tiff handle)))<br/> ("image/xbm" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'xbm handle)))<br/> ("image/x-xbitmap" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'xbm handle)))<br/> ("image/xpm" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'xpm handle)))<br/> ("image/x-xpixmap" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'xpm handle)))<br/> ("image/bmp" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'bmp handle)))<br/> ("image/x-portable-bitmap" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (mm-valid-and-fit-image-p 'pbm handle)))<br/> ("text/plain" mm-inline-text identity)<br/> ("text/enriched" mm-inline-text identity)<br/> ("text/richtext" mm-inline-text identity)<br/> ("text/x-patch" mm-display-patch-inline identity)<br/> ("text/x-diff" mm-display-patch-inline identity)<br/> ("application/emacs-lisp" mm-display-elisp-inline identity)<br/> ("application/x-emacs-lisp" mm-display-elisp-inline identity)<br/> ("application/x-shellscript" mm-display-shell-script-inline identity)<br/> ("application/x-sh" mm-display-shell-script-inline identity)<br/> ("text/x-sh" mm-display-shell-script-inline identity)<br/> ("application/javascript" mm-display-javascript-inline identity)<br/> ("text/dns" mm-display-dns-inline identity)<br/> ("text/x-org" mm-display-org-inline identity)<br/> ("text/html" mm-inline-text-html<br/>  (lambda<br/>    (handle)<br/>    mm-text-html-renderer))<br/> ("text/x-vcard" mm-inline-text-vcard<br/>  (lambda<br/>    (handle)<br/>    (or<br/>     (featurep 'vcard)<br/>     (locate-library "vcard"))))<br/> ("message/delivery-status" mm-inline-text identity)<br/> ("message/rfc822" mm-inline-message identity)<br/> ("message/partial" mm-inline-partial identity)<br/> ("message/external-body" mm-inline-external-body identity)<br/> ("text/.*" mm-inline-text identity)<br/> ("application/x-.?tar\\(-.*\\)?" mm-archive-dissect-and-inline identity)<br/> ("application/zip" mm-archive-dissect-and-inline identity)<br/> ("audio/wav" mm-inline-audio<br/>  (lambda<br/>    (handle)<br/>    (and<br/>     (or<br/>      (featurep 'nas-sound)<br/>      (featurep 'native-sound))<br/>     (device-sound-enabled-p))))<br/> ("audio/au" mm-inline-audio<br/>  (lambda<br/>    (handle)<br/>    (and<br/>     (or<br/>      (featurep 'nas-sound)<br/>      (featurep 'native-sound))<br/>     (device-sound-enabled-p))))<br/> ("application/pgp-signature" ignore identity)<br/> ("application/x-pkcs7-signature" ignore identity)<br/> ("application/pkcs7-signature" ignore identity)<br/> ("application/x-pkcs7-mime" ignore identity)<br/> ("application/pkcs7-mime" ignore identity)<br/> ("multipart/alternative" ignore identity)<br/> ("multipart/mixed" ignore identity)<br/> ("multipart/related" ignore identity)<br/> ("image/.*" mm-inline-image<br/>  (lambda<br/>    (handle)<br/>    (and<br/>     (mm-valid-image-format-p 'imagemagick)<br/>     (mm-with-unibyte-buffer<br/>       (mm-insert-part handle)<br/>       (let<br/>	   ((image<br/>	     (ignore-errors<br/>	       (if<br/>		   (fboundp 'create-image)<br/>		   (create-image<br/>		    (buffer-string)<br/>		    'imagemagick 'data-p)<br/>		 (mm-create-image-xemacs<br/>		  (mm-handle-media-subtype handle))))))<br/>	 (when image<br/>	   (setcar<br/>	    (cdr handle)<br/>	    (list "image/imagemagick"))<br/>	   (mm-image-fit-p handle)))))))<br/> ("audio/.*" ignore ignore)<br/> ("image/.*" ignore ignore)<br/> (".*" mm-inline-text mm-readable-p))<br/><br/>
+<strong>mm-inline-media-tests</strong> is a variable defined in `<code>mm-decode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Alist of media types/tests saying whether types can be displayed inline.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+Value: (("image/p?jpeg" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'jpeg handle)))<br/>
+ ("image/png" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'png handle)))<br/>
+ ("image/gif" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'gif handle)))<br/>
+ ("image/tiff" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'tiff handle)))<br/>
+ ("image/xbm" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'xbm handle)))<br/>
+ ("image/x-xbitmap" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'xbm handle)))<br/>
+ ("image/xpm" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'xpm handle)))<br/>
+ ("image/x-xpixmap" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'xpm handle)))<br/>
+ ("image/bmp" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'bmp handle)))<br/>
+ ("image/x-portable-bitmap" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (mm-valid-and-fit-image-p 'pbm handle)))<br/>
+ ("text/plain" mm-inline-text identity)<br/>
+ ("text/enriched" mm-inline-text identity)<br/>
+ ("text/richtext" mm-inline-text identity)<br/>
+ ("text/x-patch" mm-display-patch-inline identity)<br/>
+ ("text/x-diff" mm-display-patch-inline identity)<br/>
+ ("application/emacs-lisp" mm-display-elisp-inline identity)<br/>
+ ("application/x-emacs-lisp" mm-display-elisp-inline identity)<br/>
+ ("application/x-shellscript" mm-display-shell-script-inline identity)<br/>
+ ("application/x-sh" mm-display-shell-script-inline identity)<br/>
+ ("text/x-sh" mm-display-shell-script-inline identity)<br/>
+ ("application/javascript" mm-display-javascript-inline identity)<br/>
+ ("text/dns" mm-display-dns-inline identity)<br/>
+ ("text/x-org" mm-display-org-inline identity)<br/>
+ ("text/html" mm-inline-text-html<br/>
+  (lambda<br/>
+    (handle)<br/>
+    mm-text-html-renderer))<br/>
+ ("text/x-vcard" mm-inline-text-vcard<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (or<br/>
+     (featurep 'vcard)<br/>
+     (locate-library "vcard"))))<br/>
+ ("message/delivery-status" mm-inline-text identity)<br/>
+ ("message/rfc822" mm-inline-message identity)<br/>
+ ("message/partial" mm-inline-partial identity)<br/>
+ ("message/external-body" mm-inline-external-body identity)<br/>
+ ("text/.*" mm-inline-text identity)<br/>
+ ("application/x-.?tar\\(-.*\\)?" mm-archive-dissect-and-inline identity)<br/>
+ ("application/zip" mm-archive-dissect-and-inline identity)<br/>
+ ("audio/wav" mm-inline-audio<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (and<br/>
+     (or<br/>
+      (featurep 'nas-sound)<br/>
+      (featurep 'native-sound))<br/>
+     (device-sound-enabled-p))))<br/>
+ ("audio/au" mm-inline-audio<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (and<br/>
+     (or<br/>
+      (featurep 'nas-sound)<br/>
+      (featurep 'native-sound))<br/>
+     (device-sound-enabled-p))))<br/>
+ ("application/pgp-signature" ignore identity)<br/>
+ ("application/x-pkcs7-signature" ignore identity)<br/>
+ ("application/pkcs7-signature" ignore identity)<br/>
+ ("application/x-pkcs7-mime" ignore identity)<br/>
+ ("application/pkcs7-mime" ignore identity)<br/>
+ ("multipart/alternative" ignore identity)<br/>
+ ("multipart/mixed" ignore identity)<br/>
+ ("multipart/related" ignore identity)<br/>
+ ("image/.*" mm-inline-image<br/>
+  (lambda<br/>
+    (handle)<br/>
+    (and<br/>
+     (mm-valid-image-format-p 'imagemagick)<br/>
+     (mm-with-unibyte-buffer<br/>
+       (mm-insert-part handle)<br/>
+       (let<br/>
+	   ((image<br/>
+	     (ignore-errors<br/>
+	       (if<br/>
+		   (fboundp 'create-image)<br/>
+		   (create-image<br/>
+		    (buffer-string)<br/>
+		    'imagemagick 'data-p)<br/>
+		 (mm-create-image-xemacs<br/>
+		  (mm-handle-media-subtype handle))))))<br/>
+	 (when image<br/>
+	   (setcar<br/>
+	    (cdr handle)<br/>
+	    (list "image/imagemagick"))<br/>
+	   (mm-image-fit-p handle)))))))<br/>
+ ("audio/.*" ignore ignore)<br/>
+ ("image/.*" ignore ignore)<br/>
+ (".*" mm-inline-text mm-readable-p))<br/>
+<br/>

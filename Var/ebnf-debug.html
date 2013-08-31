@@ -1,1 +1,8 @@
-ebnf-debug is a variable defined in `ebnf2ps.el'.<br/>Its value is<br/>"\n% === begin EBNF procedures to help debugging\n\n% Mark visually current point:  string debug\n/debug\n{/-s- exch def\n currentpoint\n gsave -s- show grestore\n gsave\n 20 20 rlineto\n 0 -40 rlineto\n -40 40 rlineto\n 0 -40 rlineto\n 20 20 rlineto\n stroke\n grestore\n moveto\n}def\n\n% Show number value:  number string debug-number\n/debug-number\n{gsave\n 20 0 rmoveto show ([) show 60 string cvs show (]) show\n grestore\n}def\n\n% === end   EBNF procedures to help debugging\n\n"<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>This is intended to help debugging PostScript programming.
+<strong>ebnf-debug</strong> is a variable defined in `<code>ebnf2ps.el</code>'.<br/>
+Its value is<br/>
+"\n% === begin EBNF procedures to help debugging\n\n% Mark visually current point:  string debug\n/debug\n{/-s- exch def\n currentpoint\n gsave -s- show grestore\n gsave\n 20 20 rlineto\n 0 -40 rlineto\n -40 40 rlineto\n 0 -40 rlineto\n 20 20 rlineto\n stroke\n grestore\n moveto\n}def\n\n% Show number value:  number string debug-number\n/debug-number\n{gsave\n 20 0 rmoveto show ([) show 60 string cvs show (]) show\n grestore\n}def\n\n% === end   EBNF procedures to help debugging\n\n"<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+This is intended to help debugging PostScript programming.

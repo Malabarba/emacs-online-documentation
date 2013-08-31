@@ -1,1 +1,13 @@
-command-execute is a built-in function in `C source code'.<br/><br/>(command-execute CMD &optional RECORD-FLAG KEYS SPECIAL)<br/><br/>Execute CMD as an editor command.<br/>CMD must be a symbol that satisfies the `commandp' predicate.<br/>Optional second arg RECORD-FLAG non-nil<br/>means unconditionally put this command in `command-history'.<br/>Otherwise, that is done only if an arg is read using the minibuffer.<br/>The argument KEYS specifies the value to use instead of (this-command-keys)<br/>when reading the arguments; if it is nil, (this-command-keys) is used.<br/>The argument SPECIAL, if non-nil, means that this command is executing<br/>a special event, so ignore the prefix argument and don't clear it.
+<strong>command-execute</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(command-execute CMD &optional RECORD-FLAG KEYS SPECIAL)<br/>
+<br/>
+Execute CMD as an editor command.<br/>
+CMD must be a symbol that satisfies the `commandp' predicate.<br/>
+Optional second arg RECORD-FLAG non-nil<br/>
+means unconditionally put this command in `command-history'.<br/>
+Otherwise, that is done only if an arg is read using the minibuffer.<br/>
+The argument KEYS specifies the value to use instead of (this-command-keys)<br/>
+when reading the arguments; if it is nil, (this-command-keys) is used.<br/>
+The argument SPECIAL, if non-nil, means that this command is executing<br/>
+a special event, so ignore the prefix argument and don't clear it.

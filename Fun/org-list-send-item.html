@@ -1,1 +1,28 @@
-org-list-send-item is a compiled Lisp function in `org-list.el'.<br/><br/>(org-list-send-item ITEM DEST STRUCT)<br/><br/>Send ITEM to destination DEST.<br/><br/>STRUCT is the list structure.<br/><br/>DEST can have various values.<br/><br/>If DEST is a buffer position, the function will assume it points<br/>to another item in the same list as ITEM, and will move the<br/>latter just before the former.<br/><br/>If DEST is `begin' (respectively `end'), ITEM will be moved at<br/>the beginning (respectively end) of the list it belongs to.<br/><br/>If DEST is a string like "N", where N is an integer, ITEM will<br/>be moved at the Nth position in the list.<br/><br/>If DEST is `kill', ITEM will be deleted and its body will be<br/>added to the kill-ring.<br/><br/>If DEST is `delete', ITEM will be deleted.<br/><br/>Visibility of item is preserved.<br/><br/>This function returns, destructively, the new list structure.
+<strong>org-list-send-item</strong> is a compiled Lisp function in `<code>org-list.el</code>'.<br/>
+<br/>
+(org-list-send-item ITEM DEST STRUCT)<br/>
+<br/>
+Send ITEM to destination DEST.<br/>
+<br/>
+STRUCT is the list structure.<br/>
+<br/>
+DEST can have various values.<br/>
+<br/>
+If DEST is a buffer position, the function will assume it points<br/>
+to another item in the same list as ITEM, and will move the<br/>
+latter just before the former.<br/>
+<br/>
+If DEST is `begin' (respectively `end'), ITEM will be moved at<br/>
+the beginning (respectively end) of the list it belongs to.<br/>
+<br/>
+If DEST is a string like "N", where N is an integer, ITEM will<br/>
+be moved at the Nth position in the list.<br/>
+<br/>
+If DEST is `kill', ITEM will be deleted and its body will be<br/>
+added to the kill-ring.<br/>
+<br/>
+If DEST is `delete', ITEM will be deleted.<br/>
+<br/>
+Visibility of item is preserved.<br/>
+<br/>
+This function returns, destructively, the new list structure.

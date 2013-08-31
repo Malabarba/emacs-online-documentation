@@ -1,1 +1,129 @@
-pr-mode-alist is a variable defined in `printing.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Specify an alist for a major-mode and printing functions.<br/><br/>To customize a major mode printing, just declare the customization in<br/>`pr-mode-alist' and invoke some of `*-mode*' commands.  An example for major<br/>mode usage is when you're using gnus (or mh, or rmail, etc.) and you're in the<br/>*Summary* buffer, if you forget to switch to the *Article* buffer before<br/>printing, you'll get a nicely formatted list of article subjects shows up at<br/>the printer.  With major mode printing you don't need to switch from gnus<br/>*Summary* buffer first.<br/><br/>The elements have the following form:<br/><br/>   (MAJOR-MODE<br/>    LPR-PRINT PS-PRINT<br/>    HEADER-LINES<br/>    LEFT-HEADER<br/>    RIGHT-HEADER<br/>    KILL-LOCAL-VARIABLE<br/>    DEFAULT...)<br/><br/>Where:<br/><br/>MAJOR-MODE	It's the major mode symbol.<br/><br/>LPR-PRINT	It's a symbol function for text printing.  It's invoked with<br/>		one argument:<br/>		(HEADER-LINES  LEFT-HEADER  RIGHT-HEADER DEFAULT...).<br/><br/>		Usually LPR-PRINT function prepares the environment or buffer<br/>		and then call the function `pr-mode-lpr' which it's used to<br/>		process the buffer and send it to text printer.<br/><br/>		The `pr-mode-lpr' definition is:<br/><br/>		(pr-mode-lpr HEADER-LIST &optional FROM TO)<br/><br/>		Where HEADER-LIST is like the argument passed to LPR-PRINT.<br/>		FROM and TO are the beginning and end markers, respectively,<br/>		for a region.  If FROM is nil, it's used (point-min); if TO is<br/>		nil, it's used (point-max).<br/><br/>PS-PRINT	It's a symbol function for PostScript printing.  It's invoked<br/>		with three arguments: n-up printing, file name and the list:<br/>		(HEADER-LINES  LEFT-HEADER  RIGHT-HEADER DEFAULT...).<br/><br/>		Usually PS-PRINT function prepares the environment or buffer<br/>		and then call the function `pr-mode-print' which it's used to<br/>		process the buffer and send it to PostScript printer.<br/><br/>		The `pr-mode-print' definition is:<br/><br/>		(pr-mode-print N-UP FILENAME HEADER-LIST &optional FROM TO)<br/><br/>		Where N-UP, FILENAME and HEADER-LIST are like the arguments<br/>		passed to PS-PRINT.  FROM and TO are the beginning and end<br/>		markers, respectively, for a region.  If TO is nil, it's used<br/>		(point-max).<br/><br/>HEADER-LINES	It's the number of header lines; if is nil, it uses<br/>		`ps-header-lines' value.<br/><br/>LEFT-HEADER	It's the left header part, it's a list of string, variable<br/>		symbol or function symbol (with no argument); if is nil, it<br/>		uses `ps-left-header' value.<br/><br/>RIGHT-HEADER	It's the right header part, it's a list of string, variable<br/>		symbol or function symbol (with no argument); if is nil, it<br/>		uses `ps-right-header' value.<br/><br/>KILL-LOCAL-VARIABLE<br/>		Non-nil means to kill all buffer local variable declared in<br/>		DEFAULT (see below).<br/><br/>DEFAULT		It's a way to set default values when this entry is selected.<br/>		It's a cons like:<br/><br/>		   (VARIABLE-SYM . VALUE)<br/><br/>		Which associates VARIABLE-SYM with VALUE.  When this entry is<br/>		selected, it's executed the following command:<br/><br/>		   (set (make-local-variable VARIABLE-SYM) (eval VALUE))<br/><br/>		Note that VALUE can be any valid lisp expression.  So, don't<br/>		forget to quote symbols and constant lists.<br/>		If VARIABLE is the special keyword `inherits-from:', VALUE must<br/>		be a symbol name setting defined in `pr-setting-database' from<br/>		which the current setting inherits the context.  Take care with<br/>		circular inheritance.<br/>		Examples:<br/>			'(ps-landscape-mode . nil)<br/>			'(ps-spool-duplex . t)<br/>			'(pr-gs-device . (my-gs-device t))<br/><br/>You can customize this variable.<br/><br/>Value: ((mh-folder-mode pr-mh-lpr-1 pr-mh-print-1 2<br/>		 (ps-article-author ps-article-subject)<br/>		 ("/pagenumberstring load" pr-article-date)<br/>		 nil)<br/> (mh-letter-mode pr-mh-lpr-2 pr-mh-print-2 2<br/>		 (ps-article-author ps-article-subject)<br/>		 ("/pagenumberstring load" pr-article-date)<br/>		 nil)<br/> (rmail-summary-mode pr-rmail-lpr pr-rmail-print 3<br/>		     (ps-article-subject ps-article-author buffer-name)<br/>		     nil nil)<br/> (rmail-mode pr-rmail-lpr pr-rmail-print 3<br/>	     (ps-article-subject ps-article-author buffer-name)<br/>	     nil nil)<br/> (gnus-summary-mode pr-gnus-lpr pr-gnus-print 3<br/>		    (ps-article-subject ps-article-author gnus-newsgroup-name)<br/>		    nil nil)<br/> (gnus-article-mode pr-gnus-lpr pr-gnus-print 3<br/>		    (ps-article-subject ps-article-author gnus-newsgroup-name)<br/>		    nil nil)<br/> (Info-mode pr-mode-lpr pr-mode-print 2<br/>	    (ps-info-node ps-info-file)<br/>	    nil nil)<br/> (vm-mode pr-vm-lpr pr-vm-print 3<br/>	  (ps-article-subject ps-article-author buffer-name)<br/>	  nil nil))<br/><br/>
+<strong>pr-mode-alist</strong> is a variable defined in `<code>printing.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Specify an alist for a major-mode and printing functions.<br/>
+<br/>
+To customize a major mode printing, just declare the customization in<br/>
+`pr-mode-alist' and invoke some of `*-mode*' commands.  An example for major<br/>
+mode usage is when you're using gnus (or mh, or rmail, etc.) and you're in the<br/>
+*Summary* buffer, if you forget to switch to the *Article* buffer before<br/>
+printing, you'll get a nicely formatted list of article subjects shows up at<br/>
+the printer.  With major mode printing you don't need to switch from gnus<br/>
+*Summary* buffer first.<br/>
+<br/>
+The elements have the following form:<br/>
+<br/>
+   (MAJOR-MODE<br/>
+    LPR-PRINT PS-PRINT<br/>
+    HEADER-LINES<br/>
+    LEFT-HEADER<br/>
+    RIGHT-HEADER<br/>
+    KILL-LOCAL-VARIABLE<br/>
+    DEFAULT...)<br/>
+<br/>
+Where:<br/>
+<br/>
+MAJOR-MODE	It's the major mode symbol.<br/>
+<br/>
+LPR-PRINT	It's a symbol function for text printing.  It's invoked with<br/>
+		one argument:<br/>
+		(HEADER-LINES  LEFT-HEADER  RIGHT-HEADER DEFAULT...).<br/>
+<br/>
+		Usually LPR-PRINT function prepares the environment or buffer<br/>
+		and then call the function `pr-mode-lpr' which it's used to<br/>
+		process the buffer and send it to text printer.<br/>
+<br/>
+		The `pr-mode-lpr' definition is:<br/>
+<br/>
+		(pr-mode-lpr HEADER-LIST &optional FROM TO)<br/>
+<br/>
+		Where HEADER-LIST is like the argument passed to LPR-PRINT.<br/>
+		FROM and TO are the beginning and end markers, respectively,<br/>
+		for a region.  If FROM is nil, it's used (point-min); if TO is<br/>
+		nil, it's used (point-max).<br/>
+<br/>
+PS-PRINT	It's a symbol function for PostScript printing.  It's invoked<br/>
+		with three arguments: n-up printing, file name and the list:<br/>
+		(HEADER-LINES  LEFT-HEADER  RIGHT-HEADER DEFAULT...).<br/>
+<br/>
+		Usually PS-PRINT function prepares the environment or buffer<br/>
+		and then call the function `pr-mode-print' which it's used to<br/>
+		process the buffer and send it to PostScript printer.<br/>
+<br/>
+		The `pr-mode-print' definition is:<br/>
+<br/>
+		(pr-mode-print N-UP FILENAME HEADER-LIST &optional FROM TO)<br/>
+<br/>
+		Where N-UP, FILENAME and HEADER-LIST are like the arguments<br/>
+		passed to PS-PRINT.  FROM and TO are the beginning and end<br/>
+		markers, respectively, for a region.  If TO is nil, it's used<br/>
+		(point-max).<br/>
+<br/>
+HEADER-LINES	It's the number of header lines; if is nil, it uses<br/>
+		`ps-header-lines' value.<br/>
+<br/>
+LEFT-HEADER	It's the left header part, it's a list of string, variable<br/>
+		symbol or function symbol (with no argument); if is nil, it<br/>
+		uses `ps-left-header' value.<br/>
+<br/>
+RIGHT-HEADER	It's the right header part, it's a list of string, variable<br/>
+		symbol or function symbol (with no argument); if is nil, it<br/>
+		uses `ps-right-header' value.<br/>
+<br/>
+KILL-LOCAL-VARIABLE<br/>
+		Non-nil means to kill all buffer local variable declared in<br/>
+		DEFAULT (see below).<br/>
+<br/>
+DEFAULT		It's a way to set default values when this entry is selected.<br/>
+		It's a cons like:<br/>
+<br/>
+		   (VARIABLE-SYM . VALUE)<br/>
+<br/>
+		Which associates VARIABLE-SYM with VALUE.  When this entry is<br/>
+		selected, it's executed the following command:<br/>
+<br/>
+		   (set (make-local-variable VARIABLE-SYM) (eval VALUE))<br/>
+<br/>
+		Note that VALUE can be any valid lisp expression.  So, don't<br/>
+		forget to quote symbols and constant lists.<br/>
+		If VARIABLE is the special keyword `inherits-from:', VALUE must<br/>
+		be a symbol name setting defined in `pr-setting-database' from<br/>
+		which the current setting inherits the context.  Take care with<br/>
+		circular inheritance.<br/>
+		Examples:<br/>
+			'(ps-landscape-mode . nil)<br/>
+			'(ps-spool-duplex . t)<br/>
+			'(pr-gs-device . (my-gs-device t))<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+Value: ((mh-folder-mode pr-mh-lpr-1 pr-mh-print-1 2<br/>
+		 (ps-article-author ps-article-subject)<br/>
+		 ("/pagenumberstring load" pr-article-date)<br/>
+		 nil)<br/>
+ (mh-letter-mode pr-mh-lpr-2 pr-mh-print-2 2<br/>
+		 (ps-article-author ps-article-subject)<br/>
+		 ("/pagenumberstring load" pr-article-date)<br/>
+		 nil)<br/>
+ (rmail-summary-mode pr-rmail-lpr pr-rmail-print 3<br/>
+		     (ps-article-subject ps-article-author buffer-name)<br/>
+		     nil nil)<br/>
+ (rmail-mode pr-rmail-lpr pr-rmail-print 3<br/>
+	     (ps-article-subject ps-article-author buffer-name)<br/>
+	     nil nil)<br/>
+ (gnus-summary-mode pr-gnus-lpr pr-gnus-print 3<br/>
+		    (ps-article-subject ps-article-author gnus-newsgroup-name)<br/>
+		    nil nil)<br/>
+ (gnus-article-mode pr-gnus-lpr pr-gnus-print 3<br/>
+		    (ps-article-subject ps-article-author gnus-newsgroup-name)<br/>
+		    nil nil)<br/>
+ (Info-mode pr-mode-lpr pr-mode-print 2<br/>
+	    (ps-info-node ps-info-file)<br/>
+	    nil nil)<br/>
+ (vm-mode pr-vm-lpr pr-vm-print 3<br/>
+	  (ps-article-subject ps-article-author buffer-name)<br/>
+	  nil nil))<br/>
+<br/>

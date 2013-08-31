@@ -1,1 +1,245 @@
-mailcap-mime-data is a variable defined in `mailcap.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>The mailcap structure is an assoc list of assoc lists.<br/>1st assoc list is keyed on the major content-type<br/>2nd assoc list is keyed on the minor content-type (which can be a regexp)<br/><br/>Which looks like:<br/>-----------------<br/> (("application"<br/>   ("postscript" . <info>))<br/>  ("text"<br/>   ("plain" . <info>)))<br/><br/>Where <info> is another assoc list of the various information<br/>related to the mailcap RFC 1524.  This is keyed on the lowercase<br/>attribute name (viewer, test, etc).  This looks like:<br/> ((viewer . VIEWERINFO)<br/>  (test   . TESTINFO)<br/>  (xxxx   . "STRING")<br/>  FLAG)<br/><br/>Where VIEWERINFO specifies how the content-type is viewed.  Can be<br/>a string, in which case it is run through a shell, with<br/>appropriate parameters, or a symbol, in which case the symbol is<br/>`funcall'ed, with the buffer as an argument.<br/><br/>TESTINFO is a test for the viewer's applicability, or nil.  If nil, it<br/>means the viewer is always valid.  If it is a Lisp function, it is<br/>called with a list of items from any extra fields from the<br/>Content-Type header as argument to return a boolean value for the<br/>validity.  Otherwise, if it is a non-function Lisp symbol or list<br/>whose car is a symbol, it is `eval'led to yield the validity.  If it<br/>is a string or list of strings, it represents a shell command to run<br/>to return a true or false shell value for the validity.<br/><br/>Value: (("application"<br/>  ("vnd\\.ms-excel"<br/>   (viewer . "gnumeric %s")<br/>   (test getenv "DISPLAY")<br/>   (type . "application/vnd.ms-excel"))<br/>  ("x-x509-ca-cert"<br/>   (viewer . ssl-view-site-cert)<br/>   (test fboundp 'ssl-view-site-cert)<br/>   (type . "application/x-x509-ca-cert"))<br/>  ("x-x509-user-cert"<br/>   (viewer . ssl-view-user-cert)<br/>   (test fboundp 'ssl-view-user-cert)<br/>   (type . "application/x-x509-user-cert"))<br/>  ("octet-stream"<br/>   (viewer . mailcap-save-binary-file)<br/>   (non-viewer . t)<br/>   (type . "application/octet-stream"))<br/>  ("dvi"<br/>   (viewer . "xdvi -safer %s")<br/>   (test eq window-system 'x)<br/>   ("needsx11")<br/>   (type . "application/dvi")<br/>   ("print" . "dvips -qRP %s"))<br/>  ("dvi"<br/>   (viewer . "dvitty %s")<br/>   (test not<br/>	 (getenv "DISPLAY"))<br/>   (type . "application/dvi")<br/>   ("print" . "dvips -qRP %s"))<br/>  ("emacs-lisp"<br/>   (viewer . mailcap-maybe-eval)<br/>   (type . "application/emacs-lisp"))<br/>  ("x-emacs-lisp"<br/>   (viewer . mailcap-maybe-eval)<br/>   (type . "application/x-emacs-lisp"))<br/>  ("x-tar"<br/>   (viewer . mailcap-save-binary-file)<br/>   (non-viewer . t)<br/>   (type . "application/x-tar"))<br/>  ("x-latex"<br/>   (viewer . tex-mode)<br/>   (test fboundp 'tex-mode)<br/>   (type . "application/x-latex"))<br/>  ("x-tex"<br/>   (viewer . tex-mode)<br/>   (test fboundp 'tex-mode)<br/>   (type . "application/x-tex"))<br/>  ("latex"<br/>   (viewer . tex-mode)<br/>   (test fboundp 'tex-mode)<br/>   (type . "application/latex"))<br/>  ("tex"<br/>   (viewer . tex-mode)<br/>   (test fboundp 'tex-mode)<br/>   (type . "application/tex"))<br/>  ("texinfo"<br/>   (viewer . texinfo-mode)<br/>   (test fboundp 'texinfo-mode)<br/>   (type . "application/tex"))<br/>  ("zip"<br/>   (viewer . mailcap-save-binary-file)<br/>   (non-viewer . t)<br/>   (type . "application/zip")<br/>   ("copiousoutput"))<br/>  ("pdf"<br/>   (viewer . "gv -safer %s")<br/>   (type . "application/pdf")<br/>   (test . window-system)<br/>   ("print" . "pdf2ps %s - | lpr"))<br/>  ("pdf"<br/>   (viewer . "gpdf %s")<br/>   (type . "application/pdf")<br/>   ("print" . "pdftops %s - | lpr")<br/>   (test eq window-system 'x))<br/>  ("pdf"<br/>   (viewer . "xpdf %s")<br/>   (type . "application/pdf")<br/>   ("print" . "pdftops %s - | lpr")<br/>   (test eq window-system 'x))<br/>  ("pdf"<br/>   (viewer . "pdftotext %s -")<br/>   (type . "application/pdf")<br/>   ("print" . "pdftops %s - | lpr")<br/>   ("copiousoutput"))<br/>  ("postscript"<br/>   (viewer . "gv -safer %s")<br/>   (type . "application/postscript")<br/>   (test . window-system)<br/>   ("print" . "lpr %s")<br/>   ("needsx11"))<br/>  ("postscript"<br/>   (viewer . "ghostview -dSAFER %s")<br/>   (type . "application/postscript")<br/>   (test eq window-system 'x)<br/>   ("print" . "lpr %s")<br/>   ("needsx11"))<br/>  ("postscript"<br/>   (viewer . "ps2ascii %s")<br/>   (type . "application/postscript")<br/>   (test not<br/>	 (getenv "DISPLAY"))<br/>   ("print" . "lpr %s")<br/>   ("copiousoutput"))<br/>  ("sieve"<br/>   (viewer . sieve-mode)<br/>   (test fboundp 'sieve-mode)<br/>   (type . "application/sieve"))<br/>  ("pgp-keys"<br/>   (viewer . "gpg --import --interactive --verbose")<br/>   (type . "application/pgp-keys")<br/>   ("needsterminal")))<br/> ("audio"<br/>  ("x-mpeg"<br/>   (viewer . "maplay %s")<br/>   (type . "audio/x-mpeg"))<br/>  (".*"<br/>   (viewer . "showaudio")<br/>   (type . "audio/*")))<br/> ("message"<br/>  ("rfc-*822"<br/>   (viewer . mm-view-message)<br/>   (test and<br/>	 (featurep 'gnus)<br/>	 (gnus-alive-p))<br/>   (type . "message/rfc822"))<br/>  ("rfc-*822"<br/>   (viewer . vm-mode)<br/>   (test fboundp 'vm-mode)<br/>   (type . "message/rfc822"))<br/>  ("rfc-*822"<br/>   (viewer . w3-mode)<br/>   (test fboundp 'w3-mode)<br/>   (type . "message/rfc822"))<br/>  ("rfc-*822"<br/>   (viewer . view-mode)<br/>   (type . "message/rfc822")))<br/> ("image"<br/>  ("x-xwd"<br/>   (viewer . "xwud -in %s")<br/>   (type . "image/x-xwd")<br/>   ("compose" . "xwd -frame > %s")<br/>   (test eq window-system 'x)<br/>   ("needsx11"))<br/>  ("x11-dump"<br/>   (viewer . "xwud -in %s")<br/>   (type . "image/x-xwd")<br/>   ("compose" . "xwd -frame > %s")<br/>   (test eq window-system 'x)<br/>   ("needsx11"))<br/>  ("windowdump"<br/>   (viewer . "xwud -in %s")<br/>   (type . "image/x-xwd")<br/>   ("compose" . "xwd -frame > %s")<br/>   (test eq window-system 'x)<br/>   ("needsx11"))<br/>  (".*"<br/>   (viewer . "display %s")<br/>   (type . "image/*")<br/>   (test eq window-system 'x)<br/>   ("needsx11"))<br/>  (".*"<br/>   (viewer . "ee %s")<br/>   (type . "image/*")<br/>   (test eq window-system 'x)<br/>   ("needsx11")))<br/> ("text"<br/>  ("plain"<br/>   (viewer . w3-mode)<br/>   (test fboundp 'w3-mode)<br/>   (type . "text/plain"))<br/>  ("plain"<br/>   (viewer . view-mode)<br/>   (test fboundp 'view-mode)<br/>   (type . "text/plain"))<br/>  ("plain"<br/>   (viewer . fundamental-mode)<br/>   (type . "text/plain"))<br/>  ("enriched"<br/>   (viewer . enriched-decode)<br/>   (test fboundp 'enriched-decode)<br/>   (type . "text/enriched"))<br/>  ("html"<br/>   (viewer . mm-w3-prepare-buffer)<br/>   (test fboundp 'w3-prepare-buffer)<br/>   (type . "text/html"))<br/>  ("dns"<br/>   (viewer . dns-mode)<br/>   (test fboundp 'dns-mode)<br/>   (type . "text/dns")))<br/> ("video"<br/>  ("mpeg"<br/>   (viewer . "mpeg_play %s")<br/>   (type . "video/mpeg")<br/>   (test eq window-system 'x)<br/>   ("needsx11")))<br/> ("x-world"<br/>  ("x-vrml"<br/>   (viewer . "webspace -remote %s -URL %u")<br/>   (type . "x-world/x-vrml")<br/>   ("description" "VRML document")))<br/> ("archive"<br/>  ("tar"<br/>   (viewer . tar-mode)<br/>   (type . "archive/tar")<br/>   (test fboundp 'tar-mode))))<br/><br/>
+<strong>mailcap-mime-data</strong> is a variable defined in `<code>mailcap.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+The mailcap structure is an assoc list of assoc lists.<br/>
+1st assoc list is keyed on the major content-type<br/>
+2nd assoc list is keyed on the minor content-type (which can be a regexp)<br/>
+<br/>
+Which looks like:<br/>
+-----------------<br/>
+ (("application"<br/>
+   ("postscript" . <info>))<br/>
+  ("text"<br/>
+   ("plain" . <info>)))<br/>
+<br/>
+Where <info> is another assoc list of the various information<br/>
+related to the mailcap RFC 1524.  This is keyed on the lowercase<br/>
+attribute name (viewer, test, etc).  This looks like:<br/>
+ ((viewer . VIEWERINFO)<br/>
+  (test   . TESTINFO)<br/>
+  (xxxx   . "STRING")<br/>
+  FLAG)<br/>
+<br/>
+Where VIEWERINFO specifies how the content-type is viewed.  Can be<br/>
+a string, in which case it is run through a shell, with<br/>
+appropriate parameters, or a symbol, in which case the symbol is<br/>
+`funcall'ed, with the buffer as an argument.<br/>
+<br/>
+TESTINFO is a test for the viewer's applicability, or nil.  If nil, it<br/>
+means the viewer is always valid.  If it is a Lisp function, it is<br/>
+called with a list of items from any extra fields from the<br/>
+Content-Type header as argument to return a boolean value for the<br/>
+validity.  Otherwise, if it is a non-function Lisp symbol or list<br/>
+whose car is a symbol, it is `eval'led to yield the validity.  If it<br/>
+is a string or list of strings, it represents a shell command to run<br/>
+to return a true or false shell value for the validity.<br/>
+<br/>
+Value: (("application"<br/>
+  ("vnd\\.ms-excel"<br/>
+   (viewer . "gnumeric %s")<br/>
+   (test getenv "DISPLAY")<br/>
+   (type . "application/vnd.ms-excel"))<br/>
+  ("x-x509-ca-cert"<br/>
+   (viewer . ssl-view-site-cert)<br/>
+   (test fboundp 'ssl-view-site-cert)<br/>
+   (type . "application/x-x509-ca-cert"))<br/>
+  ("x-x509-user-cert"<br/>
+   (viewer . ssl-view-user-cert)<br/>
+   (test fboundp 'ssl-view-user-cert)<br/>
+   (type . "application/x-x509-user-cert"))<br/>
+  ("octet-stream"<br/>
+   (viewer . mailcap-save-binary-file)<br/>
+   (non-viewer . t)<br/>
+   (type . "application/octet-stream"))<br/>
+  ("dvi"<br/>
+   (viewer . "xdvi -safer %s")<br/>
+   (test eq window-system 'x)<br/>
+   ("needsx11")<br/>
+   (type . "application/dvi")<br/>
+   ("print" . "dvips -qRP %s"))<br/>
+  ("dvi"<br/>
+   (viewer . "dvitty %s")<br/>
+   (test not<br/>
+	 (getenv "DISPLAY"))<br/>
+   (type . "application/dvi")<br/>
+   ("print" . "dvips -qRP %s"))<br/>
+  ("emacs-lisp"<br/>
+   (viewer . mailcap-maybe-eval)<br/>
+   (type . "application/emacs-lisp"))<br/>
+  ("x-emacs-lisp"<br/>
+   (viewer . mailcap-maybe-eval)<br/>
+   (type . "application/x-emacs-lisp"))<br/>
+  ("x-tar"<br/>
+   (viewer . mailcap-save-binary-file)<br/>
+   (non-viewer . t)<br/>
+   (type . "application/x-tar"))<br/>
+  ("x-latex"<br/>
+   (viewer . tex-mode)<br/>
+   (test fboundp 'tex-mode)<br/>
+   (type . "application/x-latex"))<br/>
+  ("x-tex"<br/>
+   (viewer . tex-mode)<br/>
+   (test fboundp 'tex-mode)<br/>
+   (type . "application/x-tex"))<br/>
+  ("latex"<br/>
+   (viewer . tex-mode)<br/>
+   (test fboundp 'tex-mode)<br/>
+   (type . "application/latex"))<br/>
+  ("tex"<br/>
+   (viewer . tex-mode)<br/>
+   (test fboundp 'tex-mode)<br/>
+   (type . "application/tex"))<br/>
+  ("texinfo"<br/>
+   (viewer . texinfo-mode)<br/>
+   (test fboundp 'texinfo-mode)<br/>
+   (type . "application/tex"))<br/>
+  ("zip"<br/>
+   (viewer . mailcap-save-binary-file)<br/>
+   (non-viewer . t)<br/>
+   (type . "application/zip")<br/>
+   ("copiousoutput"))<br/>
+  ("pdf"<br/>
+   (viewer . "gv -safer %s")<br/>
+   (type . "application/pdf")<br/>
+   (test . window-system)<br/>
+   ("print" . "pdf2ps %s - | lpr"))<br/>
+  ("pdf"<br/>
+   (viewer . "gpdf %s")<br/>
+   (type . "application/pdf")<br/>
+   ("print" . "pdftops %s - | lpr")<br/>
+   (test eq window-system 'x))<br/>
+  ("pdf"<br/>
+   (viewer . "xpdf %s")<br/>
+   (type . "application/pdf")<br/>
+   ("print" . "pdftops %s - | lpr")<br/>
+   (test eq window-system 'x))<br/>
+  ("pdf"<br/>
+   (viewer . "pdftotext %s -")<br/>
+   (type . "application/pdf")<br/>
+   ("print" . "pdftops %s - | lpr")<br/>
+   ("copiousoutput"))<br/>
+  ("postscript"<br/>
+   (viewer . "gv -safer %s")<br/>
+   (type . "application/postscript")<br/>
+   (test . window-system)<br/>
+   ("print" . "lpr %s")<br/>
+   ("needsx11"))<br/>
+  ("postscript"<br/>
+   (viewer . "ghostview -dSAFER %s")<br/>
+   (type . "application/postscript")<br/>
+   (test eq window-system 'x)<br/>
+   ("print" . "lpr %s")<br/>
+   ("needsx11"))<br/>
+  ("postscript"<br/>
+   (viewer . "ps2ascii %s")<br/>
+   (type . "application/postscript")<br/>
+   (test not<br/>
+	 (getenv "DISPLAY"))<br/>
+   ("print" . "lpr %s")<br/>
+   ("copiousoutput"))<br/>
+  ("sieve"<br/>
+   (viewer . sieve-mode)<br/>
+   (test fboundp 'sieve-mode)<br/>
+   (type . "application/sieve"))<br/>
+  ("pgp-keys"<br/>
+   (viewer . "gpg --import --interactive --verbose")<br/>
+   (type . "application/pgp-keys")<br/>
+   ("needsterminal")))<br/>
+ ("audio"<br/>
+  ("x-mpeg"<br/>
+   (viewer . "maplay %s")<br/>
+   (type . "audio/x-mpeg"))<br/>
+  (".*"<br/>
+   (viewer . "showaudio")<br/>
+   (type . "audio/*")))<br/>
+ ("message"<br/>
+  ("rfc-*822"<br/>
+   (viewer . mm-view-message)<br/>
+   (test and<br/>
+	 (featurep 'gnus)<br/>
+	 (gnus-alive-p))<br/>
+   (type . "message/rfc822"))<br/>
+  ("rfc-*822"<br/>
+   (viewer . vm-mode)<br/>
+   (test fboundp 'vm-mode)<br/>
+   (type . "message/rfc822"))<br/>
+  ("rfc-*822"<br/>
+   (viewer . w3-mode)<br/>
+   (test fboundp 'w3-mode)<br/>
+   (type . "message/rfc822"))<br/>
+  ("rfc-*822"<br/>
+   (viewer . view-mode)<br/>
+   (type . "message/rfc822")))<br/>
+ ("image"<br/>
+  ("x-xwd"<br/>
+   (viewer . "xwud -in %s")<br/>
+   (type . "image/x-xwd")<br/>
+   ("compose" . "xwd -frame > %s")<br/>
+   (test eq window-system 'x)<br/>
+   ("needsx11"))<br/>
+  ("x11-dump"<br/>
+   (viewer . "xwud -in %s")<br/>
+   (type . "image/x-xwd")<br/>
+   ("compose" . "xwd -frame > %s")<br/>
+   (test eq window-system 'x)<br/>
+   ("needsx11"))<br/>
+  ("windowdump"<br/>
+   (viewer . "xwud -in %s")<br/>
+   (type . "image/x-xwd")<br/>
+   ("compose" . "xwd -frame > %s")<br/>
+   (test eq window-system 'x)<br/>
+   ("needsx11"))<br/>
+  (".*"<br/>
+   (viewer . "display %s")<br/>
+   (type . "image/*")<br/>
+   (test eq window-system 'x)<br/>
+   ("needsx11"))<br/>
+  (".*"<br/>
+   (viewer . "ee %s")<br/>
+   (type . "image/*")<br/>
+   (test eq window-system 'x)<br/>
+   ("needsx11")))<br/>
+ ("text"<br/>
+  ("plain"<br/>
+   (viewer . w3-mode)<br/>
+   (test fboundp 'w3-mode)<br/>
+   (type . "text/plain"))<br/>
+  ("plain"<br/>
+   (viewer . view-mode)<br/>
+   (test fboundp 'view-mode)<br/>
+   (type . "text/plain"))<br/>
+  ("plain"<br/>
+   (viewer . fundamental-mode)<br/>
+   (type . "text/plain"))<br/>
+  ("enriched"<br/>
+   (viewer . enriched-decode)<br/>
+   (test fboundp 'enriched-decode)<br/>
+   (type . "text/enriched"))<br/>
+  ("html"<br/>
+   (viewer . mm-w3-prepare-buffer)<br/>
+   (test fboundp 'w3-prepare-buffer)<br/>
+   (type . "text/html"))<br/>
+  ("dns"<br/>
+   (viewer . dns-mode)<br/>
+   (test fboundp 'dns-mode)<br/>
+   (type . "text/dns")))<br/>
+ ("video"<br/>
+  ("mpeg"<br/>
+   (viewer . "mpeg_play %s")<br/>
+   (type . "video/mpeg")<br/>
+   (test eq window-system 'x)<br/>
+   ("needsx11")))<br/>
+ ("x-world"<br/>
+  ("x-vrml"<br/>
+   (viewer . "webspace -remote %s -URL %u")<br/>
+   (type . "x-world/x-vrml")<br/>
+   ("description" "VRML document")))<br/>
+ ("archive"<br/>
+  ("tar"<br/>
+   (viewer . tar-mode)<br/>
+   (type . "archive/tar")<br/>
+   (test fboundp 'tar-mode))))<br/>
+<br/>

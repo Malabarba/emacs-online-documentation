@@ -1,1 +1,28 @@
-solar-holidays is a variable defined in `holidays.el'.<br/>Its value is shown below.<br/><br/>  This variable is an alias for `holiday-solar-holidays'.<br/>  This variable is obsolete since 23.1;<br/>  use `holiday-solar-holidays' instead.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Sun-related holidays.<br/>See the documentation for `calendar-holidays' for details.<br/><br/>You can customize this variable.<br/><br/>Value: ((solar-equinoxes-solstices)<br/> (holiday-sexp calendar-daylight-savings-starts<br/>	       (format "Daylight Saving Time Begins %s"<br/>		       (solar-time-string<br/>			(/ calendar-daylight-savings-starts-time<br/>			   (float 60))<br/>			calendar-standard-time-zone-name)))<br/> (holiday-sexp calendar-daylight-savings-ends<br/>	       (format "Daylight Saving Time Ends %s"<br/>		       (solar-time-string<br/>			(/ calendar-daylight-savings-ends-time<br/>			   (float 60))<br/>			calendar-daylight-time-zone-name))))<br/><br/>
+<strong>solar-holidays</strong> is a variable defined in `<code>holidays.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable is an alias for `holiday-solar-holidays'.<br/>
+  This variable is obsolete since 23.1;<br/>
+  use `holiday-solar-holidays' instead.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Sun-related holidays.<br/>
+See the documentation for `calendar-holidays' for details.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+Value: ((solar-equinoxes-solstices)<br/>
+ (holiday-sexp calendar-daylight-savings-starts<br/>
+	       (format "Daylight Saving Time Begins %s"<br/>
+		       (solar-time-string<br/>
+			(/ calendar-daylight-savings-starts-time<br/>
+			   (float 60))<br/>
+			calendar-standard-time-zone-name)))<br/>
+ (holiday-sexp calendar-daylight-savings-ends<br/>
+	       (format "Daylight Saving Time Ends %s"<br/>
+		       (solar-time-string<br/>
+			(/ calendar-daylight-savings-ends-time<br/>
+			   (float 60))<br/>
+			calendar-daylight-time-zone-name))))<br/>
+<br/>

@@ -1,1 +1,83 @@
-semantic-lex-tokens is a variable defined in `lex.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>An alist of semantic token types.<br/>As of December 2001 (semantic 1.4beta13), this variable is not used in<br/>any code.  The only use is to refer to the doc-string from elsewhere.<br/><br/>The key to this alist is the symbol representing token type that<br/>M-x semantic-flex returns.  These are<br/><br/>  - bol:           Empty string matching a beginning of line.<br/>                   This token is produced with<br/>                   `semantic-lex-beginning-of-line'.<br/><br/>  - charquote:     String sequences that match `\s\+' regexp.<br/>                   This token is produced with `semantic-lex-charquote'.<br/><br/>  - close-paren:   Characters that match `\s)' regexp.<br/>                   These are typically `)', `}', `]', etc.<br/>                   This token is produced with<br/>                   `semantic-lex-close-paren'.<br/><br/>  - comment:       A comment chunk.  These token types are not<br/>                   produced by default.<br/>                   This token is produced with `semantic-lex-comments'.<br/>                   Comments are ignored with `semantic-lex-ignore-comments'.<br/>                   Comments are treated as whitespace with<br/>                   `semantic-lex-comments-as-whitespace'.<br/><br/>  - newline        Characters matching `\s-*\(<br/>\|\s>\)' regexp.<br/>                   This token is produced with `semantic-lex-newline'.<br/><br/>  - open-paren:    Characters that match `\s(' regexp.<br/>                   These are typically `(', `{', `[', etc.<br/>                   If `semantic-lex-paren-or-list' is used,<br/>                   then `open-paren' is not usually generated unless<br/>                   the `depth' argument to M-x semantic-lex is<br/>                   greater than 0.<br/>                   This token is always produced if the analyzer<br/>                   `semantic-lex-open-paren' is used.<br/><br/>  - punctuation:   Characters matching `{\(\s.\|\s$\|\s'\)'<br/>                   regexp.<br/>                   This token is produced with `semantic-lex-punctuation'.<br/>                   Always specify this analyzer after the comment<br/>                   analyzer.<br/><br/>  - semantic-list: String delimited by matching parenthesis, braces,<br/>                   etc.  that the lexer skipped over, because the<br/>                   `depth' parameter to M-x semantic-flex was not high<br/>                   enough.<br/>                   This token is produced with `semantic-lex-paren-or-list'.<br/><br/>  - string:        Quoted strings, i.e., string sequences that start<br/>                   and end with characters matching `\s"'<br/>                   regexp.  The lexer relies on @code{forward-sexp} to<br/>                   find the matching end.<br/>                   This token is produced with `semantic-lex-string'.<br/><br/>  - symbol:        String sequences that match `\(\sw\|\s_\)+'<br/>                   regexp.<br/>                   This token is produced with<br/>                   `semantic-lex-symbol-or-keyword'.  Always add this analyzer<br/>                   after `semantic-lex-number', or other analyzers that<br/>                   match its regular expression.<br/><br/>  - whitespace:    Characters that match `\s-+' regexp.<br/>                   This token is produced with `semantic-lex-whitespace'.<br/><br/>Value: ((bol)<br/> (charquote)<br/> (close-paren)<br/> (comment)<br/> (newline)<br/> (open-paren)<br/> (punctuation)<br/> (semantic-list)<br/> (string)<br/> (symbol)<br/> (whitespace))<br/><br/>
+<strong>semantic-lex-tokens</strong> is a variable defined in `<code>lex.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+An alist of semantic token types.<br/>
+As of December 2001 (semantic 1.4beta13), this variable is not used in<br/>
+any code.  The only use is to refer to the doc-string from elsewhere.<br/>
+<br/>
+The key to this alist is the symbol representing token type that<br/>
+M-x semantic-flex returns.  These are<br/>
+<br/>
+  - bol:           Empty string matching a beginning of line.<br/>
+                   This token is produced with<br/>
+                   `semantic-lex-beginning-of-line'.<br/>
+<br/>
+  - charquote:     String sequences that match `\s\+' regexp.<br/>
+                   This token is produced with `semantic-lex-charquote'.<br/>
+<br/>
+  - close-paren:   Characters that match `\s)' regexp.<br/>
+                   These are typically `)', `}', `]', etc.<br/>
+                   This token is produced with<br/>
+                   `semantic-lex-close-paren'.<br/>
+<br/>
+  - comment:       A comment chunk.  These token types are not<br/>
+                   produced by default.<br/>
+                   This token is produced with `semantic-lex-comments'.<br/>
+                   Comments are ignored with `semantic-lex-ignore-comments'.<br/>
+                   Comments are treated as whitespace with<br/>
+                   `semantic-lex-comments-as-whitespace'.<br/>
+<br/>
+  - newline        Characters matching `\s-*\(<br/>
+\|\s>\)' regexp.<br/>
+                   This token is produced with `semantic-lex-newline'.<br/>
+<br/>
+  - open-paren:    Characters that match `\s(' regexp.<br/>
+                   These are typically `(', `{', `[', etc.<br/>
+                   If `semantic-lex-paren-or-list' is used,<br/>
+                   then `open-paren' is not usually generated unless<br/>
+                   the `depth' argument to M-x semantic-lex is<br/>
+                   greater than 0.<br/>
+                   This token is always produced if the analyzer<br/>
+                   `semantic-lex-open-paren' is used.<br/>
+<br/>
+  - punctuation:   Characters matching `{\(\s.\|\s$\|\s'\)'<br/>
+                   regexp.<br/>
+                   This token is produced with `semantic-lex-punctuation'.<br/>
+                   Always specify this analyzer after the comment<br/>
+                   analyzer.<br/>
+<br/>
+  - semantic-list: String delimited by matching parenthesis, braces,<br/>
+                   etc.  that the lexer skipped over, because the<br/>
+                   `depth' parameter to M-x semantic-flex was not high<br/>
+                   enough.<br/>
+                   This token is produced with `semantic-lex-paren-or-list'.<br/>
+<br/>
+  - string:        Quoted strings, i.e., string sequences that start<br/>
+                   and end with characters matching `\s"'<br/>
+                   regexp.  The lexer relies on @code{forward-sexp} to<br/>
+                   find the matching end.<br/>
+                   This token is produced with `semantic-lex-string'.<br/>
+<br/>
+  - symbol:        String sequences that match `\(\sw\|\s_\)+'<br/>
+                   regexp.<br/>
+                   This token is produced with<br/>
+                   `semantic-lex-symbol-or-keyword'.  Always add this analyzer<br/>
+                   after `semantic-lex-number', or other analyzers that<br/>
+                   match its regular expression.<br/>
+<br/>
+  - whitespace:    Characters that match `\s-+' regexp.<br/>
+                   This token is produced with `semantic-lex-whitespace'.<br/>
+<br/>
+Value: ((bol)<br/>
+ (charquote)<br/>
+ (close-paren)<br/>
+ (comment)<br/>
+ (newline)<br/>
+ (open-paren)<br/>
+ (punctuation)<br/>
+ (semantic-list)<br/>
+ (string)<br/>
+ (symbol)<br/>
+ (whitespace))<br/>
+<br/>

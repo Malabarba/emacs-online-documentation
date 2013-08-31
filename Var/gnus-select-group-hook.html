@@ -1,1 +1,22 @@
-gnus-select-group-hook is a variable defined in `gnus-sum.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>*A hook called when a newsgroup is selected.<br/><br/>If you'd like to simplify subjects like the<br/>`gnus-summary-next-same-subject' command does, you can use the<br/>following hook:<br/><br/> (add-hook gnus-select-group-hook<br/>	   (lambda ()<br/>	     (mapcar (lambda (header)<br/>		       (mail-header-set-subject<br/>			header<br/>			(gnus-simplify-subject<br/>			 (mail-header-subject header) 're-only)))<br/>		     gnus-newsgroup-headers)))<br/><br/>You can customize this variable.
+<strong>gnus-select-group-hook</strong> is a variable defined in `<code>gnus-sum.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+*A hook called when a newsgroup is selected.<br/>
+<br/>
+If you'd like to simplify subjects like the<br/>
+`gnus-summary-next-same-subject' command does, you can use the<br/>
+following hook:<br/>
+<br/>
+ (add-hook gnus-select-group-hook<br/>
+	   (lambda ()<br/>
+	     (mapcar (lambda (header)<br/>
+		       (mail-header-set-subject<br/>
+			header<br/>
+			(gnus-simplify-subject<br/>
+			 (mail-header-subject header) 're-only)))<br/>
+		     gnus-newsgroup-headers)))<br/>
+<br/>
+You can customize this variable.

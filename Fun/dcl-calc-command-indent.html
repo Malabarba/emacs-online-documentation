@@ -1,1 +1,56 @@
-dcl-calc-command-indent is a compiled Lisp function in `dcl-mode.el'.<br/><br/>(dcl-calc-command-indent)<br/><br/>Calculate how much the current line shall be indented.<br/>The line is known to be a command line.<br/><br/>Find the indentation of the preceding line and analyze its contents to<br/>see if the current lines should be indented.<br/>Analyze the current line to see if it should be `outdented'.<br/><br/>Calculate the indentation of the current line, either with the default<br/>method or by calling dcl-calc-command-indent-function if it is<br/>non-nil.<br/><br/>If the current line should be outdented, calculate its indentation,<br/>either with the default method or by calling<br/>dcl-calc-command-indent-function if it is non-nil.<br/><br/><br/>Rules for default indentation:<br/><br/>If it is the first line in the buffer, indent dcl-margin-offset.<br/><br/>Go to the previous command line with a command on it.<br/>Find out how much it is indented (cur-indent).<br/>Look at the first word on the line to see if the indentation should be<br/>adjusted.  Skip margin-label, continuations and comments while looking for<br/>the first word.  Save this buffer position as `last-point'.<br/>If the first word after a label is SUBROUTINE, set extra-indent to<br/>dcl-margin-offset.<br/><br/>First word  extra-indent<br/>THEN        +dcl-basic-offset<br/>ELSE        +dcl-basic-offset<br/>block-begin +dcl-basic-offset<br/><br/>Then return to the current line and look at the first word to see if the<br/>indentation should be adjusted again.  Save this buffer position as<br/>`this-point'.<br/><br/>First word  extra-indent<br/>ELSE        -dcl-basic-offset<br/>ENDIF       -dcl-basic-offset<br/>block-end   -dcl-basic-offset<br/><br/><br/>If dcl-calc-command-indent-function is nil or returns nil set<br/>cur-indent to cur-indent+extra-indent.<br/><br/>If an extra adjustment is necessary and if<br/>dcl-calc-command-indent-function is nil or returns nil set cur-indent<br/>to cur-indent+extra-indent.<br/><br/>See also documentation for dcl-calc-command-indent-function.<br/>The indent-type classification could probably be expanded upon.<br/>
+<strong>dcl-calc-command-indent</strong> is a compiled Lisp function in `<code>dcl-mode.el</code>'.<br/>
+<br/>
+(dcl-calc-command-indent)<br/>
+<br/>
+Calculate how much the current line shall be indented.<br/>
+The line is known to be a command line.<br/>
+<br/>
+Find the indentation of the preceding line and analyze its contents to<br/>
+see if the current lines should be indented.<br/>
+Analyze the current line to see if it should be `outdented'.<br/>
+<br/>
+Calculate the indentation of the current line, either with the default<br/>
+method or by calling dcl-calc-command-indent-function if it is<br/>
+non-nil.<br/>
+<br/>
+If the current line should be outdented, calculate its indentation,<br/>
+either with the default method or by calling<br/>
+dcl-calc-command-indent-function if it is non-nil.<br/>
+<br/>
+<br/>
+Rules for default indentation:<br/>
+<br/>
+If it is the first line in the buffer, indent dcl-margin-offset.<br/>
+<br/>
+Go to the previous command line with a command on it.<br/>
+Find out how much it is indented (cur-indent).<br/>
+Look at the first word on the line to see if the indentation should be<br/>
+adjusted.  Skip margin-label, continuations and comments while looking for<br/>
+the first word.  Save this buffer position as `last-point'.<br/>
+If the first word after a label is SUBROUTINE, set extra-indent to<br/>
+dcl-margin-offset.<br/>
+<br/>
+First word  extra-indent<br/>
+THEN        +dcl-basic-offset<br/>
+ELSE        +dcl-basic-offset<br/>
+block-begin +dcl-basic-offset<br/>
+<br/>
+Then return to the current line and look at the first word to see if the<br/>
+indentation should be adjusted again.  Save this buffer position as<br/>
+`this-point'.<br/>
+<br/>
+First word  extra-indent<br/>
+ELSE        -dcl-basic-offset<br/>
+ENDIF       -dcl-basic-offset<br/>
+block-end   -dcl-basic-offset<br/>
+<br/>
+<br/>
+If dcl-calc-command-indent-function is nil or returns nil set<br/>
+cur-indent to cur-indent+extra-indent.<br/>
+<br/>
+If an extra adjustment is necessary and if<br/>
+dcl-calc-command-indent-function is nil or returns nil set cur-indent<br/>
+to cur-indent+extra-indent.<br/>
+<br/>
+See also documentation for dcl-calc-command-indent-function.<br/>
+The indent-type classification could probably be expanded upon.<br/>

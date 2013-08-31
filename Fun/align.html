@@ -1,1 +1,19 @@
-align is an interactive autoloaded compiled Lisp function in `align.el'.<br/><br/>(align BEG END &optional SEPARATE RULES EXCLUDE-RULES)<br/><br/>Attempt to align a region based on a set of alignment rules.<br/>BEG and END mark the region.  If BEG and END are specifically set to<br/>nil (this can only be done programmatically), the beginning and end of<br/>the current alignment section will be calculated based on the location<br/>of point, and the value of `align-region-separate' (or possibly each<br/>rule's `separate' attribute).<br/><br/>If SEPARATE is non-nil, it overrides the value of<br/>`align-region-separate' for all rules, except those that have their<br/>`separate' attribute set.<br/><br/>RULES and EXCLUDE-RULES, if either is non-nil, will replace the<br/>default rule lists defined in `align-rules-list' and<br/>`align-exclude-rules-list'.  See `align-rules-list' for more details<br/>on the format of these lists.
+<strong>align</strong> is an interactive autoloaded compiled Lisp function in `<code>align.el</code>'.<br/>
+<br/>
+(align BEG END &optional SEPARATE RULES EXCLUDE-RULES)<br/>
+<br/>
+Attempt to align a region based on a set of alignment rules.<br/>
+BEG and END mark the region.  If BEG and END are specifically set to<br/>
+nil (this can only be done programmatically), the beginning and end of<br/>
+the current alignment section will be calculated based on the location<br/>
+of point, and the value of `align-region-separate' (or possibly each<br/>
+rule's `separate' attribute).<br/>
+<br/>
+If SEPARATE is non-nil, it overrides the value of<br/>
+`align-region-separate' for all rules, except those that have their<br/>
+`separate' attribute set.<br/>
+<br/>
+RULES and EXCLUDE-RULES, if either is non-nil, will replace the<br/>
+default rule lists defined in `align-rules-list' and<br/>
+`align-exclude-rules-list'.  See `align-rules-list' for more details<br/>
+on the format of these lists.

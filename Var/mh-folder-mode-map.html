@@ -1,1 +1,131 @@
-mh-folder-mode-map is a variable defined in `mh-folder.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap for MH-Folder mode.<br/><br/>Value:<br/>(keymap<br/> #^[nil nil keymap<br/>	#^^[3 0 nil nil nil nil mh-delete-msg-no-motion nil nil nil nil mh-index-next-folder nil nil nil mh-show nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>	      (keymap<br/>	       (112 . mh-previous-unread-msg)<br/>	       (110 . mh-next-unread-msg)<br/>	       (100 . mh-redistribute)<br/>	       (62 . mh-last-msg)<br/>	       (60 . mh-first-msg)<br/>	       (9 . mh-index-previous-folder))<br/>	      nil nil nil nil mh-page-msg mh-refile-or-write-again nil nil nil nil nil mh-toggle-tick nil nil nil nil mh-header-display negative-argument mh-alt-show mh-limit-map digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument mh-show-preferred-alternative mh-toggle-mh-decode-mime-flag nil nil mh-write-msg-to-file mh-help nil nil nil nil mh-digest-map mh-extract-rejected-mail mh-folder-map nil nil<br/>	      (keymap)<br/>	      mh-junk-map mh-mime-map nil mh-modify nil nil mh-ps-print-map nil nil mh-sequence-map mh-thread-map nil nil nil mh-extract-map nil nil nil nil nil mh-alt-refile-msg nil nil nil nil mh-copy-msg mh-delete-msg mh-edit-again mh-forward mh-goto-msg nil mh-inc-folder nil mh-delete-subject-or-thread nil mh-alt-send mh-next-undeleted-msg mh-refile-msg mh-previous-undeleted-msg mh-quit mh-reply mh-send mh-toggle-showing mh-undo mh-index-visit-folder nil mh-execute-commands nil nil nil mh-pipe-msg nil nil mh-previous-page]<br/>	#^^[1 0<br/>	      #^^[2 0<br/>		    #^^[3 0 nil nil nil nil mh-delete-msg-no-motion nil nil nil nil mh-index-next-folder nil nil nil mh-show nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>			  (keymap<br/>			   (112 . mh-previous-unread-msg)<br/>			   (110 . mh-next-unread-msg)<br/>			   (100 . mh-redistribute)<br/>			   (62 . mh-last-msg)<br/>			   (60 . mh-first-msg)<br/>			   (9 . mh-index-previous-folder))<br/>			  nil nil nil nil mh-page-msg mh-refile-or-write-again nil nil nil nil nil mh-toggle-tick nil nil nil nil mh-header-display negative-argument mh-alt-show mh-limit-map digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument mh-show-preferred-alternative mh-toggle-mh-decode-mime-flag nil nil mh-write-msg-to-file mh-help nil nil nil nil mh-digest-map mh-extract-rejected-mail mh-folder-map nil nil<br/>			  (keymap)<br/>			  mh-junk-map mh-mime-map nil mh-modify nil nil mh-ps-print-map nil nil mh-sequence-map mh-thread-map nil nil nil mh-extract-map nil nil nil nil nil mh-alt-refile-msg nil nil nil nil mh-copy-msg mh-delete-msg mh-edit-again mh-forward mh-goto-msg nil mh-inc-folder nil mh-delete-subject-or-thread nil mh-alt-send mh-next-undeleted-msg mh-refile-msg mh-previous-undeleted-msg mh-quit mh-reply mh-send mh-toggle-showing mh-undo mh-index-visit-folder nil mh-execute-commands nil nil nil mh-pipe-msg nil nil mh-previous-page]<br/>		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/> (mouse-2 . mh-show-mouse)<br/> (backtab . mh-index-previous-folder)<br/> (remap keymap<br/>	(self-insert-command . undefined))<br/> (menu-bar keymap<br/>	   (Folder menu-item "Folder"<br/>		   (keymap "Folder"<br/>			   (Incorporate\ New\ Mail menu-item "Incorporate New Mail" mh-inc-folder)<br/>			   (Toggle\ Show/Folder menu-item "Toggle Show/Folder" mh-toggle-showing)<br/>			   (Execute\ Delete/Refile menu-item "Execute Delete/Refile" mh-execute-commands :enable<br/>						   (mh-outstanding-commands-p))<br/>			   (Rescan\ Folder menu-item "Rescan Folder" mh-rescan-folder)<br/>			   (Thread\ Folder menu-item "Thread Folder" mh-toggle-threads :enable<br/>					   (not<br/>					    (memq 'unthread mh-view-ops)))<br/>			   (Pack\ Folder menu-item "Pack Folder" mh-pack-folder)<br/>			   (Sort\ Folder menu-item "Sort Folder" mh-sort-folder)<br/>			   (nil-7 menu-item "--")<br/>			   (List\ Folders menu-item "List Folders" mh-list-folders)<br/>			   (Visit\ a\ Folder\.\.\. menu-item "Visit a Folder..." mh-visit-folder)<br/>			   (View\ New\ Messages menu-item "View New Messages" mh-index-new-messages)<br/>			   (Search\.\.\. menu-item "Search..." mh-search)<br/>			   (nil-7-12 menu-item "--")<br/>			   (Quit\ MH-E menu-item "Quit MH-E" mh-quit)))<br/>	   (Message menu-item "Message"<br/>		    (keymap "Message"<br/>			    (Show\ Message menu-item "Show Message" mh-show :enable<br/>					   (mh-get-msg-num nil))<br/>			    (Show\ Message\ with\ Header menu-item "Show Message with Header" mh-header-display :enable<br/>							 (mh-get-msg-num nil))<br/>			    (Show\ Message\ with\ Preferred\ Alternative menu-item "Show Message with Preferred Alternative" mh-show-preferred-alternative :enable<br/>									 (mh-get-msg-num nil))<br/>			    (Next\ Message menu-item "Next Message" mh-next-undeleted-msg)<br/>			    (Previous\ Message menu-item "Previous Message" mh-previous-undeleted-msg)<br/>			    (Go\ to\ First\ Message menu-item "Go to First Message" mh-first-msg)<br/>			    (Go\ to\ Last\ Message menu-item "Go to Last Message" mh-last-msg)<br/>			    (Go\ to\ Message\ by\ Number\.\.\. menu-item "Go to Message by Number..." mh-goto-msg)<br/>			    (Modify\ Message menu-item "Modify Message" mh-modify)<br/>			    (Delete\ Message menu-item "Delete Message" mh-delete-msg :enable<br/>					     (mh-get-msg-num nil))<br/>			    (Refile\ Message menu-item "Refile Message" mh-refile-msg :enable<br/>					     (mh-get-msg-num nil))<br/>			    (Undo\ Delete/Refile menu-item "Undo Delete/Refile" mh-undo :enable<br/>						 (mh-outstanding-commands-p))<br/>			    (Execute\ Delete/Refile menu-item "Execute Delete/Refile" mh-execute-commands :enable<br/>						    (mh-outstanding-commands-p))<br/>			    (nil-7 menu-item "--")<br/>			    (Compose\ a\ New\ Message menu-item "Compose a New Message" mh-send)<br/>			    (Reply\ to\ Message\.\.\. menu-item "Reply to Message..." mh-reply :enable<br/>						      (mh-get-msg-num nil))<br/>			    (Forward\ Message\.\.\. menu-item "Forward Message..." mh-forward :enable<br/>						    (mh-get-msg-num nil))<br/>			    (Redistribute\ Message\.\.\. menu-item "Redistribute Message..." mh-redistribute :enable<br/>							 (mh-get-msg-num nil))<br/>			    (Edit\ Message\ Again menu-item "Edit Message Again" mh-edit-again :enable<br/>						  (mh-get-msg-num nil))<br/>			    (Re-edit\ a\ Bounced\ Message menu-item "Re-edit a Bounced Message" mh-extract-rejected-mail)<br/>			    (nil-7-20 menu-item "--")<br/>			    (Copy\ Message\ to\ Folder\.\.\. menu-item "Copy Message to Folder..." mh-copy-msg :enable<br/>							     (mh-get-msg-num nil))<br/>			    (Print\ Message menu-item "Print Message" mh-print-msg :enable<br/>					    (mh-get-msg-num nil))<br/>			    (Write\ Message\ to\ File\.\.\. menu-item "Write Message to File..." mh-write-msg-to-file :enable<br/>							    (mh-get-msg-num nil))<br/>			    (Pipe\ Message\ to\ Command\.\.\. menu-item "Pipe Message to Command..." mh-pipe-msg :enable<br/>							      (mh-get-msg-num nil))<br/>			    (Unpack\ Uuencoded\ Message\.\.\. menu-item "Unpack Uuencoded Message..." mh-store-msg :enable<br/>							      (mh-get-msg-num nil))<br/>			    (Burst\ Digest\ Message menu-item "Burst Digest Message" mh-burst-digest :enable<br/>						    (mh-get-msg-num nil))))<br/>	   (Sequence menu-item "Sequence"<br/>		     (keymap "Sequence"<br/>			     (Add\ Message\ to\ Sequence\.\.\. menu-item "Add Message to Sequence..." mh-put-msg-in-seq :enable<br/>							       (mh-get-msg-num nil))<br/>			     (List\ Sequences\ for\ Message menu-item "List Sequences for Message" mh-msg-is-in-seq :enable<br/>							    (mh-get-msg-num nil))<br/>			     (Delete\ Message\ from\ Sequence\.\.\. menu-item "Delete Message from Sequence..." mh-delete-msg-from-seq :enable<br/>								    (mh-get-msg-num nil))<br/>			     (List\ Sequences\ in\ Folder\.\.\. menu-item "List Sequences in Folder..." mh-list-sequences)<br/>			     (Delete\ Sequence\.\.\. menu-item "Delete Sequence..." mh-delete-seq)<br/>			     (Narrow\ to\ Sequence\.\.\. menu-item "Narrow to Sequence..." mh-narrow-to-seq)<br/>			     (Widen\ from\ Sequence menu-item "Widen from Sequence" mh-widen :enable mh-folder-view-stack)<br/>			     (nil-7 menu-item "--")<br/>			     (Narrow\ to\ Subject\ Sequence menu-item "Narrow to Subject Sequence" mh-narrow-to-subject)<br/>			     (Narrow\ to\ Tick\ Sequence menu-item "Narrow to Tick Sequence" mh-narrow-to-tick :enable<br/>							 (and mh-tick-seq<br/>							      (mh-seq-msgs<br/>							       (mh-find-seq mh-tick-seq))))<br/>			     (Delete\ Rest\ of\ Same\ Subject menu-item "Delete Rest of Same Subject" mh-delete-subject)<br/>			     (Toggle\ Tick\ Mark menu-item "Toggle Tick Mark" mh-toggle-tick)<br/>			     (nil-7-12 menu-item "--")<br/>			     (Push\ State\ Out\ to\ MH menu-item "Push State Out to MH" mh-update-sequences)))))<br/><br/>
+<strong>mh-folder-mode-map</strong> is a variable defined in `<code>mh-folder.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap for MH-Folder mode.<br/>
+<br/>
+Value:<br/>
+(keymap<br/>
+ #^[nil nil keymap<br/>
+	#^^[3 0 nil nil nil nil mh-delete-msg-no-motion nil nil nil nil mh-index-next-folder nil nil nil mh-show nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>
+	      (keymap<br/>
+	       (112 . mh-previous-unread-msg)<br/>
+	       (110 . mh-next-unread-msg)<br/>
+	       (100 . mh-redistribute)<br/>
+	       (62 . mh-last-msg)<br/>
+	       (60 . mh-first-msg)<br/>
+	       (9 . mh-index-previous-folder))<br/>
+	      nil nil nil nil mh-page-msg mh-refile-or-write-again nil nil nil nil nil mh-toggle-tick nil nil nil nil mh-header-display negative-argument mh-alt-show mh-limit-map digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument mh-show-preferred-alternative mh-toggle-mh-decode-mime-flag nil nil mh-write-msg-to-file mh-help nil nil nil nil mh-digest-map mh-extract-rejected-mail mh-folder-map nil nil<br/>
+	      (keymap)<br/>
+	      mh-junk-map mh-mime-map nil mh-modify nil nil mh-ps-print-map nil nil mh-sequence-map mh-thread-map nil nil nil mh-extract-map nil nil nil nil nil mh-alt-refile-msg nil nil nil nil mh-copy-msg mh-delete-msg mh-edit-again mh-forward mh-goto-msg nil mh-inc-folder nil mh-delete-subject-or-thread nil mh-alt-send mh-next-undeleted-msg mh-refile-msg mh-previous-undeleted-msg mh-quit mh-reply mh-send mh-toggle-showing mh-undo mh-index-visit-folder nil mh-execute-commands nil nil nil mh-pipe-msg nil nil mh-previous-page]<br/>
+	#^^[1 0<br/>
+	      #^^[2 0<br/>
+		    #^^[3 0 nil nil nil nil mh-delete-msg-no-motion nil nil nil nil mh-index-next-folder nil nil nil mh-show nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>
+			  (keymap<br/>
+			   (112 . mh-previous-unread-msg)<br/>
+			   (110 . mh-next-unread-msg)<br/>
+			   (100 . mh-redistribute)<br/>
+			   (62 . mh-last-msg)<br/>
+			   (60 . mh-first-msg)<br/>
+			   (9 . mh-index-previous-folder))<br/>
+			  nil nil nil nil mh-page-msg mh-refile-or-write-again nil nil nil nil nil mh-toggle-tick nil nil nil nil mh-header-display negative-argument mh-alt-show mh-limit-map digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument mh-show-preferred-alternative mh-toggle-mh-decode-mime-flag nil nil mh-write-msg-to-file mh-help nil nil nil nil mh-digest-map mh-extract-rejected-mail mh-folder-map nil nil<br/>
+			  (keymap)<br/>
+			  mh-junk-map mh-mime-map nil mh-modify nil nil mh-ps-print-map nil nil mh-sequence-map mh-thread-map nil nil nil mh-extract-map nil nil nil nil nil mh-alt-refile-msg nil nil nil nil mh-copy-msg mh-delete-msg mh-edit-again mh-forward mh-goto-msg nil mh-inc-folder nil mh-delete-subject-or-thread nil mh-alt-send mh-next-undeleted-msg mh-refile-msg mh-previous-undeleted-msg mh-quit mh-reply mh-send mh-toggle-showing mh-undo mh-index-visit-folder nil mh-execute-commands nil nil nil mh-pipe-msg nil nil mh-previous-page]<br/>
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+ (mouse-2 . mh-show-mouse)<br/>
+ (backtab . mh-index-previous-folder)<br/>
+ (remap keymap<br/>
+	(self-insert-command . undefined))<br/>
+ (menu-bar keymap<br/>
+	   (Folder menu-item "Folder"<br/>
+		   (keymap "Folder"<br/>
+			   (Incorporate\ New\ Mail menu-item "Incorporate New Mail" mh-inc-folder)<br/>
+			   (Toggle\ Show/Folder menu-item "Toggle Show/Folder" mh-toggle-showing)<br/>
+			   (Execute\ Delete/Refile menu-item "Execute Delete/Refile" mh-execute-commands :enable<br/>
+						   (mh-outstanding-commands-p))<br/>
+			   (Rescan\ Folder menu-item "Rescan Folder" mh-rescan-folder)<br/>
+			   (Thread\ Folder menu-item "Thread Folder" mh-toggle-threads :enable<br/>
+					   (not<br/>
+					    (memq 'unthread mh-view-ops)))<br/>
+			   (Pack\ Folder menu-item "Pack Folder" mh-pack-folder)<br/>
+			   (Sort\ Folder menu-item "Sort Folder" mh-sort-folder)<br/>
+			   (nil-7 menu-item "--")<br/>
+			   (List\ Folders menu-item "List Folders" mh-list-folders)<br/>
+			   (Visit\ a\ Folder\.\.\. menu-item "Visit a Folder..." mh-visit-folder)<br/>
+			   (View\ New\ Messages menu-item "View New Messages" mh-index-new-messages)<br/>
+			   (Search\.\.\. menu-item "Search..." mh-search)<br/>
+			   (nil-7-12 menu-item "--")<br/>
+			   (Quit\ MH-E menu-item "Quit MH-E" mh-quit)))<br/>
+	   (Message menu-item "Message"<br/>
+		    (keymap "Message"<br/>
+			    (Show\ Message menu-item "Show Message" mh-show :enable<br/>
+					   (mh-get-msg-num nil))<br/>
+			    (Show\ Message\ with\ Header menu-item "Show Message with Header" mh-header-display :enable<br/>
+							 (mh-get-msg-num nil))<br/>
+			    (Show\ Message\ with\ Preferred\ Alternative menu-item "Show Message with Preferred Alternative" mh-show-preferred-alternative :enable<br/>
+									 (mh-get-msg-num nil))<br/>
+			    (Next\ Message menu-item "Next Message" mh-next-undeleted-msg)<br/>
+			    (Previous\ Message menu-item "Previous Message" mh-previous-undeleted-msg)<br/>
+			    (Go\ to\ First\ Message menu-item "Go to First Message" mh-first-msg)<br/>
+			    (Go\ to\ Last\ Message menu-item "Go to Last Message" mh-last-msg)<br/>
+			    (Go\ to\ Message\ by\ Number\.\.\. menu-item "Go to Message by Number..." mh-goto-msg)<br/>
+			    (Modify\ Message menu-item "Modify Message" mh-modify)<br/>
+			    (Delete\ Message menu-item "Delete Message" mh-delete-msg :enable<br/>
+					     (mh-get-msg-num nil))<br/>
+			    (Refile\ Message menu-item "Refile Message" mh-refile-msg :enable<br/>
+					     (mh-get-msg-num nil))<br/>
+			    (Undo\ Delete/Refile menu-item "Undo Delete/Refile" mh-undo :enable<br/>
+						 (mh-outstanding-commands-p))<br/>
+			    (Execute\ Delete/Refile menu-item "Execute Delete/Refile" mh-execute-commands :enable<br/>
+						    (mh-outstanding-commands-p))<br/>
+			    (nil-7 menu-item "--")<br/>
+			    (Compose\ a\ New\ Message menu-item "Compose a New Message" mh-send)<br/>
+			    (Reply\ to\ Message\.\.\. menu-item "Reply to Message..." mh-reply :enable<br/>
+						      (mh-get-msg-num nil))<br/>
+			    (Forward\ Message\.\.\. menu-item "Forward Message..." mh-forward :enable<br/>
+						    (mh-get-msg-num nil))<br/>
+			    (Redistribute\ Message\.\.\. menu-item "Redistribute Message..." mh-redistribute :enable<br/>
+							 (mh-get-msg-num nil))<br/>
+			    (Edit\ Message\ Again menu-item "Edit Message Again" mh-edit-again :enable<br/>
+						  (mh-get-msg-num nil))<br/>
+			    (Re-edit\ a\ Bounced\ Message menu-item "Re-edit a Bounced Message" mh-extract-rejected-mail)<br/>
+			    (nil-7-20 menu-item "--")<br/>
+			    (Copy\ Message\ to\ Folder\.\.\. menu-item "Copy Message to Folder..." mh-copy-msg :enable<br/>
+							     (mh-get-msg-num nil))<br/>
+			    (Print\ Message menu-item "Print Message" mh-print-msg :enable<br/>
+					    (mh-get-msg-num nil))<br/>
+			    (Write\ Message\ to\ File\.\.\. menu-item "Write Message to File..." mh-write-msg-to-file :enable<br/>
+							    (mh-get-msg-num nil))<br/>
+			    (Pipe\ Message\ to\ Command\.\.\. menu-item "Pipe Message to Command..." mh-pipe-msg :enable<br/>
+							      (mh-get-msg-num nil))<br/>
+			    (Unpack\ Uuencoded\ Message\.\.\. menu-item "Unpack Uuencoded Message..." mh-store-msg :enable<br/>
+							      (mh-get-msg-num nil))<br/>
+			    (Burst\ Digest\ Message menu-item "Burst Digest Message" mh-burst-digest :enable<br/>
+						    (mh-get-msg-num nil))))<br/>
+	   (Sequence menu-item "Sequence"<br/>
+		     (keymap "Sequence"<br/>
+			     (Add\ Message\ to\ Sequence\.\.\. menu-item "Add Message to Sequence..." mh-put-msg-in-seq :enable<br/>
+							       (mh-get-msg-num nil))<br/>
+			     (List\ Sequences\ for\ Message menu-item "List Sequences for Message" mh-msg-is-in-seq :enable<br/>
+							    (mh-get-msg-num nil))<br/>
+			     (Delete\ Message\ from\ Sequence\.\.\. menu-item "Delete Message from Sequence..." mh-delete-msg-from-seq :enable<br/>
+								    (mh-get-msg-num nil))<br/>
+			     (List\ Sequences\ in\ Folder\.\.\. menu-item "List Sequences in Folder..." mh-list-sequences)<br/>
+			     (Delete\ Sequence\.\.\. menu-item "Delete Sequence..." mh-delete-seq)<br/>
+			     (Narrow\ to\ Sequence\.\.\. menu-item "Narrow to Sequence..." mh-narrow-to-seq)<br/>
+			     (Widen\ from\ Sequence menu-item "Widen from Sequence" mh-widen :enable mh-folder-view-stack)<br/>
+			     (nil-7 menu-item "--")<br/>
+			     (Narrow\ to\ Subject\ Sequence menu-item "Narrow to Subject Sequence" mh-narrow-to-subject)<br/>
+			     (Narrow\ to\ Tick\ Sequence menu-item "Narrow to Tick Sequence" mh-narrow-to-tick :enable<br/>
+							 (and mh-tick-seq<br/>
+							      (mh-seq-msgs<br/>
+							       (mh-find-seq mh-tick-seq))))<br/>
+			     (Delete\ Rest\ of\ Same\ Subject menu-item "Delete Rest of Same Subject" mh-delete-subject)<br/>
+			     (Toggle\ Tick\ Mark menu-item "Toggle Tick Mark" mh-toggle-tick)<br/>
+			     (nil-7-12 menu-item "--")<br/>
+			     (Push\ State\ Out\ to\ MH menu-item "Push State Out to MH" mh-update-sequences)))))<br/>
+<br/>

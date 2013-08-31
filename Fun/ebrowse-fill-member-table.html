@@ -1,1 +1,16 @@
-ebrowse-fill-member-table is a compiled Lisp function in `ebrowse.el'.<br/><br/>(ebrowse-fill-member-table)<br/><br/>Return an obarray holding all members of all classes in the current tree.<br/><br/>For each member, a symbol is added to the obarray.  Members are<br/>extracted from the buffer-local tree `ebrowse--tree-obarray'.<br/><br/>Each symbol has its property `ebrowse-info' set to a list (TREE MEMBER-LIST<br/>MEMBER) where TREE is the tree in which the member is defined,<br/>MEMBER-LIST is a symbol describing the member list in which the member<br/>is found, and MEMBER is a MEMBER structure describing the member.<br/><br/>The slot `member-table' of the buffer-local header structure of<br/>type `ebrowse-hs' is set to the resulting obarray.
+<strong>ebrowse-fill-member-table</strong> is a compiled Lisp function in `<code>ebrowse.el</code>'.<br/>
+<br/>
+(ebrowse-fill-member-table)<br/>
+<br/>
+Return an obarray holding all members of all classes in the current tree.<br/>
+<br/>
+For each member, a symbol is added to the obarray.  Members are<br/>
+extracted from the buffer-local tree `ebrowse--tree-obarray'.<br/>
+<br/>
+Each symbol has its property `ebrowse-info' set to a list (TREE MEMBER-LIST<br/>
+MEMBER) where TREE is the tree in which the member is defined,<br/>
+MEMBER-LIST is a symbol describing the member list in which the member<br/>
+is found, and MEMBER is a MEMBER structure describing the member.<br/>
+<br/>
+The slot `member-table' of the buffer-local header structure of<br/>
+type `ebrowse-hs' is set to the resulting obarray.

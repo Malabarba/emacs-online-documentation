@@ -1,1 +1,24 @@
-mh-display-with-external-viewer is an interactive autoloaded compiled Lisp function in `mh-mime.el'.<br/><br/>(mh-display-with-external-viewer PART-INDEX)<br/><br/>View attachment externally.<br/><br/>If Emacs does not know how to view an attachment, you could save<br/>it into a file and then run some program to open it. It is<br/>easier, however, to launch the program directly from MH-E with<br/>this command. While you'll most likely use this to view<br/>spreadsheets and documents, it is also useful to use your browser<br/>to view HTML attachments with higher fidelity than what Emacs can<br/>provide.<br/><br/>This command displays the attachment associated with the button<br/>under the cursor. If the cursor is not located over a button,<br/>then the cursor first moves to the next button, wrapping to the<br/>beginning of the message if necessary. You can provide a numeric<br/>prefix argument PART-INDEX to view the attachment labeled with<br/>that number.<br/><br/>This command tries to provide a reasonable default for the viewer<br/>by calling the Emacs function `mailcap-mime-info'. This function<br/>usually reads the file "/etc/mailcap".
+<strong>mh-display-with-external-viewer</strong> is an interactive autoloaded compiled Lisp function in `<code>mh-mime.el</code>'.<br/>
+<br/>
+(mh-display-with-external-viewer PART-INDEX)<br/>
+<br/>
+View attachment externally.<br/>
+<br/>
+If Emacs does not know how to view an attachment, you could save<br/>
+it into a file and then run some program to open it. It is<br/>
+easier, however, to launch the program directly from MH-E with<br/>
+this command. While you'll most likely use this to view<br/>
+spreadsheets and documents, it is also useful to use your browser<br/>
+to view HTML attachments with higher fidelity than what Emacs can<br/>
+provide.<br/>
+<br/>
+This command displays the attachment associated with the button<br/>
+under the cursor. If the cursor is not located over a button,<br/>
+then the cursor first moves to the next button, wrapping to the<br/>
+beginning of the message if necessary. You can provide a numeric<br/>
+prefix argument PART-INDEX to view the attachment labeled with<br/>
+that number.<br/>
+<br/>
+This command tries to provide a reasonable default for the viewer<br/>
+by calling the Emacs function `mailcap-mime-info'. This function<br/>
+usually reads the file "/etc/mailcap".

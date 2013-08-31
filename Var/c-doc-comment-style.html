@@ -1,1 +1,45 @@
-c-doc-comment-style is a variable defined in `cc-vars.el'.<br/>Its value is set-from-style<br/><br/>Documentation:<br/>*Specifies documentation comment style(s) to recognize.<br/>This is primarily used to fontify doc comments and the markup within<br/>them, e.g. Javadoc comments.<br/><br/>The value can be any of the following symbols for various known doc<br/>comment styles:<br/><br/> javadoc -- Javadoc style for "/** ... */" comments (default in Java mode).<br/> autodoc -- Pike autodoc style for "//! ..." comments (default in Pike mode).<br/> gtkdoc  -- GtkDoc style for "/** ... **/" comments (default in C mode).<br/><br/>The value may also be a list of doc comment styles, in which case all<br/>of them are recognized simultaneously (presumably with markup cues<br/>that don't conflict).<br/><br/>The value may also be an association list to specify different doc<br/>comment styles for different languages.  The symbol for the major mode<br/>is then looked up in the alist, and the value of that element is<br/>interpreted as above if found.  If it isn't found then the symbol<br/>`other' is looked up and its value is used instead.<br/><br/>Note that CC Mode uses this variable to set other variables that<br/>handle fontification etc.  That's done at mode initialization or when<br/>you switch to a style which sets this variable.  Thus, if you change<br/>it in some other way, e.g. interactively in a CC Mode buffer, you will<br/>need to do M-x java-mode (or whatever mode you're currently using) to<br/>reinitialize.<br/><br/>Note also that when CC Mode starts up, the other variables are<br/>modified before the mode hooks are run.  If you change this variable<br/>in a mode hook, you have to call `c-setup-doc-comment-style'<br/>afterwards to redo that work.<br/><br/>This is a style variable.  Apart from the valid values described<br/>above, it can be set to the symbol `set-from-style'.  In that case,<br/>it takes its value from the style system (see `c-default-style' and<br/>`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>the value set here overrides the style system (there is a variable<br/>`c-old-style-variable-behavior' that changes this, though).<br/><br/>You can customize this variable.
+<strong>c-doc-comment-style</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
+Its value is set-from-style<br/>
+<br/>
+Documentation:<br/>
+*Specifies documentation comment style(s) to recognize.<br/>
+This is primarily used to fontify doc comments and the markup within<br/>
+them, e.g. Javadoc comments.<br/>
+<br/>
+The value can be any of the following symbols for various known doc<br/>
+comment styles:<br/>
+<br/>
+ javadoc -- Javadoc style for "/** ... */" comments (default in Java mode).<br/>
+ autodoc -- Pike autodoc style for "//! ..." comments (default in Pike mode).<br/>
+ gtkdoc  -- GtkDoc style for "/** ... **/" comments (default in C mode).<br/>
+<br/>
+The value may also be a list of doc comment styles, in which case all<br/>
+of them are recognized simultaneously (presumably with markup cues<br/>
+that don't conflict).<br/>
+<br/>
+The value may also be an association list to specify different doc<br/>
+comment styles for different languages.  The symbol for the major mode<br/>
+is then looked up in the alist, and the value of that element is<br/>
+interpreted as above if found.  If it isn't found then the symbol<br/>
+`other' is looked up and its value is used instead.<br/>
+<br/>
+Note that CC Mode uses this variable to set other variables that<br/>
+handle fontification etc.  That's done at mode initialization or when<br/>
+you switch to a style which sets this variable.  Thus, if you change<br/>
+it in some other way, e.g. interactively in a CC Mode buffer, you will<br/>
+need to do M-x java-mode (or whatever mode you're currently using) to<br/>
+reinitialize.<br/>
+<br/>
+Note also that when CC Mode starts up, the other variables are<br/>
+modified before the mode hooks are run.  If you change this variable<br/>
+in a mode hook, you have to call `c-setup-doc-comment-style'<br/>
+afterwards to redo that work.<br/>
+<br/>
+This is a style variable.  Apart from the valid values described<br/>
+above, it can be set to the symbol `set-from-style'.  In that case,<br/>
+it takes its value from the style system (see `c-default-style' and<br/>
+`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>
+the value set here overrides the style system (there is a variable<br/>
+`c-old-style-variable-behavior' that changes this, though).<br/>
+<br/>
+You can customize this variable.

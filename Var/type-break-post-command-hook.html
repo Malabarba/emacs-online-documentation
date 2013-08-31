@@ -1,1 +1,13 @@
-type-break-post-command-hook is a variable defined in `type-break.el'.<br/>Its value is (type-break-check)<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Hook run indirectly by `post-command-hook' for typing break functions.<br/>This is not really intended to be set by the user, but it's probably<br/>harmless to do so.  Mainly it is used by various parts of the typing break<br/>program to delay actions until after the user has completed some command.<br/>It exists because `post-command-hook' itself is inaccessible while its<br/>functions are being run, and some type-break--related functions want to<br/>remove themselves after running.
+<strong>type-break-post-command-hook</strong> is a variable defined in `<code>type-break.el</code>'.<br/>
+Its value is (type-break-check)<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Hook run indirectly by `post-command-hook' for typing break functions.<br/>
+This is not really intended to be set by the user, but it's probably<br/>
+harmless to do so.  Mainly it is used by various parts of the typing break<br/>
+program to delay actions until after the user has completed some command.<br/>
+It exists because `post-command-hook' itself is inaccessible while its<br/>
+functions are being run, and some type-break--related functions want to<br/>
+remove themselves after running.

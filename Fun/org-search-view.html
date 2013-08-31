@@ -1,1 +1,46 @@
-org-search-view is an interactive autoloaded compiled Lisp function in `org-agenda.el'.<br/><br/>(org-search-view &optional TODO-ONLY STRING EDIT-AT)<br/><br/>Show all entries that contain a phrase or words or regular expressions.<br/><br/>With optional prefix argument TODO-ONLY, only consider entries that are<br/>TODO entries.  The argument STRING can be used to pass a default search<br/>string into this function.  If EDIT-AT is non-nil, it means that the<br/>user should get a chance to edit this string, with cursor at position<br/>EDIT-AT.<br/><br/>The search string can be viewed either as a phrase that should be found as<br/>is, or it can be broken into a number of snippets, each of which must match<br/>in a Boolean way to select an entry.  The default depends on the variable<br/>`org-agenda-search-view-always-boolean'.<br/>Even if this is turned off (the default) you can always switch to<br/>Boolean search dynamically by preceding the first word with  "+" or "-".<br/><br/>The default is a direct search of the whole phrase, where each space in<br/>the search string can expand to an arbitrary amount of whitespace,<br/>including newlines.<br/><br/>If using a Boolean search, the search string is split on whitespace and<br/>each snippet is searched separately, with logical AND to select an entry.<br/>Words prefixed with a minus must *not* occur in the entry.  Words without<br/>a prefix or prefixed with a plus must occur in the entry.  Matching is<br/>case-insensitive.  Words are enclosed by word delimiters (i.e. they must<br/>match whole words, not parts of a word) if<br/>`org-agenda-search-view-force-full-words' is set (default is nil).<br/><br/>Boolean search snippets enclosed by curly braces are interpreted as<br/>regular expressions that must or (when preceded with "-") must not<br/>match in the entry.  Snippets enclosed into double quotes will be taken<br/>as a whole, to include whitespace.<br/><br/>- If the search string starts with an asterisk, search only in headlines.<br/>- If (possibly after the leading star) the search string starts with an<br/>  exclamation mark, this also means to look at TODO entries only, an effect<br/>  that can also be achieved with a prefix argument.<br/>- If (possibly after star and exclamation mark) the search string starts<br/>  with a colon, this will mean that the (non-regexp) snippets of the<br/>  Boolean search must match as full words.<br/><br/>This command searches the agenda files, and in addition the files listed<br/>in `org-agenda-text-search-extra-files'.
+<strong>org-search-view</strong> is an interactive autoloaded compiled Lisp function in `<code>org-agenda.el</code>'.<br/>
+<br/>
+(org-search-view &optional TODO-ONLY STRING EDIT-AT)<br/>
+<br/>
+Show all entries that contain a phrase or words or regular expressions.<br/>
+<br/>
+With optional prefix argument TODO-ONLY, only consider entries that are<br/>
+TODO entries.  The argument STRING can be used to pass a default search<br/>
+string into this function.  If EDIT-AT is non-nil, it means that the<br/>
+user should get a chance to edit this string, with cursor at position<br/>
+EDIT-AT.<br/>
+<br/>
+The search string can be viewed either as a phrase that should be found as<br/>
+is, or it can be broken into a number of snippets, each of which must match<br/>
+in a Boolean way to select an entry.  The default depends on the variable<br/>
+`org-agenda-search-view-always-boolean'.<br/>
+Even if this is turned off (the default) you can always switch to<br/>
+Boolean search dynamically by preceding the first word with  "+" or "-".<br/>
+<br/>
+The default is a direct search of the whole phrase, where each space in<br/>
+the search string can expand to an arbitrary amount of whitespace,<br/>
+including newlines.<br/>
+<br/>
+If using a Boolean search, the search string is split on whitespace and<br/>
+each snippet is searched separately, with logical AND to select an entry.<br/>
+Words prefixed with a minus must *not* occur in the entry.  Words without<br/>
+a prefix or prefixed with a plus must occur in the entry.  Matching is<br/>
+case-insensitive.  Words are enclosed by word delimiters (i.e. they must<br/>
+match whole words, not parts of a word) if<br/>
+`org-agenda-search-view-force-full-words' is set (default is nil).<br/>
+<br/>
+Boolean search snippets enclosed by curly braces are interpreted as<br/>
+regular expressions that must or (when preceded with "-") must not<br/>
+match in the entry.  Snippets enclosed into double quotes will be taken<br/>
+as a whole, to include whitespace.<br/>
+<br/>
+- If the search string starts with an asterisk, search only in headlines.<br/>
+- If (possibly after the leading star) the search string starts with an<br/>
+  exclamation mark, this also means to look at TODO entries only, an effect<br/>
+  that can also be achieved with a prefix argument.<br/>
+- If (possibly after star and exclamation mark) the search string starts<br/>
+  with a colon, this will mean that the (non-regexp) snippets of the<br/>
+  Boolean search must match as full words.<br/>
+<br/>
+This command searches the agenda files, and in addition the files listed<br/>
+in `org-agenda-text-search-extra-files'.

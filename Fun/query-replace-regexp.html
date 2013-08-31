@@ -1,1 +1,55 @@
-query-replace-regexp is an interactive compiled Lisp function in `replace.el'.<br/><br/>It is bound to C-M-%, <menu-bar> <edit> <replace> <query-replace-regexp>.<br/><br/>(query-replace-regexp REGEXP TO-STRING &optional DELIMITED START END)<br/><br/>Replace some things after point matching REGEXP with TO-STRING.<br/>As each match is found, the user must type a character saying<br/>what to do with it.  For directions, type C-h at that time.<br/><br/>In Transient Mark mode, if the mark is active, operate on the contents<br/>of the region.  Otherwise, operate from point to the end of the buffer.<br/><br/>Use M-n to pull the last incremental search regexp to the minibuffer<br/>that reads REGEXP, or invoke replacements from<br/>incremental search with a key sequence like `C-M-s C-M-s C-M-%'<br/>to use its current search regexp as the regexp to replace.<br/><br/>Matching is independent of case if `case-fold-search' is non-nil and<br/>REGEXP has no uppercase letters.  Replacement transfers the case<br/>pattern of the old text to the new text, if `case-replace' and<br/>`case-fold-search' are non-nil and REGEXP has no uppercase letters.<br/>(Transferring the case pattern means that if the old text matched is<br/>all caps, or capitalized, then its replacement is upcased or<br/>capitalized.)<br/><br/>If `replace-regexp-lax-whitespace' is non-nil, a space or spaces in the regexp<br/>to be replaced will match a sequence of whitespace chars defined by the<br/>regexp in `search-whitespace-regexp'.<br/><br/>Third arg DELIMITED (prefix arg if interactive), if non-nil, means replace<br/>only matches surrounded by word boundaries.<br/>Fourth and fifth arg START and END specify the region to operate on.<br/><br/>In TO-STRING, `\&' stands for whatever matched the whole of REGEXP,<br/>and `\N' (where N is a digit) stands for<br/>whatever what matched the Nth `\(...\)' in REGEXP.<br/>`\?' lets you edit the replacement text in the minibuffer<br/>at the given position for each replacement.<br/><br/>In interactive calls, the replacement text can contain `\,'<br/>followed by a Lisp expression.  Each<br/>replacement evaluates that expression to compute the replacement<br/>string.  Inside of that expression, `\&' is a string denoting the<br/>whole match as a string, `\N' for a partial match, `\#&' and `\#N'<br/>for the whole or a partial match converted to a number with<br/>`string-to-number', and `\#' itself for the number of replacements<br/>done so far (starting with zero).<br/><br/>If the replacement expression is a symbol, write a space after it<br/>to terminate it.  One space there, if any, will be discarded.<br/><br/>When using those Lisp features interactively in the replacement<br/>text, TO-STRING is actually made a list instead of a string.<br/>Use C-x M-: after this command for details.
+<strong>query-replace-regexp</strong> is an interactive compiled Lisp function in `<code>replace.el</code>'.<br/>
+<br/>
+It is bound to C-M-%, <menu-bar> <edit> <replace> <query-replace-regexp>.<br/>
+<br/>
+(query-replace-regexp REGEXP TO-STRING &optional DELIMITED START END)<br/>
+<br/>
+Replace some things after point matching REGEXP with TO-STRING.<br/>
+As each match is found, the user must type a character saying<br/>
+what to do with it.  For directions, type C-h at that time.<br/>
+<br/>
+In Transient Mark mode, if the mark is active, operate on the contents<br/>
+of the region.  Otherwise, operate from point to the end of the buffer.<br/>
+<br/>
+Use M-n to pull the last incremental search regexp to the minibuffer<br/>
+that reads REGEXP, or invoke replacements from<br/>
+incremental search with a key sequence like `C-M-s C-M-s C-M-%'<br/>
+to use its current search regexp as the regexp to replace.<br/>
+<br/>
+Matching is independent of case if `case-fold-search' is non-nil and<br/>
+REGEXP has no uppercase letters.  Replacement transfers the case<br/>
+pattern of the old text to the new text, if `case-replace' and<br/>
+`case-fold-search' are non-nil and REGEXP has no uppercase letters.<br/>
+(Transferring the case pattern means that if the old text matched is<br/>
+all caps, or capitalized, then its replacement is upcased or<br/>
+capitalized.)<br/>
+<br/>
+If `replace-regexp-lax-whitespace' is non-nil, a space or spaces in the regexp<br/>
+to be replaced will match a sequence of whitespace chars defined by the<br/>
+regexp in `search-whitespace-regexp'.<br/>
+<br/>
+Third arg DELIMITED (prefix arg if interactive), if non-nil, means replace<br/>
+only matches surrounded by word boundaries.<br/>
+Fourth and fifth arg START and END specify the region to operate on.<br/>
+<br/>
+In TO-STRING, `\&' stands for whatever matched the whole of REGEXP,<br/>
+and `\N' (where N is a digit) stands for<br/>
+whatever what matched the Nth `\(...\)' in REGEXP.<br/>
+`\?' lets you edit the replacement text in the minibuffer<br/>
+at the given position for each replacement.<br/>
+<br/>
+In interactive calls, the replacement text can contain `\,'<br/>
+followed by a Lisp expression.  Each<br/>
+replacement evaluates that expression to compute the replacement<br/>
+string.  Inside of that expression, `\&' is a string denoting the<br/>
+whole match as a string, `\N' for a partial match, `\#&' and `\#N'<br/>
+for the whole or a partial match converted to a number with<br/>
+`string-to-number', and `\#' itself for the number of replacements<br/>
+done so far (starting with zero).<br/>
+<br/>
+If the replacement expression is a symbol, write a space after it<br/>
+to terminate it.  One space there, if any, will be discarded.<br/>
+<br/>
+When using those Lisp features interactively in the replacement<br/>
+text, TO-STRING is actually made a list instead of a string.<br/>
+Use C-x M-: after this command for details.

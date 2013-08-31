@@ -1,1 +1,29 @@
-org-entities-user is a variable defined in `org-entities.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>User-defined entities used in Org-mode to produce special characters.<br/>Each entry in this list is a list of strings.  It associates the name<br/>of the entity that can be inserted into an Org file as \name with the<br/>appropriate replacements for the different export backends.  The order<br/>of the fields is the following<br/><br/>name                 As a string, without the leading backslash<br/>LaTeX replacement    In ready LaTeX, no further processing will take place<br/>LaTeX mathp          A Boolean, either t or nil.  t if this entity needs<br/>                     to be in math mode.<br/>HTML replacement     In ready HTML, no further processing will take place.<br/>                     Usually this will be an &...; entity.<br/>ASCII replacement    Plain ASCII, no extensions.  Symbols that cannot be<br/>                     represented will be left as they are, but see the.<br/>                     variable `org-entities-ascii-explanatory'.<br/>Latin1 replacement   Use the special characters available in latin1.<br/>utf-8 replacement    Use the special characters available in utf-8.<br/><br/>If you define new entities here that require specific LaTeX packages to be<br/>loaded, add these packages to `org-export-latex-packages-alist'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>org-entities-user</strong> is a variable defined in `<code>org-entities.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+User-defined entities used in Org-mode to produce special characters.<br/>
+Each entry in this list is a list of strings.  It associates the name<br/>
+of the entity that can be inserted into an Org file as \name with the<br/>
+appropriate replacements for the different export backends.  The order<br/>
+of the fields is the following<br/>
+<br/>
+name                 As a string, without the leading backslash<br/>
+LaTeX replacement    In ready LaTeX, no further processing will take place<br/>
+LaTeX mathp          A Boolean, either t or nil.  t if this entity needs<br/>
+                     to be in math mode.<br/>
+HTML replacement     In ready HTML, no further processing will take place.<br/>
+                     Usually this will be an &...; entity.<br/>
+ASCII replacement    Plain ASCII, no extensions.  Symbols that cannot be<br/>
+                     represented will be left as they are, but see the.<br/>
+                     variable `org-entities-ascii-explanatory'.<br/>
+Latin1 replacement   Use the special characters available in latin1.<br/>
+utf-8 replacement    Use the special characters available in utf-8.<br/>
+<br/>
+If you define new entities here that require specific LaTeX packages to be<br/>
+loaded, add these packages to `org-export-latex-packages-alist'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

@@ -1,1 +1,40 @@
-nxml-validate-function is a variable defined in `nxml-parse.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Either nil or a function called by `nxml-parse-file' to perform validation.<br/>The function will be called once for each start-tag or end-tag.  The<br/>function is passed two arguments TEXT and START-TAG.  For a start-tag,<br/>START-TAG is a list (NAME ATTRIBUTES) where NAME and ATTRIBUTES are in<br/>the same form as returned by `nxml-parse-file'.  For an end-tag,<br/>START-TAG is nil.  TEXT is a string containing the text immediately<br/>preceding the tag, or nil if there was no such text.  An empty element<br/>is treated as a start-tag followed by an end-tag.<br/><br/>For a start-tag, the namespace state will be the state after<br/>processing the namespace declarations in the start-tag.  For an<br/>end-tag, the namespace state will be the state before popping the<br/>namespace declarations for the corresponding start-tag.<br/><br/>The function must return nil if no error is detected or a<br/>cons (MESSAGE . LOCATION) where MESSAGE is a string containing<br/>an error message and LOCATION indicates what caused the error<br/>as follows:<br/><br/>- nil indicates the tag as whole caused it; this is always allowed;<br/><br/>- text indicates the text caused it; this is allowed only if<br/>TEXT is non-nil;<br/><br/>- tag-close indicates the close of the tag caused it; this is<br/>allowed only if START-TAG is non-nil;<br/><br/>- (attribute-name . N) indicates that the name of the Nth attribute<br/>caused it; N counts from 0; this is allowed only if START-TAG is non-nil<br/>and N must be less than the number of attributes;<br/><br/>- (attribute-value . N) indicates that the value of the Nth attribute<br/>caused it; N counts from 0; this is allowed only if START-TAG is non-nil<br/>and N must be less than the number of attributes.
+<strong>nxml-validate-function</strong> is a variable defined in `<code>nxml-parse.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Either nil or a function called by `nxml-parse-file' to perform validation.<br/>
+The function will be called once for each start-tag or end-tag.  The<br/>
+function is passed two arguments TEXT and START-TAG.  For a start-tag,<br/>
+START-TAG is a list (NAME ATTRIBUTES) where NAME and ATTRIBUTES are in<br/>
+the same form as returned by `nxml-parse-file'.  For an end-tag,<br/>
+START-TAG is nil.  TEXT is a string containing the text immediately<br/>
+preceding the tag, or nil if there was no such text.  An empty element<br/>
+is treated as a start-tag followed by an end-tag.<br/>
+<br/>
+For a start-tag, the namespace state will be the state after<br/>
+processing the namespace declarations in the start-tag.  For an<br/>
+end-tag, the namespace state will be the state before popping the<br/>
+namespace declarations for the corresponding start-tag.<br/>
+<br/>
+The function must return nil if no error is detected or a<br/>
+cons (MESSAGE . LOCATION) where MESSAGE is a string containing<br/>
+an error message and LOCATION indicates what caused the error<br/>
+as follows:<br/>
+<br/>
+- nil indicates the tag as whole caused it; this is always allowed;<br/>
+<br/>
+- text indicates the text caused it; this is allowed only if<br/>
+TEXT is non-nil;<br/>
+<br/>
+- tag-close indicates the close of the tag caused it; this is<br/>
+allowed only if START-TAG is non-nil;<br/>
+<br/>
+- (attribute-name . N) indicates that the name of the Nth attribute<br/>
+caused it; N counts from 0; this is allowed only if START-TAG is non-nil<br/>
+and N must be less than the number of attributes;<br/>
+<br/>
+- (attribute-value . N) indicates that the value of the Nth attribute<br/>
+caused it; N counts from 0; this is allowed only if START-TAG is non-nil<br/>
+and N must be less than the number of attributes.

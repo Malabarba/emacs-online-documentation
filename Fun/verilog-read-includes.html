@@ -1,1 +1,32 @@
-verilog-read-includes is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-read-includes)<br/><br/>Read `includes for the current file.<br/>This will find all of the `includes which are at the beginning of lines,<br/>ignoring any ifdefs or multiline comments around them.<br/>`verilog-read-defines' is then performed on the current and each included<br/>file.<br/><br/>It is often useful put at the *END* of your file something like:<br/><br/>    // Local Variables:<br/>    // eval:(verilog-read-defines)<br/>    // eval:(verilog-read-includes)<br/>    // End:<br/><br/>Note includes are only read when the file is first visited, you must use<br/>C-x C-v RET  to have these take effect after editing them!<br/><br/>It is good to get in the habit of including all needed files in each .v<br/>file that needs it, rather than waiting for compile time.  This will aid<br/>this process, Verilint, and readability.  To prevent defining the same<br/>variable over and over when many modules are compiled together, put a test<br/>around the inside each include file:<br/><br/>foo.v (an include file):<br/>	`ifdef _FOO_V	// include if not already included<br/>	`else<br/>	`define _FOO_V<br/>	... contents of file<br/>	`endif // _FOO_V
+<strong>verilog-read-includes</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-read-includes)<br/>
+<br/>
+Read `includes for the current file.<br/>
+This will find all of the `includes which are at the beginning of lines,<br/>
+ignoring any ifdefs or multiline comments around them.<br/>
+`verilog-read-defines' is then performed on the current and each included<br/>
+file.<br/>
+<br/>
+It is often useful put at the *END* of your file something like:<br/>
+<br/>
+    // Local Variables:<br/>
+    // eval:(verilog-read-defines)<br/>
+    // eval:(verilog-read-includes)<br/>
+    // End:<br/>
+<br/>
+Note includes are only read when the file is first visited, you must use<br/>
+C-x C-v RET  to have these take effect after editing them!<br/>
+<br/>
+It is good to get in the habit of including all needed files in each .v<br/>
+file that needs it, rather than waiting for compile time.  This will aid<br/>
+this process, Verilint, and readability.  To prevent defining the same<br/>
+variable over and over when many modules are compiled together, put a test<br/>
+around the inside each include file:<br/>
+<br/>
+foo.v (an include file):<br/>
+	`ifdef _FOO_V	// include if not already included<br/>
+	`else<br/>
+	`define _FOO_V<br/>
+	... contents of file<br/>
+	`endif // _FOO_V

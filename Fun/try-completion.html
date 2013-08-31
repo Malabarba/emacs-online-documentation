@@ -1,1 +1,34 @@
-try-completion is a built-in function in `C source code'.<br/><br/>(try-completion STRING COLLECTION &optional PREDICATE)<br/><br/>Return common substring of all completions of STRING in COLLECTION.<br/>Test each possible completion specified by COLLECTION<br/>to see if it begins with STRING.  The possible completions may be<br/>strings or symbols.  Symbols are converted to strings before testing,<br/>see `symbol-name'.<br/>All that match STRING are compared together; the longest initial sequence<br/>common to all these matches is the return value.<br/>If there is no match at all, the return value is nil.<br/>For a unique match which is exact, the return value is t.<br/><br/>If COLLECTION is an alist, the keys (cars of elements) are the<br/>possible completions.  If an element is not a cons cell, then the<br/>element itself is the possible completion.<br/>If COLLECTION is a hash-table, all the keys that are strings or symbols<br/>are the possible completions.<br/>If COLLECTION is an obarray, the names of all symbols in the obarray<br/>are the possible completions.<br/><br/>COLLECTION can also be a function to do the completion itself.<br/>It receives three arguments: the values STRING, PREDICATE and nil.<br/>Whatever it returns becomes the value of `try-completion'.<br/><br/>If optional third argument PREDICATE is non-nil,<br/>it is used to test each possible match.<br/>The match is a candidate only if PREDICATE returns non-nil.<br/>The argument given to PREDICATE is the alist element<br/>or the symbol from the obarray.  If COLLECTION is a hash-table,<br/>predicate is called with two arguments: the key and the value.<br/>Additionally to this predicate, `completion-regexp-list'<br/>is used to further constrain the set of candidates.
+<strong>try-completion</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(try-completion STRING COLLECTION &optional PREDICATE)<br/>
+<br/>
+Return common substring of all completions of STRING in COLLECTION.<br/>
+Test each possible completion specified by COLLECTION<br/>
+to see if it begins with STRING.  The possible completions may be<br/>
+strings or symbols.  Symbols are converted to strings before testing,<br/>
+see `symbol-name'.<br/>
+All that match STRING are compared together; the longest initial sequence<br/>
+common to all these matches is the return value.<br/>
+If there is no match at all, the return value is nil.<br/>
+For a unique match which is exact, the return value is t.<br/>
+<br/>
+If COLLECTION is an alist, the keys (cars of elements) are the<br/>
+possible completions.  If an element is not a cons cell, then the<br/>
+element itself is the possible completion.<br/>
+If COLLECTION is a hash-table, all the keys that are strings or symbols<br/>
+are the possible completions.<br/>
+If COLLECTION is an obarray, the names of all symbols in the obarray<br/>
+are the possible completions.<br/>
+<br/>
+COLLECTION can also be a function to do the completion itself.<br/>
+It receives three arguments: the values STRING, PREDICATE and nil.<br/>
+Whatever it returns becomes the value of `try-completion'.<br/>
+<br/>
+If optional third argument PREDICATE is non-nil,<br/>
+it is used to test each possible match.<br/>
+The match is a candidate only if PREDICATE returns non-nil.<br/>
+The argument given to PREDICATE is the alist element<br/>
+or the symbol from the obarray.  If COLLECTION is a hash-table,<br/>
+predicate is called with two arguments: the key and the value.<br/>
+Additionally to this predicate, `completion-regexp-list'<br/>
+is used to further constrain the set of candidates.

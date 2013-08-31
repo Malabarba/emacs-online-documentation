@@ -1,1 +1,26 @@
-display-buffer-reuse-window is a compiled Lisp function in `window.el'.<br/><br/>(display-buffer-reuse-window BUFFER ALIST)<br/><br/>Return a window that is already displaying BUFFER.<br/>Return nil if no usable window is found.<br/><br/>If ALIST has a non-nil `inhibit-same-window' entry, the selected<br/>window is not eligible for reuse.<br/><br/>If ALIST contains a `reusable-frames' entry, its value determines<br/>which frames to search for a reusable window:<br/>  nil -- the selected frame (actually the last non-minibuffer frame)<br/>  A frame   -- just that frame<br/>  `visible' -- all visible frames<br/>  0   -- all frames on the current terminal<br/>  t   -- all frames.<br/><br/>If ALIST contains no `reusable-frames' entry, search just the<br/>selected frame if `display-buffer-reuse-frames' and<br/>`pop-up-frames' are both nil; search all frames on the current<br/>terminal if either of those variables is non-nil.<br/><br/>If ALIST has a non-nil `inhibit-switch-frame' entry, then in the<br/>event that a window on another frame is chosen, avoid raising<br/>that frame.
+<strong>display-buffer-reuse-window</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(display-buffer-reuse-window BUFFER ALIST)<br/>
+<br/>
+Return a window that is already displaying BUFFER.<br/>
+Return nil if no usable window is found.<br/>
+<br/>
+If ALIST has a non-nil `inhibit-same-window' entry, the selected<br/>
+window is not eligible for reuse.<br/>
+<br/>
+If ALIST contains a `reusable-frames' entry, its value determines<br/>
+which frames to search for a reusable window:<br/>
+  nil -- the selected frame (actually the last non-minibuffer frame)<br/>
+  A frame   -- just that frame<br/>
+  `visible' -- all visible frames<br/>
+  0   -- all frames on the current terminal<br/>
+  t   -- all frames.<br/>
+<br/>
+If ALIST contains no `reusable-frames' entry, search just the<br/>
+selected frame if `display-buffer-reuse-frames' and<br/>
+`pop-up-frames' are both nil; search all frames on the current<br/>
+terminal if either of those variables is non-nil.<br/>
+<br/>
+If ALIST has a non-nil `inhibit-switch-frame' entry, then in the<br/>
+event that a window on another frame is chosen, avoid raising<br/>
+that frame.

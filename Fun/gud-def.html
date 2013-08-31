@@ -1,1 +1,24 @@
-gud-def is a Lisp macro in `gud.el'.<br/><br/>(gud-def FUNC CMD KEY &optional DOC)<br/><br/>Define FUNC to be a command sending CMD and bound to KEY, with<br/>optional doc string DOC.  Certain %-escapes in the string arguments<br/>are interpreted specially if present.  These are:<br/><br/>  %f -- Name (without directory) of current source file.<br/>  %F -- Name (without directory or extension) of current source file.<br/>  %d -- Directory of current source file.<br/>  %l -- Number of current source line.<br/>  %e -- Text of the C lvalue or function-call expression surrounding point.<br/>  %a -- Text of the hexadecimal address surrounding point.<br/>  %p -- Prefix argument to the command (if any) as a number.<br/>  %c -- Fully qualified class name derived from the expression<br/>        surrounding point (jdb only).<br/><br/>  The `current' source file is the file of the current buffer (if<br/>we're in a C file) or the source file current at the last break or<br/>step (if we're in the GUD buffer).<br/>  The `current' line is that of the current buffer (if we're in a<br/>source file) or the source line number at the last break or step (if<br/>we're in the GUD buffer).
+<strong>gud-def</strong> is a Lisp macro in `<code>gud.el</code>'.<br/>
+<br/>
+(gud-def FUNC CMD KEY &optional DOC)<br/>
+<br/>
+Define FUNC to be a command sending CMD and bound to KEY, with<br/>
+optional doc string DOC.  Certain %-escapes in the string arguments<br/>
+are interpreted specially if present.  These are:<br/>
+<br/>
+  %f -- Name (without directory) of current source file.<br/>
+  %F -- Name (without directory or extension) of current source file.<br/>
+  %d -- Directory of current source file.<br/>
+  %l -- Number of current source line.<br/>
+  %e -- Text of the C lvalue or function-call expression surrounding point.<br/>
+  %a -- Text of the hexadecimal address surrounding point.<br/>
+  %p -- Prefix argument to the command (if any) as a number.<br/>
+  %c -- Fully qualified class name derived from the expression<br/>
+        surrounding point (jdb only).<br/>
+<br/>
+  The `current' source file is the file of the current buffer (if<br/>
+we're in a C file) or the source file current at the last break or<br/>
+step (if we're in the GUD buffer).<br/>
+  The `current' line is that of the current buffer (if we're in a<br/>
+source file) or the source line number at the last break or step (if<br/>
+we're in the GUD buffer).

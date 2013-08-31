@@ -1,1 +1,31 @@
-verilog-auto-assign-modport is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-assign-modport)<br/><br/>Expand AUTOASSIGNMODPORT statements, as part of M-x verilog-auto.<br/>Take input/output/inout statements from the specified interface<br/>and modport and use to build assignments into the modport, for<br/>making verification modules that connect to UVM interfaces.<br/><br/>  The first parameter is the name of an interface.<br/><br/>  The second parameter is a regexp of modports to read from in<br/>  that interface.<br/><br/>  The third parameter is the instance name to use to dot reference into.<br/><br/>  The optional fourth parameter is a regular expression, and only<br/>  signals matching the regular expression will be included.<br/><br/>Limitations:<br/><br/>  Interface names must be resolvable to filenames.  See `verilog-auto-inst'.<br/><br/>  Inouts are not supported, as assignments must be unidirectional.<br/><br/>  If a signal is part of the interface header and in both a<br/>  modport and the interface itself, it will not be listed.  (As<br/>  this would result in a syntax error when the connections are<br/>  made.)<br/><br/>See the example in `verilog-auto-inout-modport'.
+<strong>verilog-auto-assign-modport</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-assign-modport)<br/>
+<br/>
+Expand AUTOASSIGNMODPORT statements, as part of M-x verilog-auto.<br/>
+Take input/output/inout statements from the specified interface<br/>
+and modport and use to build assignments into the modport, for<br/>
+making verification modules that connect to UVM interfaces.<br/>
+<br/>
+  The first parameter is the name of an interface.<br/>
+<br/>
+  The second parameter is a regexp of modports to read from in<br/>
+  that interface.<br/>
+<br/>
+  The third parameter is the instance name to use to dot reference into.<br/>
+<br/>
+  The optional fourth parameter is a regular expression, and only<br/>
+  signals matching the regular expression will be included.<br/>
+<br/>
+Limitations:<br/>
+<br/>
+  Interface names must be resolvable to filenames.  See `verilog-auto-inst'.<br/>
+<br/>
+  Inouts are not supported, as assignments must be unidirectional.<br/>
+<br/>
+  If a signal is part of the interface header and in both a<br/>
+  modport and the interface itself, it will not be listed.  (As<br/>
+  this would result in a syntax error when the connections are<br/>
+  made.)<br/>
+<br/>
+See the example in `verilog-auto-inout-modport'.

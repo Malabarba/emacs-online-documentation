@@ -1,1 +1,163 @@
-proced-grammar-alist is a variable defined in `proced.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Alist of rules for handling Proced attributes.<br/><br/>Each element has the form<br/><br/>  (KEY NAME FORMAT JUSTIFY PREDICATE REVERSE SORT-SCHEME REFINER).<br/><br/>Symbol KEY is the car of a process attribute.<br/><br/>String NAME appears in the header line.<br/><br/>FORMAT specifies the format for displaying the attribute values.  It can<br/>be a string passed to `format'.  It can be a function called with one<br/>argument, the value of the attribute.  The value nil means take as is.<br/><br/>If JUSTIFY is an integer, its modulus gives the width of the attribute<br/>values formatted with FORMAT.  If JUSTIFY is positive, NAME appears<br/>right-justified, otherwise it appears left-justified.  If JUSTIFY is 'left<br/>or 'right, the field width is calculated from all field values in the listing.<br/>If JUSTIFY is 'left, the field values are formatted left-justified and<br/>right-justified otherwise.<br/><br/>PREDICATE is the predicate for sorting and filtering the process listing<br/>based on attribute KEY.  PREDICATE takes two arguments P1 and P2,<br/>the corresponding attribute values of two processes.  PREDICATE should<br/>return 'equal if P1 has same rank like P2.  Any other non-nil value says<br/>that P1 is "less than" P2, or nil if not.<br/>If PREDICATE is nil the attribute cannot be sorted.<br/><br/>PREDICATE defines an ascending sort order.  REVERSE is non-nil if the sort<br/>order is descending.<br/><br/>SORT-SCHEME is a list (KEY1 KEY2 ...) defining a hierarchy of rules<br/>for sorting the process listing.  KEY1, KEY2, ... are KEYs appearing as cars<br/>of `proced-grammar-alist'.  First the PREDICATE of KEY1 is evaluated.<br/>If it yields non-equal, it defines the sort order for the corresponding<br/>processes.  If it evaluates to 'equal the PREDICATE of KEY2 is evaluated, etc.<br/><br/>REFINER can be a list of flags (LESS-B EQUAL-B LARGER-B) used by the command<br/>`proced-refine' (see there) to refine the listing based on attribute KEY.<br/>This command compares the value of attribute KEY of every process with<br/>the value of attribute KEY of the process at the position of point<br/>using PREDICATE.<br/>If PREDICATE yields non-nil, the process is accepted if LESS-B is non-nil.<br/>If PREDICATE yields 'equal, the process is accepted if EQUAL-B is non-nil.<br/>If PREDICATE yields nil, the process is accepted if LARGER-B is non-nil.<br/><br/>REFINER can also be a list (FUNCTION HELP-ECHO).<br/>FUNCTION is called with one argument, the PID of the process at the position<br/>of point.  The function must return a list of PIDs that is used for the refined<br/>listing.  HELP-ECHO is a string that is shown when mouse is over this field.<br/><br/>If REFINER is nil no refinement is done.<br/><br/>You can customize this variable.<br/><br/>Value: ((euid "EUID" "%d" right proced-< nil<br/>       (euid pid)<br/>       (nil t nil))<br/> (user "User" nil left proced-string-lessp nil<br/>       (user pid)<br/>       (nil t nil))<br/> (egid "EGID" "%d" right proced-< nil<br/>       (egid euid pid)<br/>       (nil t nil))<br/> (group "Group" nil left proced-string-lessp nil<br/>	(group user pid)<br/>	(nil t nil))<br/> (comm "Command" nil left proced-string-lessp nil<br/>       (comm pid)<br/>       (nil t nil))<br/> (state "Stat" nil left proced-string-lessp nil<br/>	(state pid)<br/>	(nil t nil))<br/> (ppid "PPID" "%d" right proced-< nil<br/>       (ppid pid)<br/>       ((lambda<br/>	  (ppid)<br/>	  (proced-filter-parents proced-process-alist ppid))<br/>	"refine to process parents"))<br/> (pgrp "PGrp" "%d" right proced-< nil<br/>       (pgrp euid pid)<br/>       (nil t nil))<br/> (sess "Sess" "%d" right proced-< nil<br/>       (sess pid)<br/>       (nil t nil))<br/> (ttname "TTY" proced-format-ttname left proced-string-lessp nil<br/>	 (ttname pid)<br/>	 (nil t nil))<br/> (tpgid "TPGID" "%d" right proced-< nil<br/>	(tpgid pid)<br/>	(nil t nil))<br/> (minflt "MinFlt" "%d" right proced-< nil<br/>	 (minflt pid)<br/>	 (nil t t))<br/> (majflt "MajFlt" "%d" right proced-< nil<br/>	 (majflt pid)<br/>	 (nil t t))<br/> (cminflt "CMinFlt" "%d" right proced-< nil<br/>	  (cminflt pid)<br/>	  (nil t t))<br/> (cmajflt "CMajFlt" "%d" right proced-< nil<br/>	  (cmajflt pid)<br/>	  (nil t t))<br/> (utime "UTime" proced-format-time right proced-time-lessp t<br/>	(utime pid)<br/>	(nil t t))<br/> (stime "STime" proced-format-time right proced-time-lessp t<br/>	(stime pid)<br/>	(nil t t))<br/> (time "Time" proced-format-time right proced-time-lessp t<br/>       (time pid)<br/>       (nil t t))<br/> (cutime "CUTime" proced-format-time right proced-time-lessp t<br/>	 (cutime pid)<br/>	 (nil t t))<br/> (cstime "CSTime" proced-format-time right proced-time-lessp t<br/>	 (cstime pid)<br/>	 (nil t t))<br/> (ctime "CTime" proced-format-time right proced-time-lessp t<br/>	(ctime pid)<br/>	(nil t t))<br/> (pri "Pr" "%d" right proced-< t<br/>      (pri pid)<br/>      (nil t t))<br/> (nice "Ni" "%3d" 3 proced-< t<br/>       (nice pid)<br/>       (t t nil))<br/> (thcount "THCount" "%d" right proced-< t<br/>	  (thcount pid)<br/>	  (nil t t))<br/> (start "Start" proced-format-start 6 proced-time-lessp nil<br/>	(start pid)<br/>	(t t nil))<br/> (vsize "VSize" "%d" right proced-< t<br/>	(vsize pid)<br/>	(nil t t))<br/> (rss "RSS" "%d" right proced-< t<br/>      (rss pid)<br/>      (nil t t))<br/> (etime "ETime" proced-format-time right proced-time-lessp t<br/>	(etime pid)<br/>	(nil t t))<br/> (pcpu "%CPU" "%.1f" right proced-< t<br/>       (pcpu pid)<br/>       (nil t t))<br/> (pmem "%Mem" "%.1f" right proced-< t<br/>       (pmem pid)<br/>       (nil t t))<br/> (args "Args" proced-format-args left proced-string-lessp nil<br/>       (args pid)<br/>       (nil t nil))<br/> (pid "PID" "%d" right proced-< nil<br/>      (pid)<br/>      ((lambda<br/>	 (ppid)<br/>	 (proced-filter-children proced-process-alist ppid))<br/>       "refine to process children"))<br/> (tree "Tree" proced-format-tree left nil nil nil nil))<br/><br/>
+<strong>proced-grammar-alist</strong> is a variable defined in `<code>proced.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Alist of rules for handling Proced attributes.<br/>
+<br/>
+Each element has the form<br/>
+<br/>
+  (KEY NAME FORMAT JUSTIFY PREDICATE REVERSE SORT-SCHEME REFINER).<br/>
+<br/>
+Symbol KEY is the car of a process attribute.<br/>
+<br/>
+String NAME appears in the header line.<br/>
+<br/>
+FORMAT specifies the format for displaying the attribute values.  It can<br/>
+be a string passed to `format'.  It can be a function called with one<br/>
+argument, the value of the attribute.  The value nil means take as is.<br/>
+<br/>
+If JUSTIFY is an integer, its modulus gives the width of the attribute<br/>
+values formatted with FORMAT.  If JUSTIFY is positive, NAME appears<br/>
+right-justified, otherwise it appears left-justified.  If JUSTIFY is 'left<br/>
+or 'right, the field width is calculated from all field values in the listing.<br/>
+If JUSTIFY is 'left, the field values are formatted left-justified and<br/>
+right-justified otherwise.<br/>
+<br/>
+PREDICATE is the predicate for sorting and filtering the process listing<br/>
+based on attribute KEY.  PREDICATE takes two arguments P1 and P2,<br/>
+the corresponding attribute values of two processes.  PREDICATE should<br/>
+return 'equal if P1 has same rank like P2.  Any other non-nil value says<br/>
+that P1 is "less than" P2, or nil if not.<br/>
+If PREDICATE is nil the attribute cannot be sorted.<br/>
+<br/>
+PREDICATE defines an ascending sort order.  REVERSE is non-nil if the sort<br/>
+order is descending.<br/>
+<br/>
+SORT-SCHEME is a list (KEY1 KEY2 ...) defining a hierarchy of rules<br/>
+for sorting the process listing.  KEY1, KEY2, ... are KEYs appearing as cars<br/>
+of `proced-grammar-alist'.  First the PREDICATE of KEY1 is evaluated.<br/>
+If it yields non-equal, it defines the sort order for the corresponding<br/>
+processes.  If it evaluates to 'equal the PREDICATE of KEY2 is evaluated, etc.<br/>
+<br/>
+REFINER can be a list of flags (LESS-B EQUAL-B LARGER-B) used by the command<br/>
+`proced-refine' (see there) to refine the listing based on attribute KEY.<br/>
+This command compares the value of attribute KEY of every process with<br/>
+the value of attribute KEY of the process at the position of point<br/>
+using PREDICATE.<br/>
+If PREDICATE yields non-nil, the process is accepted if LESS-B is non-nil.<br/>
+If PREDICATE yields 'equal, the process is accepted if EQUAL-B is non-nil.<br/>
+If PREDICATE yields nil, the process is accepted if LARGER-B is non-nil.<br/>
+<br/>
+REFINER can also be a list (FUNCTION HELP-ECHO).<br/>
+FUNCTION is called with one argument, the PID of the process at the position<br/>
+of point.  The function must return a list of PIDs that is used for the refined<br/>
+listing.  HELP-ECHO is a string that is shown when mouse is over this field.<br/>
+<br/>
+If REFINER is nil no refinement is done.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+Value: ((euid "EUID" "%d" right proced-< nil<br/>
+       (euid pid)<br/>
+       (nil t nil))<br/>
+ (user "User" nil left proced-string-lessp nil<br/>
+       (user pid)<br/>
+       (nil t nil))<br/>
+ (egid "EGID" "%d" right proced-< nil<br/>
+       (egid euid pid)<br/>
+       (nil t nil))<br/>
+ (group "Group" nil left proced-string-lessp nil<br/>
+	(group user pid)<br/>
+	(nil t nil))<br/>
+ (comm "Command" nil left proced-string-lessp nil<br/>
+       (comm pid)<br/>
+       (nil t nil))<br/>
+ (state "Stat" nil left proced-string-lessp nil<br/>
+	(state pid)<br/>
+	(nil t nil))<br/>
+ (ppid "PPID" "%d" right proced-< nil<br/>
+       (ppid pid)<br/>
+       ((lambda<br/>
+	  (ppid)<br/>
+	  (proced-filter-parents proced-process-alist ppid))<br/>
+	"refine to process parents"))<br/>
+ (pgrp "PGrp" "%d" right proced-< nil<br/>
+       (pgrp euid pid)<br/>
+       (nil t nil))<br/>
+ (sess "Sess" "%d" right proced-< nil<br/>
+       (sess pid)<br/>
+       (nil t nil))<br/>
+ (ttname "TTY" proced-format-ttname left proced-string-lessp nil<br/>
+	 (ttname pid)<br/>
+	 (nil t nil))<br/>
+ (tpgid "TPGID" "%d" right proced-< nil<br/>
+	(tpgid pid)<br/>
+	(nil t nil))<br/>
+ (minflt "MinFlt" "%d" right proced-< nil<br/>
+	 (minflt pid)<br/>
+	 (nil t t))<br/>
+ (majflt "MajFlt" "%d" right proced-< nil<br/>
+	 (majflt pid)<br/>
+	 (nil t t))<br/>
+ (cminflt "CMinFlt" "%d" right proced-< nil<br/>
+	  (cminflt pid)<br/>
+	  (nil t t))<br/>
+ (cmajflt "CMajFlt" "%d" right proced-< nil<br/>
+	  (cmajflt pid)<br/>
+	  (nil t t))<br/>
+ (utime "UTime" proced-format-time right proced-time-lessp t<br/>
+	(utime pid)<br/>
+	(nil t t))<br/>
+ (stime "STime" proced-format-time right proced-time-lessp t<br/>
+	(stime pid)<br/>
+	(nil t t))<br/>
+ (time "Time" proced-format-time right proced-time-lessp t<br/>
+       (time pid)<br/>
+       (nil t t))<br/>
+ (cutime "CUTime" proced-format-time right proced-time-lessp t<br/>
+	 (cutime pid)<br/>
+	 (nil t t))<br/>
+ (cstime "CSTime" proced-format-time right proced-time-lessp t<br/>
+	 (cstime pid)<br/>
+	 (nil t t))<br/>
+ (ctime "CTime" proced-format-time right proced-time-lessp t<br/>
+	(ctime pid)<br/>
+	(nil t t))<br/>
+ (pri "Pr" "%d" right proced-< t<br/>
+      (pri pid)<br/>
+      (nil t t))<br/>
+ (nice "Ni" "%3d" 3 proced-< t<br/>
+       (nice pid)<br/>
+       (t t nil))<br/>
+ (thcount "THCount" "%d" right proced-< t<br/>
+	  (thcount pid)<br/>
+	  (nil t t))<br/>
+ (start "Start" proced-format-start 6 proced-time-lessp nil<br/>
+	(start pid)<br/>
+	(t t nil))<br/>
+ (vsize "VSize" "%d" right proced-< t<br/>
+	(vsize pid)<br/>
+	(nil t t))<br/>
+ (rss "RSS" "%d" right proced-< t<br/>
+      (rss pid)<br/>
+      (nil t t))<br/>
+ (etime "ETime" proced-format-time right proced-time-lessp t<br/>
+	(etime pid)<br/>
+	(nil t t))<br/>
+ (pcpu "%CPU" "%.1f" right proced-< t<br/>
+       (pcpu pid)<br/>
+       (nil t t))<br/>
+ (pmem "%Mem" "%.1f" right proced-< t<br/>
+       (pmem pid)<br/>
+       (nil t t))<br/>
+ (args "Args" proced-format-args left proced-string-lessp nil<br/>
+       (args pid)<br/>
+       (nil t nil))<br/>
+ (pid "PID" "%d" right proced-< nil<br/>
+      (pid)<br/>
+      ((lambda<br/>
+	 (ppid)<br/>
+	 (proced-filter-children proced-process-alist ppid))<br/>
+       "refine to process children"))<br/>
+ (tree "Tree" proced-format-tree left nil nil nil nil))<br/>
+<br/>

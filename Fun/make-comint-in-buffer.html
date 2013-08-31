@@ -1,1 +1,21 @@
-make-comint-in-buffer is an autoloaded compiled Lisp function in `comint.el'.<br/><br/>(make-comint-in-buffer NAME BUFFER PROGRAM &optional STARTFILE &rest SWITCHES)<br/><br/>Make a Comint process NAME in BUFFER, running PROGRAM.<br/>If BUFFER is nil, it defaults to NAME surrounded by `*'s.<br/>If there is a running process in BUFFER, it is not restarted.<br/><br/>PROGRAM should be one of the following:<br/>- a string, denoting an executable program to create via<br/>  `start-file-process'<br/>- a cons pair of the form (HOST . SERVICE), denoting a TCP<br/>  connection to be opened via `open-network-stream'<br/>- nil, denoting a newly-allocated pty.<br/><br/>Optional fourth arg STARTFILE is the name of a file, whose<br/>contents are sent to the process as its initial input.<br/><br/>If PROGRAM is a string, any more args are arguments to PROGRAM.<br/><br/>Return the (possibly newly created) process buffer.
+<strong>make-comint-in-buffer</strong> is an autoloaded compiled Lisp function in `<code>comint.el</code>'.<br/>
+<br/>
+(make-comint-in-buffer NAME BUFFER PROGRAM &optional STARTFILE &rest SWITCHES)<br/>
+<br/>
+Make a Comint process NAME in BUFFER, running PROGRAM.<br/>
+If BUFFER is nil, it defaults to NAME surrounded by `*'s.<br/>
+If there is a running process in BUFFER, it is not restarted.<br/>
+<br/>
+PROGRAM should be one of the following:<br/>
+- a string, denoting an executable program to create via<br/>
+  `start-file-process'<br/>
+- a cons pair of the form (HOST . SERVICE), denoting a TCP<br/>
+  connection to be opened via `open-network-stream'<br/>
+- nil, denoting a newly-allocated pty.<br/>
+<br/>
+Optional fourth arg STARTFILE is the name of a file, whose<br/>
+contents are sent to the process as its initial input.<br/>
+<br/>
+If PROGRAM is a string, any more args are arguments to PROGRAM.<br/>
+<br/>
+Return the (possibly newly created) process buffer.

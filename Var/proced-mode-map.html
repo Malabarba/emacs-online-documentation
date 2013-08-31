@@ -1,1 +1,110 @@
-proced-mode-map is a variable defined in `proced.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap for Proced commands.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (Proced menu-item "Proced"<br/>		   (keymap "Proced"<br/>			   (Mark menu-item "Mark" proced-mark :help "Mark Current Process")<br/>			   (Unmark menu-item "Unmark" proced-unmark :help "Unmark Current Process")<br/>			   (Mark\ All menu-item "Mark All" proced-mark-all :help "Mark All Processes")<br/>			   (Unmark\ All menu-item "Unmark All" proced-unmark-all :help "Unmark All Process")<br/>			   (Toggle\ Marks menu-item "Toggle Marks" proced-toggle-marks :help "Marked Processes Become Unmarked, and Vice Versa")<br/>			   (Mark\ Children menu-item "Mark Children" proced-mark-children :help "Mark Current Process and its Children")<br/>			   (Mark\ Parents menu-item "Mark Parents" proced-mark-parents :help "Mark Current Process and its Parents")<br/>			   (nil-7 menu-item "--")<br/>			   (Filters menu-item "Filters"<br/>				    (keymap "Filters"<br/>					    (user menu-item "user" menu-function-125 :key-sequence nil :button<br/>						  (:radio eq proced-filter 'user))<br/>					    (user-running menu-item "user-running" menu-function-126 :key-sequence nil :button<br/>							  (:radio eq proced-filter 'user-running))<br/>					    (all menu-item "all" menu-function-127 :key-sequence nil :button<br/>						 (:radio eq proced-filter 'all))<br/>					    (all-running menu-item "all-running" menu-function-128 :key-sequence nil :button<br/>							 (:radio eq proced-filter 'all-running))<br/>					    (emacs menu-item "emacs" menu-function-129 :key-sequence nil :button<br/>						   (:radio eq proced-filter 'emacs)))<br/>				    :help "Select Filter for Process Listing")<br/>			   (Sorting menu-item "Sorting"<br/>				    (keymap "Sorting"<br/>					    (Sort\.\.\. menu-item "Sort..." proced-sort-interactive :help "Sort Process List")<br/>					    (nil-7 menu-item "--")<br/>					    (Sort\ by\ %CPU menu-item "Sort by %CPU" proced-sort-pcpu)<br/>					    (Sort\ by\ %MEM menu-item "Sort by %MEM" proced-sort-pmem)<br/>					    (Sort\ by\ PID menu-item "Sort by PID" proced-sort-pid)<br/>					    (Sort\ by\ START menu-item "Sort by START" proced-sort-start)<br/>					    (Sort\ by\ TIME menu-item "Sort by TIME" proced-sort-time)<br/>					    (Sort\ by\ USER menu-item "Sort by USER" proced-sort-user))<br/>				    :help "Select Sort Scheme")<br/>			   (Formats menu-item "Formats"<br/>				    (keymap "Formats"<br/>					    (short menu-item "short" menu-function-132 :key-sequence nil :button<br/>						   (:radio eq proced-format 'short))<br/>					    (medium menu-item "medium" menu-function-133 :key-sequence nil :button<br/>						    (:radio eq proced-format 'medium))<br/>					    (long menu-item "long" menu-function-134 :key-sequence nil :button<br/>						  (:radio eq proced-format 'long))<br/>					    (verbose menu-item "verbose" menu-function-135 :key-sequence nil :button<br/>						     (:radio eq proced-format 'verbose)))<br/>				    :help "Select Format for Process Listing")<br/>			   (Tree\ Display menu-item "Tree Display" proced-toggle-tree :button<br/>					  (:toggle eval proced-tree-flag)<br/>					  :help "Display Proced Buffer as Process Tree")<br/>			   (nil-7-12 menu-item "--")<br/>			   (Omit\ Marked\ Processes menu-item "Omit Marked Processes" proced-omit-processes :help "Omit Marked Processes in Process Listing.")<br/>			   (nil-7-14 menu-item "--")<br/>			   (Revert menu-item "Revert" revert-buffer :help "Revert Process Listing")<br/>			   (Auto\ Update menu-item "Auto Update" proced-toggle-auto-update :button<br/>					 (:toggle eval proced-auto-update-flag)<br/>					 :help "Auto Update of Proced Buffer")<br/>			   (nil-7-17 menu-item "--")<br/>			   (Send\ signal menu-item "Send signal" proced-send-signal :help "Send Signal to Marked Processes")<br/>			   (Renice menu-item "Renice" proced-renice :help "Renice Marked Processes"))))<br/> (remap keymap<br/>	(advertised-undo . proced-undo)<br/>	(undo . proced-undo))<br/> (63 . proced-help)<br/> (104 . describe-mode)<br/> (114 . proced-renice)<br/> (107 . proced-send-signal)<br/> (120 . proced-send-signal)<br/> (111 . proced-omit-processes)<br/> (70 . proced-format-interactive)<br/> (84 . proced-toggle-tree)<br/> (header-line keymap<br/>	      (mouse-2 . proced-sort-header)<br/>	      (mouse-1 . proced-sort-header))<br/> (115 keymap<br/>      (117 . proced-sort-user)<br/>      (116 . proced-sort-time)<br/>      (83 . proced-sort-interactive)<br/>      (115 . proced-sort-start)<br/>      (112 . proced-sort-pid)<br/>      (109 . proced-sort-pmem)<br/>      (99 . proced-sort-pcpu))<br/> (13 . proced-refine)<br/> (mouse-2 . proced-refine)<br/> (102 . proced-filter-interactive)<br/> (80 . proced-mark-parents)<br/> (67 . proced-mark-children)<br/> (116 . proced-toggle-marks)<br/> (85 . proced-unmark-all)<br/> (77 . proced-mark-all)<br/> (117 . proced-unmark)<br/> (109 . proced-mark)<br/> (100 . proced-mark)<br/> (up . previous-line)<br/> (down . next-line)<br/> (127 . proced-unmark-backward)<br/> (16 . previous-line)<br/> (14 . next-line)<br/> (112 . previous-line)<br/> (110 . next-line)<br/> (32 . next-line))<br/><br/>
+<strong>proced-mode-map</strong> is a variable defined in `<code>proced.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap for Proced commands.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (Proced menu-item "Proced"<br/>
+		   (keymap "Proced"<br/>
+			   (Mark menu-item "Mark" proced-mark :help "Mark Current Process")<br/>
+			   (Unmark menu-item "Unmark" proced-unmark :help "Unmark Current Process")<br/>
+			   (Mark\ All menu-item "Mark All" proced-mark-all :help "Mark All Processes")<br/>
+			   (Unmark\ All menu-item "Unmark All" proced-unmark-all :help "Unmark All Process")<br/>
+			   (Toggle\ Marks menu-item "Toggle Marks" proced-toggle-marks :help "Marked Processes Become Unmarked, and Vice Versa")<br/>
+			   (Mark\ Children menu-item "Mark Children" proced-mark-children :help "Mark Current Process and its Children")<br/>
+			   (Mark\ Parents menu-item "Mark Parents" proced-mark-parents :help "Mark Current Process and its Parents")<br/>
+			   (nil-7 menu-item "--")<br/>
+			   (Filters menu-item "Filters"<br/>
+				    (keymap "Filters"<br/>
+					    (user menu-item "user" menu-function-125 :key-sequence nil :button<br/>
+						  (:radio eq proced-filter 'user))<br/>
+					    (user-running menu-item "user-running" menu-function-126 :key-sequence nil :button<br/>
+							  (:radio eq proced-filter 'user-running))<br/>
+					    (all menu-item "all" menu-function-127 :key-sequence nil :button<br/>
+						 (:radio eq proced-filter 'all))<br/>
+					    (all-running menu-item "all-running" menu-function-128 :key-sequence nil :button<br/>
+							 (:radio eq proced-filter 'all-running))<br/>
+					    (emacs menu-item "emacs" menu-function-129 :key-sequence nil :button<br/>
+						   (:radio eq proced-filter 'emacs)))<br/>
+				    :help "Select Filter for Process Listing")<br/>
+			   (Sorting menu-item "Sorting"<br/>
+				    (keymap "Sorting"<br/>
+					    (Sort\.\.\. menu-item "Sort..." proced-sort-interactive :help "Sort Process List")<br/>
+					    (nil-7 menu-item "--")<br/>
+					    (Sort\ by\ %CPU menu-item "Sort by %CPU" proced-sort-pcpu)<br/>
+					    (Sort\ by\ %MEM menu-item "Sort by %MEM" proced-sort-pmem)<br/>
+					    (Sort\ by\ PID menu-item "Sort by PID" proced-sort-pid)<br/>
+					    (Sort\ by\ START menu-item "Sort by START" proced-sort-start)<br/>
+					    (Sort\ by\ TIME menu-item "Sort by TIME" proced-sort-time)<br/>
+					    (Sort\ by\ USER menu-item "Sort by USER" proced-sort-user))<br/>
+				    :help "Select Sort Scheme")<br/>
+			   (Formats menu-item "Formats"<br/>
+				    (keymap "Formats"<br/>
+					    (short menu-item "short" menu-function-132 :key-sequence nil :button<br/>
+						   (:radio eq proced-format 'short))<br/>
+					    (medium menu-item "medium" menu-function-133 :key-sequence nil :button<br/>
+						    (:radio eq proced-format 'medium))<br/>
+					    (long menu-item "long" menu-function-134 :key-sequence nil :button<br/>
+						  (:radio eq proced-format 'long))<br/>
+					    (verbose menu-item "verbose" menu-function-135 :key-sequence nil :button<br/>
+						     (:radio eq proced-format 'verbose)))<br/>
+				    :help "Select Format for Process Listing")<br/>
+			   (Tree\ Display menu-item "Tree Display" proced-toggle-tree :button<br/>
+					  (:toggle eval proced-tree-flag)<br/>
+					  :help "Display Proced Buffer as Process Tree")<br/>
+			   (nil-7-12 menu-item "--")<br/>
+			   (Omit\ Marked\ Processes menu-item "Omit Marked Processes" proced-omit-processes :help "Omit Marked Processes in Process Listing.")<br/>
+			   (nil-7-14 menu-item "--")<br/>
+			   (Revert menu-item "Revert" revert-buffer :help "Revert Process Listing")<br/>
+			   (Auto\ Update menu-item "Auto Update" proced-toggle-auto-update :button<br/>
+					 (:toggle eval proced-auto-update-flag)<br/>
+					 :help "Auto Update of Proced Buffer")<br/>
+			   (nil-7-17 menu-item "--")<br/>
+			   (Send\ signal menu-item "Send signal" proced-send-signal :help "Send Signal to Marked Processes")<br/>
+			   (Renice menu-item "Renice" proced-renice :help "Renice Marked Processes"))))<br/>
+ (remap keymap<br/>
+	(advertised-undo . proced-undo)<br/>
+	(undo . proced-undo))<br/>
+ (63 . proced-help)<br/>
+ (104 . describe-mode)<br/>
+ (114 . proced-renice)<br/>
+ (107 . proced-send-signal)<br/>
+ (120 . proced-send-signal)<br/>
+ (111 . proced-omit-processes)<br/>
+ (70 . proced-format-interactive)<br/>
+ (84 . proced-toggle-tree)<br/>
+ (header-line keymap<br/>
+	      (mouse-2 . proced-sort-header)<br/>
+	      (mouse-1 . proced-sort-header))<br/>
+ (115 keymap<br/>
+      (117 . proced-sort-user)<br/>
+      (116 . proced-sort-time)<br/>
+      (83 . proced-sort-interactive)<br/>
+      (115 . proced-sort-start)<br/>
+      (112 . proced-sort-pid)<br/>
+      (109 . proced-sort-pmem)<br/>
+      (99 . proced-sort-pcpu))<br/>
+ (13 . proced-refine)<br/>
+ (mouse-2 . proced-refine)<br/>
+ (102 . proced-filter-interactive)<br/>
+ (80 . proced-mark-parents)<br/>
+ (67 . proced-mark-children)<br/>
+ (116 . proced-toggle-marks)<br/>
+ (85 . proced-unmark-all)<br/>
+ (77 . proced-mark-all)<br/>
+ (117 . proced-unmark)<br/>
+ (109 . proced-mark)<br/>
+ (100 . proced-mark)<br/>
+ (up . previous-line)<br/>
+ (down . next-line)<br/>
+ (127 . proced-unmark-backward)<br/>
+ (16 . previous-line)<br/>
+ (14 . next-line)<br/>
+ (112 . previous-line)<br/>
+ (110 . next-line)<br/>
+ (32 . next-line))<br/>
+<br/>

@@ -1,1 +1,39 @@
-dbus-registered-objects-table is a variable defined in `C source code'.<br/>Its value is #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data<br/>	      ())<br/><br/><br/>Documentation:<br/>Hash table of registered functions for D-Bus.<br/><br/>There are two different uses of the hash table: for accessing<br/>registered interfaces properties, targeted by signals or method calls,<br/>and for calling handlers in case of non-blocking method call returns.<br/><br/>In the first case, the key in the hash table is the list (TYPE BUS<br/>INTERFACE MEMBER).  TYPE is one of the Lisp symbols `:method',<br/>`:signal' or `:property'.  BUS is either a Lisp symbol, `:system' or<br/>`:session', or a string denoting the bus address.  INTERFACE is a<br/>string which denotes a D-Bus interface, and MEMBER, also a string, is<br/>either a method, a signal or a property INTERFACE is offering.  All<br/>arguments but BUS must not be nil.<br/><br/>The value in the hash table is a list of quadruple lists ((UNAME<br/>SERVICE PATH OBJECT [RULE]) ...).  SERVICE is the service name as<br/>registered, UNAME is the corresponding unique name.  In case of<br/>registered methods and properties, UNAME is nil.  PATH is the object<br/>path of the sending object.  All of them can be nil, which means a<br/>wildcard then.  OBJECT is either the handler to be called when a D-Bus<br/>message, which matches the key criteria, arrives (TYPE `:method' and<br/>`:signal'), or a cons cell containing the value of the property (TYPE<br/>`:property').<br/><br/>For entries of type `:signal', there is also a fifth element RULE,<br/>which keeps the match string the signal is registered with.<br/><br/>In the second case, the key in the hash table is the list (:serial BUS<br/>SERIAL).  BUS is either a Lisp symbol, `:system' or `:session', or a<br/>string denoting the bus address.  SERIAL is the serial number of the<br/>non-blocking method call, a reply is expected.  Both arguments must<br/>not be nil.  The value in the hash table is HANDLER, the function to<br/>be called when the D-Bus reply message arrives.
+<strong>dbus-registered-objects-table</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data<br/>
+	      ())<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Hash table of registered functions for D-Bus.<br/>
+<br/>
+There are two different uses of the hash table: for accessing<br/>
+registered interfaces properties, targeted by signals or method calls,<br/>
+and for calling handlers in case of non-blocking method call returns.<br/>
+<br/>
+In the first case, the key in the hash table is the list (TYPE BUS<br/>
+INTERFACE MEMBER).  TYPE is one of the Lisp symbols `:method',<br/>
+`:signal' or `:property'.  BUS is either a Lisp symbol, `:system' or<br/>
+`:session', or a string denoting the bus address.  INTERFACE is a<br/>
+string which denotes a D-Bus interface, and MEMBER, also a string, is<br/>
+either a method, a signal or a property INTERFACE is offering.  All<br/>
+arguments but BUS must not be nil.<br/>
+<br/>
+The value in the hash table is a list of quadruple lists ((UNAME<br/>
+SERVICE PATH OBJECT [RULE]) ...).  SERVICE is the service name as<br/>
+registered, UNAME is the corresponding unique name.  In case of<br/>
+registered methods and properties, UNAME is nil.  PATH is the object<br/>
+path of the sending object.  All of them can be nil, which means a<br/>
+wildcard then.  OBJECT is either the handler to be called when a D-Bus<br/>
+message, which matches the key criteria, arrives (TYPE `:method' and<br/>
+`:signal'), or a cons cell containing the value of the property (TYPE<br/>
+`:property').<br/>
+<br/>
+For entries of type `:signal', there is also a fifth element RULE,<br/>
+which keeps the match string the signal is registered with.<br/>
+<br/>
+In the second case, the key in the hash table is the list (:serial BUS<br/>
+SERIAL).  BUS is either a Lisp symbol, `:system' or `:session', or a<br/>
+string denoting the bus address.  SERIAL is the serial number of the<br/>
+non-blocking method call, a reply is expected.  Both arguments must<br/>
+not be nil.  The value in the hash table is HANDLER, the function to<br/>
+be called when the D-Bus reply message arrives.

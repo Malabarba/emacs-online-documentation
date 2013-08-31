@@ -1,1 +1,32 @@
-cache-long-line-scans is a variable defined in `C source code'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>Non-nil means that Emacs should use caches to handle long lines more quickly.<br/><br/>Normally, the line-motion functions work by scanning the buffer for<br/>newlines.  Columnar operations (like `move-to-column' and<br/>`compute-motion') also work by scanning the buffer, summing character<br/>widths as they go.  This works well for ordinary text, but if the<br/>buffer's lines are very long (say, more than 500 characters), these<br/>motion functions will take longer to execute.  Emacs may also take<br/>longer to update the display.<br/><br/>If `cache-long-line-scans' is non-nil, these motion functions cache the<br/>results of their scans, and consult the cache to avoid rescanning<br/>regions of the buffer until the text is modified.  The caches are most<br/>beneficial when they prevent the most searching---that is, when the<br/>buffer contains long lines and large regions of characters with the<br/>same, fixed screen width.<br/><br/>When `cache-long-line-scans' is non-nil, processing short lines will<br/>become slightly slower (because of the overhead of consulting the<br/>cache), and the caches will use memory roughly proportional to the<br/>number of newlines and characters whose screen width varies.<br/><br/>The caches require no explicit maintenance; their accuracy is<br/>maintained internally by the Emacs primitives.  Enabling or disabling<br/>the cache should not affect the behavior of any of the motion<br/>functions; it should only affect their performance.
+<strong>cache-long-line-scans</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+Non-nil means that Emacs should use caches to handle long lines more quickly.<br/>
+<br/>
+Normally, the line-motion functions work by scanning the buffer for<br/>
+newlines.  Columnar operations (like `move-to-column' and<br/>
+`compute-motion') also work by scanning the buffer, summing character<br/>
+widths as they go.  This works well for ordinary text, but if the<br/>
+buffer's lines are very long (say, more than 500 characters), these<br/>
+motion functions will take longer to execute.  Emacs may also take<br/>
+longer to update the display.<br/>
+<br/>
+If `cache-long-line-scans' is non-nil, these motion functions cache the<br/>
+results of their scans, and consult the cache to avoid rescanning<br/>
+regions of the buffer until the text is modified.  The caches are most<br/>
+beneficial when they prevent the most searching---that is, when the<br/>
+buffer contains long lines and large regions of characters with the<br/>
+same, fixed screen width.<br/>
+<br/>
+When `cache-long-line-scans' is non-nil, processing short lines will<br/>
+become slightly slower (because of the overhead of consulting the<br/>
+cache), and the caches will use memory roughly proportional to the<br/>
+number of newlines and characters whose screen width varies.<br/>
+<br/>
+The caches require no explicit maintenance; their accuracy is<br/>
+maintained internally by the Emacs primitives.  Enabling or disabling<br/>
+the cache should not affect the behavior of any of the motion<br/>
+functions; it should only affect their performance.

@@ -1,1 +1,15 @@
-log-edit-extract-headers is a compiled Lisp function in `log-edit.el'.<br/><br/>(log-edit-extract-headers HEADERS COMMENT)<br/><br/>Extract headers from COMMENT to form command line arguments.<br/>HEADERS should be an alist with elements (HEADER . CMDARG)<br/>or (HEADER . FUNCTION) associating headers to command line<br/>options and the result is then a list of the form (MSG ARGUMENTS...)<br/>where MSG is the remaining text from COMMENT.<br/>FUNCTION should be a function of one argument that takes the<br/>header value and returns the list of strings to be appended to<br/>ARGUMENTS.  CMDARG will be added to ARGUMENTS followed by the<br/>header value.  If "Summary" is not in HEADERS, then the<br/>"Summary" header is extracted anyway and put back as the first<br/>line of MSG.
+<strong>log-edit-extract-headers</strong> is a compiled Lisp function in `<code>log-edit.el</code>'.<br/>
+<br/>
+(log-edit-extract-headers HEADERS COMMENT)<br/>
+<br/>
+Extract headers from COMMENT to form command line arguments.<br/>
+HEADERS should be an alist with elements (HEADER . CMDARG)<br/>
+or (HEADER . FUNCTION) associating headers to command line<br/>
+options and the result is then a list of the form (MSG ARGUMENTS...)<br/>
+where MSG is the remaining text from COMMENT.<br/>
+FUNCTION should be a function of one argument that takes the<br/>
+header value and returns the list of strings to be appended to<br/>
+ARGUMENTS.  CMDARG will be added to ARGUMENTS followed by the<br/>
+header value.  If "Summary" is not in HEADERS, then the<br/>
+"Summary" header is extracted anyway and put back as the first<br/>
+line of MSG.

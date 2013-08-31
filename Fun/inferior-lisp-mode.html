@@ -1,1 +1,102 @@
-inferior-lisp-mode is an interactive compiled Lisp function in `inf-lisp.el'.<br/><br/>(inferior-lisp-mode)<br/><br/>Parent mode: `comint-mode'.<br/><br/>Major mode for interacting with an inferior Lisp process.<br/>Runs a Lisp interpreter as a subprocess of Emacs, with Lisp I/O through an<br/>Emacs buffer.  Variable `inferior-lisp-program' controls which Lisp interpreter<br/>is run.  Variables `inferior-lisp-prompt', `inferior-lisp-filter-regexp' and<br/>`inferior-lisp-load-command' can customize this mode for different Lisp<br/>interpreters.<br/><br/>For information on running multiple processes in multiple buffers, see<br/>documentation for variable `inferior-lisp-buffer'.<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>C-d		comint-delchar-or-maybe-eof<br/>RET		comint-send-input<br/>C-x		Prefix Command<br/>ESC		Prefix Command<br/>DEL		backward-delete-char-untabify<br/><C-down>	comint-next-input<br/><C-up>		comint-previous-input<br/><delete>	delete-char<br/><kp-delete>	delete-char<br/><mouse-2>	comint-insert-input<br/><br/>C-x C-e		lisp-eval-last-sexp<br/><br/>C-c C-a		lisp-show-arglist<br/>C-c C-c		comint-interrupt-subjob<br/>C-c C-d		lisp-describe-sym<br/>C-c C-e		comint-show-maximum-output<br/>C-c C-f		lisp-show-function-documentation<br/>C-c C-k		lisp-compile-file<br/>C-c C-l		lisp-load-file<br/>C-c RET		comint-copy-old-input<br/>C-c C-n		comint-next-prompt<br/>C-c C-o		comint-delete-output<br/>C-c C-p		comint-previous-prompt<br/>C-c C-r		comint-show-output<br/>C-c C-s		comint-write-output<br/>C-c C-u		comint-kill-input<br/>C-c C-v		lisp-show-variable-documentation<br/>C-c C-w		backward-kill-word<br/>C-c C-x		comint-get-next-from-history<br/>C-c C-z		comint-stop-subjob<br/>C-c ESC		Prefix Command<br/>C-c C-\		comint-quit-subjob<br/>C-c SPC		comint-accumulate<br/>C-c .		comint-insert-previous-argument<br/><br/>C-M-l		comint-show-output<br/>M-n		comint-next-input<br/>M-p		comint-previous-input<br/>M-r		comint-history-isearch-backward-regexp<br/><br/>C-M-q		indent-sexp<br/><br/>C-c M-r		comint-previous-matching-input-from-input<br/>C-c M-s		comint-next-matching-input-from-input<br/><br/><br/><br/>Customization: Entry to this mode runs the hooks on `comint-mode-hook' and<br/>`inferior-lisp-mode-hook' (in that order).<br/><br/>You can send text to the inferior Lisp process from other buffers containing<br/>Lisp source.<br/>    `switch-to-lisp' switches the current buffer to the Lisp process buffer.<br/>    `lisp-eval-defun' sends the current defun to the Lisp process.<br/>    `lisp-compile-defun' compiles the current defun.<br/>    `lisp-eval-region' sends the current region to the Lisp process.<br/>    `lisp-compile-region' compiles the current region.<br/><br/>    Prefixing the lisp-eval/compile-defun/region commands with<br/>    a C-u causes a switch to the Lisp process buffer after sending<br/>    the text.<br/><br/>Commands:<br/>RET after the end of the process' output sends the text from the<br/>    end of process to point.<br/>RET before the end of the process' output copies the sexp ending at point<br/>    to the end of the process' output, and sends it.<br/>C-c RET copies the sexp ending at point to the end of the process' output,<br/>    allowing you to edit it before sending it.<br/>If `comint-use-prompt-regexp' is nil (the default), <mouse-2> on old input<br/>   copies the entire old input to the end of the process' output, allowing<br/>   you to edit it before sending it.  When not used on old input, or if<br/>   `comint-use-prompt-regexp' is non-nil, <mouse-2> behaves according to<br/>   its global binding.<br/>DEL converts tabs to spaces as it moves back.<br/>M-x lisp-indent-line indents for Lisp; with argument, shifts rest<br/>    of expression rigidly with the current line.<br/>C-M-q does M-x lisp-indent-line on each line starting within following expression.<br/>Paragraphs are separated only by blank lines.  Semicolons start comments.<br/>If you accidentally suspend your process, use M-x comint-continue-subjob<br/>to continue it.
+<strong>inferior-lisp-mode</strong> is an interactive compiled Lisp function in `<code>inf-lisp.el</code>'.<br/>
+<br/>
+(inferior-lisp-mode)<br/>
+<br/>
+Parent mode: `comint-mode'.<br/>
+<br/>
+Major mode for interacting with an inferior Lisp process.<br/>
+Runs a Lisp interpreter as a subprocess of Emacs, with Lisp I/O through an<br/>
+Emacs buffer.  Variable `inferior-lisp-program' controls which Lisp interpreter<br/>
+is run.  Variables `inferior-lisp-prompt', `inferior-lisp-filter-regexp' and<br/>
+`inferior-lisp-load-command' can customize this mode for different Lisp<br/>
+interpreters.<br/>
+<br/>
+For information on running multiple processes in multiple buffers, see<br/>
+documentation for variable `inferior-lisp-buffer'.<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+C-d		comint-delchar-or-maybe-eof<br/>
+RET		comint-send-input<br/>
+C-x		Prefix Command<br/>
+ESC		Prefix Command<br/>
+DEL		backward-delete-char-untabify<br/>
+<C-down>	comint-next-input<br/>
+<C-up>		comint-previous-input<br/>
+<delete>	delete-char<br/>
+<kp-delete>	delete-char<br/>
+<mouse-2>	comint-insert-input<br/>
+<br/>
+C-x C-e		lisp-eval-last-sexp<br/>
+<br/>
+C-c C-a		lisp-show-arglist<br/>
+C-c C-c		comint-interrupt-subjob<br/>
+C-c C-d		lisp-describe-sym<br/>
+C-c C-e		comint-show-maximum-output<br/>
+C-c C-f		lisp-show-function-documentation<br/>
+C-c C-k		lisp-compile-file<br/>
+C-c C-l		lisp-load-file<br/>
+C-c RET		comint-copy-old-input<br/>
+C-c C-n		comint-next-prompt<br/>
+C-c C-o		comint-delete-output<br/>
+C-c C-p		comint-previous-prompt<br/>
+C-c C-r		comint-show-output<br/>
+C-c C-s		comint-write-output<br/>
+C-c C-u		comint-kill-input<br/>
+C-c C-v		lisp-show-variable-documentation<br/>
+C-c C-w		backward-kill-word<br/>
+C-c C-x		comint-get-next-from-history<br/>
+C-c C-z		comint-stop-subjob<br/>
+C-c ESC		Prefix Command<br/>
+C-c C-\		comint-quit-subjob<br/>
+C-c SPC		comint-accumulate<br/>
+C-c .		comint-insert-previous-argument<br/>
+<br/>
+C-M-l		comint-show-output<br/>
+M-n		comint-next-input<br/>
+M-p		comint-previous-input<br/>
+M-r		comint-history-isearch-backward-regexp<br/>
+<br/>
+C-M-q		indent-sexp<br/>
+<br/>
+C-c M-r		comint-previous-matching-input-from-input<br/>
+C-c M-s		comint-next-matching-input-from-input<br/>
+<br/>
+<br/>
+<br/>
+Customization: Entry to this mode runs the hooks on `comint-mode-hook' and<br/>
+`inferior-lisp-mode-hook' (in that order).<br/>
+<br/>
+You can send text to the inferior Lisp process from other buffers containing<br/>
+Lisp source.<br/>
+    `switch-to-lisp' switches the current buffer to the Lisp process buffer.<br/>
+    `lisp-eval-defun' sends the current defun to the Lisp process.<br/>
+    `lisp-compile-defun' compiles the current defun.<br/>
+    `lisp-eval-region' sends the current region to the Lisp process.<br/>
+    `lisp-compile-region' compiles the current region.<br/>
+<br/>
+    Prefixing the lisp-eval/compile-defun/region commands with<br/>
+    a C-u causes a switch to the Lisp process buffer after sending<br/>
+    the text.<br/>
+<br/>
+Commands:<br/>
+RET after the end of the process' output sends the text from the<br/>
+    end of process to point.<br/>
+RET before the end of the process' output copies the sexp ending at point<br/>
+    to the end of the process' output, and sends it.<br/>
+C-c RET copies the sexp ending at point to the end of the process' output,<br/>
+    allowing you to edit it before sending it.<br/>
+If `comint-use-prompt-regexp' is nil (the default), <mouse-2> on old input<br/>
+   copies the entire old input to the end of the process' output, allowing<br/>
+   you to edit it before sending it.  When not used on old input, or if<br/>
+   `comint-use-prompt-regexp' is non-nil, <mouse-2> behaves according to<br/>
+   its global binding.<br/>
+DEL converts tabs to spaces as it moves back.<br/>
+M-x lisp-indent-line indents for Lisp; with argument, shifts rest<br/>
+    of expression rigidly with the current line.<br/>
+C-M-q does M-x lisp-indent-line on each line starting within following expression.<br/>
+Paragraphs are separated only by blank lines.  Semicolons start comments.<br/>
+If you accidentally suspend your process, use M-x comint-continue-subjob<br/>
+to continue it.

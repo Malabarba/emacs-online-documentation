@@ -1,1 +1,43 @@
-whitespace-report-region is an interactive autoloaded compiled Lisp function in `whitespace.el'.<br/><br/>(whitespace-report-region START END &optional FORCE REPORT-IF-BOGUS)<br/><br/>Report some whitespace problems in a region.<br/><br/>Return nil if there is no whitespace problem; otherwise, return<br/>non-nil.<br/><br/>If FORCE is non-nil or C-u was pressed just<br/>before calling `whitespace-report-region' interactively, it<br/>forces `whitespace-style' to have:<br/><br/>   empty<br/>   indentation<br/>   space-before-tab<br/>   trailing<br/>   space-after-tab<br/><br/>If REPORT-IF-BOGUS is non-nil, it reports only when there are any<br/>whitespace problems in buffer.<br/><br/>Report if some of the following whitespace problems exist:<br/><br/>* If `indent-tabs-mode' is non-nil:<br/>   empty		1. empty lines at beginning of buffer.<br/>   empty		2. empty lines at end of buffer.<br/>   trailing		3. SPACEs or TABs at end of line.<br/>   indentation		4. 8 or more SPACEs at beginning of line.<br/>   space-before-tab	5. SPACEs before TAB.<br/>   space-after-tab	6. 8 or more SPACEs after TAB.<br/><br/>* If `indent-tabs-mode' is nil:<br/>   empty		1. empty lines at beginning of buffer.<br/>   empty		2. empty lines at end of buffer.<br/>   trailing		3. SPACEs or TABs at end of line.<br/>   indentation		4. TABS at beginning of line.<br/>   space-before-tab	5. SPACEs before TAB.<br/>   space-after-tab	6. 8 or more SPACEs after TAB.<br/><br/>See `whitespace-style' for documentation.<br/>See also `whitespace-cleanup' and `whitespace-cleanup-region' for<br/>cleaning up these problems.
+<strong>whitespace-report-region</strong> is an interactive autoloaded compiled Lisp function in `<code>whitespace.el</code>'.<br/>
+<br/>
+(whitespace-report-region START END &optional FORCE REPORT-IF-BOGUS)<br/>
+<br/>
+Report some whitespace problems in a region.<br/>
+<br/>
+Return nil if there is no whitespace problem; otherwise, return<br/>
+non-nil.<br/>
+<br/>
+If FORCE is non-nil or C-u was pressed just<br/>
+before calling `whitespace-report-region' interactively, it<br/>
+forces `whitespace-style' to have:<br/>
+<br/>
+   empty<br/>
+   indentation<br/>
+   space-before-tab<br/>
+   trailing<br/>
+   space-after-tab<br/>
+<br/>
+If REPORT-IF-BOGUS is non-nil, it reports only when there are any<br/>
+whitespace problems in buffer.<br/>
+<br/>
+Report if some of the following whitespace problems exist:<br/>
+<br/>
+* If `indent-tabs-mode' is non-nil:<br/>
+   empty		1. empty lines at beginning of buffer.<br/>
+   empty		2. empty lines at end of buffer.<br/>
+   trailing		3. SPACEs or TABs at end of line.<br/>
+   indentation		4. 8 or more SPACEs at beginning of line.<br/>
+   space-before-tab	5. SPACEs before TAB.<br/>
+   space-after-tab	6. 8 or more SPACEs after TAB.<br/>
+<br/>
+* If `indent-tabs-mode' is nil:<br/>
+   empty		1. empty lines at beginning of buffer.<br/>
+   empty		2. empty lines at end of buffer.<br/>
+   trailing		3. SPACEs or TABs at end of line.<br/>
+   indentation		4. TABS at beginning of line.<br/>
+   space-before-tab	5. SPACEs before TAB.<br/>
+   space-after-tab	6. 8 or more SPACEs after TAB.<br/>
+<br/>
+See `whitespace-style' for documentation.<br/>
+See also `whitespace-cleanup' and `whitespace-cleanup-region' for<br/>
+cleaning up these problems.

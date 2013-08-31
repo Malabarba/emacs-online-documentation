@@ -1,1 +1,31 @@
-window--resize-this-window is a compiled Lisp function in `window.el'.<br/><br/>(window--resize-this-window WINDOW DELTA &optional HORIZONTAL IGNORE ADD TRAIL EDGE)<br/><br/>Resize WINDOW vertically by DELTA lines.<br/>Optional argument HORIZONTAL non-nil means resize WINDOW<br/>horizontally by DELTA columns.<br/><br/>Optional argument IGNORE non-nil means ignore restrictions<br/>imposed by fixed size windows, `window-min-height' or<br/>`window-min-width' settings.  If IGNORE equals `safe', live<br/>windows may get as small as `window-safe-min-height' lines and<br/>`window-safe-min-width' columns.  If IGNORE is a window, ignore<br/>restrictions for that window only.  Any other non-nil value<br/>means ignore all of the above restrictions for all windows.<br/><br/>Optional argument ADD non-nil means add DELTA to the new total<br/>size of WINDOW.<br/><br/>Optional arguments TRAIL and EDGE, when non-nil, refine the set<br/>of windows that shall be resized.  If TRAIL equals `before',<br/>resize only windows on the left or above EDGE.  If TRAIL equals<br/>`after', resize only windows on the right or below EDGE.  Also,<br/>preferably only resize windows adjacent to EDGE.<br/><br/>This function recursively resizes WINDOW's child windows to fit the<br/>new size.  Make sure that WINDOW is `window--resizable' before<br/>calling this function.  Note that this function does not resize<br/>siblings of WINDOW or WINDOW's parent window.  You have to<br/>eventually call `window-resize-apply' in order to make resizing<br/>actually take effect.
+<strong>window--resize-this-window</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(window--resize-this-window WINDOW DELTA &optional HORIZONTAL IGNORE ADD TRAIL EDGE)<br/>
+<br/>
+Resize WINDOW vertically by DELTA lines.<br/>
+Optional argument HORIZONTAL non-nil means resize WINDOW<br/>
+horizontally by DELTA columns.<br/>
+<br/>
+Optional argument IGNORE non-nil means ignore restrictions<br/>
+imposed by fixed size windows, `window-min-height' or<br/>
+`window-min-width' settings.  If IGNORE equals `safe', live<br/>
+windows may get as small as `window-safe-min-height' lines and<br/>
+`window-safe-min-width' columns.  If IGNORE is a window, ignore<br/>
+restrictions for that window only.  Any other non-nil value<br/>
+means ignore all of the above restrictions for all windows.<br/>
+<br/>
+Optional argument ADD non-nil means add DELTA to the new total<br/>
+size of WINDOW.<br/>
+<br/>
+Optional arguments TRAIL and EDGE, when non-nil, refine the set<br/>
+of windows that shall be resized.  If TRAIL equals `before',<br/>
+resize only windows on the left or above EDGE.  If TRAIL equals<br/>
+`after', resize only windows on the right or below EDGE.  Also,<br/>
+preferably only resize windows adjacent to EDGE.<br/>
+<br/>
+This function recursively resizes WINDOW's child windows to fit the<br/>
+new size.  Make sure that WINDOW is `window--resizable' before<br/>
+calling this function.  Note that this function does not resize<br/>
+siblings of WINDOW or WINDOW's parent window.  You have to<br/>
+eventually call `window-resize-apply' in order to make resizing<br/>
+actually take effect.

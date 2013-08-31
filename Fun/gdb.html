@@ -1,1 +1,58 @@
-gdb is an interactive autoloaded compiled Lisp function in `gdb-mi.el'.<br/><br/>It is bound to <menu-bar> <tools> <gdb>.<br/><br/>(gdb COMMAND-LINE)<br/><br/>Run gdb on program FILE in buffer *gud-FILE*.<br/>The directory containing FILE becomes the initial working directory<br/>and source-file directory for your debugger.<br/><br/>COMMAND-LINE is the shell command for starting the gdb session.<br/>It should be a string consisting of the name of the gdb<br/>executable followed by command-line options.  The command-line<br/>options should include "-i=mi" to use gdb's MI text interface.<br/>Note that the old "--annotate" option is no longer supported.<br/><br/>If `gdb-many-windows' is nil (the default value) then gdb just<br/>pops up the GUD buffer unless `gdb-show-main' is t.  In this case<br/>it starts with two windows: one displaying the GUD buffer and the<br/>other with the source file with the main routine of the inferior.<br/><br/>If `gdb-many-windows' is t, regardless of the value of<br/>`gdb-show-main', the layout below will appear.  Keybindings are<br/>shown in some of the buffers.<br/><br/>Watch expressions appear in the speedbar/slowbar.<br/><br/>The following commands help control operation :<br/><br/>`gdb-many-windows'    - Toggle the number of windows gdb uses.<br/>`gdb-restore-windows' - To restore the window layout.<br/><br/>See Info node `(emacs)GDB Graphical Interface' for a more<br/>detailed description of this mode.<br/><br/><br/>+----------------------------------------------------------------------+<br/>|                               GDB Toolbar                            |<br/>+-----------------------------------+----------------------------------+<br/>| GUD buffer (I/O of GDB)           | Locals buffer                    |<br/>|                                   |                                  |<br/>|                                   |                                  |<br/>|                                   |                                  |<br/>+-----------------------------------+----------------------------------+<br/>| Source buffer                     | I/O buffer (of debugged program) |<br/>|                                   | (comint-mode)                    |<br/>|                                   |                                  |<br/>|                                   |                                  |<br/>|                                   |                                  |<br/>|                                   |                                  |<br/>|                                   |                                  |<br/>|                                   |                                  |<br/>+-----------------------------------+----------------------------------+<br/>| Stack buffer                      | Breakpoints buffer               |<br/>| RET      gdb-select-frame         | SPC    gdb-toggle-breakpoint     |<br/>|                                   | RET    gdb-goto-breakpoint       |<br/>|                                   | D      gdb-delete-breakpoint     |<br/>+-----------------------------------+----------------------------------+
+<strong>gdb</strong> is an interactive autoloaded compiled Lisp function in `<code>gdb-mi.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <tools> <gdb>.<br/>
+<br/>
+(gdb COMMAND-LINE)<br/>
+<br/>
+Run gdb on program FILE in buffer *gud-FILE*.<br/>
+The directory containing FILE becomes the initial working directory<br/>
+and source-file directory for your debugger.<br/>
+<br/>
+COMMAND-LINE is the shell command for starting the gdb session.<br/>
+It should be a string consisting of the name of the gdb<br/>
+executable followed by command-line options.  The command-line<br/>
+options should include "-i=mi" to use gdb's MI text interface.<br/>
+Note that the old "--annotate" option is no longer supported.<br/>
+<br/>
+If `gdb-many-windows' is nil (the default value) then gdb just<br/>
+pops up the GUD buffer unless `gdb-show-main' is t.  In this case<br/>
+it starts with two windows: one displaying the GUD buffer and the<br/>
+other with the source file with the main routine of the inferior.<br/>
+<br/>
+If `gdb-many-windows' is t, regardless of the value of<br/>
+`gdb-show-main', the layout below will appear.  Keybindings are<br/>
+shown in some of the buffers.<br/>
+<br/>
+Watch expressions appear in the speedbar/slowbar.<br/>
+<br/>
+The following commands help control operation :<br/>
+<br/>
+`gdb-many-windows'    - Toggle the number of windows gdb uses.<br/>
+`gdb-restore-windows' - To restore the window layout.<br/>
+<br/>
+See Info node `(emacs)GDB Graphical Interface' for a more<br/>
+detailed description of this mode.<br/>
+<br/>
+<br/>
++----------------------------------------------------------------------+<br/>
+|                               GDB Toolbar                            |<br/>
++-----------------------------------+----------------------------------+<br/>
+| GUD buffer (I/O of GDB)           | Locals buffer                    |<br/>
+|                                   |                                  |<br/>
+|                                   |                                  |<br/>
+|                                   |                                  |<br/>
++-----------------------------------+----------------------------------+<br/>
+| Source buffer                     | I/O buffer (of debugged program) |<br/>
+|                                   | (comint-mode)                    |<br/>
+|                                   |                                  |<br/>
+|                                   |                                  |<br/>
+|                                   |                                  |<br/>
+|                                   |                                  |<br/>
+|                                   |                                  |<br/>
+|                                   |                                  |<br/>
++-----------------------------------+----------------------------------+<br/>
+| Stack buffer                      | Breakpoints buffer               |<br/>
+| RET      gdb-select-frame         | SPC    gdb-toggle-breakpoint     |<br/>
+|                                   | RET    gdb-goto-breakpoint       |<br/>
+|                                   | D      gdb-delete-breakpoint     |<br/>
++-----------------------------------+----------------------------------+

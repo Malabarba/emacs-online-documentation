@@ -1,1 +1,215 @@
-mpc-tool-bar-map is a variable defined in `mpc.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (keymap<br/> (prev menu-item "prev" mpc-prev :image<br/>       (find-image<br/>	(cond<br/>	 ((not<br/>	   (display-color-p))<br/>	  '((:type pbm :file "mpc/prev.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/prev.xbm" :foreground "black" :background "grey75")<br/>	    (:type xpm :file "low-color/mpc/prev.xpm")<br/>	    (:type xpm :file "mpc/prev.xpm")))<br/>	 ((<<br/>	   (display-color-cells)<br/>	   256)<br/>	  '((:type xpm :file "low-color/mpc/prev.xpm")<br/>	    (:type xpm :file "mpc/prev.xpm")<br/>	    (:type pbm :file "mpc/prev.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/prev.xbm" :foreground "black" :background "grey75")))<br/>	 (t<br/>	  '((:type xpm :file "mpc/prev.xpm")<br/>	    (:type pbm :file "mpc/prev.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/prev.xbm" :foreground "black" :background "grey75")))))<br/>       :enable<br/>       (not<br/>	(equal<br/>	 (cdr<br/>	  (assq 'state mpc-status))<br/>	 "stop"))<br/>       :label "Prev" :vert-only t)<br/> (rewind menu-item "rewind" mpc-rewind :image<br/>	 (find-image<br/>	  (cond<br/>	   ((not<br/>	     (display-color-p))<br/>	    '((:type pbm :file "mpc/rewind.pbm" :foreground "black" :background "grey75")<br/>	      (:type xbm :file "mpc/rewind.xbm" :foreground "black" :background "grey75")<br/>	      (:type xpm :file "low-color/mpc/rewind.xpm")<br/>	      (:type xpm :file "mpc/rewind.xpm")))<br/>	   ((<<br/>	     (display-color-cells)<br/>	     256)<br/>	    '((:type xpm :file "low-color/mpc/rewind.xpm")<br/>	      (:type xpm :file "mpc/rewind.xpm")<br/>	      (:type pbm :file "mpc/rewind.pbm" :foreground "black" :background "grey75")<br/>	      (:type xbm :file "mpc/rewind.xbm" :foreground "black" :background "grey75")))<br/>	   (t<br/>	    '((:type xpm :file "mpc/rewind.xpm")<br/>	      (:type pbm :file "mpc/rewind.pbm" :foreground "black" :background "grey75")<br/>	      (:type xbm :file "mpc/rewind.xbm" :foreground "black" :background "grey75")))))<br/>	 :enable<br/>	 (not<br/>	  (equal<br/>	   (cdr<br/>	    (assq 'state mpc-status))<br/>	   "stop"))<br/>	 :label "Rew" :vert-only t :button<br/>	 (:toggle and mpc--faster-toggle-timer<br/>		  (not mpc--faster-toggle-forward)))<br/> (pause menu-item "pause" mpc-pause :image<br/>	(find-image<br/>	 (cond<br/>	  ((not<br/>	    (display-color-p))<br/>	   '((:type pbm :file "mpc/pause.pbm" :foreground "black" :background "grey75")<br/>	     (:type xbm :file "mpc/pause.xbm" :foreground "black" :background "grey75")<br/>	     (:type xpm :file "low-color/mpc/pause.xpm")<br/>	     (:type xpm :file "mpc/pause.xpm")))<br/>	  ((<<br/>	    (display-color-cells)<br/>	    256)<br/>	   '((:type xpm :file "low-color/mpc/pause.xpm")<br/>	     (:type xpm :file "mpc/pause.xpm")<br/>	     (:type pbm :file "mpc/pause.pbm" :foreground "black" :background "grey75")<br/>	     (:type xbm :file "mpc/pause.xbm" :foreground "black" :background "grey75")))<br/>	  (t<br/>	   '((:type xpm :file "mpc/pause.xpm")<br/>	     (:type pbm :file "mpc/pause.pbm" :foreground "black" :background "grey75")<br/>	     (:type xbm :file "mpc/pause.xbm" :foreground "black" :background "grey75")))))<br/>	:label "Pause" :vert-only t :visible<br/>	(equal<br/>	 (cdr<br/>	  (assq 'state mpc-status))<br/>	 "play")<br/>	:help "Pause/play")<br/> (play menu-item "play" mpc-play :image<br/>       (find-image<br/>	(cond<br/>	 ((not<br/>	   (display-color-p))<br/>	  '((:type pbm :file "mpc/play.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/play.xbm" :foreground "black" :background "grey75")<br/>	    (:type xpm :file "low-color/mpc/play.xpm")<br/>	    (:type xpm :file "mpc/play.xpm")))<br/>	 ((<<br/>	   (display-color-cells)<br/>	   256)<br/>	  '((:type xpm :file "low-color/mpc/play.xpm")<br/>	    (:type xpm :file "mpc/play.xpm")<br/>	    (:type pbm :file "mpc/play.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/play.xbm" :foreground "black" :background "grey75")))<br/>	 (t<br/>	  '((:type xpm :file "mpc/play.xpm")<br/>	    (:type pbm :file "mpc/play.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/play.xbm" :foreground "black" :background "grey75")))))<br/>       :label "Play" :vert-only t :visible<br/>       (not<br/>	(equal<br/>	 (cdr<br/>	  (assq 'state mpc-status))<br/>	 "play"))<br/>       :help "Play/pause")<br/> (ffwd menu-item "ffwd" mpc-ffwd :image<br/>       (find-image<br/>	(cond<br/>	 ((not<br/>	   (display-color-p))<br/>	  '((:type pbm :file "mpc/ffwd.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/ffwd.xbm" :foreground "black" :background "grey75")<br/>	    (:type xpm :file "low-color/mpc/ffwd.xpm")<br/>	    (:type xpm :file "mpc/ffwd.xpm")))<br/>	 ((<<br/>	   (display-color-cells)<br/>	   256)<br/>	  '((:type xpm :file "low-color/mpc/ffwd.xpm")<br/>	    (:type xpm :file "mpc/ffwd.xpm")<br/>	    (:type pbm :file "mpc/ffwd.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/ffwd.xbm" :foreground "black" :background "grey75")))<br/>	 (t<br/>	  '((:type xpm :file "mpc/ffwd.xpm")<br/>	    (:type pbm :file "mpc/ffwd.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/ffwd.xbm" :foreground "black" :background "grey75")))))<br/>       :enable<br/>       (not<br/>	(equal<br/>	 (cdr<br/>	  (assq 'state mpc-status))<br/>	 "stop"))<br/>       :label "Ffwd" :vert-only t :button<br/>       (:toggle and mpc--faster-toggle-timer mpc--faster-toggle-forward))<br/> (next menu-item "next" mpc-next :image<br/>       (find-image<br/>	(cond<br/>	 ((not<br/>	   (display-color-p))<br/>	  '((:type pbm :file "mpc/next.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/next.xbm" :foreground "black" :background "grey75")<br/>	    (:type xpm :file "low-color/mpc/next.xpm")<br/>	    (:type xpm :file "mpc/next.xpm")))<br/>	 ((<<br/>	   (display-color-cells)<br/>	   256)<br/>	  '((:type xpm :file "low-color/mpc/next.xpm")<br/>	    (:type xpm :file "mpc/next.xpm")<br/>	    (:type pbm :file "mpc/next.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/next.xbm" :foreground "black" :background "grey75")))<br/>	 (t<br/>	  '((:type xpm :file "mpc/next.xpm")<br/>	    (:type pbm :file "mpc/next.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/next.xbm" :foreground "black" :background "grey75")))))<br/>       :label "Next" :vert-only t :enable<br/>       (not<br/>	(equal<br/>	 (cdr<br/>	  (assq 'state mpc-status))<br/>	 "stop")))<br/> (stop menu-item "stop" mpc-stop :image<br/>       (find-image<br/>	(cond<br/>	 ((not<br/>	   (display-color-p))<br/>	  '((:type pbm :file "mpc/stop.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/stop.xbm" :foreground "black" :background "grey75")<br/>	    (:type xpm :file "low-color/mpc/stop.xpm")<br/>	    (:type xpm :file "mpc/stop.xpm")))<br/>	 ((<<br/>	   (display-color-cells)<br/>	   256)<br/>	  '((:type xpm :file "low-color/mpc/stop.xpm")<br/>	    (:type xpm :file "mpc/stop.xpm")<br/>	    (:type pbm :file "mpc/stop.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/stop.xbm" :foreground "black" :background "grey75")))<br/>	 (t<br/>	  '((:type xpm :file "mpc/stop.xpm")<br/>	    (:type pbm :file "mpc/stop.pbm" :foreground "black" :background "grey75")<br/>	    (:type xbm :file "mpc/stop.xbm" :foreground "black" :background "grey75")))))<br/>       :label "Stop" :vert-only t)<br/> (add menu-item "add" mpc-playlist-add :image<br/>      (find-image<br/>       (cond<br/>	((not<br/>	  (display-color-p))<br/>	 '((:type pbm :file "mpc/add.pbm" :foreground "black" :background "grey75")<br/>	   (:type xbm :file "mpc/add.xbm" :foreground "black" :background "grey75")<br/>	   (:type xpm :file "low-color/mpc/add.xpm")<br/>	   (:type xpm :file "mpc/add.xpm")))<br/>	((<<br/>	  (display-color-cells)<br/>	  256)<br/>	 '((:type xpm :file "low-color/mpc/add.xpm")<br/>	   (:type xpm :file "mpc/add.xpm")<br/>	   (:type pbm :file "mpc/add.pbm" :foreground "black" :background "grey75")<br/>	   (:type xbm :file "mpc/add.xbm" :foreground "black" :background "grey75")))<br/>	(t<br/>	 '((:type xpm :file "mpc/add.xpm")<br/>	   (:type pbm :file "mpc/add.pbm" :foreground "black" :background "grey75")<br/>	   (:type xbm :file "mpc/add.xbm" :foreground "black" :background "grey75")))))<br/>      :label "Add" :vert-only t :help "Append to the playlist"))<br/><br/>
+<strong>mpc-tool-bar-map</strong> is a variable defined in `<code>mpc.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (keymap<br/>
+ (prev menu-item "prev" mpc-prev :image<br/>
+       (find-image<br/>
+	(cond<br/>
+	 ((not<br/>
+	   (display-color-p))<br/>
+	  '((:type pbm :file "mpc/prev.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/prev.xbm" :foreground "black")<br/>
+	    (:type xpm :file "low-color/mpc/prev.xpm")<br/>
+	    (:type xpm :file "mpc/prev.xpm")))<br/>
+	 ((<<br/>
+	   (display-color-cells)<br/>
+	   256)<br/>
+	  '((:type xpm :file "low-color/mpc/prev.xpm")<br/>
+	    (:type xpm :file "mpc/prev.xpm")<br/>
+	    (:type pbm :file "mpc/prev.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/prev.xbm" :foreground "black")))<br/>
+	 (t<br/>
+	  '((:type xpm :file "mpc/prev.xpm")<br/>
+	    (:type pbm :file "mpc/prev.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/prev.xbm" :foreground "black")))))<br/>
+       :enable<br/>
+       (not<br/>
+	(equal<br/>
+	 (cdr<br/>
+	  (assq 'state mpc-status))<br/>
+	 "stop"))<br/>
+       :label "Prev" :vert-only t)<br/>
+ (rewind menu-item "rewind" mpc-rewind :image<br/>
+	 (find-image<br/>
+	  (cond<br/>
+	   ((not<br/>
+	     (display-color-p))<br/>
+	    '((:type pbm :file "mpc/rewind.pbm" :foreground "black")<br/>
+	      (:type xbm :file "mpc/rewind.xbm" :foreground "black")<br/>
+	      (:type xpm :file "low-color/mpc/rewind.xpm")<br/>
+	      (:type xpm :file "mpc/rewind.xpm")))<br/>
+	   ((<<br/>
+	     (display-color-cells)<br/>
+	     256)<br/>
+	    '((:type xpm :file "low-color/mpc/rewind.xpm")<br/>
+	      (:type xpm :file "mpc/rewind.xpm")<br/>
+	      (:type pbm :file "mpc/rewind.pbm" :foreground "black")<br/>
+	      (:type xbm :file "mpc/rewind.xbm" :foreground "black")))<br/>
+	   (t<br/>
+	    '((:type xpm :file "mpc/rewind.xpm")<br/>
+	      (:type pbm :file "mpc/rewind.pbm" :foreground "black")<br/>
+	      (:type xbm :file "mpc/rewind.xbm" :foreground "black")))))<br/>
+	 :enable<br/>
+	 (not<br/>
+	  (equal<br/>
+	   (cdr<br/>
+	    (assq 'state mpc-status))<br/>
+	   "stop"))<br/>
+	 :label "Rew" :vert-only t :button<br/>
+	 (:toggle and mpc--faster-toggle-timer<br/>
+		  (not mpc--faster-toggle-forward)))<br/>
+ (pause menu-item "pause" mpc-pause :image<br/>
+	(find-image<br/>
+	 (cond<br/>
+	  ((not<br/>
+	    (display-color-p))<br/>
+	   '((:type pbm :file "mpc/pause.pbm" :foreground "black")<br/>
+	     (:type xbm :file "mpc/pause.xbm" :foreground "black")<br/>
+	     (:type xpm :file "low-color/mpc/pause.xpm")<br/>
+	     (:type xpm :file "mpc/pause.xpm")))<br/>
+	  ((<<br/>
+	    (display-color-cells)<br/>
+	    256)<br/>
+	   '((:type xpm :file "low-color/mpc/pause.xpm")<br/>
+	     (:type xpm :file "mpc/pause.xpm")<br/>
+	     (:type pbm :file "mpc/pause.pbm" :foreground "black")<br/>
+	     (:type xbm :file "mpc/pause.xbm" :foreground "black")))<br/>
+	  (t<br/>
+	   '((:type xpm :file "mpc/pause.xpm")<br/>
+	     (:type pbm :file "mpc/pause.pbm" :foreground "black")<br/>
+	     (:type xbm :file "mpc/pause.xbm" :foreground "black")))))<br/>
+	:label "Pause" :vert-only t :visible<br/>
+	(equal<br/>
+	 (cdr<br/>
+	  (assq 'state mpc-status))<br/>
+	 "play")<br/>
+	:help "Pause/play")<br/>
+ (play menu-item "play" mpc-play :image<br/>
+       (find-image<br/>
+	(cond<br/>
+	 ((not<br/>
+	   (display-color-p))<br/>
+	  '((:type pbm :file "mpc/play.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/play.xbm" :foreground "black")<br/>
+	    (:type xpm :file "low-color/mpc/play.xpm")<br/>
+	    (:type xpm :file "mpc/play.xpm")))<br/>
+	 ((<<br/>
+	   (display-color-cells)<br/>
+	   256)<br/>
+	  '((:type xpm :file "low-color/mpc/play.xpm")<br/>
+	    (:type xpm :file "mpc/play.xpm")<br/>
+	    (:type pbm :file "mpc/play.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/play.xbm" :foreground "black")))<br/>
+	 (t<br/>
+	  '((:type xpm :file "mpc/play.xpm")<br/>
+	    (:type pbm :file "mpc/play.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/play.xbm" :foreground "black")))))<br/>
+       :label "Play" :vert-only t :visible<br/>
+       (not<br/>
+	(equal<br/>
+	 (cdr<br/>
+	  (assq 'state mpc-status))<br/>
+	 "play"))<br/>
+       :help "Play/pause")<br/>
+ (ffwd menu-item "ffwd" mpc-ffwd :image<br/>
+       (find-image<br/>
+	(cond<br/>
+	 ((not<br/>
+	   (display-color-p))<br/>
+	  '((:type pbm :file "mpc/ffwd.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/ffwd.xbm" :foreground "black")<br/>
+	    (:type xpm :file "low-color/mpc/ffwd.xpm")<br/>
+	    (:type xpm :file "mpc/ffwd.xpm")))<br/>
+	 ((<<br/>
+	   (display-color-cells)<br/>
+	   256)<br/>
+	  '((:type xpm :file "low-color/mpc/ffwd.xpm")<br/>
+	    (:type xpm :file "mpc/ffwd.xpm")<br/>
+	    (:type pbm :file "mpc/ffwd.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/ffwd.xbm" :foreground "black")))<br/>
+	 (t<br/>
+	  '((:type xpm :file "mpc/ffwd.xpm")<br/>
+	    (:type pbm :file "mpc/ffwd.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/ffwd.xbm" :foreground "black")))))<br/>
+       :enable<br/>
+       (not<br/>
+	(equal<br/>
+	 (cdr<br/>
+	  (assq 'state mpc-status))<br/>
+	 "stop"))<br/>
+       :label "Ffwd" :vert-only t :button<br/>
+       (:toggle and mpc--faster-toggle-timer mpc--faster-toggle-forward))<br/>
+ (next menu-item "next" mpc-next :image<br/>
+       (find-image<br/>
+	(cond<br/>
+	 ((not<br/>
+	   (display-color-p))<br/>
+	  '((:type pbm :file "mpc/next.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/next.xbm" :foreground "black")<br/>
+	    (:type xpm :file "low-color/mpc/next.xpm")<br/>
+	    (:type xpm :file "mpc/next.xpm")))<br/>
+	 ((<<br/>
+	   (display-color-cells)<br/>
+	   256)<br/>
+	  '((:type xpm :file "low-color/mpc/next.xpm")<br/>
+	    (:type xpm :file "mpc/next.xpm")<br/>
+	    (:type pbm :file "mpc/next.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/next.xbm" :foreground "black")))<br/>
+	 (t<br/>
+	  '((:type xpm :file "mpc/next.xpm")<br/>
+	    (:type pbm :file "mpc/next.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/next.xbm" :foreground "black")))))<br/>
+       :label "Next" :vert-only t :enable<br/>
+       (not<br/>
+	(equal<br/>
+	 (cdr<br/>
+	  (assq 'state mpc-status))<br/>
+	 "stop")))<br/>
+ (stop menu-item "stop" mpc-stop :image<br/>
+       (find-image<br/>
+	(cond<br/>
+	 ((not<br/>
+	   (display-color-p))<br/>
+	  '((:type pbm :file "mpc/stop.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/stop.xbm" :foreground "black")<br/>
+	    (:type xpm :file "low-color/mpc/stop.xpm")<br/>
+	    (:type xpm :file "mpc/stop.xpm")))<br/>
+	 ((<<br/>
+	   (display-color-cells)<br/>
+	   256)<br/>
+	  '((:type xpm :file "low-color/mpc/stop.xpm")<br/>
+	    (:type xpm :file "mpc/stop.xpm")<br/>
+	    (:type pbm :file "mpc/stop.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/stop.xbm" :foreground "black")))<br/>
+	 (t<br/>
+	  '((:type xpm :file "mpc/stop.xpm")<br/>
+	    (:type pbm :file "mpc/stop.pbm" :foreground "black")<br/>
+	    (:type xbm :file "mpc/stop.xbm" :foreground "black")))))<br/>
+       :label "Stop" :vert-only t)<br/>
+ (add menu-item "add" mpc-playlist-add :image<br/>
+      (find-image<br/>
+       (cond<br/>
+	((not<br/>
+	  (display-color-p))<br/>
+	 '((:type pbm :file "mpc/add.pbm" :foreground "black")<br/>
+	   (:type xbm :file "mpc/add.xbm" :foreground "black")<br/>
+	   (:type xpm :file "low-color/mpc/add.xpm")<br/>
+	   (:type xpm :file "mpc/add.xpm")))<br/>
+	((<<br/>
+	  (display-color-cells)<br/>
+	  256)<br/>
+	 '((:type xpm :file "low-color/mpc/add.xpm")<br/>
+	   (:type xpm :file "mpc/add.xpm")<br/>
+	   (:type pbm :file "mpc/add.pbm" :foreground "black")<br/>
+	   (:type xbm :file "mpc/add.xbm" :foreground "black")))<br/>
+	(t<br/>
+	 '((:type xpm :file "mpc/add.xpm")<br/>
+	   (:type pbm :file "mpc/add.pbm" :foreground "black")<br/>
+	   (:type xbm :file "mpc/add.xbm" :foreground "black")))))<br/>
+      :label "Add" :vert-only t :help "Append to the playlist"))<br/>
+<br/>

@@ -1,1 +1,18 @@
-process-status is a built-in function in `C source code'.<br/><br/>(process-status PROCESS)<br/><br/>Return the status of PROCESS.<br/>The returned value is one of the following symbols:<br/>run  -- for a process that is running.<br/>stop -- for a process stopped but continuable.<br/>exit -- for a process that has exited.<br/>signal -- for a process that has got a fatal signal.<br/>open -- for a network stream connection that is open.<br/>listen -- for a network stream server that is listening.<br/>closed -- for a network stream connection that is closed.<br/>connect -- when waiting for a non-blocking connection to complete.<br/>failed -- when a non-blocking connection has failed.<br/>nil -- if arg is a process name and no such process exists.<br/>PROCESS may be a process, a buffer, the name of a process, or<br/>nil, indicating the current buffer's process.
+<strong>process-status</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(process-status PROCESS)<br/>
+<br/>
+Return the status of PROCESS.<br/>
+The returned value is one of the following symbols:<br/>
+run  -- for a process that is running.<br/>
+stop -- for a process stopped but continuable.<br/>
+exit -- for a process that has exited.<br/>
+signal -- for a process that has got a fatal signal.<br/>
+open -- for a network stream connection that is open.<br/>
+listen -- for a network stream server that is listening.<br/>
+closed -- for a network stream connection that is closed.<br/>
+connect -- when waiting for a non-blocking connection to complete.<br/>
+failed -- when a non-blocking connection has failed.<br/>
+nil -- if arg is a process name and no such process exists.<br/>
+PROCESS may be a process, a buffer, the name of a process, or<br/>
+nil, indicating the current buffer's process.

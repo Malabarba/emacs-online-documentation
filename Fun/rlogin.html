@@ -1,1 +1,39 @@
-rlogin is an interactive autoloaded compiled Lisp function in `rlogin.el'.<br/><br/>(rlogin INPUT-ARGS &optional BUFFER)<br/><br/>Open a network login connection via `rlogin' with args INPUT-ARGS.<br/>INPUT-ARGS should start with a host name; it may also contain<br/>other arguments for `rlogin'.<br/><br/>Input is sent line-at-a-time to the remote connection.<br/><br/>Communication with the remote host is recorded in a buffer `*rlogin-HOST*'<br/>(or `*rlogin-USER@HOST*' if the remote username differs).<br/>If a prefix argument is given and the buffer `*rlogin-HOST*' already exists,<br/>a new buffer with a different connection will be made.<br/><br/>When called from a program, if the optional second argument BUFFER is<br/>a string or buffer, it specifies the buffer to use.<br/><br/>The variable `rlogin-program' contains the name of the actual program to<br/>run.  It can be a relative or absolute path.<br/><br/>The variable `rlogin-explicit-args' is a list of arguments to give to<br/>the rlogin when starting.  They are added after any arguments given in<br/>INPUT-ARGS.<br/><br/>If the default value of `rlogin-directory-tracking-mode' is t, then the<br/>default directory in that buffer is set to a remote (FTP) file name to<br/>access your home directory on the remote machine.  Occasionally this causes<br/>an error, if you cannot access the home directory on that machine.  This<br/>error is harmless as long as you don't try to use that default directory.<br/><br/>If `rlogin-directory-tracking-mode' is neither t nor nil, then the default<br/>directory is initially set up to your (local) home directory.<br/>This is useful if the remote machine and your local machine<br/>share the same files via NFS.  This is the default.<br/><br/>If you wish to change directory tracking styles during a session, use the<br/>function `rlogin-directory-tracking-mode' rather than simply setting the<br/>variable.
+<strong>rlogin</strong> is an interactive autoloaded compiled Lisp function in `<code>rlogin.el</code>'.<br/>
+<br/>
+(rlogin INPUT-ARGS &optional BUFFER)<br/>
+<br/>
+Open a network login connection via `rlogin' with args INPUT-ARGS.<br/>
+INPUT-ARGS should start with a host name; it may also contain<br/>
+other arguments for `rlogin'.<br/>
+<br/>
+Input is sent line-at-a-time to the remote connection.<br/>
+<br/>
+Communication with the remote host is recorded in a buffer `*rlogin-HOST*'<br/>
+(or `*rlogin-USER@HOST*' if the remote username differs).<br/>
+If a prefix argument is given and the buffer `*rlogin-HOST*' already exists,<br/>
+a new buffer with a different connection will be made.<br/>
+<br/>
+When called from a program, if the optional second argument BUFFER is<br/>
+a string or buffer, it specifies the buffer to use.<br/>
+<br/>
+The variable `rlogin-program' contains the name of the actual program to<br/>
+run.  It can be a relative or absolute path.<br/>
+<br/>
+The variable `rlogin-explicit-args' is a list of arguments to give to<br/>
+the rlogin when starting.  They are added after any arguments given in<br/>
+INPUT-ARGS.<br/>
+<br/>
+If the default value of `rlogin-directory-tracking-mode' is t, then the<br/>
+default directory in that buffer is set to a remote (FTP) file name to<br/>
+access your home directory on the remote machine.  Occasionally this causes<br/>
+an error, if you cannot access the home directory on that machine.  This<br/>
+error is harmless as long as you don't try to use that default directory.<br/>
+<br/>
+If `rlogin-directory-tracking-mode' is neither t nor nil, then the default<br/>
+directory is initially set up to your (local) home directory.<br/>
+This is useful if the remote machine and your local machine<br/>
+share the same files via NFS.  This is the default.<br/>
+<br/>
+If you wish to change directory tracking styles during a session, use the<br/>
+function `rlogin-directory-tracking-mode' rather than simply setting the<br/>
+variable.

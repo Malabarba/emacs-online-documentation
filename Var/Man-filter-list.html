@@ -1,1 +1,20 @@
-Man-filter-list is a variable defined in `man.el'.<br/>Its value is<br/>(("sed" "" "-e '/^[-][-]*$/d'" "-e '/[789]/s///g'" "-e '/Reformatting page.  Wait/d'" "-e '/Reformatting entry.  Wait/d'" "-e '/^[ 	]*Hewlett-Packard[ 	]Company[ 	]*-[ 	][0-9]*[ 	]-/d'" "-e '/^[ 	]*Hewlett-Packard[ 	]*-[ 	][0-9]*[ 	]-.*$/d'" "-e '/^[ 	][ 	]*-[ 	][0-9]*[ 	]-[ 	]*Formatted:.*[0-9]$/d'" "-e '/^[ 	]*Page[ 	][0-9]*.*(printed[ 	][0-9\\/]*)$/d'" "-e '/^Printed[ 	][0-9].*[0-9]$/d'" "-e '/^[ 	]*X[ 	]Version[ 	]1[01].*Release[ 	][0-9]/d'" "-e '/^[A-Za-z].*Last[ 	]change:/d'" "-e '/^Sun[ 	]Release[ 	][0-9].*[0-9]$/d'" "-e '/[ 	]*Copyright [0-9]* UNIX System Laboratories, Inc.$/d'" "-e '/^[ 	]*Rev\\..*Page [0-9][0-9]*$/d'")<br/> ("awk" "'\n" "BEGIN { blankline=0; anonblank=0; }\n" "/^$/ { if (anonblank==0) next; }\n" "{ anonblank=1; }\n" "/^$/ { blankline++; next; }\n" "{ if (blankline>0) { print \"\"; blankline=0; } print $0; }\n" "'"))<br/><br/>Original value was nil<br/><br/>Documentation:<br/>Manpage cleaning filter command phrases.<br/>This variable contains a list of the following form:<br/><br/>'((command-string phrase-string*)*)<br/><br/>Each phrase-string is concatenated onto the command-string to form a<br/>command filter.  The (standard) output (and standard error) of the Un*x<br/>man command is piped through each command filter in the order the<br/>commands appear in the association list.  The final output is placed in<br/>the manpage buffer.<br/><br/>You can customize this variable.
+<strong>Man-filter-list</strong> is a variable defined in `<code>man.el</code>'.<br/>
+Its value is<br/>
+(("sed" "" "-e '/^[-][-]*$/d'" "-e '/[789]/s///g'" "-e '/Reformatting page.  Wait/d'" "-e '/Reformatting entry.  Wait/d'" "-e '/^[ 	]*Hewlett-Packard[ 	]Company[ 	]*-[ 	][0-9]*[ 	]-/d'" "-e '/^[ 	]*Hewlett-Packard[ 	]*-[ 	][0-9]*[ 	]-.*$/d'" "-e '/^[ 	][ 	]*-[ 	][0-9]*[ 	]-[ 	]*Formatted:.*[0-9]$/d'" "-e '/^[ 	]*Page[ 	][0-9]*.*(printed[ 	][0-9\\/]*)$/d'" "-e '/^Printed[ 	][0-9].*[0-9]$/d'" "-e '/^[ 	]*X[ 	]Version[ 	]1[01].*Release[ 	][0-9]/d'" "-e '/^[A-Za-z].*Last[ 	]change:/d'" "-e '/^Sun[ 	]Release[ 	][0-9].*[0-9]$/d'" "-e '/[ 	]*Copyright [0-9]* UNIX System Laboratories, Inc.$/d'" "-e '/^[ 	]*Rev\\..*Page [0-9][0-9]*$/d'")<br/>
+ ("awk" "'\n" "BEGIN { blankline=0; anonblank=0; }\n" "/^$/ { if (anonblank==0) next; }\n" "{ anonblank=1; }\n" "/^$/ { blankline++; next; }\n" "{ if (blankline>0) { print \"\"; blankline=0; } print $0; }\n" "'"))<br/>
+<br/>
+Original value was nil<br/>
+<br/>
+Documentation:<br/>
+Manpage cleaning filter command phrases.<br/>
+This variable contains a list of the following form:<br/>
+<br/>
+'((command-string phrase-string*)*)<br/>
+<br/>
+Each phrase-string is concatenated onto the command-string to form a<br/>
+command filter.  The (standard) output (and standard error) of the Un*x<br/>
+man command is piped through each command filter in the order the<br/>
+commands appear in the association list.  The final output is placed in<br/>
+the manpage buffer.<br/>
+<br/>
+You can customize this variable.

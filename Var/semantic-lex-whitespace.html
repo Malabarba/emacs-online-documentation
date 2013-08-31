@@ -1,1 +1,24 @@
-semantic-lex-whitespace is a variable defined in `lex.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Detect and create whitespace tokens.<br/><br/>Value: ((looking-at "\\s-+")<br/> (if<br/>     (eq<br/>      (semantic-lex-token-class<br/>       (car semantic-lex-token-stream))<br/>      'whitespace)<br/>     (progn<br/>       (setq semantic-lex-end-point<br/>	     (match-end 0))<br/>       (setcdr<br/>	(semantic-lex-token-bounds<br/>	 (car semantic-lex-token-stream))<br/>	semantic-lex-end-point))<br/>   (semantic-lex-push-token<br/>    (semantic-lex-token 'whitespace<br/>			(match-beginning 0)<br/>			(match-end 0)))))<br/><br/>
+<strong>semantic-lex-whitespace</strong> is a variable defined in `<code>lex.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Detect and create whitespace tokens.<br/>
+<br/>
+Value: ((looking-at "\\s-+")<br/>
+ (if<br/>
+     (eq<br/>
+      (semantic-lex-token-class<br/>
+       (car semantic-lex-token-stream))<br/>
+      'whitespace)<br/>
+     (progn<br/>
+       (setq semantic-lex-end-point<br/>
+	     (match-end 0))<br/>
+       (setcdr<br/>
+	(semantic-lex-token-bounds<br/>
+	 (car semantic-lex-token-stream))<br/>
+	semantic-lex-end-point))<br/>
+   (semantic-lex-push-token<br/>
+    (semantic-lex-token 'whitespace<br/>
+			(match-beginning 0)<br/>
+			(match-end 0)))))<br/>
+<br/>

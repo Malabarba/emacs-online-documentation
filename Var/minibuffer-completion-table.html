@@ -1,1 +1,16 @@
-minibuffer-completion-table is a variable defined in `C source code'.<br/>Its value is nil<br/><br/>Documentation:<br/>Alist or obarray used for completion in the minibuffer.<br/>This becomes the ALIST argument to `try-completion' and `all-completions'.<br/>The value can also be a list of strings or a hash table.<br/><br/>The value may alternatively be a function, which is given three arguments:<br/>  STRING, the current buffer contents;<br/>  PREDICATE, the predicate for filtering possible matches;<br/>  CODE, which says what kind of things to do.<br/>CODE can be nil, t or `lambda':<br/>  nil    -- return the best completion of STRING, or nil if there is none.<br/>  t      -- return a list of all possible completions of STRING.<br/>  lambda -- return t if STRING is a valid completion as it stands.
+<strong>minibuffer-completion-table</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Alist or obarray used for completion in the minibuffer.<br/>
+This becomes the ALIST argument to `try-completion' and `all-completions'.<br/>
+The value can also be a list of strings or a hash table.<br/>
+<br/>
+The value may alternatively be a function, which is given three arguments:<br/>
+  STRING, the current buffer contents;<br/>
+  PREDICATE, the predicate for filtering possible matches;<br/>
+  CODE, which says what kind of things to do.<br/>
+CODE can be nil, t or `lambda':<br/>
+  nil    -- return the best completion of STRING, or nil if there is none.<br/>
+  t      -- return a list of all possible completions of STRING.<br/>
+  lambda -- return t if STRING is a valid completion as it stands.

@@ -1,1 +1,19 @@
-load-average is a built-in function in `C source code'.<br/><br/>(load-average &optional USE-FLOATS)<br/><br/>Return list of 1 minute, 5 minute and 15 minute load averages.<br/><br/>Each of the three load averages is multiplied by 100, then converted<br/>to integer.<br/><br/>When USE-FLOATS is non-nil, floats will be used instead of integers.<br/>These floats are not multiplied by 100.<br/><br/>If the 5-minute or 15-minute load averages are not available, return a<br/>shortened list, containing only those averages which are available.<br/><br/>An error is thrown if the load average can't be obtained.  In some<br/>cases making it work would require Emacs being installed setuid or<br/>setgid so that it can read kernel information, and that usually isn't<br/>advisable.
+<strong>load-average</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(load-average &optional USE-FLOATS)<br/>
+<br/>
+Return list of 1 minute, 5 minute and 15 minute load averages.<br/>
+<br/>
+Each of the three load averages is multiplied by 100, then converted<br/>
+to integer.<br/>
+<br/>
+When USE-FLOATS is non-nil, floats will be used instead of integers.<br/>
+These floats are not multiplied by 100.<br/>
+<br/>
+If the 5-minute or 15-minute load averages are not available, return a<br/>
+shortened list, containing only those averages which are available.<br/>
+<br/>
+An error is thrown if the load average can't be obtained.  In some<br/>
+cases making it work would require Emacs being installed setuid or<br/>
+setgid so that it can read kernel information, and that usually isn't<br/>
+advisable.

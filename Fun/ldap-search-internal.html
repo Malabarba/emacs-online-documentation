@@ -1,1 +1,43 @@
-ldap-search-internal is a compiled Lisp function in `ldap.el'.<br/><br/>(ldap-search-internal SEARCH-PLIST)<br/><br/>Perform a search on a LDAP server.<br/>SEARCH-PLIST is a property list describing the search request.<br/>Valid keys in that list are:<br/><br/>  `auth-source', if non-nil, will use `auth-source-search' and<br/>will grab the :host, :secret, :base, and (:user or :binddn)<br/>tokens into the `host', `passwd', `base', and `binddn' parameters<br/>respectively if they are not provided in SEARCH-PLIST.  So for<br/>instance *each* of these netrc lines has the same effect if you<br/>ask for the host "ldapserver:2400":<br/><br/>  machine ldapserver:2400 login myDN secret myPassword base myBase<br/>  machine ldapserver:2400 binddn myDN secret myPassword port ldap<br/>  login myDN secret myPassword base myBase<br/><br/>but if you have more than one in your netrc file, only the first<br/>matching one will be used.  Note the "port ldap" part is NOT<br/>required.<br/><br/>  `host' is a string naming one or more (blank-separated) LDAP servers<br/>to try to connect to.  Each host name may optionally be of the form HOST:PORT.<br/>  `filter' is a filter string for the search as described in RFC 1558.<br/>  `attributes' is a list of strings indicating which attributes to retrieve<br/>for each matching entry. If nil, return all available attributes.<br/>  `attrsonly', if non-nil, indicates that only attributes are retrieved,<br/>not their associated values.<br/>  `auth' is one of the symbols `simple', `krbv41' or `krbv42'.<br/>  `base' is the base for the search as described in RFC 1779.<br/>  `scope' is one of the three symbols `sub', `base' or `one'.<br/>  `binddn' is the distinguished name of the user to bind as (in RFC 1779 syntax).<br/>  `auth' is one of the symbols `simple', `krbv41' or `krbv42'<br/>  `passwd' is the password to use for simple authentication.<br/>  `deref' is one of the symbols `never', `always', `search' or `find'.<br/>  `timelimit' is the timeout limit for the connection in seconds.<br/>  `sizelimit' is the maximum number of matches to return.<br/>  `withdn' if non-nil each entry in the result will be prepended with<br/>its distinguished name DN.<br/>The function returns a list of matching entries.  Each entry is itself<br/>an alist of attribute/value pairs.
+<strong>ldap-search-internal</strong> is a compiled Lisp function in `<code>ldap.el</code>'.<br/>
+<br/>
+(ldap-search-internal SEARCH-PLIST)<br/>
+<br/>
+Perform a search on a LDAP server.<br/>
+SEARCH-PLIST is a property list describing the search request.<br/>
+Valid keys in that list are:<br/>
+<br/>
+  `auth-source', if non-nil, will use `auth-source-search' and<br/>
+will grab the :host, :secret, :base, and (:user or :binddn)<br/>
+tokens into the `host', `passwd', `base', and `binddn' parameters<br/>
+respectively if they are not provided in SEARCH-PLIST.  So for<br/>
+instance *each* of these netrc lines has the same effect if you<br/>
+ask for the host "ldapserver:2400":<br/>
+<br/>
+  machine ldapserver:2400 login myDN secret myPassword base myBase<br/>
+  machine ldapserver:2400 binddn myDN secret myPassword port ldap<br/>
+  login myDN secret myPassword base myBase<br/>
+<br/>
+but if you have more than one in your netrc file, only the first<br/>
+matching one will be used.  Note the "port ldap" part is NOT<br/>
+required.<br/>
+<br/>
+  `host' is a string naming one or more (blank-separated) LDAP servers<br/>
+to try to connect to.  Each host name may optionally be of the form HOST:PORT.<br/>
+  `filter' is a filter string for the search as described in RFC 1558.<br/>
+  `attributes' is a list of strings indicating which attributes to retrieve<br/>
+for each matching entry. If nil, return all available attributes.<br/>
+  `attrsonly', if non-nil, indicates that only attributes are retrieved,<br/>
+not their associated values.<br/>
+  `auth' is one of the symbols `simple', `krbv41' or `krbv42'.<br/>
+  `base' is the base for the search as described in RFC 1779.<br/>
+  `scope' is one of the three symbols `sub', `base' or `one'.<br/>
+  `binddn' is the distinguished name of the user to bind as (in RFC 1779 syntax).<br/>
+  `auth' is one of the symbols `simple', `krbv41' or `krbv42'<br/>
+  `passwd' is the password to use for simple authentication.<br/>
+  `deref' is one of the symbols `never', `always', `search' or `find'.<br/>
+  `timelimit' is the timeout limit for the connection in seconds.<br/>
+  `sizelimit' is the maximum number of matches to return.<br/>
+  `withdn' if non-nil each entry in the result will be prepended with<br/>
+its distinguished name DN.<br/>
+The function returns a list of matching entries.  Each entry is itself<br/>
+an alist of attribute/value pairs.

@@ -1,1 +1,27 @@
-x-send-client-message is a built-in function in `C source code'.<br/><br/>(x-send-client-message DISPLAY DEST FROM MESSAGE-TYPE FORMAT VALUES)<br/><br/>Send a client message of MESSAGE-TYPE to window DEST on DISPLAY.<br/><br/>For DISPLAY, specify either a frame or a display name (a string).<br/>If DISPLAY is nil, that stands for the selected frame's display.<br/>DEST may be a number, in which case it is a Window id.  The value 0 may<br/>be used to send to the root window of the DISPLAY.<br/>If DEST is a cons, it is converted to a 32 bit number<br/>with the high 16 bits from the car and the lower 16 bit from the cdr.  That<br/>number is then used as a window id.<br/>If DEST is a frame the event is sent to the outer window of that frame.<br/>A value of nil means the currently selected frame.<br/>If DEST is the string "PointerWindow" the event is sent to the window that<br/>contains the pointer.  If DEST is the string "InputFocus" the event is<br/>sent to the window that has the input focus.<br/>FROM is the frame sending the event.  Use nil for currently selected frame.<br/>MESSAGE-TYPE is the name of an Atom as a string.<br/>FORMAT must be one of 8, 16 or 32 and determines the size of the values in<br/>bits.  VALUES is a list of numbers, cons and/or strings containing the values<br/>to send.  If a value is a string, it is converted to an Atom and the value of<br/>the Atom is sent.  If a value is a cons, it is converted to a 32 bit number<br/>with the high 16 bits from the car and the lower 16 bit from the cdr.<br/>If more values than fits into the event is given, the excessive values<br/>are ignored.
+<strong>x-send-client-message</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(x-send-client-message DISPLAY DEST FROM MESSAGE-TYPE FORMAT VALUES)<br/>
+<br/>
+Send a client message of MESSAGE-TYPE to window DEST on DISPLAY.<br/>
+<br/>
+For DISPLAY, specify either a frame or a display name (a string).<br/>
+If DISPLAY is nil, that stands for the selected frame's display.<br/>
+DEST may be a number, in which case it is a Window id.  The value 0 may<br/>
+be used to send to the root window of the DISPLAY.<br/>
+If DEST is a cons, it is converted to a 32 bit number<br/>
+with the high 16 bits from the car and the lower 16 bit from the cdr.  That<br/>
+number is then used as a window id.<br/>
+If DEST is a frame the event is sent to the outer window of that frame.<br/>
+A value of nil means the currently selected frame.<br/>
+If DEST is the string "PointerWindow" the event is sent to the window that<br/>
+contains the pointer.  If DEST is the string "InputFocus" the event is<br/>
+sent to the window that has the input focus.<br/>
+FROM is the frame sending the event.  Use nil for currently selected frame.<br/>
+MESSAGE-TYPE is the name of an Atom as a string.<br/>
+FORMAT must be one of 8, 16 or 32 and determines the size of the values in<br/>
+bits.  VALUES is a list of numbers, cons and/or strings containing the values<br/>
+to send.  If a value is a string, it is converted to an Atom and the value of<br/>
+the Atom is sent.  If a value is a cons, it is converted to a 32 bit number<br/>
+with the high 16 bits from the car and the lower 16 bit from the cdr.<br/>
+If more values than fits into the event is given, the excessive values<br/>
+are ignored.

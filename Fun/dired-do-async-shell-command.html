@@ -1,1 +1,18 @@
-dired-do-async-shell-command is an interactive autoloaded compiled Lisp function in `dired-aux.el'.<br/><br/>(dired-do-async-shell-command COMMAND &optional ARG FILE-LIST)<br/><br/>Run a shell command COMMAND on the marked files asynchronously.<br/><br/>Like `dired-do-shell-command', but adds `&' at the end of COMMAND<br/>to execute it asynchronously.<br/><br/>When operating on multiple files, asynchronous commands<br/>are executed in the background on each file in parallel.<br/>In shell syntax this means separating the individual commands<br/>with `&'.  However, when COMMAND ends in `;' or `;&' then commands<br/>are executed in the background on each file sequentially waiting<br/>for each command to terminate before running the next command.<br/>In shell syntax this means separating the individual commands with `;'.<br/><br/>The output appears in the buffer `*Async Shell Command*'.
+<strong>dired-do-async-shell-command</strong> is an interactive autoloaded compiled Lisp function in `<code>dired-aux.el</code>'.<br/>
+<br/>
+(dired-do-async-shell-command COMMAND &optional ARG FILE-LIST)<br/>
+<br/>
+Run a shell command COMMAND on the marked files asynchronously.<br/>
+<br/>
+Like `dired-do-shell-command', but adds `&' at the end of COMMAND<br/>
+to execute it asynchronously.<br/>
+<br/>
+When operating on multiple files, asynchronous commands<br/>
+are executed in the background on each file in parallel.<br/>
+In shell syntax this means separating the individual commands<br/>
+with `&'.  However, when COMMAND ends in `;' or `;&' then commands<br/>
+are executed in the background on each file sequentially waiting<br/>
+for each command to terminate before running the next command.<br/>
+In shell syntax this means separating the individual commands with `;'.<br/>
+<br/>
+The output appears in the buffer `*Async Shell Command*'.

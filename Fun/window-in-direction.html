@@ -1,1 +1,17 @@
-window-in-direction is a compiled Lisp function in `window.el'.<br/><br/>(window-in-direction DIRECTION &optional WINDOW IGNORE)<br/><br/>Return window in DIRECTION as seen from WINDOW.<br/>More precisely, return the nearest window in direction DIRECTION<br/>as seen from the position of `window-point' in window WINDOW.<br/>DIRECTION must be one of `above', `below', `left' or `right'.<br/>WINDOW must be a live window and defaults to the selected one.<br/><br/>Do not return a window whose `no-other-window' parameter is<br/>non-nil.  If the nearest window's `no-other-window' parameter is<br/>non-nil, try to find another window in the indicated direction.<br/>If, however, the optional argument IGNORE is non-nil, return that<br/>window even if its `no-other-window' parameter is non-nil.<br/><br/>Return nil if no suitable window can be found.
+<strong>window-in-direction</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(window-in-direction DIRECTION &optional WINDOW IGNORE)<br/>
+<br/>
+Return window in DIRECTION as seen from WINDOW.<br/>
+More precisely, return the nearest window in direction DIRECTION<br/>
+as seen from the position of `window-point' in window WINDOW.<br/>
+DIRECTION must be one of `above', `below', `left' or `right'.<br/>
+WINDOW must be a live window and defaults to the selected one.<br/>
+<br/>
+Do not return a window whose `no-other-window' parameter is<br/>
+non-nil.  If the nearest window's `no-other-window' parameter is<br/>
+non-nil, try to find another window in the indicated direction.<br/>
+If, however, the optional argument IGNORE is non-nil, return that<br/>
+window even if its `no-other-window' parameter is non-nil.<br/>
+<br/>
+Return nil if no suitable window can be found.

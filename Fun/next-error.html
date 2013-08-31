@@ -1,1 +1,35 @@
-next-error is an interactive compiled Lisp function in `simple.el'.<br/><br/>It is bound to C-x `, M-g n, M-g M-n.<br/><br/>(next-error &optional ARG RESET)<br/><br/>Visit next `next-error' message and corresponding source code.<br/><br/>If all the error messages parsed so far have been processed already,<br/>the message buffer is checked for new ones.<br/><br/>A prefix ARG specifies how many error messages to move;<br/>negative means move back to previous error messages.<br/>Just C-u as a prefix means reparse the error message buffer<br/>and start at the first error.<br/><br/>The RESET argument specifies that we should restart from the beginning.<br/><br/>C-x ` normally uses the most recently started<br/>compilation, grep, or occur buffer.  It can also operate on any<br/>buffer with output from the M-x compile, M-x grep commands, or,<br/>more generally, on any buffer in Compilation mode or with<br/>Compilation Minor mode enabled, or any buffer in which<br/>`next-error-function' is bound to an appropriate function.<br/>To specify use of a particular buffer for error messages, type<br/>C-x ` in that buffer when it is the only one displayed<br/>in the current frame.<br/><br/>Once C-x ` has chosen the buffer for error messages, it<br/>runs `next-error-hook' with `run-hooks', and stays with that buffer<br/>until you use it in some other buffer which uses Compilation mode<br/>or Compilation Minor mode.<br/><br/>To control which errors are matched, customize the variable<br/>`compilation-error-regexp-alist'.
+<strong>next-error</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+It is bound to C-x `, M-g n, M-g M-n.<br/>
+<br/>
+(next-error &optional ARG RESET)<br/>
+<br/>
+Visit next `next-error' message and corresponding source code.<br/>
+<br/>
+If all the error messages parsed so far have been processed already,<br/>
+the message buffer is checked for new ones.<br/>
+<br/>
+A prefix ARG specifies how many error messages to move;<br/>
+negative means move back to previous error messages.<br/>
+Just C-u as a prefix means reparse the error message buffer<br/>
+and start at the first error.<br/>
+<br/>
+The RESET argument specifies that we should restart from the beginning.<br/>
+<br/>
+C-x ` normally uses the most recently started<br/>
+compilation, grep, or occur buffer.  It can also operate on any<br/>
+buffer with output from the M-x compile, M-x grep commands, or,<br/>
+more generally, on any buffer in Compilation mode or with<br/>
+Compilation Minor mode enabled, or any buffer in which<br/>
+`next-error-function' is bound to an appropriate function.<br/>
+To specify use of a particular buffer for error messages, type<br/>
+C-x ` in that buffer when it is the only one displayed<br/>
+in the current frame.<br/>
+<br/>
+Once C-x ` has chosen the buffer for error messages, it<br/>
+runs `next-error-hook' with `run-hooks', and stays with that buffer<br/>
+until you use it in some other buffer which uses Compilation mode<br/>
+or Compilation Minor mode.<br/>
+<br/>
+To control which errors are matched, customize the variable<br/>
+`compilation-error-regexp-alist'.

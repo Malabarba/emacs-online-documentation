@@ -1,1 +1,58 @@
-compilation-error-regexp-alist is a variable defined in `compile.el'.<br/>Its value is<br/>(absoft ada aix ant bash borland python-tracebacks-and-caml comma cucumber msft edg-1 edg-2 epc ftnchek iar ibm irix java jikes-file maven jikes-line gcc-include ruby-Test::Unit gnu lcc makepp mips-1 mips-2 msft omake oracle perl php rxp sparc-pascal-file sparc-pascal-line sparc-pascal-example sun sun-ada watcom 4bsd gcov-file gcov-header gcov-nomark gcov-called-line gcov-never-called perl--Pod::Checker perl--Test perl--Test2 perl--Test::Harness weblint)<br/><br/><br/>Documentation:<br/>Alist that specifies how to match errors in compiler output.<br/>On GNU and Unix, any string is a valid filename, so these<br/>matchers must make some common sense assumptions, which catch<br/>normal cases.  A shorter list will be lighter on resource usage.<br/><br/>Instead of an alist element, you can use a symbol, which is<br/>looked up in `compilation-error-regexp-alist-alist'.  You can see<br/>the predefined symbols and their effects in the file<br/>`etc/compilation.txt' (linked below if you are customizing this).<br/><br/>Each elt has the form (REGEXP FILE [LINE COLUMN TYPE HYPERLINK<br/>HIGHLIGHT...]).  If REGEXP matches, the FILE'th subexpression<br/>gives the file name, and the LINE'th subexpression gives the line<br/>number.  The COLUMN'th subexpression gives the column number on<br/>that line.<br/><br/>If FILE, LINE or COLUMN are nil or that index didn't match, that<br/>information is not present on the matched line.  In that case the<br/>file name is assumed to be the same as the previous one in the<br/>buffer, line number defaults to 1 and column defaults to<br/>beginning of line's indentation.<br/><br/>FILE can also have the form (FILE FORMAT...), where the FORMATs<br/>(e.g. "%s.c") will be applied in turn to the recognized file<br/>name, until a file of that name is found.  Or FILE can also be a<br/>function that returns (FILENAME) or (RELATIVE-FILENAME . DIRNAME).<br/>In the former case, FILENAME may be relative or absolute.<br/><br/>LINE can also be of the form (LINE . END-LINE) meaning a range<br/>of lines.  COLUMN can also be of the form (COLUMN . END-COLUMN)<br/>meaning a range of columns starting on LINE and ending on<br/>END-LINE, if that matched.<br/><br/>TYPE is 2 or nil for a real error or 1 for warning or 0 for info.<br/>TYPE can also be of the form (WARNING . INFO).  In that case this<br/>will be equivalent to 1 if the WARNING'th subexpression matched<br/>or else equivalent to 0 if the INFO'th subexpression matched.<br/>See `compilation-error-face', `compilation-warning-face',<br/>`compilation-info-face' and `compilation-skip-threshold'.<br/><br/>What matched the HYPERLINK'th subexpression has `mouse-face' and<br/>`compilation-message-face' applied.  If this is nil, the text<br/>matched by the whole REGEXP becomes the hyperlink.<br/><br/>Additional HIGHLIGHTs take the shape (SUBMATCH FACE), where<br/>SUBMATCH is the number of a submatch and FACE is an expression<br/>which evaluates to a face name (a symbol or string).<br/>Alternatively, FACE can evaluate to a property list of the<br/>form (face FACE PROP1 VAL1 PROP2 VAL2 ...), in which case all the<br/>listed text properties PROP# are given values VAL# as well.<br/><br/>You can customize this variable.
+<strong>compilation-error-regexp-alist</strong> is a variable defined in `<code>compile.el</code>'.<br/>
+Its value is<br/>
+(absoft ada aix ant bash borland python-tracebacks-and-caml comma cucumber msft edg-1 edg-2 epc ftnchek iar ibm irix java jikes-file maven jikes-line gcc-include ruby-Test::Unit gnu lcc makepp mips-1 mips-2 msft omake oracle perl php rxp sparc-pascal-file sparc-pascal-line sparc-pascal-example sun sun-ada watcom 4bsd gcov-file gcov-header gcov-nomark gcov-called-line gcov-never-called perl--Pod::Checker perl--Test perl--Test2 perl--Test::Harness weblint)<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Alist that specifies how to match errors in compiler output.<br/>
+On GNU and Unix, any string is a valid filename, so these<br/>
+matchers must make some common sense assumptions, which catch<br/>
+normal cases.  A shorter list will be lighter on resource usage.<br/>
+<br/>
+Instead of an alist element, you can use a symbol, which is<br/>
+looked up in `compilation-error-regexp-alist-alist'.  You can see<br/>
+the predefined symbols and their effects in the file<br/>
+`etc/compilation.txt' (linked below if you are customizing this).<br/>
+<br/>
+Each elt has the form (REGEXP FILE [LINE COLUMN TYPE HYPERLINK<br/>
+HIGHLIGHT...]).  If REGEXP matches, the FILE'th subexpression<br/>
+gives the file name, and the LINE'th subexpression gives the line<br/>
+number.  The COLUMN'th subexpression gives the column number on<br/>
+that line.<br/>
+<br/>
+If FILE, LINE or COLUMN are nil or that index didn't match, that<br/>
+information is not present on the matched line.  In that case the<br/>
+file name is assumed to be the same as the previous one in the<br/>
+buffer, line number defaults to 1 and column defaults to<br/>
+beginning of line's indentation.<br/>
+<br/>
+FILE can also have the form (FILE FORMAT...), where the FORMATs<br/>
+(e.g. "%s.c") will be applied in turn to the recognized file<br/>
+name, until a file of that name is found.  Or FILE can also be a<br/>
+function that returns (FILENAME) or (RELATIVE-FILENAME . DIRNAME).<br/>
+In the former case, FILENAME may be relative or absolute.<br/>
+<br/>
+LINE can also be of the form (LINE . END-LINE) meaning a range<br/>
+of lines.  COLUMN can also be of the form (COLUMN . END-COLUMN)<br/>
+meaning a range of columns starting on LINE and ending on<br/>
+END-LINE, if that matched.<br/>
+<br/>
+TYPE is 2 or nil for a real error or 1 for warning or 0 for info.<br/>
+TYPE can also be of the form (WARNING . INFO).  In that case this<br/>
+will be equivalent to 1 if the WARNING'th subexpression matched<br/>
+or else equivalent to 0 if the INFO'th subexpression matched.<br/>
+See `compilation-error-face', `compilation-warning-face',<br/>
+`compilation-info-face' and `compilation-skip-threshold'.<br/>
+<br/>
+What matched the HYPERLINK'th subexpression has `mouse-face' and<br/>
+`compilation-message-face' applied.  If this is nil, the text<br/>
+matched by the whole REGEXP becomes the hyperlink.<br/>
+<br/>
+Additional HIGHLIGHTs take the shape (SUBMATCH FACE), where<br/>
+SUBMATCH is the number of a submatch and FACE is an expression<br/>
+which evaluates to a face name (a symbol or string).<br/>
+Alternatively, FACE can evaluate to a property list of the<br/>
+form (face FACE PROP1 VAL1 PROP2 VAL2 ...), in which case all the<br/>
+listed text properties PROP# are given values VAL# as well.<br/>
+<br/>
+You can customize this variable.

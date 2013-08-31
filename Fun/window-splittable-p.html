@@ -1,1 +1,27 @@
-window-splittable-p is a compiled Lisp function in `window.el'.<br/><br/>(window-splittable-p WINDOW &optional HORIZONTAL)<br/><br/>Return non-nil if `split-window-sensibly' may split WINDOW.<br/>Optional argument HORIZONTAL nil or omitted means check whether<br/>`split-window-sensibly' may split WINDOW vertically.  HORIZONTAL<br/>non-nil means check whether WINDOW may be split horizontally.<br/><br/>WINDOW may be split vertically when the following conditions<br/>hold:<br/>- `window-size-fixed' is either nil or equals `width' for the<br/>  buffer of WINDOW.<br/>- `split-height-threshold' is an integer and WINDOW is at least as<br/>  high as `split-height-threshold'.<br/>- When WINDOW is split evenly, the emanating windows are at least<br/>  `window-min-height' lines tall and can accommodate at least one<br/>  line plus - if WINDOW has one - a mode line.<br/><br/>WINDOW may be split horizontally when the following conditions<br/>hold:<br/>- `window-size-fixed' is either nil or equals `height' for the<br/>  buffer of WINDOW.<br/>- `split-width-threshold' is an integer and WINDOW is at least as<br/>  wide as `split-width-threshold'.<br/>- When WINDOW is split evenly, the emanating windows are at least<br/>  `window-min-width' or two (whichever is larger) columns wide.
+<strong>window-splittable-p</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(window-splittable-p WINDOW &optional HORIZONTAL)<br/>
+<br/>
+Return non-nil if `split-window-sensibly' may split WINDOW.<br/>
+Optional argument HORIZONTAL nil or omitted means check whether<br/>
+`split-window-sensibly' may split WINDOW vertically.  HORIZONTAL<br/>
+non-nil means check whether WINDOW may be split horizontally.<br/>
+<br/>
+WINDOW may be split vertically when the following conditions<br/>
+hold:<br/>
+- `window-size-fixed' is either nil or equals `width' for the<br/>
+  buffer of WINDOW.<br/>
+- `split-height-threshold' is an integer and WINDOW is at least as<br/>
+  high as `split-height-threshold'.<br/>
+- When WINDOW is split evenly, the emanating windows are at least<br/>
+  `window-min-height' lines tall and can accommodate at least one<br/>
+  line plus - if WINDOW has one - a mode line.<br/>
+<br/>
+WINDOW may be split horizontally when the following conditions<br/>
+hold:<br/>
+- `window-size-fixed' is either nil or equals `height' for the<br/>
+  buffer of WINDOW.<br/>
+- `split-width-threshold' is an integer and WINDOW is at least as<br/>
+  wide as `split-width-threshold'.<br/>
+- When WINDOW is split evenly, the emanating windows are at least<br/>
+  `window-min-width' or two (whichever is larger) columns wide.

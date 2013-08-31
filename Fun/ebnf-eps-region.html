@@ -1,1 +1,22 @@
-ebnf-eps-region is an interactive autoloaded compiled Lisp function in `ebnf2ps.el'.<br/><br/>(ebnf-eps-region FROM TO)<br/><br/>Generate a PostScript syntactic chart image of the region in an EPS file.<br/><br/>Generate an EPS file for each production in the region.<br/>The EPS file name has the following form:<br/><br/>   <PREFIX><PRODUCTION>.eps<br/><br/><PREFIX>     is given by variable `ebnf-eps-prefix'.<br/>	     The default value is "ebnf--".<br/><br/><PRODUCTION> is the production name.<br/>	     Some characters in the production file name are replaced to<br/>	     produce a valid file name.  For example, the production name<br/>	     "A/B + C" is modified to produce "A_B_+_C", and the EPS<br/>	     file name used in this case will be "ebnf--A_B_+_C.eps".<br/><br/>WARNING: This function does *NOT* ask any confirmation to override existing<br/>	 files.
+<strong>ebnf-eps-region</strong> is an interactive autoloaded compiled Lisp function in `<code>ebnf2ps.el</code>'.<br/>
+<br/>
+(ebnf-eps-region FROM TO)<br/>
+<br/>
+Generate a PostScript syntactic chart image of the region in an EPS file.<br/>
+<br/>
+Generate an EPS file for each production in the region.<br/>
+The EPS file name has the following form:<br/>
+<br/>
+   <PREFIX><PRODUCTION>.eps<br/>
+<br/>
+<PREFIX>     is given by variable `ebnf-eps-prefix'.<br/>
+	     The default value is "ebnf--".<br/>
+<br/>
+<PRODUCTION> is the production name.<br/>
+	     Some characters in the production file name are replaced to<br/>
+	     produce a valid file name.  For example, the production name<br/>
+	     "A/B + C" is modified to produce "A_B_+_C", and the EPS<br/>
+	     file name used in this case will be "ebnf--A_B_+_C.eps".<br/>
+<br/>
+WARNING: This function does *NOT* ask any confirmation to override existing<br/>
+	 files.

@@ -1,1 +1,24 @@
-hs-adjust-block-beginning is a variable defined in `hideshow.el'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>Function used to tweak the block beginning.<br/>The block is hidden from the position returned by this function,<br/>as opposed to hiding it from the position returned when searching<br/>for `hs-block-start-regexp'.<br/><br/>For example, in c-like modes, if we wish to also hide the curly braces<br/>(if you think they occupy too much space on the screen), this function<br/>should return the starting point (at the end of line) of the hidden<br/>region.<br/><br/>It is called with a single argument ARG which is the position in<br/>buffer after the block beginning.<br/><br/>It should return the position from where we should start hiding.<br/><br/>It should not move the point.<br/><br/>See `hs-c-like-adjust-block-beginning' for an example of using this.
+<strong>hs-adjust-block-beginning</strong> is a variable defined in `<code>hideshow.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+Function used to tweak the block beginning.<br/>
+The block is hidden from the position returned by this function,<br/>
+as opposed to hiding it from the position returned when searching<br/>
+for `hs-block-start-regexp'.<br/>
+<br/>
+For example, in c-like modes, if we wish to also hide the curly braces<br/>
+(if you think they occupy too much space on the screen), this function<br/>
+should return the starting point (at the end of line) of the hidden<br/>
+region.<br/>
+<br/>
+It is called with a single argument ARG which is the position in<br/>
+buffer after the block beginning.<br/>
+<br/>
+It should return the position from where we should start hiding.<br/>
+<br/>
+It should not move the point.<br/>
+<br/>
+See `hs-c-like-adjust-block-beginning' for an example of using this.

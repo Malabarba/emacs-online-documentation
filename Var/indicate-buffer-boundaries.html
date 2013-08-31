@@ -1,1 +1,30 @@
-indicate-buffer-boundaries is a variable defined in `C source code'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>Visually indicate buffer boundaries and scrolling.<br/>If non-nil, the first and last line of the buffer are marked in the fringe<br/>of a window on window-systems with angle bitmaps, or if the window can be<br/>scrolled, the top and bottom line of the window are marked with up and down<br/>arrow bitmaps.<br/><br/>If value is a symbol `left' or `right', both angle and arrow bitmaps<br/>are displayed in the left or right fringe, resp.  Any other value<br/>that doesn't look like an alist means display the angle bitmaps in<br/>the left fringe but no arrows.<br/><br/>You can exercise more precise control by using an alist as the<br/>value.  Each alist element (INDICATOR . POSITION) specifies<br/>where to show one of the indicators.  INDICATOR is one of `top',<br/>`bottom', `up', `down', or t, which specifies the default position,<br/>and POSITION is one of `left', `right', or nil, meaning do not show<br/>this indicator.<br/><br/>For example, ((top . left) (t . right)) places the top angle bitmap in<br/>left fringe, the bottom angle bitmap in right fringe, and both arrow<br/>bitmaps in right fringe.  To show just the angle bitmaps in the left<br/>fringe, but no arrow bitmaps, use ((top .  left) (bottom . left)).<br/><br/>You can customize this variable.
+<strong>indicate-buffer-boundaries</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+Visually indicate buffer boundaries and scrolling.<br/>
+If non-nil, the first and last line of the buffer are marked in the fringe<br/>
+of a window on window-systems with angle bitmaps, or if the window can be<br/>
+scrolled, the top and bottom line of the window are marked with up and down<br/>
+arrow bitmaps.<br/>
+<br/>
+If value is a symbol `left' or `right', both angle and arrow bitmaps<br/>
+are displayed in the left or right fringe, resp.  Any other value<br/>
+that doesn't look like an alist means display the angle bitmaps in<br/>
+the left fringe but no arrows.<br/>
+<br/>
+You can exercise more precise control by using an alist as the<br/>
+value.  Each alist element (INDICATOR . POSITION) specifies<br/>
+where to show one of the indicators.  INDICATOR is one of `top',<br/>
+`bottom', `up', `down', or t, which specifies the default position,<br/>
+and POSITION is one of `left', `right', or nil, meaning do not show<br/>
+this indicator.<br/>
+<br/>
+For example, ((top . left) (t . right)) places the top angle bitmap in<br/>
+left fringe, the bottom angle bitmap in right fringe, and both arrow<br/>
+bitmaps in right fringe.  To show just the angle bitmaps in the left<br/>
+fringe, but no arrow bitmaps, use ((top .  left) (bottom . left)).<br/>
+<br/>
+You can customize this variable.

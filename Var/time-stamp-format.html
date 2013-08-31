@@ -1,1 +1,56 @@
-time-stamp-format is a variable defined in `time-stamp.el'.<br/>Its value is "%:y-%02m-%02d %02H:%02M:%02S %u"<br/><br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate `stringp'.<br/><br/>Documentation:<br/>Format of the string inserted by M-x time-stamp.<br/>The value may be a string or a list.  Lists are supported only for<br/>backward compatibility; see variable `time-stamp-old-format-warn'.<br/><br/>A string is used verbatim except for character sequences beginning<br/>with %, as follows.  The values of non-numeric formatted items depend<br/>on the locale setting recorded in `system-time-locale' and<br/>`locale-coding-system'.  The examples here are for the default<br/>(`C') locale.<br/><br/>%:a  weekday name: `Monday'.		%#A gives uppercase: `MONDAY'<br/>%3a  abbreviated weekday: `Mon'.	%3A gives uppercase: `MON'<br/>%:b  month name: `January'.		%#B gives uppercase: `JANUARY'<br/>%3b  abbreviated month: `Jan'.		%3B gives uppercase: `JAN'<br/>%02d day of month<br/>%02H 24-hour clock hour<br/>%02I 12-hour clock hour<br/>%02m month number<br/>%02M minute<br/>%#p  `am' or `pm'.			%P  gives uppercase: `AM' or `PM'<br/>%02S seconds<br/>%w   day number of week, Sunday is 0<br/>%02y 2-digit year: `03'			%:y 4-digit year: `2003'<br/>%z   time zone name: `est'.		%Z  gives uppercase: `EST'<br/><br/>Non-date items:<br/>%%   a literal percent character: `%'<br/>%f   file name without directory	%F  gives absolute pathname<br/>%s   system name<br/>%u   user's login name			%U  user's full name<br/>%h   mail host name<br/><br/>Decimal digits between the % and the type character specify the<br/>field width.  Strings are truncated on the right; years on the left.<br/>A leading zero in the field width zero-fills a number.<br/><br/>For example, to get the format used by the `date' command,<br/>use "%3a %3b %2d %02H:%02M:%02S %Z %:y".<br/><br/>In the future these formats will be aligned more with `format-time-string'.<br/>Because of this transition, the default padding for numeric formats will<br/>change in a future version.  Therefore either a padding width should be<br/>specified, or the : modifier should be used to explicitly request the<br/>historical default.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 20.1 of Emacs.<br/>
+<strong>time-stamp-format</strong> is a variable defined in `<code>time-stamp.el</code>'.<br/>
+Its value is "%:y-%02m-%02d %02H:%02M:%02S %u"<br/>
+<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate `stringp'.<br/>
+<br/>
+Documentation:<br/>
+Format of the string inserted by M-x time-stamp.<br/>
+The value may be a string or a list.  Lists are supported only for<br/>
+backward compatibility; see variable `time-stamp-old-format-warn'.<br/>
+<br/>
+A string is used verbatim except for character sequences beginning<br/>
+with %, as follows.  The values of non-numeric formatted items depend<br/>
+on the locale setting recorded in `system-time-locale' and<br/>
+`locale-coding-system'.  The examples here are for the default<br/>
+(`C') locale.<br/>
+<br/>
+%:a  weekday name: `Monday'.		%#A gives uppercase: `MONDAY'<br/>
+%3a  abbreviated weekday: `Mon'.	%3A gives uppercase: `MON'<br/>
+%:b  month name: `January'.		%#B gives uppercase: `JANUARY'<br/>
+%3b  abbreviated month: `Jan'.		%3B gives uppercase: `JAN'<br/>
+%02d day of month<br/>
+%02H 24-hour clock hour<br/>
+%02I 12-hour clock hour<br/>
+%02m month number<br/>
+%02M minute<br/>
+%#p  `am' or `pm'.			%P  gives uppercase: `AM' or `PM'<br/>
+%02S seconds<br/>
+%w   day number of week, Sunday is 0<br/>
+%02y 2-digit year: `03'			%:y 4-digit year: `2003'<br/>
+%z   time zone name: `est'.		%Z  gives uppercase: `EST'<br/>
+<br/>
+Non-date items:<br/>
+%%   a literal percent character: `%'<br/>
+%f   file name without directory	%F  gives absolute pathname<br/>
+%s   system name<br/>
+%u   user's login name			%U  user's full name<br/>
+%h   mail host name<br/>
+<br/>
+Decimal digits between the % and the type character specify the<br/>
+field width.  Strings are truncated on the right; years on the left.<br/>
+A leading zero in the field width zero-fills a number.<br/>
+<br/>
+For example, to get the format used by the `date' command,<br/>
+use "%3a %3b %2d %02H:%02M:%02S %Z %:y".<br/>
+<br/>
+In the future these formats will be aligned more with `format-time-string'.<br/>
+Because of this transition, the default padding for numeric formats will<br/>
+change in a future version.  Therefore either a padding width should be<br/>
+specified, or the : modifier should be used to explicitly request the<br/>
+historical default.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 20.1 of Emacs.<br/>

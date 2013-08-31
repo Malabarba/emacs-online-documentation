@@ -1,1 +1,17 @@
-modify-frame-parameters is a built-in function in `C source code'.<br/><br/>(modify-frame-parameters FRAME ALIST)<br/><br/>Modify the parameters of frame FRAME according to ALIST.<br/>If FRAME is nil, it defaults to the selected frame.<br/>ALIST is an alist of parameters to change and their new values.<br/>Each element of ALIST has the form (PARM . VALUE), where PARM is a symbol.<br/>The meaningful PARMs depend on the kind of frame.<br/>Undefined PARMs are ignored, but stored in the frame's parameter list<br/>so that `frame-parameters' will return them.<br/><br/>The value of frame parameter FOO can also be accessed<br/>as a frame-local binding for the variable FOO, if you have<br/>enabled such bindings for that variable with `make-variable-frame-local'.<br/>Note that this functionality is obsolete as of Emacs 22.2, and its<br/>use is not recommended.  Explicitly check for a frame-parameter instead.
+<strong>modify-frame-parameters</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(modify-frame-parameters FRAME ALIST)<br/>
+<br/>
+Modify the parameters of frame FRAME according to ALIST.<br/>
+If FRAME is nil, it defaults to the selected frame.<br/>
+ALIST is an alist of parameters to change and their new values.<br/>
+Each element of ALIST has the form (PARM . VALUE), where PARM is a symbol.<br/>
+The meaningful PARMs depend on the kind of frame.<br/>
+Undefined PARMs are ignored, but stored in the frame's parameter list<br/>
+so that `frame-parameters' will return them.<br/>
+<br/>
+The value of frame parameter FOO can also be accessed<br/>
+as a frame-local binding for the variable FOO, if you have<br/>
+enabled such bindings for that variable with `make-variable-frame-local'.<br/>
+Note that this functionality is obsolete as of Emacs 22.2, and its<br/>
+use is not recommended.  Explicitly check for a frame-parameter instead.

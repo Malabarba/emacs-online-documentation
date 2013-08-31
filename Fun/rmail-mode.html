@@ -1,1 +1,52 @@
-rmail-mode is an interactive autoloaded compiled Lisp function in `rmail.el'.<br/><br/>(rmail-mode)<br/><br/>Rmail Mode is used by M-x rmail for editing Rmail files.<br/>All normal editing commands are turned off.<br/>Instead, these commands are available:<br/><br/>.	Move point to front of this message.<br/>/	Move point to bottom of this message.<br/>M-x scroll-up	Scroll to next screen of this message.<br/>M-x scroll-down	Scroll to previous screen of this message.<br/>n	Move to Next non-deleted message.<br/>p	Move to Previous non-deleted message.<br/>M-n	Move to Next message whether deleted or not.<br/>M-p	Move to Previous message whether deleted or not.<br/><	Move to the first message in Rmail file.<br/>>	Move to the last message in Rmail file.<br/>j	Jump to message specified by numeric position in file.<br/>M-s	Search for string and show message it is found in.<br/>d	Delete this message, move to next nondeleted.<br/>C-d	Delete this message, move to previous nondeleted.<br/>u	Undelete message.  Tries current message, then earlier messages<br/>	till a deleted message is found.<br/>e	Edit the current message.  M-x rmail-cease-edit to return to Rmail.<br/>x	Expunge deleted messages.<br/>s	Expunge and save the file.<br/>q       Quit Rmail: expunge, save, then switch to another buffer.<br/>C-x C-s Save without expunging.<br/>g	Move new mail from system spool directory into this file.<br/>m	Mail a message (same as M-x mail-other-window).<br/>c	Continue composing outgoing message started before.<br/>r	Reply to this message.  Like m but initializes some fields.<br/>M-m	Send this message again.  Used on a mailer failure message.<br/>f	Forward this message to another user.<br/>o	Output (append) this message to another mail file.<br/>C-o	Output (append) this message to file as it's displayed.<br/>w	Save message body to a file.  Default filename comes from Subject line.<br/>i	Input Rmail file.  Run Rmail on that file.<br/>a	Add label to message.  It will be displayed in the mode line.<br/>k	Kill label.  Remove a label from current message.<br/>C-M-n   Move to Next message with specified label<br/>          (label defaults to last one specified).<br/>          Standard labels: filed, unseen, answered, forwarded, deleted.<br/>          Any other label is present only if you add it with a.<br/>C-M-p   Move to Previous message with specified label<br/>h	Show headers buffer, with a one line summary of each message.<br/>l	Summarize only messages with particular label(s).<br/>C-M-r   Summarize only messages with particular recipient(s).<br/>C-M-s   Summarize only messages with particular regexp(s).<br/>C-M-t   Summarize only messages with subject line regexp(s).<br/>t	Toggle display of complete header.
+<strong>rmail-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>rmail.el</code>'.<br/>
+<br/>
+(rmail-mode)<br/>
+<br/>
+Rmail Mode is used by M-x rmail for editing Rmail files.<br/>
+All normal editing commands are turned off.<br/>
+Instead, these commands are available:<br/>
+<br/>
+.	Move point to front of this message.<br/>
+/	Move point to bottom of this message.<br/>
+M-x scroll-up	Scroll to next screen of this message.<br/>
+M-x scroll-down	Scroll to previous screen of this message.<br/>
+n	Move to Next non-deleted message.<br/>
+p	Move to Previous non-deleted message.<br/>
+M-n	Move to Next message whether deleted or not.<br/>
+M-p	Move to Previous message whether deleted or not.<br/>
+<	Move to the first message in Rmail file.<br/>
+>	Move to the last message in Rmail file.<br/>
+j	Jump to message specified by numeric position in file.<br/>
+M-s	Search for string and show message it is found in.<br/>
+d	Delete this message, move to next nondeleted.<br/>
+C-d	Delete this message, move to previous nondeleted.<br/>
+u	Undelete message.  Tries current message, then earlier messages<br/>
+	till a deleted message is found.<br/>
+e	Edit the current message.  M-x rmail-cease-edit to return to Rmail.<br/>
+x	Expunge deleted messages.<br/>
+s	Expunge and save the file.<br/>
+q       Quit Rmail: expunge, save, then switch to another buffer.<br/>
+C-x C-s Save without expunging.<br/>
+g	Move new mail from system spool directory into this file.<br/>
+m	Mail a message (same as M-x mail-other-window).<br/>
+c	Continue composing outgoing message started before.<br/>
+r	Reply to this message.  Like m but initializes some fields.<br/>
+M-m	Send this message again.  Used on a mailer failure message.<br/>
+f	Forward this message to another user.<br/>
+o	Output (append) this message to another mail file.<br/>
+C-o	Output (append) this message to file as it's displayed.<br/>
+w	Save message body to a file.  Default filename comes from Subject line.<br/>
+i	Input Rmail file.  Run Rmail on that file.<br/>
+a	Add label to message.  It will be displayed in the mode line.<br/>
+k	Kill label.  Remove a label from current message.<br/>
+C-M-n   Move to Next message with specified label<br/>
+          (label defaults to last one specified).<br/>
+          Standard labels: filed, unseen, answered, forwarded, deleted.<br/>
+          Any other label is present only if you add it with a.<br/>
+C-M-p   Move to Previous message with specified label<br/>
+h	Show headers buffer, with a one line summary of each message.<br/>
+l	Summarize only messages with particular label(s).<br/>
+C-M-r   Summarize only messages with particular recipient(s).<br/>
+C-M-s   Summarize only messages with particular regexp(s).<br/>
+C-M-t   Summarize only messages with subject line regexp(s).<br/>
+t	Toggle display of complete header.

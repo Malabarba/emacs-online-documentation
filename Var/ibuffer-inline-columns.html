@@ -1,1 +1,40 @@
-ibuffer-inline-columns is a variable defined in `ibuffer.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: ((ibuffer-make-column-mode<br/>  (propertize<br/>   (with-current-buffer buffer<br/>     (format-mode-line mode-name nil nil<br/>		       (current-buffer)))<br/>   'mouse-face 'highlight 'keymap ibuffer-mode-name-map 'help-echo "mouse-2: filter by this mode"))<br/> (ibuffer-make-column-size<br/>  (with-current-buffer buffer<br/>    (format "%s"<br/>	    (buffer-size))))<br/> (ibuffer-make-column-name<br/>  (propertize<br/>   (with-current-buffer buffer<br/>     (propertize<br/>      (buffer-name)<br/>      'font-lock-face<br/>      (ibuffer-buffer-name-face buffer mark)))<br/>   'mouse-face 'highlight 'keymap ibuffer-name-map 'ibuffer-name-column t 'help-echo<br/>   '(if tooltip-mode "mouse-1: mark this buffer\nmouse-2: select this buffer\nmouse-3: operate on this buffer" "mouse-1: mark buffer   mouse-2: select buffer   mouse-3: operate")))<br/> (ibuffer-make-column-modified<br/>  (with-current-buffer buffer<br/>    (if<br/>	(buffer-modified-p)<br/>	(string ibuffer-modified-char)<br/>      " ")))<br/> (ibuffer-make-column-read-only<br/>  (with-current-buffer buffer<br/>    (if buffer-read-only<br/>	(string ibuffer-read-only-char)<br/>      " ")))<br/> (ibuffer-make-column-mark<br/>  (with-current-buffer buffer<br/>    (string mark))))<br/><br/>
+<strong>ibuffer-inline-columns</strong> is a variable defined in `<code>ibuffer.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: ((ibuffer-make-column-mode<br/>
+  (propertize<br/>
+   (with-current-buffer buffer<br/>
+     (format-mode-line mode-name nil nil<br/>
+		       (current-buffer)))<br/>
+   'mouse-face 'highlight 'keymap ibuffer-mode-name-map 'help-echo "mouse-2: filter by this mode"))<br/>
+ (ibuffer-make-column-size<br/>
+  (with-current-buffer buffer<br/>
+    (format "%s"<br/>
+	    (buffer-size))))<br/>
+ (ibuffer-make-column-name<br/>
+  (propertize<br/>
+   (with-current-buffer buffer<br/>
+     (propertize<br/>
+      (buffer-name)<br/>
+      'font-lock-face<br/>
+      (ibuffer-buffer-name-face buffer mark)))<br/>
+   'mouse-face 'highlight 'keymap ibuffer-name-map 'ibuffer-name-column t 'help-echo<br/>
+   '(if tooltip-mode "mouse-1: mark this buffer\nmouse-2: select this buffer\nmouse-3: operate on this buffer" "mouse-1: mark buffer   mouse-2: select buffer   mouse-3: operate")))<br/>
+ (ibuffer-make-column-modified<br/>
+  (with-current-buffer buffer<br/>
+    (if<br/>
+	(buffer-modified-p)<br/>
+	(string ibuffer-modified-char)<br/>
+      " ")))<br/>
+ (ibuffer-make-column-read-only<br/>
+  (with-current-buffer buffer<br/>
+    (if buffer-read-only<br/>
+	(string ibuffer-read-only-char)<br/>
+      " ")))<br/>
+ (ibuffer-make-column-mark<br/>
+  (with-current-buffer buffer<br/>
+    (string mark))))<br/>
+<br/>

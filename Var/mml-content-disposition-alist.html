@@ -1,1 +1,27 @@
-mml-content-disposition-alist is a variable defined in `mml.el'.<br/>Its value is ((text<br/>  (rtf . "attachment")<br/>  (t . "inline"))<br/> (t . "attachment"))<br/><br/><br/>Documentation:<br/>Alist of MIME types or regexps matching file names and default dispositions.<br/>Each element should be one of the following three forms:<br/><br/>  (REGEXP . DISPOSITION)<br/>  (SUPERTYPE (SUBTYPE . DISPOSITION) (SUBTYPE . DISPOSITION)...)<br/>  (TYPE . DISPOSITION)<br/><br/>Where REGEXP is a string which matches the file name (if any) of an<br/>attachment, SUPERTYPE, SUBTYPE and TYPE should be symbols which are a<br/>MIME supertype (e.g., text), a MIME subtype (e.g., plain) and a MIME<br/>type (e.g., text/plain) respectively, and DISPOSITION should be either<br/>the string "attachment" or the string "inline".  The value t for<br/>SUPERTYPE, SUBTYPE or TYPE matches any of those types.  The first<br/>match found will be used.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/>
+<strong>mml-content-disposition-alist</strong> is a variable defined in `<code>mml.el</code>'.<br/>
+Its value is ((text<br/>
+  (rtf . "attachment")<br/>
+  (t . "inline"))<br/>
+ (t . "attachment"))<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Alist of MIME types or regexps matching file names and default dispositions.<br/>
+Each element should be one of the following three forms:<br/>
+<br/>
+  (REGEXP . DISPOSITION)<br/>
+  (SUPERTYPE (SUBTYPE . DISPOSITION) (SUBTYPE . DISPOSITION)...)<br/>
+  (TYPE . DISPOSITION)<br/>
+<br/>
+Where REGEXP is a string which matches the file name (if any) of an<br/>
+attachment, SUPERTYPE, SUBTYPE and TYPE should be symbols which are a<br/>
+MIME supertype (e.g., text), a MIME subtype (e.g., plain) and a MIME<br/>
+type (e.g., text/plain) respectively, and DISPOSITION should be either<br/>
+the string "attachment" or the string "inline".  The value t for<br/>
+SUPERTYPE, SUBTYPE or TYPE matches any of those types.  The first<br/>
+match found will be used.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>

@@ -1,1 +1,67 @@
-define-minor-mode is an autoloaded Lisp macro in `easy-mmode.el'.<br/><br/>(define-minor-mode MODE DOC &optional INIT-VALUE LIGHTER KEYMAP &rest BODY)<br/><br/>Define a new minor mode MODE.<br/>This defines the toggle command MODE and (by default) a control variable<br/>MODE (you can override this with the :variable keyword, see below).<br/>DOC is the documentation for the mode toggle command.<br/><br/>The defined mode command takes one optional (prefix) argument.<br/>Interactively with no prefix argument, it toggles the mode.<br/>A prefix argument enables the mode if the argument is positive,<br/>and disables it otherwise.<br/><br/>When called from Lisp, the mode command toggles the mode if the<br/>argument is `toggle', disables the mode if the argument is a<br/>non-positive integer, and enables the mode otherwise (including<br/>if the argument is omitted or nil or a positive integer).<br/><br/>If DOC is nil, give the mode command a basic doc-string<br/>documenting what its argument does.<br/><br/>Optional INIT-VALUE is the initial value of the mode's variable.<br/>Optional LIGHTER is displayed in the mode line when the mode is on.<br/>Optional KEYMAP is the default keymap bound to the mode keymap.<br/>  If non-nil, it should be a variable name (whose value is a keymap),<br/>  or an expression that returns either a keymap or a list of<br/>  arguments for `easy-mmode-define-keymap'.  If you supply a KEYMAP<br/>  argument that is not a symbol, this macro defines the variable<br/>  MODE-map and gives it the value that KEYMAP specifies.<br/><br/>BODY contains code to execute each time the mode is enabled or disabled.<br/>  It is executed after toggling the mode, and before running MODE-hook.<br/>  Before the actual body code, you can write keyword arguments, i.e.<br/>  alternating keywords and values.  These following special keywords<br/>  are supported (other keywords are passed to `defcustom' if the minor<br/>  mode is global):<br/><br/>:group GROUP	Custom group name to use in all generated `defcustom' forms.<br/>		Defaults to MODE without the possible trailing "-mode".<br/>		Don't use this default group name unless you have written a<br/>		`defgroup' to define that group properly.<br/>:global GLOBAL	If non-nil specifies that the minor mode is not meant to be<br/>		buffer-local, so don't make the variable MODE buffer-local.<br/>		By default, the mode is buffer-local.<br/>:init-value VAL	Same as the INIT-VALUE argument.<br/>		Not used if you also specify :variable.<br/>:lighter SPEC	Same as the LIGHTER argument.<br/>:keymap MAP	Same as the KEYMAP argument.<br/>:require SYM	Same as in `defcustom'.<br/>:variable PLACE	The location to use instead of the variable MODE to store<br/>		the state of the mode.	This can be simply a different<br/>		named variable, or a generalized variable.<br/>		PLACE can also be of the form (GET . SET), where GET is<br/>		an expression that returns the current state, and SET is<br/>		a function that takes one argument, the new state, and<br/>		sets it.  If you specify a :variable, this function does<br/>		not define a MODE variable (nor any of the terms used<br/>		in :variable).<br/><br/>:after-hook     A single lisp form which is evaluated after the mode hooks<br/>                have been run.  It should not be quoted.<br/><br/>For example, you could write<br/>  (define-minor-mode foo-mode "If enabled, foo on you!"<br/>    :lighter " Foo" :require 'foo :global t :group 'hassle :version "27.5"<br/>    ...BODY CODE...)
+<strong>define-minor-mode</strong> is an autoloaded Lisp macro in `<code>easy-mmode.el</code>'.<br/>
+<br/>
+(define-minor-mode MODE DOC &optional INIT-VALUE LIGHTER KEYMAP &rest BODY)<br/>
+<br/>
+Define a new minor mode MODE.<br/>
+This defines the toggle command MODE and (by default) a control variable<br/>
+MODE (you can override this with the :variable keyword, see below).<br/>
+DOC is the documentation for the mode toggle command.<br/>
+<br/>
+The defined mode command takes one optional (prefix) argument.<br/>
+Interactively with no prefix argument, it toggles the mode.<br/>
+A prefix argument enables the mode if the argument is positive,<br/>
+and disables it otherwise.<br/>
+<br/>
+When called from Lisp, the mode command toggles the mode if the<br/>
+argument is `toggle', disables the mode if the argument is a<br/>
+non-positive integer, and enables the mode otherwise (including<br/>
+if the argument is omitted or nil or a positive integer).<br/>
+<br/>
+If DOC is nil, give the mode command a basic doc-string<br/>
+documenting what its argument does.<br/>
+<br/>
+Optional INIT-VALUE is the initial value of the mode's variable.<br/>
+Optional LIGHTER is displayed in the mode line when the mode is on.<br/>
+Optional KEYMAP is the default keymap bound to the mode keymap.<br/>
+  If non-nil, it should be a variable name (whose value is a keymap),<br/>
+  or an expression that returns either a keymap or a list of<br/>
+  arguments for `easy-mmode-define-keymap'.  If you supply a KEYMAP<br/>
+  argument that is not a symbol, this macro defines the variable<br/>
+  MODE-map and gives it the value that KEYMAP specifies.<br/>
+<br/>
+BODY contains code to execute each time the mode is enabled or disabled.<br/>
+  It is executed after toggling the mode, and before running MODE-hook.<br/>
+  Before the actual body code, you can write keyword arguments, i.e.<br/>
+  alternating keywords and values.  These following special keywords<br/>
+  are supported (other keywords are passed to `defcustom' if the minor<br/>
+  mode is global):<br/>
+<br/>
+:group GROUP	Custom group name to use in all generated `defcustom' forms.<br/>
+		Defaults to MODE without the possible trailing "-mode".<br/>
+		Don't use this default group name unless you have written a<br/>
+		`defgroup' to define that group properly.<br/>
+:global GLOBAL	If non-nil specifies that the minor mode is not meant to be<br/>
+		buffer-local, so don't make the variable MODE buffer-local.<br/>
+		By default, the mode is buffer-local.<br/>
+:init-value VAL	Same as the INIT-VALUE argument.<br/>
+		Not used if you also specify :variable.<br/>
+:lighter SPEC	Same as the LIGHTER argument.<br/>
+:keymap MAP	Same as the KEYMAP argument.<br/>
+:require SYM	Same as in `defcustom'.<br/>
+:variable PLACE	The location to use instead of the variable MODE to store<br/>
+		the state of the mode.	This can be simply a different<br/>
+		named variable, or a generalized variable.<br/>
+		PLACE can also be of the form (GET . SET), where GET is<br/>
+		an expression that returns the current state, and SET is<br/>
+		a function that takes one argument, the new state, and<br/>
+		sets it.  If you specify a :variable, this function does<br/>
+		not define a MODE variable (nor any of the terms used<br/>
+		in :variable).<br/>
+<br/>
+:after-hook     A single lisp form which is evaluated after the mode hooks<br/>
+                have been run.  It should not be quoted.<br/>
+<br/>
+For example, you could write<br/>
+  (define-minor-mode foo-mode "If enabled, foo on you!"<br/>
+    :lighter " Foo" :require 'foo :global t :group 'hassle :version "27.5"<br/>
+    ...BODY CODE...)

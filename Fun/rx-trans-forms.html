@@ -1,1 +1,8 @@
-rx-trans-forms is a compiled Lisp function in `rx.el'.<br/><br/>(rx-trans-forms FORM &optional SKIP)<br/><br/>If FORM's length is greater than two, transform it to length two.<br/>A form (HEAD REST ...) becomes (HEAD (and REST ...)).<br/>If SKIP is non-nil, allow that number of items after the head, i.e.<br/>`(= N REST ...)' becomes `(= N (and REST ...))' if SKIP is 1.
+<strong>rx-trans-forms</strong> is a compiled Lisp function in `<code>rx.el</code>'.<br/>
+<br/>
+(rx-trans-forms FORM &optional SKIP)<br/>
+<br/>
+If FORM's length is greater than two, transform it to length two.<br/>
+A form (HEAD REST ...) becomes (HEAD (and REST ...)).<br/>
+If SKIP is non-nil, allow that number of items after the head, i.e.<br/>
+`(= N REST ...)' becomes `(= N (and REST ...))' if SKIP is 1.

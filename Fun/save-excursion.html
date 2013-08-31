@@ -1,1 +1,17 @@
-save-excursion is a special form in `C source code'.<br/><br/>(save-excursion &rest BODY)<br/><br/>Save point, mark, and current buffer; execute BODY; restore those things.<br/>Executes BODY just like `progn'.<br/>The values of point, mark and the current buffer are restored<br/>even in case of abnormal exit (throw or error).<br/>The state of activation of the mark is also restored.<br/><br/>This construct does not save `deactivate-mark', and therefore<br/>functions that change the buffer will still cause deactivation<br/>of the mark at the end of the command.  To prevent that, bind<br/>`deactivate-mark' with `let'.<br/><br/>If you only want to save the current buffer but not point nor mark,<br/>then just use `save-current-buffer', or even `with-current-buffer'.
+<strong>save-excursion</strong> is a special form in `<code>C source code</code>'.<br/>
+<br/>
+(save-excursion &rest BODY)<br/>
+<br/>
+Save point, mark, and current buffer; execute BODY; restore those things.<br/>
+Executes BODY just like `progn'.<br/>
+The values of point, mark and the current buffer are restored<br/>
+even in case of abnormal exit (throw or error).<br/>
+The state of activation of the mark is also restored.<br/>
+<br/>
+This construct does not save `deactivate-mark', and therefore<br/>
+functions that change the buffer will still cause deactivation<br/>
+of the mark at the end of the command.  To prevent that, bind<br/>
+`deactivate-mark' with `let'.<br/>
+<br/>
+If you only want to save the current buffer but not point nor mark,<br/>
+then just use `save-current-buffer', or even `with-current-buffer'.

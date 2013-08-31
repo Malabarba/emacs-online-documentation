@@ -1,1 +1,15 @@
-ewoc-map is a compiled Lisp function in `ewoc.el'.<br/><br/>(ewoc-map MAP-FUNCTION EWOC &rest ARGS)<br/><br/>Apply MAP-FUNCTION to all elements in EWOC.<br/>MAP-FUNCTION is applied to the first element first.<br/>If MAP-FUNCTION returns non-nil the element will be refreshed (its<br/>pretty-printer will be called once again).<br/><br/>Note that the buffer for EWOC will be the current buffer when<br/>MAP-FUNCTION is called.  MAP-FUNCTION must restore the current<br/>buffer before it returns, if it changes it.<br/><br/>If more than two arguments are given, the remaining<br/>arguments will be passed to MAP-FUNCTION.
+<strong>ewoc-map</strong> is a compiled Lisp function in `<code>ewoc.el</code>'.<br/>
+<br/>
+(ewoc-map MAP-FUNCTION EWOC &rest ARGS)<br/>
+<br/>
+Apply MAP-FUNCTION to all elements in EWOC.<br/>
+MAP-FUNCTION is applied to the first element first.<br/>
+If MAP-FUNCTION returns non-nil the element will be refreshed (its<br/>
+pretty-printer will be called once again).<br/>
+<br/>
+Note that the buffer for EWOC will be the current buffer when<br/>
+MAP-FUNCTION is called.  MAP-FUNCTION must restore the current<br/>
+buffer before it returns, if it changes it.<br/>
+<br/>
+If more than two arguments are given, the remaining<br/>
+arguments will be passed to MAP-FUNCTION.

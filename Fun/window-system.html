@@ -1,1 +1,17 @@
-window-system is a built-in function in `C source code'.<br/><br/>(window-system &optional FRAME)<br/><br/>The name of the window system that FRAME is displaying through.<br/>The value is a symbol:<br/> nil for a termcap frame (a character-only terminal),<br/> 'x' for an Emacs frame that is really an X window,<br/> 'w32' for an Emacs frame that is a window on MS-Windows display,<br/> 'ns' for an Emacs frame on a GNUstep or Macintosh Cocoa display,<br/> 'pc' for a direct-write MS-DOS frame.<br/><br/>FRAME defaults to the currently selected frame.<br/><br/>Use of this function as a predicate is deprecated.  Instead,<br/>use `display-graphic-p' or any of the other `display-*-p'<br/>predicates which report frame's specific UI-related capabilities.
+<strong>window-system</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(window-system &optional FRAME)<br/>
+<br/>
+The name of the window system that FRAME is displaying through.<br/>
+The value is a symbol:<br/>
+ nil for a termcap frame (a character-only terminal),<br/>
+ 'x' for an Emacs frame that is really an X window,<br/>
+ 'w32' for an Emacs frame that is a window on MS-Windows display,<br/>
+ 'ns' for an Emacs frame on a GNUstep or Macintosh Cocoa display,<br/>
+ 'pc' for a direct-write MS-DOS frame.<br/>
+<br/>
+FRAME defaults to the currently selected frame.<br/>
+<br/>
+Use of this function as a predicate is deprecated.  Instead,<br/>
+use `display-graphic-p' or any of the other `display-*-p'<br/>
+predicates which report frame's specific UI-related capabilities.

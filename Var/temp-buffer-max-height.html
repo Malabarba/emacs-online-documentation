@@ -1,1 +1,35 @@
-temp-buffer-max-height is a variable defined in `help.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Maximum height of a window displaying a temporary buffer.<br/>This is effective only when Temp Buffer Resize mode is enabled.<br/>The value is the maximum height (in lines) which<br/>`resize-temp-buffer-window' will give to a window displaying a<br/>temporary buffer.  It can also be a function to be called to<br/>choose the height for such a buffer.  It gets one argument, the<br/>buffer, and should return a positive integer.  At the time the<br/>function is called, the window to be resized is selected.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.3 of Emacs.<br/><br/><br/>Value: (lambda<br/>  (buffer)<br/>  (if<br/>      (eq<br/>       (selected-window)<br/>       (frame-root-window))<br/>      (/<br/>       (x-display-pixel-height)<br/>       (frame-char-height)<br/>       2)<br/>    (/<br/>     (-<br/>      (frame-height)<br/>      2)<br/>     2)))<br/><br/>
+<strong>temp-buffer-max-height</strong> is a variable defined in `<code>help.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Maximum height of a window displaying a temporary buffer.<br/>
+This is effective only when Temp Buffer Resize mode is enabled.<br/>
+The value is the maximum height (in lines) which<br/>
+`resize-temp-buffer-window' will give to a window displaying a<br/>
+temporary buffer.  It can also be a function to be called to<br/>
+choose the height for such a buffer.  It gets one argument, the<br/>
+buffer, and should return a positive integer.  At the time the<br/>
+function is called, the window to be resized is selected.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.3 of Emacs.<br/>
+<br/>
+<br/>
+Value: (lambda<br/>
+  (buffer)<br/>
+  (if<br/>
+      (eq<br/>
+       (selected-window)<br/>
+       (frame-root-window))<br/>
+      (/<br/>
+       (x-display-pixel-height)<br/>
+       (frame-char-height)<br/>
+       2)<br/>
+    (/<br/>
+     (-<br/>
+      (frame-height)<br/>
+      2)<br/>
+     2)))<br/>
+<br/>

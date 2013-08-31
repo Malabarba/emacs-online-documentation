@@ -1,1 +1,17 @@
-pr-command is a compiled Lisp function in `printing.el'.<br/><br/>(pr-command COMMAND)<br/><br/>Return absolute file name specification for COMMAND.<br/><br/>If COMMAND is an empty string, return it.<br/><br/>If COMMAND is already an absolute file name specification, return it.<br/>Else it uses `pr-path-alist' to find COMMAND, if find it then return it;<br/>otherwise, gives an error.<br/><br/>When using `pr-path-alist' to find COMMAND, the entries `cygwin', `windows' and<br/>`unix' are used (see `pr-path-alist' for documentation).<br/><br/>If Emacs is running on Windows 95/98/NT/2000, tries to find COMMAND,<br/>COMMAND.exe, COMMAND.bat and COMMAND.com in this order.
+<strong>pr-command</strong> is a compiled Lisp function in `<code>printing.el</code>'.<br/>
+<br/>
+(pr-command COMMAND)<br/>
+<br/>
+Return absolute file name specification for COMMAND.<br/>
+<br/>
+If COMMAND is an empty string, return it.<br/>
+<br/>
+If COMMAND is already an absolute file name specification, return it.<br/>
+Else it uses `pr-path-alist' to find COMMAND, if find it then return it;<br/>
+otherwise, gives an error.<br/>
+<br/>
+When using `pr-path-alist' to find COMMAND, the entries `cygwin', `windows' and<br/>
+`unix' are used (see `pr-path-alist' for documentation).<br/>
+<br/>
+If Emacs is running on Windows 95/98/NT/2000, tries to find COMMAND,<br/>
+COMMAND.exe, COMMAND.bat and COMMAND.com in this order.

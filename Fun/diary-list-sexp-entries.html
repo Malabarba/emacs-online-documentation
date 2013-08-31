@@ -1,1 +1,115 @@
-diary-list-sexp-entries is a compiled Lisp function in `diary-lib.el'.<br/><br/>(diary-list-sexp-entries DATE)<br/><br/>Add sexp entries for DATE from the diary file to `diary-entries-list'.<br/>Also, make them visible in the diary.  Returns t if any entries are found.<br/><br/>Sexp diary entries must be prefaced by a `diary-sexp-entry-symbol'<br/>(normally `%%').  The form of a sexp diary entry is<br/><br/>                  %%(SEXP) ENTRY<br/><br/>Both ENTRY and DATE are available when the SEXP is evaluated.  If<br/>the SEXP returns nil, the diary entry does not apply.  If it<br/>returns a non-nil value, ENTRY will be taken to apply to DATE; if<br/>the value is a string, that string will be the diary entry in the<br/>fancy diary display.<br/><br/>For example, the following diary entry will apply to the 21st of<br/>the month if it is a weekday and the Friday before if the 21st is<br/>on a weekend:<br/><br/>      &%%(let ((dayname (calendar-day-of-week date))<br/>               (day (calendar-extract-day date)))<br/>           (or<br/>             (and (= day 21) (memq dayname '(1 2 3 4 5)))<br/>             (and (memq day '(19 20)) (= dayname 5)))<br/>         ) UIUC pay checks deposited<br/><br/>A number of built-in functions are available for this type of<br/>diary entry.  In the following, the optional parameter MARK<br/>specifies a face or single-character string to use when<br/>highlighting the day in the calendar.  For those functions that<br/>take MONTH, DAY, and YEAR as arguments, the order of the input<br/>parameters changes according to `calendar-date-style' (e.g. to<br/>DAY MONTH YEAR in the European style).<br/><br/>  %%(diary-date MONTH DAY YEAR &optional MARK) text<br/>    Entry applies if date is MONTH, DAY, YEAR.  DAY, MONTH, and YEAR can<br/>    be a list of integers, `t' (meaning all values), or an integer.<br/><br/>  %%(diary-float MONTH DAYNAME N &optional DAY MARK) text<br/>    Entry will appear on the Nth DAYNAME after/before MONTH DAY.<br/>    DAYNAME=0 means Sunday, DAYNAME=1 means Monday, and so on.<br/>    If N>0, use the Nth DAYNAME after MONTH DAY.<br/>    If N<0, use the Nth DAYNAME before MONTH DAY.<br/>    DAY defaults to 1 if N>0, and MONTH's last day otherwise.<br/>    MONTH can be a list of months, a single month, or `t' to<br/>    specify all months.<br/><br/>  %%(diary-block M1 D1 Y1 M2 D2 Y2 &optional MARK) text<br/>    Entry will appear on dates between M1/D1/Y1 and M2/D2/Y2,<br/>    inclusive.<br/><br/>  %%(diary-anniversary MONTH DAY YEAR &optional MARK) text<br/>    Entry will appear on anniversary dates of MONTH DAY, YEAR.<br/>    Text can contain `%d' or `%d%s'; `%d' will be replaced by the<br/>    number of years since the MONTH DAY, YEAR, and `%s' by the<br/>    ordinal ending of that number (i.e. `st', `nd', `rd' or `th',<br/>    as appropriate).  The anniversary of February 29 is<br/>    considered to be March 1 in a non-leap year.<br/><br/>  %%(diary-cyclic N MONTH DAY YEAR &optional MARK) text<br/>    Entry will appear every N days, starting MONTH DAY, YEAR.<br/>    Text can contain `%d' or `%d%s'; `%d' will be replaced by the<br/>    number of repetitions since the MONTH DAY, YEAR and `%s' by<br/>    the ordinal ending of that number (i.e. `st', `nd', `rd' or<br/>    `th', as appropriate).<br/><br/>  %%(diary-remind SEXP DAYS &optional MARKING) text<br/>    Entry is a reminder for diary sexp SEXP.  DAYS is either a<br/>    single number or a list of numbers indicating the number(s)<br/>    of days before the event that the warning(s) should occur.<br/>    A negative number -DAYS has the same meaning as a list (1 2 ... DAYS).<br/>    If the current date is (one of) DAYS before the event indicated<br/>    by EXPR, then a suitable message (as specified by<br/>    `diary-remind-message') appears.  In addition to the<br/>    reminders beforehand, the diary entry also appears on the<br/>    date itself.  If optional MARKING is non-nil then the<br/>    *reminders* are marked on the calendar.  Marking of reminders<br/>    is independent of whether the entry *itself* is a marking or<br/>    non-marking one.<br/><br/>  %%(diary-hebrew-yahrzeit MONTH DAY YEAR) text<br/>    Text is assumed to be the name of the person; the date is the<br/>    date of death on the *civil* calendar.  The diary entry will<br/>    appear on the proper Hebrew-date anniversary and on the day<br/>    before.<br/><br/>All the remaining functions do not accept any text, and so only<br/>make sense with `diary-fancy-display'.  Most produce output every day.<br/><br/>`diary-day-of-year'      - day of year and number of days remaining<br/>`diary-iso-date'         - ISO commercial date<br/>`diary-astro-day-number' - astronomical (Julian) day number<br/>`diary-sunrise-sunset'   - local times of sunrise and sunset<br/><br/>These functions give the date in alternative calendrical systems:<br/><br/>`diary-bahai-date', `diary-chinese-date', `diary-coptic-date',<br/>`diary-ethiopic-date', `diary-french-date', `diary-hebrew-date',<br/>`diary-islamic-date', `diary-julian-date', `diary-mayan-date',<br/>`diary-persian-date'<br/><br/>Theses functions only produce output on certain dates:<br/><br/>`diary-lunar-phases'           - phases of moon (on the appropriate days)<br/>`diary-hebrew-omer'            - Omer count, within 50 days after Passover<br/>`diary-hebrew-parasha'         - weekly parasha, every Saturday<br/>`diary-hebrew-rosh-hodesh'     - Rosh Hodesh, or the day or Saturday before<br/>`diary-hebrew-sabbath-candles' - local time of candle lighting, on Fridays<br/><br/><br/>Marking these entries is *extremely* time consuming, so it is<br/>best if they are non-marking.
+<strong>diary-list-sexp-entries</strong> is a compiled Lisp function in `<code>diary-lib.el</code>'.<br/>
+<br/>
+(diary-list-sexp-entries DATE)<br/>
+<br/>
+Add sexp entries for DATE from the diary file to `diary-entries-list'.<br/>
+Also, make them visible in the diary.  Returns t if any entries are found.<br/>
+<br/>
+Sexp diary entries must be prefaced by a `diary-sexp-entry-symbol'<br/>
+(normally `%%').  The form of a sexp diary entry is<br/>
+<br/>
+                  %%(SEXP) ENTRY<br/>
+<br/>
+Both ENTRY and DATE are available when the SEXP is evaluated.  If<br/>
+the SEXP returns nil, the diary entry does not apply.  If it<br/>
+returns a non-nil value, ENTRY will be taken to apply to DATE; if<br/>
+the value is a string, that string will be the diary entry in the<br/>
+fancy diary display.<br/>
+<br/>
+For example, the following diary entry will apply to the 21st of<br/>
+the month if it is a weekday and the Friday before if the 21st is<br/>
+on a weekend:<br/>
+<br/>
+      &%%(let ((dayname (calendar-day-of-week date))<br/>
+               (day (calendar-extract-day date)))<br/>
+           (or<br/>
+             (and (= day 21) (memq dayname '(1 2 3 4 5)))<br/>
+             (and (memq day '(19 20)) (= dayname 5)))<br/>
+         ) UIUC pay checks deposited<br/>
+<br/>
+A number of built-in functions are available for this type of<br/>
+diary entry.  In the following, the optional parameter MARK<br/>
+specifies a face or single-character string to use when<br/>
+highlighting the day in the calendar.  For those functions that<br/>
+take MONTH, DAY, and YEAR as arguments, the order of the input<br/>
+parameters changes according to `calendar-date-style' (e.g. to<br/>
+DAY MONTH YEAR in the European style).<br/>
+<br/>
+  %%(diary-date MONTH DAY YEAR &optional MARK) text<br/>
+    Entry applies if date is MONTH, DAY, YEAR.  DAY, MONTH, and YEAR can<br/>
+    be a list of integers, `t' (meaning all values), or an integer.<br/>
+<br/>
+  %%(diary-float MONTH DAYNAME N &optional DAY MARK) text<br/>
+    Entry will appear on the Nth DAYNAME after/before MONTH DAY.<br/>
+    DAYNAME=0 means Sunday, DAYNAME=1 means Monday, and so on.<br/>
+    If N>0, use the Nth DAYNAME after MONTH DAY.<br/>
+    If N<0, use the Nth DAYNAME before MONTH DAY.<br/>
+    DAY defaults to 1 if N>0, and MONTH's last day otherwise.<br/>
+    MONTH can be a list of months, a single month, or `t' to<br/>
+    specify all months.<br/>
+<br/>
+  %%(diary-block M1 D1 Y1 M2 D2 Y2 &optional MARK) text<br/>
+    Entry will appear on dates between M1/D1/Y1 and M2/D2/Y2,<br/>
+    inclusive.<br/>
+<br/>
+  %%(diary-anniversary MONTH DAY YEAR &optional MARK) text<br/>
+    Entry will appear on anniversary dates of MONTH DAY, YEAR.<br/>
+    Text can contain `%d' or `%d%s'; `%d' will be replaced by the<br/>
+    number of years since the MONTH DAY, YEAR, and `%s' by the<br/>
+    ordinal ending of that number (i.e. `st', `nd', `rd' or `th',<br/>
+    as appropriate).  The anniversary of February 29 is<br/>
+    considered to be March 1 in a non-leap year.<br/>
+<br/>
+  %%(diary-cyclic N MONTH DAY YEAR &optional MARK) text<br/>
+    Entry will appear every N days, starting MONTH DAY, YEAR.<br/>
+    Text can contain `%d' or `%d%s'; `%d' will be replaced by the<br/>
+    number of repetitions since the MONTH DAY, YEAR and `%s' by<br/>
+    the ordinal ending of that number (i.e. `st', `nd', `rd' or<br/>
+    `th', as appropriate).<br/>
+<br/>
+  %%(diary-remind SEXP DAYS &optional MARKING) text<br/>
+    Entry is a reminder for diary sexp SEXP.  DAYS is either a<br/>
+    single number or a list of numbers indicating the number(s)<br/>
+    of days before the event that the warning(s) should occur.<br/>
+    A negative number -DAYS has the same meaning as a list (1 2 ... DAYS).<br/>
+    If the current date is (one of) DAYS before the event indicated<br/>
+    by EXPR, then a suitable message (as specified by<br/>
+    `diary-remind-message') appears.  In addition to the<br/>
+    reminders beforehand, the diary entry also appears on the<br/>
+    date itself.  If optional MARKING is non-nil then the<br/>
+    *reminders* are marked on the calendar.  Marking of reminders<br/>
+    is independent of whether the entry *itself* is a marking or<br/>
+    non-marking one.<br/>
+<br/>
+  %%(diary-hebrew-yahrzeit MONTH DAY YEAR) text<br/>
+    Text is assumed to be the name of the person; the date is the<br/>
+    date of death on the *civil* calendar.  The diary entry will<br/>
+    appear on the proper Hebrew-date anniversary and on the day<br/>
+    before.<br/>
+<br/>
+All the remaining functions do not accept any text, and so only<br/>
+make sense with `diary-fancy-display'.  Most produce output every day.<br/>
+<br/>
+`diary-day-of-year'      - day of year and number of days remaining<br/>
+`diary-iso-date'         - ISO commercial date<br/>
+`diary-astro-day-number' - astronomical (Julian) day number<br/>
+`diary-sunrise-sunset'   - local times of sunrise and sunset<br/>
+<br/>
+These functions give the date in alternative calendrical systems:<br/>
+<br/>
+`diary-bahai-date', `diary-chinese-date', `diary-coptic-date',<br/>
+`diary-ethiopic-date', `diary-french-date', `diary-hebrew-date',<br/>
+`diary-islamic-date', `diary-julian-date', `diary-mayan-date',<br/>
+`diary-persian-date'<br/>
+<br/>
+Theses functions only produce output on certain dates:<br/>
+<br/>
+`diary-lunar-phases'           - phases of moon (on the appropriate days)<br/>
+`diary-hebrew-omer'            - Omer count, within 50 days after Passover<br/>
+`diary-hebrew-parasha'         - weekly parasha, every Saturday<br/>
+`diary-hebrew-rosh-hodesh'     - Rosh Hodesh, or the day or Saturday before<br/>
+`diary-hebrew-sabbath-candles' - local time of candle lighting, on Fridays<br/>
+<br/>
+<br/>
+Marking these entries is *extremely* time consuming, so it is<br/>
+best if they are non-marking.

@@ -1,1 +1,28 @@
-semantic-lex-comments-as-whitespace is a variable defined in `lex.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Detect comments and create a whitespace token.<br/><br/>Value: ((looking-at semantic-lex-comment-regex)<br/> (save-excursion<br/>   (forward-comment 1)<br/>   (if<br/>       (bolp)<br/>       (backward-char 1))<br/>   (setq semantic-lex-end-point<br/>	 (point))<br/>   (if<br/>       (eq<br/>	(semantic-lex-token-class<br/>	 (car semantic-lex-token-stream))<br/>	'whitespace)<br/>       (setcdr<br/>	(semantic-lex-token-bounds<br/>	 (car semantic-lex-token-stream))<br/>	semantic-lex-end-point)<br/>     (semantic-lex-push-token<br/>      (semantic-lex-token 'whitespace<br/>			  (match-beginning 0)<br/>			  semantic-lex-end-point)))))<br/><br/>
+<strong>semantic-lex-comments-as-whitespace</strong> is a variable defined in `<code>lex.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Detect comments and create a whitespace token.<br/>
+<br/>
+Value: ((looking-at semantic-lex-comment-regex)<br/>
+ (save-excursion<br/>
+   (forward-comment 1)<br/>
+   (if<br/>
+       (bolp)<br/>
+       (backward-char 1))<br/>
+   (setq semantic-lex-end-point<br/>
+	 (point))<br/>
+   (if<br/>
+       (eq<br/>
+	(semantic-lex-token-class<br/>
+	 (car semantic-lex-token-stream))<br/>
+	'whitespace)<br/>
+       (setcdr<br/>
+	(semantic-lex-token-bounds<br/>
+	 (car semantic-lex-token-stream))<br/>
+	semantic-lex-end-point)<br/>
+     (semantic-lex-push-token<br/>
+      (semantic-lex-token 'whitespace<br/>
+			  (match-beginning 0)<br/>
+			  semantic-lex-end-point)))))<br/>
+<br/>

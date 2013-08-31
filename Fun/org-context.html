@@ -1,1 +1,33 @@
-org-context is a compiled Lisp function in `org.el'.<br/><br/>(org-context)<br/><br/>Return a list of contexts of the current cursor position.<br/>If several contexts apply, all are returned.<br/>Each context entry is a list with a symbol naming the context, and<br/>two positions indicating start and end of the context.  Possible<br/>contexts are:<br/><br/>:headline         anywhere in a headline<br/>:headline-stars   on the leading stars in a headline<br/>:todo-keyword     on a TODO keyword (including DONE) in a headline<br/>:tags             on the TAGS in a headline<br/>:priority         on the priority cookie in a headline<br/>:item             on the first line of a plain list item<br/>:item-bullet      on the bullet/number of a plain list item<br/>:checkbox         on the checkbox in a plain list item<br/>:table            in an org-mode table<br/>:table-special    on a special filed in a table<br/>:table-table      in a table.el table<br/>:clocktable       in a clocktable<br/>:src-block        in a source block<br/>:link             on a hyperlink<br/>:keyword          on a keyword: SCHEDULED, DEADLINE, CLOSE, COMMENT, QUOTE.<br/>:target           on a <<target>><br/>:radio-target     on a <<<radio-target>>><br/>:latex-fragment   on a LaTeX fragment<br/>:latex-preview    on a LaTeX fragment with overlaid preview image<br/><br/>This function expects the position to be visible because it uses font-lock<br/>faces as a help to recognize the following contexts: :table-special, :link,<br/>and :keyword.
+<strong>org-context</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-context)<br/>
+<br/>
+Return a list of contexts of the current cursor position.<br/>
+If several contexts apply, all are returned.<br/>
+Each context entry is a list with a symbol naming the context, and<br/>
+two positions indicating start and end of the context.  Possible<br/>
+contexts are:<br/>
+<br/>
+:headline         anywhere in a headline<br/>
+:headline-stars   on the leading stars in a headline<br/>
+:todo-keyword     on a TODO keyword (including DONE) in a headline<br/>
+:tags             on the TAGS in a headline<br/>
+:priority         on the priority cookie in a headline<br/>
+:item             on the first line of a plain list item<br/>
+:item-bullet      on the bullet/number of a plain list item<br/>
+:checkbox         on the checkbox in a plain list item<br/>
+:table            in an org-mode table<br/>
+:table-special    on a special filed in a table<br/>
+:table-table      in a table.el table<br/>
+:clocktable       in a clocktable<br/>
+:src-block        in a source block<br/>
+:link             on a hyperlink<br/>
+:keyword          on a keyword: SCHEDULED, DEADLINE, CLOSE, COMMENT, QUOTE.<br/>
+:target           on a <<target>><br/>
+:radio-target     on a <<<radio-target>>><br/>
+:latex-fragment   on a LaTeX fragment<br/>
+:latex-preview    on a LaTeX fragment with overlaid preview image<br/>
+<br/>
+This function expects the position to be visible because it uses font-lock<br/>
+faces as a help to recognize the following contexts: :table-special, :link,<br/>
+and :keyword.

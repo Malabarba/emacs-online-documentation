@@ -1,1 +1,133 @@
-timeclock-log-data is a compiled Lisp function in `timeclock.el'.<br/><br/>(timeclock-log-data &optional RECENT-ONLY FILENAME)<br/><br/>Return the contents of the timelog file, in a useful format.<br/>If the optional argument RECENT-ONLY is non-nil, only show the contents<br/>from the last point where the time debt (see below) was set.<br/>If the optional argument FILENAME is non-nil, it is used instead of<br/>the file specified by `timeclock-file.'<br/><br/>A timelog contains data in the form of a single entry per line.<br/>Each entry has the form:<br/><br/>  CODE YYYY/MM/DD HH:MM:SS [COMMENT]<br/><br/>CODE is one of: b, h, i, o or O.  COMMENT is optional when the code is<br/>i, o or O.  The meanings of the codes are:<br/><br/>  b  Set the current time balance, or "time debt".  Useful when<br/>     archiving old log data, when a debt must be carried forward.<br/>     The COMMENT here is the number of seconds of debt.<br/><br/>  h  Set the required working time for the given day.  This must<br/>     be the first entry for that day.  The COMMENT in this case is<br/>     the number of hours in this workday.  Floating point amounts<br/>     are allowed.<br/><br/>  i  Clock in.  The COMMENT in this case should be the name of the<br/>     project worked on.<br/><br/>  o  Clock out.  COMMENT is unnecessary, but can be used to provide<br/>     a description of how the period went, for example.<br/><br/>  O  Final clock out.  Whatever project was being worked on, it is<br/>     now finished.  Useful for creating summary reports.<br/><br/>When this function is called, it will return a data structure with the<br/>following format:<br/><br/>  (DEBT ENTRIES-BY-DAY ENTRIES-BY-PROJECT)<br/><br/>DEBT is a floating point number representing the number of seconds<br/>"owed" before any work was done.  For a new file (one without a 'b'<br/>entry), this is always zero.<br/><br/>The two entries lists have similar formats.  They are both alists,<br/>where the CAR is the index, and the CDR is a list of time entries.<br/>For ENTRIES-BY-DAY, the CAR is a textual date string, of the form<br/>YYYY/MM/DD.  For ENTRIES-BY-PROJECT, it is the name of the project<br/>worked on, or t for the default project.<br/><br/>The CDR for ENTRIES-BY-DAY is slightly different than for<br/>ENTRIES-BY-PROJECT.  It has the following form:<br/><br/>  (DAY-LENGTH TIME-ENTRIES...)<br/><br/>For ENTRIES-BY-PROJECT, there is no DAY-LENGTH member.  It is simply a<br/>list of TIME-ENTRIES.  Note that if DAY-LENGTH is nil, it means<br/>whatever is the default should be used.<br/><br/>A TIME-ENTRY is a recorded time interval.  It has the following format<br/>(although generally one does not have to manipulate these entries<br/>directly; see below):<br/><br/>  (BEGIN-TIME END-TIME PROJECT [COMMENT] [FINAL-P])<br/><br/>Anyway, suffice it to say there are a lot of structures.  Typically<br/>the user is expected to manipulate to the day(s) or project(s) that he<br/>or she wants, at which point the following helper functions may be<br/>used:<br/><br/>  timeclock-day-required<br/>  timeclock-day-length<br/>  timeclock-day-debt<br/>  timeclock-day-begin<br/>  timeclock-day-end<br/>  timeclock-day-span<br/>  timeclock-day-break<br/>  timeclock-day-projects<br/><br/>  timeclock-day-list-required<br/>  timeclock-day-list-length<br/>  timeclock-day-list-debt<br/>  timeclock-day-list-begin<br/>  timeclock-day-list-end<br/>  timeclock-day-list-span<br/>  timeclock-day-list-break<br/>  timeclock-day-list-projects<br/><br/>  timeclock-entry-length<br/>  timeclock-entry-begin<br/>  timeclock-entry-end<br/>  timeclock-entry-project<br/>  timeclock-entry-comment<br/><br/>  timeclock-entry-list-length<br/>  timeclock-entry-list-begin<br/>  timeclock-entry-list-end<br/>  timeclock-entry-list-span<br/>  timeclock-entry-list-break<br/>  timeclock-entry-list-projects<br/><br/>A few comments should make the use of the above functions obvious:<br/><br/>  `required' is the amount of time that must be spent during a day, or<br/>  sequence of days, in order to have no debt.<br/><br/>  `length' is the actual amount of time that was spent.<br/><br/>  `debt' is the difference between required time and length.  A<br/>  negative debt signifies overtime.<br/><br/>  `begin' is the earliest moment at which work began.<br/><br/>  `end' is the final moment work was done.<br/><br/>  `span' is the difference between begin and end.<br/><br/>  `break' is the difference between span and length.<br/><br/>  `project' is the project that was worked on, and `projects' is a<br/>  list of all the projects that were worked on during a given period.<br/><br/>  `comment', where it applies, could mean anything.<br/><br/>There are a few more functions available, for locating day and entry<br/>lists:<br/><br/>  timeclock-day-alist LOG-DATA<br/>  timeclock-project-alist LOG-DATA<br/>  timeclock-current-debt LOG-DATA<br/><br/>See the documentation for the given function if more info is needed.
+<strong>timeclock-log-data</strong> is a compiled Lisp function in `<code>timeclock.el</code>'.<br/>
+<br/>
+(timeclock-log-data &optional RECENT-ONLY FILENAME)<br/>
+<br/>
+Return the contents of the timelog file, in a useful format.<br/>
+If the optional argument RECENT-ONLY is non-nil, only show the contents<br/>
+from the last point where the time debt (see below) was set.<br/>
+If the optional argument FILENAME is non-nil, it is used instead of<br/>
+the file specified by `timeclock-file.'<br/>
+<br/>
+A timelog contains data in the form of a single entry per line.<br/>
+Each entry has the form:<br/>
+<br/>
+  CODE YYYY/MM/DD HH:MM:SS [COMMENT]<br/>
+<br/>
+CODE is one of: b, h, i, o or O.  COMMENT is optional when the code is<br/>
+i, o or O.  The meanings of the codes are:<br/>
+<br/>
+  b  Set the current time balance, or "time debt".  Useful when<br/>
+     archiving old log data, when a debt must be carried forward.<br/>
+     The COMMENT here is the number of seconds of debt.<br/>
+<br/>
+  h  Set the required working time for the given day.  This must<br/>
+     be the first entry for that day.  The COMMENT in this case is<br/>
+     the number of hours in this workday.  Floating point amounts<br/>
+     are allowed.<br/>
+<br/>
+  i  Clock in.  The COMMENT in this case should be the name of the<br/>
+     project worked on.<br/>
+<br/>
+  o  Clock out.  COMMENT is unnecessary, but can be used to provide<br/>
+     a description of how the period went, for example.<br/>
+<br/>
+  O  Final clock out.  Whatever project was being worked on, it is<br/>
+     now finished.  Useful for creating summary reports.<br/>
+<br/>
+When this function is called, it will return a data structure with the<br/>
+following format:<br/>
+<br/>
+  (DEBT ENTRIES-BY-DAY ENTRIES-BY-PROJECT)<br/>
+<br/>
+DEBT is a floating point number representing the number of seconds<br/>
+"owed" before any work was done.  For a new file (one without a 'b'<br/>
+entry), this is always zero.<br/>
+<br/>
+The two entries lists have similar formats.  They are both alists,<br/>
+where the CAR is the index, and the CDR is a list of time entries.<br/>
+For ENTRIES-BY-DAY, the CAR is a textual date string, of the form<br/>
+YYYY/MM/DD.  For ENTRIES-BY-PROJECT, it is the name of the project<br/>
+worked on, or t for the default project.<br/>
+<br/>
+The CDR for ENTRIES-BY-DAY is slightly different than for<br/>
+ENTRIES-BY-PROJECT.  It has the following form:<br/>
+<br/>
+  (DAY-LENGTH TIME-ENTRIES...)<br/>
+<br/>
+For ENTRIES-BY-PROJECT, there is no DAY-LENGTH member.  It is simply a<br/>
+list of TIME-ENTRIES.  Note that if DAY-LENGTH is nil, it means<br/>
+whatever is the default should be used.<br/>
+<br/>
+A TIME-ENTRY is a recorded time interval.  It has the following format<br/>
+(although generally one does not have to manipulate these entries<br/>
+directly; see below):<br/>
+<br/>
+  (BEGIN-TIME END-TIME PROJECT [COMMENT] [FINAL-P])<br/>
+<br/>
+Anyway, suffice it to say there are a lot of structures.  Typically<br/>
+the user is expected to manipulate to the day(s) or project(s) that he<br/>
+or she wants, at which point the following helper functions may be<br/>
+used:<br/>
+<br/>
+  timeclock-day-required<br/>
+  timeclock-day-length<br/>
+  timeclock-day-debt<br/>
+  timeclock-day-begin<br/>
+  timeclock-day-end<br/>
+  timeclock-day-span<br/>
+  timeclock-day-break<br/>
+  timeclock-day-projects<br/>
+<br/>
+  timeclock-day-list-required<br/>
+  timeclock-day-list-length<br/>
+  timeclock-day-list-debt<br/>
+  timeclock-day-list-begin<br/>
+  timeclock-day-list-end<br/>
+  timeclock-day-list-span<br/>
+  timeclock-day-list-break<br/>
+  timeclock-day-list-projects<br/>
+<br/>
+  timeclock-entry-length<br/>
+  timeclock-entry-begin<br/>
+  timeclock-entry-end<br/>
+  timeclock-entry-project<br/>
+  timeclock-entry-comment<br/>
+<br/>
+  timeclock-entry-list-length<br/>
+  timeclock-entry-list-begin<br/>
+  timeclock-entry-list-end<br/>
+  timeclock-entry-list-span<br/>
+  timeclock-entry-list-break<br/>
+  timeclock-entry-list-projects<br/>
+<br/>
+A few comments should make the use of the above functions obvious:<br/>
+<br/>
+  `required' is the amount of time that must be spent during a day, or<br/>
+  sequence of days, in order to have no debt.<br/>
+<br/>
+  `length' is the actual amount of time that was spent.<br/>
+<br/>
+  `debt' is the difference between required time and length.  A<br/>
+  negative debt signifies overtime.<br/>
+<br/>
+  `begin' is the earliest moment at which work began.<br/>
+<br/>
+  `end' is the final moment work was done.<br/>
+<br/>
+  `span' is the difference between begin and end.<br/>
+<br/>
+  `break' is the difference between span and length.<br/>
+<br/>
+  `project' is the project that was worked on, and `projects' is a<br/>
+  list of all the projects that were worked on during a given period.<br/>
+<br/>
+  `comment', where it applies, could mean anything.<br/>
+<br/>
+There are a few more functions available, for locating day and entry<br/>
+lists:<br/>
+<br/>
+  timeclock-day-alist LOG-DATA<br/>
+  timeclock-project-alist LOG-DATA<br/>
+  timeclock-current-debt LOG-DATA<br/>
+<br/>
+See the documentation for the given function if more info is needed.

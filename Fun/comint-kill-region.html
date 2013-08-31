@@ -1,1 +1,17 @@
-comint-kill-region is an interactive compiled Lisp function in `comint.el'.<br/><br/>(comint-kill-region BEG END)<br/><br/>Like `kill-region', but ignores read-only properties, if safe.<br/>This command assumes that the buffer contains read-only<br/>"prompts" which are regions with front-sticky read-only<br/>properties at the beginning of a line, with the preceding newline<br/>being read-only to protect the prompt.  This is true of the<br/>comint prompts if `comint-prompt-read-only' is non-nil.  This<br/>command will not delete the region if this would create mutilated<br/>or out of place prompts.  That is, if any part of a prompt is<br/>deleted, the entire prompt must be deleted and all remaining<br/>prompts should stay at the beginning of a line.  If this is not<br/>the case, this command just calls `kill-region' with all<br/>read-only properties intact.  The read-only status of newlines is<br/>updated using `comint-update-fence', if necessary.
+<strong>comint-kill-region</strong> is an interactive compiled Lisp function in `<code>comint.el</code>'.<br/>
+<br/>
+(comint-kill-region BEG END)<br/>
+<br/>
+Like `kill-region', but ignores read-only properties, if safe.<br/>
+This command assumes that the buffer contains read-only<br/>
+"prompts" which are regions with front-sticky read-only<br/>
+properties at the beginning of a line, with the preceding newline<br/>
+being read-only to protect the prompt.  This is true of the<br/>
+comint prompts if `comint-prompt-read-only' is non-nil.  This<br/>
+command will not delete the region if this would create mutilated<br/>
+or out of place prompts.  That is, if any part of a prompt is<br/>
+deleted, the entire prompt must be deleted and all remaining<br/>
+prompts should stay at the beginning of a line.  If this is not<br/>
+the case, this command just calls `kill-region' with all<br/>
+read-only properties intact.  The read-only status of newlines is<br/>
+updated using `comint-update-fence', if necessary.

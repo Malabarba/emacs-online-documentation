@@ -1,1 +1,41 @@
-c-lang-defconst is a Lisp macro in `cc-defs.el'.<br/><br/>(c-lang-defconst NAME &rest ARGS)<br/><br/>Set the language specific values of the language constant NAME.<br/>The second argument can optionally be a docstring.  The rest of the<br/>arguments are one or more repetitions of LANG VAL where LANG specifies<br/>the language(s) that VAL applies to.  LANG is the name of the<br/>language, i.e. the mode name without the "-mode" suffix, or a list<br/>of such language names, or `t' for all languages.  VAL is a form to<br/>evaluate to get the value.<br/><br/>If LANG isn't `t' or one of the core languages in CC Mode, it must<br/>have been declared with `c-add-language'.<br/><br/>Neither NAME, LANG nor VAL are evaluated directly - they should not be<br/>quoted.  `c-lang-defconst-eval-immediately' can however be used inside<br/>VAL to evaluate parts of it directly.<br/><br/>When VAL is evaluated for some language, that language is temporarily<br/>made current so that `c-lang-const' without an explicit language can<br/>be used inside VAL to refer to the value of a language constant in the<br/>same language.  That is particularly useful if LANG is `t'.<br/><br/>VAL is not evaluated right away but rather when the value is requested<br/>with `c-lang-const'.  Thus it's possible to use `c-lang-const' inside<br/>VAL to refer to language constants that haven't been defined yet.<br/>However, if the definition of a language constant is in another file<br/>then that file must be loaded (at compile time) before it's safe to<br/>reference the constant.<br/><br/>The assignments in ARGS are processed in sequence like `setq', so<br/>(c-lang-const NAME) may be used inside a VAL to refer to the last<br/>assigned value to this language constant, or a value that it has<br/>gotten in another earlier loaded file.<br/><br/>To work well with repeated loads and interactive reevaluation, only<br/>one `c-lang-defconst' for each NAME is permitted per file.  If there<br/>already is one it will be completely replaced; the value in the<br/>earlier definition will not affect `c-lang-const' on the same<br/>constant.  A file is identified by its base name.
+<strong>c-lang-defconst</strong> is a Lisp macro in `<code>cc-defs.el</code>'.<br/>
+<br/>
+(c-lang-defconst NAME &rest ARGS)<br/>
+<br/>
+Set the language specific values of the language constant NAME.<br/>
+The second argument can optionally be a docstring.  The rest of the<br/>
+arguments are one or more repetitions of LANG VAL where LANG specifies<br/>
+the language(s) that VAL applies to.  LANG is the name of the<br/>
+language, i.e. the mode name without the "-mode" suffix, or a list<br/>
+of such language names, or `t' for all languages.  VAL is a form to<br/>
+evaluate to get the value.<br/>
+<br/>
+If LANG isn't `t' or one of the core languages in CC Mode, it must<br/>
+have been declared with `c-add-language'.<br/>
+<br/>
+Neither NAME, LANG nor VAL are evaluated directly - they should not be<br/>
+quoted.  `c-lang-defconst-eval-immediately' can however be used inside<br/>
+VAL to evaluate parts of it directly.<br/>
+<br/>
+When VAL is evaluated for some language, that language is temporarily<br/>
+made current so that `c-lang-const' without an explicit language can<br/>
+be used inside VAL to refer to the value of a language constant in the<br/>
+same language.  That is particularly useful if LANG is `t'.<br/>
+<br/>
+VAL is not evaluated right away but rather when the value is requested<br/>
+with `c-lang-const'.  Thus it's possible to use `c-lang-const' inside<br/>
+VAL to refer to language constants that haven't been defined yet.<br/>
+However, if the definition of a language constant is in another file<br/>
+then that file must be loaded (at compile time) before it's safe to<br/>
+reference the constant.<br/>
+<br/>
+The assignments in ARGS are processed in sequence like `setq', so<br/>
+(c-lang-const NAME) may be used inside a VAL to refer to the last<br/>
+assigned value to this language constant, or a value that it has<br/>
+gotten in another earlier loaded file.<br/>
+<br/>
+To work well with repeated loads and interactive reevaluation, only<br/>
+one `c-lang-defconst' for each NAME is permitted per file.  If there<br/>
+already is one it will be completely replaced; the value in the<br/>
+earlier definition will not affect `c-lang-const' on the same<br/>
+constant.  A file is identified by its base name.

@@ -1,1 +1,47 @@
-semantic-lex-punctuation-type is a variable defined in `lex.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Detect and create a punctuation type token.<br/>Recognized punctuation is defined in the current table of lexical<br/>types, as the value of the `punctuation' token type.<br/><br/>Value: ((and<br/>  (looking-at "\\(\\s.\\|\\s$\\|\\s'\\)+")<br/>  (let*<br/>      ((key<br/>	(match-string 0))<br/>       (pos<br/>	(match-beginning 0))<br/>       (end<br/>	(match-end 0))<br/>       (len<br/>	(- end pos))<br/>       (lst<br/>	(semantic-lex-type-value "punctuation" t))<br/>       (def<br/>	(car lst))<br/>       (lst<br/>	(cdr lst))<br/>       (elt nil))<br/>    (if lst<br/>	(while<br/>	    (and<br/>	     (> len 0)<br/>	     (not<br/>	      (setq elt<br/>		    (rassoc key lst))))<br/>	  (setq len<br/>		(1- len)<br/>		key<br/>		(substring key 0 len))))<br/>    (if elt<br/>	(semantic-lex-push-token<br/>	 (semantic-lex-token<br/>	  (car elt)<br/>	  pos<br/>	  (+ pos len)))<br/>      (if def<br/>	  (semantic-lex-push-token<br/>	   (semantic-lex-token def pos end)))))))<br/><br/>
+<strong>semantic-lex-punctuation-type</strong> is a variable defined in `<code>lex.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Detect and create a punctuation type token.<br/>
+Recognized punctuation is defined in the current table of lexical<br/>
+types, as the value of the `punctuation' token type.<br/>
+<br/>
+Value: ((and<br/>
+  (looking-at "\\(\\s.\\|\\s$\\|\\s'\\)+")<br/>
+  (let*<br/>
+      ((key<br/>
+	(match-string 0))<br/>
+       (pos<br/>
+	(match-beginning 0))<br/>
+       (end<br/>
+	(match-end 0))<br/>
+       (len<br/>
+	(- end pos))<br/>
+       (lst<br/>
+	(semantic-lex-type-value "punctuation" t))<br/>
+       (def<br/>
+	(car lst))<br/>
+       (lst<br/>
+	(cdr lst))<br/>
+       (elt nil))<br/>
+    (if lst<br/>
+	(while<br/>
+	    (and<br/>
+	     (> len 0)<br/>
+	     (not<br/>
+	      (setq elt<br/>
+		    (rassoc key lst))))<br/>
+	  (setq len<br/>
+		(1- len)<br/>
+		key<br/>
+		(substring key 0 len))))<br/>
+    (if elt<br/>
+	(semantic-lex-push-token<br/>
+	 (semantic-lex-token<br/>
+	  (car elt)<br/>
+	  pos<br/>
+	  (+ pos len)))<br/>
+      (if def<br/>
+	  (semantic-lex-push-token<br/>
+	   (semantic-lex-token def pos end)))))))<br/>
+<br/>

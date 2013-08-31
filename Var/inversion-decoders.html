@@ -1,1 +1,32 @@
-inversion-decoders is a variable defined in `inversion.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of decoders for version strings.<br/>Each decoder is of the form:<br/><br/>  ( RELEASE-TYPE REGEXP MAX )<br/><br/>RELEASE-TYPE is a symbol specifying something like `beta' or `alpha'.<br/>REGEXP is the regular expression to match a version string.<br/>MAX is the maximum number of match-numbers in the release number.<br/>Decoders must be ordered to decode least stable versions before the<br/>more stable ones.<br/><br/>Value: ((alpha "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]*\\)?\\s-*\\.?alpha\\([0-9]+\\)?$" 4)<br/> (beta "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]*\\)?\\s-*\\.?beta\\([0-9]+\\)?$" 4)<br/> (beta "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]*\\)?\\s-*\\.?(beta\\([0-9]+\\)?)$" 4)<br/> (beta "^[^/]+/\\w+--\\w+--\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)--patch-\\([0-9]+\\)" 4)<br/> (beta "^\\w+: v\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)-\\([0-9]+\\)-\\(.*\\)" 5)<br/> (prerelease "^\\([0-9]+\\)\\.\\([0-9]+\\)\\s-*\\.?pre\\([0-9]+\\)?$" 3)<br/> (full "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]+\\)?$" 3)<br/> (fullsingle "^\\([0-9]+\\)$" 1)<br/> (patch "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]+\\)?\\s-*(patch \\([0-9]+\\))" 4)<br/> (point "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)$" 3)<br/> (point "^\\w+: v\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)-\\(0\\)-\\(.*\\)" 5)<br/> (build "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\).\\([0-9]+\\)$" 4)<br/> (full "^[^/]+/\\w+--\\w+--\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)--version-\\([0-9]+\\)" 4)<br/> (full "^\\w+: v\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)" 5))<br/><br/>
+<strong>inversion-decoders</strong> is a variable defined in `<code>inversion.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of decoders for version strings.<br/>
+Each decoder is of the form:<br/>
+<br/>
+  ( RELEASE-TYPE REGEXP MAX )<br/>
+<br/>
+RELEASE-TYPE is a symbol specifying something like `beta' or `alpha'.<br/>
+REGEXP is the regular expression to match a version string.<br/>
+MAX is the maximum number of match-numbers in the release number.<br/>
+Decoders must be ordered to decode least stable versions before the<br/>
+more stable ones.<br/>
+<br/>
+Value: ((alpha "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]*\\)?\\s-*\\.?alpha\\([0-9]+\\)?$" 4)<br/>
+ (beta "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]*\\)?\\s-*\\.?beta\\([0-9]+\\)?$" 4)<br/>
+ (beta "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]*\\)?\\s-*\\.?(beta\\([0-9]+\\)?)$" 4)<br/>
+ (beta "^[^/]+/\\w+--\\w+--\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)--patch-\\([0-9]+\\)" 4)<br/>
+ (beta "^\\w+: v\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)-\\([0-9]+\\)-\\(.*\\)" 5)<br/>
+ (prerelease "^\\([0-9]+\\)\\.\\([0-9]+\\)\\s-*\\.?pre\\([0-9]+\\)?$" 3)<br/>
+ (full "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]+\\)?$" 3)<br/>
+ (fullsingle "^\\([0-9]+\\)$" 1)<br/>
+ (patch "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.?\\([0-9]+\\)?\\s-*(patch \\([0-9]+\\))" 4)<br/>
+ (point "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)$" 3)<br/>
+ (point "^\\w+: v\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)-\\(0\\)-\\(.*\\)" 5)<br/>
+ (build "^\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\).\\([0-9]+\\)$" 4)<br/>
+ (full "^[^/]+/\\w+--\\w+--\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)--version-\\([0-9]+\\)" 4)<br/>
+ (full "^\\w+: v\\([0-9]+\\)\\.\\([0-9]+\\)\\.\\([0-9]+\\)" 5))<br/>
+<br/>

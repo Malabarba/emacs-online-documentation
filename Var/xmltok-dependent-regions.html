@@ -1,1 +1,30 @@
-xmltok-dependent-regions is a variable defined in `xmltok.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>List of descriptors of regions that a parsed token depends on.<br/><br/>A token depends on a region if the region occurs after the token and a<br/>change in the region may require the token to be reparsed.  This only<br/>happens with markup that is not well-formed.  For example, if a <?<br/>occurs without a matching ?>, then the <? is returned as a<br/>not-well-formed token.  However, this token is dependent on region<br/>from the end of the token to the end of the buffer: if this ever<br/>contains ?> then the buffer must be reparsed from the <?.<br/><br/>A region descriptor is a list (FUN START END ARG ...), where FUN is a<br/>function to be called when the region changes, START and END are<br/>integers giving the start and end of the region, and ARG... are<br/>additional arguments to be passed to FUN.  FUN will be called with 5<br/>arguments followed by the additional arguments if any: the position of<br/>the start of the changed area in the region, the position of the end<br/>of the changed area in the region, the length of the changed area<br/>before the change, the position of the start of the region, the<br/>position of the end of the region.  FUN must return non-nil if the<br/>region needs reparsing.  FUN will be called in a `save-excursion'<br/>with match-data saved.<br/><br/>`xmltok-forward', `xmltok-forward-special' and `xmltok-forward-prolog'<br/>may add entries to the beginning of this list, but will not clear it.<br/>`xmltok-forward' and `xmltok-forward-special' will only add entries<br/>when returning tokens of type not-well-formed.
+<strong>xmltok-dependent-regions</strong> is a variable defined in `<code>xmltok.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+List of descriptors of regions that a parsed token depends on.<br/>
+<br/>
+A token depends on a region if the region occurs after the token and a<br/>
+change in the region may require the token to be reparsed.  This only<br/>
+happens with markup that is not well-formed.  For example, if a <?<br/>
+occurs without a matching ?>, then the <? is returned as a<br/>
+not-well-formed token.  However, this token is dependent on region<br/>
+from the end of the token to the end of the buffer: if this ever<br/>
+contains ?> then the buffer must be reparsed from the <?.<br/>
+<br/>
+A region descriptor is a list (FUN START END ARG ...), where FUN is a<br/>
+function to be called when the region changes, START and END are<br/>
+integers giving the start and end of the region, and ARG... are<br/>
+additional arguments to be passed to FUN.  FUN will be called with 5<br/>
+arguments followed by the additional arguments if any: the position of<br/>
+the start of the changed area in the region, the position of the end<br/>
+of the changed area in the region, the length of the changed area<br/>
+before the change, the position of the start of the region, the<br/>
+position of the end of the region.  FUN must return non-nil if the<br/>
+region needs reparsing.  FUN will be called in a `save-excursion'<br/>
+with match-data saved.<br/>
+<br/>
+`xmltok-forward', `xmltok-forward-special' and `xmltok-forward-prolog'<br/>
+may add entries to the beginning of this list, but will not clear it.<br/>
+`xmltok-forward' and `xmltok-forward-special' will only add entries<br/>
+when returning tokens of type not-well-formed.

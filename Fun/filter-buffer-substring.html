@@ -1,1 +1,18 @@
-filter-buffer-substring is a compiled Lisp function in `simple.el'.<br/><br/>(filter-buffer-substring BEG END &optional DELETE)<br/><br/>Return the buffer substring between BEG and END, after filtering.<br/>The wrapper hook `filter-buffer-substring-functions' performs<br/>the actual filtering.  The obsolete variable `buffer-substring-filters'<br/>is also consulted.  If both of these are nil, no filtering is done.<br/><br/>If DELETE is non-nil, the text between BEG and END is deleted<br/>from the buffer.<br/><br/>This function should be used instead of `buffer-substring',<br/>`buffer-substring-no-properties', or `delete-and-extract-region'<br/>when you want to allow filtering to take place.  For example,<br/>major or minor modes can use `filter-buffer-substring-functions' to<br/>extract characters that are special to a buffer, and should not<br/>be copied into other buffers.
+<strong>filter-buffer-substring</strong> is a compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+(filter-buffer-substring BEG END &optional DELETE)<br/>
+<br/>
+Return the buffer substring between BEG and END, after filtering.<br/>
+The wrapper hook `filter-buffer-substring-functions' performs<br/>
+the actual filtering.  The obsolete variable `buffer-substring-filters'<br/>
+is also consulted.  If both of these are nil, no filtering is done.<br/>
+<br/>
+If DELETE is non-nil, the text between BEG and END is deleted<br/>
+from the buffer.<br/>
+<br/>
+This function should be used instead of `buffer-substring',<br/>
+`buffer-substring-no-properties', or `delete-and-extract-region'<br/>
+when you want to allow filtering to take place.  For example,<br/>
+major or minor modes can use `filter-buffer-substring-functions' to<br/>
+extract characters that are special to a buffer, and should not<br/>
+be copied into other buffers.

@@ -1,1 +1,29 @@
-woman-path is a variable defined in `woman.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>List of SPECIFIC DIRECTORIES to search for UN*X manual files.<br/>For example<br/><br/>  ("/emacs/etc").<br/><br/>These directories are searched in addition to the directory trees<br/>specified in `woman-manpath'.  Each element should be a directory<br/>string or nil, which represents the current directory when the path is<br/>expanded and cached.  However, the last component (only) of each<br/>directory string is treated as a regexp (Emacs, not shell) and the<br/>string is expanded into a list of matching directories.  Non-directory<br/>and unreadable files are ignored.  The default value is nil.<br/><br/>Any environment variables (which must have the UN*X-style form $NAME,<br/>e.g. $HOME, $EMACSDATA, $emacs_dir) are evaluated first but each<br/>element must evaluate to a SINGLE directory name (regexp, see above).<br/>For example<br/><br/>  ("$EMACSDATA") [or equivalently ("$emacs_dir/etc")].<br/><br/>Trailing `/'s are discarded.  (The directory trees in `woman-manpath'<br/>are also searched.)  On Microsoft platforms I recommend including<br/>drive letters explicitly.<br/><br/>You can customize this variable.
+<strong>woman-path</strong> is a variable defined in `<code>woman.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+List of SPECIFIC DIRECTORIES to search for UN*X manual files.<br/>
+For example<br/>
+<br/>
+  ("/emacs/etc").<br/>
+<br/>
+These directories are searched in addition to the directory trees<br/>
+specified in `woman-manpath'.  Each element should be a directory<br/>
+string or nil, which represents the current directory when the path is<br/>
+expanded and cached.  However, the last component (only) of each<br/>
+directory string is treated as a regexp (Emacs, not shell) and the<br/>
+string is expanded into a list of matching directories.  Non-directory<br/>
+and unreadable files are ignored.  The default value is nil.<br/>
+<br/>
+Any environment variables (which must have the UN*X-style form $NAME,<br/>
+e.g. $HOME, $EMACSDATA, $emacs_dir) are evaluated first but each<br/>
+element must evaluate to a SINGLE directory name (regexp, see above).<br/>
+For example<br/>
+<br/>
+  ("$EMACSDATA") [or equivalently ("$emacs_dir/etc")].<br/>
+<br/>
+Trailing `/'s are discarded.  (The directory trees in `woman-manpath'<br/>
+are also searched.)  On Microsoft platforms I recommend including<br/>
+drive letters explicitly.<br/>
+<br/>
+You can customize this variable.

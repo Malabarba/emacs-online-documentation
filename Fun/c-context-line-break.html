@@ -1,1 +1,23 @@
-c-context-line-break is an interactive compiled Lisp function in `cc-cmds.el'.<br/><br/>(c-context-line-break)<br/><br/>Do a line break suitable to the context.<br/><br/>When point is outside a comment or macro, insert a newline and indent<br/>according to the syntactic context, unless `c-syntactic-indentation'<br/>is nil, in which case the new line is indented as the previous<br/>non-empty line instead.<br/><br/>When point is inside the content of a preprocessor directive, a line<br/>continuation backslash is inserted before the line break and aligned<br/>appropriately.  The end of the cpp directive doesn't count as inside<br/>it.<br/><br/>When point is inside a comment, continue it with the appropriate<br/>comment prefix (see the `c-comment-prefix-regexp' and<br/>`c-block-comment-prefix' variables for details).  The end of a<br/>C++-style line comment doesn't count as inside it.<br/><br/>When point is inside a string, only insert a backslash when it is also<br/>inside a preprocessor directive.
+<strong>c-context-line-break</strong> is an interactive compiled Lisp function in `<code>cc-cmds.el</code>'.<br/>
+<br/>
+(c-context-line-break)<br/>
+<br/>
+Do a line break suitable to the context.<br/>
+<br/>
+When point is outside a comment or macro, insert a newline and indent<br/>
+according to the syntactic context, unless `c-syntactic-indentation'<br/>
+is nil, in which case the new line is indented as the previous<br/>
+non-empty line instead.<br/>
+<br/>
+When point is inside the content of a preprocessor directive, a line<br/>
+continuation backslash is inserted before the line break and aligned<br/>
+appropriately.  The end of the cpp directive doesn't count as inside<br/>
+it.<br/>
+<br/>
+When point is inside a comment, continue it with the appropriate<br/>
+comment prefix (see the `c-comment-prefix-regexp' and<br/>
+`c-block-comment-prefix' variables for details).  The end of a<br/>
+C++-style line comment doesn't count as inside it.<br/>
+<br/>
+When point is inside a string, only insert a backslash when it is also<br/>
+inside a preprocessor directive.

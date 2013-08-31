@@ -1,1 +1,21 @@
-avl-tree-stack is a compiled Lisp function in `avl-tree.el'.<br/><br/>(avl-tree-stack TREE &optional REVERSE)<br/><br/>Return an object that behaves like a sorted stack<br/>of all elements of TREE.<br/><br/>If REVERSE is non-nil, the stack is sorted in reverse order.<br/>(See also `avl-tree-stack-pop').<br/><br/>Note that any modification to TREE *immediately* invalidates all<br/>avl-tree-stacks created before the modification (in particular,<br/>calling `avl-tree-stack-pop' will give unpredictable results).<br/><br/>Operations on these objects are significantly more efficient than<br/>constructing a real stack with `avl-tree-flatten' and using<br/>standard stack functions.  As such, they can be useful in<br/>implementing efficient algorithms of AVL trees.  However, in cases<br/>where mapping functions `avl-tree-mapc', `avl-tree-mapcar' or<br/>`avl-tree-mapf' would be sufficient, it is better to use one of<br/>those instead.
+<strong>avl-tree-stack</strong> is a compiled Lisp function in `<code>avl-tree.el</code>'.<br/>
+<br/>
+(avl-tree-stack TREE &optional REVERSE)<br/>
+<br/>
+Return an object that behaves like a sorted stack<br/>
+of all elements of TREE.<br/>
+<br/>
+If REVERSE is non-nil, the stack is sorted in reverse order.<br/>
+(See also `avl-tree-stack-pop').<br/>
+<br/>
+Note that any modification to TREE *immediately* invalidates all<br/>
+avl-tree-stacks created before the modification (in particular,<br/>
+calling `avl-tree-stack-pop' will give unpredictable results).<br/>
+<br/>
+Operations on these objects are significantly more efficient than<br/>
+constructing a real stack with `avl-tree-flatten' and using<br/>
+standard stack functions.  As such, they can be useful in<br/>
+implementing efficient algorithms of AVL trees.  However, in cases<br/>
+where mapping functions `avl-tree-mapc', `avl-tree-mapcar' or<br/>
+`avl-tree-mapf' would be sufficient, it is better to use one of<br/>
+those instead.

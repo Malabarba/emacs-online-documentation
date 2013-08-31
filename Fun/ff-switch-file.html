@@ -1,1 +1,16 @@
-ff-switch-file is a compiled Lisp function in `find-file.el'.<br/><br/>(ff-switch-file F1 F2 FILE &optional IN-OTHER-WINDOW NEW-FILE)<br/><br/>Call F1 or F2 on FILE, according to IN-OTHER-WINDOW.<br/>In addition, this runs various hooks.<br/><br/>Either F1 or F2 receives FILE as the sole argument.<br/>The decision of which one to call is based on IN-OTHER-WINDOW<br/>and on the global variable `ff-always-in-other-window'.<br/><br/>F1 and F2 are typically `find-file' / `find-file-other-window'<br/>or `switch-to-buffer' / `switch-to-buffer-other-window' function pairs.<br/><br/>If optional NEW-FILE is t, then a special hook (`ff-file-created-hook') is<br/>called before `ff-post-load-hook'.
+<strong>ff-switch-file</strong> is a compiled Lisp function in `<code>find-file.el</code>'.<br/>
+<br/>
+(ff-switch-file F1 F2 FILE &optional IN-OTHER-WINDOW NEW-FILE)<br/>
+<br/>
+Call F1 or F2 on FILE, according to IN-OTHER-WINDOW.<br/>
+In addition, this runs various hooks.<br/>
+<br/>
+Either F1 or F2 receives FILE as the sole argument.<br/>
+The decision of which one to call is based on IN-OTHER-WINDOW<br/>
+and on the global variable `ff-always-in-other-window'.<br/>
+<br/>
+F1 and F2 are typically `find-file' / `find-file-other-window'<br/>
+or `switch-to-buffer' / `switch-to-buffer-other-window' function pairs.<br/>
+<br/>
+If optional NEW-FILE is t, then a special hook (`ff-file-created-hook') is<br/>
+called before `ff-post-load-hook'.

@@ -1,1 +1,14 @@
-semantic-flex-extensions is a variable defined in `lex.el'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>Buffer local extensions to the lexical analyzer.<br/>This should contain an alist with a key of a regex and a data element of<br/>a function.  The function should both move point, and return a lexical<br/>token of the form:<br/>  ( TYPE START .  END)<br/>nil is also a valid return value.<br/>TYPE can be any type of symbol, as long as it doesn't occur as a<br/>nonterminal in the language definition.
+<strong>semantic-flex-extensions</strong> is a variable defined in `<code>lex.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+Buffer local extensions to the lexical analyzer.<br/>
+This should contain an alist with a key of a regex and a data element of<br/>
+a function.  The function should both move point, and return a lexical<br/>
+token of the form:<br/>
+  ( TYPE START .  END)<br/>
+nil is also a valid return value.<br/>
+TYPE can be any type of symbol, as long as it doesn't occur as a<br/>
+nonterminal in the language definition.

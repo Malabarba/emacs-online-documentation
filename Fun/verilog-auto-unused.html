@@ -1,1 +1,57 @@
-verilog-auto-unused is an interactive compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-unused)<br/><br/>Expand AUTOUNUSED statements, as part of M-x verilog-auto.<br/>Replace the /*AUTOUNUSED*/ comment with a comma separated list of all unused<br/>input and inout signals.<br/><br/>/*AUTOUNUSED*/ is used to make stub modules; modules that have the same<br/>input/output list as another module, but no internals.  Specifically, it<br/>finds all inputs and inouts in the module, and if that input is not otherwise<br/>used, adds it to a comma separated list.<br/><br/>The comma separated list is intended to be used to create a _unused_ok<br/>signal.  Using the exact name "_unused_ok" for name of the temporary<br/>signal is recommended as it will insure maximum forward compatibility, it<br/>also makes lint warnings easy to understand; ignore any unused warnings<br/>with "unused" in the signal name.<br/><br/>To reduce simulation time, the _unused_ok signal should be forced to a<br/>constant to prevent wiggling.  The easiest thing to do is use a<br/>reduction-and with 1'b0 as shown.<br/><br/>This way all unused signals are in one place, making it convenient to add<br/>your tool's specific pragmas around the assignment to disable any unused<br/>warnings.<br/><br/>You can add signals you do not want included in AUTOUNUSED with<br/>`verilog-auto-unused-ignore-regexp'.<br/><br/>An example of making a stub for another module:<br/><br/>    module ExampStub (/*AUTOINST*/);<br/>	/*AUTOINOUTPARAM("Examp")*/<br/>	/*AUTOINOUTMODULE("Examp")*/<br/>        /*AUTOTIEOFF*/<br/>        // verilator lint_off UNUSED<br/>        wire _unused_ok = &{1'b0,<br/>                            /*AUTOUNUSED*/<br/>                            1'b0};<br/>        // verilator lint_on  UNUSED<br/>    endmodule<br/><br/>Typing M-x verilog-auto will make this into:<br/><br/>        ...<br/>        // verilator lint_off UNUSED<br/>        wire _unused_ok = &{1'b0,<br/>                            /*AUTOUNUSED*/<br/>			    // Beginning of automatics<br/>			    unused_input_a,<br/>			    unused_input_b,<br/>			    unused_input_c,<br/>			    // End of automatics<br/>                            1'b0};<br/>        // verilator lint_on  UNUSED<br/>    endmodule
+<strong>verilog-auto-unused</strong> is an interactive compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-unused)<br/>
+<br/>
+Expand AUTOUNUSED statements, as part of M-x verilog-auto.<br/>
+Replace the /*AUTOUNUSED*/ comment with a comma separated list of all unused<br/>
+input and inout signals.<br/>
+<br/>
+/*AUTOUNUSED*/ is used to make stub modules; modules that have the same<br/>
+input/output list as another module, but no internals.  Specifically, it<br/>
+finds all inputs and inouts in the module, and if that input is not otherwise<br/>
+used, adds it to a comma separated list.<br/>
+<br/>
+The comma separated list is intended to be used to create a _unused_ok<br/>
+signal.  Using the exact name "_unused_ok" for name of the temporary<br/>
+signal is recommended as it will insure maximum forward compatibility, it<br/>
+also makes lint warnings easy to understand; ignore any unused warnings<br/>
+with "unused" in the signal name.<br/>
+<br/>
+To reduce simulation time, the _unused_ok signal should be forced to a<br/>
+constant to prevent wiggling.  The easiest thing to do is use a<br/>
+reduction-and with 1'b0 as shown.<br/>
+<br/>
+This way all unused signals are in one place, making it convenient to add<br/>
+your tool's specific pragmas around the assignment to disable any unused<br/>
+warnings.<br/>
+<br/>
+You can add signals you do not want included in AUTOUNUSED with<br/>
+`verilog-auto-unused-ignore-regexp'.<br/>
+<br/>
+An example of making a stub for another module:<br/>
+<br/>
+    module ExampStub (/*AUTOINST*/);<br/>
+	/*AUTOINOUTPARAM("Examp")*/<br/>
+	/*AUTOINOUTMODULE("Examp")*/<br/>
+        /*AUTOTIEOFF*/<br/>
+        // verilator lint_off UNUSED<br/>
+        wire _unused_ok = &{1'b0,<br/>
+                            /*AUTOUNUSED*/<br/>
+                            1'b0};<br/>
+        // verilator lint_on  UNUSED<br/>
+    endmodule<br/>
+<br/>
+Typing M-x verilog-auto will make this into:<br/>
+<br/>
+        ...<br/>
+        // verilator lint_off UNUSED<br/>
+        wire _unused_ok = &{1'b0,<br/>
+                            /*AUTOUNUSED*/<br/>
+			    // Beginning of automatics<br/>
+			    unused_input_a,<br/>
+			    unused_input_b,<br/>
+			    unused_input_c,<br/>
+			    // End of automatics<br/>
+                            1'b0};<br/>
+        // verilator lint_on  UNUSED<br/>
+    endmodule

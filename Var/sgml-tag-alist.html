@@ -1,1 +1,33 @@
-sgml-tag-alist is a variable defined in `sgml-mode.el'.<br/>Its value is (("!["<br/>  ("ignore" t)<br/>  ("include" t))<br/> ("!attlist")<br/> ("!doctype")<br/> ("!element")<br/> ("!entity"))<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of tag names for completing read and insertion rules.<br/>This alist is made up as<br/><br/>  (("tag" . TAGRULE)<br/>   ...)<br/><br/>TAGRULE is a list of optionally t (no endtag) or `\n' (separate endtag by<br/>newlines) or a skeleton with nil, t or `\n' in place of the interactor<br/>followed by an ATTRIBUTERULE (for an always present attribute) or an<br/>attribute alist.<br/><br/>The attribute alist is made up as<br/><br/>  (("attribute" . ATTRIBUTERULE)<br/>   ...)<br/><br/>ATTRIBUTERULE is a list of optionally t (no value when no input) followed by<br/>an optional alist of possible values.<br/><br/>You can customize this variable.
+<strong>sgml-tag-alist</strong> is a variable defined in `<code>sgml-mode.el</code>'.<br/>
+Its value is (("!["<br/>
+  ("ignore" t)<br/>
+  ("include" t))<br/>
+ ("!attlist")<br/>
+ ("!doctype")<br/>
+ ("!element")<br/>
+ ("!entity"))<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of tag names for completing read and insertion rules.<br/>
+This alist is made up as<br/>
+<br/>
+  (("tag" . TAGRULE)<br/>
+   ...)<br/>
+<br/>
+TAGRULE is a list of optionally t (no endtag) or `\n' (separate endtag by<br/>
+newlines) or a skeleton with nil, t or `\n' in place of the interactor<br/>
+followed by an ATTRIBUTERULE (for an always present attribute) or an<br/>
+attribute alist.<br/>
+<br/>
+The attribute alist is made up as<br/>
+<br/>
+  (("attribute" . ATTRIBUTERULE)<br/>
+   ...)<br/>
+<br/>
+ATTRIBUTERULE is a list of optionally t (no value when no input) followed by<br/>
+an optional alist of possible values.<br/>
+<br/>
+You can customize this variable.

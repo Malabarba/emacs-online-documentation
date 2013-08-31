@@ -1,1 +1,7 @@
-tool-bar-separator-image-expression is a variable defined in `C source code'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Expression evaluating to the image spec for a tool-bar separator.<br/>This is used internally by graphical displays that do not render<br/>tool-bar separators natively.  Otherwise it is unused (e.g. on GTK).<br/><br/>Value:<br/>(find-image<br/> (cond<br/>  ((not<br/>    (display-color-p))<br/>   '((:type pbm :file "separator.pbm" :foreground "black" :background "grey75")<br/>     (:type xbm :file "separator.xbm" :foreground "black" :background "grey75")<br/>     (:type xpm :file "low-color/separator.xpm")<br/>     (:type xpm :file "separator.xpm")))<br/>  ((<<br/>    (display-color-cells)<br/>    256)<br/>   '((:type xpm :file "low-color/separator.xpm")<br/>     (:type xpm :file "separator.xpm")<br/>     (:type pbm :file "separator.pbm" :foreground "black" :background "grey75")<br/>     (:type xbm :file "separator.xbm" :foreground "black" :background "grey75")))<br/>  (t<br/>   '((:type xpm :file "separator.xpm")<br/>     (:type pbm :file "separator.pbm" :foreground "black" :background "grey75")<br/>     (:type xbm :file "separator.xbm" :foreground "black" :background "grey75")))))<br/><br/>
+<strong>tool-bar-separator-image-expression</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Expression evaluating to the image spec for a tool-bar separator.<br/>
+This is used internally by graphical displays that do not render<br/>
+tool-bar separators natively.  Otherwise it is unused (e.g. on GTK).

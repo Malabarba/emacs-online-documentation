@@ -1,1 +1,16 @@
-mh-scan-format-mh is a variable defined in `mh-scan.el'.<br/>Its value is<br/>"%4(msg)%<(cur)+%| %>%<{replied}-%?(nonnull(comp{to}))%<(mymbox{to})t%>%?(nonnull(comp{cc}))%<(mymbox{cc})c%>%?(nonnull(comp{bcc}))%<(mymbox{bcc})b%>%?(nonnull(comp{newsgroups}))n%>%<(zero) %>%02(mon{date})/%02(mday{date})%<{date} %|*%>%<(mymbox{from})%<{to}To:%14(friendly{to})%>%>%<(zero)%17(friendly{from})%>  %{subject}%<{body}<<%{body}%>"<br/><br/>Documentation:<br/>*Scan format string for MH.<br/>This string is passed to the scan program via the -format<br/>argument.  This format is identical to the default except that<br/>additional hints for fontification have been added to the fifth<br/>column (remember that in Emacs, the first column is 0).<br/><br/>The values of the fifth column, in priority order, are: "-" if<br/>the message has been replied to, t if an address on the To: line<br/>matches one of the mailboxes of the current user, "c" if the Cc:<br/>line matches, "b" if the Bcc: line matches, and "n" if a<br/>non-empty Newsgroups: header is present.
+<strong>mh-scan-format-mh</strong> is a variable defined in `<code>mh-scan.el</code>'.<br/>
+Its value is<br/>
+"%4(msg)%<(cur)+%| %>%<{replied}-%?(nonnull(comp{to}))%<(mymbox{to})t%>%?(nonnull(comp{cc}))%<(mymbox{cc})c%>%?(nonnull(comp{bcc}))%<(mymbox{bcc})b%>%?(nonnull(comp{newsgroups}))n%>%<(zero) %>%02(mon{date})/%02(mday{date})%<{date} %|*%>%<(mymbox{from})%<{to}To:%14(friendly{to})%>%>%<(zero)%17(friendly{from})%>  %{subject}%<{body}<<%{body}%>"<br/>
+<br/>
+Documentation:<br/>
+*Scan format string for MH.<br/>
+This string is passed to the scan program via the -format<br/>
+argument.  This format is identical to the default except that<br/>
+additional hints for fontification have been added to the fifth<br/>
+column (remember that in Emacs, the first column is 0).<br/>
+<br/>
+The values of the fifth column, in priority order, are: "-" if<br/>
+the message has been replied to, t if an address on the To: line<br/>
+matches one of the mailboxes of the current user, "c" if the Cc:<br/>
+line matches, "b" if the Bcc: line matches, and "n" if a<br/>
+non-empty Newsgroups: header is present.

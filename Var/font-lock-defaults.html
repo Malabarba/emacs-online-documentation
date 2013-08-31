@@ -1,1 +1,63 @@
-font-lock-defaults is a variable defined in `font-core.el'.<br/>Its value is<br/>((lisp-font-lock-keywords lisp-font-lock-keywords-1 lisp-font-lock-keywords-2)<br/> nil nil<br/> (("+-*/.<>=!?$%_&~^:@" . "w"))<br/> nil<br/> (font-lock-mark-block-function . mark-defun)<br/> (font-lock-syntactic-face-function . lisp-font-lock-syntactic-face-function))<br/><br/>Local in buffer *scratch*; global value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Defaults for Font Lock mode specified by the major mode.<br/>Defaults should be of the form:<br/><br/> (KEYWORDS [KEYWORDS-ONLY [CASE-FOLD [SYNTAX-ALIST [SYNTAX-BEGIN ...]]]])<br/><br/>KEYWORDS may be a symbol (a variable or function whose value is the keywords<br/>to use for fontification) or a list of symbols (specifying different levels<br/>of fontification).<br/><br/>If KEYWORDS-ONLY is non-nil, syntactic fontification (strings and<br/>comments) is not performed.<br/><br/>If CASE-FOLD is non-nil, the case of the keywords is ignored when fontifying.<br/><br/>If SYNTAX-ALIST is non-nil, it should be a list of cons pairs of the form<br/>(CHAR-OR-STRING . STRING) used to set the local Font Lock syntax table, for<br/>keyword and syntactic fontification (see `modify-syntax-entry').<br/><br/>If SYNTAX-BEGIN is non-nil, it should be a function with no args used to move<br/>backwards outside any enclosing syntactic block, for syntactic fontification.<br/>Typical values are `beginning-of-line' (i.e., the start of the line is known to<br/>be outside a syntactic block), or `beginning-of-defun' for programming modes or<br/>`backward-paragraph' for textual modes (i.e., the mode-dependent function is<br/>known to move outside a syntactic block).  If nil, the beginning of the buffer<br/>is used as a position outside of a syntactic block, in the worst case.<br/><br/>(See also Info node `(elisp)Font Lock Basics'.)<br/><br/>These item elements are used by Font Lock mode to set the variables<br/>`font-lock-keywords', `font-lock-keywords-only',<br/>`font-lock-keywords-case-fold-search', `font-lock-syntax-table' and<br/>`font-lock-beginning-of-syntax-function', respectively.<br/><br/>Further item elements are alists of the form (VARIABLE . VALUE) and are in no<br/>particular order.  Each VARIABLE is made buffer-local before set to VALUE.<br/><br/>Currently, appropriate variables include `font-lock-mark-block-function'.<br/>If this is non-nil, it should be a function with no args used to mark any<br/>enclosing block of text, for fontification via M-o M-o.<br/>Typical values are `mark-defun' for programming modes or `mark-paragraph' for<br/>textual modes (i.e., the mode-dependent function is known to put point and mark<br/>around a text block relevant to that mode).<br/><br/>Other variables include that for syntactic keyword fontification,<br/>`font-lock-syntactic-keywords' and those for buffer-specialized fontification<br/>functions, `font-lock-fontify-buffer-function',<br/>`font-lock-unfontify-buffer-function', `font-lock-fontify-region-function',<br/>`font-lock-unfontify-region-function', and `font-lock-inhibit-thing-lock'.
+<strong>font-lock-defaults</strong> is a variable defined in `<code>font-core.el</code>'.<br/>
+Its value is<br/>
+((lisp-font-lock-keywords lisp-font-lock-keywords-1 lisp-font-lock-keywords-2)<br/>
+ nil nil<br/>
+ (("+-*/.<>=!?$%_&~^:@" . "w"))<br/>
+ nil<br/>
+ (font-lock-mark-block-function . mark-defun)<br/>
+ (font-lock-syntactic-face-function . lisp-font-lock-syntactic-face-function))<br/>
+<br/>
+Local in buffer *scratch*; global value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Defaults for Font Lock mode specified by the major mode.<br/>
+Defaults should be of the form:<br/>
+<br/>
+ (KEYWORDS [KEYWORDS-ONLY [CASE-FOLD [SYNTAX-ALIST [SYNTAX-BEGIN ...]]]])<br/>
+<br/>
+KEYWORDS may be a symbol (a variable or function whose value is the keywords<br/>
+to use for fontification) or a list of symbols (specifying different levels<br/>
+of fontification).<br/>
+<br/>
+If KEYWORDS-ONLY is non-nil, syntactic fontification (strings and<br/>
+comments) is not performed.<br/>
+<br/>
+If CASE-FOLD is non-nil, the case of the keywords is ignored when fontifying.<br/>
+<br/>
+If SYNTAX-ALIST is non-nil, it should be a list of cons pairs of the form<br/>
+(CHAR-OR-STRING . STRING) used to set the local Font Lock syntax table, for<br/>
+keyword and syntactic fontification (see `modify-syntax-entry').<br/>
+<br/>
+If SYNTAX-BEGIN is non-nil, it should be a function with no args used to move<br/>
+backwards outside any enclosing syntactic block, for syntactic fontification.<br/>
+Typical values are `beginning-of-line' (i.e., the start of the line is known to<br/>
+be outside a syntactic block), or `beginning-of-defun' for programming modes or<br/>
+`backward-paragraph' for textual modes (i.e., the mode-dependent function is<br/>
+known to move outside a syntactic block).  If nil, the beginning of the buffer<br/>
+is used as a position outside of a syntactic block, in the worst case.<br/>
+<br/>
+(See also Info node `(elisp)Font Lock Basics'.)<br/>
+<br/>
+These item elements are used by Font Lock mode to set the variables<br/>
+`font-lock-keywords', `font-lock-keywords-only',<br/>
+`font-lock-keywords-case-fold-search', `font-lock-syntax-table' and<br/>
+`font-lock-beginning-of-syntax-function', respectively.<br/>
+<br/>
+Further item elements are alists of the form (VARIABLE . VALUE) and are in no<br/>
+particular order.  Each VARIABLE is made buffer-local before set to VALUE.<br/>
+<br/>
+Currently, appropriate variables include `font-lock-mark-block-function'.<br/>
+If this is non-nil, it should be a function with no args used to mark any<br/>
+enclosing block of text, for fontification via M-o M-o.<br/>
+Typical values are `mark-defun' for programming modes or `mark-paragraph' for<br/>
+textual modes (i.e., the mode-dependent function is known to put point and mark<br/>
+around a text block relevant to that mode).<br/>
+<br/>
+Other variables include that for syntactic keyword fontification,<br/>
+`font-lock-syntactic-keywords' and those for buffer-specialized fontification<br/>
+functions, `font-lock-fontify-buffer-function',<br/>
+`font-lock-unfontify-buffer-function', `font-lock-fontify-region-function',<br/>
+`font-lock-unfontify-region-function', and `font-lock-inhibit-thing-lock'.

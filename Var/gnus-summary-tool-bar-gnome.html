@@ -1,1 +1,47 @@
-gnus-summary-tool-bar-gnome is a variable defined in `gnus-sum.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>List of functions for the summary tool bar (GNOME style).<br/><br/>See `gmm-tool-bar-from-list' for the format of the list.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/><br/><br/>Value: ((gnus-summary-post-news "mail/compose" nil)<br/> (gnus-summary-insert-new-articles "mail/inbox" nil :visible<br/>				   (or<br/>				    (not gnus-agent)<br/>				    gnus-plugged))<br/> (gnus-summary-reply-with-original "mail/reply")<br/> (gnus-summary-reply "mail/reply" nil :visible nil)<br/> (gnus-summary-followup-with-original "mail/reply-all")<br/> (gnus-summary-followup "mail/reply-all" nil :visible nil)<br/> (gnus-summary-mail-forward "mail/forward")<br/> (gnus-summary-save-article "mail/save")<br/> (gnus-summary-search-article-forward "search" nil :visible nil)<br/> (gnus-summary-print-article "print")<br/> (gnus-summary-tick-article-forward "flag-followup" nil :visible nil)<br/> (gnus-summary-save-newsrc "save" nil :visible nil)<br/> (gnus-summary-prev-article "left-arrow")<br/> (gnus-summary-next-article "right-arrow")<br/> (gnus-summary-next-page "next-page")<br/> (gnus-summary-mark-as-expirable "delete" nil :visible<br/>				 (gnus-check-backend-function 'request-expire-articles gnus-newsgroup-name))<br/> (gnus-summary-mark-as-spam "mail/spam" t :visible<br/>			    (and<br/>			     (fboundp 'spam-group-ham-contents-p)<br/>			     (spam-group-ham-contents-p gnus-newsgroup-name))<br/>			    :help "Mark as spam")<br/> (gnus-summary-mark-as-read-forward "mail/not-spam" nil :visible<br/>				    (and<br/>				     (fboundp 'spam-group-spam-contents-p)<br/>				     (spam-group-spam-contents-p gnus-newsgroup-name)))<br/> (gnus-summary-exit "exit")<br/> (gmm-customize-mode "preferences" t :help "Edit mode preferences")<br/> (gnus-info-find-node "help"))<br/><br/>
+<strong>gnus-summary-tool-bar-gnome</strong> is a variable defined in `<code>gnus-sum.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+List of functions for the summary tool bar (GNOME style).<br/>
+<br/>
+See `gmm-tool-bar-from-list' for the format of the list.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>
+<br/>
+<br/>
+Value: ((gnus-summary-post-news "mail/compose" nil)<br/>
+ (gnus-summary-insert-new-articles "mail/inbox" nil :visible<br/>
+				   (or<br/>
+				    (not gnus-agent)<br/>
+				    gnus-plugged))<br/>
+ (gnus-summary-reply-with-original "mail/reply")<br/>
+ (gnus-summary-reply "mail/reply" nil :visible nil)<br/>
+ (gnus-summary-followup-with-original "mail/reply-all")<br/>
+ (gnus-summary-followup "mail/reply-all" nil :visible nil)<br/>
+ (gnus-summary-mail-forward "mail/forward")<br/>
+ (gnus-summary-save-article "mail/save")<br/>
+ (gnus-summary-search-article-forward "search" nil :visible nil)<br/>
+ (gnus-summary-print-article "print")<br/>
+ (gnus-summary-tick-article-forward "flag-followup" nil :visible nil)<br/>
+ (gnus-summary-save-newsrc "save" nil :visible nil)<br/>
+ (gnus-summary-prev-article "left-arrow")<br/>
+ (gnus-summary-next-article "right-arrow")<br/>
+ (gnus-summary-next-page "next-page")<br/>
+ (gnus-summary-mark-as-expirable "delete" nil :visible<br/>
+				 (gnus-check-backend-function 'request-expire-articles gnus-newsgroup-name))<br/>
+ (gnus-summary-mark-as-spam "mail/spam" t :visible<br/>
+			    (and<br/>
+			     (fboundp 'spam-group-ham-contents-p)<br/>
+			     (spam-group-ham-contents-p gnus-newsgroup-name))<br/>
+			    :help "Mark as spam")<br/>
+ (gnus-summary-mark-as-read-forward "mail/not-spam" nil :visible<br/>
+				    (and<br/>
+				     (fboundp 'spam-group-spam-contents-p)<br/>
+				     (spam-group-spam-contents-p gnus-newsgroup-name)))<br/>
+ (gnus-summary-exit "exit")<br/>
+ (gmm-customize-mode "preferences" t :help "Edit mode preferences")<br/>
+ (gnus-info-find-node "help"))<br/>
+<br/>

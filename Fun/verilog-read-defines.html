@@ -1,1 +1,44 @@
-verilog-read-defines is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-read-defines &optional FILENAME RECURSE SUBCALL)<br/><br/>Read `defines and parameters for the current file, or optional FILENAME.<br/>If the filename is provided, `verilog-library-flags' will be used to<br/>resolve it.  If optional RECURSE is non-nil, recurse through `includes.<br/><br/>Parameters must be simple assignments to constants, or have their own<br/>"parameter" label rather than a list of parameters.  Thus:<br/><br/>    parameter X = 5, Y = 10;	// Ok<br/>    parameter X = {1'b1, 2'h2};	// Ok<br/>    parameter X = {1'b1, 2'h2}, Y = 10;	// Bad, make into 2 parameter lines<br/><br/>Defines must be simple text substitutions, one on a line, starting<br/>at the beginning of the line.  Any ifdefs or multiline comments around the<br/>define are ignored.<br/><br/>Defines are stored inside Emacs variables using the name vh-{definename}.<br/><br/>This function is useful for setting vh-* variables.  The file variables<br/>feature can be used to set defines that `verilog-mode' can see; put at the<br/>*END* of your file something like:<br/><br/>    // Local Variables:<br/>    // vh-macro:"macro_definition"<br/>    // End:<br/><br/>If macros are defined earlier in the same file and you want their values,<br/>you can read them automatically (provided `enable-local-eval' is on):<br/><br/>    // Local Variables:<br/>    // eval:(verilog-read-defines)<br/>    // eval:(verilog-read-defines "group_standard_includes.v")<br/>    // End:<br/><br/>Note these are only read when the file is first visited, you must use<br/>C-x C-v RET  to have these take effect after editing them!<br/><br/>If you want to disable the "Process `eval' or hook local variables"<br/>warning message, you need to add to your init file:<br/><br/>    (setq enable-local-eval t)
+<strong>verilog-read-defines</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-read-defines &optional FILENAME RECURSE SUBCALL)<br/>
+<br/>
+Read `defines and parameters for the current file, or optional FILENAME.<br/>
+If the filename is provided, `verilog-library-flags' will be used to<br/>
+resolve it.  If optional RECURSE is non-nil, recurse through `includes.<br/>
+<br/>
+Parameters must be simple assignments to constants, or have their own<br/>
+"parameter" label rather than a list of parameters.  Thus:<br/>
+<br/>
+    parameter X = 5, Y = 10;	// Ok<br/>
+    parameter X = {1'b1, 2'h2};	// Ok<br/>
+    parameter X = {1'b1, 2'h2}, Y = 10;	// Bad, make into 2 parameter lines<br/>
+<br/>
+Defines must be simple text substitutions, one on a line, starting<br/>
+at the beginning of the line.  Any ifdefs or multiline comments around the<br/>
+define are ignored.<br/>
+<br/>
+Defines are stored inside Emacs variables using the name vh-{definename}.<br/>
+<br/>
+This function is useful for setting vh-* variables.  The file variables<br/>
+feature can be used to set defines that `verilog-mode' can see; put at the<br/>
+*END* of your file something like:<br/>
+<br/>
+    // Local Variables:<br/>
+    // vh-macro:"macro_definition"<br/>
+    // End:<br/>
+<br/>
+If macros are defined earlier in the same file and you want their values,<br/>
+you can read them automatically (provided `enable-local-eval' is on):<br/>
+<br/>
+    // Local Variables:<br/>
+    // eval:(verilog-read-defines)<br/>
+    // eval:(verilog-read-defines "group_standard_includes.v")<br/>
+    // End:<br/>
+<br/>
+Note these are only read when the file is first visited, you must use<br/>
+C-x C-v RET  to have these take effect after editing them!<br/>
+<br/>
+If you want to disable the "Process `eval' or hook local variables"<br/>
+warning message, you need to add to your init file:<br/>
+<br/>
+    (setq enable-local-eval t)

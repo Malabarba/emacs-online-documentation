@@ -1,1 +1,19 @@
-feedmail-queue-runner-message-sender is a variable defined in `feedmail.el'.<br/>Its value is (lambda (&optional arg) (mail-send))<br/><br/>Documentation:<br/>Function to initiate sending a message file.<br/>Called for each message read back out of the queue directory with a<br/>single argument, the optional argument used in the call to<br/>`feedmail-run-the-queue' or `feedmail-run-the-queue-no-prompts'.<br/>Interactively, that argument will be the prefix argument.<br/>Most people want `mail-send' (bound to C-c C-s in mail-mode), but here's<br/>your chance to have something different.  The default value is just a<br/>wrapper function which discards the optional argument and calls<br/>mail-send.  If you are a VM user, you might like vm-mail-send, though<br/>you really don't need that.  Called with funcall, not call-interactively.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>feedmail-queue-runner-message-sender</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
+Its value is (lambda (&optional arg) (mail-send))<br/>
+<br/>
+Documentation:<br/>
+Function to initiate sending a message file.<br/>
+Called for each message read back out of the queue directory with a<br/>
+single argument, the optional argument used in the call to<br/>
+`feedmail-run-the-queue' or `feedmail-run-the-queue-no-prompts'.<br/>
+Interactively, that argument will be the prefix argument.<br/>
+Most people want `mail-send' (bound to C-c C-s in mail-mode), but here's<br/>
+your chance to have something different.  The default value is just a<br/>
+wrapper function which discards the optional argument and calls<br/>
+mail-send.  If you are a VM user, you might like vm-mail-send, though<br/>
+you really don't need that.  Called with funcall, not call-interactively.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

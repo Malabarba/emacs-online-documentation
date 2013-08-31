@@ -1,1 +1,36 @@
-cl-make-hash-table is an alias for `make-hash-table' in `cl.el'.<br/><br/>(cl-make-hash-table &rest KEYWORD-ARGS)<br/><br/>This function is obsolete since 24.3;<br/>use `make-hash-table' instead.<br/><br/>Create and return a new hash table.<br/><br/>Arguments are specified as keyword/argument pairs.  The following<br/>arguments are defined:<br/><br/>:test TEST -- TEST must be a symbol that specifies how to compare<br/>keys.  Default is `eql'.  Predefined are the tests `eq', `eql', and<br/>`equal'.  User-supplied test and hash functions can be specified via<br/>`define-hash-table-test'.<br/><br/>:size SIZE -- A hint as to how many elements will be put in the table.<br/>Default is 65.<br/><br/>:rehash-size REHASH-SIZE - Indicates how to expand the table when it<br/>fills up.  If REHASH-SIZE is an integer, increase the size by that<br/>amount.  If it is a float, it must be > 1.0, and the new size is the<br/>old size multiplied by that factor.  Default is 1.5.<br/><br/>:rehash-threshold THRESHOLD -- THRESHOLD must a float > 0, and <= 1.0.<br/>Resize the hash table when the ratio (number of entries / table size)<br/>is greater than or equal to THRESHOLD.  Default is 0.8.<br/><br/>:weakness WEAK -- WEAK must be one of nil, t, `key', `value',<br/>`key-or-value', or `key-and-value'.  If WEAK is not nil, the table<br/>returned is a weak table.  Key/value pairs are removed from a weak<br/>hash table when there are no non-weak references pointing to their<br/>key, value, one of key or value, or both key and value, depending on<br/>WEAK.  WEAK t is equivalent to `key-and-value'.  Default value of WEAK<br/>is nil.
+<strong>cl-make-hash-table</strong> is an alias for `make-hash-table' in `<code>cl.el</code>'.<br/>
+<br/>
+(cl-make-hash-table &rest KEYWORD-ARGS)<br/>
+<br/>
+This function is obsolete since 24.3;<br/>
+use `make-hash-table' instead.<br/>
+<br/>
+Create and return a new hash table.<br/>
+<br/>
+Arguments are specified as keyword/argument pairs.  The following<br/>
+arguments are defined:<br/>
+<br/>
+:test TEST -- TEST must be a symbol that specifies how to compare<br/>
+keys.  Default is `eql'.  Predefined are the tests `eq', `eql', and<br/>
+`equal'.  User-supplied test and hash functions can be specified via<br/>
+`define-hash-table-test'.<br/>
+<br/>
+:size SIZE -- A hint as to how many elements will be put in the table.<br/>
+Default is 65.<br/>
+<br/>
+:rehash-size REHASH-SIZE - Indicates how to expand the table when it<br/>
+fills up.  If REHASH-SIZE is an integer, increase the size by that<br/>
+amount.  If it is a float, it must be > 1.0, and the new size is the<br/>
+old size multiplied by that factor.  Default is 1.5.<br/>
+<br/>
+:rehash-threshold THRESHOLD -- THRESHOLD must a float > 0, and <= 1.0.<br/>
+Resize the hash table when the ratio (number of entries / table size)<br/>
+is greater than or equal to THRESHOLD.  Default is 0.8.<br/>
+<br/>
+:weakness WEAK -- WEAK must be one of nil, t, `key', `value',<br/>
+`key-or-value', or `key-and-value'.  If WEAK is not nil, the table<br/>
+returned is a weak table.  Key/value pairs are removed from a weak<br/>
+hash table when there are no non-weak references pointing to their<br/>
+key, value, one of key or value, or both key and value, depending on<br/>
+WEAK.  WEAK t is equivalent to `key-and-value'.  Default value of WEAK<br/>
+is nil.

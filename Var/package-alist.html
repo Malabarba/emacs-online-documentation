@@ -1,1 +1,20 @@
-package-alist is a variable defined in `package.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of all packages available for activation.<br/>Each element has the form (PKG . DESC), where PKG is a package<br/>name (a symbol) and DESC is a vector that describes the package.<br/><br/>The vector DESC has the form [VERSION-LIST REQS DOCSTRING].<br/>  VERSION-LIST is a version list.<br/>  REQS is a list of packages required by the package, each<br/>   requirement having the form (NAME VL) where NAME is a string<br/>   and VL is a version list.<br/>  DOCSTRING is a brief description of the package.<br/><br/>This variable is set automatically by `package-load-descriptor',<br/>called via `package-initialize'.  To change which packages are<br/>loaded and/or activated, customize `package-load-list'.
+<strong>package-alist</strong> is a variable defined in `<code>package.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of all packages available for activation.<br/>
+Each element has the form (PKG . DESC), where PKG is a package<br/>
+name (a symbol) and DESC is a vector that describes the package.<br/>
+<br/>
+The vector DESC has the form [VERSION-LIST REQS DOCSTRING].<br/>
+  VERSION-LIST is a version list.<br/>
+  REQS is a list of packages required by the package, each<br/>
+   requirement having the form (NAME VL) where NAME is a string<br/>
+   and VL is a version list.<br/>
+  DOCSTRING is a brief description of the package.<br/>
+<br/>
+This variable is set automatically by `package-load-descriptor',<br/>
+called via `package-initialize'.  To change which packages are<br/>
+loaded and/or activated, customize `package-load-list'.

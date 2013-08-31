@@ -1,1 +1,36 @@
-url-privacy-level is a variable defined in `url-vars.el'.<br/>Its value is (email)<br/><br/>Documentation:<br/>How private you want your requests to be.<br/>HTTP has header fields for various information about the user, including<br/>operating system information, email addresses, the last page you visited, etc.<br/>This variable controls how much of this information is sent.<br/><br/>This should a symbol or a list.<br/>Valid values if a symbol are:<br/>none     -- send all information<br/>low      -- don't send the last location<br/>high     -- don't send the email address or last location<br/>paranoid -- don't send anything<br/><br/>If a list, this should be a list of symbols of what NOT to send.<br/>Valid symbols are:<br/>email    -- the email address<br/>os       -- the operating system info<br/>lastloc  -- the last location<br/>agent    -- do not send the User-Agent string<br/>cookies  -- never accept HTTP cookies<br/><br/>Samples:<br/><br/> (setq url-privacy-level 'high)<br/> (setq url-privacy-level '(email lastloc))    ;; equivalent to 'high<br/> (setq url-privacy-level '(os))<br/><br/>::NOTE::<br/>This variable controls several other variables and is _NOT_ automatically<br/>updated.  Call the function `url-setup-privacy-info' after modifying this<br/>variable.<br/><br/>You can customize this variable.
+<strong>url-privacy-level</strong> is a variable defined in `<code>url-vars.el</code>'.<br/>
+Its value is (email)<br/>
+<br/>
+Documentation:<br/>
+How private you want your requests to be.<br/>
+HTTP has header fields for various information about the user, including<br/>
+operating system information, email addresses, the last page you visited, etc.<br/>
+This variable controls how much of this information is sent.<br/>
+<br/>
+This should a symbol or a list.<br/>
+Valid values if a symbol are:<br/>
+none     -- send all information<br/>
+low      -- don't send the last location<br/>
+high     -- don't send the email address or last location<br/>
+paranoid -- don't send anything<br/>
+<br/>
+If a list, this should be a list of symbols of what NOT to send.<br/>
+Valid symbols are:<br/>
+email    -- the email address<br/>
+os       -- the operating system info<br/>
+lastloc  -- the last location<br/>
+agent    -- do not send the User-Agent string<br/>
+cookies  -- never accept HTTP cookies<br/>
+<br/>
+Samples:<br/>
+<br/>
+ (setq url-privacy-level 'high)<br/>
+ (setq url-privacy-level '(email lastloc))    ;; equivalent to 'high<br/>
+ (setq url-privacy-level '(os))<br/>
+<br/>
+::NOTE::<br/>
+This variable controls several other variables and is _NOT_ automatically<br/>
+updated.  Call the function `url-setup-privacy-info' after modifying this<br/>
+variable.<br/>
+<br/>
+You can customize this variable.

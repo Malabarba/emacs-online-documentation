@@ -1,1 +1,50 @@
-org-cycle is an interactive autoloaded compiled Lisp function in `org.el'.<br/><br/>(org-cycle &optional ARG)<br/><br/>TAB-action and visibility cycling for Org-mode.<br/><br/>This is the command invoked in Org-mode by the TAB key.  Its main purpose<br/>is outline visibility cycling, but it also invokes other actions<br/>in special contexts.<br/><br/>- When this function is called with a prefix argument, rotate the entire<br/>  buffer through 3 states (global cycling)<br/>  1. OVERVIEW: Show only top-level headlines.<br/>  2. CONTENTS: Show all headlines of all levels, but no body text.<br/>  3. SHOW ALL: Show everything.<br/>  When called with two `C-u C-u' prefixes, switch to the startup visibility,<br/>  determined by the variable `org-startup-folded', and by any VISIBILITY<br/>  properties in the buffer.<br/>  When called with three `C-u C-u C-u' prefixed, show the entire buffer,<br/>  including any drawers.<br/><br/>- When inside a table, re-align the table and move to the next field.<br/><br/>- When point is at the beginning of a headline, rotate the subtree started<br/>  by this line through 3 different states (local cycling)<br/>  1. FOLDED:   Only the main headline is shown.<br/>  2. CHILDREN: The main headline and the direct children are shown.<br/>               From this state, you can move to one of the children<br/>               and zoom in further.<br/>  3. SUBTREE:  Show the entire subtree, including body text.<br/>  If there is no subtree, switch directly from CHILDREN to FOLDED.<br/><br/>- When point is at the beginning of an empty headline and the variable<br/>  `org-cycle-level-after-item/entry-creation' is set, cycle the level<br/>  of the headline by demoting and promoting it to likely levels.  This<br/>  speeds up creation document structure by pressing TAB once or several<br/>  times right after creating a new headline.<br/><br/>- When there is a numeric prefix, go up to a heading with level ARG, do<br/>  a `show-subtree' and return to the previous cursor position.  If ARG<br/>  is negative, go up that many levels.<br/><br/>- When point is not at the beginning of a headline, execute the global<br/>  binding for TAB, which is re-indenting the line.  See the option<br/>  `org-cycle-emulate-tab' for details.<br/><br/>- Special case: if point is at the beginning of the buffer and there is<br/>  no headline in line 1, this function will act as if called with prefix arg<br/>  (C-u TAB, same as S-TAB) also when called without prefix arg.<br/>  But only if also the variable `org-cycle-global-at-bob' is t.
+<strong>org-cycle</strong> is an interactive autoloaded compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-cycle &optional ARG)<br/>
+<br/>
+TAB-action and visibility cycling for Org-mode.<br/>
+<br/>
+This is the command invoked in Org-mode by the TAB key.  Its main purpose<br/>
+is outline visibility cycling, but it also invokes other actions<br/>
+in special contexts.<br/>
+<br/>
+- When this function is called with a prefix argument, rotate the entire<br/>
+  buffer through 3 states (global cycling)<br/>
+  1. OVERVIEW: Show only top-level headlines.<br/>
+  2. CONTENTS: Show all headlines of all levels, but no body text.<br/>
+  3. SHOW ALL: Show everything.<br/>
+  When called with two `C-u C-u' prefixes, switch to the startup visibility,<br/>
+  determined by the variable `org-startup-folded', and by any VISIBILITY<br/>
+  properties in the buffer.<br/>
+  When called with three `C-u C-u C-u' prefixed, show the entire buffer,<br/>
+  including any drawers.<br/>
+<br/>
+- When inside a table, re-align the table and move to the next field.<br/>
+<br/>
+- When point is at the beginning of a headline, rotate the subtree started<br/>
+  by this line through 3 different states (local cycling)<br/>
+  1. FOLDED:   Only the main headline is shown.<br/>
+  2. CHILDREN: The main headline and the direct children are shown.<br/>
+               From this state, you can move to one of the children<br/>
+               and zoom in further.<br/>
+  3. SUBTREE:  Show the entire subtree, including body text.<br/>
+  If there is no subtree, switch directly from CHILDREN to FOLDED.<br/>
+<br/>
+- When point is at the beginning of an empty headline and the variable<br/>
+  `org-cycle-level-after-item/entry-creation' is set, cycle the level<br/>
+  of the headline by demoting and promoting it to likely levels.  This<br/>
+  speeds up creation document structure by pressing TAB once or several<br/>
+  times right after creating a new headline.<br/>
+<br/>
+- When there is a numeric prefix, go up to a heading with level ARG, do<br/>
+  a `show-subtree' and return to the previous cursor position.  If ARG<br/>
+  is negative, go up that many levels.<br/>
+<br/>
+- When point is not at the beginning of a headline, execute the global<br/>
+  binding for TAB, which is re-indenting the line.  See the option<br/>
+  `org-cycle-emulate-tab' for details.<br/>
+<br/>
+- Special case: if point is at the beginning of the buffer and there is<br/>
+  no headline in line 1, this function will act as if called with prefix arg<br/>
+  (C-u TAB, same as S-TAB) also when called without prefix arg.<br/>
+  But only if also the variable `org-cycle-global-at-bob' is t.

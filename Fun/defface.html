@@ -1,1 +1,65 @@
-defface is a Lisp macro in `custom.el'.<br/><br/>(defface FACE SPEC DOC &rest ARGS)<br/><br/>Declare FACE as a customizable face that defaults to SPEC.<br/>FACE does not need to be quoted.<br/><br/>Third argument DOC is the face documentation.<br/><br/>If FACE has been set with `custom-set-faces', set the face<br/>attributes as specified by that function, otherwise set the face<br/>attributes according to SPEC.<br/><br/>The remaining arguments should have the form [KEYWORD VALUE]...<br/>For a list of valid keywords, see the common keywords listed in<br/>`defcustom'.<br/><br/>SPEC should be an alist of the form<br/><br/>   ((DISPLAY . ATTS)...)<br/><br/>where DISPLAY is a form specifying conditions to match certain<br/>terminals and ATTS is a property list (ATTR VALUE ATTR VALUE...)<br/>specifying face attributes and values for frames on those<br/>terminals.  On each terminal, the first element with a matching<br/>DISPLAY specification takes effect, and the remaining elements in<br/>SPEC are disregarded.<br/><br/>As a special exception, in the first element of SPEC, DISPLAY can<br/>be the special value `default'.  Then the ATTS in that element<br/>act as defaults for all the following elements.<br/><br/>For backward compatibility, elements of SPEC can be written<br/>as (DISPLAY ATTS) instead of (DISPLAY . ATTS).<br/><br/>Each DISPLAY can have the following values:<br/> - `default' (only in the first element).<br/> - The symbol t, which matches all terminals.<br/> - An alist of conditions.  Each alist element must have the form<br/>   (REQ ITEM...).  A matching terminal must satisfy each<br/>   specified condition by matching one of its ITEMs.  Each REQ<br/>   must be one of the following:<br/>   - `type' (the terminal type).<br/>     Each ITEM must be one of the values returned by<br/>     `window-system'.  Under X, additional allowed values are<br/>     `motif', `lucid', `gtk' and `x-toolkit'.<br/>   - `class' (the terminal's color support).<br/>     Each ITEM should be one of `color', `grayscale', or `mono'.<br/>   - `background' (what color is used for the background text)<br/>     Each ITEM should be one of `light' or `dark'.<br/>   - `min-colors' (the minimum number of supported colors)<br/>     Each ITEM should be an integer, which is compared with the<br/>     result of `display-color-cells'.<br/>   - `supports' (match terminals supporting certain attributes).<br/>     Each ITEM should be a list of face attributes.  See<br/>     `display-supports-face-attributes-p' for more information on<br/>     exactly how testing is done.<br/><br/>In the ATTS property list, possible attributes are `:family',<br/>`:width', `:height', `:weight', `:slant', `:underline',<br/>`:overline', `:strike-through', `:box', `:foreground',<br/>`:background', `:stipple', `:inverse-video', and `:inherit'.<br/><br/>See Info node `(elisp) Faces' in the Emacs Lisp manual for more<br/>information.
+<strong>defface</strong> is a Lisp macro in `<code>custom.el</code>'.<br/>
+<br/>
+(defface FACE SPEC DOC &rest ARGS)<br/>
+<br/>
+Declare FACE as a customizable face that defaults to SPEC.<br/>
+FACE does not need to be quoted.<br/>
+<br/>
+Third argument DOC is the face documentation.<br/>
+<br/>
+If FACE has been set with `custom-set-faces', set the face<br/>
+attributes as specified by that function, otherwise set the face<br/>
+attributes according to SPEC.<br/>
+<br/>
+The remaining arguments should have the form [KEYWORD VALUE]...<br/>
+For a list of valid keywords, see the common keywords listed in<br/>
+`defcustom'.<br/>
+<br/>
+SPEC should be an alist of the form<br/>
+<br/>
+   ((DISPLAY . ATTS)...)<br/>
+<br/>
+where DISPLAY is a form specifying conditions to match certain<br/>
+terminals and ATTS is a property list (ATTR VALUE ATTR VALUE...)<br/>
+specifying face attributes and values for frames on those<br/>
+terminals.  On each terminal, the first element with a matching<br/>
+DISPLAY specification takes effect, and the remaining elements in<br/>
+SPEC are disregarded.<br/>
+<br/>
+As a special exception, in the first element of SPEC, DISPLAY can<br/>
+be the special value `default'.  Then the ATTS in that element<br/>
+act as defaults for all the following elements.<br/>
+<br/>
+For backward compatibility, elements of SPEC can be written<br/>
+as (DISPLAY ATTS) instead of (DISPLAY . ATTS).<br/>
+<br/>
+Each DISPLAY can have the following values:<br/>
+ - `default' (only in the first element).<br/>
+ - The symbol t, which matches all terminals.<br/>
+ - An alist of conditions.  Each alist element must have the form<br/>
+   (REQ ITEM...).  A matching terminal must satisfy each<br/>
+   specified condition by matching one of its ITEMs.  Each REQ<br/>
+   must be one of the following:<br/>
+   - `type' (the terminal type).<br/>
+     Each ITEM must be one of the values returned by<br/>
+     `window-system'.  Under X, additional allowed values are<br/>
+     `motif', `lucid', `gtk' and `x-toolkit'.<br/>
+   - `class' (the terminal's color support).<br/>
+     Each ITEM should be one of `color', `grayscale', or `mono'.<br/>
+   - `background' (what color is used for the background text)<br/>
+     Each ITEM should be one of `light' or `dark'.<br/>
+   - `min-colors' (the minimum number of supported colors)<br/>
+     Each ITEM should be an integer, which is compared with the<br/>
+     result of `display-color-cells'.<br/>
+   - `supports' (match terminals supporting certain attributes).<br/>
+     Each ITEM should be a list of face attributes.  See<br/>
+     `display-supports-face-attributes-p' for more information on<br/>
+     exactly how testing is done.<br/>
+<br/>
+In the ATTS property list, possible attributes are `:family',<br/>
+`:width', `:height', `:weight', `:slant', `:underline',<br/>
+`:overline', `:strike-through', `:box', `:foreground',<br/>
+`:background', `:stipple', `:inverse-video', and `:inherit'.<br/>
+<br/>
+See Info node `(elisp) Faces' in the Emacs Lisp manual for more<br/>
+information.

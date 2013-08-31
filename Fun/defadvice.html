@@ -1,1 +1,56 @@
-defadvice is an autoloaded Lisp macro in `advice.el'.<br/><br/>(defadvice FUNCTION ARGS &rest BODY)<br/><br/>Define a piece of advice for FUNCTION (a symbol).<br/>The syntax of `defadvice' is as follows:<br/><br/>  (defadvice FUNCTION (CLASS NAME [POSITION] [ARGLIST] FLAG...)<br/>    [DOCSTRING] [INTERACTIVE-FORM]<br/>    BODY...)<br/><br/>FUNCTION ::= Name of the function to be advised.<br/>CLASS ::= `before' | `around' | `after' | `activation' | `deactivation'.<br/>NAME ::= Non-nil symbol that names this piece of advice.<br/>POSITION ::= `first' | `last' | NUMBER. Optional, defaults to `first',<br/>    see also `ad-add-advice'.<br/>ARGLIST ::= An optional argument list to be used for the advised function<br/>    instead of the argument list of the original.  The first one found in<br/>    before/around/after-advices will be used.<br/>FLAG ::= `protect'|`disable'|`activate'|`compile'|`preactivate'|`freeze'.<br/>    All flags can be specified with unambiguous initial substrings.<br/>DOCSTRING ::= Optional documentation for this piece of advice.<br/>INTERACTIVE-FORM ::= Optional interactive form to be used for the advised<br/>    function.  The first one found in before/around/after-advices will be used.<br/>BODY ::= Any s-expression.<br/><br/>Semantics of the various flags:<br/>`protect': The piece of advice will be protected against non-local exits in<br/>any code that precedes it.  If any around-advice of a function is protected<br/>then automatically all around-advices will be protected (the complete onion).<br/><br/>`activate': All advice of FUNCTION will be activated immediately if<br/>FUNCTION has been properly defined prior to this application of `defadvice'.<br/><br/>`compile': In conjunction with `activate' specifies that the resulting<br/>advised function should be compiled.<br/><br/>`disable': The defined advice will be disabled, hence, it will not be used<br/>during activation until somebody enables it.<br/><br/>`preactivate': Preactivates the advised FUNCTION at macro-expansion/compile<br/>time.  This generates a compiled advised definition according to the current<br/>advice state that will be used during activation if appropriate.  Only use<br/>this if the `defadvice' gets actually compiled.<br/><br/>`freeze': Expands the `defadvice' into a redefining `defun/defmacro' according<br/>to this particular single advice.  No other advice information will be saved.<br/>Frozen advices cannot be undone, they behave like a hard redefinition of<br/>the advised function.  `freeze' implies `activate' and `preactivate'.  The<br/>documentation of the advised function can be dumped onto the `DOC' file<br/>during preloading.<br/><br/>See Info node `(elisp)Advising Functions' for comprehensive documentation.<br/>usage: (defadvice FUNCTION (CLASS NAME [POSITION] [ARGLIST] FLAG...)<br/>          [DOCSTRING] [INTERACTIVE-FORM]<br/>          BODY...)
+<strong>defadvice</strong> is an autoloaded Lisp macro in `<code>advice.el</code>'.<br/>
+<br/>
+(defadvice FUNCTION ARGS &rest BODY)<br/>
+<br/>
+Define a piece of advice for FUNCTION (a symbol).<br/>
+The syntax of `defadvice' is as follows:<br/>
+<br/>
+  (defadvice FUNCTION (CLASS NAME [POSITION] [ARGLIST] FLAG...)<br/>
+    [DOCSTRING] [INTERACTIVE-FORM]<br/>
+    BODY...)<br/>
+<br/>
+FUNCTION ::= Name of the function to be advised.<br/>
+CLASS ::= `before' | `around' | `after' | `activation' | `deactivation'.<br/>
+NAME ::= Non-nil symbol that names this piece of advice.<br/>
+POSITION ::= `first' | `last' | NUMBER. Optional, defaults to `first',<br/>
+    see also `ad-add-advice'.<br/>
+ARGLIST ::= An optional argument list to be used for the advised function<br/>
+    instead of the argument list of the original.  The first one found in<br/>
+    before/around/after-advices will be used.<br/>
+FLAG ::= `protect'|`disable'|`activate'|`compile'|`preactivate'|`freeze'.<br/>
+    All flags can be specified with unambiguous initial substrings.<br/>
+DOCSTRING ::= Optional documentation for this piece of advice.<br/>
+INTERACTIVE-FORM ::= Optional interactive form to be used for the advised<br/>
+    function.  The first one found in before/around/after-advices will be used.<br/>
+BODY ::= Any s-expression.<br/>
+<br/>
+Semantics of the various flags:<br/>
+`protect': The piece of advice will be protected against non-local exits in<br/>
+any code that precedes it.  If any around-advice of a function is protected<br/>
+then automatically all around-advices will be protected (the complete onion).<br/>
+<br/>
+`activate': All advice of FUNCTION will be activated immediately if<br/>
+FUNCTION has been properly defined prior to this application of `defadvice'.<br/>
+<br/>
+`compile': In conjunction with `activate' specifies that the resulting<br/>
+advised function should be compiled.<br/>
+<br/>
+`disable': The defined advice will be disabled, hence, it will not be used<br/>
+during activation until somebody enables it.<br/>
+<br/>
+`preactivate': Preactivates the advised FUNCTION at macro-expansion/compile<br/>
+time.  This generates a compiled advised definition according to the current<br/>
+advice state that will be used during activation if appropriate.  Only use<br/>
+this if the `defadvice' gets actually compiled.<br/>
+<br/>
+`freeze': Expands the `defadvice' into a redefining `defun/defmacro' according<br/>
+to this particular single advice.  No other advice information will be saved.<br/>
+Frozen advices cannot be undone, they behave like a hard redefinition of<br/>
+the advised function.  `freeze' implies `activate' and `preactivate'.  The<br/>
+documentation of the advised function can be dumped onto the `DOC' file<br/>
+during preloading.<br/>
+<br/>
+See Info node `(elisp)Advising Functions' for comprehensive documentation.<br/>
+usage: (defadvice FUNCTION (CLASS NAME [POSITION] [ARGLIST] FLAG...)<br/>
+          [DOCSTRING] [INTERACTIVE-FORM]<br/>
+          BODY...)

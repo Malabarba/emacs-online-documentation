@@ -1,1 +1,36 @@
-set-coding-system-map is a variable defined in `mule-cmds.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (keymap<br/> (universal-coding-system-argument menu-item "For Next Command" universal-coding-system-argument :help "Coding system to be used by next command")<br/> (separator-1 "--")<br/> (set-buffer-file-coding-system menu-item "For Saving This Buffer" set-buffer-file-coding-system :help "How to encode this buffer when saved")<br/> (revert-buffer-with-coding-system menu-item "For Reverting This File Now" revert-buffer-with-coding-system :enable buffer-file-name :help "Revisit this file immediately using specified coding system")<br/> (set-file-name-coding-system menu-item "For File Name" set-file-name-coding-system :help "How to decode/encode file names")<br/> (separator-2 "--")<br/> (set-keyboard-coding-system menu-item "For Keyboard" set-keyboard-coding-system :help "How to decode keyboard input")<br/> (set-terminal-coding-system menu-item "For Terminal" set-terminal-coding-system :enable<br/>			     (null<br/>			      (memq initial-window-system<br/>				    '(x w32 ns)))<br/>			     :help "How to encode terminal output")<br/> (separator-3 "--")<br/> (set-selection-coding-system menu-item "For X Selections/Clipboard" set-selection-coding-system :visible<br/>			      (display-selections-p)<br/>			      :help "How to en/decode data to/from selection/clipboard")<br/> (set-next-selection-coding-system menu-item "For Next X Selection" set-next-selection-coding-system :visible<br/>				   (display-selections-p)<br/>				   :help "How to en/decode next selection/clipboard operation")<br/> (set-buffer-process-coding-system menu-item "For I/O with Subprocess" set-buffer-process-coding-system :visible<br/>				   (fboundp 'start-process)<br/>				   :enable<br/>				   (get-buffer-process<br/>				    (current-buffer))<br/>				   :help "How to en/decode I/O from/to subprocess connected to this buffer")<br/> "Set Coding System")<br/><br/>
+<strong>set-coding-system-map</strong> is a variable defined in `<code>mule-cmds.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (keymap<br/>
+ (universal-coding-system-argument menu-item "For Next Command" universal-coding-system-argument :help "Coding system to be used by next command")<br/>
+ (separator-1 "--")<br/>
+ (set-buffer-file-coding-system menu-item "For Saving This Buffer" set-buffer-file-coding-system :help "How to encode this buffer when saved")<br/>
+ (revert-buffer-with-coding-system menu-item "For Reverting This File Now" revert-buffer-with-coding-system :enable buffer-file-name :help "Revisit this file immediately using specified coding system")<br/>
+ (set-file-name-coding-system menu-item "For File Name" set-file-name-coding-system :help "How to decode/encode file names")<br/>
+ (separator-2 "--")<br/>
+ (set-keyboard-coding-system menu-item "For Keyboard" set-keyboard-coding-system :help "How to decode keyboard input")<br/>
+ (set-terminal-coding-system menu-item "For Terminal" set-terminal-coding-system :enable<br/>
+			     (null<br/>
+			      (memq initial-window-system<br/>
+				    '(x w32 ns)))<br/>
+			     :help "How to encode terminal output")<br/>
+ (separator-3 "--")<br/>
+ (set-selection-coding-system menu-item "For X Selections/Clipboard" set-selection-coding-system :visible<br/>
+			      (display-selections-p)<br/>
+			      :help "How to en/decode data to/from selection/clipboard")<br/>
+ (set-next-selection-coding-system menu-item "For Next X Selection" set-next-selection-coding-system :visible<br/>
+				   (display-selections-p)<br/>
+				   :help "How to en/decode next selection/clipboard operation")<br/>
+ (set-buffer-process-coding-system menu-item "For I/O with Subprocess" set-buffer-process-coding-system :visible<br/>
+				   (fboundp 'start-process)<br/>
+				   :enable<br/>
+				   (get-buffer-process<br/>
+				    (current-buffer))<br/>
+				   :help "How to en/decode I/O from/to subprocess connected to this buffer")<br/>
+ "Set Coding System")<br/>
+<br/>

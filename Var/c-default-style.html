@@ -1,1 +1,27 @@
-c-default-style is a variable defined in `cc-vars.el'.<br/>Its value is ((java-mode . "java")<br/> (awk-mode . "awk")<br/> (other . "gnu"))<br/><br/><br/>Documentation:<br/>*Style which gets installed by default when a file is visited.<br/><br/>The value of this variable can be any style defined in<br/>`c-style-alist', including styles you add.  The value can also be an<br/>association list of major mode symbols to style names.<br/><br/>When the value is a string, all CC Mode major modes will install this<br/>style by default.<br/><br/>When the value is an alist, the major mode symbol is looked up in it<br/>and the associated style is installed.  If the major mode is not<br/>listed in the alist, then the symbol `other' is looked up in it, and<br/>if found, the style in that entry is used.  If `other' is not found in<br/>the alist, then "gnu" style is used.<br/><br/>The default style gets installed before your mode hooks run, so you<br/>can always override the use of `c-default-style' by making calls to<br/>`c-set-style' in the appropriate mode hook.<br/><br/>You can customize this variable.
+<strong>c-default-style</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
+Its value is ((java-mode . "java")<br/>
+ (awk-mode . "awk")<br/>
+ (other . "gnu"))<br/>
+<br/>
+<br/>
+Documentation:<br/>
+*Style which gets installed by default when a file is visited.<br/>
+<br/>
+The value of this variable can be any style defined in<br/>
+`c-style-alist', including styles you add.  The value can also be an<br/>
+association list of major mode symbols to style names.<br/>
+<br/>
+When the value is a string, all CC Mode major modes will install this<br/>
+style by default.<br/>
+<br/>
+When the value is an alist, the major mode symbol is looked up in it<br/>
+and the associated style is installed.  If the major mode is not<br/>
+listed in the alist, then the symbol `other' is looked up in it, and<br/>
+if found, the style in that entry is used.  If `other' is not found in<br/>
+the alist, then "gnu" style is used.<br/>
+<br/>
+The default style gets installed before your mode hooks run, so you<br/>
+can always override the use of `c-default-style' by making calls to<br/>
+`c-set-style' in the appropriate mode hook.<br/>
+<br/>
+You can customize this variable.

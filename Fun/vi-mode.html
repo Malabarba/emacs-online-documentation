@@ -1,1 +1,47 @@
-vi-mode is an interactive autoloaded compiled Lisp function in `vi.el'.<br/><br/>(vi-mode)<br/><br/>Major mode that acts like the `vi' editor.<br/>The purpose of this mode is to provide you the combined power of vi (namely,<br/>the "cross product" effect of commands and repeat last changes) and Emacs.<br/><br/>This command redefines nearly all keys to look like vi commands.<br/>It records the previous major mode, and any vi command for input<br/>(`i', `a', `s', etc.) switches back to that mode.<br/>Thus, ordinary Emacs (in whatever major mode you had been using)<br/>is "input" mode as far as vi is concerned.<br/><br/>To get back into vi from "input" mode, you must issue this command again.<br/>Therefore, it is recommended that you assign it to a key.<br/><br/>Major differences between this mode and real vi :<br/><br/>* Limitations and unsupported features<br/>  - Search patterns with line offset (e.g. /pat/+3 or /pat/z.) are<br/>    not supported.<br/>  - Ex commands are not implemented; try ':' to get some hints.<br/>  - No line undo (i.e. the 'U' command), but multi-undo is a standard feature.<br/><br/>* Modifications<br/>  - The stopping positions for some point motion commands (word boundary,<br/>    pattern search) are slightly different from standard 'vi'.<br/>    Also, no automatic wrap around at end of buffer for pattern searching.<br/>  - Since changes are done in two steps (deletion then insertion), you need<br/>    to undo twice to completely undo a change command.  But this is not needed<br/>    for undoing a repeated change command.<br/>  - No need to set/unset 'magic', to search for a string with regular expr<br/>    in it just put a prefix arg for the search commands.  Replace cmds too.<br/>  - ^R is bound to incremental backward search, so use ^L to redraw screen.<br/><br/>* Extensions<br/>  - Some standard (or modified) Emacs commands were integrated, such as<br/>    incremental search, query replace, transpose objects, and keyboard macros.<br/>  - In command state, ^X links to the 'ctl-x-map', and ESC can be linked to<br/>    esc-map or set undefined.  These can give you the full power of Emacs.<br/>  - See vi-com-map for those keys that are extensions to standard vi, e.g.<br/>    `vi-name-last-change-or-macro', `vi-verify-spelling', `vi-locate-def',<br/>    `vi-mark-region', and 'vi-quote-words'.  Some of them are quite handy.<br/>  - Use C-x ~ to switch among different modes quickly.<br/><br/>Syntax table and abbrevs while in vi mode remain as they were in Emacs.
+<strong>vi-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>vi.el</code>'.<br/>
+<br/>
+(vi-mode)<br/>
+<br/>
+Major mode that acts like the `vi' editor.<br/>
+The purpose of this mode is to provide you the combined power of vi (namely,<br/>
+the "cross product" effect of commands and repeat last changes) and Emacs.<br/>
+<br/>
+This command redefines nearly all keys to look like vi commands.<br/>
+It records the previous major mode, and any vi command for input<br/>
+(`i', `a', `s', etc.) switches back to that mode.<br/>
+Thus, ordinary Emacs (in whatever major mode you had been using)<br/>
+is "input" mode as far as vi is concerned.<br/>
+<br/>
+To get back into vi from "input" mode, you must issue this command again.<br/>
+Therefore, it is recommended that you assign it to a key.<br/>
+<br/>
+Major differences between this mode and real vi :<br/>
+<br/>
+* Limitations and unsupported features<br/>
+  - Search patterns with line offset (e.g. /pat/+3 or /pat/z.) are<br/>
+    not supported.<br/>
+  - Ex commands are not implemented; try ':' to get some hints.<br/>
+  - No line undo (i.e. the 'U' command), but multi-undo is a standard feature.<br/>
+<br/>
+* Modifications<br/>
+  - The stopping positions for some point motion commands (word boundary,<br/>
+    pattern search) are slightly different from standard 'vi'.<br/>
+    Also, no automatic wrap around at end of buffer for pattern searching.<br/>
+  - Since changes are done in two steps (deletion then insertion), you need<br/>
+    to undo twice to completely undo a change command.  But this is not needed<br/>
+    for undoing a repeated change command.<br/>
+  - No need to set/unset 'magic', to search for a string with regular expr<br/>
+    in it just put a prefix arg for the search commands.  Replace cmds too.<br/>
+  - ^R is bound to incremental backward search, so use ^L to redraw screen.<br/>
+<br/>
+* Extensions<br/>
+  - Some standard (or modified) Emacs commands were integrated, such as<br/>
+    incremental search, query replace, transpose objects, and keyboard macros.<br/>
+  - In command state, ^X links to the 'ctl-x-map', and ESC can be linked to<br/>
+    esc-map or set undefined.  These can give you the full power of Emacs.<br/>
+  - See vi-com-map for those keys that are extensions to standard vi, e.g.<br/>
+    `vi-name-last-change-or-macro', `vi-verify-spelling', `vi-locate-def',<br/>
+    `vi-mark-region', and 'vi-quote-words'.  Some of them are quite handy.<br/>
+  - Use C-x ~ to switch among different modes quickly.<br/>
+<br/>
+Syntax table and abbrevs while in vi mode remain as they were in Emacs.

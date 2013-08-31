@@ -1,1 +1,16 @@
-soap-wsdl-get is a compiled Lisp function in `soap-client.el'.<br/><br/>(soap-wsdl-get NAME WSDL &optional PREDICATE USE-LOCAL-ALIAS-TABLE)<br/><br/>Retrieve element NAME from the WSDL document.<br/><br/>PREDICATE is used to differentiate between elements when NAME<br/>refers to multiple elements.  A typical value for this would be a<br/>structure predicate for the type of element you want to retrieve.<br/>For example, to retrieve a message named "foo" when other<br/>elements named "foo" exist in the WSDL you could use:<br/><br/>  (soap-wsdl-get "foo" WSDL 'soap-message-p)<br/><br/>If USE-LOCAL-ALIAS-TABLE is not nil, `soap-local-xmlns` will be<br/>used to resolve the namespace alias.
+<strong>soap-wsdl-get</strong> is a compiled Lisp function in `<code>soap-client.el</code>'.<br/>
+<br/>
+(soap-wsdl-get NAME WSDL &optional PREDICATE USE-LOCAL-ALIAS-TABLE)<br/>
+<br/>
+Retrieve element NAME from the WSDL document.<br/>
+<br/>
+PREDICATE is used to differentiate between elements when NAME<br/>
+refers to multiple elements.  A typical value for this would be a<br/>
+structure predicate for the type of element you want to retrieve.<br/>
+For example, to retrieve a message named "foo" when other<br/>
+elements named "foo" exist in the WSDL you could use:<br/>
+<br/>
+  (soap-wsdl-get "foo" WSDL 'soap-message-p)<br/>
+<br/>
+If USE-LOCAL-ALIAS-TABLE is not nil, `soap-local-xmlns` will be<br/>
+used to resolve the namespace alias.

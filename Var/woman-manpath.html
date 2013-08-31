@@ -1,1 +1,55 @@
-woman-manpath is a variable defined in `woman.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>List of DIRECTORY TREES to search for UN*X manual files.<br/>Each element should be the name of a directory that contains<br/>subdirectories of the form `man?', or more precisely subdirectories<br/>selected by the value of `woman-manpath-man-regexp'.  Non-directory<br/>and unreadable files are ignored.<br/><br/>Elements can also be a cons cell indicating a mapping from PATH<br/>to manual trees: if such an element's car is equal to a path<br/>element of the environment variable PATH, the cdr of the cons<br/>cell is included in the directory tree search.<br/><br/>If not set then the environment variable MANPATH is used.  If no such<br/>environment variable is found, the default list is determined by<br/>consulting the man configuration file if found, which is determined by<br/>the user option `woman-man.conf-path'.  An empty substring of MANPATH<br/>denotes the default list.<br/><br/>Any environment variables (names must have the UN*X-style form $NAME,<br/>e.g. $HOME, $EMACSDATA, $emacs_dir) are evaluated first but each<br/>element must evaluate to a SINGLE directory name.  Trailing `/'s are<br/>ignored.  (Specific directories in `woman-path' are also searched.)<br/><br/>Microsoft platforms:<br/>I recommend including drive letters explicitly, e.g.<br/><br/>  ("C:/Cygwin/usr/man/" "C:/Cygwin/usr/local/man").<br/><br/>The MANPATH environment variable may be set using DOS semi-colon-<br/>separated or UN*X/Cygwin colon-separated syntax (but not mixed).<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/><br/><br/>Value: ("/usr/man" "/usr/share/man" "/usr/local/share/man"<br/> ("/bin" . "/usr/share/man")<br/> ("/usr/bin" . "/usr/share/man")<br/> ("/sbin" . "/usr/share/man")<br/> ("/usr/sbin" . "/usr/share/man")<br/> ("/usr/local/bin" . "/usr/local/man")<br/> ("/usr/local/bin" . "/usr/local/share/man")<br/> ("/usr/local/sbin" . "/usr/local/man")<br/> ("/usr/local/sbin" . "/usr/local/share/man")<br/> ("/usr/X11R6/bin" . "/usr/X11R6/man")<br/> ("/usr/bin/X11" . "/usr/X11R6/man")<br/> ("/usr/games" . "/usr/share/man")<br/> ("/opt/bin" . "/opt/man")<br/> ("/opt/sbin" . "/opt/man"))<br/><br/>
+<strong>woman-manpath</strong> is a variable defined in `<code>woman.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+List of DIRECTORY TREES to search for UN*X manual files.<br/>
+Each element should be the name of a directory that contains<br/>
+subdirectories of the form `man?', or more precisely subdirectories<br/>
+selected by the value of `woman-manpath-man-regexp'.  Non-directory<br/>
+and unreadable files are ignored.<br/>
+<br/>
+Elements can also be a cons cell indicating a mapping from PATH<br/>
+to manual trees: if such an element's car is equal to a path<br/>
+element of the environment variable PATH, the cdr of the cons<br/>
+cell is included in the directory tree search.<br/>
+<br/>
+If not set then the environment variable MANPATH is used.  If no such<br/>
+environment variable is found, the default list is determined by<br/>
+consulting the man configuration file if found, which is determined by<br/>
+the user option `woman-man.conf-path'.  An empty substring of MANPATH<br/>
+denotes the default list.<br/>
+<br/>
+Any environment variables (names must have the UN*X-style form $NAME,<br/>
+e.g. $HOME, $EMACSDATA, $emacs_dir) are evaluated first but each<br/>
+element must evaluate to a SINGLE directory name.  Trailing `/'s are<br/>
+ignored.  (Specific directories in `woman-path' are also searched.)<br/>
+<br/>
+Microsoft platforms:<br/>
+I recommend including drive letters explicitly, e.g.<br/>
+<br/>
+  ("C:/Cygwin/usr/man/" "C:/Cygwin/usr/local/man").<br/>
+<br/>
+The MANPATH environment variable may be set using DOS semi-colon-<br/>
+separated or UN*X/Cygwin colon-separated syntax (but not mixed).<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>
+<br/>
+<br/>
+Value: ("/usr/man" "/usr/share/man" "/usr/local/share/man"<br/>
+ ("/bin" . "/usr/share/man")<br/>
+ ("/usr/bin" . "/usr/share/man")<br/>
+ ("/sbin" . "/usr/share/man")<br/>
+ ("/usr/sbin" . "/usr/share/man")<br/>
+ ("/usr/local/bin" . "/usr/local/man")<br/>
+ ("/usr/local/bin" . "/usr/local/share/man")<br/>
+ ("/usr/local/sbin" . "/usr/local/man")<br/>
+ ("/usr/local/sbin" . "/usr/local/share/man")<br/>
+ ("/usr/X11R6/bin" . "/usr/X11R6/man")<br/>
+ ("/usr/bin/X11" . "/usr/X11R6/man")<br/>
+ ("/usr/games" . "/usr/share/man")<br/>
+ ("/opt/bin" . "/opt/man")<br/>
+ ("/opt/sbin" . "/opt/man"))<br/>
+<br/>

@@ -1,1 +1,41 @@
-allout-encrypt-string is a compiled Lisp function in `allout.el'.<br/><br/>(allout-encrypt-string TEXT DECRYPT ALLOUT-BUFFER KEYMODE-CUE &optional REJECTED)<br/><br/>Encrypt or decrypt message TEXT.<br/><br/>Returns the resulting string, or nil if the transformation fails.<br/><br/>If DECRYPT is true (default false), then decrypt instead of encrypt.<br/><br/>ALLOUT-BUFFER identifies the buffer containing the text.<br/><br/>Entry encryption defaults to symmetric key mode unless keypair<br/>recipients are associated with the file (see<br/>`epa-file-encrypt-to') or the function is invoked with a<br/>(KEYMODE-CUE) universal argument greater than 1.<br/><br/>When encrypting, KEYMODE-CUE universal argument greater than 1<br/>causes prompting for recipients for public-key keypair<br/>encryption.  Selecting no recipients results in symmetric key<br/>encryption.<br/><br/>Further, encrypting with a KEYMODE-CUE universal argument greater<br/>than 4 - eg, preceded by a doubled Ctrl-U - causes association of<br/>the specified recipients with the file, replacing those currently<br/>associated with it.  This can be used to dissociate any<br/>recipients with the file, by selecting no recipients in the<br/>dialog.<br/><br/>Optional REJECTED is for internal use, to convey the number of<br/>rejections due to matches against<br/>`allout-encryption-ciphertext-rejection-regexps', as limited by<br/>`allout-encryption-ciphertext-rejection-ceiling'.<br/><br/>NOTE: A few GnuPG v2 versions improperly preserve incorrect<br/>symmetric decryption keys, preventing entry of the correct key on<br/>subsequent decryption attempts until the cache times-out.  That<br/>can take several minutes.  (Decryption of other entries is not<br/>affected.)  Upgrade your EasyPG version, if you can, and you can<br/>deliberately clear your gpg-agent's cache by sending it a '-HUP'<br/>signal.
+<strong>allout-encrypt-string</strong> is a compiled Lisp function in `<code>allout.el</code>'.<br/>
+<br/>
+(allout-encrypt-string TEXT DECRYPT ALLOUT-BUFFER KEYMODE-CUE &optional REJECTED)<br/>
+<br/>
+Encrypt or decrypt message TEXT.<br/>
+<br/>
+Returns the resulting string, or nil if the transformation fails.<br/>
+<br/>
+If DECRYPT is true (default false), then decrypt instead of encrypt.<br/>
+<br/>
+ALLOUT-BUFFER identifies the buffer containing the text.<br/>
+<br/>
+Entry encryption defaults to symmetric key mode unless keypair<br/>
+recipients are associated with the file (see<br/>
+`epa-file-encrypt-to') or the function is invoked with a<br/>
+(KEYMODE-CUE) universal argument greater than 1.<br/>
+<br/>
+When encrypting, KEYMODE-CUE universal argument greater than 1<br/>
+causes prompting for recipients for public-key keypair<br/>
+encryption.  Selecting no recipients results in symmetric key<br/>
+encryption.<br/>
+<br/>
+Further, encrypting with a KEYMODE-CUE universal argument greater<br/>
+than 4 - eg, preceded by a doubled Ctrl-U - causes association of<br/>
+the specified recipients with the file, replacing those currently<br/>
+associated with it.  This can be used to dissociate any<br/>
+recipients with the file, by selecting no recipients in the<br/>
+dialog.<br/>
+<br/>
+Optional REJECTED is for internal use, to convey the number of<br/>
+rejections due to matches against<br/>
+`allout-encryption-ciphertext-rejection-regexps', as limited by<br/>
+`allout-encryption-ciphertext-rejection-ceiling'.<br/>
+<br/>
+NOTE: A few GnuPG v2 versions improperly preserve incorrect<br/>
+symmetric decryption keys, preventing entry of the correct key on<br/>
+subsequent decryption attempts until the cache times-out.  That<br/>
+can take several minutes.  (Decryption of other entries is not<br/>
+affected.)  Upgrade your EasyPG version, if you can, and you can<br/>
+deliberately clear your gpg-agent's cache by sending it a '-HUP'<br/>
+signal.

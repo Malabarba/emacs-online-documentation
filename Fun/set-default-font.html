@@ -1,1 +1,24 @@
-set-default-font is an alias for `set-frame-font' in `frame.el'.<br/><br/>(set-default-font FONT &optional KEEP-SIZE FRAMES)<br/><br/>This function is obsolete since 23.1;<br/>use `set-frame-font' instead.<br/><br/>Set the default font to FONT.<br/>When called interactively, prompt for the name of a font, and use<br/>that font on the selected frame.  When called from Lisp, FONT<br/>should be a font name (a string), a font object, font entity, or<br/>font spec.<br/><br/>If KEEP-SIZE is nil, keep the number of frame lines and columns<br/>fixed.  If KEEP-SIZE is non-nil (or with a prefix argument), try<br/>to keep the current frame size fixed (in pixels) by adjusting the<br/>number of lines and columns.<br/><br/>If FRAMES is nil, apply the font to the selected frame only.<br/>If FRAMES is non-nil, it should be a list of frames to act upon,<br/>or t meaning all graphical frames.  Also, if FRAME is non-nil,<br/>alter the user's Customization settings as though the<br/>font-related attributes of the `default' face had been "set in<br/>this session", so that the font is applied to future frames.
+<strong>set-default-font</strong> is an alias for `set-frame-font' in `<code>frame.el</code>'.<br/>
+<br/>
+(set-default-font FONT &optional KEEP-SIZE FRAMES)<br/>
+<br/>
+This function is obsolete since 23.1;<br/>
+use `set-frame-font' instead.<br/>
+<br/>
+Set the default font to FONT.<br/>
+When called interactively, prompt for the name of a font, and use<br/>
+that font on the selected frame.  When called from Lisp, FONT<br/>
+should be a font name (a string), a font object, font entity, or<br/>
+font spec.<br/>
+<br/>
+If KEEP-SIZE is nil, keep the number of frame lines and columns<br/>
+fixed.  If KEEP-SIZE is non-nil (or with a prefix argument), try<br/>
+to keep the current frame size fixed (in pixels) by adjusting the<br/>
+number of lines and columns.<br/>
+<br/>
+If FRAMES is nil, apply the font to the selected frame only.<br/>
+If FRAMES is non-nil, it should be a list of frames to act upon,<br/>
+or t meaning all graphical frames.  Also, if FRAME is non-nil,<br/>
+alter the user's Customization settings as though the<br/>
+font-related attributes of the `default' face had been "set in<br/>
+this session", so that the font is applied to future frames.

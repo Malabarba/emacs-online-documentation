@@ -1,1 +1,15 @@
-define-lex is a Lisp macro in `lex.el'.<br/><br/>(define-lex NAME DOC &rest ANALYZERS)<br/><br/>Create a new lexical analyzer with NAME.<br/>DOC is a documentation string describing this analyzer.<br/>ANALYZERS are small code snippets of analyzers to use when<br/>building the new NAMED analyzer.  Only use analyzers which<br/>are written to be used in `define-lex'.<br/>Each analyzer should be an analyzer created with `define-lex-analyzer'.<br/>Note: The order in which analyzers are listed is important.<br/>If two analyzers can match the same text, it is important to order the<br/>analyzers so that the one you want to match first occurs first.  For<br/>example, it is good to put a number analyzer in front of a symbol<br/>analyzer which might mistake a number for as a symbol.
+<strong>define-lex</strong> is a Lisp macro in `<code>lex.el</code>'.<br/>
+<br/>
+(define-lex NAME DOC &rest ANALYZERS)<br/>
+<br/>
+Create a new lexical analyzer with NAME.<br/>
+DOC is a documentation string describing this analyzer.<br/>
+ANALYZERS are small code snippets of analyzers to use when<br/>
+building the new NAMED analyzer.  Only use analyzers which<br/>
+are written to be used in `define-lex'.<br/>
+Each analyzer should be an analyzer created with `define-lex-analyzer'.<br/>
+Note: The order in which analyzers are listed is important.<br/>
+If two analyzers can match the same text, it is important to order the<br/>
+analyzers so that the one you want to match first occurs first.  For<br/>
+example, it is good to put a number analyzer in front of a symbol<br/>
+analyzer which might mistake a number for as a symbol.

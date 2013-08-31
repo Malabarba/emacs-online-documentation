@@ -1,1 +1,23 @@
-check-coding-systems-region is a built-in function in `C source code'.<br/><br/>(check-coding-systems-region START END CODING-SYSTEM-LIST)<br/><br/>Check if the region is encodable by coding systems.<br/><br/>START and END are buffer positions specifying the region.<br/>CODING-SYSTEM-LIST is a list of coding systems to check.<br/><br/>The value is an alist ((CODING-SYSTEM POS0 POS1 ...) ...), where<br/>CODING-SYSTEM is a member of CODING-SYSTEM-LIST and can't encode the<br/>whole region, POS0, POS1, ... are buffer positions where non-encodable<br/>characters are found.<br/><br/>If all coding systems in CODING-SYSTEM-LIST can encode the region, the<br/>value is nil.<br/><br/>START may be a string.  In that case, check if the string is<br/>encodable, and the value contains indices to the string instead of<br/>buffer positions.  END is ignored.<br/><br/>If the current buffer (or START if it is a string) is unibyte, the value<br/>is nil.
+<strong>check-coding-systems-region</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(check-coding-systems-region START END CODING-SYSTEM-LIST)<br/>
+<br/>
+Check if the region is encodable by coding systems.<br/>
+<br/>
+START and END are buffer positions specifying the region.<br/>
+CODING-SYSTEM-LIST is a list of coding systems to check.<br/>
+<br/>
+The value is an alist ((CODING-SYSTEM POS0 POS1 ...) ...), where<br/>
+CODING-SYSTEM is a member of CODING-SYSTEM-LIST and can't encode the<br/>
+whole region, POS0, POS1, ... are buffer positions where non-encodable<br/>
+characters are found.<br/>
+<br/>
+If all coding systems in CODING-SYSTEM-LIST can encode the region, the<br/>
+value is nil.<br/>
+<br/>
+START may be a string.  In that case, check if the string is<br/>
+encodable, and the value contains indices to the string instead of<br/>
+buffer positions.  END is ignored.<br/>
+<br/>
+If the current buffer (or START if it is a string) is unibyte, the value<br/>
+is nil.

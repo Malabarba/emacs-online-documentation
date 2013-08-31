@@ -1,1 +1,19 @@
-special-display-popup-frame is a compiled Lisp function in `window.el'.<br/><br/>(special-display-popup-frame BUFFER &optional ARGS)<br/><br/>Pop up a frame displaying BUFFER and return its window.<br/>If BUFFER is already displayed in a visible or iconified frame,<br/>raise that frame.  Otherwise, display BUFFER in a new frame.<br/><br/>Optional argument ARGS is a list specifying additional<br/>information.<br/><br/>If ARGS is an alist, use it as a list of frame parameters.  If<br/>these parameters contain (same-window . t), display BUFFER in<br/>the selected window.  If they contain (same-frame . t), display<br/>BUFFER in a window of the selected frame.<br/><br/>If ARGS is a list whose car is a symbol, use (car ARGS) as a<br/>function to do the work.  Pass it BUFFER as first argument, and<br/>pass the elements of (cdr ARGS) as the remaining arguments.
+<strong>special-display-popup-frame</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(special-display-popup-frame BUFFER &optional ARGS)<br/>
+<br/>
+Pop up a frame displaying BUFFER and return its window.<br/>
+If BUFFER is already displayed in a visible or iconified frame,<br/>
+raise that frame.  Otherwise, display BUFFER in a new frame.<br/>
+<br/>
+Optional argument ARGS is a list specifying additional<br/>
+information.<br/>
+<br/>
+If ARGS is an alist, use it as a list of frame parameters.  If<br/>
+these parameters contain (same-window . t), display BUFFER in<br/>
+the selected window.  If they contain (same-frame . t), display<br/>
+BUFFER in a window of the selected frame.<br/>
+<br/>
+If ARGS is a list whose car is a symbol, use (car ARGS) as a<br/>
+function to do the work.  Pass it BUFFER as first argument, and<br/>
+pass the elements of (cdr ARGS) as the remaining arguments.

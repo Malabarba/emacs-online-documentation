@@ -1,1 +1,21 @@
-elp-sort-by-function is a variable defined in `elp.el'.<br/>Its value is elp-sort-by-total-time<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Non-nil specifies ELP results sorting function.<br/>These functions are currently available:<br/><br/>  elp-sort-by-call-count   -- sort by the highest call count<br/>  elp-sort-by-total-time   -- sort by the highest total time<br/>  elp-sort-by-average-time -- sort by the highest average times<br/><br/>You can write your own sort function.  It should adhere to the<br/>interface specified by the PREDICATE argument for `sort'.<br/>Each "element of LIST" is really a 4 element vector where element 0 is<br/>the call count, element 1 is the total time spent in the function,<br/>element 2 is the average time spent in the function, and element 3 is<br/>the symbol's name string.<br/><br/>You can customize this variable.
+<strong>elp-sort-by-function</strong> is a variable defined in `<code>elp.el</code>'.<br/>
+Its value is elp-sort-by-total-time<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Non-nil specifies ELP results sorting function.<br/>
+These functions are currently available:<br/>
+<br/>
+  elp-sort-by-call-count   -- sort by the highest call count<br/>
+  elp-sort-by-total-time   -- sort by the highest total time<br/>
+  elp-sort-by-average-time -- sort by the highest average times<br/>
+<br/>
+You can write your own sort function.  It should adhere to the<br/>
+interface specified by the PREDICATE argument for `sort'.<br/>
+Each "element of LIST" is really a 4 element vector where element 0 is<br/>
+the call count, element 1 is the total time spent in the function,<br/>
+element 2 is the average time spent in the function, and element 3 is<br/>
+the symbol's name string.<br/>
+<br/>
+You can customize this variable.

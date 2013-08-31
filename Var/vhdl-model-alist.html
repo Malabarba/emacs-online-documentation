@@ -1,1 +1,36 @@
-vhdl-model-alist is a variable defined in `vhdl-mode.el'.<br/>Its value is<br/>(("Example Model" "<label> : process (<clock>, <reset>)\nbegin  -- process <label>\n  if <reset> = '0' then  -- asynchronous reset (active low)\n    <cursor>\n  elsif <clock>'event and <clock> = '1' then  -- rising clock edge\n    if <enable> = '1' then  -- synchronous load\n\n    end if;\n  end if;\nend process <label>;" "e" ""))<br/><br/><br/>Documentation:<br/>List of user models.<br/>VHDL models (templates) can be specified by the user in this list.  They can be<br/>invoked from the menu, through key bindings (`C-c C-m ...'), or by keyword<br/>electrification (i.e. overriding existing or creating new keywords, see<br/>option `vhdl-electric-keywords').<br/>  Name       : name of model (string of words and spaces)<br/>  String     : string or name of file to be inserted as model (newline: `C-j')<br/>  Key Binding: key binding to invoke model, added to prefix `C-c C-m'<br/>                (must be in double-quotes, examples: "i", "\C-p", "\M-s")<br/>  Keyword    : keyword to invoke model<br/><br/>The models can contain prompts to be queried.  A prompt is of the form "<...>".<br/>A prompt that appears several times is queried once and replaced throughout<br/>the model.  Special prompts are:<br/>  <clock> : name specified in `vhdl-clock-name' (if not empty)<br/>  <reset> : name specified in `vhdl-reset-name' (if not empty)<br/>  <cursor>: final cursor position<br/>File header prompts (see variable `vhdl-file-header') are automatically<br/>replaced, so that user models can also be used to insert different types of<br/>headers.<br/><br/>If the string specifies an existing file name, the contents of the file is<br/>inserted, otherwise the string itself is inserted.<br/>The code within the models should be correctly indented.<br/>Type `C-j' for newlines.<br/><br/>NOTE: Activate the new setting in a VHDL buffer by using the menu entry<br/>      "Activate Options".<br/><br/>You can customize this variable.
+<strong>vhdl-model-alist</strong> is a variable defined in `<code>vhdl-mode.el</code>'.<br/>
+Its value is<br/>
+(("Example Model" "<label> : process (<clock>, <reset>)\nbegin  -- process <label>\n  if <reset> = '0' then  -- asynchronous reset (active low)\n    <cursor>\n  elsif <clock>'event and <clock> = '1' then  -- rising clock edge\n    if <enable> = '1' then  -- synchronous load\n\n    end if;\n  end if;\nend process <label>;" "e" ""))<br/>
+<br/>
+<br/>
+Documentation:<br/>
+List of user models.<br/>
+VHDL models (templates) can be specified by the user in this list.  They can be<br/>
+invoked from the menu, through key bindings (`C-c C-m ...'), or by keyword<br/>
+electrification (i.e. overriding existing or creating new keywords, see<br/>
+option `vhdl-electric-keywords').<br/>
+  Name       : name of model (string of words and spaces)<br/>
+  String     : string or name of file to be inserted as model (newline: `C-j')<br/>
+  Key Binding: key binding to invoke model, added to prefix `C-c C-m'<br/>
+                (must be in double-quotes, examples: "i", "\C-p", "\M-s")<br/>
+  Keyword    : keyword to invoke model<br/>
+<br/>
+The models can contain prompts to be queried.  A prompt is of the form "<...>".<br/>
+A prompt that appears several times is queried once and replaced throughout<br/>
+the model.  Special prompts are:<br/>
+  <clock> : name specified in `vhdl-clock-name' (if not empty)<br/>
+  <reset> : name specified in `vhdl-reset-name' (if not empty)<br/>
+  <cursor>: final cursor position<br/>
+File header prompts (see variable `vhdl-file-header') are automatically<br/>
+replaced, so that user models can also be used to insert different types of<br/>
+headers.<br/>
+<br/>
+If the string specifies an existing file name, the contents of the file is<br/>
+inserted, otherwise the string itself is inserted.<br/>
+The code within the models should be correctly indented.<br/>
+Type `C-j' for newlines.<br/>
+<br/>
+NOTE: Activate the new setting in a VHDL buffer by using the menu entry<br/>
+      "Activate Options".<br/>
+<br/>
+You can customize this variable.

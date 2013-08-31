@@ -1,1 +1,14 @@
-mh-url-hexify-string is an alias for `url-hexify-string' in `mh-compat.el'.<br/><br/>(mh-url-hexify-string STRING &optional ALLOWED-CHARS)<br/><br/>URI-encode STRING and return the result.<br/>If STRING is multibyte, it is first converted to a utf-8 byte<br/>string.  Each byte corresponding to an allowed character is left<br/>as-is, while all other bytes are converted to a three-character<br/>string: "%" followed by two upper-case hex digits.<br/><br/>The allowed characters are specified by ALLOWED-CHARS.  If this<br/>argument is nil, the list `url-unreserved-chars' determines the<br/>allowed characters.  Otherwise, ALLOWED-CHARS should be a vector<br/>whose Nth element is non-nil if character N is allowed.
+<strong>mh-url-hexify-string</strong> is an alias for `url-hexify-string' in `<code>mh-compat.el</code>'.<br/>
+<br/>
+(mh-url-hexify-string STRING &optional ALLOWED-CHARS)<br/>
+<br/>
+URI-encode STRING and return the result.<br/>
+If STRING is multibyte, it is first converted to a utf-8 byte<br/>
+string.  Each byte corresponding to an allowed character is left<br/>
+as-is, while all other bytes are converted to a three-character<br/>
+string: "%" followed by two upper-case hex digits.<br/>
+<br/>
+The allowed characters are specified by ALLOWED-CHARS.  If this<br/>
+argument is nil, the list `url-unreserved-chars' determines the<br/>
+allowed characters.  Otherwise, ALLOWED-CHARS should be a vector<br/>
+whose Nth element is non-nil if character N is allowed.

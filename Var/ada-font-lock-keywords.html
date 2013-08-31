@@ -1,1 +1,38 @@
-ada-font-lock-keywords is a variable defined in `ada-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Default expressions to highlight in Ada mode.<br/><br/>Value: (("\\<\\(function[ 	]+return\\)\\>"<br/>  (1 font-lock-keyword-face))<br/> ("^[ 	]*\\(#.*\n\\)"<br/>  (1 font-lock-type-face t))<br/> ("\\<\\(accept\\|entry\\|function\\|package[ 	]+body\\|package\\|pragma\\|procedure\\|protected[ 	]+body\\|protected[ 	]+type\\|protected\\|task[ 	]+body\\|task[ 	]+type\\|task\\)\\>[ 	]*\\(\\sw+\\(\\.\\sw*\\)*\\)?"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-function-name-face nil t))<br/> ("\\<\\(access[ 	]+all\\|access[ 	]+constant\\|access\\|constant\\|in[ 	]+reverse\\|\\|in[ 	]+out\\|in\\|out\\)\\>[ 	]*\\(\\sw+\\(\\.\\sw*\\)*\\)?"<br/>  (1 font-lock-keyword-face nil t)<br/>  (2 font-lock-type-face nil t))<br/> "\\<\\(a\\(?:b\\(?:ort\\|s\\(?:tract\\)?\\)\\|cce\\(?:pt\\|ss\\)\\|l\\(?:iased\\|l\\)\\|nd\\|rray\\|t\\)\\|begin\\|case\\|d\\(?:e\\(?:clare\\|l\\(?:ay\\|ta\\)\\)\\|igits\\|o\\)\\|e\\(?:ls\\(?:e\\|if\\)\\|ntry\\|x\\(?:ception\\|it\\)\\)\\|for\\|generic\\|i\\(?:nterface\\|[fns]\\)\\|l\\(?:imited\\|oop\\)\\|mod\\|n\\(?:ot\\|ull\\)\\|o\\(?:r\\|thers\\|verriding\\)\\|pr\\(?:ivate\\|otected\\)\\|r\\(?:a\\(?:\\(?:is\\|ng\\)e\\)\\|e\\(?:cord\\|m\\|names\\|queue\\|turn\\|verse\\)\\)\\|s\\(?:e\\(?:lect\\|parate\\)\\|ynchronized\\)\\|t\\(?:a\\(?:gged\\|sk\\)\\|erminate\\|hen\\)\\|until\\|w\\(?:h\\(?:en\\|ile\\)\\|ith\\)\\|xor\\)\\>"<br/> ("\\<\\(end\\)\\>\\([ 	]+\\)?\\(\\(\\sw\\|[_.]\\)+\\)?"<br/>  (1 font-lock-keyword-face)<br/>  (3 font-lock-function-name-face nil t))<br/> ("\\<\\(new\\|of\\|subtype\\|type\\)\\>[ 	]*\\(\\sw+\\(\\.\\sw*\\)*\\)?[ 	]*\\((\\)?"<br/>  (1 font-lock-keyword-face)<br/>  (2<br/>   (if<br/>       (match-beginning 4)<br/>       font-lock-function-name-face font-lock-type-face)<br/>   nil t))<br/> ("\\<\\(goto\\|raise\\|use\\|with\\)[ 	]+\\([a-zA-Z0-9_., 	]+\\)\\W"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-constant-face nil t))<br/> ("<<\\(\\sw+\\)>>" 1 font-lock-constant-face)<br/> ("\\([0-9]+#[0-9a-fA-F_]+#\\)"<br/>  (1 font-lock-constant-face t))<br/> ("\\W\\([-+]?[0-9._]+\\)\\>"<br/>  (1 font-lock-constant-face)))<br/><br/>
+<strong>ada-font-lock-keywords</strong> is a variable defined in `<code>ada-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Default expressions to highlight in Ada mode.<br/>
+<br/>
+Value: (("\\<\\(function[ 	]+return\\)\\>"<br/>
+  (1 font-lock-keyword-face))<br/>
+ ("^[ 	]*\\(#.*\n\\)"<br/>
+  (1 font-lock-type-face t))<br/>
+ ("\\<\\(accept\\|entry\\|function\\|package[ 	]+body\\|package\\|pragma\\|procedure\\|protected[ 	]+body\\|protected[ 	]+type\\|protected\\|task[ 	]+body\\|task[ 	]+type\\|task\\)\\>[ 	]*\\(\\sw+\\(\\.\\sw*\\)*\\)?"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-function-name-face nil t))<br/>
+ ("\\<\\(access[ 	]+all\\|access[ 	]+constant\\|access\\|constant\\|in[ 	]+reverse\\|\\|in[ 	]+out\\|in\\|out\\)\\>[ 	]*\\(\\sw+\\(\\.\\sw*\\)*\\)?"<br/>
+  (1 font-lock-keyword-face nil t)<br/>
+  (2 font-lock-type-face nil t))<br/>
+ "\\<\\(a\\(?:b\\(?:ort\\|s\\(?:tract\\)?\\)\\|cce\\(?:pt\\|ss\\)\\|l\\(?:iased\\|l\\)\\|nd\\|rray\\|t\\)\\|begin\\|case\\|d\\(?:e\\(?:clare\\|l\\(?:ay\\|ta\\)\\)\\|igits\\|o\\)\\|e\\(?:ls\\(?:e\\|if\\)\\|ntry\\|x\\(?:ception\\|it\\)\\)\\|for\\|generic\\|i\\(?:nterface\\|[fns]\\)\\|l\\(?:imited\\|oop\\)\\|mod\\|n\\(?:ot\\|ull\\)\\|o\\(?:r\\|thers\\|verriding\\)\\|pr\\(?:ivate\\|otected\\)\\|r\\(?:a\\(?:\\(?:is\\|ng\\)e\\)\\|e\\(?:cord\\|m\\|names\\|queue\\|turn\\|verse\\)\\)\\|s\\(?:e\\(?:lect\\|parate\\)\\|ynchronized\\)\\|t\\(?:a\\(?:gged\\|sk\\)\\|erminate\\|hen\\)\\|until\\|w\\(?:h\\(?:en\\|ile\\)\\|ith\\)\\|xor\\)\\>"<br/>
+ ("\\<\\(end\\)\\>\\([ 	]+\\)?\\(\\(\\sw\\|[_.]\\)+\\)?"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (3 font-lock-function-name-face nil t))<br/>
+ ("\\<\\(new\\|of\\|subtype\\|type\\)\\>[ 	]*\\(\\sw+\\(\\.\\sw*\\)*\\)?[ 	]*\\((\\)?"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2<br/>
+   (if<br/>
+       (match-beginning 4)<br/>
+       font-lock-function-name-face font-lock-type-face)<br/>
+   nil t))<br/>
+ ("\\<\\(goto\\|raise\\|use\\|with\\)[ 	]+\\([a-zA-Z0-9_., 	]+\\)\\W"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-constant-face nil t))<br/>
+ ("<<\\(\\sw+\\)>>" 1 font-lock-constant-face)<br/>
+ ("\\([0-9]+#[0-9a-fA-F_]+#\\)"<br/>
+  (1 font-lock-constant-face t))<br/>
+ ("\\W\\([-+]?[0-9._]+\\)\\>"<br/>
+  (1 font-lock-constant-face)))<br/>
+<br/>

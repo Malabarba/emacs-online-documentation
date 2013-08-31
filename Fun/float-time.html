@@ -1,1 +1,15 @@
-float-time is a built-in function in `C source code'.<br/><br/>(float-time &optional SPECIFIED-TIME)<br/><br/>Return the current time, as a float number of seconds since the epoch.<br/>If SPECIFIED-TIME is given, it is the time to convert to float<br/>instead of the current time.  The argument should have the form<br/>(HIGH LOW) or (HIGH LOW USEC) or (HIGH LOW USEC PSEC).  Thus,<br/>you can use times from `current-time' and from `file-attributes'.<br/>SPECIFIED-TIME can also have the form (HIGH . LOW), but this is<br/>considered obsolete.<br/><br/>WARNING: Since the result is floating point, it may not be exact.<br/>If precise time stamps are required, use either `current-time',<br/>or (if you need time as a string) `format-time-string'.
+<strong>float-time</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(float-time &optional SPECIFIED-TIME)<br/>
+<br/>
+Return the current time, as a float number of seconds since the epoch.<br/>
+If SPECIFIED-TIME is given, it is the time to convert to float<br/>
+instead of the current time.  The argument should have the form<br/>
+(HIGH LOW) or (HIGH LOW USEC) or (HIGH LOW USEC PSEC).  Thus,<br/>
+you can use times from `current-time' and from `file-attributes'.<br/>
+SPECIFIED-TIME can also have the form (HIGH . LOW), but this is<br/>
+considered obsolete.<br/>
+<br/>
+WARNING: Since the result is floating point, it may not be exact.<br/>
+If precise time stamps are required, use either `current-time',<br/>
+or (if you need time as a string) `format-time-string'.

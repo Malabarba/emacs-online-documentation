@@ -1,1 +1,50 @@
-makefile-makepp-font-lock-keywords is a variable defined in `make-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (("\\(?:^\\|^export\\|^override\\|:\\|: *override\\) *\\([^ \n	][^:#= 	\n]*\\)[ 	]*\\(?:!=\\|[*:+]?[:?]?=\\)"<br/>  (1 font-lock-variable-name-face)<br/>  (2 'makefile-shell prepend t)<br/>  (3 'font-lock-string-face prepend t))<br/> (makefile-match-action<br/>  (1 font-lock-type-face nil t)<br/>  (2 'makefile-shell prepend)<br/>  (3 font-lock-builtin-face prepend t))<br/> ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\|[@%<?^+*][FD]?\\)" 1 font-lock-variable-name-face prepend)<br/> ("[^$]\\$\\([@%<?^+*_]\\|[a-zA-Z0-9]\\>\\)" 1 font-lock-constant-face prepend)<br/> ("[^$]\\(\\$[@%*]\\)" 1 'makefile-targets append)<br/> ("^\\(?: [ 	]*\\)?\\([_-]include\\|a\\(?:nd[ 	]+if\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\|utoload\\)\\|build[_-]c\\(?:ache\\|heck\\)\\|define\\|e\\(?:lse\\(?:[ 	]+if\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\)?\\|nd\\(?:\\(?:de\\|[ei]\\)f\\)\\|xport\\(?:[ 	]+define\\)?\\)\\|global\\(?:[ 	]+\\(?:build[_-]c\\(?:ache\\|heck\\)\\|\\(?:defin\\|\\(?:override[ 	]+\\)?signatur\\)e\\)\\)?\\|i\\(?:f\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\|nclude\\)\\|load[_-]makefile\\|make\\(?:perl\\|sub\\)?\\|no[_-]implicit[_-]load\\|o\\(?:r[ 	]+if\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\|verride\\(?:[ 	]+\\(?:define\\|export\\|global\\)\\)?\\)\\|p\\(?:erl\\(?:[_-]\\(?:begin\\|end\\)\\)?\\|rebuild\\)\\|r\\(?:e\\(?:gister[_-]\\(?:command[_-]parser\\|input[_-]suffix\\|\\(?:pars\\|scann\\)er\\)\\|pository\\)\\|untime\\)\\|s\\(?:ignature\\|ub\\)\\|unexport\\|vpath\\)\\>[ 	]*\\([^: 	\n#]*\\)"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-variable-name-face))<br/> ("^\\(?: [ 	]*\\)?\\(?:and[ 	]+\\|else[ 	]+\\|or[ 	]+\\)?if\\(n\\)\\(?:def\\|eq\\|sys\\|true\\)\\>"<br/>  (1 font-lock-negation-char-face prepend)<br/>  (2 font-lock-negation-char-face prepend t))<br/> ("[^$]\\(\\$[({]\\(?:output\\|stem\\|target\\)s?\\_>.*?[})]\\)" 1 'makefile-targets append)<br/> ("\\(:\\s *\\)\\(build_c\\(?:ache\\|heck\\)\\|env\\(?:ironment\\)?\\|foreach\\|signature\\|scanner\\|quickscan\\|smartscan\\)\\>\\([^:\n]*\\)"<br/>  (1 font-lock-type-face t)<br/>  (2 font-lock-keyword-face t)<br/>  (3 font-lock-variable-name-face t))<br/> ("[^$]\\$\\(?:((?\\|{{?\\|\\[\\[?\\)\\([-a-zA-Z0-9_.]+\\s \\)" 1 font-lock-function-name-face prepend)<br/> ("[^$]\\$\\(((?\\|{{?\\|\\[\\[?\\)shell\\(?:[-_]\\(?:global[-_]\\)?once\\)?[ 	]+" makefile-match-function-end nil nil<br/>  (1 'makefile-shell prepend t))<br/> ("[^$]\\$\\(((?\\|{{?\\|\\[\\[?\\)makeperl[ 	]+" makefile-match-function-end nil nil<br/>  (1 'makefile-makepp-perl prepend t))<br/> ("[^$]\\$\\(((?\\|{{?\\)perl[ 	]+" makefile-match-function-end nil nil<br/>  (1 'makefile-makepp-perl t t))<br/> ("ifmakeperl\\s +\\(.*\\)" 1 'makefile-makepp-perl prepend)<br/> ("ifperl\\s +\\(.*\\)" 1 'makefile-makepp-perl t)<br/> ("\\<make\\(?:perl\\|sub\\s +\\S +\\)\\s *\n?\\s *{\\(?:{\\s *\n?\\(\\(?:.*\n\\)+?\\)\\s *}\\|\\s *\\(\\(?:.*?\\|\n?\\(?:.*\n\\)+?\\)\\)\\)}"<br/>  (1 'makefile-makepp-perl prepend t)<br/>  (2 'makefile-makepp-perl prepend t))<br/> ("\\<\\(?:perl\\|sub\\s +\\S +\\)\\s *\n?\\s *{\\(?:{\\s *\n?\\(\\(?:.*\n\\)+?\\)\\s *}\\|\\s *\\(\\(?:.*?\\|\n?\\(?:.*\n\\)+?\\)\\)\\)}"<br/>  (1 'makefile-makepp-perl t t)<br/>  (2 'makefile-makepp-perl t t))<br/> ("perl[-_]begin\\s *\\(?:\\s #.*\\)?\n\\(\\(?:.*\n\\)+?\\)\\s *perl[-_]end\\>" 1 'makefile-makepp-perl t)<br/> (makefile-match-dependency<br/>  (1 'makefile-targets prepend)<br/>  (3 'makefile-shell prepend t)))<br/><br/>
+<strong>makefile-makepp-font-lock-keywords</strong> is a variable defined in `<code>make-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (("\\(?:^\\|^export\\|^override\\|:\\|: *override\\) *\\([^ \n	][^:#= 	\n]*\\)[ 	]*\\(?:!=\\|[*:+]?[:?]?=\\)"<br/>
+  (1 font-lock-variable-name-face)<br/>
+  (2 'makefile-shell prepend t)<br/>
+  (3 'font-lock-string-face prepend t))<br/>
+ (makefile-match-action<br/>
+  (1 font-lock-type-face nil t)<br/>
+  (2 'makefile-shell prepend)<br/>
+  (3 font-lock-builtin-face prepend t))<br/>
+ ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\|[@%<?^+*][FD]?\\)" 1 font-lock-variable-name-face prepend)<br/>
+ ("[^$]\\$\\([@%<?^+*_]\\|[a-zA-Z0-9]\\>\\)" 1 font-lock-constant-face prepend)<br/>
+ ("[^$]\\(\\$[@%*]\\)" 1 'makefile-targets append)<br/>
+ ("^\\(?: [ 	]*\\)?\\([_-]include\\|a\\(?:nd[ 	]+if\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\|utoload\\)\\|build[_-]c\\(?:ache\\|heck\\)\\|define\\|e\\(?:lse\\(?:[ 	]+if\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\)?\\|nd\\(?:\\(?:de\\|[ei]\\)f\\)\\|xport\\(?:[ 	]+define\\)?\\)\\|global\\(?:[ 	]+\\(?:build[_-]c\\(?:ache\\|heck\\)\\|\\(?:defin\\|\\(?:override[ 	]+\\)?signatur\\)e\\)\\)?\\|i\\(?:f\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\|nclude\\)\\|load[_-]makefile\\|make\\(?:perl\\|sub\\)?\\|no[_-]implicit[_-]load\\|o\\(?:r[ 	]+if\\(?:def\\|eq\\|makeperl\\|n\\(?:def\\|eq\\|sys\\|true\\)\\|perl\\|sys\\|true\\)\\|verride\\(?:[ 	]+\\(?:define\\|export\\|global\\)\\)?\\)\\|p\\(?:erl\\(?:[_-]\\(?:begin\\|end\\)\\)?\\|rebuild\\)\\|r\\(?:e\\(?:gister[_-]\\(?:command[_-]parser\\|input[_-]suffix\\|\\(?:pars\\|scann\\)er\\)\\|pository\\)\\|untime\\)\\|s\\(?:ignature\\|ub\\)\\|unexport\\|vpath\\)\\>[ 	]*\\([^: 	\n#]*\\)"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-variable-name-face))<br/>
+ ("^\\(?: [ 	]*\\)?\\(?:and[ 	]+\\|else[ 	]+\\|or[ 	]+\\)?if\\(n\\)\\(?:def\\|eq\\|sys\\|true\\)\\>"<br/>
+  (1 font-lock-negation-char-face prepend)<br/>
+  (2 font-lock-negation-char-face prepend t))<br/>
+ ("[^$]\\(\\$[({]\\(?:output\\|stem\\|target\\)s?\\_>.*?[})]\\)" 1 'makefile-targets append)<br/>
+ ("\\(:\\s *\\)\\(build_c\\(?:ache\\|heck\\)\\|env\\(?:ironment\\)?\\|foreach\\|signature\\|scanner\\|quickscan\\|smartscan\\)\\>\\([^:\n]*\\)"<br/>
+  (1 font-lock-type-face t)<br/>
+  (2 font-lock-keyword-face t)<br/>
+  (3 font-lock-variable-name-face t))<br/>
+ ("[^$]\\$\\(?:((?\\|{{?\\|\\[\\[?\\)\\([-a-zA-Z0-9_.]+\\s \\)" 1 font-lock-function-name-face prepend)<br/>
+ ("[^$]\\$\\(((?\\|{{?\\|\\[\\[?\\)shell\\(?:[-_]\\(?:global[-_]\\)?once\\)?[ 	]+" makefile-match-function-end nil nil<br/>
+  (1 'makefile-shell prepend t))<br/>
+ ("[^$]\\$\\(((?\\|{{?\\|\\[\\[?\\)makeperl[ 	]+" makefile-match-function-end nil nil<br/>
+  (1 'makefile-makepp-perl prepend t))<br/>
+ ("[^$]\\$\\(((?\\|{{?\\)perl[ 	]+" makefile-match-function-end nil nil<br/>
+  (1 'makefile-makepp-perl t t))<br/>
+ ("ifmakeperl\\s +\\(.*\\)" 1 'makefile-makepp-perl prepend)<br/>
+ ("ifperl\\s +\\(.*\\)" 1 'makefile-makepp-perl t)<br/>
+ ("\\<make\\(?:perl\\|sub\\s +\\S +\\)\\s *\n?\\s *{\\(?:{\\s *\n?\\(\\(?:.*\n\\)+?\\)\\s *}\\|\\s *\\(\\(?:.*?\\|\n?\\(?:.*\n\\)+?\\)\\)\\)}"<br/>
+  (1 'makefile-makepp-perl prepend t)<br/>
+  (2 'makefile-makepp-perl prepend t))<br/>
+ ("\\<\\(?:perl\\|sub\\s +\\S +\\)\\s *\n?\\s *{\\(?:{\\s *\n?\\(\\(?:.*\n\\)+?\\)\\s *}\\|\\s *\\(\\(?:.*?\\|\n?\\(?:.*\n\\)+?\\)\\)\\)}"<br/>
+  (1 'makefile-makepp-perl t t)<br/>
+  (2 'makefile-makepp-perl t t))<br/>
+ ("perl[-_]begin\\s *\\(?:\\s #.*\\)?\n\\(\\(?:.*\n\\)+?\\)\\s *perl[-_]end\\>" 1 'makefile-makepp-perl t)<br/>
+ (makefile-match-dependency<br/>
+  (1 'makefile-targets prepend)<br/>
+  (3 'makefile-shell prepend t)))<br/>
+<br/>

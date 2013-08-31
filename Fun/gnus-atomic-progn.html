@@ -1,1 +1,11 @@
-gnus-atomic-progn is a Lisp macro in `gnus-util.el'.<br/><br/>(gnus-atomic-progn &rest FORMS)<br/><br/>Evaluate FORMS atomically, which means to protect the evaluation<br/>from being interrupted by the user.  An error from the forms themselves<br/>will return without finishing the operation.  Since interrupts from<br/>the user are disabled, it is recommended that only the most minimal<br/>operations are performed by FORMS.  If you wish to assign many<br/>complicated values atomically, compute the results into temporary<br/>variables and then do only the assignment atomically.
+<strong>gnus-atomic-progn</strong> is a Lisp macro in `<code>gnus-util.el</code>'.<br/>
+<br/>
+(gnus-atomic-progn &rest FORMS)<br/>
+<br/>
+Evaluate FORMS atomically, which means to protect the evaluation<br/>
+from being interrupted by the user.  An error from the forms themselves<br/>
+will return without finishing the operation.  Since interrupts from<br/>
+the user are disabled, it is recommended that only the most minimal<br/>
+operations are performed by FORMS.  If you wish to assign many<br/>
+complicated values atomically, compute the results into temporary<br/>
+variables and then do only the assignment atomically.

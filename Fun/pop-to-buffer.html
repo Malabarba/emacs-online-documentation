@@ -1,1 +1,22 @@
-pop-to-buffer is an interactive compiled Lisp function in `window.el'.<br/><br/>(pop-to-buffer BUFFER &optional ACTION NORECORD)<br/><br/>Select buffer BUFFER in some window, preferably a different one.<br/>BUFFER may be a buffer, a string (a buffer name), or nil.  If it<br/>is a string not naming an existent buffer, create a buffer with<br/>that name.  If BUFFER is nil, choose some other buffer.  Return<br/>the buffer.<br/><br/>This uses `display-buffer' as a subroutine.  The optional ACTION<br/>argument is passed to `display-buffer' as its ACTION argument.<br/>See `display-buffer' for more information.  ACTION is t if called<br/>interactively with a prefix argument, which means to pop to a<br/>window other than the selected one even if the buffer is already<br/>displayed in the selected window.<br/><br/>If the window to show BUFFER is not on the selected<br/>frame, raise that window's frame and give it input focus.<br/><br/>Optional third arg NORECORD non-nil means do not put this buffer<br/>at the front of the list of recently selected ones.
+<strong>pop-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(pop-to-buffer BUFFER &optional ACTION NORECORD)<br/>
+<br/>
+Select buffer BUFFER in some window, preferably a different one.<br/>
+BUFFER may be a buffer, a string (a buffer name), or nil.  If it<br/>
+is a string not naming an existent buffer, create a buffer with<br/>
+that name.  If BUFFER is nil, choose some other buffer.  Return<br/>
+the buffer.<br/>
+<br/>
+This uses `display-buffer' as a subroutine.  The optional ACTION<br/>
+argument is passed to `display-buffer' as its ACTION argument.<br/>
+See `display-buffer' for more information.  ACTION is t if called<br/>
+interactively with a prefix argument, which means to pop to a<br/>
+window other than the selected one even if the buffer is already<br/>
+displayed in the selected window.<br/>
+<br/>
+If the window to show BUFFER is not on the selected<br/>
+frame, raise that window's frame and give it input focus.<br/>
+<br/>
+Optional third arg NORECORD non-nil means do not put this buffer<br/>
+at the front of the list of recently selected ones.

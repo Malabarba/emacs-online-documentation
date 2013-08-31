@@ -1,1 +1,53 @@
-sgml-mode is an interactive autoloaded compiled Lisp function in `sgml-mode.el'.<br/><br/>(sgml-mode)<br/><br/>Parent mode: `text-mode'.<br/><br/>Major mode for editing SGML documents.<br/>Makes > match <.<br/>Keys <, &, SPC within <>, ", / and ' can be electric depending on<br/>`sgml-quick-keys'.<br/><br/>An argument of N to a tag-inserting command means to wrap it around<br/>the next N words.  In Transient Mark mode, when the mark is active,<br/>N defaults to -1, which means to wrap it around the current region.<br/><br/>If you like upcased tags, put (setq sgml-transformation-function 'upcase)<br/>in your init file.<br/><br/>Use M-x sgml-validate to validate your document with an SGML parser.<br/><br/>Do C-h v sgml- SPC to see available variables.<br/>Do C-h k on the following bindings to discover what they do.<br/>key             binding<br/>---             -------<br/><br/> .. ÿ	sgml-maybe-name-self<br/><br/>C-c		Prefix Command<br/>/		sgml-slash<br/><br/>C-c C-a		sgml-attributes<br/>C-c C-b		sgml-skip-tag-backward<br/>C-c C-d		sgml-delete-tag<br/>C-c C-e		sgml-close-tag<br/>C-c C-f		sgml-skip-tag-forward<br/>C-c TAB		sgml-tags-invisible<br/>C-c C-n		sgml-name-char<br/>C-c C-o		sgml-tag<br/>C-c C-t		sgml-tag<br/>C-c C-v		sgml-validate<br/>C-c /		sgml-close-tag<br/>C-c 8		sgml-name-8bit-mode<br/>C-c ?		sgml-tag-help<br/>C-c ]		sgml-close-tag<br/>C-c DEL		sgml-delete-tag<br/>C-c <left>	sgml-skip-tag-backward<br/>C-c <right>	sgml-skip-tag-forward<br/><br/><br/><br/>In addition to any hooks its parent mode `text-mode' might have run,<br/>this mode runs the hook `sgml-mode-hook', as the final step<br/>during initialization.
+<strong>sgml-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>sgml-mode.el</code>'.<br/>
+<br/>
+(sgml-mode)<br/>
+<br/>
+Parent mode: `text-mode'.<br/>
+<br/>
+Major mode for editing SGML documents.<br/>
+Makes > match <.<br/>
+Keys <, &, SPC within <>, ", / and ' can be electric depending on<br/>
+`sgml-quick-keys'.<br/>
+<br/>
+An argument of N to a tag-inserting command means to wrap it around<br/>
+the next N words.  In Transient Mark mode, when the mark is active,<br/>
+N defaults to -1, which means to wrap it around the current region.<br/>
+<br/>
+If you like upcased tags, put (setq sgml-transformation-function 'upcase)<br/>
+in your init file.<br/>
+<br/>
+Use M-x sgml-validate to validate your document with an SGML parser.<br/>
+<br/>
+Do C-h v sgml- SPC to see available variables.<br/>
+Do C-h k on the following bindings to discover what they do.<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+ .. ÿ	sgml-maybe-name-self<br/>
+<br/>
+C-c		Prefix Command<br/>
+/		sgml-slash<br/>
+<br/>
+C-c C-a		sgml-attributes<br/>
+C-c C-b		sgml-skip-tag-backward<br/>
+C-c C-d		sgml-delete-tag<br/>
+C-c C-e		sgml-close-tag<br/>
+C-c C-f		sgml-skip-tag-forward<br/>
+C-c TAB		sgml-tags-invisible<br/>
+C-c C-n		sgml-name-char<br/>
+C-c C-o		sgml-tag<br/>
+C-c C-t		sgml-tag<br/>
+C-c C-v		sgml-validate<br/>
+C-c /		sgml-close-tag<br/>
+C-c 8		sgml-name-8bit-mode<br/>
+C-c ?		sgml-tag-help<br/>
+C-c ]		sgml-close-tag<br/>
+C-c DEL		sgml-delete-tag<br/>
+C-c <left>	sgml-skip-tag-backward<br/>
+C-c <right>	sgml-skip-tag-forward<br/>
+<br/>
+<br/>
+<br/>
+In addition to any hooks its parent mode `text-mode' might have run,<br/>
+this mode runs the hook `sgml-mode-hook', as the final step<br/>
+during initialization.

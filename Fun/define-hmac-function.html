@@ -1,1 +1,13 @@
-define-hmac-function is a Lisp macro in `hmac-def.el'.<br/><br/>(define-hmac-function NAME H B L &optional BIT)<br/><br/>Define a function NAME(TEXT KEY) which computes HMAC with function H.<br/><br/>HMAC function is H(KEY XOR opad, H(KEY XOR ipad, TEXT)):<br/><br/>H is a cryptographic hash function, such as SHA1 and MD5, which takes<br/>a string and return a digest of it (in binary form).<br/>B is a byte-length of a block size of H. (B=64 for both SHA1 and MD5.)<br/>L is a byte-length of hash outputs. (L=16 for MD5, L=20 for SHA1.)<br/>If BIT is non-nil, truncate output to specified bits.
+<strong>define-hmac-function</strong> is a Lisp macro in `<code>hmac-def.el</code>'.<br/>
+<br/>
+(define-hmac-function NAME H B L &optional BIT)<br/>
+<br/>
+Define a function NAME(TEXT KEY) which computes HMAC with function H.<br/>
+<br/>
+HMAC function is H(KEY XOR opad, H(KEY XOR ipad, TEXT)):<br/>
+<br/>
+H is a cryptographic hash function, such as SHA1 and MD5, which takes<br/>
+a string and return a digest of it (in binary form).<br/>
+B is a byte-length of a block size of H. (B=64 for both SHA1 and MD5.)<br/>
+L is a byte-length of hash outputs. (L=16 for MD5, L=20 for SHA1.)<br/>
+If BIT is non-nil, truncate output to specified bits.

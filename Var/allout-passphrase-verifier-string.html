@@ -1,1 +1,22 @@
-allout-passphrase-verifier-string is a variable defined in `allout.el'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/>  This variable is obsolete since 23.3;<br/>  use `allout-passphrase-verifier-string' instead.<br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate `stringp'.<br/><br/>Documentation:<br/>Setting used to test solicited encryption passphrases against the one<br/>already associated with a file.<br/><br/>It consists of an encrypted random string useful only to verify that a<br/>passphrase entered by the user is effective for decryption.  The passphrase<br/>itself is *not* recorded in the file anywhere, and the encrypted contents<br/>are random binary characters to avoid exposing greater susceptibility to<br/>search attacks.<br/><br/>The verifier string is retained as an Emacs file variable, as well as in<br/>the Emacs buffer state, if file variable adjustments are enabled.  See<br/>`allout-enable-file-variable-adjustment' for details about that.
+<strong>allout-passphrase-verifier-string</strong> is a variable defined in `<code>allout.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+  This variable is obsolete since 23.3;<br/>
+  use `allout-passphrase-verifier-string' instead.<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate `stringp'.<br/>
+<br/>
+Documentation:<br/>
+Setting used to test solicited encryption passphrases against the one<br/>
+already associated with a file.<br/>
+<br/>
+It consists of an encrypted random string useful only to verify that a<br/>
+passphrase entered by the user is effective for decryption.  The passphrase<br/>
+itself is *not* recorded in the file anywhere, and the encrypted contents<br/>
+are random binary characters to avoid exposing greater susceptibility to<br/>
+search attacks.<br/>
+<br/>
+The verifier string is retained as an Emacs file variable, as well as in<br/>
+the Emacs buffer state, if file variable adjustments are enabled.  See<br/>
+`allout-enable-file-variable-adjustment' for details about that.

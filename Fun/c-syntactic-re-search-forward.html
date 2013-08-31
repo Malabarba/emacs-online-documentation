@@ -1,1 +1,43 @@
-c-syntactic-re-search-forward is a compiled Lisp function in `cc-engine.el'.<br/><br/>(c-syntactic-re-search-forward REGEXP &optional BOUND NOERROR PAREN-LEVEL NOT-INSIDE-TOKEN LOOKBEHIND-SUBMATCH)<br/><br/>Like `re-search-forward', but only report matches that are found<br/>in syntactically significant text.  I.e. matches in comments, macros<br/>or string literals are ignored.  The start point is assumed to be<br/>outside any comment, macro or string literal, or else the content of<br/>that region is taken as syntactically significant text.<br/><br/>If PAREN-LEVEL is non-nil, an additional restriction is added to<br/>ignore matches in nested paren sexps.  The search will also not go<br/>outside the current list sexp, which has the effect that if the point<br/>should be moved to BOUND when no match is found (i.e. NOERROR is<br/>neither nil nor t), then it will be at the closing paren if the end of<br/>the current list sexp is encountered first.<br/><br/>If NOT-INSIDE-TOKEN is non-nil, matches in the middle of tokens are<br/>ignored.  Things like multicharacter operators and special symbols<br/>(e.g. "`()" in Pike) are handled but currently not floating point<br/>constants.<br/><br/>If LOOKBEHIND-SUBMATCH is non-nil, it's taken as a number of a<br/>subexpression in REGEXP.  The end of that submatch is used as the<br/>position to check for syntactic significance.  If LOOKBEHIND-SUBMATCH<br/>isn't used or if that subexpression didn't match then the start<br/>position of the whole match is used instead.  The "look behind"<br/>subexpression is never tested before the starting position, so it<br/>might be a good idea to include \= as a match alternative in it.<br/><br/>Optimization note: Matches might be missed if the "look behind"<br/>subexpression can match the end of nonwhite syntactic whitespace,<br/>i.e. the end of comments or cpp directives.  This since the function<br/>skips over such things before resuming the search.  It's on the other<br/>hand not safe to assume that the "look behind" subexpression never<br/>matches syntactic whitespace.<br/><br/>Bug: Unbalanced parens inside cpp directives are currently not handled<br/>correctly (i.e. they don't get ignored as they should) when<br/>PAREN-LEVEL is set.<br/><br/>Note that this function might do hidden buffer changes.  See the<br/>comment at the start of cc-engine.el for more info.
+<strong>c-syntactic-re-search-forward</strong> is a compiled Lisp function in `<code>cc-engine.el</code>'.<br/>
+<br/>
+(c-syntactic-re-search-forward REGEXP &optional BOUND NOERROR PAREN-LEVEL NOT-INSIDE-TOKEN LOOKBEHIND-SUBMATCH)<br/>
+<br/>
+Like `re-search-forward', but only report matches that are found<br/>
+in syntactically significant text.  I.e. matches in comments, macros<br/>
+or string literals are ignored.  The start point is assumed to be<br/>
+outside any comment, macro or string literal, or else the content of<br/>
+that region is taken as syntactically significant text.<br/>
+<br/>
+If PAREN-LEVEL is non-nil, an additional restriction is added to<br/>
+ignore matches in nested paren sexps.  The search will also not go<br/>
+outside the current list sexp, which has the effect that if the point<br/>
+should be moved to BOUND when no match is found (i.e. NOERROR is<br/>
+neither nil nor t), then it will be at the closing paren if the end of<br/>
+the current list sexp is encountered first.<br/>
+<br/>
+If NOT-INSIDE-TOKEN is non-nil, matches in the middle of tokens are<br/>
+ignored.  Things like multicharacter operators and special symbols<br/>
+(e.g. "`()" in Pike) are handled but currently not floating point<br/>
+constants.<br/>
+<br/>
+If LOOKBEHIND-SUBMATCH is non-nil, it's taken as a number of a<br/>
+subexpression in REGEXP.  The end of that submatch is used as the<br/>
+position to check for syntactic significance.  If LOOKBEHIND-SUBMATCH<br/>
+isn't used or if that subexpression didn't match then the start<br/>
+position of the whole match is used instead.  The "look behind"<br/>
+subexpression is never tested before the starting position, so it<br/>
+might be a good idea to include \= as a match alternative in it.<br/>
+<br/>
+Optimization note: Matches might be missed if the "look behind"<br/>
+subexpression can match the end of nonwhite syntactic whitespace,<br/>
+i.e. the end of comments or cpp directives.  This since the function<br/>
+skips over such things before resuming the search.  It's on the other<br/>
+hand not safe to assume that the "look behind" subexpression never<br/>
+matches syntactic whitespace.<br/>
+<br/>
+Bug: Unbalanced parens inside cpp directives are currently not handled<br/>
+correctly (i.e. they don't get ignored as they should) when<br/>
+PAREN-LEVEL is set.<br/>
+<br/>
+Note that this function might do hidden buffer changes.  See the<br/>
+comment at the start of cc-engine.el for more info.

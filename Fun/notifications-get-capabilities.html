@@ -1,1 +1,25 @@
-notifications-get-capabilities is a compiled Lisp function in `notifications.el'.<br/><br/>(notifications-get-capabilities &optional BUS)<br/><br/>Return the capabilities of the notification server, a list of strings.<br/>BUS can be a string denoting a D-Bus connection, the default is `:session'.<br/>The following capabilities can be expected:<br/><br/>  :actions         The server will provide the specified actions<br/>                   to the user.<br/>  :action-icons    Supports using icons instead of text for<br/>                   displaying actions.<br/>  :body            Supports body text.<br/>  :body-hyperlinks The server supports hyperlinks in the notifications.<br/>  :body-images     The server supports images in the notifications.<br/>  :body-markup     Supports markup in the body text.<br/>  :icon-multi      The server will render an animation of all the<br/>                   frames in a given image array.<br/>  :icon-static     Supports display of exactly 1 frame of any<br/>                   given image array.  This value is mutually exclusive<br/>                   with `:icon-multi'.<br/>  :persistence     The server supports persistence of notifications.<br/>  :sound           The server supports sounds on notifications.<br/><br/>Further vendor-specific caps start with `:x-vendor', like `:x-gnome-foo-cap'.
+<strong>notifications-get-capabilities</strong> is a compiled Lisp function in `<code>notifications.el</code>'.<br/>
+<br/>
+(notifications-get-capabilities &optional BUS)<br/>
+<br/>
+Return the capabilities of the notification server, a list of strings.<br/>
+BUS can be a string denoting a D-Bus connection, the default is `:session'.<br/>
+The following capabilities can be expected:<br/>
+<br/>
+  :actions         The server will provide the specified actions<br/>
+                   to the user.<br/>
+  :action-icons    Supports using icons instead of text for<br/>
+                   displaying actions.<br/>
+  :body            Supports body text.<br/>
+  :body-hyperlinks The server supports hyperlinks in the notifications.<br/>
+  :body-images     The server supports images in the notifications.<br/>
+  :body-markup     Supports markup in the body text.<br/>
+  :icon-multi      The server will render an animation of all the<br/>
+                   frames in a given image array.<br/>
+  :icon-static     Supports display of exactly 1 frame of any<br/>
+                   given image array.  This value is mutually exclusive<br/>
+                   with `:icon-multi'.<br/>
+  :persistence     The server supports persistence of notifications.<br/>
+  :sound           The server supports sounds on notifications.<br/>
+<br/>
+Further vendor-specific caps start with `:x-vendor', like `:x-gnome-foo-cap'.

@@ -1,1 +1,13 @@
-image-transform-fit-width is a compiled Lisp function in `image-mode.el'.<br/><br/>(image-transform-fit-width WIDTH HEIGHT LENGTH)<br/><br/>Return (w . h) so that a rotated w x h image has exactly width LENGTH.<br/>The rotation angle is the value of `image-transform-rotation'.<br/>Write W for WIDTH and H for HEIGHT.  Then the w x h rectangle is<br/>an "approximately uniformly" scaled W x H rectangle, which<br/>currently means that w is one of floor(s W) + {0, 1, -1} and h is<br/>floor(s H), where s can be recovered as the value of `image-transform-scale'.<br/>The value of `image-transform-rotation' may be replaced by<br/>a slightly different angle.  Currently this is done for values<br/>close to a multiple of 90, see `image-transform-right-angle-fudge'.
+<strong>image-transform-fit-width</strong> is a compiled Lisp function in `<code>image-mode.el</code>'.<br/>
+<br/>
+(image-transform-fit-width WIDTH HEIGHT LENGTH)<br/>
+<br/>
+Return (w . h) so that a rotated w x h image has exactly width LENGTH.<br/>
+The rotation angle is the value of `image-transform-rotation'.<br/>
+Write W for WIDTH and H for HEIGHT.  Then the w x h rectangle is<br/>
+an "approximately uniformly" scaled W x H rectangle, which<br/>
+currently means that w is one of floor(s W) + {0, 1, -1} and h is<br/>
+floor(s H), where s can be recovered as the value of `image-transform-scale'.<br/>
+The value of `image-transform-rotation' may be replaced by<br/>
+a slightly different angle.  Currently this is done for values<br/>
+close to a multiple of 90, see `image-transform-right-angle-fudge'.

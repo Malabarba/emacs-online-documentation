@@ -1,1 +1,28 @@
-viper-syntax-preference is a variable defined in `viper-util.el'.<br/>Its value is reformed-vi<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>Syntax type characterizing Viper's alphanumeric symbols.<br/>Affects movement and change commands that deal with Vi-style words.<br/>Works best when set in the hooks to various major modes.<br/><br/>`strict-vi' means Viper words are (hopefully) exactly as in Vi.<br/><br/>`reformed-vi' means Viper words are like Emacs words (as determined using<br/>Emacs syntax tables, which are different for different major modes) with two<br/>exceptions: the symbol `_' is always part of a word and typical Vi non-word<br/>symbols, such as `,',:,",),{, etc., are excluded.<br/>This behaves very close to `strict-vi', but also works well with non-ASCII<br/>characters from various alphabets.<br/><br/>`extended' means Viper word constituents are symbols that are marked as being<br/>parts of words OR symbols in Emacs syntax tables.<br/>This is most appropriate for major modes intended for editing programs.<br/><br/>`emacs' means Viper words are the same as Emacs words as specified by Emacs<br/>syntax tables.<br/>This option is appropriate if you like Emacs-style words.<br/><br/>You can customize this variable.
+<strong>viper-syntax-preference</strong> is a variable defined in `<code>viper-util.el</code>'.<br/>
+Its value is reformed-vi<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+Syntax type characterizing Viper's alphanumeric symbols.<br/>
+Affects movement and change commands that deal with Vi-style words.<br/>
+Works best when set in the hooks to various major modes.<br/>
+<br/>
+`strict-vi' means Viper words are (hopefully) exactly as in Vi.<br/>
+<br/>
+`reformed-vi' means Viper words are like Emacs words (as determined using<br/>
+Emacs syntax tables, which are different for different major modes) with two<br/>
+exceptions: the symbol `_' is always part of a word and typical Vi non-word<br/>
+symbols, such as `,',:,",),{, etc., are excluded.<br/>
+This behaves very close to `strict-vi', but also works well with non-ASCII<br/>
+characters from various alphabets.<br/>
+<br/>
+`extended' means Viper word constituents are symbols that are marked as being<br/>
+parts of words OR symbols in Emacs syntax tables.<br/>
+This is most appropriate for major modes intended for editing programs.<br/>
+<br/>
+`emacs' means Viper words are the same as Emacs words as specified by Emacs<br/>
+syntax tables.<br/>
+This option is appropriate if you like Emacs-style words.<br/>
+<br/>
+You can customize this variable.

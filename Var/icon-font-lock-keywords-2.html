@@ -1,1 +1,35 @@
-icon-font-lock-keywords-2 is a variable defined in `icon.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Gaudy level highlighting for Icon mode.<br/><br/>Value: (("^[ 	]*\\(procedure\\)\\>[ 	]*\\(\\sw+\\)?"<br/>  (1 font-lock-builtin-face)<br/>  (2 font-lock-function-name-face nil t))<br/> ("\\<\\(c\\(?:o-expression\\|set\\)\\|file\\|integer\\|list\\|null\\|real\\|s\\(?:et\\|tring\\)\\|table\\)\\>" . font-lock-type-face)<br/> ("\\<\\(b\\(?:reak\\|y\\)\\|c\\(?:\\(?:as\\|reat\\)e\\)\\|d\\(?:efault\\|o\\)\\|e\\(?:lse\\|very\\)\\|fail\\|if\\|n\\(?:\\(?:ex\\|o\\)t\\)\\|of\\|re\\(?:cord\\|peat\\|turn\\)\\|suspend\\|t\\(?:hen\\|o\\)\\|until\\|while\\)\\>" . font-lock-keyword-face)<br/> ("\\<\\(end\\|initial\\)\\>" . font-lock-builtin-face)<br/> ("\\(&\\(?:a\\(?:llocated\\|scii\\)\\|c\\(?:lock\\|o\\(?:l\\(?:lections\\|umn\\)?\\|ntrol\\)\\|\\(?:se\\|urren\\)t\\)\\|d\\(?:ate\\(?:line\\)?\\|igits\\|ump\\)\\|e\\(?:rro\\(?:r\\(?:number\\|text\\|value\\)?\\|ut\\)\\|vent\\(?:\\(?:cod\\|sourc\\|valu\\)e\\)\\)\\|f\\(?:ail\\|eatures\\|ile\\)\\|host\\|in\\(?:put\\|terval\\)\\|l\\(?:case\\|drag\\|e\\(?:tters\\|vel\\)\\|ine\\|press\\|release\\)\\|m\\(?:ain\\|drag\\|eta\\|press\\|release\\)\\|null\\|output\\|p\\(?:hi\\|i\\|os\\|rogname\\)\\|r\\(?:andom\\|drag\\|e\\(?:gions\\|size\\)\\|ow\\|press\\|release\\)\\|s\\(?:hift\\|ource\\|torage\\|ubject\\)\\|t\\(?:\\(?:im\\|rac\\)e\\)\\|ucase\\|version\\|window\\|[exy]\\)\\)" . font-lock-constant-face)<br/> ("^[ 	]*\\(global\\|l\\(?:ink\\|ocal\\)\\|static\\)\\(\\sw+\\>\\)*"<br/>  (1 font-lock-builtin-face)<br/>  (font-lock-match-c-style-declaration-item-and-skip-to-next<br/>   (goto-char<br/>    (or<br/>     (match-beginning 2)<br/>     (match-end 1)))<br/>   nil<br/>   (1<br/>    (if<br/>	(match-beginning 2)<br/>	font-lock-function-name-face font-lock-variable-name-face))))<br/> ("^\\(\\$\\(?:define\\|\\(?:eli\\|\\(?:ifn?\\|un\\)de\\)f\\)\\)\\>[ 	]*\\([^ 	\n]+\\)?"<br/>  (1 font-lock-builtin-face)<br/>  (4 font-lock-variable-name-face nil t))<br/> ("^\\(\\$\\(?:dump\\|e\\(?:lse\\|ndif\\)\\|include\\)\\)\\>" . font-lock-builtin-face)<br/> ("^\\(\\$\\(?:error\\|warning\\)\\)\\>[ 	]*\\(.+\\)?"<br/>  (1 font-lock-builtin-face)<br/>  (3 font-lock-warning-face nil t)))<br/><br/>
+<strong>icon-font-lock-keywords-2</strong> is a variable defined in `<code>icon.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Gaudy level highlighting for Icon mode.<br/>
+<br/>
+Value: (("^[ 	]*\\(procedure\\)\\>[ 	]*\\(\\sw+\\)?"<br/>
+  (1 font-lock-builtin-face)<br/>
+  (2 font-lock-function-name-face nil t))<br/>
+ ("\\<\\(c\\(?:o-expression\\|set\\)\\|file\\|integer\\|list\\|null\\|real\\|s\\(?:et\\|tring\\)\\|table\\)\\>" . font-lock-type-face)<br/>
+ ("\\<\\(b\\(?:reak\\|y\\)\\|c\\(?:\\(?:as\\|reat\\)e\\)\\|d\\(?:efault\\|o\\)\\|e\\(?:lse\\|very\\)\\|fail\\|if\\|n\\(?:\\(?:ex\\|o\\)t\\)\\|of\\|re\\(?:cord\\|peat\\|turn\\)\\|suspend\\|t\\(?:hen\\|o\\)\\|until\\|while\\)\\>" . font-lock-keyword-face)<br/>
+ ("\\<\\(end\\|initial\\)\\>" . font-lock-builtin-face)<br/>
+ ("\\(&\\(?:a\\(?:llocated\\|scii\\)\\|c\\(?:lock\\|o\\(?:l\\(?:lections\\|umn\\)?\\|ntrol\\)\\|\\(?:se\\|urren\\)t\\)\\|d\\(?:ate\\(?:line\\)?\\|igits\\|ump\\)\\|e\\(?:rro\\(?:r\\(?:number\\|text\\|value\\)?\\|ut\\)\\|vent\\(?:\\(?:cod\\|sourc\\|valu\\)e\\)\\)\\|f\\(?:ail\\|eatures\\|ile\\)\\|host\\|in\\(?:put\\|terval\\)\\|l\\(?:case\\|drag\\|e\\(?:tters\\|vel\\)\\|ine\\|press\\|release\\)\\|m\\(?:ain\\|drag\\|eta\\|press\\|release\\)\\|null\\|output\\|p\\(?:hi\\|i\\|os\\|rogname\\)\\|r\\(?:andom\\|drag\\|e\\(?:gions\\|size\\)\\|ow\\|press\\|release\\)\\|s\\(?:hift\\|ource\\|torage\\|ubject\\)\\|t\\(?:\\(?:im\\|rac\\)e\\)\\|ucase\\|version\\|window\\|[exy]\\)\\)" . font-lock-constant-face)<br/>
+ ("^[ 	]*\\(global\\|l\\(?:ink\\|ocal\\)\\|static\\)\\(\\sw+\\>\\)*"<br/>
+  (1 font-lock-builtin-face)<br/>
+  (font-lock-match-c-style-declaration-item-and-skip-to-next<br/>
+   (goto-char<br/>
+    (or<br/>
+     (match-beginning 2)<br/>
+     (match-end 1)))<br/>
+   nil<br/>
+   (1<br/>
+    (if<br/>
+	(match-beginning 2)<br/>
+	font-lock-function-name-face font-lock-variable-name-face))))<br/>
+ ("^\\(\\$\\(?:define\\|\\(?:eli\\|\\(?:ifn?\\|un\\)de\\)f\\)\\)\\>[ 	]*\\([^ 	\n]+\\)?"<br/>
+  (1 font-lock-builtin-face)<br/>
+  (4 font-lock-variable-name-face nil t))<br/>
+ ("^\\(\\$\\(?:dump\\|e\\(?:lse\\|ndif\\)\\|include\\)\\)\\>" . font-lock-builtin-face)<br/>
+ ("^\\(\\$\\(?:error\\|warning\\)\\)\\>[ 	]*\\(.+\\)?"<br/>
+  (1 font-lock-builtin-face)<br/>
+  (3 font-lock-warning-face nil t)))<br/>
+<br/>

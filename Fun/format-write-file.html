@@ -1,1 +1,18 @@
-format-write-file is an interactive compiled Lisp function in `format.el'.<br/><br/>(format-write-file FILENAME FORMAT &optional CONFIRM)<br/><br/>Write current buffer into FILENAME, using a format based on FORMAT.<br/>Constructs the actual format starting from FORMAT, then appending<br/>any elements from the value of `buffer-file-format' with a non-nil<br/>`preserve' flag (see the documentation of `format-alist'), if they<br/>are not already present in FORMAT.  It then updates `buffer-file-format'<br/>with this format, making it the default for future saves.<br/><br/>If the buffer is already visiting a file, you can specify a<br/>directory name as FILENAME, to write a file of the same old name<br/>in that directory.<br/><br/>If optional third arg CONFIRM is non-nil, asks for confirmation before<br/>overwriting an existing file.  Interactively, requires confirmation<br/>unless you supply a prefix argument.
+<strong>format-write-file</strong> is an interactive compiled Lisp function in `<code>format.el</code>'.<br/>
+<br/>
+(format-write-file FILENAME FORMAT &optional CONFIRM)<br/>
+<br/>
+Write current buffer into FILENAME, using a format based on FORMAT.<br/>
+Constructs the actual format starting from FORMAT, then appending<br/>
+any elements from the value of `buffer-file-format' with a non-nil<br/>
+`preserve' flag (see the documentation of `format-alist'), if they<br/>
+are not already present in FORMAT.  It then updates `buffer-file-format'<br/>
+with this format, making it the default for future saves.<br/>
+<br/>
+If the buffer is already visiting a file, you can specify a<br/>
+directory name as FILENAME, to write a file of the same old name<br/>
+in that directory.<br/>
+<br/>
+If optional third arg CONFIRM is non-nil, asks for confirmation before<br/>
+overwriting an existing file.  Interactively, requires confirmation<br/>
+unless you supply a prefix argument.

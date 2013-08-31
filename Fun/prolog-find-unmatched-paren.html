@@ -1,1 +1,12 @@
-prolog-find-unmatched-paren is a compiled Lisp function in `prolog.el'.<br/><br/>(prolog-find-unmatched-paren &optional MODE)<br/><br/>Return the column of the last unmatched left parenthesis.<br/>If MODE is `skipwhite' then any white space after the parenthesis is added to<br/>the answer.<br/>If MODE is `plusone' then the parenthesis' column +1 is returned.<br/>If MODE is `termdependent' then if the unmatched parenthesis is part of<br/>a compound term the function will work as `skipwhite', otherwise<br/>it will return the column paren plus the value of `prolog-paren-indent'.<br/>If MODE is nil or not set then the parenthesis' exact column is returned.
+<strong>prolog-find-unmatched-paren</strong> is a compiled Lisp function in `<code>prolog.el</code>'.<br/>
+<br/>
+(prolog-find-unmatched-paren &optional MODE)<br/>
+<br/>
+Return the column of the last unmatched left parenthesis.<br/>
+If MODE is `skipwhite' then any white space after the parenthesis is added to<br/>
+the answer.<br/>
+If MODE is `plusone' then the parenthesis' column +1 is returned.<br/>
+If MODE is `termdependent' then if the unmatched parenthesis is part of<br/>
+a compound term the function will work as `skipwhite', otherwise<br/>
+it will return the column paren plus the value of `prolog-paren-indent'.<br/>
+If MODE is nil or not set then the parenthesis' exact column is returned.

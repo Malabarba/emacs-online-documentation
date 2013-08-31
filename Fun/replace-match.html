@@ -1,1 +1,39 @@
-replace-match is a built-in function in `C source code'.<br/><br/>(replace-match NEWTEXT &optional FIXEDCASE LITERAL STRING SUBEXP)<br/><br/>Replace text matched by last search with NEWTEXT.<br/>Leave point at the end of the replacement text.<br/><br/>If optional second arg FIXEDCASE is non-nil, do not alter the case of<br/>the replacement text.  Otherwise, maybe capitalize the whole text, or<br/>maybe just word initials, based on the replaced text.  If the replaced<br/>text has only capital letters and has at least one multiletter word,<br/>convert NEWTEXT to all caps.  Otherwise if all words are capitalized<br/>in the replaced text, capitalize each word in NEWTEXT.<br/><br/>If optional third arg LITERAL is non-nil, insert NEWTEXT literally.<br/>Otherwise treat `\' as special:<br/>  `\&' in NEWTEXT means substitute original matched text.<br/>  `\N' means substitute what matched the Nth `\(...\)'.<br/>       If Nth parens didn't match, substitute nothing.<br/>  `\\' means insert one `\'.<br/>  `\?' is treated literally<br/>       (for compatibility with `query-replace-regexp').<br/>  Any other character following `\' signals an error.<br/>Case conversion does not apply to these substitutions.<br/><br/>If optional fourth argument STRING is non-nil, it should be a string<br/>to act on; this should be the string on which the previous match was<br/>done via `string-match'.  In this case, `replace-match' creates and<br/>returns a new string, made by copying STRING and replacing the part of<br/>STRING that was matched (the original STRING itself is not altered).<br/><br/>The optional fifth argument SUBEXP specifies a subexpression;<br/>it says to replace just that subexpression with NEWTEXT,<br/>rather than replacing the entire matched text.<br/>This is, in a vague sense, the inverse of using `\N' in NEWTEXT;<br/>`\N' copies subexp N into NEWTEXT, but using N as SUBEXP puts<br/>NEWTEXT in place of subexp N.<br/>This is useful only after a regular expression search or match,<br/>since only regular expressions have distinguished subexpressions.
+<strong>replace-match</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(replace-match NEWTEXT &optional FIXEDCASE LITERAL STRING SUBEXP)<br/>
+<br/>
+Replace text matched by last search with NEWTEXT.<br/>
+Leave point at the end of the replacement text.<br/>
+<br/>
+If optional second arg FIXEDCASE is non-nil, do not alter the case of<br/>
+the replacement text.  Otherwise, maybe capitalize the whole text, or<br/>
+maybe just word initials, based on the replaced text.  If the replaced<br/>
+text has only capital letters and has at least one multiletter word,<br/>
+convert NEWTEXT to all caps.  Otherwise if all words are capitalized<br/>
+in the replaced text, capitalize each word in NEWTEXT.<br/>
+<br/>
+If optional third arg LITERAL is non-nil, insert NEWTEXT literally.<br/>
+Otherwise treat `\' as special:<br/>
+  `\&' in NEWTEXT means substitute original matched text.<br/>
+  `\N' means substitute what matched the Nth `\(...\)'.<br/>
+       If Nth parens didn't match, substitute nothing.<br/>
+  `\\' means insert one `\'.<br/>
+  `\?' is treated literally<br/>
+       (for compatibility with `query-replace-regexp').<br/>
+  Any other character following `\' signals an error.<br/>
+Case conversion does not apply to these substitutions.<br/>
+<br/>
+If optional fourth argument STRING is non-nil, it should be a string<br/>
+to act on; this should be the string on which the previous match was<br/>
+done via `string-match'.  In this case, `replace-match' creates and<br/>
+returns a new string, made by copying STRING and replacing the part of<br/>
+STRING that was matched (the original STRING itself is not altered).<br/>
+<br/>
+The optional fifth argument SUBEXP specifies a subexpression;<br/>
+it says to replace just that subexpression with NEWTEXT,<br/>
+rather than replacing the entire matched text.<br/>
+This is, in a vague sense, the inverse of using `\N' in NEWTEXT;<br/>
+`\N' copies subexp N into NEWTEXT, but using N as SUBEXP puts<br/>
+NEWTEXT in place of subexp N.<br/>
+This is useful only after a regular expression search or match,<br/>
+since only regular expressions have distinguished subexpressions.

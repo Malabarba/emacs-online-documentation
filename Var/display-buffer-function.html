@@ -1,1 +1,19 @@
-display-buffer-function is a variable defined in `window.el'.<br/>Its value is nil<br/><br/>  This variable is obsolete since 24.3;<br/>  use `display-buffer-alist' instead.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>If non-nil, function to call to handle `display-buffer'.<br/>It will receive two args, the buffer and a flag which if non-nil<br/>means that the currently selected window is not acceptable.  It<br/>should choose or create a window, display the specified buffer in<br/>it, and return the window.<br/><br/>The specified function should call `display-buffer-record-window'<br/>with corresponding arguments to set up the quit-restore parameter<br/>of the window used.<br/><br/>You can customize this variable.
+<strong>display-buffer-function</strong> is a variable defined in `<code>window.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable is obsolete since 24.3;<br/>
+  use `display-buffer-alist' instead.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+If non-nil, function to call to handle `display-buffer'.<br/>
+It will receive two args, the buffer and a flag which if non-nil<br/>
+means that the currently selected window is not acceptable.  It<br/>
+should choose or create a window, display the specified buffer in<br/>
+it, and return the window.<br/>
+<br/>
+The specified function should call `display-buffer-record-window'<br/>
+with corresponding arguments to set up the quit-restore parameter<br/>
+of the window used.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,24 @@
-c-lineup-arglist-operators is a compiled Lisp function in `cc-align.el'.<br/><br/>(c-lineup-arglist-operators LANGELEM)<br/><br/>Line up lines starting with an infix operator under the open paren.<br/>Return nil on lines that don't start with an operator, to leave those<br/>cases to other line-up functions.  Example:<br/><br/>if (  x < 10<br/>   || at_limit (x,       <- c-lineup-arglist-operators<br/>                list)    <- c-lineup-arglist-operators returns nil<br/>   )<br/><br/>Since this function doesn't do anything for lines without an infix<br/>operator you typically want to use it together with some other line-up<br/>settings, e.g. as follows (the arglist-close setting is just a<br/>suggestion to get a consistent style):<br/><br/>(c-set-offset 'arglist-cont '(c-lineup-arglist-operators 0))<br/>(c-set-offset 'arglist-cont-nonempty '(c-lineup-arglist-operators<br/>                                        c-lineup-arglist))<br/>(c-set-offset 'arglist-close '(c-lineup-arglist-close-under-paren))<br/><br/>Works with: arglist-cont, arglist-cont-nonempty.
+<strong>c-lineup-arglist-operators</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
+<br/>
+(c-lineup-arglist-operators LANGELEM)<br/>
+<br/>
+Line up lines starting with an infix operator under the open paren.<br/>
+Return nil on lines that don't start with an operator, to leave those<br/>
+cases to other line-up functions.  Example:<br/>
+<br/>
+if (  x < 10<br/>
+   || at_limit (x,       <- c-lineup-arglist-operators<br/>
+                list)    <- c-lineup-arglist-operators returns nil<br/>
+   )<br/>
+<br/>
+Since this function doesn't do anything for lines without an infix<br/>
+operator you typically want to use it together with some other line-up<br/>
+settings, e.g. as follows (the arglist-close setting is just a<br/>
+suggestion to get a consistent style):<br/>
+<br/>
+(c-set-offset 'arglist-cont '(c-lineup-arglist-operators 0))<br/>
+(c-set-offset 'arglist-cont-nonempty '(c-lineup-arglist-operators<br/>
+                                        c-lineup-arglist))<br/>
+(c-set-offset 'arglist-close '(c-lineup-arglist-close-under-paren))<br/>
+<br/>
+Works with: arglist-cont, arglist-cont-nonempty.

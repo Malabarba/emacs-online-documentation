@@ -1,1 +1,19 @@
-float-output-format is a variable defined in `C source code'.<br/>Its value is nil<br/><br/>Documentation:<br/>The format descriptor string used to print floats.<br/>This is a %-spec like those accepted by `printf' in C,<br/>but with some restrictions.  It must start with the two characters `%.'.<br/>After that comes an integer precision specification,<br/>and then a letter which controls the format.<br/>The letters allowed are `e', `f' and `g'.<br/>Use `e' for exponential notation "DIG.DIGITSeEXPT"<br/>Use `f' for decimal point notation "DIGITS.DIGITS".<br/>Use `g' to choose the shorter of those two formats for the number at hand.<br/>The precision in any of these cases is the number of digits following<br/>the decimal point.  With `f', a precision of 0 means to omit the<br/>decimal point.  0 is not allowed with `e' or `g'.<br/><br/>A value of nil means to use the shortest notation<br/>that represents the number without losing information.
+<strong>float-output-format</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+The format descriptor string used to print floats.<br/>
+This is a %-spec like those accepted by `printf' in C,<br/>
+but with some restrictions.  It must start with the two characters `%.'.<br/>
+After that comes an integer precision specification,<br/>
+and then a letter which controls the format.<br/>
+The letters allowed are `e', `f' and `g'.<br/>
+Use `e' for exponential notation "DIG.DIGITSeEXPT"<br/>
+Use `f' for decimal point notation "DIGITS.DIGITS".<br/>
+Use `g' to choose the shorter of those two formats for the number at hand.<br/>
+The precision in any of these cases is the number of digits following<br/>
+the decimal point.  With `f', a precision of 0 means to omit the<br/>
+decimal point.  0 is not allowed with `e' or `g'.<br/>
+<br/>
+A value of nil means to use the shortest notation<br/>
+that represents the number without losing information.

@@ -1,1 +1,17 @@
-cvs-execute-single-dir is a variable defined in `pcvs-defs.el'.<br/>Its value is ("status")<br/><br/>Documentation:<br/>Whether cvs commands should be executed a directory at a time.<br/>If a list, specifies for which commands the single-dir mode should be used.<br/>If T, single-dir mode should be used for all operations.<br/><br/>CVS versions before 1.10 did not allow passing them arguments in different<br/>directories, so pcl-cvs checks what version you're using to determine<br/>whether to use the new feature or not.<br/>Sadly, even with a new cvs executable, if you connect to an older cvs server<br/>(typically a cvs-1.9 on the server), the old restriction applies.  In such<br/>a case the sanity check made by pcl-cvs fails and you will have to manually<br/>set this variable to t (until the cvs server is upgraded).<br/>When the above problem occurs, pcl-cvs should (hopefully) catch cvs' error<br/>message and replace it with a message telling you to change this variable.
+<strong>cvs-execute-single-dir</strong> is a variable defined in `<code>pcvs-defs.el</code>'.<br/>
+Its value is ("status")<br/>
+<br/>
+Documentation:<br/>
+Whether cvs commands should be executed a directory at a time.<br/>
+If a list, specifies for which commands the single-dir mode should be used.<br/>
+If T, single-dir mode should be used for all operations.<br/>
+<br/>
+CVS versions before 1.10 did not allow passing them arguments in different<br/>
+directories, so pcl-cvs checks what version you're using to determine<br/>
+whether to use the new feature or not.<br/>
+Sadly, even with a new cvs executable, if you connect to an older cvs server<br/>
+(typically a cvs-1.9 on the server), the old restriction applies.  In such<br/>
+a case the sanity check made by pcl-cvs fails and you will have to manually<br/>
+set this variable to t (until the cvs server is upgraded).<br/>
+When the above problem occurs, pcl-cvs should (hopefully) catch cvs' error<br/>
+message and replace it with a message telling you to change this variable.

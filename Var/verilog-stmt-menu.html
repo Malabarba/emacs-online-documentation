@@ -1,1 +1,41 @@
-verilog-stmt-menu is a variable defined in `verilog-mode.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Menu for statement templates in Verilog.<br/><br/>Value:<br/>(keymap "Statements"<br/>	(Header menu-item "Header" verilog-sk-header :help "Insert a header block at the top of file")<br/>	(Comment menu-item "Comment" verilog-sk-comment :help "Insert a comment block")<br/>	(nil menu-item "----")<br/>	(Module menu-item "Module" verilog-sk-module :help "Insert a module .. (/*AUTOARG*/);.. endmodule block")<br/>	(OVM\ Class menu-item "OVM Class" verilog-sk-ovm-class :help "Insert an OVM class block")<br/>	(UVM\ Class menu-item "UVM Class" verilog-sk-uvm-class :help "Insert an UVM class block")<br/>	(Primitive menu-item "Primitive" verilog-sk-primitive :help "Insert a primitive .. (.. );.. endprimitive block")<br/>	(nil-7 menu-item "----")<br/>	(Input menu-item "Input" verilog-sk-input :help "Insert an input declaration")<br/>	(Output menu-item "Output" verilog-sk-output :help "Insert an output declaration")<br/>	(Inout menu-item "Inout" verilog-sk-inout :help "Insert an inout declaration")<br/>	(Wire menu-item "Wire" verilog-sk-wire :help "Insert a wire declaration")<br/>	(Reg menu-item "Reg" verilog-sk-reg :help "Insert a register declaration")<br/>	(Define\ thing\ under\ point\ as\ a\ register menu-item "Define thing under point as a register" verilog-sk-define-signal :help "Define signal under point as a register at the top of the module")<br/>	(nil-14 menu-item "----")<br/>	(Initial menu-item "Initial" verilog-sk-initial :help "Insert an initial begin .. end block")<br/>	(Always menu-item "Always" verilog-sk-always :help "Insert an always @(AS) begin .. end block")<br/>	(Function menu-item "Function" verilog-sk-function :help "Insert a function .. begin .. end endfunction block")<br/>	(Task menu-item "Task" verilog-sk-task :help "Insert a task .. begin .. end endtask block")<br/>	(Specify menu-item "Specify" verilog-sk-specify :help "Insert a specify .. endspecify block")<br/>	(Generate menu-item "Generate" verilog-sk-generate :help "Insert a generate .. endgenerate block")<br/>	(nil-21 menu-item "----")<br/>	(Begin menu-item "Begin" verilog-sk-begin :help "Insert a begin .. end block")<br/>	(If menu-item "If" verilog-sk-if :help "Insert an if (..) begin .. end block")<br/>	(\(if\)\ else menu-item "(if) else" verilog-sk-else-if :help "Insert an else if (..) begin .. end block")<br/>	(For menu-item "For" verilog-sk-for :help "Insert a for (...) begin .. end block")<br/>	(While menu-item "While" verilog-sk-while :help "Insert a while (...) begin .. end block")<br/>	(Fork menu-item "Fork" verilog-sk-fork :help "Insert a fork begin .. end .. join block")<br/>	(Repeat menu-item "Repeat" verilog-sk-repeat :help "Insert a repeat (..) begin .. end block")<br/>	(Case menu-item "Case" verilog-sk-case :help "Insert a case block, prompting for details")<br/>	(Casex menu-item "Casex" verilog-sk-casex :help "Insert a casex (...) item: begin.. end endcase block")<br/>	(Casez menu-item "Casez" verilog-sk-casez :help "Insert a casez (...) item: begin.. end endcase block"))<br/><br/>
+<strong>verilog-stmt-menu</strong> is a variable defined in `<code>verilog-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Menu for statement templates in Verilog.<br/>
+<br/>
+Value:<br/>
+(keymap "Statements"<br/>
+	(Header menu-item "Header" verilog-sk-header :help "Insert a header block at the top of file")<br/>
+	(Comment menu-item "Comment" verilog-sk-comment :help "Insert a comment block")<br/>
+	(nil menu-item "----")<br/>
+	(Module menu-item "Module" verilog-sk-module :help "Insert a module .. (/*AUTOARG*/);.. endmodule block")<br/>
+	(OVM\ Class menu-item "OVM Class" verilog-sk-ovm-class :help "Insert an OVM class block")<br/>
+	(UVM\ Class menu-item "UVM Class" verilog-sk-uvm-class :help "Insert an UVM class block")<br/>
+	(Primitive menu-item "Primitive" verilog-sk-primitive :help "Insert a primitive .. (.. );.. endprimitive block")<br/>
+	(nil-7 menu-item "----")<br/>
+	(Input menu-item "Input" verilog-sk-input :help "Insert an input declaration")<br/>
+	(Output menu-item "Output" verilog-sk-output :help "Insert an output declaration")<br/>
+	(Inout menu-item "Inout" verilog-sk-inout :help "Insert an inout declaration")<br/>
+	(Wire menu-item "Wire" verilog-sk-wire :help "Insert a wire declaration")<br/>
+	(Reg menu-item "Reg" verilog-sk-reg :help "Insert a register declaration")<br/>
+	(Define\ thing\ under\ point\ as\ a\ register menu-item "Define thing under point as a register" verilog-sk-define-signal :help "Define signal under point as a register at the top of the module")<br/>
+	(nil-14 menu-item "----")<br/>
+	(Initial menu-item "Initial" verilog-sk-initial :help "Insert an initial begin .. end block")<br/>
+	(Always menu-item "Always" verilog-sk-always :help "Insert an always @(AS) begin .. end block")<br/>
+	(Function menu-item "Function" verilog-sk-function :help "Insert a function .. begin .. end endfunction block")<br/>
+	(Task menu-item "Task" verilog-sk-task :help "Insert a task .. begin .. end endtask block")<br/>
+	(Specify menu-item "Specify" verilog-sk-specify :help "Insert a specify .. endspecify block")<br/>
+	(Generate menu-item "Generate" verilog-sk-generate :help "Insert a generate .. endgenerate block")<br/>
+	(nil-21 menu-item "----")<br/>
+	(Begin menu-item "Begin" verilog-sk-begin :help "Insert a begin .. end block")<br/>
+	(If menu-item "If" verilog-sk-if :help "Insert an if (..) begin .. end block")<br/>
+	(\(if\)\ else menu-item "(if) else" verilog-sk-else-if :help "Insert an else if (..) begin .. end block")<br/>
+	(For menu-item "For" verilog-sk-for :help "Insert a for (...) begin .. end block")<br/>
+	(While menu-item "While" verilog-sk-while :help "Insert a while (...) begin .. end block")<br/>
+	(Fork menu-item "Fork" verilog-sk-fork :help "Insert a fork begin .. end .. join block")<br/>
+	(Repeat menu-item "Repeat" verilog-sk-repeat :help "Insert a repeat (..) begin .. end block")<br/>
+	(Case menu-item "Case" verilog-sk-case :help "Insert a case block, prompting for details")<br/>
+	(Casex menu-item "Casex" verilog-sk-casex :help "Insert a casex (...) item: begin.. end endcase block")<br/>
+	(Casez menu-item "Casez" verilog-sk-casez :help "Insert a casez (...) item: begin.. end endcase block"))<br/>
+<br/>

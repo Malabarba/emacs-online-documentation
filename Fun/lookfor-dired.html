@@ -1,1 +1,12 @@
-lookfor-dired is an alias for `find-grep-dired' in `find-dired.el'.<br/><br/>(lookfor-dired DIR REGEXP)<br/><br/>Find files in DIR containing a regexp REGEXP and start Dired on output.<br/>The command run (after changing into DIR) is<br/><br/>  find . \( -type f -exec `grep-program' `find-grep-options' \<br/>    -e REGEXP {} \; \) -ls<br/><br/>where the car of the variable `find-ls-option' specifies what to<br/>use in place of "-ls" as the final argument.
+<strong>lookfor-dired</strong> is an alias for `find-grep-dired' in `<code>find-dired.el</code>'.<br/>
+<br/>
+(lookfor-dired DIR REGEXP)<br/>
+<br/>
+Find files in DIR containing a regexp REGEXP and start Dired on output.<br/>
+The command run (after changing into DIR) is<br/>
+<br/>
+  find . \( -type f -exec `grep-program' `find-grep-options' \<br/>
+    -e REGEXP {} \; \) -ls<br/>
+<br/>
+where the car of the variable `find-ls-option' specifies what to<br/>
+use in place of "-ls" as the final argument.

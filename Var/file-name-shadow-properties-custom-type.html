@@ -1,1 +1,30 @@
-file-name-shadow-properties-custom-type is a variable defined in `rfn-eshadow.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (list<br/> (checklist :inline t<br/>	    (const :tag "Invisible" :doc "Make shadowed part of filename invisible" :format "%t%n%h" :inline t<br/>		   (invisible t intangible t))<br/>	    (list :inline t :format "%v" :tag "Face" :doc "Display shadowed part of filename using a different face"<br/>		  (const :format "" face)<br/>		  (face :value file-name-shadow))<br/>	    (list :inline t :format "%t: %v%h" :tag "Brackets" :doc "    Surround shadowed part of filename with brackets"<br/>		  (const :format "" before-string)<br/>		  (string :format "%v" :size 4 :value "{")<br/>		  (const :format "" after-string)<br/>		  (string :format " and: %v" :value "} "))<br/>	    (list :inline t :format "%t: %v%n%h" :tag "String" :doc "Display a string instead of the shadowed part of filename"<br/>		  (const :format "" display)<br/>		  (string :format "%v" :size 15 :value "<...ignored...>"))<br/>	    (const :tag "Avoid" :doc "Try to keep cursor out of shadowed part of filename" :format "%t%n%h" :inline t<br/>		   (field shadow)))<br/> (repeat :inline t :tag "Other Properties"<br/>	 (list :inline t :format "%v"<br/>	       (symbol :tag "Property")<br/>	       (sexp :tag "Value"))))<br/><br/>
+<strong>file-name-shadow-properties-custom-type</strong> is a variable defined in `<code>rfn-eshadow.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (list<br/>
+ (checklist :inline t<br/>
+	    (const :tag "Invisible" :doc "Make shadowed part of filename invisible" :format "%t%n%h" :inline t<br/>
+		   (invisible t intangible t))<br/>
+	    (list :inline t :format "%v" :tag "Face" :doc "Display shadowed part of filename using a different face"<br/>
+		  (const :format "" face)<br/>
+		  (face :value file-name-shadow))<br/>
+	    (list :inline t :format "%t: %v%h" :tag "Brackets" :doc "    Surround shadowed part of filename with brackets"<br/>
+		  (const :format "" before-string)<br/>
+		  (string :format "%v" :size 4 :value "{")<br/>
+		  (const :format "" after-string)<br/>
+		  (string :format " and: %v" :value "} "))<br/>
+	    (list :inline t :format "%t: %v%n%h" :tag "String" :doc "Display a string instead of the shadowed part of filename"<br/>
+		  (const :format "" display)<br/>
+		  (string :format "%v" :size 15 :value "<...ignored...>"))<br/>
+	    (const :tag "Avoid" :doc "Try to keep cursor out of shadowed part of filename" :format "%t%n%h" :inline t<br/>
+		   (field shadow)))<br/>
+ (repeat :inline t :tag "Other Properties"<br/>
+	 (list :inline t :format "%v"<br/>
+	       (symbol :tag "Property")<br/>
+	       (sexp :tag "Value"))))<br/>
+<br/>

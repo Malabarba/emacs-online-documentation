@@ -1,1 +1,21 @@
-pos-visible-in-window-p is a built-in function in `C source code'.<br/><br/>(pos-visible-in-window-p &optional POS WINDOW PARTIALLY)<br/><br/>Return non-nil if position POS is currently on the frame in WINDOW.<br/>WINDOW must be a live window and defaults to the selected one.<br/><br/>Return nil if that position is scrolled vertically out of view.  If a<br/>character is only partially visible, nil is returned, unless the<br/>optional argument PARTIALLY is non-nil.  If POS is only out of view<br/>because of horizontal scrolling, return non-nil.  If POS is t, it<br/>specifies the position of the last visible glyph in WINDOW.  POS<br/>defaults to point in WINDOW; WINDOW defaults to the selected window.<br/><br/>If POS is visible, return t if PARTIALLY is nil; if PARTIALLY is non-nil,<br/>return value is a list of 2 or 6 elements (X Y [RTOP RBOT ROWH VPOS]),<br/>where X and Y are the pixel coordinates relative to the top left corner<br/>of the window.  The remaining elements are omitted if the character after<br/>POS is fully visible; otherwise, RTOP and RBOT are the number of pixels<br/>off-window at the top and bottom of the row, ROWH is the height of the<br/>display row, and VPOS is the row number (0-based) containing POS.
+<strong>pos-visible-in-window-p</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(pos-visible-in-window-p &optional POS WINDOW PARTIALLY)<br/>
+<br/>
+Return non-nil if position POS is currently on the frame in WINDOW.<br/>
+WINDOW must be a live window and defaults to the selected one.<br/>
+<br/>
+Return nil if that position is scrolled vertically out of view.  If a<br/>
+character is only partially visible, nil is returned, unless the<br/>
+optional argument PARTIALLY is non-nil.  If POS is only out of view<br/>
+because of horizontal scrolling, return non-nil.  If POS is t, it<br/>
+specifies the position of the last visible glyph in WINDOW.  POS<br/>
+defaults to point in WINDOW; WINDOW defaults to the selected window.<br/>
+<br/>
+If POS is visible, return t if PARTIALLY is nil; if PARTIALLY is non-nil,<br/>
+return value is a list of 2 or 6 elements (X Y [RTOP RBOT ROWH VPOS]),<br/>
+where X and Y are the pixel coordinates relative to the top left corner<br/>
+of the window.  The remaining elements are omitted if the character after<br/>
+POS is fully visible; otherwise, RTOP and RBOT are the number of pixels<br/>
+off-window at the top and bottom of the row, ROWH is the height of the<br/>
+display row, and VPOS is the row number (0-based) containing POS.

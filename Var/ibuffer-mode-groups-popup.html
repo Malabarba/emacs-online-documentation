@@ -1,1 +1,47 @@
-ibuffer-mode-groups-popup is a variable defined in `ibuffer.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value:<br/>(keymap "Filter Groups"<br/>	(filters-to-filter-group menu-item "Create filter group from current filters..." ibuffer-filters-to-filter-group :enable<br/>				 (and<br/>				  (featurep 'ibuf-ext)<br/>				  ibuffer-filtering-qualifiers))<br/>	(forward-filter-group menu-item "Move point to the next filter group" ibuffer-forward-filter-group)<br/>	(backward-filter-group menu-item "Move point to the previous filter group" ibuffer-backward-filter-group)<br/>	(jump-to-filter-group menu-item "Move point to a specific filter group..." ibuffer-jump-to-filter-group)<br/>	(kill-filter-group menu-item "Kill filter group" ibuffer-kill-line :enable<br/>			   (and<br/>			    (featurep 'ibuf-ext)<br/>			    ibuffer-filter-groups))<br/>	(yank-filter-group menu-item "Yank last killed filter group" ibuffer-yank :enable<br/>			   (and<br/>			    (featurep 'ibuf-ext)<br/>			    ibuffer-filter-group-kill-ring))<br/>	(clear-filter-groups menu-item "Remove all filter groups" ibuffer-clear-filter-groups :enable<br/>			     (and<br/>			      (featurep 'ibuf-ext)<br/>			      ibuffer-filter-groups))<br/>	(pop-filter-group menu-item "Decompose filter group..." ibuffer-pop-filter-group :help "\"Unmake\" a filter group" :enable<br/>			  (and<br/>			   (featurep 'ibuf-ext)<br/>			   ibuffer-filter-groups))<br/>	(save-filter-groups menu-item "Save current filter groups permanently..." ibuffer-save-filter-groups :enable<br/>			    (and<br/>			     (featurep 'ibuf-ext)<br/>			     ibuffer-filter-groups)<br/>			    :help "Use a mnemonic name to store current filter groups")<br/>	(switch-to-saved-filter-groups menu-item "Restore permanently saved filters..." ibuffer-switch-to-saved-filter-groups :enable<br/>				       (and<br/>					(featurep 'ibuf-ext)<br/>					ibuffer-saved-filter-groups)<br/>				       :help "Replace current filters with a saved stack")<br/>	(delete-saved-filter-groups menu-item "Delete permanently saved filter groups..." ibuffer-delete-saved-filter-groups :enable<br/>				    (and<br/>				     (featurep 'ibuf-ext)<br/>				     ibuffer-saved-filter-groups))<br/>	(set-filter-groups-by-mode menu-item "Set current filter groups to filter by mode" ibuffer-set-filter-groups-by-mode))<br/><br/>
+<strong>ibuffer-mode-groups-popup</strong> is a variable defined in `<code>ibuffer.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value:<br/>
+(keymap "Filter Groups"<br/>
+	(filters-to-filter-group menu-item "Create filter group from current filters..." ibuffer-filters-to-filter-group :enable<br/>
+				 (and<br/>
+				  (featurep 'ibuf-ext)<br/>
+				  ibuffer-filtering-qualifiers))<br/>
+	(forward-filter-group menu-item "Move point to the next filter group" ibuffer-forward-filter-group)<br/>
+	(backward-filter-group menu-item "Move point to the previous filter group" ibuffer-backward-filter-group)<br/>
+	(jump-to-filter-group menu-item "Move point to a specific filter group..." ibuffer-jump-to-filter-group)<br/>
+	(kill-filter-group menu-item "Kill filter group" ibuffer-kill-line :enable<br/>
+			   (and<br/>
+			    (featurep 'ibuf-ext)<br/>
+			    ibuffer-filter-groups))<br/>
+	(yank-filter-group menu-item "Yank last killed filter group" ibuffer-yank :enable<br/>
+			   (and<br/>
+			    (featurep 'ibuf-ext)<br/>
+			    ibuffer-filter-group-kill-ring))<br/>
+	(clear-filter-groups menu-item "Remove all filter groups" ibuffer-clear-filter-groups :enable<br/>
+			     (and<br/>
+			      (featurep 'ibuf-ext)<br/>
+			      ibuffer-filter-groups))<br/>
+	(pop-filter-group menu-item "Decompose filter group..." ibuffer-pop-filter-group :help "\"Unmake\" a filter group" :enable<br/>
+			  (and<br/>
+			   (featurep 'ibuf-ext)<br/>
+			   ibuffer-filter-groups))<br/>
+	(save-filter-groups menu-item "Save current filter groups permanently..." ibuffer-save-filter-groups :enable<br/>
+			    (and<br/>
+			     (featurep 'ibuf-ext)<br/>
+			     ibuffer-filter-groups)<br/>
+			    :help "Use a mnemonic name to store current filter groups")<br/>
+	(switch-to-saved-filter-groups menu-item "Restore permanently saved filters..." ibuffer-switch-to-saved-filter-groups :enable<br/>
+				       (and<br/>
+					(featurep 'ibuf-ext)<br/>
+					ibuffer-saved-filter-groups)<br/>
+				       :help "Replace current filters with a saved stack")<br/>
+	(delete-saved-filter-groups menu-item "Delete permanently saved filter groups..." ibuffer-delete-saved-filter-groups :enable<br/>
+				    (and<br/>
+				     (featurep 'ibuf-ext)<br/>
+				     ibuffer-saved-filter-groups))<br/>
+	(set-filter-groups-by-mode menu-item "Set current filter groups to filter by mode" ibuffer-set-filter-groups-by-mode))<br/>
+<br/>

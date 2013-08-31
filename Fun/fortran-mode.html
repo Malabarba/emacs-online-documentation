@@ -1,1 +1,95 @@
-fortran-mode is an interactive compiled Lisp function in `fortran.el'.<br/><br/>(fortran-mode)<br/><br/>Parent mode: `prog-mode'.<br/><br/>Major mode for editing Fortran code in fixed format.<br/>For free format code, use `f90-mode'.<br/><br/>M-x fortran-indent-line indents the current Fortran line correctly.<br/>Note that DO statements must not share a common CONTINUE.<br/><br/>Type ;? or ;C-h to display a list of built-in abbrevs for Fortran keywords.<br/><br/>Key definitions:<br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>ESC		Prefix Command<br/>0 .. 9		fortran-electric-line-number<br/>;		fortran-abbrev-start<br/><br/>C-M-j		fortran-split-line<br/>C-M-n		fortran-end-of-block<br/>C-M-p		fortran-beginning-of-block<br/>C-M-q		fortran-indent-subprogram<br/>M-^		fortran-join-line<br/><br/>C-c C-d		fortran-join-line<br/>C-c C-n		fortran-next-statement<br/>C-c C-p		fortran-previous-statement<br/>C-c C-r		fortran-column-ruler<br/>C-c C-w		fortran-window-create-momentarily<br/>C-c ;		fortran-comment-region<br/><br/><br/><br/>Variables controlling indentation style and extra features:<br/><br/>`fortran-comment-line-start'<br/>  To use comments starting with `!', set this to the string "!".<br/>`fortran-do-indent'<br/>  Extra indentation within DO blocks (default 3).<br/>`fortran-if-indent'<br/>  Extra indentation within IF blocks (default 3).<br/>`fortran-structure-indent'<br/>  Extra indentation within STRUCTURE, UNION, MAP and INTERFACE blocks.<br/>  (default 3)<br/>`fortran-continuation-indent'<br/>  Extra indentation applied to continuation statements (default 5).<br/>`fortran-comment-line-extra-indent'<br/>  Amount of extra indentation for text in full-line comments (default 0).<br/>`fortran-comment-indent-style'<br/>  How to indent the text in full-line comments. Allowed values are:<br/>  nil       don't change the indentation<br/>  fixed     indent to `fortran-comment-line-extra-indent' beyond the<br/>              value of either<br/>                `fortran-minimum-statement-indent-fixed' (fixed format) or<br/>                `fortran-minimum-statement-indent-tab' (TAB format),<br/>              depending on the continuation format in use.<br/>  relative  indent to `fortran-comment-line-extra-indent' beyond the<br/>              indentation for a line of code.<br/>  (default 'fixed)<br/>`fortran-comment-indent-char'<br/>  Single-character string to be inserted instead of space for<br/>  full-line comment indentation (default " ").<br/>`fortran-minimum-statement-indent-fixed'<br/>  Minimum indentation for statements in fixed format mode (default 6).<br/>`fortran-minimum-statement-indent-tab'<br/>  Minimum indentation for statements in TAB format mode (default 9).<br/>`fortran-line-number-indent'<br/>  Maximum indentation for line numbers (default 1).  A line number will<br/>  get less than this much indentation if necessary to avoid reaching<br/>  column 5.<br/>`fortran-check-all-num-for-matching-do'<br/>  Non-nil causes all numbered lines to be treated as possible "continue"<br/>  statements (default nil).<br/>`fortran-blink-matching-if'<br/>  Non-nil causes M-x fortran-indent-line on an ENDIF (or ENDDO) statement<br/>  to blink on the matching IF (or DO [WHILE]).  (default nil)<br/>`fortran-continuation-string'<br/>  Single-character string to be inserted in column 5 of a continuation<br/>  line (default "$").<br/>`fortran-comment-region'<br/>  String inserted by M-x fortran-comment-region at start of each line in<br/>  the region (default "c$$$").<br/>`fortran-electric-line-number'<br/>  Non-nil causes line number digits to be moved to the correct column<br/>  as typed (default t).<br/>`fortran-break-before-delimiters'<br/>  Non-nil causes lines to be broken before delimiters (default t).<br/><br/>Turning on Fortran mode calls the value of the variable `fortran-mode-hook'<br/>with no args, if that value is non-nil.
+<strong>fortran-mode</strong> is an interactive compiled Lisp function in `<code>fortran.el</code>'.<br/>
+<br/>
+(fortran-mode)<br/>
+<br/>
+Parent mode: `prog-mode'.<br/>
+<br/>
+Major mode for editing Fortran code in fixed format.<br/>
+For free format code, use `f90-mode'.<br/>
+<br/>
+M-x fortran-indent-line indents the current Fortran line correctly.<br/>
+Note that DO statements must not share a common CONTINUE.<br/>
+<br/>
+Type ;? or ;C-h to display a list of built-in abbrevs for Fortran keywords.<br/>
+<br/>
+Key definitions:<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+ESC		Prefix Command<br/>
+0 .. 9		fortran-electric-line-number<br/>
+;		fortran-abbrev-start<br/>
+<br/>
+C-M-j		fortran-split-line<br/>
+C-M-n		fortran-end-of-block<br/>
+C-M-p		fortran-beginning-of-block<br/>
+C-M-q		fortran-indent-subprogram<br/>
+M-^		fortran-join-line<br/>
+<br/>
+C-c C-d		fortran-join-line<br/>
+C-c C-n		fortran-next-statement<br/>
+C-c C-p		fortran-previous-statement<br/>
+C-c C-r		fortran-column-ruler<br/>
+C-c C-w		fortran-window-create-momentarily<br/>
+C-c ;		fortran-comment-region<br/>
+<br/>
+<br/>
+<br/>
+Variables controlling indentation style and extra features:<br/>
+<br/>
+`fortran-comment-line-start'<br/>
+  To use comments starting with `!', set this to the string "!".<br/>
+`fortran-do-indent'<br/>
+  Extra indentation within DO blocks (default 3).<br/>
+`fortran-if-indent'<br/>
+  Extra indentation within IF blocks (default 3).<br/>
+`fortran-structure-indent'<br/>
+  Extra indentation within STRUCTURE, UNION, MAP and INTERFACE blocks.<br/>
+  (default 3)<br/>
+`fortran-continuation-indent'<br/>
+  Extra indentation applied to continuation statements (default 5).<br/>
+`fortran-comment-line-extra-indent'<br/>
+  Amount of extra indentation for text in full-line comments (default 0).<br/>
+`fortran-comment-indent-style'<br/>
+  How to indent the text in full-line comments. Allowed values are:<br/>
+  nil       don't change the indentation<br/>
+  fixed     indent to `fortran-comment-line-extra-indent' beyond the<br/>
+              value of either<br/>
+                `fortran-minimum-statement-indent-fixed' (fixed format) or<br/>
+                `fortran-minimum-statement-indent-tab' (TAB format),<br/>
+              depending on the continuation format in use.<br/>
+  relative  indent to `fortran-comment-line-extra-indent' beyond the<br/>
+              indentation for a line of code.<br/>
+  (default 'fixed)<br/>
+`fortran-comment-indent-char'<br/>
+  Single-character string to be inserted instead of space for<br/>
+  full-line comment indentation (default " ").<br/>
+`fortran-minimum-statement-indent-fixed'<br/>
+  Minimum indentation for statements in fixed format mode (default 6).<br/>
+`fortran-minimum-statement-indent-tab'<br/>
+  Minimum indentation for statements in TAB format mode (default 9).<br/>
+`fortran-line-number-indent'<br/>
+  Maximum indentation for line numbers (default 1).  A line number will<br/>
+  get less than this much indentation if necessary to avoid reaching<br/>
+  column 5.<br/>
+`fortran-check-all-num-for-matching-do'<br/>
+  Non-nil causes all numbered lines to be treated as possible "continue"<br/>
+  statements (default nil).<br/>
+`fortran-blink-matching-if'<br/>
+  Non-nil causes M-x fortran-indent-line on an ENDIF (or ENDDO) statement<br/>
+  to blink on the matching IF (or DO [WHILE]).  (default nil)<br/>
+`fortran-continuation-string'<br/>
+  Single-character string to be inserted in column 5 of a continuation<br/>
+  line (default "$").<br/>
+`fortran-comment-region'<br/>
+  String inserted by M-x fortran-comment-region at start of each line in<br/>
+  the region (default "c$$$").<br/>
+`fortran-electric-line-number'<br/>
+  Non-nil causes line number digits to be moved to the correct column<br/>
+  as typed (default t).<br/>
+`fortran-break-before-delimiters'<br/>
+  Non-nil causes lines to be broken before delimiters (default t).<br/>
+<br/>
+Turning on Fortran mode calls the value of the variable `fortran-mode-hook'<br/>
+with no args, if that value is non-nil.

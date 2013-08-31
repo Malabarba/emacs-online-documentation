@@ -1,1 +1,27 @@
-redirect-frame-focus is a built-in function in `C source code'.<br/><br/>(redirect-frame-focus FRAME FOCUS-FRAME)<br/><br/>Arrange for keystrokes typed at FRAME to be sent to FOCUS-FRAME.<br/>In other words, switch-frame events caused by events in FRAME will<br/>request a switch to FOCUS-FRAME, and `last-event-frame' will be<br/>FOCUS-FRAME after reading an event typed at FRAME.<br/><br/>If FOCUS-FRAME is nil, any existing redirection is canceled, and the<br/>frame again receives its own keystrokes.<br/><br/>Focus redirection is useful for temporarily redirecting keystrokes to<br/>a surrogate minibuffer frame when a frame doesn't have its own<br/>minibuffer window.<br/><br/>A frame's focus redirection can be changed by `select-frame'.  If frame<br/>FOO is selected, and then a different frame BAR is selected, any<br/>frames redirecting their focus to FOO are shifted to redirect their<br/>focus to BAR.  This allows focus redirection to work properly when the<br/>user switches from one frame to another using `select-window'.<br/><br/>This means that a frame whose focus is redirected to itself is treated<br/>differently from a frame whose focus is redirected to nil; the former<br/>is affected by `select-frame', while the latter is not.<br/><br/>The redirection lasts until `redirect-frame-focus' is called to change it.
+<strong>redirect-frame-focus</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(redirect-frame-focus FRAME FOCUS-FRAME)<br/>
+<br/>
+Arrange for keystrokes typed at FRAME to be sent to FOCUS-FRAME.<br/>
+In other words, switch-frame events caused by events in FRAME will<br/>
+request a switch to FOCUS-FRAME, and `last-event-frame' will be<br/>
+FOCUS-FRAME after reading an event typed at FRAME.<br/>
+<br/>
+If FOCUS-FRAME is nil, any existing redirection is canceled, and the<br/>
+frame again receives its own keystrokes.<br/>
+<br/>
+Focus redirection is useful for temporarily redirecting keystrokes to<br/>
+a surrogate minibuffer frame when a frame doesn't have its own<br/>
+minibuffer window.<br/>
+<br/>
+A frame's focus redirection can be changed by `select-frame'.  If frame<br/>
+FOO is selected, and then a different frame BAR is selected, any<br/>
+frames redirecting their focus to FOO are shifted to redirect their<br/>
+focus to BAR.  This allows focus redirection to work properly when the<br/>
+user switches from one frame to another using `select-window'.<br/>
+<br/>
+This means that a frame whose focus is redirected to itself is treated<br/>
+differently from a frame whose focus is redirected to nil; the former<br/>
+is affected by `select-frame', while the latter is not.<br/>
+<br/>
+The redirection lasts until `redirect-frame-focus' is called to change it.

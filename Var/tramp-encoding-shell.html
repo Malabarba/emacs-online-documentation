@@ -1,1 +1,25 @@
-tramp-encoding-shell is a variable defined in `tramp.el'.<br/>Its value is "/bin/sh"<br/><br/>Documentation:<br/>Use this program for encoding and decoding commands on the local host.<br/>This shell is used to execute the encoding and decoding command on the<br/>local host, so if you want to use `~' in those commands, you should<br/>choose a shell here which groks tilde expansion.  `/bin/sh' normally<br/>does not understand tilde expansion.<br/><br/>For encoding and decoding, commands like the following are executed:<br/><br/>    /bin/sh -c COMMAND < INPUT > OUTPUT<br/><br/>This variable can be used to change the "/bin/sh" part.  See the<br/>variable `tramp-encoding-command-switch' for the "-c" part.<br/><br/>If the shell must be forced to be interactive, see<br/>`tramp-encoding-command-interactive'.<br/><br/>Note that this variable is not used for remote commands.  There are<br/>mechanisms in tramp.el which automatically determine the right shell to<br/>use for the remote host.<br/><br/>You can customize this variable.
+<strong>tramp-encoding-shell</strong> is a variable defined in `<code>tramp.el</code>'.<br/>
+Its value is "/bin/sh"<br/>
+<br/>
+Documentation:<br/>
+Use this program for encoding and decoding commands on the local host.<br/>
+This shell is used to execute the encoding and decoding command on the<br/>
+local host, so if you want to use `~' in those commands, you should<br/>
+choose a shell here which groks tilde expansion.  `/bin/sh' normally<br/>
+does not understand tilde expansion.<br/>
+<br/>
+For encoding and decoding, commands like the following are executed:<br/>
+<br/>
+    /bin/sh -c COMMAND < INPUT > OUTPUT<br/>
+<br/>
+This variable can be used to change the "/bin/sh" part.  See the<br/>
+variable `tramp-encoding-command-switch' for the "-c" part.<br/>
+<br/>
+If the shell must be forced to be interactive, see<br/>
+`tramp-encoding-command-interactive'.<br/>
+<br/>
+Note that this variable is not used for remote commands.  There are<br/>
+mechanisms in tramp.el which automatically determine the right shell to<br/>
+use for the remote host.<br/>
+<br/>
+You can customize this variable.

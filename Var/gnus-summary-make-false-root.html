@@ -1,1 +1,27 @@
-gnus-summary-make-false-root is a variable defined in `gnus-sum.el'.<br/>Its value is adopt<br/><br/>Documentation:<br/>*nil means that Gnus won't gather loose threads.<br/>If the root of a thread has expired or been read in a previous<br/>session, the information necessary to build a complete thread has been<br/>lost.  Instead of having many small sub-threads from this original thread<br/>scattered all over the summary buffer, Gnus can gather them.<br/><br/>If non-nil, Gnus will try to gather all loose sub-threads from an<br/>original thread into one large thread.<br/><br/>If this variable is non-nil, it should be one of `none', `adopt',<br/>`dummy' or `empty'.<br/><br/>If this variable is `none', Gnus will not make a false root, but just<br/>present the sub-threads after another.<br/>If this variable is `dummy', Gnus will create a dummy root that will<br/>have all the sub-threads as children.<br/>If this variable is `adopt', Gnus will make one of the "children"<br/>the parent and mark all the step-children as such.<br/>If this variable is `empty', the "children" are printed with empty<br/>subject fields.  (Or rather, they will be printed with a string<br/>given by the `gnus-summary-same-subject' variable.)<br/><br/>You can customize this variable.
+<strong>gnus-summary-make-false-root</strong> is a variable defined in `<code>gnus-sum.el</code>'.<br/>
+Its value is adopt<br/>
+<br/>
+Documentation:<br/>
+*nil means that Gnus won't gather loose threads.<br/>
+If the root of a thread has expired or been read in a previous<br/>
+session, the information necessary to build a complete thread has been<br/>
+lost.  Instead of having many small sub-threads from this original thread<br/>
+scattered all over the summary buffer, Gnus can gather them.<br/>
+<br/>
+If non-nil, Gnus will try to gather all loose sub-threads from an<br/>
+original thread into one large thread.<br/>
+<br/>
+If this variable is non-nil, it should be one of `none', `adopt',<br/>
+`dummy' or `empty'.<br/>
+<br/>
+If this variable is `none', Gnus will not make a false root, but just<br/>
+present the sub-threads after another.<br/>
+If this variable is `dummy', Gnus will create a dummy root that will<br/>
+have all the sub-threads as children.<br/>
+If this variable is `adopt', Gnus will make one of the "children"<br/>
+the parent and mark all the step-children as such.<br/>
+If this variable is `empty', the "children" are printed with empty<br/>
+subject fields.  (Or rather, they will be printed with a string<br/>
+given by the `gnus-summary-same-subject' variable.)<br/>
+<br/>
+You can customize this variable.

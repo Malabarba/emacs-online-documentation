@@ -1,1 +1,20 @@
-tramp-file-name-regexp is a variable defined in `tramp.el'.<br/>Its value is "\\`/\\([^[/|:]+\\|[^/|]+]\\):"<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Regular expression matching file names handled by Tramp.<br/>This regexp should match Tramp file names but no other file names.<br/>When tramp.el is loaded, this regular expression is prepended to<br/>`file-name-handler-alist', and that is searched sequentially.  Thus,<br/>if the Tramp entry appears rather early in the `file-name-handler-alist'<br/>and is a bit too general, then some files might be considered Tramp<br/>files which are not really Tramp files.<br/><br/>Please note that the entry in `file-name-handler-alist' is made when<br/>this file (tramp.el) is loaded.  This means that this variable must be set<br/>before loading tramp.el.  Alternatively, `file-name-handler-alist' can be<br/>updated after changing this variable.<br/><br/>Also see `tramp-file-name-structure'.
+<strong>tramp-file-name-regexp</strong> is a variable defined in `<code>tramp.el</code>'.<br/>
+Its value is "\\`/\\([^[/|:]+\\|[^/|]+]\\):"<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Regular expression matching file names handled by Tramp.<br/>
+This regexp should match Tramp file names but no other file names.<br/>
+When tramp.el is loaded, this regular expression is prepended to<br/>
+`file-name-handler-alist', and that is searched sequentially.  Thus,<br/>
+if the Tramp entry appears rather early in the `file-name-handler-alist'<br/>
+and is a bit too general, then some files might be considered Tramp<br/>
+files which are not really Tramp files.<br/>
+<br/>
+Please note that the entry in `file-name-handler-alist' is made when<br/>
+this file (tramp.el) is loaded.  This means that this variable must be set<br/>
+before loading tramp.el.  Alternatively, `file-name-handler-alist' can be<br/>
+updated after changing this variable.<br/>
+<br/>
+Also see `tramp-file-name-structure'.

@@ -1,1 +1,22 @@
-scan-lists is a built-in function in `C source code'.<br/><br/>(scan-lists FROM COUNT DEPTH)<br/><br/>Scan from character number FROM by COUNT lists.<br/>Scan forward if COUNT is positive, backward if COUNT is negative.<br/>Return the character number of the position thus found.<br/><br/>A "list", in this context, refers to a balanced parenthetical<br/>grouping, as determined by the syntax table.<br/><br/>If DEPTH is nonzero, treat that as the nesting depth of the starting<br/>point (i.e. the starting point is DEPTH parentheses deep).  This<br/>function scans over parentheses until the depth goes to zero COUNT<br/>times.  Hence, positive DEPTH moves out that number of levels of<br/>parentheses, while negative DEPTH moves to a deeper level.<br/><br/>Comments are ignored if `parse-sexp-ignore-comments' is non-nil.<br/><br/>If we reach the beginning or end of the accessible part of the buffer<br/>before we have scanned over COUNT lists, return nil if the depth at<br/>that point is zero, and signal a error if the depth is nonzero.
+<strong>scan-lists</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(scan-lists FROM COUNT DEPTH)<br/>
+<br/>
+Scan from character number FROM by COUNT lists.<br/>
+Scan forward if COUNT is positive, backward if COUNT is negative.<br/>
+Return the character number of the position thus found.<br/>
+<br/>
+A "list", in this context, refers to a balanced parenthetical<br/>
+grouping, as determined by the syntax table.<br/>
+<br/>
+If DEPTH is nonzero, treat that as the nesting depth of the starting<br/>
+point (i.e. the starting point is DEPTH parentheses deep).  This<br/>
+function scans over parentheses until the depth goes to zero COUNT<br/>
+times.  Hence, positive DEPTH moves out that number of levels of<br/>
+parentheses, while negative DEPTH moves to a deeper level.<br/>
+<br/>
+Comments are ignored if `parse-sexp-ignore-comments' is non-nil.<br/>
+<br/>
+If we reach the beginning or end of the accessible part of the buffer<br/>
+before we have scanned over COUNT lists, return nil if the depth at<br/>
+that point is zero, and signal a error if the depth is nonzero.

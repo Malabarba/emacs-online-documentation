@@ -1,1 +1,123 @@
-bibtex-mode is an interactive autoloaded compiled Lisp function in `bibtex.el'.<br/><br/>(bibtex-mode)<br/><br/>Major mode for editing BibTeX files.<br/><br/>General information on working with BibTeX mode:<br/><br/>Use commands such as C-c C-e b to get a template for a specific entry.<br/>Then fill in all desired fields using C-j to jump from field<br/>to field.  After having filled in all desired fields in the entry, clean the<br/>new entry with the command C-c C-c.<br/><br/>Some features of BibTeX mode are available only by setting the variable<br/>`bibtex-maintain-sorted-entries' to non-nil.  However, then BibTeX mode<br/>works only with buffers containing valid (syntactically correct) and sorted<br/>entries.  This is usually the case, if you have created a buffer completely<br/>with BibTeX mode and finished every new entry with C-c C-c.<br/><br/>For third party BibTeX files, call the command M-x bibtex-convert-alien<br/>to fully take advantage of all features of BibTeX mode.<br/><br/><br/>Special information:<br/><br/>A command such as C-c C-e b outlines the fields for a BibTeX book entry.<br/><br/>The names of optional fields start with the string OPT, and are thus ignored<br/>by BibTeX.  The names of alternative fields from which only one is required<br/>start with the string ALT.  The OPT or ALT string may be removed from<br/>the name of a field with C-c C-o.<br/>C-c C-f inserts a new field after the current one.<br/>C-c C-k kills the current field entirely.<br/>C-c C-y yanks the last recently killed field after the current field.<br/>C-c } removes the double-quotes or braces around the text of the current field.<br/>C-c C-d replaces the text of the current field with the default "" or {}.<br/>TAB moves point to the end of the current field.<br/>C-M-i completes word fragment before point according to context.<br/><br/>The command C-c C-c cleans the current entry, i.e. it removes OPT/ALT<br/>from the names of all non-empty optional or alternative fields, checks that<br/>no required fields are empty, and does some formatting dependent on the value<br/>of `bibtex-entry-format'.  Furthermore, it can automatically generate a key<br/>for the BibTeX entry, see `bibtex-generate-autokey'.<br/>Note: some functions in BibTeX mode depend on entries being in a special<br/>format (all fields beginning on separate lines), so it is usually a bad<br/>idea to remove `realign' from `bibtex-entry-format'.<br/><br/>BibTeX mode supports Imenu and hideshow minor mode (`hs-minor-mode').<br/><br/>----------------------------------------------------------<br/>Entry to BibTeX mode calls the value of `bibtex-mode-hook'<br/>if that value is non-nil.<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>TAB		bibtex-find-text<br/>C-j		bibtex-next-field<br/>ESC		Prefix Command<br/><br/>C-c C-a		bibtex-search-entries<br/>C-c C-b		bibtex-entry<br/>C-c C-c		bibtex-clean-entry<br/>C-c C-d		bibtex-empty-field<br/>C-c C-e		Prefix Command<br/>C-c C-f		bibtex-make-field<br/>C-c C-k		bibtex-kill-field<br/>C-c C-l		bibtex-url<br/>C-c C-n		bibtex-pop-next<br/>C-c C-o		bibtex-remove-OPT-or-ALT<br/>C-c C-p		bibtex-pop-previous<br/>C-c C-q		bibtex-fill-entry<br/>C-c C-r		Prefix Command<br/>C-c C-s		bibtex-search-entry<br/>C-c C-t		bibtex-copy-summary-as-kill<br/>C-c C-u		bibtex-entry-update<br/>C-c C-w		bibtex-kill-entry<br/>C-c C-x		bibtex-search-crossref<br/>C-c C-y		bibtex-yank<br/>C-c ESC		Prefix Command<br/>C-c "		bibtex-remove-delimiters<br/>C-c $		bibtex-ispell-abstract<br/>C-c &		reftex-view-crossref-from-bibtex<br/>C-c ?		bibtex-print-help-message<br/>C-c {		bibtex-remove-delimiters<br/>C-c }		bibtex-remove-delimiters<br/><br/>C-M-a		bibtex-beginning-of-entry<br/>C-M-e		bibtex-end-of-entry<br/>C-M-h		bibtex-mark-entry<br/>C-M-i		completion-at-point<br/>C-M-l		bibtex-reposition-window<br/><br/>C-c C-e C-a	bibtex-Article<br/>C-c C-e C-b	bibtex-InBook<br/>C-c C-e C-c	bibtex-InCollection<br/>C-c C-e TAB	bibtex-InProceedings<br/>C-c C-e RET	bibtex-Manual<br/>C-c C-e C-p	bibtex-InProceedings<br/>C-c C-e C-s	bibtex-String<br/>C-c C-e C-t	bibtex-TechReport<br/>C-c C-e C-u	bibtex-Unpublished<br/>C-c C-e ESC	Prefix Command<br/>C-c C-e B	bibtex-Booklet<br/>C-c C-e I	bibtex-InBook<br/>C-c C-e M	bibtex-Misc<br/>C-c C-e P	bibtex-PhdThesis<br/>C-c C-e b	bibtex-Book<br/>C-c C-e i	bibtex-InCollection<br/>C-c C-e m	bibtex-MastersThesis<br/>C-c C-e p	bibtex-Proceedings<br/><br/>C-c C-r n	bibtex-narrow-to-entry<br/>C-c C-r w	widen<br/><br/>C-c M-k		bibtex-copy-field-as-kill<br/>C-c M-w		bibtex-copy-entry-as-kill<br/>C-c M-y		bibtex-yank-pop<br/><br/>C-c C-e M-p	bibtex-Preamble<br/><br/>
+<strong>bibtex-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>bibtex.el</code>'.<br/>
+<br/>
+(bibtex-mode)<br/>
+<br/>
+Major mode for editing BibTeX files.<br/>
+<br/>
+General information on working with BibTeX mode:<br/>
+<br/>
+Use commands such as C-c C-e b to get a template for a specific entry.<br/>
+Then fill in all desired fields using C-j to jump from field<br/>
+to field.  After having filled in all desired fields in the entry, clean the<br/>
+new entry with the command C-c C-c.<br/>
+<br/>
+Some features of BibTeX mode are available only by setting the variable<br/>
+`bibtex-maintain-sorted-entries' to non-nil.  However, then BibTeX mode<br/>
+works only with buffers containing valid (syntactically correct) and sorted<br/>
+entries.  This is usually the case, if you have created a buffer completely<br/>
+with BibTeX mode and finished every new entry with C-c C-c.<br/>
+<br/>
+For third party BibTeX files, call the command M-x bibtex-convert-alien<br/>
+to fully take advantage of all features of BibTeX mode.<br/>
+<br/>
+<br/>
+Special information:<br/>
+<br/>
+A command such as C-c C-e b outlines the fields for a BibTeX book entry.<br/>
+<br/>
+The names of optional fields start with the string OPT, and are thus ignored<br/>
+by BibTeX.  The names of alternative fields from which only one is required<br/>
+start with the string ALT.  The OPT or ALT string may be removed from<br/>
+the name of a field with C-c C-o.<br/>
+C-c C-f inserts a new field after the current one.<br/>
+C-c C-k kills the current field entirely.<br/>
+C-c C-y yanks the last recently killed field after the current field.<br/>
+C-c } removes the double-quotes or braces around the text of the current field.<br/>
+C-c C-d replaces the text of the current field with the default "" or {}.<br/>
+TAB moves point to the end of the current field.<br/>
+C-M-i completes word fragment before point according to context.<br/>
+<br/>
+The command C-c C-c cleans the current entry, i.e. it removes OPT/ALT<br/>
+from the names of all non-empty optional or alternative fields, checks that<br/>
+no required fields are empty, and does some formatting dependent on the value<br/>
+of `bibtex-entry-format'.  Furthermore, it can automatically generate a key<br/>
+for the BibTeX entry, see `bibtex-generate-autokey'.<br/>
+Note: some functions in BibTeX mode depend on entries being in a special<br/>
+format (all fields beginning on separate lines), so it is usually a bad<br/>
+idea to remove `realign' from `bibtex-entry-format'.<br/>
+<br/>
+BibTeX mode supports Imenu and hideshow minor mode (`hs-minor-mode').<br/>
+<br/>
+----------------------------------------------------------<br/>
+Entry to BibTeX mode calls the value of `bibtex-mode-hook'<br/>
+if that value is non-nil.<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+TAB		bibtex-find-text<br/>
+C-j		bibtex-next-field<br/>
+ESC		Prefix Command<br/>
+<br/>
+C-c C-a		bibtex-search-entries<br/>
+C-c C-b		bibtex-entry<br/>
+C-c C-c		bibtex-clean-entry<br/>
+C-c C-d		bibtex-empty-field<br/>
+C-c C-e		Prefix Command<br/>
+C-c C-f		bibtex-make-field<br/>
+C-c C-k		bibtex-kill-field<br/>
+C-c C-l		bibtex-url<br/>
+C-c C-n		bibtex-pop-next<br/>
+C-c C-o		bibtex-remove-OPT-or-ALT<br/>
+C-c C-p		bibtex-pop-previous<br/>
+C-c C-q		bibtex-fill-entry<br/>
+C-c C-r		Prefix Command<br/>
+C-c C-s		bibtex-search-entry<br/>
+C-c C-t		bibtex-copy-summary-as-kill<br/>
+C-c C-u		bibtex-entry-update<br/>
+C-c C-w		bibtex-kill-entry<br/>
+C-c C-x		bibtex-search-crossref<br/>
+C-c C-y		bibtex-yank<br/>
+C-c ESC		Prefix Command<br/>
+C-c "		bibtex-remove-delimiters<br/>
+C-c $		bibtex-ispell-abstract<br/>
+C-c &		reftex-view-crossref-from-bibtex<br/>
+C-c ?		bibtex-print-help-message<br/>
+C-c {		bibtex-remove-delimiters<br/>
+C-c }		bibtex-remove-delimiters<br/>
+<br/>
+C-M-a		bibtex-beginning-of-entry<br/>
+C-M-e		bibtex-end-of-entry<br/>
+C-M-h		bibtex-mark-entry<br/>
+C-M-i		completion-at-point<br/>
+C-M-l		bibtex-reposition-window<br/>
+<br/>
+C-c C-e C-a	bibtex-Article<br/>
+C-c C-e C-b	bibtex-InBook<br/>
+C-c C-e C-c	bibtex-InCollection<br/>
+C-c C-e TAB	bibtex-InProceedings<br/>
+C-c C-e RET	bibtex-Manual<br/>
+C-c C-e C-p	bibtex-InProceedings<br/>
+C-c C-e C-s	bibtex-String<br/>
+C-c C-e C-t	bibtex-TechReport<br/>
+C-c C-e C-u	bibtex-Unpublished<br/>
+C-c C-e ESC	Prefix Command<br/>
+C-c C-e B	bibtex-Booklet<br/>
+C-c C-e I	bibtex-InBook<br/>
+C-c C-e M	bibtex-Misc<br/>
+C-c C-e P	bibtex-PhdThesis<br/>
+C-c C-e b	bibtex-Book<br/>
+C-c C-e i	bibtex-InCollection<br/>
+C-c C-e m	bibtex-MastersThesis<br/>
+C-c C-e p	bibtex-Proceedings<br/>
+<br/>
+C-c C-r n	bibtex-narrow-to-entry<br/>
+C-c C-r w	widen<br/>
+<br/>
+C-c M-k		bibtex-copy-field-as-kill<br/>
+C-c M-w		bibtex-copy-entry-as-kill<br/>
+C-c M-y		bibtex-yank-pop<br/>
+<br/>
+C-c C-e M-p	bibtex-Preamble<br/>
+<br/>

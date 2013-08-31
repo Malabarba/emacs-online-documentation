@@ -1,1 +1,35 @@
-org-agenda-entry-types is a variable defined in `org-agenda.el'.<br/>Its value is (:deadline :scheduled :timestamp :sexp)<br/><br/>Documentation:<br/>List of types searched for when creating the daily/weekly agenda.<br/>This variable is a list of symbols that controls the types of<br/>items that appear in the daily/weekly agenda.  Allowed symbols in this<br/>list are are<br/><br/>   :timestamp    List items containing a date stamp or date range matching<br/>                 the selected date.  This includes sexp entries in<br/>                 angular brackets.<br/><br/>   :sexp         List entries resulting from plain diary-like sexps.<br/><br/>   :deadline     List deadline due on that date.  When the date is today,<br/>                 also list any deadlines past due, or due within<br/>		 `org-deadline-warning-days'.  `:deadline' must appear before<br/>                 `:scheduled' if the setting of<br/>                 `org-agenda-skip-scheduled-if-deadline-is-shown' is to have<br/>                 any effect.<br/><br/>   :scheduled    List all items which are scheduled for the given date.<br/>		 The diary for *today* also contains items which were<br/>		 scheduled earlier and are not yet marked DONE.<br/><br/>By default, all four types are turned on.<br/><br/>Never set this variable globally using `setq', because then it<br/>will apply to all future agenda commands.  Instead, bind it with<br/>`let' to scope it dynamically into the agenda-constructing<br/>command.  A good way to set it is through options in<br/>`org-agenda-custom-commands'.  For a more flexible (though<br/>somewhat less efficient) way of determining what is included in<br/>the daily/weekly agenda, see `org-agenda-skip-function'.
+<strong>org-agenda-entry-types</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
+Its value is (:deadline :scheduled :timestamp :sexp)<br/>
+<br/>
+Documentation:<br/>
+List of types searched for when creating the daily/weekly agenda.<br/>
+This variable is a list of symbols that controls the types of<br/>
+items that appear in the daily/weekly agenda.  Allowed symbols in this<br/>
+list are are<br/>
+<br/>
+   :timestamp    List items containing a date stamp or date range matching<br/>
+                 the selected date.  This includes sexp entries in<br/>
+                 angular brackets.<br/>
+<br/>
+   :sexp         List entries resulting from plain diary-like sexps.<br/>
+<br/>
+   :deadline     List deadline due on that date.  When the date is today,<br/>
+                 also list any deadlines past due, or due within<br/>
+		 `org-deadline-warning-days'.  `:deadline' must appear before<br/>
+                 `:scheduled' if the setting of<br/>
+                 `org-agenda-skip-scheduled-if-deadline-is-shown' is to have<br/>
+                 any effect.<br/>
+<br/>
+   :scheduled    List all items which are scheduled for the given date.<br/>
+		 The diary for *today* also contains items which were<br/>
+		 scheduled earlier and are not yet marked DONE.<br/>
+<br/>
+By default, all four types are turned on.<br/>
+<br/>
+Never set this variable globally using `setq', because then it<br/>
+will apply to all future agenda commands.  Instead, bind it with<br/>
+`let' to scope it dynamically into the agenda-constructing<br/>
+command.  A good way to set it is through options in<br/>
+`org-agenda-custom-commands'.  For a more flexible (though<br/>
+somewhat less efficient) way of determining what is included in<br/>
+the daily/weekly agenda, see `org-agenda-skip-function'.

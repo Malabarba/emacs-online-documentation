@@ -1,1 +1,28 @@
-gnus-article-save-coding-system is a variable defined in `gnus-art.el'.<br/>Its value is utf-8<br/><br/>Documentation:<br/>Coding system used to save decoded articles to a file.<br/><br/>The recommended coding systems are `utf-8', `iso-2022-7bit' and so on,<br/>which can safely encode any characters in text.  This is used by the<br/>commands including:<br/><br/>* gnus-summary-save-article-file<br/>* gnus-summary-save-article-body-file<br/>* gnus-summary-write-article-file<br/>* gnus-summary-write-article-body-file<br/><br/>and the functions to which you may set `gnus-default-article-saver':<br/><br/>* gnus-summary-save-in-file<br/>* gnus-summary-save-body-in-file<br/>* gnus-summary-write-to-file<br/>* gnus-summary-write-body-to-file<br/><br/>Those commands and functions save just text displayed in the article<br/>buffer to a file if the value of this variable is non-nil.  Note that<br/>buttonized MIME parts will be lost in a saved file in that case.<br/>Otherwise, raw articles will be saved.<br/><br/>You can customize this variable.
+<strong>gnus-article-save-coding-system</strong> is a variable defined in `<code>gnus-art.el</code>'.<br/>
+Its value is utf-8<br/>
+<br/>
+Documentation:<br/>
+Coding system used to save decoded articles to a file.<br/>
+<br/>
+The recommended coding systems are `utf-8', `iso-2022-7bit' and so on,<br/>
+which can safely encode any characters in text.  This is used by the<br/>
+commands including:<br/>
+<br/>
+* gnus-summary-save-article-file<br/>
+* gnus-summary-save-article-body-file<br/>
+* gnus-summary-write-article-file<br/>
+* gnus-summary-write-article-body-file<br/>
+<br/>
+and the functions to which you may set `gnus-default-article-saver':<br/>
+<br/>
+* gnus-summary-save-in-file<br/>
+* gnus-summary-save-body-in-file<br/>
+* gnus-summary-write-to-file<br/>
+* gnus-summary-write-body-to-file<br/>
+<br/>
+Those commands and functions save just text displayed in the article<br/>
+buffer to a file if the value of this variable is non-nil.  Note that<br/>
+buttonized MIME parts will be lost in a saved file in that case.<br/>
+Otherwise, raw articles will be saved.<br/>
+<br/>
+You can customize this variable.

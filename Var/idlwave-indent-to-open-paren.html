@@ -1,1 +1,26 @@
-idlwave-indent-to-open-paren is a variable defined in `idlwave.el'.<br/>Its value is t<br/><br/>Documentation:<br/>Non-nil means, indent continuation lines to innermost open parenthesis.<br/>This indentation occurs even if otherwise disallowed by<br/>`idlwave-max-extra-continuation-indent'.  Matching parens and the<br/>interleaving args are lined up.  Example:<br/><br/>  x = function_a(function_b(function_c( a, b, [1,2,3, $<br/>                                               4,5,6 $<br/>                                              ], $<br/>                                        c, d $<br/>                                      )))<br/><br/>When this variable is nil, paren alignment may still occur, based on<br/>the value of `idlwave-max-extra-continuation-indent', which, if zero,<br/>would yield:<br/><br/>  x = function_a(function_b(function_c( a, b, [1,2,3, $<br/>     4,5,6 $<br/>     ], $<br/>     c, d $<br/>     )))<br/><br/>You can customize this variable.
+<strong>idlwave-indent-to-open-paren</strong> is a variable defined in `<code>idlwave.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+Documentation:<br/>
+Non-nil means, indent continuation lines to innermost open parenthesis.<br/>
+This indentation occurs even if otherwise disallowed by<br/>
+`idlwave-max-extra-continuation-indent'.  Matching parens and the<br/>
+interleaving args are lined up.  Example:<br/>
+<br/>
+  x = function_a(function_b(function_c( a, b, [1,2,3, $<br/>
+                                               4,5,6 $<br/>
+                                              ], $<br/>
+                                        c, d $<br/>
+                                      )))<br/>
+<br/>
+When this variable is nil, paren alignment may still occur, based on<br/>
+the value of `idlwave-max-extra-continuation-indent', which, if zero,<br/>
+would yield:<br/>
+<br/>
+  x = function_a(function_b(function_c( a, b, [1,2,3, $<br/>
+     4,5,6 $<br/>
+     ], $<br/>
+     c, d $<br/>
+     )))<br/>
+<br/>
+You can customize this variable.

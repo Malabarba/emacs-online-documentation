@@ -1,1 +1,11 @@
-edebug-var-status is a compiled Lisp function in `edebug.el'.<br/><br/>(edebug-var-status VAR)<br/><br/>Return a cons cell describing the status of VAR's current binding.<br/>The purpose of this function is so you can properly undo<br/>subsequent changes to the same binding, by passing the status<br/>cons cell to `edebug-restore-status'.  The status cons cell<br/>has the form (LOCUS . VALUE), where LOCUS can be a buffer<br/>(for a buffer-local binding), a frame (for a frame-local binding),<br/>or nil (if the default binding is current).
+<strong>edebug-var-status</strong> is a compiled Lisp function in `<code>edebug.el</code>'.<br/>
+<br/>
+(edebug-var-status VAR)<br/>
+<br/>
+Return a cons cell describing the status of VAR's current binding.<br/>
+The purpose of this function is so you can properly undo<br/>
+subsequent changes to the same binding, by passing the status<br/>
+cons cell to `edebug-restore-status'.  The status cons cell<br/>
+has the form (LOCUS . VALUE), where LOCUS can be a buffer<br/>
+(for a buffer-local binding), a frame (for a frame-local binding),<br/>
+or nil (if the default binding is current).

@@ -1,1 +1,15 @@
-max-lisp-eval-depth is a variable defined in `C source code'.<br/>Its value is 600<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Limit on depth in `eval', `apply' and `funcall' before error.<br/><br/>This limit serves to catch infinite recursions for you before they cause<br/>actual stack overflow in C, which would be fatal for Emacs.<br/>You can safely make it considerably larger than its default value,<br/>if that proves inconveniently small.  However, if you increase it too far,<br/>Emacs could overflow the real C stack, and crash.<br/><br/>You can customize this variable.
+<strong>max-lisp-eval-depth</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is 600<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Limit on depth in `eval', `apply' and `funcall' before error.<br/>
+<br/>
+This limit serves to catch infinite recursions for you before they cause<br/>
+actual stack overflow in C, which would be fatal for Emacs.<br/>
+You can safely make it considerably larger than its default value,<br/>
+if that proves inconveniently small.  However, if you increase it too far,<br/>
+Emacs could overflow the real C stack, and crash.<br/>
+<br/>
+You can customize this variable.

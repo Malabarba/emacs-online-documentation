@@ -1,1 +1,21 @@
-ewoc-create is an autoloaded compiled Lisp function in `ewoc.el'.<br/><br/>(ewoc-create PRETTY-PRINTER &optional HEADER FOOTER NOSEP)<br/><br/>Create an empty ewoc.<br/><br/>The ewoc will be inserted in the current buffer at the current position.<br/><br/>PRETTY-PRINTER should be a function that takes one argument, an<br/>element, and inserts a string representing it in the buffer (at<br/>point).  The string PRETTY-PRINTER inserts may be empty or span<br/>several lines.  The PRETTY-PRINTER should use `insert', and not<br/>`insert-before-markers'.<br/><br/>Optional second and third arguments HEADER and FOOTER are strings,<br/>possibly empty, that will always be present at the top and bottom,<br/>respectively, of the ewoc.<br/><br/>Normally, a newline is automatically inserted after the header,<br/>the footer and every node's printed representation.  Optional<br/>fourth arg NOSEP non-nil inhibits this.
+<strong>ewoc-create</strong> is an autoloaded compiled Lisp function in `<code>ewoc.el</code>'.<br/>
+<br/>
+(ewoc-create PRETTY-PRINTER &optional HEADER FOOTER NOSEP)<br/>
+<br/>
+Create an empty ewoc.<br/>
+<br/>
+The ewoc will be inserted in the current buffer at the current position.<br/>
+<br/>
+PRETTY-PRINTER should be a function that takes one argument, an<br/>
+element, and inserts a string representing it in the buffer (at<br/>
+point).  The string PRETTY-PRINTER inserts may be empty or span<br/>
+several lines.  The PRETTY-PRINTER should use `insert', and not<br/>
+`insert-before-markers'.<br/>
+<br/>
+Optional second and third arguments HEADER and FOOTER are strings,<br/>
+possibly empty, that will always be present at the top and bottom,<br/>
+respectively, of the ewoc.<br/>
+<br/>
+Normally, a newline is automatically inserted after the header,<br/>
+the footer and every node's printed representation.  Optional<br/>
+fourth arg NOSEP non-nil inhibits this.

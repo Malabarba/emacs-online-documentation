@@ -1,1 +1,28 @@
-org-clone-subtree-with-time-shift is an interactive compiled Lisp function in `org.el'.<br/><br/>(org-clone-subtree-with-time-shift N &optional SHIFT)<br/><br/>Clone the task (subtree) at point N times.<br/>The clones will be inserted as siblings.<br/><br/>In interactive use, the user will be prompted for the number of<br/>clones to be produced, and for a time SHIFT, which may be a<br/>repeater as used in time stamps, for example `+3d'.<br/><br/>When a valid repeater is given and the entry contains any time<br/>stamps, the clones will become a sequence in time, with time<br/>stamps in the subtree shifted for each clone produced.  If SHIFT<br/>is nil or the empty string, time stamps will be left alone.  The<br/>ID property of the original subtree is removed.<br/><br/>If the original subtree did contain time stamps with a repeater,<br/>the following will happen:<br/>- the repeater will be removed in each clone<br/>- an additional clone will be produced, with the current, unshifted<br/>  date(s) in the entry.<br/>- the original entry will be placed *after* all the clones, with<br/>  repeater intact.<br/>- the start days in the repeater in the original entry will be shifted<br/>  to past the last clone.<br/>In this way you can spell out a number of instances of a repeating task,<br/>and still retain the repeater to cover future instances of the task.
+<strong>org-clone-subtree-with-time-shift</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-clone-subtree-with-time-shift N &optional SHIFT)<br/>
+<br/>
+Clone the task (subtree) at point N times.<br/>
+The clones will be inserted as siblings.<br/>
+<br/>
+In interactive use, the user will be prompted for the number of<br/>
+clones to be produced, and for a time SHIFT, which may be a<br/>
+repeater as used in time stamps, for example `+3d'.<br/>
+<br/>
+When a valid repeater is given and the entry contains any time<br/>
+stamps, the clones will become a sequence in time, with time<br/>
+stamps in the subtree shifted for each clone produced.  If SHIFT<br/>
+is nil or the empty string, time stamps will be left alone.  The<br/>
+ID property of the original subtree is removed.<br/>
+<br/>
+If the original subtree did contain time stamps with a repeater,<br/>
+the following will happen:<br/>
+- the repeater will be removed in each clone<br/>
+- an additional clone will be produced, with the current, unshifted<br/>
+  date(s) in the entry.<br/>
+- the original entry will be placed *after* all the clones, with<br/>
+  repeater intact.<br/>
+- the start days in the repeater in the original entry will be shifted<br/>
+  to past the last clone.<br/>
+In this way you can spell out a number of instances of a repeating task,<br/>
+and still retain the repeater to cover future instances of the task.

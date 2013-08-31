@@ -1,1 +1,61 @@
-ebrowse-tree-mode is an interactive autoloaded compiled Lisp function in `ebrowse.el'.<br/><br/>(ebrowse-tree-mode)<br/><br/>Parent mode: `special-mode'.<br/><br/>Major mode for Ebrowse class tree buffers.<br/>Each line corresponds to a class in a class tree.<br/>Letters do not insert themselves, they are commands.<br/>File operations in the tree buffer work on class tree data structures.<br/>E.g.C-x C-s writes the tree to the file it was loaded from.<br/><br/>Tree mode key bindings:<br/>key             binding<br/>---             -------<br/><br/>0 .. 9		digit-argument<br/><br/>TAB		ebrowse-pop/switch-to-member-buffer-for-same-tree<br/>C-k		ebrowse-remove-class-at-point<br/>C-l		ebrowse-redraw-tree<br/>RET		ebrowse-find-class-declaration<br/>SPC		ebrowse-view-class-declaration<br/>*		ebrowse-expand-all<br/>+		ebrowse-expand-branch<br/>-		ebrowse-collapse-branch<br/>/		ebrowse-read-class-name-and-go<br/>?		describe-mode<br/>L		Prefix Command<br/>M		Prefix Command<br/>T		Prefix Command<br/>n		ebrowse-repeat-member-search<br/>q		bury-buffer<br/>x		ebrowse-statistics<br/><down-mouse-1>	ebrowse-mouse-1-in-tree-buffer<br/><down-mouse-3>	ebrowse-mouse-3-in-tree-buffer<br/><mouse-2>	ebrowse-mouse-2-in-tree-buffer<br/><remap>		Prefix Command<br/><br/>L F		ebrowse-tree-command:show-static-member-functions<br/>L V		ebrowse-tree-command:show-static-member-variables<br/>L d		ebrowse-tree-command:show-friends<br/>L f		ebrowse-tree-command:show-member-functions<br/>L t		ebrowse-tree-command:show-types<br/>L v		ebrowse-tree-command:show-member-variables<br/>L <remap>	Prefix Command<br/><br/>M a		ebrowse-mark-all-classes<br/>M t		ebrowse-toggle-mark-at-point<br/>M <remap>	Prefix Command<br/><br/>T f		ebrowse-toggle-file-name-display<br/>T s		ebrowse-show-file-name-at-point<br/>T w		ebrowse-set-tree-indentation<br/>T <remap>	Prefix Command<br/><br/><br/><br/>In addition to any hooks its parent mode `special-mode' might have run,<br/>this mode runs the hook `ebrowse-tree-mode-hook', as the final step<br/>during initialization.
+<strong>ebrowse-tree-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>ebrowse.el</code>'.<br/>
+<br/>
+(ebrowse-tree-mode)<br/>
+<br/>
+Parent mode: `special-mode'.<br/>
+<br/>
+Major mode for Ebrowse class tree buffers.<br/>
+Each line corresponds to a class in a class tree.<br/>
+Letters do not insert themselves, they are commands.<br/>
+File operations in the tree buffer work on class tree data structures.<br/>
+E.g.C-x C-s writes the tree to the file it was loaded from.<br/>
+<br/>
+Tree mode key bindings:<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+0 .. 9		digit-argument<br/>
+<br/>
+TAB		ebrowse-pop/switch-to-member-buffer-for-same-tree<br/>
+C-k		ebrowse-remove-class-at-point<br/>
+C-l		ebrowse-redraw-tree<br/>
+RET		ebrowse-find-class-declaration<br/>
+SPC		ebrowse-view-class-declaration<br/>
+*		ebrowse-expand-all<br/>
++		ebrowse-expand-branch<br/>
+-		ebrowse-collapse-branch<br/>
+/		ebrowse-read-class-name-and-go<br/>
+?		describe-mode<br/>
+L		Prefix Command<br/>
+M		Prefix Command<br/>
+T		Prefix Command<br/>
+n		ebrowse-repeat-member-search<br/>
+q		bury-buffer<br/>
+x		ebrowse-statistics<br/>
+<down-mouse-1>	ebrowse-mouse-1-in-tree-buffer<br/>
+<down-mouse-3>	ebrowse-mouse-3-in-tree-buffer<br/>
+<mouse-2>	ebrowse-mouse-2-in-tree-buffer<br/>
+<remap>		Prefix Command<br/>
+<br/>
+L F		ebrowse-tree-command:show-static-member-functions<br/>
+L V		ebrowse-tree-command:show-static-member-variables<br/>
+L d		ebrowse-tree-command:show-friends<br/>
+L f		ebrowse-tree-command:show-member-functions<br/>
+L t		ebrowse-tree-command:show-types<br/>
+L v		ebrowse-tree-command:show-member-variables<br/>
+L <remap>	Prefix Command<br/>
+<br/>
+M a		ebrowse-mark-all-classes<br/>
+M t		ebrowse-toggle-mark-at-point<br/>
+M <remap>	Prefix Command<br/>
+<br/>
+T f		ebrowse-toggle-file-name-display<br/>
+T s		ebrowse-show-file-name-at-point<br/>
+T w		ebrowse-set-tree-indentation<br/>
+T <remap>	Prefix Command<br/>
+<br/>
+<br/>
+<br/>
+In addition to any hooks its parent mode `special-mode' might have run,<br/>
+this mode runs the hook `ebrowse-tree-mode-hook', as the final step<br/>
+during initialization.

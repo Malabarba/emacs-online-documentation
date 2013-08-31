@@ -1,1 +1,66 @@
-font-spec is a built-in function in `C source code'.<br/><br/>(font-spec ARGS...)<br/><br/>Return a newly created font-spec with arguments as properties.<br/><br/>ARGS must come in pairs KEY VALUE of font properties.  KEY must be a<br/>valid font property name listed below:<br/><br/>`:family', `:weight', `:slant', `:width'<br/><br/>They are the same as face attributes of the same name.  See<br/>`set-face-attribute'.<br/><br/>`:foundry'<br/><br/>VALUE must be a string or a symbol specifying the font foundry, e.g. ``misc''.<br/><br/>`:adstyle'<br/><br/>VALUE must be a string or a symbol specifying the additional<br/>typographic style information of a font, e.g. ``sans''.<br/><br/>`:registry'<br/><br/>VALUE must be a string or a symbol specifying the charset registry and<br/>encoding of a font, e.g. ``iso8859-1''.<br/><br/>`:size'<br/><br/>VALUE must be a non-negative integer or a floating point number<br/>specifying the font size.  It specifies the font size in pixels (if<br/>VALUE is an integer), or in points (if VALUE is a float).<br/><br/>`:name'<br/><br/>VALUE must be a string of XLFD-style or fontconfig-style font name.<br/><br/>`:script'<br/><br/>VALUE must be a symbol representing a script that the font must<br/>support.  It may be a symbol representing a subgroup of a script<br/>listed in the variable `script-representative-chars'.<br/><br/>`:lang'<br/><br/>VALUE must be a symbol of two-letter ISO-639 language names,<br/>e.g. `ja'.<br/><br/>`:otf'<br/><br/>VALUE must be a list (SCRIPT-TAG LANGSYS-TAG GSUB [ GPOS ]) to specify<br/>required OpenType features.<br/><br/>  SCRIPT-TAG: OpenType script tag symbol (e.g. `deva').<br/>  LANGSYS-TAG: OpenType language system tag symbol,<br/>     or nil for the default language system.<br/>  GSUB: List of OpenType GSUB feature tag symbols, or nil if none required.<br/>  GPOS: List of OpenType GPOS feature tag symbols, or nil if none required.<br/><br/>GSUB and GPOS may contain `nil' element.  In such a case, the font<br/>must not have any of the remaining elements.<br/><br/>For instance, if the VALUE is `(thai nil nil (mark))', the font must<br/>be an OpenType font whose GPOS table of `thai' script's default<br/>language system must contain `mark' feature.
+<strong>font-spec</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(font-spec ARGS...)<br/>
+<br/>
+Return a newly created font-spec with arguments as properties.<br/>
+<br/>
+ARGS must come in pairs KEY VALUE of font properties.  KEY must be a<br/>
+valid font property name listed below:<br/>
+<br/>
+`:family', `:weight', `:slant', `:width'<br/>
+<br/>
+They are the same as face attributes of the same name.  See<br/>
+`set-face-attribute'.<br/>
+<br/>
+`:foundry'<br/>
+<br/>
+VALUE must be a string or a symbol specifying the font foundry, e.g. ``misc''.<br/>
+<br/>
+`:adstyle'<br/>
+<br/>
+VALUE must be a string or a symbol specifying the additional<br/>
+typographic style information of a font, e.g. ``sans''.<br/>
+<br/>
+`:registry'<br/>
+<br/>
+VALUE must be a string or a symbol specifying the charset registry and<br/>
+encoding of a font, e.g. ``iso8859-1''.<br/>
+<br/>
+`:size'<br/>
+<br/>
+VALUE must be a non-negative integer or a floating point number<br/>
+specifying the font size.  It specifies the font size in pixels (if<br/>
+VALUE is an integer), or in points (if VALUE is a float).<br/>
+<br/>
+`:name'<br/>
+<br/>
+VALUE must be a string of XLFD-style or fontconfig-style font name.<br/>
+<br/>
+`:script'<br/>
+<br/>
+VALUE must be a symbol representing a script that the font must<br/>
+support.  It may be a symbol representing a subgroup of a script<br/>
+listed in the variable `script-representative-chars'.<br/>
+<br/>
+`:lang'<br/>
+<br/>
+VALUE must be a symbol of two-letter ISO-639 language names,<br/>
+e.g. `ja'.<br/>
+<br/>
+`:otf'<br/>
+<br/>
+VALUE must be a list (SCRIPT-TAG LANGSYS-TAG GSUB [ GPOS ]) to specify<br/>
+required OpenType features.<br/>
+<br/>
+  SCRIPT-TAG: OpenType script tag symbol (e.g. `deva').<br/>
+  LANGSYS-TAG: OpenType language system tag symbol,<br/>
+     or nil for the default language system.<br/>
+  GSUB: List of OpenType GSUB feature tag symbols, or nil if none required.<br/>
+  GPOS: List of OpenType GPOS feature tag symbols, or nil if none required.<br/>
+<br/>
+GSUB and GPOS may contain `nil' element.  In such a case, the font<br/>
+must not have any of the remaining elements.<br/>
+<br/>
+For instance, if the VALUE is `(thai nil nil (mark))', the font must<br/>
+be an OpenType font whose GPOS table of `thai' script's default<br/>
+language system must contain `mark' feature.

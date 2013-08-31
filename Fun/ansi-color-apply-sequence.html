@@ -1,1 +1,15 @@
-ansi-color-apply-sequence is a compiled Lisp function in `ansi-color.el'.<br/><br/>(ansi-color-apply-sequence ESCAPE-SEQUENCE CODES)<br/><br/>Apply ESCAPE-SEQ to CODES and return the new list of codes.<br/><br/>ESCAPE-SEQ is an escape sequence parsed by `ansi-color-parse-sequence'.<br/><br/>For each new code, the following happens: if it is 1-7, add it to<br/>the list of codes; if it is 21-25 or 27, delete appropriate<br/>parameters from the list of codes; if it is 30-37 resp. 39, the<br/>foreground color code is replaced or added resp. deleted; if it<br/>is 40-47 resp. 49, the background color code is replaced or added<br/>resp. deleted; any other code is discarded together with the old<br/>codes.	Finally, the so changed list of codes is returned.
+<strong>ansi-color-apply-sequence</strong> is a compiled Lisp function in `<code>ansi-color.el</code>'.<br/>
+<br/>
+(ansi-color-apply-sequence ESCAPE-SEQUENCE CODES)<br/>
+<br/>
+Apply ESCAPE-SEQ to CODES and return the new list of codes.<br/>
+<br/>
+ESCAPE-SEQ is an escape sequence parsed by `ansi-color-parse-sequence'.<br/>
+<br/>
+For each new code, the following happens: if it is 1-7, add it to<br/>
+the list of codes; if it is 21-25 or 27, delete appropriate<br/>
+parameters from the list of codes; if it is 30-37 resp. 39, the<br/>
+foreground color code is replaced or added resp. deleted; if it<br/>
+is 40-47 resp. 49, the background color code is replaced or added<br/>
+resp. deleted; any other code is discarded together with the old<br/>
+codes.	Finally, the so changed list of codes is returned.

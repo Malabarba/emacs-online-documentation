@@ -1,1 +1,26 @@
-find-auto-coding is a compiled Lisp function in `mule.el'.<br/><br/>(find-auto-coding FILENAME SIZE)<br/><br/>Find a coding system for a file FILENAME of which SIZE bytes follow point.<br/>These bytes should include at least the first 1k of the file<br/>and the last 3k of the file, but the middle may be omitted.<br/><br/>The function checks FILENAME against the variable `auto-coding-alist'.<br/>If FILENAME doesn't match any entries in the variable, it checks the<br/>contents of the current buffer following point against<br/>`auto-coding-regexp-alist'.  If no match is found, it checks for a<br/>`coding:' tag in the first one or two lines following point.  If no<br/>`coding:' tag is found, it checks any local variables list in the last<br/>3K bytes out of the SIZE bytes.  Finally, if none of these methods<br/>succeed, it checks to see if any function in `auto-coding-functions'<br/>gives a match.<br/><br/>If a coding system is specified, the return value is a cons<br/>(CODING . SOURCE), where CODING is the specified coding system and<br/>SOURCE is a symbol `auto-coding-alist', `auto-coding-regexp-alist',<br/>`:coding', or `auto-coding-functions' indicating by what CODING is<br/>specified.  Note that the validity of CODING is not checked;<br/>it's the caller's responsibility to check it.<br/><br/>If nothing is specified, the return value is nil.
+<strong>find-auto-coding</strong> is a compiled Lisp function in `<code>mule.el</code>'.<br/>
+<br/>
+(find-auto-coding FILENAME SIZE)<br/>
+<br/>
+Find a coding system for a file FILENAME of which SIZE bytes follow point.<br/>
+These bytes should include at least the first 1k of the file<br/>
+and the last 3k of the file, but the middle may be omitted.<br/>
+<br/>
+The function checks FILENAME against the variable `auto-coding-alist'.<br/>
+If FILENAME doesn't match any entries in the variable, it checks the<br/>
+contents of the current buffer following point against<br/>
+`auto-coding-regexp-alist'.  If no match is found, it checks for a<br/>
+`coding:' tag in the first one or two lines following point.  If no<br/>
+`coding:' tag is found, it checks any local variables list in the last<br/>
+3K bytes out of the SIZE bytes.  Finally, if none of these methods<br/>
+succeed, it checks to see if any function in `auto-coding-functions'<br/>
+gives a match.<br/>
+<br/>
+If a coding system is specified, the return value is a cons<br/>
+(CODING . SOURCE), where CODING is the specified coding system and<br/>
+SOURCE is a symbol `auto-coding-alist', `auto-coding-regexp-alist',<br/>
+`:coding', or `auto-coding-functions' indicating by what CODING is<br/>
+specified.  Note that the validity of CODING is not checked;<br/>
+it's the caller's responsibility to check it.<br/>
+<br/>
+If nothing is specified, the return value is nil.

@@ -1,1 +1,21 @@
-epa-sign-region is an interactive autoloaded compiled Lisp function in `epa.el'.<br/><br/>It is bound to <menu-bar> <tools> <encryption-decryption> <sign-region>.<br/><br/>(epa-sign-region START END SIGNERS MODE)<br/><br/>Sign the current region between START and END by SIGNERS keys selected.<br/><br/>Don't use this command in Lisp programs!<br/>Since this function operates on regions, it does some tricks such<br/>as coding-system detection and unibyte/multibyte conversion.  If<br/>you are sure how the data should be treated, you should consider<br/>using the string based counterpart `epg-sign-string', or the file<br/>based counterpart `epg-sign-file' instead.<br/><br/>For example:<br/><br/>(let ((context (epg-make-context 'OpenPGP)))<br/>  (epg-sign-string<br/>    context<br/>    (encode-coding-string (buffer-substring start end) 'utf-8)))
+<strong>epa-sign-region</strong> is an interactive autoloaded compiled Lisp function in `<code>epa.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <tools> <encryption-decryption> <sign-region>.<br/>
+<br/>
+(epa-sign-region START END SIGNERS MODE)<br/>
+<br/>
+Sign the current region between START and END by SIGNERS keys selected.<br/>
+<br/>
+Don't use this command in Lisp programs!<br/>
+Since this function operates on regions, it does some tricks such<br/>
+as coding-system detection and unibyte/multibyte conversion.  If<br/>
+you are sure how the data should be treated, you should consider<br/>
+using the string based counterpart `epg-sign-string', or the file<br/>
+based counterpart `epg-sign-file' instead.<br/>
+<br/>
+For example:<br/>
+<br/>
+(let ((context (epg-make-context 'OpenPGP)))<br/>
+  (epg-sign-string<br/>
+    context<br/>
+    (encode-coding-string (buffer-substring start end) 'utf-8)))

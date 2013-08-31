@@ -1,1 +1,46 @@
-cperl-problems-old-emaxen is a variable defined in `cperl-mode.el'.<br/>Its value is please-ignore-this-line<br/><br/>Documentation:<br/>Description of problems in CPerl mode specific for older Emacs versions.<br/><br/>Emacs had a _very_ restricted syntax parsing engine until version<br/>20.1.  Most problems below are corrected starting from this version of<br/>Emacs, and all of them should be fixed in version 20.3.  (Or apply<br/>patches to Emacs 19.33/34 - see tips.)  XEmacs was very backward in<br/>this respect (until 2003).<br/><br/>Note that even with newer Emacsen in some very rare cases the details<br/>of interaction of `font-lock' and syntaxification may be not cleaned<br/>up yet.  You may get slightly different colors basing on the order of<br/>fontification and syntaxification.  Say, the initial faces is correct,<br/>but editing the buffer breaks this.<br/><br/>Even with older Emacsen CPerl mode tries to corrects some Emacs<br/>misunderstandings, however, for efficiency reasons the degree of<br/>correction is different for different operations.  The partially<br/>corrected problems are: POD sections, here-documents, regexps.  The<br/>operations are: highlighting, indentation, electric keywords, electric<br/>braces.<br/><br/>This may be confusing, since the regexp s#//#/#; may be highlighted<br/>as a comment, but it will be recognized as a regexp by the indentation<br/>code.  Or the opposite case, when a POD section is highlighted, but<br/>may break the indentation of the following code (though indentation<br/>should work if the balance of delimiters is not broken by POD).<br/><br/>The main trick (to make $ a "backslash") makes constructions like<br/>${aaa} look like unbalanced braces.  The only trick I can think of is<br/>to insert it as $ {aaa} (valid in perl5, not in perl4).<br/><br/>Similar problems arise in regexps, when /(\s|$)/ should be rewritten<br/>as /($|\s)/.  Note that such a transposition is not always possible.<br/><br/>The solution is to upgrade your Emacs or patch an older one.  Note<br/>that Emacs 20.2 has some bugs related to `syntax-table' text<br/>properties.  Patches are available on the main CPerl download site,<br/>and on CPAN.<br/><br/>If these bugs cannot be fixed on your machine (say, you have an inferior<br/>environment and cannot recompile), you may still disable all the fancy stuff<br/>via `cperl-use-syntax-table-text-property'.
+<strong>cperl-problems-old-emaxen</strong> is a variable defined in `<code>cperl-mode.el</code>'.<br/>
+Its value is please-ignore-this-line<br/>
+<br/>
+Documentation:<br/>
+Description of problems in CPerl mode specific for older Emacs versions.<br/>
+<br/>
+Emacs had a _very_ restricted syntax parsing engine until version<br/>
+20.1.  Most problems below are corrected starting from this version of<br/>
+Emacs, and all of them should be fixed in version 20.3.  (Or apply<br/>
+patches to Emacs 19.33/34 - see tips.)  XEmacs was very backward in<br/>
+this respect (until 2003).<br/>
+<br/>
+Note that even with newer Emacsen in some very rare cases the details<br/>
+of interaction of `font-lock' and syntaxification may be not cleaned<br/>
+up yet.  You may get slightly different colors basing on the order of<br/>
+fontification and syntaxification.  Say, the initial faces is correct,<br/>
+but editing the buffer breaks this.<br/>
+<br/>
+Even with older Emacsen CPerl mode tries to corrects some Emacs<br/>
+misunderstandings, however, for efficiency reasons the degree of<br/>
+correction is different for different operations.  The partially<br/>
+corrected problems are: POD sections, here-documents, regexps.  The<br/>
+operations are: highlighting, indentation, electric keywords, electric<br/>
+braces.<br/>
+<br/>
+This may be confusing, since the regexp s#//#/#; may be highlighted<br/>
+as a comment, but it will be recognized as a regexp by the indentation<br/>
+code.  Or the opposite case, when a POD section is highlighted, but<br/>
+may break the indentation of the following code (though indentation<br/>
+should work if the balance of delimiters is not broken by POD).<br/>
+<br/>
+The main trick (to make $ a "backslash") makes constructions like<br/>
+${aaa} look like unbalanced braces.  The only trick I can think of is<br/>
+to insert it as $ {aaa} (valid in perl5, not in perl4).<br/>
+<br/>
+Similar problems arise in regexps, when /(\s|$)/ should be rewritten<br/>
+as /($|\s)/.  Note that such a transposition is not always possible.<br/>
+<br/>
+The solution is to upgrade your Emacs or patch an older one.  Note<br/>
+that Emacs 20.2 has some bugs related to `syntax-table' text<br/>
+properties.  Patches are available on the main CPerl download site,<br/>
+and on CPAN.<br/>
+<br/>
+If these bugs cannot be fixed on your machine (say, you have an inferior<br/>
+environment and cannot recompile), you may still disable all the fancy stuff<br/>
+via `cperl-use-syntax-table-text-property'.

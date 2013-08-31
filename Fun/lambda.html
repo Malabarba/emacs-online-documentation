@@ -1,1 +1,18 @@
-lambda is a Lisp macro in `subr.el'.<br/><br/>(lambda ARGS [DOCSTRING] [INTERACTIVE] BODY)<br/><br/>Return a lambda expression.<br/>A call of the form (lambda ARGS DOCSTRING INTERACTIVE BODY) is<br/>self-quoting; the result of evaluating the lambda expression is the<br/>expression itself.  The lambda expression may then be treated as a<br/>function, i.e., stored as the function value of a symbol, passed to<br/>`funcall' or `mapcar', etc.<br/><br/>ARGS should take the same form as an argument list for a `defun'.<br/>DOCSTRING is an optional documentation string.<br/> If present, it should describe how to call the function.<br/> But documentation strings are usually not useful in nameless functions.<br/>INTERACTIVE should be a call to the function `interactive', which see.<br/>It may also be omitted.<br/>BODY should be a list of Lisp expressions.
+<strong>lambda</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
+<br/>
+(lambda ARGS [DOCSTRING] [INTERACTIVE] BODY)<br/>
+<br/>
+Return a lambda expression.<br/>
+A call of the form (lambda ARGS DOCSTRING INTERACTIVE BODY) is<br/>
+self-quoting; the result of evaluating the lambda expression is the<br/>
+expression itself.  The lambda expression may then be treated as a<br/>
+function, i.e., stored as the function value of a symbol, passed to<br/>
+`funcall' or `mapcar', etc.<br/>
+<br/>
+ARGS should take the same form as an argument list for a `defun'.<br/>
+DOCSTRING is an optional documentation string.<br/>
+ If present, it should describe how to call the function.<br/>
+ But documentation strings are usually not useful in nameless functions.<br/>
+INTERACTIVE should be a call to the function `interactive', which see.<br/>
+It may also be omitted.<br/>
+BODY should be a list of Lisp expressions.

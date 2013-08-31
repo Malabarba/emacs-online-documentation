@@ -1,1 +1,92 @@
-vc-dir-mode-map is a variable defined in `vc-dir.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap for directory buffer.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (vc-dir-mode menu-item "VC-dir"<br/>			(keymap<br/>			 (register menu-item "Register" vc-register :help "Register file set into the version control system")<br/>			 (next-action menu-item "Check In/Out" vc-next-action :help "Do the next logical version control operation on the current fileset")<br/>			 (revert menu-item "Revert to Base Version" vc-revert :help "Revert working copies of the selected fileset to their repository contents.")<br/>			 (update menu-item "Update to Latest Version" vc-update :help "Update the current fileset's files to their tip revisions")<br/>			 (sepvccmd "--")<br/>			 (rlog menu-item "Show Top of the Tree History " vc-print-root-log :help "List the change log for the current tree in a window")<br/>			 (log menu-item "Show History" vc-print-log :help "List the change log of the current file set in a window")<br/>			 (logi menu-item "Show Incoming Log" vc-log-incoming :help "Show a log of changes that will be received with a pull operation")<br/>			 (logo menu-item "Show Outgoing Log" vc-log-outgoing :help "Show a log of changes that will be sent with a push operation")<br/>			 (diff menu-item "Compare with Base Version" vc-diff :help "Compare file set with the base version")<br/>			 (annotate menu-item "Annotate" vc-annotate :help "Display the edit history of the current file using colors")<br/>			 (ins menu-item "Show File" vc-dir-show-fileentry :help "Show a file in the VC status listing even though it might be up to date")<br/>			 (sepvcdet "--")<br/>			 (open menu-item "Open File" vc-dir-find-file :help "Find the file on the current line")<br/>			 (open-other menu-item "Open in Other Window" vc-dir-find-file-other-window :help "Find the file on the current line, in another window")<br/>			 (ise menu-item "Isearch Files..." vc-dir-isearch :help "Incremental search a string in the marked files")<br/>			 (ires menu-item "Isearch Regexp Files..." vc-dir-isearch-regexp :help "Incremental search a regexp in the marked files")<br/>			 (se menu-item "Search Files..." vc-dir-search :help "Search a regexp in the marked files")<br/>			 (qr menu-item "Query Replace in Files..." vc-dir-query-replace-regexp :help "Replace a string in the marked files")<br/>			 (sepopn "--")<br/>			 (mark menu-item "Mark" vc-dir-mark :help "Mark the current file or all files in the region")<br/>			 (unmark menu-item "Unmark" vc-dir-unmark :help "Unmark the current file or all files in the region")<br/>			 (mark-all menu-item "Mark All" vc-dir-mark-all-files :help "Mark all files that are in the same state as the current file\nWith prefix argument mark all files")<br/>			 (unmark-previous menu-item "Unmark Previous " vc-dir-unmark-file-up :help "Move to the previous line and unmark the file")<br/>			 (unmark-all menu-item "Unmark All" vc-dir-unmark-all-files :help "Unmark all files that are in the same state as the current file\nWith prefix argument unmark all files")<br/>			 (sepmrk "--")<br/>			 (previous-line menu-item "Previous Line" vc-dir-previous-line :help "Go to the previous line")<br/>			 (next-line menu-item "Next Line" vc-dir-next-line :help "Go to the next line" :keys "n")<br/>			 (sepmv "--")<br/>			 (remup menu-item "Hide Up-to-date" vc-dir-hide-up-to-date :help "Hide up-to-date items from display")<br/>			 (refresh menu-item "Refresh" revert-buffer :enable<br/>				  (not<br/>				   (vc-dir-busy))<br/>				  :help "Refresh the contents of the directory buffer")<br/>			 (kill menu-item "Kill Update Command" vc-dir-kill-dir-status-process :enable<br/>			       (vc-dir-busy)<br/>			       :help "Kill the command that updates the directory buffer")<br/>			 (quit menu-item "Quit" quit-window :help "Quit")<br/>			 "VC-dir")<br/>			:filter vc-dir-menu-map-filter))<br/> (81 . vc-dir-query-replace-regexp)<br/> (83 . vc-dir-search)<br/> (11 . vc-dir-kill-line)<br/> (120 . vc-dir-hide-up-to-date)<br/> (follow-link . mouse-face)<br/> (mouse-2 . vc-dir-toggle-mark)<br/> (down-mouse-3 . vc-dir-menu)<br/> (3 keymap<br/>    (3 . vc-dir-kill-dir-status-process))<br/> (111 . vc-dir-find-file-other-window)<br/> (13 . vc-dir-find-file)<br/> (101 . vc-dir-find-file)<br/> (102 . vc-dir-find-file)<br/> (C-up . vc-dir-previous-directory)<br/> (C-down . vc-dir-next-directory)<br/> (backtab . vc-dir-previous-directory)<br/> (112 . vc-dir-previous-line)<br/> (9 . vc-dir-next-directory)<br/> (32 . vc-dir-next-line)<br/> (110 . vc-dir-next-line)<br/> (27 keymap<br/>     (115 keymap<br/>	  (97 keymap<br/>	      (27 keymap<br/>		  (19 . vc-dir-isearch-regexp))<br/>	      (19 . vc-dir-isearch)))<br/>     (123 . vc-dir-previous-directory)<br/>     (125 . vc-dir-next-directory)<br/>     (127 . vc-dir-unmark-all-files))<br/> (127 . vc-dir-unmark-file-up)<br/> (85 . vc-dir-unmark-all-files)<br/> (117 . vc-dir-unmark)<br/> (77 . vc-dir-mark-all-files)<br/> (109 . vc-dir-mark)<br/> (108 . vc-print-log)<br/> (43 . vc-update)<br/> (105 . vc-register)<br/> (61 . vc-diff)<br/> (118 . vc-next-action))<br/><br/>
+<strong>vc-dir-mode-map</strong> is a variable defined in `<code>vc-dir.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap for directory buffer.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (vc-dir-mode menu-item "VC-dir"<br/>
+			(keymap<br/>
+			 (register menu-item "Register" vc-register :help "Register file set into the version control system")<br/>
+			 (next-action menu-item "Check In/Out" vc-next-action :help "Do the next logical version control operation on the current fileset")<br/>
+			 (revert menu-item "Revert to Base Version" vc-revert :help "Revert working copies of the selected fileset to their repository contents.")<br/>
+			 (update menu-item "Update to Latest Version" vc-update :help "Update the current fileset's files to their tip revisions")<br/>
+			 (sepvccmd "--")<br/>
+			 (rlog menu-item "Show Top of the Tree History " vc-print-root-log :help "List the change log for the current tree in a window")<br/>
+			 (log menu-item "Show History" vc-print-log :help "List the change log of the current file set in a window")<br/>
+			 (logi menu-item "Show Incoming Log" vc-log-incoming :help "Show a log of changes that will be received with a pull operation")<br/>
+			 (logo menu-item "Show Outgoing Log" vc-log-outgoing :help "Show a log of changes that will be sent with a push operation")<br/>
+			 (diff menu-item "Compare with Base Version" vc-diff :help "Compare file set with the base version")<br/>
+			 (annotate menu-item "Annotate" vc-annotate :help "Display the edit history of the current file using colors")<br/>
+			 (ins menu-item "Show File" vc-dir-show-fileentry :help "Show a file in the VC status listing even though it might be up to date")<br/>
+			 (sepvcdet "--")<br/>
+			 (open menu-item "Open File" vc-dir-find-file :help "Find the file on the current line")<br/>
+			 (open-other menu-item "Open in Other Window" vc-dir-find-file-other-window :help "Find the file on the current line, in another window")<br/>
+			 (ise menu-item "Isearch Files..." vc-dir-isearch :help "Incremental search a string in the marked files")<br/>
+			 (ires menu-item "Isearch Regexp Files..." vc-dir-isearch-regexp :help "Incremental search a regexp in the marked files")<br/>
+			 (se menu-item "Search Files..." vc-dir-search :help "Search a regexp in the marked files")<br/>
+			 (qr menu-item "Query Replace in Files..." vc-dir-query-replace-regexp :help "Replace a string in the marked files")<br/>
+			 (sepopn "--")<br/>
+			 (mark menu-item "Mark" vc-dir-mark :help "Mark the current file or all files in the region")<br/>
+			 (unmark menu-item "Unmark" vc-dir-unmark :help "Unmark the current file or all files in the region")<br/>
+			 (mark-all menu-item "Mark All" vc-dir-mark-all-files :help "Mark all files that are in the same state as the current file\nWith prefix argument mark all files")<br/>
+			 (unmark-previous menu-item "Unmark Previous " vc-dir-unmark-file-up :help "Move to the previous line and unmark the file")<br/>
+			 (unmark-all menu-item "Unmark All" vc-dir-unmark-all-files :help "Unmark all files that are in the same state as the current file\nWith prefix argument unmark all files")<br/>
+			 (sepmrk "--")<br/>
+			 (previous-line menu-item "Previous Line" vc-dir-previous-line :help "Go to the previous line")<br/>
+			 (next-line menu-item "Next Line" vc-dir-next-line :help "Go to the next line" :keys "n")<br/>
+			 (sepmv "--")<br/>
+			 (remup menu-item "Hide Up-to-date" vc-dir-hide-up-to-date :help "Hide up-to-date items from display")<br/>
+			 (refresh menu-item "Refresh" revert-buffer :enable<br/>
+				  (not<br/>
+				   (vc-dir-busy))<br/>
+				  :help "Refresh the contents of the directory buffer")<br/>
+			 (kill menu-item "Kill Update Command" vc-dir-kill-dir-status-process :enable<br/>
+			       (vc-dir-busy)<br/>
+			       :help "Kill the command that updates the directory buffer")<br/>
+			 (quit menu-item "Quit" quit-window :help "Quit")<br/>
+			 "VC-dir")<br/>
+			:filter vc-dir-menu-map-filter))<br/>
+ (81 . vc-dir-query-replace-regexp)<br/>
+ (83 . vc-dir-search)<br/>
+ (11 . vc-dir-kill-line)<br/>
+ (120 . vc-dir-hide-up-to-date)<br/>
+ (follow-link . mouse-face)<br/>
+ (mouse-2 . vc-dir-toggle-mark)<br/>
+ (down-mouse-3 . vc-dir-menu)<br/>
+ (3 keymap<br/>
+    (3 . vc-dir-kill-dir-status-process))<br/>
+ (111 . vc-dir-find-file-other-window)<br/>
+ (13 . vc-dir-find-file)<br/>
+ (101 . vc-dir-find-file)<br/>
+ (102 . vc-dir-find-file)<br/>
+ (C-up . vc-dir-previous-directory)<br/>
+ (C-down . vc-dir-next-directory)<br/>
+ (backtab . vc-dir-previous-directory)<br/>
+ (112 . vc-dir-previous-line)<br/>
+ (9 . vc-dir-next-directory)<br/>
+ (32 . vc-dir-next-line)<br/>
+ (110 . vc-dir-next-line)<br/>
+ (27 keymap<br/>
+     (115 keymap<br/>
+	  (97 keymap<br/>
+	      (27 keymap<br/>
+		  (19 . vc-dir-isearch-regexp))<br/>
+	      (19 . vc-dir-isearch)))<br/>
+     (123 . vc-dir-previous-directory)<br/>
+     (125 . vc-dir-next-directory)<br/>
+     (127 . vc-dir-unmark-all-files))<br/>
+ (127 . vc-dir-unmark-file-up)<br/>
+ (85 . vc-dir-unmark-all-files)<br/>
+ (117 . vc-dir-unmark)<br/>
+ (77 . vc-dir-mark-all-files)<br/>
+ (109 . vc-dir-mark)<br/>
+ (108 . vc-print-log)<br/>
+ (43 . vc-update)<br/>
+ (105 . vc-register)<br/>
+ (61 . vc-diff)<br/>
+ (118 . vc-next-action))<br/>
+<br/>

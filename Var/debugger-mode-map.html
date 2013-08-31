@@ -1,1 +1,44 @@
-debugger-mode-map is a variable defined in `debug.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (keymap<br/> #^[nil nil keymap<br/>	#^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil debug-help-follow nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-record-expression nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-frame debugger-continue debugger-step-through debugger-eval-expression nil nil describe-mode nil debugger-jump nil debugger-list-functions nil nil nil nil top-level debugger-return-value nil nil debugger-frame-clear nil nil nil nil nil nil nil nil nil nil]<br/>	#^^[1 0<br/>	      #^^[2 0<br/>		    #^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil debug-help-follow nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-record-expression nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-frame debugger-continue debugger-step-through debugger-eval-expression nil nil describe-mode nil debugger-jump nil debugger-list-functions nil nil nil nil top-level debugger-return-value nil nil debugger-frame-clear nil nil nil nil nil nil nil nil nil nil]<br/>		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/> (menu-bar keymap<br/>	   (debugger "Debugger" keymap<br/>		     (deb-step menu-item "Step through" debugger-step-through :help "Proceed, stepping through subexpressions of this expression")<br/>		     (deb-cont menu-item "Continue" debugger-continue :help "Continue, evaluating this expression without stopping")<br/>		     (deb-jump menu-item "Jump" debugger-jump :help "Continue to exit from this frame, with all debug-on-entry suspended")<br/>		     (deb-eval menu-item "Eval Expression..." debugger-eval-expression :help "Eval an expression, in an environment like that outside the debugger")<br/>		     (deb-rec menu-item "Display and Record Expression" debugger-record-expression :help "Display a variable's value and record it in `*Backtrace-record*' buffer")<br/>		     (deb-ret menu-item "Return value..." debugger-return-value :help "Continue, specifying value to return.")<br/>		     (deb-s2 "--")<br/>		     (deb-frame menu-item "Debug frame" debugger-frame :help "Request entry to debugger when this frame exits")<br/>		     (deb-fclear menu-item "Cancel debug frame" debugger-frame-clear :help "Do not enter debugger when this frame exits")<br/>		     (deb-lfunc menu-item "List debug on entry functions" debugger-list-functions :help "Display a list of all the functions now set to debug on entry")<br/>		     (deb-s1 "--")<br/>		     (deb-nxt menu-item "Next Line" next-line :help "Move cursor down")<br/>		     (deb-hfol menu-item "Help Follow" debug-help-follow :help "Follow cross-reference")<br/>		     (deb-descr menu-item "Describe Debugger Mode" describe-mode :help "Display documentation for debugger-mode")<br/>		     (deb-s0 "--")<br/>		     (deb-top menu-item "Quit" top-level :help "Quit debugging and return to top level")))<br/> (mouse-2 . push-button)<br/> (remap keymap<br/>	(self-insert-command . undefined))<br/> keymap<br/> (backtab . backward-button)<br/> (27 keymap<br/>     (9 . backward-button))<br/> (9 . forward-button))<br/><br/>
+<strong>debugger-mode-map</strong> is a variable defined in `<code>debug.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (keymap<br/>
+ #^[nil nil keymap<br/>
+	#^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil debug-help-follow nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-record-expression nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-frame debugger-continue debugger-step-through debugger-eval-expression nil nil describe-mode nil debugger-jump nil debugger-list-functions nil nil nil nil top-level debugger-return-value nil nil debugger-frame-clear nil nil nil nil nil nil nil nil nil nil]<br/>
+	#^^[1 0<br/>
+	      #^^[2 0<br/>
+		    #^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil debug-help-follow nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil next-line nil nil nil nil nil nil nil nil nil nil nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-record-expression nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil debugger-frame debugger-continue debugger-step-through debugger-eval-expression nil nil describe-mode nil debugger-jump nil debugger-list-functions nil nil nil nil top-level debugger-return-value nil nil debugger-frame-clear nil nil nil nil nil nil nil nil nil nil]<br/>
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+ (menu-bar keymap<br/>
+	   (debugger "Debugger" keymap<br/>
+		     (deb-step menu-item "Step through" debugger-step-through :help "Proceed, stepping through subexpressions of this expression")<br/>
+		     (deb-cont menu-item "Continue" debugger-continue :help "Continue, evaluating this expression without stopping")<br/>
+		     (deb-jump menu-item "Jump" debugger-jump :help "Continue to exit from this frame, with all debug-on-entry suspended")<br/>
+		     (deb-eval menu-item "Eval Expression..." debugger-eval-expression :help "Eval an expression, in an environment like that outside the debugger")<br/>
+		     (deb-rec menu-item "Display and Record Expression" debugger-record-expression :help "Display a variable's value and record it in `*Backtrace-record*' buffer")<br/>
+		     (deb-ret menu-item "Return value..." debugger-return-value :help "Continue, specifying value to return.")<br/>
+		     (deb-s2 "--")<br/>
+		     (deb-frame menu-item "Debug frame" debugger-frame :help "Request entry to debugger when this frame exits")<br/>
+		     (deb-fclear menu-item "Cancel debug frame" debugger-frame-clear :help "Do not enter debugger when this frame exits")<br/>
+		     (deb-lfunc menu-item "List debug on entry functions" debugger-list-functions :help "Display a list of all the functions now set to debug on entry")<br/>
+		     (deb-s1 "--")<br/>
+		     (deb-nxt menu-item "Next Line" next-line :help "Move cursor down")<br/>
+		     (deb-hfol menu-item "Help Follow" debug-help-follow :help "Follow cross-reference")<br/>
+		     (deb-descr menu-item "Describe Debugger Mode" describe-mode :help "Display documentation for debugger-mode")<br/>
+		     (deb-s0 "--")<br/>
+		     (deb-top menu-item "Quit" top-level :help "Quit debugging and return to top level")))<br/>
+ (mouse-2 . push-button)<br/>
+ (remap keymap<br/>
+	(self-insert-command . undefined))<br/>
+ keymap<br/>
+ (backtab . backward-button)<br/>
+ (27 keymap<br/>
+     (9 . backward-button))<br/>
+ (9 . forward-button))<br/>
+<br/>

@@ -1,1 +1,27 @@
-org-properties-postprocess-alist is a variable defined in `org.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Alist of properties and functions to adjust inserted values.<br/>Elements of this alist must be of the form<br/><br/>  ([string] [function])<br/><br/>where [string] must be a property name and [function] must be a<br/>lambda expression: this lambda expression must take one argument,<br/>the value to adjust, and return the new value as a string.<br/><br/>For example, this element will allow the property "Remaining"<br/>to be updated wrt the relation between the "Effort" property<br/>and the clock summary:<br/><br/> (("Remaining" (lambda(value)<br/>                   (let ((clocksum (org-clock-sum-current-item))<br/>                         (effort (org-duration-string-to-minutes<br/>                                   (org-entry-get (point) "Effort"))))<br/>                     (org-minutes-to-hh:mm-string (- effort clocksum))))))<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>org-properties-postprocess-alist</strong> is a variable defined in `<code>org.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Alist of properties and functions to adjust inserted values.<br/>
+Elements of this alist must be of the form<br/>
+<br/>
+  ([string] [function])<br/>
+<br/>
+where [string] must be a property name and [function] must be a<br/>
+lambda expression: this lambda expression must take one argument,<br/>
+the value to adjust, and return the new value as a string.<br/>
+<br/>
+For example, this element will allow the property "Remaining"<br/>
+to be updated wrt the relation between the "Effort" property<br/>
+and the clock summary:<br/>
+<br/>
+ (("Remaining" (lambda(value)<br/>
+                   (let ((clocksum (org-clock-sum-current-item))<br/>
+                         (effort (org-duration-string-to-minutes<br/>
+                                   (org-entry-get (point) "Effort"))))<br/>
+                     (org-minutes-to-hh:mm-string (- effort clocksum))))))<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

@@ -1,1 +1,40 @@
-composition-get-gstring is a built-in function in `C source code'.<br/><br/>(composition-get-gstring FROM TO FONT-OBJECT STRING)<br/><br/>Return a glyph-string for characters between FROM and TO.<br/>If the glyph string is for graphic display, FONT-OBJECT must be<br/>a font-object to use for those characters.<br/>Otherwise (for terminal display), FONT-OBJECT must be a terminal ID, a<br/>frame, or nil for the selected frame's terminal device.<br/><br/>If the optional 4th argument STRING is not nil, it is a string<br/>containing the target characters between indices FROM and TO.<br/><br/>A glyph-string is a vector containing information about how to display<br/>a specific character sequence.  The format is:<br/>   [HEADER ID GLYPH ...]<br/><br/>HEADER is a vector of this form:<br/>    [FONT-OBJECT CHAR ...]<br/>where<br/>    FONT-OBJECT is a font-object for all glyphs in the glyph-string,<br/>    or the terminal coding system of the specified terminal.<br/>    CHARs are characters to be composed by GLYPHs.<br/><br/>ID is an identification number of the glyph-string.  It may be nil if<br/>not yet shaped.<br/><br/>GLYPH is a vector whose elements have this form:<br/>    [ FROM-IDX TO-IDX C CODE WIDTH LBEARING RBEARING ASCENT DESCENT<br/>      [ [X-OFF Y-OFF WADJUST] | nil] ]<br/>where<br/>    FROM-IDX and TO-IDX are used internally and should not be touched.<br/>    C is the character of the glyph.<br/>    CODE is the glyph-code of C in FONT-OBJECT.<br/>    WIDTH thru DESCENT are the metrics (in pixels) of the glyph.<br/>    X-OFF and Y-OFF are offsets to the base position for the glyph.<br/>    WADJUST is the adjustment to the normal width of the glyph.<br/><br/>If GLYPH is nil, the remaining elements of the glyph-string vector<br/>should be ignored.
+<strong>composition-get-gstring</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(composition-get-gstring FROM TO FONT-OBJECT STRING)<br/>
+<br/>
+Return a glyph-string for characters between FROM and TO.<br/>
+If the glyph string is for graphic display, FONT-OBJECT must be<br/>
+a font-object to use for those characters.<br/>
+Otherwise (for terminal display), FONT-OBJECT must be a terminal ID, a<br/>
+frame, or nil for the selected frame's terminal device.<br/>
+<br/>
+If the optional 4th argument STRING is not nil, it is a string<br/>
+containing the target characters between indices FROM and TO.<br/>
+<br/>
+A glyph-string is a vector containing information about how to display<br/>
+a specific character sequence.  The format is:<br/>
+   [HEADER ID GLYPH ...]<br/>
+<br/>
+HEADER is a vector of this form:<br/>
+    [FONT-OBJECT CHAR ...]<br/>
+where<br/>
+    FONT-OBJECT is a font-object for all glyphs in the glyph-string,<br/>
+    or the terminal coding system of the specified terminal.<br/>
+    CHARs are characters to be composed by GLYPHs.<br/>
+<br/>
+ID is an identification number of the glyph-string.  It may be nil if<br/>
+not yet shaped.<br/>
+<br/>
+GLYPH is a vector whose elements have this form:<br/>
+    [ FROM-IDX TO-IDX C CODE WIDTH LBEARING RBEARING ASCENT DESCENT<br/>
+      [ [X-OFF Y-OFF WADJUST] | nil] ]<br/>
+where<br/>
+    FROM-IDX and TO-IDX are used internally and should not be touched.<br/>
+    C is the character of the glyph.<br/>
+    CODE is the glyph-code of C in FONT-OBJECT.<br/>
+    WIDTH thru DESCENT are the metrics (in pixels) of the glyph.<br/>
+    X-OFF and Y-OFF are offsets to the base position for the glyph.<br/>
+    WADJUST is the adjustment to the normal width of the glyph.<br/>
+<br/>
+If GLYPH is nil, the remaining elements of the glyph-string vector<br/>
+should be ignored.

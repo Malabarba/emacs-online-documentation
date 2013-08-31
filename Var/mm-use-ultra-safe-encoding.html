@@ -1,1 +1,14 @@
-mm-use-ultra-safe-encoding is a variable defined in `mm-encode.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>If non-nil, use encodings aimed at Procrustean bed survival.<br/><br/>This means that textual parts are encoded as quoted-printable if they<br/>contain lines longer than 76 characters or starting with "From " in<br/>the body.  Non-7bit encodings (8bit, binary) are generally disallowed.<br/>This is to reduce the probability that a broken MTA or MDA changes the<br/>message.<br/><br/>This variable should never be set directly, but bound before a call to<br/>`mml-generate-mime' or similar functions.
+<strong>mm-use-ultra-safe-encoding</strong> is a variable defined in `<code>mm-encode.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+If non-nil, use encodings aimed at Procrustean bed survival.<br/>
+<br/>
+This means that textual parts are encoded as quoted-printable if they<br/>
+contain lines longer than 76 characters or starting with "From " in<br/>
+the body.  Non-7bit encodings (8bit, binary) are generally disallowed.<br/>
+This is to reduce the probability that a broken MTA or MDA changes the<br/>
+message.<br/>
+<br/>
+This variable should never be set directly, but bound before a call to<br/>
+`mml-generate-mime' or similar functions.

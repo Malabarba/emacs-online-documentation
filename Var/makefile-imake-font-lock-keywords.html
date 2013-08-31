@@ -1,1 +1,53 @@
-makefile-imake-font-lock-keywords is a variable defined in `make-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (("\\(?:^\\|^export\\|^override\\|:\\|: *override\\) *\\([^ \n	][^:#= 	\n]*\\)[ 	]*\\(?:!=\\|[*:+]?[:?]?=\\)"<br/>  (1 font-lock-variable-name-face)<br/>  (2 'makefile-shell prepend t)<br/>  (3 'font-lock-string-face prepend t))<br/> (makefile-match-action<br/>  (1 font-lock-type-face nil t)<br/>  (2 'makefile-shell prepend)<br/>  (3 font-lock-builtin-face prepend t))<br/> ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\|[@%<?^+*][FD]?\\)" 1 font-lock-variable-name-face prepend)<br/> ("[^$]\\$\\([@%<?^+*_]\\|[a-zA-Z0-9]\\>\\)" 1 font-lock-constant-face prepend)<br/> ("[^$]\\(\\$[@%*]\\)" 1 'makefile-targets append)<br/> ("^\\(?: [ 	]*\\)?\\(include\\)\\>[ 	]*\\([^: 	\n#]*\\)"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-variable-name-face))<br/> ("^[ 	]+$" . makefile-space)<br/> ("^	+#" 0 makefile-space t)<br/> ("^\\( +\\)	" 1 makefile-space)<br/> ("^XCOMM.*$" . font-lock-comment-face)<br/> ("XVAR\\(?:use\\|def\\)[0-9]" 0 font-lock-keyword-face prepend)<br/> ("@@" . font-lock-preprocessor-face)<br/> (makefile-match-dependency<br/>  (1 'makefile-targets prepend)<br/>  (3 'makefile-shell prepend t))<br/> ("^#[ 	]*\\(?:error\\|warning\\)[ 	]+\\(.+\\)" 1 font-lock-warning-face prepend)<br/> ("^#[ 	]*\\(?:import\\|include\\)[ 	]*\\(<[^>\"\n]*>?\\)" 1 font-lock-string-face prepend)<br/> ("^#[ 	]*define[ 	]+\\([[:alpha:]_][[:alnum:]_$]*\\)("<br/>  (1 font-lock-function-name-face prepend)<br/>  ((lambda<br/>     (limit)<br/>     (re-search-forward "\\(?:\\([[:alpha:]_][[:alnum:]_]*\\)[,]?\\)"<br/>			(or<br/>			 (save-excursion<br/>			   (re-search-forward ")" limit t))<br/>			 limit)<br/>			t))<br/>   nil nil<br/>   (1 font-lock-variable-name-face prepend)))<br/> ("^#[ 	]*\\(?:elif\\|if\\)\\>"<br/>  ("\\<\\(defined\\)\\>[ 	]*(?\\([[:alpha:]_][[:alnum:]_]*\\)?" nil nil<br/>   (1 font-lock-builtin-face prepend)<br/>   (2 font-lock-variable-name-face prepend t)))<br/> ("^\\(#[ 	]*\\(?:define\\|e\\(?:l\\(?:if\\|se\\)\\|ndif\\|rror\\)\\|file\\|i\\(?:f\\(?:n?def\\)?\\|mport\\|nclude\\)\\|line\\|pragma\\|undef\\|warning\\)\\)\\>[ 	!]*\\([[:alpha:]_][[:alnum:]_]*\\)?"<br/>  (1 font-lock-preprocessor-face prepend)<br/>  (2 font-lock-variable-name-face nil t)))<br/><br/>
+<strong>makefile-imake-font-lock-keywords</strong> is a variable defined in `<code>make-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (("\\(?:^\\|^export\\|^override\\|:\\|: *override\\) *\\([^ \n	][^:#= 	\n]*\\)[ 	]*\\(?:!=\\|[*:+]?[:?]?=\\)"<br/>
+  (1 font-lock-variable-name-face)<br/>
+  (2 'makefile-shell prepend t)<br/>
+  (3 'font-lock-string-face prepend t))<br/>
+ (makefile-match-action<br/>
+  (1 font-lock-type-face nil t)<br/>
+  (2 'makefile-shell prepend)<br/>
+  (3 font-lock-builtin-face prepend t))<br/>
+ ("[^$]\\$[({]\\([-a-zA-Z0-9_.]+\\|[@%<?^+*][FD]?\\)" 1 font-lock-variable-name-face prepend)<br/>
+ ("[^$]\\$\\([@%<?^+*_]\\|[a-zA-Z0-9]\\>\\)" 1 font-lock-constant-face prepend)<br/>
+ ("[^$]\\(\\$[@%*]\\)" 1 'makefile-targets append)<br/>
+ ("^\\(?: [ 	]*\\)?\\(include\\)\\>[ 	]*\\([^: 	\n#]*\\)"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-variable-name-face))<br/>
+ ("^[ 	]+$" . makefile-space)<br/>
+ ("^	+#" 0 makefile-space t)<br/>
+ ("^\\( +\\)	" 1 makefile-space)<br/>
+ ("^XCOMM.*$" . font-lock-comment-face)<br/>
+ ("XVAR\\(?:use\\|def\\)[0-9]" 0 font-lock-keyword-face prepend)<br/>
+ ("@@" . font-lock-preprocessor-face)<br/>
+ (makefile-match-dependency<br/>
+  (1 'makefile-targets prepend)<br/>
+  (3 'makefile-shell prepend t))<br/>
+ ("^#[ 	]*\\(?:error\\|warning\\)[ 	]+\\(.+\\)" 1 font-lock-warning-face prepend)<br/>
+ ("^#[ 	]*\\(?:import\\|include\\)[ 	]*\\(<[^>\"\n]*>?\\)" 1 font-lock-string-face prepend)<br/>
+ ("^#[ 	]*define[ 	]+\\([[:alpha:]_][[:alnum:]_$]*\\)("<br/>
+  (1 font-lock-function-name-face prepend)<br/>
+  ((lambda<br/>
+     (limit)<br/>
+     (re-search-forward "\\(?:\\([[:alpha:]_][[:alnum:]_]*\\)[,]?\\)"<br/>
+			(or<br/>
+			 (save-excursion<br/>
+			   (re-search-forward ")" limit t))<br/>
+			 limit)<br/>
+			t))<br/>
+   nil nil<br/>
+   (1 font-lock-variable-name-face prepend)))<br/>
+ ("^#[ 	]*\\(?:elif\\|if\\)\\>"<br/>
+  ("\\<\\(defined\\)\\>[ 	]*(?\\([[:alpha:]_][[:alnum:]_]*\\)?" nil nil<br/>
+   (1 font-lock-builtin-face prepend)<br/>
+   (2 font-lock-variable-name-face prepend t)))<br/>
+ ("^\\(#[ 	]*\\(?:define\\|e\\(?:l\\(?:if\\|se\\)\\|ndif\\|rror\\)\\|file\\|i\\(?:f\\(?:n?def\\)?\\|mport\\|nclude\\)\\|line\\|pragma\\|undef\\|warning\\)\\)\\>[ 	!]*\\([[:alpha:]_][[:alnum:]_]*\\)?"<br/>
+  (1 font-lock-preprocessor-face prepend)<br/>
+  (2 font-lock-variable-name-face nil t)))<br/>
+<br/>

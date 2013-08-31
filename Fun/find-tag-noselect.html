@@ -1,1 +1,22 @@
-find-tag-noselect is an interactive autoloaded compiled Lisp function in `etags.el'.<br/><br/>(find-tag-noselect TAGNAME &optional NEXT-P REGEXP-P)<br/><br/>Find tag (in current tags table) whose name contains TAGNAME.<br/>Returns the buffer containing the tag's definition and moves its point there,<br/>but does not select the buffer.<br/>The default for TAGNAME is the expression in the buffer near point.<br/><br/>If second arg NEXT-P is t (interactively, with prefix arg), search for<br/>another tag that matches the last tagname or regexp used.  When there are<br/>multiple matches for a tag, more exact matches are found first.  If NEXT-P<br/>is the atom `-' (interactively, with prefix arg that is a negative number<br/>or just M--), pop back to the previous tag gone to.<br/><br/>If third arg REGEXP-P is non-nil, treat TAGNAME as a regexp.<br/><br/>A marker representing the point when this command is invoked is pushed<br/>onto a ring and may be popped back to with M-*.<br/>Contrast this with the ring of marks gone to by the command.<br/><br/>See documentation of variable `tags-file-name'.
+<strong>find-tag-noselect</strong> is an interactive autoloaded compiled Lisp function in `<code>etags.el</code>'.<br/>
+<br/>
+(find-tag-noselect TAGNAME &optional NEXT-P REGEXP-P)<br/>
+<br/>
+Find tag (in current tags table) whose name contains TAGNAME.<br/>
+Returns the buffer containing the tag's definition and moves its point there,<br/>
+but does not select the buffer.<br/>
+The default for TAGNAME is the expression in the buffer near point.<br/>
+<br/>
+If second arg NEXT-P is t (interactively, with prefix arg), search for<br/>
+another tag that matches the last tagname or regexp used.  When there are<br/>
+multiple matches for a tag, more exact matches are found first.  If NEXT-P<br/>
+is the atom `-' (interactively, with prefix arg that is a negative number<br/>
+or just M--), pop back to the previous tag gone to.<br/>
+<br/>
+If third arg REGEXP-P is non-nil, treat TAGNAME as a regexp.<br/>
+<br/>
+A marker representing the point when this command is invoked is pushed<br/>
+onto a ring and may be popped back to with M-*.<br/>
+Contrast this with the ring of marks gone to by the command.<br/>
+<br/>
+See documentation of variable `tags-file-name'.

@@ -1,1 +1,20 @@
-tls-checktrust is a variable defined in `tls.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Indicate if certificates should be checked against trusted root certs.<br/>If this is `ask', the user can decide whether to accept an<br/>untrusted certificate.  You may have to adapt `tls-program' in<br/>order to make this feature work properly, i.e., to ensure that<br/>the external program knows about the root certificates you<br/>consider trustworthy, e.g.:<br/><br/>(setq tls-program<br/>      '("gnutls-cli --x509cafile /etc/ssl/certs/ca-certificates.crt -p %p %h"<br/>	"gnutls-cli --x509cafile /etc/ssl/certs/ca-certificates.crt -p %p %h --protocols ssl3"<br/>	"openssl s_client -connect %h:%p -CAfile /etc/ssl/certs/ca-certificates.crt -no_ssl2 -ign_eof"))<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/>
+<strong>tls-checktrust</strong> is a variable defined in `<code>tls.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Indicate if certificates should be checked against trusted root certs.<br/>
+If this is `ask', the user can decide whether to accept an<br/>
+untrusted certificate.  You may have to adapt `tls-program' in<br/>
+order to make this feature work properly, i.e., to ensure that<br/>
+the external program knows about the root certificates you<br/>
+consider trustworthy, e.g.:<br/>
+<br/>
+(setq tls-program<br/>
+      '("gnutls-cli --x509cafile /etc/ssl/certs/ca-certificates.crt -p %p %h"<br/>
+	"gnutls-cli --x509cafile /etc/ssl/certs/ca-certificates.crt -p %p %h --protocols ssl3"<br/>
+	"openssl s_client -connect %h:%p -CAfile /etc/ssl/certs/ca-certificates.crt -no_ssl2 -ign_eof"))<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>

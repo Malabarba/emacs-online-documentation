@@ -1,1 +1,15 @@
-texinfo-tex-region is an interactive compiled Lisp function in `texinfo.el'.<br/><br/>(texinfo-tex-region BEG END)<br/><br/>Run TeX on the current region.<br/>This works by writing a temporary file (`tex-zap-file') in the directory<br/>that is the value of `tex-directory', then running TeX on that file.<br/><br/>The first line of the buffer is copied to the<br/>temporary file; and if the buffer has a header, it is written to the<br/>temporary file before the region itself.  The buffer's header is all lines<br/>between the strings defined by `tex-start-of-header' and `tex-end-of-header'<br/>inclusive.  The header must start in the first 100 lines.<br/><br/>The value of `texinfo-tex-trailer' is appended to the temporary file after the region.
+<strong>texinfo-tex-region</strong> is an interactive compiled Lisp function in `<code>texinfo.el</code>'.<br/>
+<br/>
+(texinfo-tex-region BEG END)<br/>
+<br/>
+Run TeX on the current region.<br/>
+This works by writing a temporary file (`tex-zap-file') in the directory<br/>
+that is the value of `tex-directory', then running TeX on that file.<br/>
+<br/>
+The first line of the buffer is copied to the<br/>
+temporary file; and if the buffer has a header, it is written to the<br/>
+temporary file before the region itself.  The buffer's header is all lines<br/>
+between the strings defined by `tex-start-of-header' and `tex-end-of-header'<br/>
+inclusive.  The header must start in the first 100 lines.<br/>
+<br/>
+The value of `texinfo-tex-trailer' is appended to the temporary file after the region.

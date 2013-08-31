@@ -1,1 +1,30 @@
-window-resize is a compiled Lisp function in `window.el'.<br/><br/>(window-resize WINDOW DELTA &optional HORIZONTAL IGNORE)<br/><br/>Resize WINDOW vertically by DELTA lines.<br/>WINDOW can be an arbitrary window and defaults to the selected<br/>one.  An attempt to resize the root window of a frame will raise<br/>an error though.<br/><br/>DELTA a positive number means WINDOW shall be enlarged by DELTA<br/>lines.  DELTA negative means WINDOW shall be shrunk by -DELTA<br/>lines.<br/><br/>Optional argument HORIZONTAL non-nil means resize WINDOW<br/>horizontally by DELTA columns.  In this case a positive DELTA<br/>means enlarge WINDOW by DELTA columns.  DELTA negative means<br/>WINDOW shall be shrunk by -DELTA columns.<br/><br/>Optional argument IGNORE non-nil means ignore restrictions<br/>imposed by fixed size windows, `window-min-height' or<br/>`window-min-width' settings.  If IGNORE is a window, ignore<br/>restrictions for that window only.  If IGNORE equals `safe',<br/>live windows may get as small as `window-safe-min-height' lines<br/>and `window-safe-min-width' columns.  Any other non-nil value<br/>means ignore all of the above restrictions for all windows.<br/><br/>This function resizes other windows proportionally and never<br/>deletes any windows.  If you want to move only the low (right)<br/>edge of WINDOW consider using `adjust-window-trailing-edge'<br/>instead.
+<strong>window-resize</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(window-resize WINDOW DELTA &optional HORIZONTAL IGNORE)<br/>
+<br/>
+Resize WINDOW vertically by DELTA lines.<br/>
+WINDOW can be an arbitrary window and defaults to the selected<br/>
+one.  An attempt to resize the root window of a frame will raise<br/>
+an error though.<br/>
+<br/>
+DELTA a positive number means WINDOW shall be enlarged by DELTA<br/>
+lines.  DELTA negative means WINDOW shall be shrunk by -DELTA<br/>
+lines.<br/>
+<br/>
+Optional argument HORIZONTAL non-nil means resize WINDOW<br/>
+horizontally by DELTA columns.  In this case a positive DELTA<br/>
+means enlarge WINDOW by DELTA columns.  DELTA negative means<br/>
+WINDOW shall be shrunk by -DELTA columns.<br/>
+<br/>
+Optional argument IGNORE non-nil means ignore restrictions<br/>
+imposed by fixed size windows, `window-min-height' or<br/>
+`window-min-width' settings.  If IGNORE is a window, ignore<br/>
+restrictions for that window only.  If IGNORE equals `safe',<br/>
+live windows may get as small as `window-safe-min-height' lines<br/>
+and `window-safe-min-width' columns.  Any other non-nil value<br/>
+means ignore all of the above restrictions for all windows.<br/>
+<br/>
+This function resizes other windows proportionally and never<br/>
+deletes any windows.  If you want to move only the low (right)<br/>
+edge of WINDOW consider using `adjust-window-trailing-edge'<br/>
+instead.

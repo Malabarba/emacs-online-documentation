@@ -1,1 +1,79 @@
-reference-point-alist is a variable defined in `composite.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of symbols vs integer codes of glyph reference points.<br/>A glyph reference point symbol is to be used to specify a composition<br/>rule in COMPONENTS argument to such functions as `compose-region'.<br/><br/>The meaning of glyph reference point codes is as follows:<br/><br/>    0----1----2 <---- ascent	0:tl or top-left<br/>    |         |			1:tc or top-center<br/>    |         |			2:tr or top-right<br/>    |         |			3:Bl or base-left     9:cl or center-left<br/>    9   10   11 <---- center	4:Bc or base-center  10:cc or center-center<br/>    |         |			5:Br or base-right   11:cr or center-right<br/>  --3----4----5-- <-- baseline	6:bl or bottom-left<br/>    |         |			7:bc or bottom-center<br/>    6----7----8 <---- descent	8:br or bottom-right<br/><br/>Glyph reference point symbols are to be used to specify composition<br/>rule of the form (GLOBAL-REF-POINT . NEW-REF-POINT), where<br/>GLOBAL-REF-POINT is a reference point in the overall glyphs already<br/>composed, and NEW-REF-POINT is a reference point in the new glyph to<br/>be added.<br/><br/>For instance, if GLOBAL-REF-POINT is `br' (bottom-right) and<br/>NEW-REF-POINT is `tc' (top-center), the overall glyph is updated as<br/>follows (the point `*' corresponds to both reference points):<br/><br/>    +-------+--+ <--- new ascent<br/>    |       |  |<br/>    | global|  |<br/>    | glyph |  |<br/> -- |       |  |-- <--- baseline (doesn't change)<br/>    +----+--*--+<br/>    |    | new |<br/>    |    |glyph|<br/>    +----+-----+ <--- new descent<br/><br/>A composition rule may have the form (GLOBAL-REF-POINT<br/>NEW-REF-POINT XOFF YOFF), where XOFF and YOFF specify how much<br/>to shift NEW-REF-POINT from GLOBAL-REF-POINT.  In this case, XOFF<br/>and YOFF are integers in the range -100..100 representing the<br/>shifting percentage against the font size.<br/><br/>Value: ((tl . 0)<br/> (tc . 1)<br/> (tr . 2)<br/> (Bl . 3)<br/> (Bc . 4)<br/> (Br . 5)<br/> (bl . 6)<br/> (bc . 7)<br/> (br . 8)<br/> (cl . 9)<br/> (cc . 10)<br/> (cr . 11)<br/> (top-left . 0)<br/> (top-center . 1)<br/> (top-right . 2)<br/> (base-left . 3)<br/> (base-center . 4)<br/> (base-right . 5)<br/> (bottom-left . 6)<br/> (bottom-center . 7)<br/> (bottom-right . 8)<br/> (center-left . 9)<br/> (center-center . 10)<br/> (center-right . 11)<br/> (ml . 3)<br/> (mc . 10)<br/> (mr . 5)<br/> (mid-left . 3)<br/> (mid-center . 10)<br/> (mid-right . 5))<br/><br/>
+<strong>reference-point-alist</strong> is a variable defined in `<code>composite.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of symbols vs integer codes of glyph reference points.<br/>
+A glyph reference point symbol is to be used to specify a composition<br/>
+rule in COMPONENTS argument to such functions as `compose-region'.<br/>
+<br/>
+The meaning of glyph reference point codes is as follows:<br/>
+<br/>
+    0----1----2 <---- ascent	0:tl or top-left<br/>
+    |         |			1:tc or top-center<br/>
+    |         |			2:tr or top-right<br/>
+    |         |			3:Bl or base-left     9:cl or center-left<br/>
+    9   10   11 <---- center	4:Bc or base-center  10:cc or center-center<br/>
+    |         |			5:Br or base-right   11:cr or center-right<br/>
+  --3----4----5-- <-- baseline	6:bl or bottom-left<br/>
+    |         |			7:bc or bottom-center<br/>
+    6----7----8 <---- descent	8:br or bottom-right<br/>
+<br/>
+Glyph reference point symbols are to be used to specify composition<br/>
+rule of the form (GLOBAL-REF-POINT . NEW-REF-POINT), where<br/>
+GLOBAL-REF-POINT is a reference point in the overall glyphs already<br/>
+composed, and NEW-REF-POINT is a reference point in the new glyph to<br/>
+be added.<br/>
+<br/>
+For instance, if GLOBAL-REF-POINT is `br' (bottom-right) and<br/>
+NEW-REF-POINT is `tc' (top-center), the overall glyph is updated as<br/>
+follows (the point `*' corresponds to both reference points):<br/>
+<br/>
+    +-------+--+ <--- new ascent<br/>
+    |       |  |<br/>
+    | global|  |<br/>
+    | glyph |  |<br/>
+ -- |       |  |-- <--- baseline (doesn't change)<br/>
+    +----+--*--+<br/>
+    |    | new |<br/>
+    |    |glyph|<br/>
+    +----+-----+ <--- new descent<br/>
+<br/>
+A composition rule may have the form (GLOBAL-REF-POINT<br/>
+NEW-REF-POINT XOFF YOFF), where XOFF and YOFF specify how much<br/>
+to shift NEW-REF-POINT from GLOBAL-REF-POINT.  In this case, XOFF<br/>
+and YOFF are integers in the range -100..100 representing the<br/>
+shifting percentage against the font size.<br/>
+<br/>
+Value: ((tl . 0)<br/>
+ (tc . 1)<br/>
+ (tr . 2)<br/>
+ (Bl . 3)<br/>
+ (Bc . 4)<br/>
+ (Br . 5)<br/>
+ (bl . 6)<br/>
+ (bc . 7)<br/>
+ (br . 8)<br/>
+ (cl . 9)<br/>
+ (cc . 10)<br/>
+ (cr . 11)<br/>
+ (top-left . 0)<br/>
+ (top-center . 1)<br/>
+ (top-right . 2)<br/>
+ (base-left . 3)<br/>
+ (base-center . 4)<br/>
+ (base-right . 5)<br/>
+ (bottom-left . 6)<br/>
+ (bottom-center . 7)<br/>
+ (bottom-right . 8)<br/>
+ (center-left . 9)<br/>
+ (center-center . 10)<br/>
+ (center-right . 11)<br/>
+ (ml . 3)<br/>
+ (mc . 10)<br/>
+ (mr . 5)<br/>
+ (mid-left . 3)<br/>
+ (mid-center . 10)<br/>
+ (mid-right . 5))<br/>
+<br/>

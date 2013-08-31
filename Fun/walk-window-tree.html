@@ -1,1 +1,19 @@
-walk-window-tree is a compiled Lisp function in `window.el'.<br/><br/>(walk-window-tree FUN &optional FRAME ANY MINIBUF)<br/><br/>Run function FUN on each live window of FRAME.<br/>FUN must be a function with one argument - a window.  FRAME must<br/>be a live frame and defaults to the selected one.  ANY, if<br/>non-nil, means to run FUN on all live and internal windows of<br/>FRAME.<br/><br/>Optional argument MINIBUF t means run FUN on FRAME's minibuffer<br/>window even if it isn't active.  MINIBUF nil or omitted means run<br/>FUN on FRAME's minibuffer window only if it's active.  In both<br/>cases the minibuffer window must be part of FRAME.  MINIBUF<br/>neither nil nor t means never run FUN on the minibuffer window.<br/><br/>This function performs a pre-order, depth-first traversal of the<br/>window tree.  If FUN changes the window tree, the result is<br/>unpredictable.
+<strong>walk-window-tree</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(walk-window-tree FUN &optional FRAME ANY MINIBUF)<br/>
+<br/>
+Run function FUN on each live window of FRAME.<br/>
+FUN must be a function with one argument - a window.  FRAME must<br/>
+be a live frame and defaults to the selected one.  ANY, if<br/>
+non-nil, means to run FUN on all live and internal windows of<br/>
+FRAME.<br/>
+<br/>
+Optional argument MINIBUF t means run FUN on FRAME's minibuffer<br/>
+window even if it isn't active.  MINIBUF nil or omitted means run<br/>
+FUN on FRAME's minibuffer window only if it's active.  In both<br/>
+cases the minibuffer window must be part of FRAME.  MINIBUF<br/>
+neither nil nor t means never run FUN on the minibuffer window.<br/>
+<br/>
+This function performs a pre-order, depth-first traversal of the<br/>
+window tree.  If FUN changes the window tree, the result is<br/>
+unpredictable.

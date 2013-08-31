@@ -1,1 +1,22 @@
-tcl-font-lock-keywords is a variable defined in `tcl.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keywords to highlight for Tcl.  See variable `font-lock-keywords'.<br/>This variable is generally set from `tcl-proc-regexp',<br/>`tcl-typeword-list', and `tcl-keyword-list' by the function<br/>`tcl-set-font-lock-keywords'.<br/><br/>Value:<br/>(("^\\s-*\\(body\\|c\\(?:lass\\|onfigbody\\)\\|itcl_class\\|method\\|proc\\)[ 	]+\\([^ 	\n]+\\)" 2 font-lock-function-name-face)<br/> ("\\(\\s-\\|^\\)\\(common\\|global\\|i\\(?:nherit\\|tk_option\\)\\|p\\(?:r\\(?:ivate\\|otected\\)\\|ublic\\)\\|upvar\\|variable\\)\\(\\s-\\|$\\)" 2 font-lock-type-face)<br/> ("\\_<\\(a\\(?:fter\\|ppend\\|rray\\)\\|b\\(?:gerror\\|inary\\)\\|c\\(?:atch\\|d\\|lo\\(?:ck\\|se\\)\\|on\\(?:cat\\|sole\\)\\)\\|dde\\|e\\(?:ncoding\\|of\\|x\\(?:ec\\|pr\\)\\)\\|f\\(?:blocked\\|co\\(?:nfigure\\|py\\)\\|ile\\(?:event\\)?\\|lush\\|ormat\\)\\|g\\(?:ets\\|lob\\)\\|history\\|in\\(?:cr\\|fo\\|terp\\)\\|join\\|l\\(?:append\\|i\\(?:n\\(?:dex\\|sert\\)\\|st\\)\\|length\\|oad\\|r\\(?:\\(?:ang\\|eplac\\)e\\)\\|sort\\)\\|namespace\\|open\\|p\\(?:ackage\\|id\\|uts\\|wd\\)\\|re\\(?:ad\\|g\\(?:exp\\|istry\\|sub\\)\\|name\\)\\|s\\(?:can\\|e\\(?:ek\\|t\\)\\|o\\(?:cket\\|urce\\)\\|plit\\|tring\\|ubst\\)\\|t\\(?:ell\\|\\(?:im\\|rac\\)e\\)\\|un\\(?:known\\|set\\)\\|vwait\\)\\_>" 1 font-lock-builtin-face)<br/> ("\\${\\([^}]+\\)}" 1 font-lock-variable-name-face)<br/> ("\\$\\(\\(?:::\\)?\\(?:[[:alnum:]_]+::\\)*[[:alnum:]_]+\\)" 1 font-lock-variable-name-face)<br/> ("\\(?:\\s-\\|^\\|\\[\\)set\\s-+{\\([^}]+\\)}" 1 font-lock-variable-name-face keep)<br/> ("\\(?:\\s-\\|^\\|\\[\\)set\\s-+\\(\\(?:::\\)?\\(?:[[:alnum:]_]+::\\)*[[:alnum:]_]+\\)" 1 font-lock-variable-name-face keep)<br/> ("\\(^\\|[^\\]\\)\\(\\\\\\\\\\)*\\(\\\\\\)$" 3 'tcl-escaped-newline)<br/> ("\\_<\\(b\\(?:ody\\|reak\\)\\|c\\(?:ase\\|hain\\|lass\\|on\\(?:figbody\\|structor\\|tinue\\)\\)\\|de\\(?:fault\\|structor\\)\\|e\\(?:lse\\(?:if\\)?\\|rror\\|val\\|xit\\)\\|for\\(?:_\\(?:array_keys\\|file\\|recursive_glob\\)\\|each\\)?\\|i\\(?:tcl_class\\|[fn]\\)\\|loop\\|method\\|proc\\|return\\|switch\\|then\\|uplevel\\|while\\)\\_>" . 1))<br/><br/>
+<strong>tcl-font-lock-keywords</strong> is a variable defined in `<code>tcl.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keywords to highlight for Tcl.  See variable `font-lock-keywords'.<br/>
+This variable is generally set from `tcl-proc-regexp',<br/>
+`tcl-typeword-list', and `tcl-keyword-list' by the function<br/>
+`tcl-set-font-lock-keywords'.<br/>
+<br/>
+Value:<br/>
+(("^\\s-*\\(body\\|c\\(?:lass\\|onfigbody\\)\\|itcl_class\\|method\\|proc\\)[ 	]+\\([^ 	\n]+\\)" 2 font-lock-function-name-face)<br/>
+ ("\\(\\s-\\|^\\)\\(common\\|global\\|i\\(?:nherit\\|tk_option\\)\\|p\\(?:r\\(?:ivate\\|otected\\)\\|ublic\\)\\|upvar\\|variable\\)\\(\\s-\\|$\\)" 2 font-lock-type-face)<br/>
+ ("\\_<\\(a\\(?:fter\\|ppend\\|rray\\)\\|b\\(?:gerror\\|inary\\)\\|c\\(?:atch\\|d\\|lo\\(?:ck\\|se\\)\\|on\\(?:cat\\|sole\\)\\)\\|dde\\|e\\(?:ncoding\\|of\\|x\\(?:ec\\|pr\\)\\)\\|f\\(?:blocked\\|co\\(?:nfigure\\|py\\)\\|ile\\(?:event\\)?\\|lush\\|ormat\\)\\|g\\(?:ets\\|lob\\)\\|history\\|in\\(?:cr\\|fo\\|terp\\)\\|join\\|l\\(?:append\\|i\\(?:n\\(?:dex\\|sert\\)\\|st\\)\\|length\\|oad\\|r\\(?:\\(?:ang\\|eplac\\)e\\)\\|sort\\)\\|namespace\\|open\\|p\\(?:ackage\\|id\\|uts\\|wd\\)\\|re\\(?:ad\\|g\\(?:exp\\|istry\\|sub\\)\\|name\\)\\|s\\(?:can\\|e\\(?:ek\\|t\\)\\|o\\(?:cket\\|urce\\)\\|plit\\|tring\\|ubst\\)\\|t\\(?:ell\\|\\(?:im\\|rac\\)e\\)\\|un\\(?:known\\|set\\)\\|vwait\\)\\_>" 1 font-lock-builtin-face)<br/>
+ ("\\${\\([^}]+\\)}" 1 font-lock-variable-name-face)<br/>
+ ("\\$\\(\\(?:::\\)?\\(?:[[:alnum:]_]+::\\)*[[:alnum:]_]+\\)" 1 font-lock-variable-name-face)<br/>
+ ("\\(?:\\s-\\|^\\|\\[\\)set\\s-+{\\([^}]+\\)}" 1 font-lock-variable-name-face keep)<br/>
+ ("\\(?:\\s-\\|^\\|\\[\\)set\\s-+\\(\\(?:::\\)?\\(?:[[:alnum:]_]+::\\)*[[:alnum:]_]+\\)" 1 font-lock-variable-name-face keep)<br/>
+ ("\\(^\\|[^\\]\\)\\(\\\\\\\\\\)*\\(\\\\\\)$" 3 'tcl-escaped-newline)<br/>
+ ("\\_<\\(b\\(?:ody\\|reak\\)\\|c\\(?:ase\\|hain\\|lass\\|on\\(?:figbody\\|structor\\|tinue\\)\\)\\|de\\(?:fault\\|structor\\)\\|e\\(?:lse\\(?:if\\)?\\|rror\\|val\\|xit\\)\\|for\\(?:_\\(?:array_keys\\|file\\|recursive_glob\\)\\|each\\)?\\|i\\(?:tcl_class\\|[fn]\\)\\|loop\\|method\\|proc\\|return\\|switch\\|then\\|uplevel\\|while\\)\\_>" . 1))<br/>
+<br/>

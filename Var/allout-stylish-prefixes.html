@@ -1,1 +1,51 @@
-allout-stylish-prefixes is a variable defined in `allout.el'.<br/>Its value is t<br/><br/>  Automatically becomes buffer-local when set.<br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate `booleanp'.<br/><br/>Documentation:<br/>Do fancy stuff with topic prefix bullets according to level, etc.<br/><br/>Non-nil enables topic creation, modification, and repositioning<br/>functions to vary the topic bullet char (the char that marks the topic<br/>depth) just preceding the start of the topic text) according to level.<br/>Otherwise, only asterisks (`*') and distinctive bullets are used.<br/><br/>This is how an outline can look (but sans indentation) with stylish<br/>prefixes:<br/><br/>    * Top level<br/>    .* A topic<br/>    . + One level 3 subtopic<br/>    .  . One level 4 subtopic<br/>    .  . A second 4 subtopic<br/>    . + Another level 3 subtopic<br/>    .  #1 A numbered level 4 subtopic<br/>    .  #2 Another<br/>    .  ! Another level 4 subtopic with a different distinctive bullet<br/>    .  #4 And another numbered level 4 subtopic<br/><br/>This would be an outline with stylish prefixes inhibited (but the<br/>numbered and other distinctive bullets retained):<br/><br/>    * Top level<br/>    .* A topic<br/>    . * One level 3 subtopic<br/>    .  * One level 4 subtopic<br/>    .  * A second 4 subtopic<br/>    . * Another level 3 subtopic<br/>    .  #1 A numbered level 4 subtopic<br/>    .  #2 Another<br/>    .  ! Another level 4 subtopic with a different distinctive bullet<br/>    .  #4 And another numbered level 4 subtopic<br/><br/>Stylish and constant prefixes (as well as old-style prefixes) are<br/>always respected by the topic maneuvering functions, regardless of<br/>this variable setting.<br/><br/>The setting of this var is not relevant when `allout-old-style-prefixes'<br/>is non-nil.<br/><br/>You can customize this variable.
+<strong>allout-stylish-prefixes</strong> is a variable defined in `<code>allout.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate `booleanp'.<br/>
+<br/>
+Documentation:<br/>
+Do fancy stuff with topic prefix bullets according to level, etc.<br/>
+<br/>
+Non-nil enables topic creation, modification, and repositioning<br/>
+functions to vary the topic bullet char (the char that marks the topic<br/>
+depth) just preceding the start of the topic text) according to level.<br/>
+Otherwise, only asterisks (`*') and distinctive bullets are used.<br/>
+<br/>
+This is how an outline can look (but sans indentation) with stylish<br/>
+prefixes:<br/>
+<br/>
+    * Top level<br/>
+    .* A topic<br/>
+    . + One level 3 subtopic<br/>
+    .  . One level 4 subtopic<br/>
+    .  . A second 4 subtopic<br/>
+    . + Another level 3 subtopic<br/>
+    .  #1 A numbered level 4 subtopic<br/>
+    .  #2 Another<br/>
+    .  ! Another level 4 subtopic with a different distinctive bullet<br/>
+    .  #4 And another numbered level 4 subtopic<br/>
+<br/>
+This would be an outline with stylish prefixes inhibited (but the<br/>
+numbered and other distinctive bullets retained):<br/>
+<br/>
+    * Top level<br/>
+    .* A topic<br/>
+    . * One level 3 subtopic<br/>
+    .  * One level 4 subtopic<br/>
+    .  * A second 4 subtopic<br/>
+    . * Another level 3 subtopic<br/>
+    .  #1 A numbered level 4 subtopic<br/>
+    .  #2 Another<br/>
+    .  ! Another level 4 subtopic with a different distinctive bullet<br/>
+    .  #4 And another numbered level 4 subtopic<br/>
+<br/>
+Stylish and constant prefixes (as well as old-style prefixes) are<br/>
+always respected by the topic maneuvering functions, regardless of<br/>
+this variable setting.<br/>
+<br/>
+The setting of this var is not relevant when `allout-old-style-prefixes'<br/>
+is non-nil.<br/>
+<br/>
+You can customize this variable.

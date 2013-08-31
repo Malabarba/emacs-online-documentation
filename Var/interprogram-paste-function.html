@@ -1,1 +1,33 @@
-interprogram-paste-function is a variable defined in `simple.el'.<br/>Its value is x-selection-value<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Function to call to get text cut from other programs.<br/>Most window systems provide a facility for cutting and pasting<br/>text between different programs, such as the clipboard on X and<br/>MS-Windows, or the pasteboard on Nextstep/Mac OS.<br/><br/>This variable holds a function that Emacs calls to obtain text<br/>that other programs have provided for pasting.  The function is<br/>called with no arguments.  If no other program has provided text<br/>to paste, the function should return nil (in which case the<br/>caller, usually `current-kill', should use the top of the Emacs<br/>kill ring).  If another program has provided text to paste, the<br/>function should return that text as a string (in which case the<br/>caller should put this string in the kill ring as the latest<br/>kill).<br/><br/>The function may also return a list of strings if the window<br/>system supports multiple selections.  The first string will be<br/>used as the pasted text, but the other will be placed in the kill<br/>ring for easy access via `yank-pop'.<br/><br/>Note that the function should return a string only if a program<br/>other than Emacs has provided a string for pasting; if Emacs<br/>provided the most recent string, the function should return nil.<br/>If it is difficult to tell whether Emacs or some other program<br/>provided the current string, it is probably good enough to return<br/>nil if the string is equal (according to `string=') to the last<br/>text Emacs provided.
+<strong>interprogram-paste-function</strong> is a variable defined in `<code>simple.el</code>'.<br/>
+Its value is x-selection-value<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Function to call to get text cut from other programs.<br/>
+Most window systems provide a facility for cutting and pasting<br/>
+text between different programs, such as the clipboard on X and<br/>
+MS-Windows, or the pasteboard on Nextstep/Mac OS.<br/>
+<br/>
+This variable holds a function that Emacs calls to obtain text<br/>
+that other programs have provided for pasting.  The function is<br/>
+called with no arguments.  If no other program has provided text<br/>
+to paste, the function should return nil (in which case the<br/>
+caller, usually `current-kill', should use the top of the Emacs<br/>
+kill ring).  If another program has provided text to paste, the<br/>
+function should return that text as a string (in which case the<br/>
+caller should put this string in the kill ring as the latest<br/>
+kill).<br/>
+<br/>
+The function may also return a list of strings if the window<br/>
+system supports multiple selections.  The first string will be<br/>
+used as the pasted text, but the other will be placed in the kill<br/>
+ring for easy access via `yank-pop'.<br/>
+<br/>
+Note that the function should return a string only if a program<br/>
+other than Emacs has provided a string for pasting; if Emacs<br/>
+provided the most recent string, the function should return nil.<br/>
+If it is difficult to tell whether Emacs or some other program<br/>
+provided the current string, it is probably good enough to return<br/>
+nil if the string is equal (according to `string=') to the last<br/>
+text Emacs provided.

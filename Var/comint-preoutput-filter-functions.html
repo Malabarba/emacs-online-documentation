@@ -1,1 +1,20 @@
-comint-preoutput-filter-functions is a variable defined in `comint.el'.<br/>Its value is nil<br/><br/>  This variable's value is permanent if it is given a local binding.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of functions to call before inserting Comint output into the buffer.<br/>Each function gets one argument, a string containing the text received<br/>from the subprocess.  It should return the string to insert, perhaps<br/>the same string that was received, or perhaps a modified or transformed<br/>string.<br/><br/>The functions on the list are called sequentially, and each one is<br/>given the string returned by the previous one.  The string returned by<br/>the last function is the text that is actually inserted in the<br/>redirection buffer.<br/><br/>You can use `add-hook' to add functions to this list<br/>either globally or locally.
+<strong>comint-preoutput-filter-functions</strong> is a variable defined in `<code>comint.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable's value is permanent if it is given a local binding.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of functions to call before inserting Comint output into the buffer.<br/>
+Each function gets one argument, a string containing the text received<br/>
+from the subprocess.  It should return the string to insert, perhaps<br/>
+the same string that was received, or perhaps a modified or transformed<br/>
+string.<br/>
+<br/>
+The functions on the list are called sequentially, and each one is<br/>
+given the string returned by the previous one.  The string returned by<br/>
+the last function is the text that is actually inserted in the<br/>
+redirection buffer.<br/>
+<br/>
+You can use `add-hook' to add functions to this list<br/>
+either globally or locally.

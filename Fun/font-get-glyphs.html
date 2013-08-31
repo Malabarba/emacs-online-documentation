@@ -1,1 +1,21 @@
-font-get-glyphs is a built-in function in `C source code'.<br/><br/>(font-get-glyphs FONT-OBJECT FROM TO &optional OBJECT)<br/><br/>Return a vector of FONT-OBJECT's glyphs for the specified characters.<br/>FROM and TO are positions (integers or markers) specifying a region<br/>of the current buffer.<br/>If the optional fourth arg OBJECT is not nil, it is a string or a<br/>vector containing the target characters.<br/><br/>Each element is a vector containing information of a glyph in this format:<br/>  [FROM-IDX TO-IDX C CODE WIDTH LBEARING RBEARING ASCENT DESCENT ADJUSTMENT]<br/>where<br/>  FROM is an index numbers of a character the glyph corresponds to.<br/>  TO is the same as FROM.<br/>  C is the character of the glyph.<br/>  CODE is the glyph-code of C in FONT-OBJECT.<br/>  WIDTH thru DESCENT are the metrics (in pixels) of the glyph.<br/>  ADJUSTMENT is always nil.<br/>If FONT-OBJECT doesn't have a glyph for a character,<br/>the corresponding element is nil.
+<strong>font-get-glyphs</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(font-get-glyphs FONT-OBJECT FROM TO &optional OBJECT)<br/>
+<br/>
+Return a vector of FONT-OBJECT's glyphs for the specified characters.<br/>
+FROM and TO are positions (integers or markers) specifying a region<br/>
+of the current buffer.<br/>
+If the optional fourth arg OBJECT is not nil, it is a string or a<br/>
+vector containing the target characters.<br/>
+<br/>
+Each element is a vector containing information of a glyph in this format:<br/>
+  [FROM-IDX TO-IDX C CODE WIDTH LBEARING RBEARING ASCENT DESCENT ADJUSTMENT]<br/>
+where<br/>
+  FROM is an index numbers of a character the glyph corresponds to.<br/>
+  TO is the same as FROM.<br/>
+  C is the character of the glyph.<br/>
+  CODE is the glyph-code of C in FONT-OBJECT.<br/>
+  WIDTH thru DESCENT are the metrics (in pixels) of the glyph.<br/>
+  ADJUSTMENT is always nil.<br/>
+If FONT-OBJECT doesn't have a glyph for a character,<br/>
+the corresponding element is nil.

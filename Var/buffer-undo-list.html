@@ -1,1 +1,47 @@
-buffer-undo-list is a variable defined in `C source code'.<br/>Its value is shown below.<br/><br/>  Automatically becomes permanently buffer-local when set.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of undo entries in current buffer.<br/>Recent changes come first; older changes follow newer.<br/><br/>An entry (BEG . END) represents an insertion which begins at<br/>position BEG and ends at position END.<br/><br/>An entry (TEXT . POSITION) represents the deletion of the string TEXT<br/>from (abs POSITION).  If POSITION is positive, point was at the front<br/>of the text being deleted; if negative, point was at the end.<br/><br/>An entry (t HIGH LOW USEC PSEC) indicates that the buffer was previously<br/>unmodified; (HIGH LOW USEC PSEC) is in the same style as (current-time)<br/>and is the visited file's modification time, as of that time.  If the<br/>modification time of the most recent save is different, this entry is<br/>obsolete.<br/><br/>An entry (nil PROPERTY VALUE BEG . END) indicates that a text property<br/>was modified between BEG and END.  PROPERTY is the property name,<br/>and VALUE is the old value.<br/><br/>An entry (apply FUN-NAME . ARGS) means undo the change with<br/>(apply FUN-NAME ARGS).<br/><br/>An entry (apply DELTA BEG END FUN-NAME . ARGS) supports selective undo<br/>in the active region.  BEG and END is the range affected by this entry<br/>and DELTA is the number of bytes added or deleted in that range by<br/>this change.<br/><br/>An entry (MARKER . DISTANCE) indicates that the marker MARKER<br/>was adjusted in position by the offset DISTANCE (an integer).<br/><br/>An entry of the form POSITION indicates that point was at the buffer<br/>location given by the integer.  Undoing an entry of this form places<br/>point at POSITION.<br/><br/>Entries with value `nil' mark undo boundaries.  The undo command treats<br/>the changes between two undo boundaries as a single step to be undone.<br/><br/>If the value of the variable is t, undo information is not recorded.<br/><br/>Value: ((493 . 494)<br/> nil<br/> (480 . 493)<br/> nil<br/> (477 . 480)<br/> nil<br/> (475 . 477)<br/> nil<br/> (#("~/.emacs.d/packages/doc-to-hmtl\")" 0 31<br/>    (fontified t face font-lock-string-face)<br/>    31 32<br/>    (fontified t face font-lock-string-face)<br/>    32 33<br/>    (rear-nonsticky t fontified t))<br/>  . 475)<br/> (#<marker in no buffer> . -33)<br/> nil<br/> (nil rear-nonsticky nil 474 . 475)<br/> (nil fontified nil 431 . 475)<br/> (431 . 475)<br/> nil<br/> (464 . 465)<br/> nil<br/> (#("l" 0 1<br/>    (rear-nonsticky t fontified t face font-lock-string-face))<br/>  . 462)<br/> nil<br/> (#("." 0 1<br/>    (fontified t face font-lock-string-face))<br/>  . -462)<br/> nil<br/> (#("e" 0 1<br/>    (fontified t face font-lock-string-face))<br/>  . 463)<br/> nil<br/> (428 . 429)<br/> nil<br/> (#("f" 0 1<br/>    (fontified t))<br/>  . -428)<br/> nil<br/> (#("\n" 0 1<br/>    (fontified t))<br/>  . -429)<br/> nil<br/> (429 . 430)<br/> nil<br/> (428 . 429)<br/> nil<br/> (#("-file" 0 5<br/>    (fontified t))<br/>  . 428)<br/> (#<marker in no buffer> . -5)<br/> nil<br/> (471 . 472)<br/> nil<br/> (#("\n" 0 1<br/>    (fontified t))<br/>  . 422)<br/> (#<marker at 494 in *scratch*> . -1)<br/> (#<marker at 422 in *scratch*> . -1)<br/> (#<marker in no buffer> . -1)<br/> nil<br/> (#("(length (dth/function-list))" 0 28<br/>    (fontified t))<br/>  . 422)<br/> (#<marker in no buffer> . -28)<br/> nil<br/> (450 . 451)<br/> nil<br/> (433 . 450)<br/> nil<br/> (#("/" 0 1<br/>    (fontified t))<br/>  . -433)<br/> nil<br/> (433 . 434)<br/> nil<br/> (#("/" 0 1<br/>    (fontified t))<br/>  . -433)<br/> nil<br/> (422 . 434)<br/> nil<br/> (421 . 422)<br/> nil<br/> (454 . 465)<br/> nil<br/> (#("full-" 0 5<br/>    (fontified t face font-lock-string-face))<br/>  . -454)<br/> nil<br/> (#("feature-" 0 8<br/>    (fontified t face font-lock-string-face))<br/>  . -459)<br/> nil<br/> (#("lister" 0 6<br/>    (fontified t face font-lock-string-face))<br/>  . 467)<br/> (#<marker in no buffer> . -6)<br/> nil<br/> (nil rear-nonsticky nil 477 . 478)<br/> (nil fontified nil 477 . 478)<br/> (nil fontified nil 476 . 477)<br/> (nil fontified nil 475 . 476)<br/> (nil fontified nil 434 . 475)<br/> (nil fontified nil 433 . 434)<br/> (nil fontified nil 422 . 433)<br/> (422 . 478)<br/> nil<br/> (nil rear-nonsticky nil 247 . 248)<br/> (nil fontified nil 247 . 248)<br/> (nil fontified nil 246 . 247)<br/> (nil fontified nil 245 . 246)<br/> (nil fontified nil 204 . 245)<br/> (nil fontified nil 203 . 204)<br/> (nil fontified nil 192 . 203)<br/> (192 . 248)<br/> nil<br/> (#("(load-file \"~/.emacs.d/packages/full-feature-lister.el\")" 0 11<br/>    (fontified t)<br/>    11 12<br/>    (fontified t rear-nonsticky t face font-lock-string-face)<br/>    12 53<br/>    (fontified t face font-lock-string-face)<br/>    53 54<br/>    (fontified t rear-nonsticky t face font-lock-string-face)<br/>    54 55<br/>    (fontified t face font-lock-string-face)<br/>    55 56<br/>    (fontified t))<br/>  . 192)<br/> (#<marker at 192 in *scratch*> . -12)<br/> (#<marker in no buffer> . -56)<br/> nil<br/> (421 . 422)<br/> (nil rear-nonsticky nil 311 . 421)<br/> (nil help-echo nil 311 . 421)<br/> (nil keymap nil 311 . 421)<br/> (nil mouse-face nil 311 . 421)<br/> (nil printed-value nil 311 . 421)<br/> (310 . 421)<br/> nil<br/> (#(")" 0 1<br/>    (fontified t))<br/>  . -310)<br/> nil<br/> (286 . 287)<br/> nil<br/> (#("\n" 0 1<br/>    (fontified t))<br/>  . -309)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -310)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -311)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -312)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -313)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -314)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -315)<br/> nil<br/> (309 . 316)<br/> 286 nil<br/> (310 . 311)<br/> nil<br/> (308 . 310)<br/> nil<br/> (307 . 308)<br/> nil<br/> (#("full-fe" 0 7<br/>    (fontified t))<br/>  . 307)<br/> (#<marker at 308 in *scratch*> . -7)<br/> (#<marker at 308 in *scratch*> . -7)<br/> (#<marker at 494 in *scratch*> . -7)<br/> (#<marker in no buffer> . -7)<br/> nil<br/> (nil rear-nonsticky nil 306 . 307)<br/> (nil fontified nil 288 . 307)<br/> (288 . 307)<br/> nil<br/> (285 . 295)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -285)<br/> nil<br/> (266 . 286)<br/> nil<br/> (#(")" 0 1<br/>    (fontified t))<br/>  . -266)<br/> nil<br/> (#(" " 0 1<br/>    (fontified t))<br/>  . -267)<br/> nil<br/> (257 . 268)<br/> nil<br/> (#("'" 0 1<br/>    (fontified t))<br/>  . -257)<br/> nil<br/> (251 . 258)<br/> nil<br/> (248 . 251)<br/> nil<br/> (246 . 248)<br/> nil<br/> (nil rear-nonsticky nil 245 . 246)<br/> (nil fontified nil 204 . 246)<br/> (204 . 246)<br/> nil<br/> (nil rear-nonsticky nil 203 . 204)<br/> (nil fontified nil 192 . 204)<br/> (192 . 204)<br/> (t 0 0 0 -2000)<br/> nil<br/> (1 . 192)<br/> (t 0 0 0 -2000))<br/><br/>Local in buffer *scratch*; global value is nil<br/>
+<strong>buffer-undo-list</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+Local in buffer *scratch*; global value is the same.<br/>
+<br/>
+  Automatically becomes permanently buffer-local when set.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of undo entries in current buffer.<br/>
+Recent changes come first; older changes follow newer.<br/>
+<br/>
+An entry (BEG . END) represents an insertion which begins at<br/>
+position BEG and ends at position END.<br/>
+<br/>
+An entry (TEXT . POSITION) represents the deletion of the string TEXT<br/>
+from (abs POSITION).  If POSITION is positive, point was at the front<br/>
+of the text being deleted; if negative, point was at the end.<br/>
+<br/>
+An entry (t HIGH LOW USEC PSEC) indicates that the buffer was previously<br/>
+unmodified; (HIGH LOW USEC PSEC) is in the same style as (current-time)<br/>
+and is the visited file's modification time, as of that time.  If the<br/>
+modification time of the most recent save is different, this entry is<br/>
+obsolete.<br/>
+<br/>
+An entry (nil PROPERTY VALUE BEG . END) indicates that a text property<br/>
+was modified between BEG and END.  PROPERTY is the property name,<br/>
+and VALUE is the old value.<br/>
+<br/>
+An entry (apply FUN-NAME . ARGS) means undo the change with<br/>
+(apply FUN-NAME ARGS).<br/>
+<br/>
+An entry (apply DELTA BEG END FUN-NAME . ARGS) supports selective undo<br/>
+in the active region.  BEG and END is the range affected by this entry<br/>
+and DELTA is the number of bytes added or deleted in that range by<br/>
+this change.<br/>
+<br/>
+An entry (MARKER . DISTANCE) indicates that the marker MARKER<br/>
+was adjusted in position by the offset DISTANCE (an integer).<br/>
+<br/>
+An entry of the form POSITION indicates that point was at the buffer<br/>
+location given by the integer.  Undoing an entry of this form places<br/>
+point at POSITION.<br/>
+<br/>
+Entries with value `nil' mark undo boundaries.  The undo command treats<br/>
+the changes between two undo boundaries as a single step to be undone.<br/>
+<br/>
+If the value of the variable is t, undo information is not recorded.

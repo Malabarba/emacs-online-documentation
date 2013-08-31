@@ -1,1 +1,26 @@
-fill-individual-paragraphs is an interactive compiled Lisp function in `fill.el'.<br/><br/>(fill-individual-paragraphs MIN MAX &optional JUSTIFY CITATION-REGEXP)<br/><br/>Fill paragraphs of uniform indentation within the region.<br/>This command divides the region into "paragraphs",<br/>treating every change in indentation level or prefix as a paragraph boundary,<br/>then fills each paragraph using its indentation level as the fill prefix.<br/><br/>There is one special case where a change in indentation does not start<br/>a new paragraph.  This is for text of this form:<br/><br/>   foo>    This line with extra indentation starts<br/>   foo> a paragraph that continues on more lines.<br/><br/>These lines are filled together.<br/><br/>When calling from a program, pass the range to fill<br/>as the first two arguments.<br/><br/>Optional third and fourth arguments JUSTIFY and CITATION-REGEXP:<br/>JUSTIFY to justify paragraphs (prefix arg).<br/>When filling a mail message, pass a regexp for CITATION-REGEXP<br/>which will match the prefix of a line which is a citation marker<br/>plus whitespace, but no other kind of prefix.<br/>Also, if CITATION-REGEXP is non-nil, don't fill header lines.
+<strong>fill-individual-paragraphs</strong> is an interactive compiled Lisp function in `<code>fill.el</code>'.<br/>
+<br/>
+(fill-individual-paragraphs MIN MAX &optional JUSTIFY CITATION-REGEXP)<br/>
+<br/>
+Fill paragraphs of uniform indentation within the region.<br/>
+This command divides the region into "paragraphs",<br/>
+treating every change in indentation level or prefix as a paragraph boundary,<br/>
+then fills each paragraph using its indentation level as the fill prefix.<br/>
+<br/>
+There is one special case where a change in indentation does not start<br/>
+a new paragraph.  This is for text of this form:<br/>
+<br/>
+   foo>    This line with extra indentation starts<br/>
+   foo> a paragraph that continues on more lines.<br/>
+<br/>
+These lines are filled together.<br/>
+<br/>
+When calling from a program, pass the range to fill<br/>
+as the first two arguments.<br/>
+<br/>
+Optional third and fourth arguments JUSTIFY and CITATION-REGEXP:<br/>
+JUSTIFY to justify paragraphs (prefix arg).<br/>
+When filling a mail message, pass a regexp for CITATION-REGEXP<br/>
+which will match the prefix of a line which is a citation marker<br/>
+plus whitespace, but no other kind of prefix.<br/>
+Also, if CITATION-REGEXP is non-nil, don't fill header lines.

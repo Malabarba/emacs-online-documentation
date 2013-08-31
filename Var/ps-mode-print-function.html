@@ -1,1 +1,20 @@
-ps-mode-print-function is a variable defined in `ps-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Lisp function to print current buffer as PostScript.<br/><br/>You can customize this variable.<br/><br/>Value: (lambda nil<br/>  (let<br/>      ((lpr-switches nil)<br/>       (lpr-command<br/>	(if<br/>	    (memq system-type<br/>		  '(usg-unix-v hpux irix))<br/>	    "lp" "lpr")))<br/>    (lpr-buffer)))<br/><br/>
+<strong>ps-mode-print-function</strong> is a variable defined in `<code>ps-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Lisp function to print current buffer as PostScript.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+Value: (lambda nil<br/>
+  (let<br/>
+      ((lpr-switches nil)<br/>
+       (lpr-command<br/>
+	(if<br/>
+	    (memq system-type<br/>
+		  '(usg-unix-v hpux irix))<br/>
+	    "lp" "lpr")))<br/>
+    (lpr-buffer)))<br/>
+<br/>

@@ -1,1 +1,53 @@
-edebug-format is an alias for `format' in `edebug.el'.<br/><br/>(edebug-format STRING &rest OBJECTS)<br/><br/>Format a string out of a format-string and arguments.<br/>The first argument is a format control string.<br/>The other arguments are substituted into it to make the result, a string.<br/><br/>The format control string may contain %-sequences meaning to substitute<br/>the next available argument:<br/><br/>%s means print a string argument.  Actually, prints any object, with `princ'.<br/>%d means print as number in decimal (%o octal, %x hex).<br/>%X is like %x, but uses upper case.<br/>%e means print a number in exponential notation.<br/>%f means print a number in decimal-point notation.<br/>%g means print a number in exponential notation<br/>  or decimal-point notation, whichever uses fewer characters.<br/>%c means print a number as a single character.<br/>%S means print any object as an s-expression (using `prin1').<br/><br/>The argument used for %d, %o, %x, %e, %f, %g or %c must be a number.<br/>Use %% to put a single % into the output.<br/><br/>A %-sequence may contain optional flag, width, and precision<br/>specifiers, as follows:<br/><br/>  %<flags><width><precision>character<br/><br/>where flags is [+ #-0]+, width is [0-9]+, and precision is .[0-9]+<br/><br/>The + flag character inserts a + before any positive number, while a<br/>space inserts a space before any positive number; these flags only<br/>affect %d, %e, %f, and %g sequences, and the + flag takes precedence.<br/>The - and 0 flags affect the width specifier, as described below.<br/><br/>The # flag means to use an alternate display form for %o, %x, %X, %e,<br/>%f, and %g sequences: for %o, it ensures that the result begins with<br/>"0"; for %x and %X, it prefixes the result with "0x" or "0X";<br/>for %e, %f, and %g, it causes a decimal point to be included even if<br/>the precision is zero.<br/><br/>The width specifier supplies a lower limit for the length of the<br/>printed representation.  The padding, if any, normally goes on the<br/>left, but it goes on the right if the - flag is present.  The padding<br/>character is normally a space, but it is 0 if the 0 flag is present.<br/>The 0 flag is ignored if the - flag is present, or the format sequence<br/>is something other than %d, %e, %f, and %g.<br/><br/>For %e, %f, and %g sequences, the number after the "." in the<br/>precision specifier says how many decimal places to show; if zero, the<br/>decimal point itself is omitted.  For %s and %S, the precision<br/>specifier truncates the string to the given width.
+<strong>edebug-format</strong> is an alias for `format' in `<code>edebug.el</code>'.<br/>
+<br/>
+(edebug-format STRING &rest OBJECTS)<br/>
+<br/>
+Format a string out of a format-string and arguments.<br/>
+The first argument is a format control string.<br/>
+The other arguments are substituted into it to make the result, a string.<br/>
+<br/>
+The format control string may contain %-sequences meaning to substitute<br/>
+the next available argument:<br/>
+<br/>
+%s means print a string argument.  Actually, prints any object, with `princ'.<br/>
+%d means print as number in decimal (%o octal, %x hex).<br/>
+%X is like %x, but uses upper case.<br/>
+%e means print a number in exponential notation.<br/>
+%f means print a number in decimal-point notation.<br/>
+%g means print a number in exponential notation<br/>
+  or decimal-point notation, whichever uses fewer characters.<br/>
+%c means print a number as a single character.<br/>
+%S means print any object as an s-expression (using `prin1').<br/>
+<br/>
+The argument used for %d, %o, %x, %e, %f, %g or %c must be a number.<br/>
+Use %% to put a single % into the output.<br/>
+<br/>
+A %-sequence may contain optional flag, width, and precision<br/>
+specifiers, as follows:<br/>
+<br/>
+  %<flags><width><precision>character<br/>
+<br/>
+where flags is [+ #-0]+, width is [0-9]+, and precision is .[0-9]+<br/>
+<br/>
+The + flag character inserts a + before any positive number, while a<br/>
+space inserts a space before any positive number; these flags only<br/>
+affect %d, %e, %f, and %g sequences, and the + flag takes precedence.<br/>
+The - and 0 flags affect the width specifier, as described below.<br/>
+<br/>
+The # flag means to use an alternate display form for %o, %x, %X, %e,<br/>
+%f, and %g sequences: for %o, it ensures that the result begins with<br/>
+"0"; for %x and %X, it prefixes the result with "0x" or "0X";<br/>
+for %e, %f, and %g, it causes a decimal point to be included even if<br/>
+the precision is zero.<br/>
+<br/>
+The width specifier supplies a lower limit for the length of the<br/>
+printed representation.  The padding, if any, normally goes on the<br/>
+left, but it goes on the right if the - flag is present.  The padding<br/>
+character is normally a space, but it is 0 if the 0 flag is present.<br/>
+The 0 flag is ignored if the - flag is present, or the format sequence<br/>
+is something other than %d, %e, %f, and %g.<br/>
+<br/>
+For %e, %f, and %g sequences, the number after the "." in the<br/>
+precision specifier says how many decimal places to show; if zero, the<br/>
+decimal point itself is omitted.  For %s and %S, the precision<br/>
+specifier truncates the string to the given width.

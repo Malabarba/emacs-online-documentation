@@ -1,1 +1,22 @@
-mh-interactive-range is an autoloaded compiled Lisp function in `mh-seq.el'.<br/><br/>(mh-interactive-range RANGE-PROMPT &optional DEFAULT)<br/><br/>Return interactive specification for message, sequence, range or region.<br/>By convention, the name of this argument is RANGE.<br/><br/>If variable `transient-mark-mode' is non-nil and the mark is active,<br/>then this function returns a cons-cell of the region.<br/><br/>If optional prefix argument is provided, then prompt for message range<br/>with RANGE-PROMPT. A list of messages in that range is returned.<br/><br/>If a MH range is given, say something like last:20, then a list<br/>containing the messages in that range is returned.<br/><br/>If DEFAULT non-nil then it is returned.<br/><br/>Otherwise, the message number at point is returned.<br/><br/>This function is usually used with `mh-iterate-on-range' in order to<br/>provide a uniform interface to MH-E functions.
+<strong>mh-interactive-range</strong> is an autoloaded compiled Lisp function in `<code>mh-seq.el</code>'.<br/>
+<br/>
+(mh-interactive-range RANGE-PROMPT &optional DEFAULT)<br/>
+<br/>
+Return interactive specification for message, sequence, range or region.<br/>
+By convention, the name of this argument is RANGE.<br/>
+<br/>
+If variable `transient-mark-mode' is non-nil and the mark is active,<br/>
+then this function returns a cons-cell of the region.<br/>
+<br/>
+If optional prefix argument is provided, then prompt for message range<br/>
+with RANGE-PROMPT. A list of messages in that range is returned.<br/>
+<br/>
+If a MH range is given, say something like last:20, then a list<br/>
+containing the messages in that range is returned.<br/>
+<br/>
+If DEFAULT non-nil then it is returned.<br/>
+<br/>
+Otherwise, the message number at point is returned.<br/>
+<br/>
+This function is usually used with `mh-iterate-on-range' in order to<br/>
+provide a uniform interface to MH-E functions.

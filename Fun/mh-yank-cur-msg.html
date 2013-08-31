@@ -1,1 +1,35 @@
-mh-yank-cur-msg is an interactive autoloaded Lisp function in `mh-letter.el'.<br/><br/>(mh-yank-cur-msg)<br/><br/>Insert the current message into the draft buffer.<br/><br/>It is often useful to insert a snippet of text from a letter that<br/>someone mailed to provide some context for your reply. This<br/>command does this by adding an attribution, yanking a portion of<br/>text from the message to which you're replying, and inserting<br/>`mh-ins-buf-prefix' (`> ') before each line.<br/><br/>The attribution consists of the sender's name and email address<br/>followed by the content of the option<br/>`mh-extract-from-attribution-verb'.<br/><br/>You can also turn on the option<br/>`mh-delete-yanked-msg-window-flag' to delete the window<br/>containing the original message after yanking it to make more<br/>room on your screen for your reply.<br/><br/>You can control how the message to which you are replying is<br/>yanked into your reply using `mh-yank-behavior'.<br/><br/>If this isn't enough, you can gain full control over the<br/>appearance of the included text by setting `mail-citation-hook'<br/>to a function that modifies it. For example, if you set this hook<br/>to `trivial-cite' (which is NOT part of Emacs), set<br/>`mh-yank-behavior' to "Body and Header" (see URL<br/>`http://shasta.cs.uiuc.edu/~lrclause/tc.html').<br/><br/>Note that if `mail-citation-hook' is set, `mh-ins-buf-prefix' is<br/>not inserted. If the option `mh-yank-behavior' is set to one of<br/>the supercite flavors, the hook `mail-citation-hook' is ignored<br/>and `mh-ins-buf-prefix' is not inserted.
+<strong>mh-yank-cur-msg</strong> is an interactive autoloaded Lisp function in `<code>mh-letter.el</code>'.<br/>
+<br/>
+(mh-yank-cur-msg)<br/>
+<br/>
+Insert the current message into the draft buffer.<br/>
+<br/>
+It is often useful to insert a snippet of text from a letter that<br/>
+someone mailed to provide some context for your reply. This<br/>
+command does this by adding an attribution, yanking a portion of<br/>
+text from the message to which you're replying, and inserting<br/>
+`mh-ins-buf-prefix' (`> ') before each line.<br/>
+<br/>
+The attribution consists of the sender's name and email address<br/>
+followed by the content of the option<br/>
+`mh-extract-from-attribution-verb'.<br/>
+<br/>
+You can also turn on the option<br/>
+`mh-delete-yanked-msg-window-flag' to delete the window<br/>
+containing the original message after yanking it to make more<br/>
+room on your screen for your reply.<br/>
+<br/>
+You can control how the message to which you are replying is<br/>
+yanked into your reply using `mh-yank-behavior'.<br/>
+<br/>
+If this isn't enough, you can gain full control over the<br/>
+appearance of the included text by setting `mail-citation-hook'<br/>
+to a function that modifies it. For example, if you set this hook<br/>
+to `trivial-cite' (which is NOT part of Emacs), set<br/>
+`mh-yank-behavior' to "Body and Header" (see URL<br/>
+`http://shasta.cs.uiuc.edu/~lrclause/tc.html').<br/>
+<br/>
+Note that if `mail-citation-hook' is set, `mh-ins-buf-prefix' is<br/>
+not inserted. If the option `mh-yank-behavior' is set to one of<br/>
+the supercite flavors, the hook `mail-citation-hook' is ignored<br/>
+and `mh-ins-buf-prefix' is not inserted.

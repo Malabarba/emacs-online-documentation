@@ -1,1 +1,22 @@
-display-buffer-record-window is a compiled Lisp function in `window.el'.<br/><br/>(display-buffer-record-window TYPE WINDOW BUFFER)<br/><br/>Record information for window used by `display-buffer'.<br/>TYPE specifies the type of the calling operation and must be one<br/>of the symbols 'reuse (when WINDOW existed already and was<br/>reused for displaying BUFFER), 'window (when WINDOW was created<br/>on an already existing frame), or 'frame (when WINDOW was<br/>created on a new frame).  WINDOW is the window used for or created<br/>by the `display-buffer' routines.  BUFFER is the buffer that<br/>shall be displayed.<br/><br/>This function installs or updates the quit-restore parameter of<br/>WINDOW.  The quit-restore parameter is a list of four elements:<br/>The first element is one of the symbols 'window, 'frame, 'same or<br/>'other.  The second element is either one of the symbols 'window<br/>or 'frame or a list whose elements are the buffer previously<br/>shown in the window, that buffer's window start and window point,<br/>and the window's height.  The third element is the window<br/>selected at the time the parameter was created.  The fourth<br/>element is BUFFER.
+<strong>display-buffer-record-window</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(display-buffer-record-window TYPE WINDOW BUFFER)<br/>
+<br/>
+Record information for window used by `display-buffer'.<br/>
+TYPE specifies the type of the calling operation and must be one<br/>
+of the symbols 'reuse (when WINDOW existed already and was<br/>
+reused for displaying BUFFER), 'window (when WINDOW was created<br/>
+on an already existing frame), or 'frame (when WINDOW was<br/>
+created on a new frame).  WINDOW is the window used for or created<br/>
+by the `display-buffer' routines.  BUFFER is the buffer that<br/>
+shall be displayed.<br/>
+<br/>
+This function installs or updates the quit-restore parameter of<br/>
+WINDOW.  The quit-restore parameter is a list of four elements:<br/>
+The first element is one of the symbols 'window, 'frame, 'same or<br/>
+'other.  The second element is either one of the symbols 'window<br/>
+or 'frame or a list whose elements are the buffer previously<br/>
+shown in the window, that buffer's window start and window point,<br/>
+and the window's height.  The third element is the window<br/>
+selected at the time the parameter was created.  The fourth<br/>
+element is BUFFER.

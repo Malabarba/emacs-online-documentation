@@ -1,1 +1,24 @@
-sgml-font-lock-keywords is a variable defined in `sgml-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Rules for highlighting SGML code.  See also `sgml-tag-face-alist'.<br/><br/>Value:<br/>(("<\\([!?][_:[:alpha:]][-_.:[:alnum:]]*\\)" 1 font-lock-keyword-face)<br/> ("</?\\([_[:alpha:]][-_.[:alnum:]]*\\)\\(?::\\([_:[:alpha:]][-_.:[:alnum:]]*\\)\\)?"<br/>  (1<br/>   (if<br/>       (match-end 2)<br/>       sgml-namespace-face font-lock-function-name-face))<br/>  (2 font-lock-function-name-face nil t))<br/> ("\\(?:^\\|[ 	]\\)\\([_[:alpha:]][-_.[:alnum:]]*\\)\\(?::\\([_:[:alpha:]][-_.:[:alnum:]]*\\)\\)?=[\"']"<br/>  (1<br/>   (if<br/>       (match-end 2)<br/>       sgml-namespace-face font-lock-variable-name-face))<br/>  (2 font-lock-variable-name-face nil t))<br/> ("[&%][_:[:alpha:]][-_.:[:alnum:]]*;?" . font-lock-variable-name-face))<br/><br/>
+<strong>sgml-font-lock-keywords</strong> is a variable defined in `<code>sgml-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Rules for highlighting SGML code.  See also `sgml-tag-face-alist'.<br/>
+<br/>
+Value:<br/>
+(("<\\([!?][_:[:alpha:]][-_.:[:alnum:]]*\\)" 1 font-lock-keyword-face)<br/>
+ ("</?\\([_[:alpha:]][-_.[:alnum:]]*\\)\\(?::\\([_:[:alpha:]][-_.:[:alnum:]]*\\)\\)?"<br/>
+  (1<br/>
+   (if<br/>
+       (match-end 2)<br/>
+       sgml-namespace-face font-lock-function-name-face))<br/>
+  (2 font-lock-function-name-face nil t))<br/>
+ ("\\(?:^\\|[ 	]\\)\\([_[:alpha:]][-_.[:alnum:]]*\\)\\(?::\\([_:[:alpha:]][-_.:[:alnum:]]*\\)\\)?=[\"']"<br/>
+  (1<br/>
+   (if<br/>
+       (match-end 2)<br/>
+       sgml-namespace-face font-lock-variable-name-face))<br/>
+  (2 font-lock-variable-name-face nil t))<br/>
+ ("[&%][_:[:alpha:]][-_.:[:alnum:]]*;?" . font-lock-variable-name-face))<br/>
+<br/>

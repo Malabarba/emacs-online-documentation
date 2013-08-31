@@ -1,1 +1,18 @@
-mouse-copy-work-around-drag-bug is a compiled Lisp function in `mouse-copy.el'.<br/><br/>(mouse-copy-work-around-drag-bug START-EVENT END-EVENT)<br/><br/>Code to work around a bug in post-19.29 Emacs: it drops mouse-drag events.<br/>The problem occurs under XFree86-3.1.1 (X11R6pl11) but not under X11R5,<br/>and under post-19.29 but not early versions of Emacs.<br/><br/>19.29 and 19.30 seems to drop mouse drag events<br/>sometimes. (Reproducible under XFree86-3.1.1 (X11R6pl11) and<br/>XFree86-3.1.2 under Linux 1.2.x.  Doesn't occur under X11R5 and SunOS<br/>4.1.1.)<br/><br/>To see if you have the problem:<br/>Disable this routine (with (setq mouse-copy-have-drag-bug nil)).<br/>Click and drag for a while.<br/>If highlighting stops tracking, you have the bug.<br/>If you have the bug (or the real fix :-), please let me know.
+<strong>mouse-copy-work-around-drag-bug</strong> is a compiled Lisp function in `<code>mouse-copy.el</code>'.<br/>
+<br/>
+(mouse-copy-work-around-drag-bug START-EVENT END-EVENT)<br/>
+<br/>
+Code to work around a bug in post-19.29 Emacs: it drops mouse-drag events.<br/>
+The problem occurs under XFree86-3.1.1 (X11R6pl11) but not under X11R5,<br/>
+and under post-19.29 but not early versions of Emacs.<br/>
+<br/>
+19.29 and 19.30 seems to drop mouse drag events<br/>
+sometimes. (Reproducible under XFree86-3.1.1 (X11R6pl11) and<br/>
+XFree86-3.1.2 under Linux 1.2.x.  Doesn't occur under X11R5 and SunOS<br/>
+4.1.1.)<br/>
+<br/>
+To see if you have the problem:<br/>
+Disable this routine (with (setq mouse-copy-have-drag-bug nil)).<br/>
+Click and drag for a while.<br/>
+If highlighting stops tracking, you have the bug.<br/>
+If you have the bug (or the real fix :-), please let me know.

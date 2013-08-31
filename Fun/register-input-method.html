@@ -1,1 +1,25 @@
-register-input-method is a compiled Lisp function in `mule-cmds.el'.<br/><br/>(register-input-method INPUT-METHOD LANG-ENV ACTIVATE-FUNC TITLE DESCRIPTION &rest ARGS)<br/><br/>Register INPUT-METHOD as an input method for language environment LANG-ENV.<br/><br/>INPUT-METHOD and LANG-ENV are symbols or strings.<br/>ACTIVATE-FUNC is a function to call to activate this method.<br/>TITLE is a string to show in the mode line when this method is active.<br/>DESCRIPTION is a string describing this method and what it is good for.<br/>The ARGS, if any, are passed as arguments to ACTIVATE-FUNC.<br/>All told, the arguments to ACTIVATE-FUNC are INPUT-METHOD and the ARGS.<br/><br/>This function is mainly used in the file "leim-list.el" which is<br/>created at Emacs build time, registering all Quail input methods<br/>contained in the Emacs distribution.<br/><br/>In case you want to register a new Quail input method by yourself, be<br/>careful to use the same input method title as given in the third<br/>parameter of `quail-define-package'.  (If the values are different, the<br/>string specified in this function takes precedence.)<br/><br/>The commands `describe-input-method' and `list-input-methods' need<br/>these duplicated values to show some information about input methods<br/>without loading the relevant Quail packages.
+<strong>register-input-method</strong> is a compiled Lisp function in `<code>mule-cmds.el</code>'.<br/>
+<br/>
+(register-input-method INPUT-METHOD LANG-ENV ACTIVATE-FUNC TITLE DESCRIPTION &rest ARGS)<br/>
+<br/>
+Register INPUT-METHOD as an input method for language environment LANG-ENV.<br/>
+<br/>
+INPUT-METHOD and LANG-ENV are symbols or strings.<br/>
+ACTIVATE-FUNC is a function to call to activate this method.<br/>
+TITLE is a string to show in the mode line when this method is active.<br/>
+DESCRIPTION is a string describing this method and what it is good for.<br/>
+The ARGS, if any, are passed as arguments to ACTIVATE-FUNC.<br/>
+All told, the arguments to ACTIVATE-FUNC are INPUT-METHOD and the ARGS.<br/>
+<br/>
+This function is mainly used in the file "leim-list.el" which is<br/>
+created at Emacs build time, registering all Quail input methods<br/>
+contained in the Emacs distribution.<br/>
+<br/>
+In case you want to register a new Quail input method by yourself, be<br/>
+careful to use the same input method title as given in the third<br/>
+parameter of `quail-define-package'.  (If the values are different, the<br/>
+string specified in this function takes precedence.)<br/>
+<br/>
+The commands `describe-input-method' and `list-input-methods' need<br/>
+these duplicated values to show some information about input methods<br/>
+without loading the relevant Quail packages.

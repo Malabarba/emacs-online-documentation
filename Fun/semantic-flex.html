@@ -1,1 +1,17 @@
-semantic-flex is a compiled Lisp function in `lex.el'.<br/><br/>(semantic-flex START END &optional DEPTH LENGTH)<br/><br/>Using the syntax table, do something roughly equivalent to flex.<br/>Semantically check between START and END.  Optional argument DEPTH<br/>indicates at what level to scan over entire lists.<br/>The return value is a token stream.  Each element is a list, such of<br/>the form (symbol start-expression .  end-expression) where SYMBOL<br/>denotes the token type.<br/>See `semantic-flex-tokens' variable for details on token types.<br/>END does not mark the end of the text scanned, only the end of the<br/>beginning of text scanned.  Thus, if a string extends past END, the<br/>end of the return token will be larger than END.  To truly restrict<br/>scanning, use `narrow-to-region'.<br/>The last argument, LENGTH specifies that `semantic-flex' should only<br/>return LENGTH tokens.
+<strong>semantic-flex</strong> is a compiled Lisp function in `<code>lex.el</code>'.<br/>
+<br/>
+(semantic-flex START END &optional DEPTH LENGTH)<br/>
+<br/>
+Using the syntax table, do something roughly equivalent to flex.<br/>
+Semantically check between START and END.  Optional argument DEPTH<br/>
+indicates at what level to scan over entire lists.<br/>
+The return value is a token stream.  Each element is a list, such of<br/>
+the form (symbol start-expression .  end-expression) where SYMBOL<br/>
+denotes the token type.<br/>
+See `semantic-flex-tokens' variable for details on token types.<br/>
+END does not mark the end of the text scanned, only the end of the<br/>
+beginning of text scanned.  Thus, if a string extends past END, the<br/>
+end of the return token will be larger than END.  To truly restrict<br/>
+scanning, use `narrow-to-region'.<br/>
+The last argument, LENGTH specifies that `semantic-flex' should only<br/>
+return LENGTH tokens.

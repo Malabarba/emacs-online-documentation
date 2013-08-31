@@ -1,1 +1,28 @@
-vertical-motion is a built-in function in `C source code'.<br/><br/>(vertical-motion LINES &optional WINDOW)<br/><br/>Move point to start of the screen line LINES lines down.<br/>If LINES is negative, this means moving up.<br/><br/>This function is an ordinary cursor motion function<br/>which calculates the new position based on how text would be displayed.<br/>The new position may be the start of a line,<br/>or just the start of a continuation line.<br/>The function returns number of screen lines moved over;<br/>that usually equals LINES, but may be closer to zero<br/>if beginning or end of buffer was reached.<br/><br/>The optional second argument WINDOW specifies the window to use for<br/>parameters such as width, horizontal scrolling, and so on.<br/>The default is to use the selected window's parameters.<br/><br/>LINES can optionally take the form (COLS . LINES), in which case<br/>the motion will not stop at the start of a screen line but on<br/>its column COLS (if such exists on that line, that is).<br/><br/>`vertical-motion' always uses the current buffer,<br/>regardless of which buffer is displayed in WINDOW.<br/>This is consistent with other cursor motion functions<br/>and makes it possible to use `vertical-motion' in any buffer,<br/>whether or not it is currently displayed in some window.
+<strong>vertical-motion</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(vertical-motion LINES &optional WINDOW)<br/>
+<br/>
+Move point to start of the screen line LINES lines down.<br/>
+If LINES is negative, this means moving up.<br/>
+<br/>
+This function is an ordinary cursor motion function<br/>
+which calculates the new position based on how text would be displayed.<br/>
+The new position may be the start of a line,<br/>
+or just the start of a continuation line.<br/>
+The function returns number of screen lines moved over;<br/>
+that usually equals LINES, but may be closer to zero<br/>
+if beginning or end of buffer was reached.<br/>
+<br/>
+The optional second argument WINDOW specifies the window to use for<br/>
+parameters such as width, horizontal scrolling, and so on.<br/>
+The default is to use the selected window's parameters.<br/>
+<br/>
+LINES can optionally take the form (COLS . LINES), in which case<br/>
+the motion will not stop at the start of a screen line but on<br/>
+its column COLS (if such exists on that line, that is).<br/>
+<br/>
+`vertical-motion' always uses the current buffer,<br/>
+regardless of which buffer is displayed in WINDOW.<br/>
+This is consistent with other cursor motion functions<br/>
+and makes it possible to use `vertical-motion' in any buffer,<br/>
+whether or not it is currently displayed in some window.

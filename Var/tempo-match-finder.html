@@ -1,1 +1,23 @@
-tempo-match-finder is a variable defined in `tempo.el'.<br/>Its value is "\\b\\([[:word:]]+\\)\\="<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>The regexp or function used to find the string to match against tags.<br/><br/>If `tempo-match-finder' is a string, it should contain a regular<br/>expression with at least one \( \) pair.  When searching for tags,<br/>`tempo-complete-tag' calls `re-search-backward' with this string, and<br/>the string between the first \( and \) is used for matching against<br/>each string in the tag list. If one is found, the whole text between<br/>the first \( and the point is replaced with the inserted template.<br/><br/>You will probably want to include \= at the end of the regexp to<br/>make sure that the string is matched only against text adjacent to the<br/>point.<br/><br/>If `tempo-match-finder' is a symbol, it should be a function that<br/>returns a pair of the form (STRING . POS), where STRING is the string<br/>used for matching and POS is the buffer position after which text<br/>should be replaced with a template.
+<strong>tempo-match-finder</strong> is a variable defined in `<code>tempo.el</code>'.<br/>
+Its value is "\\b\\([[:word:]]+\\)\\="<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+The regexp or function used to find the string to match against tags.<br/>
+<br/>
+If `tempo-match-finder' is a string, it should contain a regular<br/>
+expression with at least one \( \) pair.  When searching for tags,<br/>
+`tempo-complete-tag' calls `re-search-backward' with this string, and<br/>
+the string between the first \( and \) is used for matching against<br/>
+each string in the tag list. If one is found, the whole text between<br/>
+the first \( and the point is replaced with the inserted template.<br/>
+<br/>
+You will probably want to include \= at the end of the regexp to<br/>
+make sure that the string is matched only against text adjacent to the<br/>
+point.<br/>
+<br/>
+If `tempo-match-finder' is a symbol, it should be a function that<br/>
+returns a pair of the form (STRING . POS), where STRING is the string<br/>
+used for matching and POS is the buffer position after which text<br/>
+should be replaced with a template.

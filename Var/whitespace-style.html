@@ -1,1 +1,149 @@
-whitespace-style is a variable defined in `whitespace.el'.<br/>Its value is<br/>(face tabs spaces trailing lines space-before-tab newline indentation empty space-after-tab space-mark tab-mark newline-mark)<br/><br/><br/>Documentation:<br/>Specify which kind of blank is visualized.<br/><br/>It's a list containing some or all of the following values:<br/><br/>   face			enable all visualization via faces (see below).<br/><br/>   trailing		trailing blanks are visualized via faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   tabs			TABs are visualized via faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   spaces		SPACEs and HARD SPACEs are visualized via<br/>			faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   lines		lines which have columns beyond<br/>			`whitespace-line-column' are highlighted via<br/>			faces.<br/>			Whole line is highlighted.<br/>			It has precedence over `lines-tail' (see<br/>			below).<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   lines-tail		lines which have columns beyond<br/>			`whitespace-line-column' are highlighted via<br/>			faces.<br/>			But only the part of line which goes<br/>			beyond `whitespace-line-column' column.<br/>			It has effect only if `lines' (see above)<br/>			is not present in `whitespace-style'<br/>			and if `face' (see above) is present in<br/>			`whitespace-style'.<br/><br/>   newline		NEWLINEs are visualized via faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   empty		empty lines at beginning and/or end of buffer<br/>			are visualized via faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   indentation::tab	8 or more SPACEs at beginning of line are<br/>			visualized via faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   indentation::space	TABs at beginning of line are visualized via<br/>			faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   indentation		8 or more SPACEs at beginning of line are<br/>			visualized, if `indent-tabs-mode' (which see)<br/>			is non-nil; otherwise, TABs at beginning of<br/>			line are visualized via faces.<br/>			It has effect only if `face' (see above)<br/>			is present in `whitespace-style'.<br/><br/>   space-after-tab::tab		8 or more SPACEs after a TAB are<br/>				visualized via faces.<br/>				It has effect only if `face' (see above)<br/>				is present in `whitespace-style'.<br/><br/>   space-after-tab::space	TABs are visualized when 8 or more<br/>				SPACEs occur after a TAB, via faces.<br/>				It has effect only if `face' (see above)<br/>				is present in `whitespace-style'.<br/><br/>   space-after-tab		8 or more SPACEs after a TAB are<br/>				visualized, if `indent-tabs-mode'<br/>				(which see) is non-nil; otherwise,<br/>				the TABs are visualized via faces.<br/>				It has effect only if `face' (see above)<br/>				is present in `whitespace-style'.<br/><br/>   space-before-tab::tab	SPACEs before TAB are visualized via<br/>				faces.<br/>				It has effect only if `face' (see above)<br/>				is present in `whitespace-style'.<br/><br/>   space-before-tab::space	TABs are visualized when SPACEs occur<br/>				before TAB, via faces.<br/>				It has effect only if `face' (see above)<br/>				is present in `whitespace-style'.<br/><br/>   space-before-tab		SPACEs before TAB are visualized, if<br/>				`indent-tabs-mode' (which see) is<br/>				non-nil; otherwise, the TABs are<br/>				visualized via faces.<br/>				It has effect only if `face' (see above)<br/>				is present in `whitespace-style'.<br/><br/>   space-mark		SPACEs and HARD SPACEs are visualized via<br/>			display table.<br/><br/>   tab-mark		TABs are visualized via display table.<br/><br/>   newline-mark		NEWLINEs are visualized via display table.<br/><br/>Any other value is ignored.<br/><br/>If nil, don't visualize TABs, (HARD) SPACEs and NEWLINEs via faces and<br/>via display table.<br/><br/>There is an evaluation order for some values, if they are<br/>included in `whitespace-style' list.  For example, if<br/>indentation, indentation::tab and/or indentation::space are<br/>included in `whitespace-style' list.  The evaluation order for<br/>these values is:<br/><br/> * For indentation:<br/>   1. indentation<br/>   2. indentation::tab<br/>   3. indentation::space<br/><br/> * For SPACEs after TABs:<br/>   1. space-after-tab<br/>   2. space-after-tab::tab<br/>   3. space-after-tab::space<br/><br/> * For SPACEs before TABs:<br/>   1. space-before-tab<br/>   2. space-before-tab::tab<br/>   3. space-before-tab::space<br/><br/>So, for example, if indentation and indentation::space are<br/>included in `whitespace-style' list, the indentation value is<br/>evaluated instead of indentation::space value.<br/><br/>One reason for not visualize spaces via faces (if `face' is not<br/>included in `whitespace-style') is to use exclusively for<br/>cleaning up a buffer.  See `whitespace-cleanup' and<br/>`whitespace-cleanup-region' for documentation.<br/><br/>See also `whitespace-display-mappings' for documentation.<br/><br/>You can customize this variable.
+<strong>whitespace-style</strong> is a variable defined in `<code>whitespace.el</code>'.<br/>
+Its value is<br/>
+(face tabs spaces trailing lines space-before-tab newline indentation empty space-after-tab space-mark tab-mark newline-mark)<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Specify which kind of blank is visualized.<br/>
+<br/>
+It's a list containing some or all of the following values:<br/>
+<br/>
+   face			enable all visualization via faces (see below).<br/>
+<br/>
+   trailing		trailing blanks are visualized via faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   tabs			TABs are visualized via faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   spaces		SPACEs and HARD SPACEs are visualized via<br/>
+			faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   lines		lines which have columns beyond<br/>
+			`whitespace-line-column' are highlighted via<br/>
+			faces.<br/>
+			Whole line is highlighted.<br/>
+			It has precedence over `lines-tail' (see<br/>
+			below).<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   lines-tail		lines which have columns beyond<br/>
+			`whitespace-line-column' are highlighted via<br/>
+			faces.<br/>
+			But only the part of line which goes<br/>
+			beyond `whitespace-line-column' column.<br/>
+			It has effect only if `lines' (see above)<br/>
+			is not present in `whitespace-style'<br/>
+			and if `face' (see above) is present in<br/>
+			`whitespace-style'.<br/>
+<br/>
+   newline		NEWLINEs are visualized via faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   empty		empty lines at beginning and/or end of buffer<br/>
+			are visualized via faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   indentation::tab	8 or more SPACEs at beginning of line are<br/>
+			visualized via faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   indentation::space	TABs at beginning of line are visualized via<br/>
+			faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   indentation		8 or more SPACEs at beginning of line are<br/>
+			visualized, if `indent-tabs-mode' (which see)<br/>
+			is non-nil; otherwise, TABs at beginning of<br/>
+			line are visualized via faces.<br/>
+			It has effect only if `face' (see above)<br/>
+			is present in `whitespace-style'.<br/>
+<br/>
+   space-after-tab::tab		8 or more SPACEs after a TAB are<br/>
+				visualized via faces.<br/>
+				It has effect only if `face' (see above)<br/>
+				is present in `whitespace-style'.<br/>
+<br/>
+   space-after-tab::space	TABs are visualized when 8 or more<br/>
+				SPACEs occur after a TAB, via faces.<br/>
+				It has effect only if `face' (see above)<br/>
+				is present in `whitespace-style'.<br/>
+<br/>
+   space-after-tab		8 or more SPACEs after a TAB are<br/>
+				visualized, if `indent-tabs-mode'<br/>
+				(which see) is non-nil; otherwise,<br/>
+				the TABs are visualized via faces.<br/>
+				It has effect only if `face' (see above)<br/>
+				is present in `whitespace-style'.<br/>
+<br/>
+   space-before-tab::tab	SPACEs before TAB are visualized via<br/>
+				faces.<br/>
+				It has effect only if `face' (see above)<br/>
+				is present in `whitespace-style'.<br/>
+<br/>
+   space-before-tab::space	TABs are visualized when SPACEs occur<br/>
+				before TAB, via faces.<br/>
+				It has effect only if `face' (see above)<br/>
+				is present in `whitespace-style'.<br/>
+<br/>
+   space-before-tab		SPACEs before TAB are visualized, if<br/>
+				`indent-tabs-mode' (which see) is<br/>
+				non-nil; otherwise, the TABs are<br/>
+				visualized via faces.<br/>
+				It has effect only if `face' (see above)<br/>
+				is present in `whitespace-style'.<br/>
+<br/>
+   space-mark		SPACEs and HARD SPACEs are visualized via<br/>
+			display table.<br/>
+<br/>
+   tab-mark		TABs are visualized via display table.<br/>
+<br/>
+   newline-mark		NEWLINEs are visualized via display table.<br/>
+<br/>
+Any other value is ignored.<br/>
+<br/>
+If nil, don't visualize TABs, (HARD) SPACEs and NEWLINEs via faces and<br/>
+via display table.<br/>
+<br/>
+There is an evaluation order for some values, if they are<br/>
+included in `whitespace-style' list.  For example, if<br/>
+indentation, indentation::tab and/or indentation::space are<br/>
+included in `whitespace-style' list.  The evaluation order for<br/>
+these values is:<br/>
+<br/>
+ * For indentation:<br/>
+   1. indentation<br/>
+   2. indentation::tab<br/>
+   3. indentation::space<br/>
+<br/>
+ * For SPACEs after TABs:<br/>
+   1. space-after-tab<br/>
+   2. space-after-tab::tab<br/>
+   3. space-after-tab::space<br/>
+<br/>
+ * For SPACEs before TABs:<br/>
+   1. space-before-tab<br/>
+   2. space-before-tab::tab<br/>
+   3. space-before-tab::space<br/>
+<br/>
+So, for example, if indentation and indentation::space are<br/>
+included in `whitespace-style' list, the indentation value is<br/>
+evaluated instead of indentation::space value.<br/>
+<br/>
+One reason for not visualize spaces via faces (if `face' is not<br/>
+included in `whitespace-style') is to use exclusively for<br/>
+cleaning up a buffer.  See `whitespace-cleanup' and<br/>
+`whitespace-cleanup-region' for documentation.<br/>
+<br/>
+See also `whitespace-display-mappings' for documentation.<br/>
+<br/>
+You can customize this variable.

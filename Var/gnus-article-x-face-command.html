@@ -1,1 +1,15 @@
-gnus-article-x-face-command is a variable defined in `gnus-art.el'.<br/>Its value is gnus-display-x-face-in-from<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>*String or function to be executed to display an X-Face header.<br/>If it is a string, the command will be executed in a sub-shell<br/>asynchronously.  The compressed face will be piped to this command.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 21.1 of Emacs.<br/>
+<strong>gnus-article-x-face-command</strong> is a variable defined in `<code>gnus-art.el</code>'.<br/>
+Its value is<br/>
+"{ echo '/* Format_version=1, Width=48, Height=48, Depth=1, Valid_bits_per_item=16 */'; uncompface; } | icontopbm | display -"<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+*String or function to be executed to display an X-Face header.<br/>
+If it is a string, the command will be executed in a sub-shell<br/>
+asynchronously.  The compressed face will be piped to this command.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 21.1 of Emacs.<br/>

@@ -1,1 +1,37 @@
-allout-rebullet-heading is a compiled Lisp function in `allout.el'.<br/><br/>(allout-rebullet-heading &optional INSTEAD NEW-DEPTH NUMBER-CONTROL INDEX DO-SUCCESSORS)<br/><br/>Adjust bullet of current topic prefix.<br/><br/>All args are optional.<br/><br/>If INSTEAD is:<br/>- nil, then the bullet char for the context is used, per distinction or depth<br/>- a (numeric) character, then character's string representation is used<br/>- a string, then the user is asked for bullet with the first char as default<br/>- anything else, the user is solicited with bullet char per context as default<br/><br/>Second arg DEPTH forces the topic prefix to that depth, regardless<br/>of the topic's current depth.<br/><br/>Third arg NUMBER-CONTROL can force the prefix to or away from<br/>numbered form.  It has effect only if `allout-numbered-bullet' is<br/>non-nil and soliciting was not explicitly invoked (via first arg).<br/>Its effect, numbering or denumbering, then depends on the setting<br/>of the fourth arg, INDEX.<br/><br/>If NUMBER-CONTROL is non-nil and fourth arg INDEX is nil, then the<br/>prefix of the topic is forced to be non-numbered.  Null index and<br/>non-nil NUMBER-CONTROL forces denumbering.  Non-nil INDEX (and<br/>non-nil NUMBER-CONTROL) forces a numbered-prefix form.  If non-nil<br/>INDEX is a number, then that number is used for the numbered<br/>prefix.  Non-nil and non-number means that the index for the<br/>numbered prefix will be derived by allout-make-topic-prefix.<br/><br/>Fifth arg DO-SUCCESSORS t means re-resolve count on succeeding<br/>siblings.<br/><br/>Cf vars `allout-stylish-prefixes', `allout-old-style-prefixes',<br/>and `allout-numbered-bullet', which all affect the behavior of<br/>this function.
+<strong>allout-rebullet-heading</strong> is a compiled Lisp function in `<code>allout.el</code>'.<br/>
+<br/>
+(allout-rebullet-heading &optional INSTEAD NEW-DEPTH NUMBER-CONTROL INDEX DO-SUCCESSORS)<br/>
+<br/>
+Adjust bullet of current topic prefix.<br/>
+<br/>
+All args are optional.<br/>
+<br/>
+If INSTEAD is:<br/>
+- nil, then the bullet char for the context is used, per distinction or depth<br/>
+- a (numeric) character, then character's string representation is used<br/>
+- a string, then the user is asked for bullet with the first char as default<br/>
+- anything else, the user is solicited with bullet char per context as default<br/>
+<br/>
+Second arg DEPTH forces the topic prefix to that depth, regardless<br/>
+of the topic's current depth.<br/>
+<br/>
+Third arg NUMBER-CONTROL can force the prefix to or away from<br/>
+numbered form.  It has effect only if `allout-numbered-bullet' is<br/>
+non-nil and soliciting was not explicitly invoked (via first arg).<br/>
+Its effect, numbering or denumbering, then depends on the setting<br/>
+of the fourth arg, INDEX.<br/>
+<br/>
+If NUMBER-CONTROL is non-nil and fourth arg INDEX is nil, then the<br/>
+prefix of the topic is forced to be non-numbered.  Null index and<br/>
+non-nil NUMBER-CONTROL forces denumbering.  Non-nil INDEX (and<br/>
+non-nil NUMBER-CONTROL) forces a numbered-prefix form.  If non-nil<br/>
+INDEX is a number, then that number is used for the numbered<br/>
+prefix.  Non-nil and non-number means that the index for the<br/>
+numbered prefix will be derived by allout-make-topic-prefix.<br/>
+<br/>
+Fifth arg DO-SUCCESSORS t means re-resolve count on succeeding<br/>
+siblings.<br/>
+<br/>
+Cf vars `allout-stylish-prefixes', `allout-old-style-prefixes',<br/>
+and `allout-numbered-bullet', which all affect the behavior of<br/>
+this function.

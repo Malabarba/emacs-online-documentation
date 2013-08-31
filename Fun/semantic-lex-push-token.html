@@ -1,1 +1,14 @@
-semantic-lex-push-token is a Lisp macro in `lex.el'.<br/><br/>(semantic-lex-push-token TOKEN &rest BLOCKSPECS)<br/><br/>Push TOKEN in the lexical analyzer token stream.<br/>Return the lexical analysis current end point.<br/>If optional arguments BLOCKSPECS is non-nil, it specifies to process<br/>collapsed block tokens.  See `semantic-lex-expand-block-specs' for<br/>more details.<br/>This macro should only be called within the bounds of<br/>`define-lex-analyzer'.  It changes the values of the lexical analyzer<br/>variables `token-stream' and `semantic-lex-end-point'.  If you need to<br/>move `semantic-lex-end-point' somewhere else, just modify this<br/>variable after calling `semantic-lex-push-token'.
+<strong>semantic-lex-push-token</strong> is a Lisp macro in `<code>lex.el</code>'.<br/>
+<br/>
+(semantic-lex-push-token TOKEN &rest BLOCKSPECS)<br/>
+<br/>
+Push TOKEN in the lexical analyzer token stream.<br/>
+Return the lexical analysis current end point.<br/>
+If optional arguments BLOCKSPECS is non-nil, it specifies to process<br/>
+collapsed block tokens.  See `semantic-lex-expand-block-specs' for<br/>
+more details.<br/>
+This macro should only be called within the bounds of<br/>
+`define-lex-analyzer'.  It changes the values of the lexical analyzer<br/>
+variables `token-stream' and `semantic-lex-end-point'.  If you need to<br/>
+move `semantic-lex-end-point' somewhere else, just modify this<br/>
+variable after calling `semantic-lex-push-token'.

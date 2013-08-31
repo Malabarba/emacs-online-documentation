@@ -1,1 +1,48 @@
-compose-region is an interactive compiled Lisp function in `composite.el'.<br/><br/>(compose-region START END &optional COMPONENTS MODIFICATION-FUNC)<br/><br/>Compose characters in the current region.<br/><br/>Characters are composed relatively, i.e. composed by overstriking<br/>or stacking depending on ascent, descent and other metrics of<br/>glyphs.<br/><br/>For instance, if the region has three characters "XYZ", X is<br/>regarded as BASE glyph, and Y is displayed:<br/>  (1) above BASE if Y's descent value is not positive<br/>  (2) below BASE if Y's ascent value is not positive<br/>  (3) on BASE (i.e. at the BASE position) otherwise<br/>and Z is displayed with the same rule while regarding the whole<br/>XY glyphs as BASE.<br/><br/>When called from a program, expects these four arguments.<br/><br/>First two arguments START and END are positions (integers or markers)<br/>specifying the region.<br/><br/>Optional 3rd argument COMPONENTS, if non-nil, is a character, a string<br/>or a vector or list of integers and rules.<br/><br/>If it is a character, it is an alternate character to display instead<br/>of the text in the region.<br/><br/>If it is a string, the elements are alternate characters.  In<br/>this case, TAB element has a special meaning.  If the first<br/>character is TAB, the glyphs are displayed with left padding space<br/>so that no pixel overlaps with the previous column.  If the last<br/>character is TAB, the glyphs are displayed with right padding<br/>space so that no pixel overlaps with the following column.<br/><br/>If it is a vector or list, it is a sequence of alternate characters and<br/>composition rules, where (2N)th elements are characters and (2N+1)th<br/>elements are composition rules to specify how to compose (2N+2)th<br/>elements with previously composed N glyphs.<br/><br/>A composition rule is a cons of global and new glyph reference point<br/>symbols.  See the documentation of `reference-point-alist' for more<br/>details.<br/><br/>Optional 4th argument MODIFICATION-FUNC is a function to call to<br/>adjust the composition when it gets invalid because of a change of<br/>text in the composition.
+<strong>compose-region</strong> is an interactive compiled Lisp function in `<code>composite.el</code>'.<br/>
+<br/>
+(compose-region START END &optional COMPONENTS MODIFICATION-FUNC)<br/>
+<br/>
+Compose characters in the current region.<br/>
+<br/>
+Characters are composed relatively, i.e. composed by overstriking<br/>
+or stacking depending on ascent, descent and other metrics of<br/>
+glyphs.<br/>
+<br/>
+For instance, if the region has three characters "XYZ", X is<br/>
+regarded as BASE glyph, and Y is displayed:<br/>
+  (1) above BASE if Y's descent value is not positive<br/>
+  (2) below BASE if Y's ascent value is not positive<br/>
+  (3) on BASE (i.e. at the BASE position) otherwise<br/>
+and Z is displayed with the same rule while regarding the whole<br/>
+XY glyphs as BASE.<br/>
+<br/>
+When called from a program, expects these four arguments.<br/>
+<br/>
+First two arguments START and END are positions (integers or markers)<br/>
+specifying the region.<br/>
+<br/>
+Optional 3rd argument COMPONENTS, if non-nil, is a character, a string<br/>
+or a vector or list of integers and rules.<br/>
+<br/>
+If it is a character, it is an alternate character to display instead<br/>
+of the text in the region.<br/>
+<br/>
+If it is a string, the elements are alternate characters.  In<br/>
+this case, TAB element has a special meaning.  If the first<br/>
+character is TAB, the glyphs are displayed with left padding space<br/>
+so that no pixel overlaps with the previous column.  If the last<br/>
+character is TAB, the glyphs are displayed with right padding<br/>
+space so that no pixel overlaps with the following column.<br/>
+<br/>
+If it is a vector or list, it is a sequence of alternate characters and<br/>
+composition rules, where (2N)th elements are characters and (2N+1)th<br/>
+elements are composition rules to specify how to compose (2N+2)th<br/>
+elements with previously composed N glyphs.<br/>
+<br/>
+A composition rule is a cons of global and new glyph reference point<br/>
+symbols.  See the documentation of `reference-point-alist' for more<br/>
+details.<br/>
+<br/>
+Optional 4th argument MODIFICATION-FUNC is a function to call to<br/>
+adjust the composition when it gets invalid because of a change of<br/>
+text in the composition.

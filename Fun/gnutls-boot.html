@@ -1,1 +1,53 @@
-gnutls-boot is a built-in function in `C source code'.<br/><br/>(gnutls-boot PROC TYPE PROPLIST)<br/><br/>Initialize GnuTLS client for process PROC with TYPE+PROPLIST.<br/>Currently only client mode is supported.  Return a success/failure<br/>value you can check with `gnutls-errorp'.<br/><br/>TYPE is a symbol, either `gnutls-anon' or `gnutls-x509pki'.<br/>PROPLIST is a property list with the following keys:<br/><br/>:hostname is a string naming the remote host.<br/><br/>:priority is a GnuTLS priority string, defaults to "NORMAL".<br/><br/>:trustfiles is a list of PEM-encoded trust files for `gnutls-x509pki'.<br/><br/>:crlfiles is a list of PEM-encoded CRL lists for `gnutls-x509pki'.<br/><br/>:keylist is an alist of PEM-encoded key files and PEM-encoded<br/>certificates for `gnutls-x509pki'.<br/><br/>:callbacks is an alist of callback functions, see below.<br/><br/>:loglevel is the debug level requested from GnuTLS, try 4.<br/><br/>:verify-flags is a bitset as per GnuTLS'<br/>gnutls_certificate_set_verify_flags.<br/><br/>:verify-hostname-error, if non-nil, makes a hostname mismatch an<br/>error.  Otherwise it will be just a warning.<br/><br/>:min-prime-bits is the minimum accepted number of bits the client will<br/>accept in Diffie-Hellman key exchange.<br/><br/>The debug level will be set for this process AND globally for GnuTLS.<br/>So if you set it higher or lower at any point, it affects global<br/>debugging.<br/><br/>Note that the priority is set on the client.  The server does not use<br/>the protocols's priority except for disabling protocols that were not<br/>specified.<br/><br/>Processes must be initialized with this function before other GnuTLS<br/>functions are used.  This function allocates resources which can only<br/>be deallocated by calling `gnutls-deinit' or by calling it again.<br/><br/>The callbacks alist can have a `verify' key, associated with a<br/>verification function (UNUSED).<br/><br/>Each authentication type may need additional information in order to<br/>work.  For X.509 PKI (`gnutls-x509pki'), you probably need at least<br/>one trustfile (usually a CA bundle).
+<strong>gnutls-boot</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(gnutls-boot PROC TYPE PROPLIST)<br/>
+<br/>
+Initialize GnuTLS client for process PROC with TYPE+PROPLIST.<br/>
+Currently only client mode is supported.  Return a success/failure<br/>
+value you can check with `gnutls-errorp'.<br/>
+<br/>
+TYPE is a symbol, either `gnutls-anon' or `gnutls-x509pki'.<br/>
+PROPLIST is a property list with the following keys:<br/>
+<br/>
+:hostname is a string naming the remote host.<br/>
+<br/>
+:priority is a GnuTLS priority string, defaults to "NORMAL".<br/>
+<br/>
+:trustfiles is a list of PEM-encoded trust files for `gnutls-x509pki'.<br/>
+<br/>
+:crlfiles is a list of PEM-encoded CRL lists for `gnutls-x509pki'.<br/>
+<br/>
+:keylist is an alist of PEM-encoded key files and PEM-encoded<br/>
+certificates for `gnutls-x509pki'.<br/>
+<br/>
+:callbacks is an alist of callback functions, see below.<br/>
+<br/>
+:loglevel is the debug level requested from GnuTLS, try 4.<br/>
+<br/>
+:verify-flags is a bitset as per GnuTLS'<br/>
+gnutls_certificate_set_verify_flags.<br/>
+<br/>
+:verify-hostname-error, if non-nil, makes a hostname mismatch an<br/>
+error.  Otherwise it will be just a warning.<br/>
+<br/>
+:min-prime-bits is the minimum accepted number of bits the client will<br/>
+accept in Diffie-Hellman key exchange.<br/>
+<br/>
+The debug level will be set for this process AND globally for GnuTLS.<br/>
+So if you set it higher or lower at any point, it affects global<br/>
+debugging.<br/>
+<br/>
+Note that the priority is set on the client.  The server does not use<br/>
+the protocols's priority except for disabling protocols that were not<br/>
+specified.<br/>
+<br/>
+Processes must be initialized with this function before other GnuTLS<br/>
+functions are used.  This function allocates resources which can only<br/>
+be deallocated by calling `gnutls-deinit' or by calling it again.<br/>
+<br/>
+The callbacks alist can have a `verify' key, associated with a<br/>
+verification function (UNUSED).<br/>
+<br/>
+Each authentication type may need additional information in order to<br/>
+work.  For X.509 PKI (`gnutls-x509pki'), you probably need at least<br/>
+one trustfile (usually a CA bundle).

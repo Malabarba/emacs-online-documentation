@@ -1,1 +1,31 @@
-occur is an interactive compiled Lisp function in `replace.el'.<br/><br/>It is bound to M-s o.<br/><br/>(occur REGEXP &optional NLINES)<br/><br/>Show all lines in the current buffer containing a match for REGEXP.<br/>If a match spreads across multiple lines, all those lines are shown.<br/><br/>Each line is displayed with NLINES lines before and after, or -NLINES<br/>before if NLINES is negative.<br/>NLINES defaults to `list-matching-lines-default-context-lines'.<br/>Interactively it is the prefix arg.<br/><br/>The lines are shown in a buffer named `*Occur*'.<br/>It serves as a menu to find any of the occurrences in this buffer.<br/>C-h m in that buffer will explain how.<br/><br/>If REGEXP contains upper case characters (excluding those preceded by `\')<br/>and `search-upper-case' is non-nil, the matching is case-sensitive.<br/><br/>When NLINES is a string or when the function is called<br/>interactively with prefix argument without a number (`C-u' alone<br/>as prefix) the matching strings are collected into the `*Occur*'<br/>buffer by using NLINES as a replacement regexp.  NLINES may<br/>contain \& and \N which convention follows `replace-match'.<br/>For example, providing "defun\s +\(\S +\)" for REGEXP and<br/>"\1" for NLINES collects all the function names in a lisp<br/>program.  When there is no parenthesized subexpressions in REGEXP<br/>the entire match is collected.  In any case the searched buffer<br/>is not modified.
+<strong>occur</strong> is an interactive compiled Lisp function in `<code>replace.el</code>'.<br/>
+<br/>
+It is bound to M-s o.<br/>
+<br/>
+(occur REGEXP &optional NLINES)<br/>
+<br/>
+Show all lines in the current buffer containing a match for REGEXP.<br/>
+If a match spreads across multiple lines, all those lines are shown.<br/>
+<br/>
+Each line is displayed with NLINES lines before and after, or -NLINES<br/>
+before if NLINES is negative.<br/>
+NLINES defaults to `list-matching-lines-default-context-lines'.<br/>
+Interactively it is the prefix arg.<br/>
+<br/>
+The lines are shown in a buffer named `*Occur*'.<br/>
+It serves as a menu to find any of the occurrences in this buffer.<br/>
+C-h m in that buffer will explain how.<br/>
+<br/>
+If REGEXP contains upper case characters (excluding those preceded by `\')<br/>
+and `search-upper-case' is non-nil, the matching is case-sensitive.<br/>
+<br/>
+When NLINES is a string or when the function is called<br/>
+interactively with prefix argument without a number (`C-u' alone<br/>
+as prefix) the matching strings are collected into the `*Occur*'<br/>
+buffer by using NLINES as a replacement regexp.  NLINES may<br/>
+contain \& and \N which convention follows `replace-match'.<br/>
+For example, providing "defun\s +\(\S +\)" for REGEXP and<br/>
+"\1" for NLINES collects all the function names in a lisp<br/>
+program.  When there is no parenthesized subexpressions in REGEXP<br/>
+the entire match is collected.  In any case the searched buffer<br/>
+is not modified.

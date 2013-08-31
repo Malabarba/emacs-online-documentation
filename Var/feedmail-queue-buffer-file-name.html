@@ -1,1 +1,33 @@
-feedmail-queue-buffer-file-name is a variable defined in `feedmail.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>If non-nil, has the value normally expected of 'buffer-file-name'.<br/>You are not intended to set this to something in your configuration.  Rather,<br/>you might programmatically set it to something via a hook or function<br/>advice or whatever.  You might like to do this if you are using a mail<br/>composition program that eventually uses sendmail.el's 'mail-send'<br/>function to process the message.  If there is a filename associated<br/>with the message buffer, 'mail-send' will ask you for confirmation.<br/>There's no trivial way to avoid it.  It's unwise to just set the value<br/>of 'buffer-file-name' to nil because that will defeat feedmail's file<br/>management features.  Instead, arrange for this variable to be set to<br/>the value of 'buffer-file-name' before setting that to nil.  An easy way<br/>to do that would be with defadvice on 'mail-send' (undoing the<br/>assignments in a later advice).<br/><br/>feedmail will pretend that 'buffer-file-name', if nil, has the value<br/>assigned of 'feedmail-queue-buffer-file-name' and carry out its normal<br/>activities.  feedmail does not restore the non-nil value of<br/>'buffer-file-name'.  For safe bookkeeping, the user should insure that<br/>feedmail-queue-buffer-file-name is restored to nil.<br/><br/>Example 'defadvice' for mail-send:<br/><br/>   (defadvice mail-send (before feedmail-mail-send-before-advice activate)<br/>     (setq feedmail-queue-buffer-file-name buffer-file-name)<br/>     (setq buffer-file-name nil))<br/><br/>   (defadvice mail-send (after feedmail-mail-send-after-advice activate)<br/>     (if feedmail-queue-buffer-file-name (setq buffer-file-name feedmail-queue-buffer-file-name))<br/>     (setq feedmail-queue-buffer-file-name nil))<br/>
+<strong>feedmail-queue-buffer-file-name</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+If non-nil, has the value normally expected of 'buffer-file-name'.<br/>
+You are not intended to set this to something in your configuration.  Rather,<br/>
+you might programmatically set it to something via a hook or function<br/>
+advice or whatever.  You might like to do this if you are using a mail<br/>
+composition program that eventually uses sendmail.el's 'mail-send'<br/>
+function to process the message.  If there is a filename associated<br/>
+with the message buffer, 'mail-send' will ask you for confirmation.<br/>
+There's no trivial way to avoid it.  It's unwise to just set the value<br/>
+of 'buffer-file-name' to nil because that will defeat feedmail's file<br/>
+management features.  Instead, arrange for this variable to be set to<br/>
+the value of 'buffer-file-name' before setting that to nil.  An easy way<br/>
+to do that would be with defadvice on 'mail-send' (undoing the<br/>
+assignments in a later advice).<br/>
+<br/>
+feedmail will pretend that 'buffer-file-name', if nil, has the value<br/>
+assigned of 'feedmail-queue-buffer-file-name' and carry out its normal<br/>
+activities.  feedmail does not restore the non-nil value of<br/>
+'buffer-file-name'.  For safe bookkeeping, the user should insure that<br/>
+feedmail-queue-buffer-file-name is restored to nil.<br/>
+<br/>
+Example 'defadvice' for mail-send:<br/>
+<br/>
+   (defadvice mail-send (before feedmail-mail-send-before-advice activate)<br/>
+     (setq feedmail-queue-buffer-file-name buffer-file-name)<br/>
+     (setq buffer-file-name nil))<br/>
+<br/>
+   (defadvice mail-send (after feedmail-mail-send-after-advice activate)<br/>
+     (if feedmail-queue-buffer-file-name (setq buffer-file-name feedmail-queue-buffer-file-name))<br/>
+     (setq feedmail-queue-buffer-file-name nil))<br/>

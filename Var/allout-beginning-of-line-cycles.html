@@ -1,1 +1,34 @@
-allout-beginning-of-line-cycles is a variable defined in `allout.el'.<br/>Its value is t<br/><br/>Documentation:<br/>If non-nil, M-x allout-beginning-of-line will cycle through smart-placement options.<br/><br/>Cycling only happens on when the command is repeated, not when it<br/>follows a different command.<br/><br/>Smart-placement means that repeated calls to this function will<br/>advance as follows:<br/><br/> - if the cursor is on a non-headline body line and not on the first column:<br/>   then it goes to the first column<br/> - if the cursor is on the first column of a non-headline body line:<br/>   then it goes to the start of the headline within the item body<br/> - if the cursor is on the headline and not the start of the headline:<br/>   then it goes to the start of the headline<br/> - if the cursor is on the start of the headline:<br/>   then it goes to the bullet character (for hotspot navigation)<br/> - if the cursor is on the bullet character:<br/>   then it goes to the first column of that line (the headline)<br/> - if the cursor is on the first column of the headline:<br/>   then it goes to the start of the headline within the item body.<br/><br/>In this fashion, you can use the beginning-of-line command to do<br/>its normal job and then, when repeated, advance through the<br/>entry, cycling back to start.<br/><br/>If this configuration variable is nil, then the cursor is just<br/>advanced to the beginning of the line and remains there on<br/>repeated calls.<br/><br/>You can customize this variable.
+<strong>allout-beginning-of-line-cycles</strong> is a variable defined in `<code>allout.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+Documentation:<br/>
+If non-nil, M-x allout-beginning-of-line will cycle through smart-placement options.<br/>
+<br/>
+Cycling only happens on when the command is repeated, not when it<br/>
+follows a different command.<br/>
+<br/>
+Smart-placement means that repeated calls to this function will<br/>
+advance as follows:<br/>
+<br/>
+ - if the cursor is on a non-headline body line and not on the first column:<br/>
+   then it goes to the first column<br/>
+ - if the cursor is on the first column of a non-headline body line:<br/>
+   then it goes to the start of the headline within the item body<br/>
+ - if the cursor is on the headline and not the start of the headline:<br/>
+   then it goes to the start of the headline<br/>
+ - if the cursor is on the start of the headline:<br/>
+   then it goes to the bullet character (for hotspot navigation)<br/>
+ - if the cursor is on the bullet character:<br/>
+   then it goes to the first column of that line (the headline)<br/>
+ - if the cursor is on the first column of the headline:<br/>
+   then it goes to the start of the headline within the item body.<br/>
+<br/>
+In this fashion, you can use the beginning-of-line command to do<br/>
+its normal job and then, when repeated, advance through the<br/>
+entry, cycling back to start.<br/>
+<br/>
+If this configuration variable is nil, then the cursor is just<br/>
+advanced to the beginning of the line and remains there on<br/>
+repeated calls.<br/>
+<br/>
+You can customize this variable.

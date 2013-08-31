@@ -1,1 +1,15 @@
-org-entry-properties is a compiled Lisp function in `org.el'.<br/><br/>(org-entry-properties &optional POM WHICH SPECIFIC)<br/><br/>Get all properties of the entry at point-or-marker POM.<br/>This includes the TODO keyword, the tags, time strings for deadline,<br/>scheduled, and clocking, and any additional properties defined in the<br/>entry.  The return value is an alist, keys may occur multiple times<br/>if the property key was used several times.<br/>POM may also be nil, in which case the current entry is used.<br/>If WHICH is nil or `all', get all properties.  If WHICH is<br/>`special' or `standard', only get that subclass.  If WHICH<br/>is a string only get exactly this property.  SPECIFIC can be a string, the<br/>specific property we are interested in.  Specifying it can speed<br/>things up because then unnecessary parsing is avoided.
+<strong>org-entry-properties</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-entry-properties &optional POM WHICH SPECIFIC)<br/>
+<br/>
+Get all properties of the entry at point-or-marker POM.<br/>
+This includes the TODO keyword, the tags, time strings for deadline,<br/>
+scheduled, and clocking, and any additional properties defined in the<br/>
+entry.  The return value is an alist, keys may occur multiple times<br/>
+if the property key was used several times.<br/>
+POM may also be nil, in which case the current entry is used.<br/>
+If WHICH is nil or `all', get all properties.  If WHICH is<br/>
+`special' or `standard', only get that subclass.  If WHICH<br/>
+is a string only get exactly this property.  SPECIFIC can be a string, the<br/>
+specific property we are interested in.  Specifying it can speed<br/>
+things up because then unnecessary parsing is avoided.

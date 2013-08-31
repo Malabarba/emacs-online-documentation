@@ -1,1 +1,22 @@
-allout-rebullet-topic-grunt is a compiled Lisp function in `allout.el'.<br/><br/>(allout-rebullet-topic-grunt &optional RELATIVE-DEPTH STARTING-DEPTH STARTING-POINT INDEX DO-SUCCESSORS SANS-OFFSPRING)<br/><br/>Like `allout-rebullet-topic', but on nearest containing topic<br/>(visible or not).<br/><br/>See `allout-rebullet-heading' for rebulleting behavior.<br/><br/>All arguments are optional.<br/><br/>First arg RELATIVE-DEPTH means to shift the depth of the entire<br/>topic that amount.<br/><br/>Several subsequent args are for internal recursive use by the function<br/>itself: STARTING-DEPTH, STARTING-POINT, and INDEX.<br/><br/>Finally, if optional SANS-OFFSPRING is non-nil then the offspring<br/>are not shifted.  (Shifting a topic outwards without shifting<br/>its offspring is disallowed, since this would create a<br/>"containment discontinuity", where the depth difference between<br/>a topic and its immediate offspring is greater than one.)
+<strong>allout-rebullet-topic-grunt</strong> is a compiled Lisp function in `<code>allout.el</code>'.<br/>
+<br/>
+(allout-rebullet-topic-grunt &optional RELATIVE-DEPTH STARTING-DEPTH STARTING-POINT INDEX DO-SUCCESSORS SANS-OFFSPRING)<br/>
+<br/>
+Like `allout-rebullet-topic', but on nearest containing topic<br/>
+(visible or not).<br/>
+<br/>
+See `allout-rebullet-heading' for rebulleting behavior.<br/>
+<br/>
+All arguments are optional.<br/>
+<br/>
+First arg RELATIVE-DEPTH means to shift the depth of the entire<br/>
+topic that amount.<br/>
+<br/>
+Several subsequent args are for internal recursive use by the function<br/>
+itself: STARTING-DEPTH, STARTING-POINT, and INDEX.<br/>
+<br/>
+Finally, if optional SANS-OFFSPRING is non-nil then the offspring<br/>
+are not shifted.  (Shifting a topic outwards without shifting<br/>
+its offspring is disallowed, since this would create a<br/>
+"containment discontinuity", where the depth difference between<br/>
+a topic and its immediate offspring is greater than one.)

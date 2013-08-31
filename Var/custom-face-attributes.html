@@ -1,1 +1,235 @@
-custom-face-attributes is a variable defined in `cus-face.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of face attributes.<br/><br/>The elements are of the form (KEY TYPE PRE-FILTER POST-FILTER),<br/>where KEY is the name of the attribute, TYPE is a widget type for<br/>editing the attribute, PRE-FILTER is a function to make the attribute's<br/>value suitable for the customization widget, and POST-FILTER is a<br/>function to make the customized value suitable for storing.  PRE-FILTER<br/>and POST-FILTER are optional.<br/><br/>The PRE-FILTER should take a single argument, the attribute value as<br/>stored, and should return a value for customization (using the<br/>customization type TYPE).<br/><br/>The POST-FILTER should also take a single argument, the value after<br/>being customized, and should return a value suitable for setting the<br/>given face attribute.<br/><br/>Value: ((:family<br/>  (string :tag "Font Family" :help-echo "Font family or fontset alias name."))<br/> (:foundry<br/>  (string :tag "Font Foundry" :help-echo "Font foundry name."))<br/> (:width<br/>  (choice :tag "Width" :help-echo "Font width." :value normal<br/>	  (const :tag "compressed" condensed)<br/>	  (const :tag "condensed" condensed)<br/>	  (const :tag "demiexpanded" semi-expanded)<br/>	  (const :tag "expanded" expanded)<br/>	  (const :tag "extracondensed" extra-condensed)<br/>	  (const :tag "extraexpanded" extra-expanded)<br/>	  (const :tag "medium" normal)<br/>	  (const :tag "narrow" condensed)<br/>	  (const :tag "normal" normal)<br/>	  (const :tag "regular" normal)<br/>	  (const :tag "semicondensed" semi-condensed)<br/>	  (const :tag "semiexpanded" semi-expanded)<br/>	  (const :tag "ultracondensed" ultra-condensed)<br/>	  (const :tag "ultraexpanded" ultra-expanded)<br/>	  (const :tag "wide" extra-expanded)))<br/> (:height<br/>  (choice :tag "Height" :help-echo "Face's font height." :value 1.0<br/>	  (integer :tag "Height in 1/10 pt")<br/>	  (number :tag "Scale" 1.0)))<br/> (:weight<br/>  (choice :tag "Weight" :help-echo "Font weight." :value normal<br/>	  (const :tag "black" ultra-bold)<br/>	  (const :tag "bold" bold)<br/>	  (const :tag "book" semi-light)<br/>	  (const :tag "demibold" semi-bold)<br/>	  (const :tag "extralight" extra-light)<br/>	  (const :tag "extrabold" extra-bold)<br/>	  (const :tag "heavy" extra-bold)<br/>	  (const :tag "light" light)<br/>	  (const :tag "medium" normal)<br/>	  (const :tag "normal" normal)<br/>	  (const :tag "regular" normal)<br/>	  (const :tag "semibold" semi-bold)<br/>	  (const :tag "semilight" semi-light)<br/>	  (const :tag "ultralight" ultra-light)<br/>	  (const :tag "ultrabold" ultra-bold)<br/>	  (const :tag "thin" thin)))<br/> (:slant<br/>  (choice :tag "Slant" :help-echo "Font slant." :value normal<br/>	  (const :tag "italic" italic)<br/>	  (const :tag "oblique" oblique)<br/>	  (const :tag "normal" normal)<br/>	  (const :tag "roman" roman)))<br/> (:underline<br/>  (choice :tag "Underline" :help-echo "Control text underlining."<br/>	  (const :tag "Off" nil)<br/>	  (list :tag "On" :value<br/>		(:color foreground-color :style line)<br/>		(const :format "" :value :color)<br/>		(choice :tag "Color"<br/>			(const :tag "Foreground Color" foreground-color)<br/>			color)<br/>		(const :format "" :value :style)<br/>		(choice :tag "Style"<br/>			(const :tag "Line" line)<br/>			(const :tag "Wave" wave))))<br/>  (lambda<br/>    (real-value)<br/>    (and real-value<br/>	 (let<br/>	     ((color<br/>	       (or<br/>		(and<br/>		 (consp real-value)<br/>		 (plist-get real-value :color))<br/>		(and<br/>		 (stringp real-value)<br/>		 real-value)<br/>		'foreground-color))<br/>	      (style<br/>	       (or<br/>		(and<br/>		 (consp real-value)<br/>		 (plist-get real-value :style))<br/>		'line)))<br/>	   (list :color color :style style))))<br/>  (lambda<br/>    (cus-value)<br/>    (and cus-value<br/>	 (let<br/>	     ((color<br/>	       (plist-get cus-value :color))<br/>	      (style<br/>	       (plist-get cus-value :style)))<br/>	   (cond<br/>	    ((eq style 'line)<br/>	     (if<br/>		 (eq color 'foreground-color)<br/>		 t color))<br/>	    (t<br/>	     `(:color ,color :style ,style)))))))<br/> (:overline<br/>  (choice :tag "Overline" :help-echo "Control text overlining."<br/>	  (const :tag "Off" nil)<br/>	  (const :tag "On" t)<br/>	  (color :tag "Colored")))<br/> (:strike-through<br/>  (choice :tag "Strike-through" :help-echo "Control text strike-through."<br/>	  (const :tag "Off" nil)<br/>	  (const :tag "On" t)<br/>	  (color :tag "Colored")))<br/> (:box<br/>  (choice :tag "Box around text" :help-echo "Control box around text."<br/>	  (const :tag "Off" nil)<br/>	  (list :tag "Box" :value<br/>		(:line-width 2 :color "grey75" :style released-button)<br/>		(const :format "" :value :line-width)<br/>		(integer :tag "Width")<br/>		(const :format "" :value :color)<br/>		(choice :tag "Color"<br/>			(const :tag "*" nil)<br/>			color)<br/>		(const :format "" :value :style)<br/>		(choice :tag "Style"<br/>			(const :tag "Raised" released-button)<br/>			(const :tag "Sunken" pressed-button)<br/>			(const :tag "None" nil))))<br/>  (lambda<br/>    (real-value)<br/>    (and real-value<br/>	 (let<br/>	     ((lwidth<br/>	       (or<br/>		(and<br/>		 (consp real-value)<br/>		 (plist-get real-value :line-width))<br/>		(and<br/>		 (integerp real-value)<br/>		 real-value)<br/>		1))<br/>	      (color<br/>	       (or<br/>		(and<br/>		 (consp real-value)<br/>		 (plist-get real-value :color))<br/>		(and<br/>		 (stringp real-value)<br/>		 real-value)<br/>		nil))<br/>	      (style<br/>	       (and<br/>		(consp real-value)<br/>		(plist-get real-value :style))))<br/>	   (list :line-width lwidth :color color :style style))))<br/>  (lambda<br/>    (cus-value)<br/>    (and cus-value<br/>	 (let<br/>	     ((lwidth<br/>	       (plist-get cus-value :line-width))<br/>	      (color<br/>	       (plist-get cus-value :color))<br/>	      (style<br/>	       (plist-get cus-value :style)))<br/>	   (cond<br/>	    ((and<br/>	      (null color)<br/>	      (null style))<br/>	     lwidth)<br/>	    ((and<br/>	      (null lwidth)<br/>	      (null style))<br/>	     color)<br/>	    (t<br/>	     (nconc<br/>	      (and lwidth<br/>		   `(:line-width ,lwidth))<br/>	      (and color<br/>		   `(:color ,color))<br/>	      (and style<br/>		   `(:style ,style)))))))))<br/> (:inverse-video<br/>  (choice :tag "Inverse-video" :help-echo "Control whether text should be in inverse-video."<br/>	  (const :tag "Off" nil)<br/>	  (const :tag "On" t)))<br/> (:foreground<br/>  (color :tag "Foreground" :help-echo "Set foreground color (name or #RRGGBB hex spec)."))<br/> (:background<br/>  (color :tag "Background" :help-echo "Set background color (name or #RRGGBB hex spec)."))<br/> (:stipple<br/>  (choice :tag "Stipple" :help-echo "Background bit-mask"<br/>	  (const :tag "None" nil)<br/>	  (file :tag "File" :help-echo "Name of bitmap file." :must-match t)))<br/> (:inherit<br/>  (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from."<br/>	  (face :Tag "Face" default))<br/>  (lambda<br/>    (real-value)<br/>    (cond<br/>     ((or<br/>       (null real-value)<br/>       (eq real-value 'unspecified))<br/>      nil)<br/>     ((symbolp real-value)<br/>      (list real-value))<br/>     (t real-value)))<br/>  (lambda<br/>    (cus-value)<br/>    (if<br/>	(and<br/>	 (consp cus-value)<br/>	 (null<br/>	  (cdr cus-value)))<br/>	(car cus-value)<br/>      cus-value))))<br/><br/>
+<strong>custom-face-attributes</strong> is a variable defined in `<code>cus-face.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of face attributes.<br/>
+<br/>
+The elements are of the form (KEY TYPE PRE-FILTER POST-FILTER),<br/>
+where KEY is the name of the attribute, TYPE is a widget type for<br/>
+editing the attribute, PRE-FILTER is a function to make the attribute's<br/>
+value suitable for the customization widget, and POST-FILTER is a<br/>
+function to make the customized value suitable for storing.  PRE-FILTER<br/>
+and POST-FILTER are optional.<br/>
+<br/>
+The PRE-FILTER should take a single argument, the attribute value as<br/>
+stored, and should return a value for customization (using the<br/>
+customization type TYPE).<br/>
+<br/>
+The POST-FILTER should also take a single argument, the value after<br/>
+being customized, and should return a value suitable for setting the<br/>
+given face attribute.<br/>
+<br/>
+Value: ((:family<br/>
+  (string :tag "Font Family" :help-echo "Font family or fontset alias name."))<br/>
+ (:foundry<br/>
+  (string :tag "Font Foundry" :help-echo "Font foundry name."))<br/>
+ (:width<br/>
+  (choice :tag "Width" :help-echo "Font width." :value normal<br/>
+	  (const :tag "compressed" condensed)<br/>
+	  (const :tag "condensed" condensed)<br/>
+	  (const :tag "demiexpanded" semi-expanded)<br/>
+	  (const :tag "expanded" expanded)<br/>
+	  (const :tag "extracondensed" extra-condensed)<br/>
+	  (const :tag "extraexpanded" extra-expanded)<br/>
+	  (const :tag "medium" normal)<br/>
+	  (const :tag "narrow" condensed)<br/>
+	  (const :tag "normal" normal)<br/>
+	  (const :tag "regular" normal)<br/>
+	  (const :tag "semicondensed" semi-condensed)<br/>
+	  (const :tag "semiexpanded" semi-expanded)<br/>
+	  (const :tag "ultracondensed" ultra-condensed)<br/>
+	  (const :tag "ultraexpanded" ultra-expanded)<br/>
+	  (const :tag "wide" extra-expanded)))<br/>
+ (:height<br/>
+  (choice :tag "Height" :help-echo "Face's font height." :value 1.0<br/>
+	  (integer :tag "Height in 1/10 pt")<br/>
+	  (number :tag "Scale" 1.0)))<br/>
+ (:weight<br/>
+  (choice :tag "Weight" :help-echo "Font weight." :value normal<br/>
+	  (const :tag "black" ultra-bold)<br/>
+	  (const :tag "bold" bold)<br/>
+	  (const :tag "book" semi-light)<br/>
+	  (const :tag "demibold" semi-bold)<br/>
+	  (const :tag "extralight" extra-light)<br/>
+	  (const :tag "extrabold" extra-bold)<br/>
+	  (const :tag "heavy" extra-bold)<br/>
+	  (const :tag "light" light)<br/>
+	  (const :tag "medium" normal)<br/>
+	  (const :tag "normal" normal)<br/>
+	  (const :tag "regular" normal)<br/>
+	  (const :tag "semibold" semi-bold)<br/>
+	  (const :tag "semilight" semi-light)<br/>
+	  (const :tag "ultralight" ultra-light)<br/>
+	  (const :tag "ultrabold" ultra-bold)<br/>
+	  (const :tag "thin" thin)))<br/>
+ (:slant<br/>
+  (choice :tag "Slant" :help-echo "Font slant." :value normal<br/>
+	  (const :tag "italic" italic)<br/>
+	  (const :tag "oblique" oblique)<br/>
+	  (const :tag "normal" normal)<br/>
+	  (const :tag "roman" roman)))<br/>
+ (:underline<br/>
+  (choice :tag "Underline" :help-echo "Control text underlining."<br/>
+	  (const :tag "Off" nil)<br/>
+	  (list :tag "On" :value<br/>
+		(:color foreground-color :style line)<br/>
+		(const :format "" :value :color)<br/>
+		(choice :tag "Color"<br/>
+			(const :tag "Foreground Color" foreground-color)<br/>
+			color)<br/>
+		(const :format "" :value :style)<br/>
+		(choice :tag "Style"<br/>
+			(const :tag "Line" line)<br/>
+			(const :tag "Wave" wave))))<br/>
+  (lambda<br/>
+    (real-value)<br/>
+    (and real-value<br/>
+	 (let<br/>
+	     ((color<br/>
+	       (or<br/>
+		(and<br/>
+		 (consp real-value)<br/>
+		 (plist-get real-value :color))<br/>
+		(and<br/>
+		 (stringp real-value)<br/>
+		 real-value)<br/>
+		'foreground-color))<br/>
+	      (style<br/>
+	       (or<br/>
+		(and<br/>
+		 (consp real-value)<br/>
+		 (plist-get real-value :style))<br/>
+		'line)))<br/>
+	   (list :color color :style style))))<br/>
+  (lambda<br/>
+    (cus-value)<br/>
+    (and cus-value<br/>
+	 (let<br/>
+	     ((color<br/>
+	       (plist-get cus-value :color))<br/>
+	      (style<br/>
+	       (plist-get cus-value :style)))<br/>
+	   (cond<br/>
+	    ((eq style 'line)<br/>
+	     (if<br/>
+		 (eq color 'foreground-color)<br/>
+		 t color))<br/>
+	    (t<br/>
+	     `(:color ,color :style ,style)))))))<br/>
+ (:overline<br/>
+  (choice :tag "Overline" :help-echo "Control text overlining."<br/>
+	  (const :tag "Off" nil)<br/>
+	  (const :tag "On" t)<br/>
+	  (color :tag "Colored")))<br/>
+ (:strike-through<br/>
+  (choice :tag "Strike-through" :help-echo "Control text strike-through."<br/>
+	  (const :tag "Off" nil)<br/>
+	  (const :tag "On" t)<br/>
+	  (color :tag "Colored")))<br/>
+ (:box<br/>
+  (choice :tag "Box around text" :help-echo "Control box around text."<br/>
+	  (const :tag "Off" nil)<br/>
+	  (list :tag "Box" :value<br/>
+		(:line-width 2 :color "grey75" :style released-button)<br/>
+		(const :format "" :value :line-width)<br/>
+		(integer :tag "Width")<br/>
+		(const :format "" :value :color)<br/>
+		(choice :tag "Color"<br/>
+			(const :tag "*" nil)<br/>
+			color)<br/>
+		(const :format "" :value :style)<br/>
+		(choice :tag "Style"<br/>
+			(const :tag "Raised" released-button)<br/>
+			(const :tag "Sunken" pressed-button)<br/>
+			(const :tag "None" nil))))<br/>
+  (lambda<br/>
+    (real-value)<br/>
+    (and real-value<br/>
+	 (let<br/>
+	     ((lwidth<br/>
+	       (or<br/>
+		(and<br/>
+		 (consp real-value)<br/>
+		 (plist-get real-value :line-width))<br/>
+		(and<br/>
+		 (integerp real-value)<br/>
+		 real-value)<br/>
+		1))<br/>
+	      (color<br/>
+	       (or<br/>
+		(and<br/>
+		 (consp real-value)<br/>
+		 (plist-get real-value :color))<br/>
+		(and<br/>
+		 (stringp real-value)<br/>
+		 real-value)<br/>
+		nil))<br/>
+	      (style<br/>
+	       (and<br/>
+		(consp real-value)<br/>
+		(plist-get real-value :style))))<br/>
+	   (list :line-width lwidth :color color :style style))))<br/>
+  (lambda<br/>
+    (cus-value)<br/>
+    (and cus-value<br/>
+	 (let<br/>
+	     ((lwidth<br/>
+	       (plist-get cus-value :line-width))<br/>
+	      (color<br/>
+	       (plist-get cus-value :color))<br/>
+	      (style<br/>
+	       (plist-get cus-value :style)))<br/>
+	   (cond<br/>
+	    ((and<br/>
+	      (null color)<br/>
+	      (null style))<br/>
+	     lwidth)<br/>
+	    ((and<br/>
+	      (null lwidth)<br/>
+	      (null style))<br/>
+	     color)<br/>
+	    (t<br/>
+	     (nconc<br/>
+	      (and lwidth<br/>
+		   `(:line-width ,lwidth))<br/>
+	      (and color<br/>
+		   `(:color ,color))<br/>
+	      (and style<br/>
+		   `(:style ,style)))))))))<br/>
+ (:inverse-video<br/>
+  (choice :tag "Inverse-video" :help-echo "Control whether text should be in inverse-video."<br/>
+	  (const :tag "Off" nil)<br/>
+	  (const :tag "On" t)))<br/>
+ (:foreground<br/>
+  (color :tag "Foreground" :help-echo "Set foreground color (name or #RRGGBB hex spec)."))<br/>
+ (:background<br/>
+  (color :tag "Background" :help-echo "Set background color (name or #RRGGBB hex spec)."))<br/>
+ (:stipple<br/>
+  (choice :tag "Stipple" :help-echo "Background bit-mask"<br/>
+	  (const :tag "None" nil)<br/>
+	  (file :tag "File" :help-echo "Name of bitmap file." :must-match t)))<br/>
+ (:inherit<br/>
+  (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from."<br/>
+	  (face :Tag "Face" default))<br/>
+  (lambda<br/>
+    (real-value)<br/>
+    (cond<br/>
+     ((or<br/>
+       (null real-value)<br/>
+       (eq real-value 'unspecified))<br/>
+      nil)<br/>
+     ((symbolp real-value)<br/>
+      (list real-value))<br/>
+     (t real-value)))<br/>
+  (lambda<br/>
+    (cus-value)<br/>
+    (if<br/>
+	(and<br/>
+	 (consp cus-value)<br/>
+	 (null<br/>
+	  (cdr cus-value)))<br/>
+	(car cus-value)<br/>
+      cus-value))))<br/>
+<br/>

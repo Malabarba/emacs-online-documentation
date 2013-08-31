@@ -1,1 +1,57 @@
-verilog-auto-sense is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-sense)<br/><br/>Expand AUTOSENSE statements, as part of M-x verilog-auto.<br/>Replace the always (/*AUTOSENSE*/) sensitivity list (/*AS*/ for short)<br/>with one automatically derived from all inputs declared in the always<br/>statement.  Signals that are generated within the same always block are NOT<br/>placed into the sensitivity list (see `verilog-auto-sense-include-inputs').<br/>Long lines are split based on the `fill-column', see C-x f.<br/><br/>Limitations:<br/>  Verilog does not allow memories (multidimensional arrays) in sensitivity<br/>  lists.  AUTOSENSE will thus exclude them, and add a /*memory or*/ comment.<br/><br/>Constant signals:<br/>  AUTOSENSE cannot always determine if a `define is a constant or a signal<br/>  (it could be in an include file for example).  If a `define or other signal<br/>  is put into the AUTOSENSE list and is not desired, use the AUTO_CONSTANT<br/>  declaration anywhere in the module (parenthesis are required):<br/><br/>	/* AUTO_CONSTANT ( `this_is_really_constant_dont_autosense_it ) */<br/><br/>  Better yet, use a parameter, which will be understood to be constant<br/>  automatically.<br/><br/>OOps!<br/>  If AUTOSENSE makes a mistake, please report it.  (First try putting<br/>  a begin/end after your always!) As a workaround, if a signal that<br/>  shouldn't be in the sensitivity list was, use the AUTO_CONSTANT above.<br/>  If a signal should be in the sensitivity list wasn't, placing it before<br/>  the /*AUTOSENSE*/ comment will prevent it from being deleted when the<br/>  autos are updated (or added if it occurs there already).<br/><br/>An example:<br/><br/>	   always @ (/*AS*/) begin<br/>	      /* AUTO_CONSTANT (`constant) */<br/>	      outin = ina | inb | `constant;<br/>	      out = outin;<br/>	   end<br/><br/>Typing M-x verilog-auto will make this into:<br/><br/>	   always @ (/*AS*/ina or inb) begin<br/>	      /* AUTO_CONSTANT (`constant) */<br/>	      outin = ina | inb | `constant;<br/>	      out = outin;<br/>	   end<br/><br/>Note in Verilog 2001, you can often get the same result from the new @*<br/>operator.  (This was added to the language in part due to AUTOSENSE!)<br/><br/>	   always @* begin<br/>	      outin = ina | inb | `constant;<br/>	      out = outin;<br/>	   end
+<strong>verilog-auto-sense</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-sense)<br/>
+<br/>
+Expand AUTOSENSE statements, as part of M-x verilog-auto.<br/>
+Replace the always (/*AUTOSENSE*/) sensitivity list (/*AS*/ for short)<br/>
+with one automatically derived from all inputs declared in the always<br/>
+statement.  Signals that are generated within the same always block are NOT<br/>
+placed into the sensitivity list (see `verilog-auto-sense-include-inputs').<br/>
+Long lines are split based on the `fill-column', see C-x f.<br/>
+<br/>
+Limitations:<br/>
+  Verilog does not allow memories (multidimensional arrays) in sensitivity<br/>
+  lists.  AUTOSENSE will thus exclude them, and add a /*memory or*/ comment.<br/>
+<br/>
+Constant signals:<br/>
+  AUTOSENSE cannot always determine if a `define is a constant or a signal<br/>
+  (it could be in an include file for example).  If a `define or other signal<br/>
+  is put into the AUTOSENSE list and is not desired, use the AUTO_CONSTANT<br/>
+  declaration anywhere in the module (parenthesis are required):<br/>
+<br/>
+	/* AUTO_CONSTANT ( `this_is_really_constant_dont_autosense_it ) */<br/>
+<br/>
+  Better yet, use a parameter, which will be understood to be constant<br/>
+  automatically.<br/>
+<br/>
+OOps!<br/>
+  If AUTOSENSE makes a mistake, please report it.  (First try putting<br/>
+  a begin/end after your always!) As a workaround, if a signal that<br/>
+  shouldn't be in the sensitivity list was, use the AUTO_CONSTANT above.<br/>
+  If a signal should be in the sensitivity list wasn't, placing it before<br/>
+  the /*AUTOSENSE*/ comment will prevent it from being deleted when the<br/>
+  autos are updated (or added if it occurs there already).<br/>
+<br/>
+An example:<br/>
+<br/>
+	   always @ (/*AS*/) begin<br/>
+	      /* AUTO_CONSTANT (`constant) */<br/>
+	      outin = ina | inb | `constant;<br/>
+	      out = outin;<br/>
+	   end<br/>
+<br/>
+Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	   always @ (/*AS*/ina or inb) begin<br/>
+	      /* AUTO_CONSTANT (`constant) */<br/>
+	      outin = ina | inb | `constant;<br/>
+	      out = outin;<br/>
+	   end<br/>
+<br/>
+Note in Verilog 2001, you can often get the same result from the new @*<br/>
+operator.  (This was added to the language in part due to AUTOSENSE!)<br/>
+<br/>
+	   always @* begin<br/>
+	      outin = ina | inb | `constant;<br/>
+	      out = outin;<br/>
+	   end

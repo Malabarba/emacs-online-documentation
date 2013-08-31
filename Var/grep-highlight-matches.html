@@ -1,1 +1,35 @@
-grep-highlight-matches is a variable defined in `grep.el'.<br/>Its value is auto-detect<br/><br/>Documentation:<br/>Use special markers to highlight grep matches.<br/><br/>Some grep programs are able to surround matches with special<br/>markers in grep output.  Such markers can be used to highlight<br/>matches in grep mode.  This requires `font-lock-mode' to be active<br/>in grep buffers, so if you have globally disabled font-lock-mode,<br/>you will not get highlighting.<br/><br/>This option sets the environment variable GREP_COLORS to specify<br/>markers for highlighting and GREP_OPTIONS to add the --color<br/>option in front of any explicit grep options before starting<br/>the grep.<br/><br/>When this option is `auto', grep uses `--color=auto' to highlight<br/>matches only when it outputs to a terminal (when `grep' is the last<br/>command in the pipe), thus avoiding the use of any potentially-harmful<br/>escape sequences when standard output goes to a file or pipe.<br/><br/>To make grep highlight matches even into a pipe, you need the option<br/>`always' that forces grep to use `--color=always' to unconditionally<br/>output escape sequences.<br/><br/>In interactive usage, the actual value of this variable is set up<br/>by `grep-compute-defaults' when the default value is `auto-detect'.<br/>To change the default value, use Customize or call the function<br/>`grep-apply-setting'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22.1 of Emacs.<br/>
+<strong>grep-highlight-matches</strong> is a variable defined in `<code>grep.el</code>'.<br/>
+Its value is auto-detect<br/>
+<br/>
+Documentation:<br/>
+Use special markers to highlight grep matches.<br/>
+<br/>
+Some grep programs are able to surround matches with special<br/>
+markers in grep output.  Such markers can be used to highlight<br/>
+matches in grep mode.  This requires `font-lock-mode' to be active<br/>
+in grep buffers, so if you have globally disabled font-lock-mode,<br/>
+you will not get highlighting.<br/>
+<br/>
+This option sets the environment variable GREP_COLORS to specify<br/>
+markers for highlighting and GREP_OPTIONS to add the --color<br/>
+option in front of any explicit grep options before starting<br/>
+the grep.<br/>
+<br/>
+When this option is `auto', grep uses `--color=auto' to highlight<br/>
+matches only when it outputs to a terminal (when `grep' is the last<br/>
+command in the pipe), thus avoiding the use of any potentially-harmful<br/>
+escape sequences when standard output goes to a file or pipe.<br/>
+<br/>
+To make grep highlight matches even into a pipe, you need the option<br/>
+`always' that forces grep to use `--color=always' to unconditionally<br/>
+output escape sequences.<br/>
+<br/>
+In interactive usage, the actual value of this variable is set up<br/>
+by `grep-compute-defaults' when the default value is `auto-detect'.<br/>
+To change the default value, use Customize or call the function<br/>
+`grep-apply-setting'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22.1 of Emacs.<br/>

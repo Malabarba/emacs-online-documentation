@@ -1,1 +1,21 @@
-semantic-tag-new-type is a compiled Lisp function in `tag.el'.<br/><br/>(semantic-tag-new-type NAME TYPE MEMBERS PARENTS &rest ATTRIBUTES)<br/><br/>Create a semantic tag of class 'type.<br/>NAME is the name of this type.<br/>TYPE is a string or semantic tag representing the type of this type.<br/>MEMBERS is a list of strings or semantic tags representing the<br/>elements that make up this type if it is a composite type.<br/>PARENTS is a cons cell.  (EXPLICIT-PARENTS . INTERFACE-PARENTS)<br/>EXPLICIT-PARENTS can be a single string (Just one parent) or a<br/>list of parents (in a multiple inheritance situation).  It can also<br/>be nil.<br/>INTERFACE-PARENTS is a list of strings representing the names of<br/>all INTERFACES, or abstract classes inherited from.  It can also be<br/>nil.<br/>This slot can be interesting because the form:<br/>     ( nil "string")<br/>is a valid parent where there is no explicit parent, and only an<br/>interface.<br/>ATTRIBUTES is a list of additional attributes belonging to this tag.
+<strong>semantic-tag-new-type</strong> is a compiled Lisp function in `<code>tag.el</code>'.<br/>
+<br/>
+(semantic-tag-new-type NAME TYPE MEMBERS PARENTS &rest ATTRIBUTES)<br/>
+<br/>
+Create a semantic tag of class 'type.<br/>
+NAME is the name of this type.<br/>
+TYPE is a string or semantic tag representing the type of this type.<br/>
+MEMBERS is a list of strings or semantic tags representing the<br/>
+elements that make up this type if it is a composite type.<br/>
+PARENTS is a cons cell.  (EXPLICIT-PARENTS . INTERFACE-PARENTS)<br/>
+EXPLICIT-PARENTS can be a single string (Just one parent) or a<br/>
+list of parents (in a multiple inheritance situation).  It can also<br/>
+be nil.<br/>
+INTERFACE-PARENTS is a list of strings representing the names of<br/>
+all INTERFACES, or abstract classes inherited from.  It can also be<br/>
+nil.<br/>
+This slot can be interesting because the form:<br/>
+     ( nil "string")<br/>
+is a valid parent where there is no explicit parent, and only an<br/>
+interface.<br/>
+ATTRIBUTES is a list of additional attributes belonging to this tag.

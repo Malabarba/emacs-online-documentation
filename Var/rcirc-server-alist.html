@@ -1,1 +1,51 @@
-rcirc-server-alist is a variable defined in `rcirc.el'.<br/>Its value is (("irc.freenode.net" :channels ("#rcirc")))<br/><br/>Documentation:<br/>An alist of IRC connections to establish when running `rcirc'.<br/>Each element looks like (SERVER-NAME PARAMETERS).<br/><br/>SERVER-NAME is a string describing the server to connect<br/>to.<br/><br/>The optional PARAMETERS come in pairs PARAMETER VALUE.<br/><br/>The following parameters are recognized:<br/><br/>`:nick'<br/><br/>VALUE must be a string.  If absent, `rcirc-default-nick' is used<br/>for this connection.<br/><br/>`:port'<br/><br/>VALUE must be a number or string.  If absent,<br/>`rcirc-default-port' is used.<br/><br/>`:user-name'<br/><br/>VALUE must be a string.  If absent, `rcirc-default-user-name' is<br/>used.<br/><br/>`:password'<br/><br/>VALUE must be a string.  If absent, no PASS command will be sent<br/>to the server.<br/><br/>`:full-name'<br/><br/>VALUE must be a string.  If absent, `rcirc-default-full-name' is<br/>used.<br/><br/>`:channels'<br/><br/>VALUE must be a list of strings describing which channels to join<br/>when connecting to this server.  If absent, no channels will be<br/>connected to automatically.<br/><br/>`:encryption'<br/><br/>VALUE must be `plain' (the default) for unencrypted connections, or `tls'<br/>for connections using SSL/TLS.<br/><br/>You can customize this variable.
+<strong>rcirc-server-alist</strong> is a variable defined in `<code>rcirc.el</code>'.<br/>
+Its value is (("irc.freenode.net" :channels ("#rcirc")))<br/>
+<br/>
+Documentation:<br/>
+An alist of IRC connections to establish when running `rcirc'.<br/>
+Each element looks like (SERVER-NAME PARAMETERS).<br/>
+<br/>
+SERVER-NAME is a string describing the server to connect<br/>
+to.<br/>
+<br/>
+The optional PARAMETERS come in pairs PARAMETER VALUE.<br/>
+<br/>
+The following parameters are recognized:<br/>
+<br/>
+`:nick'<br/>
+<br/>
+VALUE must be a string.  If absent, `rcirc-default-nick' is used<br/>
+for this connection.<br/>
+<br/>
+`:port'<br/>
+<br/>
+VALUE must be a number or string.  If absent,<br/>
+`rcirc-default-port' is used.<br/>
+<br/>
+`:user-name'<br/>
+<br/>
+VALUE must be a string.  If absent, `rcirc-default-user-name' is<br/>
+used.<br/>
+<br/>
+`:password'<br/>
+<br/>
+VALUE must be a string.  If absent, no PASS command will be sent<br/>
+to the server.<br/>
+<br/>
+`:full-name'<br/>
+<br/>
+VALUE must be a string.  If absent, `rcirc-default-full-name' is<br/>
+used.<br/>
+<br/>
+`:channels'<br/>
+<br/>
+VALUE must be a list of strings describing which channels to join<br/>
+when connecting to this server.  If absent, no channels will be<br/>
+connected to automatically.<br/>
+<br/>
+`:encryption'<br/>
+<br/>
+VALUE must be `plain' (the default) for unencrypted connections, or `tls'<br/>
+for connections using SSL/TLS.<br/>
+<br/>
+You can customize this variable.

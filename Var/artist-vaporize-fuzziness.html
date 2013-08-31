@@ -1,1 +1,25 @@
-artist-vaporize-fuzziness is a variable defined in `artist.el'.<br/>Its value is 1<br/><br/>Documentation:<br/>How to vaporize lines that are cut off.<br/><br/>Accept this many characters cutting off a line and still treat<br/>it as one line.<br/>Example:<br/> If `artist-vaporize-fuzziness' is 2, then those will be recognized as<br/> lines from A to B (provided you start vaporizing them at the ``*''):<br/>                         /<br/>            A----*------/-----------B<br/>                      \/<br/>            A----*----/\------------B<br/>                     /  \<br/><br/> but this one won't, since it is cut off by more than 2 characters:<br/>                      \/ /<br/>            A----*----/\/----------B<br/>                     / /\<br/> (in fact, only the left part [between the A and the leftmost ``/''<br/> crossing the line] will be vaporized).<br/><br/>You can customize this variable.
+<strong>artist-vaporize-fuzziness</strong> is a variable defined in `<code>artist.el</code>'.<br/>
+Its value is 1<br/>
+<br/>
+Documentation:<br/>
+How to vaporize lines that are cut off.<br/>
+<br/>
+Accept this many characters cutting off a line and still treat<br/>
+it as one line.<br/>
+Example:<br/>
+ If `artist-vaporize-fuzziness' is 2, then those will be recognized as<br/>
+ lines from A to B (provided you start vaporizing them at the ``*''):<br/>
+                         /<br/>
+            A----*------/-----------B<br/>
+                      \/<br/>
+            A----*----/\------------B<br/>
+                     /  \<br/>
+<br/>
+ but this one won't, since it is cut off by more than 2 characters:<br/>
+                      \/ /<br/>
+            A----*----/\/----------B<br/>
+                     / /\<br/>
+ (in fact, only the left part [between the A and the leftmost ``/''<br/>
+ crossing the line] will be vaporized).<br/>
+<br/>
+You can customize this variable.

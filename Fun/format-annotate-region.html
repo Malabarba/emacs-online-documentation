@@ -1,1 +1,37 @@
-format-annotate-region is a compiled Lisp function in `format.el'.<br/><br/>(format-annotate-region FROM TO TRANSLATIONS FORMAT-FN IGNORE)<br/><br/>Generate annotations for text properties in the region.<br/>Search for changes between FROM and TO, and describe them with a list of<br/>annotations as defined by alist TRANSLATIONS and FORMAT-FN.  IGNORE lists text<br/>properties not to consider; any text properties that are neither ignored nor<br/>listed in TRANSLATIONS are warned about.<br/>If you actually want to modify the region, give the return value of this<br/>function to `format-insert-annotations'.<br/><br/>Format of the TRANSLATIONS argument:<br/><br/>Each element is a list whose car is a PROPERTY, and the following<br/>elements have the form (VALUE ANNOTATIONS...).<br/>Whenever the property takes on the value VALUE, the annotations<br/>(as formatted by FORMAT-FN) are inserted into the file.<br/>When the property stops having that value, the matching negated annotation<br/>will be inserted (it may actually be closed earlier and reopened, if<br/>necessary, to keep proper nesting).<br/><br/>If VALUE is a list, then each element of the list is dealt with<br/>separately.<br/><br/>If a VALUE is numeric, then it is assumed that there is a single annotation<br/>and each occurrence of it increments the value of the property by that number.<br/>Thus, given the entry (left-margin (4 "indent")), if the left margin<br/>changes from 4 to 12, two <indent> annotations will be generated.<br/><br/>If the VALUE is nil, then instead of annotations, a function should be<br/>specified.  This function is used as a default: it is called for all<br/>transitions not explicitly listed in the table.  The function is called with<br/>two arguments, the OLD and NEW values of the property.  It should return<br/>a cons cell (CLOSE . OPEN) as `format-annotate-single-property-change' does.<br/><br/>The same TRANSLATIONS structure can be used in reverse for reading files.
+<strong>format-annotate-region</strong> is a compiled Lisp function in `<code>format.el</code>'.<br/>
+<br/>
+(format-annotate-region FROM TO TRANSLATIONS FORMAT-FN IGNORE)<br/>
+<br/>
+Generate annotations for text properties in the region.<br/>
+Search for changes between FROM and TO, and describe them with a list of<br/>
+annotations as defined by alist TRANSLATIONS and FORMAT-FN.  IGNORE lists text<br/>
+properties not to consider; any text properties that are neither ignored nor<br/>
+listed in TRANSLATIONS are warned about.<br/>
+If you actually want to modify the region, give the return value of this<br/>
+function to `format-insert-annotations'.<br/>
+<br/>
+Format of the TRANSLATIONS argument:<br/>
+<br/>
+Each element is a list whose car is a PROPERTY, and the following<br/>
+elements have the form (VALUE ANNOTATIONS...).<br/>
+Whenever the property takes on the value VALUE, the annotations<br/>
+(as formatted by FORMAT-FN) are inserted into the file.<br/>
+When the property stops having that value, the matching negated annotation<br/>
+will be inserted (it may actually be closed earlier and reopened, if<br/>
+necessary, to keep proper nesting).<br/>
+<br/>
+If VALUE is a list, then each element of the list is dealt with<br/>
+separately.<br/>
+<br/>
+If a VALUE is numeric, then it is assumed that there is a single annotation<br/>
+and each occurrence of it increments the value of the property by that number.<br/>
+Thus, given the entry (left-margin (4 "indent")), if the left margin<br/>
+changes from 4 to 12, two <indent> annotations will be generated.<br/>
+<br/>
+If the VALUE is nil, then instead of annotations, a function should be<br/>
+specified.  This function is used as a default: it is called for all<br/>
+transitions not explicitly listed in the table.  The function is called with<br/>
+two arguments, the OLD and NEW values of the property.  It should return<br/>
+a cons cell (CLOSE . OPEN) as `format-annotate-single-property-change' does.<br/>
+<br/>
+The same TRANSLATIONS structure can be used in reverse for reading files.

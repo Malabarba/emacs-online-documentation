@@ -1,1 +1,43 @@
-verilog-auto-insert-lisp is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-insert-lisp)<br/><br/>Expand AUTOINSERTLISP statements, as part of M-x verilog-auto.<br/>The Lisp code provided is called, and the Lisp code calls<br/>`insert` to insert text into the current file beginning on the<br/>line after the AUTOINSERTLISP.<br/><br/>See also AUTO_LISP, which takes a Lisp expression and evaluates<br/>it during `verilog-auto-inst' but does not insert any text.<br/><br/>An example:<br/><br/>	module ExampInsertLisp;<br/>	   /*AUTOINSERTLISP(my-verilog-insert-hello "world")*/<br/>	endmodule<br/><br/>	// For this example we declare the function in the<br/>	// module's file itself.  Often you'd define it instead<br/>	// in a site-start.el or init file.<br/>	/*<br/>	 Local Variables:<br/>	 eval:<br/>	   (defun my-verilog-insert-hello (who)<br/>	     (insert (concat "initial $write(\"hello " who "\");\n")))<br/>	 End:<br/>	*/<br/><br/>Typing M-x verilog-auto will call my-verilog-insert-hello and<br/>expand the above into:<br/><br/>	// Beginning of automatic insert lisp<br/>	initial $write("hello world");<br/>	// End of automatics<br/><br/>You can also call an external program and insert the returned<br/>text:<br/><br/>	/*AUTOINSERTLISP(insert (shell-command-to-string "echo //hello"))*/<br/>	// Beginning of automatic insert lisp<br/>	//hello<br/>	// End of automatics
+<strong>verilog-auto-insert-lisp</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-insert-lisp)<br/>
+<br/>
+Expand AUTOINSERTLISP statements, as part of M-x verilog-auto.<br/>
+The Lisp code provided is called, and the Lisp code calls<br/>
+`insert` to insert text into the current file beginning on the<br/>
+line after the AUTOINSERTLISP.<br/>
+<br/>
+See also AUTO_LISP, which takes a Lisp expression and evaluates<br/>
+it during `verilog-auto-inst' but does not insert any text.<br/>
+<br/>
+An example:<br/>
+<br/>
+	module ExampInsertLisp;<br/>
+	   /*AUTOINSERTLISP(my-verilog-insert-hello "world")*/<br/>
+	endmodule<br/>
+<br/>
+	// For this example we declare the function in the<br/>
+	// module's file itself.  Often you'd define it instead<br/>
+	// in a site-start.el or init file.<br/>
+	/*<br/>
+	 Local Variables:<br/>
+	 eval:<br/>
+	   (defun my-verilog-insert-hello (who)<br/>
+	     (insert (concat "initial $write(\"hello " who "\");\n")))<br/>
+	 End:<br/>
+	*/<br/>
+<br/>
+Typing M-x verilog-auto will call my-verilog-insert-hello and<br/>
+expand the above into:<br/>
+<br/>
+	// Beginning of automatic insert lisp<br/>
+	initial $write("hello world");<br/>
+	// End of automatics<br/>
+<br/>
+You can also call an external program and insert the returned<br/>
+text:<br/>
+<br/>
+	/*AUTOINSERTLISP(insert (shell-command-to-string "echo //hello"))*/<br/>
+	// Beginning of automatic insert lisp<br/>
+	//hello<br/>
+	// End of automatics

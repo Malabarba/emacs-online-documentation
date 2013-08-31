@@ -1,1 +1,49 @@
-org-agenda-clock-consistency-checks is a variable defined in `org-agenda.el'.<br/>Its value is<br/>(:max-duration "10:00" :min-duration 0 :max-gap "0:05" :gap-ok-around<br/>	       ("4:00")<br/>	       :default-face<br/>	       ((:background "DarkRed")<br/>		(:foreground "white"))<br/>	       :overlap-face nil :gap-face nil :no-end-time-face nil :long-face nil :short-face nil)<br/><br/><br/>Documentation:<br/>This is a property list, with the following keys:<br/><br/>:max-duration    Mark clocking chunks that are longer than this time.<br/>                 This is a time string like "HH:MM", or the number<br/>                 of minutes as an integer.<br/><br/>:min-duration    Mark clocking chunks that are shorter that this.<br/>                 This is a time string like "HH:MM", or the number<br/>                 of minutes as an integer.<br/><br/>:max-gap         Mark gaps between clocking chunks that are longer than<br/>                 this duration.  A number of minutes, or a string<br/>                 like "HH:MM".<br/><br/>:gap-ok-around   List of times during the day which are usually not working<br/>                 times.  When a gap is detected, but the gap contains any<br/>                 of these times, the gap is *not* reported.  For example,<br/>                 if this is ("4:00" "13:00") then gaps that contain<br/>                 4:00 in the morning (i.e. the night) and 13:00<br/>                 (i.e. a typical lunch time) do not cause a warning.<br/>                 You should have at least one time during the night in this<br/>                 list, or otherwise the first task each morning will trigger<br/>                 a warning because it follows a long gap.<br/><br/>Furthermore, the following properties can be used to define faces for<br/>issue display.<br/><br/>:default-face         the default face, if the specific face is undefined<br/>:overlap-face         face for overlapping clocks<br/>:gap-face             face for gaps between clocks<br/>:no-end-time-face     face for incomplete clocks<br/>:long-face            face for clock intervals that are too long<br/>:short-face           face for clock intervals that are too short<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>org-agenda-clock-consistency-checks</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
+Its value is<br/>
+(:max-duration "10:00" :min-duration 0 :max-gap "0:05" :gap-ok-around<br/>
+	       ("4:00")<br/>
+	       :default-face<br/>
+	       ((:background "DarkRed")<br/>
+		(:foreground "white"))<br/>
+	       :overlap-face nil :gap-face nil :no-end-time-face nil :long-face nil :short-face nil)<br/>
+<br/>
+<br/>
+Documentation:<br/>
+This is a property list, with the following keys:<br/>
+<br/>
+:max-duration    Mark clocking chunks that are longer than this time.<br/>
+                 This is a time string like "HH:MM", or the number<br/>
+                 of minutes as an integer.<br/>
+<br/>
+:min-duration    Mark clocking chunks that are shorter that this.<br/>
+                 This is a time string like "HH:MM", or the number<br/>
+                 of minutes as an integer.<br/>
+<br/>
+:max-gap         Mark gaps between clocking chunks that are longer than<br/>
+                 this duration.  A number of minutes, or a string<br/>
+                 like "HH:MM".<br/>
+<br/>
+:gap-ok-around   List of times during the day which are usually not working<br/>
+                 times.  When a gap is detected, but the gap contains any<br/>
+                 of these times, the gap is *not* reported.  For example,<br/>
+                 if this is ("4:00" "13:00") then gaps that contain<br/>
+                 4:00 in the morning (i.e. the night) and 13:00<br/>
+                 (i.e. a typical lunch time) do not cause a warning.<br/>
+                 You should have at least one time during the night in this<br/>
+                 list, or otherwise the first task each morning will trigger<br/>
+                 a warning because it follows a long gap.<br/>
+<br/>
+Furthermore, the following properties can be used to define faces for<br/>
+issue display.<br/>
+<br/>
+:default-face         the default face, if the specific face is undefined<br/>
+:overlap-face         face for overlapping clocks<br/>
+:gap-face             face for gaps between clocks<br/>
+:no-end-time-face     face for incomplete clocks<br/>
+:long-face            face for clock intervals that are too long<br/>
+:short-face           face for clock intervals that are too short<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

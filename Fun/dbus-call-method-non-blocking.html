@@ -1,1 +1,74 @@
-dbus-call-method-non-blocking is an alias for `dbus-call-method' in `dbus.el'.<br/><br/>(dbus-call-method-non-blocking BUS SERVICE PATH INTERFACE METHOD &rest ARGS)<br/><br/>This function is obsolete since 24.3;<br/>use `dbus-call-method' instead.<br/><br/>Call METHOD on the D-Bus BUS.<br/><br/>BUS is either a Lisp symbol, `:system' or `:session', or a string<br/>denoting the bus address.<br/><br/>SERVICE is the D-Bus service name to be used.  PATH is the D-Bus<br/>object path SERVICE is registered at.  INTERFACE is an interface<br/>offered by SERVICE.  It must provide METHOD.<br/><br/>If the parameter `:timeout' is given, the following integer TIMEOUT<br/>specifies the maximum number of milliseconds the method call must<br/>return.  The default value is 25,000.  If the method call doesn't<br/>return in time, a D-Bus error is raised.<br/><br/>All other arguments ARGS are passed to METHOD as arguments.  They are<br/>converted into D-Bus types via the following rules:<br/><br/>  t and nil => DBUS_TYPE_BOOLEAN<br/>  number    => DBUS_TYPE_UINT32<br/>  integer   => DBUS_TYPE_INT32<br/>  float     => DBUS_TYPE_DOUBLE<br/>  string    => DBUS_TYPE_STRING<br/>  list      => DBUS_TYPE_ARRAY<br/><br/>All arguments can be preceded by a type symbol.  For details about<br/>type symbols, see Info node `(dbus)Type Conversion'.<br/><br/>`dbus-call-method' returns the resulting values of METHOD as a list of<br/>Lisp objects.  The type conversion happens the other direction as for<br/>input arguments.  It follows the mapping rules:<br/><br/>  DBUS_TYPE_BOOLEAN     => t or nil<br/>  DBUS_TYPE_BYTE        => number<br/>  DBUS_TYPE_UINT16      => number<br/>  DBUS_TYPE_INT16       => integer<br/>  DBUS_TYPE_UINT32      => number or float<br/>  DBUS_TYPE_UNIX_FD     => number or float<br/>  DBUS_TYPE_INT32       => integer or float<br/>  DBUS_TYPE_UINT64      => number or float<br/>  DBUS_TYPE_INT64       => integer or float<br/>  DBUS_TYPE_DOUBLE      => float<br/>  DBUS_TYPE_STRING      => string<br/>  DBUS_TYPE_OBJECT_PATH => string<br/>  DBUS_TYPE_SIGNATURE   => string<br/>  DBUS_TYPE_ARRAY       => list<br/>  DBUS_TYPE_VARIANT     => list<br/>  DBUS_TYPE_STRUCT      => list<br/>  DBUS_TYPE_DICT_ENTRY  => list<br/><br/>Example:<br/><br/>(dbus-call-method<br/>  :session "org.gnome.seahorse" "/org/gnome/seahorse/keys/openpgp"<br/>  "org.gnome.seahorse.Keys" "GetKeyField"<br/>  "openpgp:657984B8C7A966DD" "simple-name")<br/><br/>  => (t ("Philip R. Zimmermann"))<br/><br/>If the result of the METHOD call is just one value, the converted Lisp<br/>object is returned instead of a list containing this single Lisp object.<br/><br/>(dbus-call-method<br/>  :system "org.freedesktop.Hal" "/org/freedesktop/Hal/devices/computer"<br/>  "org.freedesktop.Hal.Device" "GetPropertyString"<br/>  "system.kernel.machine")<br/><br/>  => "i686"
+<strong>dbus-call-method-non-blocking</strong> is an alias for `dbus-call-method' in `<code>dbus.el</code>'.<br/>
+<br/>
+(dbus-call-method-non-blocking BUS SERVICE PATH INTERFACE METHOD &rest ARGS)<br/>
+<br/>
+This function is obsolete since 24.3;<br/>
+use `dbus-call-method' instead.<br/>
+<br/>
+Call METHOD on the D-Bus BUS.<br/>
+<br/>
+BUS is either a Lisp symbol, `:system' or `:session', or a string<br/>
+denoting the bus address.<br/>
+<br/>
+SERVICE is the D-Bus service name to be used.  PATH is the D-Bus<br/>
+object path SERVICE is registered at.  INTERFACE is an interface<br/>
+offered by SERVICE.  It must provide METHOD.<br/>
+<br/>
+If the parameter `:timeout' is given, the following integer TIMEOUT<br/>
+specifies the maximum number of milliseconds the method call must<br/>
+return.  The default value is 25,000.  If the method call doesn't<br/>
+return in time, a D-Bus error is raised.<br/>
+<br/>
+All other arguments ARGS are passed to METHOD as arguments.  They are<br/>
+converted into D-Bus types via the following rules:<br/>
+<br/>
+  t and nil => DBUS_TYPE_BOOLEAN<br/>
+  number    => DBUS_TYPE_UINT32<br/>
+  integer   => DBUS_TYPE_INT32<br/>
+  float     => DBUS_TYPE_DOUBLE<br/>
+  string    => DBUS_TYPE_STRING<br/>
+  list      => DBUS_TYPE_ARRAY<br/>
+<br/>
+All arguments can be preceded by a type symbol.  For details about<br/>
+type symbols, see Info node `(dbus)Type Conversion'.<br/>
+<br/>
+`dbus-call-method' returns the resulting values of METHOD as a list of<br/>
+Lisp objects.  The type conversion happens the other direction as for<br/>
+input arguments.  It follows the mapping rules:<br/>
+<br/>
+  DBUS_TYPE_BOOLEAN     => t or nil<br/>
+  DBUS_TYPE_BYTE        => number<br/>
+  DBUS_TYPE_UINT16      => number<br/>
+  DBUS_TYPE_INT16       => integer<br/>
+  DBUS_TYPE_UINT32      => number or float<br/>
+  DBUS_TYPE_UNIX_FD     => number or float<br/>
+  DBUS_TYPE_INT32       => integer or float<br/>
+  DBUS_TYPE_UINT64      => number or float<br/>
+  DBUS_TYPE_INT64       => integer or float<br/>
+  DBUS_TYPE_DOUBLE      => float<br/>
+  DBUS_TYPE_STRING      => string<br/>
+  DBUS_TYPE_OBJECT_PATH => string<br/>
+  DBUS_TYPE_SIGNATURE   => string<br/>
+  DBUS_TYPE_ARRAY       => list<br/>
+  DBUS_TYPE_VARIANT     => list<br/>
+  DBUS_TYPE_STRUCT      => list<br/>
+  DBUS_TYPE_DICT_ENTRY  => list<br/>
+<br/>
+Example:<br/>
+<br/>
+(dbus-call-method<br/>
+  :session "org.gnome.seahorse" "/org/gnome/seahorse/keys/openpgp"<br/>
+  "org.gnome.seahorse.Keys" "GetKeyField"<br/>
+  "openpgp:657984B8C7A966DD" "simple-name")<br/>
+<br/>
+  => (t ("Philip R. Zimmermann"))<br/>
+<br/>
+If the result of the METHOD call is just one value, the converted Lisp<br/>
+object is returned instead of a list containing this single Lisp object.<br/>
+<br/>
+(dbus-call-method<br/>
+  :system "org.freedesktop.Hal" "/org/freedesktop/Hal/devices/computer"<br/>
+  "org.freedesktop.Hal.Device" "GetPropertyString"<br/>
+  "system.kernel.machine")<br/>
+<br/>
+  => "i686"

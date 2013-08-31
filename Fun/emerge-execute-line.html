@@ -1,1 +1,18 @@
-emerge-execute-line is an interactive compiled Lisp function in `emerge.el'.<br/><br/>(emerge-execute-line)<br/><br/>Run Emerge using files named in current text line.<br/>Looks in that line for whitespace-separated entries of these forms:<br/>	a=file1<br/>	b=file2<br/>	ancestor=file3<br/>	output=file4<br/>to specify the files to use in Emerge.<br/><br/>In addition, if only one of `a=file' or `b=file' is present, and `output=file'<br/>is present:<br/>If `emerge-execute-line-deletions' is non-nil and `ancestor=file' is present,<br/>it is assumed that the file in question has been deleted, and it is<br/>not copied to the output file.<br/>Otherwise, the A or B file present is copied to the output file.
+<strong>emerge-execute-line</strong> is an interactive compiled Lisp function in `<code>emerge.el</code>'.<br/>
+<br/>
+(emerge-execute-line)<br/>
+<br/>
+Run Emerge using files named in current text line.<br/>
+Looks in that line for whitespace-separated entries of these forms:<br/>
+	a=file1<br/>
+	b=file2<br/>
+	ancestor=file3<br/>
+	output=file4<br/>
+to specify the files to use in Emerge.<br/>
+<br/>
+In addition, if only one of `a=file' or `b=file' is present, and `output=file'<br/>
+is present:<br/>
+If `emerge-execute-line-deletions' is non-nil and `ancestor=file' is present,<br/>
+it is assumed that the file in question has been deleted, and it is<br/>
+not copied to the output file.<br/>
+Otherwise, the A or B file present is copied to the output file.

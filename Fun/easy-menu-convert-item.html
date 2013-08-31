@@ -1,1 +1,10 @@
-easy-menu-convert-item is a compiled Lisp function in `easymenu.el'.<br/><br/>(easy-menu-convert-item ITEM)<br/><br/>Memoize the value returned by `easy-menu-convert-item-1' called on ITEM.<br/>This makes key-shortcut-caching work a *lot* better when this<br/>conversion is done from within a filter.<br/>This also helps when the NAME of the entry is recreated each time:<br/>since the menu is built and traversed separately, the lookup<br/>would always fail because the key is `equal' but not `eq'.
+<strong>easy-menu-convert-item</strong> is a compiled Lisp function in `<code>easymenu.el</code>'.<br/>
+<br/>
+(easy-menu-convert-item ITEM)<br/>
+<br/>
+Memoize the value returned by `easy-menu-convert-item-1' called on ITEM.<br/>
+This makes key-shortcut-caching work a *lot* better when this<br/>
+conversion is done from within a filter.<br/>
+This also helps when the NAME of the entry is recreated each time:<br/>
+since the menu is built and traversed separately, the lookup<br/>
+would always fail because the key is `equal' but not `eq'.

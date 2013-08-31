@@ -1,1 +1,30 @@
-allout-doublecheck-at-and-shallower is a variable defined in `allout.el'.<br/>Its value is 3<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Validate apparent topics of this depth and shallower as being non-aberrant.<br/><br/>Verified with `allout-aberrant-container-p'.  The usefulness of<br/>this check is limited to shallow depths, because the<br/>determination of aberrance is according to the mistaken item<br/>being followed by a legitimate item of excessively greater depth.<br/><br/>The classic example of a mistaken item, for a standard allout<br/>outline configuration, is a body line that begins with an '...'<br/>ellipsis.  This happens to contain a legitimate depth-2 header<br/>prefix, constituted by two '..' dots at the beginning of the<br/>line.  The only thing that can distinguish it *in principle* from<br/>a legitimate one is if the following real header is at a depth<br/>that is discontinuous from the depth of 2 implied by the<br/>ellipsis, ie depth 4 or more.  As the depth being tested gets<br/>greater, the likelihood of this kind of disqualification is<br/>lower, and the usefulness of this test is lower.<br/><br/>Extending the depth of the doublecheck increases the amount it is<br/>applied, increasing the cost of the test - on casual estimation,<br/>for outlines with many deep topics, geometrically (O(n)?).<br/>Taken together with decreasing likelihood that the test will be<br/>useful at greater depths, more modest doublecheck limits are more<br/>suitably economical.
+<strong>allout-doublecheck-at-and-shallower</strong> is a variable defined in `<code>allout.el</code>'.<br/>
+Its value is 3<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Validate apparent topics of this depth and shallower as being non-aberrant.<br/>
+<br/>
+Verified with `allout-aberrant-container-p'.  The usefulness of<br/>
+this check is limited to shallow depths, because the<br/>
+determination of aberrance is according to the mistaken item<br/>
+being followed by a legitimate item of excessively greater depth.<br/>
+<br/>
+The classic example of a mistaken item, for a standard allout<br/>
+outline configuration, is a body line that begins with an '...'<br/>
+ellipsis.  This happens to contain a legitimate depth-2 header<br/>
+prefix, constituted by two '..' dots at the beginning of the<br/>
+line.  The only thing that can distinguish it *in principle* from<br/>
+a legitimate one is if the following real header is at a depth<br/>
+that is discontinuous from the depth of 2 implied by the<br/>
+ellipsis, ie depth 4 or more.  As the depth being tested gets<br/>
+greater, the likelihood of this kind of disqualification is<br/>
+lower, and the usefulness of this test is lower.<br/>
+<br/>
+Extending the depth of the doublecheck increases the amount it is<br/>
+applied, increasing the cost of the test - on casual estimation,<br/>
+for outlines with many deep topics, geometrically (O(n)?).<br/>
+Taken together with decreasing likelihood that the test will be<br/>
+useful at greater depths, more modest doublecheck limits are more<br/>
+suitably economical.

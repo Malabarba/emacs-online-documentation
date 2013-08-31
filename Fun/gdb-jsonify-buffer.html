@@ -1,1 +1,19 @@
-gdb-jsonify-buffer is a compiled Lisp function in `gdb-mi.el'.<br/><br/>(gdb-jsonify-buffer &optional FIX-KEY FIX-LIST)<br/><br/>Prepare GDB/MI output in current buffer for parsing with `json-read'.<br/><br/>Field names are wrapped in double quotes and equal signs are<br/>replaced with semicolons.<br/><br/>If FIX-KEY is non-nil, strip all "FIX-KEY=" occurrences from<br/>partial output. This is used to get rid of useless keys in lists<br/>in MI messages, e.g.: [key=.., key=..]. -stack-list-frames and<br/>-break-info are examples of MI commands which issue such<br/>responses.<br/><br/>If FIX-LIST is non-nil, "FIX-LIST={..}" is replaced with<br/>"FIX-LIST=[..]" prior to parsing. This is used to fix broken<br/>-break-info output when it contains breakpoint script field<br/>incompatible with GDB/MI output syntax.
+<strong>gdb-jsonify-buffer</strong> is a compiled Lisp function in `<code>gdb-mi.el</code>'.<br/>
+<br/>
+(gdb-jsonify-buffer &optional FIX-KEY FIX-LIST)<br/>
+<br/>
+Prepare GDB/MI output in current buffer for parsing with `json-read'.<br/>
+<br/>
+Field names are wrapped in double quotes and equal signs are<br/>
+replaced with semicolons.<br/>
+<br/>
+If FIX-KEY is non-nil, strip all "FIX-KEY=" occurrences from<br/>
+partial output. This is used to get rid of useless keys in lists<br/>
+in MI messages, e.g.: [key=.., key=..]. -stack-list-frames and<br/>
+-break-info are examples of MI commands which issue such<br/>
+responses.<br/>
+<br/>
+If FIX-LIST is non-nil, "FIX-LIST={..}" is replaced with<br/>
+"FIX-LIST=[..]" prior to parsing. This is used to fix broken<br/>
+-break-info output when it contains breakpoint script field<br/>
+incompatible with GDB/MI output syntax.

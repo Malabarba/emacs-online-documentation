@@ -1,1 +1,52 @@
-customize-package-emacs-version-alist is a variable defined in `cus-edit.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Alist mapping versions of a package to Emacs versions.<br/>We use this for packages that have their own names, but are released<br/>as part of Emacs itself.<br/><br/>Each elements looks like this:<br/><br/>     (PACKAGE (PVERSION . EVERSION)...)<br/><br/>Here PACKAGE is the name of a package, as a symbol.  After<br/>PACKAGE come one or more elements, each associating a<br/>package version PVERSION with the first Emacs version<br/>EVERSION in which it (or a subsequent version of PACKAGE)<br/>was first released.  Both PVERSION and EVERSION are strings.<br/>PVERSION should be a string that this package used in<br/>the :package-version keyword for `defcustom', `defgroup',<br/>and `defface'.<br/><br/>For example, the MH-E package updates this alist as follows:<br/><br/>     (add-to-list 'customize-package-emacs-version-alist<br/>                  '(MH-E ("6.0" . "22.1") ("6.1" . "22.1")<br/>                         ("7.0" . "22.1") ("7.1" . "22.1")<br/>                         ("7.2" . "22.1") ("7.3" . "22.1")<br/>                         ("7.4" . "22.1") ("8.0" . "22.1")))<br/><br/>The value of PACKAGE needs to be unique and it needs to match the<br/>PACKAGE value appearing in the :package-version keyword.  Since<br/>the user might see the value in a error message, a good choice is<br/>the official name of the package, such as MH-E or Gnus.<br/><br/>Value: ((ReST<br/>  ("1.0.0" . "24.3")<br/>  ("1.1.0" . "24.3")<br/>  ("1.2.0" . "24.3")<br/>  ("1.2.1" . "24.3")<br/>  ("1.3.0" . "24.3")<br/>  ("1.3.1" . "24.3")<br/>  ("1.4.0" . "24.3"))<br/> (MH-E<br/>  ("6.0" . "22.1")<br/>  ("6.1" . "22.1")<br/>  ("7.0" . "22.1")<br/>  ("7.1" . "22.1")<br/>  ("7.2" . "22.1")<br/>  ("7.3" . "22.1")<br/>  ("7.4" . "22.1")<br/>  ("8.0" . "22.1")))<br/><br/>
+<strong>customize-package-emacs-version-alist</strong> is a variable defined in `<code>cus-edit.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Alist mapping versions of a package to Emacs versions.<br/>
+We use this for packages that have their own names, but are released<br/>
+as part of Emacs itself.<br/>
+<br/>
+Each elements looks like this:<br/>
+<br/>
+     (PACKAGE (PVERSION . EVERSION)...)<br/>
+<br/>
+Here PACKAGE is the name of a package, as a symbol.  After<br/>
+PACKAGE come one or more elements, each associating a<br/>
+package version PVERSION with the first Emacs version<br/>
+EVERSION in which it (or a subsequent version of PACKAGE)<br/>
+was first released.  Both PVERSION and EVERSION are strings.<br/>
+PVERSION should be a string that this package used in<br/>
+the :package-version keyword for `defcustom', `defgroup',<br/>
+and `defface'.<br/>
+<br/>
+For example, the MH-E package updates this alist as follows:<br/>
+<br/>
+     (add-to-list 'customize-package-emacs-version-alist<br/>
+                  '(MH-E ("6.0" . "22.1") ("6.1" . "22.1")<br/>
+                         ("7.0" . "22.1") ("7.1" . "22.1")<br/>
+                         ("7.2" . "22.1") ("7.3" . "22.1")<br/>
+                         ("7.4" . "22.1") ("8.0" . "22.1")))<br/>
+<br/>
+The value of PACKAGE needs to be unique and it needs to match the<br/>
+PACKAGE value appearing in the :package-version keyword.  Since<br/>
+the user might see the value in a error message, a good choice is<br/>
+the official name of the package, such as MH-E or Gnus.<br/>
+<br/>
+Value: ((ReST<br/>
+  ("1.0.0" . "24.3")<br/>
+  ("1.1.0" . "24.3")<br/>
+  ("1.2.0" . "24.3")<br/>
+  ("1.2.1" . "24.3")<br/>
+  ("1.3.0" . "24.3")<br/>
+  ("1.3.1" . "24.3")<br/>
+  ("1.4.0" . "24.3"))<br/>
+ (MH-E<br/>
+  ("6.0" . "22.1")<br/>
+  ("6.1" . "22.1")<br/>
+  ("7.0" . "22.1")<br/>
+  ("7.1" . "22.1")<br/>
+  ("7.2" . "22.1")<br/>
+  ("7.3" . "22.1")<br/>
+  ("7.4" . "22.1")<br/>
+  ("8.0" . "22.1")))<br/>
+<br/>

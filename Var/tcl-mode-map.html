@@ -1,1 +1,54 @@
-tcl-mode-map is a variable defined in `tcl.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap used in `tcl-mode'.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (Tcl menu-item "Tcl"<br/>		(keymap "Tcl"<br/>			(Beginning\ of\ function menu-item "Beginning of function" beginning-of-defun)<br/>			(End\ of\ function menu-item "End of function" end-of-defun)<br/>			(Mark\ function menu-item "Mark function" mark-defun)<br/>			(Indent\ region menu-item "Indent region" indent-region :enable<br/>					(mark t))<br/>			(Comment\ region menu-item "Comment region" comment-region :enable<br/>					 (mark t))<br/>			(Uncomment\ region menu-item "Uncomment region" uncomment-region :enable<br/>					   (mark t))<br/>			(nil menu-item "----")<br/>			(Show\ Tcl\ process\ buffer menu-item "Show Tcl process buffer" inferior-tcl)<br/>			(Send\ function\ to\ Tcl\ process menu-item "Send function to Tcl process" tcl-eval-defun :enable<br/>							  (and inferior-tcl-buffer<br/>							       (get-buffer inferior-tcl-buffer)))<br/>			(Send\ region\ to\ Tcl\ process menu-item "Send region to Tcl process" tcl-eval-region :enable<br/>							(and inferior-tcl-buffer<br/>							     (get-buffer inferior-tcl-buffer)))<br/>			(Send\ file\ to\ Tcl\ process menu-item "Send file to Tcl process" tcl-load-file :enable<br/>						      (and inferior-tcl-buffer<br/>							   (get-buffer inferior-tcl-buffer)))<br/>			(Restart\ Tcl\ process\ with\ file menu-item "Restart Tcl process with file" tcl-restart-with-file)<br/>			(nil-12 menu-item "----")<br/>			(Tcl\ help menu-item "Tcl help" tcl-help-on-word :enable tcl-help-directory-list))))<br/> (3 keymap<br/>    (19 . switch-to-tcl)<br/>    (24 . tcl-eval-region)<br/>    (20 . inferior-tcl)<br/>    (6 . tcl-load-file)<br/>    (22 . tcl-eval-defun)<br/>    (9 . tcl-help-on-word))<br/> (9 . tcl-indent-command)<br/> (127 . backward-delete-char-untabify)<br/> (27 keymap<br/>     (24 . tcl-eval-defun)<br/>     (17 . tcl-indent-exp))<br/> (35 . tcl-electric-hash)<br/> (59 . tcl-electric-char)<br/> (93 . tcl-electric-char)<br/> (91 . tcl-electric-char)<br/> (125 . tcl-electric-brace)<br/> (123 . tcl-electric-char))<br/><br/>
+<strong>tcl-mode-map</strong> is a variable defined in `<code>tcl.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap used in `tcl-mode'.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (Tcl menu-item "Tcl"<br/>
+		(keymap "Tcl"<br/>
+			(Beginning\ of\ function menu-item "Beginning of function" beginning-of-defun)<br/>
+			(End\ of\ function menu-item "End of function" end-of-defun)<br/>
+			(Mark\ function menu-item "Mark function" mark-defun)<br/>
+			(Indent\ region menu-item "Indent region" indent-region :enable<br/>
+					(mark t))<br/>
+			(Comment\ region menu-item "Comment region" comment-region :enable<br/>
+					 (mark t))<br/>
+			(Uncomment\ region menu-item "Uncomment region" uncomment-region :enable<br/>
+					   (mark t))<br/>
+			(nil menu-item "----")<br/>
+			(Show\ Tcl\ process\ buffer menu-item "Show Tcl process buffer" inferior-tcl)<br/>
+			(Send\ function\ to\ Tcl\ process menu-item "Send function to Tcl process" tcl-eval-defun :enable<br/>
+							  (and inferior-tcl-buffer<br/>
+							       (get-buffer inferior-tcl-buffer)))<br/>
+			(Send\ region\ to\ Tcl\ process menu-item "Send region to Tcl process" tcl-eval-region :enable<br/>
+							(and inferior-tcl-buffer<br/>
+							     (get-buffer inferior-tcl-buffer)))<br/>
+			(Send\ file\ to\ Tcl\ process menu-item "Send file to Tcl process" tcl-load-file :enable<br/>
+						      (and inferior-tcl-buffer<br/>
+							   (get-buffer inferior-tcl-buffer)))<br/>
+			(Restart\ Tcl\ process\ with\ file menu-item "Restart Tcl process with file" tcl-restart-with-file)<br/>
+			(nil-12 menu-item "----")<br/>
+			(Tcl\ help menu-item "Tcl help" tcl-help-on-word :enable tcl-help-directory-list))))<br/>
+ (3 keymap<br/>
+    (19 . switch-to-tcl)<br/>
+    (24 . tcl-eval-region)<br/>
+    (20 . inferior-tcl)<br/>
+    (6 . tcl-load-file)<br/>
+    (22 . tcl-eval-defun)<br/>
+    (9 . tcl-help-on-word))<br/>
+ (9 . tcl-indent-command)<br/>
+ (127 . backward-delete-char-untabify)<br/>
+ (27 keymap<br/>
+     (24 . tcl-eval-defun)<br/>
+     (17 . tcl-indent-exp))<br/>
+ (35 . tcl-electric-hash)<br/>
+ (59 . tcl-electric-char)<br/>
+ (93 . tcl-electric-char)<br/>
+ (91 . tcl-electric-char)<br/>
+ (125 . tcl-electric-brace)<br/>
+ (123 . tcl-electric-char))<br/>
+<br/>

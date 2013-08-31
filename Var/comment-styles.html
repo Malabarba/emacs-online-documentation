@@ -1,1 +1,57 @@
-comment-styles is a variable defined in `newcomment.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Comment region style definitions.<br/>Each style is defined with a form (STYLE . (MULTI ALIGN EXTRA INDENT DOC)).<br/>DOC should succinctly describe the style.<br/>STYLE should be a mnemonic symbol.<br/>MULTI specifies that comments are allowed to span multiple lines.<br/>  e.g. in C it comments regions as<br/>     /* blabla<br/>      * bli */<br/>  rather than<br/>     /* blabla */<br/>     /* bli */<br/>  if `comment-end' is empty, this has no effect.<br/><br/>ALIGN specifies that the `comment-end' markers should be aligned.<br/>  e.g. in C it comments regions as<br/>     /* blabla */<br/>     /* bli    */<br/>  rather than<br/>     /* blabla */<br/>     /* bli */<br/>  if `comment-end' is empty, this has no effect, unless EXTRA is also set,<br/>  in which case the comment gets wrapped in a box.<br/><br/>EXTRA specifies that an extra line should be used before and after the<br/>  region to comment (to put the `comment-end' and `comment-start').<br/>  e.g. in C it comments regions as<br/>     /*<br/>      * blabla<br/>      * bli<br/>      */<br/>  rather than<br/>     /* blabla<br/>      * bli */<br/>  if the comment style is not multi line, this has no effect, unless ALIGN<br/>  is also set, in which case the comment gets wrapped in a box.<br/><br/>INDENT specifies that the `comment-start' markers should not be put at the<br/>  left margin but at the current indentation of the region to comment.<br/>If INDENT is `multi-char', that means indent multi-character<br/>  comment starters, but not one-character comment starters.<br/><br/>Value:<br/>((plain nil nil nil nil "Start in column 0 (do not indent), as in Emacs-20")<br/> (indent-or-triple nil nil nil multi-char "Start in column 0, but only for single-char starters")<br/> (indent nil nil nil t "Full comment per line, ends not aligned")<br/> (aligned nil t nil t "Full comment per line, ends aligned")<br/> (box nil t t t "Full comment per line, ends aligned, + top and bottom")<br/> (extra-line t nil t t "One comment for all lines, end on a line by itself")<br/> (multi-line t nil nil t "One comment for all lines, end on last commented line")<br/> (box-multi t t t t "One comment for all lines, + top and bottom"))<br/><br/>
+<strong>comment-styles</strong> is a variable defined in `<code>newcomment.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Comment region style definitions.<br/>
+Each style is defined with a form (STYLE . (MULTI ALIGN EXTRA INDENT DOC)).<br/>
+DOC should succinctly describe the style.<br/>
+STYLE should be a mnemonic symbol.<br/>
+MULTI specifies that comments are allowed to span multiple lines.<br/>
+  e.g. in C it comments regions as<br/>
+     /* blabla<br/>
+      * bli */<br/>
+  rather than<br/>
+     /* blabla */<br/>
+     /* bli */<br/>
+  if `comment-end' is empty, this has no effect.<br/>
+<br/>
+ALIGN specifies that the `comment-end' markers should be aligned.<br/>
+  e.g. in C it comments regions as<br/>
+     /* blabla */<br/>
+     /* bli    */<br/>
+  rather than<br/>
+     /* blabla */<br/>
+     /* bli */<br/>
+  if `comment-end' is empty, this has no effect, unless EXTRA is also set,<br/>
+  in which case the comment gets wrapped in a box.<br/>
+<br/>
+EXTRA specifies that an extra line should be used before and after the<br/>
+  region to comment (to put the `comment-end' and `comment-start').<br/>
+  e.g. in C it comments regions as<br/>
+     /*<br/>
+      * blabla<br/>
+      * bli<br/>
+      */<br/>
+  rather than<br/>
+     /* blabla<br/>
+      * bli */<br/>
+  if the comment style is not multi line, this has no effect, unless ALIGN<br/>
+  is also set, in which case the comment gets wrapped in a box.<br/>
+<br/>
+INDENT specifies that the `comment-start' markers should not be put at the<br/>
+  left margin but at the current indentation of the region to comment.<br/>
+If INDENT is `multi-char', that means indent multi-character<br/>
+  comment starters, but not one-character comment starters.<br/>
+<br/>
+Value:<br/>
+((plain nil nil nil nil "Start in column 0 (do not indent), as in Emacs-20")<br/>
+ (indent-or-triple nil nil nil multi-char "Start in column 0, but only for single-char starters")<br/>
+ (indent nil nil nil t "Full comment per line, ends not aligned")<br/>
+ (aligned nil t nil t "Full comment per line, ends aligned")<br/>
+ (box nil t t t "Full comment per line, ends aligned, + top and bottom")<br/>
+ (extra-line t nil t t "One comment for all lines, end on a line by itself")<br/>
+ (multi-line t nil nil t "One comment for all lines, end on last commented line")<br/>
+ (box-multi t t t t "One comment for all lines, + top and bottom"))<br/>
+<br/>

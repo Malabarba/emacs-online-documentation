@@ -1,1 +1,14 @@
-ses-relocate-formula is a compiled Lisp function in `ses.el'.<br/><br/>(ses-relocate-formula FORMULA STARTROW STARTCOL ROWINCR COLINCR)<br/><br/>Produce a copy of FORMULA where all symbols that refer to cells in row<br/>STARTROW or above, and col STARTCOL or above, are altered by adding ROWINCR<br/>and COLINCR.  STARTROW and STARTCOL are 0-based.  Example:<br/>	(ses-relocate-formula '(+ A1 B2 D3) 1 2 1 -1)<br/>	=> (+ A1 B2 C4)<br/>If ROWINCR or COLINCR is negative, references to cells being deleted are<br/>removed.  Example:<br/>	(ses-relocate-formula '(+ A1 B2 D3) 0 1 0 -1)<br/>	=> (+ A1 C3)<br/>Sets `ses-relocate-return' to 'delete if cell-references were removed.
+<strong>ses-relocate-formula</strong> is a compiled Lisp function in `<code>ses.el</code>'.<br/>
+<br/>
+(ses-relocate-formula FORMULA STARTROW STARTCOL ROWINCR COLINCR)<br/>
+<br/>
+Produce a copy of FORMULA where all symbols that refer to cells in row<br/>
+STARTROW or above, and col STARTCOL or above, are altered by adding ROWINCR<br/>
+and COLINCR.  STARTROW and STARTCOL are 0-based.  Example:<br/>
+	(ses-relocate-formula '(+ A1 B2 D3) 1 2 1 -1)<br/>
+	=> (+ A1 B2 C4)<br/>
+If ROWINCR or COLINCR is negative, references to cells being deleted are<br/>
+removed.  Example:<br/>
+	(ses-relocate-formula '(+ A1 B2 D3) 0 1 0 -1)<br/>
+	=> (+ A1 C3)<br/>
+Sets `ses-relocate-return' to 'delete if cell-references were removed.

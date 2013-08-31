@@ -1,1 +1,14 @@
-shell-filter-ctrl-a-ctrl-b is a compiled Lisp function in `shell.el'.<br/><br/>(shell-filter-ctrl-a-ctrl-b STRING)<br/><br/>Remove `^A' and `^B' characters from comint output.<br/><br/>Bash uses these characters as internal quoting characters in its<br/>prompt.  Due to a bug in some bash versions (including 2.03,<br/>2.04, and 2.05b), they may erroneously show up when bash is<br/>started with the `--noediting' option and Select Graphic<br/>Rendition (SGR) control sequences (formerly known as ANSI escape<br/>sequences) are used to color the prompt.<br/><br/>This function can be put on `comint-preoutput-filter-functions'.
+<strong>shell-filter-ctrl-a-ctrl-b</strong> is a compiled Lisp function in `<code>shell.el</code>'.<br/>
+<br/>
+(shell-filter-ctrl-a-ctrl-b STRING)<br/>
+<br/>
+Remove `^A' and `^B' characters from comint output.<br/>
+<br/>
+Bash uses these characters as internal quoting characters in its<br/>
+prompt.  Due to a bug in some bash versions (including 2.03,<br/>
+2.04, and 2.05b), they may erroneously show up when bash is<br/>
+started with the `--noediting' option and Select Graphic<br/>
+Rendition (SGR) control sequences (formerly known as ANSI escape<br/>
+sequences) are used to color the prompt.<br/>
+<br/>
+This function can be put on `comint-preoutput-filter-functions'.

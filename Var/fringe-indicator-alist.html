@@ -1,1 +1,34 @@
-fringe-indicator-alist is a variable defined in `C source code'.<br/>Its value is shown below.<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>Mapping from logical to physical fringe indicator bitmaps.<br/>The value is an alist where each element (INDICATOR . BITMAPS)<br/>specifies the fringe bitmaps used to display a specific logical<br/>fringe indicator.<br/><br/>INDICATOR specifies the logical indicator type which is one of the<br/>following symbols: `truncation' , `continuation', `overlay-arrow',<br/>`top', `bottom', `top-bottom', `up', `down', empty-line', or `unknown'.<br/><br/>BITMAPS is a list of symbols (LEFT RIGHT [LEFT1 RIGHT1]) which specifies<br/>the actual bitmap shown in the left or right fringe for the logical<br/>indicator.  LEFT and RIGHT are the bitmaps shown in the left and/or<br/>right fringe for the specific indicator.  The LEFT1 or RIGHT1 bitmaps<br/>are used only for the `bottom' and `top-bottom' indicators when the<br/>last (only) line has no final newline.  BITMAPS may also be a single<br/>symbol which is used in both left and right fringes.<br/><br/>Value: ((truncation left-arrow right-arrow)<br/> (continuation left-curly-arrow right-curly-arrow)<br/> (overlay-arrow . right-triangle)<br/> (up . up-arrow)<br/> (down . down-arrow)<br/> (top top-left-angle top-right-angle)<br/> (bottom bottom-left-angle bottom-right-angle top-right-angle top-left-angle)<br/> (top-bottom left-bracket right-bracket top-right-angle top-left-angle)<br/> (empty-line . empty-line)<br/> (unknown . question-mark))<br/><br/>
+<strong>fringe-indicator-alist</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+Mapping from logical to physical fringe indicator bitmaps.<br/>
+The value is an alist where each element (INDICATOR . BITMAPS)<br/>
+specifies the fringe bitmaps used to display a specific logical<br/>
+fringe indicator.<br/>
+<br/>
+INDICATOR specifies the logical indicator type which is one of the<br/>
+following symbols: `truncation' , `continuation', `overlay-arrow',<br/>
+`top', `bottom', `top-bottom', `up', `down', empty-line', or `unknown'.<br/>
+<br/>
+BITMAPS is a list of symbols (LEFT RIGHT [LEFT1 RIGHT1]) which specifies<br/>
+the actual bitmap shown in the left or right fringe for the logical<br/>
+indicator.  LEFT and RIGHT are the bitmaps shown in the left and/or<br/>
+right fringe for the specific indicator.  The LEFT1 or RIGHT1 bitmaps<br/>
+are used only for the `bottom' and `top-bottom' indicators when the<br/>
+last (only) line has no final newline.  BITMAPS may also be a single<br/>
+symbol which is used in both left and right fringes.<br/>
+<br/>
+Value: ((truncation left-arrow right-arrow)<br/>
+ (continuation left-curly-arrow right-curly-arrow)<br/>
+ (overlay-arrow . right-triangle)<br/>
+ (up . up-arrow)<br/>
+ (down . down-arrow)<br/>
+ (top top-left-angle top-right-angle)<br/>
+ (bottom bottom-left-angle bottom-right-angle top-right-angle top-left-angle)<br/>
+ (top-bottom left-bracket right-bracket top-right-angle top-left-angle)<br/>
+ (empty-line . empty-line)<br/>
+ (unknown . question-mark))<br/>
+<br/>

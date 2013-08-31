@@ -1,1 +1,29 @@
-org-add-link-type is a compiled Lisp function in `org.el'.<br/><br/>(org-add-link-type TYPE &optional FOLLOW EXPORT)<br/><br/>Add TYPE to the list of `org-link-types'.<br/>Re-compute all regular expressions depending on `org-link-types'<br/><br/>FOLLOW and EXPORT are two functions.<br/><br/>FOLLOW should take the link path as the single argument and do whatever<br/>is necessary to follow the link, for example find a file or display<br/>a mail message.<br/><br/>EXPORT should format the link path for export to one of the export formats.<br/>It should be a function accepting three arguments:<br/><br/>  path    the path of the link, the text after the prefix (like "http:")<br/>  desc    the description of the link, if any, or a description added by<br/>          org-export-normalize-links if there is none<br/>  format  the export format, a symbol like `html' or `latex' or `ascii'..<br/><br/>The function may use the FORMAT information to return different values<br/>depending on the format.  The return value will be put literally into<br/>the exported file.  If the return value is nil, this means Org should<br/>do what it normally does with links which do not have EXPORT defined.<br/><br/>Org-mode has a built-in default for exporting links.  If you are happy with<br/>this default, there is no need to define an export function for the link<br/>type.  For a simple example of an export function, see `org-bbdb.el'.
+<strong>org-add-link-type</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-add-link-type TYPE &optional FOLLOW EXPORT)<br/>
+<br/>
+Add TYPE to the list of `org-link-types'.<br/>
+Re-compute all regular expressions depending on `org-link-types'<br/>
+<br/>
+FOLLOW and EXPORT are two functions.<br/>
+<br/>
+FOLLOW should take the link path as the single argument and do whatever<br/>
+is necessary to follow the link, for example find a file or display<br/>
+a mail message.<br/>
+<br/>
+EXPORT should format the link path for export to one of the export formats.<br/>
+It should be a function accepting three arguments:<br/>
+<br/>
+  path    the path of the link, the text after the prefix (like "http:")<br/>
+  desc    the description of the link, if any, or a description added by<br/>
+          org-export-normalize-links if there is none<br/>
+  format  the export format, a symbol like `html' or `latex' or `ascii'..<br/>
+<br/>
+The function may use the FORMAT information to return different values<br/>
+depending on the format.  The return value will be put literally into<br/>
+the exported file.  If the return value is nil, this means Org should<br/>
+do what it normally does with links which do not have EXPORT defined.<br/>
+<br/>
+Org-mode has a built-in default for exporting links.  If you are happy with<br/>
+this default, there is no need to define an export function for the link<br/>
+type.  For a simple example of an export function, see `org-bbdb.el'.

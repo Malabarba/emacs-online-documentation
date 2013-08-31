@@ -1,1 +1,49 @@
-term-pager-break-map is a variable defined in `term.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap used in Term pager mode.<br/><br/>Value: (keymap<br/> #^[nil nil keymap<br/>	#^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-line nil nil nil nil nil nil nil universal-argument nil nil Control-X-prefix nil nil ESC-prefix nil nil nil nil term-pager-page nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-bob nil term-pager-eob term-pager-help nil nil nil nil term-pager-disable nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-page nil nil nil nil nil term-pager-help nil nil nil nil nil nil nil nil term-pager-discard nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-line]<br/>	#^^[1 0<br/>	      #^^[2 0<br/>		    #^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-line nil nil nil nil nil nil nil universal-argument nil nil Control-X-prefix nil nil ESC-prefix nil nil nil nil term-pager-page nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-bob nil term-pager-eob term-pager-help nil nil nil nil term-pager-disable nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-page nil nil nil nil nil term-pager-help nil nil nil nil nil nil nil nil term-pager-discard nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-line]<br/>		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/> (menu-bar keymap<br/>	   (More\ pages\? menu-item "More pages?"<br/>			  (keymap "More pages?"<br/>				  (1\ page\ forwards menu-item "1 page forwards" term-pager-page)<br/>				  (1\ page\ backwards menu-item "1 page backwards" term-pager-back-page)<br/>				  (1\ line\ backwards menu-item "1 line backwards" term-pager-back-line)<br/>				  (1\ line\ forwards menu-item "1 line forwards" term-pager-line)<br/>				  (Goto\ to\ beginning menu-item "Goto to beginning" term-pager-bob)<br/>				  (Goto\ to\ end menu-item "Goto to end" term-pager-eob)<br/>				  (Discard\ remaining\ output menu-item "Discard remaining output" term-pager-discard)<br/>				  (Disable\ paging menu-item "Disable paging" term-pager-toggle)<br/>				  (Help menu-item "Help" term-pager-help)))<br/>	   (Signals menu-item "Signals"<br/>		    (keymap "Signals"<br/>			    (BREAK menu-item "BREAK" term-interrupt-subjob :help "Interrupt the current subjob")<br/>			    (STOP menu-item "STOP" term-stop-subjob :help "Stop the current subjob")<br/>			    (CONT menu-item "CONT" term-continue-subjob :help "Send CONT signal to process buffer's process group")<br/>			    (QUIT menu-item "QUIT" term-quit-subjob :help "Send quit signal to the current subjob")<br/>			    (KILL menu-item "KILL" term-kill-subjob :help "Send kill signal to the current subjob")<br/>			    (EOF menu-item "EOF" term-send-eof :help "Send an EOF to the current buffer's process")))<br/>	   (Terminal menu-item "Terminal"<br/>		     (keymap "Terminal"<br/>			     (Line\ mode menu-item "Line mode" term-line-mode :enable<br/>					 (term-in-char-mode)<br/>					 :help "Switch to line (cooked) sub-mode of term mode")<br/>			     (Character\ mode menu-item "Character mode" term-char-mode :enable<br/>					      (term-in-line-mode)<br/>					      :help "Switch to char (raw) sub-mode of term mode")<br/>			     (Paging menu-item "Paging" term-pager-toggle :button<br/>				     (:toggle . term-pager-count)<br/>				     :help "Toggle paging feature")))))<br/><br/>
+<strong>term-pager-break-map</strong> is a variable defined in `<code>term.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap used in Term pager mode.<br/>
+<br/>
+Value: (keymap<br/>
+ #^[nil nil keymap<br/>
+	#^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-line nil nil nil nil nil nil nil universal-argument nil nil Control-X-prefix nil nil ESC-prefix nil nil nil nil term-pager-page nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-bob nil term-pager-eob term-pager-help nil nil nil nil term-pager-disable nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-page nil nil nil nil nil term-pager-help nil nil nil nil nil nil nil nil term-pager-discard nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-line]<br/>
+	#^^[1 0<br/>
+	      #^^[2 0<br/>
+		    #^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-line nil nil nil nil nil nil nil universal-argument nil nil Control-X-prefix nil nil ESC-prefix nil nil nil nil term-pager-page nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-bob nil term-pager-eob term-pager-help nil nil nil nil term-pager-disable nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-page nil nil nil nil nil term-pager-help nil nil nil nil nil nil nil nil term-pager-discard nil nil nil nil nil nil nil nil nil nil nil nil nil term-pager-back-line]<br/>
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
+ (menu-bar keymap<br/>
+	   (More\ pages\? menu-item "More pages?"<br/>
+			  (keymap "More pages?"<br/>
+				  (1\ page\ forwards menu-item "1 page forwards" term-pager-page)<br/>
+				  (1\ page\ backwards menu-item "1 page backwards" term-pager-back-page)<br/>
+				  (1\ line\ backwards menu-item "1 line backwards" term-pager-back-line)<br/>
+				  (1\ line\ forwards menu-item "1 line forwards" term-pager-line)<br/>
+				  (Goto\ to\ beginning menu-item "Goto to beginning" term-pager-bob)<br/>
+				  (Goto\ to\ end menu-item "Goto to end" term-pager-eob)<br/>
+				  (Discard\ remaining\ output menu-item "Discard remaining output" term-pager-discard)<br/>
+				  (Disable\ paging menu-item "Disable paging" term-pager-toggle)<br/>
+				  (Help menu-item "Help" term-pager-help)))<br/>
+	   (Signals menu-item "Signals"<br/>
+		    (keymap "Signals"<br/>
+			    (BREAK menu-item "BREAK" term-interrupt-subjob :help "Interrupt the current subjob")<br/>
+			    (STOP menu-item "STOP" term-stop-subjob :help "Stop the current subjob")<br/>
+			    (CONT menu-item "CONT" term-continue-subjob :help "Send CONT signal to process buffer's process group")<br/>
+			    (QUIT menu-item "QUIT" term-quit-subjob :help "Send quit signal to the current subjob")<br/>
+			    (KILL menu-item "KILL" term-kill-subjob :help "Send kill signal to the current subjob")<br/>
+			    (EOF menu-item "EOF" term-send-eof :help "Send an EOF to the current buffer's process")))<br/>
+	   (Terminal menu-item "Terminal"<br/>
+		     (keymap "Terminal"<br/>
+			     (Line\ mode menu-item "Line mode" term-line-mode :enable<br/>
+					 (term-in-char-mode)<br/>
+					 :help "Switch to line (cooked) sub-mode of term mode")<br/>
+			     (Character\ mode menu-item "Character mode" term-char-mode :enable<br/>
+					      (term-in-line-mode)<br/>
+					      :help "Switch to char (raw) sub-mode of term mode")<br/>
+			     (Paging menu-item "Paging" term-pager-toggle :button<br/>
+				     (:toggle . term-pager-count)<br/>
+				     :help "Toggle paging feature")))))<br/>
+<br/>

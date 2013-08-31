@@ -1,1 +1,14 @@
-completion-in-region-functions is a variable defined in `minibuffer.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Wrapper hook around `completion-in-region'.<br/>The functions on this special hook are called with 5 arguments:<br/>  NEXT-FUN START END COLLECTION PREDICATE.<br/>NEXT-FUN is a function of four arguments (START END COLLECTION PREDICATE)<br/>that performs the default operation.  The other four arguments are like<br/>the ones passed to `completion-in-region'.  The functions on this hook<br/>are expected to perform completion on START..END using COLLECTION<br/>and PREDICATE, either by calling NEXT-FUN or by doing it themselves.
+<strong>completion-in-region-functions</strong> is a variable defined in `<code>minibuffer.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Wrapper hook around `completion-in-region'.<br/>
+The functions on this special hook are called with 5 arguments:<br/>
+  NEXT-FUN START END COLLECTION PREDICATE.<br/>
+NEXT-FUN is a function of four arguments (START END COLLECTION PREDICATE)<br/>
+that performs the default operation.  The other four arguments are like<br/>
+the ones passed to `completion-in-region'.  The functions on this hook<br/>
+are expected to perform completion on START..END using COLLECTION<br/>
+and PREDICATE, either by calling NEXT-FUN or by doing it themselves.

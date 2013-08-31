@@ -1,1 +1,17 @@
-speedbar-fetch-etags-parse-list is a variable defined in `speedbar.el'.<br/>Its value is<br/>(("\\.\\([cChH]\\|c\\+\\+\\|cpp\\|cc\\|hh\\|java\\|cxx\\|hxx\\)\\'" . speedbar-parse-c-or-c++tag)<br/> ("^\\.emacs$\\|.\\(el\\|l\\|lsp\\)\\'" . "def[^i]+\\s-+\\(\\(\\w\\|[-_]\\)+\\)\\s-*")<br/> ("\\.tex\\'" . speedbar-parse-tex-string)<br/> ("\\.p\\'" . "\\(\\(FUNCTION\\|function\\|PROCEDURE\\|procedure\\)\\s-+\\([a-zA-Z0-9_.:]+\\)\\)\\s-*(?^?"))<br/><br/><br/>Documentation:<br/>Associations of file extensions and expressions for extracting tags.<br/>To add a new file type, you would want to add a new association to the<br/>list, where the car is the file match, and the cdr is the way to<br/>extract an element from the tags output.  If the output is complex,<br/>use a function symbol instead of regexp.  The function should expect<br/>to be at the beginning of a line in the etags buffer.<br/><br/>This variable is ignored if `speedbar-use-imenu-flag' is non-nil.
+<strong>speedbar-fetch-etags-parse-list</strong> is a variable defined in `<code>speedbar.el</code>'.<br/>
+Its value is<br/>
+(("\\.\\([cChH]\\|c\\+\\+\\|cpp\\|cc\\|hh\\|java\\|cxx\\|hxx\\)\\'" . speedbar-parse-c-or-c++tag)<br/>
+ ("^\\.emacs$\\|.\\(el\\|l\\|lsp\\)\\'" . "def[^i]+\\s-+\\(\\(\\w\\|[-_]\\)+\\)\\s-*")<br/>
+ ("\\.tex\\'" . speedbar-parse-tex-string)<br/>
+ ("\\.p\\'" . "\\(\\(FUNCTION\\|function\\|PROCEDURE\\|procedure\\)\\s-+\\([a-zA-Z0-9_.:]+\\)\\)\\s-*(?^?"))<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Associations of file extensions and expressions for extracting tags.<br/>
+To add a new file type, you would want to add a new association to the<br/>
+list, where the car is the file match, and the cdr is the way to<br/>
+extract an element from the tags output.  If the output is complex,<br/>
+use a function symbol instead of regexp.  The function should expect<br/>
+to be at the beginning of a line in the etags buffer.<br/>
+<br/>
+This variable is ignored if `speedbar-use-imenu-flag' is non-nil.

@@ -1,1 +1,21 @@
-sc-cite-region-limit is a variable defined in `supercite.el'.<br/>Its value is t<br/><br/>Documentation:<br/>This variable controls automatic citation of yanked text.<br/>Valid values are:<br/><br/>non-nil   -- cite the entire region, regardless of its size<br/>nil       -- do not cite the region at all<br/><integer> -- a number indicating the threshold for citation.  When<br/>	     the number of lines in the region is greater than this<br/>	     value, a warning message will be printed and the region<br/>	     will not be cited.  Lines in region are counted with<br/>	     `count-lines'.<br/><br/>The gathering of attribution information is not affected by the value<br/>of this variable.  The number of lines in the region is calculated<br/>*after* all mail headers are removed.  This variable is only consulted<br/>during the initial citing via `sc-cite-original'.<br/><br/>You can customize this variable.
+<strong>sc-cite-region-limit</strong> is a variable defined in `<code>supercite.el</code>'.<br/>
+Its value is t<br/>
+<br/>
+Documentation:<br/>
+This variable controls automatic citation of yanked text.<br/>
+Valid values are:<br/>
+<br/>
+non-nil   -- cite the entire region, regardless of its size<br/>
+nil       -- do not cite the region at all<br/>
+<integer> -- a number indicating the threshold for citation.  When<br/>
+	     the number of lines in the region is greater than this<br/>
+	     value, a warning message will be printed and the region<br/>
+	     will not be cited.  Lines in region are counted with<br/>
+	     `count-lines'.<br/>
+<br/>
+The gathering of attribution information is not affected by the value<br/>
+of this variable.  The number of lines in the region is calculated<br/>
+*after* all mail headers are removed.  This variable is only consulted<br/>
+during the initial citing via `sc-cite-original'.<br/>
+<br/>
+You can customize this variable.

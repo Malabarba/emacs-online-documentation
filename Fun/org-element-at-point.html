@@ -1,1 +1,25 @@
-org-element-at-point is an autoloaded Lisp function in `org-element.el'.<br/><br/>(org-element-at-point &optional KEEP-TRAIL)<br/><br/>Determine closest element around point.<br/><br/>Return value is a list like (TYPE PROPS) where TYPE is the type<br/>of the element and PROPS a plist of properties associated to the<br/>element.<br/><br/>Possible types are defined in `org-element-all-elements'.<br/>Properties depend on element or object type, but always include<br/>`:begin', `:end', `:parent' and `:post-blank' properties.<br/><br/>As a special case, if point is at the very beginning of a list or<br/>sub-list, returned element will be that list instead of the first<br/>item.  In the same way, if point is at the beginning of the first<br/>row of a table, returned element will be the table instead of the<br/>first row.<br/><br/>If optional argument KEEP-TRAIL is non-nil, the function returns<br/>a list of elements leading to element at point.  The list's CAR<br/>is always the element at point.  The following positions contain<br/>element's siblings, then parents, siblings of parents, until the<br/>first element of current section.
+<strong>org-element-at-point</strong> is an autoloaded Lisp function in `<code>org-element.el</code>'.<br/>
+<br/>
+(org-element-at-point &optional KEEP-TRAIL)<br/>
+<br/>
+Determine closest element around point.<br/>
+<br/>
+Return value is a list like (TYPE PROPS) where TYPE is the type<br/>
+of the element and PROPS a plist of properties associated to the<br/>
+element.<br/>
+<br/>
+Possible types are defined in `org-element-all-elements'.<br/>
+Properties depend on element or object type, but always include<br/>
+`:begin', `:end', `:parent' and `:post-blank' properties.<br/>
+<br/>
+As a special case, if point is at the very beginning of a list or<br/>
+sub-list, returned element will be that list instead of the first<br/>
+item.  In the same way, if point is at the beginning of the first<br/>
+row of a table, returned element will be the table instead of the<br/>
+first row.<br/>
+<br/>
+If optional argument KEEP-TRAIL is non-nil, the function returns<br/>
+a list of elements leading to element at point.  The list's CAR<br/>
+is always the element at point.  The following positions contain<br/>
+element's siblings, then parents, siblings of parents, until the<br/>
+first element of current section.

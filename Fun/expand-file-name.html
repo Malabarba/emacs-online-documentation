@@ -1,1 +1,26 @@
-expand-file-name is a built-in function in `C source code'.<br/><br/>(expand-file-name NAME &optional DEFAULT-DIRECTORY)<br/><br/>Convert filename NAME to absolute, and canonicalize it.<br/>Second arg DEFAULT-DIRECTORY is directory to start with if NAME is relative<br/>(does not start with slash or tilde); if DEFAULT-DIRECTORY is nil or missing,<br/>the current buffer's value of `default-directory' is used.<br/>NAME should be a string that is a valid file name for the underlying<br/>filesystem.<br/>File name components that are `.' are removed, and<br/>so are file name components followed by `..', along with the `..' itself;<br/>note that these simplifications are done without checking the resulting<br/>file names in the file system.<br/>Multiple consecutive slashes are collapsed into a single slash,<br/>except at the beginning of the file name when they are significant (e.g.,<br/>UNC file names on MS-Windows.)<br/>An initial `~/' expands to your home directory.<br/>An initial `~USER/' expands to USER's home directory.<br/>See also the function `substitute-in-file-name'.<br/><br/>For technical reasons, this function can return correct but<br/>non-intuitive results for the root directory; for instance,<br/>(expand-file-name ".." "/") returns "/..".  For this reason, use<br/>(directory-file-name (file-name-directory dirname)) to traverse a<br/>filesystem tree, not (expand-file-name ".."  dirname).
+<strong>expand-file-name</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(expand-file-name NAME &optional DEFAULT-DIRECTORY)<br/>
+<br/>
+Convert filename NAME to absolute, and canonicalize it.<br/>
+Second arg DEFAULT-DIRECTORY is directory to start with if NAME is relative<br/>
+(does not start with slash or tilde); if DEFAULT-DIRECTORY is nil or missing,<br/>
+the current buffer's value of `default-directory' is used.<br/>
+NAME should be a string that is a valid file name for the underlying<br/>
+filesystem.<br/>
+File name components that are `.' are removed, and<br/>
+so are file name components followed by `..', along with the `..' itself;<br/>
+note that these simplifications are done without checking the resulting<br/>
+file names in the file system.<br/>
+Multiple consecutive slashes are collapsed into a single slash,<br/>
+except at the beginning of the file name when they are significant (e.g.,<br/>
+UNC file names on MS-Windows.)<br/>
+An initial `~/' expands to your home directory.<br/>
+An initial `~USER/' expands to USER's home directory.<br/>
+See also the function `substitute-in-file-name'.<br/>
+<br/>
+For technical reasons, this function can return correct but<br/>
+non-intuitive results for the root directory; for instance,<br/>
+(expand-file-name ".." "/") returns "/..".  For this reason, use<br/>
+(directory-file-name (file-name-directory dirname)) to traverse a<br/>
+filesystem tree, not (expand-file-name ".."  dirname).

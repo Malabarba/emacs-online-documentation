@@ -1,1 +1,22 @@
-input-decode-map is a variable defined in `C source code'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap that decodes input escape sequences.<br/>This is used mainly for mapping ASCII function key sequences into<br/>real Emacs function key events (symbols).<br/><br/>The `read-key-sequence' function replaces any subsequence bound by<br/>`input-decode-map' with its binding.  Contrary to `function-key-map',<br/>this map applies its rebinding regardless of the presence of an ordinary<br/>binding.  So it is more like `key-translation-map' except that it applies<br/>before `function-key-map' rather than after.<br/><br/>If the binding is a function, it is called with one argument (the prompt)<br/>and its return value (a key sequence) is used.<br/><br/>The events that come from bindings in `input-decode-map' are not<br/>themselves looked up in `input-decode-map'.<br/><br/>Value: (keymap<br/> (27 keymap<br/>     (C-backspace)<br/>     (C-delete))<br/> (C-M-backspace)<br/> (C-M-delete)<br/> (M-backspace)<br/> (M-delete))<br/><br/>It is a terminal-local variable; global value is the same.<br/>
+<strong>input-decode-map</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is (keymap)<br/>
+It is a terminal-local variable; global value is the same.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap that decodes input escape sequences.<br/>
+This is used mainly for mapping ASCII function key sequences into<br/>
+real Emacs function key events (symbols).<br/>
+<br/>
+The `read-key-sequence' function replaces any subsequence bound by<br/>
+`input-decode-map' with its binding.  Contrary to `function-key-map',<br/>
+this map applies its rebinding regardless of the presence of an ordinary<br/>
+binding.  So it is more like `key-translation-map' except that it applies<br/>
+before `function-key-map' rather than after.<br/>
+<br/>
+If the binding is a function, it is called with one argument (the prompt)<br/>
+and its return value (a key sequence) is used.<br/>
+<br/>
+The events that come from bindings in `input-decode-map' are not<br/>
+themselves looked up in `input-decode-map'.

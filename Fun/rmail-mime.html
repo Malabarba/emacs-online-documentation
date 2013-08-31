@@ -1,1 +1,21 @@
-rmail-mime is an interactive autoloaded Lisp function in `rmailmm.el'.<br/><br/>(rmail-mime &optional ARG STATE)<br/><br/>Toggle the display of a MIME message.<br/><br/>The actual behavior depends on the value of `rmail-enable-mime'.<br/><br/>If `rmail-enable-mime' is non-nil (the default), this command toggles<br/>the display of a MIME message between decoded presentation form and<br/>raw data.  With optional prefix argument ARG, it toggles the display only<br/>of the MIME entity at point, if there is one.  The optional argument<br/>STATE forces a particular display state, rather than toggling.<br/>`raw' forces raw mode, any other non-nil value forces decoded mode.<br/><br/>If `rmail-enable-mime' is nil, this creates a temporary "*RMAIL*"<br/>buffer holding a decoded copy of the message. Inline content-types are<br/>handled according to `rmail-mime-media-type-handlers-alist'.<br/>By default, this displays text and multipart messages, and offers to<br/>download attachments as specified by `rmail-mime-attachment-dirs-alist'.<br/>The arguments ARG and STATE have no effect in this case.
+<strong>rmail-mime</strong> is an interactive autoloaded Lisp function in `<code>rmailmm.el</code>'.<br/>
+<br/>
+(rmail-mime &optional ARG STATE)<br/>
+<br/>
+Toggle the display of a MIME message.<br/>
+<br/>
+The actual behavior depends on the value of `rmail-enable-mime'.<br/>
+<br/>
+If `rmail-enable-mime' is non-nil (the default), this command toggles<br/>
+the display of a MIME message between decoded presentation form and<br/>
+raw data.  With optional prefix argument ARG, it toggles the display only<br/>
+of the MIME entity at point, if there is one.  The optional argument<br/>
+STATE forces a particular display state, rather than toggling.<br/>
+`raw' forces raw mode, any other non-nil value forces decoded mode.<br/>
+<br/>
+If `rmail-enable-mime' is nil, this creates a temporary "*RMAIL*"<br/>
+buffer holding a decoded copy of the message. Inline content-types are<br/>
+handled according to `rmail-mime-media-type-handlers-alist'.<br/>
+By default, this displays text and multipart messages, and offers to<br/>
+download attachments as specified by `rmail-mime-attachment-dirs-alist'.<br/>
+The arguments ARG and STATE have no effect in this case.

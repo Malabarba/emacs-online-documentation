@@ -1,1 +1,371 @@
-term-mode is an interactive compiled Lisp function in `term.el'.<br/><br/>(term-mode)<br/><br/>Major mode for interacting with an inferior interpreter.<br/>The interpreter name is same as buffer name, sans the asterisks.<br/><br/>There are two submodes: line mode and char mode.  By default, you are<br/>in char mode.  In char sub-mode, each character (except<br/>`term-escape-char') is sent immediately to the subprocess.<br/>The escape character is equivalent to the usual meaning of C-x.<br/><br/>In line mode, you send a line of input at a time; use<br/>M-x term-send-input to send.<br/><br/>In line mode, this maintains an input history of size<br/>`term-input-ring-size', and you can access it with the commands<br/>M-x term-next-input, M-x term-previous-input, and<br/>M-x term-dynamic-list-input-ring.  Input ring history expansion can be<br/>achieved with the commands M-x term-replace-by-expanded-history or<br/>M-x term-magic-space.  Input ring expansion is controlled by the<br/>variable `term-input-autoexpand', and addition is controlled by the<br/>variable `term-input-ignoredups'.<br/><br/>Input to, and output from, the subprocess can cause the window to scroll to<br/>the end of the buffer.  See variables `term-scroll-to-bottom-on-input',<br/>and `term-scroll-to-bottom-on-output'.<br/><br/>If you accidentally suspend your process, use M-x term-continue-subjob<br/>to continue it.<br/><br/>This mode can be customized to create specific modes for running<br/>particular subprocesses.  This can be done by setting the hooks<br/>`term-input-filter-functions', `term-input-filter',<br/>`term-input-sender' and `term-get-old-input' to appropriate functions,<br/>and the variable `term-prompt-regexp' to the appropriate regular<br/>expression.<br/><br/>Commands in raw mode:<br/><br/>key             binding<br/>---             -------<br/><br/>C-@ .. C-b	term-send-raw<br/>C-d .. C-z	term-send-raw<br/>C-\ .. DEL	term-send-raw<br/><br/>C-c		Prefix Command<br/>ESC		Prefix Command<br/><S-insert>	term-paste<br/><S-next>	scroll-up<br/><S-prior>	scroll-down<br/><backspace>	term-send-backspace<br/><delete>	term-send-del<br/><deletechar>	term-send-del<br/><down>		term-send-down<br/><end>		term-send-end<br/><home>		term-send-home<br/><insert>	term-send-insert<br/><left>		term-send-left<br/><mouse-2>	term-mouse-paste<br/><next>		term-send-next<br/><prior>		term-send-prior<br/><remap>		Prefix Command<br/><right>		term-send-right<br/><up>		term-send-up<br/><br/>C-c C-@		pop-global-mark<br/>C-c C-a		Prefix Command<br/>C-c C-b		list-buffers<br/>C-c C-c		term-send-raw<br/>C-c C-d		list-directory<br/>C-c C-e		eval-last-sexp<br/>C-c C-f		find-file<br/>C-c TAB		indent-rigidly<br/>C-c C-j		term-line-mode<br/>C-c C-k		term-char-mode<br/>C-c C-l		downcase-region<br/>C-c RET		Prefix Command<br/>C-c C-n		set-goal-column<br/>C-c C-o		delete-blank-lines<br/>C-c C-p		ctl-x-ctl-p-prefix<br/>C-c C-q		term-pager-toggle<br/>C-c C-r		find-file-read-only<br/>C-c C-s		save-buffer<br/>C-c C-t		transpose-lines<br/>C-c C-u		universal-argument<br/>C-c C-v		scroll-up-command<br/>C-c C-w		write-file<br/>C-c C-x		exchange-point-and-mark<br/>C-c C-z		suspend-frame<br/>C-c ESC		Prefix Command<br/>C-c SPC		gud-break<br/>C-c #		server-edit<br/>C-c $		set-selective-display<br/>C-c '		expand-abbrev<br/>C-c (		kmacro-start-macro<br/>C-c )		kmacro-end-macro<br/>C-c *		calc-dispatch<br/>C-c +		balance-windows<br/>C-c -		shrink-window-if-larger-than-buffer<br/>C-c .		set-fill-prefix<br/>C-c 0		delete-window<br/>C-c 1		delete-other-windows<br/>C-c 2		split-window-below<br/>C-c 3		split-window-right<br/>C-c 4		ctl-x-4-prefix<br/>C-c 5		ctl-x-5-prefix<br/>C-c 6		2C-command<br/>C-c 8		Prefix Command<br/>C-c ;		comment-set-column<br/>C-c <		scroll-left<br/>C-c =		what-cursor-position<br/>C-c >		scroll-right<br/>C-c X		Prefix Command<br/>C-c [		backward-page<br/>C-c ]		forward-page<br/>C-c ^		enlarge-window<br/>C-c `		next-error<br/>C-c a		Prefix Command<br/>C-c b		switch-to-buffer<br/>C-c d		dired<br/>C-c e		kmacro-end-and-call-macro<br/>C-c f		set-fill-column<br/>C-c h		mark-whole-buffer<br/>C-c i		insert-file<br/>C-c k		kill-buffer<br/>C-c l		count-lines-page<br/>C-c m		compose-mail<br/>C-c n		Prefix Command<br/>C-c o		other-window<br/>C-c q		kbd-macro-query<br/>C-c r		Prefix Command<br/>C-c s		save-some-buffers<br/>C-c u		undo<br/>C-c v		vc-prefix-map<br/>C-c z		repeat<br/>C-c {		shrink-window-horizontally<br/>C-c }		enlarge-window-horizontally<br/>C-c ~		vi-switch-mode<br/>C-c DEL		backward-kill-sentence<br/>C-c C-SPC	pop-global-mark<br/>C-c C-+		text-scale-adjust<br/>C-c C--		text-scale-adjust<br/>C-c C-0		text-scale-adjust<br/>C-c C-=		text-scale-adjust<br/>C-c <C-left>	previous-buffer<br/>C-c <C-right>	next-buffer<br/>C-c <left>	previous-buffer<br/>C-c <right>	next-buffer<br/><br/>C-M-@ .. M-N	term-send-raw-meta<br/>M-P .. M-Z	term-send-raw-meta<br/>M-\ .. M-DEL	term-send-raw-meta<br/><br/><remap> <self-insert-command>	term-send-raw<br/><br/>C-c M-x		execute-extended-command<br/><br/>C-c C-a C-l	gud-refresh<br/>C-c C-a C-w	gud-watch<br/><br/>C-c C-k C-a	kmacro-add-counter<br/>C-c C-k C-c	kmacro-set-counter<br/>C-c C-k C-d	kmacro-delete-ring-head<br/>C-c C-k C-e	kmacro-edit-macro-repeat<br/>C-c C-k C-f	kmacro-set-format<br/>C-c C-k TAB	kmacro-insert-counter<br/>C-c C-k C-k	kmacro-end-or-call-macro-repeat<br/>C-c C-k C-l	kmacro-call-ring-2nd-repeat<br/>C-c C-k RET	kmacro-edit-macro<br/>C-c C-k C-n	kmacro-cycle-ring-next<br/>C-c C-k C-p	kmacro-cycle-ring-previous<br/>C-c C-k C-s	kmacro-start-macro<br/>C-c C-k C-t	kmacro-swap-ring<br/>C-c C-k C-v	kmacro-view-macro-repeat<br/>C-c C-k SPC	kmacro-step-edit-macro<br/>C-c C-k b	kmacro-bind-to-key<br/>C-c C-k e	edit-kbd-macro<br/>C-c C-k l	kmacro-edit-lossage<br/>C-c C-k n	kmacro-name-last-macro<br/>C-c C-k q	kbd-macro-query<br/>C-c C-k r	apply-macro-to-region-lines<br/>C-c C-k s	kmacro-start-macro<br/><br/>C-c RET C-\	set-input-method<br/>C-c RET F	set-file-name-coding-system<br/>C-c RET X	set-next-selection-coding-system<br/>C-c RET c	universal-coding-system-argument<br/>C-c RET f	set-buffer-file-coding-system<br/>C-c RET k	set-keyboard-coding-system<br/>C-c RET l	set-language-environment<br/>C-c RET p	set-buffer-process-coding-system<br/>C-c RET r	revert-buffer-with-coding-system<br/>C-c RET t	set-terminal-coding-system<br/>C-c RET x	set-selection-coding-system<br/><br/>C-c C-p C-a	add-new-page<br/>C-c C-p C-d	pages-directory<br/>C-c C-p C-l	set-page-delimiter<br/>C-c C-p RET	mark-page<br/>C-c C-p C-n	next-page<br/>C-c C-p C-p	previous-page<br/>C-c C-p C-s	search-pages<br/>C-c C-p d	pages-directory-for-addresses<br/>C-c C-p s	sort-pages-buffer<br/><br/>C-c ESC ESC	repeat-complex-command<br/>C-c M-:		repeat-complex-command<br/><br/>C-c 4 C-f	find-file-other-window<br/>C-c 4 C-o	display-buffer<br/>C-c 4 .		find-tag-other-window<br/>C-c 4 0		kill-buffer-and-window<br/>C-c 4 a		add-change-log-entry-other-window<br/>C-c 4 b		switch-to-buffer-other-window<br/>C-c 4 c		clone-indirect-buffer-other-window<br/>C-c 4 d		dired-other-window<br/>C-c 4 f		find-file-other-window<br/>C-c 4 m		compose-mail-other-window<br/>C-c 4 r		find-file-read-only-other-window<br/><br/>C-c 5 C-f	find-file-other-frame<br/>C-c 5 C-o	display-buffer-other-frame<br/>C-c 5 .		find-tag-other-frame<br/>C-c 5 0		delete-frame<br/>C-c 5 1		delete-other-frames<br/>C-c 5 2		make-frame-command<br/>C-c 5 b		switch-to-buffer-other-frame<br/>C-c 5 d		dired-other-frame<br/>C-c 5 f		find-file-other-frame<br/>C-c 5 m		compose-mail-other-frame<br/>C-c 5 o		other-frame<br/>C-c 5 r		find-file-read-only-other-frame<br/><br/>C-c 6 2		2C-two-columns<br/>C-c 6 b		2C-associate-buffer<br/>C-c 6 s		2C-split<br/>C-c 6 <f2>	2C-two-columns<br/><br/>C-c 8 RET	insert-char<br/><br/>C-c X SPC	edebug-step-mode<br/>C-c X =		edebug-display-freq-count<br/>C-c X C		edebug-Continue-fast-mode<br/>C-c X G		edebug-Go-nonstop-mode<br/>C-c X Q		edebug-top-level-nonstop<br/>C-c X T		edebug-Trace-fast-mode<br/>C-c X W		edebug-toggle-save-windows<br/>C-c X X		edebug-set-global-break-condition<br/>C-c X a		abort-recursive-edit<br/>C-c X b		edebug-set-breakpoint<br/>C-c X c		edebug-continue-mode<br/>C-c X g		edebug-go-mode<br/>C-c X q		top-level<br/>C-c X t		edebug-trace-mode<br/>C-c X u		edebug-unset-breakpoint<br/>C-c X w		edebug-where<br/>C-c X x		edebug-set-conditional-breakpoint<br/><br/>C-c a C-a	add-mode-abbrev<br/>C-c a '		expand-abbrev<br/>C-c a +		add-mode-abbrev<br/>C-c a -		inverse-add-global-abbrev<br/>C-c a e		expand-abbrev<br/>C-c a g		add-global-abbrev<br/>C-c a i		Prefix Command<br/>C-c a l		add-mode-abbrev<br/>C-c a n		expand-jump-to-next-slot<br/>C-c a p		expand-jump-to-previous-slot<br/><br/>C-c n b		org-narrow-to-block<br/>C-c n d		narrow-to-defun<br/>C-c n e		org-narrow-to-element<br/>C-c n n		narrow-to-region<br/>C-c n p		narrow-to-page<br/>C-c n s		org-narrow-to-subtree<br/>C-c n w		widen<br/><br/>C-c r C-@	point-to-register<br/>C-c r ESC	Prefix Command<br/>C-c r SPC	point-to-register<br/>C-c r +		increment-register<br/>C-c r N		rectangle-number-lines<br/>C-c r b		bookmark-jump<br/>C-c r c		clear-rectangle<br/>C-c r d		delete-rectangle<br/>C-c r f		frame-configuration-to-register<br/>C-c r g		insert-register<br/>C-c r i		insert-register<br/>C-c r j		jump-to-register<br/>C-c r k		kill-rectangle<br/>C-c r l		bookmark-bmenu-list<br/>C-c r m		bookmark-set<br/>C-c r n		number-to-register<br/>C-c r o		open-rectangle<br/>C-c r r		copy-rectangle-to-register<br/>C-c r s		copy-to-register<br/>C-c r t		string-rectangle<br/>C-c r w		window-configuration-to-register<br/>C-c r x		copy-to-register<br/>C-c r y		yank-rectangle<br/>C-c r C-SPC	point-to-register<br/><br/>C-c v +		vc-update<br/>C-c v =		vc-diff<br/>C-c v D		vc-root-diff<br/>C-c v I		vc-log-incoming<br/>C-c v L		vc-print-root-log<br/>C-c v O		vc-log-outgoing<br/>C-c v a		vc-update-change-log<br/>C-c v b		vc-switch-backend<br/>C-c v c		vc-rollback<br/>C-c v d		vc-dir<br/>C-c v g		vc-annotate<br/>C-c v h		vc-insert-headers<br/>C-c v i		vc-register<br/>C-c v l		vc-print-log<br/>C-c v m		vc-merge<br/>C-c v r		vc-retrieve-tag<br/>C-c v s		vc-create-tag<br/>C-c v u		vc-revert<br/>C-c v v		vc-next-action<br/>C-c v ~		vc-revision-other-window<br/><br/>C-c a i g	inverse-add-global-abbrev<br/>C-c a i l	inverse-add-mode-abbrev<br/><br/>C-c r M-w	copy-rectangle-as-kill<br/><br/><br/><br/>Commands in line mode:<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>C-d		term-delchar-or-maybe-eof<br/>RET		term-send-input<br/>ESC		Prefix Command<br/><br/>C-c C-a		term-bol<br/>C-c C-c		term-interrupt-subjob<br/>C-c C-d		term-send-eof<br/>C-c C-e		term-show-maximum-output<br/>C-c C-j		term-line-mode<br/>C-c C-k		term-char-mode<br/>C-c C-l		term-dynamic-list-input-ring<br/>C-c RET		term-copy-old-input<br/>C-c C-n		term-next-prompt<br/>C-c C-o		term-kill-output<br/>C-c C-p		term-previous-prompt<br/>C-c C-q		term-pager-toggle<br/>C-c C-r		term-show-output<br/>C-c C-u		term-kill-input<br/>C-c C-w		backward-kill-word<br/>C-c C-z		term-stop-subjob<br/>C-c C-\		term-quit-subjob<br/><br/>C-M-l		term-show-output<br/>M-n		term-next-input<br/>M-p		term-previous-input<br/>M-r		term-previous-matching-input<br/>M-s		term-next-matching-input<br/>A-M-r		term-previous-matching-input-from-input<br/>A-M-s		term-next-matching-input-from-input<br/><br/><br/><br/>Entry to this mode runs the hooks on `term-mode-hook'.
+<strong>term-mode</strong> is an interactive compiled Lisp function in `<code>term.el</code>'.<br/>
+<br/>
+(term-mode)<br/>
+<br/>
+Major mode for interacting with an inferior interpreter.<br/>
+The interpreter name is same as buffer name, sans the asterisks.<br/>
+<br/>
+There are two submodes: line mode and char mode.  By default, you are<br/>
+in char mode.  In char sub-mode, each character (except<br/>
+`term-escape-char') is sent immediately to the subprocess.<br/>
+The escape character is equivalent to the usual meaning of C-x.<br/>
+<br/>
+In line mode, you send a line of input at a time; use<br/>
+M-x term-send-input to send.<br/>
+<br/>
+In line mode, this maintains an input history of size<br/>
+`term-input-ring-size', and you can access it with the commands<br/>
+M-x term-next-input, M-x term-previous-input, and<br/>
+M-x term-dynamic-list-input-ring.  Input ring history expansion can be<br/>
+achieved with the commands M-x term-replace-by-expanded-history or<br/>
+M-x term-magic-space.  Input ring expansion is controlled by the<br/>
+variable `term-input-autoexpand', and addition is controlled by the<br/>
+variable `term-input-ignoredups'.<br/>
+<br/>
+Input to, and output from, the subprocess can cause the window to scroll to<br/>
+the end of the buffer.  See variables `term-scroll-to-bottom-on-input',<br/>
+and `term-scroll-to-bottom-on-output'.<br/>
+<br/>
+If you accidentally suspend your process, use M-x term-continue-subjob<br/>
+to continue it.<br/>
+<br/>
+This mode can be customized to create specific modes for running<br/>
+particular subprocesses.  This can be done by setting the hooks<br/>
+`term-input-filter-functions', `term-input-filter',<br/>
+`term-input-sender' and `term-get-old-input' to appropriate functions,<br/>
+and the variable `term-prompt-regexp' to the appropriate regular<br/>
+expression.<br/>
+<br/>
+Commands in raw mode:<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-@ .. C-b	term-send-raw<br/>
+C-d .. C-z	term-send-raw<br/>
+C-\ .. DEL	term-send-raw<br/>
+<br/>
+C-c		Prefix Command<br/>
+ESC		Prefix Command<br/>
+<S-insert>	term-paste<br/>
+<S-next>	scroll-up<br/>
+<S-prior>	scroll-down<br/>
+<backspace>	term-send-backspace<br/>
+<delete>	term-send-del<br/>
+<deletechar>	term-send-del<br/>
+<down>		term-send-down<br/>
+<end>		term-send-end<br/>
+<home>		term-send-home<br/>
+<insert>	term-send-insert<br/>
+<left>		term-send-left<br/>
+<mouse-2>	term-mouse-paste<br/>
+<next>		term-send-next<br/>
+<prior>		term-send-prior<br/>
+<remap>		Prefix Command<br/>
+<right>		term-send-right<br/>
+<up>		term-send-up<br/>
+<br/>
+C-c C-@		pop-global-mark<br/>
+C-c C-a		Prefix Command<br/>
+C-c C-b		list-buffers<br/>
+C-c C-c		term-send-raw<br/>
+C-c C-d		list-directory<br/>
+C-c C-e		eval-last-sexp<br/>
+C-c C-f		find-file<br/>
+C-c TAB		indent-rigidly<br/>
+C-c C-j		term-line-mode<br/>
+C-c C-k		term-char-mode<br/>
+C-c C-l		downcase-region<br/>
+C-c RET		Prefix Command<br/>
+C-c C-n		set-goal-column<br/>
+C-c C-o		delete-blank-lines<br/>
+C-c C-p		ctl-x-ctl-p-prefix<br/>
+C-c C-q		term-pager-toggle<br/>
+C-c C-r		find-file-read-only<br/>
+C-c C-s		save-buffer<br/>
+C-c C-t		transpose-lines<br/>
+C-c C-u		universal-argument<br/>
+C-c C-v		scroll-up-command<br/>
+C-c C-w		write-file<br/>
+C-c C-x		exchange-point-and-mark<br/>
+C-c C-z		suspend-frame<br/>
+C-c ESC		Prefix Command<br/>
+C-c SPC		gud-break<br/>
+C-c #		server-edit<br/>
+C-c $		set-selective-display<br/>
+C-c '		expand-abbrev<br/>
+C-c (		kmacro-start-macro<br/>
+C-c )		kmacro-end-macro<br/>
+C-c *		calc-dispatch<br/>
+C-c +		balance-windows<br/>
+C-c -		shrink-window-if-larger-than-buffer<br/>
+C-c .		set-fill-prefix<br/>
+C-c 0		delete-window<br/>
+C-c 1		delete-other-windows<br/>
+C-c 2		split-window-below<br/>
+C-c 3		split-window-right<br/>
+C-c 4		ctl-x-4-prefix<br/>
+C-c 5		ctl-x-5-prefix<br/>
+C-c 6		2C-command<br/>
+C-c 8		Prefix Command<br/>
+C-c ;		comment-set-column<br/>
+C-c <		scroll-left<br/>
+C-c =		what-cursor-position<br/>
+C-c >		scroll-right<br/>
+C-c X		Prefix Command<br/>
+C-c [		backward-page<br/>
+C-c ]		forward-page<br/>
+C-c ^		enlarge-window<br/>
+C-c `		next-error<br/>
+C-c a		Prefix Command<br/>
+C-c b		switch-to-buffer<br/>
+C-c d		dired<br/>
+C-c e		kmacro-end-and-call-macro<br/>
+C-c f		set-fill-column<br/>
+C-c h		mark-whole-buffer<br/>
+C-c i		insert-file<br/>
+C-c k		kill-buffer<br/>
+C-c l		count-lines-page<br/>
+C-c m		compose-mail<br/>
+C-c n		Prefix Command<br/>
+C-c o		other-window<br/>
+C-c q		kbd-macro-query<br/>
+C-c r		Prefix Command<br/>
+C-c s		save-some-buffers<br/>
+C-c u		undo<br/>
+C-c v		vc-prefix-map<br/>
+C-c z		repeat<br/>
+C-c {		shrink-window-horizontally<br/>
+C-c }		enlarge-window-horizontally<br/>
+C-c ~		vi-switch-mode<br/>
+C-c DEL		backward-kill-sentence<br/>
+C-c C-SPC	pop-global-mark<br/>
+C-c C-+		text-scale-adjust<br/>
+C-c C--		text-scale-adjust<br/>
+C-c C-0		text-scale-adjust<br/>
+C-c C-=		text-scale-adjust<br/>
+C-c <C-left>	previous-buffer<br/>
+C-c <C-right>	next-buffer<br/>
+C-c <left>	previous-buffer<br/>
+C-c <right>	next-buffer<br/>
+<br/>
+C-M-@ .. M-N	term-send-raw-meta<br/>
+M-P .. M-Z	term-send-raw-meta<br/>
+M-\ .. M-DEL	term-send-raw-meta<br/>
+<br/>
+<remap> <self-insert-command>	term-send-raw<br/>
+<br/>
+C-c M-x		execute-extended-command<br/>
+<br/>
+C-c C-a C-l	gud-refresh<br/>
+C-c C-a C-w	gud-watch<br/>
+<br/>
+C-c C-k C-a	kmacro-add-counter<br/>
+C-c C-k C-c	kmacro-set-counter<br/>
+C-c C-k C-d	kmacro-delete-ring-head<br/>
+C-c C-k C-e	kmacro-edit-macro-repeat<br/>
+C-c C-k C-f	kmacro-set-format<br/>
+C-c C-k TAB	kmacro-insert-counter<br/>
+C-c C-k C-k	kmacro-end-or-call-macro-repeat<br/>
+C-c C-k C-l	kmacro-call-ring-2nd-repeat<br/>
+C-c C-k RET	kmacro-edit-macro<br/>
+C-c C-k C-n	kmacro-cycle-ring-next<br/>
+C-c C-k C-p	kmacro-cycle-ring-previous<br/>
+C-c C-k C-s	kmacro-start-macro<br/>
+C-c C-k C-t	kmacro-swap-ring<br/>
+C-c C-k C-v	kmacro-view-macro-repeat<br/>
+C-c C-k SPC	kmacro-step-edit-macro<br/>
+C-c C-k b	kmacro-bind-to-key<br/>
+C-c C-k e	edit-kbd-macro<br/>
+C-c C-k l	kmacro-edit-lossage<br/>
+C-c C-k n	kmacro-name-last-macro<br/>
+C-c C-k q	kbd-macro-query<br/>
+C-c C-k r	apply-macro-to-region-lines<br/>
+C-c C-k s	kmacro-start-macro<br/>
+<br/>
+C-c RET C-\	set-input-method<br/>
+C-c RET F	set-file-name-coding-system<br/>
+C-c RET X	set-next-selection-coding-system<br/>
+C-c RET c	universal-coding-system-argument<br/>
+C-c RET f	set-buffer-file-coding-system<br/>
+C-c RET k	set-keyboard-coding-system<br/>
+C-c RET l	set-language-environment<br/>
+C-c RET p	set-buffer-process-coding-system<br/>
+C-c RET r	revert-buffer-with-coding-system<br/>
+C-c RET t	set-terminal-coding-system<br/>
+C-c RET x	set-selection-coding-system<br/>
+<br/>
+C-c C-p C-a	add-new-page<br/>
+C-c C-p C-d	pages-directory<br/>
+C-c C-p C-l	set-page-delimiter<br/>
+C-c C-p RET	mark-page<br/>
+C-c C-p C-n	next-page<br/>
+C-c C-p C-p	previous-page<br/>
+C-c C-p C-s	search-pages<br/>
+C-c C-p d	pages-directory-for-addresses<br/>
+C-c C-p s	sort-pages-buffer<br/>
+<br/>
+C-c ESC ESC	repeat-complex-command<br/>
+C-c M-:		repeat-complex-command<br/>
+<br/>
+C-c 4 C-f	find-file-other-window<br/>
+C-c 4 C-o	display-buffer<br/>
+C-c 4 .		find-tag-other-window<br/>
+C-c 4 0		kill-buffer-and-window<br/>
+C-c 4 a		add-change-log-entry-other-window<br/>
+C-c 4 b		switch-to-buffer-other-window<br/>
+C-c 4 c		clone-indirect-buffer-other-window<br/>
+C-c 4 d		dired-other-window<br/>
+C-c 4 f		find-file-other-window<br/>
+C-c 4 m		compose-mail-other-window<br/>
+C-c 4 r		find-file-read-only-other-window<br/>
+<br/>
+C-c 5 C-f	find-file-other-frame<br/>
+C-c 5 C-o	display-buffer-other-frame<br/>
+C-c 5 .		find-tag-other-frame<br/>
+C-c 5 0		delete-frame<br/>
+C-c 5 1		delete-other-frames<br/>
+C-c 5 2		make-frame-command<br/>
+C-c 5 b		switch-to-buffer-other-frame<br/>
+C-c 5 d		dired-other-frame<br/>
+C-c 5 f		find-file-other-frame<br/>
+C-c 5 m		compose-mail-other-frame<br/>
+C-c 5 o		other-frame<br/>
+C-c 5 r		find-file-read-only-other-frame<br/>
+<br/>
+C-c 6 2		2C-two-columns<br/>
+C-c 6 b		2C-associate-buffer<br/>
+C-c 6 s		2C-split<br/>
+C-c 6 <f2>	2C-two-columns<br/>
+<br/>
+C-c 8 RET	insert-char<br/>
+<br/>
+C-c X SPC	edebug-step-mode<br/>
+C-c X =		edebug-display-freq-count<br/>
+C-c X C		edebug-Continue-fast-mode<br/>
+C-c X G		edebug-Go-nonstop-mode<br/>
+C-c X Q		edebug-top-level-nonstop<br/>
+C-c X T		edebug-Trace-fast-mode<br/>
+C-c X W		edebug-toggle-save-windows<br/>
+C-c X X		edebug-set-global-break-condition<br/>
+C-c X a		abort-recursive-edit<br/>
+C-c X b		edebug-set-breakpoint<br/>
+C-c X c		edebug-continue-mode<br/>
+C-c X g		edebug-go-mode<br/>
+C-c X q		top-level<br/>
+C-c X t		edebug-trace-mode<br/>
+C-c X u		edebug-unset-breakpoint<br/>
+C-c X w		edebug-where<br/>
+C-c X x		edebug-set-conditional-breakpoint<br/>
+<br/>
+C-c a C-a	add-mode-abbrev<br/>
+C-c a '		expand-abbrev<br/>
+C-c a +		add-mode-abbrev<br/>
+C-c a -		inverse-add-global-abbrev<br/>
+C-c a e		expand-abbrev<br/>
+C-c a g		add-global-abbrev<br/>
+C-c a i		Prefix Command<br/>
+C-c a l		add-mode-abbrev<br/>
+C-c a n		expand-jump-to-next-slot<br/>
+C-c a p		expand-jump-to-previous-slot<br/>
+<br/>
+C-c n b		org-narrow-to-block<br/>
+C-c n d		narrow-to-defun<br/>
+C-c n e		org-narrow-to-element<br/>
+C-c n n		narrow-to-region<br/>
+C-c n p		narrow-to-page<br/>
+C-c n s		org-narrow-to-subtree<br/>
+C-c n w		widen<br/>
+<br/>
+C-c r C-@	point-to-register<br/>
+C-c r ESC	Prefix Command<br/>
+C-c r SPC	point-to-register<br/>
+C-c r +		increment-register<br/>
+C-c r N		rectangle-number-lines<br/>
+C-c r b		bookmark-jump<br/>
+C-c r c		clear-rectangle<br/>
+C-c r d		delete-rectangle<br/>
+C-c r f		frame-configuration-to-register<br/>
+C-c r g		insert-register<br/>
+C-c r i		insert-register<br/>
+C-c r j		jump-to-register<br/>
+C-c r k		kill-rectangle<br/>
+C-c r l		bookmark-bmenu-list<br/>
+C-c r m		bookmark-set<br/>
+C-c r n		number-to-register<br/>
+C-c r o		open-rectangle<br/>
+C-c r r		copy-rectangle-to-register<br/>
+C-c r s		copy-to-register<br/>
+C-c r t		string-rectangle<br/>
+C-c r w		window-configuration-to-register<br/>
+C-c r x		copy-to-register<br/>
+C-c r y		yank-rectangle<br/>
+C-c r C-SPC	point-to-register<br/>
+<br/>
+C-c v +		vc-update<br/>
+C-c v =		vc-diff<br/>
+C-c v D		vc-root-diff<br/>
+C-c v I		vc-log-incoming<br/>
+C-c v L		vc-print-root-log<br/>
+C-c v O		vc-log-outgoing<br/>
+C-c v a		vc-update-change-log<br/>
+C-c v b		vc-switch-backend<br/>
+C-c v c		vc-rollback<br/>
+C-c v d		vc-dir<br/>
+C-c v g		vc-annotate<br/>
+C-c v h		vc-insert-headers<br/>
+C-c v i		vc-register<br/>
+C-c v l		vc-print-log<br/>
+C-c v m		vc-merge<br/>
+C-c v r		vc-retrieve-tag<br/>
+C-c v s		vc-create-tag<br/>
+C-c v u		vc-revert<br/>
+C-c v v		vc-next-action<br/>
+C-c v ~		vc-revision-other-window<br/>
+<br/>
+C-c a i g	inverse-add-global-abbrev<br/>
+C-c a i l	inverse-add-mode-abbrev<br/>
+<br/>
+C-c r M-w	copy-rectangle-as-kill<br/>
+<br/>
+<br/>
+<br/>
+Commands in line mode:<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+C-d		term-delchar-or-maybe-eof<br/>
+RET		term-send-input<br/>
+ESC		Prefix Command<br/>
+<br/>
+C-c C-a		term-bol<br/>
+C-c C-c		term-interrupt-subjob<br/>
+C-c C-d		term-send-eof<br/>
+C-c C-e		term-show-maximum-output<br/>
+C-c C-j		term-line-mode<br/>
+C-c C-k		term-char-mode<br/>
+C-c C-l		term-dynamic-list-input-ring<br/>
+C-c RET		term-copy-old-input<br/>
+C-c C-n		term-next-prompt<br/>
+C-c C-o		term-kill-output<br/>
+C-c C-p		term-previous-prompt<br/>
+C-c C-q		term-pager-toggle<br/>
+C-c C-r		term-show-output<br/>
+C-c C-u		term-kill-input<br/>
+C-c C-w		backward-kill-word<br/>
+C-c C-z		term-stop-subjob<br/>
+C-c C-\		term-quit-subjob<br/>
+<br/>
+C-M-l		term-show-output<br/>
+M-n		term-next-input<br/>
+M-p		term-previous-input<br/>
+M-r		term-previous-matching-input<br/>
+M-s		term-next-matching-input<br/>
+A-M-r		term-previous-matching-input-from-input<br/>
+A-M-s		term-next-matching-input-from-input<br/>
+<br/>
+<br/>
+<br/>
+Entry to this mode runs the hooks on `term-mode-hook'.

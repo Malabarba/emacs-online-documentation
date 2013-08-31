@@ -1,1 +1,22 @@
-modify-coding-system-alist is a compiled Lisp function in `mule.el'.<br/><br/>(modify-coding-system-alist TARGET-TYPE REGEXP CODING-SYSTEM)<br/><br/>Modify one of look up tables for finding a coding system on I/O operation.<br/>There are three of such tables, `file-coding-system-alist',<br/>`process-coding-system-alist', and `network-coding-system-alist'.<br/><br/>TARGET-TYPE specifies which of them to modify.<br/>If it is `file', it affects `file-coding-system-alist' (which see).<br/>If it is `process', it affects `process-coding-system-alist' (which see).<br/>If it is `network', it affects `network-coding-system-alist' (which see).<br/><br/>REGEXP is a regular expression matching a target of I/O operation.<br/>The target is a file name if TARGET-TYPE is `file', a program name if<br/>TARGET-TYPE is `process', or a network service name or a port number<br/>to connect to if TARGET-TYPE is `network'.<br/><br/>CODING-SYSTEM is a coding system to perform code conversion on the I/O<br/>operation, or a cons cell (DECODING . ENCODING) specifying the coding<br/>systems for decoding and encoding respectively, or a function symbol<br/>which, when called, returns such a cons cell.
+<strong>modify-coding-system-alist</strong> is a compiled Lisp function in `<code>mule.el</code>'.<br/>
+<br/>
+(modify-coding-system-alist TARGET-TYPE REGEXP CODING-SYSTEM)<br/>
+<br/>
+Modify one of look up tables for finding a coding system on I/O operation.<br/>
+There are three of such tables, `file-coding-system-alist',<br/>
+`process-coding-system-alist', and `network-coding-system-alist'.<br/>
+<br/>
+TARGET-TYPE specifies which of them to modify.<br/>
+If it is `file', it affects `file-coding-system-alist' (which see).<br/>
+If it is `process', it affects `process-coding-system-alist' (which see).<br/>
+If it is `network', it affects `network-coding-system-alist' (which see).<br/>
+<br/>
+REGEXP is a regular expression matching a target of I/O operation.<br/>
+The target is a file name if TARGET-TYPE is `file', a program name if<br/>
+TARGET-TYPE is `process', or a network service name or a port number<br/>
+to connect to if TARGET-TYPE is `network'.<br/>
+<br/>
+CODING-SYSTEM is a coding system to perform code conversion on the I/O<br/>
+operation, or a cons cell (DECODING . ENCODING) specifying the coding<br/>
+systems for decoding and encoding respectively, or a function symbol<br/>
+which, when called, returns such a cons cell.

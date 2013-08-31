@@ -1,1 +1,57 @@
-allout-default-layout is a variable defined in `allout.el'.<br/>Its value is (-2 : 0)<br/><br/>Documentation:<br/>Default allout outline layout specification.<br/><br/>This setting specifies the outline exposure to use when<br/>`allout-layout' has the local value `t'.  This docstring describes the<br/>layout specifications.<br/><br/>A list value specifies a default layout for the current buffer,<br/>to be applied upon activation of `allout-mode'.  Any non-nil<br/>value will automatically trigger `allout-mode', provided<br/>`allout-auto-activation' has been customized to enable it.<br/><br/>The types of elements in the layout specification are:<br/><br/> INTEGER -- dictate the relative depth to open the corresponding topic(s),<br/>            where:<br/>         -- negative numbers force the topic to be closed before opening<br/>            to the absolute value of the number, so all siblings are open<br/>            only to that level.<br/>         -- positive numbers open to the relative depth indicated by the<br/>            number, but do not force already opened subtopics to be closed.<br/>         -- 0 means to close topic -- hide all subitems.<br/> :   -- repeat spec -- apply the preceding element to all siblings at<br/>        current level, *up to* those siblings that would be covered by specs<br/>        following the `:' on the list.  Ie, apply to all topics at level but<br/>        trailing ones accounted for by trailing specs.  (Only the first of<br/>        multiple colons at the same level is honored -- later ones are ignored.)<br/> *   -- completely exposes the topic, including bodies<br/> +   -- exposes all subtopics, but not the bodies<br/> -   -- exposes the body of the corresponding topic, but not subtopics<br/> LIST -- a nested layout spec, to be applied intricately to its<br/>        corresponding item(s)<br/><br/>Examples:<br/> (-2 : 0)<br/>	Collapse the top-level topics to show their children and<br/>        grandchildren, but completely collapse the final top-level topic.<br/> (-1 () : 1 0)<br/>	Close the first topic so only the immediate subtopics are shown,<br/>        leave the subsequent topics exposed as they are until the second<br/>	second to last topic, which is exposed at least one level, and<br/>        completely close the last topic.<br/> (-2 : -1 *)<br/>        Expose children and grandchildren of all topics at current<br/>	level except the last two; expose children of the second to<br/>	last and completely expose the last one, including its subtopics.<br/><br/>See `allout-expose-topic' for more about the exposure process.<br/><br/>Also, allout's mode-specific provisions will make topic prefixes default<br/>to the comment-start string, if any, of the language of the file.  This<br/>is modulo the setting of `allout-use-mode-specific-leader', which see.<br/><br/>You can customize this variable.
+<strong>allout-default-layout</strong> is a variable defined in `<code>allout.el</code>'.<br/>
+Its value is (-2 : 0)<br/>
+<br/>
+Documentation:<br/>
+Default allout outline layout specification.<br/>
+<br/>
+This setting specifies the outline exposure to use when<br/>
+`allout-layout' has the local value `t'.  This docstring describes the<br/>
+layout specifications.<br/>
+<br/>
+A list value specifies a default layout for the current buffer,<br/>
+to be applied upon activation of `allout-mode'.  Any non-nil<br/>
+value will automatically trigger `allout-mode', provided<br/>
+`allout-auto-activation' has been customized to enable it.<br/>
+<br/>
+The types of elements in the layout specification are:<br/>
+<br/>
+ INTEGER -- dictate the relative depth to open the corresponding topic(s),<br/>
+            where:<br/>
+         -- negative numbers force the topic to be closed before opening<br/>
+            to the absolute value of the number, so all siblings are open<br/>
+            only to that level.<br/>
+         -- positive numbers open to the relative depth indicated by the<br/>
+            number, but do not force already opened subtopics to be closed.<br/>
+         -- 0 means to close topic -- hide all subitems.<br/>
+ :   -- repeat spec -- apply the preceding element to all siblings at<br/>
+        current level, *up to* those siblings that would be covered by specs<br/>
+        following the `:' on the list.  Ie, apply to all topics at level but<br/>
+        trailing ones accounted for by trailing specs.  (Only the first of<br/>
+        multiple colons at the same level is honored -- later ones are ignored.)<br/>
+ *   -- completely exposes the topic, including bodies<br/>
+ +   -- exposes all subtopics, but not the bodies<br/>
+ -   -- exposes the body of the corresponding topic, but not subtopics<br/>
+ LIST -- a nested layout spec, to be applied intricately to its<br/>
+        corresponding item(s)<br/>
+<br/>
+Examples:<br/>
+ (-2 : 0)<br/>
+	Collapse the top-level topics to show their children and<br/>
+        grandchildren, but completely collapse the final top-level topic.<br/>
+ (-1 () : 1 0)<br/>
+	Close the first topic so only the immediate subtopics are shown,<br/>
+        leave the subsequent topics exposed as they are until the second<br/>
+	second to last topic, which is exposed at least one level, and<br/>
+        completely close the last topic.<br/>
+ (-2 : -1 *)<br/>
+        Expose children and grandchildren of all topics at current<br/>
+	level except the last two; expose children of the second to<br/>
+	last and completely expose the last one, including its subtopics.<br/>
+<br/>
+See `allout-expose-topic' for more about the exposure process.<br/>
+<br/>
+Also, allout's mode-specific provisions will make topic prefixes default<br/>
+to the comment-start string, if any, of the language of the file.  This<br/>
+is modulo the setting of `allout-use-mode-specific-leader', which see.<br/>
+<br/>
+You can customize this variable.

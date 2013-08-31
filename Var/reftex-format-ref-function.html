@@ -1,1 +1,20 @@
-reftex-format-ref-function is a variable defined in `reftex-vars.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Function which produces the string to insert as a reference.<br/>Normally should be nil, because the format to insert a reference<br/>can already be specified in `reftex-label-alist'.<br/><br/>This hook also is used by the special commands to insert<br/>e.g. `\vref' and `\fref' references, so even if you set this,<br/>your setting will be ignored by the special commands.<br/><br/>The function will be called with three arguments, the LABEL, the<br/>DEFAULT FORMAT, which normally is `~\ref{%s}' and the REFERENCE<br/>STYLE.  The function should return the string to insert into the<br/>buffer.<br/><br/>You can customize this variable.
+<strong>reftex-format-ref-function</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Function which produces the string to insert as a reference.<br/>
+Normally should be nil, because the format to insert a reference<br/>
+can already be specified in `reftex-label-alist'.<br/>
+<br/>
+This hook also is used by the special commands to insert<br/>
+e.g. `\vref' and `\fref' references, so even if you set this,<br/>
+your setting will be ignored by the special commands.<br/>
+<br/>
+The function will be called with three arguments, the LABEL, the<br/>
+DEFAULT FORMAT, which normally is `~\ref{%s}' and the REFERENCE<br/>
+STYLE.  The function should return the string to insert into the<br/>
+buffer.<br/>
+<br/>
+You can customize this variable.

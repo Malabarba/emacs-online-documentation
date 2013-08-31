@@ -1,1 +1,39 @@
-write-region is an interactive built-in function in `C source code'.<br/><br/>(write-region START END FILENAME &optional APPEND VISIT LOCKNAME MUSTBENEW)<br/><br/>Write current region into specified file.<br/>When called from a program, requires three arguments:<br/>START, END and FILENAME.  START and END are normally buffer positions<br/>specifying the part of the buffer to write.<br/>If START is nil, that means to use the entire buffer contents.<br/>If START is a string, then output that string to the file<br/>instead of any buffer contents; END is ignored.<br/><br/>Optional fourth argument APPEND if non-nil means<br/>  append to existing file contents (if any).  If it is an integer,<br/>  seek to that offset in the file before writing.<br/>Optional fifth argument VISIT, if t or a string, means<br/>  set the last-save-file-modtime of buffer to this file's modtime<br/>  and mark buffer not modified.<br/>If VISIT is a string, it is a second file name;<br/>  the output goes to FILENAME, but the buffer is marked as visiting VISIT.<br/>  VISIT is also the file name to lock and unlock for clash detection.<br/>If VISIT is neither t nor nil nor a string,<br/>  that means do not display the "Wrote file" message.<br/>The optional sixth arg LOCKNAME, if non-nil, specifies the name to<br/>  use for locking and unlocking, overriding FILENAME and VISIT.<br/>The optional seventh arg MUSTBENEW, if non-nil, insists on a check<br/>  for an existing file with the same name.  If MUSTBENEW is `excl',<br/>  that means to get an error if the file already exists; never overwrite.<br/>  If MUSTBENEW is neither nil nor `excl', that means ask for<br/>  confirmation before overwriting, but do go ahead and overwrite the file<br/>  if the user confirms.<br/><br/>This does code conversion according to the value of<br/>`coding-system-for-write', `buffer-file-coding-system', or<br/>`file-coding-system-alist', and sets the variable<br/>`last-coding-system-used' to the coding system actually used.<br/><br/>This calls `write-region-annotate-functions' at the start, and<br/>`write-region-post-annotation-function' at the end.
+<strong>write-region</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(write-region START END FILENAME &optional APPEND VISIT LOCKNAME MUSTBENEW)<br/>
+<br/>
+Write current region into specified file.<br/>
+When called from a program, requires three arguments:<br/>
+START, END and FILENAME.  START and END are normally buffer positions<br/>
+specifying the part of the buffer to write.<br/>
+If START is nil, that means to use the entire buffer contents.<br/>
+If START is a string, then output that string to the file<br/>
+instead of any buffer contents; END is ignored.<br/>
+<br/>
+Optional fourth argument APPEND if non-nil means<br/>
+  append to existing file contents (if any).  If it is an integer,<br/>
+  seek to that offset in the file before writing.<br/>
+Optional fifth argument VISIT, if t or a string, means<br/>
+  set the last-save-file-modtime of buffer to this file's modtime<br/>
+  and mark buffer not modified.<br/>
+If VISIT is a string, it is a second file name;<br/>
+  the output goes to FILENAME, but the buffer is marked as visiting VISIT.<br/>
+  VISIT is also the file name to lock and unlock for clash detection.<br/>
+If VISIT is neither t nor nil nor a string,<br/>
+  that means do not display the "Wrote file" message.<br/>
+The optional sixth arg LOCKNAME, if non-nil, specifies the name to<br/>
+  use for locking and unlocking, overriding FILENAME and VISIT.<br/>
+The optional seventh arg MUSTBENEW, if non-nil, insists on a check<br/>
+  for an existing file with the same name.  If MUSTBENEW is `excl',<br/>
+  that means to get an error if the file already exists; never overwrite.<br/>
+  If MUSTBENEW is neither nil nor `excl', that means ask for<br/>
+  confirmation before overwriting, but do go ahead and overwrite the file<br/>
+  if the user confirms.<br/>
+<br/>
+This does code conversion according to the value of<br/>
+`coding-system-for-write', `buffer-file-coding-system', or<br/>
+`file-coding-system-alist', and sets the variable<br/>
+`last-coding-system-used' to the coding system actually used.<br/>
+<br/>
+This calls `write-region-annotate-functions' at the start, and<br/>
+`write-region-post-annotation-function' at the end.

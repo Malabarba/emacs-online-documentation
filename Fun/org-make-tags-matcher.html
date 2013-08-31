@@ -1,1 +1,22 @@
-org-make-tags-matcher is a compiled Lisp function in `org.el'.<br/><br/>(org-make-tags-matcher MATCH)<br/><br/>Create the TAGS/TODO matcher form for the selection string MATCH.<br/><br/>The variable `todo-only' is scoped dynamically into this function.<br/>It will be set to t if the matcher restricts matching to TODO entries,<br/>otherwise will not be touched.<br/><br/>Returns a cons of the selection string MATCH and the constructed<br/>lisp form implementing the matcher.  The matcher is to be evaluated<br/>at an Org entry, with point on the headline, and returns t if the<br/>entry matches the selection string MATCH.  The returned lisp form<br/>references two variables with information about the entry, which<br/>must be bound around the form's evaluation: todo, the TODO keyword<br/>at the entry (or nil of none); and tags-list, the list of all tags<br/>at the entry including inherited ones.  Additionally, the category<br/>of the entry (if any) must be specified as the text property<br/>'org-category on the headline.<br/><br/>See also `org-scan-tags'.<br/>
+<strong>org-make-tags-matcher</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-make-tags-matcher MATCH)<br/>
+<br/>
+Create the TAGS/TODO matcher form for the selection string MATCH.<br/>
+<br/>
+The variable `todo-only' is scoped dynamically into this function.<br/>
+It will be set to t if the matcher restricts matching to TODO entries,<br/>
+otherwise will not be touched.<br/>
+<br/>
+Returns a cons of the selection string MATCH and the constructed<br/>
+lisp form implementing the matcher.  The matcher is to be evaluated<br/>
+at an Org entry, with point on the headline, and returns t if the<br/>
+entry matches the selection string MATCH.  The returned lisp form<br/>
+references two variables with information about the entry, which<br/>
+must be bound around the form's evaluation: todo, the TODO keyword<br/>
+at the entry (or nil of none); and tags-list, the list of all tags<br/>
+at the entry including inherited ones.  Additionally, the category<br/>
+of the entry (if any) must be specified as the text property<br/>
+'org-category on the headline.<br/>
+<br/>
+See also `org-scan-tags'.<br/>

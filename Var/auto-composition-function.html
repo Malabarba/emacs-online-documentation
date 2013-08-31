@@ -1,1 +1,17 @@
-auto-composition-function is a variable defined in `C source code'.<br/>Its value is auto-compose-chars<br/><br/>  Automatically becomes buffer-local when set.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Function to call to compose characters automatically.<br/>This function is called from the display routine with four arguments:<br/>FROM, TO, WINDOW, and STRING.<br/><br/>If STRING is nil, the function must compose characters in the region<br/>between FROM and TO in the current buffer.<br/><br/>Otherwise, STRING is a string, and FROM and TO are indices into the<br/>string.  In this case, the function must compose characters in the<br/>string.
+<strong>auto-composition-function</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is auto-compose-chars<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Function to call to compose characters automatically.<br/>
+This function is called from the display routine with four arguments:<br/>
+FROM, TO, WINDOW, and STRING.<br/>
+<br/>
+If STRING is nil, the function must compose characters in the region<br/>
+between FROM and TO in the current buffer.<br/>
+<br/>
+Otherwise, STRING is a string, and FROM and TO are indices into the<br/>
+string.  In this case, the function must compose characters in the<br/>
+string.

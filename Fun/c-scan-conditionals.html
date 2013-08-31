@@ -1,1 +1,20 @@
-c-scan-conditionals is a compiled Lisp function in `cc-cmds.el'.<br/><br/>(c-scan-conditionals COUNT &optional TARGET-DEPTH WITH-ELSE)<br/><br/>Scan forward across COUNT preprocessor conditionals.<br/>With a negative argument, scan backward across preprocessor<br/>conditionals.  Return the end position.  Point is not moved.<br/><br/>If there aren't enough preprocessor conditionals, throw an error.<br/><br/>"#elif" is treated like "#else" followed by "#if", except that<br/>the nesting level isn't changed when tracking subconditionals.<br/><br/>The optional argument TARGET-DEPTH specifies the wanted nesting depth<br/>after each scan.  E.g. if TARGET-DEPTH is -1, the end position will be<br/>outside the enclosing conditional.  A non-integer non-nil TARGET-DEPTH<br/>counts as -1.<br/><br/>If the optional argument WITH-ELSE is non-nil, "#else" directives<br/>are treated as conditional clause limits.  Normally they are ignored.
+<strong>c-scan-conditionals</strong> is a compiled Lisp function in `<code>cc-cmds.el</code>'.<br/>
+<br/>
+(c-scan-conditionals COUNT &optional TARGET-DEPTH WITH-ELSE)<br/>
+<br/>
+Scan forward across COUNT preprocessor conditionals.<br/>
+With a negative argument, scan backward across preprocessor<br/>
+conditionals.  Return the end position.  Point is not moved.<br/>
+<br/>
+If there aren't enough preprocessor conditionals, throw an error.<br/>
+<br/>
+"#elif" is treated like "#else" followed by "#if", except that<br/>
+the nesting level isn't changed when tracking subconditionals.<br/>
+<br/>
+The optional argument TARGET-DEPTH specifies the wanted nesting depth<br/>
+after each scan.  E.g. if TARGET-DEPTH is -1, the end position will be<br/>
+outside the enclosing conditional.  A non-integer non-nil TARGET-DEPTH<br/>
+counts as -1.<br/>
+<br/>
+If the optional argument WITH-ELSE is non-nil, "#else" directives<br/>
+are treated as conditional clause limits.  Normally they are ignored.

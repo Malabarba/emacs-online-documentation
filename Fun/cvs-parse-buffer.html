@@ -1,1 +1,14 @@
-cvs-parse-buffer is a compiled Lisp function in `pcvs-parse.el'.<br/><br/>(cvs-parse-buffer PARSE-SPEC DONT-CHANGE-DISC &optional SUBDIR)<br/><br/>Parse current buffer according to PARSE-SPEC.<br/>PARSE-SPEC is a function of no argument advancing the point and returning<br/>  either a fileinfo or t (if the matched text should be ignored) or<br/>  nil if it didn't match anything.<br/>DONT-CHANGE-DISC just indicates whether the command was changing the disc<br/>  or not (useful to tell the difference between `cvs-examine' and `cvs-update'<br/>  output.<br/>The path names should be interpreted as relative to SUBDIR (defaults<br/>  to the `default-directory').<br/>Return a list of collected entries, or t if an error occurred.
+<strong>cvs-parse-buffer</strong> is a compiled Lisp function in `<code>pcvs-parse.el</code>'.<br/>
+<br/>
+(cvs-parse-buffer PARSE-SPEC DONT-CHANGE-DISC &optional SUBDIR)<br/>
+<br/>
+Parse current buffer according to PARSE-SPEC.<br/>
+PARSE-SPEC is a function of no argument advancing the point and returning<br/>
+  either a fileinfo or t (if the matched text should be ignored) or<br/>
+  nil if it didn't match anything.<br/>
+DONT-CHANGE-DISC just indicates whether the command was changing the disc<br/>
+  or not (useful to tell the difference between `cvs-examine' and `cvs-update'<br/>
+  output.<br/>
+The path names should be interpreted as relative to SUBDIR (defaults<br/>
+  to the `default-directory').<br/>
+Return a list of collected entries, or t if an error occurred.

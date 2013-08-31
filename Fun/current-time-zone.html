@@ -1,1 +1,18 @@
-current-time-zone is a built-in function in `C source code'.<br/><br/>(current-time-zone &optional SPECIFIED-TIME)<br/><br/>Return the offset and name for the local time zone.<br/>This returns a list of the form (OFFSET NAME).<br/>OFFSET is an integer number of seconds ahead of UTC (east of Greenwich).<br/>    A negative value means west of Greenwich.<br/>NAME is a string giving the name of the time zone.<br/>If SPECIFIED-TIME is given, the time zone offset is determined from it<br/>instead of using the current time.  The argument should have the form<br/>(HIGH LOW . IGNORED).  Thus, you can use times obtained from<br/>`current-time' and from `file-attributes'.  SPECIFIED-TIME can also<br/>have the form (HIGH . LOW), but this is considered obsolete.<br/><br/>Some operating systems cannot provide all this information to Emacs;<br/>in this case, `current-time-zone' returns a list containing nil for<br/>the data it can't find.
+<strong>current-time-zone</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(current-time-zone &optional SPECIFIED-TIME)<br/>
+<br/>
+Return the offset and name for the local time zone.<br/>
+This returns a list of the form (OFFSET NAME).<br/>
+OFFSET is an integer number of seconds ahead of UTC (east of Greenwich).<br/>
+    A negative value means west of Greenwich.<br/>
+NAME is a string giving the name of the time zone.<br/>
+If SPECIFIED-TIME is given, the time zone offset is determined from it<br/>
+instead of using the current time.  The argument should have the form<br/>
+(HIGH LOW . IGNORED).  Thus, you can use times obtained from<br/>
+`current-time' and from `file-attributes'.  SPECIFIED-TIME can also<br/>
+have the form (HIGH . LOW), but this is considered obsolete.<br/>
+<br/>
+Some operating systems cannot provide all this information to Emacs;<br/>
+in this case, `current-time-zone' returns a list containing nil for<br/>
+the data it can't find.

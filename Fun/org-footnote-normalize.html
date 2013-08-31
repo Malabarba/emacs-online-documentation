@@ -1,1 +1,28 @@
-org-footnote-normalize is an autoloaded compiled Lisp function in `org-footnote.el'.<br/><br/>(org-footnote-normalize &optional SORT-ONLY EXPORT-PROPS)<br/><br/>Collect the footnotes in various formats and normalize them.<br/><br/>This finds the different sorts of footnotes allowed in Org, and<br/>normalizes them to the usual [N] format that is understood by the<br/>Org-mode exporters.<br/><br/>When SORT-ONLY is set, only sort the footnote definitions into the<br/>referenced sequence.<br/><br/>If Org is amidst an export process, EXPORT-PROPS will hold the<br/>export properties of the buffer.<br/><br/>When EXPORT-PROPS is non-nil, the default action is to insert<br/>normalized footnotes towards the end of the pre-processing<br/>buffer.  Some exporters (docbook, odt...) expect footnote<br/>definitions to be available before any references to them.  Such<br/>exporters can let bind `org-footnote-insert-pos-for-preprocessor'<br/>to symbol `point-min' to achieve the desired behaviour.<br/><br/>Additional note on `org-footnote-insert-pos-for-preprocessor':<br/>1. This variable has not effect when FOR-PREPROCESSOR is nil.<br/>2. This variable (potentially) obviates the need for extra scan<br/>   of pre-processor buffer as witnessed in<br/>   `org-export-docbook-get-footnotes'.
+<strong>org-footnote-normalize</strong> is an autoloaded compiled Lisp function in `<code>org-footnote.el</code>'.<br/>
+<br/>
+(org-footnote-normalize &optional SORT-ONLY EXPORT-PROPS)<br/>
+<br/>
+Collect the footnotes in various formats and normalize them.<br/>
+<br/>
+This finds the different sorts of footnotes allowed in Org, and<br/>
+normalizes them to the usual [N] format that is understood by the<br/>
+Org-mode exporters.<br/>
+<br/>
+When SORT-ONLY is set, only sort the footnote definitions into the<br/>
+referenced sequence.<br/>
+<br/>
+If Org is amidst an export process, EXPORT-PROPS will hold the<br/>
+export properties of the buffer.<br/>
+<br/>
+When EXPORT-PROPS is non-nil, the default action is to insert<br/>
+normalized footnotes towards the end of the pre-processing<br/>
+buffer.  Some exporters (docbook, odt...) expect footnote<br/>
+definitions to be available before any references to them.  Such<br/>
+exporters can let bind `org-footnote-insert-pos-for-preprocessor'<br/>
+to symbol `point-min' to achieve the desired behaviour.<br/>
+<br/>
+Additional note on `org-footnote-insert-pos-for-preprocessor':<br/>
+1. This variable has not effect when FOR-PREPROCESSOR is nil.<br/>
+2. This variable (potentially) obviates the need for extra scan<br/>
+   of pre-processor buffer as witnessed in<br/>
+   `org-export-docbook-get-footnotes'.

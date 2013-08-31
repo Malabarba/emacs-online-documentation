@@ -1,1 +1,50 @@
-idlwave-complete is an interactive compiled Lisp function in `idlwave.el'.<br/><br/>(idlwave-complete &optional ARG MODULE CLASS)<br/><br/>Complete a function, procedure or keyword name at point.<br/>This function is smart and figures out what can be completed<br/>at this point.<br/>- At the beginning of a statement it completes procedure names.<br/>- In the middle of a statement it completes function names.<br/>- After a `(' or `,' in the argument list of a function or procedure,<br/>  it completes a keyword of the relevant function or procedure.<br/>- In the first arg of `OBJ_NEW', it completes a class name.<br/><br/>When several completions are possible, a list will be displayed in<br/>the *Completions* buffer.  If this list is too long to fit into the<br/>window, scrolling can be achieved by repeatedly pressing<br/>M-x idlwave-complete.<br/><br/>The function also knows about object methods.  When it needs a class<br/>name, the action depends upon `idlwave-query-class', which see.  You<br/>can force IDLWAVE to ask you for a class name with a<br/>C-u prefix argument to this command.<br/><br/>See also the variables `idlwave-keyword-completion-adds-equal' and<br/>`idlwave-function-completion-adds-paren'.<br/><br/>The optional ARG can be used to specify the completion type in order<br/>to override IDLWAVE's idea of what should be completed at point.<br/>Possible values are:<br/><br/>0  <=>  query for the completion type<br/>1  <=>  'procedure<br/>2  <=>  'procedure-keyword<br/>3  <=>  'function<br/>4  <=>  'function-keyword<br/>5  <=>  'procedure-method<br/>6  <=>  'procedure-method-keyword<br/>7  <=>  'function-method<br/>8  <=>  'function-method-keyword<br/>9  <=>  'class<br/><br/>As a special case, the universal argument C-u forces completion of<br/>function names in places where the default would be a keyword.<br/><br/>Two prefix argument, C-u C-u, prompts for a regexp by which to limit<br/>completion.<br/><br/>For Lisp programmers only:<br/>When we force a keyword, optional argument MODULE can contain the module name.<br/>When we force a method or a method keyword, CLASS can specify the class.
+<strong>idlwave-complete</strong> is an interactive compiled Lisp function in `<code>idlwave.el</code>'.<br/>
+<br/>
+(idlwave-complete &optional ARG MODULE CLASS)<br/>
+<br/>
+Complete a function, procedure or keyword name at point.<br/>
+This function is smart and figures out what can be completed<br/>
+at this point.<br/>
+- At the beginning of a statement it completes procedure names.<br/>
+- In the middle of a statement it completes function names.<br/>
+- After a `(' or `,' in the argument list of a function or procedure,<br/>
+  it completes a keyword of the relevant function or procedure.<br/>
+- In the first arg of `OBJ_NEW', it completes a class name.<br/>
+<br/>
+When several completions are possible, a list will be displayed in<br/>
+the *Completions* buffer.  If this list is too long to fit into the<br/>
+window, scrolling can be achieved by repeatedly pressing<br/>
+M-x idlwave-complete.<br/>
+<br/>
+The function also knows about object methods.  When it needs a class<br/>
+name, the action depends upon `idlwave-query-class', which see.  You<br/>
+can force IDLWAVE to ask you for a class name with a<br/>
+C-u prefix argument to this command.<br/>
+<br/>
+See also the variables `idlwave-keyword-completion-adds-equal' and<br/>
+`idlwave-function-completion-adds-paren'.<br/>
+<br/>
+The optional ARG can be used to specify the completion type in order<br/>
+to override IDLWAVE's idea of what should be completed at point.<br/>
+Possible values are:<br/>
+<br/>
+0  <=>  query for the completion type<br/>
+1  <=>  'procedure<br/>
+2  <=>  'procedure-keyword<br/>
+3  <=>  'function<br/>
+4  <=>  'function-keyword<br/>
+5  <=>  'procedure-method<br/>
+6  <=>  'procedure-method-keyword<br/>
+7  <=>  'function-method<br/>
+8  <=>  'function-method-keyword<br/>
+9  <=>  'class<br/>
+<br/>
+As a special case, the universal argument C-u forces completion of<br/>
+function names in places where the default would be a keyword.<br/>
+<br/>
+Two prefix argument, C-u C-u, prompts for a regexp by which to limit<br/>
+completion.<br/>
+<br/>
+For Lisp programmers only:<br/>
+When we force a keyword, optional argument MODULE can contain the module name.<br/>
+When we force a method or a method keyword, CLASS can specify the class.

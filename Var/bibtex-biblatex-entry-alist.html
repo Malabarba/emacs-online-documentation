@@ -1,1 +1,943 @@
-bibtex-biblatex-entry-alist is a variable defined in `bibtex.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of biblatex entry types and their associated fields.<br/>It has the same format as `bibtex-BibTeX-entry-alist'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/><br/><br/>Value: (("Article" "Article in Journal"<br/>  (("author")<br/>   ("title")<br/>   ("journaltitle")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("editor")<br/>   ("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("journalsubtitle")<br/>   ("issuetitle")<br/>   ("issuesubtitle")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("series")<br/>   ("volume")<br/>   ("number")<br/>   ("eid")<br/>   ("issue")<br/>   ("month")<br/>   ("pages")<br/>   ("version")<br/>   ("note")<br/>   ("issn")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Book" "Single-Volume Book"<br/>  (("author")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("editor")<br/>   ("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("MVBook" "Multi-Volume Book"<br/>  (("author")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("editor")<br/>   ("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("InBook" "Chapter or Pages in a Book"<br/>  (("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  (("author")<br/>   ("booktitle"))<br/>  (("bookauthor")<br/>   ("editor")<br/>   ("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("booksubtitle")<br/>   ("booktitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("BookInBook" "Book in Collection"<br/>  (("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  (("author")<br/>   ("booktitle"))<br/>  (("bookauthor")<br/>   ("editor")<br/>   ("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("booksubtitle")<br/>   ("booktitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("SuppBook" "Supplemental Material in a Book"<br/>  (("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  (("author")<br/>   ("booktitle"))<br/>  (("bookauthor")<br/>   ("editor")<br/>   ("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("booksubtitle")<br/>   ("booktitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Booklet" "Booklet (Bound, but no Publisher)"<br/>  (("author" nil nil 0)<br/>   ("editor" nil nil 0)<br/>   ("title")<br/>   ("year" nil nil 1)<br/>   ("date" nil nil 1))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("howpublished")<br/>   ("type")<br/>   ("note")<br/>   ("location")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Collection" "Single-Volume Collection"<br/>  (("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("MVCollection" "Multi-Volume Collection"<br/>  (("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("InCollection" "Article in a Collection"<br/>  (("author")<br/>   ("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  (("booktitle"))<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("booksubtitle")<br/>   ("booktitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("SuppCollection" "Supplemental Material in a Collection"<br/>  (("author")<br/>   ("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  (("booktitle"))<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("booksubtitle")<br/>   ("booktitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Manual" "Technical Manual"<br/>  (("author" nil nil 0)<br/>   ("editor" nil nil 0)<br/>   ("title")<br/>   ("year" nil nil 1)<br/>   ("date" nil nil 1))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("edition")<br/>   ("type")<br/>   ("series")<br/>   ("number")<br/>   ("version")<br/>   ("note")<br/>   ("organization")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Misc" "Miscellaneous"<br/>  (("author" nil nil 0)<br/>   ("editor" nil nil 0)<br/>   ("title")<br/>   ("year" nil nil 1)<br/>   ("date" nil nil 1))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("howpublished")<br/>   ("type")<br/>   ("version")<br/>   ("note")<br/>   ("organization")<br/>   ("location")<br/>   ("date")<br/>   ("month")<br/>   ("year")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Online" "Online Resource"<br/>  (("author" nil nil 0)<br/>   ("editor" nil nil 0)<br/>   ("title")<br/>   ("year" nil nil 1)<br/>   ("date" nil nil 1)<br/>   ("url"))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("version")<br/>   ("note")<br/>   ("organization")<br/>   ("date")<br/>   ("month")<br/>   ("year")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("urldate")))<br/> ("Patent" "Patent"<br/>  (("author")<br/>   ("title")<br/>   ("number")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("holder")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("type")<br/>   ("version")<br/>   ("location")<br/>   ("note")<br/>   ("date")<br/>   ("month")<br/>   ("year")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Periodical" "Complete Issue of a Periodical"<br/>  (("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("subtitle")<br/>   ("issuetitle")<br/>   ("issuesubtitle")<br/>   ("language")<br/>   ("series")<br/>   ("volume")<br/>   ("number")<br/>   ("issue")<br/>   ("date")<br/>   ("month")<br/>   ("year")<br/>   ("note")<br/>   ("issn")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("SuppPeriodical" "Supplemental Material in a Periodical"<br/>  (("author")<br/>   ("title")<br/>   ("journaltitle")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("editor")<br/>   ("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("journalsubtitle")<br/>   ("issuetitle")<br/>   ("issuesubtitle")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("series")<br/>   ("volume")<br/>   ("number")<br/>   ("eid")<br/>   ("issue")<br/>   ("month")<br/>   ("pages")<br/>   ("version")<br/>   ("note")<br/>   ("issn")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Proceedings" "Single-Volume Conference Proceedings"<br/>  (("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("eventtitle")<br/>   ("eventdate")<br/>   ("venue")<br/>   ("language")<br/>   ("volume")<br/>   ("part")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("organization")<br/>   ("publisher")<br/>   ("location")<br/>   ("month")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("MVProceedings" "Multi-Volume Conference Proceedings"<br/>  (("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("eventtitle")<br/>   ("eventdate")<br/>   ("venue")<br/>   ("language")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("organization")<br/>   ("publisher")<br/>   ("location")<br/>   ("month")<br/>   ("isbn")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("InProceedings" "Article in Conference Proceedings"<br/>  (("author")<br/>   ("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  (("booktitle"))<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("booksubtitle")<br/>   ("booktitleaddon")<br/>   ("eventtitle")<br/>   ("eventdate")<br/>   ("venue")<br/>   ("language")<br/>   ("volume")<br/>   ("part")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("organization")<br/>   ("publisher")<br/>   ("location")<br/>   ("month")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Reference" "Single-Volume Work of Reference"<br/>  (("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("MVReference" "Multi-Volume Work of Reference"<br/>  (("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("InReference" "Article in a Work of Reference"<br/>  (("author")<br/>   ("editor")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  (("booktitle"))<br/>  (("editora")<br/>   ("editorb")<br/>   ("editorc")<br/>   ("translator")<br/>   ("annotator")<br/>   ("commentator")<br/>   ("introduction")<br/>   ("foreword")<br/>   ("afterword")<br/>   ("subtitle")<br/>   ("titleaddon")<br/>   ("maintitle")<br/>   ("mainsubtitle")<br/>   ("maintitleaddon")<br/>   ("booksubtitle")<br/>   ("booktitleaddon")<br/>   ("language")<br/>   ("origlanguage")<br/>   ("volume")<br/>   ("part")<br/>   ("edition")<br/>   ("volumes")<br/>   ("series")<br/>   ("number")<br/>   ("note")<br/>   ("publisher")<br/>   ("location")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Report" "Technical or Research Report"<br/>  (("author")<br/>   ("title")<br/>   ("type")<br/>   ("institution")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("number")<br/>   ("version")<br/>   ("note")<br/>   ("location")<br/>   ("month")<br/>   ("isrn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Thesis" "PhD. or Master's Thesis"<br/>  (("author")<br/>   ("title")<br/>   ("type")<br/>   ("institution")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("note")<br/>   ("location")<br/>   ("month")<br/>   ("isbn")<br/>   ("chapter")<br/>   ("pages")<br/>   ("pagetotal")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("doi")<br/>   ("eprint")<br/>   ("eprintclass")<br/>   ("eprinttype")<br/>   ("url")<br/>   ("urldate")))<br/> ("Unpublished" "Unpublished"<br/>  (("author")<br/>   ("title")<br/>   ("year" nil nil 0)<br/>   ("date" nil nil 0))<br/>  nil<br/>  (("subtitle")<br/>   ("titleaddon")<br/>   ("language")<br/>   ("howpublished")<br/>   ("note")<br/>   ("location")<br/>   ("isbn")<br/>   ("date")<br/>   ("month")<br/>   ("year")<br/>   ("addendum")<br/>   ("pubstate")<br/>   ("url")<br/>   ("urldate"))))<br/><br/>
+<strong>bibtex-biblatex-entry-alist</strong> is a variable defined in `<code>bibtex.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of biblatex entry types and their associated fields.<br/>
+It has the same format as `bibtex-BibTeX-entry-alist'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>
+<br/>
+<br/>
+Value: (("Article" "Article in Journal"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("journaltitle")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("editor")<br/>
+   ("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("journalsubtitle")<br/>
+   ("issuetitle")<br/>
+   ("issuesubtitle")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("series")<br/>
+   ("volume")<br/>
+   ("number")<br/>
+   ("eid")<br/>
+   ("issue")<br/>
+   ("month")<br/>
+   ("pages")<br/>
+   ("version")<br/>
+   ("note")<br/>
+   ("issn")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Book" "Single-Volume Book"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("editor")<br/>
+   ("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("MVBook" "Multi-Volume Book"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("editor")<br/>
+   ("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("InBook" "Chapter or Pages in a Book"<br/>
+  (("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  (("author")<br/>
+   ("booktitle"))<br/>
+  (("bookauthor")<br/>
+   ("editor")<br/>
+   ("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("booksubtitle")<br/>
+   ("booktitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("BookInBook" "Book in Collection"<br/>
+  (("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  (("author")<br/>
+   ("booktitle"))<br/>
+  (("bookauthor")<br/>
+   ("editor")<br/>
+   ("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("booksubtitle")<br/>
+   ("booktitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("SuppBook" "Supplemental Material in a Book"<br/>
+  (("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  (("author")<br/>
+   ("booktitle"))<br/>
+  (("bookauthor")<br/>
+   ("editor")<br/>
+   ("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("booksubtitle")<br/>
+   ("booktitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Booklet" "Booklet (Bound, but no Publisher)"<br/>
+  (("author" nil nil 0)<br/>
+   ("editor" nil nil 0)<br/>
+   ("title")<br/>
+   ("year" nil nil 1)<br/>
+   ("date" nil nil 1))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("howpublished")<br/>
+   ("type")<br/>
+   ("note")<br/>
+   ("location")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Collection" "Single-Volume Collection"<br/>
+  (("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("MVCollection" "Multi-Volume Collection"<br/>
+  (("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("InCollection" "Article in a Collection"<br/>
+  (("author")<br/>
+   ("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  (("booktitle"))<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("booksubtitle")<br/>
+   ("booktitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("SuppCollection" "Supplemental Material in a Collection"<br/>
+  (("author")<br/>
+   ("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  (("booktitle"))<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("booksubtitle")<br/>
+   ("booktitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Manual" "Technical Manual"<br/>
+  (("author" nil nil 0)<br/>
+   ("editor" nil nil 0)<br/>
+   ("title")<br/>
+   ("year" nil nil 1)<br/>
+   ("date" nil nil 1))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("edition")<br/>
+   ("type")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("version")<br/>
+   ("note")<br/>
+   ("organization")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Misc" "Miscellaneous"<br/>
+  (("author" nil nil 0)<br/>
+   ("editor" nil nil 0)<br/>
+   ("title")<br/>
+   ("year" nil nil 1)<br/>
+   ("date" nil nil 1))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("howpublished")<br/>
+   ("type")<br/>
+   ("version")<br/>
+   ("note")<br/>
+   ("organization")<br/>
+   ("location")<br/>
+   ("date")<br/>
+   ("month")<br/>
+   ("year")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Online" "Online Resource"<br/>
+  (("author" nil nil 0)<br/>
+   ("editor" nil nil 0)<br/>
+   ("title")<br/>
+   ("year" nil nil 1)<br/>
+   ("date" nil nil 1)<br/>
+   ("url"))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("version")<br/>
+   ("note")<br/>
+   ("organization")<br/>
+   ("date")<br/>
+   ("month")<br/>
+   ("year")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("urldate")))<br/>
+ ("Patent" "Patent"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("number")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("holder")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("type")<br/>
+   ("version")<br/>
+   ("location")<br/>
+   ("note")<br/>
+   ("date")<br/>
+   ("month")<br/>
+   ("year")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Periodical" "Complete Issue of a Periodical"<br/>
+  (("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("subtitle")<br/>
+   ("issuetitle")<br/>
+   ("issuesubtitle")<br/>
+   ("language")<br/>
+   ("series")<br/>
+   ("volume")<br/>
+   ("number")<br/>
+   ("issue")<br/>
+   ("date")<br/>
+   ("month")<br/>
+   ("year")<br/>
+   ("note")<br/>
+   ("issn")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("SuppPeriodical" "Supplemental Material in a Periodical"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("journaltitle")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("editor")<br/>
+   ("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("journalsubtitle")<br/>
+   ("issuetitle")<br/>
+   ("issuesubtitle")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("series")<br/>
+   ("volume")<br/>
+   ("number")<br/>
+   ("eid")<br/>
+   ("issue")<br/>
+   ("month")<br/>
+   ("pages")<br/>
+   ("version")<br/>
+   ("note")<br/>
+   ("issn")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Proceedings" "Single-Volume Conference Proceedings"<br/>
+  (("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("eventtitle")<br/>
+   ("eventdate")<br/>
+   ("venue")<br/>
+   ("language")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("organization")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("month")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("MVProceedings" "Multi-Volume Conference Proceedings"<br/>
+  (("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("eventtitle")<br/>
+   ("eventdate")<br/>
+   ("venue")<br/>
+   ("language")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("organization")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("month")<br/>
+   ("isbn")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("InProceedings" "Article in Conference Proceedings"<br/>
+  (("author")<br/>
+   ("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  (("booktitle"))<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("booksubtitle")<br/>
+   ("booktitleaddon")<br/>
+   ("eventtitle")<br/>
+   ("eventdate")<br/>
+   ("venue")<br/>
+   ("language")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("organization")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("month")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Reference" "Single-Volume Work of Reference"<br/>
+  (("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("MVReference" "Multi-Volume Work of Reference"<br/>
+  (("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("InReference" "Article in a Work of Reference"<br/>
+  (("author")<br/>
+   ("editor")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  (("booktitle"))<br/>
+  (("editora")<br/>
+   ("editorb")<br/>
+   ("editorc")<br/>
+   ("translator")<br/>
+   ("annotator")<br/>
+   ("commentator")<br/>
+   ("introduction")<br/>
+   ("foreword")<br/>
+   ("afterword")<br/>
+   ("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("maintitle")<br/>
+   ("mainsubtitle")<br/>
+   ("maintitleaddon")<br/>
+   ("booksubtitle")<br/>
+   ("booktitleaddon")<br/>
+   ("language")<br/>
+   ("origlanguage")<br/>
+   ("volume")<br/>
+   ("part")<br/>
+   ("edition")<br/>
+   ("volumes")<br/>
+   ("series")<br/>
+   ("number")<br/>
+   ("note")<br/>
+   ("publisher")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Report" "Technical or Research Report"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("type")<br/>
+   ("institution")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("number")<br/>
+   ("version")<br/>
+   ("note")<br/>
+   ("location")<br/>
+   ("month")<br/>
+   ("isrn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Thesis" "PhD. or Master's Thesis"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("type")<br/>
+   ("institution")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("note")<br/>
+   ("location")<br/>
+   ("month")<br/>
+   ("isbn")<br/>
+   ("chapter")<br/>
+   ("pages")<br/>
+   ("pagetotal")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("doi")<br/>
+   ("eprint")<br/>
+   ("eprintclass")<br/>
+   ("eprinttype")<br/>
+   ("url")<br/>
+   ("urldate")))<br/>
+ ("Unpublished" "Unpublished"<br/>
+  (("author")<br/>
+   ("title")<br/>
+   ("year" nil nil 0)<br/>
+   ("date" nil nil 0))<br/>
+  nil<br/>
+  (("subtitle")<br/>
+   ("titleaddon")<br/>
+   ("language")<br/>
+   ("howpublished")<br/>
+   ("note")<br/>
+   ("location")<br/>
+   ("isbn")<br/>
+   ("date")<br/>
+   ("month")<br/>
+   ("year")<br/>
+   ("addendum")<br/>
+   ("pubstate")<br/>
+   ("url")<br/>
+   ("urldate"))))<br/>
+<br/>

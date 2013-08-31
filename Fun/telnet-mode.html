@@ -1,1 +1,63 @@
-telnet-mode is an interactive compiled Lisp function in `telnet.el'.<br/><br/>(telnet-mode)<br/><br/>Parent mode: `comint-mode'.<br/><br/>This mode is for using telnet (or rsh) from a buffer to another host.<br/>It has most of the same commands as comint-mode.<br/>There is a variable ``telnet-interrupt-string'' which is the character<br/>sent to try to stop execution of a job on the remote host.<br/>Data is sent to the remote host when RET is typed.<br/><br/>In addition to any hooks its parent mode `comint-mode' might have run,<br/>this mode runs the hook `telnet-mode-hook', as the final step<br/>during initialization.<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>C-d		comint-delchar-or-maybe-eof<br/>RET		telnet-send-input<br/>ESC		Prefix Command<br/><C-down>	comint-next-input<br/><C-up>		comint-previous-input<br/><delete>	delete-char<br/><kp-delete>	delete-char<br/><mouse-2>	comint-insert-input<br/><br/>C-c C-c		telnet-interrupt-subjob<br/>C-c C-q		send-process-next-char<br/>C-c C-z		telnet-c-z<br/><br/>C-c C-a		comint-bol-or-process-mark<br/>C-c C-c		comint-interrupt-subjob<br/>  (that binding is currently shadowed by another mode)<br/>C-c C-d		comint-send-eof<br/>C-c C-e		comint-show-maximum-output<br/>C-c C-l		comint-dynamic-list-input-ring<br/>C-c RET		comint-copy-old-input<br/>C-c C-n		comint-next-prompt<br/>C-c C-o		comint-delete-output<br/>C-c C-p		comint-previous-prompt<br/>C-c C-r		comint-show-output<br/>C-c C-s		comint-write-output<br/>C-c C-u		comint-kill-input<br/>C-c C-w		backward-kill-word<br/>C-c C-x		comint-get-next-from-history<br/>C-c C-z		comint-stop-subjob<br/>  (that binding is currently shadowed by another mode)<br/>C-c ESC		Prefix Command<br/>C-c C-\		comint-quit-subjob<br/>C-c SPC		comint-accumulate<br/>C-c .		comint-insert-previous-argument<br/><br/>C-M-l		comint-show-output<br/>M-n		comint-next-input<br/>M-p		comint-previous-input<br/>M-r		comint-history-isearch-backward-regexp<br/><br/>C-c M-r		comint-previous-matching-input-from-input<br/>C-c M-s		comint-next-matching-input-from-input<br/><br/>
+<strong>telnet-mode</strong> is an interactive compiled Lisp function in `<code>telnet.el</code>'.<br/>
+<br/>
+(telnet-mode)<br/>
+<br/>
+Parent mode: `comint-mode'.<br/>
+<br/>
+This mode is for using telnet (or rsh) from a buffer to another host.<br/>
+It has most of the same commands as comint-mode.<br/>
+There is a variable ``telnet-interrupt-string'' which is the character<br/>
+sent to try to stop execution of a job on the remote host.<br/>
+Data is sent to the remote host when RET is typed.<br/>
+<br/>
+In addition to any hooks its parent mode `comint-mode' might have run,<br/>
+this mode runs the hook `telnet-mode-hook', as the final step<br/>
+during initialization.<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+C-d		comint-delchar-or-maybe-eof<br/>
+RET		telnet-send-input<br/>
+ESC		Prefix Command<br/>
+<C-down>	comint-next-input<br/>
+<C-up>		comint-previous-input<br/>
+<delete>	delete-char<br/>
+<kp-delete>	delete-char<br/>
+<mouse-2>	comint-insert-input<br/>
+<br/>
+C-c C-c		telnet-interrupt-subjob<br/>
+C-c C-q		send-process-next-char<br/>
+C-c C-z		telnet-c-z<br/>
+<br/>
+C-c C-a		comint-bol-or-process-mark<br/>
+C-c C-c		comint-interrupt-subjob<br/>
+  (that binding is currently shadowed by another mode)<br/>
+C-c C-d		comint-send-eof<br/>
+C-c C-e		comint-show-maximum-output<br/>
+C-c C-l		comint-dynamic-list-input-ring<br/>
+C-c RET		comint-copy-old-input<br/>
+C-c C-n		comint-next-prompt<br/>
+C-c C-o		comint-delete-output<br/>
+C-c C-p		comint-previous-prompt<br/>
+C-c C-r		comint-show-output<br/>
+C-c C-s		comint-write-output<br/>
+C-c C-u		comint-kill-input<br/>
+C-c C-w		backward-kill-word<br/>
+C-c C-x		comint-get-next-from-history<br/>
+C-c C-z		comint-stop-subjob<br/>
+  (that binding is currently shadowed by another mode)<br/>
+C-c ESC		Prefix Command<br/>
+C-c C-\		comint-quit-subjob<br/>
+C-c SPC		comint-accumulate<br/>
+C-c .		comint-insert-previous-argument<br/>
+<br/>
+C-M-l		comint-show-output<br/>
+M-n		comint-next-input<br/>
+M-p		comint-previous-input<br/>
+M-r		comint-history-isearch-backward-regexp<br/>
+<br/>
+C-c M-r		comint-previous-matching-input-from-input<br/>
+C-c M-s		comint-next-matching-input-from-input<br/>
+<br/>

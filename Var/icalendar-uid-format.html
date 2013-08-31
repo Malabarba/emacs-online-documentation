@@ -1,1 +1,19 @@
-icalendar-uid-format is a variable defined in `icalendar.el'.<br/>Its value is "emacs%t%c"<br/><br/>Documentation:<br/>Format of unique ID code (UID) for each iCalendar object.<br/>The following specifiers are available:<br/>%c COUNTER, an integer value that is increased each time a uid is<br/>   generated.  This may be necessary for systems which do not<br/>   provide time-resolution finer than a second.<br/>%h HASH, a hash value of the diary entry,<br/>%s DTSTART, the start date (excluding time) of the diary entry,<br/>%t TIMESTAMP, a unique creation timestamp,<br/>%u USERNAME, the variable `user-login-name'.<br/><br/>For example, a value of "%s_%h@mydomain.com" will generate a<br/>UID code for each entry composed of the time of the event, a hash<br/>code for the event, and your personal domain name.<br/><br/>You can customize this variable.
+<strong>icalendar-uid-format</strong> is a variable defined in `<code>icalendar.el</code>'.<br/>
+Its value is "emacs%t%c"<br/>
+<br/>
+Documentation:<br/>
+Format of unique ID code (UID) for each iCalendar object.<br/>
+The following specifiers are available:<br/>
+%c COUNTER, an integer value that is increased each time a uid is<br/>
+   generated.  This may be necessary for systems which do not<br/>
+   provide time-resolution finer than a second.<br/>
+%h HASH, a hash value of the diary entry,<br/>
+%s DTSTART, the start date (excluding time) of the diary entry,<br/>
+%t TIMESTAMP, a unique creation timestamp,<br/>
+%u USERNAME, the variable `user-login-name'.<br/>
+<br/>
+For example, a value of "%s_%h@mydomain.com" will generate a<br/>
+UID code for each entry composed of the time of the event, a hash<br/>
+code for the event, and your personal domain name.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,34 @@
-split-window-preferred-function is a variable defined in `window.el'.<br/>Its value is split-window-sensibly<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Function called by `display-buffer' routines to split a window.<br/>This function is called with a window as single argument and is<br/>supposed to split that window and return the new window.  If the<br/>window can (or shall) not be split, it is supposed to return nil.<br/>The default is to call the function `split-window-sensibly' which<br/>tries to split the window in a way which seems most suitable.<br/>You can customize the options `split-height-threshold' and/or<br/>`split-width-threshold' in order to have `split-window-sensibly'<br/>prefer either vertical or horizontal splitting.<br/><br/>If you set this to any other function, bear in mind that the<br/>`display-buffer' routines may call this function two times.  The<br/>argument of the first call is the largest window on its frame.<br/>If that call fails to return a live window, the function is<br/>called again with the least recently used window as argument.  If<br/>that call fails too, `display-buffer' will use an existing window<br/>to display its buffer.<br/><br/>The window selected at the time `display-buffer' was invoked is<br/>still selected when this function is called.  Hence you can<br/>compare the window argument with the value of `selected-window'<br/>if you intend to split the selected window instead or if you do<br/>not want to split the selected window.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/>
+<strong>split-window-preferred-function</strong> is a variable defined in `<code>window.el</code>'.<br/>
+Its value is split-window-sensibly<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Function called by `display-buffer' routines to split a window.<br/>
+This function is called with a window as single argument and is<br/>
+supposed to split that window and return the new window.  If the<br/>
+window can (or shall) not be split, it is supposed to return nil.<br/>
+The default is to call the function `split-window-sensibly' which<br/>
+tries to split the window in a way which seems most suitable.<br/>
+You can customize the options `split-height-threshold' and/or<br/>
+`split-width-threshold' in order to have `split-window-sensibly'<br/>
+prefer either vertical or horizontal splitting.<br/>
+<br/>
+If you set this to any other function, bear in mind that the<br/>
+`display-buffer' routines may call this function two times.  The<br/>
+argument of the first call is the largest window on its frame.<br/>
+If that call fails to return a live window, the function is<br/>
+called again with the least recently used window as argument.  If<br/>
+that call fails too, `display-buffer' will use an existing window<br/>
+to display its buffer.<br/>
+<br/>
+The window selected at the time `display-buffer' was invoked is<br/>
+still selected when this function is called.  Hence you can<br/>
+compare the window argument with the value of `selected-window'<br/>
+if you intend to split the selected window instead or if you do<br/>
+not want to split the selected window.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>

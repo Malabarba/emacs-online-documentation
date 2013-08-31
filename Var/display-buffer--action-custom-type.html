@@ -1,1 +1,30 @@
-display-buffer--action-custom-type is a variable defined in `window.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Custom type for `display-buffer' actions.<br/><br/>Value: (cons :tag "Action"<br/>      (choice :tag "Action functions"<br/>	      (choice :tag "Function"<br/>		      (const :tag "--" ignore)<br/>		      (const display-buffer-reuse-window)<br/>		      (const display-buffer-pop-up-window)<br/>		      (const display-buffer-same-window)<br/>		      (const display-buffer-pop-up-frame)<br/>		      (const display-buffer-use-some-window)<br/>		      (function :tag "Other function"))<br/>	      (repeat :tag "List of functions"<br/>		      (choice :tag "Function"<br/>			      (const :tag "--" ignore)<br/>			      (const display-buffer-reuse-window)<br/>			      (const display-buffer-pop-up-window)<br/>			      (const display-buffer-same-window)<br/>			      (const display-buffer-pop-up-frame)<br/>			      (const display-buffer-use-some-window)<br/>			      (function :tag "Other function"))))<br/>      (alist :tag "Action arguments" :key-type symbol :value-type<br/>	     (sexp :tag "Value")))<br/><br/>
+<strong>display-buffer--action-custom-type</strong> is a variable defined in `<code>window.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Custom type for `display-buffer' actions.<br/>
+<br/>
+Value: (cons :tag "Action"<br/>
+      (choice :tag "Action functions"<br/>
+	      (choice :tag "Function"<br/>
+		      (const :tag "--" ignore)<br/>
+		      (const display-buffer-reuse-window)<br/>
+		      (const display-buffer-pop-up-window)<br/>
+		      (const display-buffer-same-window)<br/>
+		      (const display-buffer-pop-up-frame)<br/>
+		      (const display-buffer-use-some-window)<br/>
+		      (function :tag "Other function"))<br/>
+	      (repeat :tag "List of functions"<br/>
+		      (choice :tag "Function"<br/>
+			      (const :tag "--" ignore)<br/>
+			      (const display-buffer-reuse-window)<br/>
+			      (const display-buffer-pop-up-window)<br/>
+			      (const display-buffer-same-window)<br/>
+			      (const display-buffer-pop-up-frame)<br/>
+			      (const display-buffer-use-some-window)<br/>
+			      (function :tag "Other function"))))<br/>
+      (alist :tag "Action arguments" :key-type symbol :value-type<br/>
+	     (sexp :tag "Value")))<br/>
+<br/>

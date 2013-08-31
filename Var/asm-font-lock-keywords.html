@@ -1,1 +1,37 @@
-asm-font-lock-keywords is a variable defined in `asm-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Additional expressions to highlight in Assembler mode.<br/><br/>Value: (("^\\(\\(\\sw\\|\\s_\\)+\\)\\>:?[ 	]*\\(\\sw+\\(\\.\\sw+\\)*\\)?"<br/>  (1 font-lock-function-name-face)<br/>  (3 font-lock-keyword-face nil t))<br/> ("^\\(\\.\\(\\sw\\|\\s_\\)+\\)\\>:" 1 font-lock-function-name-face)<br/> ("^\\((\\sw+)\\)?\\s +\\(\\(\\.?\\sw\\|\\s_\\)+\\(\\.\\sw+\\)*\\)" 2 font-lock-keyword-face)<br/> ("^\\(\\.\\(\\sw\\|\\s_\\)+\\)\\>[^:]?" 1 font-lock-keyword-face)<br/> ("%\\sw+" . font-lock-variable-name-face)<br/> ("^#[ 	]*\\(?:error\\|warning\\)[ 	]+\\(.+\\)" 1 font-lock-warning-face prepend)<br/> ("^#[ 	]*\\(?:import\\|include\\)[ 	]*\\(<[^>\"\n]*>?\\)" 1 font-lock-string-face prepend)<br/> ("^#[ 	]*define[ 	]+\\([[:alpha:]_][[:alnum:]_$]*\\)("<br/>  (1 font-lock-function-name-face prepend)<br/>  ((lambda<br/>     (limit)<br/>     (re-search-forward "\\(?:\\([[:alpha:]_][[:alnum:]_]*\\)[,]?\\)"<br/>			(or<br/>			 (save-excursion<br/>			   (re-search-forward ")" limit t))<br/>			 limit)<br/>			t))<br/>   nil nil<br/>   (1 font-lock-variable-name-face prepend)))<br/> ("^#[ 	]*\\(?:elif\\|if\\)\\>"<br/>  ("\\<\\(defined\\)\\>[ 	]*(?\\([[:alpha:]_][[:alnum:]_]*\\)?" nil nil<br/>   (1 font-lock-builtin-face prepend)<br/>   (2 font-lock-variable-name-face prepend t)))<br/> ("^\\(#[ 	]*\\(?:define\\|e\\(?:l\\(?:if\\|se\\)\\|ndif\\|rror\\)\\|file\\|i\\(?:f\\(?:n?def\\)?\\|mport\\|nclude\\)\\|line\\|pragma\\|undef\\|warning\\)\\)\\>[ 	!]*\\([[:alpha:]_][[:alnum:]_]*\\)?"<br/>  (1 font-lock-preprocessor-face prepend)<br/>  (2 font-lock-variable-name-face nil t)))<br/><br/>
+<strong>asm-font-lock-keywords</strong> is a variable defined in `<code>asm-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Additional expressions to highlight in Assembler mode.<br/>
+<br/>
+Value: (("^\\(\\(\\sw\\|\\s_\\)+\\)\\>:?[ 	]*\\(\\sw+\\(\\.\\sw+\\)*\\)?"<br/>
+  (1 font-lock-function-name-face)<br/>
+  (3 font-lock-keyword-face nil t))<br/>
+ ("^\\(\\.\\(\\sw\\|\\s_\\)+\\)\\>:" 1 font-lock-function-name-face)<br/>
+ ("^\\((\\sw+)\\)?\\s +\\(\\(\\.?\\sw\\|\\s_\\)+\\(\\.\\sw+\\)*\\)" 2 font-lock-keyword-face)<br/>
+ ("^\\(\\.\\(\\sw\\|\\s_\\)+\\)\\>[^:]?" 1 font-lock-keyword-face)<br/>
+ ("%\\sw+" . font-lock-variable-name-face)<br/>
+ ("^#[ 	]*\\(?:error\\|warning\\)[ 	]+\\(.+\\)" 1 font-lock-warning-face prepend)<br/>
+ ("^#[ 	]*\\(?:import\\|include\\)[ 	]*\\(<[^>\"\n]*>?\\)" 1 font-lock-string-face prepend)<br/>
+ ("^#[ 	]*define[ 	]+\\([[:alpha:]_][[:alnum:]_$]*\\)("<br/>
+  (1 font-lock-function-name-face prepend)<br/>
+  ((lambda<br/>
+     (limit)<br/>
+     (re-search-forward "\\(?:\\([[:alpha:]_][[:alnum:]_]*\\)[,]?\\)"<br/>
+			(or<br/>
+			 (save-excursion<br/>
+			   (re-search-forward ")" limit t))<br/>
+			 limit)<br/>
+			t))<br/>
+   nil nil<br/>
+   (1 font-lock-variable-name-face prepend)))<br/>
+ ("^#[ 	]*\\(?:elif\\|if\\)\\>"<br/>
+  ("\\<\\(defined\\)\\>[ 	]*(?\\([[:alpha:]_][[:alnum:]_]*\\)?" nil nil<br/>
+   (1 font-lock-builtin-face prepend)<br/>
+   (2 font-lock-variable-name-face prepend t)))<br/>
+ ("^\\(#[ 	]*\\(?:define\\|e\\(?:l\\(?:if\\|se\\)\\|ndif\\|rror\\)\\|file\\|i\\(?:f\\(?:n?def\\)?\\|mport\\|nclude\\)\\|line\\|pragma\\|undef\\|warning\\)\\)\\>[ 	!]*\\([[:alpha:]_][[:alnum:]_]*\\)?"<br/>
+  (1 font-lock-preprocessor-face prepend)<br/>
+  (2 font-lock-variable-name-face nil t)))<br/>
+<br/>

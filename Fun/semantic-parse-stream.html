@@ -1,1 +1,14 @@
-semantic-parse-stream is a compiled Lisp function in `semantic.el'.<br/><br/>(semantic-parse-stream STREAM NONTERMINAL)<br/><br/>Parse STREAM, starting at the first NONTERMINAL rule.<br/>For bovine and wisent based parsers, STREAM is from the output of<br/>`semantic-lex', and NONTERMINAL is a rule in the appropriate language<br/>specific rules file.<br/>The default parser table used for bovine or wisent based parsers is<br/>`semantic--parse-table'.<br/><br/>Must return a list: (STREAM TAGS) where STREAM is the unused elements<br/>from STREAM, and TAGS is the list of semantic tags found; usually only<br/>one tag is returned with the exception of compound statements.
+<strong>semantic-parse-stream</strong> is a compiled Lisp function in `<code>semantic.el</code>'.<br/>
+<br/>
+(semantic-parse-stream STREAM NONTERMINAL)<br/>
+<br/>
+Parse STREAM, starting at the first NONTERMINAL rule.<br/>
+For bovine and wisent based parsers, STREAM is from the output of<br/>
+`semantic-lex', and NONTERMINAL is a rule in the appropriate language<br/>
+specific rules file.<br/>
+The default parser table used for bovine or wisent based parsers is<br/>
+`semantic--parse-table'.<br/>
+<br/>
+Must return a list: (STREAM TAGS) where STREAM is the unused elements<br/>
+from STREAM, and TAGS is the list of semantic tags found; usually only<br/>
+one tag is returned with the exception of compound statements.

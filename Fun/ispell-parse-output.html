@@ -1,1 +1,16 @@
-ispell-parse-output is a compiled Lisp function in `ispell.el'.<br/><br/>(ispell-parse-output OUTPUT &optional ACCEPT-LIST SHIFT)<br/><br/>Parse the OUTPUT string from Ispell process and return:<br/>1: t for an exact match.<br/>2: A string containing the root word matched via suffix removal.<br/>3: A list of possible correct spellings of the format:<br/>   ("ORIGINAL-WORD" OFFSET MISS-LIST GUESS-LIST)<br/>   ORIGINAL-WORD is a string of the possibly misspelled word.<br/>   OFFSET is an integer giving the line offset of the word.<br/>   MISS-LIST and GUESS-LIST are possibly null lists of guesses and misses.<br/>4: nil when an error has occurred.<br/><br/>Optional second arg ACCEPT-LIST is list of words already accepted.<br/>Optional third arg SHIFT is an offset to apply based on previous corrections.
+<strong>ispell-parse-output</strong> is a compiled Lisp function in `<code>ispell.el</code>'.<br/>
+<br/>
+(ispell-parse-output OUTPUT &optional ACCEPT-LIST SHIFT)<br/>
+<br/>
+Parse the OUTPUT string from Ispell process and return:<br/>
+1: t for an exact match.<br/>
+2: A string containing the root word matched via suffix removal.<br/>
+3: A list of possible correct spellings of the format:<br/>
+   ("ORIGINAL-WORD" OFFSET MISS-LIST GUESS-LIST)<br/>
+   ORIGINAL-WORD is a string of the possibly misspelled word.<br/>
+   OFFSET is an integer giving the line offset of the word.<br/>
+   MISS-LIST and GUESS-LIST are possibly null lists of guesses and misses.<br/>
+4: nil when an error has occurred.<br/>
+<br/>
+Optional second arg ACCEPT-LIST is list of words already accepted.<br/>
+Optional third arg SHIFT is an offset to apply based on previous corrections.

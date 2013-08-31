@@ -1,1 +1,72 @@
-mode-line-format is a variable defined in `C source code'.<br/>Its value is ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position<br/> (vc-mode vc-mode)<br/> "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)<br/><br/><br/>  Automatically becomes buffer-local when set.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Template for displaying mode line for current buffer.<br/><br/>The value may be nil, a string, a symbol or a list.<br/><br/>A value of nil means don't display a mode line.<br/><br/>For any symbol other than t or nil, the symbol's value is processed as<br/> a mode line construct.  As a special exception, if that value is a<br/> string, the string is processed verbatim, without handling any<br/> %-constructs (see below).  Also, unless the symbol has a non-nil<br/> `risky-local-variable' property, all properties in any strings, as<br/> well as all :eval and :propertize forms in the value, are ignored.<br/><br/>A list whose car is a string or list is processed by processing each<br/> of the list elements recursively, as separate mode line constructs,<br/> and concatenating the results.<br/><br/>A list of the form `(:eval FORM)' is processed by evaluating FORM and<br/> using the result as a mode line construct.  Be careful--FORM should<br/> not load any files, because that can cause an infinite recursion.<br/><br/>A list of the form `(:propertize ELT PROPS...)' is processed by<br/> processing ELT as the mode line construct, and adding the text<br/> properties PROPS to the result.<br/><br/>A list whose car is a symbol is processed by examining the symbol's<br/> value, and, if that value is non-nil, processing the cadr of the list<br/> recursively; and if that value is nil, processing the caddr of the<br/> list recursively.<br/><br/>A list whose car is an integer is processed by processing the cadr of<br/> the list, and padding (if the number is positive) or truncating (if<br/> negative) to the width specified by that number.<br/><br/>A string is printed verbatim in the mode line except for %-constructs:<br/>  %b -- print buffer name.      %f -- print visited file name.<br/>  %F -- print frame name.<br/>  %* -- print %, * or hyphen.   %+ -- print *, % or hyphen.<br/>	%& is like %*, but ignore read-only-ness.<br/>	% means buffer is read-only and * means it is modified.<br/>	For a modified read-only buffer, %* gives % and %+ gives *.<br/>  %s -- print process status.   %l -- print the current line number.<br/>  %c -- print the current column number (this makes editing slower).<br/>        To make the column number update correctly in all cases,<br/>	`column-number-mode' must be non-nil.<br/>  %i -- print the size of the buffer.<br/>  %I -- like %i, but use k, M, G, etc., to abbreviate.<br/>  %p -- print percent of buffer above top of window, or Top, Bot or All.<br/>  %P -- print percent of buffer above bottom of window, perhaps plus Top,<br/>        or print Bottom or All.<br/>  %n -- print Narrow if appropriate.<br/>  %t -- visited file is text or binary (if OS supports this distinction).<br/>  %z -- print mnemonics of keyboard, terminal, and buffer coding systems.<br/>  %Z -- like %z, but including the end-of-line format.<br/>  %e -- print error message about full memory.<br/>  %@ -- print @ or hyphen.  @ means that default-directory is on a<br/>        remote machine.<br/>  %[ -- print one [ for each recursive editing level.  %] similar.<br/>  %% -- print %.   %- -- print infinitely many dashes.<br/>Decimal digits after the % specify field width to which to pad.<br/><br/>You can customize this variable.
+<strong>mode-line-format</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position<br/>
+ (vc-mode vc-mode)<br/>
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)<br/>
+<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Template for displaying mode line for current buffer.<br/>
+<br/>
+The value may be nil, a string, a symbol or a list.<br/>
+<br/>
+A value of nil means don't display a mode line.<br/>
+<br/>
+For any symbol other than t or nil, the symbol's value is processed as<br/>
+ a mode line construct.  As a special exception, if that value is a<br/>
+ string, the string is processed verbatim, without handling any<br/>
+ %-constructs (see below).  Also, unless the symbol has a non-nil<br/>
+ `risky-local-variable' property, all properties in any strings, as<br/>
+ well as all :eval and :propertize forms in the value, are ignored.<br/>
+<br/>
+A list whose car is a string or list is processed by processing each<br/>
+ of the list elements recursively, as separate mode line constructs,<br/>
+ and concatenating the results.<br/>
+<br/>
+A list of the form `(:eval FORM)' is processed by evaluating FORM and<br/>
+ using the result as a mode line construct.  Be careful--FORM should<br/>
+ not load any files, because that can cause an infinite recursion.<br/>
+<br/>
+A list of the form `(:propertize ELT PROPS...)' is processed by<br/>
+ processing ELT as the mode line construct, and adding the text<br/>
+ properties PROPS to the result.<br/>
+<br/>
+A list whose car is a symbol is processed by examining the symbol's<br/>
+ value, and, if that value is non-nil, processing the cadr of the list<br/>
+ recursively; and if that value is nil, processing the caddr of the<br/>
+ list recursively.<br/>
+<br/>
+A list whose car is an integer is processed by processing the cadr of<br/>
+ the list, and padding (if the number is positive) or truncating (if<br/>
+ negative) to the width specified by that number.<br/>
+<br/>
+A string is printed verbatim in the mode line except for %-constructs:<br/>
+  %b -- print buffer name.      %f -- print visited file name.<br/>
+  %F -- print frame name.<br/>
+  %* -- print %, * or hyphen.   %+ -- print *, % or hyphen.<br/>
+	%& is like %*, but ignore read-only-ness.<br/>
+	% means buffer is read-only and * means it is modified.<br/>
+	For a modified read-only buffer, %* gives % and %+ gives *.<br/>
+  %s -- print process status.   %l -- print the current line number.<br/>
+  %c -- print the current column number (this makes editing slower).<br/>
+        To make the column number update correctly in all cases,<br/>
+	`column-number-mode' must be non-nil.<br/>
+  %i -- print the size of the buffer.<br/>
+  %I -- like %i, but use k, M, G, etc., to abbreviate.<br/>
+  %p -- print percent of buffer above top of window, or Top, Bot or All.<br/>
+  %P -- print percent of buffer above bottom of window, perhaps plus Top,<br/>
+        or print Bottom or All.<br/>
+  %n -- print Narrow if appropriate.<br/>
+  %t -- visited file is text or binary (if OS supports this distinction).<br/>
+  %z -- print mnemonics of keyboard, terminal, and buffer coding systems.<br/>
+  %Z -- like %z, but including the end-of-line format.<br/>
+  %e -- print error message about full memory.<br/>
+  %@ -- print @ or hyphen.  @ means that default-directory is on a<br/>
+        remote machine.<br/>
+  %[ -- print one [ for each recursive editing level.  %] similar.<br/>
+  %% -- print %.   %- -- print infinitely many dashes.<br/>
+Decimal digits after the % specify field width to which to pad.<br/>
+<br/>
+You can customize this variable.

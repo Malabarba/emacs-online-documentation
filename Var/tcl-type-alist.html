@@ -1,1 +1,41 @@
-tcl-type-alist is a variable defined in `tcl.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Alist that controls indentation.<br/>(Actually, this really only controls what happens on continuation lines).<br/>Each entry looks like `(KEYWORD TYPE ...)'.<br/>Each type entry describes a sexp after the keyword, and can be one of:<br/>* nil, meaning that this sexp has no particular type.<br/>* tcl-expr, meaning that this sexp is an arithmetic expression.<br/>* tcl-commands, meaning that this sexp holds Tcl commands.<br/>* a string, which must exactly match the string at the corresponding<br/>  position for a match to be made.<br/><br/>For example, the entry for the "loop" command is:<br/><br/>   ("loop" nil tcl-expr tcl-commands)<br/><br/>This means that the "loop" command has three arguments.  The first<br/>argument is ignored (for indentation purposes).  The second argument<br/>is a Tcl expression, and the last argument is Tcl commands.<br/><br/>Value: (("proc" nil tcl-expr tcl-commands)<br/> ("method" nil tcl-expr tcl-commands)<br/> ("destructor" tcl-commands)<br/> ("constructor" tcl-commands)<br/> ("expr" tcl-expr)<br/> ("catch" tcl-commands)<br/> ("if" tcl-expr "then" tcl-commands)<br/> ("elseif" tcl-expr "then" tcl-commands)<br/> ("elseif" tcl-expr tcl-commands)<br/> ("if" tcl-expr tcl-commands)<br/> ("while" tcl-expr tcl-commands)<br/> ("for" tcl-commands tcl-expr tcl-commands tcl-commands)<br/> ("foreach" nil nil tcl-commands)<br/> ("for_file" nil nil tcl-commands)<br/> ("for_array_keys" nil nil tcl-commands)<br/> ("for_recursive_glob" nil nil nil tcl-commands)<br/> ("loop" nil tcl-expr tcl-expr tcl-commands)<br/> ("loop" nil tcl-expr tcl-commands))<br/><br/>
+<strong>tcl-type-alist</strong> is a variable defined in `<code>tcl.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Alist that controls indentation.<br/>
+(Actually, this really only controls what happens on continuation lines).<br/>
+Each entry looks like `(KEYWORD TYPE ...)'.<br/>
+Each type entry describes a sexp after the keyword, and can be one of:<br/>
+* nil, meaning that this sexp has no particular type.<br/>
+* tcl-expr, meaning that this sexp is an arithmetic expression.<br/>
+* tcl-commands, meaning that this sexp holds Tcl commands.<br/>
+* a string, which must exactly match the string at the corresponding<br/>
+  position for a match to be made.<br/>
+<br/>
+For example, the entry for the "loop" command is:<br/>
+<br/>
+   ("loop" nil tcl-expr tcl-commands)<br/>
+<br/>
+This means that the "loop" command has three arguments.  The first<br/>
+argument is ignored (for indentation purposes).  The second argument<br/>
+is a Tcl expression, and the last argument is Tcl commands.<br/>
+<br/>
+Value: (("proc" nil tcl-expr tcl-commands)<br/>
+ ("method" nil tcl-expr tcl-commands)<br/>
+ ("destructor" tcl-commands)<br/>
+ ("constructor" tcl-commands)<br/>
+ ("expr" tcl-expr)<br/>
+ ("catch" tcl-commands)<br/>
+ ("if" tcl-expr "then" tcl-commands)<br/>
+ ("elseif" tcl-expr "then" tcl-commands)<br/>
+ ("elseif" tcl-expr tcl-commands)<br/>
+ ("if" tcl-expr tcl-commands)<br/>
+ ("while" tcl-expr tcl-commands)<br/>
+ ("for" tcl-commands tcl-expr tcl-commands tcl-commands)<br/>
+ ("foreach" nil nil tcl-commands)<br/>
+ ("for_file" nil nil tcl-commands)<br/>
+ ("for_array_keys" nil nil tcl-commands)<br/>
+ ("for_recursive_glob" nil nil nil tcl-commands)<br/>
+ ("loop" nil tcl-expr tcl-expr tcl-commands)<br/>
+ ("loop" nil tcl-expr tcl-commands))<br/>
+<br/>

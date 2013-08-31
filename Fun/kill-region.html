@@ -1,1 +1,26 @@
-kill-region is an interactive compiled Lisp function in `simple.el'.<br/><br/>It is bound to C-w, <S-delete>, <menu-bar> <edit> <cut>.<br/><br/>(kill-region BEG END)<br/><br/>Kill ("cut") text between point and mark.<br/>This deletes the text from the buffer and saves it in the kill ring.<br/>The command C-y can retrieve it from there.<br/>(If you want to save the region without killing it, use M-w.)<br/><br/>If you want to append the killed region to the last killed text,<br/>use C-M-w before C-w.<br/><br/>If the buffer is read-only, Emacs will beep and refrain from deleting<br/>the text, but put the text in the kill ring anyway.  This means that<br/>you can use the killing commands to copy text from a read-only buffer.<br/><br/>Lisp programs should use this function for killing text.<br/> (To delete text, use `delete-region'.)<br/>Supply two arguments, character positions indicating the stretch of text<br/> to be killed.<br/>Any command that calls this function is a "kill command".<br/>If the previous command was also a kill command,<br/>the text killed this time appends to the text killed last time<br/>to make one entry in the kill ring.
+<strong>kill-region</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+It is bound to C-w, <S-delete>, <menu-bar> <edit> <cut>.<br/>
+<br/>
+(kill-region BEG END)<br/>
+<br/>
+Kill ("cut") text between point and mark.<br/>
+This deletes the text from the buffer and saves it in the kill ring.<br/>
+The command C-y can retrieve it from there.<br/>
+(If you want to save the region without killing it, use M-w.)<br/>
+<br/>
+If you want to append the killed region to the last killed text,<br/>
+use C-M-w before C-w.<br/>
+<br/>
+If the buffer is read-only, Emacs will beep and refrain from deleting<br/>
+the text, but put the text in the kill ring anyway.  This means that<br/>
+you can use the killing commands to copy text from a read-only buffer.<br/>
+<br/>
+Lisp programs should use this function for killing text.<br/>
+ (To delete text, use `delete-region'.)<br/>
+Supply two arguments, character positions indicating the stretch of text<br/>
+ to be killed.<br/>
+Any command that calls this function is a "kill command".<br/>
+If the previous command was also a kill command,<br/>
+the text killed this time appends to the text killed last time<br/>
+to make one entry in the kill ring.

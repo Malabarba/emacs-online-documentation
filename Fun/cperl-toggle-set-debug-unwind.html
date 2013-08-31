@@ -1,1 +1,17 @@
-cperl-toggle-set-debug-unwind is an interactive compiled Lisp function in `cperl-mode.el'.<br/><br/>(cperl-toggle-set-debug-unwind ARG &optional BACKTRACE)<br/><br/>Toggle (or, with numeric argument, set) debugging state of syntaxification.<br/>Nonpositive numeric argument disables debugging messages.  The message<br/>summarizes which regions it was decided to rescan for syntactic constructs.<br/><br/>The message looks like this:<br/><br/>  Syxify req=123..138 actual=101..146 done-to: 112=>146 statepos: 73=>117<br/><br/>Numbers are character positions in the buffer.  REQ provides the range to<br/>rescan requested by `font-lock'.  ACTUAL is the range actually resyntaxified;<br/>for correct operation it should start and end outside any special syntactic<br/>construct.  DONE-TO and STATEPOS indicate changes to internal caches maintained<br/>by CPerl.
+<strong>cperl-toggle-set-debug-unwind</strong> is an interactive compiled Lisp function in `<code>cperl-mode.el</code>'.<br/>
+<br/>
+(cperl-toggle-set-debug-unwind ARG &optional BACKTRACE)<br/>
+<br/>
+Toggle (or, with numeric argument, set) debugging state of syntaxification.<br/>
+Nonpositive numeric argument disables debugging messages.  The message<br/>
+summarizes which regions it was decided to rescan for syntactic constructs.<br/>
+<br/>
+The message looks like this:<br/>
+<br/>
+  Syxify req=123..138 actual=101..146 done-to: 112=>146 statepos: 73=>117<br/>
+<br/>
+Numbers are character positions in the buffer.  REQ provides the range to<br/>
+rescan requested by `font-lock'.  ACTUAL is the range actually resyntaxified;<br/>
+for correct operation it should start and end outside any special syntactic<br/>
+construct.  DONE-TO and STATEPOS indicate changes to internal caches maintained<br/>
+by CPerl.

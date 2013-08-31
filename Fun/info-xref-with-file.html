@@ -1,1 +1,13 @@
-info-xref-with-file is a Lisp macro in `info-xref.el'.<br/><br/>(info-xref-with-file FILENAME &rest BODY)<br/><br/>Evaluate BODY in a buffer containing the contents of FILENAME.<br/>If FILENAME is already in a buffer then that's used, otherwise a<br/>temporary buffer.<br/><br/>The current implementation uses `insert-file-contents' rather<br/>than `find-file-noselect' so as not to be held up by queries<br/>about local variables or possible weirdness in a major mode.<br/>`lm-with-file' does a similar thing, but it sets<br/>`emacs-lisp-mode' which is not wanted here.
+<strong>info-xref-with-file</strong> is a Lisp macro in `<code>info-xref.el</code>'.<br/>
+<br/>
+(info-xref-with-file FILENAME &rest BODY)<br/>
+<br/>
+Evaluate BODY in a buffer containing the contents of FILENAME.<br/>
+If FILENAME is already in a buffer then that's used, otherwise a<br/>
+temporary buffer.<br/>
+<br/>
+The current implementation uses `insert-file-contents' rather<br/>
+than `find-file-noselect' so as not to be held up by queries<br/>
+about local variables or possible weirdness in a major mode.<br/>
+`lm-with-file' does a similar thing, but it sets<br/>
+`emacs-lisp-mode' which is not wanted here.

@@ -1,1 +1,54 @@
-align-rules-list-type is a variable defined in `align.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>The `type' form for any `align-rules-list' variable.<br/><br/>Value: (repeat<br/> (cons :tag "Alignment rule"<br/>       (symbol :tag "Title")<br/>       (cons :tag "Required attributes"<br/>	     (cons :tag "Regexp"<br/>		   (const :tag "(Regular expression to match)" regexp)<br/>		   (choice :value "\\(\\s-+\\)" regexp function))<br/>	     (repeat :tag "Optional attributes"<br/>		     (choice<br/>		      (cons :tag "Repeat"<br/>			    (const :tag "(Repeat this rule throughout line)" repeat)<br/>			    (boolean :value t))<br/>		      (cons :tag "Paren group"<br/>			    (const :tag "(Parenthesis group to use)" group)<br/>			    (choice :value 2 integer<br/>				    (repeat integer)))<br/>		      (cons :tag "Modes"<br/>			    (const :tag "(Modes where this rule applies)" modes)<br/>			    (sexp :value<br/>				  (text-mode)))<br/>		      (cons :tag "Case-fold"<br/>			    (const :tag "(Should case be ignored for this rule)" case-fold)<br/>			    (boolean :value t))<br/>		      (cons :tag "To Tab Stop"<br/>			    (const :tag "(Should rule align to tab stops)" tab-stop)<br/>			    (boolean :value nil))<br/>		      (cons :tag "Valid"<br/>			    (const :tag "(Return non-nil if rule is valid)" valid)<br/>			    (function :value t))<br/>		      (cons :tag "Run If"<br/>			    (const :tag "(Return non-nil if rule should run)" run-if)<br/>			    (function :value t))<br/>		      (cons :tag "Column"<br/>			    (const :tag "(Column to fix alignment at)" column)<br/>			    (choice :value comment-column integer symbol))<br/>		      (cons :tag "Spacing"<br/>			    (const :tag "(Amount of spacing to use)" spacing)<br/>			    (integer :value 1))<br/>		      (cons :tag "Justify"<br/>			    (const :tag "(Should text be right justified)" justify)<br/>			    (boolean :value t))<br/>		      (cons :tag "Separate"<br/>			    (const :tag "(Separation to use for this rule)" separate)<br/>			    (choice :value "^\\s-*$"<br/>				    (const entire)<br/>				    (const group)<br/>				    regexp function)))))))<br/><br/>
+<strong>align-rules-list-type</strong> is a variable defined in `<code>align.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+The `type' form for any `align-rules-list' variable.<br/>
+<br/>
+Value: (repeat<br/>
+ (cons :tag "Alignment rule"<br/>
+       (symbol :tag "Title")<br/>
+       (cons :tag "Required attributes"<br/>
+	     (cons :tag "Regexp"<br/>
+		   (const :tag "(Regular expression to match)" regexp)<br/>
+		   (choice :value "\\(\\s-+\\)" regexp function))<br/>
+	     (repeat :tag "Optional attributes"<br/>
+		     (choice<br/>
+		      (cons :tag "Repeat"<br/>
+			    (const :tag "(Repeat this rule throughout line)" repeat)<br/>
+			    (boolean :value t))<br/>
+		      (cons :tag "Paren group"<br/>
+			    (const :tag "(Parenthesis group to use)" group)<br/>
+			    (choice :value 2 integer<br/>
+				    (repeat integer)))<br/>
+		      (cons :tag "Modes"<br/>
+			    (const :tag "(Modes where this rule applies)" modes)<br/>
+			    (sexp :value<br/>
+				  (text-mode)))<br/>
+		      (cons :tag "Case-fold"<br/>
+			    (const :tag "(Should case be ignored for this rule)" case-fold)<br/>
+			    (boolean :value t))<br/>
+		      (cons :tag "To Tab Stop"<br/>
+			    (const :tag "(Should rule align to tab stops)" tab-stop)<br/>
+			    (boolean :value nil))<br/>
+		      (cons :tag "Valid"<br/>
+			    (const :tag "(Return non-nil if rule is valid)" valid)<br/>
+			    (function :value t))<br/>
+		      (cons :tag "Run If"<br/>
+			    (const :tag "(Return non-nil if rule should run)" run-if)<br/>
+			    (function :value t))<br/>
+		      (cons :tag "Column"<br/>
+			    (const :tag "(Column to fix alignment at)" column)<br/>
+			    (choice :value comment-column integer symbol))<br/>
+		      (cons :tag "Spacing"<br/>
+			    (const :tag "(Amount of spacing to use)" spacing)<br/>
+			    (integer :value 1))<br/>
+		      (cons :tag "Justify"<br/>
+			    (const :tag "(Should text be right justified)" justify)<br/>
+			    (boolean :value t))<br/>
+		      (cons :tag "Separate"<br/>
+			    (const :tag "(Separation to use for this rule)" separate)<br/>
+			    (choice :value "^\\s-*$"<br/>
+				    (const entire)<br/>
+				    (const group)<br/>
+				    regexp function)))))))<br/>
+<br/>

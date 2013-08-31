@@ -1,1 +1,46 @@
-new-frame is an alias for `make-frame' in `frame.el'.<br/><br/>(new-frame &optional PARAMETERS)<br/><br/>This function is obsolete since 22.1;<br/>use `make-frame' instead.<br/><br/>Return a newly created frame displaying the current buffer.<br/>Optional argument PARAMETERS is an alist of frame parameters for<br/>the new frame.  Each element of PARAMETERS should have the<br/>form (NAME . VALUE), for example:<br/><br/> (name . STRING)	The frame should be named STRING.<br/><br/> (width . NUMBER)	The frame should be NUMBER characters in width.<br/> (height . NUMBER)	The frame should be NUMBER text lines high.<br/><br/>You cannot specify either `width' or `height', you must specify<br/>neither or both.<br/><br/> (minibuffer . t)	The frame should have a minibuffer.<br/> (minibuffer . nil)	The frame should have no minibuffer.<br/> (minibuffer . only)	The frame should contain only a minibuffer.<br/> (minibuffer . WINDOW)	The frame should use WINDOW as its minibuffer window.<br/><br/> (window-system . nil)	The frame should be displayed on a terminal device.<br/> (window-system . x)	The frame should be displayed in an X window.<br/><br/> (display . ":0")     The frame should appear on display :0.<br/><br/> (terminal . TERMINAL)  The frame should use the terminal object TERMINAL.<br/><br/>In addition, any parameter specified in `default-frame-alist',<br/>but not present in PARAMETERS, is applied.<br/><br/>Before creating the frame (via `frame-creation-function-alist'),<br/>this function runs the hook `before-make-frame-hook'.  After<br/>creating the frame, it runs the hook `after-make-frame-functions'<br/>with one arg, the newly created frame.<br/><br/>If a display parameter is supplied and a window-system is not,<br/>guess the window-system from the display.<br/><br/>On graphical displays, this function does not itself make the new<br/>frame the selected frame.  However, the window system may select<br/>the new frame according to its own rules.
+<strong>new-frame</strong> is an alias for `make-frame' in `<code>frame.el</code>'.<br/>
+<br/>
+(new-frame &optional PARAMETERS)<br/>
+<br/>
+This function is obsolete since 22.1;<br/>
+use `make-frame' instead.<br/>
+<br/>
+Return a newly created frame displaying the current buffer.<br/>
+Optional argument PARAMETERS is an alist of frame parameters for<br/>
+the new frame.  Each element of PARAMETERS should have the<br/>
+form (NAME . VALUE), for example:<br/>
+<br/>
+ (name . STRING)	The frame should be named STRING.<br/>
+<br/>
+ (width . NUMBER)	The frame should be NUMBER characters in width.<br/>
+ (height . NUMBER)	The frame should be NUMBER text lines high.<br/>
+<br/>
+You cannot specify either `width' or `height', you must specify<br/>
+neither or both.<br/>
+<br/>
+ (minibuffer . t)	The frame should have a minibuffer.<br/>
+ (minibuffer . nil)	The frame should have no minibuffer.<br/>
+ (minibuffer . only)	The frame should contain only a minibuffer.<br/>
+ (minibuffer . WINDOW)	The frame should use WINDOW as its minibuffer window.<br/>
+<br/>
+ (window-system . nil)	The frame should be displayed on a terminal device.<br/>
+ (window-system . x)	The frame should be displayed in an X window.<br/>
+<br/>
+ (display . ":0")     The frame should appear on display :0.<br/>
+<br/>
+ (terminal . TERMINAL)  The frame should use the terminal object TERMINAL.<br/>
+<br/>
+In addition, any parameter specified in `default-frame-alist',<br/>
+but not present in PARAMETERS, is applied.<br/>
+<br/>
+Before creating the frame (via `frame-creation-function-alist'),<br/>
+this function runs the hook `before-make-frame-hook'.  After<br/>
+creating the frame, it runs the hook `after-make-frame-functions'<br/>
+with one arg, the newly created frame.<br/>
+<br/>
+If a display parameter is supplied and a window-system is not,<br/>
+guess the window-system from the display.<br/>
+<br/>
+On graphical displays, this function does not itself make the new<br/>
+frame the selected frame.  However, the window system may select<br/>
+the new frame according to its own rules.

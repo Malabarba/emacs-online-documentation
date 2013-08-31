@@ -1,1 +1,11 @@
-backquote-process is a compiled Lisp function in `backquote.el'.<br/><br/>(backquote-process S &optional LEVEL)<br/><br/>Process the body of a backquote.<br/>S is the body.  Returns a cons cell whose cdr is piece of code which<br/>is the macro-expansion of S, and whose car is a small integer whose value<br/>can either indicate that the code is constant (0), or not (1), or returns<br/>a list which should be spliced into its environment (2).<br/>LEVEL is only used internally and indicates the nesting level:<br/>0 (the default) is for the toplevel nested inside a single backquote.
+<strong>backquote-process</strong> is a compiled Lisp function in `<code>backquote.el</code>'.<br/>
+<br/>
+(backquote-process S &optional LEVEL)<br/>
+<br/>
+Process the body of a backquote.<br/>
+S is the body.  Returns a cons cell whose cdr is piece of code which<br/>
+is the macro-expansion of S, and whose car is a small integer whose value<br/>
+can either indicate that the code is constant (0), or not (1), or returns<br/>
+a list which should be spliced into its environment (2).<br/>
+LEVEL is only used internally and indicates the nesting level:<br/>
+0 (the default) is for the toplevel nested inside a single backquote.

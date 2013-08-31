@@ -1,1 +1,12 @@
-cl-block is an autoloaded Lisp macro in `cl-macs.el'.<br/><br/>(cl-block NAME &rest BODY)<br/><br/>Define a lexically-scoped block named NAME.<br/>NAME may be any symbol.  Code inside the BODY forms can call `cl-return-from'<br/>to jump prematurely out of the block.  This differs from `catch' and `throw'<br/>in two respects:  First, the NAME is an unevaluated symbol rather than a<br/>quoted symbol or other form; and second, NAME is lexically rather than<br/>dynamically scoped:  Only references to it within BODY will work.  These<br/>references may appear inside macro expansions, but not inside functions<br/>called from BODY.
+<strong>cl-block</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.<br/>
+<br/>
+(cl-block NAME &rest BODY)<br/>
+<br/>
+Define a lexically-scoped block named NAME.<br/>
+NAME may be any symbol.  Code inside the BODY forms can call `cl-return-from'<br/>
+to jump prematurely out of the block.  This differs from `catch' and `throw'<br/>
+in two respects:  First, the NAME is an unevaluated symbol rather than a<br/>
+quoted symbol or other form; and second, NAME is lexically rather than<br/>
+dynamically scoped:  Only references to it within BODY will work.  These<br/>
+references may appear inside macro expansions, but not inside functions<br/>
+called from BODY.

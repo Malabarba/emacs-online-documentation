@@ -1,1 +1,24 @@
-completion-extra-properties is a variable defined in `minibuffer.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Property list of extra properties of the current completion job.<br/>These include:<br/><br/>`:annotation-function': Function to annotate the completions buffer.<br/>   The function must accept one argument, a completion string,<br/>   and return either nil or a string which is to be displayed<br/>   next to the completion (but which is not part of the<br/>   completion).  The function can access the completion data via<br/>   `minibuffer-completion-table' and related variables.<br/><br/>`:exit-function': Function to run after completion is performed.<br/><br/>   The function must accept two arguments, STRING and STATUS.<br/>   STRING is the text to which the field was completed, and<br/>   STATUS indicates what kind of operation happened:<br/>     `finished' - text is now complete<br/>     `sole'     - text cannot be further completed but<br/>                  completion is not finished<br/>     `exact'    - text is a valid completion but may be further<br/>                  completed.
+<strong>completion-extra-properties</strong> is a variable defined in `<code>minibuffer.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Property list of extra properties of the current completion job.<br/>
+These include:<br/>
+<br/>
+`:annotation-function': Function to annotate the completions buffer.<br/>
+   The function must accept one argument, a completion string,<br/>
+   and return either nil or a string which is to be displayed<br/>
+   next to the completion (but which is not part of the<br/>
+   completion).  The function can access the completion data via<br/>
+   `minibuffer-completion-table' and related variables.<br/>
+<br/>
+`:exit-function': Function to run after completion is performed.<br/>
+<br/>
+   The function must accept two arguments, STRING and STATUS.<br/>
+   STRING is the text to which the field was completed, and<br/>
+   STATUS indicates what kind of operation happened:<br/>
+     `finished' - text is now complete<br/>
+     `sole'     - text cannot be further completed but<br/>
+                  completion is not finished<br/>
+     `exact'    - text is a valid completion but may be further<br/>
+                  completed.

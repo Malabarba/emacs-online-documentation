@@ -1,1 +1,83 @@
-open-network-stream is an autoloaded compiled Lisp function in `network-stream.el'.<br/><br/>(open-network-stream NAME BUFFER HOST SERVICE &rest PARAMETERS)<br/><br/>Open a TCP connection to HOST, optionally with encryption.<br/>Normally, return a network process object; with a non-nil<br/>:return-list parameter, return a list instead (see below).<br/>Input and output work as for subprocesses; `delete-process'<br/>closes it.<br/><br/>NAME is the name for the process.  It is modified if necessary to<br/> make it unique.<br/>BUFFER is a buffer or buffer name to associate with the process.<br/> Process output goes at end of that buffer.  BUFFER may be nil,<br/> meaning that the process is not associated with any buffer.<br/>HOST is the name or IP address of the host to connect to.<br/>SERVICE is the name of the service desired, or an integer specifying<br/> a port number to connect to.<br/><br/>The remaining PARAMETERS should be a sequence of keywords and<br/>values:<br/><br/>:type specifies the connection type, one of the following:<br/>  nil or `network'<br/>             -- Begin with an ordinary network connection, and if<br/>                the parameters :success and :capability-command<br/>                are also supplied, try to upgrade to an encrypted<br/>                connection via STARTTLS.  Even if that<br/>                fails (e.g. if HOST does not support TLS), retain<br/>                an unencrypted connection.<br/>  `plain'    -- An ordinary, unencrypted network connection.<br/>  `starttls' -- Begin with an ordinary connection, and try<br/>                upgrading via STARTTLS.  If that fails for any<br/>                reason, drop the connection; in that case the<br/>                returned object is a killed process.<br/>  `tls'      -- A TLS connection.<br/>  `ssl'      -- Equivalent to `tls'.<br/>  `shell'    -- A shell connection.<br/><br/>:return-list specifies this function's return value.<br/>  If omitted or nil, return a process object.  A non-nil means to<br/>  return (PROC . PROPS), where PROC is a process object and PROPS<br/>  is a plist of connection properties, with these keywords:<br/>   :greeting -- the greeting returned by HOST (a string), or nil.<br/>   :capabilities -- a string representing HOST's capabilities,<br/>                    or nil if none could be found.<br/>   :type -- the resulting connection type; `plain' (unencrypted)<br/>            or `tls' (TLS-encrypted).<br/><br/>:end-of-command specifies a regexp matching the end of a command.<br/><br/>:end-of-capability specifies a regexp matching the end of the<br/>  response to the command specified for :capability-command.<br/>  It defaults to the regexp specified for :end-of-command.<br/><br/>:success specifies a regexp matching a message indicating a<br/>  successful STARTTLS negotiation.  For instance, the default<br/>  should be "^3" for an NNTP connection.<br/><br/>:capability-command specifies a command used to query the HOST<br/>  for its capabilities.  For instance, for IMAP this should be<br/>  "1 CAPABILITY\r\n".<br/><br/>:starttls-function specifies a function for handling STARTTLS.<br/>  This function should take one parameter, the response to the<br/>  capability command, and should return the command to switch on<br/>  STARTTLS if the server supports STARTTLS, and nil otherwise.<br/><br/>:always-query-capabilities says whether to query the server for<br/>  capabilities, even if we're doing a `plain' network connection.<br/><br/>:client-certificate should either be a list where the first<br/>  element is the certificate key file name, and the second<br/>  element is the certificate file name itself, or `t', which<br/>  means that `auth-source' will be queried for the key and the<br/>  certificate.  This parameter will only be used when doing TLS<br/>  or STARTTLS connections.<br/><br/>:use-starttls-if-possible is a boolean that says to do opportunistic<br/>STARTTLS upgrades even if Emacs doesn't have built-in TLS functionality.<br/><br/>:nowait is a boolean that says the connection should be made<br/>  asynchronously, if possible.
+<strong>open-network-stream</strong> is an autoloaded compiled Lisp function in `<code>network-stream.el</code>'.<br/>
+<br/>
+(open-network-stream NAME BUFFER HOST SERVICE &rest PARAMETERS)<br/>
+<br/>
+Open a TCP connection to HOST, optionally with encryption.<br/>
+Normally, return a network process object; with a non-nil<br/>
+:return-list parameter, return a list instead (see below).<br/>
+Input and output work as for subprocesses; `delete-process'<br/>
+closes it.<br/>
+<br/>
+NAME is the name for the process.  It is modified if necessary to<br/>
+ make it unique.<br/>
+BUFFER is a buffer or buffer name to associate with the process.<br/>
+ Process output goes at end of that buffer.  BUFFER may be nil,<br/>
+ meaning that the process is not associated with any buffer.<br/>
+HOST is the name or IP address of the host to connect to.<br/>
+SERVICE is the name of the service desired, or an integer specifying<br/>
+ a port number to connect to.<br/>
+<br/>
+The remaining PARAMETERS should be a sequence of keywords and<br/>
+values:<br/>
+<br/>
+:type specifies the connection type, one of the following:<br/>
+  nil or `network'<br/>
+             -- Begin with an ordinary network connection, and if<br/>
+                the parameters :success and :capability-command<br/>
+                are also supplied, try to upgrade to an encrypted<br/>
+                connection via STARTTLS.  Even if that<br/>
+                fails (e.g. if HOST does not support TLS), retain<br/>
+                an unencrypted connection.<br/>
+  `plain'    -- An ordinary, unencrypted network connection.<br/>
+  `starttls' -- Begin with an ordinary connection, and try<br/>
+                upgrading via STARTTLS.  If that fails for any<br/>
+                reason, drop the connection; in that case the<br/>
+                returned object is a killed process.<br/>
+  `tls'      -- A TLS connection.<br/>
+  `ssl'      -- Equivalent to `tls'.<br/>
+  `shell'    -- A shell connection.<br/>
+<br/>
+:return-list specifies this function's return value.<br/>
+  If omitted or nil, return a process object.  A non-nil means to<br/>
+  return (PROC . PROPS), where PROC is a process object and PROPS<br/>
+  is a plist of connection properties, with these keywords:<br/>
+   :greeting -- the greeting returned by HOST (a string), or nil.<br/>
+   :capabilities -- a string representing HOST's capabilities,<br/>
+                    or nil if none could be found.<br/>
+   :type -- the resulting connection type; `plain' (unencrypted)<br/>
+            or `tls' (TLS-encrypted).<br/>
+<br/>
+:end-of-command specifies a regexp matching the end of a command.<br/>
+<br/>
+:end-of-capability specifies a regexp matching the end of the<br/>
+  response to the command specified for :capability-command.<br/>
+  It defaults to the regexp specified for :end-of-command.<br/>
+<br/>
+:success specifies a regexp matching a message indicating a<br/>
+  successful STARTTLS negotiation.  For instance, the default<br/>
+  should be "^3" for an NNTP connection.<br/>
+<br/>
+:capability-command specifies a command used to query the HOST<br/>
+  for its capabilities.  For instance, for IMAP this should be<br/>
+  "1 CAPABILITY\r\n".<br/>
+<br/>
+:starttls-function specifies a function for handling STARTTLS.<br/>
+  This function should take one parameter, the response to the<br/>
+  capability command, and should return the command to switch on<br/>
+  STARTTLS if the server supports STARTTLS, and nil otherwise.<br/>
+<br/>
+:always-query-capabilities says whether to query the server for<br/>
+  capabilities, even if we're doing a `plain' network connection.<br/>
+<br/>
+:client-certificate should either be a list where the first<br/>
+  element is the certificate key file name, and the second<br/>
+  element is the certificate file name itself, or `t', which<br/>
+  means that `auth-source' will be queried for the key and the<br/>
+  certificate.  This parameter will only be used when doing TLS<br/>
+  or STARTTLS connections.<br/>
+<br/>
+:use-starttls-if-possible is a boolean that says to do opportunistic<br/>
+STARTTLS upgrades even if Emacs doesn't have built-in TLS functionality.<br/>
+<br/>
+:nowait is a boolean that says the connection should be made<br/>
+  asynchronously, if possible.

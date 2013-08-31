@@ -1,1 +1,268 @@
-allout-mode is an interactive autoloaded compiled Lisp function in `allout.el'.<br/><br/>(allout-mode &optional ARG)<br/><br/>Toggle Allout outline mode.<br/>With a prefix argument ARG, enable Allout outline mode if ARG is<br/>positive, and disable it otherwise.  If called from Lisp, enable<br/>the mode if ARG is omitted or nil.<br/><br/><br/>Allout outline mode is a minor mode that provides extensive<br/>outline oriented formatting and manipulation.  It enables<br/>structural editing of outlines, as well as navigation and<br/>exposure.  It also is specifically aimed at accommodating<br/>syntax-sensitive text like programming languages.  (For example,<br/>see the allout code itself, which is organized as an allout<br/>outline.)<br/><br/>In addition to typical outline navigation and exposure, allout includes:<br/><br/> - topic-oriented authoring, including keystroke-based topic creation,<br/>   repositioning, promotion/demotion, cut, and paste<br/> - incremental search with dynamic exposure and reconcealment of hidden text<br/> - adjustable format, so programming code can be developed in outline-structure<br/> - easy topic encryption and decryption, symmetric or key-pair<br/> - "Hot-spot" operation, for single-keystroke maneuvering and exposure control<br/> - integral outline layout, for automatic initial exposure when visiting a file<br/> - independent extensibility, using comprehensive exposure and authoring hooks<br/><br/>and many other features.<br/><br/>Below is a description of the key bindings, and then description<br/>of special `allout-mode' features and terminology.  See also the<br/>outline menubar additions for quick reference to many of the<br/>features.  Customize `allout-auto-activation' to prepare your<br/>Emacs session for automatic activation of `allout-mode'.<br/><br/>The bindings are those listed in `allout-prefixed-keybindings'<br/>and `allout-unprefixed-keybindings'.  We recommend customizing<br/>`allout-command-prefix' to use just `\C-c' as the command<br/>prefix, if the allout bindings don't conflict with any personal<br/>bindings you have on \C-c.  In any case, outline structure<br/>navigation and authoring is simplified by positioning the cursor<br/>on an item's bullet character, the "hot-spot" -- then you can<br/>invoke allout commands with just the un-prefixed,<br/>un-control-shifted command letters.  This is described further in<br/>the HOT-SPOT Operation section.<br/><br/>        Exposure Control:<br/>        ----------------<br/>C-c SPC h   `allout-hide-current-subtree'<br/>C-c SPC TAB `allout-show-children'<br/>C-c SPC C-s `allout-show-current-subtree'<br/>C-c SPC C-o `allout-show-current-entry'<br/>C-c SPC !   `allout-show-all'<br/><br/>        Navigation:<br/>        ----------<br/>C-c SPC C-n `allout-next-visible-heading'<br/>C-c SPC C-p `allout-previous-visible-heading'<br/>C-c SPC C-u `allout-up-current-level'<br/>C-c SPC C-f `allout-forward-current-level'<br/>C-c SPC C-b `allout-backward-current-level'<br/>C-c SPC C-e `allout-end-of-entry'<br/>C-c SPC C-a `allout-beginning-of-current-entry' (alternately, goes to hot-spot)<br/>C-a  `allout-beginning-of-line' -- like regular beginning-of-line, but<br/>     if immediately repeated cycles to the beginning of the current item<br/>     and then to the hot-spot (if `allout-beginning-of-line-cycles' is set).<br/><br/><br/>        Topic Header Production:<br/>        -----------------------<br/>C-c SPC SPC `allout-open-sibtopic' Create a new sibling after current topic.<br/>C-c SPC .   `allout-open-subtopic' ... an offspring of current topic.<br/>C-c SPC , `allout-open-supertopic' ... a sibling of the current topic's parent.<br/><br/>        Topic Level and Prefix Adjustment:<br/>        ---------------------------------<br/>C-c SPC > `allout-shift-in'   Shift current topic and all offspring deeper<br/>C-c SPC < `allout-shift-out' ... less deep<br/>C-c SPC * `allout-rebullet-current-heading' Prompt for alternate bullet for<br/>            current topic<br/>C-c SPC RET `allout-rebullet-topic'   Reconcile bullets of topic and<br/>            its offspring -- distinctive bullets are not changed, others<br/>            are alternated according to nesting depth.<br/>C-c SPC # `allout-number-siblings'  Number bullets of topic and siblings --<br/>           the offspring are not affected.<br/>           With repeat count, revoke numbering.<br/><br/>        Topic-oriented Killing and Yanking:<br/>        ----------------------------------<br/>C-c SPC C-k `allout-kill-topic'   Kill current topic, including offspring.<br/>C-c SPC M-k `allout-copy-topic-as-kill' Copy current topic, including offspring.<br/>C-k     `allout-kill-line'    Kill line, attending to outline structure.<br/>M-k     `allout-copy-line-as-kill' Copy line but don't delete it.<br/>C-y `allout-yank'        Yank, adjusting depth of yanked topic to<br/>                             depth of heading if yanking into bare topic<br/>                             heading (ie, prefix sans text).<br/>M-y     `allout-yank-pop'       Is to `allout-yank' as `yank-pop' is to `yank'.<br/><br/>        Topic-oriented Encryption:<br/>        -------------------------<br/>C-c SPC x `allout-toggle-current-subtree-encryption'<br/>          Encrypt/Decrypt topic content<br/><br/>        Misc commands:<br/>        -------------<br/>M-x outlineify-sticky       Activate outline mode for current buffer,<br/>                            and establish a default file-var setting<br/>                            for `allout-layout'.<br/>M-x allout-mark-topic       `allout-mark-topic'<br/>C-c SPC = c `allout-copy-exposed-to-buffer'<br/>                            Duplicate outline, sans concealed text, to<br/>                            buffer with name derived from derived from that<br/>                            of current buffer -- "*BUFFERNAME exposed*".<br/>C-c SPC = p `allout-flatten-exposed-to-buffer'<br/>                            Like above 'copy-exposed', but convert topic<br/>                            prefixes to section.subsection... numeric<br/>                            format.<br/>M-x customize-variable allout-auto-activation<br/>                            Prepare Emacs session for allout outline mode<br/>                            auto-activation.<br/><br/>                  Topic Encryption<br/><br/>Outline mode supports gpg encryption of topics, with support for<br/>symmetric and key-pair modes, and auto-encryption of topics<br/>pending encryption on save.<br/><br/>Topics pending encryption are, by default, automatically<br/>encrypted during file saves, including checkpoint saves, to avoid<br/>exposing the plain text of encrypted topics in the file system.<br/>If the content of the topic containing the cursor was encrypted<br/>for a save, it is automatically decrypted for continued editing.<br/><br/>NOTE: A few GnuPG v2 versions improperly preserve incorrect<br/>symmetric decryption keys, preventing entry of the correct key on<br/>subsequent decryption attempts until the cache times-out.  That<br/>can take several minutes.  (Decryption of other entries is not<br/>affected.)  Upgrade your EasyPG version, if you can, and you can<br/>deliberately clear your gpg-agent's cache by sending it a '-HUP'<br/>signal.<br/><br/>See `allout-toggle-current-subtree-encryption' function docstring<br/>and `allout-encrypt-unencrypted-on-saves' customization variable<br/>for details.<br/><br/>                 HOT-SPOT Operation<br/><br/>Hot-spot operation provides a means for easy, single-keystroke outline<br/>navigation and exposure control.<br/><br/>When the text cursor is positioned directly on the bullet character of<br/>a topic, regular characters (a to z) invoke the commands of the<br/>corresponding allout-mode keymap control chars.  For example, "f"<br/>would invoke the command typically bound to "C-c<space>C-f"<br/>(C-c SPC C-f `allout-forward-current-level').<br/><br/>Thus, by positioning the cursor on a topic bullet, you can<br/>execute the outline navigation and manipulation commands with a<br/>single keystroke.  Regular navigation keys (eg, C-f, C-n) don't get<br/>this special translation, so you can use them to get out of the<br/>hot-spot and back to normal editing operation.<br/><br/>In allout-mode, the normal beginning-of-line command (C-a) is<br/>replaced with one that makes it easy to get to the hot-spot.  If you<br/>repeat it immediately it cycles (if `allout-beginning-of-line-cycles'<br/>is set) to the beginning of the item and then, if you hit it again<br/>immediately, to the hot-spot.  Similarly, `allout-beginning-of-current-entry'<br/>(C-c SPC C-a) moves to the hot-spot when the cursor is already located<br/>at the beginning of the current entry.<br/><br/>                             Extending Allout<br/><br/>Allout exposure and authoring activities all have associated<br/>hooks, by which independent code can cooperate with allout<br/>without changes to the allout core.  Here are key ones:<br/><br/>`allout-mode-hook'<br/>`allout-mode-deactivate-hook' (deprecated)<br/>`allout-mode-off-hook'<br/>`allout-exposure-change-functions'<br/>`allout-structure-added-functions'<br/>`allout-structure-deleted-functions'<br/>`allout-structure-shifted-functions'<br/>`allout-after-copy-or-kill-hook'<br/>`allout-post-undo-hook'<br/><br/>                            Terminology<br/><br/>Topic hierarchy constituents -- TOPICS and SUBTOPICS:<br/><br/>ITEM:   A unitary outline element, including the HEADER and ENTRY text.<br/>TOPIC:  An ITEM and any ITEMs contained within it, ie having greater DEPTH<br/>        and with no intervening items of lower DEPTH than the container.<br/>CURRENT ITEM:<br/>        The visible ITEM most immediately containing the cursor.<br/>DEPTH:  The degree of nesting of an ITEM; it increases with containment.<br/>        The DEPTH is determined by the HEADER PREFIX.  The DEPTH is also<br/>        called the:<br/>LEVEL:  The same as DEPTH.<br/><br/>ANCESTORS:<br/>        Those ITEMs whose TOPICs contain an ITEM.<br/>PARENT: An ITEM's immediate ANCESTOR.  It has a DEPTH one less than that<br/>        of the ITEM.<br/>OFFSPRING:<br/>        The ITEMs contained within an ITEM's TOPIC.<br/>SUBTOPIC:<br/>        An OFFSPRING of its ANCESTOR TOPICs.<br/>CHILD:<br/>        An immediate SUBTOPIC of its PARENT.<br/>SIBLINGS:<br/>        TOPICs having the same PARENT and DEPTH.<br/><br/>Topic text constituents:<br/><br/>HEADER: The first line of an ITEM, include the ITEM PREFIX and HEADER<br/>        text.<br/>ENTRY:  The text content of an ITEM, before any OFFSPRING, but including<br/>        the HEADER text and distinct from the ITEM PREFIX.<br/>BODY:   Same as ENTRY.<br/>PREFIX: The leading text of an ITEM which distinguishes it from normal<br/>        ENTRY text.  Allout recognizes the outline structure according<br/>        to the strict PREFIX format.  It consists of a PREFIX-LEAD string,<br/>        PREFIX-PADDING, and a BULLET.  The BULLET might be followed by a<br/>        number, indicating the ordinal number of the topic among its<br/>        siblings, or an asterisk indicating encryption, plus an optional<br/>        space.  After that is the ITEM HEADER text, which is not part of<br/>        the PREFIX.<br/><br/>        The relative length of the PREFIX determines the nesting DEPTH<br/>        of the ITEM.<br/>PREFIX-LEAD:<br/>        The string at the beginning of a HEADER PREFIX, by default a `.'.<br/>        It can be customized by changing the setting of<br/>        `allout-header-prefix' and then reinitializing `allout-mode'.<br/><br/>        When the PREFIX-LEAD is set to the comment-string of a<br/>        programming language, outline structuring can be embedded in<br/>        program code without interfering with processing of the text<br/>        (by Emacs or the language processor) as program code.  This<br/>        setting happens automatically when allout mode is used in<br/>        programming-mode buffers.  See `allout-use-mode-specific-leader'<br/>        docstring for more detail.<br/>PREFIX-PADDING:<br/>        Spaces or asterisks which separate the PREFIX-LEAD and the<br/>        bullet, determining the ITEM's DEPTH.<br/>BULLET: A character at the end of the ITEM PREFIX, it must be one of<br/>        the characters listed on `allout-plain-bullets-string' or<br/>        `allout-distinctive-bullets-string'.  When creating a TOPIC,<br/>        plain BULLETs are by default used, according to the DEPTH of the<br/>        TOPIC.  Choice among the distinctive BULLETs is offered when you<br/>        provide a universal argument (C-u) to the<br/>        TOPIC creation command, or when explicitly rebulleting a TOPIC.  The<br/>        significance of the various distinctive bullets is purely by<br/>        convention.  See the documentation for the above bullet strings for<br/>        more details.<br/>EXPOSURE:<br/>        The state of a TOPIC which determines the on-screen visibility<br/>        of its OFFSPRING and contained ENTRY text.<br/>CONCEALED:<br/>        TOPICs and ENTRY text whose EXPOSURE is inhibited.  Concealed<br/>        text is represented by "..." ellipses.<br/><br/>        CONCEALED TOPICs are effectively collapsed within an ANCESTOR.<br/>CLOSED: A TOPIC whose immediate OFFSPRING and body-text is CONCEALED.<br/>OPEN:	A TOPIC that is not CLOSED, though its OFFSPRING or BODY may be.
+<strong>allout-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>allout.el</code>'.<br/>
+<br/>
+(allout-mode &optional ARG)<br/>
+<br/>
+Toggle Allout outline mode.<br/>
+With a prefix argument ARG, enable Allout outline mode if ARG is<br/>
+positive, and disable it otherwise.  If called from Lisp, enable<br/>
+the mode if ARG is omitted or nil.<br/>
+<br/>
+<br/>
+Allout outline mode is a minor mode that provides extensive<br/>
+outline oriented formatting and manipulation.  It enables<br/>
+structural editing of outlines, as well as navigation and<br/>
+exposure.  It also is specifically aimed at accommodating<br/>
+syntax-sensitive text like programming languages.  (For example,<br/>
+see the allout code itself, which is organized as an allout<br/>
+outline.)<br/>
+<br/>
+In addition to typical outline navigation and exposure, allout includes:<br/>
+<br/>
+ - topic-oriented authoring, including keystroke-based topic creation,<br/>
+   repositioning, promotion/demotion, cut, and paste<br/>
+ - incremental search with dynamic exposure and reconcealment of hidden text<br/>
+ - adjustable format, so programming code can be developed in outline-structure<br/>
+ - easy topic encryption and decryption, symmetric or key-pair<br/>
+ - "Hot-spot" operation, for single-keystroke maneuvering and exposure control<br/>
+ - integral outline layout, for automatic initial exposure when visiting a file<br/>
+ - independent extensibility, using comprehensive exposure and authoring hooks<br/>
+<br/>
+and many other features.<br/>
+<br/>
+Below is a description of the key bindings, and then description<br/>
+of special `allout-mode' features and terminology.  See also the<br/>
+outline menubar additions for quick reference to many of the<br/>
+features.  Customize `allout-auto-activation' to prepare your<br/>
+Emacs session for automatic activation of `allout-mode'.<br/>
+<br/>
+The bindings are those listed in `allout-prefixed-keybindings'<br/>
+and `allout-unprefixed-keybindings'.  We recommend customizing<br/>
+`allout-command-prefix' to use just `\C-c' as the command<br/>
+prefix, if the allout bindings don't conflict with any personal<br/>
+bindings you have on \C-c.  In any case, outline structure<br/>
+navigation and authoring is simplified by positioning the cursor<br/>
+on an item's bullet character, the "hot-spot" -- then you can<br/>
+invoke allout commands with just the un-prefixed,<br/>
+un-control-shifted command letters.  This is described further in<br/>
+the HOT-SPOT Operation section.<br/>
+<br/>
+        Exposure Control:<br/>
+        ----------------<br/>
+C-c SPC h   `allout-hide-current-subtree'<br/>
+C-c SPC TAB `allout-show-children'<br/>
+C-c SPC C-s `allout-show-current-subtree'<br/>
+C-c SPC C-o `allout-show-current-entry'<br/>
+C-c SPC !   `allout-show-all'<br/>
+<br/>
+        Navigation:<br/>
+        ----------<br/>
+C-c SPC C-n `allout-next-visible-heading'<br/>
+C-c SPC C-p `allout-previous-visible-heading'<br/>
+C-c SPC C-u `allout-up-current-level'<br/>
+C-c SPC C-f `allout-forward-current-level'<br/>
+C-c SPC C-b `allout-backward-current-level'<br/>
+C-c SPC C-e `allout-end-of-entry'<br/>
+C-c SPC C-a `allout-beginning-of-current-entry' (alternately, goes to hot-spot)<br/>
+C-a  `allout-beginning-of-line' -- like regular beginning-of-line, but<br/>
+     if immediately repeated cycles to the beginning of the current item<br/>
+     and then to the hot-spot (if `allout-beginning-of-line-cycles' is set).<br/>
+<br/>
+<br/>
+        Topic Header Production:<br/>
+        -----------------------<br/>
+C-c SPC SPC `allout-open-sibtopic' Create a new sibling after current topic.<br/>
+C-c SPC .   `allout-open-subtopic' ... an offspring of current topic.<br/>
+C-c SPC , `allout-open-supertopic' ... a sibling of the current topic's parent.<br/>
+<br/>
+        Topic Level and Prefix Adjustment:<br/>
+        ---------------------------------<br/>
+C-c SPC > `allout-shift-in'   Shift current topic and all offspring deeper<br/>
+C-c SPC < `allout-shift-out' ... less deep<br/>
+C-c SPC * `allout-rebullet-current-heading' Prompt for alternate bullet for<br/>
+            current topic<br/>
+C-c SPC RET `allout-rebullet-topic'   Reconcile bullets of topic and<br/>
+            its offspring -- distinctive bullets are not changed, others<br/>
+            are alternated according to nesting depth.<br/>
+C-c SPC # `allout-number-siblings'  Number bullets of topic and siblings --<br/>
+           the offspring are not affected.<br/>
+           With repeat count, revoke numbering.<br/>
+<br/>
+        Topic-oriented Killing and Yanking:<br/>
+        ----------------------------------<br/>
+C-c SPC C-k `allout-kill-topic'   Kill current topic, including offspring.<br/>
+C-c SPC M-k `allout-copy-topic-as-kill' Copy current topic, including offspring.<br/>
+C-k     `allout-kill-line'    Kill line, attending to outline structure.<br/>
+M-k     `allout-copy-line-as-kill' Copy line but don't delete it.<br/>
+C-y `allout-yank'        Yank, adjusting depth of yanked topic to<br/>
+                             depth of heading if yanking into bare topic<br/>
+                             heading (ie, prefix sans text).<br/>
+M-y     `allout-yank-pop'       Is to `allout-yank' as `yank-pop' is to `yank'.<br/>
+<br/>
+        Topic-oriented Encryption:<br/>
+        -------------------------<br/>
+C-c SPC x `allout-toggle-current-subtree-encryption'<br/>
+          Encrypt/Decrypt topic content<br/>
+<br/>
+        Misc commands:<br/>
+        -------------<br/>
+M-x outlineify-sticky       Activate outline mode for current buffer,<br/>
+                            and establish a default file-var setting<br/>
+                            for `allout-layout'.<br/>
+M-x allout-mark-topic       `allout-mark-topic'<br/>
+C-c SPC = c `allout-copy-exposed-to-buffer'<br/>
+                            Duplicate outline, sans concealed text, to<br/>
+                            buffer with name derived from derived from that<br/>
+                            of current buffer -- "*BUFFERNAME exposed*".<br/>
+C-c SPC = p `allout-flatten-exposed-to-buffer'<br/>
+                            Like above 'copy-exposed', but convert topic<br/>
+                            prefixes to section.subsection... numeric<br/>
+                            format.<br/>
+M-x customize-variable allout-auto-activation<br/>
+                            Prepare Emacs session for allout outline mode<br/>
+                            auto-activation.<br/>
+<br/>
+                  Topic Encryption<br/>
+<br/>
+Outline mode supports gpg encryption of topics, with support for<br/>
+symmetric and key-pair modes, and auto-encryption of topics<br/>
+pending encryption on save.<br/>
+<br/>
+Topics pending encryption are, by default, automatically<br/>
+encrypted during file saves, including checkpoint saves, to avoid<br/>
+exposing the plain text of encrypted topics in the file system.<br/>
+If the content of the topic containing the cursor was encrypted<br/>
+for a save, it is automatically decrypted for continued editing.<br/>
+<br/>
+NOTE: A few GnuPG v2 versions improperly preserve incorrect<br/>
+symmetric decryption keys, preventing entry of the correct key on<br/>
+subsequent decryption attempts until the cache times-out.  That<br/>
+can take several minutes.  (Decryption of other entries is not<br/>
+affected.)  Upgrade your EasyPG version, if you can, and you can<br/>
+deliberately clear your gpg-agent's cache by sending it a '-HUP'<br/>
+signal.<br/>
+<br/>
+See `allout-toggle-current-subtree-encryption' function docstring<br/>
+and `allout-encrypt-unencrypted-on-saves' customization variable<br/>
+for details.<br/>
+<br/>
+                 HOT-SPOT Operation<br/>
+<br/>
+Hot-spot operation provides a means for easy, single-keystroke outline<br/>
+navigation and exposure control.<br/>
+<br/>
+When the text cursor is positioned directly on the bullet character of<br/>
+a topic, regular characters (a to z) invoke the commands of the<br/>
+corresponding allout-mode keymap control chars.  For example, "f"<br/>
+would invoke the command typically bound to "C-c<space>C-f"<br/>
+(C-c SPC C-f `allout-forward-current-level').<br/>
+<br/>
+Thus, by positioning the cursor on a topic bullet, you can<br/>
+execute the outline navigation and manipulation commands with a<br/>
+single keystroke.  Regular navigation keys (eg, C-f, C-n) don't get<br/>
+this special translation, so you can use them to get out of the<br/>
+hot-spot and back to normal editing operation.<br/>
+<br/>
+In allout-mode, the normal beginning-of-line command (C-a) is<br/>
+replaced with one that makes it easy to get to the hot-spot.  If you<br/>
+repeat it immediately it cycles (if `allout-beginning-of-line-cycles'<br/>
+is set) to the beginning of the item and then, if you hit it again<br/>
+immediately, to the hot-spot.  Similarly, `allout-beginning-of-current-entry'<br/>
+(C-c SPC C-a) moves to the hot-spot when the cursor is already located<br/>
+at the beginning of the current entry.<br/>
+<br/>
+                             Extending Allout<br/>
+<br/>
+Allout exposure and authoring activities all have associated<br/>
+hooks, by which independent code can cooperate with allout<br/>
+without changes to the allout core.  Here are key ones:<br/>
+<br/>
+`allout-mode-hook'<br/>
+`allout-mode-deactivate-hook' (deprecated)<br/>
+`allout-mode-off-hook'<br/>
+`allout-exposure-change-functions'<br/>
+`allout-structure-added-functions'<br/>
+`allout-structure-deleted-functions'<br/>
+`allout-structure-shifted-functions'<br/>
+`allout-after-copy-or-kill-hook'<br/>
+`allout-post-undo-hook'<br/>
+<br/>
+                            Terminology<br/>
+<br/>
+Topic hierarchy constituents -- TOPICS and SUBTOPICS:<br/>
+<br/>
+ITEM:   A unitary outline element, including the HEADER and ENTRY text.<br/>
+TOPIC:  An ITEM and any ITEMs contained within it, ie having greater DEPTH<br/>
+        and with no intervening items of lower DEPTH than the container.<br/>
+CURRENT ITEM:<br/>
+        The visible ITEM most immediately containing the cursor.<br/>
+DEPTH:  The degree of nesting of an ITEM; it increases with containment.<br/>
+        The DEPTH is determined by the HEADER PREFIX.  The DEPTH is also<br/>
+        called the:<br/>
+LEVEL:  The same as DEPTH.<br/>
+<br/>
+ANCESTORS:<br/>
+        Those ITEMs whose TOPICs contain an ITEM.<br/>
+PARENT: An ITEM's immediate ANCESTOR.  It has a DEPTH one less than that<br/>
+        of the ITEM.<br/>
+OFFSPRING:<br/>
+        The ITEMs contained within an ITEM's TOPIC.<br/>
+SUBTOPIC:<br/>
+        An OFFSPRING of its ANCESTOR TOPICs.<br/>
+CHILD:<br/>
+        An immediate SUBTOPIC of its PARENT.<br/>
+SIBLINGS:<br/>
+        TOPICs having the same PARENT and DEPTH.<br/>
+<br/>
+Topic text constituents:<br/>
+<br/>
+HEADER: The first line of an ITEM, include the ITEM PREFIX and HEADER<br/>
+        text.<br/>
+ENTRY:  The text content of an ITEM, before any OFFSPRING, but including<br/>
+        the HEADER text and distinct from the ITEM PREFIX.<br/>
+BODY:   Same as ENTRY.<br/>
+PREFIX: The leading text of an ITEM which distinguishes it from normal<br/>
+        ENTRY text.  Allout recognizes the outline structure according<br/>
+        to the strict PREFIX format.  It consists of a PREFIX-LEAD string,<br/>
+        PREFIX-PADDING, and a BULLET.  The BULLET might be followed by a<br/>
+        number, indicating the ordinal number of the topic among its<br/>
+        siblings, or an asterisk indicating encryption, plus an optional<br/>
+        space.  After that is the ITEM HEADER text, which is not part of<br/>
+        the PREFIX.<br/>
+<br/>
+        The relative length of the PREFIX determines the nesting DEPTH<br/>
+        of the ITEM.<br/>
+PREFIX-LEAD:<br/>
+        The string at the beginning of a HEADER PREFIX, by default a `.'.<br/>
+        It can be customized by changing the setting of<br/>
+        `allout-header-prefix' and then reinitializing `allout-mode'.<br/>
+<br/>
+        When the PREFIX-LEAD is set to the comment-string of a<br/>
+        programming language, outline structuring can be embedded in<br/>
+        program code without interfering with processing of the text<br/>
+        (by Emacs or the language processor) as program code.  This<br/>
+        setting happens automatically when allout mode is used in<br/>
+        programming-mode buffers.  See `allout-use-mode-specific-leader'<br/>
+        docstring for more detail.<br/>
+PREFIX-PADDING:<br/>
+        Spaces or asterisks which separate the PREFIX-LEAD and the<br/>
+        bullet, determining the ITEM's DEPTH.<br/>
+BULLET: A character at the end of the ITEM PREFIX, it must be one of<br/>
+        the characters listed on `allout-plain-bullets-string' or<br/>
+        `allout-distinctive-bullets-string'.  When creating a TOPIC,<br/>
+        plain BULLETs are by default used, according to the DEPTH of the<br/>
+        TOPIC.  Choice among the distinctive BULLETs is offered when you<br/>
+        provide a universal argument (C-u) to the<br/>
+        TOPIC creation command, or when explicitly rebulleting a TOPIC.  The<br/>
+        significance of the various distinctive bullets is purely by<br/>
+        convention.  See the documentation for the above bullet strings for<br/>
+        more details.<br/>
+EXPOSURE:<br/>
+        The state of a TOPIC which determines the on-screen visibility<br/>
+        of its OFFSPRING and contained ENTRY text.<br/>
+CONCEALED:<br/>
+        TOPICs and ENTRY text whose EXPOSURE is inhibited.  Concealed<br/>
+        text is represented by "..." ellipses.<br/>
+<br/>
+        CONCEALED TOPICs are effectively collapsed within an ANCESTOR.<br/>
+CLOSED: A TOPIC whose immediate OFFSPRING and body-text is CONCEALED.<br/>
+OPEN:	A TOPIC that is not CLOSED, though its OFFSPRING or BODY may be.

@@ -1,1 +1,120 @@
-ps-mode-map is a variable defined in `ps-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Local keymap to use in PostScript mode.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (PostScript menu-item "PostScript"<br/>		       (keymap "PostScript"<br/>			       (EPSF\ Template\,\ Sparse menu-item "EPSF Template, Sparse" ps-mode-epsf-sparse)<br/>			       (EPSF\ Template\,\ Rich menu-item "EPSF Template, Rich" ps-mode-epsf-rich)<br/>			       (nil-9 menu-item "---")<br/>			       (Cookbook menu-item "Cookbook"<br/>					 (keymap "Cookbook"<br/>						 (RE menu-item "RE" ps-mode-RE)<br/>						 (ISOLatin1Extended menu-item "ISOLatin1Extended" ps-mode-latin-extended)<br/>						 (center menu-item "center" ps-mode-center)<br/>						 (right menu-item "right" ps-mode-right)<br/>						 (Heapsort menu-item "Heapsort" ps-mode-heapsort)))<br/>			       (Fonts\ \(1\) menu-item "Fonts (1)"<br/>					     (keymap "Fonts (1)"<br/>						     (Times-Roman menu-item "Times-Roman" menu-function-141 :key-sequence nil)<br/>						     (Times-Bold menu-item "Times-Bold" menu-function-142 :key-sequence nil)<br/>						     (Times-Italic menu-item "Times-Italic" menu-function-143 :key-sequence nil)<br/>						     (Times-BoldItalic menu-item "Times-BoldItalic" menu-function-144 :key-sequence nil)<br/>						     (Helvetica menu-item "Helvetica" menu-function-145 :key-sequence nil)<br/>						     (Helvetica-Bold menu-item "Helvetica-Bold" menu-function-146 :key-sequence nil)<br/>						     (Helvetica-Oblique menu-item "Helvetica-Oblique" menu-function-147 :key-sequence nil)<br/>						     (Helvetica-BoldOblique menu-item "Helvetica-BoldOblique" menu-function-148 :key-sequence nil)<br/>						     (Courier menu-item "Courier" menu-function-149 :key-sequence nil)<br/>						     (Courier-Bold menu-item "Courier-Bold" menu-function-150 :key-sequence nil)<br/>						     (Courier-Oblique menu-item "Courier-Oblique" menu-function-151 :key-sequence nil)<br/>						     (Courier-BoldOblique menu-item "Courier-BoldOblique" menu-function-152 :key-sequence nil)<br/>						     (Symbol menu-item "Symbol" menu-function-153 :key-sequence nil)))<br/>			       (Fonts\ \(2\) menu-item "Fonts (2)"<br/>					     (keymap "Fonts (2)"<br/>						     (AvantGarde-Book menu-item "AvantGarde-Book" menu-function-154 :key-sequence nil)<br/>						     (AvantGarde-Demi menu-item "AvantGarde-Demi" menu-function-155 :key-sequence nil)<br/>						     (AvantGarde-BookOblique menu-item "AvantGarde-BookOblique" menu-function-156 :key-sequence nil)<br/>						     (AvantGarde-DemiOblique menu-item "AvantGarde-DemiOblique" menu-function-157 :key-sequence nil)<br/>						     (Bookman-Light menu-item "Bookman-Light" menu-function-158 :key-sequence nil)<br/>						     (Bookman-Demi menu-item "Bookman-Demi" menu-function-159 :key-sequence nil)<br/>						     (Bookman-LightItalic menu-item "Bookman-LightItalic" menu-function-160 :key-sequence nil)<br/>						     (Bookman-DemiItalic menu-item "Bookman-DemiItalic" menu-function-161 :key-sequence nil)<br/>						     (Helvetica-Narrow menu-item "Helvetica-Narrow" menu-function-162 :key-sequence nil)<br/>						     (Helvetica-Narrow-Bold menu-item "Helvetica-Narrow-Bold" menu-function-163 :key-sequence nil)<br/>						     (Helvetica-Narrow-Oblique menu-item "Helvetica-Narrow-Oblique" menu-function-164 :key-sequence nil)<br/>						     (Helvetica-Narrow-BoldOblique menu-item "Helvetica-Narrow-BoldOblique" menu-function-165 :key-sequence nil)<br/>						     (NewCenturySchlbk-Roman menu-item "NewCenturySchlbk-Roman" menu-function-166 :key-sequence nil)<br/>						     (NewCenturySchlbk-Bold menu-item "NewCenturySchlbk-Bold" menu-function-167 :key-sequence nil)<br/>						     (NewCenturySchlbk-Italic menu-item "NewCenturySchlbk-Italic" menu-function-168 :key-sequence nil)<br/>						     (NewCenturySchlbk-BoldItalic menu-item "NewCenturySchlbk-BoldItalic" menu-function-169 :key-sequence nil)<br/>						     (Palatino-Roman menu-item "Palatino-Roman" menu-function-170 :key-sequence nil)<br/>						     (Palatino-Bold menu-item "Palatino-Bold" menu-function-171 :key-sequence nil)<br/>						     (Palatino-Italic menu-item "Palatino-Italic" menu-function-172 :key-sequence nil)<br/>						     (Palatino-BoldItalic menu-item "Palatino-BoldItalic" menu-function-173 :key-sequence nil)<br/>						     (ZapfChancery-MediumItalic menu-item "ZapfChancery-MediumItalic" menu-function-174 :key-sequence nil)<br/>						     (ZapfDingbats menu-item "ZapfDingbats" menu-function-175 :key-sequence nil)))<br/>			       (nil-9-6 menu-item "---")<br/>			       (Comment\ Out\ Region menu-item "Comment Out Region" ps-mode-comment-out-region :enable<br/>						     (mark t))<br/>			       (Uncomment\ Region menu-item "Uncomment Region" ps-mode-uncomment-region :enable<br/>						  (mark t))<br/>			       (nil-9-9 menu-item "---")<br/>			       (8-bit\ to\ Octal\ Buffer menu-item "8-bit to Octal Buffer" ps-mode-octal-buffer)<br/>			       (8-bit\ to\ Octal\ Region menu-item "8-bit to Octal Region" ps-mode-octal-region :enable<br/>							 (mark t))<br/>			       (nil-9-12 menu-item "---")<br/>			       (Auto\ Indent menu-item "Auto Indent" menu-function-176 :key-sequence nil :button<br/>					     (:toggle . ps-mode-auto-indent))<br/>			       (nil-9-14 menu-item "---")<br/>			       (Start\ PostScript menu-item "Start PostScript" ps-run-start)<br/>			       (Quit\ PostScript menu-item "Quit PostScript" ps-run-quit :enable<br/>						 (process-status "ps-run"))<br/>			       (Kill\ PostScript menu-item "Kill PostScript" ps-run-kill :enable<br/>						 (process-status "ps-run"))<br/>			       (Send\ Buffer\ to\ Interpreter menu-item "Send Buffer to Interpreter" ps-run-buffer :enable<br/>							      (process-status "ps-run"))<br/>			       (Send\ Region\ to\ Interpreter menu-item "Send Region to Interpreter" ps-run-region :enable<br/>							      (and<br/>							       (mark t)<br/>							       (process-status "ps-run")))<br/>			       (Send\ Newline\ to\ Interpreter menu-item "Send Newline to Interpreter" ps-mode-other-newline :enable<br/>							       (process-status "ps-run"))<br/>			       (View\ BoundingBox menu-item "View BoundingBox" ps-run-boundingbox :enable<br/>						  (process-status "ps-run"))<br/>			       (Clear/Reset\ PostScript\ Graphics menu-item "Clear/Reset PostScript Graphics" ps-run-clear :enable<br/>								  (process-status "ps-run"))<br/>			       (nil-9-23 menu-item "---")<br/>			       (Print\ Buffer\ as\ PostScript menu-item "Print Buffer as PostScript" ps-mode-print-buffer)<br/>			       (Print\ Region\ as\ PostScript menu-item "Print Region as PostScript" ps-mode-print-region :enable<br/>							      (mark t))<br/>			       (nil-9-26 menu-item "---")<br/>			       (Customize\ for\ PostScript menu-item "Customize for PostScript" menu-function-177 :key-sequence nil)<br/>			       (nil-9-28 menu-item "---")<br/>			       (Submit\ Bug\ Report menu-item "Submit Bug Report" ps-mode-submit-bug-report))))<br/> (return . ps-mode-newline)<br/> (13 . ps-mode-newline)<br/> (9 . ps-mode-tabkey)<br/> (127 . ps-mode-backward-delete-char)<br/> (125 . ps-mode-r-brace)<br/> (93 . ps-mode-r-angle)<br/> (62 . ps-mode-r-gt)<br/> (3 keymap<br/>    (2 . ps-run-buffer)<br/>    (12 . ps-run-clear)<br/>    (10 . ps-mode-other-newline)<br/>    (11 . ps-run-kill)<br/>    (15 . ps-mode-comment-out-region)<br/>    (16 . ps-mode-print-buffer)<br/>    (17 . ps-run-quit)<br/>    (18 . ps-run-region)<br/>    (19 . ps-run-start)<br/>    (20 . ps-mode-epsf-rich)<br/>    (21 . ps-mode-uncomment-region)<br/>    (22 . ps-run-boundingbox)))<br/><br/>
+<strong>ps-mode-map</strong> is a variable defined in `<code>ps-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Local keymap to use in PostScript mode.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (PostScript menu-item "PostScript"<br/>
+		       (keymap "PostScript"<br/>
+			       (EPSF\ Template\,\ Sparse menu-item "EPSF Template, Sparse" ps-mode-epsf-sparse)<br/>
+			       (EPSF\ Template\,\ Rich menu-item "EPSF Template, Rich" ps-mode-epsf-rich)<br/>
+			       (nil-9 menu-item "---")<br/>
+			       (Cookbook menu-item "Cookbook"<br/>
+					 (keymap "Cookbook"<br/>
+						 (RE menu-item "RE" ps-mode-RE)<br/>
+						 (ISOLatin1Extended menu-item "ISOLatin1Extended" ps-mode-latin-extended)<br/>
+						 (center menu-item "center" ps-mode-center)<br/>
+						 (right menu-item "right" ps-mode-right)<br/>
+						 (Heapsort menu-item "Heapsort" ps-mode-heapsort)))<br/>
+			       (Fonts\ \(1\) menu-item "Fonts (1)"<br/>
+					     (keymap "Fonts (1)"<br/>
+						     (Times-Roman menu-item "Times-Roman" menu-function-141 :key-sequence nil)<br/>
+						     (Times-Bold menu-item "Times-Bold" menu-function-142 :key-sequence nil)<br/>
+						     (Times-Italic menu-item "Times-Italic" menu-function-143 :key-sequence nil)<br/>
+						     (Times-BoldItalic menu-item "Times-BoldItalic" menu-function-144 :key-sequence nil)<br/>
+						     (Helvetica menu-item "Helvetica" menu-function-145 :key-sequence nil)<br/>
+						     (Helvetica-Bold menu-item "Helvetica-Bold" menu-function-146 :key-sequence nil)<br/>
+						     (Helvetica-Oblique menu-item "Helvetica-Oblique" menu-function-147 :key-sequence nil)<br/>
+						     (Helvetica-BoldOblique menu-item "Helvetica-BoldOblique" menu-function-148 :key-sequence nil)<br/>
+						     (Courier menu-item "Courier" menu-function-149 :key-sequence nil)<br/>
+						     (Courier-Bold menu-item "Courier-Bold" menu-function-150 :key-sequence nil)<br/>
+						     (Courier-Oblique menu-item "Courier-Oblique" menu-function-151 :key-sequence nil)<br/>
+						     (Courier-BoldOblique menu-item "Courier-BoldOblique" menu-function-152 :key-sequence nil)<br/>
+						     (Symbol menu-item "Symbol" menu-function-153 :key-sequence nil)))<br/>
+			       (Fonts\ \(2\) menu-item "Fonts (2)"<br/>
+					     (keymap "Fonts (2)"<br/>
+						     (AvantGarde-Book menu-item "AvantGarde-Book" menu-function-154 :key-sequence nil)<br/>
+						     (AvantGarde-Demi menu-item "AvantGarde-Demi" menu-function-155 :key-sequence nil)<br/>
+						     (AvantGarde-BookOblique menu-item "AvantGarde-BookOblique" menu-function-156 :key-sequence nil)<br/>
+						     (AvantGarde-DemiOblique menu-item "AvantGarde-DemiOblique" menu-function-157 :key-sequence nil)<br/>
+						     (Bookman-Light menu-item "Bookman-Light" menu-function-158 :key-sequence nil)<br/>
+						     (Bookman-Demi menu-item "Bookman-Demi" menu-function-159 :key-sequence nil)<br/>
+						     (Bookman-LightItalic menu-item "Bookman-LightItalic" menu-function-160 :key-sequence nil)<br/>
+						     (Bookman-DemiItalic menu-item "Bookman-DemiItalic" menu-function-161 :key-sequence nil)<br/>
+						     (Helvetica-Narrow menu-item "Helvetica-Narrow" menu-function-162 :key-sequence nil)<br/>
+						     (Helvetica-Narrow-Bold menu-item "Helvetica-Narrow-Bold" menu-function-163 :key-sequence nil)<br/>
+						     (Helvetica-Narrow-Oblique menu-item "Helvetica-Narrow-Oblique" menu-function-164 :key-sequence nil)<br/>
+						     (Helvetica-Narrow-BoldOblique menu-item "Helvetica-Narrow-BoldOblique" menu-function-165 :key-sequence nil)<br/>
+						     (NewCenturySchlbk-Roman menu-item "NewCenturySchlbk-Roman" menu-function-166 :key-sequence nil)<br/>
+						     (NewCenturySchlbk-Bold menu-item "NewCenturySchlbk-Bold" menu-function-167 :key-sequence nil)<br/>
+						     (NewCenturySchlbk-Italic menu-item "NewCenturySchlbk-Italic" menu-function-168 :key-sequence nil)<br/>
+						     (NewCenturySchlbk-BoldItalic menu-item "NewCenturySchlbk-BoldItalic" menu-function-169 :key-sequence nil)<br/>
+						     (Palatino-Roman menu-item "Palatino-Roman" menu-function-170 :key-sequence nil)<br/>
+						     (Palatino-Bold menu-item "Palatino-Bold" menu-function-171 :key-sequence nil)<br/>
+						     (Palatino-Italic menu-item "Palatino-Italic" menu-function-172 :key-sequence nil)<br/>
+						     (Palatino-BoldItalic menu-item "Palatino-BoldItalic" menu-function-173 :key-sequence nil)<br/>
+						     (ZapfChancery-MediumItalic menu-item "ZapfChancery-MediumItalic" menu-function-174 :key-sequence nil)<br/>
+						     (ZapfDingbats menu-item "ZapfDingbats" menu-function-175 :key-sequence nil)))<br/>
+			       (nil-9-6 menu-item "---")<br/>
+			       (Comment\ Out\ Region menu-item "Comment Out Region" ps-mode-comment-out-region :enable<br/>
+						     (mark t))<br/>
+			       (Uncomment\ Region menu-item "Uncomment Region" ps-mode-uncomment-region :enable<br/>
+						  (mark t))<br/>
+			       (nil-9-9 menu-item "---")<br/>
+			       (8-bit\ to\ Octal\ Buffer menu-item "8-bit to Octal Buffer" ps-mode-octal-buffer)<br/>
+			       (8-bit\ to\ Octal\ Region menu-item "8-bit to Octal Region" ps-mode-octal-region :enable<br/>
+							 (mark t))<br/>
+			       (nil-9-12 menu-item "---")<br/>
+			       (Auto\ Indent menu-item "Auto Indent" menu-function-176 :key-sequence nil :button<br/>
+					     (:toggle . ps-mode-auto-indent))<br/>
+			       (nil-9-14 menu-item "---")<br/>
+			       (Start\ PostScript menu-item "Start PostScript" ps-run-start)<br/>
+			       (Quit\ PostScript menu-item "Quit PostScript" ps-run-quit :enable<br/>
+						 (process-status "ps-run"))<br/>
+			       (Kill\ PostScript menu-item "Kill PostScript" ps-run-kill :enable<br/>
+						 (process-status "ps-run"))<br/>
+			       (Send\ Buffer\ to\ Interpreter menu-item "Send Buffer to Interpreter" ps-run-buffer :enable<br/>
+							      (process-status "ps-run"))<br/>
+			       (Send\ Region\ to\ Interpreter menu-item "Send Region to Interpreter" ps-run-region :enable<br/>
+							      (and<br/>
+							       (mark t)<br/>
+							       (process-status "ps-run")))<br/>
+			       (Send\ Newline\ to\ Interpreter menu-item "Send Newline to Interpreter" ps-mode-other-newline :enable<br/>
+							       (process-status "ps-run"))<br/>
+			       (View\ BoundingBox menu-item "View BoundingBox" ps-run-boundingbox :enable<br/>
+						  (process-status "ps-run"))<br/>
+			       (Clear/Reset\ PostScript\ Graphics menu-item "Clear/Reset PostScript Graphics" ps-run-clear :enable<br/>
+								  (process-status "ps-run"))<br/>
+			       (nil-9-23 menu-item "---")<br/>
+			       (Print\ Buffer\ as\ PostScript menu-item "Print Buffer as PostScript" ps-mode-print-buffer)<br/>
+			       (Print\ Region\ as\ PostScript menu-item "Print Region as PostScript" ps-mode-print-region :enable<br/>
+							      (mark t))<br/>
+			       (nil-9-26 menu-item "---")<br/>
+			       (Customize\ for\ PostScript menu-item "Customize for PostScript" menu-function-177 :key-sequence nil)<br/>
+			       (nil-9-28 menu-item "---")<br/>
+			       (Submit\ Bug\ Report menu-item "Submit Bug Report" ps-mode-submit-bug-report))))<br/>
+ (return . ps-mode-newline)<br/>
+ (13 . ps-mode-newline)<br/>
+ (9 . ps-mode-tabkey)<br/>
+ (127 . ps-mode-backward-delete-char)<br/>
+ (125 . ps-mode-r-brace)<br/>
+ (93 . ps-mode-r-angle)<br/>
+ (62 . ps-mode-r-gt)<br/>
+ (3 keymap<br/>
+    (2 . ps-run-buffer)<br/>
+    (12 . ps-run-clear)<br/>
+    (10 . ps-mode-other-newline)<br/>
+    (11 . ps-run-kill)<br/>
+    (15 . ps-mode-comment-out-region)<br/>
+    (16 . ps-mode-print-buffer)<br/>
+    (17 . ps-run-quit)<br/>
+    (18 . ps-run-region)<br/>
+    (19 . ps-run-start)<br/>
+    (20 . ps-mode-epsf-rich)<br/>
+    (21 . ps-mode-uncomment-region)<br/>
+    (22 . ps-run-boundingbox)))<br/>
+<br/>

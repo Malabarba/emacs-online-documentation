@@ -1,1 +1,34 @@
-vc-annotate is an interactive autoloaded Lisp function in `vc-annotate.el'.<br/><br/>It is bound to C-x v g, <menu-bar> <tools> <vc> <vc-annotate>.<br/><br/>(vc-annotate FILE REV &optional DISPLAY-MODE BUF MOVE-POINT-TO VC-BK)<br/><br/>Display the edit history of the current FILE using colors.<br/><br/>This command creates a buffer that shows, for each line of the current<br/>file, when it was last edited and by whom.  Additionally, colors are<br/>used to show the age of each line--blue means oldest, red means<br/>youngest, and intermediate colors indicate intermediate ages.  By<br/>default, the time scale stretches back one year into the past;<br/>everything that is older than that is shown in blue.<br/><br/>With a prefix argument, this command asks two questions in the<br/>minibuffer.  First, you may enter a revision number REV; then the buffer<br/>displays and annotates that revision instead of the working revision<br/>(type RET in the minibuffer to leave that default unchanged).  Then,<br/>you are prompted for the time span in days which the color range<br/>should cover.  For example, a time span of 20 days means that changes<br/>over the past 20 days are shown in red to blue, according to their<br/>age, and everything that is older than that is shown in blue.<br/><br/>If MOVE-POINT-TO is given, move the point to that line.<br/><br/>If VC-BK is given used that VC backend.<br/><br/>Customization variables:<br/><br/>`vc-annotate-menu-elements' customizes the menu elements of the<br/>mode-specific menu.  `vc-annotate-color-map' and<br/>`vc-annotate-very-old-color' define the mapping of time to colors.<br/>`vc-annotate-background' specifies the background color.
+<strong>vc-annotate</strong> is an interactive autoloaded Lisp function in `<code>vc-annotate.el</code>'.<br/>
+<br/>
+It is bound to C-x v g, <menu-bar> <tools> <vc> <vc-annotate>.<br/>
+<br/>
+(vc-annotate FILE REV &optional DISPLAY-MODE BUF MOVE-POINT-TO VC-BK)<br/>
+<br/>
+Display the edit history of the current FILE using colors.<br/>
+<br/>
+This command creates a buffer that shows, for each line of the current<br/>
+file, when it was last edited and by whom.  Additionally, colors are<br/>
+used to show the age of each line--blue means oldest, red means<br/>
+youngest, and intermediate colors indicate intermediate ages.  By<br/>
+default, the time scale stretches back one year into the past;<br/>
+everything that is older than that is shown in blue.<br/>
+<br/>
+With a prefix argument, this command asks two questions in the<br/>
+minibuffer.  First, you may enter a revision number REV; then the buffer<br/>
+displays and annotates that revision instead of the working revision<br/>
+(type RET in the minibuffer to leave that default unchanged).  Then,<br/>
+you are prompted for the time span in days which the color range<br/>
+should cover.  For example, a time span of 20 days means that changes<br/>
+over the past 20 days are shown in red to blue, according to their<br/>
+age, and everything that is older than that is shown in blue.<br/>
+<br/>
+If MOVE-POINT-TO is given, move the point to that line.<br/>
+<br/>
+If VC-BK is given used that VC backend.<br/>
+<br/>
+Customization variables:<br/>
+<br/>
+`vc-annotate-menu-elements' customizes the menu elements of the<br/>
+mode-specific menu.  `vc-annotate-color-map' and<br/>
+`vc-annotate-very-old-color' define the mapping of time to colors.<br/>
+`vc-annotate-background' specifies the background color.

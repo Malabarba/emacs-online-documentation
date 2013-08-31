@@ -1,1 +1,16 @@
-mailcap-mime-info is a compiled Lisp function in `mailcap.el'.<br/><br/>(mailcap-mime-info STRING &optional REQUEST NO-DECODE)<br/><br/>Get the MIME viewer command for STRING, return nil if none found.<br/>Expects a complete content-type header line as its argument.<br/><br/>Second argument REQUEST specifies what information to return.  If it is<br/>nil or the empty string, the viewer (second field of the mailcap<br/>entry) will be returned.  If it is a string, then the mailcap field<br/>corresponding to that string will be returned (print, description,<br/>whatever).  If a number, then all the information for this specific<br/>viewer is returned.  If `all', then all possible viewers for<br/>this type is returned.<br/><br/>If NO-DECODE is non-nil, don't decode STRING.
+<strong>mailcap-mime-info</strong> is a compiled Lisp function in `<code>mailcap.el</code>'.<br/>
+<br/>
+(mailcap-mime-info STRING &optional REQUEST NO-DECODE)<br/>
+<br/>
+Get the MIME viewer command for STRING, return nil if none found.<br/>
+Expects a complete content-type header line as its argument.<br/>
+<br/>
+Second argument REQUEST specifies what information to return.  If it is<br/>
+nil or the empty string, the viewer (second field of the mailcap<br/>
+entry) will be returned.  If it is a string, then the mailcap field<br/>
+corresponding to that string will be returned (print, description,<br/>
+whatever).  If a number, then all the information for this specific<br/>
+viewer is returned.  If `all', then all possible viewers for<br/>
+this type is returned.<br/>
+<br/>
+If NO-DECODE is non-nil, don't decode STRING.

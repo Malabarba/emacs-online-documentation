@@ -1,1 +1,73 @@
-picture-mode is an interactive autoloaded compiled Lisp function in `picture.el'.<br/><br/>(picture-mode)<br/><br/>Switch to Picture mode, in which a quarter-plane screen model is used.<br/><br/>Printing characters replace instead of inserting themselves with motion<br/>afterwards settable by these commands:<br/><br/> Move left after insertion:            C-c <<br/> Move right after insertion:           C-c ><br/> Move up after insertion:              C-c ^<br/> Move down after insertion:            C-c .<br/><br/> Move northwest (nw) after insertion:  C-c `<br/> Move northeast (ne) after insertion:  C-c '<br/> Move southwest (sw) after insertion:  C-c /<br/> Move southeast (se) after insertion:  C-c \<br/><br/> Move westnorthwest (wnw) after insertion:  C-u C-c `<br/> Move eastnortheast (ene) after insertion:  C-u C-c '<br/> Move westsouthwest (wsw) after insertion:  C-u C-c /<br/> Move eastsoutheast (ese) after insertion:  C-u C-c \<br/><br/>The current direction is displayed in the mode line.  The initial<br/>direction is right.  Whitespace is inserted and tabs are changed to<br/>spaces when required by movement.  You can move around in the buffer<br/>with these commands:<br/><br/> Move vertically to SAME column in previous line: C-n<br/> Move vertically to SAME column in next line:     C-p<br/> Move to column following last<br/>  non-whitespace character:                       C-e<br/> Move right, inserting spaces if required:        C-f<br/> Move left changing tabs to spaces if required:   C-b<br/> Move in direction of current picture motion:     C-c C-f<br/> Move opposite to current picture motion:         C-c C-b<br/> Move to beginning of next line:                  C-n<br/><br/>You can edit tabular text with these commands:<br/><br/> Move to column beneath (or at) next interesting<br/>  character (see variable `picture-tab-chars'):   C-M-i<br/> Move to next stop in tab stop list:              TAB<br/> Set tab stops according to context of this line: C-c TAB<br/>   (With ARG, resets tab stops to default value.)<br/> Change the tab stop list:                        M-x edit-tab-stops<br/><br/>You can manipulate text with these commands:<br/> Clear ARG columns after point without moving:    C-d<br/> Delete char at point:                            C-c C-d<br/> Clear ARG columns backward:                      DEL<br/> Clear ARG lines, advancing over them:            C-k<br/>  (the cleared text is saved in the kill ring)<br/> Open blank line(s) beneath current line:         C-o<br/><br/>You can manipulate rectangles with these commands:<br/>  Clear a rectangle and save it:                  C-c C-k<br/>  Clear a rectangle, saving in a named register:  C-c C-w<br/>  Insert currently saved rectangle at point:      C-c C-y<br/>  Insert rectangle from named register:           C-c C-x<br/>  Draw a rectangular box around mark and point:   C-c C-r<br/>  Copies a rectangle to a register:               C-x r r<br/>  Undo effects of rectangle overlay commands:     C-x u<br/><br/>You can return to the previous mode with C-c C-c, which<br/>also strips trailing whitespace from every line.  Stripping is suppressed<br/>by supplying an argument.<br/><br/>Entry to this mode calls the value of `picture-mode-hook' if non-nil.<br/><br/>Note that Picture mode commands will work outside of Picture mode, but<br/>they are not by default assigned to keys.
+<strong>picture-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>picture.el</code>'.<br/>
+<br/>
+(picture-mode)<br/>
+<br/>
+Switch to Picture mode, in which a quarter-plane screen model is used.<br/>
+<br/>
+Printing characters replace instead of inserting themselves with motion<br/>
+afterwards settable by these commands:<br/>
+<br/>
+ Move left after insertion:            C-c <<br/>
+ Move right after insertion:           C-c ><br/>
+ Move up after insertion:              C-c ^<br/>
+ Move down after insertion:            C-c .<br/>
+<br/>
+ Move northwest (nw) after insertion:  C-c `<br/>
+ Move northeast (ne) after insertion:  C-c '<br/>
+ Move southwest (sw) after insertion:  C-c /<br/>
+ Move southeast (se) after insertion:  C-c \<br/>
+<br/>
+ Move westnorthwest (wnw) after insertion:  C-u C-c `<br/>
+ Move eastnortheast (ene) after insertion:  C-u C-c '<br/>
+ Move westsouthwest (wsw) after insertion:  C-u C-c /<br/>
+ Move eastsoutheast (ese) after insertion:  C-u C-c \<br/>
+<br/>
+The current direction is displayed in the mode line.  The initial<br/>
+direction is right.  Whitespace is inserted and tabs are changed to<br/>
+spaces when required by movement.  You can move around in the buffer<br/>
+with these commands:<br/>
+<br/>
+ Move vertically to SAME column in previous line: C-n<br/>
+ Move vertically to SAME column in next line:     C-p<br/>
+ Move to column following last<br/>
+  non-whitespace character:                       C-e<br/>
+ Move right, inserting spaces if required:        C-f<br/>
+ Move left changing tabs to spaces if required:   C-b<br/>
+ Move in direction of current picture motion:     C-c C-f<br/>
+ Move opposite to current picture motion:         C-c C-b<br/>
+ Move to beginning of next line:                  C-n<br/>
+<br/>
+You can edit tabular text with these commands:<br/>
+<br/>
+ Move to column beneath (or at) next interesting<br/>
+  character (see variable `picture-tab-chars'):   C-M-i<br/>
+ Move to next stop in tab stop list:              TAB<br/>
+ Set tab stops according to context of this line: C-c TAB<br/>
+   (With ARG, resets tab stops to default value.)<br/>
+ Change the tab stop list:                        M-x edit-tab-stops<br/>
+<br/>
+You can manipulate text with these commands:<br/>
+ Clear ARG columns after point without moving:    C-d<br/>
+ Delete char at point:                            C-c C-d<br/>
+ Clear ARG columns backward:                      DEL<br/>
+ Clear ARG lines, advancing over them:            C-k<br/>
+  (the cleared text is saved in the kill ring)<br/>
+ Open blank line(s) beneath current line:         C-o<br/>
+<br/>
+You can manipulate rectangles with these commands:<br/>
+  Clear a rectangle and save it:                  C-c C-k<br/>
+  Clear a rectangle, saving in a named register:  C-c C-w<br/>
+  Insert currently saved rectangle at point:      C-c C-y<br/>
+  Insert rectangle from named register:           C-c C-x<br/>
+  Draw a rectangular box around mark and point:   C-c C-r<br/>
+  Copies a rectangle to a register:               C-x r r<br/>
+  Undo effects of rectangle overlay commands:     C-x u<br/>
+<br/>
+You can return to the previous mode with C-c C-c, which<br/>
+also strips trailing whitespace from every line.  Stripping is suppressed<br/>
+by supplying an argument.<br/>
+<br/>
+Entry to this mode calls the value of `picture-mode-hook' if non-nil.<br/>
+<br/>
+Note that Picture mode commands will work outside of Picture mode, but<br/>
+they are not by default assigned to keys.

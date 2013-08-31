@@ -1,1 +1,91 @@
-mh-letter-mode is an interactive autoloaded Lisp function in `mh-letter.el'.<br/><br/>(mh-letter-mode)<br/><br/>Parent mode: `mail-mode'.<br/><br/>Mode for composing letters in MH-E.<br/><br/>When you have finished composing, type C-c C-c to send<br/>the message using the MH mail handling system.<br/><br/>There are two types of tags used by MH-E when composing MIME<br/>messages: MML and MH. The option `mh-compose-insertion' controls<br/>what type of tags are inserted by MH-E commands. These tags can<br/>be converted to MIME body parts by running C-c C-e for<br/>MH-style directives or C-c RET m for MML tags.<br/><br/>Options that control this mode can be changed with<br/>M-x customize-group; specify the "mh-compose" group.<br/><br/>When a message is composed, the hooks `text-mode-hook',<br/>`mail-mode-hook', and `mh-letter-mode-hook' are run (in that<br/>order).<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>TAB		mh-letter-next-header-field-or-indent<br/>ESC		Prefix Command<br/>SPC		mh-letter-complete-or-space<br/>,		mh-letter-confirm-address<br/><backtab>	mh-letter-previous-header-field<br/><br/>C-c C-c		mh-send-letter<br/>C-c C-d		mh-insert-identity<br/>C-c C-e		mh-mh-to-mime<br/>C-c C-f		Prefix Command<br/>C-c TAB		mh-insert-letter<br/>C-c RET		Prefix Command<br/>C-c C-o		mh-open-line<br/>C-c C-q		mh-fully-kill-draft<br/>C-c C-s		mh-insert-signature<br/>C-c C-t		mh-letter-toggle-header-field-display<br/>C-c C-w		mh-check-whom<br/>C-c C-y		mh-yank-cur-msg<br/>C-c ESC		Prefix Command<br/>C-c C-\		mh-fully-kill-draft<br/>C-c C-^		mh-insert-signature<br/>C-c ?		mh-help<br/><br/>C-M-i		mh-letter-complete<br/><br/>C-c M-d		mh-insert-auto-fields<br/><br/>C-c RET C-e	mh-mml-secure-message-encrypt<br/>C-c RET C-f	mh-compose-forward<br/>C-c RET C-g	mh-mh-compose-anon-ftp<br/>C-c RET TAB	mh-compose-insertion<br/>C-c RET RET	mh-mml-to-mime<br/>C-c RET C-n	mh-mml-unsecure-message<br/>C-c RET C-s	mh-mml-secure-message-sign<br/>C-c RET C-t	mh-mh-compose-external-compressed-tar<br/>C-c RET C-u	mh-mh-to-mime-undo<br/>C-c RET C-x	mh-mh-compose-external-type<br/>C-c RET e	Prefix Command<br/>C-c RET f	mh-compose-forward<br/>C-c RET g	mh-mh-compose-anon-ftp<br/>C-c RET i	mh-compose-insertion<br/>C-c RET m	mh-mml-to-mime<br/>C-c RET n	mh-mml-unsecure-message<br/>C-c RET s	Prefix Command<br/>C-c RET t	mh-mh-compose-external-compressed-tar<br/>C-c RET u	mh-mh-to-mime-undo<br/>C-c RET x	mh-mh-compose-external-type<br/><br/>C-c C-f C-a .. C-c C-f C-d	mh-to-field<br/>C-c C-f C-f			mh-to-fcc<br/>C-c C-f C-l .. C-c C-f RET	mh-to-field<br/>C-c C-f C-r .. C-c C-f C-t	mh-to-field<br/>C-c C-f a .. C-c C-f d		mh-to-field<br/>C-c C-f f	mh-to-fcc<br/>C-c C-f l .. C-c C-f m		mh-to-field<br/>C-c C-f r .. C-c C-f t		mh-to-field<br/><br/>C-c RET s e	mh-mml-secure-message-signencrypt<br/>C-c RET s s	mh-mml-secure-message-sign<br/><br/>C-c RET e e	mh-mml-secure-message-encrypt<br/>C-c RET e s	mh-mml-secure-message-signencrypt<br/><br/>
+<strong>mh-letter-mode</strong> is an interactive autoloaded Lisp function in `<code>mh-letter.el</code>'.<br/>
+<br/>
+(mh-letter-mode)<br/>
+<br/>
+Parent mode: `mail-mode'.<br/>
+<br/>
+Mode for composing letters in MH-E.<br/>
+<br/>
+When you have finished composing, type C-c C-c to send<br/>
+the message using the MH mail handling system.<br/>
+<br/>
+There are two types of tags used by MH-E when composing MIME<br/>
+messages: MML and MH. The option `mh-compose-insertion' controls<br/>
+what type of tags are inserted by MH-E commands. These tags can<br/>
+be converted to MIME body parts by running C-c C-e for<br/>
+MH-style directives or C-c RET m for MML tags.<br/>
+<br/>
+Options that control this mode can be changed with<br/>
+M-x customize-group; specify the "mh-compose" group.<br/>
+<br/>
+When a message is composed, the hooks `text-mode-hook',<br/>
+`mail-mode-hook', and `mh-letter-mode-hook' are run (in that<br/>
+order).<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+TAB		mh-letter-next-header-field-or-indent<br/>
+ESC		Prefix Command<br/>
+SPC		mh-letter-complete-or-space<br/>
+,		mh-letter-confirm-address<br/>
+<backtab>	mh-letter-previous-header-field<br/>
+<br/>
+C-c C-c		mh-send-letter<br/>
+C-c C-d		mh-insert-identity<br/>
+C-c C-e		mh-mh-to-mime<br/>
+C-c C-f		Prefix Command<br/>
+C-c TAB		mh-insert-letter<br/>
+C-c RET		Prefix Command<br/>
+C-c C-o		mh-open-line<br/>
+C-c C-q		mh-fully-kill-draft<br/>
+C-c C-s		mh-insert-signature<br/>
+C-c C-t		mh-letter-toggle-header-field-display<br/>
+C-c C-w		mh-check-whom<br/>
+C-c C-y		mh-yank-cur-msg<br/>
+C-c ESC		Prefix Command<br/>
+C-c C-\		mh-fully-kill-draft<br/>
+C-c C-^		mh-insert-signature<br/>
+C-c ?		mh-help<br/>
+<br/>
+C-M-i		mh-letter-complete<br/>
+<br/>
+C-c M-d		mh-insert-auto-fields<br/>
+<br/>
+C-c RET C-e	mh-mml-secure-message-encrypt<br/>
+C-c RET C-f	mh-compose-forward<br/>
+C-c RET C-g	mh-mh-compose-anon-ftp<br/>
+C-c RET TAB	mh-compose-insertion<br/>
+C-c RET RET	mh-mml-to-mime<br/>
+C-c RET C-n	mh-mml-unsecure-message<br/>
+C-c RET C-s	mh-mml-secure-message-sign<br/>
+C-c RET C-t	mh-mh-compose-external-compressed-tar<br/>
+C-c RET C-u	mh-mh-to-mime-undo<br/>
+C-c RET C-x	mh-mh-compose-external-type<br/>
+C-c RET e	Prefix Command<br/>
+C-c RET f	mh-compose-forward<br/>
+C-c RET g	mh-mh-compose-anon-ftp<br/>
+C-c RET i	mh-compose-insertion<br/>
+C-c RET m	mh-mml-to-mime<br/>
+C-c RET n	mh-mml-unsecure-message<br/>
+C-c RET s	Prefix Command<br/>
+C-c RET t	mh-mh-compose-external-compressed-tar<br/>
+C-c RET u	mh-mh-to-mime-undo<br/>
+C-c RET x	mh-mh-compose-external-type<br/>
+<br/>
+C-c C-f C-a .. C-c C-f C-d	mh-to-field<br/>
+C-c C-f C-f			mh-to-fcc<br/>
+C-c C-f C-l .. C-c C-f RET	mh-to-field<br/>
+C-c C-f C-r .. C-c C-f C-t	mh-to-field<br/>
+C-c C-f a .. C-c C-f d		mh-to-field<br/>
+C-c C-f f	mh-to-fcc<br/>
+C-c C-f l .. C-c C-f m		mh-to-field<br/>
+C-c C-f r .. C-c C-f t		mh-to-field<br/>
+<br/>
+C-c RET s e	mh-mml-secure-message-signencrypt<br/>
+C-c RET s s	mh-mml-secure-message-sign<br/>
+<br/>
+C-c RET e e	mh-mml-secure-message-encrypt<br/>
+C-c RET e s	mh-mml-secure-message-signencrypt<br/>
+<br/>

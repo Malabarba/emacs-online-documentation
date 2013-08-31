@@ -1,1 +1,12 @@
-mh-require-cl is an autoloaded Lisp macro in `mh-acros.el'.<br/><br/>(mh-require-cl)<br/><br/>Macro to load "cl" if needed.<br/><br/>Emacs coding conventions require that the "cl" package not be<br/>required at runtime. However, the "cl" package in Emacs 21.4<br/>and earlier left "cl" routines in their macro expansions. In<br/>particular, the expansion of (setf (gethash ...) ...) used<br/>functions in "cl" at run time. This macro recognizes that and<br/>loads "cl" appropriately.
+<strong>mh-require-cl</strong> is an autoloaded Lisp macro in `<code>mh-acros.el</code>'.<br/>
+<br/>
+(mh-require-cl)<br/>
+<br/>
+Macro to load "cl" if needed.<br/>
+<br/>
+Emacs coding conventions require that the "cl" package not be<br/>
+required at runtime. However, the "cl" package in Emacs 21.4<br/>
+and earlier left "cl" routines in their macro expansions. In<br/>
+particular, the expansion of (setf (gethash ...) ...) used<br/>
+functions in "cl" at run time. This macro recognizes that and<br/>
+loads "cl" appropriately.

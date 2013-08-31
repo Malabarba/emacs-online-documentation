@@ -1,1 +1,40 @@
-buffer-display-table is a variable defined in `C source code'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>Display table that controls display of the contents of current buffer.<br/><br/>If this variable is nil, the value of `standard-display-table' is used.<br/>Each window can have its own, overriding display table, see<br/>`set-window-display-table' and `window-display-table'.<br/><br/>The display table is a char-table created with `make-display-table'.<br/>A char-table is an array indexed by character codes.  Normal array<br/>primitives `aref' and `aset' can be used to access elements of a char-table.<br/><br/>Each of the char-table elements control how to display the corresponding<br/>text character: the element at index C in the table says how to display<br/>the character whose code is C.  Each element should be a vector of<br/>characters or nil.  The value nil means display the character in the<br/>default fashion; otherwise, the characters from the vector are delivered<br/>to the screen instead of the original character.<br/><br/>For example, (aset buffer-display-table ?X [?Y]) tells Emacs<br/>to display a capital Y instead of each X character.<br/><br/>In addition, a char-table has six extra slots to control the display of:<br/><br/>  the end of a truncated screen line (extra-slot 0, a single character);<br/>  the end of a continued line (extra-slot 1, a single character);<br/>  the escape character used to display character codes in octal<br/>    (extra-slot 2, a single character);<br/>  the character used as an arrow for control characters (extra-slot 3,<br/>    a single character);<br/>  the decoration indicating the presence of invisible lines (extra-slot 4,<br/>    a vector of characters);<br/>  the character used to draw the border between side-by-side windows<br/>    (extra-slot 5, a single character).<br/><br/>See also the functions `display-table-slot' and `set-display-table-slot'.
+<strong>buffer-display-table</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+Display table that controls display of the contents of current buffer.<br/>
+<br/>
+If this variable is nil, the value of `standard-display-table' is used.<br/>
+Each window can have its own, overriding display table, see<br/>
+`set-window-display-table' and `window-display-table'.<br/>
+<br/>
+The display table is a char-table created with `make-display-table'.<br/>
+A char-table is an array indexed by character codes.  Normal array<br/>
+primitives `aref' and `aset' can be used to access elements of a char-table.<br/>
+<br/>
+Each of the char-table elements control how to display the corresponding<br/>
+text character: the element at index C in the table says how to display<br/>
+the character whose code is C.  Each element should be a vector of<br/>
+characters or nil.  The value nil means display the character in the<br/>
+default fashion; otherwise, the characters from the vector are delivered<br/>
+to the screen instead of the original character.<br/>
+<br/>
+For example, (aset buffer-display-table ?X [?Y]) tells Emacs<br/>
+to display a capital Y instead of each X character.<br/>
+<br/>
+In addition, a char-table has six extra slots to control the display of:<br/>
+<br/>
+  the end of a truncated screen line (extra-slot 0, a single character);<br/>
+  the end of a continued line (extra-slot 1, a single character);<br/>
+  the escape character used to display character codes in octal<br/>
+    (extra-slot 2, a single character);<br/>
+  the character used as an arrow for control characters (extra-slot 3,<br/>
+    a single character);<br/>
+  the decoration indicating the presence of invisible lines (extra-slot 4,<br/>
+    a vector of characters);<br/>
+  the character used to draw the border between side-by-side windows<br/>
+    (extra-slot 5, a single character).<br/>
+<br/>
+See also the functions `display-table-slot' and `set-display-table-slot'.

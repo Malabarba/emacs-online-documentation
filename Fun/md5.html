@@ -1,1 +1,30 @@
-md5 is a built-in function in `C source code'.<br/><br/>(md5 OBJECT &optional START END CODING-SYSTEM NOERROR)<br/><br/>Return MD5 message digest of OBJECT, a buffer or string.<br/><br/>A message digest is a cryptographic checksum of a document, and the<br/>algorithm to calculate it is defined in RFC 1321.<br/><br/>The two optional arguments START and END are character positions<br/>specifying for which part of OBJECT the message digest should be<br/>computed.  If nil or omitted, the digest is computed for the whole<br/>OBJECT.<br/><br/>The MD5 message digest is computed from the result of encoding the<br/>text in a coding system, not directly from the internal Emacs form of<br/>the text.  The optional fourth argument CODING-SYSTEM specifies which<br/>coding system to encode the text with.  It should be the same coding<br/>system that you used or will use when actually writing the text into a<br/>file.<br/><br/>If CODING-SYSTEM is nil or omitted, the default depends on OBJECT.  If<br/>OBJECT is a buffer, the default for CODING-SYSTEM is whatever coding<br/>system would be chosen by default for writing this text into a file.<br/><br/>If OBJECT is a string, the most preferred coding system (see the<br/>command `prefer-coding-system') is used.<br/><br/>If NOERROR is non-nil, silently assume the `raw-text' coding if the<br/>guesswork fails.  Normally, an error is signaled in such case.
+<strong>md5</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(md5 OBJECT &optional START END CODING-SYSTEM NOERROR)<br/>
+<br/>
+Return MD5 message digest of OBJECT, a buffer or string.<br/>
+<br/>
+A message digest is a cryptographic checksum of a document, and the<br/>
+algorithm to calculate it is defined in RFC 1321.<br/>
+<br/>
+The two optional arguments START and END are character positions<br/>
+specifying for which part of OBJECT the message digest should be<br/>
+computed.  If nil or omitted, the digest is computed for the whole<br/>
+OBJECT.<br/>
+<br/>
+The MD5 message digest is computed from the result of encoding the<br/>
+text in a coding system, not directly from the internal Emacs form of<br/>
+the text.  The optional fourth argument CODING-SYSTEM specifies which<br/>
+coding system to encode the text with.  It should be the same coding<br/>
+system that you used or will use when actually writing the text into a<br/>
+file.<br/>
+<br/>
+If CODING-SYSTEM is nil or omitted, the default depends on OBJECT.  If<br/>
+OBJECT is a buffer, the default for CODING-SYSTEM is whatever coding<br/>
+system would be chosen by default for writing this text into a file.<br/>
+<br/>
+If OBJECT is a string, the most preferred coding system (see the<br/>
+command `prefer-coding-system') is used.<br/>
+<br/>
+If NOERROR is non-nil, silently assume the `raw-text' coding if the<br/>
+guesswork fails.  Normally, an error is signaled in such case.

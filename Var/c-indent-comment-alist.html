@@ -1,1 +1,56 @@
-c-indent-comment-alist is a variable defined in `cc-vars.el'.<br/>Its value is set-from-style<br/><br/>Documentation:<br/>*Specifies how M-x indent-for-comment calculates the comment start column.<br/>This is an association list that contains entries of the form:<br/><br/> (LINE-TYPE . INDENT-SPEC)<br/><br/>LINE-TYPE specifies a type of line as described below, and INDENT-SPEC<br/>says what M-x indent-for-comment should do when used on that type of line.<br/><br/>The recognized values for LINE-TYPE are:<br/><br/> empty-line        -- The line is empty.<br/> anchored-comment  -- The line contains a comment that starts in column 0.<br/> end-block         -- The line contains a solitary block closing brace.<br/> cpp-end-block     -- The line contains a preprocessor directive that<br/>                      closes a block, i.e. either "#endif" or "#else".<br/> other             -- The line does not match any other entry<br/>                      currently on the list.<br/><br/>An INDENT-SPEC is a cons cell of the form:<br/><br/> (ACTION . VALUE)<br/><br/>ACTION says how M-x indent-for-comment should align the comment, and<br/>VALUE is interpreted depending on ACTION.  ACTION can be any of the<br/>following:<br/><br/> space   -- Put VALUE spaces between the end of the line and the start<br/>            of the comment.<br/> column  -- Start the comment at the column VALUE.  If the line is<br/>            longer than that, the comment is preceded by a single<br/>            space.  If VALUE is nil, `comment-column' is used.<br/> align   -- Align the comment with one on the previous line, if there<br/>            is any.  If the line is too long, the comment is preceded<br/>            by a single space.  If there isn't a comment start on the<br/>            previous line, the behavior is specified by VALUE, which<br/>            in turn is interpreted as an INDENT-SPEC.<br/><br/>If a LINE-TYPE is missing, then M-x indent-for-comment indents the comment<br/>according to `comment-column'.<br/><br/>Note that a non-nil value on `c-indent-comments-syntactically-p'<br/>overrides this variable, so empty lines are indented syntactically<br/>in that case, i.e. as if M-x c-indent-command was used instead.<br/><br/>This is a style variable.  Apart from the valid values described<br/>above, it can be set to the symbol `set-from-style'.  In that case,<br/>it takes its value from the style system (see `c-default-style' and<br/>`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>the value set here overrides the style system (there is a variable<br/>`c-old-style-variable-behavior' that changes this, though).<br/><br/>You can customize this variable.
+<strong>c-indent-comment-alist</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
+Its value is set-from-style<br/>
+<br/>
+Documentation:<br/>
+*Specifies how M-x indent-for-comment calculates the comment start column.<br/>
+This is an association list that contains entries of the form:<br/>
+<br/>
+ (LINE-TYPE . INDENT-SPEC)<br/>
+<br/>
+LINE-TYPE specifies a type of line as described below, and INDENT-SPEC<br/>
+says what M-x indent-for-comment should do when used on that type of line.<br/>
+<br/>
+The recognized values for LINE-TYPE are:<br/>
+<br/>
+ empty-line        -- The line is empty.<br/>
+ anchored-comment  -- The line contains a comment that starts in column 0.<br/>
+ end-block         -- The line contains a solitary block closing brace.<br/>
+ cpp-end-block     -- The line contains a preprocessor directive that<br/>
+                      closes a block, i.e. either "#endif" or "#else".<br/>
+ other             -- The line does not match any other entry<br/>
+                      currently on the list.<br/>
+<br/>
+An INDENT-SPEC is a cons cell of the form:<br/>
+<br/>
+ (ACTION . VALUE)<br/>
+<br/>
+ACTION says how M-x indent-for-comment should align the comment, and<br/>
+VALUE is interpreted depending on ACTION.  ACTION can be any of the<br/>
+following:<br/>
+<br/>
+ space   -- Put VALUE spaces between the end of the line and the start<br/>
+            of the comment.<br/>
+ column  -- Start the comment at the column VALUE.  If the line is<br/>
+            longer than that, the comment is preceded by a single<br/>
+            space.  If VALUE is nil, `comment-column' is used.<br/>
+ align   -- Align the comment with one on the previous line, if there<br/>
+            is any.  If the line is too long, the comment is preceded<br/>
+            by a single space.  If there isn't a comment start on the<br/>
+            previous line, the behavior is specified by VALUE, which<br/>
+            in turn is interpreted as an INDENT-SPEC.<br/>
+<br/>
+If a LINE-TYPE is missing, then M-x indent-for-comment indents the comment<br/>
+according to `comment-column'.<br/>
+<br/>
+Note that a non-nil value on `c-indent-comments-syntactically-p'<br/>
+overrides this variable, so empty lines are indented syntactically<br/>
+in that case, i.e. as if M-x c-indent-command was used instead.<br/>
+<br/>
+This is a style variable.  Apart from the valid values described<br/>
+above, it can be set to the symbol `set-from-style'.  In that case,<br/>
+it takes its value from the style system (see `c-default-style' and<br/>
+`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>
+the value set here overrides the style system (there is a variable<br/>
+`c-old-style-variable-behavior' that changes this, though).<br/>
+<br/>
+You can customize this variable.

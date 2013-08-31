@@ -1,1 +1,38 @@
-ps-fg-list is a variable defined in `ps-print.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Specify foreground color list.<br/><br/>This list is used to chose a text foreground color which is different than the<br/>background color.  It'll be used the first foreground color in `ps-fg-list'<br/>which is different from the background color.<br/><br/>If this list is nil, the default foreground color is used.  See<br/>`ps-default-fg'.<br/><br/>The list element valid values are:<br/><br/>   NUMBER	It's a real value between 0.0 (black) and 1.0 (white) that<br/>		indicate the gray color.<br/><br/>   COLOR-NAME	It's a string which contains the color name.  For example:<br/>		"yellow".<br/><br/>   LIST		It's a list of RGB values, that is a list of three real values<br/>		of the form:<br/><br/>		  (RED GREEN BLUE)<br/><br/>		Where RED, GREEN and BLUE are reals between 0.0 (no color) and<br/>		1.0 (full color).<br/><br/>Any other value is ignored and black color will be used.<br/><br/>This variable is used only when `ps-fg-validate-p' (which see) is non-nil and<br/>when `ps-print-color-p' (which see) is neither nil nor black-white.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22 of Emacs.<br/>
+<strong>ps-fg-list</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Specify foreground color list.<br/>
+<br/>
+This list is used to chose a text foreground color which is different than the<br/>
+background color.  It'll be used the first foreground color in `ps-fg-list'<br/>
+which is different from the background color.<br/>
+<br/>
+If this list is nil, the default foreground color is used.  See<br/>
+`ps-default-fg'.<br/>
+<br/>
+The list element valid values are:<br/>
+<br/>
+   NUMBER	It's a real value between 0.0 (black) and 1.0 (white) that<br/>
+		indicate the gray color.<br/>
+<br/>
+   COLOR-NAME	It's a string which contains the color name.  For example:<br/>
+		"yellow".<br/>
+<br/>
+   LIST		It's a list of RGB values, that is a list of three real values<br/>
+		of the form:<br/>
+<br/>
+		  (RED GREEN BLUE)<br/>
+<br/>
+		Where RED, GREEN and BLUE are reals between 0.0 (no color) and<br/>
+		1.0 (full color).<br/>
+<br/>
+Any other value is ignored and black color will be used.<br/>
+<br/>
+This variable is used only when `ps-fg-validate-p' (which see) is non-nil and<br/>
+when `ps-print-color-p' (which see) is neither nil nor black-white.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22 of Emacs.<br/>

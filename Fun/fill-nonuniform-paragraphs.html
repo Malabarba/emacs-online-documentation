@@ -1,1 +1,18 @@
-fill-nonuniform-paragraphs is an interactive compiled Lisp function in `fill.el'.<br/><br/>(fill-nonuniform-paragraphs MIN MAX &optional JUSTIFYP CITATION-REGEXP)<br/><br/>Fill paragraphs within the region, allowing varying indentation within each.<br/>This command divides the region into "paragraphs",<br/>only at paragraph-separator lines, then fills each paragraph<br/>using as the fill prefix the smallest indentation of any line<br/>in the paragraph.<br/><br/>When calling from a program, pass range to fill as first two arguments.<br/><br/>Optional third and fourth arguments JUSTIFYP and CITATION-REGEXP:<br/>JUSTIFYP to justify paragraphs (prefix arg).<br/>When filling a mail message, pass a regexp for CITATION-REGEXP<br/>which will match the prefix of a line which is a citation marker<br/>plus whitespace, but no other kind of prefix.<br/>Also, if CITATION-REGEXP is non-nil, don't fill header lines.
+<strong>fill-nonuniform-paragraphs</strong> is an interactive compiled Lisp function in `<code>fill.el</code>'.<br/>
+<br/>
+(fill-nonuniform-paragraphs MIN MAX &optional JUSTIFYP CITATION-REGEXP)<br/>
+<br/>
+Fill paragraphs within the region, allowing varying indentation within each.<br/>
+This command divides the region into "paragraphs",<br/>
+only at paragraph-separator lines, then fills each paragraph<br/>
+using as the fill prefix the smallest indentation of any line<br/>
+in the paragraph.<br/>
+<br/>
+When calling from a program, pass range to fill as first two arguments.<br/>
+<br/>
+Optional third and fourth arguments JUSTIFYP and CITATION-REGEXP:<br/>
+JUSTIFYP to justify paragraphs (prefix arg).<br/>
+When filling a mail message, pass a regexp for CITATION-REGEXP<br/>
+which will match the prefix of a line which is a citation marker<br/>
+plus whitespace, but no other kind of prefix.<br/>
+Also, if CITATION-REGEXP is non-nil, don't fill header lines.

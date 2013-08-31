@@ -1,1 +1,26 @@
-org-create-file-search-functions is a variable defined in `org.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of functions to construct the right search string for a file link.<br/>These functions are called in turn with point at the location to<br/>which the link should point.<br/><br/>A function in the hook should first test if it would like to<br/>handle this file type, for example by checking the `major-mode'<br/>or the file extension.  If it decides not to handle this file, it<br/>should just return nil to give other functions a chance.  If it<br/>does handle the file, it must return the search string to be used<br/>when following the link.  The search string will be part of the<br/>file link, given after a double colon, and `org-open-at-point'<br/>will automatically search for it.  If special measures must be<br/>taken to make the search successful, another function should be<br/>added to the companion hook `org-execute-file-search-functions',<br/>which see.<br/><br/>A function in this hook may also use `setq' to set the variable<br/>`description' to provide a suggestion for the descriptive text to<br/>be used for this link when it gets inserted into an Org-mode<br/>buffer with M-x org-insert-link.
+<strong>org-create-file-search-functions</strong> is a variable defined in `<code>org.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of functions to construct the right search string for a file link.<br/>
+These functions are called in turn with point at the location to<br/>
+which the link should point.<br/>
+<br/>
+A function in the hook should first test if it would like to<br/>
+handle this file type, for example by checking the `major-mode'<br/>
+or the file extension.  If it decides not to handle this file, it<br/>
+should just return nil to give other functions a chance.  If it<br/>
+does handle the file, it must return the search string to be used<br/>
+when following the link.  The search string will be part of the<br/>
+file link, given after a double colon, and `org-open-at-point'<br/>
+will automatically search for it.  If special measures must be<br/>
+taken to make the search successful, another function should be<br/>
+added to the companion hook `org-execute-file-search-functions',<br/>
+which see.<br/>
+<br/>
+A function in this hook may also use `setq' to set the variable<br/>
+`description' to provide a suggestion for the descriptive text to<br/>
+be used for this link when it gets inserted into an Org-mode<br/>
+buffer with M-x org-insert-link.

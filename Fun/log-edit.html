@@ -1,1 +1,26 @@
-log-edit is an autoloaded compiled Lisp function in `log-edit.el'.<br/><br/>(log-edit CALLBACK &optional SETUP PARAMS BUFFER MODE &rest IGNORE)<br/><br/>Setup a buffer to enter a log message.<br/>The buffer is put in mode MODE or `log-edit-mode' if MODE is nil.<br/><br/>If SETUP is non-nil, erase the buffer and run `log-edit-hook'.<br/>Set mark and point around the entire contents of the buffer, so<br/>that it is easy to kill the contents of the buffer with<br/>C-w.  Once the user is done editing the message,<br/>invoking the command C-c C-c (`log-edit-done') will<br/>call CALLBACK to do the actual commit.<br/><br/>PARAMS if non-nil is an alist of variables and buffer-local<br/>values to give them in the Log Edit buffer.  Possible keys and<br/>associated values:<br/> `log-edit-listfun' -- function taking no arguments that returns the list of<br/> files that are concerned by the current operation (using relative names);<br/> `log-edit-diff-function' -- function taking no arguments that<br/> displays a diff of the files concerned by the current operation.<br/> `vc-log-fileset' -- the VC fileset to be committed (if any).<br/><br/>If BUFFER is non-nil `log-edit' will jump to that buffer, use it<br/>to edit the log message and go back to the current buffer when<br/>done.  Otherwise, it uses the current buffer.
+<strong>log-edit</strong> is an autoloaded compiled Lisp function in `<code>log-edit.el</code>'.<br/>
+<br/>
+(log-edit CALLBACK &optional SETUP PARAMS BUFFER MODE &rest IGNORE)<br/>
+<br/>
+Setup a buffer to enter a log message.<br/>
+The buffer is put in mode MODE or `log-edit-mode' if MODE is nil.<br/>
+<br/>
+If SETUP is non-nil, erase the buffer and run `log-edit-hook'.<br/>
+Set mark and point around the entire contents of the buffer, so<br/>
+that it is easy to kill the contents of the buffer with<br/>
+C-w.  Once the user is done editing the message,<br/>
+invoking the command C-c C-c (`log-edit-done') will<br/>
+call CALLBACK to do the actual commit.<br/>
+<br/>
+PARAMS if non-nil is an alist of variables and buffer-local<br/>
+values to give them in the Log Edit buffer.  Possible keys and<br/>
+associated values:<br/>
+ `log-edit-listfun' -- function taking no arguments that returns the list of<br/>
+ files that are concerned by the current operation (using relative names);<br/>
+ `log-edit-diff-function' -- function taking no arguments that<br/>
+ displays a diff of the files concerned by the current operation.<br/>
+ `vc-log-fileset' -- the VC fileset to be committed (if any).<br/>
+<br/>
+If BUFFER is non-nil `log-edit' will jump to that buffer, use it<br/>
+to edit the log message and go back to the current buffer when<br/>
+done.  Otherwise, it uses the current buffer.

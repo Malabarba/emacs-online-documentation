@@ -1,1 +1,116 @@
-ses-mode is an interactive autoloaded compiled Lisp function in `ses.el'.<br/><br/>(ses-mode)<br/><br/>Major mode for Simple Emacs Spreadsheet.<br/>See "ses-example.ses" (in `data-directory') for more info.<br/><br/>Key definitions:<br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>ESC		Prefix Command<br/>C-S-l		ses-reprint-all<br/><header-line>	Prefix Command<br/><br/><header-line> <down-mouse-3>	Prefix Command<br/><header-line> <mouse-2>		ses-sort-column-click<br/><br/>C-M-l		ses-reprint-all<br/><br/>C-c C-c		ses-recalculate-cell<br/>C-c C-j		ses-jump<br/>C-c C-l		ses-recalculate-all<br/>C-c C-n		ses-renarrow-buffer<br/>C-c C-p		ses-read-default-printer<br/>C-c C-t		ses-truncate-cell<br/>C-c ESC		Prefix Command<br/><br/><header-line> <down-mouse-3> <Set current row><br/>				ses-set-header-row<br/><header-line> <down-mouse-3> <Unset row><br/>				ses-unset-header-row<br/><br/>C-c C-M-h	ses-set-header-row<br/>C-c C-M-l	ses-reconstruct-all<br/>C-c C-M-s	ses-sort-column<br/><br/><br/>These key definitions are active only in the print area (the visible part):<br/>key             binding<br/>---             -------<br/><br/>- .. .		ses-read-cell<br/>0 .. 9		ses-read-cell<br/><br/>C-d		ses-clear-cell-forward<br/>TAB		ses-forward-or-insert<br/>C-j		ses-append-row-jump-first-column<br/>C-k		ses-delete-row<br/>RET		ses-edit-cell<br/>C-o		ses-insert-row<br/>C-w		ses-kill-override<br/>ESC		Prefix Command<br/>"		ses-read-cell<br/>'		ses-read-symbol<br/>(		ses-read-cell<br/>=		ses-edit-cell<br/>c		ses-recalculate-cell<br/>j		ses-jump<br/>p		ses-read-cell-printer<br/>t		ses-truncate-cell<br/>w		ses-set-column-width<br/>x		ses-export-keymap<br/>DEL		ses-clear-cell-backward<br/><S-delete>	ses-kill-override<br/><backtab>	backward-char<br/><cut>		ses-kill-override<br/><deleteline>	ses-delete-row<br/><f20>		ses-kill-override<br/><insertline>	ses-insert-row<br/><remap>		Prefix Command<br/><tab>		ses-forward-or-insert<br/><br/>M-H		ses-mark-column<br/>M-h		ses-mark-row<br/>M-k		ses-delete-column<br/>M-o		ses-insert-column<br/>M-p		ses-read-column-printer<br/>M-y		ses-yank-pop<br/><br/>x T		ses-export-tsf<br/>x t		ses-export-tsv<br/><br/><br/>These are active only in the minibuffer, when entering or editing a formula:<br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>C-g		minibuffer-keyboard-quit<br/>TAB		self-insert-command<br/>C-j		exit-minibuffer<br/>RET		exit-minibuffer<br/>ESC		Prefix Command<br/><C-S-mouse-3>	ses-insert-ses-range-click<br/><C-tab>		file-cache-minibuffer-complete<br/><S-mouse-3>	ses-insert-range-click<br/><XF86Back>	previous-history-element<br/><XF86Forward>	next-history-element<br/><down>		next-history-element<br/><kp-4>		tpu-search-forward-exit<br/><kp-5>		tpu-search-backward-exit<br/><kp-enter>	exit-minibuffer<br/><next>		next-history-element<br/><prior>		previous-history-element<br/><up>		previous-history-element<br/><br/>C-M-i		lisp-complete-symbol<br/><br/>C-c C-r		ses-insert-range<br/>C-c C-s		ses-insert-ses-range<br/><br/>M-n		next-history-element<br/>M-p		previous-history-element<br/>M-r		previous-matching-history-element<br/>M-s		next-matching-history-element<br/><br/>
+<strong>ses-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>ses.el</code>'.<br/>
+<br/>
+(ses-mode)<br/>
+<br/>
+Major mode for Simple Emacs Spreadsheet.<br/>
+See "ses-example.ses" (in `data-directory') for more info.<br/>
+<br/>
+Key definitions:<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+ESC		Prefix Command<br/>
+C-S-l		ses-reprint-all<br/>
+<header-line>	Prefix Command<br/>
+<br/>
+<header-line> <down-mouse-3>	Prefix Command<br/>
+<header-line> <mouse-2>		ses-sort-column-click<br/>
+<br/>
+C-M-l		ses-reprint-all<br/>
+<br/>
+C-c C-c		ses-recalculate-cell<br/>
+C-c C-j		ses-jump<br/>
+C-c C-l		ses-recalculate-all<br/>
+C-c C-n		ses-renarrow-buffer<br/>
+C-c C-p		ses-read-default-printer<br/>
+C-c C-t		ses-truncate-cell<br/>
+C-c ESC		Prefix Command<br/>
+<br/>
+<header-line> <down-mouse-3> <Set current row><br/>
+				ses-set-header-row<br/>
+<header-line> <down-mouse-3> <Unset row><br/>
+				ses-unset-header-row<br/>
+<br/>
+C-c C-M-h	ses-set-header-row<br/>
+C-c C-M-l	ses-reconstruct-all<br/>
+C-c C-M-s	ses-sort-column<br/>
+<br/>
+<br/>
+These key definitions are active only in the print area (the visible part):<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+- .. .		ses-read-cell<br/>
+0 .. 9		ses-read-cell<br/>
+<br/>
+C-d		ses-clear-cell-forward<br/>
+TAB		ses-forward-or-insert<br/>
+C-j		ses-append-row-jump-first-column<br/>
+C-k		ses-delete-row<br/>
+RET		ses-edit-cell<br/>
+C-o		ses-insert-row<br/>
+C-w		ses-kill-override<br/>
+ESC		Prefix Command<br/>
+"		ses-read-cell<br/>
+'		ses-read-symbol<br/>
+(		ses-read-cell<br/>
+=		ses-edit-cell<br/>
+c		ses-recalculate-cell<br/>
+j		ses-jump<br/>
+p		ses-read-cell-printer<br/>
+t		ses-truncate-cell<br/>
+w		ses-set-column-width<br/>
+x		ses-export-keymap<br/>
+DEL		ses-clear-cell-backward<br/>
+<S-delete>	ses-kill-override<br/>
+<backtab>	backward-char<br/>
+<deleteline>	ses-delete-row<br/>
+<insertline>	ses-insert-row<br/>
+<remap>		Prefix Command<br/>
+<tab>		ses-forward-or-insert<br/>
+<br/>
+M-H		ses-mark-column<br/>
+M-h		ses-mark-row<br/>
+M-k		ses-delete-column<br/>
+M-o		ses-insert-column<br/>
+M-p		ses-read-column-printer<br/>
+M-y		ses-yank-pop<br/>
+<br/>
+x T		ses-export-tsf<br/>
+x t		ses-export-tsv<br/>
+<br/>
+<br/>
+These are active only in the minibuffer, when entering or editing a formula:<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+C-g		minibuffer-keyboard-quit<br/>
+TAB		self-insert-command<br/>
+C-j		exit-minibuffer<br/>
+RET		exit-minibuffer<br/>
+ESC		Prefix Command<br/>
+<C-S-mouse-3>	ses-insert-ses-range-click<br/>
+<C-tab>		file-cache-minibuffer-complete<br/>
+<S-mouse-3>	ses-insert-range-click<br/>
+<XF86Back>	previous-history-element<br/>
+<XF86Forward>	next-history-element<br/>
+<down>		next-history-element<br/>
+<kp-4>		tpu-search-forward-exit<br/>
+<kp-5>		tpu-search-backward-exit<br/>
+<kp-enter>	exit-minibuffer<br/>
+<next>		next-history-element<br/>
+<prior>		previous-history-element<br/>
+<up>		previous-history-element<br/>
+<br/>
+C-M-i		lisp-complete-symbol<br/>
+<br/>
+C-c C-r		ses-insert-range<br/>
+C-c C-s		ses-insert-ses-range<br/>
+<br/>
+M-n		next-history-element<br/>
+M-p		previous-history-element<br/>
+M-r		previous-matching-history-element<br/>
+M-s		next-matching-history-element<br/>
+<br/>

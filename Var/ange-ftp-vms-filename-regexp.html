@@ -1,1 +1,11 @@
-ange-ftp-vms-filename-regexp is a variable defined in `ange-ftp.el'.<br/>Its value is<br/>"\\(\\([_A-Za-z0-9$]?\\|[_A-Za-z0-9$][-_A-Za-z0-9$]*\\)\\.[-_A-Za-z0-9$]*;+[0-9]*\\)"<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Regular expression to match for a valid VMS file name in Dired buffer.<br/>Stupid freaking bug!  Position of _ and $ shouldn't matter but they do.<br/>Having [A-Z0-9$_] bombs on filename _$$CHANGE_LOG$.TXT$ and $CHANGE_LOG$.TX.<br/>Other orders of $ and _ seem to all work just fine.
+<strong>ange-ftp-vms-filename-regexp</strong> is a variable defined in `<code>ange-ftp.el</code>'.<br/>
+Its value is<br/>
+"\\(\\([_A-Za-z0-9$]?\\|[_A-Za-z0-9$][-_A-Za-z0-9$]*\\)\\.[-_A-Za-z0-9$]*;+[0-9]*\\)"<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Regular expression to match for a valid VMS file name in Dired buffer.<br/>
+Stupid freaking bug!  Position of _ and $ shouldn't matter but they do.<br/>
+Having [A-Z0-9$_] bombs on filename _$$CHANGE_LOG$.TXT$ and $CHANGE_LOG$.TX.<br/>
+Other orders of $ and _ seem to all work just fine.

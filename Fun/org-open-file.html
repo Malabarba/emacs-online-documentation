@@ -1,1 +1,24 @@
-org-open-file is a compiled Lisp function in `org.el'.<br/><br/>(org-open-file PATH &optional IN-EMACS LINE SEARCH)<br/><br/>Open the file at PATH.<br/>First, this expands any special file name abbreviations.  Then the<br/>configuration variable `org-file-apps' is checked if it contains an<br/>entry for this file type, and if yes, the corresponding command is launched.<br/><br/>If no application is found, Emacs simply visits the file.<br/><br/>With optional prefix argument IN-EMACS, Emacs will visit the file.<br/>With a double C-u C-u prefix arg, Org tries to avoid opening in Emacs<br/>and to use an external application to visit the file.<br/><br/>Optional LINE specifies a line to go to, optional SEARCH a string<br/>to search for.  If LINE or SEARCH is given, the file will be<br/>opened in Emacs, unless an entry from org-file-apps that makes<br/>use of groups in a regexp matches.<br/><br/>If you want to change the way frames are used when following a<br/>link, please customize `org-link-frame-setup'.<br/><br/>If the file does not exist, an error is thrown.
+<strong>org-open-file</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-open-file PATH &optional IN-EMACS LINE SEARCH)<br/>
+<br/>
+Open the file at PATH.<br/>
+First, this expands any special file name abbreviations.  Then the<br/>
+configuration variable `org-file-apps' is checked if it contains an<br/>
+entry for this file type, and if yes, the corresponding command is launched.<br/>
+<br/>
+If no application is found, Emacs simply visits the file.<br/>
+<br/>
+With optional prefix argument IN-EMACS, Emacs will visit the file.<br/>
+With a double C-u C-u prefix arg, Org tries to avoid opening in Emacs<br/>
+and to use an external application to visit the file.<br/>
+<br/>
+Optional LINE specifies a line to go to, optional SEARCH a string<br/>
+to search for.  If LINE or SEARCH is given, the file will be<br/>
+opened in Emacs, unless an entry from org-file-apps that makes<br/>
+use of groups in a regexp matches.<br/>
+<br/>
+If you want to change the way frames are used when following a<br/>
+link, please customize `org-link-frame-setup'.<br/>
+<br/>
+If the file does not exist, an error is thrown.

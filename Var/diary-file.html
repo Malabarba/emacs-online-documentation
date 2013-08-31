@@ -1,1 +1,92 @@
-diary-file is a variable defined in `calendar.el'.<br/>Its value is "~/diary"<br/><br/>Documentation:<br/>Name of the file in which one's personal diary of dates is kept.<br/><br/>The file's entries are lines beginning with any of the forms<br/>specified by the variable `diary-date-forms', which by default<br/>uses the forms of `diary-american-date-forms':<br/><br/>            MONTH/DAY<br/>            MONTH/DAY/YEAR<br/>            MONTHNAME DAY<br/>            MONTHNAME DAY, YEAR<br/>            DAYNAME<br/><br/>with the remainder of the line being the diary entry string for<br/>that date.  MONTH and DAY are one or two digit numbers, YEAR is a<br/>number and may be written in full or abbreviated to the final two<br/>digits (if `diary-abbreviated-year-flag' is non-nil).  MONTHNAME<br/>and DAYNAME can be spelled in full (as specified by the variables<br/>`calendar-month-name-array' and `calendar-day-name-array'), or<br/>abbreviated (as specified by `calendar-month-abbrev-array' and<br/>`calendar-day-abbrev-array') with or without a period.  Case is<br/>ignored.  Any of DAY, MONTH, or MONTHNAME, YEAR can be `*' which<br/>matches any day, month, or year, respectively.  If the date does<br/>not contain a year, it is generic and applies to any year.  A<br/>DAYNAME entry applies to the appropriate day of the week in every week.<br/><br/>You can customize `diary-date-forms' to your preferred format.<br/>Three default styles are provided: `diary-american-date-forms',<br/>`diary-european-date-forms', and `diary-iso-date-forms'.<br/>You can choose between these by setting `calendar-date-style' in your<br/>init file, or by using `calendar-set-date-style' when in the calendar.<br/><br/>A diary entry can be preceded by the character `diary-nonmarking-symbol'<br/>(ordinarily `&') to make that entry nonmarking--that is, it will not be<br/>marked on dates in the calendar window but will appear in a diary window.<br/><br/>Multiline diary entries are made by indenting lines after the first with<br/>either a TAB or one or more spaces.<br/><br/>Lines not in one the above formats are ignored.  Here are some sample diary<br/>entries (in the default American style):<br/><br/>     12/22/1988 Twentieth wedding anniversary!!<br/>     &1/1. Happy New Year!<br/>     10/22 Ruth's birthday.<br/>     21: Payday<br/>     Tuesday--weekly meeting with grad students at 10am<br/>              Supowit, Shen, Bitner, and Kapoor to attend.<br/>     1/13/89 Friday the thirteenth!!<br/>     &thu 4pm squash game with Lloyd.<br/>     mar 16 Dad's birthday<br/>     April 15, 1989 Income tax due.<br/>     &* 15 time cards due.<br/><br/>If the first line of a diary entry consists only of the date or day name with<br/>no trailing blanks or punctuation, then that line is not displayed in the<br/>diary window; only the continuation lines is shown.  For example, the<br/>single diary entry<br/><br/>     02/11/1989<br/>      Bill Blattner visits Princeton today<br/>      2pm Cognitive Studies Committee meeting<br/>      2:30-5:30 Lizzie at Lawrenceville for `Group Initiative'<br/>      4:00pm Jamie Tappenden<br/>      7:30pm Dinner at George and Ed's for Alan Ryan<br/>      7:30-10:00pm dance at Stewart Country Day School<br/><br/>will appear in the diary window without the date line at the beginning.  This<br/>facility allows the diary window to look neater, but can cause confusion if<br/>used with more than one day's entries displayed.<br/><br/>Diary entries can be based on Lisp sexps.  For example, the diary entry<br/><br/>      %%(diary-block 11 1 1990 11 10 1990) Vacation<br/><br/>causes the diary entry "Vacation" to appear from November 1 through<br/>November 10, 1990.  See the documentation for the function<br/>`diary-list-sexp-entries' for more details.<br/><br/>Diary entries based on the Hebrew, the Islamic and/or the Bahá'í<br/>calendar are also possible, but because these are somewhat slow, they<br/>are ignored unless you set the `diary-nongregorian-listing-hook' and<br/>the `diary-nongregorian-marking-hook' appropriately.  See the<br/>documentation of these hooks for details.<br/><br/>Diary files can contain directives to include the contents of other files; for<br/>details, see the documentation for the variable `diary-list-entries-hook'.<br/><br/>You can customize this variable.
+<strong>diary-file</strong> is a variable defined in `<code>calendar.el</code>'.<br/>
+Its value is "~/diary"<br/>
+<br/>
+Documentation:<br/>
+Name of the file in which one's personal diary of dates is kept.<br/>
+<br/>
+The file's entries are lines beginning with any of the forms<br/>
+specified by the variable `diary-date-forms', which by default<br/>
+uses the forms of `diary-american-date-forms':<br/>
+<br/>
+            MONTH/DAY<br/>
+            MONTH/DAY/YEAR<br/>
+            MONTHNAME DAY<br/>
+            MONTHNAME DAY, YEAR<br/>
+            DAYNAME<br/>
+<br/>
+with the remainder of the line being the diary entry string for<br/>
+that date.  MONTH and DAY are one or two digit numbers, YEAR is a<br/>
+number and may be written in full or abbreviated to the final two<br/>
+digits (if `diary-abbreviated-year-flag' is non-nil).  MONTHNAME<br/>
+and DAYNAME can be spelled in full (as specified by the variables<br/>
+`calendar-month-name-array' and `calendar-day-name-array'), or<br/>
+abbreviated (as specified by `calendar-month-abbrev-array' and<br/>
+`calendar-day-abbrev-array') with or without a period.  Case is<br/>
+ignored.  Any of DAY, MONTH, or MONTHNAME, YEAR can be `*' which<br/>
+matches any day, month, or year, respectively.  If the date does<br/>
+not contain a year, it is generic and applies to any year.  A<br/>
+DAYNAME entry applies to the appropriate day of the week in every week.<br/>
+<br/>
+You can customize `diary-date-forms' to your preferred format.<br/>
+Three default styles are provided: `diary-american-date-forms',<br/>
+`diary-european-date-forms', and `diary-iso-date-forms'.<br/>
+You can choose between these by setting `calendar-date-style' in your<br/>
+init file, or by using `calendar-set-date-style' when in the calendar.<br/>
+<br/>
+A diary entry can be preceded by the character `diary-nonmarking-symbol'<br/>
+(ordinarily `&') to make that entry nonmarking--that is, it will not be<br/>
+marked on dates in the calendar window but will appear in a diary window.<br/>
+<br/>
+Multiline diary entries are made by indenting lines after the first with<br/>
+either a TAB or one or more spaces.<br/>
+<br/>
+Lines not in one the above formats are ignored.  Here are some sample diary<br/>
+entries (in the default American style):<br/>
+<br/>
+     12/22/1988 Twentieth wedding anniversary!!<br/>
+     &1/1. Happy New Year!<br/>
+     10/22 Ruth's birthday.<br/>
+     21: Payday<br/>
+     Tuesday--weekly meeting with grad students at 10am<br/>
+              Supowit, Shen, Bitner, and Kapoor to attend.<br/>
+     1/13/89 Friday the thirteenth!!<br/>
+     &thu 4pm squash game with Lloyd.<br/>
+     mar 16 Dad's birthday<br/>
+     April 15, 1989 Income tax due.<br/>
+     &* 15 time cards due.<br/>
+<br/>
+If the first line of a diary entry consists only of the date or day name with<br/>
+no trailing blanks or punctuation, then that line is not displayed in the<br/>
+diary window; only the continuation lines is shown.  For example, the<br/>
+single diary entry<br/>
+<br/>
+     02/11/1989<br/>
+      Bill Blattner visits Princeton today<br/>
+      2pm Cognitive Studies Committee meeting<br/>
+      2:30-5:30 Lizzie at Lawrenceville for `Group Initiative'<br/>
+      4:00pm Jamie Tappenden<br/>
+      7:30pm Dinner at George and Ed's for Alan Ryan<br/>
+      7:30-10:00pm dance at Stewart Country Day School<br/>
+<br/>
+will appear in the diary window without the date line at the beginning.  This<br/>
+facility allows the diary window to look neater, but can cause confusion if<br/>
+used with more than one day's entries displayed.<br/>
+<br/>
+Diary entries can be based on Lisp sexps.  For example, the diary entry<br/>
+<br/>
+      %%(diary-block 11 1 1990 11 10 1990) Vacation<br/>
+<br/>
+causes the diary entry "Vacation" to appear from November 1 through<br/>
+November 10, 1990.  See the documentation for the function<br/>
+`diary-list-sexp-entries' for more details.<br/>
+<br/>
+Diary entries based on the Hebrew, the Islamic and/or the Bahá'í<br/>
+calendar are also possible, but because these are somewhat slow, they<br/>
+are ignored unless you set the `diary-nongregorian-listing-hook' and<br/>
+the `diary-nongregorian-marking-hook' appropriately.  See the<br/>
+documentation of these hooks for details.<br/>
+<br/>
+Diary files can contain directives to include the contents of other files; for<br/>
+details, see the documentation for the variable `diary-list-entries-hook'.<br/>
+<br/>
+You can customize this variable.

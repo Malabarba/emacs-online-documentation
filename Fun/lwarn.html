@@ -1,1 +1,21 @@
-lwarn is an autoloaded compiled Lisp function in `warnings.el'.<br/><br/>(lwarn TYPE LEVEL MESSAGE &rest ARGS)<br/><br/>Display a warning message made from (format MESSAGE ARGS...).<br/>Aside from generating the message with `format',<br/>this is equivalent to `display-warning'.<br/><br/>TYPE is the warning type: either a custom group name (a symbol),<br/>or a list of symbols whose first element is a custom group name.<br/>(The rest of the symbols represent subcategories and<br/>can be whatever you like.)<br/><br/>LEVEL should be either :debug, :warning, :error, or :emergency<br/>(but see `warning-minimum-level' and `warning-minimum-log-level').<br/><br/>:emergency -- a problem that will seriously impair Emacs operation soon<br/>	      if you do not attend to it promptly.<br/>:error     -- invalid data or circumstances.<br/>:warning   -- suspicious data or circumstances.<br/>:debug     -- info for debugging only.
+<strong>lwarn</strong> is an autoloaded compiled Lisp function in `<code>warnings.el</code>'.<br/>
+<br/>
+(lwarn TYPE LEVEL MESSAGE &rest ARGS)<br/>
+<br/>
+Display a warning message made from (format MESSAGE ARGS...).<br/>
+Aside from generating the message with `format',<br/>
+this is equivalent to `display-warning'.<br/>
+<br/>
+TYPE is the warning type: either a custom group name (a symbol),<br/>
+or a list of symbols whose first element is a custom group name.<br/>
+(The rest of the symbols represent subcategories and<br/>
+can be whatever you like.)<br/>
+<br/>
+LEVEL should be either :debug, :warning, :error, or :emergency<br/>
+(but see `warning-minimum-level' and `warning-minimum-log-level').<br/>
+<br/>
+:emergency -- a problem that will seriously impair Emacs operation soon<br/>
+	      if you do not attend to it promptly.<br/>
+:error     -- invalid data or circumstances.<br/>
+:warning   -- suspicious data or circumstances.<br/>
+:debug     -- info for debugging only.

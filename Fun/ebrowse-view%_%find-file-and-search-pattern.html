@@ -1,1 +1,20 @@
-ebrowse-view/find-file-and-search-pattern is a compiled Lisp function in `ebrowse.el'.<br/><br/>(ebrowse-view/find-file-and-search-pattern STRUC INFO FILE TAGS-FILE &optional VIEW WHERE)<br/><br/>Find or view a member or class.<br/>STRUC is an `ebrowse-bs' structure (or a structure including that)<br/>describing what to search.<br/>INFO is a list (HEADER MEMBER-OR-CLASS ACCESSOR).  HEADER is the<br/>header structure of a class tree.  MEMBER-OR-CLASS is either an<br/>`ebrowse-ms' or `ebrowse-cs' structure depending on what is searched.<br/>ACCESSOR is an accessor function for the member list of a member<br/>if MEMBER-OR-CLASS is an `ebrowse-ms'.<br/>FILE is the file to search the member in.<br/>FILE is not taken out of STRUC here because the filename in STRUC<br/>may be nil in which case the filename of the class description is used.<br/>TAGS-FILE is the name of the BROWSE file from which the<br/>tree was loaded.<br/>If VIEW is non-nil, view file else find the file.<br/>WHERE is either `other-window', `other-frame' or `this-window' and<br/>specifies where to find/view the result.
+<strong>ebrowse-view/find-file-and-search-pattern</strong> is a compiled Lisp function in `<code>ebrowse.el</code>'.<br/>
+<br/>
+(ebrowse-view/find-file-and-search-pattern STRUC INFO FILE TAGS-FILE &optional VIEW WHERE)<br/>
+<br/>
+Find or view a member or class.<br/>
+STRUC is an `ebrowse-bs' structure (or a structure including that)<br/>
+describing what to search.<br/>
+INFO is a list (HEADER MEMBER-OR-CLASS ACCESSOR).  HEADER is the<br/>
+header structure of a class tree.  MEMBER-OR-CLASS is either an<br/>
+`ebrowse-ms' or `ebrowse-cs' structure depending on what is searched.<br/>
+ACCESSOR is an accessor function for the member list of a member<br/>
+if MEMBER-OR-CLASS is an `ebrowse-ms'.<br/>
+FILE is the file to search the member in.<br/>
+FILE is not taken out of STRUC here because the filename in STRUC<br/>
+may be nil in which case the filename of the class description is used.<br/>
+TAGS-FILE is the name of the BROWSE file from which the<br/>
+tree was loaded.<br/>
+If VIEW is non-nil, view file else find the file.<br/>
+WHERE is either `other-window', `other-frame' or `this-window' and<br/>
+specifies where to find/view the result.

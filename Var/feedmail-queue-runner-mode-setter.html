@@ -1,1 +1,18 @@
-feedmail-queue-runner-mode-setter is a variable defined in `feedmail.el'.<br/>Its value is (lambda (&optional arg) (mail-mode))<br/><br/>Documentation:<br/>A function to set the proper mode of a message file.<br/>Called when the message is read back out of the queue directory with a single<br/>argument, the optional argument used in the call to<br/>`feedmail-run-the-queue' or `feedmail-run-the-queue-no-prompts'.<br/><br/>Most people want `mail-mode', so the default value is an anonymous<br/>function which is just a wrapper to ignore the supplied argument when<br/>calling it, but here's your chance to have something different.<br/>If you are a VM user, you might like feedmail-vm-mail-mode, though you<br/>really don't need that (and it's not particularly well-tested).<br/><br/>Called with funcall, not `call-interactively'.<br/><br/>You can customize this variable.
+<strong>feedmail-queue-runner-mode-setter</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
+Its value is (lambda (&optional arg) (mail-mode))<br/>
+<br/>
+Documentation:<br/>
+A function to set the proper mode of a message file.<br/>
+Called when the message is read back out of the queue directory with a single<br/>
+argument, the optional argument used in the call to<br/>
+`feedmail-run-the-queue' or `feedmail-run-the-queue-no-prompts'.<br/>
+<br/>
+Most people want `mail-mode', so the default value is an anonymous<br/>
+function which is just a wrapper to ignore the supplied argument when<br/>
+calling it, but here's your chance to have something different.<br/>
+If you are a VM user, you might like feedmail-vm-mail-mode, though you<br/>
+really don't need that (and it's not particularly well-tested).<br/>
+<br/>
+Called with funcall, not `call-interactively'.<br/>
+<br/>
+You can customize this variable.

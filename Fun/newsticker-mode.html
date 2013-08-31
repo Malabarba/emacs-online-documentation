@@ -1,1 +1,84 @@
-newsticker-mode is an interactive compiled Lisp function in `newst-plainview.el'.<br/><br/>(newsticker-mode)<br/><br/>Viewing news feeds in Emacs.<br/><br/>This mode runs the hook `newsticker-mode-hook', as the final step<br/>during initialization.<br/><br/>key             binding<br/>---             -------<br/><br/>TAB		newsticker-next-item<br/>SPC		scroll-up-command<br/>F		newsticker-previous-feed<br/>G		newsticker-get-all-news<br/>M		newsticker-mark-all-items-as-read<br/>N		newsticker-next-new-item<br/>O		newsticker-mark-all-items-at-point-as-read<br/>P		newsticker-previous-new-item<br/>U		newsticker-buffer-force-update<br/>a		newsticker-add-url<br/>f		newsticker-next-feed<br/>g		newsticker-get-news-at-point<br/>h		Prefix Command<br/>i		newsticker-mark-item-at-point-as-immortal<br/>m		newsticker-mark-all-items-at-point-as-read-and-redraw<br/>n		newsticker-next-item<br/>o		newsticker-mark-item-at-point-as-read<br/>p		newsticker-previous-item<br/>q		newsticker-close-buffer<br/>s		Prefix Command<br/>u		newsticker-buffer-update<br/>x		Prefix Command<br/><down-mouse-3>	Prefix Command<br/><br/>h O		newsticker-hide-old-items<br/>h a		newsticker-hide-all-desc<br/>h e		newsticker-hide-entry<br/>h f		newsticker-hide-feed-desc<br/>h n		newsticker-hide-new-item-desc<br/>h o		newsticker-hide-old-item-desc<br/>h x		newsticker-hide-extra<br/><br/>s O		newsticker-show-old-items<br/>s a		newsticker-show-all-desc<br/>s e		newsticker-show-entry<br/>s f		newsticker-show-feed-desc<br/>s n		newsticker-show-new-item-desc<br/>s o		newsticker-show-old-item-desc<br/>s x		newsticker-show-extra<br/><br/>x f		newsticker-toggle-auto-narrow-to-feed<br/>x i		newsticker-toggle-auto-narrow-to-item<br/><br/><down-mouse-3> <newsticker-browse-url><br/>				newsticker-browse-url<br/><down-mouse-3> <newsticker-buffer-update><br/>				newsticker-buffer-update<br/><down-mouse-3> <newsticker-get-all-news><br/>				newsticker-get-all-news<br/><down-mouse-3> <newsticker-get-news-at-point><br/>				newsticker-get-news-at-point<br/><down-mouse-3> <newsticker-hide-old-items><br/>				newsticker-hide-old-items<br/><down-mouse-3> <newsticker-mark-all-items-as-read><br/>				newsticker-mark-all-items-as-read<br/><down-mouse-3> <newsticker-mark-all-items-at-point-as-read><br/>				newsticker-mark-all-items-at-point-as-read<br/><down-mouse-3> <newsticker-mark-item-at-point-as-immortal><br/>				newsticker-mark-item-at-point-as-immortal<br/><down-mouse-3> <newsticker-mark-item-at-point-as-read><br/>				newsticker-mark-item-at-point-as-read<br/><down-mouse-3> <newsticker-next-item><br/>				newsticker-next-item<br/><down-mouse-3> <newsticker-previous-item><br/>				newsticker-previous-item<br/><down-mouse-3> <newsticker-show-old-items><br/>				newsticker-show-old-items<br/><down-mouse-3> <newsticker-toggle-auto-narrow-to-feed><br/>				newsticker-toggle-auto-narrow-to-feed<br/><down-mouse-3> <newsticker-toggle-auto-narrow-to-item><br/>				newsticker-toggle-auto-narrow-to-item<br/><br/>
+<strong>newsticker-mode</strong> is an interactive compiled Lisp function in `<code>newst-plainview.el</code>'.<br/>
+<br/>
+(newsticker-mode)<br/>
+<br/>
+Viewing news feeds in Emacs.<br/>
+<br/>
+This mode runs the hook `newsticker-mode-hook', as the final step<br/>
+during initialization.<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+TAB		newsticker-next-item<br/>
+SPC		scroll-up-command<br/>
+F		newsticker-previous-feed<br/>
+G		newsticker-get-all-news<br/>
+M		newsticker-mark-all-items-as-read<br/>
+N		newsticker-next-new-item<br/>
+O		newsticker-mark-all-items-at-point-as-read<br/>
+P		newsticker-previous-new-item<br/>
+U		newsticker-buffer-force-update<br/>
+a		newsticker-add-url<br/>
+f		newsticker-next-feed<br/>
+g		newsticker-get-news-at-point<br/>
+h		Prefix Command<br/>
+i		newsticker-mark-item-at-point-as-immortal<br/>
+m		newsticker-mark-all-items-at-point-as-read-and-redraw<br/>
+n		newsticker-next-item<br/>
+o		newsticker-mark-item-at-point-as-read<br/>
+p		newsticker-previous-item<br/>
+q		newsticker-close-buffer<br/>
+s		Prefix Command<br/>
+u		newsticker-buffer-update<br/>
+x		Prefix Command<br/>
+<down-mouse-3>	Prefix Command<br/>
+<br/>
+h O		newsticker-hide-old-items<br/>
+h a		newsticker-hide-all-desc<br/>
+h e		newsticker-hide-entry<br/>
+h f		newsticker-hide-feed-desc<br/>
+h n		newsticker-hide-new-item-desc<br/>
+h o		newsticker-hide-old-item-desc<br/>
+h x		newsticker-hide-extra<br/>
+<br/>
+s O		newsticker-show-old-items<br/>
+s a		newsticker-show-all-desc<br/>
+s e		newsticker-show-entry<br/>
+s f		newsticker-show-feed-desc<br/>
+s n		newsticker-show-new-item-desc<br/>
+s o		newsticker-show-old-item-desc<br/>
+s x		newsticker-show-extra<br/>
+<br/>
+x f		newsticker-toggle-auto-narrow-to-feed<br/>
+x i		newsticker-toggle-auto-narrow-to-item<br/>
+<br/>
+<down-mouse-3> <newsticker-browse-url><br/>
+				newsticker-browse-url<br/>
+<down-mouse-3> <newsticker-buffer-update><br/>
+				newsticker-buffer-update<br/>
+<down-mouse-3> <newsticker-get-all-news><br/>
+				newsticker-get-all-news<br/>
+<down-mouse-3> <newsticker-get-news-at-point><br/>
+				newsticker-get-news-at-point<br/>
+<down-mouse-3> <newsticker-hide-old-items><br/>
+				newsticker-hide-old-items<br/>
+<down-mouse-3> <newsticker-mark-all-items-as-read><br/>
+				newsticker-mark-all-items-as-read<br/>
+<down-mouse-3> <newsticker-mark-all-items-at-point-as-read><br/>
+				newsticker-mark-all-items-at-point-as-read<br/>
+<down-mouse-3> <newsticker-mark-item-at-point-as-immortal><br/>
+				newsticker-mark-item-at-point-as-immortal<br/>
+<down-mouse-3> <newsticker-mark-item-at-point-as-read><br/>
+				newsticker-mark-item-at-point-as-read<br/>
+<down-mouse-3> <newsticker-next-item><br/>
+				newsticker-next-item<br/>
+<down-mouse-3> <newsticker-previous-item><br/>
+				newsticker-previous-item<br/>
+<down-mouse-3> <newsticker-show-old-items><br/>
+				newsticker-show-old-items<br/>
+<down-mouse-3> <newsticker-toggle-auto-narrow-to-feed><br/>
+				newsticker-toggle-auto-narrow-to-feed<br/>
+<down-mouse-3> <newsticker-toggle-auto-narrow-to-item><br/>
+				newsticker-toggle-auto-narrow-to-item<br/>
+<br/>

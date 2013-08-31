@@ -1,1 +1,24 @@
-hscroll-step is a variable defined in `C source code'.<br/>Its value is 0<br/><br/>Documentation:<br/>How many columns to scroll the window when point gets too close to the edge.<br/>When point is less than `hscroll-margin' columns from the window<br/>edge, automatic hscrolling will scroll the window by the amount of columns<br/>determined by this variable.  If its value is a positive integer, scroll that<br/>many columns.  If it's a positive floating-point number, it specifies the<br/>fraction of the window's width to scroll.  If it's nil or zero, point will be<br/>centered horizontally after the scroll.  Any other value, including negative<br/>numbers, are treated as if the value were zero.<br/><br/>Automatic hscrolling always moves point outside the scroll margin, so if<br/>point was more than scroll step columns inside the margin, the window will<br/>scroll more than the value given by the scroll step.<br/><br/>Note that the lower bound for automatic hscrolling specified by `scroll-left'<br/>and `scroll-right' overrides this variable's effect.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22.1 of Emacs.<br/>
+<strong>hscroll-step</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is 0<br/>
+<br/>
+Documentation:<br/>
+How many columns to scroll the window when point gets too close to the edge.<br/>
+When point is less than `hscroll-margin' columns from the window<br/>
+edge, automatic hscrolling will scroll the window by the amount of columns<br/>
+determined by this variable.  If its value is a positive integer, scroll that<br/>
+many columns.  If it's a positive floating-point number, it specifies the<br/>
+fraction of the window's width to scroll.  If it's nil or zero, point will be<br/>
+centered horizontally after the scroll.  Any other value, including negative<br/>
+numbers, are treated as if the value were zero.<br/>
+<br/>
+Automatic hscrolling always moves point outside the scroll margin, so if<br/>
+point was more than scroll step columns inside the margin, the window will<br/>
+scroll more than the value given by the scroll step.<br/>
+<br/>
+Note that the lower bound for automatic hscrolling specified by `scroll-left'<br/>
+and `scroll-right' overrides this variable's effect.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22.1 of Emacs.<br/>

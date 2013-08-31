@@ -1,1 +1,169 @@
-c-offsets-alist is a variable defined in `cc-vars.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Association list of syntactic element symbols and indentation offsets.<br/>As described below, each cons cell in this list has the form:<br/><br/>    (SYNTACTIC-SYMBOL . OFFSET)<br/><br/>When a line is indented, CC Mode first determines the syntactic<br/>context of it by generating a list of symbols called syntactic<br/>elements.  The global variable `c-syntactic-context' is bound to the<br/>that list.  Each element in the list is in turn a list where the first<br/>element is a syntactic symbol which tells what kind of construct the<br/>indentation point is located within.  More elements in the syntactic<br/>element lists are optional.  If there is one more and it isn't nil,<br/>then it's the anchor position for that construct.<br/><br/>After generating the syntactic context for the line, CC Mode<br/>calculates the absolute indentation: First the base indentation is<br/>found by using the anchor position for the first syntactic element<br/>that provides one.  If none does, zero is used as base indentation.<br/>Then CC Mode looks at each syntactic element in the context in turn.<br/>It compares the car of the syntactic element against the<br/>SYNTACTIC-SYMBOL's in `c-offsets-alist'.  When it finds a match, it<br/>adds OFFSET to the base indentation.  The sum of this calculation is<br/>the absolute offset for line being indented.<br/><br/>If the syntactic element does not match any in the `c-offsets-alist',<br/>the element is ignored.<br/><br/>OFFSET can specify an offset in several different ways:<br/><br/>  If OFFSET is nil then it's ignored.<br/><br/>  If OFFSET is an integer then it's used as relative offset, i.e. it's<br/>  added to the base indentation.<br/><br/>  If OFFSET is one of the symbols `+', `-', `++', `--', `*', or `/'<br/>  then a positive or negative multiple of `c-basic-offset' is added to<br/>  the base indentation; 1, -1, 2, -2, 0.5, and -0.5, respectively.<br/><br/>  If OFFSET is a symbol with a value binding then that value, which<br/>  must be an integer, is used as relative offset.<br/><br/>  If OFFSET is a vector then its first element, which must be an<br/>  integer, is used as an absolute indentation column.  This overrides<br/>  the previous base indentation and the relative offsets applied to<br/>  it, and it becomes the new base indentation.<br/><br/>  If OFFSET is a function or a lambda expression then it's called with<br/>  a single argument containing the cons of the syntactic symbol and<br/>  the anchor position (or nil if there is none).  The return value<br/>  from the function is then reinterpreted as an offset specification.<br/><br/>  If OFFSET is a list then its elements are evaluated recursively as<br/>  offset specifications.  If the first element is any of the symbols<br/>  below then it isn't evaluated but instead specifies how the<br/>  remaining offsets in the list should be combined.  If it's something<br/>  else then the list is combined according the method `first'.  The<br/>  valid combination methods are:<br/><br/>  `first' -- Use the first offset (that doesn't evaluate to nil).<br/>  `min'   -- Use the minimum of all the offsets.  All must be either<br/>             relative or absolute - they can't be mixed.<br/>  `max'   -- Use the maximum of all the offsets.  All must be either<br/>             relative or absolute - they can't be mixed.<br/>  `add'   -- Add all the evaluated offsets together.  Exactly one of<br/>             them may be absolute, in which case the result is<br/>             absolute.  Any relative offsets that preceded the<br/>             absolute one in the list will be ignored in that case.<br/><br/>`c-offsets-alist' is a style variable.  This means that the offsets on<br/>this variable are normally taken from the style system in CC Mode<br/>(see `c-default-style' and `c-style-alist').  However, any offsets<br/>put explicitly on this list will override the style system when a CC<br/>Mode buffer is initialized (there is a variable<br/>`c-old-style-variable-behavior' that changes this, though).<br/><br/>Here is the current list of valid syntactic element symbols:<br/><br/> string                 -- Inside multi-line string.<br/> c                      -- Inside a multi-line C style block comment.<br/> defun-open             -- Brace that opens a function definition.<br/> defun-close            -- Brace that closes a function definition.<br/> defun-block-intro      -- The first line in a top-level defun.<br/> class-open             -- Brace that opens a class definition.<br/> class-close            -- Brace that closes a class definition.<br/> inline-open            -- Brace that opens an in-class inline method.<br/> inline-close           -- Brace that closes an in-class inline method.<br/> func-decl-cont         -- The region between a function definition's<br/>                           argument list and the function opening brace<br/>                           (excluding K&R argument declarations).  In C, you<br/>                           cannot put anything but whitespace and comments<br/>                           between them; in C++ and Java, throws declarations<br/>                           and other things can appear in this context.<br/> knr-argdecl-intro      -- First line of a K&R C argument declaration.<br/> knr-argdecl		-- Subsequent lines in a K&R C argument declaration.<br/> topmost-intro		-- The first line in a topmost construct definition.<br/> topmost-intro-cont	-- Topmost definition continuation lines.<br/> annotation-top-cont    -- Topmost definition continuation line where only<br/> 			   annotations are on previous lines.<br/> annotation-var-cont    -- A continuation of a C (or like) statement where<br/> 			   only annotations are on previous lines.<br/> member-init-intro	-- First line in a member initialization list.<br/> member-init-cont	-- Subsequent member initialization list lines.<br/> inher-intro		-- First line of a multiple inheritance list.<br/> inher-cont             -- Subsequent multiple inheritance lines.<br/> block-open             -- Statement block open brace.<br/> block-close            -- Statement block close brace.<br/> brace-list-open        -- Open brace of an enum or static array list.<br/> brace-list-close       -- Close brace of an enum or static array list.<br/> brace-list-intro       -- First line in an enum or static array list.<br/> brace-list-entry       -- Subsequent lines in an enum or static array list.<br/> brace-entry-open       -- Subsequent lines in an enum or static array<br/>                           list that start with an open brace.<br/> statement              -- A C (or like) statement.<br/> statement-cont         -- A continuation of a C (or like) statement.<br/> statement-block-intro  -- The first line in a new statement block.<br/> statement-case-intro   -- The first line in a case "block".<br/> statement-case-open    -- The first line in a case block starting with brace.<br/> substatement           -- The first line after an if/while/for/do/else.<br/> substatement-open      -- The brace that opens a substatement block.<br/> substatement-label     -- Labeled line after an if/while/for/do/else.<br/> case-label             -- A "case" or "default" label.<br/> access-label           -- C++ private/protected/public access label.<br/> label                  -- Any ordinary label.<br/> do-while-closure       -- The "while" that ends a do/while construct.<br/> else-clause            -- The "else" of an if/else construct.<br/> catch-clause           -- The "catch" or "finally" of a try/catch construct.<br/> comment-intro          -- A line containing only a comment introduction.<br/> arglist-intro          -- The first line in an argument list.<br/> arglist-cont           -- Subsequent argument list lines when no<br/>                           arguments follow on the same line as the<br/>                           arglist opening paren.<br/> arglist-cont-nonempty  -- Subsequent argument list lines when at<br/>                           least one argument follows on the same<br/>                           line as the arglist opening paren.<br/> arglist-close          -- The solo close paren of an argument list.<br/> stream-op              -- Lines continuing a stream operator construct.<br/> inclass                -- The construct is nested inside a class definition.<br/>                           Used together with e.g. `topmost-intro'.<br/> cpp-macro              -- The start of a C preprocessor macro definition.<br/> cpp-macro-cont         -- Inside a multi-line C preprocessor macro definition.<br/> friend                 -- A C++ friend declaration.<br/> objc-method-intro      -- The first line of an Objective-C method definition.<br/> objc-method-args-cont  -- Lines continuing an Objective-C method definition.<br/> objc-method-call-cont  -- Lines continuing an Objective-C method call.<br/> extern-lang-open       -- Brace that opens an "extern" block.<br/> extern-lang-close      -- Brace that closes an "extern" block.<br/> inextern-lang          -- Analogous to the `inclass' syntactic symbol,<br/>                           but used inside "extern" blocks.<br/> namespace-open, namespace-close, innamespace<br/>                        -- Similar to the three `extern-lang' symbols, but for<br/>                           C++ "namespace" blocks.<br/> module-open, module-close, inmodule<br/>                        -- Similar to the three `extern-lang' symbols, but for<br/>                           CORBA IDL "module" blocks.<br/> composition-open, composition-close, incomposition<br/>                        -- Similar to the three `extern-lang' symbols, but for<br/>                           CORBA CIDL "composition" blocks.<br/> template-args-cont     -- C++ template argument list continuations.<br/> inlambda               -- In the header or body of a lambda function.<br/> lambda-intro-cont      -- Continuation of the header of a lambda function.<br/> inexpr-statement       -- The statement is inside an expression.<br/> inexpr-class           -- The class is inside an expression.  Used e.g. for<br/>                           Java anonymous classes.<br/><br/>You can customize this variable.
+<strong>c-offsets-alist</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Association list of syntactic element symbols and indentation offsets.<br/>
+As described below, each cons cell in this list has the form:<br/>
+<br/>
+    (SYNTACTIC-SYMBOL . OFFSET)<br/>
+<br/>
+When a line is indented, CC Mode first determines the syntactic<br/>
+context of it by generating a list of symbols called syntactic<br/>
+elements.  The global variable `c-syntactic-context' is bound to the<br/>
+that list.  Each element in the list is in turn a list where the first<br/>
+element is a syntactic symbol which tells what kind of construct the<br/>
+indentation point is located within.  More elements in the syntactic<br/>
+element lists are optional.  If there is one more and it isn't nil,<br/>
+then it's the anchor position for that construct.<br/>
+<br/>
+After generating the syntactic context for the line, CC Mode<br/>
+calculates the absolute indentation: First the base indentation is<br/>
+found by using the anchor position for the first syntactic element<br/>
+that provides one.  If none does, zero is used as base indentation.<br/>
+Then CC Mode looks at each syntactic element in the context in turn.<br/>
+It compares the car of the syntactic element against the<br/>
+SYNTACTIC-SYMBOL's in `c-offsets-alist'.  When it finds a match, it<br/>
+adds OFFSET to the base indentation.  The sum of this calculation is<br/>
+the absolute offset for line being indented.<br/>
+<br/>
+If the syntactic element does not match any in the `c-offsets-alist',<br/>
+the element is ignored.<br/>
+<br/>
+OFFSET can specify an offset in several different ways:<br/>
+<br/>
+  If OFFSET is nil then it's ignored.<br/>
+<br/>
+  If OFFSET is an integer then it's used as relative offset, i.e. it's<br/>
+  added to the base indentation.<br/>
+<br/>
+  If OFFSET is one of the symbols `+', `-', `++', `--', `*', or `/'<br/>
+  then a positive or negative multiple of `c-basic-offset' is added to<br/>
+  the base indentation; 1, -1, 2, -2, 0.5, and -0.5, respectively.<br/>
+<br/>
+  If OFFSET is a symbol with a value binding then that value, which<br/>
+  must be an integer, is used as relative offset.<br/>
+<br/>
+  If OFFSET is a vector then its first element, which must be an<br/>
+  integer, is used as an absolute indentation column.  This overrides<br/>
+  the previous base indentation and the relative offsets applied to<br/>
+  it, and it becomes the new base indentation.<br/>
+<br/>
+  If OFFSET is a function or a lambda expression then it's called with<br/>
+  a single argument containing the cons of the syntactic symbol and<br/>
+  the anchor position (or nil if there is none).  The return value<br/>
+  from the function is then reinterpreted as an offset specification.<br/>
+<br/>
+  If OFFSET is a list then its elements are evaluated recursively as<br/>
+  offset specifications.  If the first element is any of the symbols<br/>
+  below then it isn't evaluated but instead specifies how the<br/>
+  remaining offsets in the list should be combined.  If it's something<br/>
+  else then the list is combined according the method `first'.  The<br/>
+  valid combination methods are:<br/>
+<br/>
+  `first' -- Use the first offset (that doesn't evaluate to nil).<br/>
+  `min'   -- Use the minimum of all the offsets.  All must be either<br/>
+             relative or absolute - they can't be mixed.<br/>
+  `max'   -- Use the maximum of all the offsets.  All must be either<br/>
+             relative or absolute - they can't be mixed.<br/>
+  `add'   -- Add all the evaluated offsets together.  Exactly one of<br/>
+             them may be absolute, in which case the result is<br/>
+             absolute.  Any relative offsets that preceded the<br/>
+             absolute one in the list will be ignored in that case.<br/>
+<br/>
+`c-offsets-alist' is a style variable.  This means that the offsets on<br/>
+this variable are normally taken from the style system in CC Mode<br/>
+(see `c-default-style' and `c-style-alist').  However, any offsets<br/>
+put explicitly on this list will override the style system when a CC<br/>
+Mode buffer is initialized (there is a variable<br/>
+`c-old-style-variable-behavior' that changes this, though).<br/>
+<br/>
+Here is the current list of valid syntactic element symbols:<br/>
+<br/>
+ string                 -- Inside multi-line string.<br/>
+ c                      -- Inside a multi-line C style block comment.<br/>
+ defun-open             -- Brace that opens a function definition.<br/>
+ defun-close            -- Brace that closes a function definition.<br/>
+ defun-block-intro      -- The first line in a top-level defun.<br/>
+ class-open             -- Brace that opens a class definition.<br/>
+ class-close            -- Brace that closes a class definition.<br/>
+ inline-open            -- Brace that opens an in-class inline method.<br/>
+ inline-close           -- Brace that closes an in-class inline method.<br/>
+ func-decl-cont         -- The region between a function definition's<br/>
+                           argument list and the function opening brace<br/>
+                           (excluding K&R argument declarations).  In C, you<br/>
+                           cannot put anything but whitespace and comments<br/>
+                           between them; in C++ and Java, throws declarations<br/>
+                           and other things can appear in this context.<br/>
+ knr-argdecl-intro      -- First line of a K&R C argument declaration.<br/>
+ knr-argdecl		-- Subsequent lines in a K&R C argument declaration.<br/>
+ topmost-intro		-- The first line in a topmost construct definition.<br/>
+ topmost-intro-cont	-- Topmost definition continuation lines.<br/>
+ annotation-top-cont    -- Topmost definition continuation line where only<br/>
+ 			   annotations are on previous lines.<br/>
+ annotation-var-cont    -- A continuation of a C (or like) statement where<br/>
+ 			   only annotations are on previous lines.<br/>
+ member-init-intro	-- First line in a member initialization list.<br/>
+ member-init-cont	-- Subsequent member initialization list lines.<br/>
+ inher-intro		-- First line of a multiple inheritance list.<br/>
+ inher-cont             -- Subsequent multiple inheritance lines.<br/>
+ block-open             -- Statement block open brace.<br/>
+ block-close            -- Statement block close brace.<br/>
+ brace-list-open        -- Open brace of an enum or static array list.<br/>
+ brace-list-close       -- Close brace of an enum or static array list.<br/>
+ brace-list-intro       -- First line in an enum or static array list.<br/>
+ brace-list-entry       -- Subsequent lines in an enum or static array list.<br/>
+ brace-entry-open       -- Subsequent lines in an enum or static array<br/>
+                           list that start with an open brace.<br/>
+ statement              -- A C (or like) statement.<br/>
+ statement-cont         -- A continuation of a C (or like) statement.<br/>
+ statement-block-intro  -- The first line in a new statement block.<br/>
+ statement-case-intro   -- The first line in a case "block".<br/>
+ statement-case-open    -- The first line in a case block starting with brace.<br/>
+ substatement           -- The first line after an if/while/for/do/else.<br/>
+ substatement-open      -- The brace that opens a substatement block.<br/>
+ substatement-label     -- Labeled line after an if/while/for/do/else.<br/>
+ case-label             -- A "case" or "default" label.<br/>
+ access-label           -- C++ private/protected/public access label.<br/>
+ label                  -- Any ordinary label.<br/>
+ do-while-closure       -- The "while" that ends a do/while construct.<br/>
+ else-clause            -- The "else" of an if/else construct.<br/>
+ catch-clause           -- The "catch" or "finally" of a try/catch construct.<br/>
+ comment-intro          -- A line containing only a comment introduction.<br/>
+ arglist-intro          -- The first line in an argument list.<br/>
+ arglist-cont           -- Subsequent argument list lines when no<br/>
+                           arguments follow on the same line as the<br/>
+                           arglist opening paren.<br/>
+ arglist-cont-nonempty  -- Subsequent argument list lines when at<br/>
+                           least one argument follows on the same<br/>
+                           line as the arglist opening paren.<br/>
+ arglist-close          -- The solo close paren of an argument list.<br/>
+ stream-op              -- Lines continuing a stream operator construct.<br/>
+ inclass                -- The construct is nested inside a class definition.<br/>
+                           Used together with e.g. `topmost-intro'.<br/>
+ cpp-macro              -- The start of a C preprocessor macro definition.<br/>
+ cpp-macro-cont         -- Inside a multi-line C preprocessor macro definition.<br/>
+ friend                 -- A C++ friend declaration.<br/>
+ objc-method-intro      -- The first line of an Objective-C method definition.<br/>
+ objc-method-args-cont  -- Lines continuing an Objective-C method definition.<br/>
+ objc-method-call-cont  -- Lines continuing an Objective-C method call.<br/>
+ extern-lang-open       -- Brace that opens an "extern" block.<br/>
+ extern-lang-close      -- Brace that closes an "extern" block.<br/>
+ inextern-lang          -- Analogous to the `inclass' syntactic symbol,<br/>
+                           but used inside "extern" blocks.<br/>
+ namespace-open, namespace-close, innamespace<br/>
+                        -- Similar to the three `extern-lang' symbols, but for<br/>
+                           C++ "namespace" blocks.<br/>
+ module-open, module-close, inmodule<br/>
+                        -- Similar to the three `extern-lang' symbols, but for<br/>
+                           CORBA IDL "module" blocks.<br/>
+ composition-open, composition-close, incomposition<br/>
+                        -- Similar to the three `extern-lang' symbols, but for<br/>
+                           CORBA CIDL "composition" blocks.<br/>
+ template-args-cont     -- C++ template argument list continuations.<br/>
+ inlambda               -- In the header or body of a lambda function.<br/>
+ lambda-intro-cont      -- Continuation of the header of a lambda function.<br/>
+ inexpr-statement       -- The statement is inside an expression.<br/>
+ inexpr-class           -- The class is inside an expression.  Used e.g. for<br/>
+                           Java anonymous classes.<br/>
+<br/>
+You can customize this variable.

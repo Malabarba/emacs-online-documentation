@@ -1,1 +1,22 @@
-epa-verify-region is an interactive autoloaded compiled Lisp function in `epa.el'.<br/><br/>It is bound to <menu-bar> <tools> <encryption-decryption> <verify-region>.<br/><br/>(epa-verify-region START END)<br/><br/>Verify the current region between START and END.<br/><br/>Don't use this command in Lisp programs!<br/>Since this function operates on regions, it does some tricks such<br/>as coding-system detection and unibyte/multibyte conversion.  If<br/>you are sure how the data in the region should be treated, you<br/>should consider using the string based counterpart<br/>`epg-verify-string', or the file based counterpart<br/>`epg-verify-file' instead.<br/><br/>For example:<br/><br/>(let ((context (epg-make-context 'OpenPGP)))<br/>  (decode-coding-string<br/>    (epg-verify-string context (buffer-substring start end))<br/>    'utf-8))
+<strong>epa-verify-region</strong> is an interactive autoloaded compiled Lisp function in `<code>epa.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <tools> <encryption-decryption> <verify-region>.<br/>
+<br/>
+(epa-verify-region START END)<br/>
+<br/>
+Verify the current region between START and END.<br/>
+<br/>
+Don't use this command in Lisp programs!<br/>
+Since this function operates on regions, it does some tricks such<br/>
+as coding-system detection and unibyte/multibyte conversion.  If<br/>
+you are sure how the data in the region should be treated, you<br/>
+should consider using the string based counterpart<br/>
+`epg-verify-string', or the file based counterpart<br/>
+`epg-verify-file' instead.<br/>
+<br/>
+For example:<br/>
+<br/>
+(let ((context (epg-make-context 'OpenPGP)))<br/>
+  (decode-coding-string<br/>
+    (epg-verify-string context (buffer-substring start end))<br/>
+    'utf-8))

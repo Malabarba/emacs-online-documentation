@@ -1,1 +1,47 @@
-verilog-auto-arg is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-arg)<br/><br/>Expand AUTOARG statements.<br/>Replace the argument declarations at the beginning of the<br/>module with ones automatically derived from input and output<br/>statements.  This can be dangerous if the module is instantiated<br/>using position-based connections, so use only name-based when<br/>instantiating the resulting module.  Long lines are split based<br/>on the `fill-column', see C-x f.<br/><br/>Limitations:<br/>  Concatenation and outputting partial buses is not supported.<br/><br/>  Typedefs must match `verilog-typedef-regexp', which is disabled by default.<br/><br/>For example:<br/><br/>	module ExampArg (/*AUTOARG*/);<br/>	  input i;<br/>	  output o;<br/>	endmodule<br/><br/>Typing M-x verilog-auto will make this into:<br/><br/>	module ExampArg (/*AUTOARG*/<br/>	  // Outputs<br/>	  o,<br/>	  // Inputs<br/>	  i<br/>	);<br/>	  input i;<br/>	  output o;<br/>	endmodule<br/><br/>The argument declarations may be printed in declaration order to best suit<br/>order based instantiations, or alphabetically, based on the<br/>`verilog-auto-arg-sort' variable.<br/><br/>Any ports declared between the ( and /*AUTOARG*/ are presumed to be<br/>predeclared and are not redeclared by AUTOARG.  AUTOARG will make a<br/>conservative guess on adding a comma for the first signal, if you have<br/>any ifdefs or complicated expressions before the AUTOARG you will need<br/>to choose the comma yourself.<br/><br/>Avoid declaring ports manually, as it makes code harder to maintain.
+<strong>verilog-auto-arg</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-arg)<br/>
+<br/>
+Expand AUTOARG statements.<br/>
+Replace the argument declarations at the beginning of the<br/>
+module with ones automatically derived from input and output<br/>
+statements.  This can be dangerous if the module is instantiated<br/>
+using position-based connections, so use only name-based when<br/>
+instantiating the resulting module.  Long lines are split based<br/>
+on the `fill-column', see C-x f.<br/>
+<br/>
+Limitations:<br/>
+  Concatenation and outputting partial buses is not supported.<br/>
+<br/>
+  Typedefs must match `verilog-typedef-regexp', which is disabled by default.<br/>
+<br/>
+For example:<br/>
+<br/>
+	module ExampArg (/*AUTOARG*/);<br/>
+	  input i;<br/>
+	  output o;<br/>
+	endmodule<br/>
+<br/>
+Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	module ExampArg (/*AUTOARG*/<br/>
+	  // Outputs<br/>
+	  o,<br/>
+	  // Inputs<br/>
+	  i<br/>
+	);<br/>
+	  input i;<br/>
+	  output o;<br/>
+	endmodule<br/>
+<br/>
+The argument declarations may be printed in declaration order to best suit<br/>
+order based instantiations, or alphabetically, based on the<br/>
+`verilog-auto-arg-sort' variable.<br/>
+<br/>
+Any ports declared between the ( and /*AUTOARG*/ are presumed to be<br/>
+predeclared and are not redeclared by AUTOARG.  AUTOARG will make a<br/>
+conservative guess on adding a comma for the first signal, if you have<br/>
+any ifdefs or complicated expressions before the AUTOARG you will need<br/>
+to choose the comma yourself.<br/>
+<br/>
+Avoid declaring ports manually, as it makes code harder to maintain.

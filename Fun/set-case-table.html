@@ -1,1 +1,20 @@
-set-case-table is a built-in function in `C source code'.<br/><br/>(set-case-table TABLE)<br/><br/>Select a new case table for the current buffer.<br/>A case table is a char-table which maps characters<br/>to their lower-case equivalents.  It also has three "extra" slots<br/>which may be additional char-tables or nil.<br/>These slots are called UPCASE, CANONICALIZE and EQUIVALENCES.<br/>UPCASE maps each non-upper-case character to its upper-case equivalent.<br/> (The value in UPCASE for an upper-case character is never used.)<br/> If lower and upper case characters are in 1-1 correspondence,<br/> you may use nil and the upcase table will be deduced from DOWNCASE.<br/>CANONICALIZE maps each character to a canonical equivalent;<br/> any two characters that are related by case-conversion have the same<br/> canonical equivalent character; it may be nil, in which case it is<br/> deduced from DOWNCASE and UPCASE.<br/>EQUIVALENCES is a map that cyclically permutes each equivalence class<br/> (of characters with the same canonical equivalent); it may be nil,<br/> in which case it is deduced from CANONICALIZE.
+<strong>set-case-table</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(set-case-table TABLE)<br/>
+<br/>
+Select a new case table for the current buffer.<br/>
+A case table is a char-table which maps characters<br/>
+to their lower-case equivalents.  It also has three "extra" slots<br/>
+which may be additional char-tables or nil.<br/>
+These slots are called UPCASE, CANONICALIZE and EQUIVALENCES.<br/>
+UPCASE maps each non-upper-case character to its upper-case equivalent.<br/>
+ (The value in UPCASE for an upper-case character is never used.)<br/>
+ If lower and upper case characters are in 1-1 correspondence,<br/>
+ you may use nil and the upcase table will be deduced from DOWNCASE.<br/>
+CANONICALIZE maps each character to a canonical equivalent;<br/>
+ any two characters that are related by case-conversion have the same<br/>
+ canonical equivalent character; it may be nil, in which case it is<br/>
+ deduced from DOWNCASE and UPCASE.<br/>
+EQUIVALENCES is a map that cyclically permutes each equivalence class<br/>
+ (of characters with the same canonical equivalent); it may be nil,<br/>
+ in which case it is deduced from CANONICALIZE.

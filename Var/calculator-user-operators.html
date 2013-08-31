@@ -1,1 +1,37 @@
-calculator-user-operators is a variable defined in `calculator.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>A list of additional operators.<br/>This is a list in the same format as specified in the documentation for<br/>`calculator-operators', that you can use to bind additional calculator<br/>operators.  It is probably not a good idea to modify this value with<br/>`customize' since it is too complex...<br/><br/>Examples:<br/><br/>* A very simple one, adding a postfix "x-to-y" conversion keys, using<br/>  t as a prefix key:<br/><br/>  (setq calculator-user-operators<br/>        '(("tf" cl-to-fr (+ 32 (/ (* X 9) 5)) 1)<br/>          ("tc" fr-to-cl (/ (* (- X 32) 5) 9) 1)<br/>          ("tp" kg-to-lb (/ X 0.453592)       1)<br/>          ("tk" lb-to-kg (* X 0.453592)       1)<br/>          ("tF" mt-to-ft (/ X 0.3048)         1)<br/>          ("tM" ft-to-mt (* X 0.3048)         1)))<br/><br/>* Using a function-like form is very simple, X for an argument (Y the<br/>  second in case of a binary operator), TX is a truncated version of X<br/>  and F does a recursive call, Here is a [very inefficient] Fibonacci<br/>  number calculation:<br/><br/>  (add-to-list 'calculator-user-operators<br/>               '("F" fib (if (<= TX 1)<br/>                         1<br/>                         (+ (F (- TX 1)) (F (- TX 2)))) 0))<br/><br/>  Note that this will be either postfix or prefix, according to<br/>  `calculator-unary-style'.<br/><br/>You can customize this variable.
+<strong>calculator-user-operators</strong> is a variable defined in `<code>calculator.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+A list of additional operators.<br/>
+This is a list in the same format as specified in the documentation for<br/>
+`calculator-operators', that you can use to bind additional calculator<br/>
+operators.  It is probably not a good idea to modify this value with<br/>
+`customize' since it is too complex...<br/>
+<br/>
+Examples:<br/>
+<br/>
+* A very simple one, adding a postfix "x-to-y" conversion keys, using<br/>
+  t as a prefix key:<br/>
+<br/>
+  (setq calculator-user-operators<br/>
+        '(("tf" cl-to-fr (+ 32 (/ (* X 9) 5)) 1)<br/>
+          ("tc" fr-to-cl (/ (* (- X 32) 5) 9) 1)<br/>
+          ("tp" kg-to-lb (/ X 0.453592)       1)<br/>
+          ("tk" lb-to-kg (* X 0.453592)       1)<br/>
+          ("tF" mt-to-ft (/ X 0.3048)         1)<br/>
+          ("tM" ft-to-mt (* X 0.3048)         1)))<br/>
+<br/>
+* Using a function-like form is very simple, X for an argument (Y the<br/>
+  second in case of a binary operator), TX is a truncated version of X<br/>
+  and F does a recursive call, Here is a [very inefficient] Fibonacci<br/>
+  number calculation:<br/>
+<br/>
+  (add-to-list 'calculator-user-operators<br/>
+               '("F" fib (if (<= TX 1)<br/>
+                         1<br/>
+                         (+ (F (- TX 1)) (F (- TX 2)))) 0))<br/>
+<br/>
+  Note that this will be either postfix or prefix, according to<br/>
+  `calculator-unary-style'.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,15 @@
-wisent-discarding-token-functions is a variable defined in `wisent.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of functions to be called when discarding a lexical token.<br/>These functions receive the lexical token discarded.<br/>When the parser encounters unexpected tokens, it can discards them,<br/>based on what directed by error recovery rules.  Either when the<br/>parser reads tokens until one is found that can be shifted, or when an<br/>semantic action calls the function `wisent-skip-token' or<br/>`wisent-skip-block'.<br/>For language specific hooks, make sure you define this as a local<br/>hook.
+<strong>wisent-discarding-token-functions</strong> is a variable defined in `<code>wisent.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of functions to be called when discarding a lexical token.<br/>
+These functions receive the lexical token discarded.<br/>
+When the parser encounters unexpected tokens, it can discards them,<br/>
+based on what directed by error recovery rules.  Either when the<br/>
+parser reads tokens until one is found that can be shifted, or when an<br/>
+semantic action calls the function `wisent-skip-token' or<br/>
+`wisent-skip-block'.<br/>
+For language specific hooks, make sure you define this as a local<br/>
+hook.

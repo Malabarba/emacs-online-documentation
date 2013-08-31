@@ -1,1 +1,33 @@
-nnmail-split-methods is a variable defined in `nnmail.el'.<br/>Its value is (("mail.misc" ""))<br/><br/>Documentation:<br/>*Incoming mail will be split according to this variable.<br/><br/>If you'd like, for instance, one mail group for mail from the<br/>"4ad-l" mailing list, one group for junk mail and one for everything<br/>else, you could do something like this:<br/><br/> (setq nnmail-split-methods<br/>       '(("mail.4ad" "From:.*4ad")<br/>	 ("mail.junk" "From:.*Lars\\|Subject:.*buy")<br/>	 ("mail.misc" "")))<br/><br/>As you can see, this variable is a list of lists, where the first<br/>element in each "rule" is the name of the group (which, by the way,<br/>does not have to be called anything beginning with "mail",<br/>"yonka.zow" is a fine, fine name), and the second is a regexp that<br/>nnmail will try to match on the header to find a fit.<br/><br/>The second element can also be a function.  In that case, it will be<br/>called narrowed to the headers with the first element of the rule as<br/>the argument.  It should return a non-nil value if it thinks that the<br/>mail belongs in that group.<br/><br/>The last element should always have "" as the regexp.<br/><br/>This variable can also have a function as its value, and it can<br/>also have a fancy split method as its value.  See<br/>`nnmail-split-fancy' for an explanation of that syntax.<br/><br/>You can customize this variable.
+<strong>nnmail-split-methods</strong> is a variable defined in `<code>nnmail.el</code>'.<br/>
+Its value is (("mail.misc" ""))<br/>
+<br/>
+Documentation:<br/>
+*Incoming mail will be split according to this variable.<br/>
+<br/>
+If you'd like, for instance, one mail group for mail from the<br/>
+"4ad-l" mailing list, one group for junk mail and one for everything<br/>
+else, you could do something like this:<br/>
+<br/>
+ (setq nnmail-split-methods<br/>
+       '(("mail.4ad" "From:.*4ad")<br/>
+	 ("mail.junk" "From:.*Lars\\|Subject:.*buy")<br/>
+	 ("mail.misc" "")))<br/>
+<br/>
+As you can see, this variable is a list of lists, where the first<br/>
+element in each "rule" is the name of the group (which, by the way,<br/>
+does not have to be called anything beginning with "mail",<br/>
+"yonka.zow" is a fine, fine name), and the second is a regexp that<br/>
+nnmail will try to match on the header to find a fit.<br/>
+<br/>
+The second element can also be a function.  In that case, it will be<br/>
+called narrowed to the headers with the first element of the rule as<br/>
+the argument.  It should return a non-nil value if it thinks that the<br/>
+mail belongs in that group.<br/>
+<br/>
+The last element should always have "" as the regexp.<br/>
+<br/>
+This variable can also have a function as its value, and it can<br/>
+also have a fancy split method as its value.  See<br/>
+`nnmail-split-fancy' for an explanation of that syntax.<br/>
+<br/>
+You can customize this variable.

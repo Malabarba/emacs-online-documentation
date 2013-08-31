@@ -1,1 +1,935 @@
-package--builtins is a variable defined in `package.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of built-in packages.<br/>The actual value is initialized by loading the library<br/>`finder-inf'; this is not done until it is needed, e.g. by the<br/>function `package-built-in-p'.<br/><br/>Each element has the form (PKG . DESC), where PKG is a package<br/>name (a symbol) and DESC is a vector that describes the package.<br/>The vector DESC has the form [VERSION-LIST REQS DOCSTRING].<br/>  VERSION-LIST is a version list.<br/>  REQS is a list of packages required by the package, each<br/>   requirement having the form (NAME VL), where NAME is a string<br/>   and VL is a version list.<br/>  DOCSTRING is a brief description of the package.<br/><br/>Value: ((5x5 .<br/>      [nil nil "simple little puzzle game"])<br/> (ada-mode .<br/>	   [nil nil "major-mode for editing Ada sources"])<br/> (add-log .<br/>	  [nil nil "change log maintenance commands for Emacs"])<br/> (align .<br/>	[nil nil "align text to a specific column, by regexp"])<br/> (allout .<br/>	 [(2 3)<br/>	  nil "extensive outline mode for use alone and with other modes"])<br/> (allout-widgets .<br/>		 [(1 0)<br/>		  nil "Visually highlight allout outline structure."])<br/> (ange-ftp .<br/>	   [nil nil "transparent FTP support for GNU Emacs"])<br/> (animate .<br/>	  [nil nil "make text dance"])<br/> (ansi-color .<br/>	     [(3 4 2)<br/>	      nil "translate ANSI escape sequences into faces"])<br/> (antlr-mode .<br/>	     [(2 2 3)<br/>	      nil "major mode for ANTLR grammar files"])<br/> (arc-mode .<br/>	   [nil nil "simple editing of archives"])<br/> (array .<br/>	[nil nil "array editing commands for GNU Emacs"])<br/> (artist .<br/>	 [(1 2 6)<br/>	  nil "draw ascii graphics with your mouse"])<br/> (asm-mode .<br/>	   [nil nil "mode for editing assembler code"])<br/> (autoarg .<br/>	  [nil nil "make digit keys supply prefix args"])<br/> (autoconf .<br/>	   [nil nil "mode for editing Autoconf configure.ac files"])<br/> (autoinsert .<br/>	     [nil nil "automatic mode-dependent insertion of text into new files"])<br/> (autorevert .<br/>	     [nil nil "revert buffers when files on disk change"])<br/> (avl-tree .<br/>	   [nil nil "balanced binary trees, AVL-trees"])<br/> (avoid .<br/>	[nil nil "make mouse pointer stay out of the way of editing"])<br/> (battery .<br/>	  [nil nil "display battery status information"])<br/> (benchmark .<br/>	    [nil nil "support for benchmarking code"])<br/> (bib-mode .<br/>	   [nil nil "major mode for editing bib files"])<br/> (bibtex .<br/>	 [nil nil "BibTeX mode for GNU Emacs"])<br/> (bibtex-style .<br/>	       [nil nil "Major mode for BibTeX Style files"])<br/> (bindat .<br/>	 [nil nil "binary data structure packing and unpacking."])<br/> (binhex .<br/>	 [nil nil "decode BinHex-encoded text"])<br/> (blackbox .<br/>	   [nil nil "blackbox game in Emacs Lisp"])<br/> (bookmark .<br/>	   [nil nil "set bookmarks, maybe annotate them, jump to them later"])<br/> (browse-url .<br/>	     [nil nil "pass a URL to a WWW browser"])<br/> (bs .<br/>     [(1 17)<br/>      nil "menu for selecting and displaying buffers"])<br/> (bubbles .<br/>	  [nil nil "Puzzle game for Emacs"])<br/> (bug-reference .<br/>		[nil nil "buttonize bug references"])<br/> (calc .<br/>       [nil nil "the GNU Emacs calculator"])<br/> (calculator .<br/>	     [nil nil "a [not so] simple calculator for Emacs"])<br/> (calendar .<br/>	   [nil nil "calendar functions"])<br/> (cap-words .<br/>	    [nil nil "minor mode for motion in CapitalizedWordIdentifiers"])<br/> (cc-guess .<br/>	   [nil nil "guess indentation values by scanning existing code"])<br/> (cc-mode .<br/>	  [nil nil "major mode for editing C and similar languages"])<br/> (cdl .<br/>      [nil nil "Common Data Language (CDL) utility functions for GNU Emacs"])<br/> (cedet .<br/>	[(2 0)<br/>	 nil "Setup CEDET environment"])<br/> (cfengine .<br/>	   [(1 1)<br/>	    nil "mode for editing Cfengine files"])<br/> (chart .<br/>	[(0 2)<br/>	 nil "Draw charts (bar charts, etc)"])<br/> (check-declare .<br/>		[nil nil "Check declare-function statements"])<br/> (checkdoc .<br/>	   [(0 6 2)<br/>	    nil "check documentation strings for style requirements"])<br/> (chistory .<br/>	   [nil nil "list command history"])<br/> (cl .<br/>     [nil nil "Compatibility aliases for the old CL library."])<br/> (cl-lib .<br/>	 [(1 0)<br/>	  nil "Common Lisp extensions for Emacs"])<br/> (cmacexp .<br/>	  [nil nil "expand C macros in a region"])<br/> (cmuscheme .<br/>	    [nil nil "Scheme process in a buffer. Adapted from tea.el"])<br/> (color .<br/>	[nil nil "Color manipulation library"])<br/> (compare-w .<br/>	    [nil nil "compare text between windows for Emacs"])<br/> (compile .<br/>	  [nil nil "run compiler as inferior of Emacs, parse error messages"])<br/> (completion .<br/>	     [nil nil "dynamic word-completion code"])<br/> (conf-mode .<br/>	    [nil nil "Simple major mode for editing conf/ini/properties files"])<br/> (cookie1 .<br/>	  [nil nil "retrieve random phrases from fortune cookie files"])<br/> (copyright .<br/>	    [nil nil "update the copyright notice in current buffer"])<br/> (cperl-mode .<br/>	     [nil nil "Perl code editing commands for Emacs"])<br/> (cpp .<br/>      [nil nil "highlight or hide text according to cpp conditionals"])<br/> (crisp .<br/>	[nil nil "CRiSP/Brief Emacs emulator"])<br/> (crm .<br/>      [nil nil "read multiple strings with completion"])<br/> (css-mode .<br/>	   [nil nil "Major mode to edit CSS files"])<br/> (cua-base .<br/>	   [nil nil "emulate CUA key bindings"])<br/> (cvs-status .<br/>	     [nil nil "major mode for browsing `cvs status' output"])<br/> (cwarn .<br/>	[(1 3 1)<br/>	 nil "highlight suspicious C and C++ constructions"])<br/> (dabbrev .<br/>	  [nil nil "dynamic abbreviation package"])<br/> (dbus .<br/>       [nil nil "Elisp bindings for D-Bus."])<br/> (dcl-mode .<br/>	   [nil nil "major mode for editing DCL command files"])<br/> (debug .<br/>	[nil nil "debuggers and related commands for Emacs"])<br/> (decipher .<br/>	   [nil nil "cryptanalyze monoalphabetic substitution ciphers"])<br/> (delim-col .<br/>	    [(2 1)<br/>	     nil "prettify all columns in a region or rectangle"])<br/> (delphi .<br/>	 [nil nil "major mode for editing Delphi source (Object Pascal) in Emacs"])<br/> (delsel .<br/>	 [nil nil "delete selection if you insert"])<br/> (descr-text .<br/>	     [nil nil "describe text mode"])<br/> (desktop .<br/>	  [nil nil "save partial status of Emacs when killed"])<br/> (dframe .<br/>	 [nil nil "dedicate frame support modes"])<br/> (diary-lib .<br/>	    [nil nil "diary functions"])<br/> (diff .<br/>       [nil nil "run `diff'"])<br/> (diff-mode .<br/>	    [nil nil "a mode for viewing/editing context diffs"])<br/> (dig .<br/>      [nil nil "Domain Name System dig interface"])<br/> (dirtrack .<br/>	   [nil nil "Directory Tracking by watching the prompt"])<br/> (disass .<br/>	 [nil nil "disassembler for compiled Emacs Lisp code"])<br/> (dissociate .<br/>	     [nil nil "scramble text amusingly for Emacs"])<br/> (dns .<br/>      [nil nil "Domain Name Service lookups"])<br/> (dns-mode .<br/>	   [nil nil "a mode for viewing/editing Domain Name System master files"])<br/> (doc-view .<br/>	   [nil nil "View PDF/PostScript/DVI files in Emacs"])<br/> (doctor .<br/>	 [nil nil "psychological help for frustrated users"])<br/> (double .<br/>	 [nil nil "support for keyboard remapping with double clicking"])<br/> (dunnet .<br/>	 [(2 1)<br/>	  nil "text adventure for Emacs"])<br/> (ebnf2ps .<br/>	  [(4 4)<br/>	   nil "translate an EBNF to a syntactic chart on PostScript"])<br/> (ebrowse .<br/>	  [nil nil "Emacs C++ class browser & tags facility"])<br/> (ebuff-menu .<br/>	     [nil nil "electric-buffer-list mode"])<br/> (echistory .<br/>	    [nil nil "Electric Command History Mode"])<br/> (ede .<br/>      [(1 2)<br/>       nil "Emacs Development Environment gloss"])<br/> (edebug .<br/>	 [nil nil "a source-level debugger for Emacs Lisp"])<br/> (ediff .<br/>	[(2 81 4)<br/>	 nil "a comprehensive visual interface to diff & patch"])<br/> (edmacro .<br/>	  [(2 1)<br/>	   nil "keyboard macro editor"])<br/> (edt .<br/>      [nil nil "enhanced EDT keypad mode emulation for GNU Emacs"])<br/> (ehelp .<br/>	[nil nil "bindings for electric-help mode"])<br/> (eieio .<br/>	[(1 4)<br/>	 nil "Enhanced Implementation of Emacs Interpreted Objects"])<br/> (eldoc .<br/>	[nil nil "show function arglist or variable docstring in echo area"])<br/> (electric .<br/>	   [nil nil "window maker and Command loop for `electric' modes"])<br/> (elide-head .<br/>	     [nil nil "hide headers in files"])<br/> (elint .<br/>	[nil nil "Lint Emacs Lisp"])<br/> (elp .<br/>      [nil nil "Emacs Lisp Profiler"])<br/> (emacs .<br/>	[nil nil "abbrev mode commands for Emacs"])<br/> (emacs-lock .<br/>	     [nil nil "protect buffers against killing or exiting"])<br/> (emerge .<br/>	 [nil nil "merge diffs under Emacs control"])<br/> (enriched .<br/>	   [nil nil "read and save files in text/enriched format"])<br/> (epa .<br/>      [nil nil "the EasyPG Assistant"])<br/> (epg .<br/>      [(1 0 0)<br/>       nil "the EasyPG Library"])<br/> (erc .<br/>      [(5 3)<br/>       nil "An Emacs Internet Relay Chat client"])<br/> (ert .<br/>      [nil nil "Emacs Lisp Regression Testing"])<br/> (ert-x .<br/>	[nil nil "Staging area for experimental extensions to ERT"])<br/> (eshell .<br/>	 [(2 4 2)<br/>	  nil "the Emacs command shell"])<br/> (etags .<br/>	[nil nil "etags facility for Emacs"])<br/> (eudc .<br/>       [nil nil "Emacs Unified Directory Client"])<br/> (ewoc .<br/>       [nil nil "utility to maintain a view of a list of objects in a buffer"])<br/> (executable .<br/>	     [nil nil "base functionality for executable interpreter scripts"])<br/> (expand .<br/>	 [nil nil "make abbreviations more usable"])<br/> (ezimage .<br/>	  [nil nil "Generalized Image management"])<br/> (f90 .<br/>      [nil nil "Fortran-90 mode (free format)"])<br/> (face-remap .<br/>	     [nil nil "Functions for managing `face-remapping-alist'"])<br/> (feedmail .<br/>	   [(11)<br/>	    nil "assist other email packages to massage outgoing messages"])<br/> (ffap .<br/>       [nil nil "find file (or url) at point"])<br/> (filecache .<br/>	    [nil nil "find files using a pre-loaded cache"])<br/> (filesets .<br/>	   [nil nil "handle group of files"])<br/> (find-cmd .<br/>	   [(0 6)<br/>	    nil "Build a valid find(1) command with sexps"])<br/> (find-dired .<br/>	     [nil nil "run a `find' command and dired the output"])<br/> (find-file .<br/>	    [nil nil "find a file corresponding to this one given a pattern"])<br/> (find-func .<br/>	    [nil nil "find the definition of the Emacs Lisp function near point"])<br/> (find-gc .<br/>	  [nil nil "detect functions that call the garbage collector"])<br/> (find-lisp .<br/>	    [nil nil "emulation of find in Emacs Lisp"])<br/> (finder .<br/>	 [(1 0)<br/>	  nil "topic & keyword-based code finder"])<br/> (flow-ctrl .<br/>	    [nil nil "help for lusers on cu(1) or ttys with wired-in ^S/^Q flow control"])<br/> (flymake .<br/>	  [(0 3)<br/>	   nil "a universal on-the-fly syntax checker"])<br/> (flyspell .<br/>	   [nil nil "on-the-fly spell checker"])<br/> (foldout .<br/>	  [(1 10)<br/>	   nil "folding extensions for outline-mode and outline-minor-mode"])<br/> (follow .<br/>	 [nil nil "synchronize windows showing the same buffer"])<br/> (footnote .<br/>	   [(0 19)<br/>	    nil "footnote support for message mode"])<br/> (format-spec .<br/>	      [nil nil "functions for formatting arbitrary formatting strings"])<br/> (forms .<br/>	[nil nil "Forms mode: edit a file as a form to fill in"])<br/> (fortran .<br/>	  [nil nil "Fortran mode for GNU Emacs"])<br/> (fortune .<br/>	  [nil nil "use fortune to create signatures"])<br/> (gamegrid .<br/>	   [(1 2)<br/>	    nil "library for implementing grid-based games on Emacs"])<br/> (gametree .<br/>	   [nil nil "manage game analysis trees in Emacs"])<br/> (gdb-mi .<br/>	 [nil nil "User Interface for running GDB"])<br/> (glasses .<br/>	  [nil nil "make cantReadThis readable"])<br/> (gnus .<br/>       [(5 13)<br/>	nil "a newsreader for GNU Emacs"])<br/> (gnutls .<br/>	 [nil nil "Support SSL/TLS connections through GnuTLS"])<br/> (gomoku .<br/>	 [nil nil "Gomoku game between you and Emacs"])<br/> (goto-addr .<br/>	    [nil nil "click to browse URL or to send to e-mail address"])<br/> (grep .<br/>       [nil nil "run `grep' and display the results"])<br/> (gs .<br/>     [nil nil "interface to Ghostscript"])<br/> (gud .<br/>      [nil nil "Grand Unified Debugger mode for running GDB and other debuggers"])<br/> (gulp .<br/>       [nil nil "ask for updates for Lisp packages"])<br/> (handwrite .<br/>	    [nil nil "turns your emacs buffer into a handwritten document"])<br/> (hanoi .<br/>	[nil nil "towers of hanoi in Emacs"])<br/> (hashcash .<br/>	   [nil nil "Add hashcash payments to email"])<br/> (help-at-pt .<br/>	     [nil nil "local help through the keyboard"])<br/> (hex-util .<br/>	   [nil nil "Functions to encode/decode hexadecimal string."])<br/> (hexl .<br/>       [nil nil "edit a file in a hex dump format using the hexl filter"])<br/> (hi-lock .<br/>	  [nil nil "minor mode for interactive automatic highlighting"])<br/> (hideif .<br/>	 [nil nil "hides selected code within ifdef"])<br/> (hideshow .<br/>	   [nil nil "minor mode cmds to selectively display code/comment blocks"])<br/> (hilit-chg .<br/>	    [nil nil "minor mode displaying buffer changes with special face"])<br/> (hippie-exp .<br/>	     [(1 6)<br/>	      nil "expand text trying various ways to find its expansion"])<br/> (hl-line .<br/>	  [nil nil "highlight the current line"])<br/> (hmac-def .<br/>	   [nil nil "A macro for defining HMAC functions."])<br/> (hmac-md5 .<br/>	   [nil nil "Compute HMAC-MD5."])<br/> (htmlfontify .<br/>	      [(0 21)<br/>	       nil "htmlize a buffer/source tree with optional hyperlinks"])<br/> (ibuffer .<br/>	  [nil nil "operate on buffers like dired"])<br/> (icalendar .<br/>	    [(0 19)<br/>	     nil "iCalendar implementation"])<br/> (icomplete .<br/>	    [nil nil "minibuffer completion incremental feedback"])<br/> (icon .<br/>       [nil nil "mode for editing Icon code"])<br/> (idlwave .<br/>	  [(6 1 22)<br/>	   nil "IDL editing mode for GNU Emacs"])<br/> (ido .<br/>      [nil nil "interactively do things with buffers and files"])<br/> (ielm .<br/>       [nil nil "interaction mode for Emacs Lisp"])<br/> (iimage .<br/>	 [nil nil "Inline image minor mode."])<br/> (image-dired .<br/>	      [(0 4 11)<br/>	       nil "use dired to browse and manipulate your images"])<br/> (image-file .<br/>	     [nil nil "support for visiting image files"])<br/> (imap .<br/>       [nil nil "imap library"])<br/> (imenu .<br/>	[nil nil "framework for mode-specific buffer indexes"])<br/> (inf-lisp .<br/>	   [nil nil "an inferior-lisp mode"])<br/> (info .<br/>       [nil nil "info package for Emacs"])<br/> (info-look .<br/>	    [nil nil "major-mode-sensitive Info index lookup facility"])<br/> (info-xref .<br/>	    [(3)<br/>	     nil "check external references in an Info document"])<br/> (informat .<br/>	   [nil nil "info support functions package for Emacs"])<br/> (inversion .<br/>	    [(1 3)<br/>	     nil "When you need something in version XX.XX"])<br/> (isearchb .<br/>	   [(1 5)<br/>	    nil "a marriage between iswitchb and isearch"])<br/> (ispell .<br/>	 [nil nil "interface to International Ispell Versions 3.1 and 3.2"])<br/> (iswitchb .<br/>	   [nil nil "switch between buffers using substrings"])<br/> (jka-compr .<br/>	    [nil nil "reading/writing/loading compressed files"])<br/> (js .<br/>     [(9)<br/>      nil "Major mode for editing JavaScript"])<br/> (json .<br/>       [(1 3)<br/>	nil "JavaScript Object Notation parser / generator"])<br/> (kermit .<br/>	 [nil nil "additions to shell mode for use with kermit"])<br/> (keypad .<br/>	 [nil nil "simplified keypad bindings"])<br/> (kmacro .<br/>	 [nil nil "enhanced keyboard macros"])<br/> (landmark .<br/>	   [nil nil "neural-network robot that learns landmarks"])<br/> (ld-script .<br/>	    [nil nil "GNU linker script editing mode for Emacs"])<br/> (ldap .<br/>       [nil nil "client interface to LDAP for Emacs"])<br/> (life .<br/>       [nil nil "John Horton Conway's `Life' game for GNU Emacs"])<br/> (linum .<br/>	[(0 9 24)<br/>	 nil "display line numbers in the left margin"])<br/> (lisp-mnt .<br/>	   [nil nil "utility functions for Emacs Lisp maintainers"])<br/> (loadhist .<br/>	   [nil nil "lisp functions for working with feature groups"])<br/> (locate .<br/>	 [nil nil "interface to the locate command"])<br/> (log-edit .<br/>	   [nil nil "Major mode for editing CVS commit messages"])<br/> (log-view .<br/>	   [nil nil "Major mode for browsing RCS/CVS/SCCS log output"])<br/> (longlines .<br/>	    [nil nil "automatically wrap long lines"])<br/> (lpr .<br/>      [nil nil "print Emacs buffer on line printer"])<br/> (m4-mode .<br/>	  [nil nil "m4 code editing commands for Emacs"])<br/> (macroexp .<br/>	   [nil nil "Additional macro-expansion support"])<br/> (mail-utils .<br/>	     [nil nil "utility functions used both by rmail and rnews"])<br/> (mailabbrev .<br/>	     [nil nil "abbrev-expansion of mail aliases"])<br/> (mailalias .<br/>	    [nil nil "expand and complete mailing address aliases"])<br/> (mailclient .<br/>	     [nil nil "mail sending via system's mail client."])<br/> (mairix .<br/>	 [nil nil "Mairix interface for Emacs"])<br/> (make-mode .<br/>	    [nil nil "makefile editing commands for Emacs"])<br/> (makeinfo .<br/>	   [nil nil "run makeinfo conveniently"])<br/> (makesum .<br/>	  [nil nil "generate key binding summary for Emacs"])<br/> (man .<br/>      [nil nil "browse UNIX manual pages"])<br/> (mantemp .<br/>	  [nil nil "create manual template instantiations from g++ 2.7.2 output"])<br/> (master .<br/>	 [(1 0 2)<br/>	  nil "make a buffer the master over another buffer"])<br/> (mb-depth .<br/>	   [nil nil "Indicate minibuffer-depth in prompt"])<br/> (md4 .<br/>      [(1 0)<br/>       nil "MD4 Message Digest Algorithm."])<br/> (meese .<br/>	[nil nil "protect the impressionable young minds of America"])<br/> (meta-mode .<br/>	    [(1 0)<br/>	     nil "major mode for editing Metafont or MetaPost sources"])<br/> (metamail .<br/>	   [nil nil "Metamail interface for GNU Emacs"])<br/> (mh-e .<br/>       [(8 3 1)<br/>	nil "GNU Emacs interface to the MH mail system"])<br/> (midnight .<br/>	   [nil nil "run something every midnight, e.g., kill old buffers"])<br/> (minibuf-eldef .<br/>		[nil nil "Only show defaults in prompts when applicable"])<br/> (misearch .<br/>	   [nil nil "isearch extensions for multi-buffer search"])<br/> (mixal-mode .<br/>	     [(0 1)<br/>	      nil "Major mode for the mix asm language."])<br/> (mode-local .<br/>	     [nil nil "Support for mode local facilities"])<br/> (modula2 .<br/>	  [nil nil "Modula-2 editing support package"])<br/> (morse .<br/>	[nil nil "convert text to morse code and back"])<br/> (mouse-copy .<br/>	     [nil nil "one-click text copy and move"])<br/> (mouse-drag .<br/>	     [nil nil "use mouse-2 to do a new style of scrolling"])<br/> (mpc .<br/>      [nil nil "A client for the Music Player Daemon"])<br/> (mpuz .<br/>       [nil nil "multiplication puzzle for GNU Emacs"])<br/> (msb .<br/>      [nil nil "customizable buffer-selection with multiple menus"])<br/> (mspools .<br/>	  [nil nil "show mail spools waiting to be read"])<br/> (net-utils .<br/>	    [nil nil "network functions"])<br/> (netrc .<br/>	[nil nil ".netrc parsing functionality"])<br/> (network-stream .<br/>		 [nil nil "open network processes, possibly with encryption"])<br/> (newsticker .<br/>	     [(1 99)<br/>	      nil "A Newsticker for Emacs."])<br/> (notifications .<br/>		[nil nil "Client interface to desktop notifications."])<br/> (novice .<br/>	 [nil nil "handling of disabled commands (\"novice mode\") for Emacs"])<br/> (nroff-mode .<br/>	     [nil nil "GNU Emacs major mode for editing nroff source"])<br/> (ntlm .<br/>       [(1 0)<br/>	nil "NTLM (NT LanManager) authentication support"])<br/> (nxml .<br/>       [nil nil "XML encoding auto-detection"])<br/> (octave-mod .<br/>	     [nil nil "editing Octave source files under Emacs"])<br/> (org .<br/>      [nil nil "Outline-based notes management and organizer"])<br/> (outline .<br/>	  [nil nil "outline mode commands for Emacs"])<br/> (package .<br/>	  [(1 0)<br/>	   nil "Simple package system for Emacs"])<br/> (page-ext .<br/>	   [nil nil "extended page handling commands"])<br/> (paren .<br/>	[nil nil "highlight matching paren"])<br/> (parse-time .<br/>	     [nil nil "parsing time strings"])<br/> (pascal .<br/>	 [nil nil "major mode for editing pascal source in Emacs"])<br/> (password-cache .<br/>		 [nil nil "Read passwords, possibly using a password cache."])<br/> (pcase .<br/>   [nil nil "ML-style pattern-matching macro for Elisp"])<br/> (pcomplete .<br/>	    [nil nil "programmable completion"])<br/> (pcvs .<br/>       [nil nil "a front-end to CVS"])<br/> (perl-mode .<br/>	    [nil nil "Perl code editing commands for GNU Emacs"])<br/> (picture .<br/>	  [nil nil "\"Picture mode\" -- editing using quarter-plane screen model"])<br/> (po .<br/>     [nil nil "basic support of PO translation files"])<br/> (pong .<br/>       [nil nil "classical implementation of pong"])<br/> (pp .<br/>     [nil nil "pretty printer for Emacs Lisp"])<br/> (printing .<br/>	   [(6 9 3)<br/>	    nil "printing utilities"])<br/> (proced .<br/>	 [nil nil "operate on system processes like dired"])<br/> (profiler .<br/>	   [nil nil "UI and helper functions for Emacs's native profiler"])<br/> (prolog .<br/>	 [nil nil "major mode for editing and running Prolog (and Mercury) code"])<br/> (ps-mode .<br/>	  [(1 1 8)<br/>	   nil "PostScript mode for GNU Emacs"])<br/> (ps-print .<br/>	   [(7 3 5)<br/>	    nil "print text from the buffer as PostScript"])<br/> (pulse .<br/>	[(1 0)<br/>	 nil "Pulsing Overlays"])<br/> (python .<br/>	 [(0 24 2)<br/>	  nil "Python's flying circus support for Emacs"])<br/> (quickurl .<br/>	   [nil nil "insert a URL based on text at point in buffer"])<br/> (rcirc .<br/>	[nil nil "default, simple IRC client."])<br/> (rcompile .<br/>	   [nil nil "run a compilation on a remote machine"])<br/> (re-builder .<br/>	     [nil nil "building Regexps with visual feedback"])<br/> (recentf .<br/>	  [nil nil "setup a menu of recently opened files"])<br/> (refbib .<br/>	 [nil nil "convert refer-style references to ones usable by Latex bib"])<br/> (refer .<br/>	[nil nil "look up references in bibliography files"])<br/> (refill .<br/>	 [nil nil "`auto-fill' by refilling paragraphs on changes"])<br/> (reftex .<br/>	 [nil nil "minor mode for doing \\label, \\ref, \\cite, \\index in LaTeX"])<br/> (reftex-auc .<br/>	     [nil nil "RefTeX's interface to AUCTeX"])<br/> (reftex-cite .<br/>	      [nil nil "creating citations with RefTeX"])<br/> (reftex-dcr .<br/>	     [nil nil "viewing cross references and citations with RefTeX"])<br/> (reftex-global .<br/>		[nil nil "operations on entire documents with RefTeX"])<br/> (reftex-index .<br/>	       [nil nil "index support with RefTeX"])<br/> (reftex-parse .<br/>	       [nil nil "parser functions for RefTeX"])<br/> (reftex-ref .<br/>	     [nil nil "code to create labels and references with RefTeX"])<br/> (reftex-sel .<br/>	     [nil nil "the selection modes for RefTeX"])<br/> (reftex-toc .<br/>	     [nil nil "RefTeX's table of contents mode"])<br/> (reftex-vars .<br/>	      [nil nil "configuration variables for RefTeX"])<br/> (regexp-opt .<br/>	     [nil nil "generate efficient regexps to match strings"])<br/> (regi .<br/>       [(1 8)<br/>	nil "REGular expression Interpreting engine"])<br/> (remember .<br/>	   [(2 0)<br/>	    nil "a mode for quickly jotting down things to remember"])<br/> (repeat .<br/>	 [(0 51)<br/>	  nil "convenient way to repeat the previous command"])<br/> (reporter .<br/>	   [nil nil "customizable bug reporting of lisp programs"])<br/> (reposition .<br/>	     [nil nil "center a Lisp function or comment on the screen"])<br/> (reveal .<br/>	 [nil nil "Automatically reveal hidden text at point"])<br/> (rfc2368 .<br/>	  [nil nil "support for rfc2368"])<br/> (rfc822 .<br/>	 [nil nil "hairy rfc822 parser for mail and news and suchlike"])<br/> (ring .<br/>       [nil nil "handle rings of items"])<br/> (rlogin .<br/>	 [nil nil "remote login interface"])<br/> (rmail .<br/>	[nil nil "main code of \"RMAIL\" mail reader for Emacs"])<br/> (rot13 .<br/>	[nil nil "display a buffer in ROT13"])<br/> (rst .<br/>      [nil nil "Mode for viewing and editing reStructuredText-documents."])<br/> (ruby-mode .<br/>	    [(1 2)<br/>	     nil "Major mode for editing Ruby files"])<br/> (ruler-mode .<br/>	     [(1 6)<br/>	      nil "display a ruler in the header line"])<br/> (rx .<br/>     [nil nil "sexp notation for regular expressions"])<br/> (sasl .<br/>       [nil nil "SASL client framework"])<br/> (savehist .<br/>	   [(24)<br/>	    nil "Save minibuffer history"])<br/> (saveplace .<br/>	    [nil nil "automatically save place in files"])<br/> (sb-image .<br/>	   [nil nil "Image management for speedbar"])<br/> (scheme .<br/>	 [nil nil "Scheme (and DSSSL) editing mode"])<br/> (scroll-all .<br/>	     [nil nil "scroll all buffers together minor mode"])<br/> (scroll-lock .<br/>	      [nil nil "Scroll lock scrolling."])<br/> (secrets .<br/>	  [nil nil "Client interface to gnome-keyring and kwallet."])<br/> (select .<br/>	 [nil nil "lisp portion of standard selection support"])<br/> (semantic .<br/>	   [(2 2)<br/>	    nil "Semantic buffer evaluator."])<br/> (sendmail .<br/>	   [nil nil "mail sending commands for Emacs"])<br/> (server .<br/>	 [nil nil "Lisp code for GNU Emacs running as server process"])<br/> (ses .<br/>      [nil nil "Simple Emacs Spreadsheet"])<br/> (sgml-mode .<br/>	    [nil nil "SGML- and HTML-editing modes"])<br/> (sh-script .<br/>	    [(2 0 6)<br/>	     nil "shell-script editing commands for Emacs"])<br/> (shadow .<br/>	 [nil nil "locate Emacs Lisp file shadowings"])<br/> (shadowfile .<br/>	     [nil nil "automatic file copying"])<br/> (shell .<br/>	[nil nil "specialized comint.el for running the shell"])<br/> (simula .<br/>	 [nil nil "SIMULA 87 code editing commands for Emacs"])<br/> (skeleton .<br/>	   [nil nil "Lisp language extension for writing statement skeletons"])<br/> (smerge-mode .<br/>	      [nil nil "Minor mode to resolve diff3 conflicts"])<br/> (smie .<br/>       [nil nil "Simple Minded Indentation Engine"])<br/> (smtpmail .<br/>	   [nil nil "simple SMTP protocol (RFC 821) for sending mail"])<br/> (snake .<br/>	[nil nil "implementation of Snake for Emacs"])<br/> (snmp-mode .<br/>	    [nil nil "SNMP & SNMPv2 MIB major mode"])<br/> (soap-client .<br/>	      [nil nil "Access SOAP web services from Emacs"])<br/> (socks .<br/>	[nil nil "A Socks v5 Client for Emacs"])<br/> (solitaire .<br/>	    [nil nil "game of solitaire in Emacs Lisp"])<br/> (sort .<br/>       [nil nil "commands to sort text in an Emacs buffer"])<br/> (soundex .<br/>	  [nil nil "implement Soundex algorithm"])<br/> (speedbar .<br/>	   [nil nil "quick access to files and tags in a frame"])<br/> (spook .<br/>	[nil nil "spook phrase utility for overloading the NSA line eater"])<br/> (sql .<br/>      [(3 1)<br/>       nil "specialized comint.el for SQL interpreters"])<br/> (srecode .<br/>	  [(1 2)<br/>	   nil "Semantic buffer evaluator."])<br/> (strokes .<br/>	  [nil nil "control Emacs through mouse strokes"])<br/> (studly .<br/>	 [nil nil "StudlyCaps (tm)(r)(c)(xxx)"])<br/> (subword .<br/>	  [nil nil "Handling capitalized subwords in a nomenclature"])<br/> (supercite .<br/>	    [nil nil "minor mode for citing mail and news replies"])<br/> (syntax .<br/>	 [nil nil "helper functions to find syntactic context"])<br/> (t-mouse .<br/>	  [nil nil "mouse support within the text terminal"])<br/> (table .<br/>	[nil nil "create and edit WYSIWYG text based embedded tables"])<br/> (tabulated-list .<br/>		 [nil nil "generic major mode for tabulated lists"])<br/> (talk .<br/>       [nil nil "allow several users to talk to each other through Emacs"])<br/> (tar-mode .<br/>	   [nil nil "simple editing of tar files from GNU Emacs"])<br/> (tcl .<br/>      [nil nil "Tcl code editing commands for Emacs"])<br/> (telnet .<br/>	 [nil nil "run a telnet session from within an Emacs buffer"])<br/> (tempo .<br/>	[nil nil "Flexible template insertion"])<br/> (term .<br/>       [nil nil "general command interpreter in a window stuff"])<br/> (terminal .<br/>	   [nil nil "terminal emulator for GNU Emacs"])<br/> (testcover .<br/>	    [nil nil "Visual code-coverage tool"])<br/> (tetris .<br/>	 [(2 1)<br/>	  nil "implementation of Tetris for Emacs"])<br/> (tex-mode .<br/>	   [nil nil "TeX, LaTeX, and SliTeX mode commands"])<br/> (texinfmt .<br/>	   [nil nil "format Texinfo files into Info files"])<br/> (texinfo .<br/>	  [nil nil "major mode for editing Texinfo files"])<br/> (texnfo-upd .<br/>	     [nil nil "utilities for updating nodes and menus in Texinfo files"])<br/> (thingatpt .<br/>	    [nil nil "get the `thing' at point"])<br/> (thumbs .<br/>	 [nil nil "Thumbnails previewer for images files"])<br/> (tildify .<br/>	  [(4 5)<br/>	   nil "adding hard spaces into texts"])<br/> (time .<br/>       [nil nil "display time, load and mail indicator in mode line of Emacs"])<br/> (time-date .<br/>	    [nil nil "Date and time handling functions"])<br/> (time-stamp .<br/>	     [nil nil "Maintain last change time stamps in files edited by Emacs"])<br/> (timeclock .<br/>	    [(2 6 1)<br/>	     nil "mode for keeping track of how much you work"])<br/> (timezone .<br/>	   [nil nil "time zone package for GNU Emacs"])<br/> (tls .<br/>      [nil nil "TLS/SSL support via wrapper around GnuTLS"])<br/> (tmm .<br/>      [nil nil "text mode access to menu-bar"])<br/> (todo-mode .<br/>	    [nil nil "major mode for editing TODO list files"])<br/> (tpu-edt .<br/>	  [(4 5)<br/>	   nil "Emacs emulating TPU emulating EDT"])<br/> (tq .<br/>     [nil nil "utility to maintain a transaction queue"])<br/> (trace .<br/>	[nil nil "tracing facility for Emacs Lisp functions"])<br/> (tramp .<br/>	[nil nil "Transparent Remote Access, Multiple Protocol"])<br/> (tree-widget .<br/>	      [nil nil "Tree widget"])<br/> (two-column .<br/>	     [nil nil "minor mode for editing of two-column text"])<br/> (type-break .<br/>	     [nil nil "encourage rests from typing at appropriate intervals"])<br/> (uce .<br/>      [nil nil "facilitate reply to unsolicited commercial email"])<br/> (underline .<br/>	    [nil nil "insert/remove underlining (done by overstriking) in Emacs"])<br/> (undigest .<br/>	   [nil nil "digest-cracking support for the RMAIL mail reader"])<br/> (unrmail .<br/>	  [nil nil "convert Rmail Babyl files to mailbox files"])<br/> (unsafep .<br/>	  [nil nil "Determine whether a Lisp form is safe to evaluate"])<br/> (url .<br/>      [nil nil "Uniform Resource Locator retrieval tool"])<br/> (uudecode .<br/>	   [nil nil "elisp native uudecode"])<br/> (vc .<br/>     [nil nil "drive a version-control system from within Emacs"])<br/> (vcursor .<br/>	  [nil nil "manipulate an alternative (\"virtual\") cursor"])<br/> (vera-mode .<br/>	    [(2 28)<br/>	     nil "major mode for editing Vera files"])<br/> (verilog-mode .<br/>	       [nil nil "major mode for editing verilog source in Emacs"])<br/> (vhdl-mode .<br/>	    [nil nil "major mode for editing VHDL code"])<br/> (vi .<br/>     [nil nil "major mode for emulating \"vi\" editor under GNU Emacs"])<br/> (view .<br/>       [nil nil "peruse file or buffer without editing"])<br/> (vip .<br/>      [nil nil "a VI Package for GNU Emacs"])<br/> (viper .<br/>	[(3 14 1)<br/>	 nil "A full-featured Vi emulator for Emacs and XEmacs,"])<br/> (vt-control .<br/>	     [nil nil "Common VTxxx control functions"])<br/> (vt100-led .<br/>	    [nil nil "functions for LED control on VT-100 terminals & clones"])<br/> (w32-common-fns .<br/>		 [nil nil "Lisp routines for Windows and Cygwin-w32"])<br/> (warnings .<br/>	   [nil nil "log and display warnings"])<br/> (wdired .<br/>	 [(2 0)<br/>	  nil "Rename files editing their names in dired buffers"])<br/> (webjump .<br/>	  [nil nil "programmable Web hotlist"])<br/> (which-func .<br/>	     [nil nil "print current function in mode line"])<br/> (whitespace .<br/>	     [(13 2 2)<br/>	      nil "minor mode to visualize TAB, (HARD) SPACE, NEWLINE"])<br/> (windmove .<br/>	   [nil nil "directional window-selection routines"])<br/> (winner .<br/>	 [nil nil "Restore old window configurations"])<br/> (woman .<br/>	[(0 551)<br/>	 nil "browse UN*X manual pages `wo (without) man'"])<br/> (ws-mode .<br/>	  [(0 7)<br/>	   nil "WordStar emulation mode for GNU Emacs"])<br/> (xesam .<br/>	[nil nil "Xesam interface to search engines."])<br/> (xml .<br/>      [nil nil "XML parser"])<br/> (xscheme .<br/>	  [nil nil "run MIT Scheme under Emacs"])<br/> (xt-mouse .<br/>	   [nil nil "support the mouse when emacs run in an xterm"])<br/> (yow .<br/>      [nil nil "quote random zippyisms"])<br/> (zeroconf .<br/>	   [nil nil "Service browser using Avahi."])<br/> (zone .<br/>       [nil nil "idle display hacks"]))<br/><br/>
+<strong>package--builtins</strong> is a variable defined in `<code>package.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of built-in packages.<br/>
+The actual value is initialized by loading the library<br/>
+`finder-inf'; this is not done until it is needed, e.g. by the<br/>
+function `package-built-in-p'.<br/>
+<br/>
+Each element has the form (PKG . DESC), where PKG is a package<br/>
+name (a symbol) and DESC is a vector that describes the package.<br/>
+The vector DESC has the form [VERSION-LIST REQS DOCSTRING].<br/>
+  VERSION-LIST is a version list.<br/>
+  REQS is a list of packages required by the package, each<br/>
+   requirement having the form (NAME VL), where NAME is a string<br/>
+   and VL is a version list.<br/>
+  DOCSTRING is a brief description of the package.<br/>
+<br/>
+Value: ((5x5 .<br/>
+      [nil nil "simple little puzzle game"])<br/>
+ (ada-mode .<br/>
+	   [nil nil "major-mode for editing Ada sources"])<br/>
+ (add-log .<br/>
+	  [nil nil "change log maintenance commands for Emacs"])<br/>
+ (align .<br/>
+	[nil nil "align text to a specific column, by regexp"])<br/>
+ (allout .<br/>
+	 [(2 3)<br/>
+	  nil "extensive outline mode for use alone and with other modes"])<br/>
+ (allout-widgets .<br/>
+		 [(1 0)<br/>
+		  nil "Visually highlight allout outline structure."])<br/>
+ (ange-ftp .<br/>
+	   [nil nil "transparent FTP support for GNU Emacs"])<br/>
+ (animate .<br/>
+	  [nil nil "make text dance"])<br/>
+ (ansi-color .<br/>
+	     [(3 4 2)<br/>
+	      nil "translate ANSI escape sequences into faces"])<br/>
+ (antlr-mode .<br/>
+	     [(2 2 3)<br/>
+	      nil "major mode for ANTLR grammar files"])<br/>
+ (arc-mode .<br/>
+	   [nil nil "simple editing of archives"])<br/>
+ (array .<br/>
+	[nil nil "array editing commands for GNU Emacs"])<br/>
+ (artist .<br/>
+	 [(1 2 6)<br/>
+	  nil "draw ascii graphics with your mouse"])<br/>
+ (asm-mode .<br/>
+	   [nil nil "mode for editing assembler code"])<br/>
+ (autoarg .<br/>
+	  [nil nil "make digit keys supply prefix args"])<br/>
+ (autoconf .<br/>
+	   [nil nil "mode for editing Autoconf configure.ac files"])<br/>
+ (autoinsert .<br/>
+	     [nil nil "automatic mode-dependent insertion of text into new files"])<br/>
+ (autorevert .<br/>
+	     [nil nil "revert buffers when files on disk change"])<br/>
+ (avl-tree .<br/>
+	   [nil nil "balanced binary trees, AVL-trees"])<br/>
+ (avoid .<br/>
+	[nil nil "make mouse pointer stay out of the way of editing"])<br/>
+ (battery .<br/>
+	  [nil nil "display battery status information"])<br/>
+ (benchmark .<br/>
+	    [nil nil "support for benchmarking code"])<br/>
+ (bib-mode .<br/>
+	   [nil nil "major mode for editing bib files"])<br/>
+ (bibtex .<br/>
+	 [nil nil "BibTeX mode for GNU Emacs"])<br/>
+ (bibtex-style .<br/>
+	       [nil nil "Major mode for BibTeX Style files"])<br/>
+ (bindat .<br/>
+	 [nil nil "binary data structure packing and unpacking."])<br/>
+ (binhex .<br/>
+	 [nil nil "decode BinHex-encoded text"])<br/>
+ (blackbox .<br/>
+	   [nil nil "blackbox game in Emacs Lisp"])<br/>
+ (bookmark .<br/>
+	   [nil nil "set bookmarks, maybe annotate them, jump to them later"])<br/>
+ (browse-url .<br/>
+	     [nil nil "pass a URL to a WWW browser"])<br/>
+ (bs .<br/>
+     [(1 17)<br/>
+      nil "menu for selecting and displaying buffers"])<br/>
+ (bubbles .<br/>
+	  [nil nil "Puzzle game for Emacs"])<br/>
+ (bug-reference .<br/>
+		[nil nil "buttonize bug references"])<br/>
+ (calc .<br/>
+       [nil nil "the GNU Emacs calculator"])<br/>
+ (calculator .<br/>
+	     [nil nil "a [not so] simple calculator for Emacs"])<br/>
+ (calendar .<br/>
+	   [nil nil "calendar functions"])<br/>
+ (cap-words .<br/>
+	    [nil nil "minor mode for motion in CapitalizedWordIdentifiers"])<br/>
+ (cc-guess .<br/>
+	   [nil nil "guess indentation values by scanning existing code"])<br/>
+ (cc-mode .<br/>
+	  [nil nil "major mode for editing C and similar languages"])<br/>
+ (cdl .<br/>
+      [nil nil "Common Data Language (CDL) utility functions for GNU Emacs"])<br/>
+ (cedet .<br/>
+	[(2 0)<br/>
+	 nil "Setup CEDET environment"])<br/>
+ (cfengine .<br/>
+	   [(1 1)<br/>
+	    nil "mode for editing Cfengine files"])<br/>
+ (chart .<br/>
+	[(0 2)<br/>
+	 nil "Draw charts (bar charts, etc)"])<br/>
+ (check-declare .<br/>
+		[nil nil "Check declare-function statements"])<br/>
+ (checkdoc .<br/>
+	   [(0 6 2)<br/>
+	    nil "check documentation strings for style requirements"])<br/>
+ (chistory .<br/>
+	   [nil nil "list command history"])<br/>
+ (cl .<br/>
+     [nil nil "Compatibility aliases for the old CL library."])<br/>
+ (cl-lib .<br/>
+	 [(1 0)<br/>
+	  nil "Common Lisp extensions for Emacs"])<br/>
+ (cmacexp .<br/>
+	  [nil nil "expand C macros in a region"])<br/>
+ (cmuscheme .<br/>
+	    [nil nil "Scheme process in a buffer. Adapted from tea.el"])<br/>
+ (color .<br/>
+	[nil nil "Color manipulation library"])<br/>
+ (compare-w .<br/>
+	    [nil nil "compare text between windows for Emacs"])<br/>
+ (compile .<br/>
+	  [nil nil "run compiler as inferior of Emacs, parse error messages"])<br/>
+ (completion .<br/>
+	     [nil nil "dynamic word-completion code"])<br/>
+ (conf-mode .<br/>
+	    [nil nil "Simple major mode for editing conf/ini/properties files"])<br/>
+ (cookie1 .<br/>
+	  [nil nil "retrieve random phrases from fortune cookie files"])<br/>
+ (copyright .<br/>
+	    [nil nil "update the copyright notice in current buffer"])<br/>
+ (cperl-mode .<br/>
+	     [nil nil "Perl code editing commands for Emacs"])<br/>
+ (cpp .<br/>
+      [nil nil "highlight or hide text according to cpp conditionals"])<br/>
+ (crisp .<br/>
+	[nil nil "CRiSP/Brief Emacs emulator"])<br/>
+ (crm .<br/>
+      [nil nil "read multiple strings with completion"])<br/>
+ (css-mode .<br/>
+	   [nil nil "Major mode to edit CSS files"])<br/>
+ (cua-base .<br/>
+	   [nil nil "emulate CUA key bindings"])<br/>
+ (cvs-status .<br/>
+	     [nil nil "major mode for browsing `cvs status' output"])<br/>
+ (cwarn .<br/>
+	[(1 3 1)<br/>
+	 nil "highlight suspicious C and C++ constructions"])<br/>
+ (dabbrev .<br/>
+	  [nil nil "dynamic abbreviation package"])<br/>
+ (dbus .<br/>
+       [nil nil "Elisp bindings for D-Bus."])<br/>
+ (dcl-mode .<br/>
+	   [nil nil "major mode for editing DCL command files"])<br/>
+ (debug .<br/>
+	[nil nil "debuggers and related commands for Emacs"])<br/>
+ (decipher .<br/>
+	   [nil nil "cryptanalyze monoalphabetic substitution ciphers"])<br/>
+ (delim-col .<br/>
+	    [(2 1)<br/>
+	     nil "prettify all columns in a region or rectangle"])<br/>
+ (delphi .<br/>
+	 [nil nil "major mode for editing Delphi source (Object Pascal) in Emacs"])<br/>
+ (delsel .<br/>
+	 [nil nil "delete selection if you insert"])<br/>
+ (descr-text .<br/>
+	     [nil nil "describe text mode"])<br/>
+ (desktop .<br/>
+	  [nil nil "save partial status of Emacs when killed"])<br/>
+ (dframe .<br/>
+	 [nil nil "dedicate frame support modes"])<br/>
+ (diary-lib .<br/>
+	    [nil nil "diary functions"])<br/>
+ (diff .<br/>
+       [nil nil "run `diff'"])<br/>
+ (diff-mode .<br/>
+	    [nil nil "a mode for viewing/editing context diffs"])<br/>
+ (dig .<br/>
+      [nil nil "Domain Name System dig interface"])<br/>
+ (dirtrack .<br/>
+	   [nil nil "Directory Tracking by watching the prompt"])<br/>
+ (disass .<br/>
+	 [nil nil "disassembler for compiled Emacs Lisp code"])<br/>
+ (dissociate .<br/>
+	     [nil nil "scramble text amusingly for Emacs"])<br/>
+ (dns .<br/>
+      [nil nil "Domain Name Service lookups"])<br/>
+ (dns-mode .<br/>
+	   [nil nil "a mode for viewing/editing Domain Name System master files"])<br/>
+ (doc-view .<br/>
+	   [nil nil "View PDF/PostScript/DVI files in Emacs"])<br/>
+ (doctor .<br/>
+	 [nil nil "psychological help for frustrated users"])<br/>
+ (double .<br/>
+	 [nil nil "support for keyboard remapping with double clicking"])<br/>
+ (dunnet .<br/>
+	 [(2 1)<br/>
+	  nil "text adventure for Emacs"])<br/>
+ (ebnf2ps .<br/>
+	  [(4 4)<br/>
+	   nil "translate an EBNF to a syntactic chart on PostScript"])<br/>
+ (ebrowse .<br/>
+	  [nil nil "Emacs C++ class browser & tags facility"])<br/>
+ (ebuff-menu .<br/>
+	     [nil nil "electric-buffer-list mode"])<br/>
+ (echistory .<br/>
+	    [nil nil "Electric Command History Mode"])<br/>
+ (ede .<br/>
+      [(1 2)<br/>
+       nil "Emacs Development Environment gloss"])<br/>
+ (edebug .<br/>
+	 [nil nil "a source-level debugger for Emacs Lisp"])<br/>
+ (ediff .<br/>
+	[(2 81 4)<br/>
+	 nil "a comprehensive visual interface to diff & patch"])<br/>
+ (edmacro .<br/>
+	  [(2 1)<br/>
+	   nil "keyboard macro editor"])<br/>
+ (edt .<br/>
+      [nil nil "enhanced EDT keypad mode emulation for GNU Emacs"])<br/>
+ (ehelp .<br/>
+	[nil nil "bindings for electric-help mode"])<br/>
+ (eieio .<br/>
+	[(1 4)<br/>
+	 nil "Enhanced Implementation of Emacs Interpreted Objects"])<br/>
+ (eldoc .<br/>
+	[nil nil "show function arglist or variable docstring in echo area"])<br/>
+ (electric .<br/>
+	   [nil nil "window maker and Command loop for `electric' modes"])<br/>
+ (elide-head .<br/>
+	     [nil nil "hide headers in files"])<br/>
+ (elint .<br/>
+	[nil nil "Lint Emacs Lisp"])<br/>
+ (elp .<br/>
+      [nil nil "Emacs Lisp Profiler"])<br/>
+ (emacs .<br/>
+	[nil nil "abbrev mode commands for Emacs"])<br/>
+ (emacs-lock .<br/>
+	     [nil nil "protect buffers against killing or exiting"])<br/>
+ (emerge .<br/>
+	 [nil nil "merge diffs under Emacs control"])<br/>
+ (enriched .<br/>
+	   [nil nil "read and save files in text/enriched format"])<br/>
+ (epa .<br/>
+      [nil nil "the EasyPG Assistant"])<br/>
+ (epg .<br/>
+      [(1 0 0)<br/>
+       nil "the EasyPG Library"])<br/>
+ (erc .<br/>
+      [(5 3)<br/>
+       nil "An Emacs Internet Relay Chat client"])<br/>
+ (ert .<br/>
+      [nil nil "Emacs Lisp Regression Testing"])<br/>
+ (ert-x .<br/>
+	[nil nil "Staging area for experimental extensions to ERT"])<br/>
+ (eshell .<br/>
+	 [(2 4 2)<br/>
+	  nil "the Emacs command shell"])<br/>
+ (etags .<br/>
+	[nil nil "etags facility for Emacs"])<br/>
+ (eudc .<br/>
+       [nil nil "Emacs Unified Directory Client"])<br/>
+ (ewoc .<br/>
+       [nil nil "utility to maintain a view of a list of objects in a buffer"])<br/>
+ (executable .<br/>
+	     [nil nil "base functionality for executable interpreter scripts"])<br/>
+ (expand .<br/>
+	 [nil nil "make abbreviations more usable"])<br/>
+ (ezimage .<br/>
+	  [nil nil "Generalized Image management"])<br/>
+ (f90 .<br/>
+      [nil nil "Fortran-90 mode (free format)"])<br/>
+ (face-remap .<br/>
+	     [nil nil "Functions for managing `face-remapping-alist'"])<br/>
+ (feedmail .<br/>
+	   [(11)<br/>
+	    nil "assist other email packages to massage outgoing messages"])<br/>
+ (ffap .<br/>
+       [nil nil "find file (or url) at point"])<br/>
+ (filecache .<br/>
+	    [nil nil "find files using a pre-loaded cache"])<br/>
+ (filesets .<br/>
+	   [nil nil "handle group of files"])<br/>
+ (find-cmd .<br/>
+	   [(0 6)<br/>
+	    nil "Build a valid find(1) command with sexps"])<br/>
+ (find-dired .<br/>
+	     [nil nil "run a `find' command and dired the output"])<br/>
+ (find-file .<br/>
+	    [nil nil "find a file corresponding to this one given a pattern"])<br/>
+ (find-func .<br/>
+	    [nil nil "find the definition of the Emacs Lisp function near point"])<br/>
+ (find-gc .<br/>
+	  [nil nil "detect functions that call the garbage collector"])<br/>
+ (find-lisp .<br/>
+	    [nil nil "emulation of find in Emacs Lisp"])<br/>
+ (finder .<br/>
+	 [(1 0)<br/>
+	  nil "topic & keyword-based code finder"])<br/>
+ (flow-ctrl .<br/>
+	    [nil nil "help for lusers on cu(1) or ttys with wired-in ^S/^Q flow control"])<br/>
+ (flymake .<br/>
+	  [(0 3)<br/>
+	   nil "a universal on-the-fly syntax checker"])<br/>
+ (flyspell .<br/>
+	   [nil nil "on-the-fly spell checker"])<br/>
+ (foldout .<br/>
+	  [(1 10)<br/>
+	   nil "folding extensions for outline-mode and outline-minor-mode"])<br/>
+ (follow .<br/>
+	 [nil nil "synchronize windows showing the same buffer"])<br/>
+ (footnote .<br/>
+	   [(0 19)<br/>
+	    nil "footnote support for message mode"])<br/>
+ (format-spec .<br/>
+	      [nil nil "functions for formatting arbitrary formatting strings"])<br/>
+ (forms .<br/>
+	[nil nil "Forms mode: edit a file as a form to fill in"])<br/>
+ (fortran .<br/>
+	  [nil nil "Fortran mode for GNU Emacs"])<br/>
+ (fortune .<br/>
+	  [nil nil "use fortune to create signatures"])<br/>
+ (gamegrid .<br/>
+	   [(1 2)<br/>
+	    nil "library for implementing grid-based games on Emacs"])<br/>
+ (gametree .<br/>
+	   [nil nil "manage game analysis trees in Emacs"])<br/>
+ (gdb-mi .<br/>
+	 [nil nil "User Interface for running GDB"])<br/>
+ (glasses .<br/>
+	  [nil nil "make cantReadThis readable"])<br/>
+ (gnus .<br/>
+       [(5 13)<br/>
+	nil "a newsreader for GNU Emacs"])<br/>
+ (gnutls .<br/>
+	 [nil nil "Support SSL/TLS connections through GnuTLS"])<br/>
+ (gomoku .<br/>
+	 [nil nil "Gomoku game between you and Emacs"])<br/>
+ (goto-addr .<br/>
+	    [nil nil "click to browse URL or to send to e-mail address"])<br/>
+ (grep .<br/>
+       [nil nil "run `grep' and display the results"])<br/>
+ (gs .<br/>
+     [nil nil "interface to Ghostscript"])<br/>
+ (gud .<br/>
+      [nil nil "Grand Unified Debugger mode for running GDB and other debuggers"])<br/>
+ (gulp .<br/>
+       [nil nil "ask for updates for Lisp packages"])<br/>
+ (handwrite .<br/>
+	    [nil nil "turns your emacs buffer into a handwritten document"])<br/>
+ (hanoi .<br/>
+	[nil nil "towers of hanoi in Emacs"])<br/>
+ (hashcash .<br/>
+	   [nil nil "Add hashcash payments to email"])<br/>
+ (help-at-pt .<br/>
+	     [nil nil "local help through the keyboard"])<br/>
+ (hex-util .<br/>
+	   [nil nil "Functions to encode/decode hexadecimal string."])<br/>
+ (hexl .<br/>
+       [nil nil "edit a file in a hex dump format using the hexl filter"])<br/>
+ (hi-lock .<br/>
+	  [nil nil "minor mode for interactive automatic highlighting"])<br/>
+ (hideif .<br/>
+	 [nil nil "hides selected code within ifdef"])<br/>
+ (hideshow .<br/>
+	   [nil nil "minor mode cmds to selectively display code/comment blocks"])<br/>
+ (hilit-chg .<br/>
+	    [nil nil "minor mode displaying buffer changes with special face"])<br/>
+ (hippie-exp .<br/>
+	     [(1 6)<br/>
+	      nil "expand text trying various ways to find its expansion"])<br/>
+ (hl-line .<br/>
+	  [nil nil "highlight the current line"])<br/>
+ (hmac-def .<br/>
+	   [nil nil "A macro for defining HMAC functions."])<br/>
+ (hmac-md5 .<br/>
+	   [nil nil "Compute HMAC-MD5."])<br/>
+ (htmlfontify .<br/>
+	      [(0 21)<br/>
+	       nil "htmlize a buffer/source tree with optional hyperlinks"])<br/>
+ (ibuffer .<br/>
+	  [nil nil "operate on buffers like dired"])<br/>
+ (icalendar .<br/>
+	    [(0 19)<br/>
+	     nil "iCalendar implementation"])<br/>
+ (icomplete .<br/>
+	    [nil nil "minibuffer completion incremental feedback"])<br/>
+ (icon .<br/>
+       [nil nil "mode for editing Icon code"])<br/>
+ (idlwave .<br/>
+	  [(6 1 22)<br/>
+	   nil "IDL editing mode for GNU Emacs"])<br/>
+ (ido .<br/>
+      [nil nil "interactively do things with buffers and files"])<br/>
+ (ielm .<br/>
+       [nil nil "interaction mode for Emacs Lisp"])<br/>
+ (iimage .<br/>
+	 [nil nil "Inline image minor mode."])<br/>
+ (image-dired .<br/>
+	      [(0 4 11)<br/>
+	       nil "use dired to browse and manipulate your images"])<br/>
+ (image-file .<br/>
+	     [nil nil "support for visiting image files"])<br/>
+ (imap .<br/>
+       [nil nil "imap library"])<br/>
+ (imenu .<br/>
+	[nil nil "framework for mode-specific buffer indexes"])<br/>
+ (inf-lisp .<br/>
+	   [nil nil "an inferior-lisp mode"])<br/>
+ (info .<br/>
+       [nil nil "info package for Emacs"])<br/>
+ (info-look .<br/>
+	    [nil nil "major-mode-sensitive Info index lookup facility"])<br/>
+ (info-xref .<br/>
+	    [(3)<br/>
+	     nil "check external references in an Info document"])<br/>
+ (informat .<br/>
+	   [nil nil "info support functions package for Emacs"])<br/>
+ (inversion .<br/>
+	    [(1 3)<br/>
+	     nil "When you need something in version XX.XX"])<br/>
+ (isearchb .<br/>
+	   [(1 5)<br/>
+	    nil "a marriage between iswitchb and isearch"])<br/>
+ (ispell .<br/>
+	 [nil nil "interface to International Ispell Versions 3.1 and 3.2"])<br/>
+ (iswitchb .<br/>
+	   [nil nil "switch between buffers using substrings"])<br/>
+ (jka-compr .<br/>
+	    [nil nil "reading/writing/loading compressed files"])<br/>
+ (js .<br/>
+     [(9)<br/>
+      nil "Major mode for editing JavaScript"])<br/>
+ (json .<br/>
+       [(1 3)<br/>
+	nil "JavaScript Object Notation parser / generator"])<br/>
+ (kermit .<br/>
+	 [nil nil "additions to shell mode for use with kermit"])<br/>
+ (keypad .<br/>
+	 [nil nil "simplified keypad bindings"])<br/>
+ (kmacro .<br/>
+	 [nil nil "enhanced keyboard macros"])<br/>
+ (landmark .<br/>
+	   [nil nil "neural-network robot that learns landmarks"])<br/>
+ (ld-script .<br/>
+	    [nil nil "GNU linker script editing mode for Emacs"])<br/>
+ (ldap .<br/>
+       [nil nil "client interface to LDAP for Emacs"])<br/>
+ (life .<br/>
+       [nil nil "John Horton Conway's `Life' game for GNU Emacs"])<br/>
+ (linum .<br/>
+	[(0 9 24)<br/>
+	 nil "display line numbers in the left margin"])<br/>
+ (lisp-mnt .<br/>
+	   [nil nil "utility functions for Emacs Lisp maintainers"])<br/>
+ (loadhist .<br/>
+	   [nil nil "lisp functions for working with feature groups"])<br/>
+ (locate .<br/>
+	 [nil nil "interface to the locate command"])<br/>
+ (log-edit .<br/>
+	   [nil nil "Major mode for editing CVS commit messages"])<br/>
+ (log-view .<br/>
+	   [nil nil "Major mode for browsing RCS/CVS/SCCS log output"])<br/>
+ (longlines .<br/>
+	    [nil nil "automatically wrap long lines"])<br/>
+ (lpr .<br/>
+      [nil nil "print Emacs buffer on line printer"])<br/>
+ (m4-mode .<br/>
+	  [nil nil "m4 code editing commands for Emacs"])<br/>
+ (macroexp .<br/>
+	   [nil nil "Additional macro-expansion support"])<br/>
+ (mail-utils .<br/>
+	     [nil nil "utility functions used both by rmail and rnews"])<br/>
+ (mailabbrev .<br/>
+	     [nil nil "abbrev-expansion of mail aliases"])<br/>
+ (mailalias .<br/>
+	    [nil nil "expand and complete mailing address aliases"])<br/>
+ (mailclient .<br/>
+	     [nil nil "mail sending via system's mail client."])<br/>
+ (mairix .<br/>
+	 [nil nil "Mairix interface for Emacs"])<br/>
+ (make-mode .<br/>
+	    [nil nil "makefile editing commands for Emacs"])<br/>
+ (makeinfo .<br/>
+	   [nil nil "run makeinfo conveniently"])<br/>
+ (makesum .<br/>
+	  [nil nil "generate key binding summary for Emacs"])<br/>
+ (man .<br/>
+      [nil nil "browse UNIX manual pages"])<br/>
+ (mantemp .<br/>
+	  [nil nil "create manual template instantiations from g++ 2.7.2 output"])<br/>
+ (master .<br/>
+	 [(1 0 2)<br/>
+	  nil "make a buffer the master over another buffer"])<br/>
+ (mb-depth .<br/>
+	   [nil nil "Indicate minibuffer-depth in prompt"])<br/>
+ (md4 .<br/>
+      [(1 0)<br/>
+       nil "MD4 Message Digest Algorithm."])<br/>
+ (meese .<br/>
+	[nil nil "protect the impressionable young minds of America"])<br/>
+ (meta-mode .<br/>
+	    [(1 0)<br/>
+	     nil "major mode for editing Metafont or MetaPost sources"])<br/>
+ (metamail .<br/>
+	   [nil nil "Metamail interface for GNU Emacs"])<br/>
+ (mh-e .<br/>
+       [(8 3 1)<br/>
+	nil "GNU Emacs interface to the MH mail system"])<br/>
+ (midnight .<br/>
+	   [nil nil "run something every midnight, e.g., kill old buffers"])<br/>
+ (minibuf-eldef .<br/>
+		[nil nil "Only show defaults in prompts when applicable"])<br/>
+ (misearch .<br/>
+	   [nil nil "isearch extensions for multi-buffer search"])<br/>
+ (mixal-mode .<br/>
+	     [(0 1)<br/>
+	      nil "Major mode for the mix asm language."])<br/>
+ (mode-local .<br/>
+	     [nil nil "Support for mode local facilities"])<br/>
+ (modula2 .<br/>
+	  [nil nil "Modula-2 editing support package"])<br/>
+ (morse .<br/>
+	[nil nil "convert text to morse code and back"])<br/>
+ (mouse-copy .<br/>
+	     [nil nil "one-click text copy and move"])<br/>
+ (mouse-drag .<br/>
+	     [nil nil "use mouse-2 to do a new style of scrolling"])<br/>
+ (mpc .<br/>
+      [nil nil "A client for the Music Player Daemon"])<br/>
+ (mpuz .<br/>
+       [nil nil "multiplication puzzle for GNU Emacs"])<br/>
+ (msb .<br/>
+      [nil nil "customizable buffer-selection with multiple menus"])<br/>
+ (mspools .<br/>
+	  [nil nil "show mail spools waiting to be read"])<br/>
+ (net-utils .<br/>
+	    [nil nil "network functions"])<br/>
+ (netrc .<br/>
+	[nil nil ".netrc parsing functionality"])<br/>
+ (network-stream .<br/>
+		 [nil nil "open network processes, possibly with encryption"])<br/>
+ (newsticker .<br/>
+	     [(1 99)<br/>
+	      nil "A Newsticker for Emacs."])<br/>
+ (notifications .<br/>
+		[nil nil "Client interface to desktop notifications."])<br/>
+ (novice .<br/>
+	 [nil nil "handling of disabled commands (\"novice mode\") for Emacs"])<br/>
+ (nroff-mode .<br/>
+	     [nil nil "GNU Emacs major mode for editing nroff source"])<br/>
+ (ntlm .<br/>
+       [(1 0)<br/>
+	nil "NTLM (NT LanManager) authentication support"])<br/>
+ (nxml .<br/>
+       [nil nil "XML encoding auto-detection"])<br/>
+ (octave-mod .<br/>
+	     [nil nil "editing Octave source files under Emacs"])<br/>
+ (org .<br/>
+      [nil nil "Outline-based notes management and organizer"])<br/>
+ (outline .<br/>
+	  [nil nil "outline mode commands for Emacs"])<br/>
+ (package .<br/>
+	  [(1 0)<br/>
+	   nil "Simple package system for Emacs"])<br/>
+ (page-ext .<br/>
+	   [nil nil "extended page handling commands"])<br/>
+ (paren .<br/>
+	[nil nil "highlight matching paren"])<br/>
+ (parse-time .<br/>
+	     [nil nil "parsing time strings"])<br/>
+ (pascal .<br/>
+	 [nil nil "major mode for editing pascal source in Emacs"])<br/>
+ (password-cache .<br/>
+		 [nil nil "Read passwords, possibly using a password cache."])<br/>
+ (pcase .<br/>
+   [nil nil "ML-style pattern-matching macro for Elisp"])<br/>
+ (pcomplete .<br/>
+	    [nil nil "programmable completion"])<br/>
+ (pcvs .<br/>
+       [nil nil "a front-end to CVS"])<br/>
+ (perl-mode .<br/>
+	    [nil nil "Perl code editing commands for GNU Emacs"])<br/>
+ (picture .<br/>
+	  [nil nil "\"Picture mode\" -- editing using quarter-plane screen model"])<br/>
+ (po .<br/>
+     [nil nil "basic support of PO translation files"])<br/>
+ (pong .<br/>
+       [nil nil "classical implementation of pong"])<br/>
+ (pp .<br/>
+     [nil nil "pretty printer for Emacs Lisp"])<br/>
+ (printing .<br/>
+	   [(6 9 3)<br/>
+	    nil "printing utilities"])<br/>
+ (proced .<br/>
+	 [nil nil "operate on system processes like dired"])<br/>
+ (profiler .<br/>
+	   [nil nil "UI and helper functions for Emacs's native profiler"])<br/>
+ (prolog .<br/>
+	 [nil nil "major mode for editing and running Prolog (and Mercury) code"])<br/>
+ (ps-mode .<br/>
+	  [(1 1 8)<br/>
+	   nil "PostScript mode for GNU Emacs"])<br/>
+ (ps-print .<br/>
+	   [(7 3 5)<br/>
+	    nil "print text from the buffer as PostScript"])<br/>
+ (pulse .<br/>
+	[(1 0)<br/>
+	 nil "Pulsing Overlays"])<br/>
+ (python .<br/>
+	 [(0 24 2)<br/>
+	  nil "Python's flying circus support for Emacs"])<br/>
+ (quickurl .<br/>
+	   [nil nil "insert a URL based on text at point in buffer"])<br/>
+ (rcirc .<br/>
+	[nil nil "default, simple IRC client."])<br/>
+ (rcompile .<br/>
+	   [nil nil "run a compilation on a remote machine"])<br/>
+ (re-builder .<br/>
+	     [nil nil "building Regexps with visual feedback"])<br/>
+ (recentf .<br/>
+	  [nil nil "setup a menu of recently opened files"])<br/>
+ (refbib .<br/>
+	 [nil nil "convert refer-style references to ones usable by Latex bib"])<br/>
+ (refer .<br/>
+	[nil nil "look up references in bibliography files"])<br/>
+ (refill .<br/>
+	 [nil nil "`auto-fill' by refilling paragraphs on changes"])<br/>
+ (reftex .<br/>
+	 [nil nil "minor mode for doing \\label, \\ref, \\cite, \\index in LaTeX"])<br/>
+ (reftex-auc .<br/>
+	     [nil nil "RefTeX's interface to AUCTeX"])<br/>
+ (reftex-cite .<br/>
+	      [nil nil "creating citations with RefTeX"])<br/>
+ (reftex-dcr .<br/>
+	     [nil nil "viewing cross references and citations with RefTeX"])<br/>
+ (reftex-global .<br/>
+		[nil nil "operations on entire documents with RefTeX"])<br/>
+ (reftex-index .<br/>
+	       [nil nil "index support with RefTeX"])<br/>
+ (reftex-parse .<br/>
+	       [nil nil "parser functions for RefTeX"])<br/>
+ (reftex-ref .<br/>
+	     [nil nil "code to create labels and references with RefTeX"])<br/>
+ (reftex-sel .<br/>
+	     [nil nil "the selection modes for RefTeX"])<br/>
+ (reftex-toc .<br/>
+	     [nil nil "RefTeX's table of contents mode"])<br/>
+ (reftex-vars .<br/>
+	      [nil nil "configuration variables for RefTeX"])<br/>
+ (regexp-opt .<br/>
+	     [nil nil "generate efficient regexps to match strings"])<br/>
+ (regi .<br/>
+       [(1 8)<br/>
+	nil "REGular expression Interpreting engine"])<br/>
+ (remember .<br/>
+	   [(2 0)<br/>
+	    nil "a mode for quickly jotting down things to remember"])<br/>
+ (repeat .<br/>
+	 [(0 51)<br/>
+	  nil "convenient way to repeat the previous command"])<br/>
+ (reporter .<br/>
+	   [nil nil "customizable bug reporting of lisp programs"])<br/>
+ (reposition .<br/>
+	     [nil nil "center a Lisp function or comment on the screen"])<br/>
+ (reveal .<br/>
+	 [nil nil "Automatically reveal hidden text at point"])<br/>
+ (rfc2368 .<br/>
+	  [nil nil "support for rfc2368"])<br/>
+ (rfc822 .<br/>
+	 [nil nil "hairy rfc822 parser for mail and news and suchlike"])<br/>
+ (ring .<br/>
+       [nil nil "handle rings of items"])<br/>
+ (rlogin .<br/>
+	 [nil nil "remote login interface"])<br/>
+ (rmail .<br/>
+	[nil nil "main code of \"RMAIL\" mail reader for Emacs"])<br/>
+ (rot13 .<br/>
+	[nil nil "display a buffer in ROT13"])<br/>
+ (rst .<br/>
+      [nil nil "Mode for viewing and editing reStructuredText-documents."])<br/>
+ (ruby-mode .<br/>
+	    [(1 2)<br/>
+	     nil "Major mode for editing Ruby files"])<br/>
+ (ruler-mode .<br/>
+	     [(1 6)<br/>
+	      nil "display a ruler in the header line"])<br/>
+ (rx .<br/>
+     [nil nil "sexp notation for regular expressions"])<br/>
+ (sasl .<br/>
+       [nil nil "SASL client framework"])<br/>
+ (savehist .<br/>
+	   [(24)<br/>
+	    nil "Save minibuffer history"])<br/>
+ (saveplace .<br/>
+	    [nil nil "automatically save place in files"])<br/>
+ (sb-image .<br/>
+	   [nil nil "Image management for speedbar"])<br/>
+ (scheme .<br/>
+	 [nil nil "Scheme (and DSSSL) editing mode"])<br/>
+ (scroll-all .<br/>
+	     [nil nil "scroll all buffers together minor mode"])<br/>
+ (scroll-lock .<br/>
+	      [nil nil "Scroll lock scrolling."])<br/>
+ (secrets .<br/>
+	  [nil nil "Client interface to gnome-keyring and kwallet."])<br/>
+ (select .<br/>
+	 [nil nil "lisp portion of standard selection support"])<br/>
+ (semantic .<br/>
+	   [(2 2)<br/>
+	    nil "Semantic buffer evaluator."])<br/>
+ (sendmail .<br/>
+	   [nil nil "mail sending commands for Emacs"])<br/>
+ (server .<br/>
+	 [nil nil "Lisp code for GNU Emacs running as server process"])<br/>
+ (ses .<br/>
+      [nil nil "Simple Emacs Spreadsheet"])<br/>
+ (sgml-mode .<br/>
+	    [nil nil "SGML- and HTML-editing modes"])<br/>
+ (sh-script .<br/>
+	    [(2 0 6)<br/>
+	     nil "shell-script editing commands for Emacs"])<br/>
+ (shadow .<br/>
+	 [nil nil "locate Emacs Lisp file shadowings"])<br/>
+ (shadowfile .<br/>
+	     [nil nil "automatic file copying"])<br/>
+ (shell .<br/>
+	[nil nil "specialized comint.el for running the shell"])<br/>
+ (simula .<br/>
+	 [nil nil "SIMULA 87 code editing commands for Emacs"])<br/>
+ (skeleton .<br/>
+	   [nil nil "Lisp language extension for writing statement skeletons"])<br/>
+ (smerge-mode .<br/>
+	      [nil nil "Minor mode to resolve diff3 conflicts"])<br/>
+ (smie .<br/>
+       [nil nil "Simple Minded Indentation Engine"])<br/>
+ (smtpmail .<br/>
+	   [nil nil "simple SMTP protocol (RFC 821) for sending mail"])<br/>
+ (snake .<br/>
+	[nil nil "implementation of Snake for Emacs"])<br/>
+ (snmp-mode .<br/>
+	    [nil nil "SNMP & SNMPv2 MIB major mode"])<br/>
+ (soap-client .<br/>
+	      [nil nil "Access SOAP web services from Emacs"])<br/>
+ (socks .<br/>
+	[nil nil "A Socks v5 Client for Emacs"])<br/>
+ (solitaire .<br/>
+	    [nil nil "game of solitaire in Emacs Lisp"])<br/>
+ (sort .<br/>
+       [nil nil "commands to sort text in an Emacs buffer"])<br/>
+ (soundex .<br/>
+	  [nil nil "implement Soundex algorithm"])<br/>
+ (speedbar .<br/>
+	   [nil nil "quick access to files and tags in a frame"])<br/>
+ (spook .<br/>
+	[nil nil "spook phrase utility for overloading the NSA line eater"])<br/>
+ (sql .<br/>
+      [(3 1)<br/>
+       nil "specialized comint.el for SQL interpreters"])<br/>
+ (srecode .<br/>
+	  [(1 2)<br/>
+	   nil "Semantic buffer evaluator."])<br/>
+ (strokes .<br/>
+	  [nil nil "control Emacs through mouse strokes"])<br/>
+ (studly .<br/>
+	 [nil nil "StudlyCaps (tm)(r)(c)(xxx)"])<br/>
+ (subword .<br/>
+	  [nil nil "Handling capitalized subwords in a nomenclature"])<br/>
+ (supercite .<br/>
+	    [nil nil "minor mode for citing mail and news replies"])<br/>
+ (syntax .<br/>
+	 [nil nil "helper functions to find syntactic context"])<br/>
+ (t-mouse .<br/>
+	  [nil nil "mouse support within the text terminal"])<br/>
+ (table .<br/>
+	[nil nil "create and edit WYSIWYG text based embedded tables"])<br/>
+ (tabulated-list .<br/>
+		 [nil nil "generic major mode for tabulated lists"])<br/>
+ (talk .<br/>
+       [nil nil "allow several users to talk to each other through Emacs"])<br/>
+ (tar-mode .<br/>
+	   [nil nil "simple editing of tar files from GNU Emacs"])<br/>
+ (tcl .<br/>
+      [nil nil "Tcl code editing commands for Emacs"])<br/>
+ (telnet .<br/>
+	 [nil nil "run a telnet session from within an Emacs buffer"])<br/>
+ (tempo .<br/>
+	[nil nil "Flexible template insertion"])<br/>
+ (term .<br/>
+       [nil nil "general command interpreter in a window stuff"])<br/>
+ (terminal .<br/>
+	   [nil nil "terminal emulator for GNU Emacs"])<br/>
+ (testcover .<br/>
+	    [nil nil "Visual code-coverage tool"])<br/>
+ (tetris .<br/>
+	 [(2 1)<br/>
+	  nil "implementation of Tetris for Emacs"])<br/>
+ (tex-mode .<br/>
+	   [nil nil "TeX, LaTeX, and SliTeX mode commands"])<br/>
+ (texinfmt .<br/>
+	   [nil nil "format Texinfo files into Info files"])<br/>
+ (texinfo .<br/>
+	  [nil nil "major mode for editing Texinfo files"])<br/>
+ (texnfo-upd .<br/>
+	     [nil nil "utilities for updating nodes and menus in Texinfo files"])<br/>
+ (thingatpt .<br/>
+	    [nil nil "get the `thing' at point"])<br/>
+ (thumbs .<br/>
+	 [nil nil "Thumbnails previewer for images files"])<br/>
+ (tildify .<br/>
+	  [(4 5)<br/>
+	   nil "adding hard spaces into texts"])<br/>
+ (time .<br/>
+       [nil nil "display time, load and mail indicator in mode line of Emacs"])<br/>
+ (time-date .<br/>
+	    [nil nil "Date and time handling functions"])<br/>
+ (time-stamp .<br/>
+	     [nil nil "Maintain last change time stamps in files edited by Emacs"])<br/>
+ (timeclock .<br/>
+	    [(2 6 1)<br/>
+	     nil "mode for keeping track of how much you work"])<br/>
+ (timezone .<br/>
+	   [nil nil "time zone package for GNU Emacs"])<br/>
+ (tls .<br/>
+      [nil nil "TLS/SSL support via wrapper around GnuTLS"])<br/>
+ (tmm .<br/>
+      [nil nil "text mode access to menu-bar"])<br/>
+ (todo-mode .<br/>
+	    [nil nil "major mode for editing TODO list files"])<br/>
+ (tpu-edt .<br/>
+	  [(4 5)<br/>
+	   nil "Emacs emulating TPU emulating EDT"])<br/>
+ (tq .<br/>
+     [nil nil "utility to maintain a transaction queue"])<br/>
+ (trace .<br/>
+	[nil nil "tracing facility for Emacs Lisp functions"])<br/>
+ (tramp .<br/>
+	[nil nil "Transparent Remote Access, Multiple Protocol"])<br/>
+ (tree-widget .<br/>
+	      [nil nil "Tree widget"])<br/>
+ (two-column .<br/>
+	     [nil nil "minor mode for editing of two-column text"])<br/>
+ (type-break .<br/>
+	     [nil nil "encourage rests from typing at appropriate intervals"])<br/>
+ (uce .<br/>
+      [nil nil "facilitate reply to unsolicited commercial email"])<br/>
+ (underline .<br/>
+	    [nil nil "insert/remove underlining (done by overstriking) in Emacs"])<br/>
+ (undigest .<br/>
+	   [nil nil "digest-cracking support for the RMAIL mail reader"])<br/>
+ (unrmail .<br/>
+	  [nil nil "convert Rmail Babyl files to mailbox files"])<br/>
+ (unsafep .<br/>
+	  [nil nil "Determine whether a Lisp form is safe to evaluate"])<br/>
+ (url .<br/>
+      [nil nil "Uniform Resource Locator retrieval tool"])<br/>
+ (uudecode .<br/>
+	   [nil nil "elisp native uudecode"])<br/>
+ (vc .<br/>
+     [nil nil "drive a version-control system from within Emacs"])<br/>
+ (vcursor .<br/>
+	  [nil nil "manipulate an alternative (\"virtual\") cursor"])<br/>
+ (vera-mode .<br/>
+	    [(2 28)<br/>
+	     nil "major mode for editing Vera files"])<br/>
+ (verilog-mode .<br/>
+	       [nil nil "major mode for editing verilog source in Emacs"])<br/>
+ (vhdl-mode .<br/>
+	    [nil nil "major mode for editing VHDL code"])<br/>
+ (vi .<br/>
+     [nil nil "major mode for emulating \"vi\" editor under GNU Emacs"])<br/>
+ (view .<br/>
+       [nil nil "peruse file or buffer without editing"])<br/>
+ (vip .<br/>
+      [nil nil "a VI Package for GNU Emacs"])<br/>
+ (viper .<br/>
+	[(3 14 1)<br/>
+	 nil "A full-featured Vi emulator for Emacs and XEmacs,"])<br/>
+ (vt-control .<br/>
+	     [nil nil "Common VTxxx control functions"])<br/>
+ (vt100-led .<br/>
+	    [nil nil "functions for LED control on VT-100 terminals & clones"])<br/>
+ (w32-common-fns .<br/>
+		 [nil nil "Lisp routines for Windows and Cygwin-w32"])<br/>
+ (warnings .<br/>
+	   [nil nil "log and display warnings"])<br/>
+ (wdired .<br/>
+	 [(2 0)<br/>
+	  nil "Rename files editing their names in dired buffers"])<br/>
+ (webjump .<br/>
+	  [nil nil "programmable Web hotlist"])<br/>
+ (which-func .<br/>
+	     [nil nil "print current function in mode line"])<br/>
+ (whitespace .<br/>
+	     [(13 2 2)<br/>
+	      nil "minor mode to visualize TAB, (HARD) SPACE, NEWLINE"])<br/>
+ (windmove .<br/>
+	   [nil nil "directional window-selection routines"])<br/>
+ (winner .<br/>
+	 [nil nil "Restore old window configurations"])<br/>
+ (woman .<br/>
+	[(0 551)<br/>
+	 nil "browse UN*X manual pages `wo (without) man'"])<br/>
+ (ws-mode .<br/>
+	  [(0 7)<br/>
+	   nil "WordStar emulation mode for GNU Emacs"])<br/>
+ (xesam .<br/>
+	[nil nil "Xesam interface to search engines."])<br/>
+ (xml .<br/>
+      [nil nil "XML parser"])<br/>
+ (xscheme .<br/>
+	  [nil nil "run MIT Scheme under Emacs"])<br/>
+ (xt-mouse .<br/>
+	   [nil nil "support the mouse when emacs run in an xterm"])<br/>
+ (yow .<br/>
+      [nil nil "quote random zippyisms"])<br/>
+ (zeroconf .<br/>
+	   [nil nil "Service browser using Avahi."])<br/>
+ (zone .<br/>
+       [nil nil "idle display hacks"]))<br/>
+<br/>

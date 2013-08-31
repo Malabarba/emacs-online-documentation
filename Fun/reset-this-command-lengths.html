@@ -1,1 +1,14 @@
-reset-this-command-lengths is a built-in function in `C source code'.<br/><br/>(reset-this-command-lengths)<br/><br/>Make the unread events replace the last command and echo.<br/>Used in `universal-argument-other-key'.<br/><br/>`universal-argument-other-key' rereads the event just typed.<br/>It then gets translated through `function-key-map'.<br/>The translated event has to replace the real events,<br/>both in the value of (this-command-keys) and in echoing.<br/>To achieve this, `universal-argument-other-key' calls<br/>`reset-this-command-lengths', which discards the record of reading<br/>these events the first time.
+<strong>reset-this-command-lengths</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(reset-this-command-lengths)<br/>
+<br/>
+Make the unread events replace the last command and echo.<br/>
+Used in `universal-argument-other-key'.<br/>
+<br/>
+`universal-argument-other-key' rereads the event just typed.<br/>
+It then gets translated through `function-key-map'.<br/>
+The translated event has to replace the real events,<br/>
+both in the value of (this-command-keys) and in echoing.<br/>
+To achieve this, `universal-argument-other-key' calls<br/>
+`reset-this-command-lengths', which discards the record of reading<br/>
+these events the first time.

@@ -1,1 +1,22 @@
-break-hardlink-on-save is a variable defined in `files.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Non-nil means when saving a file that exists under several names<br/>(i.e., has multiple hardlinks), break the hardlink associated with<br/>`buffer-file-name' and write to a new file, so that the other<br/>instances of the file are not affected by the save.<br/><br/>If `buffer-file-name' refers to a symlink, do not break the symlink.<br/><br/>Unlike `file-precious-flag', `break-hardlink-on-save' is not advisory.<br/>For example, if the directory in which a file is being saved is not<br/>itself writable, then error instead of saving in some<br/>hardlink-nonbreaking way.<br/><br/>See also `backup-by-copying' and `backup-by-copying-when-linked'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.1 of Emacs.<br/>
+<strong>break-hardlink-on-save</strong> is a variable defined in `<code>files.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Non-nil means when saving a file that exists under several names<br/>
+(i.e., has multiple hardlinks), break the hardlink associated with<br/>
+`buffer-file-name' and write to a new file, so that the other<br/>
+instances of the file are not affected by the save.<br/>
+<br/>
+If `buffer-file-name' refers to a symlink, do not break the symlink.<br/>
+<br/>
+Unlike `file-precious-flag', `break-hardlink-on-save' is not advisory.<br/>
+For example, if the directory in which a file is being saved is not<br/>
+itself writable, then error instead of saving in some<br/>
+hardlink-nonbreaking way.<br/>
+<br/>
+See also `backup-by-copying' and `backup-by-copying-when-linked'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.1 of Emacs.<br/>

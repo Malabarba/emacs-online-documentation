@@ -1,1 +1,34 @@
-ps-user-defined-prologue is a variable defined in `ps-print.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>User defined PostScript prologue code inserted before all prologue code.<br/><br/>`ps-user-defined-prologue' may be a string or a symbol function which returns a<br/>string.  Note that this string is inserted after `ps-adobe-tag' and PostScript<br/>prologue comments, and before ps-print PostScript prologue code section.  That<br/>is, this string is inserted after error handler initialization and before<br/>ps-print settings.<br/><br/>It's strongly recommended only insert PostScript code and/or comments specific<br/>for your printing system particularities.  For example, some special<br/>initialization that only your printing system needs.<br/><br/>Do not insert code for duplex printing, n-up printing or error handler,<br/>ps-print handles this in a suitable way.<br/><br/>For more information about PostScript, see:<br/>   PostScript Language Reference Manual (2nd edition)<br/>   Adobe Systems Incorporated<br/><br/>As an example for `ps-user-defined-prologue' setting:<br/><br/>   ;; Setting for HP PostScript printer<br/>   (setq ps-user-defined-prologue<br/>	 (concat "<</DeferredMediaSelection true /PageSize [612 792] "<br/>		 "/MediaPosition 2 /MediaType (Plain)>> setpagedevice"))<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 20 of Emacs.<br/>
+<strong>ps-user-defined-prologue</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+User defined PostScript prologue code inserted before all prologue code.<br/>
+<br/>
+`ps-user-defined-prologue' may be a string or a symbol function which returns a<br/>
+string.  Note that this string is inserted after `ps-adobe-tag' and PostScript<br/>
+prologue comments, and before ps-print PostScript prologue code section.  That<br/>
+is, this string is inserted after error handler initialization and before<br/>
+ps-print settings.<br/>
+<br/>
+It's strongly recommended only insert PostScript code and/or comments specific<br/>
+for your printing system particularities.  For example, some special<br/>
+initialization that only your printing system needs.<br/>
+<br/>
+Do not insert code for duplex printing, n-up printing or error handler,<br/>
+ps-print handles this in a suitable way.<br/>
+<br/>
+For more information about PostScript, see:<br/>
+   PostScript Language Reference Manual (2nd edition)<br/>
+   Adobe Systems Incorporated<br/>
+<br/>
+As an example for `ps-user-defined-prologue' setting:<br/>
+<br/>
+   ;; Setting for HP PostScript printer<br/>
+   (setq ps-user-defined-prologue<br/>
+	 (concat "<</DeferredMediaSelection true /PageSize [612 792] "<br/>
+		 "/MediaPosition 2 /MediaType (Plain)>> setpagedevice"))<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 20 of Emacs.<br/>

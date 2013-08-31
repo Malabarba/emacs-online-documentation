@@ -1,1 +1,17 @@
-nxml-glyph-set-functions is a variable defined in `nxml-glyph.el'.<br/>Its value is (nxml-x-set-glyph-set)<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Abnormal hook for determining the set of glyphs in a face.<br/>Each function in this hook is called in turn, unless one of them<br/>returns non-nil.  Each function is called with a single argument<br/>FACE.  If it can determine the set of glyphs representable by<br/>FACE, it must set the variable `nxml-glyph-set' and return<br/>non-nil.  Otherwise, it must return nil.<br/><br/>The constants `nxml-ascii-glyph-set', `nxml-latin1-glyph-set',<br/>`nxml-misc-fixed-1-glyph-set', `nxml-misc-fixed-2-glyph-set',<br/>`nxml-misc-fixed-3-glyph-set' and `nxml-wgl4-glyph-set' are<br/>predefined for use by `nxml-glyph-set-functions'.
+<strong>nxml-glyph-set-functions</strong> is a variable defined in `<code>nxml-glyph.el</code>'.<br/>
+Its value is (nxml-terminal-set-glyph-set)<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Abnormal hook for determining the set of glyphs in a face.<br/>
+Each function in this hook is called in turn, unless one of them<br/>
+returns non-nil.  Each function is called with a single argument<br/>
+FACE.  If it can determine the set of glyphs representable by<br/>
+FACE, it must set the variable `nxml-glyph-set' and return<br/>
+non-nil.  Otherwise, it must return nil.<br/>
+<br/>
+The constants `nxml-ascii-glyph-set', `nxml-latin1-glyph-set',<br/>
+`nxml-misc-fixed-1-glyph-set', `nxml-misc-fixed-2-glyph-set',<br/>
+`nxml-misc-fixed-3-glyph-set' and `nxml-wgl4-glyph-set' are<br/>
+predefined for use by `nxml-glyph-set-functions'.

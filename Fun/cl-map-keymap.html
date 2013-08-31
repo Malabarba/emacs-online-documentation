@@ -1,1 +1,14 @@
-cl-map-keymap is an alias for `map-keymap' in `cl.el'.<br/><br/>(cl-map-keymap FUNCTION KEYMAP)<br/><br/>This function is obsolete since 24.3;<br/>use `map-keymap' instead.<br/><br/>Call FUNCTION once for each event binding in KEYMAP.<br/>FUNCTION is called with two arguments: the event that is bound, and<br/>the definition it is bound to.  The event may be a character range.<br/><br/>If KEYMAP has a parent, the parent's bindings are included as well.<br/>This works recursively: if the parent has itself a parent, then the<br/>grandparent's bindings are also included and so on.
+<strong>cl-map-keymap</strong> is an alias for `map-keymap' in `<code>cl.el</code>'.<br/>
+<br/>
+(cl-map-keymap FUNCTION KEYMAP)<br/>
+<br/>
+This function is obsolete since 24.3;<br/>
+use `map-keymap' instead.<br/>
+<br/>
+Call FUNCTION once for each event binding in KEYMAP.<br/>
+FUNCTION is called with two arguments: the event that is bound, and<br/>
+the definition it is bound to.  The event may be a character range.<br/>
+<br/>
+If KEYMAP has a parent, the parent's bindings are included as well.<br/>
+This works recursively: if the parent has itself a parent, then the<br/>
+grandparent's bindings are also included and so on.

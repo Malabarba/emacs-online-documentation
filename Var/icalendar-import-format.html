@@ -1,1 +1,23 @@
-icalendar-import-format is a variable defined in `icalendar.el'.<br/>Its value is "%s%d%l%o"<br/><br/>Documentation:<br/>Format for importing events from iCalendar into Emacs diary.<br/>It defines how iCalendar events are inserted into diary file.<br/>This may either be a string or a function.<br/><br/>In case of a formatting STRING the following specifiers can be used:<br/>%c Class, see `icalendar-import-format-class'<br/>%d Description, see `icalendar-import-format-description'<br/>%l Location, see `icalendar-import-format-location'<br/>%o Organizer, see `icalendar-import-format-organizer'<br/>%s Summary, see `icalendar-import-format-summary'<br/>%t Status, see `icalendar-import-format-status'<br/>%u URL, see `icalendar-import-format-url'<br/>%U UID, see `icalendar-import-format-uid'<br/><br/>A formatting FUNCTION will be called with a VEVENT as its only<br/>argument.  It must return a string.  See<br/>`icalendar-import-format-sample' for an example.<br/><br/>You can customize this variable.
+<strong>icalendar-import-format</strong> is a variable defined in `<code>icalendar.el</code>'.<br/>
+Its value is "%s%d%l%o"<br/>
+<br/>
+Documentation:<br/>
+Format for importing events from iCalendar into Emacs diary.<br/>
+It defines how iCalendar events are inserted into diary file.<br/>
+This may either be a string or a function.<br/>
+<br/>
+In case of a formatting STRING the following specifiers can be used:<br/>
+%c Class, see `icalendar-import-format-class'<br/>
+%d Description, see `icalendar-import-format-description'<br/>
+%l Location, see `icalendar-import-format-location'<br/>
+%o Organizer, see `icalendar-import-format-organizer'<br/>
+%s Summary, see `icalendar-import-format-summary'<br/>
+%t Status, see `icalendar-import-format-status'<br/>
+%u URL, see `icalendar-import-format-url'<br/>
+%U UID, see `icalendar-import-format-uid'<br/>
+<br/>
+A formatting FUNCTION will be called with a VEVENT as its only<br/>
+argument.  It must return a string.  See<br/>
+`icalendar-import-format-sample' for an example.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,86 @@
-reftex-cite-format-builtin is a variable defined in `reftex-vars.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Builtin versions of the citation format.<br/>The following conventions are valid for all alist entries:<br/>`?' should always point to a straight \cite{%l} macro.<br/>`?t'    should point to a textual citation (citation as a noun).<br/>`?p'    should point to a parenthetical citation.<br/><br/>Value: ((default "Default macro \\cite{%l}" "\\cite[]{%l}")<br/> (natbib "The Natbib package"<br/>	 ((13 . "\\cite[][]{%l}")<br/>	  (116 . "\\citet[][]{%l}")<br/>	  (84 . "\\citet*[][]{%l}")<br/>	  (112 . "\\citep[][]{%l}")<br/>	  (80 . "\\citep*[][]{%l}")<br/>	  (101 . "\\citep[e.g.][]{%l}")<br/>	  (115 . "\\citep[see][]{%l}")<br/>	  (97 . "\\citeauthor{%l}")<br/>	  (65 . "\\citeauthor*{%l}")<br/>	  (121 . "\\citeyear{%l}")<br/>	  (110 . "\\nocite{%l}")))<br/> (amsrefs "The AMSRefs package"<br/>	  ((13 . "\\cite{%l}")<br/>	   (112 . "\\cite{%l}")<br/>	   (80 . "\\cites{%l}")<br/>	   (116 . "\\ocite{%l}")<br/>	   (84 . "\\ocites{%l}")<br/>	   (121 . "\\ycite{%l}")<br/>	   (89 . "\\ycites{%l}")<br/>	   (97 . "\\citeauthor{%l}")<br/>	   (65 . "\\citeauthory{%l}")<br/>	   (102 . "\\fullcite{%l}")<br/>	   (70 . "\\fullocite{%l}")<br/>	   (110 . "\\nocite{%l}")))<br/> (jurabib "The Jurabib package"<br/>	  ((13 . "\\cite{%l}")<br/>	   (99 . "\\cite[][]{%l}")<br/>	   (116 . "\\citet{%l}")<br/>	   (112 . "\\citep{%l}")<br/>	   (101 . "\\citep[e.g.][]{%l}")<br/>	   (115 . "\\citep[see][]{%l}")<br/>	   (117 . "\\fullcite{%l}")<br/>	   (105 . "\\citetitle{%l}")<br/>	   (97 . "\\citeauthor{%l}")<br/>	   (101 . "\\citefield{}{%l}")<br/>	   (121 . "\\citeyear{%l}")<br/>	   (102 . "\\footcite{%l}")<br/>	   (70 . "\\footcite[][]{%l}")<br/>	   (108 . "\\footfullcite{%l}")))<br/> (bibentry "The Bibentry package" "\\bibentry{%l}")<br/> (harvard "The Harvard package"<br/>	  ((13 . "\\cite[]{%l}")<br/>	   (112 . "\\cite[]{%l}")<br/>	   (116 . "\\citeasnoun{%l}")<br/>	   (110 . "\\citeasnoun{%l}")<br/>	   (115 . "\\possessivecite{%l}")<br/>	   (101 . "\\citeaffixed{%l}{?}")<br/>	   (121 . "\\citeyear{%l}")<br/>	   (97 . "\\citename{%l}")))<br/> (chicago "The Chicago package"<br/>	  ((13 . "\\cite[]{%l}")<br/>	   (116 . "\\citeN[]{%l}")<br/>	   (84 . "\\shortciteN{%l}")<br/>	   (112 . "\\cite[]{%l}")<br/>	   (80 . "\\shortcite{%l}")<br/>	   (97 . "\\citeA{%l}")<br/>	   (65 . "\\shortciteA{%l}")<br/>	   (121 . "\\citeyear{%l}")))<br/> (astron "The Astron package"<br/>	 ((13 . "\\cite[]{%l}")<br/>	  (112 . "\\cite[]{%l}")<br/>	  (116 . "%2a (\\cite{%l})")))<br/> (author-year "Do-it-yourself Author-year"<br/>	      ((13 . "\\cite{%l}")<br/>	       (116 . "%2a (%y)\\nocite{%l}")<br/>	       (112 . "(%2a %y\\nocite{%l})")))<br/> (locally "Full info in parenthesis" "(%2a %y, %j %v, %P, %e: %b, %u, %s %<)")<br/> (context "ConTeXt bib module"<br/>	  ((13 . "\\cite[%l]")<br/>	   (115 . "\\cite[][%l]")<br/>	   (110 . "\\nocite[%l]"))))<br/><br/>
+<strong>reftex-cite-format-builtin</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Builtin versions of the citation format.<br/>
+The following conventions are valid for all alist entries:<br/>
+`?' should always point to a straight \cite{%l} macro.<br/>
+`?t'    should point to a textual citation (citation as a noun).<br/>
+`?p'    should point to a parenthetical citation.<br/>
+<br/>
+Value: ((default "Default macro \\cite{%l}" "\\cite[]{%l}")<br/>
+ (natbib "The Natbib package"<br/>
+	 ((13 . "\\cite[][]{%l}")<br/>
+	  (116 . "\\citet[][]{%l}")<br/>
+	  (84 . "\\citet*[][]{%l}")<br/>
+	  (112 . "\\citep[][]{%l}")<br/>
+	  (80 . "\\citep*[][]{%l}")<br/>
+	  (101 . "\\citep[e.g.][]{%l}")<br/>
+	  (115 . "\\citep[see][]{%l}")<br/>
+	  (97 . "\\citeauthor{%l}")<br/>
+	  (65 . "\\citeauthor*{%l}")<br/>
+	  (121 . "\\citeyear{%l}")<br/>
+	  (110 . "\\nocite{%l}")))<br/>
+ (amsrefs "The AMSRefs package"<br/>
+	  ((13 . "\\cite{%l}")<br/>
+	   (112 . "\\cite{%l}")<br/>
+	   (80 . "\\cites{%l}")<br/>
+	   (116 . "\\ocite{%l}")<br/>
+	   (84 . "\\ocites{%l}")<br/>
+	   (121 . "\\ycite{%l}")<br/>
+	   (89 . "\\ycites{%l}")<br/>
+	   (97 . "\\citeauthor{%l}")<br/>
+	   (65 . "\\citeauthory{%l}")<br/>
+	   (102 . "\\fullcite{%l}")<br/>
+	   (70 . "\\fullocite{%l}")<br/>
+	   (110 . "\\nocite{%l}")))<br/>
+ (jurabib "The Jurabib package"<br/>
+	  ((13 . "\\cite{%l}")<br/>
+	   (99 . "\\cite[][]{%l}")<br/>
+	   (116 . "\\citet{%l}")<br/>
+	   (112 . "\\citep{%l}")<br/>
+	   (101 . "\\citep[e.g.][]{%l}")<br/>
+	   (115 . "\\citep[see][]{%l}")<br/>
+	   (117 . "\\fullcite{%l}")<br/>
+	   (105 . "\\citetitle{%l}")<br/>
+	   (97 . "\\citeauthor{%l}")<br/>
+	   (101 . "\\citefield{}{%l}")<br/>
+	   (121 . "\\citeyear{%l}")<br/>
+	   (102 . "\\footcite{%l}")<br/>
+	   (70 . "\\footcite[][]{%l}")<br/>
+	   (108 . "\\footfullcite{%l}")))<br/>
+ (bibentry "The Bibentry package" "\\bibentry{%l}")<br/>
+ (harvard "The Harvard package"<br/>
+	  ((13 . "\\cite[]{%l}")<br/>
+	   (112 . "\\cite[]{%l}")<br/>
+	   (116 . "\\citeasnoun{%l}")<br/>
+	   (110 . "\\citeasnoun{%l}")<br/>
+	   (115 . "\\possessivecite{%l}")<br/>
+	   (101 . "\\citeaffixed{%l}{?}")<br/>
+	   (121 . "\\citeyear{%l}")<br/>
+	   (97 . "\\citename{%l}")))<br/>
+ (chicago "The Chicago package"<br/>
+	  ((13 . "\\cite[]{%l}")<br/>
+	   (116 . "\\citeN[]{%l}")<br/>
+	   (84 . "\\shortciteN{%l}")<br/>
+	   (112 . "\\cite[]{%l}")<br/>
+	   (80 . "\\shortcite{%l}")<br/>
+	   (97 . "\\citeA{%l}")<br/>
+	   (65 . "\\shortciteA{%l}")<br/>
+	   (121 . "\\citeyear{%l}")))<br/>
+ (astron "The Astron package"<br/>
+	 ((13 . "\\cite[]{%l}")<br/>
+	  (112 . "\\cite[]{%l}")<br/>
+	  (116 . "%2a (\\cite{%l})")))<br/>
+ (author-year "Do-it-yourself Author-year"<br/>
+	      ((13 . "\\cite{%l}")<br/>
+	       (116 . "%2a (%y)\\nocite{%l}")<br/>
+	       (112 . "(%2a %y\\nocite{%l})")))<br/>
+ (locally "Full info in parenthesis" "(%2a %y, %j %v, %P, %e: %b, %u, %s %<)")<br/>
+ (context "ConTeXt bib module"<br/>
+	  ((13 . "\\cite[%l]")<br/>
+	   (115 . "\\cite[][%l]")<br/>
+	   (110 . "\\nocite[%l]"))))<br/>
+<br/>

@@ -1,1 +1,23 @@
-save-some-buffers is an interactive compiled Lisp function in `files.el'.<br/><br/>It is bound to C-x s.<br/><br/>(save-some-buffers &optional ARG PRED)<br/><br/>Save some modified file-visiting buffers.  Asks user about each one.<br/>You can answer `y' to save, `n' not to save, `C-r' to look at the<br/>buffer in question with `view-buffer' before deciding or `d' to<br/>view the differences using `diff-buffer-with-file'.<br/><br/>This command first saves any buffers where `buffer-save-without-query' is<br/>non-nil, without asking.<br/><br/>Optional argument (the prefix) non-nil means save all with no questions.<br/>Optional second argument PRED determines which buffers are considered:<br/>If PRED is nil, all the file-visiting buffers are considered.<br/>If PRED is t, then certain non-file buffers will also be considered.<br/>If PRED is a zero-argument function, it indicates for each buffer whether<br/>to consider it or not when called with that buffer current.<br/><br/>See `save-some-buffers-action-alist' if you want to<br/>change the additional actions you can take on files.
+<strong>save-some-buffers</strong> is an interactive compiled Lisp function in `<code>files.el</code>'.<br/>
+<br/>
+It is bound to C-x s.<br/>
+<br/>
+(save-some-buffers &optional ARG PRED)<br/>
+<br/>
+Save some modified file-visiting buffers.  Asks user about each one.<br/>
+You can answer `y' to save, `n' not to save, `C-r' to look at the<br/>
+buffer in question with `view-buffer' before deciding or `d' to<br/>
+view the differences using `diff-buffer-with-file'.<br/>
+<br/>
+This command first saves any buffers where `buffer-save-without-query' is<br/>
+non-nil, without asking.<br/>
+<br/>
+Optional argument (the prefix) non-nil means save all with no questions.<br/>
+Optional second argument PRED determines which buffers are considered:<br/>
+If PRED is nil, all the file-visiting buffers are considered.<br/>
+If PRED is t, then certain non-file buffers will also be considered.<br/>
+If PRED is a zero-argument function, it indicates for each buffer whether<br/>
+to consider it or not when called with that buffer current.<br/>
+<br/>
+See `save-some-buffers-action-alist' if you want to<br/>
+change the additional actions you can take on files.

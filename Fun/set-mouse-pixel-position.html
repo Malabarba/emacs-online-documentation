@@ -1,1 +1,12 @@
-set-mouse-pixel-position is a built-in function in `C source code'.<br/><br/>(set-mouse-pixel-position FRAME X Y)<br/><br/>Move the mouse pointer to pixel position (X,Y) in FRAME.<br/>The position is given in pixels, where (0, 0) is the upper-left corner<br/>of the frame, X is the horizontal offset, and Y is the vertical offset.<br/><br/>Note, this is a no-op for an X frame that is not visible.<br/>If you have just created a frame, you must wait for it to become visible<br/>before calling this function on it, like this.<br/>  (while (not (frame-visible-p frame)) (sleep-for .5))
+<strong>set-mouse-pixel-position</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(set-mouse-pixel-position FRAME X Y)<br/>
+<br/>
+Move the mouse pointer to pixel position (X,Y) in FRAME.<br/>
+The position is given in pixels, where (0, 0) is the upper-left corner<br/>
+of the frame, X is the horizontal offset, and Y is the vertical offset.<br/>
+<br/>
+Note, this is a no-op for an X frame that is not visible.<br/>
+If you have just created a frame, you must wait for it to become visible<br/>
+before calling this function on it, like this.<br/>
+  (while (not (frame-visible-p frame)) (sleep-for .5))

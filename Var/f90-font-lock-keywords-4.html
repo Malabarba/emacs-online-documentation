@@ -1,1 +1,92 @@
-f90-font-lock-keywords-4 is a variable defined in `f90.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Highlights all F90 and HPF keywords and constants.<br/><br/>Value:<br/>(("\\<\\(module[ 	]*procedure\\)\\>\\([^()\n]*::\\)?[ 	]*\\([^&!\n]*\\)"<br/>  (1 font-lock-keyword-face)<br/>  (3 font-lock-function-name-face nil t))<br/> (f90-typedef-matcher<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-function-name-face))<br/> ("\\<\\(\\(?:end[ 	]*\\)?interface[ 	]*\\(?:assignment\\|operator\\|read\\|write\\)\\)[ 	]*("<br/>  (1 font-lock-keyword-face t))<br/> ("\\<\\(\\(?:end[ 	]*\\)?\\(program\\|\\(?:sub\\)?module\\|function\\|associate\\|subroutine\\|interface\\)\\|use\\|call\\)\\>[ 	]*\\(\\sw+\\)?"<br/>  (1 font-lock-keyword-face)<br/>  (3 font-lock-function-name-face nil t))<br/> ("\\<\\(submodule\\)\\>[ 	]*([^)\n]+)[ 	]*\\(\\sw+\\)?"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-function-name-face nil t))<br/> ("\\<\\(use\\)[ 	]*,[ 	]*\\(\\(?:non_\\)?intrinsic\\)[ 	]*::[ 	]*\\(\\sw+\\)"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-keyword-face)<br/>  (3 font-lock-function-name-face))<br/> "\\<\\(\\(end[ 	]*\\)?block[ 	]*data\\|contains\\)\\>"<br/> ("\\<abstract[ 	]*interface\\>"<br/>  (0 font-lock-keyword-face t))<br/> ("^[ 	0-9]*\\(?:pure\\|elemental\\)?[ 	]*\\(real\\|integer\\|c\\(haracter\\|omplex\\)\\|enumerator\\|generic\\|procedure\\|logical\\|double[ 	]*precision\\)\\(.*::\\|[ 	]*(.*)\\)?\\([^&!\n]*\\)"<br/>  (1 font-lock-type-face t)<br/>  (4 font-lock-variable-name-face t))<br/> (f90-typedec-matcher<br/>  (1 font-lock-type-face)<br/>  (2 font-lock-variable-name-face))<br/> ("\\<\\(\\(real\\|integer\\|c\\(haracter\\|omplex\\)\\|logical\\|double[ 	]*precision\\|\\(?:type\\|class\\)[ 	]*([ 	]*\\sw+[ 	]*)\\)[ 	]*\\)\\(function\\)\\>[ 	]*\\(\\sw+\\)[ 	]*\\(([^&!\n]*)\\)"<br/>  (1 font-lock-type-face t)<br/>  (4 font-lock-keyword-face t)<br/>  (5 font-lock-function-name-face t)<br/>  (6 'default t))<br/> ("\\<\\(enum\\)[ 	]*,"<br/>  (1 font-lock-keyword-face))<br/> ("\\<\\(end[ 	]*\\(do\\|if\\|enum\\|select\\|forall\\|where\\|block\\|critical\\)\\)\\>\\([ 	]+\\(\\sw+\\)\\)?"<br/>  (1 font-lock-keyword-face)<br/>  (3 font-lock-constant-face nil t))<br/> ("^[ 	0-9]*\\(\\(\\sw+\\)[ 	]*:[ 	]*\\)?\\(\\(if\\|do\\([ 	]*while\\)?\\|select[ 	]*\\(?:case\\|type\\)\\|where\\|forall\\|block\\|critical\\)\\)\\>"<br/>  (2 font-lock-constant-face nil t)<br/>  (3 font-lock-keyword-face))<br/> ("\\<\\(implicit\\)[ 	]*\\(real\\|integer\\|c\\(haracter\\|omplex\\)\\|enumerator\\|procedure\\|logical\\|double[ 	]*precision\\|type[ 	]*(\\sw+)\\|none\\)[ 	]*"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-type-face))<br/> ("\\<\\(namelist\\|common\\)[ 	]*/\\(\\sw+\\)?/"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-constant-face nil t))<br/> "\\<else\\([ 	]*if\\|where\\)?\\>"<br/> ("\\(&\\)[ 	]*\\(!\\|$\\)"<br/>  (1 font-lock-keyword-face))<br/> "\\<\\(then\\|continue\\|format\\|include\\|stop\\|return\\)\\>"<br/> ("\\<\\(exit\\|cycle\\)[ 	]*\\(\\sw+\\)?\\>"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-constant-face nil t))<br/> ("\\<\\(case\\)[ 	]*\\(default\\|(\\)" . 1)<br/> ("\\<\\(class\\)[ 	]*default" . 1)<br/> ("\\<\\(\\(type\\|class\\)[ 	]*is\\)[ 	]*("<br/>  (1 font-lock-keyword-face t))<br/> ("\\<\\(do\\|go[ 	]*to\\)\\>[ 	]*\\([0-9]+\\)"<br/>  (1 font-lock-keyword-face)<br/>  (2 font-lock-constant-face))<br/> ("^[ 	]*\\([0-9]+\\)[ 	]*[a-z]+"<br/>  (1 font-lock-constant-face t))<br/> ("^#[ 	]*\\w+"<br/>  (0 font-lock-preprocessor-face t)<br/>  ("\\<defined\\>" nil nil<br/>   (0 font-lock-preprocessor-face)))<br/> ("^#"<br/>  ("\\(&&\\|||\\)" nil nil<br/>   (0 font-lock-constant-face t)))<br/> ("^#[ 	]*define[ 	]+\\(\\w+\\)("<br/>  (1 font-lock-function-name-face))<br/> ("^#[ 	]*define[ 	]+\\(\\w+\\)"<br/>  (1 font-lock-variable-name-face))<br/> ("^#[ 	]*include[ 	]+\\(<.+>\\)"<br/>  (1 font-lock-string-face))<br/> "\\<\\(a\\(?:bstract\\|llocat\\(?:\\(?:abl\\)?e\\)\\|ssign\\(?:ment\\)?\\)\\|backspace\\|c\\(?:lose\\|o\\(?:dimension\\|n\\(?:current\\|tiguous\\)\\)\\)\\|d\\(?:e\\(?:allocate\\|ferred\\)\\|imension\\)\\|e\\(?:lemental\\|n\\(?:dfile\\|try\\)\\|quivalence\\|xternal\\)\\|final\\|i\\(?:mport\\|n\\(?:quire\\|t\\(?:ent\\|rinsic\\)\\)\\)\\|n\\(?:o\\(?:n_\\(?:intrinsic\\|overridable\\)\\|pass\\)\\|ullify\\)\\|o\\(?:nly\\|p\\(?:e\\(?:n\\|rator\\)\\|tional\\)\\)\\|p\\(?:a\\(?:rameter\\|ss\\|use\\)\\|ointer\\|r\\(?:i\\(?:nt\\|vate\\)\\|otected\\)\\|u\\(?:blic\\|re\\)\\)\\|re\\(?:ad\\|cursive\\|sult\\|wind\\)\\|s\\(?:ave\\|e\\(?:lect\\|quence\\)\\|ync \\(?:all\\|memory\\)\\)\\|target\\|\\(?:v\\(?:alu\\|olatil\\)\\|writ\\)e\\)\\>" "\\.\\(and\\|eqv?\\|false\\|g[et]\\|l[et]\\|n\\(?:e\\(?:qv\\)?\\|ot\\)\\|or\\|true\\)\\."<br/> ("\\<\\(a\\(?:bs\\|c\\(?:har\\|os\\)\\|djust[lr]\\|i\\(?:mag\\|nt\\)\\|ll\\(?:ocated\\)?\\|n\\(?:int\\|y\\)\\|s\\(?:in\\|sociated\\)\\|tan2?\\)\\|b\\(?:essel_\\(?:j[01n]\\|y[01n]\\)\\|g[et]\\|i\\(?:nd\\|t_size\\)\\|l[et]\\|test\\)\\|c\\(?:_\\(?:associated\\|f\\(?:_p\\(?:\\(?:rocp\\)?ointer\\)\\|unloc\\)\\|loc\\|sizeof\\)\\|eiling\\|har\\|mplx\\|o\\(?:m\\(?:mand_argument_count\\|piler_\\(?:options\\|version\\)\\)\\|njg\\|sh?\\|unt\\)\\|pu_time\\|shift\\)\\|d\\(?:ate_and_time\\|ble\\|i\\(?:gits\\|m\\)\\|ot_product\\|prod\\|shift[lr]\\)\\|e\\(?:oshift\\|psilon\\|rf\\(?:c\\(?:_scaled\\)?\\)?\\|x\\(?:p\\(?:onent\\)?\\|tends\\(?:_type_of\\)?\\)\\)\\|f\\(?:indloc\\|l\\(?:oor\\|ush\\)\\|raction\\)\\|g\\(?:amma\\|et_\\(?:command\\(?:_argument\\)?\\|environment_variable\\)\\)\\|h\\(?:uge\\|ypot\\)\\|i\\(?:a\\(?:char\\|ll\\|n[dy]\\)\\|b\\(?:clr\\|its\\|set\\)\\|char\\|e\\(?:ee_\\(?:get_underflow_mode\\|s\\(?:et_underflow_mode\\|upport_underflow_control\\)\\)\\|or\\)\\|mage_index\\|n\\(?:dex\\|t\\)\\|or\\|parity\\|s\\(?:_contiguous\\|hftc?\\)\\)\\|kind\\|l\\(?:bound\\|cobound\\|e\\(?:adz\\|n\\(?:_trim\\)?\\)\\|g[et]\\|l[et]\\|o\\(?:ck\\|g\\(?:10\\|_gamma\\|ical\\)?\\)\\)\\|m\\(?:a\\(?:sk[lr]\\|tmul\\|x\\(?:exponent\\|loc\\|val\\)?\\)\\|erge\\(?:_bits\\)?\\|in\\(?:exponent\\|loc\\|val\\)?\\|o\\(?:d\\(?:ulo\\)?\\|ve_alloc\\)\\|vbits\\)\\|n\\(?:e\\(?:arest\\|w_line\\)\\|int\\|o\\(?:rm2\\|t\\)\\|u\\(?:ll\\|m_images\\)\\)\\|p\\(?:a\\(?:ck\\|rity\\)\\|op\\(?:cnt\\|par\\)\\|r\\(?:e\\(?:cision\\|sent\\)\\|oduct\\)\\)\\|r\\(?:a\\(?:dix\\|n\\(?:dom_\\(?:number\\|seed\\)\\|ge\\)\\)\\|e\\(?:peat\\|shape\\)\\|rspacing\\)\\|s\\(?:ame_type_as\\|ca\\(?:le\\|n\\)\\|e\\(?:lected_\\(?:\\(?:char\\|int\\|real\\)_kind\\)\\|t_exponent\\)\\|h\\(?:ape\\|ift[alr]\\)\\|i\\(?:gn\\|nh?\\|ze\\)\\|p\\(?:acing\\|read\\)\\|qrt\\|torage_size\\|um\\|y\\(?:nc images\\|stem_clock\\)\\)\\|t\\(?:anh?\\|his_image\\|iny\\|r\\(?:a\\(?:ilz\\|ns\\(?:fer\\|pose\\)\\)\\|im\\)\\)\\|u\\(?:bound\\|cobound\\|n\\(?:\\(?:lo\\|pa\\)ck\\)\\)\\|verify\\|wait\\)[ 	]*("<br/>  (1 font-lock-keyword-face keep))<br/> "\\<real\\>"<br/> ("\\<\\(asynchronous\\)[ 	]*[^=]" . 1)<br/> ("\\<\\(atomic_\\(?:\\(?:int\\|logical\\)_kind\\)\\|c\\(?:_\\(?:alert\\|b\\(?:ackspace\\|ool\\)\\|c\\(?:arriage_return\\|har\\)\\|double\\(?:_complex\\)?\\|f\\(?:loat\\(?:_complex\\)?\\|orm_feed\\|unptr\\)\\|horizontal_tab\\|int\\(?:\\(?:16\\|32\\|64\\|8\\|_\\(?:fast\\(?:16\\|32\\|64\\|8\\)\\|least\\(?:16\\|32\\|64\\|8\\)\\)\\|max\\|ptr\\)_t\\)?\\|long\\(?:_\\(?:double\\(?:_complex\\)?\\|long\\)\\)?\\|n\\(?:ew_line\\|ull_\\(?:\\(?:cha\\|\\(?:fun\\)?pt\\)r\\)\\)\\|ptr\\|s\\(?:hort\\|i\\(?:gned_char\\|ze_t\\)\\)\\|vertical_tab\\)\\|haracter_\\(?:kinds\\|storage_size\\)\\)\\|error_unit\\|file_storage_size\\|i\\(?:eee_\\(?:arithmetic\\|\\(?:exception\\|feature\\)s\\)\\|n\\(?:put_unit\\|t\\(?:16\\|32\\|64\\|8\\|eger_kinds\\)\\)\\|ostat_\\(?:e\\(?:nd\\|or\\)\\|inquire_internal_unit\\)\\|so_\\(?:c_binding\\|fortran_env\\)\\)\\|lo\\(?:ck_type\\|gical_kinds\\)\\|numeric_storage_size\\|output_unit\\|real\\(?:128\\|32\\|64\\|_kinds\\)\\)\\>" . font-lock-constant-face)<br/> "\\<\\(a\\(?:l\\(?:ign\\|l_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|ny_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|block\\|c\\(?:o\\(?:py_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\|unt_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|yclic\\)\\|d\\(?:istribute\\|ynamic\\)\\|extrinsic\\|grade_\\(?:down\\|up\\)\\|hpf_\\(?:alignment\\|distribution\\|template\\)\\|i\\(?:a\\(?:ll\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\|ny\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\)\\|len\\|n\\(?:\\(?:dependen\\|heri\\)t\\)\\|parity\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\)\\|leadz\\|m\\(?:axval_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\|inval_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|n\\(?:ew\\|umber_of_processors\\)\\|onto\\|p\\(?:arity\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\|op\\(?:cnt\\|par\\)\\|ro\\(?:cessors\\(?:_shape\\)?\\|duct_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|ure\\)\\|re\\(?:align\\|distribute\\)\\|sum_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\|template\\|with\\)\\>")<br/><br/>
+<strong>f90-font-lock-keywords-4</strong> is a variable defined in `<code>f90.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Highlights all F90 and HPF keywords and constants.<br/>
+<br/>
+Value:<br/>
+(("\\<\\(module[ 	]*procedure\\)\\>\\([^()\n]*::\\)?[ 	]*\\([^&!\n]*\\)"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (3 font-lock-function-name-face nil t))<br/>
+ (f90-typedef-matcher<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-function-name-face))<br/>
+ ("\\<\\(\\(?:end[ 	]*\\)?interface[ 	]*\\(?:assignment\\|operator\\|read\\|write\\)\\)[ 	]*("<br/>
+  (1 font-lock-keyword-face t))<br/>
+ ("\\<\\(\\(?:end[ 	]*\\)?\\(program\\|\\(?:sub\\)?module\\|function\\|associate\\|subroutine\\|interface\\)\\|use\\|call\\)\\>[ 	]*\\(\\sw+\\)?"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (3 font-lock-function-name-face nil t))<br/>
+ ("\\<\\(submodule\\)\\>[ 	]*([^)\n]+)[ 	]*\\(\\sw+\\)?"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-function-name-face nil t))<br/>
+ ("\\<\\(use\\)[ 	]*,[ 	]*\\(\\(?:non_\\)?intrinsic\\)[ 	]*::[ 	]*\\(\\sw+\\)"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-keyword-face)<br/>
+  (3 font-lock-function-name-face))<br/>
+ "\\<\\(\\(end[ 	]*\\)?block[ 	]*data\\|contains\\)\\>"<br/>
+ ("\\<abstract[ 	]*interface\\>"<br/>
+  (0 font-lock-keyword-face t))<br/>
+ ("^[ 	0-9]*\\(?:pure\\|elemental\\)?[ 	]*\\(real\\|integer\\|c\\(haracter\\|omplex\\)\\|enumerator\\|generic\\|procedure\\|logical\\|double[ 	]*precision\\)\\(.*::\\|[ 	]*(.*)\\)?\\([^&!\n]*\\)"<br/>
+  (1 font-lock-type-face t)<br/>
+  (4 font-lock-variable-name-face t))<br/>
+ (f90-typedec-matcher<br/>
+  (1 font-lock-type-face)<br/>
+  (2 font-lock-variable-name-face))<br/>
+ ("\\<\\(\\(real\\|integer\\|c\\(haracter\\|omplex\\)\\|logical\\|double[ 	]*precision\\|\\(?:type\\|class\\)[ 	]*([ 	]*\\sw+[ 	]*)\\)[ 	]*\\)\\(function\\)\\>[ 	]*\\(\\sw+\\)[ 	]*\\(([^&!\n]*)\\)"<br/>
+  (1 font-lock-type-face t)<br/>
+  (4 font-lock-keyword-face t)<br/>
+  (5 font-lock-function-name-face t)<br/>
+  (6 'default t))<br/>
+ ("\\<\\(enum\\)[ 	]*,"<br/>
+  (1 font-lock-keyword-face))<br/>
+ ("\\<\\(end[ 	]*\\(do\\|if\\|enum\\|select\\|forall\\|where\\|block\\|critical\\)\\)\\>\\([ 	]+\\(\\sw+\\)\\)?"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (3 font-lock-constant-face nil t))<br/>
+ ("^[ 	0-9]*\\(\\(\\sw+\\)[ 	]*:[ 	]*\\)?\\(\\(if\\|do\\([ 	]*while\\)?\\|select[ 	]*\\(?:case\\|type\\)\\|where\\|forall\\|block\\|critical\\)\\)\\>"<br/>
+  (2 font-lock-constant-face nil t)<br/>
+  (3 font-lock-keyword-face))<br/>
+ ("\\<\\(implicit\\)[ 	]*\\(real\\|integer\\|c\\(haracter\\|omplex\\)\\|enumerator\\|procedure\\|logical\\|double[ 	]*precision\\|type[ 	]*(\\sw+)\\|none\\)[ 	]*"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-type-face))<br/>
+ ("\\<\\(namelist\\|common\\)[ 	]*/\\(\\sw+\\)?/"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-constant-face nil t))<br/>
+ "\\<else\\([ 	]*if\\|where\\)?\\>"<br/>
+ ("\\(&\\)[ 	]*\\(!\\|$\\)"<br/>
+  (1 font-lock-keyword-face))<br/>
+ "\\<\\(then\\|continue\\|format\\|include\\|stop\\|return\\)\\>"<br/>
+ ("\\<\\(exit\\|cycle\\)[ 	]*\\(\\sw+\\)?\\>"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-constant-face nil t))<br/>
+ ("\\<\\(case\\)[ 	]*\\(default\\|(\\)" . 1)<br/>
+ ("\\<\\(class\\)[ 	]*default" . 1)<br/>
+ ("\\<\\(\\(type\\|class\\)[ 	]*is\\)[ 	]*("<br/>
+  (1 font-lock-keyword-face t))<br/>
+ ("\\<\\(do\\|go[ 	]*to\\)\\>[ 	]*\\([0-9]+\\)"<br/>
+  (1 font-lock-keyword-face)<br/>
+  (2 font-lock-constant-face))<br/>
+ ("^[ 	]*\\([0-9]+\\)[ 	]*[a-z]+"<br/>
+  (1 font-lock-constant-face t))<br/>
+ ("^#[ 	]*\\w+"<br/>
+  (0 font-lock-preprocessor-face t)<br/>
+  ("\\<defined\\>" nil nil<br/>
+   (0 font-lock-preprocessor-face)))<br/>
+ ("^#"<br/>
+  ("\\(&&\\|||\\)" nil nil<br/>
+   (0 font-lock-constant-face t)))<br/>
+ ("^#[ 	]*define[ 	]+\\(\\w+\\)("<br/>
+  (1 font-lock-function-name-face))<br/>
+ ("^#[ 	]*define[ 	]+\\(\\w+\\)"<br/>
+  (1 font-lock-variable-name-face))<br/>
+ ("^#[ 	]*include[ 	]+\\(<.+>\\)"<br/>
+  (1 font-lock-string-face))<br/>
+ "\\<\\(a\\(?:bstract\\|llocat\\(?:\\(?:abl\\)?e\\)\\|ssign\\(?:ment\\)?\\)\\|backspace\\|c\\(?:lose\\|o\\(?:dimension\\|n\\(?:current\\|tiguous\\)\\)\\)\\|d\\(?:e\\(?:allocate\\|ferred\\)\\|imension\\)\\|e\\(?:lemental\\|n\\(?:dfile\\|try\\)\\|quivalence\\|xternal\\)\\|final\\|i\\(?:mport\\|n\\(?:quire\\|t\\(?:ent\\|rinsic\\)\\)\\)\\|n\\(?:o\\(?:n_\\(?:intrinsic\\|overridable\\)\\|pass\\)\\|ullify\\)\\|o\\(?:nly\\|p\\(?:e\\(?:n\\|rator\\)\\|tional\\)\\)\\|p\\(?:a\\(?:rameter\\|ss\\|use\\)\\|ointer\\|r\\(?:i\\(?:nt\\|vate\\)\\|otected\\)\\|u\\(?:blic\\|re\\)\\)\\|re\\(?:ad\\|cursive\\|sult\\|wind\\)\\|s\\(?:ave\\|e\\(?:lect\\|quence\\)\\|ync \\(?:all\\|memory\\)\\)\\|target\\|\\(?:v\\(?:alu\\|olatil\\)\\|writ\\)e\\)\\>" "\\.\\(and\\|eqv?\\|false\\|g[et]\\|l[et]\\|n\\(?:e\\(?:qv\\)?\\|ot\\)\\|or\\|true\\)\\."<br/>
+ ("\\<\\(a\\(?:bs\\|c\\(?:har\\|os\\)\\|djust[lr]\\|i\\(?:mag\\|nt\\)\\|ll\\(?:ocated\\)?\\|n\\(?:int\\|y\\)\\|s\\(?:in\\|sociated\\)\\|tan2?\\)\\|b\\(?:essel_\\(?:j[01n]\\|y[01n]\\)\\|g[et]\\|i\\(?:nd\\|t_size\\)\\|l[et]\\|test\\)\\|c\\(?:_\\(?:associated\\|f\\(?:_p\\(?:\\(?:rocp\\)?ointer\\)\\|unloc\\)\\|loc\\|sizeof\\)\\|eiling\\|har\\|mplx\\|o\\(?:m\\(?:mand_argument_count\\|piler_\\(?:options\\|version\\)\\)\\|njg\\|sh?\\|unt\\)\\|pu_time\\|shift\\)\\|d\\(?:ate_and_time\\|ble\\|i\\(?:gits\\|m\\)\\|ot_product\\|prod\\|shift[lr]\\)\\|e\\(?:oshift\\|psilon\\|rf\\(?:c\\(?:_scaled\\)?\\)?\\|x\\(?:p\\(?:onent\\)?\\|tends\\(?:_type_of\\)?\\)\\)\\|f\\(?:indloc\\|l\\(?:oor\\|ush\\)\\|raction\\)\\|g\\(?:amma\\|et_\\(?:command\\(?:_argument\\)?\\|environment_variable\\)\\)\\|h\\(?:uge\\|ypot\\)\\|i\\(?:a\\(?:char\\|ll\\|n[dy]\\)\\|b\\(?:clr\\|its\\|set\\)\\|char\\|e\\(?:ee_\\(?:get_underflow_mode\\|s\\(?:et_underflow_mode\\|upport_underflow_control\\)\\)\\|or\\)\\|mage_index\\|n\\(?:dex\\|t\\)\\|or\\|parity\\|s\\(?:_contiguous\\|hftc?\\)\\)\\|kind\\|l\\(?:bound\\|cobound\\|e\\(?:adz\\|n\\(?:_trim\\)?\\)\\|g[et]\\|l[et]\\|o\\(?:ck\\|g\\(?:10\\|_gamma\\|ical\\)?\\)\\)\\|m\\(?:a\\(?:sk[lr]\\|tmul\\|x\\(?:exponent\\|loc\\|val\\)?\\)\\|erge\\(?:_bits\\)?\\|in\\(?:exponent\\|loc\\|val\\)?\\|o\\(?:d\\(?:ulo\\)?\\|ve_alloc\\)\\|vbits\\)\\|n\\(?:e\\(?:arest\\|w_line\\)\\|int\\|o\\(?:rm2\\|t\\)\\|u\\(?:ll\\|m_images\\)\\)\\|p\\(?:a\\(?:ck\\|rity\\)\\|op\\(?:cnt\\|par\\)\\|r\\(?:e\\(?:cision\\|sent\\)\\|oduct\\)\\)\\|r\\(?:a\\(?:dix\\|n\\(?:dom_\\(?:number\\|seed\\)\\|ge\\)\\)\\|e\\(?:peat\\|shape\\)\\|rspacing\\)\\|s\\(?:ame_type_as\\|ca\\(?:le\\|n\\)\\|e\\(?:lected_\\(?:\\(?:char\\|int\\|real\\)_kind\\)\\|t_exponent\\)\\|h\\(?:ape\\|ift[alr]\\)\\|i\\(?:gn\\|nh?\\|ze\\)\\|p\\(?:acing\\|read\\)\\|qrt\\|torage_size\\|um\\|y\\(?:nc images\\|stem_clock\\)\\)\\|t\\(?:anh?\\|his_image\\|iny\\|r\\(?:a\\(?:ilz\\|ns\\(?:fer\\|pose\\)\\)\\|im\\)\\)\\|u\\(?:bound\\|cobound\\|n\\(?:\\(?:lo\\|pa\\)ck\\)\\)\\|verify\\|wait\\)[ 	]*("<br/>
+  (1 font-lock-keyword-face keep))<br/>
+ "\\<real\\>"<br/>
+ ("\\<\\(asynchronous\\)[ 	]*[^=]" . 1)<br/>
+ ("\\<\\(atomic_\\(?:\\(?:int\\|logical\\)_kind\\)\\|c\\(?:_\\(?:alert\\|b\\(?:ackspace\\|ool\\)\\|c\\(?:arriage_return\\|har\\)\\|double\\(?:_complex\\)?\\|f\\(?:loat\\(?:_complex\\)?\\|orm_feed\\|unptr\\)\\|horizontal_tab\\|int\\(?:\\(?:16\\|32\\|64\\|8\\|_\\(?:fast\\(?:16\\|32\\|64\\|8\\)\\|least\\(?:16\\|32\\|64\\|8\\)\\)\\|max\\|ptr\\)_t\\)?\\|long\\(?:_\\(?:double\\(?:_complex\\)?\\|long\\)\\)?\\|n\\(?:ew_line\\|ull_\\(?:\\(?:cha\\|\\(?:fun\\)?pt\\)r\\)\\)\\|ptr\\|s\\(?:hort\\|i\\(?:gned_char\\|ze_t\\)\\)\\|vertical_tab\\)\\|haracter_\\(?:kinds\\|storage_size\\)\\)\\|error_unit\\|file_storage_size\\|i\\(?:eee_\\(?:arithmetic\\|\\(?:exception\\|feature\\)s\\)\\|n\\(?:put_unit\\|t\\(?:16\\|32\\|64\\|8\\|eger_kinds\\)\\)\\|ostat_\\(?:e\\(?:nd\\|or\\)\\|inquire_internal_unit\\)\\|so_\\(?:c_binding\\|fortran_env\\)\\)\\|lo\\(?:ck_type\\|gical_kinds\\)\\|numeric_storage_size\\|output_unit\\|real\\(?:128\\|32\\|64\\|_kinds\\)\\)\\>" . font-lock-constant-face)<br/>
+ "\\<\\(a\\(?:l\\(?:ign\\|l_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|ny_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|block\\|c\\(?:o\\(?:py_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\|unt_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|yclic\\)\\|d\\(?:istribute\\|ynamic\\)\\|extrinsic\\|grade_\\(?:down\\|up\\)\\|hpf_\\(?:alignment\\|distribution\\|template\\)\\|i\\(?:a\\(?:ll\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\|ny\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\)\\|len\\|n\\(?:\\(?:dependen\\|heri\\)t\\)\\|parity\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\)\\|leadz\\|m\\(?:axval_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\|inval_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|n\\(?:ew\\|umber_of_processors\\)\\|onto\\|p\\(?:arity\\(?:_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)?\\|op\\(?:cnt\\|par\\)\\|ro\\(?:cessors\\(?:_shape\\)?\\|duct_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\)\\|ure\\)\\|re\\(?:align\\|distribute\\)\\|sum_\\(?:prefix\\|s\\(?:catter\\|uffix\\)\\)\\|template\\|with\\)\\>")<br/>
+<br/>

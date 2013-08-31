@@ -1,1 +1,23 @@
-filesets-tree-max-level is a variable defined in `filesets.el'.<br/>Its value is 3<br/><br/>Documentation:<br/>Maximum scan depth for directory trees.<br/>A :tree fileset is defined by a base directory the contents of which<br/>will be recursively added to the menu.  `filesets-tree-max-level' tells up<br/>to which level the directory structure should be scanned/listed,<br/>i.e. how deep the menu should be.  Try something like<br/><br/>	("HOME -- only one level"<br/>	 (:tree "~" "^[^.].*[^~]$")<br/>	 (:tree-max-level 1)<br/>	 (:filter-dirs-flag t))<br/>	("HOME -- up to 3 levels"<br/>	 (:tree "~" "^[^.].*[^~]$")<br/>	 (:tree-max-level 3)<br/>	 (:filter-dirs-flag t))<br/><br/>and it should become clear what this option is about.  In any case,<br/>including directory trees to the menu can take a lot of memory.<br/><br/>You can customize this variable.
+<strong>filesets-tree-max-level</strong> is a variable defined in `<code>filesets.el</code>'.<br/>
+Its value is 3<br/>
+<br/>
+Documentation:<br/>
+Maximum scan depth for directory trees.<br/>
+A :tree fileset is defined by a base directory the contents of which<br/>
+will be recursively added to the menu.  `filesets-tree-max-level' tells up<br/>
+to which level the directory structure should be scanned/listed,<br/>
+i.e. how deep the menu should be.  Try something like<br/>
+<br/>
+	("HOME -- only one level"<br/>
+	 (:tree "~" "^[^.].*[^~]$")<br/>
+	 (:tree-max-level 1)<br/>
+	 (:filter-dirs-flag t))<br/>
+	("HOME -- up to 3 levels"<br/>
+	 (:tree "~" "^[^.].*[^~]$")<br/>
+	 (:tree-max-level 3)<br/>
+	 (:filter-dirs-flag t))<br/>
+<br/>
+and it should become clear what this option is about.  In any case,<br/>
+including directory trees to the menu can take a lot of memory.<br/>
+<br/>
+You can customize this variable.

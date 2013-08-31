@@ -1,1 +1,26 @@
-sh-learn-buffer-indent is an interactive compiled Lisp function in `sh-script.el'.<br/><br/>(sh-learn-buffer-indent &optional ARG)<br/><br/>Learn how to indent the buffer the way it currently is.<br/><br/>Output in buffer "*indent*" shows any lines which have conflicting<br/>values of a variable, and the final value of all variables learned.<br/>When called interactively, pop to this buffer automatically if<br/>there are any discrepancies.<br/><br/>If no prefix ARG is given, then variables are set to numbers.<br/>If a prefix arg is given, then variables are set to symbols when<br/>applicable -- e.g. to symbol `+' if the value is that of the<br/>basic indent.<br/>If a positive numerical prefix is given, then  `sh-basic-offset'<br/>is set to the prefix's numerical value.<br/>Otherwise, sh-basic-offset may or may not be changed, according<br/>to the value of variable `sh-learn-basic-offset'.<br/><br/>Abnormal hook `sh-learned-buffer-hook' if non-nil is called when the<br/>function completes.  The function is abnormal because it is called<br/>with an alist of variables learned.  This feature may be changed or<br/>removed in the future.<br/><br/>This command can often take a long time to run.
+<strong>sh-learn-buffer-indent</strong> is an interactive compiled Lisp function in `<code>sh-script.el</code>'.<br/>
+<br/>
+(sh-learn-buffer-indent &optional ARG)<br/>
+<br/>
+Learn how to indent the buffer the way it currently is.<br/>
+<br/>
+Output in buffer "*indent*" shows any lines which have conflicting<br/>
+values of a variable, and the final value of all variables learned.<br/>
+When called interactively, pop to this buffer automatically if<br/>
+there are any discrepancies.<br/>
+<br/>
+If no prefix ARG is given, then variables are set to numbers.<br/>
+If a prefix arg is given, then variables are set to symbols when<br/>
+applicable -- e.g. to symbol `+' if the value is that of the<br/>
+basic indent.<br/>
+If a positive numerical prefix is given, then  `sh-basic-offset'<br/>
+is set to the prefix's numerical value.<br/>
+Otherwise, sh-basic-offset may or may not be changed, according<br/>
+to the value of variable `sh-learn-basic-offset'.<br/>
+<br/>
+Abnormal hook `sh-learned-buffer-hook' if non-nil is called when the<br/>
+function completes.  The function is abnormal because it is called<br/>
+with an alist of variables learned.  This feature may be changed or<br/>
+removed in the future.<br/>
+<br/>
+This command can often take a long time to run.

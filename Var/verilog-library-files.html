@@ -1,1 +1,26 @@
-verilog-library-files is a variable defined in `verilog-mode.el'.<br/>Its value is nil<br/><br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate `listp'.<br/><br/>Documentation:<br/>List of files to search for modules.<br/>AUTOINST will use this when it needs to resolve a module name.<br/>This is a complete path, usually to a technology file with many standard<br/>cells defined in it.<br/><br/>You might want these defined in each file; put at the *END* of your file<br/>something like:<br/><br/>    // Local Variables:<br/>    // verilog-library-files:("/some/path/technology.v" "/some/path/tech2.v")<br/>    // End:<br/><br/>Verilog-mode attempts to detect changes to this local variable, but they<br/>are only insured to be correct when the file is first visited.  Thus if you<br/>have problems, use C-x C-v RET to have these take effect.<br/><br/>See also `verilog-library-flags', `verilog-library-directories'.<br/><br/>You can customize this variable.
+<strong>verilog-library-files</strong> is a variable defined in `<code>verilog-mode.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate `listp'.<br/>
+<br/>
+Documentation:<br/>
+List of files to search for modules.<br/>
+AUTOINST will use this when it needs to resolve a module name.<br/>
+This is a complete path, usually to a technology file with many standard<br/>
+cells defined in it.<br/>
+<br/>
+You might want these defined in each file; put at the *END* of your file<br/>
+something like:<br/>
+<br/>
+    // Local Variables:<br/>
+    // verilog-library-files:("/some/path/technology.v" "/some/path/tech2.v")<br/>
+    // End:<br/>
+<br/>
+Verilog-mode attempts to detect changes to this local variable, but they<br/>
+are only insured to be correct when the file is first visited.  Thus if you<br/>
+have problems, use C-x C-v RET to have these take effect.<br/>
+<br/>
+See also `verilog-library-flags', `verilog-library-directories'.<br/>
+<br/>
+You can customize this variable.

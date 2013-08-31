@@ -1,1 +1,83 @@
-table-global-menu-map is a variable defined in `table.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Table global menu<br/><br/>Value: (keymap "Table"<br/>	(Insert menu-item "Insert"<br/>		(keymap "Insert"<br/>			(a\ Table\.\.\. menu-item "a Table..." table-insert :enable<br/>					(and<br/>					 (not buffer-read-only)<br/>					 (not<br/>					  (table--probe-cell)))<br/>					:help "Insert a text based table at point")<br/>			(Row menu-item "Row" table-insert-row :enable<br/>			     (table--row-column-insertion-point-p)<br/>			     :help "Insert row(s) of cells in table")<br/>			(Column menu-item "Column" table-insert-column :enable<br/>				(table--row-column-insertion-point-p 'column)<br/>				:help "Insert column(s) of cells in table")))<br/>	(nil menu-item "----")<br/>	(Recognize menu-item "Recognize"<br/>		   (keymap "Recognize"<br/>			   (in\ Buffer menu-item "in Buffer" table-recognize :help "Recognize all tables in the current buffer")<br/>			   (in\ Region menu-item "in Region" table-recognize-region :enable<br/>				       (and mark-active<br/>					    (not<br/>					     (eq<br/>					      (mark t)<br/>					      (point))))<br/>				       :help "Recognize all tables in the current region")<br/>			   (a\ Table menu-item "a Table" table-recognize-table :enable<br/>				     (table--probe-cell)<br/>				     :help "Recognize a table at point")<br/>			   (a\ Cell menu-item "a Cell" table-recognize-cell :enable<br/>				    (let<br/>					((cell<br/>					  (table--probe-cell)))<br/>				      (and cell<br/>					   (null<br/>					    (table--at-cell-p<br/>					     (car cell)))))<br/>				    :help "Recognize a cell at point")))<br/>	(Unrecognize menu-item "Unrecognize"<br/>		     (keymap "Unrecognize"<br/>			     (in\ Buffer menu-item "in Buffer" table-unrecognize :help "Unrecognize all tables in the current buffer")<br/>			     (in\ Region menu-item "in Region" table-unrecognize-region :enable<br/>					 (and mark-active<br/>					      (not<br/>					       (eq<br/>						(mark t)<br/>						(point))))<br/>					 :help "Unrecognize all tables in the current region")<br/>			     (a\ Table menu-item "a Table" table-unrecognize-table :enable<br/>				       (table--probe-cell)<br/>				       :help "Unrecognize the current table")<br/>			     (a\ Cell menu-item "a Cell" table-unrecognize-cell :enable<br/>				      (let<br/>					  ((cell<br/>					    (table--probe-cell)))<br/>					(and cell<br/>					     (table--at-cell-p<br/>					      (car cell))))<br/>				      :help "Unrecognize the current cell")))<br/>	(nil-4 menu-item "----")<br/>	(Capture\ Region menu-item "Capture Region" table-capture :enable<br/>			 (and<br/>			  (not buffer-read-only)<br/>			  mark-active<br/>			  (not<br/>			   (eq<br/>			    (mark t)<br/>			    (point)))<br/>			  (not<br/>			   (table--probe-cell)))<br/>			 :help "Capture text in the current region as a table")<br/>	(Release menu-item "Release" table-release :enable<br/>		 (table--editable-cell-p)<br/>		 :help "Release the current table as plain text"))<br/><br/>
+<strong>table-global-menu-map</strong> is a variable defined in `<code>table.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Table global menu<br/>
+<br/>
+Value: (keymap "Table"<br/>
+	(Insert menu-item "Insert"<br/>
+		(keymap "Insert"<br/>
+			(a\ Table\.\.\. menu-item "a Table..." table-insert :enable<br/>
+					(and<br/>
+					 (not buffer-read-only)<br/>
+					 (not<br/>
+					  (table--probe-cell)))<br/>
+					:help "Insert a text based table at point")<br/>
+			(Row menu-item "Row" table-insert-row :enable<br/>
+			     (table--row-column-insertion-point-p)<br/>
+			     :help "Insert row(s) of cells in table")<br/>
+			(Column menu-item "Column" table-insert-column :enable<br/>
+				(table--row-column-insertion-point-p 'column)<br/>
+				:help "Insert column(s) of cells in table")))<br/>
+	(nil menu-item "----")<br/>
+	(Recognize menu-item "Recognize"<br/>
+		   (keymap "Recognize"<br/>
+			   (in\ Buffer menu-item "in Buffer" table-recognize :help "Recognize all tables in the current buffer")<br/>
+			   (in\ Region menu-item "in Region" table-recognize-region :enable<br/>
+				       (and mark-active<br/>
+					    (not<br/>
+					     (eq<br/>
+					      (mark t)<br/>
+					      (point))))<br/>
+				       :help "Recognize all tables in the current region")<br/>
+			   (a\ Table menu-item "a Table" table-recognize-table :enable<br/>
+				     (table--probe-cell)<br/>
+				     :help "Recognize a table at point")<br/>
+			   (a\ Cell menu-item "a Cell" table-recognize-cell :enable<br/>
+				    (let<br/>
+					((cell<br/>
+					  (table--probe-cell)))<br/>
+				      (and cell<br/>
+					   (null<br/>
+					    (table--at-cell-p<br/>
+					     (car cell)))))<br/>
+				    :help "Recognize a cell at point")))<br/>
+	(Unrecognize menu-item "Unrecognize"<br/>
+		     (keymap "Unrecognize"<br/>
+			     (in\ Buffer menu-item "in Buffer" table-unrecognize :help "Unrecognize all tables in the current buffer")<br/>
+			     (in\ Region menu-item "in Region" table-unrecognize-region :enable<br/>
+					 (and mark-active<br/>
+					      (not<br/>
+					       (eq<br/>
+						(mark t)<br/>
+						(point))))<br/>
+					 :help "Unrecognize all tables in the current region")<br/>
+			     (a\ Table menu-item "a Table" table-unrecognize-table :enable<br/>
+				       (table--probe-cell)<br/>
+				       :help "Unrecognize the current table")<br/>
+			     (a\ Cell menu-item "a Cell" table-unrecognize-cell :enable<br/>
+				      (let<br/>
+					  ((cell<br/>
+					    (table--probe-cell)))<br/>
+					(and cell<br/>
+					     (table--at-cell-p<br/>
+					      (car cell))))<br/>
+				      :help "Unrecognize the current cell")))<br/>
+	(nil-4 menu-item "----")<br/>
+	(Capture\ Region menu-item "Capture Region" table-capture :enable<br/>
+			 (and<br/>
+			  (not buffer-read-only)<br/>
+			  mark-active<br/>
+			  (not<br/>
+			   (eq<br/>
+			    (mark t)<br/>
+			    (point)))<br/>
+			  (not<br/>
+			   (table--probe-cell)))<br/>
+			 :help "Capture text in the current region as a table")<br/>
+	(Release menu-item "Release" table-release :enable<br/>
+		 (table--editable-cell-p)<br/>
+		 :help "Release the current table as plain text"))<br/>
+<br/>

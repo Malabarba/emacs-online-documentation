@@ -1,1 +1,30 @@
-ps-printer-name is a variable defined in `ps-print.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>The name of a local printer for printing PostScript files.<br/><br/>On Unix-like systems, a string value should be a name understood by lpr's -P<br/>option; a value of nil means use the value of `printer-name' instead.<br/><br/>On MS-DOS and MS-Windows systems, a string value is taken as the name of the<br/>printer device or port to which PostScript files are written, provided<br/>`ps-lpr-command' is "".  By default it is the same as `printer-name'; typical<br/>non-default settings would be "LPT1" to "LPT3" for parallel printers, or<br/>"COM1" to "COM4" or "AUX" for serial printers, or "\\hostname\printer"<br/>for a shared network printer.  You can also set it to a name of a file, in<br/>which case the output gets appended to that file.  (Note that `ps-print'<br/>package already has facilities for printing to a file, so you might as well use<br/>them instead of changing the setting of this variable.)  If you want to<br/>silently discard the printed output, set this to "NUL".<br/><br/>Set to t, if the utility given by `ps-lpr-command' needs an empty printer name.<br/><br/>Any other value is treated as t, that is, an empty printer name.<br/><br/>See also `ps-printer-name-option' for documentation.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 20 of Emacs.<br/>
+<strong>ps-printer-name</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+The name of a local printer for printing PostScript files.<br/>
+<br/>
+On Unix-like systems, a string value should be a name understood by lpr's -P<br/>
+option; a value of nil means use the value of `printer-name' instead.<br/>
+<br/>
+On MS-DOS and MS-Windows systems, a string value is taken as the name of the<br/>
+printer device or port to which PostScript files are written, provided<br/>
+`ps-lpr-command' is "".  By default it is the same as `printer-name'; typical<br/>
+non-default settings would be "LPT1" to "LPT3" for parallel printers, or<br/>
+"COM1" to "COM4" or "AUX" for serial printers, or "\\hostname\printer"<br/>
+for a shared network printer.  You can also set it to a name of a file, in<br/>
+which case the output gets appended to that file.  (Note that `ps-print'<br/>
+package already has facilities for printing to a file, so you might as well use<br/>
+them instead of changing the setting of this variable.)  If you want to<br/>
+silently discard the printed output, set this to "NUL".<br/>
+<br/>
+Set to t, if the utility given by `ps-lpr-command' needs an empty printer name.<br/>
+<br/>
+Any other value is treated as t, that is, an empty printer name.<br/>
+<br/>
+See also `ps-printer-name-option' for documentation.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 20 of Emacs.<br/>

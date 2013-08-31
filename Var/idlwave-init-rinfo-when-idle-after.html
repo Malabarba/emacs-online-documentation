@@ -1,1 +1,19 @@
-idlwave-init-rinfo-when-idle-after is a variable defined in `idlwave.el'.<br/>Its value is 10<br/><br/>Documentation:<br/>Seconds of idle time before routine info is automatically initialized.<br/>Initializing the routine info can take a long time, in particular if a<br/>large number of library catalogs are involved.  When Emacs is idle for<br/>more than the number of seconds specified by this variable, it starts<br/>the initialization.  The process is split into five steps, in order to<br/>keep work interruption as short as possible.  If one of the steps<br/>finishes, and no user input has arrived in the mean time, initialization<br/>proceeds immediately to the next step.  A good value for this variable<br/>is about 1/3 of the time initialization take in your setup.  So if you<br/>have a fast machine and no problems with a slow network connection,<br/>don't hesitate to set this to 2 seconds.  A value of 0 means, don't<br/>initialize automatically, but instead wait until routine information is<br/>needed, and initialize then.<br/><br/>You can customize this variable.
+<strong>idlwave-init-rinfo-when-idle-after</strong> is a variable defined in `<code>idlwave.el</code>'.<br/>
+Its value is 10<br/>
+<br/>
+Documentation:<br/>
+Seconds of idle time before routine info is automatically initialized.<br/>
+Initializing the routine info can take a long time, in particular if a<br/>
+large number of library catalogs are involved.  When Emacs is idle for<br/>
+more than the number of seconds specified by this variable, it starts<br/>
+the initialization.  The process is split into five steps, in order to<br/>
+keep work interruption as short as possible.  If one of the steps<br/>
+finishes, and no user input has arrived in the mean time, initialization<br/>
+proceeds immediately to the next step.  A good value for this variable<br/>
+is about 1/3 of the time initialization take in your setup.  So if you<br/>
+have a fast machine and no problems with a slow network connection,<br/>
+don't hesitate to set this to 2 seconds.  A value of 0 means, don't<br/>
+initialize automatically, but instead wait until routine information is<br/>
+needed, and initialize then.<br/>
+<br/>
+You can customize this variable.

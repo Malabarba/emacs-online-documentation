@@ -1,1 +1,94 @@
-f90-menu is a variable defined in `f90.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Menu for F90 mode.<br/><br/>Value: (keymap "F90"<br/>	(Customization menu-item "Customization"<br/>		       (keymap "Customization"<br/>			       (F90 menu-item "F90"<br/>				    (keymap "F90"<br/>					    (F90\.\.\. menu-item "F90..." menu-function-246 :key-sequence nil)<br/>					    (nil-7 menu-item "--")<br/>					    (F90\ Indent menu-item "F90 Indent" nil :filter<br/>							 (lambda<br/>							   (menu)<br/>							   (easy-menu-filter-return<br/>							    ((lambda<br/>							       (&rest junk)<br/>							       (let*<br/>								   ((menu<br/>								     (custom-menu-create 'f90-indent)))<br/>								 (if<br/>								     (consp menu)<br/>								     (cdr menu)<br/>								   menu)))<br/>							     menu)<br/>							    "F90 Indent")))<br/>					    (F90\ Beginning\ Ampersand\.\.\. menu-item "F90 Beginning Ampersand..." menu-function-248 :key-sequence nil :button<br/>									     (:toggle . f90-beginning-ampersand))<br/>					    (F90\ Smart\ End\.\.\. menu-item "F90 Smart End..." menu-function-249 :key-sequence nil)<br/>					    (F90\ Break\ Delimiters\.\.\. menu-item "F90 Break Delimiters..." menu-function-250 :key-sequence nil)<br/>					    (F90\ Break\ Before\ Delimiters\.\.\. menu-item "F90 Break Before Delimiters..." menu-function-251 :key-sequence nil :button<br/>										  (:toggle . f90-break-before-delimiters))<br/>					    (F90\ Auto\ Keyword\ Case\.\.\. menu-item "F90 Auto Keyword Case..." menu-function-252 :key-sequence nil)<br/>					    (F90\ Leave\ Line\ No\.\.\. menu-item "F90 Leave Line No..." menu-function-253 :key-sequence nil :button<br/>									(:toggle . f90-leave-line-no))<br/>					    (F90\ Mode\ Hook\.\.\. menu-item "F90 Mode Hook..." menu-function-254 :key-sequence nil)))<br/>			       (Set menu-item "Set" Custom-set :help "Set current value of all edited settings in the buffer")<br/>			       (Save menu-item "Save" Custom-save :help "Set and save all edited settings")<br/>			       (Reset\ to\ Current menu-item "Reset to Current" Custom-reset-current :help "Reset all edited settings to current")<br/>			       (Reset\ to\ Saved menu-item "Reset to Saved" Custom-reset-saved :help "Reset all edited or set settings to saved")<br/>			       (Reset\ to\ Standard\ Settings menu-item "Reset to Standard Settings" Custom-reset-standard :help "Erase all customizations in buffer")))<br/>	(nil-7 menu-item "--")<br/>	(Indent\ Subprogram menu-item "Indent Subprogram" f90-indent-subprogram)<br/>	(Mark\ Subprogram menu-item "Mark Subprogram" f90-mark-subprogram :help "Mark the end of the current subprogram, move point to the start")<br/>	(Beginning\ of\ Subprogram menu-item "Beginning of Subprogram" f90-beginning-of-subprogram :help "Move point to the start of the current subprogram")<br/>	(End\ of\ Subprogram menu-item "End of Subprogram" f90-end-of-subprogram :help "Move point to the end of the current subprogram")<br/>	(nil-7-6 menu-item "--")<br/>	(\(Un\)Comment\ Region menu-item "(Un)Comment Region" f90-comment-region :enable mark-active :help "Comment or uncomment the region")<br/>	(Indent\ Region menu-item "Indent Region" f90-indent-region :enable mark-active)<br/>	(Fill\ Region menu-item "Fill Region" f90-fill-region :enable mark-active :help "Fill long lines in the region")<br/>	(nil-7-10 menu-item "--")<br/>	(Break\ Line\ at\ Point menu-item "Break Line at Point" f90-break-line :help "Break the current line at point")<br/>	(Join\ with\ Previous\ Line menu-item "Join with Previous Line" f90-join-lines :help "Join the current line to the previous one")<br/>	(Insert\ Block\ End menu-item "Insert Block End" f90-insert-end :help "Insert an end statement for the current code block")<br/>	(nil-7-14 menu-item "--")<br/>	(Highlighting menu-item "Highlighting"<br/>		      (keymap "Highlighting"<br/>			      (Toggle\ font-lock-mode menu-item "Toggle font-lock-mode" font-lock-mode :button<br/>						      (:toggle . font-lock-mode)<br/>						      :help "Fontify text in this buffer")<br/>			      (nil-7 menu-item "--")<br/>			      (Light\ highlighting\ \(level\ 1\) menu-item "Light highlighting (level 1)" f90-font-lock-1)<br/>			      (Moderate\ highlighting\ \(level\ 2\) menu-item "Moderate highlighting (level 2)" f90-font-lock-2)<br/>			      (Heavy\ highlighting\ \(level\ 3\) menu-item "Heavy highlighting (level 3)" f90-font-lock-3)<br/>			      (Maximum\ highlighting\ \(level\ 4\) menu-item "Maximum highlighting (level 4)" f90-font-lock-4))<br/>		      :help "Fontify this buffer to varying degrees")<br/>	(Change\ Keyword\ Case menu-item "Change Keyword Case"<br/>			       (keymap "Change Keyword Case"<br/>				       (Upcase\ Keywords\ \(buffer\) menu-item "Upcase Keywords (buffer)" f90-upcase-keywords)<br/>				       (Capitalize\ Keywords\ \(buffer\) menu-item "Capitalize Keywords (buffer)" f90-capitalize-keywords)<br/>				       (Downcase\ Keywords\ \(buffer\) menu-item "Downcase Keywords (buffer)" f90-downcase-keywords)<br/>				       (nil-7 menu-item "--")<br/>				       (Upcase\ Keywords\ \(region\) menu-item "Upcase Keywords (region)" f90-upcase-region-keywords :enable mark-active)<br/>				       (Capitalize\ Keywords\ \(region\) menu-item "Capitalize Keywords (region)" f90-capitalize-region-keywords :enable mark-active)<br/>				       (Downcase\ Keywords\ \(region\) menu-item "Downcase Keywords (region)" f90-downcase-region-keywords :enable mark-active))<br/>			       :help "Change the case of keywords in the buffer or region")<br/>	(nil-7-17 menu-item "--")<br/>	(Toggle\ Auto\ Fill menu-item "Toggle Auto Fill" auto-fill-mode :button<br/>			    (:toggle . auto-fill-function)<br/>			    :help "Automatically fill text while typing in this buffer")<br/>	(Toggle\ Abbrev\ Mode menu-item "Toggle Abbrev Mode" abbrev-mode :button<br/>			      (:toggle . abbrev-mode)<br/>			      :help "Expand abbreviations while typing in this buffer")<br/>	(Add\ Imenu\ Menu menu-item "Add Imenu Menu" f90-add-imenu-menu :enable<br/>			  (not<br/>			   (lookup-key<br/>			    (current-local-map)<br/>			    [menu-bar index]))<br/>			  :visible<br/>			  (fboundp 'imenu-add-to-menubar)<br/>			  :help "Add an index menu to the menu-bar"))<br/><br/>
+<strong>f90-menu</strong> is a variable defined in `<code>f90.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Menu for F90 mode.<br/>
+<br/>
+Value: (keymap "F90"<br/>
+	(Customization menu-item "Customization"<br/>
+		       (keymap "Customization"<br/>
+			       (F90 menu-item "F90"<br/>
+				    (keymap "F90"<br/>
+					    (F90\.\.\. menu-item "F90..." menu-function-246 :key-sequence nil)<br/>
+					    (nil-7 menu-item "--")<br/>
+					    (F90\ Indent menu-item "F90 Indent" nil :filter<br/>
+							 (lambda<br/>
+							   (menu)<br/>
+							   (easy-menu-filter-return<br/>
+							    ((lambda<br/>
+							       (&rest junk)<br/>
+							       (let*<br/>
+								   ((menu<br/>
+								     (custom-menu-create 'f90-indent)))<br/>
+								 (if<br/>
+								     (consp menu)<br/>
+								     (cdr menu)<br/>
+								   menu)))<br/>
+							     menu)<br/>
+							    "F90 Indent")))<br/>
+					    (F90\ Beginning\ Ampersand\.\.\. menu-item "F90 Beginning Ampersand..." menu-function-248 :key-sequence nil :button<br/>
+									     (:toggle . f90-beginning-ampersand))<br/>
+					    (F90\ Smart\ End\.\.\. menu-item "F90 Smart End..." menu-function-249 :key-sequence nil)<br/>
+					    (F90\ Break\ Delimiters\.\.\. menu-item "F90 Break Delimiters..." menu-function-250 :key-sequence nil)<br/>
+					    (F90\ Break\ Before\ Delimiters\.\.\. menu-item "F90 Break Before Delimiters..." menu-function-251 :key-sequence nil :button<br/>
+										  (:toggle . f90-break-before-delimiters))<br/>
+					    (F90\ Auto\ Keyword\ Case\.\.\. menu-item "F90 Auto Keyword Case..." menu-function-252 :key-sequence nil)<br/>
+					    (F90\ Leave\ Line\ No\.\.\. menu-item "F90 Leave Line No..." menu-function-253 :key-sequence nil :button<br/>
+									(:toggle . f90-leave-line-no))<br/>
+					    (F90\ Mode\ Hook\.\.\. menu-item "F90 Mode Hook..." menu-function-254 :key-sequence nil)))<br/>
+			       (Set menu-item "Set" Custom-set :help "Set current value of all edited settings in the buffer")<br/>
+			       (Save menu-item "Save" Custom-save :help "Set and save all edited settings")<br/>
+			       (Reset\ to\ Current menu-item "Reset to Current" Custom-reset-current :help "Reset all edited settings to current")<br/>
+			       (Reset\ to\ Saved menu-item "Reset to Saved" Custom-reset-saved :help "Reset all edited or set settings to saved")<br/>
+			       (Reset\ to\ Standard\ Settings menu-item "Reset to Standard Settings" Custom-reset-standard :help "Erase all customizations in buffer")))<br/>
+	(nil-7 menu-item "--")<br/>
+	(Indent\ Subprogram menu-item "Indent Subprogram" f90-indent-subprogram)<br/>
+	(Mark\ Subprogram menu-item "Mark Subprogram" f90-mark-subprogram :help "Mark the end of the current subprogram, move point to the start")<br/>
+	(Beginning\ of\ Subprogram menu-item "Beginning of Subprogram" f90-beginning-of-subprogram :help "Move point to the start of the current subprogram")<br/>
+	(End\ of\ Subprogram menu-item "End of Subprogram" f90-end-of-subprogram :help "Move point to the end of the current subprogram")<br/>
+	(nil-7-6 menu-item "--")<br/>
+	(\(Un\)Comment\ Region menu-item "(Un)Comment Region" f90-comment-region :enable mark-active :help "Comment or uncomment the region")<br/>
+	(Indent\ Region menu-item "Indent Region" f90-indent-region :enable mark-active)<br/>
+	(Fill\ Region menu-item "Fill Region" f90-fill-region :enable mark-active :help "Fill long lines in the region")<br/>
+	(nil-7-10 menu-item "--")<br/>
+	(Break\ Line\ at\ Point menu-item "Break Line at Point" f90-break-line :help "Break the current line at point")<br/>
+	(Join\ with\ Previous\ Line menu-item "Join with Previous Line" f90-join-lines :help "Join the current line to the previous one")<br/>
+	(Insert\ Block\ End menu-item "Insert Block End" f90-insert-end :help "Insert an end statement for the current code block")<br/>
+	(nil-7-14 menu-item "--")<br/>
+	(Highlighting menu-item "Highlighting"<br/>
+		      (keymap "Highlighting"<br/>
+			      (Toggle\ font-lock-mode menu-item "Toggle font-lock-mode" font-lock-mode :button<br/>
+						      (:toggle . font-lock-mode)<br/>
+						      :help "Fontify text in this buffer")<br/>
+			      (nil-7 menu-item "--")<br/>
+			      (Light\ highlighting\ \(level\ 1\) menu-item "Light highlighting (level 1)" f90-font-lock-1)<br/>
+			      (Moderate\ highlighting\ \(level\ 2\) menu-item "Moderate highlighting (level 2)" f90-font-lock-2)<br/>
+			      (Heavy\ highlighting\ \(level\ 3\) menu-item "Heavy highlighting (level 3)" f90-font-lock-3)<br/>
+			      (Maximum\ highlighting\ \(level\ 4\) menu-item "Maximum highlighting (level 4)" f90-font-lock-4))<br/>
+		      :help "Fontify this buffer to varying degrees")<br/>
+	(Change\ Keyword\ Case menu-item "Change Keyword Case"<br/>
+			       (keymap "Change Keyword Case"<br/>
+				       (Upcase\ Keywords\ \(buffer\) menu-item "Upcase Keywords (buffer)" f90-upcase-keywords)<br/>
+				       (Capitalize\ Keywords\ \(buffer\) menu-item "Capitalize Keywords (buffer)" f90-capitalize-keywords)<br/>
+				       (Downcase\ Keywords\ \(buffer\) menu-item "Downcase Keywords (buffer)" f90-downcase-keywords)<br/>
+				       (nil-7 menu-item "--")<br/>
+				       (Upcase\ Keywords\ \(region\) menu-item "Upcase Keywords (region)" f90-upcase-region-keywords :enable mark-active)<br/>
+				       (Capitalize\ Keywords\ \(region\) menu-item "Capitalize Keywords (region)" f90-capitalize-region-keywords :enable mark-active)<br/>
+				       (Downcase\ Keywords\ \(region\) menu-item "Downcase Keywords (region)" f90-downcase-region-keywords :enable mark-active))<br/>
+			       :help "Change the case of keywords in the buffer or region")<br/>
+	(nil-7-17 menu-item "--")<br/>
+	(Toggle\ Auto\ Fill menu-item "Toggle Auto Fill" auto-fill-mode :button<br/>
+			    (:toggle . auto-fill-function)<br/>
+			    :help "Automatically fill text while typing in this buffer")<br/>
+	(Toggle\ Abbrev\ Mode menu-item "Toggle Abbrev Mode" abbrev-mode :button<br/>
+			      (:toggle . abbrev-mode)<br/>
+			      :help "Expand abbreviations while typing in this buffer")<br/>
+	(Add\ Imenu\ Menu menu-item "Add Imenu Menu" f90-add-imenu-menu :enable<br/>
+			  (not<br/>
+			   (lookup-key<br/>
+			    (current-local-map)<br/>
+			    [menu-bar index]))<br/>
+			  :visible<br/>
+			  (fboundp 'imenu-add-to-menubar)<br/>
+			  :help "Add an index menu to the menu-bar"))<br/>
+<br/>

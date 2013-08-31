@@ -1,1 +1,15 @@
-save-window-excursion is a Lisp macro in `subr.el'.<br/><br/>(save-window-excursion &rest BODY)<br/><br/>Execute BODY, then restore previous window configuration.<br/>This macro saves the window configuration on the selected frame,<br/>executes BODY, then calls `set-window-configuration' to restore<br/>the saved window configuration.  The return value is the last<br/>form in BODY.  The window configuration is also restored if BODY<br/>exits nonlocally.<br/><br/>BEWARE: Most uses of this macro introduce bugs.<br/>E.g. it should not be used to try and prevent some code from opening<br/>a new window, since that window may sometimes appear in another frame,<br/>in which case `save-window-excursion' cannot help.
+<strong>save-window-excursion</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
+<br/>
+(save-window-excursion &rest BODY)<br/>
+<br/>
+Execute BODY, then restore previous window configuration.<br/>
+This macro saves the window configuration on the selected frame,<br/>
+executes BODY, then calls `set-window-configuration' to restore<br/>
+the saved window configuration.  The return value is the last<br/>
+form in BODY.  The window configuration is also restored if BODY<br/>
+exits nonlocally.<br/>
+<br/>
+BEWARE: Most uses of this macro introduce bugs.<br/>
+E.g. it should not be used to try and prevent some code from opening<br/>
+a new window, since that window may sometimes appear in another frame,<br/>
+in which case `save-window-excursion' cannot help.

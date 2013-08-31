@@ -1,1 +1,28 @@
-dired-compare-directories is an interactive autoloaded compiled Lisp function in `dired-aux.el'.<br/><br/>(dired-compare-directories DIR2 PREDICATE)<br/><br/>Mark files with different file attributes in two dired buffers.<br/>Compare file attributes of files in the current directory<br/>with file attributes in directory DIR2 using PREDICATE on pairs of files<br/>with the same name.  Mark files for which PREDICATE returns non-nil.<br/>Mark files with different names if PREDICATE is nil (or interactively<br/>with empty input at the predicate prompt).<br/><br/>PREDICATE is a Lisp expression that can refer to the following variables:<br/><br/>    size1, size2   - file size in bytes<br/>    mtime1, mtime2 - last modification time in seconds, as a float<br/>    fa1, fa2       - list of file attributes<br/>                     returned by function `file-attributes'<br/><br/>    where 1 refers to attribute of file in the current dired buffer<br/>    and 2 to attribute of file in second dired buffer.<br/><br/>Examples of PREDICATE:<br/><br/>    (> mtime1 mtime2) - mark newer files<br/>    (not (= size1 size2)) - mark files with different sizes<br/>    (not (string= (nth 8 fa1) (nth 8 fa2))) - mark files with different modes<br/>    (not (and (= (nth 2 fa1) (nth 2 fa2))   - mark files with different UID<br/>              (= (nth 3 fa1) (nth 3 fa2))))   and GID.
+<strong>dired-compare-directories</strong> is an interactive autoloaded compiled Lisp function in `<code>dired-aux.el</code>'.<br/>
+<br/>
+(dired-compare-directories DIR2 PREDICATE)<br/>
+<br/>
+Mark files with different file attributes in two dired buffers.<br/>
+Compare file attributes of files in the current directory<br/>
+with file attributes in directory DIR2 using PREDICATE on pairs of files<br/>
+with the same name.  Mark files for which PREDICATE returns non-nil.<br/>
+Mark files with different names if PREDICATE is nil (or interactively<br/>
+with empty input at the predicate prompt).<br/>
+<br/>
+PREDICATE is a Lisp expression that can refer to the following variables:<br/>
+<br/>
+    size1, size2   - file size in bytes<br/>
+    mtime1, mtime2 - last modification time in seconds, as a float<br/>
+    fa1, fa2       - list of file attributes<br/>
+                     returned by function `file-attributes'<br/>
+<br/>
+    where 1 refers to attribute of file in the current dired buffer<br/>
+    and 2 to attribute of file in second dired buffer.<br/>
+<br/>
+Examples of PREDICATE:<br/>
+<br/>
+    (> mtime1 mtime2) - mark newer files<br/>
+    (not (= size1 size2)) - mark files with different sizes<br/>
+    (not (string= (nth 8 fa1) (nth 8 fa2))) - mark files with different modes<br/>
+    (not (and (= (nth 2 fa1) (nth 2 fa2))   - mark files with different UID<br/>
+              (= (nth 3 fa1) (nth 3 fa2))))   and GID.

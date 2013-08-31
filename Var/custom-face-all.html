@@ -1,1 +1,348 @@
-custom-face-all is a variable defined in `cus-edit.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Converted version of the `custom-face-all' widget.<br/><br/>Value:<br/>(custom-face-all :args<br/>		 ((group :format "%v" :args<br/>			 ((custom-display :args<br/>					  ((const :tag "all" :args nil :value t)<br/>					   (const :tag "defaults" :args nil :value default)<br/>					   (checklist :tag "specific display" :offset 0 :extra-offset 9 :args<br/>						      ((group :sibling-args<br/>							      (:help-echo "Only match the specified window systems.")<br/>							      :args<br/>							      ((const :format "Type: " :args nil :value type)<br/>							       (checklist :inline t :offset 0 :args<br/>									  ((const :format "X " :sibling-args<br/>										  (:help-echo "The X11 Window System.")<br/>										  :args nil :value x)<br/>									   (const :format "PM " :sibling-args<br/>										  (:help-echo "OS/2 Presentation Manager.")<br/>										  :args nil :value pm)<br/>									   (const :format "W32 " :sibling-args<br/>										  (:help-echo "Windows NT/9X.")<br/>										  :args nil :value w32)<br/>									   (const :format "NS " :sibling-args<br/>										  (:help-echo "GNUstep or Macintosh OS Cocoa interface.")<br/>										  :args nil :value ns)<br/>									   (const :format "DOS " :sibling-args<br/>										  (:help-echo "Plain MS-DOS.")<br/>										  :args nil :value pc)<br/>									   (const :format "TTY%n" :sibling-args<br/>										  (:help-echo "Plain text terminals.")<br/>										  :args nil :value tty)))))<br/>						       (group :sibling-args<br/>							      (:help-echo "Only match the frames with the specified color support.")<br/>							      :args<br/>							      ((const :format "Class: " :args nil :value class)<br/>							       (checklist :inline t :offset 0 :args<br/>									  ((const :format "Color " :sibling-args<br/>										  (:help-echo "Match color frames.")<br/>										  :args nil :value color)<br/>									   (const :format "Grayscale " :sibling-args<br/>										  (:help-echo "Match grayscale frames.")<br/>										  :args nil :value grayscale)<br/>									   (const :format "Monochrome%n" :sibling-args<br/>										  (:help-echo "Match frames with no color support.")<br/>										  :args nil :value mono)))))<br/>						       (group :sibling-args<br/>							      (:help-echo "The minimum number of colors the frame should support.")<br/>							      :args<br/>							      ((const :format "" :args nil :value min-colors)<br/>							       (integer :tag "Minimum number of colors" :value "0")))<br/>						       (group :sibling-args<br/>							      (:help-echo "Only match frames with the specified intensity.")<br/>							      :args<br/>							      ((const :format "Background brightness: " :args nil :value background)<br/>							       (checklist :inline t :offset 0 :args<br/>									  ((const :format "Light " :sibling-args<br/>										  (:help-echo "Match frames with light backgrounds.")<br/>										  :args nil :value light)<br/>									   (const :format "Dark\n" :sibling-args<br/>										  (:help-echo "Match frames with dark backgrounds.")<br/>										  :args nil :value dark)))))<br/>						       (group :sibling-args<br/>							      (:help-echo "Only match frames that support the specified face attributes.")<br/>							      :args<br/>							      ((const :format "Supports attributes:" :args nil :value supports)<br/>							       (custom-face-edit :inline t :format "%n%v" :args<br/>										 ((group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :family)<br/>											  (string :tag "Font Family" :help-echo "Font family or fontset alias name." :value ""))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :foundry)<br/>											  (string :tag "Font Foundry" :help-echo "Font foundry name." :value ""))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :width)<br/>											  (choice :tag "Width" :help-echo "Font width." :value normal :args<br/>												  ((const :tag "compressed" :args nil :value condensed)<br/>												   (const :tag "condensed" :args nil :value condensed)<br/>												   (const :tag "demiexpanded" :args nil :value semi-expanded)<br/>												   (const :tag "expanded" :args nil :value expanded)<br/>												   (const :tag "extracondensed" :args nil :value extra-condensed)<br/>												   (const :tag "extraexpanded" :args nil :value extra-expanded)<br/>												   (const :tag "medium" :args nil :value normal)<br/>												   (const :tag "narrow" :args nil :value condensed)<br/>												   (const :tag "normal" :args nil :value normal)<br/>												   (const :tag "regular" :args nil :value normal)<br/>												   (const :tag "semicondensed" :args nil :value semi-condensed)<br/>												   (const :tag "semiexpanded" :args nil :value semi-expanded)<br/>												   (const :tag "ultracondensed" :args nil :value ultra-condensed)<br/>												   (const :tag "ultraexpanded" :args nil :value ultra-expanded)<br/>												   (const :tag "wide" :args nil :value extra-expanded))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :height)<br/>											  (choice :tag "Height" :help-echo "Face's font height." :value 1.0 :args<br/>												  ((integer :tag "Height in 1/10 pt" :value "0")<br/>												   (number :tag "Scale" :args nil :value "1.0"))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :weight)<br/>											  (choice :tag "Weight" :help-echo "Font weight." :value normal :args<br/>												  ((const :tag "black" :args nil :value ultra-bold)<br/>												   (const :tag "bold" :args nil :value bold)<br/>												   (const :tag "book" :args nil :value semi-light)<br/>												   (const :tag "demibold" :args nil :value semi-bold)<br/>												   (const :tag "extralight" :args nil :value extra-light)<br/>												   (const :tag "extrabold" :args nil :value extra-bold)<br/>												   (const :tag "heavy" :args nil :value extra-bold)<br/>												   (const :tag "light" :args nil :value light)<br/>												   (const :tag "medium" :args nil :value normal)<br/>												   (const :tag "normal" :args nil :value normal)<br/>												   (const :tag "regular" :args nil :value normal)<br/>												   (const :tag "semibold" :args nil :value semi-bold)<br/>												   (const :tag "semilight" :args nil :value semi-light)<br/>												   (const :tag "ultralight" :args nil :value ultra-light)<br/>												   (const :tag "ultrabold" :args nil :value ultra-bold)<br/>												   (const :tag "thin" :args nil :value thin))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :slant)<br/>											  (choice :tag "Slant" :help-echo "Font slant." :value normal :args<br/>												  ((const :tag "italic" :args nil :value italic)<br/>												   (const :tag "oblique" :args nil :value oblique)<br/>												   (const :tag "normal" :args nil :value normal)<br/>												   (const :tag "roman" :args nil :value roman))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :underline)<br/>											  (choice :tag "Underline" :help-echo "Control text underlining." :args<br/>												  ((const :tag "Off" :args nil :value nil)<br/>												   (list :tag "On" :value<br/>													 (:color foreground-color :style line)<br/>													 :args<br/>													 ((const :format "" :value :color)<br/>													  (choice :tag "Color" :args<br/>														  ((const :tag "Foreground Color" :args nil :value foreground-color)<br/>														   (color :value "black")))<br/>													  (const :format "" :value :style)<br/>													  (choice :tag "Style" :args<br/>														  ((const :tag "Line" :args nil :value line)<br/>														   (const :tag "Wave" :args nil :value wave))))))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :overline)<br/>											  (choice :tag "Overline" :help-echo "Control text overlining." :args<br/>												  ((const :tag "Off" :args nil :value nil)<br/>												   (const :tag "On" :args nil :value t)<br/>												   (color :tag "Colored" :value "black"))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :strike-through)<br/>											  (choice :tag "Strike-through" :help-echo "Control text strike-through." :args<br/>												  ((const :tag "Off" :args nil :value nil)<br/>												   (const :tag "On" :args nil :value t)<br/>												   (color :tag "Colored" :value "black"))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :box)<br/>											  (choice :tag "Box around text" :help-echo "Control box around text." :args<br/>												  ((const :tag "Off" :args nil :value nil)<br/>												   (list :tag "Box" :value<br/>													 (:line-width 2 :color "grey75" :style released-button)<br/>													 :args<br/>													 ((const :format "" :value :line-width)<br/>													  (integer :tag "Width" :value "0")<br/>													  (const :format "" :value :color)<br/>													  (choice :tag "Color" :args<br/>														  ((const :tag "*" :args nil :value nil)<br/>														   (color :value "black")))<br/>													  (const :format "" :value :style)<br/>													  (choice :tag "Style" :args<br/>														  ((const :tag "Raised" :args nil :value released-button)<br/>														   (const :tag "Sunken" :args nil :value pressed-button)<br/>														   (const :tag "None" :args nil :value nil))))))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :inverse-video)<br/>											  (choice :tag "Inverse-video" :help-echo "Control whether text should be in inverse-video." :args<br/>												  ((const :tag "Off" :args nil :value nil)<br/>												   (const :tag "On" :args nil :value t))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :foreground)<br/>											  (color :tag "Foreground" :help-echo "Set foreground color (name or #RRGGBB hex spec)." :value "black"))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :background)<br/>											  (color :tag "Background" :help-echo "Set background color (name or #RRGGBB hex spec)." :value "black"))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :stipple)<br/>											  (choice :tag "Stipple" :help-echo "Background bit-mask" :args<br/>												  ((const :tag "None" :args nil :value nil)<br/>												   (file :tag "File" :help-echo "Name of bitmap file." :must-match t :value ""))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>										  (group :inline t :sibling-args nil :args<br/>											 ((const :format "" :value :inherit)<br/>											  (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from." :args<br/>												  ((face :Tag "Face" :args<br/>													 (default)))))<br/>											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete))))))))<br/>					  :value t)<br/>			  (custom-face-edit :args<br/>					    ((group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :family)<br/>						     (string :tag "Font Family" :help-echo "Font family or fontset alias name." :value ""))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :foundry)<br/>						     (string :tag "Font Foundry" :help-echo "Font foundry name." :value ""))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :width)<br/>						     (choice :tag "Width" :help-echo "Font width." :value normal :args<br/>							     ((const :tag "compressed" :args nil :value condensed)<br/>							      (const :tag "condensed" :args nil :value condensed)<br/>							      (const :tag "demiexpanded" :args nil :value semi-expanded)<br/>							      (const :tag "expanded" :args nil :value expanded)<br/>							      (const :tag "extracondensed" :args nil :value extra-condensed)<br/>							      (const :tag "extraexpanded" :args nil :value extra-expanded)<br/>							      (const :tag "medium" :args nil :value normal)<br/>							      (const :tag "narrow" :args nil :value condensed)<br/>							      (const :tag "normal" :args nil :value normal)<br/>							      (const :tag "regular" :args nil :value normal)<br/>							      (const :tag "semicondensed" :args nil :value semi-condensed)<br/>							      (const :tag "semiexpanded" :args nil :value semi-expanded)<br/>							      (const :tag "ultracondensed" :args nil :value ultra-condensed)<br/>							      (const :tag "ultraexpanded" :args nil :value ultra-expanded)<br/>							      (const :tag "wide" :args nil :value extra-expanded))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :height)<br/>						     (choice :tag "Height" :help-echo "Face's font height." :value 1.0 :args<br/>							     ((integer :tag "Height in 1/10 pt" :value "0")<br/>							      (number :tag "Scale" :args nil :value "1.0"))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :weight)<br/>						     (choice :tag "Weight" :help-echo "Font weight." :value normal :args<br/>							     ((const :tag "black" :args nil :value ultra-bold)<br/>							      (const :tag "bold" :args nil :value bold)<br/>							      (const :tag "book" :args nil :value semi-light)<br/>							      (const :tag "demibold" :args nil :value semi-bold)<br/>							      (const :tag "extralight" :args nil :value extra-light)<br/>							      (const :tag "extrabold" :args nil :value extra-bold)<br/>							      (const :tag "heavy" :args nil :value extra-bold)<br/>							      (const :tag "light" :args nil :value light)<br/>							      (const :tag "medium" :args nil :value normal)<br/>							      (const :tag "normal" :args nil :value normal)<br/>							      (const :tag "regular" :args nil :value normal)<br/>							      (const :tag "semibold" :args nil :value semi-bold)<br/>							      (const :tag "semilight" :args nil :value semi-light)<br/>							      (const :tag "ultralight" :args nil :value ultra-light)<br/>							      (const :tag "ultrabold" :args nil :value ultra-bold)<br/>							      (const :tag "thin" :args nil :value thin))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :slant)<br/>						     (choice :tag "Slant" :help-echo "Font slant." :value normal :args<br/>							     ((const :tag "italic" :args nil :value italic)<br/>							      (const :tag "oblique" :args nil :value oblique)<br/>							      (const :tag "normal" :args nil :value normal)<br/>							      (const :tag "roman" :args nil :value roman))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :underline)<br/>						     (choice :tag "Underline" :help-echo "Control text underlining." :args<br/>							     ((const :tag "Off" :args nil :value nil)<br/>							      (list :tag "On" :value<br/>								    (:color foreground-color :style line)<br/>								    :args<br/>								    ((const :format "" :value :color)<br/>								     (choice :tag "Color" :args<br/>									     ((const :tag "Foreground Color" :args nil :value foreground-color)<br/>									      (color :value "black")))<br/>								     (const :format "" :value :style)<br/>								     (choice :tag "Style" :args<br/>									     ((const :tag "Line" :args nil :value line)<br/>									      (const :tag "Wave" :args nil :value wave))))))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :overline)<br/>						     (choice :tag "Overline" :help-echo "Control text overlining." :args<br/>							     ((const :tag "Off" :args nil :value nil)<br/>							      (const :tag "On" :args nil :value t)<br/>							      (color :tag "Colored" :value "black"))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :strike-through)<br/>						     (choice :tag "Strike-through" :help-echo "Control text strike-through." :args<br/>							     ((const :tag "Off" :args nil :value nil)<br/>							      (const :tag "On" :args nil :value t)<br/>							      (color :tag "Colored" :value "black"))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :box)<br/>						     (choice :tag "Box around text" :help-echo "Control box around text." :args<br/>							     ((const :tag "Off" :args nil :value nil)<br/>							      (list :tag "Box" :value<br/>								    (:line-width 2 :color "grey75" :style released-button)<br/>								    :args<br/>								    ((const :format "" :value :line-width)<br/>								     (integer :tag "Width" :value "0")<br/>								     (const :format "" :value :color)<br/>								     (choice :tag "Color" :args<br/>									     ((const :tag "*" :args nil :value nil)<br/>									      (color :value "black")))<br/>								     (const :format "" :value :style)<br/>								     (choice :tag "Style" :args<br/>									     ((const :tag "Raised" :args nil :value released-button)<br/>									      (const :tag "Sunken" :args nil :value pressed-button)<br/>									      (const :tag "None" :args nil :value nil))))))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :inverse-video)<br/>						     (choice :tag "Inverse-video" :help-echo "Control whether text should be in inverse-video." :args<br/>							     ((const :tag "Off" :args nil :value nil)<br/>							      (const :tag "On" :args nil :value t))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :foreground)<br/>						     (color :tag "Foreground" :help-echo "Set foreground color (name or #RRGGBB hex spec)." :value "black"))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :background)<br/>						     (color :tag "Background" :help-echo "Set background color (name or #RRGGBB hex spec)." :value "black"))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :stipple)<br/>						     (choice :tag "Stipple" :help-echo "Background bit-mask" :args<br/>							     ((const :tag "None" :args nil :value nil)<br/>							      (file :tag "File" :help-echo "Name of bitmap file." :must-match t :value ""))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>					     (group :inline t :sibling-args nil :args<br/>						    ((const :format "" :value :inherit)<br/>						     (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from." :args<br/>							     ((face :Tag "Face" :args<br/>								    (default)))))<br/>						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)))))))<br/><br/>
+<strong>custom-face-all</strong> is a variable defined in `<code>cus-edit.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Converted version of the `custom-face-all' widget.<br/>
+<br/>
+Value:<br/>
+(custom-face-all :args<br/>
+		 ((group :format "%v" :args<br/>
+			 ((custom-display :args<br/>
+					  ((const :tag "all" :args nil :value t)<br/>
+					   (const :tag "defaults" :args nil :value default)<br/>
+					   (checklist :tag "specific display" :offset 0 :extra-offset 9 :args<br/>
+						      ((group :sibling-args<br/>
+							      (:help-echo "Only match the specified window systems.")<br/>
+							      :args<br/>
+							      ((const :format "Type: " :args nil :value type)<br/>
+							       (checklist :inline t :offset 0 :args<br/>
+									  ((const :format "X " :sibling-args<br/>
+										  (:help-echo "The X11 Window System.")<br/>
+										  :args nil :value x)<br/>
+									   (const :format "PM " :sibling-args<br/>
+										  (:help-echo "OS/2 Presentation Manager.")<br/>
+										  :args nil :value pm)<br/>
+									   (const :format "W32 " :sibling-args<br/>
+										  (:help-echo "Windows NT/9X.")<br/>
+										  :args nil :value w32)<br/>
+									   (const :format "NS " :sibling-args<br/>
+										  (:help-echo "GNUstep or Macintosh OS Cocoa interface.")<br/>
+										  :args nil :value ns)<br/>
+									   (const :format "DOS " :sibling-args<br/>
+										  (:help-echo "Plain MS-DOS.")<br/>
+										  :args nil :value pc)<br/>
+									   (const :format "TTY%n" :sibling-args<br/>
+										  (:help-echo "Plain text terminals.")<br/>
+										  :args nil :value tty)))))<br/>
+						       (group :sibling-args<br/>
+							      (:help-echo "Only match the frames with the specified color support.")<br/>
+							      :args<br/>
+							      ((const :format "Class: " :args nil :value class)<br/>
+							       (checklist :inline t :offset 0 :args<br/>
+									  ((const :format "Color " :sibling-args<br/>
+										  (:help-echo "Match color frames.")<br/>
+										  :args nil :value color)<br/>
+									   (const :format "Grayscale " :sibling-args<br/>
+										  (:help-echo "Match grayscale frames.")<br/>
+										  :args nil :value grayscale)<br/>
+									   (const :format "Monochrome%n" :sibling-args<br/>
+										  (:help-echo "Match frames with no color support.")<br/>
+										  :args nil :value mono)))))<br/>
+						       (group :sibling-args<br/>
+							      (:help-echo "The minimum number of colors the frame should support.")<br/>
+							      :args<br/>
+							      ((const :format "" :args nil :value min-colors)<br/>
+							       (integer :tag "Minimum number of colors" :value "0")))<br/>
+						       (group :sibling-args<br/>
+							      (:help-echo "Only match frames with the specified intensity.")<br/>
+							      :args<br/>
+							      ((const :format "Background brightness: " :args nil :value background)<br/>
+							       (checklist :inline t :offset 0 :args<br/>
+									  ((const :format "Light " :sibling-args<br/>
+										  (:help-echo "Match frames with light backgrounds.")<br/>
+										  :args nil :value light)<br/>
+									   (const :format "Dark\n" :sibling-args<br/>
+										  (:help-echo "Match frames with dark backgrounds.")<br/>
+										  :args nil :value dark)))))<br/>
+						       (group :sibling-args<br/>
+							      (:help-echo "Only match frames that support the specified face attributes.")<br/>
+							      :args<br/>
+							      ((const :format "Supports attributes:" :args nil :value supports)<br/>
+							       (custom-face-edit :inline t :format "%n%v" :args<br/>
+										 ((group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :family)<br/>
+											  (string :tag "Font Family" :help-echo "Font family or fontset alias name." :value ""))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :foundry)<br/>
+											  (string :tag "Font Foundry" :help-echo "Font foundry name." :value ""))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :width)<br/>
+											  (choice :tag "Width" :help-echo "Font width." :value normal :args<br/>
+												  ((const :tag "compressed" :args nil :value condensed)<br/>
+												   (const :tag "condensed" :args nil :value condensed)<br/>
+												   (const :tag "demiexpanded" :args nil :value semi-expanded)<br/>
+												   (const :tag "expanded" :args nil :value expanded)<br/>
+												   (const :tag "extracondensed" :args nil :value extra-condensed)<br/>
+												   (const :tag "extraexpanded" :args nil :value extra-expanded)<br/>
+												   (const :tag "medium" :args nil :value normal)<br/>
+												   (const :tag "narrow" :args nil :value condensed)<br/>
+												   (const :tag "normal" :args nil :value normal)<br/>
+												   (const :tag "regular" :args nil :value normal)<br/>
+												   (const :tag "semicondensed" :args nil :value semi-condensed)<br/>
+												   (const :tag "semiexpanded" :args nil :value semi-expanded)<br/>
+												   (const :tag "ultracondensed" :args nil :value ultra-condensed)<br/>
+												   (const :tag "ultraexpanded" :args nil :value ultra-expanded)<br/>
+												   (const :tag "wide" :args nil :value extra-expanded))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :height)<br/>
+											  (choice :tag "Height" :help-echo "Face's font height." :value 1.0 :args<br/>
+												  ((integer :tag "Height in 1/10 pt" :value "0")<br/>
+												   (number :tag "Scale" :args nil :value "1.0"))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :weight)<br/>
+											  (choice :tag "Weight" :help-echo "Font weight." :value normal :args<br/>
+												  ((const :tag "black" :args nil :value ultra-bold)<br/>
+												   (const :tag "bold" :args nil :value bold)<br/>
+												   (const :tag "book" :args nil :value semi-light)<br/>
+												   (const :tag "demibold" :args nil :value semi-bold)<br/>
+												   (const :tag "extralight" :args nil :value extra-light)<br/>
+												   (const :tag "extrabold" :args nil :value extra-bold)<br/>
+												   (const :tag "heavy" :args nil :value extra-bold)<br/>
+												   (const :tag "light" :args nil :value light)<br/>
+												   (const :tag "medium" :args nil :value normal)<br/>
+												   (const :tag "normal" :args nil :value normal)<br/>
+												   (const :tag "regular" :args nil :value normal)<br/>
+												   (const :tag "semibold" :args nil :value semi-bold)<br/>
+												   (const :tag "semilight" :args nil :value semi-light)<br/>
+												   (const :tag "ultralight" :args nil :value ultra-light)<br/>
+												   (const :tag "ultrabold" :args nil :value ultra-bold)<br/>
+												   (const :tag "thin" :args nil :value thin))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :slant)<br/>
+											  (choice :tag "Slant" :help-echo "Font slant." :value normal :args<br/>
+												  ((const :tag "italic" :args nil :value italic)<br/>
+												   (const :tag "oblique" :args nil :value oblique)<br/>
+												   (const :tag "normal" :args nil :value normal)<br/>
+												   (const :tag "roman" :args nil :value roman))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :underline)<br/>
+											  (choice :tag "Underline" :help-echo "Control text underlining." :args<br/>
+												  ((const :tag "Off" :args nil :value nil)<br/>
+												   (list :tag "On" :value<br/>
+													 (:color foreground-color :style line)<br/>
+													 :args<br/>
+													 ((const :format "" :value :color)<br/>
+													  (choice :tag "Color" :args<br/>
+														  ((const :tag "Foreground Color" :args nil :value foreground-color)<br/>
+														   (color :value "black")))<br/>
+													  (const :format "" :value :style)<br/>
+													  (choice :tag "Style" :args<br/>
+														  ((const :tag "Line" :args nil :value line)<br/>
+														   (const :tag "Wave" :args nil :value wave))))))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :overline)<br/>
+											  (choice :tag "Overline" :help-echo "Control text overlining." :args<br/>
+												  ((const :tag "Off" :args nil :value nil)<br/>
+												   (const :tag "On" :args nil :value t)<br/>
+												   (color :tag "Colored" :value "black"))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :strike-through)<br/>
+											  (choice :tag "Strike-through" :help-echo "Control text strike-through." :args<br/>
+												  ((const :tag "Off" :args nil :value nil)<br/>
+												   (const :tag "On" :args nil :value t)<br/>
+												   (color :tag "Colored" :value "black"))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :box)<br/>
+											  (choice :tag "Box around text" :help-echo "Control box around text." :args<br/>
+												  ((const :tag "Off" :args nil :value nil)<br/>
+												   (list :tag "Box" :value<br/>
+													 (:line-width 2 :color "grey75" :style released-button)<br/>
+													 :args<br/>
+													 ((const :format "" :value :line-width)<br/>
+													  (integer :tag "Width" :value "0")<br/>
+													  (const :format "" :value :color)<br/>
+													  (choice :tag "Color" :args<br/>
+														  ((const :tag "*" :args nil :value nil)<br/>
+														   (color :value "black")))<br/>
+													  (const :format "" :value :style)<br/>
+													  (choice :tag "Style" :args<br/>
+														  ((const :tag "Raised" :args nil :value released-button)<br/>
+														   (const :tag "Sunken" :args nil :value pressed-button)<br/>
+														   (const :tag "None" :args nil :value nil))))))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :inverse-video)<br/>
+											  (choice :tag "Inverse-video" :help-echo "Control whether text should be in inverse-video." :args<br/>
+												  ((const :tag "Off" :args nil :value nil)<br/>
+												   (const :tag "On" :args nil :value t))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :foreground)<br/>
+											  (color :tag "Foreground" :help-echo "Set foreground color (name or #RRGGBB hex spec)." :value "black"))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :background)<br/>
+											  (color :tag "Background" :help-echo "Set background color (name or #RRGGBB hex spec)." :value "black"))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :stipple)<br/>
+											  (choice :tag "Stipple" :help-echo "Background bit-mask" :args<br/>
+												  ((const :tag "None" :args nil :value nil)<br/>
+												   (file :tag "File" :help-echo "Name of bitmap file." :must-match t :value ""))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+										  (group :inline t :sibling-args nil :args<br/>
+											 ((const :format "" :value :inherit)<br/>
+											  (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from." :args<br/>
+												  ((face :Tag "Face" :args<br/>
+													 (default)))))<br/>
+											 :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete))))))))<br/>
+					  :value t)<br/>
+			  (custom-face-edit :args<br/>
+					    ((group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :family)<br/>
+						     (string :tag "Font Family" :help-echo "Font family or fontset alias name." :value ""))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :foundry)<br/>
+						     (string :tag "Font Foundry" :help-echo "Font foundry name." :value ""))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :width)<br/>
+						     (choice :tag "Width" :help-echo "Font width." :value normal :args<br/>
+							     ((const :tag "compressed" :args nil :value condensed)<br/>
+							      (const :tag "condensed" :args nil :value condensed)<br/>
+							      (const :tag "demiexpanded" :args nil :value semi-expanded)<br/>
+							      (const :tag "expanded" :args nil :value expanded)<br/>
+							      (const :tag "extracondensed" :args nil :value extra-condensed)<br/>
+							      (const :tag "extraexpanded" :args nil :value extra-expanded)<br/>
+							      (const :tag "medium" :args nil :value normal)<br/>
+							      (const :tag "narrow" :args nil :value condensed)<br/>
+							      (const :tag "normal" :args nil :value normal)<br/>
+							      (const :tag "regular" :args nil :value normal)<br/>
+							      (const :tag "semicondensed" :args nil :value semi-condensed)<br/>
+							      (const :tag "semiexpanded" :args nil :value semi-expanded)<br/>
+							      (const :tag "ultracondensed" :args nil :value ultra-condensed)<br/>
+							      (const :tag "ultraexpanded" :args nil :value ultra-expanded)<br/>
+							      (const :tag "wide" :args nil :value extra-expanded))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :height)<br/>
+						     (choice :tag "Height" :help-echo "Face's font height." :value 1.0 :args<br/>
+							     ((integer :tag "Height in 1/10 pt" :value "0")<br/>
+							      (number :tag "Scale" :args nil :value "1.0"))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :weight)<br/>
+						     (choice :tag "Weight" :help-echo "Font weight." :value normal :args<br/>
+							     ((const :tag "black" :args nil :value ultra-bold)<br/>
+							      (const :tag "bold" :args nil :value bold)<br/>
+							      (const :tag "book" :args nil :value semi-light)<br/>
+							      (const :tag "demibold" :args nil :value semi-bold)<br/>
+							      (const :tag "extralight" :args nil :value extra-light)<br/>
+							      (const :tag "extrabold" :args nil :value extra-bold)<br/>
+							      (const :tag "heavy" :args nil :value extra-bold)<br/>
+							      (const :tag "light" :args nil :value light)<br/>
+							      (const :tag "medium" :args nil :value normal)<br/>
+							      (const :tag "normal" :args nil :value normal)<br/>
+							      (const :tag "regular" :args nil :value normal)<br/>
+							      (const :tag "semibold" :args nil :value semi-bold)<br/>
+							      (const :tag "semilight" :args nil :value semi-light)<br/>
+							      (const :tag "ultralight" :args nil :value ultra-light)<br/>
+							      (const :tag "ultrabold" :args nil :value ultra-bold)<br/>
+							      (const :tag "thin" :args nil :value thin))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :slant)<br/>
+						     (choice :tag "Slant" :help-echo "Font slant." :value normal :args<br/>
+							     ((const :tag "italic" :args nil :value italic)<br/>
+							      (const :tag "oblique" :args nil :value oblique)<br/>
+							      (const :tag "normal" :args nil :value normal)<br/>
+							      (const :tag "roman" :args nil :value roman))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :underline)<br/>
+						     (choice :tag "Underline" :help-echo "Control text underlining." :args<br/>
+							     ((const :tag "Off" :args nil :value nil)<br/>
+							      (list :tag "On" :value<br/>
+								    (:color foreground-color :style line)<br/>
+								    :args<br/>
+								    ((const :format "" :value :color)<br/>
+								     (choice :tag "Color" :args<br/>
+									     ((const :tag "Foreground Color" :args nil :value foreground-color)<br/>
+									      (color :value "black")))<br/>
+								     (const :format "" :value :style)<br/>
+								     (choice :tag "Style" :args<br/>
+									     ((const :tag "Line" :args nil :value line)<br/>
+									      (const :tag "Wave" :args nil :value wave))))))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :overline)<br/>
+						     (choice :tag "Overline" :help-echo "Control text overlining." :args<br/>
+							     ((const :tag "Off" :args nil :value nil)<br/>
+							      (const :tag "On" :args nil :value t)<br/>
+							      (color :tag "Colored" :value "black"))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :strike-through)<br/>
+						     (choice :tag "Strike-through" :help-echo "Control text strike-through." :args<br/>
+							     ((const :tag "Off" :args nil :value nil)<br/>
+							      (const :tag "On" :args nil :value t)<br/>
+							      (color :tag "Colored" :value "black"))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :box)<br/>
+						     (choice :tag "Box around text" :help-echo "Control box around text." :args<br/>
+							     ((const :tag "Off" :args nil :value nil)<br/>
+							      (list :tag "Box" :value<br/>
+								    (:line-width 2 :color "grey75" :style released-button)<br/>
+								    :args<br/>
+								    ((const :format "" :value :line-width)<br/>
+								     (integer :tag "Width" :value "0")<br/>
+								     (const :format "" :value :color)<br/>
+								     (choice :tag "Color" :args<br/>
+									     ((const :tag "*" :args nil :value nil)<br/>
+									      (color :value "black")))<br/>
+								     (const :format "" :value :style)<br/>
+								     (choice :tag "Style" :args<br/>
+									     ((const :tag "Raised" :args nil :value released-button)<br/>
+									      (const :tag "Sunken" :args nil :value pressed-button)<br/>
+									      (const :tag "None" :args nil :value nil))))))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :inverse-video)<br/>
+						     (choice :tag "Inverse-video" :help-echo "Control whether text should be in inverse-video." :args<br/>
+							     ((const :tag "Off" :args nil :value nil)<br/>
+							      (const :tag "On" :args nil :value t))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :foreground)<br/>
+						     (color :tag "Foreground" :help-echo "Set foreground color (name or #RRGGBB hex spec)." :value "black"))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :background)<br/>
+						     (color :tag "Background" :help-echo "Set background color (name or #RRGGBB hex spec)." :value "black"))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :stipple)<br/>
+						     (choice :tag "Stipple" :help-echo "Background bit-mask" :args<br/>
+							     ((const :tag "None" :args nil :value nil)<br/>
+							      (file :tag "File" :help-echo "Name of bitmap file." :must-match t :value ""))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)<br/>
+					     (group :inline t :sibling-args nil :args<br/>
+						    ((const :format "" :value :inherit)<br/>
+						     (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from." :args<br/>
+							     ((face :Tag "Face" :args<br/>
+								    (default)))))<br/>
+						    :deactivate custom-face-edit-deactivate :activate custom-face-edit-activate :delete custom-face-edit-delete)))))))<br/>
+<br/>

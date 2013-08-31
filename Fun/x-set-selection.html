@@ -1,1 +1,27 @@
-x-set-selection is an interactive compiled Lisp function in `select.el'.<br/><br/>(x-set-selection TYPE DATA)<br/><br/>Make an X selection of type TYPE and value DATA.<br/>The argument TYPE (nil means `PRIMARY') says which selection, and<br/>DATA specifies the contents.  TYPE must be a symbol.  (It can also<br/>be a string, which stands for the symbol with that name, but this<br/>is considered obsolete.)  DATA may be a string, a symbol, an<br/>integer (or a cons of two integers or list of two integers).<br/><br/>The selection may also be a cons of two markers pointing to the same buffer,<br/>or an overlay.  In these cases, the selection is considered to be the text<br/>between the markers *at whatever time the selection is examined*.<br/>Thus, editing done in the buffer after you specify the selection<br/>can alter the effective value of the selection.<br/><br/>The data may also be a vector of valid non-vector selection values.<br/><br/>The return value is DATA.<br/><br/>Interactively, this command sets the primary selection.  Without<br/>prefix argument, it reads the selection in the minibuffer.  With<br/>prefix argument, it uses the text of the region as the selection value.<br/><br/>Note that on MS-Windows, primary and secondary selections set by Emacs<br/>are not available to other programs.
+<strong>x-set-selection</strong> is an interactive compiled Lisp function in `<code>select.el</code>'.<br/>
+<br/>
+(x-set-selection TYPE DATA)<br/>
+<br/>
+Make an X selection of type TYPE and value DATA.<br/>
+The argument TYPE (nil means `PRIMARY') says which selection, and<br/>
+DATA specifies the contents.  TYPE must be a symbol.  (It can also<br/>
+be a string, which stands for the symbol with that name, but this<br/>
+is considered obsolete.)  DATA may be a string, a symbol, an<br/>
+integer (or a cons of two integers or list of two integers).<br/>
+<br/>
+The selection may also be a cons of two markers pointing to the same buffer,<br/>
+or an overlay.  In these cases, the selection is considered to be the text<br/>
+between the markers *at whatever time the selection is examined*.<br/>
+Thus, editing done in the buffer after you specify the selection<br/>
+can alter the effective value of the selection.<br/>
+<br/>
+The data may also be a vector of valid non-vector selection values.<br/>
+<br/>
+The return value is DATA.<br/>
+<br/>
+Interactively, this command sets the primary selection.  Without<br/>
+prefix argument, it reads the selection in the minibuffer.  With<br/>
+prefix argument, it uses the text of the region as the selection value.<br/>
+<br/>
+Note that on MS-Windows, primary and secondary selections set by Emacs<br/>
+are not available to other programs.

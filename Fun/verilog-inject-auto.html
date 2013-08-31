@@ -1,1 +1,43 @@
-verilog-inject-auto is an interactive compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-inject-auto)<br/><br/>Examine legacy non-AUTO code and insert AUTOs in appropriate places.<br/><br/>Any always @ blocks with sensitivity lists that match computed lists will<br/>be replaced with /*AS*/ comments.<br/><br/>Any cells will get /*AUTOINST*/ added to the end of the pin list.<br/>Pins with have identical names will be deleted.<br/><br/>Argument lists will not be deleted, /*AUTOARG*/ will only be inserted to<br/>support adding new ports.  You may wish to delete older ports yourself.<br/><br/>For example:<br/><br/>	module ExampInject (i, o);<br/>	  input i;<br/>	  input j;<br/>	  output o;<br/>	  always @ (i or j)<br/>	     o = i | j;<br/>	  InstModule instName<br/>            (.foobar(baz),<br/>	     j(j));<br/>	endmodule<br/><br/>Typing M-x verilog-inject-auto will make this into:<br/><br/>	module ExampInject (i, o/*AUTOARG*/<br/>	  // Inputs<br/>	  j);<br/>	  input i;<br/>	  output o;<br/>	  always @ (/*AS*/i or j)<br/>	     o = i | j;<br/>	  InstModule instName<br/>            (.foobar(baz),<br/>	     /*AUTOINST*/<br/>	     // Outputs<br/>	     j(j));<br/>	endmodule
+<strong>verilog-inject-auto</strong> is an interactive compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-inject-auto)<br/>
+<br/>
+Examine legacy non-AUTO code and insert AUTOs in appropriate places.<br/>
+<br/>
+Any always @ blocks with sensitivity lists that match computed lists will<br/>
+be replaced with /*AS*/ comments.<br/>
+<br/>
+Any cells will get /*AUTOINST*/ added to the end of the pin list.<br/>
+Pins with have identical names will be deleted.<br/>
+<br/>
+Argument lists will not be deleted, /*AUTOARG*/ will only be inserted to<br/>
+support adding new ports.  You may wish to delete older ports yourself.<br/>
+<br/>
+For example:<br/>
+<br/>
+	module ExampInject (i, o);<br/>
+	  input i;<br/>
+	  input j;<br/>
+	  output o;<br/>
+	  always @ (i or j)<br/>
+	     o = i | j;<br/>
+	  InstModule instName<br/>
+            (.foobar(baz),<br/>
+	     j(j));<br/>
+	endmodule<br/>
+<br/>
+Typing M-x verilog-inject-auto will make this into:<br/>
+<br/>
+	module ExampInject (i, o/*AUTOARG*/<br/>
+	  // Inputs<br/>
+	  j);<br/>
+	  input i;<br/>
+	  output o;<br/>
+	  always @ (/*AS*/i or j)<br/>
+	     o = i | j;<br/>
+	  InstModule instName<br/>
+            (.foobar(baz),<br/>
+	     /*AUTOINST*/<br/>
+	     // Outputs<br/>
+	     j(j));<br/>
+	endmodule

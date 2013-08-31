@@ -1,1 +1,65 @@
-diff-font-lock-keywords is a variable defined in `diff-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (("\\(^@@ -\\([0-9]+\\)\\(?:,\\([0-9]+\\)\\)? \\+\\([0-9]+\\)\\(?:,\\([0-9]+\\)\\)? @@\\)\\(.*\\)$"<br/>  (1 diff-hunk-header-face)<br/>  (6 diff-function-face))<br/> ("^\\(\\*\\{15\\}\\)\\(.*\\)$"<br/>  (1 diff-hunk-header-face)<br/>  (2 diff-function-face))<br/> ("^\\*\\*\\* .+ \\*\\*\\*\\*" . diff-hunk-header-face)<br/> ("--- \\([0-9]+\\)\\(?:,\\([0-9]+\\)\\)? ----$" . diff-hunk-header-face)<br/> ("^[0-9,]+[acd][0-9,]+$" . diff-hunk-header-face)<br/> ("^---$" . diff-hunk-header-face)<br/> ("^\\(---\\|\\+\\+\\+\\|\\*\\*\\*\\) \\([^	\n]+?\\)\\(?:	.*\\| \\(\\*\\*\\*\\*\\|----\\)\\)?\n"<br/>  (0 diff-header-face)<br/>  (2<br/>   (if<br/>       (not<br/>	(match-end 3))<br/>       diff-file-header-face)<br/>   prepend))<br/> ("^\\([-<]\\)\\(.*\n\\)"<br/>  (1 diff-indicator-removed-face)<br/>  (2 diff-removed-face))<br/> ("^\\([+>]\\)\\(.*\n\\)"<br/>  (1 diff-indicator-added-face)<br/>  (2 diff-added-face))<br/> ("^\\(!\\)\\(.*\n\\)"<br/>  (1<br/>   (if diff-use-changed-face diff-indicator-changed-face<br/>     (save-match-data<br/>       (let<br/>	   ((limit<br/>	     (save-excursion<br/>	       (diff-beginning-of-hunk))))<br/>	 (if<br/>	     (save-excursion<br/>	       (re-search-backward diff-context-mid-hunk-header-re limit t))<br/>	     diff-indicator-added-face diff-indicator-removed-face)))))<br/>  (2<br/>   (if diff-use-changed-face diff-changed-face<br/>     (save-match-data<br/>       (let<br/>	   ((limit<br/>	     (save-excursion<br/>	       (diff-beginning-of-hunk))))<br/>	 (if<br/>	     (save-excursion<br/>	       (re-search-backward diff-context-mid-hunk-header-re limit t))<br/>	     diff-added-face diff-removed-face))))))<br/> ("^\\(?:Index\\|revno\\): \\(.+\\).*\n"<br/>  (0 diff-header-face)<br/>  (1 diff-index-face prepend))<br/> ("^Only in .*\n" . diff-nonexistent-face)<br/> ("^\\(#\\)\\(.*\\)"<br/>  (1 font-lock-comment-delimiter-face)<br/>  (2 font-lock-comment-face))<br/> ("^[^-=+*!<>#].*\n"<br/>  (0 diff-context-face)))<br/><br/>
+<strong>diff-font-lock-keywords</strong> is a variable defined in `<code>diff-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (("\\(^@@ -\\([0-9]+\\)\\(?:,\\([0-9]+\\)\\)? \\+\\([0-9]+\\)\\(?:,\\([0-9]+\\)\\)? @@\\)\\(.*\\)$"<br/>
+  (1 diff-hunk-header-face)<br/>
+  (6 diff-function-face))<br/>
+ ("^\\(\\*\\{15\\}\\)\\(.*\\)$"<br/>
+  (1 diff-hunk-header-face)<br/>
+  (2 diff-function-face))<br/>
+ ("^\\*\\*\\* .+ \\*\\*\\*\\*" . diff-hunk-header-face)<br/>
+ ("--- \\([0-9]+\\)\\(?:,\\([0-9]+\\)\\)? ----$" . diff-hunk-header-face)<br/>
+ ("^[0-9,]+[acd][0-9,]+$" . diff-hunk-header-face)<br/>
+ ("^---$" . diff-hunk-header-face)<br/>
+ ("^\\(---\\|\\+\\+\\+\\|\\*\\*\\*\\) \\([^	\n]+?\\)\\(?:	.*\\| \\(\\*\\*\\*\\*\\|----\\)\\)?\n"<br/>
+  (0 diff-header-face)<br/>
+  (2<br/>
+   (if<br/>
+       (not<br/>
+	(match-end 3))<br/>
+       diff-file-header-face)<br/>
+   prepend))<br/>
+ ("^\\([-<]\\)\\(.*\n\\)"<br/>
+  (1 diff-indicator-removed-face)<br/>
+  (2 diff-removed-face))<br/>
+ ("^\\([+>]\\)\\(.*\n\\)"<br/>
+  (1 diff-indicator-added-face)<br/>
+  (2 diff-added-face))<br/>
+ ("^\\(!\\)\\(.*\n\\)"<br/>
+  (1<br/>
+   (if diff-use-changed-face diff-indicator-changed-face<br/>
+     (save-match-data<br/>
+       (let<br/>
+	   ((limit<br/>
+	     (save-excursion<br/>
+	       (diff-beginning-of-hunk))))<br/>
+	 (if<br/>
+	     (save-excursion<br/>
+	       (re-search-backward diff-context-mid-hunk-header-re limit t))<br/>
+	     diff-indicator-added-face diff-indicator-removed-face)))))<br/>
+  (2<br/>
+   (if diff-use-changed-face diff-changed-face<br/>
+     (save-match-data<br/>
+       (let<br/>
+	   ((limit<br/>
+	     (save-excursion<br/>
+	       (diff-beginning-of-hunk))))<br/>
+	 (if<br/>
+	     (save-excursion<br/>
+	       (re-search-backward diff-context-mid-hunk-header-re limit t))<br/>
+	     diff-added-face diff-removed-face))))))<br/>
+ ("^\\(?:Index\\|revno\\): \\(.+\\).*\n"<br/>
+  (0 diff-header-face)<br/>
+  (1 diff-index-face prepend))<br/>
+ ("^Only in .*\n" . diff-nonexistent-face)<br/>
+ ("^\\(#\\)\\(.*\\)"<br/>
+  (1 font-lock-comment-delimiter-face)<br/>
+  (2 font-lock-comment-face))<br/>
+ ("^[^-=+*!<>#].*\n"<br/>
+  (0 diff-context-face)))<br/>
+<br/>

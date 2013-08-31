@@ -1,1 +1,42 @@
-mh-read-range is an autoloaded compiled Lisp function in `mh-seq.el'.<br/><br/>(mh-read-range PROMPT &optional FOLDER DEFAULT EXPAND-FLAG ASK-FLAG NUMBER-AS-RANGE-FLAG)<br/><br/>Read a message range with PROMPT.<br/><br/>If FOLDER is non-nil then a range is read from that folder, otherwise<br/>use `mh-current-folder'.<br/><br/>If DEFAULT is a string then use that as default range to return. If<br/>DEFAULT is nil then ask user with default answer a range based on the<br/>sequences that seem relevant. Finally if DEFAULT is t, try to avoid<br/>prompting the user. Unseen messages, if present, are returned. If the<br/>folder has fewer than `mh-large-folder' messages then "all" messages<br/>are returned. Finally as a last resort prompt the user.<br/><br/>If EXPAND-FLAG is non-nil then a list of message numbers corresponding<br/>to the input is returned. If this list is empty then an error is<br/>raised. If EXPAND-FLAG is nil just return the input string. In this<br/>case we don't check if the range is empty.<br/><br/>If ASK-FLAG is non-nil, then the user is always queried for a range of<br/>messages. If ASK-FLAG is nil, then the function checks if the unseen<br/>sequence is non-empty. If that is the case, `mh-unseen-seq', or the<br/>list of messages in it depending on the value of EXPAND, is returned.<br/>Otherwise if the folder has fewer than `mh-large-folder' messages then<br/>the list of messages corresponding to "all" is returned. If neither<br/>of the above holds then as a last resort the user is queried for a<br/>range of messages.<br/><br/>If NUMBER-AS-RANGE-FLAG is non-nil, then if a number, N is read as<br/>input, it is interpreted as the range "last:N".<br/><br/>This function replaces the existing function `mh-read-msg-range'.<br/>Calls to:<br/><br/>  (mh-read-msg-range folder flag)<br/><br/>should be replaced with:<br/><br/>  (mh-read-range "Suitable prompt" folder t nil flag<br/>                 mh-interpret-number-as-range-flag)
+<strong>mh-read-range</strong> is an autoloaded compiled Lisp function in `<code>mh-seq.el</code>'.<br/>
+<br/>
+(mh-read-range PROMPT &optional FOLDER DEFAULT EXPAND-FLAG ASK-FLAG NUMBER-AS-RANGE-FLAG)<br/>
+<br/>
+Read a message range with PROMPT.<br/>
+<br/>
+If FOLDER is non-nil then a range is read from that folder, otherwise<br/>
+use `mh-current-folder'.<br/>
+<br/>
+If DEFAULT is a string then use that as default range to return. If<br/>
+DEFAULT is nil then ask user with default answer a range based on the<br/>
+sequences that seem relevant. Finally if DEFAULT is t, try to avoid<br/>
+prompting the user. Unseen messages, if present, are returned. If the<br/>
+folder has fewer than `mh-large-folder' messages then "all" messages<br/>
+are returned. Finally as a last resort prompt the user.<br/>
+<br/>
+If EXPAND-FLAG is non-nil then a list of message numbers corresponding<br/>
+to the input is returned. If this list is empty then an error is<br/>
+raised. If EXPAND-FLAG is nil just return the input string. In this<br/>
+case we don't check if the range is empty.<br/>
+<br/>
+If ASK-FLAG is non-nil, then the user is always queried for a range of<br/>
+messages. If ASK-FLAG is nil, then the function checks if the unseen<br/>
+sequence is non-empty. If that is the case, `mh-unseen-seq', or the<br/>
+list of messages in it depending on the value of EXPAND, is returned.<br/>
+Otherwise if the folder has fewer than `mh-large-folder' messages then<br/>
+the list of messages corresponding to "all" is returned. If neither<br/>
+of the above holds then as a last resort the user is queried for a<br/>
+range of messages.<br/>
+<br/>
+If NUMBER-AS-RANGE-FLAG is non-nil, then if a number, N is read as<br/>
+input, it is interpreted as the range "last:N".<br/>
+<br/>
+This function replaces the existing function `mh-read-msg-range'.<br/>
+Calls to:<br/>
+<br/>
+  (mh-read-msg-range folder flag)<br/>
+<br/>
+should be replaced with:<br/>
+<br/>
+  (mh-read-range "Suitable prompt" folder t nil flag<br/>
+                 mh-interpret-number-as-range-flag)

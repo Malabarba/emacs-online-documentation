@@ -1,1 +1,17 @@
-eudc-expand-inline is an interactive autoloaded compiled Lisp function in `eudc.el'.<br/><br/>It is bound to <menu-bar> <tools> <directory-search> <Expand Inline Query>.<br/><br/>(eudc-expand-inline &optional REPLACE)<br/><br/>Query the directory server, and expand the query string before point.<br/>The query string consists of the buffer substring from the point back to<br/>the preceding comma, colon or beginning of line.<br/>The variable `eudc-inline-query-format' controls how to associate the<br/>individual inline query words with directory attribute names.<br/>After querying the server for the given string, the expansion specified by<br/>`eudc-inline-expansion-format' is inserted in the buffer at point.<br/>If REPLACE is non-nil, then this expansion replaces the name in the buffer.<br/>`eudc-expansion-overwrites-query' being non-nil inverts the meaning of REPLACE.<br/>Multiple servers can be tried with the same query until one finds a match,<br/>see `eudc-inline-expansion-servers'
+<strong>eudc-expand-inline</strong> is an interactive autoloaded compiled Lisp function in `<code>eudc.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <tools> <directory-search> <Expand Inline Query>.<br/>
+<br/>
+(eudc-expand-inline &optional REPLACE)<br/>
+<br/>
+Query the directory server, and expand the query string before point.<br/>
+The query string consists of the buffer substring from the point back to<br/>
+the preceding comma, colon or beginning of line.<br/>
+The variable `eudc-inline-query-format' controls how to associate the<br/>
+individual inline query words with directory attribute names.<br/>
+After querying the server for the given string, the expansion specified by<br/>
+`eudc-inline-expansion-format' is inserted in the buffer at point.<br/>
+If REPLACE is non-nil, then this expansion replaces the name in the buffer.<br/>
+`eudc-expansion-overwrites-query' being non-nil inverts the meaning of REPLACE.<br/>
+Multiple servers can be tried with the same query until one finds a match,<br/>
+see `eudc-inline-expansion-servers'

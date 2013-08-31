@@ -1,1 +1,238 @@
-table-cell-menu is a variable defined in `table.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: ("Table"<br/> ("Insert"<br/>  ["Row" table-insert-row :active<br/>   (table--row-column-insertion-point-p)<br/>   :help "Insert row(s) of cells in table"]<br/>  ["Column" table-insert-column :active<br/>   (table--row-column-insertion-point-p 'column)<br/>   :help "Insert column(s) of cells in table"])<br/> ("Delete"<br/>  ["Row" table-delete-row :active<br/>   (table--editable-cell-p)<br/>   :help "Delete row(s) of cells in table"]<br/>  ["Column" table-delete-column :active<br/>   (table--editable-cell-p)<br/>   :help "Delete column(s) of cells in table"])<br/> "----"<br/> ("Split a Cell"<br/>  ["Horizontally" table-split-cell-horizontally :active<br/>   (table--cell-can-split-horizontally-p)<br/>   :help "Split the current cell horizontally at point"]<br/>  ["Vertically" table-split-cell-vertically :active<br/>   (table--cell-can-split-vertically-p)<br/>   :help "Split the current cell vertical at point"])<br/> ("Span a Cell to"<br/>  ["Right"<br/>   (table-span-cell 'right)<br/>   :active<br/>   (table--cell-can-span-p 'right)<br/>   :help "Span the current cell into the right cell"]<br/>  ["Left"<br/>   (table-span-cell 'left)<br/>   :active<br/>   (table--cell-can-span-p 'left)<br/>   :help "Span the current cell into the left cell"]<br/>  ["Above"<br/>   (table-span-cell 'above)<br/>   :active<br/>   (table--cell-can-span-p 'above)<br/>   :help "Span the current cell into the cell above"]<br/>  ["Below"<br/>   (table-span-cell 'below)<br/>   :active<br/>   (table--cell-can-span-p 'below)<br/>   :help "Span the current cell into the cell below"])<br/> "----"<br/> ("Shrink Cells"<br/>  ["Horizontally" table-narrow-cell :active<br/>   (table--editable-cell-p)<br/>   :help "Shrink the current cell horizontally"]<br/>  ["Vertically" table-shorten-cell :active<br/>   (table--editable-cell-p)<br/>   :help "Shrink the current cell vertically"])<br/> ("Expand Cells"<br/>  ["Horizontally" table-widen-cell :active<br/>   (table--editable-cell-p)<br/>   :help "Expand the current cell horizontally"]<br/>  ["Vertically" table-heighten-cell :active<br/>   (table--editable-cell-p)<br/>   :help "Expand the current cell vertically"])<br/> "----"<br/> ("Justify"<br/>  ("a Cell"<br/>   ["Left"<br/>    (table-justify-cell 'left)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Left justify the contents of the current cell"]<br/>   ["Center"<br/>    (table-justify-cell 'center)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Center justify the contents of the current cell"]<br/>   ["Right"<br/>    (table-justify-cell 'right)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Right justify the contents of the current cell"]<br/>   "----"<br/>   ["Top"<br/>    (table-justify-cell 'top)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Top align the contents of the current cell"]<br/>   ["Middle"<br/>    (table-justify-cell 'middle)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Middle align the contents of the current cell"]<br/>   ["Bottom"<br/>    (table-justify-cell 'bottom)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Bottom align the contents of the current cell"]<br/>   ["None"<br/>    (table-justify-cell 'none)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Remove vertical alignment from the current cell"])<br/>  ("a Row"<br/>   ["Left"<br/>    (table-justify-row 'left)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Left justify the contents of all cells in the current row"]<br/>   ["Center"<br/>    (table-justify-row 'center)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Center justify the contents of all cells in the current row"]<br/>   ["Right"<br/>    (table-justify-row 'right)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Right justify the contents of all cells in the current row"]<br/>   "----"<br/>   ["Top"<br/>    (table-justify-row 'top)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Top align the contents of all cells in the current row"]<br/>   ["Middle"<br/>    (table-justify-row 'middle)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Middle align the contents of all cells in the current row"]<br/>   ["Bottom"<br/>    (table-justify-row 'bottom)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Bottom align the contents of all cells in the current row"]<br/>   ["None"<br/>    (table-justify-cell 'none)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Remove vertical alignment from all cells in the current row"])<br/>  ("a Column"<br/>   ["Left"<br/>    (table-justify-column 'left)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Left justify the contents of all cells in the current column"]<br/>   ["Center"<br/>    (table-justify-column 'center)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Center justify the contents of all cells in the current column"]<br/>   ["Right"<br/>    (table-justify-column 'right)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Right justify the contents of all cells in the current column"]<br/>   "----"<br/>   ["Top"<br/>    (table-justify-column 'top)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Top align the contents of all cells in the current column"]<br/>   ["Middle"<br/>    (table-justify-column 'middle)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Middle align the contents of all cells in the current column"]<br/>   ["Bottom"<br/>    (table-justify-column 'bottom)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Bottom align the contents of all cells in the current column"]<br/>   ["None"<br/>    (table-justify-cell 'none)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Remove vertical alignment from all cells in the current column"])<br/>  ("a Paragraph"<br/>   ["Left"<br/>    (table-justify-cell 'left t)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Left justify the current paragraph"]<br/>   ["Center"<br/>    (table-justify-cell 'center t)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Center justify the current paragraph"]<br/>   ["Right"<br/>    (table-justify-cell 'right t)<br/>    :active<br/>    (table--editable-cell-p)<br/>    :help "Right justify the current paragraph"]))<br/> "----"<br/> ["Query Dimension" table-query-dimension :active<br/>  (table--probe-cell)<br/>  :help "Get the dimension of the current cell and the current table"]<br/> ["Generate Source" table-generate-source :active<br/>  (table--probe-cell)<br/>  :help "Generate source of the current table in the specified language"]<br/> ["Insert Sequence" table-insert-sequence :active<br/>  (table--editable-cell-p)<br/>  :help "Travel cells forward while inserting a specified sequence string in each cell"]<br/> ("Unrecognize"<br/>  ["a Table" table-unrecognize-table :active<br/>   (table--probe-cell)<br/>   :help "Unrecognize the current table"]<br/>  ["a Cell" table-unrecognize-cell :active<br/>   (let<br/>       ((cell<br/>	 (table--probe-cell)))<br/>     (and cell<br/>	  (table--at-cell-p<br/>	   (car cell))))<br/>   :help "Unrecognize the current cell"])<br/> ["Release" table-release :active<br/>  (table--editable-cell-p)<br/>  :help "Release the current table as plain text"]<br/> ("Configure Width to"<br/>  ["Auto Expand Mode"<br/>   (table-fixed-width-mode -1)<br/>   :active t :style radio :selected<br/>   (not table-fixed-width-mode)<br/>   :help "A mode that allows automatic horizontal cell expansion"]<br/>  ["Fixed Width Mode"<br/>   (table-fixed-width-mode 1)<br/>   :active t :style radio :selected table-fixed-width-mode :help "A mode that does not allow automatic horizontal cell expansion"])<br/> ("Navigate"<br/>  ["Forward Cell" table-forward-cell :active<br/>   (table--probe-cell)<br/>   :help "Move point forward by cell(s)"]<br/>  ["Backward Cell" table-backward-cell :active<br/>   (table--probe-cell)<br/>   :help "Move point backward by cell(s)"]))<br/><br/>
+<strong>table-cell-menu</strong> is a variable defined in `<code>table.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: ("Table"<br/>
+ ("Insert"<br/>
+  ["Row" table-insert-row :active<br/>
+   (table--row-column-insertion-point-p)<br/>
+   :help "Insert row(s) of cells in table"]<br/>
+  ["Column" table-insert-column :active<br/>
+   (table--row-column-insertion-point-p 'column)<br/>
+   :help "Insert column(s) of cells in table"])<br/>
+ ("Delete"<br/>
+  ["Row" table-delete-row :active<br/>
+   (table--editable-cell-p)<br/>
+   :help "Delete row(s) of cells in table"]<br/>
+  ["Column" table-delete-column :active<br/>
+   (table--editable-cell-p)<br/>
+   :help "Delete column(s) of cells in table"])<br/>
+ "----"<br/>
+ ("Split a Cell"<br/>
+  ["Horizontally" table-split-cell-horizontally :active<br/>
+   (table--cell-can-split-horizontally-p)<br/>
+   :help "Split the current cell horizontally at point"]<br/>
+  ["Vertically" table-split-cell-vertically :active<br/>
+   (table--cell-can-split-vertically-p)<br/>
+   :help "Split the current cell vertical at point"])<br/>
+ ("Span a Cell to"<br/>
+  ["Right"<br/>
+   (table-span-cell 'right)<br/>
+   :active<br/>
+   (table--cell-can-span-p 'right)<br/>
+   :help "Span the current cell into the right cell"]<br/>
+  ["Left"<br/>
+   (table-span-cell 'left)<br/>
+   :active<br/>
+   (table--cell-can-span-p 'left)<br/>
+   :help "Span the current cell into the left cell"]<br/>
+  ["Above"<br/>
+   (table-span-cell 'above)<br/>
+   :active<br/>
+   (table--cell-can-span-p 'above)<br/>
+   :help "Span the current cell into the cell above"]<br/>
+  ["Below"<br/>
+   (table-span-cell 'below)<br/>
+   :active<br/>
+   (table--cell-can-span-p 'below)<br/>
+   :help "Span the current cell into the cell below"])<br/>
+ "----"<br/>
+ ("Shrink Cells"<br/>
+  ["Horizontally" table-narrow-cell :active<br/>
+   (table--editable-cell-p)<br/>
+   :help "Shrink the current cell horizontally"]<br/>
+  ["Vertically" table-shorten-cell :active<br/>
+   (table--editable-cell-p)<br/>
+   :help "Shrink the current cell vertically"])<br/>
+ ("Expand Cells"<br/>
+  ["Horizontally" table-widen-cell :active<br/>
+   (table--editable-cell-p)<br/>
+   :help "Expand the current cell horizontally"]<br/>
+  ["Vertically" table-heighten-cell :active<br/>
+   (table--editable-cell-p)<br/>
+   :help "Expand the current cell vertically"])<br/>
+ "----"<br/>
+ ("Justify"<br/>
+  ("a Cell"<br/>
+   ["Left"<br/>
+    (table-justify-cell 'left)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Left justify the contents of the current cell"]<br/>
+   ["Center"<br/>
+    (table-justify-cell 'center)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Center justify the contents of the current cell"]<br/>
+   ["Right"<br/>
+    (table-justify-cell 'right)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Right justify the contents of the current cell"]<br/>
+   "----"<br/>
+   ["Top"<br/>
+    (table-justify-cell 'top)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Top align the contents of the current cell"]<br/>
+   ["Middle"<br/>
+    (table-justify-cell 'middle)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Middle align the contents of the current cell"]<br/>
+   ["Bottom"<br/>
+    (table-justify-cell 'bottom)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Bottom align the contents of the current cell"]<br/>
+   ["None"<br/>
+    (table-justify-cell 'none)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Remove vertical alignment from the current cell"])<br/>
+  ("a Row"<br/>
+   ["Left"<br/>
+    (table-justify-row 'left)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Left justify the contents of all cells in the current row"]<br/>
+   ["Center"<br/>
+    (table-justify-row 'center)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Center justify the contents of all cells in the current row"]<br/>
+   ["Right"<br/>
+    (table-justify-row 'right)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Right justify the contents of all cells in the current row"]<br/>
+   "----"<br/>
+   ["Top"<br/>
+    (table-justify-row 'top)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Top align the contents of all cells in the current row"]<br/>
+   ["Middle"<br/>
+    (table-justify-row 'middle)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Middle align the contents of all cells in the current row"]<br/>
+   ["Bottom"<br/>
+    (table-justify-row 'bottom)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Bottom align the contents of all cells in the current row"]<br/>
+   ["None"<br/>
+    (table-justify-cell 'none)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Remove vertical alignment from all cells in the current row"])<br/>
+  ("a Column"<br/>
+   ["Left"<br/>
+    (table-justify-column 'left)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Left justify the contents of all cells in the current column"]<br/>
+   ["Center"<br/>
+    (table-justify-column 'center)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Center justify the contents of all cells in the current column"]<br/>
+   ["Right"<br/>
+    (table-justify-column 'right)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Right justify the contents of all cells in the current column"]<br/>
+   "----"<br/>
+   ["Top"<br/>
+    (table-justify-column 'top)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Top align the contents of all cells in the current column"]<br/>
+   ["Middle"<br/>
+    (table-justify-column 'middle)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Middle align the contents of all cells in the current column"]<br/>
+   ["Bottom"<br/>
+    (table-justify-column 'bottom)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Bottom align the contents of all cells in the current column"]<br/>
+   ["None"<br/>
+    (table-justify-cell 'none)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Remove vertical alignment from all cells in the current column"])<br/>
+  ("a Paragraph"<br/>
+   ["Left"<br/>
+    (table-justify-cell 'left t)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Left justify the current paragraph"]<br/>
+   ["Center"<br/>
+    (table-justify-cell 'center t)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Center justify the current paragraph"]<br/>
+   ["Right"<br/>
+    (table-justify-cell 'right t)<br/>
+    :active<br/>
+    (table--editable-cell-p)<br/>
+    :help "Right justify the current paragraph"]))<br/>
+ "----"<br/>
+ ["Query Dimension" table-query-dimension :active<br/>
+  (table--probe-cell)<br/>
+  :help "Get the dimension of the current cell and the current table"]<br/>
+ ["Generate Source" table-generate-source :active<br/>
+  (table--probe-cell)<br/>
+  :help "Generate source of the current table in the specified language"]<br/>
+ ["Insert Sequence" table-insert-sequence :active<br/>
+  (table--editable-cell-p)<br/>
+  :help "Travel cells forward while inserting a specified sequence string in each cell"]<br/>
+ ("Unrecognize"<br/>
+  ["a Table" table-unrecognize-table :active<br/>
+   (table--probe-cell)<br/>
+   :help "Unrecognize the current table"]<br/>
+  ["a Cell" table-unrecognize-cell :active<br/>
+   (let<br/>
+       ((cell<br/>
+	 (table--probe-cell)))<br/>
+     (and cell<br/>
+	  (table--at-cell-p<br/>
+	   (car cell))))<br/>
+   :help "Unrecognize the current cell"])<br/>
+ ["Release" table-release :active<br/>
+  (table--editable-cell-p)<br/>
+  :help "Release the current table as plain text"]<br/>
+ ("Configure Width to"<br/>
+  ["Auto Expand Mode"<br/>
+   (table-fixed-width-mode -1)<br/>
+   :active t :style radio :selected<br/>
+   (not table-fixed-width-mode)<br/>
+   :help "A mode that allows automatic horizontal cell expansion"]<br/>
+  ["Fixed Width Mode"<br/>
+   (table-fixed-width-mode 1)<br/>
+   :active t :style radio :selected table-fixed-width-mode :help "A mode that does not allow automatic horizontal cell expansion"])<br/>
+ ("Navigate"<br/>
+  ["Forward Cell" table-forward-cell :active<br/>
+   (table--probe-cell)<br/>
+   :help "Move point forward by cell(s)"]<br/>
+  ["Backward Cell" table-backward-cell :active<br/>
+   (table--probe-cell)<br/>
+   :help "Move point backward by cell(s)"]))<br/>
+<br/>

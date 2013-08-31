@@ -1,1 +1,47 @@
-meta-mode-map is a variable defined in `meta-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable is an alias for `meta-common-mode-map'.<br/>  This variable is obsolete since 24.1;<br/>  use `meta-common-mode-map' instead.<br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap used in Metafont or MetaPost mode.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (Meta menu-item "Meta"<br/>		 (keymap "Meta"<br/>			 (Forward\ Environment menu-item "Forward Environment" meta-beginning-of-defun)<br/>			 (Backward\ Environment menu-item "Backward Environment" meta-end-of-defun)<br/>			 (nil-7 menu-item "--")<br/>			 (Indent\ Line menu-item "Indent Line" meta-indent-line)<br/>			 (Indent\ Environment menu-item "Indent Environment" meta-indent-defun)<br/>			 (Indent\ Region menu-item "Indent Region" meta-indent-region :enable<br/>					 (meta-mark-active))<br/>			 (Indent\ Buffer menu-item "Indent Buffer" meta-indent-buffer)<br/>			 (nil-7-7 menu-item "--")<br/>			 (Comment\ Out\ Environment menu-item "Comment Out Environment" meta-comment-defun)<br/>			 (Uncomment\ Environment menu-item "Uncomment Environment" meta-uncomment-defun)<br/>			 (Comment\ Out\ Region menu-item "Comment Out Region" meta-comment-region :enable<br/>					       (meta-mark-active))<br/>			 (Uncomment\ Region menu-item "Uncomment Region" meta-uncomment-region :enable<br/>					    (meta-mark-active))<br/>			 (nil-7-12 menu-item "--")<br/>			 (Complete\ Symbol menu-item "Complete Symbol" completion-at-point))))<br/> (3 keymap<br/>    (58 . meta-uncomment-region)<br/>    (59 . meta-comment-region)<br/>    (37 . meta-comment-defun)<br/>    (17 keymap<br/>	(98 . meta-indent-buffer)<br/>	(114 . meta-indent-region)<br/>	(101 . meta-indent-defun)))<br/> (27 keymap<br/>     (9 . completion-at-point)<br/>     (17 . meta-indent-defun)<br/>     (8 . meta-mark-defun)<br/>     (5 . meta-end-of-defun)<br/>     (1 . meta-beginning-of-defun)))<br/><br/>
+<strong>meta-mode-map</strong> is a variable defined in `<code>meta-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable is an alias for `meta-common-mode-map'.<br/>
+  This variable is obsolete since 24.1;<br/>
+  use `meta-common-mode-map' instead.<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap used in Metafont or MetaPost mode.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (Meta menu-item "Meta"<br/>
+		 (keymap "Meta"<br/>
+			 (Forward\ Environment menu-item "Forward Environment" meta-beginning-of-defun)<br/>
+			 (Backward\ Environment menu-item "Backward Environment" meta-end-of-defun)<br/>
+			 (nil-7 menu-item "--")<br/>
+			 (Indent\ Line menu-item "Indent Line" meta-indent-line)<br/>
+			 (Indent\ Environment menu-item "Indent Environment" meta-indent-defun)<br/>
+			 (Indent\ Region menu-item "Indent Region" meta-indent-region :enable<br/>
+					 (meta-mark-active))<br/>
+			 (Indent\ Buffer menu-item "Indent Buffer" meta-indent-buffer)<br/>
+			 (nil-7-7 menu-item "--")<br/>
+			 (Comment\ Out\ Environment menu-item "Comment Out Environment" meta-comment-defun)<br/>
+			 (Uncomment\ Environment menu-item "Uncomment Environment" meta-uncomment-defun)<br/>
+			 (Comment\ Out\ Region menu-item "Comment Out Region" meta-comment-region :enable<br/>
+					       (meta-mark-active))<br/>
+			 (Uncomment\ Region menu-item "Uncomment Region" meta-uncomment-region :enable<br/>
+					    (meta-mark-active))<br/>
+			 (nil-7-12 menu-item "--")<br/>
+			 (Complete\ Symbol menu-item "Complete Symbol" completion-at-point))))<br/>
+ (3 keymap<br/>
+    (58 . meta-uncomment-region)<br/>
+    (59 . meta-comment-region)<br/>
+    (37 . meta-comment-defun)<br/>
+    (17 keymap<br/>
+	(98 . meta-indent-buffer)<br/>
+	(114 . meta-indent-region)<br/>
+	(101 . meta-indent-defun)))<br/>
+ (27 keymap<br/>
+     (9 . completion-at-point)<br/>
+     (17 . meta-indent-defun)<br/>
+     (8 . meta-mark-defun)<br/>
+     (5 . meta-end-of-defun)<br/>
+     (1 . meta-beginning-of-defun)))<br/>
+<br/>

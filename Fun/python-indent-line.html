@@ -1,1 +1,23 @@
-python-indent-line is a compiled Lisp function in `python.el'.<br/><br/>(python-indent-line &optional FORCE-TOGGLE)<br/><br/>Internal implementation of `python-indent-line-function'.<br/>Uses the offset calculated in<br/>`python-indent-calculate-indentation' and available levels<br/>indicated by the variable `python-indent-levels' to set the<br/>current indentation.<br/><br/>When the variable `last-command' is equal to one of the symbols<br/>inside `python-indent-trigger-commands' or FORCE-TOGGLE is<br/>non-nil it cycles levels indicated in the variable<br/>`python-indent-levels' by setting the current level in the<br/>variable `python-indent-current-level'.<br/><br/>When the variable `last-command' is not equal to one of the<br/>symbols inside `python-indent-trigger-commands' and FORCE-TOGGLE<br/>is nil it calculates possible indentation levels and saves it in<br/>the variable `python-indent-levels'.  Afterwards it sets the<br/>variable `python-indent-current-level' correctly so offset is<br/>equal to (`nth' `python-indent-current-level'<br/>`python-indent-levels')
+<strong>python-indent-line</strong> is a compiled Lisp function in `<code>python.el</code>'.<br/>
+<br/>
+(python-indent-line &optional FORCE-TOGGLE)<br/>
+<br/>
+Internal implementation of `python-indent-line-function'.<br/>
+Uses the offset calculated in<br/>
+`python-indent-calculate-indentation' and available levels<br/>
+indicated by the variable `python-indent-levels' to set the<br/>
+current indentation.<br/>
+<br/>
+When the variable `last-command' is equal to one of the symbols<br/>
+inside `python-indent-trigger-commands' or FORCE-TOGGLE is<br/>
+non-nil it cycles levels indicated in the variable<br/>
+`python-indent-levels' by setting the current level in the<br/>
+variable `python-indent-current-level'.<br/>
+<br/>
+When the variable `last-command' is not equal to one of the<br/>
+symbols inside `python-indent-trigger-commands' and FORCE-TOGGLE<br/>
+is nil it calculates possible indentation levels and saves it in<br/>
+the variable `python-indent-levels'.  Afterwards it sets the<br/>
+variable `python-indent-current-level' correctly so offset is<br/>
+equal to (`nth' `python-indent-current-level'<br/>
+`python-indent-levels')

@@ -1,1 +1,22 @@
-ido-rewrite-file-prompt-functions is a variable defined in `ido.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of functions to run when the find-file prompt is created.<br/>Each function on the list may modify the following dynamically bound<br/>variables:<br/>  dirname   - the (abbreviated) directory name<br/>		 to be modified by the hook functions<br/>  max-width - the max width of the resulting dirname; nil means no limit<br/>  prompt    - the basic prompt (e.g. "Find File: ")<br/>  literal   - the string shown if doing "literal" find; set to nil to omit<br/>  vc-off    - the string shown if version control is inhibited; set to nil to omit<br/>  prefix    - either nil or a fixed prefix for the dirname<br/><br/>The following variables are available, but should not be changed:<br/>  `ido-current-directory' - the unabbreviated directory name<br/>  item - equals `file' or `dir' depending on the current mode.<br/><br/>You can customize this variable.
+<strong>ido-rewrite-file-prompt-functions</strong> is a variable defined in `<code>ido.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of functions to run when the find-file prompt is created.<br/>
+Each function on the list may modify the following dynamically bound<br/>
+variables:<br/>
+  dirname   - the (abbreviated) directory name<br/>
+		 to be modified by the hook functions<br/>
+  max-width - the max width of the resulting dirname; nil means no limit<br/>
+  prompt    - the basic prompt (e.g. "Find File: ")<br/>
+  literal   - the string shown if doing "literal" find; set to nil to omit<br/>
+  vc-off    - the string shown if version control is inhibited; set to nil to omit<br/>
+  prefix    - either nil or a fixed prefix for the dirname<br/>
+<br/>
+The following variables are available, but should not be changed:<br/>
+  `ido-current-directory' - the unabbreviated directory name<br/>
+  item - equals `file' or `dir' depending on the current mode.<br/>
+<br/>
+You can customize this variable.

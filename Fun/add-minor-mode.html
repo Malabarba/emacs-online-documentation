@@ -1,1 +1,27 @@
-add-minor-mode is a compiled Lisp function in `subr.el'.<br/><br/>(add-minor-mode TOGGLE NAME &optional KEYMAP AFTER TOGGLE-FUN)<br/><br/>Register a new minor mode.<br/><br/>This is an XEmacs-compatibility function.  Use `define-minor-mode' instead.<br/><br/>TOGGLE is a symbol which is the name of a buffer-local variable that<br/>is toggled on or off to say whether the minor mode is active or not.<br/><br/>NAME specifies what will appear in the mode line when the minor mode<br/>is active.  NAME should be either a string starting with a space, or a<br/>symbol whose value is such a string.<br/><br/>Optional KEYMAP is the keymap for the minor mode that will be added<br/>to `minor-mode-map-alist'.<br/><br/>Optional AFTER specifies that TOGGLE should be added after AFTER<br/>in `minor-mode-alist'.<br/><br/>Optional TOGGLE-FUN is an interactive function to toggle the mode.<br/>It defaults to (and should by convention be) TOGGLE.<br/><br/>If TOGGLE has a non-nil `:included' property, an entry for the mode is<br/>included in the mode-line minor mode menu.<br/>If TOGGLE has a `:menu-tag', that is used for the menu item's label.
+<strong>add-minor-mode</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
+<br/>
+(add-minor-mode TOGGLE NAME &optional KEYMAP AFTER TOGGLE-FUN)<br/>
+<br/>
+Register a new minor mode.<br/>
+<br/>
+This is an XEmacs-compatibility function.  Use `define-minor-mode' instead.<br/>
+<br/>
+TOGGLE is a symbol which is the name of a buffer-local variable that<br/>
+is toggled on or off to say whether the minor mode is active or not.<br/>
+<br/>
+NAME specifies what will appear in the mode line when the minor mode<br/>
+is active.  NAME should be either a string starting with a space, or a<br/>
+symbol whose value is such a string.<br/>
+<br/>
+Optional KEYMAP is the keymap for the minor mode that will be added<br/>
+to `minor-mode-map-alist'.<br/>
+<br/>
+Optional AFTER specifies that TOGGLE should be added after AFTER<br/>
+in `minor-mode-alist'.<br/>
+<br/>
+Optional TOGGLE-FUN is an interactive function to toggle the mode.<br/>
+It defaults to (and should by convention be) TOGGLE.<br/>
+<br/>
+If TOGGLE has a non-nil `:included' property, an entry for the mode is<br/>
+included in the mode-line minor mode menu.<br/>
+If TOGGLE has a `:menu-tag', that is used for the menu item's label.

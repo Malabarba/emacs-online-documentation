@@ -1,1 +1,10 @@
-with-timeout is a Lisp macro in `timer.el'.<br/><br/>(with-timeout (SECONDS TIMEOUT-FORMS...) BODY)<br/><br/>Run BODY, but if it doesn't finish in SECONDS seconds, give up.<br/>If we give up, we run the TIMEOUT-FORMS and return the value of the last one.<br/>The timeout is checked whenever Emacs waits for some kind of external<br/>event (such as keyboard input, input from subprocesses, or a certain time);<br/>if the program loops without waiting in any way, the timeout will not<br/>be detected.
+<strong>with-timeout</strong> is a Lisp macro in `<code>timer.el</code>'.<br/>
+<br/>
+(with-timeout (SECONDS TIMEOUT-FORMS...) BODY)<br/>
+<br/>
+Run BODY, but if it doesn't finish in SECONDS seconds, give up.<br/>
+If we give up, we run the TIMEOUT-FORMS and return the value of the last one.<br/>
+The timeout is checked whenever Emacs waits for some kind of external<br/>
+event (such as keyboard input, input from subprocesses, or a certain time);<br/>
+if the program loops without waiting in any way, the timeout will not<br/>
+be detected.

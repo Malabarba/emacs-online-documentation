@@ -1,1 +1,11 @@
-eieio-slot-name-index is a compiled Lisp function in `eieio.el'.<br/><br/>(eieio-slot-name-index CLASS OBJ SLOT)<br/><br/>In CLASS for OBJ find the index of the named SLOT.<br/>The slot is a symbol which is installed in CLASS by the `defclass'<br/>call.  OBJ can be nil, but if it is an object, and the slot in question<br/>is protected, access will be allowed if OBJ is a child of the currently<br/>`scoped-class'.<br/>If SLOT is the value created with :initarg instead,<br/>reverse-lookup that name, and recurse with the associated slot value.
+<strong>eieio-slot-name-index</strong> is a compiled Lisp function in `<code>eieio.el</code>'.<br/>
+<br/>
+(eieio-slot-name-index CLASS OBJ SLOT)<br/>
+<br/>
+In CLASS for OBJ find the index of the named SLOT.<br/>
+The slot is a symbol which is installed in CLASS by the `defclass'<br/>
+call.  OBJ can be nil, but if it is an object, and the slot in question<br/>
+is protected, access will be allowed if OBJ is a child of the currently<br/>
+`scoped-class'.<br/>
+If SLOT is the value created with :initarg instead,<br/>
+reverse-lookup that name, and recurse with the associated slot value.

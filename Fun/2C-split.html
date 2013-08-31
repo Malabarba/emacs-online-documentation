@@ -1,1 +1,22 @@
-2C-split is an interactive autoloaded compiled Lisp function in `two-column.el'.<br/><br/>It is bound to <f2> s, C-x 6 s.<br/><br/>(2C-split ARG)<br/><br/>Split a two-column text at point, into two buffers in two-column minor mode.<br/>Point becomes the local value of `2C-window-width'.  Only lines that<br/>have the ARG same preceding characters at that column get split.  The<br/>ARG preceding characters without any leading whitespace become the local<br/>value for `2C-separator'.  This way lines that continue across both<br/>columns remain untouched in the first buffer.<br/><br/>This function can be used with a prototype line, to set up things.  You<br/>write the first line of each column and then split that line.  E.g.:<br/><br/>First column's text    sSs  Second column's text<br/>		       \___/\<br/>			/    \<br/>   5 character Separator      You type  M-5 C-x 6 s  with the point here.<br/><br/>(See  C-h m .)
+<strong>2C-split</strong> is an interactive autoloaded compiled Lisp function in `<code>two-column.el</code>'.<br/>
+<br/>
+It is bound to <f2> s, C-x 6 s.<br/>
+<br/>
+(2C-split ARG)<br/>
+<br/>
+Split a two-column text at point, into two buffers in two-column minor mode.<br/>
+Point becomes the local value of `2C-window-width'.  Only lines that<br/>
+have the ARG same preceding characters at that column get split.  The<br/>
+ARG preceding characters without any leading whitespace become the local<br/>
+value for `2C-separator'.  This way lines that continue across both<br/>
+columns remain untouched in the first buffer.<br/>
+<br/>
+This function can be used with a prototype line, to set up things.  You<br/>
+write the first line of each column and then split that line.  E.g.:<br/>
+<br/>
+First column's text    sSs  Second column's text<br/>
+		       \___/\<br/>
+			/    \<br/>
+   5 character Separator      You type  M-5 C-x 6 s  with the point here.<br/>
+<br/>
+(See  C-h m .)

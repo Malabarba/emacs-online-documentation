@@ -1,1 +1,24 @@
-expand-add-abbrevs is an autoloaded compiled Lisp function in `expand.el'.<br/><br/>(expand-add-abbrevs TABLE ABBREVS)<br/><br/>Add a list of abbreviations to abbrev table TABLE.<br/>ABBREVS is a list of abbrev definitions; each abbrev description entry<br/>has the form (ABBREV EXPANSION ARG).<br/><br/>ABBREV is the abbreviation to replace.<br/><br/>EXPANSION is the replacement string or a function which will make the<br/>expansion.  For example, you could use the DMacros or skeleton packages<br/>to generate such functions.<br/><br/>ARG is an optional argument which can be a number or a list of<br/>numbers.  If ARG is a number, point is placed ARG chars from the<br/>beginning of the expanded text.<br/><br/>If ARG is a list of numbers, point is placed according to the first<br/>member of the list, but you can visit the other specified positions<br/>cyclically with the functions `expand-jump-to-previous-slot' and<br/>`expand-jump-to-next-slot'.<br/><br/>If ARG is omitted, point is placed at the end of the expanded text.
+<strong>expand-add-abbrevs</strong> is an autoloaded compiled Lisp function in `<code>expand.el</code>'.<br/>
+<br/>
+(expand-add-abbrevs TABLE ABBREVS)<br/>
+<br/>
+Add a list of abbreviations to abbrev table TABLE.<br/>
+ABBREVS is a list of abbrev definitions; each abbrev description entry<br/>
+has the form (ABBREV EXPANSION ARG).<br/>
+<br/>
+ABBREV is the abbreviation to replace.<br/>
+<br/>
+EXPANSION is the replacement string or a function which will make the<br/>
+expansion.  For example, you could use the DMacros or skeleton packages<br/>
+to generate such functions.<br/>
+<br/>
+ARG is an optional argument which can be a number or a list of<br/>
+numbers.  If ARG is a number, point is placed ARG chars from the<br/>
+beginning of the expanded text.<br/>
+<br/>
+If ARG is a list of numbers, point is placed according to the first<br/>
+member of the list, but you can visit the other specified positions<br/>
+cyclically with the functions `expand-jump-to-previous-slot' and<br/>
+`expand-jump-to-next-slot'.<br/>
+<br/>
+If ARG is omitted, point is placed at the end of the expanded text.

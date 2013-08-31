@@ -1,1 +1,14 @@
-gud-find-class is a compiled Lisp function in `gud.el'.<br/><br/>(gud-find-class F LINE)<br/><br/>Find fully qualified class in file F at line LINE.<br/>This function uses the `gud-jdb-classpath' (and optional<br/>`gud-jdb-sourcepath') list(s) to derive a file<br/>pathname relative to its classpath directory.  The values in<br/>`gud-jdb-classpath' are assumed to have been converted to absolute<br/>pathname standards using file-truename.<br/>If F is visited by a buffer and its mode is CC-mode(Java),<br/>syntactic information of LINE is used to find the enclosing (nested)<br/>class string which is appended to the top level<br/>class of the file (using s to separate nested class ids).
+<strong>gud-find-class</strong> is a compiled Lisp function in `<code>gud.el</code>'.<br/>
+<br/>
+(gud-find-class F LINE)<br/>
+<br/>
+Find fully qualified class in file F at line LINE.<br/>
+This function uses the `gud-jdb-classpath' (and optional<br/>
+`gud-jdb-sourcepath') list(s) to derive a file<br/>
+pathname relative to its classpath directory.  The values in<br/>
+`gud-jdb-classpath' are assumed to have been converted to absolute<br/>
+pathname standards using file-truename.<br/>
+If F is visited by a buffer and its mode is CC-mode(Java),<br/>
+syntactic information of LINE is used to find the enclosing (nested)<br/>
+class string which is appended to the top level<br/>
+class of the file (using s to separate nested class ids).

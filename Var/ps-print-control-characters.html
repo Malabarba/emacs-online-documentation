@@ -1,1 +1,33 @@
-ps-print-control-characters is a variable defined in `ps-print.el'.<br/>Its value is control-8-bit<br/><br/>Documentation:<br/>Specify the printable form for control and 8-bit characters.<br/>That is, instead of sending, for example, a ^D (\004) to printer,<br/>it is sent the string "^D".<br/><br/>Valid values are:<br/><br/>  `8-bit'         This is the value to use when you want an ASCII encoding of<br/>		  any control or non-ASCII character.  Control characters are<br/>		  encoded as "^D", and non-ASCII characters have an<br/>		  octal encoding.<br/><br/>  `control-8-bit' This is the value to use when you want an ASCII encoding of<br/>		  any control character, whether it is 7 or 8-bit.<br/>		  European 8-bits accented characters are printed according<br/>		  the current font.<br/><br/>  `control'       Only ASCII control characters have an ASCII encoding.<br/>		  European 8-bits accented characters are printed according<br/>		  the current font.<br/><br/>  nil             No ASCII encoding.  Any character is printed according the<br/>		  current font.<br/><br/>Any other value is treated as nil.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 20 of Emacs.<br/>
+<strong>ps-print-control-characters</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
+Its value is control-8-bit<br/>
+<br/>
+Documentation:<br/>
+Specify the printable form for control and 8-bit characters.<br/>
+That is, instead of sending, for example, a ^D (\004) to printer,<br/>
+it is sent the string "^D".<br/>
+<br/>
+Valid values are:<br/>
+<br/>
+  `8-bit'         This is the value to use when you want an ASCII encoding of<br/>
+		  any control or non-ASCII character.  Control characters are<br/>
+		  encoded as "^D", and non-ASCII characters have an<br/>
+		  octal encoding.<br/>
+<br/>
+  `control-8-bit' This is the value to use when you want an ASCII encoding of<br/>
+		  any control character, whether it is 7 or 8-bit.<br/>
+		  European 8-bits accented characters are printed according<br/>
+		  the current font.<br/>
+<br/>
+  `control'       Only ASCII control characters have an ASCII encoding.<br/>
+		  European 8-bits accented characters are printed according<br/>
+		  the current font.<br/>
+<br/>
+  nil             No ASCII encoding.  Any character is printed according the<br/>
+		  current font.<br/>
+<br/>
+Any other value is treated as nil.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 20 of Emacs.<br/>

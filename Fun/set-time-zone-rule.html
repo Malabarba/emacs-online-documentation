@@ -1,1 +1,12 @@
-set-time-zone-rule is a built-in function in `C source code'.<br/><br/>(set-time-zone-rule TZ)<br/><br/>Set the local time zone using TZ, a string specifying a time zone rule.<br/>If TZ is nil, use implementation-defined default time zone information.<br/>If TZ is t, use Universal Time.<br/><br/>Instead of calling this function, you typically want (setenv "TZ" TZ).<br/>That changes both the environment of the Emacs process and the<br/>variable `process-environment', whereas `set-time-zone-rule' affects<br/>only the former.
+<strong>set-time-zone-rule</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(set-time-zone-rule TZ)<br/>
+<br/>
+Set the local time zone using TZ, a string specifying a time zone rule.<br/>
+If TZ is nil, use implementation-defined default time zone information.<br/>
+If TZ is t, use Universal Time.<br/>
+<br/>
+Instead of calling this function, you typically want (setenv "TZ" TZ).<br/>
+That changes both the environment of the Emacs process and the<br/>
+variable `process-environment', whereas `set-time-zone-rule' affects<br/>
+only the former.

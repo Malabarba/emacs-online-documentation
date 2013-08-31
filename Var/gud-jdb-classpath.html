@@ -1,1 +1,22 @@
-gud-jdb-classpath is a variable defined in `gud.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Java/jdb classpath directories list.<br/>If `gud-jdb-use-classpath' is non-nil, gud-jdb derives the `gud-jdb-classpath'<br/>list automatically using the following methods in sequence<br/>(with subsequent successful steps overriding the results of previous<br/>steps):<br/><br/>1) Read the CLASSPATH environment variable,<br/>2) Read any "-classpath" argument used to run jdb,<br/>   or detected in jdb output (e.g. if jdb is run by a script<br/>   that echoes the actual jdb command before starting jdb),<br/>3) Send a "classpath" command to jdb and scan jdb output for<br/>   classpath information if jdb is invoked with an "-attach" (to<br/>   an already running VM) argument (This case typically does not<br/>   have a "-classpath" command line argument - that is provided<br/>   to the VM when it is started).<br/><br/>Note that method 3 cannot be used with oldjdb (or Java 1 jdb) since<br/>those debuggers do not support the classpath command.  Use 1) or 2).
+<strong>gud-jdb-classpath</strong> is a variable defined in `<code>gud.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Java/jdb classpath directories list.<br/>
+If `gud-jdb-use-classpath' is non-nil, gud-jdb derives the `gud-jdb-classpath'<br/>
+list automatically using the following methods in sequence<br/>
+(with subsequent successful steps overriding the results of previous<br/>
+steps):<br/>
+<br/>
+1) Read the CLASSPATH environment variable,<br/>
+2) Read any "-classpath" argument used to run jdb,<br/>
+   or detected in jdb output (e.g. if jdb is run by a script<br/>
+   that echoes the actual jdb command before starting jdb),<br/>
+3) Send a "classpath" command to jdb and scan jdb output for<br/>
+   classpath information if jdb is invoked with an "-attach" (to<br/>
+   an already running VM) argument (This case typically does not<br/>
+   have a "-classpath" command line argument - that is provided<br/>
+   to the VM when it is started).<br/>
+<br/>
+Note that method 3 cannot be used with oldjdb (or Java 1 jdb) since<br/>
+those debuggers do not support the classpath command.  Use 1) or 2).

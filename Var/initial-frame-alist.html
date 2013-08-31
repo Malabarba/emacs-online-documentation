@@ -1,1 +1,32 @@
-initial-frame-alist is a variable defined in `frame.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Alist of parameters for the initial X window frame.<br/>You can set this in your init file; for example,<br/><br/> (setq initial-frame-alist<br/>       '((top . 1) (left . 1) (width . 80) (height . 55)))<br/><br/>Parameters specified here supersede the values given in<br/>`default-frame-alist'.<br/><br/>If the value calls for a frame without a minibuffer, and you have<br/>not created a minibuffer frame on your own, a minibuffer frame is<br/>created according to `minibuffer-frame-alist'.<br/><br/>You can specify geometry-related options for just the initial<br/>frame by setting this variable in your init file; however, they<br/>won't take effect until Emacs reads your init file, which happens<br/>after creating the initial frame.  If you want the initial frame<br/>to have the proper geometry as soon as it appears, you need to<br/>use this three-step process:<br/>* Specify X resources to give the geometry you want.<br/>* Set `default-frame-alist' to override these options so that they<br/>  don't affect subsequent frames.<br/>* Set `initial-frame-alist' in a way that matches the X resources,<br/>  to override what you put in `default-frame-alist'.<br/><br/>You can customize this variable.
+<strong>initial-frame-alist</strong> is a variable defined in `<code>frame.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Alist of parameters for the initial X window frame.<br/>
+You can set this in your init file; for example,<br/>
+<br/>
+ (setq initial-frame-alist<br/>
+       '((top . 1) (left . 1) (width . 80) (height . 55)))<br/>
+<br/>
+Parameters specified here supersede the values given in<br/>
+`default-frame-alist'.<br/>
+<br/>
+If the value calls for a frame without a minibuffer, and you have<br/>
+not created a minibuffer frame on your own, a minibuffer frame is<br/>
+created according to `minibuffer-frame-alist'.<br/>
+<br/>
+You can specify geometry-related options for just the initial<br/>
+frame by setting this variable in your init file; however, they<br/>
+won't take effect until Emacs reads your init file, which happens<br/>
+after creating the initial frame.  If you want the initial frame<br/>
+to have the proper geometry as soon as it appears, you need to<br/>
+use this three-step process:<br/>
+* Specify X resources to give the geometry you want.<br/>
+* Set `default-frame-alist' to override these options so that they<br/>
+  don't affect subsequent frames.<br/>
+* Set `initial-frame-alist' in a way that matches the X resources,<br/>
+  to override what you put in `default-frame-alist'.<br/>
+<br/>
+You can customize this variable.

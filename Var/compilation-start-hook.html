@@ -1,1 +1,14 @@
-compilation-start-hook is a variable defined in `compile.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of hook functions run by `compilation-start' on the compilation process.<br/>(See `run-hook-with-args').<br/>If you use "omake -P" and do not want C-x C-c to ask whether you want<br/>the compilation to be killed, you can use this hook:<br/>  (add-hook 'compilation-start-hook<br/>    (lambda (process) (set-process-query-on-exit-flag process nil)) nil t)<br/><br/>You can customize this variable.
+<strong>compilation-start-hook</strong> is a variable defined in `<code>compile.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of hook functions run by `compilation-start' on the compilation process.<br/>
+(See `run-hook-with-args').<br/>
+If you use "omake -P" and do not want C-x C-c to ask whether you want<br/>
+the compilation to be killed, you can use this hook:<br/>
+  (add-hook 'compilation-start-hook<br/>
+    (lambda (process) (set-process-query-on-exit-flag process nil)) nil t)<br/>
+<br/>
+You can customize this variable.

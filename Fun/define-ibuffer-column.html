@@ -1,1 +1,25 @@
-define-ibuffer-column is an autoloaded Lisp macro in `ibuf-macs.el'.<br/><br/>(define-ibuffer-column SYMBOL (&key NAME INLINE PROPS SUMMARIZER) &rest BODY)<br/><br/>Define a column SYMBOL for use with `ibuffer-formats'.<br/><br/>BODY will be called with `buffer' bound to the buffer object, and<br/>`mark' bound to the current mark on the buffer.  The original ibuffer<br/>buffer will be bound to `ibuffer-buf'.<br/><br/>If NAME is given, it will be used as a title for the column.<br/>Otherwise, the title will default to a capitalized version of the<br/>SYMBOL's name.  PROPS is a plist of additional properties to add to<br/>the text, such as `mouse-face'.  And SUMMARIZER, if given, is a<br/>function which will be passed a list of all the strings in its column;<br/>it should return a string to display at the bottom.<br/><br/>If HEADER-MOUSE-MAP is given, it will be used as a keymap for the<br/>title of the column.<br/><br/>Note that this macro expands into a `defun' for a function named<br/>ibuffer-make-column-NAME.  If INLINE is non-nil, then the form will be<br/>inlined into the compiled format versions.  This means that if you<br/>change its definition, you should explicitly call<br/>`ibuffer-recompile-formats'.
+<strong>define-ibuffer-column</strong> is an autoloaded Lisp macro in `<code>ibuf-macs.el</code>'.<br/>
+<br/>
+(define-ibuffer-column SYMBOL (&key NAME INLINE PROPS SUMMARIZER) &rest BODY)<br/>
+<br/>
+Define a column SYMBOL for use with `ibuffer-formats'.<br/>
+<br/>
+BODY will be called with `buffer' bound to the buffer object, and<br/>
+`mark' bound to the current mark on the buffer.  The original ibuffer<br/>
+buffer will be bound to `ibuffer-buf'.<br/>
+<br/>
+If NAME is given, it will be used as a title for the column.<br/>
+Otherwise, the title will default to a capitalized version of the<br/>
+SYMBOL's name.  PROPS is a plist of additional properties to add to<br/>
+the text, such as `mouse-face'.  And SUMMARIZER, if given, is a<br/>
+function which will be passed a list of all the strings in its column;<br/>
+it should return a string to display at the bottom.<br/>
+<br/>
+If HEADER-MOUSE-MAP is given, it will be used as a keymap for the<br/>
+title of the column.<br/>
+<br/>
+Note that this macro expands into a `defun' for a function named<br/>
+ibuffer-make-column-NAME.  If INLINE is non-nil, then the form will be<br/>
+inlined into the compiled format versions.  This means that if you<br/>
+change its definition, you should explicitly call<br/>
+`ibuffer-recompile-formats'.

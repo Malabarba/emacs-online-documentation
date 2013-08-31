@@ -1,1 +1,19 @@
-format-annotate-function is a compiled Lisp function in `format.el'.<br/><br/>(format-annotate-function FORMAT FROM TO ORIG-BUF FORMAT-COUNT)<br/><br/>Return annotations for writing region as FORMAT.<br/>FORMAT is a symbol naming one of the formats defined in `format-alist'.<br/>It must be a single symbol, not a list like `buffer-file-format'.<br/>FROM and TO delimit the region to be operated on in the current buffer.<br/>ORIG-BUF is the original buffer that the data came from.<br/><br/>FORMAT-COUNT is an integer specifying how many times this function has<br/>been called in the process of decoding ORIG-BUF.<br/><br/>This function works like a function in `write-region-annotate-functions':<br/>it either returns a list of annotations, or returns with a different buffer<br/>current, which contains the modified text to write.  In the latter case,<br/>this function's value is nil.<br/><br/>For most purposes, consider using `format-encode-region' instead.
+<strong>format-annotate-function</strong> is a compiled Lisp function in `<code>format.el</code>'.<br/>
+<br/>
+(format-annotate-function FORMAT FROM TO ORIG-BUF FORMAT-COUNT)<br/>
+<br/>
+Return annotations for writing region as FORMAT.<br/>
+FORMAT is a symbol naming one of the formats defined in `format-alist'.<br/>
+It must be a single symbol, not a list like `buffer-file-format'.<br/>
+FROM and TO delimit the region to be operated on in the current buffer.<br/>
+ORIG-BUF is the original buffer that the data came from.<br/>
+<br/>
+FORMAT-COUNT is an integer specifying how many times this function has<br/>
+been called in the process of decoding ORIG-BUF.<br/>
+<br/>
+This function works like a function in `write-region-annotate-functions':<br/>
+it either returns a list of annotations, or returns with a different buffer<br/>
+current, which contains the modified text to write.  In the latter case,<br/>
+this function's value is nil.<br/>
+<br/>
+For most purposes, consider using `format-encode-region' instead.

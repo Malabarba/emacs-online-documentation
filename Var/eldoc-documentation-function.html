@@ -1,1 +1,20 @@
-eldoc-documentation-function is a variable defined in `eldoc.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>If non-nil, function to call to return doc string.<br/>The function of no args should return a one-line string for displaying<br/>doc about a function etc. appropriate to the context around point.<br/>It should return nil if there's no doc appropriate for the context.<br/>Typically doc is returned if point is on a function-like name or in its<br/>arg list.<br/><br/>The result is used as is, so the function must explicitly handle<br/>the variables `eldoc-argument-case' and `eldoc-echo-area-use-multiline-p',<br/>and the face `eldoc-highlight-function-argument', if they are to have any<br/>effect.<br/><br/>This variable is expected to be made buffer-local by modes (other than<br/>Emacs Lisp mode) that support ElDoc.
+<strong>eldoc-documentation-function</strong> is a variable defined in `<code>eldoc.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+If non-nil, function to call to return doc string.<br/>
+The function of no args should return a one-line string for displaying<br/>
+doc about a function etc. appropriate to the context around point.<br/>
+It should return nil if there's no doc appropriate for the context.<br/>
+Typically doc is returned if point is on a function-like name or in its<br/>
+arg list.<br/>
+<br/>
+The result is used as is, so the function must explicitly handle<br/>
+the variables `eldoc-argument-case' and `eldoc-echo-area-use-multiline-p',<br/>
+and the face `eldoc-highlight-function-argument', if they are to have any<br/>
+effect.<br/>
+<br/>
+This variable is expected to be made buffer-local by modes (other than<br/>
+Emacs Lisp mode) that support ElDoc.

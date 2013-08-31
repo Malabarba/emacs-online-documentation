@@ -1,1 +1,25 @@
-fit-window-to-buffer is an interactive compiled Lisp function in `window.el'.<br/><br/>(fit-window-to-buffer &optional WINDOW MAX-HEIGHT MIN-HEIGHT)<br/><br/>Adjust height of WINDOW to display its buffer's contents exactly.<br/>WINDOW must be a live window and defaults to the selected one.<br/><br/>Optional argument MAX-HEIGHT specifies the maximum height of<br/>WINDOW and defaults to the height of WINDOW's frame.  Optional<br/>argument MIN-HEIGHT specifies the minimum height of WINDOW and<br/>defaults to `window-min-height'.  Both MAX-HEIGHT and MIN-HEIGHT<br/>are specified in lines and include the mode line and header line,<br/>if any.<br/><br/>If WINDOW is a full height window, then if the option<br/>`fit-frame-to-buffer' is non-nil, this calls the function<br/>`fit-frame-to-buffer' to adjust the frame height.<br/><br/>Return the number of lines by which WINDOW was enlarged or<br/>shrunk.  If an error occurs during resizing, return nil but don't<br/>signal an error.<br/><br/>Note that even if this function makes WINDOW large enough to show<br/>_all_ lines of its buffer you might not see the first lines when<br/>WINDOW was scrolled.
+<strong>fit-window-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(fit-window-to-buffer &optional WINDOW MAX-HEIGHT MIN-HEIGHT)<br/>
+<br/>
+Adjust height of WINDOW to display its buffer's contents exactly.<br/>
+WINDOW must be a live window and defaults to the selected one.<br/>
+<br/>
+Optional argument MAX-HEIGHT specifies the maximum height of<br/>
+WINDOW and defaults to the height of WINDOW's frame.  Optional<br/>
+argument MIN-HEIGHT specifies the minimum height of WINDOW and<br/>
+defaults to `window-min-height'.  Both MAX-HEIGHT and MIN-HEIGHT<br/>
+are specified in lines and include the mode line and header line,<br/>
+if any.<br/>
+<br/>
+If WINDOW is a full height window, then if the option<br/>
+`fit-frame-to-buffer' is non-nil, this calls the function<br/>
+`fit-frame-to-buffer' to adjust the frame height.<br/>
+<br/>
+Return the number of lines by which WINDOW was enlarged or<br/>
+shrunk.  If an error occurs during resizing, return nil but don't<br/>
+signal an error.<br/>
+<br/>
+Note that even if this function makes WINDOW large enough to show<br/>
+_all_ lines of its buffer you might not see the first lines when<br/>
+WINDOW was scrolled.

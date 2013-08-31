@@ -1,1 +1,32 @@
-autoarg-mode is an interactive autoloaded compiled Lisp function in `autoarg.el'.<br/><br/>(autoarg-mode &optional ARG)<br/><br/>Toggle Autoarg mode, a global minor mode.<br/>With a prefix argument ARG, enable Autoarg mode if ARG is<br/>positive, and disable it otherwise.  If called from Lisp, enable<br/>the mode if ARG is omitted or nil.<br/><br/><br/>In Autoarg mode, digits are bound to `digit-argument', i.e. they<br/>supply prefix arguments as C-DIGIT and M-DIGIT normally do.<br/>Furthermore, C-DIGIT inserts DIGIT.<br/>SPC terminates the prefix sequence and inserts<br/>the digits of the autoarg sequence into the buffer.<br/>Without a numeric prefix arg, the normal binding of SPC<br/>is invoked, i.e. what it would be with Autoarg mode off.<br/><br/>For example:<br/>`6 9 SPC' inserts `69' into the buffer, as does `C-6 C-9'.<br/>`6 9 a' inserts 69 `a's into the buffer.<br/>`6 9 SPC SPC' inserts `69' into the buffer and<br/>then invokes the normal binding of SPC.<br/>`C-u SPC' invokes the normal binding of SPC four times.<br/><br/>key             binding<br/>---             -------<br/><br/>SPC		autoarg-terminate<br/>0 .. 9		digit-argument<br/>C-0 .. C-9	self-insert-command<br/><br/>
+<strong>autoarg-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>autoarg.el</code>'.<br/>
+<br/>
+(autoarg-mode &optional ARG)<br/>
+<br/>
+Toggle Autoarg mode, a global minor mode.<br/>
+With a prefix argument ARG, enable Autoarg mode if ARG is<br/>
+positive, and disable it otherwise.  If called from Lisp, enable<br/>
+the mode if ARG is omitted or nil.<br/>
+<br/>
+<br/>
+In Autoarg mode, digits are bound to `digit-argument', i.e. they<br/>
+supply prefix arguments as C-DIGIT and M-DIGIT normally do.<br/>
+Furthermore, C-DIGIT inserts DIGIT.<br/>
+SPC terminates the prefix sequence and inserts<br/>
+the digits of the autoarg sequence into the buffer.<br/>
+Without a numeric prefix arg, the normal binding of SPC<br/>
+is invoked, i.e. what it would be with Autoarg mode off.<br/>
+<br/>
+For example:<br/>
+`6 9 SPC' inserts `69' into the buffer, as does `C-6 C-9'.<br/>
+`6 9 a' inserts 69 `a's into the buffer.<br/>
+`6 9 SPC SPC' inserts `69' into the buffer and<br/>
+then invokes the normal binding of SPC.<br/>
+`C-u SPC' invokes the normal binding of SPC four times.<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+SPC		autoarg-terminate<br/>
+0 .. 9		digit-argument<br/>
+C-0 .. C-9	self-insert-command<br/>
+<br/>

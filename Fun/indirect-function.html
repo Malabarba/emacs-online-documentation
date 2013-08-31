@@ -1,1 +1,11 @@
-indirect-function is a built-in function in `C source code'.<br/><br/>(indirect-function OBJECT &optional NOERROR)<br/><br/>Return the function at the end of OBJECT's function chain.<br/>If OBJECT is not a symbol, just return it.  Otherwise, follow all<br/>function indirections to find the final function binding and return it.<br/>If the final symbol in the chain is unbound, signal a void-function error.<br/>Optional arg NOERROR non-nil means to return nil instead of signaling.<br/>Signal a cyclic-function-indirection error if there is a loop in the<br/>function chain of symbols.
+<strong>indirect-function</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(indirect-function OBJECT &optional NOERROR)<br/>
+<br/>
+Return the function at the end of OBJECT's function chain.<br/>
+If OBJECT is not a symbol, just return it.  Otherwise, follow all<br/>
+function indirections to find the final function binding and return it.<br/>
+If the final symbol in the chain is unbound, signal a void-function error.<br/>
+Optional arg NOERROR non-nil means to return nil instead of signaling.<br/>
+Signal a cyclic-function-indirection error if there is a loop in the<br/>
+function chain of symbols.

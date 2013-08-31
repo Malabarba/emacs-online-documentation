@@ -1,1 +1,20 @@
-eval-current-buffer is an alias for `eval-buffer' in `subr.el'.<br/><br/>(eval-current-buffer &optional BUFFER PRINTFLAG FILENAME UNIBYTE DO-ALLOW-PRINT)<br/><br/>This function is obsolete since 22.1;<br/>use `eval-buffer' instead.<br/><br/>Execute the current buffer as Lisp code.<br/>When called from a Lisp program (i.e., not interactively), this<br/>function accepts up to five optional arguments:<br/>BUFFER is the buffer to evaluate (nil means use current buffer).<br/>PRINTFLAG controls printing of output:<br/> A value of nil means discard it; anything else is stream for print.<br/>FILENAME specifies the file name to use for `load-history'.<br/>UNIBYTE, if non-nil, specifies `load-convert-to-unibyte' for this<br/> invocation.<br/>DO-ALLOW-PRINT, if non-nil, specifies that `print' and related<br/> functions should work normally even if PRINTFLAG is nil.<br/><br/>This function preserves the position of point.
+<strong>eval-current-buffer</strong> is an alias for `eval-buffer' in `<code>subr.el</code>'.<br/>
+<br/>
+(eval-current-buffer &optional BUFFER PRINTFLAG FILENAME UNIBYTE DO-ALLOW-PRINT)<br/>
+<br/>
+This function is obsolete since 22.1;<br/>
+use `eval-buffer' instead.<br/>
+<br/>
+Execute the current buffer as Lisp code.<br/>
+When called from a Lisp program (i.e., not interactively), this<br/>
+function accepts up to five optional arguments:<br/>
+BUFFER is the buffer to evaluate (nil means use current buffer).<br/>
+PRINTFLAG controls printing of output:<br/>
+ A value of nil means discard it; anything else is stream for print.<br/>
+FILENAME specifies the file name to use for `load-history'.<br/>
+UNIBYTE, if non-nil, specifies `load-convert-to-unibyte' for this<br/>
+ invocation.<br/>
+DO-ALLOW-PRINT, if non-nil, specifies that `print' and related<br/>
+ functions should work normally even if PRINTFLAG is nil.<br/>
+<br/>
+This function preserves the position of point.

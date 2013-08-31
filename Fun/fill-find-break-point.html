@@ -1,1 +1,12 @@
-fill-find-break-point is a compiled Lisp function in `fill.el'.<br/><br/>(fill-find-break-point LIMIT)<br/><br/>Move point to a proper line breaking position of the current line.<br/>Don't move back past the buffer position LIMIT.<br/><br/>This function is called when we are going to break the current line<br/>after or before a non-ASCII character.  If the charset of the<br/>character has the property `fill-find-break-point-function', this<br/>function calls the property value as a function with one arg LIMIT.<br/>If the charset has no such property, do nothing.
+<strong>fill-find-break-point</strong> is a compiled Lisp function in `<code>fill.el</code>'.<br/>
+<br/>
+(fill-find-break-point LIMIT)<br/>
+<br/>
+Move point to a proper line breaking position of the current line.<br/>
+Don't move back past the buffer position LIMIT.<br/>
+<br/>
+This function is called when we are going to break the current line<br/>
+after or before a non-ASCII character.  If the charset of the<br/>
+character has the property `fill-find-break-point-function', this<br/>
+function calls the property value as a function with one arg LIMIT.<br/>
+If the charset has no such property, do nothing.

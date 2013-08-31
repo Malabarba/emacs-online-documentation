@@ -1,1 +1,20 @@
-resume-tty is a built-in function in `C source code'.<br/><br/>(resume-tty &optional TTY)<br/><br/>Resume the previously suspended terminal device TTY.<br/>The terminal is opened and reinitialized.  Frames that are on the<br/>suspended terminal are revived.<br/><br/>It is an error to resume a terminal while another terminal is active<br/>on the same device.<br/><br/>This function runs `resume-tty-functions' after resuming the terminal.<br/>The functions are run with one arg, the id of the resumed terminal<br/>device.<br/><br/>`resume-tty' does nothing if it is called on a device that is not<br/>suspended.<br/><br/>TTY may be a terminal object, a frame, or nil (meaning the selected<br/>frame's terminal).
+<strong>resume-tty</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(resume-tty &optional TTY)<br/>
+<br/>
+Resume the previously suspended terminal device TTY.<br/>
+The terminal is opened and reinitialized.  Frames that are on the<br/>
+suspended terminal are revived.<br/>
+<br/>
+It is an error to resume a terminal while another terminal is active<br/>
+on the same device.<br/>
+<br/>
+This function runs `resume-tty-functions' after resuming the terminal.<br/>
+The functions are run with one arg, the id of the resumed terminal<br/>
+device.<br/>
+<br/>
+`resume-tty' does nothing if it is called on a device that is not<br/>
+suspended.<br/>
+<br/>
+TTY may be a terminal object, a frame, or nil (meaning the selected<br/>
+frame's terminal).

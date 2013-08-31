@@ -1,1 +1,25 @@
-rng-validate-mode is an interactive autoloaded Lisp function in `rng-valid.el'.<br/><br/>(rng-validate-mode &optional ARG NO-CHANGE-SCHEMA)<br/><br/>Minor mode performing continual validation against a RELAX NG schema.<br/><br/>Checks whether the buffer is a well-formed XML 1.0 document,<br/>conforming to the XML Namespaces Recommendation and valid against a<br/>RELAX NG schema.  The mode-line indicates whether it is or not.  Any<br/>parts of the buffer that cause it not to be are considered errors and<br/>are highlighted with face `rng-error'.  A description of each error is<br/>available as a tooltip.  M-x rng-next-error goes to the next error<br/>after point.  Clicking mouse-1 on the word `Invalid' in the mode-line<br/>goes to the first error in the buffer.  If the buffer changes, then it<br/>will be automatically rechecked when Emacs becomes idle; the<br/>rechecking will be paused whenever there is input pending.<br/><br/>By default, uses a vacuous schema that allows any well-formed XML<br/>document.  A schema can be specified explicitly using<br/>M-x rng-set-schema-file-and-validate, or implicitly based on the buffer's<br/>file name or on the root element name.  In each case the schema must<br/>be a RELAX NG schema using the compact schema (such schemas<br/>conventionally have a suffix of `.rnc').  The variable<br/>`rng-schema-locating-files' specifies files containing rules<br/>to use for finding the schema.
+<strong>rng-validate-mode</strong> is an interactive autoloaded Lisp function in `<code>rng-valid.el</code>'.<br/>
+<br/>
+(rng-validate-mode &optional ARG NO-CHANGE-SCHEMA)<br/>
+<br/>
+Minor mode performing continual validation against a RELAX NG schema.<br/>
+<br/>
+Checks whether the buffer is a well-formed XML 1.0 document,<br/>
+conforming to the XML Namespaces Recommendation and valid against a<br/>
+RELAX NG schema.  The mode-line indicates whether it is or not.  Any<br/>
+parts of the buffer that cause it not to be are considered errors and<br/>
+are highlighted with face `rng-error'.  A description of each error is<br/>
+available as a tooltip.  M-x rng-next-error goes to the next error<br/>
+after point.  Clicking mouse-1 on the word `Invalid' in the mode-line<br/>
+goes to the first error in the buffer.  If the buffer changes, then it<br/>
+will be automatically rechecked when Emacs becomes idle; the<br/>
+rechecking will be paused whenever there is input pending.<br/>
+<br/>
+By default, uses a vacuous schema that allows any well-formed XML<br/>
+document.  A schema can be specified explicitly using<br/>
+M-x rng-set-schema-file-and-validate, or implicitly based on the buffer's<br/>
+file name or on the root element name.  In each case the schema must<br/>
+be a RELAX NG schema using the compact schema (such schemas<br/>
+conventionally have a suffix of `.rnc').  The variable<br/>
+`rng-schema-locating-files' specifies files containing rules<br/>
+to use for finding the schema.

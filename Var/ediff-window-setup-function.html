@@ -1,1 +1,37 @@
-ediff-window-setup-function is a variable defined in `ediff-wind.el'.<br/>Its value is ediff-setup-windows-default<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Function called to set up windows.<br/>Ediff provides a choice of three functions:<br/> (1) `ediff-setup-windows-multiframe', which sets the control panel<br/>     in a separate frame.<br/> (2) `ediff-setup-windows-plain', which does everything in one frame<br/> (3) `ediff-setup-windows-default' (the default), which does (1)<br/>     on a graphical display and (2) on a text terminal.<br/><br/>The command M-x ediff-toggle-multiframe can be used to toggle<br/>between the multiframe display and the single frame display.  If<br/>the multiframe function detects that one of the buffers A/B is<br/>seen in some other frame, it will try to keep that buffer in that<br/>frame.<br/><br/>If you don't like any of the two provided functions, write your own one.<br/>The basic guidelines:<br/>    1. It should leave the control buffer current and the control window<br/>       selected.<br/>    2. It should set `ediff-window-A', `ediff-window-B', `ediff-window-C',<br/>       and `ediff-control-window' to contain window objects that display<br/>       the corresponding buffers.<br/>    3. It should accept the following arguments:<br/>       buffer-A, buffer-B, buffer-C, control-buffer<br/>       Buffer C may not be used in jobs that compare only two buffers.<br/>If you plan to do something fancy, take a close look at how the two<br/>provided functions are written.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.3 of Emacs.<br/>
+<strong>ediff-window-setup-function</strong> is a variable defined in `<code>ediff-wind.el</code>'.<br/>
+Its value is ediff-setup-windows-default<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Function called to set up windows.<br/>
+Ediff provides a choice of three functions:<br/>
+ (1) `ediff-setup-windows-multiframe', which sets the control panel<br/>
+     in a separate frame.<br/>
+ (2) `ediff-setup-windows-plain', which does everything in one frame<br/>
+ (3) `ediff-setup-windows-default' (the default), which does (1)<br/>
+     on a graphical display and (2) on a text terminal.<br/>
+<br/>
+The command M-x ediff-toggle-multiframe can be used to toggle<br/>
+between the multiframe display and the single frame display.  If<br/>
+the multiframe function detects that one of the buffers A/B is<br/>
+seen in some other frame, it will try to keep that buffer in that<br/>
+frame.<br/>
+<br/>
+If you don't like any of the two provided functions, write your own one.<br/>
+The basic guidelines:<br/>
+    1. It should leave the control buffer current and the control window<br/>
+       selected.<br/>
+    2. It should set `ediff-window-A', `ediff-window-B', `ediff-window-C',<br/>
+       and `ediff-control-window' to contain window objects that display<br/>
+       the corresponding buffers.<br/>
+    3. It should accept the following arguments:<br/>
+       buffer-A, buffer-B, buffer-C, control-buffer<br/>
+       Buffer C may not be used in jobs that compare only two buffers.<br/>
+If you plan to do something fancy, take a close look at how the two<br/>
+provided functions are written.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.3 of Emacs.<br/>

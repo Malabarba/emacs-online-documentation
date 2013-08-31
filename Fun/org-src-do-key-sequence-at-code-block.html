@@ -1,1 +1,21 @@
-org-src-do-key-sequence-at-code-block is an interactive compiled Lisp function in `org-src.el'.<br/><br/>(org-src-do-key-sequence-at-code-block &optional KEY)<br/><br/>Execute key sequence at code block in the source Org buffer.<br/>The command bound to KEY in the Org-babel key map is executed<br/>remotely with point temporarily at the start of the code block in<br/>the Org buffer.<br/><br/>This command is not bound to a key by default, to avoid conflicts<br/>with language major mode bindings.  To bind it to C-c @ in all<br/>language major modes, you could use<br/><br/>  (add-hook 'org-src-mode-hook<br/>            (lambda () (define-key org-src-mode-map "\C-c@"<br/>                    'org-src-do-key-sequence-at-code-block)))<br/><br/>In that case, for example, C-c @ t issued in code edit buffers<br/>would tangle the current Org code block, C-c @ e would execute<br/>the block and C-c @ h would display the other available<br/>Org-babel commands.
+<strong>org-src-do-key-sequence-at-code-block</strong> is an interactive compiled Lisp function in `<code>org-src.el</code>'.<br/>
+<br/>
+(org-src-do-key-sequence-at-code-block &optional KEY)<br/>
+<br/>
+Execute key sequence at code block in the source Org buffer.<br/>
+The command bound to KEY in the Org-babel key map is executed<br/>
+remotely with point temporarily at the start of the code block in<br/>
+the Org buffer.<br/>
+<br/>
+This command is not bound to a key by default, to avoid conflicts<br/>
+with language major mode bindings.  To bind it to C-c @ in all<br/>
+language major modes, you could use<br/>
+<br/>
+  (add-hook 'org-src-mode-hook<br/>
+            (lambda () (define-key org-src-mode-map "\C-c@"<br/>
+                    'org-src-do-key-sequence-at-code-block)))<br/>
+<br/>
+In that case, for example, C-c @ t issued in code edit buffers<br/>
+would tangle the current Org code block, C-c @ e would execute<br/>
+the block and C-c @ h would display the other available<br/>
+Org-babel commands.

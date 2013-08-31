@@ -1,1 +1,18 @@
-c-at-expression-start-p is a compiled Lisp function in `cc-engine.el'.<br/><br/>(c-at-expression-start-p)<br/><br/>Return non-nil if the point is at the first token in an expression or<br/>statement, or somewhere in the syntactic whitespace before it.<br/><br/>An "expression" here is a bit different from the normal language<br/>grammar sense: It's any sequence of expression tokens except commas,<br/>unless they are enclosed inside parentheses of some kind.  Also, an<br/>expression never continues past an enclosing parenthesis, but it might<br/>contain parenthesis pairs of any sort except braces.<br/><br/>Since expressions never cross statement boundaries, this function also<br/>recognizes statement beginnings, just like `c-at-statement-start-p'.<br/><br/>Note that this function might do hidden buffer changes.  See the<br/>comment at the start of cc-engine.el for more info.
+<strong>c-at-expression-start-p</strong> is a compiled Lisp function in `<code>cc-engine.el</code>'.<br/>
+<br/>
+(c-at-expression-start-p)<br/>
+<br/>
+Return non-nil if the point is at the first token in an expression or<br/>
+statement, or somewhere in the syntactic whitespace before it.<br/>
+<br/>
+An "expression" here is a bit different from the normal language<br/>
+grammar sense: It's any sequence of expression tokens except commas,<br/>
+unless they are enclosed inside parentheses of some kind.  Also, an<br/>
+expression never continues past an enclosing parenthesis, but it might<br/>
+contain parenthesis pairs of any sort except braces.<br/>
+<br/>
+Since expressions never cross statement boundaries, this function also<br/>
+recognizes statement beginnings, just like `c-at-statement-start-p'.<br/>
+<br/>
+Note that this function might do hidden buffer changes.  See the<br/>
+comment at the start of cc-engine.el for more info.

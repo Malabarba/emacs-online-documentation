@@ -1,1 +1,20 @@
-set-process-inherit-coding-system-flag is a built-in function in `C source code'.<br/><br/>(set-process-inherit-coding-system-flag PROCESS FLAG)<br/><br/>Determine whether buffer of PROCESS will inherit coding-system.<br/>If the second argument FLAG is non-nil, then the variable<br/>`buffer-file-coding-system' of the buffer associated with PROCESS<br/>will be bound to the value of the coding system used to decode<br/>the process output.<br/><br/>This is useful when the coding system specified for the process buffer<br/>leaves either the character code conversion or the end-of-line conversion<br/>unspecified, or if the coding system used to decode the process output<br/>is more appropriate for saving the process buffer.<br/><br/>Binding the variable `inherit-process-coding-system' to non-nil before<br/>starting the process is an alternative way of setting the inherit flag<br/>for the process which will run.<br/><br/>This function returns FLAG.
+<strong>set-process-inherit-coding-system-flag</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(set-process-inherit-coding-system-flag PROCESS FLAG)<br/>
+<br/>
+Determine whether buffer of PROCESS will inherit coding-system.<br/>
+If the second argument FLAG is non-nil, then the variable<br/>
+`buffer-file-coding-system' of the buffer associated with PROCESS<br/>
+will be bound to the value of the coding system used to decode<br/>
+the process output.<br/>
+<br/>
+This is useful when the coding system specified for the process buffer<br/>
+leaves either the character code conversion or the end-of-line conversion<br/>
+unspecified, or if the coding system used to decode the process output<br/>
+is more appropriate for saving the process buffer.<br/>
+<br/>
+Binding the variable `inherit-process-coding-system' to non-nil before<br/>
+starting the process is an alternative way of setting the inherit flag<br/>
+for the process which will run.<br/>
+<br/>
+This function returns FLAG.

@@ -1,1 +1,21 @@
-window-line-height is a built-in function in `C source code'.<br/><br/>(window-line-height &optional LINE WINDOW)<br/><br/>Return height in pixels of text line LINE in window WINDOW.<br/>WINDOW must be a live window and defaults to the selected one.<br/><br/>Return height of current line if LINE is omitted or nil.  Return height of<br/>header or mode line if LINE is `header-line' or `mode-line'.<br/>Otherwise, LINE is a text line number starting from 0.  A negative number<br/>counts from the end of the window.<br/><br/>Value is a list (HEIGHT VPOS YPOS OFFBOT), where HEIGHT is the height<br/>in pixels of the visible part of the line, VPOS and YPOS are the<br/>vertical position in lines and pixels of the line, relative to the top<br/>of the first text line, and OFFBOT is the number of off-window pixels at<br/>the bottom of the text line.  If there are off-window pixels at the top<br/>of the (first) text line, YPOS is negative.<br/><br/>Return nil if window display is not up-to-date.  In that case, use<br/>`pos-visible-in-window-p' to obtain the information.
+<strong>window-line-height</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(window-line-height &optional LINE WINDOW)<br/>
+<br/>
+Return height in pixels of text line LINE in window WINDOW.<br/>
+WINDOW must be a live window and defaults to the selected one.<br/>
+<br/>
+Return height of current line if LINE is omitted or nil.  Return height of<br/>
+header or mode line if LINE is `header-line' or `mode-line'.<br/>
+Otherwise, LINE is a text line number starting from 0.  A negative number<br/>
+counts from the end of the window.<br/>
+<br/>
+Value is a list (HEIGHT VPOS YPOS OFFBOT), where HEIGHT is the height<br/>
+in pixels of the visible part of the line, VPOS and YPOS are the<br/>
+vertical position in lines and pixels of the line, relative to the top<br/>
+of the first text line, and OFFBOT is the number of off-window pixels at<br/>
+the bottom of the text line.  If there are off-window pixels at the top<br/>
+of the (first) text line, YPOS is negative.<br/>
+<br/>
+Return nil if window display is not up-to-date.  In that case, use<br/>
+`pos-visible-in-window-p' to obtain the information.

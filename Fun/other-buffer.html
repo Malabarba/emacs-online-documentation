@@ -1,1 +1,14 @@
-other-buffer is a built-in function in `C source code'.<br/><br/>(other-buffer &optional BUFFER VISIBLE-OK FRAME)<br/><br/>Return most recently selected buffer other than BUFFER.<br/>Buffers not visible in windows are preferred to visible buffers, unless<br/>optional second argument VISIBLE-OK is non-nil.  Ignore the argument<br/>BUFFER unless it denotes a live buffer.  If the optional third argument<br/>FRAME is non-nil, use that frame's buffer list instead of the selected<br/>frame's buffer list.<br/><br/>The buffer is found by scanning the selected or specified frame's buffer<br/>list first, followed by the list of all buffers.  If no other buffer<br/>exists, return the buffer `*scratch*' (creating it if necessary).
+<strong>other-buffer</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(other-buffer &optional BUFFER VISIBLE-OK FRAME)<br/>
+<br/>
+Return most recently selected buffer other than BUFFER.<br/>
+Buffers not visible in windows are preferred to visible buffers, unless<br/>
+optional second argument VISIBLE-OK is non-nil.  Ignore the argument<br/>
+BUFFER unless it denotes a live buffer.  If the optional third argument<br/>
+FRAME is non-nil, use that frame's buffer list instead of the selected<br/>
+frame's buffer list.<br/>
+<br/>
+The buffer is found by scanning the selected or specified frame's buffer<br/>
+list first, followed by the list of all buffers.  If no other buffer<br/>
+exists, return the buffer `*scratch*' (creating it if necessary).

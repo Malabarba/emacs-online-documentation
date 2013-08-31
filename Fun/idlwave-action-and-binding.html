@@ -1,1 +1,28 @@
-idlwave-action-and-binding is a compiled Lisp function in `idlwave.el'.<br/><br/>(idlwave-action-and-binding KEY CMD &optional SELECT)<br/><br/>KEY and CMD are made into a key binding and an indent action.<br/>KEY is a string - same as for the `define-key' function.  CMD is a<br/>function of no arguments or a list to be evaluated.  CMD is bound to<br/>KEY in `idlwave-mode-map' by defining an anonymous function calling<br/>`self-insert-command' followed by CMD.  If KEY contains more than one<br/>character a binding will only be set if SELECT is 'both.<br/><br/>(KEY . CMD) is also placed in the `idlwave-indent-expand-table',<br/>replacing any previous value for KEY.  If a binding is not set then it<br/>will instead be placed in `idlwave-indent-action-table'.<br/><br/>If the optional argument SELECT is nil then an action and binding are<br/>created.  If SELECT is 'noaction, then a binding is always set and no<br/>action is created.  If SELECT is 'both then an action and binding<br/>will both be created even if KEY contains more than one character.<br/>Otherwise, if SELECT is non-nil then only an action is created.<br/><br/>Some examples:<br/>No spaces before and 1 after a comma<br/>   (idlwave-action-and-binding ","  '(idlwave-surround 0 1))<br/>A minimum of 1 space before and after `=' (see `idlwave-expand-equal').<br/>   (idlwave-action-and-binding "="  '(idlwave-expand-equal -1 -1))<br/>Capitalize system variables - action only<br/>   (idlwave-action-and-binding idlwave-sysvar '(capitalize-word 1) t)
+<strong>idlwave-action-and-binding</strong> is a compiled Lisp function in `<code>idlwave.el</code>'.<br/>
+<br/>
+(idlwave-action-and-binding KEY CMD &optional SELECT)<br/>
+<br/>
+KEY and CMD are made into a key binding and an indent action.<br/>
+KEY is a string - same as for the `define-key' function.  CMD is a<br/>
+function of no arguments or a list to be evaluated.  CMD is bound to<br/>
+KEY in `idlwave-mode-map' by defining an anonymous function calling<br/>
+`self-insert-command' followed by CMD.  If KEY contains more than one<br/>
+character a binding will only be set if SELECT is 'both.<br/>
+<br/>
+(KEY . CMD) is also placed in the `idlwave-indent-expand-table',<br/>
+replacing any previous value for KEY.  If a binding is not set then it<br/>
+will instead be placed in `idlwave-indent-action-table'.<br/>
+<br/>
+If the optional argument SELECT is nil then an action and binding are<br/>
+created.  If SELECT is 'noaction, then a binding is always set and no<br/>
+action is created.  If SELECT is 'both then an action and binding<br/>
+will both be created even if KEY contains more than one character.<br/>
+Otherwise, if SELECT is non-nil then only an action is created.<br/>
+<br/>
+Some examples:<br/>
+No spaces before and 1 after a comma<br/>
+   (idlwave-action-and-binding ","  '(idlwave-surround 0 1))<br/>
+A minimum of 1 space before and after `=' (see `idlwave-expand-equal').<br/>
+   (idlwave-action-and-binding "="  '(idlwave-expand-equal -1 -1))<br/>
+Capitalize system variables - action only<br/>
+   (idlwave-action-and-binding idlwave-sysvar '(capitalize-word 1) t)

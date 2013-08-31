@@ -1,1 +1,52 @@
-mh-folder-message-menu is a variable defined in `mh-folder.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Menu for MH-E folder-message.<br/><br/>Value: (keymap "Message"<br/>	(Show\ Message menu-item "Show Message" mh-show :enable<br/>		       (mh-get-msg-num nil))<br/>	(Show\ Message\ with\ Header menu-item "Show Message with Header" mh-header-display :enable<br/>				     (mh-get-msg-num nil))<br/>	(Show\ Message\ with\ Preferred\ Alternative menu-item "Show Message with Preferred Alternative" mh-show-preferred-alternative :enable<br/>						     (mh-get-msg-num nil))<br/>	(Next\ Message menu-item "Next Message" mh-next-undeleted-msg)<br/>	(Previous\ Message menu-item "Previous Message" mh-previous-undeleted-msg)<br/>	(Go\ to\ First\ Message menu-item "Go to First Message" mh-first-msg)<br/>	(Go\ to\ Last\ Message menu-item "Go to Last Message" mh-last-msg)<br/>	(Go\ to\ Message\ by\ Number\.\.\. menu-item "Go to Message by Number..." mh-goto-msg)<br/>	(Modify\ Message menu-item "Modify Message" mh-modify)<br/>	(Delete\ Message menu-item "Delete Message" mh-delete-msg :enable<br/>			 (mh-get-msg-num nil))<br/>	(Refile\ Message menu-item "Refile Message" mh-refile-msg :enable<br/>			 (mh-get-msg-num nil))<br/>	(Undo\ Delete/Refile menu-item "Undo Delete/Refile" mh-undo :enable<br/>			     (mh-outstanding-commands-p))<br/>	(Execute\ Delete/Refile menu-item "Execute Delete/Refile" mh-execute-commands :enable<br/>				(mh-outstanding-commands-p))<br/>	(nil-7 menu-item "--")<br/>	(Compose\ a\ New\ Message menu-item "Compose a New Message" mh-send)<br/>	(Reply\ to\ Message\.\.\. menu-item "Reply to Message..." mh-reply :enable<br/>				  (mh-get-msg-num nil))<br/>	(Forward\ Message\.\.\. menu-item "Forward Message..." mh-forward :enable<br/>				(mh-get-msg-num nil))<br/>	(Redistribute\ Message\.\.\. menu-item "Redistribute Message..." mh-redistribute :enable<br/>				     (mh-get-msg-num nil))<br/>	(Edit\ Message\ Again menu-item "Edit Message Again" mh-edit-again :enable<br/>			      (mh-get-msg-num nil))<br/>	(Re-edit\ a\ Bounced\ Message menu-item "Re-edit a Bounced Message" mh-extract-rejected-mail)<br/>	(nil-7-20 menu-item "--")<br/>	(Copy\ Message\ to\ Folder\.\.\. menu-item "Copy Message to Folder..." mh-copy-msg :enable<br/>					 (mh-get-msg-num nil))<br/>	(Print\ Message menu-item "Print Message" mh-print-msg :enable<br/>			(mh-get-msg-num nil))<br/>	(Write\ Message\ to\ File\.\.\. menu-item "Write Message to File..." mh-write-msg-to-file :enable<br/>					(mh-get-msg-num nil))<br/>	(Pipe\ Message\ to\ Command\.\.\. menu-item "Pipe Message to Command..." mh-pipe-msg :enable<br/>					  (mh-get-msg-num nil))<br/>	(Unpack\ Uuencoded\ Message\.\.\. menu-item "Unpack Uuencoded Message..." mh-store-msg :enable<br/>					  (mh-get-msg-num nil))<br/>	(Burst\ Digest\ Message menu-item "Burst Digest Message" mh-burst-digest :enable<br/>				(mh-get-msg-num nil)))<br/><br/>
+<strong>mh-folder-message-menu</strong> is a variable defined in `<code>mh-folder.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Menu for MH-E folder-message.<br/>
+<br/>
+Value: (keymap "Message"<br/>
+	(Show\ Message menu-item "Show Message" mh-show :enable<br/>
+		       (mh-get-msg-num nil))<br/>
+	(Show\ Message\ with\ Header menu-item "Show Message with Header" mh-header-display :enable<br/>
+				     (mh-get-msg-num nil))<br/>
+	(Show\ Message\ with\ Preferred\ Alternative menu-item "Show Message with Preferred Alternative" mh-show-preferred-alternative :enable<br/>
+						     (mh-get-msg-num nil))<br/>
+	(Next\ Message menu-item "Next Message" mh-next-undeleted-msg)<br/>
+	(Previous\ Message menu-item "Previous Message" mh-previous-undeleted-msg)<br/>
+	(Go\ to\ First\ Message menu-item "Go to First Message" mh-first-msg)<br/>
+	(Go\ to\ Last\ Message menu-item "Go to Last Message" mh-last-msg)<br/>
+	(Go\ to\ Message\ by\ Number\.\.\. menu-item "Go to Message by Number..." mh-goto-msg)<br/>
+	(Modify\ Message menu-item "Modify Message" mh-modify)<br/>
+	(Delete\ Message menu-item "Delete Message" mh-delete-msg :enable<br/>
+			 (mh-get-msg-num nil))<br/>
+	(Refile\ Message menu-item "Refile Message" mh-refile-msg :enable<br/>
+			 (mh-get-msg-num nil))<br/>
+	(Undo\ Delete/Refile menu-item "Undo Delete/Refile" mh-undo :enable<br/>
+			     (mh-outstanding-commands-p))<br/>
+	(Execute\ Delete/Refile menu-item "Execute Delete/Refile" mh-execute-commands :enable<br/>
+				(mh-outstanding-commands-p))<br/>
+	(nil-7 menu-item "--")<br/>
+	(Compose\ a\ New\ Message menu-item "Compose a New Message" mh-send)<br/>
+	(Reply\ to\ Message\.\.\. menu-item "Reply to Message..." mh-reply :enable<br/>
+				  (mh-get-msg-num nil))<br/>
+	(Forward\ Message\.\.\. menu-item "Forward Message..." mh-forward :enable<br/>
+				(mh-get-msg-num nil))<br/>
+	(Redistribute\ Message\.\.\. menu-item "Redistribute Message..." mh-redistribute :enable<br/>
+				     (mh-get-msg-num nil))<br/>
+	(Edit\ Message\ Again menu-item "Edit Message Again" mh-edit-again :enable<br/>
+			      (mh-get-msg-num nil))<br/>
+	(Re-edit\ a\ Bounced\ Message menu-item "Re-edit a Bounced Message" mh-extract-rejected-mail)<br/>
+	(nil-7-20 menu-item "--")<br/>
+	(Copy\ Message\ to\ Folder\.\.\. menu-item "Copy Message to Folder..." mh-copy-msg :enable<br/>
+					 (mh-get-msg-num nil))<br/>
+	(Print\ Message menu-item "Print Message" mh-print-msg :enable<br/>
+			(mh-get-msg-num nil))<br/>
+	(Write\ Message\ to\ File\.\.\. menu-item "Write Message to File..." mh-write-msg-to-file :enable<br/>
+					(mh-get-msg-num nil))<br/>
+	(Pipe\ Message\ to\ Command\.\.\. menu-item "Pipe Message to Command..." mh-pipe-msg :enable<br/>
+					  (mh-get-msg-num nil))<br/>
+	(Unpack\ Uuencoded\ Message\.\.\. menu-item "Unpack Uuencoded Message..." mh-store-msg :enable<br/>
+					  (mh-get-msg-num nil))<br/>
+	(Burst\ Digest\ Message menu-item "Burst Digest Message" mh-burst-digest :enable<br/>
+				(mh-get-msg-num nil)))<br/>
+<br/>

@@ -1,1 +1,16 @@
-python-indent-context is a compiled Lisp function in `python.el'.<br/><br/>(python-indent-context)<br/><br/>Get information on indentation context.<br/>Context information is returned with a cons with the form:<br/>    (STATUS . START)<br/><br/>Where status can be any of the following symbols:<br/> * inside-paren: If point in between (), {} or []<br/> * inside-string: If point is inside a string<br/> * after-backslash: Previous line ends in a backslash<br/> * after-beginning-of-block: Point is after beginning of block<br/> * after-line: Point is after normal line<br/> * no-indent: Point is at beginning of buffer or other special case<br/>START is the buffer position where the sexp starts.
+<strong>python-indent-context</strong> is a compiled Lisp function in `<code>python.el</code>'.<br/>
+<br/>
+(python-indent-context)<br/>
+<br/>
+Get information on indentation context.<br/>
+Context information is returned with a cons with the form:<br/>
+    (STATUS . START)<br/>
+<br/>
+Where status can be any of the following symbols:<br/>
+ * inside-paren: If point in between (), {} or []<br/>
+ * inside-string: If point is inside a string<br/>
+ * after-backslash: Previous line ends in a backslash<br/>
+ * after-beginning-of-block: Point is after beginning of block<br/>
+ * after-line: Point is after normal line<br/>
+ * no-indent: Point is at beginning of buffer or other special case<br/>
+START is the buffer position where the sexp starts.

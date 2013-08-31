@@ -1,1 +1,33 @@
-ada-align-modes is a variable defined in `ada-mode.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Ada support for align.el >= 2.8.<br/>This variable defines several rules to use to align different lines.<br/><br/>Value: ((ada-declaration<br/>  (regexp . "[^:]\\(\\s-*\\):[^:]")<br/>  (valid lambda nil<br/>	 (not<br/>	  (ada-in-comment-p)))<br/>  (modes quote<br/>	 (ada-mode)))<br/> (ada-assignment<br/>  (regexp . "[^=]\\(\\s-+\\)=[^=]")<br/>  (valid lambda nil<br/>	 (not<br/>	  (ada-in-comment-p)))<br/>  (modes quote<br/>	 (ada-mode)))<br/> (ada-comment<br/>  (regexp . "\\(\\s-*\\)--")<br/>  (modes quote<br/>	 (ada-mode)))<br/> (ada-use<br/>  (regexp . "\\(\\s-*\\)use\\s-")<br/>  (valid lambda nil<br/>	 (not<br/>	  (ada-in-comment-p)))<br/>  (modes quote<br/>	 (ada-mode))))<br/><br/>
+<strong>ada-align-modes</strong> is a variable defined in `<code>ada-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Ada support for align.el >= 2.8.<br/>
+This variable defines several rules to use to align different lines.<br/>
+<br/>
+Value: ((ada-declaration<br/>
+  (regexp . "[^:]\\(\\s-*\\):[^:]")<br/>
+  (valid lambda nil<br/>
+	 (not<br/>
+	  (ada-in-comment-p)))<br/>
+  (modes quote<br/>
+	 (ada-mode)))<br/>
+ (ada-assignment<br/>
+  (regexp . "[^=]\\(\\s-+\\)=[^=]")<br/>
+  (valid lambda nil<br/>
+	 (not<br/>
+	  (ada-in-comment-p)))<br/>
+  (modes quote<br/>
+	 (ada-mode)))<br/>
+ (ada-comment<br/>
+  (regexp . "\\(\\s-*\\)--")<br/>
+  (modes quote<br/>
+	 (ada-mode)))<br/>
+ (ada-use<br/>
+  (regexp . "\\(\\s-*\\)use\\s-")<br/>
+  (valid lambda nil<br/>
+	 (not<br/>
+	  (ada-in-comment-p)))<br/>
+  (modes quote<br/>
+	 (ada-mode))))<br/>
+<br/>

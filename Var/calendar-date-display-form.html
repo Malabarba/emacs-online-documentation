@@ -1,1 +1,27 @@
-calendar-date-display-form is a variable defined in `calendar.el'.<br/>Its value is ((if dayname<br/>     (concat dayname ", "))<br/> monthname " " day ", " year)<br/><br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Pseudo-pattern governing the way a calendar date appears.<br/>Used by the function `calendar-date-string' (which see), a pseudo-pattern<br/>is a list of expressions that can involve the keywords `month', `day',<br/>and `year' (all numbers in string form), and `monthname' and `dayname'<br/>(both alphabetic strings).  For example, a typical American form would be<br/><br/>       '(month "/" day "/" (substring year -2))<br/><br/>whereas<br/><br/>       '((format "%9s, %9s %2s, %4s" dayname monthname day year))<br/><br/>would give the usual American style in fixed-length fields.  The variables<br/>`calendar-iso-date-display-form', `calendar-european-date-display-form', and<br/>`calendar-american-date-display-form' provide some defaults for three common<br/>styles.<br/><br/>You can customize this variable.
+<strong>calendar-date-display-form</strong> is a variable defined in `<code>calendar.el</code>'.<br/>
+Its value is ((if dayname<br/>
+     (concat dayname ", "))<br/>
+ monthname " " day ", " year)<br/>
+<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Pseudo-pattern governing the way a calendar date appears.<br/>
+Used by the function `calendar-date-string' (which see), a pseudo-pattern<br/>
+is a list of expressions that can involve the keywords `month', `day',<br/>
+and `year' (all numbers in string form), and `monthname' and `dayname'<br/>
+(both alphabetic strings).  For example, a typical American form would be<br/>
+<br/>
+       '(month "/" day "/" (substring year -2))<br/>
+<br/>
+whereas<br/>
+<br/>
+       '((format "%9s, %9s %2s, %4s" dayname monthname day year))<br/>
+<br/>
+would give the usual American style in fixed-length fields.  The variables<br/>
+`calendar-iso-date-display-form', `calendar-european-date-display-form', and<br/>
+`calendar-american-date-display-form' provide some defaults for three common<br/>
+styles.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,28 @@
-ff-search-directories is a variable defined in `find-file.el'.<br/>Its value is cc-search-directories<br/><br/>  Automatically becomes buffer-local when set.<br/><br/>Documentation:<br/>List of directories to search for a specific file.<br/><br/>Set by default to `cc-search-directories', expanded at run-time.<br/><br/>This list is searched through with each extension specified in<br/>`ff-other-file-alist' that matches this file's extension.  So the<br/>longer the list, the longer it'll take to realize that a file<br/>may not exist.<br/><br/>A typical format is<br/><br/>    '("." "/usr/include" "$PROJECT/*/include")<br/><br/>Environment variables can be inserted between slashes (`/').<br/>They will be replaced by their definition.  If a variable does<br/>not exist, it is replaced (silently) with an empty string.<br/><br/>The stars are *not* wildcards: they are searched for together with<br/>the preceding slash.  The star represents all the subdirectories except<br/>`..', and each of these subdirectories will be searched in turn.<br/><br/>You can customize this variable.
+<strong>ff-search-directories</strong> is a variable defined in `<code>find-file.el</code>'.<br/>
+Its value is cc-search-directories<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+<br/>
+Documentation:<br/>
+List of directories to search for a specific file.<br/>
+<br/>
+Set by default to `cc-search-directories', expanded at run-time.<br/>
+<br/>
+This list is searched through with each extension specified in<br/>
+`ff-other-file-alist' that matches this file's extension.  So the<br/>
+longer the list, the longer it'll take to realize that a file<br/>
+may not exist.<br/>
+<br/>
+A typical format is<br/>
+<br/>
+    '("." "/usr/include" "$PROJECT/*/include")<br/>
+<br/>
+Environment variables can be inserted between slashes (`/').<br/>
+They will be replaced by their definition.  If a variable does<br/>
+not exist, it is replaced (silently) with an empty string.<br/>
+<br/>
+The stars are *not* wildcards: they are searched for together with<br/>
+the preceding slash.  The star represents all the subdirectories except<br/>
+`..', and each of these subdirectories will be searched in turn.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,27 @@
-read-face-name is a compiled Lisp function in `faces.el'.<br/><br/>(read-face-name PROMPT &optional DEFAULT MULTIPLE)<br/><br/>Read one or more face names, defaulting to the face(s) at point.<br/>PROMPT should be a prompt string; it should not end in a space or<br/>a colon.<br/><br/>The optional argument DEFAULT specifies the default face name(s)<br/>to return if the user just types RET.  If its value is non-nil,<br/>it should be a list of face names (symbols); in that case, the<br/>default return value is the `car' of DEFAULT (if the argument<br/>MULTIPLE is non-nil), or DEFAULT (if MULTIPLE is nil).  See below<br/>for the meaning of MULTIPLE.<br/><br/>If DEFAULT is nil, the list of default face names is taken from<br/>the `read-face-name' property of the text at point, or, if that<br/>is nil, from the `face' property of the text at point.<br/><br/>This function uses `completing-read-multiple' with "," as the<br/>separator character.  Thus, the user may enter multiple face<br/>names, separated by commas.  The optional argument MULTIPLE<br/>specifies the form of the return value.  If MULTIPLE is non-nil,<br/>return a list of face names; if the user entered just one face<br/>name, the return value would be a list of one face name.<br/>Otherwise, return a single face name; if the user entered more<br/>than one face name, return only the first one.
+<strong>read-face-name</strong> is a compiled Lisp function in `<code>faces.el</code>'.<br/>
+<br/>
+(read-face-name PROMPT &optional DEFAULT MULTIPLE)<br/>
+<br/>
+Read one or more face names, defaulting to the face(s) at point.<br/>
+PROMPT should be a prompt string; it should not end in a space or<br/>
+a colon.<br/>
+<br/>
+The optional argument DEFAULT specifies the default face name(s)<br/>
+to return if the user just types RET.  If its value is non-nil,<br/>
+it should be a list of face names (symbols); in that case, the<br/>
+default return value is the `car' of DEFAULT (if the argument<br/>
+MULTIPLE is non-nil), or DEFAULT (if MULTIPLE is nil).  See below<br/>
+for the meaning of MULTIPLE.<br/>
+<br/>
+If DEFAULT is nil, the list of default face names is taken from<br/>
+the `read-face-name' property of the text at point, or, if that<br/>
+is nil, from the `face' property of the text at point.<br/>
+<br/>
+This function uses `completing-read-multiple' with "," as the<br/>
+separator character.  Thus, the user may enter multiple face<br/>
+names, separated by commas.  The optional argument MULTIPLE<br/>
+specifies the form of the return value.  If MULTIPLE is non-nil,<br/>
+return a list of face names; if the user entered just one face<br/>
+name, the return value would be a list of one face name.<br/>
+Otherwise, return a single face name; if the user entered more<br/>
+than one face name, return only the first one.

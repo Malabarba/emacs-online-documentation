@@ -1,1 +1,40 @@
-verilog-auto-reg-input is a compiled Lisp function in `verilog-mode.el'.<br/><br/>(verilog-auto-reg-input)<br/><br/>Expand AUTOREGINPUT statements, as part of M-x verilog-auto.<br/>Make reg statements instantiation inputs that aren't already declared.<br/>This is useful for making a top level shell for testing the module that is<br/>to be instantiated.<br/><br/>Limitations:<br/>  This ONLY detects inputs of AUTOINSTants (see `verilog-read-sub-decls').<br/><br/>  This does NOT work on memories, declare those yourself.<br/><br/>An example (see `verilog-auto-inst' for what else is going on here):<br/><br/>	module ExampRegInput (o,i);<br/>	   output o;<br/>	   input i;<br/>	   /*AUTOREGINPUT*/<br/>           InstModule instName<br/>             (/*AUTOINST*/);<br/>	endmodule<br/><br/>Typing M-x verilog-auto will make this into:<br/><br/>	module ExampRegInput (o,i);<br/>	   output o;<br/>	   input i;<br/>	   /*AUTOREGINPUT*/<br/>	   // Beginning of automatic reg inputs (for undeclared ...<br/>	   reg [31:0]		iv;	// From inst of inst.v<br/>	   // End of automatics<br/>	   InstModule instName<br/>             (/*AUTOINST*/<br/>	      // Outputs<br/>	      .o		(o[31:0]),<br/>	      // Inputs<br/>	      .iv		(iv));<br/>	endmodule
+<strong>verilog-auto-reg-input</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
+<br/>
+(verilog-auto-reg-input)<br/>
+<br/>
+Expand AUTOREGINPUT statements, as part of M-x verilog-auto.<br/>
+Make reg statements instantiation inputs that aren't already declared.<br/>
+This is useful for making a top level shell for testing the module that is<br/>
+to be instantiated.<br/>
+<br/>
+Limitations:<br/>
+  This ONLY detects inputs of AUTOINSTants (see `verilog-read-sub-decls').<br/>
+<br/>
+  This does NOT work on memories, declare those yourself.<br/>
+<br/>
+An example (see `verilog-auto-inst' for what else is going on here):<br/>
+<br/>
+	module ExampRegInput (o,i);<br/>
+	   output o;<br/>
+	   input i;<br/>
+	   /*AUTOREGINPUT*/<br/>
+           InstModule instName<br/>
+             (/*AUTOINST*/);<br/>
+	endmodule<br/>
+<br/>
+Typing M-x verilog-auto will make this into:<br/>
+<br/>
+	module ExampRegInput (o,i);<br/>
+	   output o;<br/>
+	   input i;<br/>
+	   /*AUTOREGINPUT*/<br/>
+	   // Beginning of automatic reg inputs (for undeclared ...<br/>
+	   reg [31:0]		iv;	// From inst of inst.v<br/>
+	   // End of automatics<br/>
+	   InstModule instName<br/>
+             (/*AUTOINST*/<br/>
+	      // Outputs<br/>
+	      .o		(o[31:0]),<br/>
+	      // Inputs<br/>
+	      .iv		(iv));<br/>
+	endmodule

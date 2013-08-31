@@ -1,1 +1,16 @@
-c-lineup-java-inher is a compiled Lisp function in `cc-align.el'.<br/><br/>(c-lineup-java-inher LANGELEM)<br/><br/>Line up Java implements and extends declarations.<br/>If class names follow on the same line as the implements/extends<br/>keyword, they are lined up under each other.  Otherwise, they are<br/>indented by adding `c-basic-offset' to the column of the keyword.<br/>E.g.:<br/><br/>class Foo             class Foo<br/>    extends               extends Cyphr,<br/>        Bar    <->                Bar     <- c-lineup-java-inher<br/>    <--> c-basic-offset<br/><br/>Works with: inher-cont.
+<strong>c-lineup-java-inher</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
+<br/>
+(c-lineup-java-inher LANGELEM)<br/>
+<br/>
+Line up Java implements and extends declarations.<br/>
+If class names follow on the same line as the implements/extends<br/>
+keyword, they are lined up under each other.  Otherwise, they are<br/>
+indented by adding `c-basic-offset' to the column of the keyword.<br/>
+E.g.:<br/>
+<br/>
+class Foo             class Foo<br/>
+    extends               extends Cyphr,<br/>
+        Bar    <->                Bar     <- c-lineup-java-inher<br/>
+    <--> c-basic-offset<br/>
+<br/>
+Works with: inher-cont.

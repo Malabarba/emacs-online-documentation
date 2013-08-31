@@ -1,1 +1,40 @@
-window--resizable is a compiled Lisp function in `window.el'.<br/><br/>(window--resizable WINDOW DELTA &optional HORIZONTAL IGNORE TRAIL NOUP NODOWN)<br/><br/>Return DELTA if WINDOW can be resized vertically by DELTA lines.<br/>WINDOW must be a valid window and defaults to the selected one.<br/>Optional argument HORIZONTAL non-nil means return DELTA if WINDOW<br/>can be resized horizontally by DELTA columns.  A return value of<br/>zero means that WINDOW is not resizable.<br/><br/>DELTA positive means WINDOW shall be enlarged by DELTA lines or<br/>columns.  If WINDOW cannot be enlarged by DELTA lines or columns,<br/>return the maximum value in the range 0..DELTA by which WINDOW<br/>can be enlarged.<br/><br/>DELTA negative means WINDOW shall be shrunk by -DELTA lines or<br/>columns.  If WINDOW cannot be shrunk by -DELTA lines or columns,<br/>return the minimum value in the range DELTA..0 that can be used<br/>for shrinking WINDOW.<br/><br/>Optional argument IGNORE non-nil means ignore restrictions<br/>imposed by fixed size windows, `window-min-height' or<br/>`window-min-width' settings.  If IGNORE is a window, ignore<br/>restrictions for that window only.  If IGNORE equals `safe',<br/>live windows may get as small as `window-safe-min-height' lines<br/>and `window-safe-min-width' columns.  Any other non-nil value<br/>means ignore all of the above restrictions for all windows.<br/><br/>Optional argument TRAIL `before' means only windows to the left<br/>of or below WINDOW can be shrunk.  Optional argument TRAIL<br/>`after' means only windows to the right of or above WINDOW can be<br/>shrunk.<br/><br/>Optional argument NOUP non-nil means don't go up in the window<br/>tree but check only whether space can be obtained from (or given<br/>to) WINDOW's siblings.<br/><br/>Optional argument NODOWN non-nil means don't go down in the<br/>window tree.  This means do not check whether resizing would<br/>violate size restrictions of WINDOW or its child windows.
+<strong>window--resizable</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(window--resizable WINDOW DELTA &optional HORIZONTAL IGNORE TRAIL NOUP NODOWN)<br/>
+<br/>
+Return DELTA if WINDOW can be resized vertically by DELTA lines.<br/>
+WINDOW must be a valid window and defaults to the selected one.<br/>
+Optional argument HORIZONTAL non-nil means return DELTA if WINDOW<br/>
+can be resized horizontally by DELTA columns.  A return value of<br/>
+zero means that WINDOW is not resizable.<br/>
+<br/>
+DELTA positive means WINDOW shall be enlarged by DELTA lines or<br/>
+columns.  If WINDOW cannot be enlarged by DELTA lines or columns,<br/>
+return the maximum value in the range 0..DELTA by which WINDOW<br/>
+can be enlarged.<br/>
+<br/>
+DELTA negative means WINDOW shall be shrunk by -DELTA lines or<br/>
+columns.  If WINDOW cannot be shrunk by -DELTA lines or columns,<br/>
+return the minimum value in the range DELTA..0 that can be used<br/>
+for shrinking WINDOW.<br/>
+<br/>
+Optional argument IGNORE non-nil means ignore restrictions<br/>
+imposed by fixed size windows, `window-min-height' or<br/>
+`window-min-width' settings.  If IGNORE is a window, ignore<br/>
+restrictions for that window only.  If IGNORE equals `safe',<br/>
+live windows may get as small as `window-safe-min-height' lines<br/>
+and `window-safe-min-width' columns.  Any other non-nil value<br/>
+means ignore all of the above restrictions for all windows.<br/>
+<br/>
+Optional argument TRAIL `before' means only windows to the left<br/>
+of or below WINDOW can be shrunk.  Optional argument TRAIL<br/>
+`after' means only windows to the right of or above WINDOW can be<br/>
+shrunk.<br/>
+<br/>
+Optional argument NOUP non-nil means don't go up in the window<br/>
+tree but check only whether space can be obtained from (or given<br/>
+to) WINDOW's siblings.<br/>
+<br/>
+Optional argument NODOWN non-nil means don't go down in the<br/>
+window tree.  This means do not check whether resizing would<br/>
+violate size restrictions of WINDOW or its child windows.

@@ -1,1 +1,75 @@
-compilation-minor-mode-map is a variable defined in `compile.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap for `compilation-minor-mode'.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (compilation "Errors" keymap<br/>			(compilation-next-error menu-item "Next Error" next-error :help "Visit next `next-error' message and corresponding source code")<br/>			(compilation-previous-error menu-item "Previous Error" previous-error :help "Visit previous `next-error' message and corresponding source code")<br/>			(compilation-first-error menu-item "First Error" first-error :help "Restart at the first error, visit corresponding source code")<br/>			(compilation-mode-separator2 "----")<br/>			(compilation-skip "Skip Less Important Messages" keymap<br/>					  (compilation-skip-warning-and-info menu-item "Skip Warnings and Info"<br/>									     (lambda nil<br/>									       (interactive)<br/>									       (customize-set-variable 'compilation-skip-threshold 2))<br/>									     :help "Skip over Warnings and Info, stop for errors" :button<br/>									     (:radio eq compilation-skip-threshold 2))<br/>					  (compilation-skip-info menu-item "Skip Info"<br/>								 (lambda nil<br/>								   (interactive)<br/>								   (customize-set-variable 'compilation-skip-threshold 1))<br/>								 :help "Skip anything less than warning" :button<br/>								 (:radio eq compilation-skip-threshold 1))<br/>					  (compilation-skip-none menu-item "Don't Skip Any Messages"<br/>								 (lambda nil<br/>								   (interactive)<br/>								   (customize-set-variable 'compilation-skip-threshold 0))<br/>								 :help "Do not skip any type of messages" :button<br/>								 (:radio eq compilation-skip-threshold 0))<br/>					  "Skip")<br/>			(compilation-next-error-follow-minor-mode menu-item "Auto Error Display" next-error-follow-minor-mode :help "Display the error under cursor when moving the cursor" :button<br/>								  (:toggle . next-error-follow-minor-mode))<br/>			(compilation-mode-separator3 "----")<br/>			(stop-subjob menu-item "Stop Compilation" kill-compilation :help "Kill the process made by the M-x compile or M-x grep commands")<br/>			"Errors"))<br/> (103 . recompile)<br/> (27 keymap<br/>     (125 . compilation-next-file)<br/>     (123 . compilation-previous-file)<br/>     (112 . compilation-previous-error)<br/>     (110 . compilation-next-error))<br/> (13 . compile-goto-error)<br/> (3 keymap<br/>    (11 . kill-compilation)<br/>    (3 . compile-goto-error))<br/> (follow-link . mouse-face)<br/> (mouse-2 . compile-goto-error)<br/> keymap<br/> (103 . revert-buffer)<br/> (60 . beginning-of-buffer)<br/> (62 . end-of-buffer)<br/> (104 . describe-mode)<br/> (63 . describe-mode)<br/> (127 . scroll-down-command)<br/> (32 . scroll-up-command)<br/> (113 . quit-window)<br/> (57 . digit-argument)<br/> (56 . digit-argument)<br/> (55 . digit-argument)<br/> (54 . digit-argument)<br/> (53 . digit-argument)<br/> (52 . digit-argument)<br/> (51 . digit-argument)<br/> (50 . digit-argument)<br/> (49 . digit-argument)<br/> (48 . digit-argument)<br/> (45 . negative-argument)<br/> (remap keymap<br/>	(self-insert-command . undefined)))<br/><br/>
+<strong>compilation-minor-mode-map</strong> is a variable defined in `<code>compile.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap for `compilation-minor-mode'.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (compilation "Errors" keymap<br/>
+			(compilation-next-error menu-item "Next Error" next-error :help "Visit next `next-error' message and corresponding source code")<br/>
+			(compilation-previous-error menu-item "Previous Error" previous-error :help "Visit previous `next-error' message and corresponding source code")<br/>
+			(compilation-first-error menu-item "First Error" first-error :help "Restart at the first error, visit corresponding source code")<br/>
+			(compilation-mode-separator2 "----")<br/>
+			(compilation-skip "Skip Less Important Messages" keymap<br/>
+					  (compilation-skip-warning-and-info menu-item "Skip Warnings and Info"<br/>
+									     (lambda nil<br/>
+									       (interactive)<br/>
+									       (customize-set-variable 'compilation-skip-threshold 2))<br/>
+									     :help "Skip over Warnings and Info, stop for errors" :button<br/>
+									     (:radio eq compilation-skip-threshold 2))<br/>
+					  (compilation-skip-info menu-item "Skip Info"<br/>
+								 (lambda nil<br/>
+								   (interactive)<br/>
+								   (customize-set-variable 'compilation-skip-threshold 1))<br/>
+								 :help "Skip anything less than warning" :button<br/>
+								 (:radio eq compilation-skip-threshold 1))<br/>
+					  (compilation-skip-none menu-item "Don't Skip Any Messages"<br/>
+								 (lambda nil<br/>
+								   (interactive)<br/>
+								   (customize-set-variable 'compilation-skip-threshold 0))<br/>
+								 :help "Do not skip any type of messages" :button<br/>
+								 (:radio eq compilation-skip-threshold 0))<br/>
+					  "Skip")<br/>
+			(compilation-next-error-follow-minor-mode menu-item "Auto Error Display" next-error-follow-minor-mode :help "Display the error under cursor when moving the cursor" :button<br/>
+								  (:toggle . next-error-follow-minor-mode))<br/>
+			(compilation-mode-separator3 "----")<br/>
+			(stop-subjob menu-item "Stop Compilation" kill-compilation :help "Kill the process made by the M-x compile or M-x grep commands")<br/>
+			"Errors"))<br/>
+ (103 . recompile)<br/>
+ (27 keymap<br/>
+     (125 . compilation-next-file)<br/>
+     (123 . compilation-previous-file)<br/>
+     (112 . compilation-previous-error)<br/>
+     (110 . compilation-next-error))<br/>
+ (13 . compile-goto-error)<br/>
+ (3 keymap<br/>
+    (11 . kill-compilation)<br/>
+    (3 . compile-goto-error))<br/>
+ (follow-link . mouse-face)<br/>
+ (mouse-2 . compile-goto-error)<br/>
+ keymap<br/>
+ (103 . revert-buffer)<br/>
+ (60 . beginning-of-buffer)<br/>
+ (62 . end-of-buffer)<br/>
+ (104 . describe-mode)<br/>
+ (63 . describe-mode)<br/>
+ (127 . scroll-down-command)<br/>
+ (32 . scroll-up-command)<br/>
+ (113 . quit-window)<br/>
+ (57 . digit-argument)<br/>
+ (56 . digit-argument)<br/>
+ (55 . digit-argument)<br/>
+ (54 . digit-argument)<br/>
+ (53 . digit-argument)<br/>
+ (52 . digit-argument)<br/>
+ (51 . digit-argument)<br/>
+ (50 . digit-argument)<br/>
+ (49 . digit-argument)<br/>
+ (48 . digit-argument)<br/>
+ (45 . negative-argument)<br/>
+ (remap keymap<br/>
+	(self-insert-command . undefined)))<br/>
+<br/>

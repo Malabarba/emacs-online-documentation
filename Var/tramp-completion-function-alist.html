@@ -1,1 +1,30 @@
-tramp-completion-function-alist is a variable defined in `tramp.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Alist of methods for remote files.<br/>This is a list of entries of the form (NAME PAIR1 PAIR2 ...).<br/>Each NAME stands for a remote access method.  Each PAIR is of the form<br/>(FUNCTION FILE).  FUNCTION is responsible to extract user names and host<br/>names from FILE for completion.  The following predefined FUNCTIONs exists:<br/><br/> * `tramp-parse-rhosts'      for "~/.rhosts" like files,<br/> * `tramp-parse-shosts'      for "~/.ssh/known_hosts" like files,<br/> * `tramp-parse-sconfig'     for "~/.ssh/config" like files,<br/> * `tramp-parse-shostkeys'   for "~/.ssh2/hostkeys/*" like files,<br/> * `tramp-parse-sknownhosts' for "~/.ssh2/knownhosts/*" like files,<br/> * `tramp-parse-hosts'       for "/etc/hosts" like files,<br/> * `tramp-parse-passwd'      for "/etc/passwd" like files.<br/> * `tramp-parse-netrc'       for "~/.netrc" like files.<br/> * `tramp-parse-putty'       for PuTTY registered sessions.<br/><br/>FUNCTION can also be a customer defined function.  For more details see<br/>the info pages.<br/><br/>Value: (("ftp"<br/>  (tramp-parse-netrc "~/.netrc"))<br/> ("fcp"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("pscp"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("plink1"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("plink"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("ksu"<br/>  (tramp-parse-passwd "/etc/passwd"))<br/> ("sudo"<br/>  (tramp-parse-passwd "/etc/passwd"))<br/> ("su"<br/>  (tramp-parse-passwd "/etc/passwd"))<br/> ("telnet"<br/>  (tramp-parse-hosts "/etc/hosts"))<br/> ("sshx"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("ssh2_old"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("ssh1_old"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("ssh2"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("ssh1"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("ssh"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("rsyncc"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("rsync"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("sftp"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("scpx"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("scpc"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("scp2"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("scp1"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("scp"<br/>  (tramp-parse-shosts "~/.ssh/known_hosts")<br/>  (tramp-parse-sconfig "~/.ssh/config"))<br/> ("smb"<br/>  (tramp-parse-netrc "~/.netrc")))<br/><br/>
+<strong>tramp-completion-function-alist</strong> is a variable defined in `<code>tramp.el</code>'.<br/>
+Its value is (("ksu"<br/>
+  (tramp-parse-passwd "/etc/passwd"))<br/>
+ ("sudo"<br/>
+  (tramp-parse-passwd "/etc/passwd"))<br/>
+ ("su"<br/>
+  (tramp-parse-passwd "/etc/passwd"))<br/>
+ ("telnet"<br/>
+  (tramp-parse-hosts "/etc/hosts")))<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Alist of methods for remote files.<br/>
+This is a list of entries of the form (NAME PAIR1 PAIR2 ...).<br/>
+Each NAME stands for a remote access method.  Each PAIR is of the form<br/>
+(FUNCTION FILE).  FUNCTION is responsible to extract user names and host<br/>
+names from FILE for completion.  The following predefined FUNCTIONs exists:<br/>
+<br/>
+ * `tramp-parse-rhosts'      for "~/.rhosts" like files,<br/>
+ * `tramp-parse-shosts'      for "~/.ssh/known_hosts" like files,<br/>
+ * `tramp-parse-sconfig'     for "~/.ssh/config" like files,<br/>
+ * `tramp-parse-shostkeys'   for "~/.ssh2/hostkeys/*" like files,<br/>
+ * `tramp-parse-sknownhosts' for "~/.ssh2/knownhosts/*" like files,<br/>
+ * `tramp-parse-hosts'       for "/etc/hosts" like files,<br/>
+ * `tramp-parse-passwd'      for "/etc/passwd" like files.<br/>
+ * `tramp-parse-netrc'       for "~/.netrc" like files.<br/>
+ * `tramp-parse-putty'       for PuTTY registered sessions.<br/>
+<br/>
+FUNCTION can also be a customer defined function.  For more details see<br/>
+the info pages.

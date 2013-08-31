@@ -1,1 +1,63 @@
-gud-mode is an interactive compiled Lisp function in `gud.el'.<br/><br/>(gud-mode)<br/><br/>Parent mode: `comint-mode'.<br/><br/>Major mode for interacting with an inferior debugger process.<br/><br/>   You start it up with one of the commands M-x gdb, M-x sdb, M-x dbx,<br/>M-x perldb, M-x xdb, or M-x jdb.  Each entry point finishes by executing a<br/>hook; `gdb-mode-hook', `sdb-mode-hook', `dbx-mode-hook',<br/>`perldb-mode-hook', `xdb-mode-hook', or `jdb-mode-hook' respectively.<br/><br/>After startup, the following commands are available in both the GUD<br/>interaction buffer and any source buffer GUD visits due to a breakpoint stop<br/>or step operation:<br/><br/>C-x SPC sets a breakpoint at the current file and line.  In the<br/>GUD buffer, the current file and line are those of the last breakpoint or<br/>step.  In a source buffer, they are the buffer's file and current line.<br/><br/>M-x gud-remove removes breakpoints on the current file and line.<br/><br/>C-x C-a C-l displays in the source window the last line referred to<br/>in the gud buffer.<br/><br/>M-x gud-step, M-x gud-next, and M-x gud-stepi do a step-one-line,<br/>step-one-line (not entering function calls), and step-one-instruction<br/>and then update the source window with the current file and position.<br/>M-x gud-cont continues execution.<br/><br/>M-x gud-print tries to find the largest C lvalue or function-call expression<br/>around point, and sends it to the debugger for value display.<br/><br/>The above commands are common to all supported debuggers except xdb which<br/>does not support stepping instructions.<br/><br/>Under gdb, sdb and xdb, M-x gud-tbreak behaves exactly like C-x SPC,<br/>except that the breakpoint is temporary; that is, it is removed when<br/>execution stops on it.<br/><br/>Under gdb, dbx, and xdb, M-x gud-up pops up through an enclosing stack<br/>frame.  M-x gud-down drops back down through one.<br/><br/>If you are using gdb or xdb, M-x gud-finish runs execution to the return from<br/>the current function and stops.<br/><br/>All the keystrokes above are accessible in the GUD buffer<br/>with the prefix C-c, and in all buffers through the prefix C-x C-a.<br/><br/>All pre-defined functions for which the concept make sense repeat<br/>themselves the appropriate number of times if you give a prefix<br/>argument.<br/><br/>You may use the `gud-def' macro in the initialization hook to define other<br/>commands.<br/><br/>Other commands for interacting with the debugger process are inherited from<br/>comint mode, which see.<br/><br/>In addition to any hooks its parent mode `comint-mode' might have run,<br/>this mode runs the hook `gud-mode-hook', as the final step<br/>during initialization.
+<strong>gud-mode</strong> is an interactive compiled Lisp function in `<code>gud.el</code>'.<br/>
+<br/>
+(gud-mode)<br/>
+<br/>
+Parent mode: `comint-mode'.<br/>
+<br/>
+Major mode for interacting with an inferior debugger process.<br/>
+<br/>
+   You start it up with one of the commands M-x gdb, M-x sdb, M-x dbx,<br/>
+M-x perldb, M-x xdb, or M-x jdb.  Each entry point finishes by executing a<br/>
+hook; `gdb-mode-hook', `sdb-mode-hook', `dbx-mode-hook',<br/>
+`perldb-mode-hook', `xdb-mode-hook', or `jdb-mode-hook' respectively.<br/>
+<br/>
+After startup, the following commands are available in both the GUD<br/>
+interaction buffer and any source buffer GUD visits due to a breakpoint stop<br/>
+or step operation:<br/>
+<br/>
+C-x SPC sets a breakpoint at the current file and line.  In the<br/>
+GUD buffer, the current file and line are those of the last breakpoint or<br/>
+step.  In a source buffer, they are the buffer's file and current line.<br/>
+<br/>
+M-x gud-remove removes breakpoints on the current file and line.<br/>
+<br/>
+C-x C-a C-l displays in the source window the last line referred to<br/>
+in the gud buffer.<br/>
+<br/>
+M-x gud-step, M-x gud-next, and M-x gud-stepi do a step-one-line,<br/>
+step-one-line (not entering function calls), and step-one-instruction<br/>
+and then update the source window with the current file and position.<br/>
+M-x gud-cont continues execution.<br/>
+<br/>
+M-x gud-print tries to find the largest C lvalue or function-call expression<br/>
+around point, and sends it to the debugger for value display.<br/>
+<br/>
+The above commands are common to all supported debuggers except xdb which<br/>
+does not support stepping instructions.<br/>
+<br/>
+Under gdb, sdb and xdb, M-x gud-tbreak behaves exactly like C-x SPC,<br/>
+except that the breakpoint is temporary; that is, it is removed when<br/>
+execution stops on it.<br/>
+<br/>
+Under gdb, dbx, and xdb, M-x gud-up pops up through an enclosing stack<br/>
+frame.  M-x gud-down drops back down through one.<br/>
+<br/>
+If you are using gdb or xdb, M-x gud-finish runs execution to the return from<br/>
+the current function and stops.<br/>
+<br/>
+All the keystrokes above are accessible in the GUD buffer<br/>
+with the prefix C-c, and in all buffers through the prefix C-x C-a.<br/>
+<br/>
+All pre-defined functions for which the concept make sense repeat<br/>
+themselves the appropriate number of times if you give a prefix<br/>
+argument.<br/>
+<br/>
+You may use the `gud-def' macro in the initialization hook to define other<br/>
+commands.<br/>
+<br/>
+Other commands for interacting with the debugger process are inherited from<br/>
+comint mode, which see.<br/>
+<br/>
+In addition to any hooks its parent mode `comint-mode' might have run,<br/>
+this mode runs the hook `gud-mode-hook', as the final step<br/>
+during initialization.

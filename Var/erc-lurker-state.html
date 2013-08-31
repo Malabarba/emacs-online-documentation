@@ -1,1 +1,12 @@
-erc-lurker-state is a variable defined in `erc.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Track the time of the last PRIVMSG for each (server,nick) pair.<br/><br/>This is implemented as a hash of hashes, where the outer key is<br/>the canonicalized server name (as returned by<br/>`erc-canonicalize-server-name') and the outer value is a hash<br/>table mapping nicks (as returned by `erc-lurker-maybe-trim') to<br/>the times of their most recently received PRIVMSG on any channel<br/>on the given server.
+<strong>erc-lurker-state</strong> is a variable defined in `<code>erc.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Track the time of the last PRIVMSG for each (server,nick) pair.<br/>
+<br/>
+This is implemented as a hash of hashes, where the outer key is<br/>
+the canonicalized server name (as returned by<br/>
+`erc-canonicalize-server-name') and the outer value is a hash<br/>
+table mapping nicks (as returned by `erc-lurker-maybe-trim') to<br/>
+the times of their most recently received PRIVMSG on any channel<br/>
+on the given server.

@@ -1,1 +1,67 @@
-perl-mode is an interactive autoloaded compiled Lisp function in `perl-mode.el'.<br/><br/>(perl-mode)<br/><br/>Parent mode: `prog-mode'.<br/><br/>Major mode for editing Perl code.<br/>Expression and list commands understand all Perl brackets.<br/>Tab indents for Perl code.<br/>Comments are delimited with # ... \n.<br/>Paragraphs are separated by blank lines only.<br/>Delete converts tabs to spaces as it moves back.<br/>key             binding<br/>---             -------<br/><br/>TAB		perl-indent-command<br/>ESC		Prefix Command<br/>: .. ;		perl-electric-terminator<br/>{		perl-electric-terminator<br/>}		perl-electric-terminator<br/>DEL		backward-delete-char-untabify<br/><br/>C-M-a		perl-beginning-of-function<br/>C-M-e		perl-end-of-function<br/>C-M-h		perl-mark-function<br/>C-M-q		perl-indent-exp<br/><br/><br/>Variables controlling indentation style:<br/> `perl-tab-always-indent'<br/>    Non-nil means TAB in Perl mode should always indent the current line,<br/>    regardless of where in the line point is when the TAB command is used.<br/> `perl-tab-to-comment'<br/>    Non-nil means that for lines which don't need indenting, TAB will<br/>    either delete an empty comment, indent an existing comment, move<br/>    to end-of-line, or if at end-of-line already, create a new comment.<br/> `perl-nochange'<br/>    Lines starting with this regular expression are not auto-indented.<br/> `perl-indent-level'<br/>    Indentation of Perl statements within surrounding block.<br/>    The surrounding block's indentation is the indentation<br/>    of the line on which the open-brace appears.<br/> `perl-continued-statement-offset'<br/>    Extra indentation given to a substatement, such as the<br/>    then-clause of an if or body of a while.<br/> `perl-continued-brace-offset'<br/>    Extra indentation given to a brace that starts a substatement.<br/>    This is in addition to `perl-continued-statement-offset'.<br/> `perl-brace-offset'<br/>    Extra indentation for line if it starts with an open brace.<br/> `perl-brace-imaginary-offset'<br/>    An open brace following other text is treated as if it were<br/>    this far to the right of the start of its line.<br/> `perl-label-offset'<br/>    Extra indentation for line that is a label.<br/> `perl-indent-continued-arguments'<br/>    Offset of argument lines relative to usual indentation.<br/><br/>Various indentation styles:       K&R  BSD  BLK  GNU  LW<br/>  perl-indent-level                5    8    0    2    4<br/>  perl-continued-statement-offset  5    8    4    2    4<br/>  perl-continued-brace-offset      0    0    0    0   -4<br/>  perl-brace-offset               -5   -8    0    0    0<br/>  perl-brace-imaginary-offset      0    0    4    0    0<br/>  perl-label-offset               -5   -8   -2   -2   -2<br/><br/>Turning on Perl mode runs the normal hook `perl-mode-hook'.
+<strong>perl-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>perl-mode.el</code>'.<br/>
+<br/>
+(perl-mode)<br/>
+<br/>
+Parent mode: `prog-mode'.<br/>
+<br/>
+Major mode for editing Perl code.<br/>
+Expression and list commands understand all Perl brackets.<br/>
+Tab indents for Perl code.<br/>
+Comments are delimited with # ... \n.<br/>
+Paragraphs are separated by blank lines only.<br/>
+Delete converts tabs to spaces as it moves back.<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+TAB		perl-indent-command<br/>
+ESC		Prefix Command<br/>
+: .. ;		perl-electric-terminator<br/>
+{		perl-electric-terminator<br/>
+}		perl-electric-terminator<br/>
+DEL		backward-delete-char-untabify<br/>
+<br/>
+C-M-a		perl-beginning-of-function<br/>
+C-M-e		perl-end-of-function<br/>
+C-M-h		perl-mark-function<br/>
+C-M-q		perl-indent-exp<br/>
+<br/>
+<br/>
+Variables controlling indentation style:<br/>
+ `perl-tab-always-indent'<br/>
+    Non-nil means TAB in Perl mode should always indent the current line,<br/>
+    regardless of where in the line point is when the TAB command is used.<br/>
+ `perl-tab-to-comment'<br/>
+    Non-nil means that for lines which don't need indenting, TAB will<br/>
+    either delete an empty comment, indent an existing comment, move<br/>
+    to end-of-line, or if at end-of-line already, create a new comment.<br/>
+ `perl-nochange'<br/>
+    Lines starting with this regular expression are not auto-indented.<br/>
+ `perl-indent-level'<br/>
+    Indentation of Perl statements within surrounding block.<br/>
+    The surrounding block's indentation is the indentation<br/>
+    of the line on which the open-brace appears.<br/>
+ `perl-continued-statement-offset'<br/>
+    Extra indentation given to a substatement, such as the<br/>
+    then-clause of an if or body of a while.<br/>
+ `perl-continued-brace-offset'<br/>
+    Extra indentation given to a brace that starts a substatement.<br/>
+    This is in addition to `perl-continued-statement-offset'.<br/>
+ `perl-brace-offset'<br/>
+    Extra indentation for line if it starts with an open brace.<br/>
+ `perl-brace-imaginary-offset'<br/>
+    An open brace following other text is treated as if it were<br/>
+    this far to the right of the start of its line.<br/>
+ `perl-label-offset'<br/>
+    Extra indentation for line that is a label.<br/>
+ `perl-indent-continued-arguments'<br/>
+    Offset of argument lines relative to usual indentation.<br/>
+<br/>
+Various indentation styles:       K&R  BSD  BLK  GNU  LW<br/>
+  perl-indent-level                5    8    0    2    4<br/>
+  perl-continued-statement-offset  5    8    4    2    4<br/>
+  perl-continued-brace-offset      0    0    0    0   -4<br/>
+  perl-brace-offset               -5   -8    0    0    0<br/>
+  perl-brace-imaginary-offset      0    0    4    0    0<br/>
+  perl-label-offset               -5   -8   -2   -2   -2<br/>
+<br/>
+Turning on Perl mode runs the normal hook `perl-mode-hook'.

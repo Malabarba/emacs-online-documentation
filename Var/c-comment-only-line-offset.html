@@ -1,1 +1,26 @@
-c-comment-only-line-offset is a variable defined in `cc-vars.el'.<br/>Its value is set-from-style<br/><br/>Documentation:<br/>*Extra offset for line which contains only the start of a comment.<br/>Can contain an integer or a cons cell of the form:<br/><br/> (NON-ANCHORED-OFFSET . ANCHORED-OFFSET)<br/><br/>Where NON-ANCHORED-OFFSET is the amount of offset given to<br/>non-column-zero anchored comment-only lines, and ANCHORED-OFFSET is<br/>the amount of offset to give column-zero anchored comment-only lines.<br/>Just an integer as value is equivalent to (<val> . -1000).<br/><br/>Note that this variable only has effect when the `c-lineup-comment'<br/>lineup function is used on the `comment-intro' syntactic symbol (the<br/>default).<br/><br/>This is a style variable.  Apart from the valid values described<br/>above, it can be set to the symbol `set-from-style'.  In that case,<br/>it takes its value from the style system (see `c-default-style' and<br/>`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>the value set here overrides the style system (there is a variable<br/>`c-old-style-variable-behavior' that changes this, though).<br/><br/>You can customize this variable.
+<strong>c-comment-only-line-offset</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
+Its value is set-from-style<br/>
+<br/>
+Documentation:<br/>
+*Extra offset for line which contains only the start of a comment.<br/>
+Can contain an integer or a cons cell of the form:<br/>
+<br/>
+ (NON-ANCHORED-OFFSET . ANCHORED-OFFSET)<br/>
+<br/>
+Where NON-ANCHORED-OFFSET is the amount of offset given to<br/>
+non-column-zero anchored comment-only lines, and ANCHORED-OFFSET is<br/>
+the amount of offset to give column-zero anchored comment-only lines.<br/>
+Just an integer as value is equivalent to (<val> . -1000).<br/>
+<br/>
+Note that this variable only has effect when the `c-lineup-comment'<br/>
+lineup function is used on the `comment-intro' syntactic symbol (the<br/>
+default).<br/>
+<br/>
+This is a style variable.  Apart from the valid values described<br/>
+above, it can be set to the symbol `set-from-style'.  In that case,<br/>
+it takes its value from the style system (see `c-default-style' and<br/>
+`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>
+the value set here overrides the style system (there is a variable<br/>
+`c-old-style-variable-behavior' that changes this, though).<br/>
+<br/>
+You can customize this variable.

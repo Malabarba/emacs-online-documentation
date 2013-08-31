@@ -1,1 +1,21 @@
-compilation-start is an autoloaded compiled Lisp function in `compile.el'.<br/><br/>(compilation-start COMMAND &optional MODE NAME-FUNCTION HIGHLIGHT-REGEXP)<br/><br/>Run compilation command COMMAND (low level interface).<br/>If COMMAND starts with a cd command, that becomes the `default-directory'.<br/>The rest of the arguments are optional; for them, nil means use the default.<br/><br/>MODE is the major mode to set in the compilation buffer.  Mode<br/>may also be t meaning use `compilation-shell-minor-mode' under `comint-mode'.<br/><br/>If NAME-FUNCTION is non-nil, call it with one argument (the mode name)<br/>to determine the buffer name.  Otherwise, the default is to<br/>reuses the current buffer if it has the proper major mode,<br/>else use or create a buffer with name based on the major mode.<br/><br/>If HIGHLIGHT-REGEXP is non-nil, `next-error' will temporarily highlight<br/>the matching section of the visited source line; the default is to use the<br/>global value of `compilation-highlight-regexp'.<br/><br/>Returns the compilation buffer created.
+<strong>compilation-start</strong> is an autoloaded compiled Lisp function in `<code>compile.el</code>'.<br/>
+<br/>
+(compilation-start COMMAND &optional MODE NAME-FUNCTION HIGHLIGHT-REGEXP)<br/>
+<br/>
+Run compilation command COMMAND (low level interface).<br/>
+If COMMAND starts with a cd command, that becomes the `default-directory'.<br/>
+The rest of the arguments are optional; for them, nil means use the default.<br/>
+<br/>
+MODE is the major mode to set in the compilation buffer.  Mode<br/>
+may also be t meaning use `compilation-shell-minor-mode' under `comint-mode'.<br/>
+<br/>
+If NAME-FUNCTION is non-nil, call it with one argument (the mode name)<br/>
+to determine the buffer name.  Otherwise, the default is to<br/>
+reuses the current buffer if it has the proper major mode,<br/>
+else use or create a buffer with name based on the major mode.<br/>
+<br/>
+If HIGHLIGHT-REGEXP is non-nil, `next-error' will temporarily highlight<br/>
+the matching section of the visited source line; the default is to use the<br/>
+global value of `compilation-highlight-regexp'.<br/>
+<br/>
+Returns the compilation buffer created.

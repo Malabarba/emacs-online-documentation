@@ -1,1 +1,17 @@
-set-variable is an interactive compiled Lisp function in `simple.el'.<br/><br/>(set-variable VARIABLE VALUE &optional MAKE-LOCAL)<br/><br/>Set VARIABLE to VALUE.  VALUE is a Lisp object.<br/>VARIABLE should be a user option variable name, a Lisp variable<br/>meant to be customized by users.  You should enter VALUE in Lisp syntax,<br/>so if you want VALUE to be a string, you must surround it with doublequotes.<br/>VALUE is used literally, not evaluated.<br/><br/>If VARIABLE has a `variable-interactive' property, that is used as if<br/>it were the arg to `interactive' (which see) to interactively read VALUE.<br/><br/>If VARIABLE has been defined with `defcustom', then the type information<br/>in the definition is used to check that VALUE is valid.<br/><br/>With a prefix argument, set VARIABLE to VALUE buffer-locally.
+<strong>set-variable</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+(set-variable VARIABLE VALUE &optional MAKE-LOCAL)<br/>
+<br/>
+Set VARIABLE to VALUE.  VALUE is a Lisp object.<br/>
+VARIABLE should be a user option variable name, a Lisp variable<br/>
+meant to be customized by users.  You should enter VALUE in Lisp syntax,<br/>
+so if you want VALUE to be a string, you must surround it with doublequotes.<br/>
+VALUE is used literally, not evaluated.<br/>
+<br/>
+If VARIABLE has a `variable-interactive' property, that is used as if<br/>
+it were the arg to `interactive' (which see) to interactively read VALUE.<br/>
+<br/>
+If VARIABLE has been defined with `defcustom', then the type information<br/>
+in the definition is used to check that VALUE is valid.<br/>
+<br/>
+With a prefix argument, set VARIABLE to VALUE buffer-locally.

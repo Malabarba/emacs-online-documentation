@@ -1,1 +1,31 @@
-dired-guess-shell-alist-user is a variable defined in `dired-x.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>User-defined alist of rules for suggested commands.<br/>These rules take precedence over the predefined rules in the variable<br/>`dired-guess-shell-alist-default' (to which they are prepended).<br/><br/>Each element of this list looks like<br/><br/>    (REGEXP COMMAND...)<br/><br/>where each COMMAND can either be a string or a Lisp expression that evaluates<br/>to a string.  If several COMMANDs are given, the first one will be the default<br/>and the rest will be added temporarily to the history and can be retrieved<br/>with M-x previous-history-element (M-p) .<br/><br/>The variable `dired-guess-shell-case-fold-search' controls whether<br/>REGEXP is matched case-sensitively.<br/><br/>You can set this variable in your ~/.emacs.  For example, to add rules for<br/>`.foo' and `.bar' files, write<br/><br/> (setq dired-guess-shell-alist-user<br/>        '(("\\.foo\\'" "FOO-COMMAND")<br/>          ("\\.bar\\'"<br/>           (if condition<br/>              "BAR-COMMAND-1"<br/>            "BAR-COMMAND-2"))))<br/><br/>You can customize this variable.
+<strong>dired-guess-shell-alist-user</strong> is a variable defined in `<code>dired-x.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+User-defined alist of rules for suggested commands.<br/>
+These rules take precedence over the predefined rules in the variable<br/>
+`dired-guess-shell-alist-default' (to which they are prepended).<br/>
+<br/>
+Each element of this list looks like<br/>
+<br/>
+    (REGEXP COMMAND...)<br/>
+<br/>
+where each COMMAND can either be a string or a Lisp expression that evaluates<br/>
+to a string.  If several COMMANDs are given, the first one will be the default<br/>
+and the rest will be added temporarily to the history and can be retrieved<br/>
+with M-x previous-history-element (M-p) .<br/>
+<br/>
+The variable `dired-guess-shell-case-fold-search' controls whether<br/>
+REGEXP is matched case-sensitively.<br/>
+<br/>
+You can set this variable in your ~/.emacs.  For example, to add rules for<br/>
+`.foo' and `.bar' files, write<br/>
+<br/>
+ (setq dired-guess-shell-alist-user<br/>
+        '(("\\.foo\\'" "FOO-COMMAND")<br/>
+          ("\\.bar\\'"<br/>
+           (if condition<br/>
+              "BAR-COMMAND-1"<br/>
+            "BAR-COMMAND-2"))))<br/>
+<br/>
+You can customize this variable.

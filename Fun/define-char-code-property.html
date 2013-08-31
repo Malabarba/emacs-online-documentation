@@ -1,1 +1,27 @@
-define-char-code-property is a compiled Lisp function in `mule-cmds.el'.<br/><br/>(define-char-code-property NAME TABLE &optional DOCSTRING)<br/><br/>Define NAME as a character code property given by TABLE.<br/>TABLE is a char-table of purpose `char-code-property-table' with<br/>these extra slots:<br/>  1st: NAME.<br/>  2nd: Function to call to get a property value of a character.<br/>    It is called with three arguments CHAR, VAL, and TABLE, where<br/>    CHAR is a character, VAL is the value of (aref TABLE CHAR).<br/>  3rd: Function to call to put a property value of a character.<br/>    It is called with the same arguments as above.<br/>  4th: Function to call to get a description string of a property value.<br/>    It is called with one argument VALUE, a property value.<br/>  5th: Data used by the above functions.<br/><br/>TABLE may be a name of file to load to build a char-table.  The<br/>file should contain a call of `define-char-code-property' with a<br/>char-table of the above format as the argument TABLE.<br/><br/>TABLE may also be nil, in which case no property value is pre-assigned.<br/><br/>Optional 3rd argument DOCSTRING is a documentation string of the property.<br/><br/>See also the documentation of `get-char-code-property' and<br/>`put-char-code-property'.
+<strong>define-char-code-property</strong> is a compiled Lisp function in `<code>mule-cmds.el</code>'.<br/>
+<br/>
+(define-char-code-property NAME TABLE &optional DOCSTRING)<br/>
+<br/>
+Define NAME as a character code property given by TABLE.<br/>
+TABLE is a char-table of purpose `char-code-property-table' with<br/>
+these extra slots:<br/>
+  1st: NAME.<br/>
+  2nd: Function to call to get a property value of a character.<br/>
+    It is called with three arguments CHAR, VAL, and TABLE, where<br/>
+    CHAR is a character, VAL is the value of (aref TABLE CHAR).<br/>
+  3rd: Function to call to put a property value of a character.<br/>
+    It is called with the same arguments as above.<br/>
+  4th: Function to call to get a description string of a property value.<br/>
+    It is called with one argument VALUE, a property value.<br/>
+  5th: Data used by the above functions.<br/>
+<br/>
+TABLE may be a name of file to load to build a char-table.  The<br/>
+file should contain a call of `define-char-code-property' with a<br/>
+char-table of the above format as the argument TABLE.<br/>
+<br/>
+TABLE may also be nil, in which case no property value is pre-assigned.<br/>
+<br/>
+Optional 3rd argument DOCSTRING is a documentation string of the property.<br/>
+<br/>
+See also the documentation of `get-char-code-property' and<br/>
+`put-char-code-property'.

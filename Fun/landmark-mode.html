@@ -1,1 +1,54 @@
-landmark-mode is an interactive compiled Lisp function in `landmark.el'.<br/><br/>(landmark-mode)<br/><br/>Major mode for playing Landmark against Emacs.<br/>You and Emacs play in turn by marking a free square.  You mark it with X<br/>and Emacs marks it with O.  The winner is the first to get five contiguous<br/>marks horizontally, vertically or in diagonal.<br/><br/>You play by moving the cursor over the square you choose and hitting M-x landmark-human-plays.<br/><br/>Other useful commands:<br/>key             binding<br/>---             -------<br/><br/>C-n		landmark-move-down<br/>C-p		landmark-move-up<br/>SPC		landmark-start-robot<br/>X		landmark-human-plays<br/>b		landmark-move-sw<br/>h		backward-char<br/>j		landmark-move-down<br/>k		landmark-move-up<br/>l		forward-char<br/>n		landmark-move-se<br/>u		landmark-move-ne<br/>x		landmark-human-plays<br/>y		landmark-move-nw<br/><down-mouse-1>	landmark-start-robot<br/><down-mouse-2>	landmark-click<br/><drag-mouse-1>	landmark-click<br/><drag-mouse-2>	landmark-mouse-play<br/><kp-1>		landmark-move-sw<br/><kp-2>		landmark-move-down<br/><kp-3>		landmark-move-se<br/><kp-4>		backward-char<br/><kp-6>		forward-char<br/><kp-7>		landmark-move-nw<br/><kp-8>		landmark-move-up<br/><kp-9>		landmark-move-ne<br/><mouse-1>	landmark-click<br/><mouse-2>	landmark-mouse-play<br/><remap>		Prefix Command<br/><br/><remap> <advertised-undo>	landmark-human-takes-back<br/><remap> <beginning-of-line>	landmark-beginning-of-line<br/><remap> <end-of-line>		landmark-end-of-line<br/><remap> <next-line>		landmark-move-down<br/><remap> <previous-line>		landmark-move-up<br/><remap> <undo>			landmark-human-takes-back<br/><br/><br/>Entry to this mode calls the value of `landmark-mode-hook' if that value<br/>is non-nil.  One interesting value is `turn-on-font-lock'.
+<strong>landmark-mode</strong> is an interactive compiled Lisp function in `<code>landmark.el</code>'.<br/>
+<br/>
+(landmark-mode)<br/>
+<br/>
+Major mode for playing Landmark against Emacs.<br/>
+You and Emacs play in turn by marking a free square.  You mark it with X<br/>
+and Emacs marks it with O.  The winner is the first to get five contiguous<br/>
+marks horizontally, vertically or in diagonal.<br/>
+<br/>
+You play by moving the cursor over the square you choose and hitting M-x landmark-human-plays.<br/>
+<br/>
+Other useful commands:<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-n		landmark-move-down<br/>
+C-p		landmark-move-up<br/>
+SPC		landmark-start-robot<br/>
+X		landmark-human-plays<br/>
+b		landmark-move-sw<br/>
+h		backward-char<br/>
+j		landmark-move-down<br/>
+k		landmark-move-up<br/>
+l		forward-char<br/>
+n		landmark-move-se<br/>
+u		landmark-move-ne<br/>
+x		landmark-human-plays<br/>
+y		landmark-move-nw<br/>
+<down-mouse-1>	landmark-start-robot<br/>
+<down-mouse-2>	landmark-click<br/>
+<drag-mouse-1>	landmark-click<br/>
+<drag-mouse-2>	landmark-mouse-play<br/>
+<kp-1>		landmark-move-sw<br/>
+<kp-2>		landmark-move-down<br/>
+<kp-3>		landmark-move-se<br/>
+<kp-4>		backward-char<br/>
+<kp-6>		forward-char<br/>
+<kp-7>		landmark-move-nw<br/>
+<kp-8>		landmark-move-up<br/>
+<kp-9>		landmark-move-ne<br/>
+<mouse-1>	landmark-click<br/>
+<mouse-2>	landmark-mouse-play<br/>
+<remap>		Prefix Command<br/>
+<br/>
+<remap> <advertised-undo>	landmark-human-takes-back<br/>
+<remap> <beginning-of-line>	landmark-beginning-of-line<br/>
+<remap> <end-of-line>		landmark-end-of-line<br/>
+<remap> <next-line>		landmark-move-down<br/>
+<remap> <previous-line>		landmark-move-up<br/>
+<remap> <undo>			landmark-human-takes-back<br/>
+<br/>
+<br/>
+Entry to this mode calls the value of `landmark-mode-hook' if that value<br/>
+is non-nil.  One interesting value is `turn-on-font-lock'.

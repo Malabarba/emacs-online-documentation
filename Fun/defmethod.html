@@ -1,1 +1,28 @@
-defmethod is a Lisp macro in `eieio.el'.<br/><br/>(defmethod METHOD &rest ARGS)<br/><br/>Create a new METHOD through `defgeneric' with ARGS.<br/><br/>The optional second argument KEY is a specifier that<br/>modifies how the method is called, including:<br/>   :before  - Method will be called before the :primary<br/>   :primary - The default if not specified<br/>   :after   - Method will be called after the :primary<br/>   :static  - First arg could be an object or class<br/>The next argument is the ARGLIST.  The ARGLIST specifies the arguments<br/>to the method as with `defun'.  The first argument can have a type<br/>specifier, such as:<br/>  ((VARNAME CLASS) ARG2 ...)<br/>where VARNAME is the name of the local variable for the method being<br/>created.  The CLASS is a class symbol for a class made with `defclass'.<br/>A DOCSTRING comes after the ARGLIST, and is optional.<br/>All the rest of the args are the BODY of the method.  A method will<br/>return the value of the last form in the BODY.<br/><br/>Summary:<br/><br/> (defmethod mymethod [:before | :primary | :after | :static]<br/>                     ((typearg class-name) arg2 &optional opt &rest rest)<br/>    "doc-string"<br/>     body)
+<strong>defmethod</strong> is a Lisp macro in `<code>eieio.el</code>'.<br/>
+<br/>
+(defmethod METHOD &rest ARGS)<br/>
+<br/>
+Create a new METHOD through `defgeneric' with ARGS.<br/>
+<br/>
+The optional second argument KEY is a specifier that<br/>
+modifies how the method is called, including:<br/>
+   :before  - Method will be called before the :primary<br/>
+   :primary - The default if not specified<br/>
+   :after   - Method will be called after the :primary<br/>
+   :static  - First arg could be an object or class<br/>
+The next argument is the ARGLIST.  The ARGLIST specifies the arguments<br/>
+to the method as with `defun'.  The first argument can have a type<br/>
+specifier, such as:<br/>
+  ((VARNAME CLASS) ARG2 ...)<br/>
+where VARNAME is the name of the local variable for the method being<br/>
+created.  The CLASS is a class symbol for a class made with `defclass'.<br/>
+A DOCSTRING comes after the ARGLIST, and is optional.<br/>
+All the rest of the args are the BODY of the method.  A method will<br/>
+return the value of the last form in the BODY.<br/>
+<br/>
+Summary:<br/>
+<br/>
+ (defmethod mymethod [:before | :primary | :after | :static]<br/>
+                     ((typearg class-name) arg2 &optional opt &rest rest)<br/>
+    "doc-string"<br/>
+     body)

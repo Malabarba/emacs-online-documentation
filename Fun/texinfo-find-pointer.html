@@ -1,1 +1,18 @@
-texinfo-find-pointer is a compiled Lisp function in `texnfo-upd.el'.<br/><br/>(texinfo-find-pointer BEGINNING END LEVEL DIRECTION)<br/><br/>Move point to section associated with next, previous, or up pointer.<br/>Return type of pointer (either `normal' or `no-pointer').<br/><br/>The first and second arguments bound the search for a pointer to the<br/>beginning and end, respectively, of the enclosing higher level<br/>section.  The third argument is a string specifying the general kind<br/>of section such as "chapter" or "section".  When looking for the<br/>`Next' pointer, the section found will be at the same hierarchical<br/>level in the Texinfo file; when looking for the `Previous' pointer,<br/>the section found will be at the same or higher hierarchical level in<br/>the Texinfo file; when looking for the `Up' pointer, the section found<br/>will be at some level higher in the Texinfo file.  The fourth argument<br/>(one of 'next, 'previous, or 'up) specifies whether to find the<br/>`Next', `Previous', or `Up' pointer.
+<strong>texinfo-find-pointer</strong> is a compiled Lisp function in `<code>texnfo-upd.el</code>'.<br/>
+<br/>
+(texinfo-find-pointer BEGINNING END LEVEL DIRECTION)<br/>
+<br/>
+Move point to section associated with next, previous, or up pointer.<br/>
+Return type of pointer (either `normal' or `no-pointer').<br/>
+<br/>
+The first and second arguments bound the search for a pointer to the<br/>
+beginning and end, respectively, of the enclosing higher level<br/>
+section.  The third argument is a string specifying the general kind<br/>
+of section such as "chapter" or "section".  When looking for the<br/>
+`Next' pointer, the section found will be at the same hierarchical<br/>
+level in the Texinfo file; when looking for the `Previous' pointer,<br/>
+the section found will be at the same or higher hierarchical level in<br/>
+the Texinfo file; when looking for the `Up' pointer, the section found<br/>
+will be at some level higher in the Texinfo file.  The fourth argument<br/>
+(one of 'next, 'previous, or 'up) specifies whether to find the<br/>
+`Next', `Previous', or `Up' pointer.

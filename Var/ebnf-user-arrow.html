@@ -1,1 +1,43 @@
-ebnf-user-arrow is a variable defined in `ebnf2ps.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Specify a sexp for user arrow shape (a PostScript code).<br/><br/>When evaluated, the sexp should return nil or a string containing PostScript<br/>code.  PostScript code should draw a right arrow.<br/><br/>The anatomy of a right arrow is:<br/><br/>   ...... Initial position<br/>   :<br/>   :     *.................<br/>   :     | *       }      }<br/>   :     |   *     } hT4  }<br/>   v     |     *   }      }<br/>   ======+======*...      } hT2<br/>   :     |     *:  }      }<br/>   :     |   *  :  } hT4  }<br/>   :     | *    :  }      }<br/>   :     *.................<br/>   :     :      :<br/>   :     :      :..........<br/>   :     :         } hT2  }<br/>   :     :..........      } hT<br/>   :               } hT2  }<br/>   :.......................<br/><br/>Where `hT', `hT2' and `hT4' are predefined PostScript variable names that can<br/>be used to generate your own arrow.  As these variables are used along<br/>PostScript execution, *DON'T* modify the values of them.  Instead, copy the<br/>values, if you need to modify them.<br/><br/>The relation between these variables is: hT = 2 * hT2 = 4 * hT4.<br/><br/>The variable `ebnf-user-arrow' is only used when `ebnf-arrow-shape' is set to<br/>symbol `user'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 20 of Emacs.<br/>
+<strong>ebnf-user-arrow</strong> is a variable defined in `<code>ebnf2ps.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Specify a sexp for user arrow shape (a PostScript code).<br/>
+<br/>
+When evaluated, the sexp should return nil or a string containing PostScript<br/>
+code.  PostScript code should draw a right arrow.<br/>
+<br/>
+The anatomy of a right arrow is:<br/>
+<br/>
+   ...... Initial position<br/>
+   :<br/>
+   :     *.................<br/>
+   :     | *       }      }<br/>
+   :     |   *     } hT4  }<br/>
+   v     |     *   }      }<br/>
+   ======+======*...      } hT2<br/>
+   :     |     *:  }      }<br/>
+   :     |   *  :  } hT4  }<br/>
+   :     | *    :  }      }<br/>
+   :     *.................<br/>
+   :     :      :<br/>
+   :     :      :..........<br/>
+   :     :         } hT2  }<br/>
+   :     :..........      } hT<br/>
+   :               } hT2  }<br/>
+   :.......................<br/>
+<br/>
+Where `hT', `hT2' and `hT4' are predefined PostScript variable names that can<br/>
+be used to generate your own arrow.  As these variables are used along<br/>
+PostScript execution, *DON'T* modify the values of them.  Instead, copy the<br/>
+values, if you need to modify them.<br/>
+<br/>
+The relation between these variables is: hT = 2 * hT2 = 4 * hT4.<br/>
+<br/>
+The variable `ebnf-user-arrow' is only used when `ebnf-arrow-shape' is set to<br/>
+symbol `user'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 20 of Emacs.<br/>

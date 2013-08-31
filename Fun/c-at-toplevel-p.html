@@ -1,1 +1,23 @@
-c-at-toplevel-p is a compiled Lisp function in `cc-engine.el'.<br/><br/>(c-at-toplevel-p)<br/><br/>Return a determination as to whether point is "at the top level".<br/>Informally, "at the top level" is anywhere where you can write<br/>a function.<br/><br/>More precisely, being at the top-level means that point is either<br/>outside any enclosing block (such as a function definition), or<br/>directly inside a class, namespace or other block that contains<br/>another declaration level.<br/><br/>If point is not at the top-level (e.g. it is inside a method<br/>definition), then nil is returned.  Otherwise, if point is at a<br/>top-level not enclosed within a class definition, t is returned.<br/>Otherwise, a 2-vector is returned where the zeroth element is the<br/>buffer position of the start of the class declaration, and the first<br/>element is the buffer position of the enclosing class's opening<br/>brace.<br/><br/>Note that this function might do hidden buffer changes.  See the<br/>comment at the start of cc-engine.el for more info.
+<strong>c-at-toplevel-p</strong> is a compiled Lisp function in `<code>cc-engine.el</code>'.<br/>
+<br/>
+(c-at-toplevel-p)<br/>
+<br/>
+Return a determination as to whether point is "at the top level".<br/>
+Informally, "at the top level" is anywhere where you can write<br/>
+a function.<br/>
+<br/>
+More precisely, being at the top-level means that point is either<br/>
+outside any enclosing block (such as a function definition), or<br/>
+directly inside a class, namespace or other block that contains<br/>
+another declaration level.<br/>
+<br/>
+If point is not at the top-level (e.g. it is inside a method<br/>
+definition), then nil is returned.  Otherwise, if point is at a<br/>
+top-level not enclosed within a class definition, t is returned.<br/>
+Otherwise, a 2-vector is returned where the zeroth element is the<br/>
+buffer position of the start of the class declaration, and the first<br/>
+element is the buffer position of the enclosing class's opening<br/>
+brace.<br/>
+<br/>
+Note that this function might do hidden buffer changes.  See the<br/>
+comment at the start of cc-engine.el for more info.

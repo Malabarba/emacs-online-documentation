@@ -1,1 +1,12 @@
-byte-defop-compiler is a Lisp macro in `bytecomp.el'.<br/><br/>(byte-defop-compiler FUNCTION &optional COMPILE-HANDLER)<br/><br/>Add a compiler-form for FUNCTION.<br/>If function is a symbol, then the variable "byte-SYMBOL" must name<br/>the opcode to be used.  If function is a list, the first element<br/>is the function and the second element is the bytecode-symbol.<br/>The second element may be nil, meaning there is no opcode.<br/>COMPILE-HANDLER is the function to use to compile this byte-op, or<br/>may be the abbreviations 0, 1, 2, 3, 0-1, or 1-2.<br/>If it is nil, then the handler is "byte-compile-SYMBOL."
+<strong>byte-defop-compiler</strong> is a Lisp macro in `<code>bytecomp.el</code>'.<br/>
+<br/>
+(byte-defop-compiler FUNCTION &optional COMPILE-HANDLER)<br/>
+<br/>
+Add a compiler-form for FUNCTION.<br/>
+If function is a symbol, then the variable "byte-SYMBOL" must name<br/>
+the opcode to be used.  If function is a list, the first element<br/>
+is the function and the second element is the bytecode-symbol.<br/>
+The second element may be nil, meaning there is no opcode.<br/>
+COMPILE-HANDLER is the function to use to compile this byte-op, or<br/>
+may be the abbreviations 0, 1, 2, 3, 0-1, or 1-2.<br/>
+If it is nil, then the handler is "byte-compile-SYMBOL."

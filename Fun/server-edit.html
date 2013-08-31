@@ -1,1 +1,19 @@
-server-edit is an interactive compiled Lisp function in `server.el'.<br/><br/>It is bound to C-x #.<br/><br/>(server-edit &optional ARG)<br/><br/>Switch to next server editing buffer; say "Done" for current buffer.<br/>If a server buffer is current, it is marked "done" and optionally saved.<br/>The buffer is also killed if it did not exist before the clients asked for it.<br/>When all of a client's buffers are marked as "done", the client is notified.<br/><br/>Temporary files such as MH <draft> files are always saved and backed up,<br/>no questions asked.  (The variable `make-backup-files', if nil, still<br/>inhibits a backup; you can set it locally in a particular buffer to<br/>prevent a backup for it.)  The variable `server-temp-file-regexp' controls<br/>which filenames are considered temporary.<br/><br/>If invoked with a prefix argument, or if there is no server process running,<br/>starts server process and that is all.  Invoked by C-x #.
+<strong>server-edit</strong> is an interactive compiled Lisp function in `<code>server.el</code>'.<br/>
+<br/>
+It is bound to C-x #.<br/>
+<br/>
+(server-edit &optional ARG)<br/>
+<br/>
+Switch to next server editing buffer; say "Done" for current buffer.<br/>
+If a server buffer is current, it is marked "done" and optionally saved.<br/>
+The buffer is also killed if it did not exist before the clients asked for it.<br/>
+When all of a client's buffers are marked as "done", the client is notified.<br/>
+<br/>
+Temporary files such as MH <draft> files are always saved and backed up,<br/>
+no questions asked.  (The variable `make-backup-files', if nil, still<br/>
+inhibits a backup; you can set it locally in a particular buffer to<br/>
+prevent a backup for it.)  The variable `server-temp-file-regexp' controls<br/>
+which filenames are considered temporary.<br/>
+<br/>
+If invoked with a prefix argument, or if there is no server process running,<br/>
+starts server process and that is all.  Invoked by C-x #.

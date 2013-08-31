@@ -1,1 +1,19 @@
-defstruct is an alias for `cl-defstruct' in `cl.el'.<br/><br/>(defstruct NAME SLOTS...)<br/><br/>Define a struct type.<br/>This macro defines a new data type called NAME that stores data<br/>in SLOTs.  It defines a `make-NAME' constructor, a `copy-NAME'<br/>copier, a `NAME-p' predicate, and slot accessors named `NAME-SLOT'.<br/>You can use the accessors to set the corresponding slots, via `setf'.<br/><br/>NAME may instead take the form (NAME OPTIONS...), where each<br/>OPTION is either a single keyword or (KEYWORD VALUE) where<br/>KEYWORD can be one of :conc-name, :constructor, :copier, :predicate,<br/>:type, :named, :initial-offset, :print-function, or :include.<br/><br/>Each SLOT may instead take the form (SLOT SLOT-OPTS...), where<br/>SLOT-OPTS are keyword-value pairs for that slot.  Currently, only<br/>one keyword is supported, `:read-only'.  If this has a non-nil<br/>value, that slot cannot be set via `setf'.
+<strong>defstruct</strong> is an alias for `cl-defstruct' in `<code>cl.el</code>'.<br/>
+<br/>
+(defstruct NAME SLOTS...)<br/>
+<br/>
+Define a struct type.<br/>
+This macro defines a new data type called NAME that stores data<br/>
+in SLOTs.  It defines a `make-NAME' constructor, a `copy-NAME'<br/>
+copier, a `NAME-p' predicate, and slot accessors named `NAME-SLOT'.<br/>
+You can use the accessors to set the corresponding slots, via `setf'.<br/>
+<br/>
+NAME may instead take the form (NAME OPTIONS...), where each<br/>
+OPTION is either a single keyword or (KEYWORD VALUE) where<br/>
+KEYWORD can be one of :conc-name, :constructor, :copier, :predicate,<br/>
+:type, :named, :initial-offset, :print-function, or :include.<br/>
+<br/>
+Each SLOT may instead take the form (SLOT SLOT-OPTS...), where<br/>
+SLOT-OPTS are keyword-value pairs for that slot.  Currently, only<br/>
+one keyword is supported, `:read-only'.  If this has a non-nil<br/>
+value, that slot cannot be set via `setf'.

@@ -1,1 +1,11 @@
-catch is a special form in `C source code'.<br/><br/>(catch TAG BODY...)<br/><br/>Eval BODY allowing nonlocal exits using `throw'.<br/>TAG is evalled to get the tag to use; it must not be nil.<br/><br/>Then the BODY is executed.<br/>Within BODY, a call to `throw' with the same TAG exits BODY and this `catch'.<br/>If no throw happens, `catch' returns the value of the last BODY form.<br/>If a throw happens, it specifies the value to return from `catch'.
+<strong>catch</strong> is a special form in `<code>C source code</code>'.<br/>
+<br/>
+(catch TAG BODY...)<br/>
+<br/>
+Eval BODY allowing nonlocal exits using `throw'.<br/>
+TAG is evalled to get the tag to use; it must not be nil.<br/>
+<br/>
+Then the BODY is executed.<br/>
+Within BODY, a call to `throw' with the same TAG exits BODY and this `catch'.<br/>
+If no throw happens, `catch' returns the value of the last BODY form.<br/>
+If a throw happens, it specifies the value to return from `catch'.

@@ -1,1 +1,39 @@
-manual-entry is an alias for `man' in `man.el'.<br/><br/>It is bound to <menu-bar> <help-menu> <more-manuals> <man>.<br/><br/>(manual-entry MAN-ARGS)<br/><br/>Get a Un*x manual page and put it in a buffer.<br/>This command is the top-level command in the man package.  It<br/>runs a Un*x command to retrieve and clean a manpage in the<br/>background and places the results in a `Man-mode' browsing<br/>buffer.  See variable `Man-notify-method' for what happens when<br/>the buffer is ready.  If a buffer already exists for this man<br/>page, it will display immediately.<br/><br/>For a manpage from a particular section, use either of the<br/>following.  "cat(1)" is how cross-references appear and is<br/>passed to man as "1 cat".<br/><br/>    cat(1)<br/>    1 cat<br/><br/>To see manpages from all sections related to a subject, use an<br/>"all pages" option (which might be "-a" if it's not the<br/>default), then step through with `Man-next-manpage' (M-n) etc.<br/>Add to `Man-switches' to make this option permanent.<br/><br/>    -a chmod<br/><br/>An explicit filename can be given too.  Use -l if it might<br/>otherwise look like a page name.<br/><br/>    /my/file/name.1.gz<br/>    -l somefile.1<br/><br/>An "apropos" query with -k gives a buffer of matching page<br/>names or descriptions.  The pattern argument is usually an<br/>"egrep" style regexp.<br/><br/>    -k pattern
+<strong>manual-entry</strong> is an alias for `man' in `<code>man.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <help-menu> <more-manuals> <man>.<br/>
+<br/>
+(manual-entry MAN-ARGS)<br/>
+<br/>
+Get a Un*x manual page and put it in a buffer.<br/>
+This command is the top-level command in the man package.  It<br/>
+runs a Un*x command to retrieve and clean a manpage in the<br/>
+background and places the results in a `Man-mode' browsing<br/>
+buffer.  See variable `Man-notify-method' for what happens when<br/>
+the buffer is ready.  If a buffer already exists for this man<br/>
+page, it will display immediately.<br/>
+<br/>
+For a manpage from a particular section, use either of the<br/>
+following.  "cat(1)" is how cross-references appear and is<br/>
+passed to man as "1 cat".<br/>
+<br/>
+    cat(1)<br/>
+    1 cat<br/>
+<br/>
+To see manpages from all sections related to a subject, use an<br/>
+"all pages" option (which might be "-a" if it's not the<br/>
+default), then step through with `Man-next-manpage' (M-n) etc.<br/>
+Add to `Man-switches' to make this option permanent.<br/>
+<br/>
+    -a chmod<br/>
+<br/>
+An explicit filename can be given too.  Use -l if it might<br/>
+otherwise look like a page name.<br/>
+<br/>
+    /my/file/name.1.gz<br/>
+    -l somefile.1<br/>
+<br/>
+An "apropos" query with -k gives a buffer of matching page<br/>
+names or descriptions.  The pattern argument is usually an<br/>
+"egrep" style regexp.<br/>
+<br/>
+    -k pattern

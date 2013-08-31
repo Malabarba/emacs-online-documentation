@@ -1,1 +1,31 @@
-mh-inherit-face-flag is a variable defined in `mh-e.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Non-nil means that the `defface' :inherit keyword is available.<br/>The :inherit keyword is available on all supported versions of<br/>GNU Emacs and XEmacs from at least 21.5.23 on.<br/><br/>Value: (:inherit<br/> (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from."<br/>	 (face :Tag "Face" default))<br/> (lambda<br/>   (real-value)<br/>   (cond<br/>    ((or<br/>      (null real-value)<br/>      (eq real-value 'unspecified))<br/>     nil)<br/>    ((symbolp real-value)<br/>     (list real-value))<br/>    (t real-value)))<br/> (lambda<br/>   (cus-value)<br/>   (if<br/>       (and<br/>	(consp cus-value)<br/>	(null<br/>	 (cdr cus-value)))<br/>       (car cus-value)<br/>     cus-value)))<br/><br/>
+<strong>mh-inherit-face-flag</strong> is a variable defined in `<code>mh-e.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Non-nil means that the `defface' :inherit keyword is available.<br/>
+The :inherit keyword is available on all supported versions of<br/>
+GNU Emacs and XEmacs from at least 21.5.23 on.<br/>
+<br/>
+Value: (:inherit<br/>
+ (repeat :tag "Inherit" :help-echo "List of faces to inherit attributes from."<br/>
+	 (face :Tag "Face" default))<br/>
+ (lambda<br/>
+   (real-value)<br/>
+   (cond<br/>
+    ((or<br/>
+      (null real-value)<br/>
+      (eq real-value 'unspecified))<br/>
+     nil)<br/>
+    ((symbolp real-value)<br/>
+     (list real-value))<br/>
+    (t real-value)))<br/>
+ (lambda<br/>
+   (cus-value)<br/>
+   (if<br/>
+       (and<br/>
+	(consp cus-value)<br/>
+	(null<br/>
+	 (cdr cus-value)))<br/>
+       (car cus-value)<br/>
+     cus-value)))<br/>
+<br/>

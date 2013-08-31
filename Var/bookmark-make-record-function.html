@@ -1,1 +1,24 @@
-bookmark-make-record-function is a variable defined in `bookmark.el'.<br/>Its value is bookmark-make-record-default<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>A function that should be called to create a bookmark record.<br/>Modes may set this variable buffer-locally to enable bookmarking of<br/>locations that should be treated specially, such as Info nodes,<br/>news posts, images, pdf documents, etc.<br/><br/>The function will be called with no arguments.<br/>It should signal a user error if it is unable to construct a record for<br/>the current location.<br/><br/>The returned record should be a cons cell of the form (NAME . ALIST)<br/>where ALIST is as described in `bookmark-alist' and may typically contain<br/>a special cons (handler . HANDLER-FUNC) which specifies the handler function<br/>that should be used instead of `bookmark-default-handler' to open this<br/>bookmark.  See the documentation for `bookmark-alist' for more.<br/><br/>NAME is a suggested name for the constructed bookmark.  It can be nil<br/>in which case a default heuristic will be used.  The function can also<br/>equivalently just return ALIST without NAME.
+<strong>bookmark-make-record-function</strong> is a variable defined in `<code>bookmark.el</code>'.<br/>
+Its value is bookmark-make-record-default<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+A function that should be called to create a bookmark record.<br/>
+Modes may set this variable buffer-locally to enable bookmarking of<br/>
+locations that should be treated specially, such as Info nodes,<br/>
+news posts, images, pdf documents, etc.<br/>
+<br/>
+The function will be called with no arguments.<br/>
+It should signal a user error if it is unable to construct a record for<br/>
+the current location.<br/>
+<br/>
+The returned record should be a cons cell of the form (NAME . ALIST)<br/>
+where ALIST is as described in `bookmark-alist' and may typically contain<br/>
+a special cons (handler . HANDLER-FUNC) which specifies the handler function<br/>
+that should be used instead of `bookmark-default-handler' to open this<br/>
+bookmark.  See the documentation for `bookmark-alist' for more.<br/>
+<br/>
+NAME is a suggested name for the constructed bookmark.  It can be nil<br/>
+in which case a default heuristic will be used.  The function can also<br/>
+equivalently just return ALIST without NAME.

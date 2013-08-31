@@ -1,1 +1,26 @@
-diary-outlook-formats is a variable defined in `diary-lib.el'.<br/>Its value is<br/>(("[ 	\n]*When: [[:alpha:]]+, \\([[:alpha:]]+\\) \\([0-9][0-9]*\\), \\([0-9]\\{4\\}\\),? \\(.+\\)\n\\(?:Where: \\(.+\n\\)\\)?" . diary-outlook-format-1))<br/><br/><br/>Documentation:<br/>Alist of regexps matching message text and replacement text.<br/><br/>The regexp must match the start of the message text containing an<br/>appointment, but need not include a leading `^'.  If it matches the<br/>current message, a diary entry is made from the corresponding<br/>template.  If the template is a string, it should be suitable for<br/>passing to `replace-match', and so will have occurrences of `\D' to<br/>substitute the match for the Dth subexpression.  It must also contain<br/>a single `%s' which will be replaced with the text of the message's<br/>Subject field.  Any other `%' characters must be doubled, so that the<br/>template can be passed to `format'.<br/><br/>If the template is actually a function, it is called with the message<br/>body text as argument, and may use `match-string' etc. to make a<br/>template following the rules above.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22.1 of Emacs.<br/>
+<strong>diary-outlook-formats</strong> is a variable defined in `<code>diary-lib.el</code>'.<br/>
+Its value is<br/>
+(("[ 	\n]*When: [[:alpha:]]+, \\([[:alpha:]]+\\) \\([0-9][0-9]*\\), \\([0-9]\\{4\\}\\),? \\(.+\\)\n\\(?:Where: \\(.+\n\\)\\)?" . diary-outlook-format-1))<br/>
+<br/>
+<br/>
+Documentation:<br/>
+Alist of regexps matching message text and replacement text.<br/>
+<br/>
+The regexp must match the start of the message text containing an<br/>
+appointment, but need not include a leading `^'.  If it matches the<br/>
+current message, a diary entry is made from the corresponding<br/>
+template.  If the template is a string, it should be suitable for<br/>
+passing to `replace-match', and so will have occurrences of `\D' to<br/>
+substitute the match for the Dth subexpression.  It must also contain<br/>
+a single `%s' which will be replaced with the text of the message's<br/>
+Subject field.  Any other `%' characters must be doubled, so that the<br/>
+template can be passed to `format'.<br/>
+<br/>
+If the template is actually a function, it is called with the message<br/>
+body text as argument, and may use `match-string' etc. to make a<br/>
+template following the rules above.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22.1 of Emacs.<br/>

@@ -1,1 +1,36 @@
-walk-windows is a compiled Lisp function in `window.el'.<br/><br/>(walk-windows FUN &optional MINIBUF ALL-FRAMES)<br/><br/>Cycle through all live windows, calling FUN for each one.<br/>FUN must specify a function with a window as its sole argument.<br/>The optional arguments MINIBUF and ALL-FRAMES specify the set of<br/>windows to include in the walk.<br/><br/>MINIBUF t means include the minibuffer window even if the<br/>minibuffer is not active.  MINIBUF nil or omitted means include<br/>the minibuffer window only if the minibuffer is active.  Any<br/>other value means do not include the minibuffer window even if<br/>the minibuffer is active.<br/><br/>ALL-FRAMES nil or omitted means consider all windows on the<br/>selected frame, plus the minibuffer window if specified by the<br/>MINIBUF argument.  If the minibuffer counts, consider all windows<br/>on all frames that share that minibuffer too.  The following<br/>non-nil values of ALL-FRAMES have special meanings:<br/><br/>- t means consider all windows on all existing frames.<br/><br/>- `visible' means consider all windows on all visible frames on<br/>  the current terminal.<br/><br/>- 0 (the number zero) means consider all windows on all visible<br/>  and iconified frames on the current terminal.<br/><br/>- A frame means consider all windows on that frame only.<br/><br/>Anything else means consider all windows on the selected frame<br/>and no others.<br/><br/>This function changes neither the order of recently selected<br/>windows nor the buffer list.
+<strong>walk-windows</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(walk-windows FUN &optional MINIBUF ALL-FRAMES)<br/>
+<br/>
+Cycle through all live windows, calling FUN for each one.<br/>
+FUN must specify a function with a window as its sole argument.<br/>
+The optional arguments MINIBUF and ALL-FRAMES specify the set of<br/>
+windows to include in the walk.<br/>
+<br/>
+MINIBUF t means include the minibuffer window even if the<br/>
+minibuffer is not active.  MINIBUF nil or omitted means include<br/>
+the minibuffer window only if the minibuffer is active.  Any<br/>
+other value means do not include the minibuffer window even if<br/>
+the minibuffer is active.<br/>
+<br/>
+ALL-FRAMES nil or omitted means consider all windows on the<br/>
+selected frame, plus the minibuffer window if specified by the<br/>
+MINIBUF argument.  If the minibuffer counts, consider all windows<br/>
+on all frames that share that minibuffer too.  The following<br/>
+non-nil values of ALL-FRAMES have special meanings:<br/>
+<br/>
+- t means consider all windows on all existing frames.<br/>
+<br/>
+- `visible' means consider all windows on all visible frames on<br/>
+  the current terminal.<br/>
+<br/>
+- 0 (the number zero) means consider all windows on all visible<br/>
+  and iconified frames on the current terminal.<br/>
+<br/>
+- A frame means consider all windows on that frame only.<br/>
+<br/>
+Anything else means consider all windows on the selected frame<br/>
+and no others.<br/>
+<br/>
+This function changes neither the order of recently selected<br/>
+windows nor the buffer list.

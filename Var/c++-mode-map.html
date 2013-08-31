@@ -1,1 +1,109 @@
-c++-mode-map is a variable defined in `cc-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keymap used in c++-mode buffers.<br/><br/>Value: (keymap<br/> (menu-bar keymap<br/>	   (C++ menu-item "C++"<br/>		(keymap "C++"<br/>			(Comment\ Out\ Region menu-item "Comment Out Region" comment-region :enable<br/>					      (c-fn-region-is-active-p))<br/>			(Uncomment\ Region menu-item "Uncomment Region" menu-function-137 :key-sequence nil :enable<br/>					   (c-fn-region-is-active-p))<br/>			(Indent\ Expression menu-item "Indent Expression" c-indent-exp :enable<br/>					    (memq<br/>					     (char-after)<br/>					     '(40 91 123)))<br/>			(Indent\ Line\ or\ Region menu-item "Indent Line or Region" c-indent-line-or-region)<br/>			(Fill\ Comment\ Paragraph menu-item "Fill Comment Paragraph" c-fill-paragraph)<br/>			(nil menu-item "----")<br/>			(Backward\ Statement menu-item "Backward Statement" c-beginning-of-statement)<br/>			(Forward\ Statement menu-item "Forward Statement" c-end-of-statement)<br/>			(Up\ Conditional menu-item "Up Conditional" c-up-conditional)<br/>			(Backward\ Conditional menu-item "Backward Conditional" c-backward-conditional)<br/>			(Forward\ Conditional menu-item "Forward Conditional" c-forward-conditional)<br/>			(nil-11 menu-item "----")<br/>			(Macro\ Expand\ Region menu-item "Macro Expand Region" c-macro-expand :enable<br/>					       (c-fn-region-is-active-p))<br/>			(Backslashify menu-item "Backslashify" c-backslash-region :enable<br/>				      (c-fn-region-is-active-p))<br/>			(nil-14 menu-item "----")<br/>			(Style\.\.\. menu-item "Style..."<br/>				     (keymap "Style..."<br/>					     (Set\ Style\.\.\. menu-item "Set Style..." c-set-style)<br/>					     (Show\ Current\ Style\ Name menu-item "Show Current Style Name" menu-function-138 :key-sequence nil)<br/>					     (Guess\ Style\ from\ this\ Buffer menu-item "Guess Style from this Buffer" c-guess-buffer-no-install)<br/>					     (Install\ the\ Last\ Guessed\ Style\.\.\. menu-item "Install the Last Guessed Style..." c-guess-install :enable<br/>										       (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))<br/>					     (View\ the\ Last\ Guessed\ Style menu-item "View the Last Guessed Style" c-guess-view :enable<br/>									      (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))))<br/>			(nil-16 menu-item "----")<br/>			(Toggle\.\.\. menu-item "Toggle..."<br/>				      (keymap "Toggle..."<br/>					      (Syntactic\ indentation menu-item "Syntactic indentation" c-toggle-syntactic-indentation :button<br/>								      (:toggle . c-syntactic-indentation))<br/>					      (Electric\ mode menu-item "Electric mode" c-toggle-electric-state :button<br/>							      (:toggle . c-electric-flag))<br/>					      (Auto\ newline menu-item "Auto newline" c-toggle-auto-newline :button<br/>							     (:toggle . c-auto-newline))<br/>					      (Hungry\ delete menu-item "Hungry delete" c-toggle-hungry-state :button<br/>							      (:toggle . c-hungry-delete-key))<br/>					      (Subword\ mode menu-item "Subword mode" subword-mode :button<br/>							     (:toggle and<br/>								      (boundp 'subword-mode)<br/>								      subword-mode)))))))<br/> (62 . c-electric-lt-gt)<br/> (60 . c-electric-lt-gt)<br/> (3 keymap<br/>    (58 . c-scope-operator)<br/>    (5 . c-macro-expand))<br/> keymap<br/> (41 . c-electric-paren)<br/> (40 . c-electric-paren)<br/> (58 . c-electric-colon)<br/> (44 . c-electric-semi&comma)<br/> (59 . c-electric-semi&comma)<br/> (42 . c-electric-star)<br/> (47 . c-electric-slash)<br/> (125 . c-electric-brace)<br/> (123 . c-electric-brace)<br/> (35 . c-electric-pound)<br/> (127 . c-electric-backspace)<br/> (4 . c-electric-delete-forward)<br/> (3 keymap<br/>    (23 . subword-mode)<br/>    (46 . c-set-style)<br/>    (19 . c-show-syntactic-information)<br/>    (17 . c-indent-defun)<br/>    (15 . c-set-offset)<br/>    (12 . c-toggle-electric-state)<br/>    (3 . comment-region)<br/>    (2 . c-submit-bug-report)<br/>    (1 . c-toggle-auto-newline)<br/>    (28 . c-backslash-region)<br/>    (C-backspace . c-hungry-delete-backwards)<br/>    (C-delete . c-hungry-delete-forward)<br/>    (C-deletechar . c-hungry-delete-forward)<br/>    (deletechar . c-hungry-delete-forward)<br/>    (67108991 . c-hungry-delete-backwards)<br/>    (127 . c-hungry-delete-backwards)<br/>    (4 . c-hungry-delete-forward)<br/>    (21 . c-up-conditional)<br/>    (16 . c-backward-conditional)<br/>    (14 . c-forward-conditional))<br/> (9 . c-indent-line-or-region)<br/> (27 keymap<br/>     (113 . c-fill-paragraph)<br/>     (5 . c-end-of-defun)<br/>     (1 . c-beginning-of-defun)<br/>     (106 . c-indent-new-comment-line)<br/>     (10 . c-indent-new-comment-line)<br/>     (101 . c-end-of-statement)<br/>     (97 . c-beginning-of-statement)<br/>     (17 . c-indent-exp)<br/>     (8 . c-mark-function)))<br/><br/>
+<strong>c++-mode-map</strong> is a variable defined in `<code>cc-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keymap used in c++-mode buffers.<br/>
+<br/>
+Value: (keymap<br/>
+ (menu-bar keymap<br/>
+	   (C++ menu-item "C++"<br/>
+		(keymap "C++"<br/>
+			(Comment\ Out\ Region menu-item "Comment Out Region" comment-region :enable<br/>
+					      (c-fn-region-is-active-p))<br/>
+			(Uncomment\ Region menu-item "Uncomment Region" menu-function-137 :key-sequence nil :enable<br/>
+					   (c-fn-region-is-active-p))<br/>
+			(Indent\ Expression menu-item "Indent Expression" c-indent-exp :enable<br/>
+					    (memq<br/>
+					     (char-after)<br/>
+					     '(40 91 123)))<br/>
+			(Indent\ Line\ or\ Region menu-item "Indent Line or Region" c-indent-line-or-region)<br/>
+			(Fill\ Comment\ Paragraph menu-item "Fill Comment Paragraph" c-fill-paragraph)<br/>
+			(nil menu-item "----")<br/>
+			(Backward\ Statement menu-item "Backward Statement" c-beginning-of-statement)<br/>
+			(Forward\ Statement menu-item "Forward Statement" c-end-of-statement)<br/>
+			(Up\ Conditional menu-item "Up Conditional" c-up-conditional)<br/>
+			(Backward\ Conditional menu-item "Backward Conditional" c-backward-conditional)<br/>
+			(Forward\ Conditional menu-item "Forward Conditional" c-forward-conditional)<br/>
+			(nil-11 menu-item "----")<br/>
+			(Macro\ Expand\ Region menu-item "Macro Expand Region" c-macro-expand :enable<br/>
+					       (c-fn-region-is-active-p))<br/>
+			(Backslashify menu-item "Backslashify" c-backslash-region :enable<br/>
+				      (c-fn-region-is-active-p))<br/>
+			(nil-14 menu-item "----")<br/>
+			(Style\.\.\. menu-item "Style..."<br/>
+				     (keymap "Style..."<br/>
+					     (Set\ Style\.\.\. menu-item "Set Style..." c-set-style)<br/>
+					     (Show\ Current\ Style\ Name menu-item "Show Current Style Name" menu-function-138 :key-sequence nil)<br/>
+					     (Guess\ Style\ from\ this\ Buffer menu-item "Guess Style from this Buffer" c-guess-buffer-no-install)<br/>
+					     (Install\ the\ Last\ Guessed\ Style\.\.\. menu-item "Install the Last Guessed Style..." c-guess-install :enable<br/>
+										       (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))<br/>
+					     (View\ the\ Last\ Guessed\ Style menu-item "View the Last Guessed Style" c-guess-view :enable<br/>
+									      (and c-guess-guessed-offsets-alist c-guess-guessed-basic-offset))))<br/>
+			(nil-16 menu-item "----")<br/>
+			(Toggle\.\.\. menu-item "Toggle..."<br/>
+				      (keymap "Toggle..."<br/>
+					      (Syntactic\ indentation menu-item "Syntactic indentation" c-toggle-syntactic-indentation :button<br/>
+								      (:toggle . c-syntactic-indentation))<br/>
+					      (Electric\ mode menu-item "Electric mode" c-toggle-electric-state :button<br/>
+							      (:toggle . c-electric-flag))<br/>
+					      (Auto\ newline menu-item "Auto newline" c-toggle-auto-newline :button<br/>
+							     (:toggle . c-auto-newline))<br/>
+					      (Hungry\ delete menu-item "Hungry delete" c-toggle-hungry-state :button<br/>
+							      (:toggle . c-hungry-delete-key))<br/>
+					      (Subword\ mode menu-item "Subword mode" subword-mode :button<br/>
+							     (:toggle and<br/>
+								      (boundp 'subword-mode)<br/>
+								      subword-mode)))))))<br/>
+ (62 . c-electric-lt-gt)<br/>
+ (60 . c-electric-lt-gt)<br/>
+ (3 keymap<br/>
+    (58 . c-scope-operator)<br/>
+    (5 . c-macro-expand))<br/>
+ keymap<br/>
+ (41 . c-electric-paren)<br/>
+ (40 . c-electric-paren)<br/>
+ (58 . c-electric-colon)<br/>
+ (44 . c-electric-semi&comma)<br/>
+ (59 . c-electric-semi&comma)<br/>
+ (42 . c-electric-star)<br/>
+ (47 . c-electric-slash)<br/>
+ (125 . c-electric-brace)<br/>
+ (123 . c-electric-brace)<br/>
+ (35 . c-electric-pound)<br/>
+ (127 . c-electric-backspace)<br/>
+ (4 . c-electric-delete-forward)<br/>
+ (3 keymap<br/>
+    (23 . subword-mode)<br/>
+    (46 . c-set-style)<br/>
+    (19 . c-show-syntactic-information)<br/>
+    (17 . c-indent-defun)<br/>
+    (15 . c-set-offset)<br/>
+    (12 . c-toggle-electric-state)<br/>
+    (3 . comment-region)<br/>
+    (2 . c-submit-bug-report)<br/>
+    (1 . c-toggle-auto-newline)<br/>
+    (28 . c-backslash-region)<br/>
+    (C-backspace . c-hungry-delete-backwards)<br/>
+    (C-delete . c-hungry-delete-forward)<br/>
+    (C-deletechar . c-hungry-delete-forward)<br/>
+    (deletechar . c-hungry-delete-forward)<br/>
+    (67108991 . c-hungry-delete-backwards)<br/>
+    (127 . c-hungry-delete-backwards)<br/>
+    (4 . c-hungry-delete-forward)<br/>
+    (21 . c-up-conditional)<br/>
+    (16 . c-backward-conditional)<br/>
+    (14 . c-forward-conditional))<br/>
+ (9 . c-indent-line-or-region)<br/>
+ (27 keymap<br/>
+     (113 . c-fill-paragraph)<br/>
+     (5 . c-end-of-defun)<br/>
+     (1 . c-beginning-of-defun)<br/>
+     (106 . c-indent-new-comment-line)<br/>
+     (10 . c-indent-new-comment-line)<br/>
+     (101 . c-end-of-statement)<br/>
+     (97 . c-beginning-of-statement)<br/>
+     (17 . c-indent-exp)<br/>
+     (8 . c-mark-function)))<br/>
+<br/>

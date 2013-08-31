@@ -1,1 +1,13 @@
-after-insert-file-functions is a variable defined in `C source code'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>A list of functions to be called at the end of `insert-file-contents'.<br/>Each is passed one argument, the number of characters inserted,<br/>with point at the start of the inserted text.  Each function<br/>should leave point the same, and return the new character count.<br/>If `insert-file-contents' is intercepted by a handler from<br/>`file-name-handler-alist', that handler is responsible for calling the<br/>functions in `after-insert-file-functions' if appropriate.
+<strong>after-insert-file-functions</strong> is a variable defined in `<code>C source code</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+A list of functions to be called at the end of `insert-file-contents'.<br/>
+Each is passed one argument, the number of characters inserted,<br/>
+with point at the start of the inserted text.  Each function<br/>
+should leave point the same, and return the new character count.<br/>
+If `insert-file-contents' is intercepted by a handler from<br/>
+`file-name-handler-alist', that handler is responsible for calling the<br/>
+functions in `after-insert-file-functions' if appropriate.

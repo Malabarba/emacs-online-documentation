@@ -1,1 +1,34 @@
-ispell-word is an interactive autoloaded compiled Lisp function in `ispell.el'.<br/><br/>It is bound to M-$, <menu-bar> <tools> <spell> <ispell-word>.<br/><br/>(ispell-word &optional FOLLOWING QUIETLY CONTINUE REGION)<br/><br/>Check spelling of word under or before the cursor.<br/>If the word is not found in dictionary, display possible corrections<br/>in a window allowing you to choose one.<br/><br/>If optional argument FOLLOWING is non-nil or if `ispell-following-word'<br/>is non-nil when called interactively, then the following word<br/>(rather than preceding) is checked when the cursor is not over a word.<br/>When the optional argument QUIETLY is non-nil or `ispell-quietly' is non-nil<br/>when called interactively, non-corrective messages are suppressed.<br/><br/>With a prefix argument (or if CONTINUE is non-nil),<br/>resume interrupted spell-checking of a buffer or region.<br/><br/>Interactively, in Transient Mark mode when the mark is active, call<br/>`ispell-region' to check the active region for spelling errors.<br/><br/>Word syntax is controlled by the definition of the chosen dictionary,<br/>which is in `ispell-local-dictionary-alist' or `ispell-dictionary-alist'.<br/><br/>This will check or reload the dictionary.  Use M-x ispell-change-dictionary<br/>or M-x ispell-region to update the Ispell process.<br/><br/>Return values:<br/>nil           word is correct or spelling is accepted.<br/>0             word is inserted into buffer-local definitions.<br/>"word"        word corrected from word list.<br/>("word" arg)  word is hand entered.<br/>quit          spell session exited.
+<strong>ispell-word</strong> is an interactive autoloaded compiled Lisp function in `<code>ispell.el</code>'.<br/>
+<br/>
+It is bound to M-$, <menu-bar> <tools> <spell> <ispell-word>.<br/>
+<br/>
+(ispell-word &optional FOLLOWING QUIETLY CONTINUE REGION)<br/>
+<br/>
+Check spelling of word under or before the cursor.<br/>
+If the word is not found in dictionary, display possible corrections<br/>
+in a window allowing you to choose one.<br/>
+<br/>
+If optional argument FOLLOWING is non-nil or if `ispell-following-word'<br/>
+is non-nil when called interactively, then the following word<br/>
+(rather than preceding) is checked when the cursor is not over a word.<br/>
+When the optional argument QUIETLY is non-nil or `ispell-quietly' is non-nil<br/>
+when called interactively, non-corrective messages are suppressed.<br/>
+<br/>
+With a prefix argument (or if CONTINUE is non-nil),<br/>
+resume interrupted spell-checking of a buffer or region.<br/>
+<br/>
+Interactively, in Transient Mark mode when the mark is active, call<br/>
+`ispell-region' to check the active region for spelling errors.<br/>
+<br/>
+Word syntax is controlled by the definition of the chosen dictionary,<br/>
+which is in `ispell-local-dictionary-alist' or `ispell-dictionary-alist'.<br/>
+<br/>
+This will check or reload the dictionary.  Use M-x ispell-change-dictionary<br/>
+or M-x ispell-region to update the Ispell process.<br/>
+<br/>
+Return values:<br/>
+nil           word is correct or spelling is accepted.<br/>
+0             word is inserted into buffer-local definitions.<br/>
+"word"        word corrected from word list.<br/>
+("word" arg)  word is hand entered.<br/>
+quit          spell session exited.

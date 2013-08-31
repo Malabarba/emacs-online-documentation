@@ -1,1 +1,16 @@
-c-lineup-string-cont is a compiled Lisp function in `cc-align.el'.<br/><br/>(c-lineup-string-cont LANGELEM)<br/><br/>Line up a continued string under the one it continues.<br/>A continued string in this sense is where a string literal follows<br/>directly after another one.  E.g.:<br/><br/>result = prefix + "A message "<br/>                  "string.";      <- c-lineup-string-cont<br/><br/>In other situations, returns nil, to allow stacking with other<br/>line-up functions.<br/><br/>Works with: topmost-intro-cont, statement-cont, arglist-cont,<br/>arglist-cont-nonempty.
+<strong>c-lineup-string-cont</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
+<br/>
+(c-lineup-string-cont LANGELEM)<br/>
+<br/>
+Line up a continued string under the one it continues.<br/>
+A continued string in this sense is where a string literal follows<br/>
+directly after another one.  E.g.:<br/>
+<br/>
+result = prefix + "A message "<br/>
+                  "string.";      <- c-lineup-string-cont<br/>
+<br/>
+In other situations, returns nil, to allow stacking with other<br/>
+line-up functions.<br/>
+<br/>
+Works with: topmost-intro-cont, statement-cont, arglist-cont,<br/>
+arglist-cont-nonempty.

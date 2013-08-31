@@ -1,1 +1,33 @@
-allout-layout is a variable defined in `allout.el'.<br/>Its value is nil<br/><br/>  Automatically becomes buffer-local when set.<br/>  This variable is safe as a file local variable if its value<br/>  satisfies the predicate which is a byte-compiled expression.<br/><br/>Documentation:<br/>Buffer-specific setting for allout layout.<br/><br/>In buffers where this is non-nil (and if `allout-auto-activation'<br/>has been customized to enable this behavior), `allout-mode' will be<br/>automatically activated.  The layout dictated by the value will be used to<br/>set the initial exposure when `allout-mode' is activated.<br/><br/>*You should not setq-default this variable non-nil unless you want every<br/>visited file to be treated as an allout file.*<br/><br/>The value would typically be set by a file local variable.  For<br/>example, the following lines at the bottom of an Emacs Lisp file:<br/><br/>;;;Local variables:<br/>;;;allout-layout: (0 : -1 -1 0)<br/>;;;End:<br/><br/>dictate activation of `allout-mode' mode when the file is visited<br/>(presuming proper `allout-auto-activation' customization),<br/>followed by the equivalent of `(allout-expose-topic 0 : -1 -1 0)'.<br/>(This is the layout used for the allout.el source file.)<br/><br/>`allout-default-layout' describes the specification format.<br/>`allout-layout' can additionally have the value `t', in which<br/>case the value of `allout-default-layout' is used.
+<strong>allout-layout</strong> is a variable defined in `<code>allout.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  Automatically becomes buffer-local when set.<br/>
+  This variable is safe as a file local variable if its value<br/>
+  satisfies the predicate which is a byte-compiled expression.<br/>
+<br/>
+Documentation:<br/>
+Buffer-specific setting for allout layout.<br/>
+<br/>
+In buffers where this is non-nil (and if `allout-auto-activation'<br/>
+has been customized to enable this behavior), `allout-mode' will be<br/>
+automatically activated.  The layout dictated by the value will be used to<br/>
+set the initial exposure when `allout-mode' is activated.<br/>
+<br/>
+*You should not setq-default this variable non-nil unless you want every<br/>
+visited file to be treated as an allout file.*<br/>
+<br/>
+The value would typically be set by a file local variable.  For<br/>
+example, the following lines at the bottom of an Emacs Lisp file:<br/>
+<br/>
+;;;Local variables:<br/>
+;;;allout-layout: (0 : -1 -1 0)<br/>
+;;;End:<br/>
+<br/>
+dictate activation of `allout-mode' mode when the file is visited<br/>
+(presuming proper `allout-auto-activation' customization),<br/>
+followed by the equivalent of `(allout-expose-topic 0 : -1 -1 0)'.<br/>
+(This is the layout used for the allout.el source file.)<br/>
+<br/>
+`allout-default-layout' describes the specification format.<br/>
+`allout-layout' can additionally have the value `t', in which<br/>
+case the value of `allout-default-layout' is used.

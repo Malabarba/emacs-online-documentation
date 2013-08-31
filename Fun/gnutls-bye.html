@@ -1,1 +1,16 @@
-gnutls-bye is a built-in function in `C source code'.<br/><br/>(gnutls-bye PROC CONT)<br/><br/>Terminate current GnuTLS connection for process PROC.<br/>The connection should have been initiated using `gnutls-handshake'.<br/><br/>If CONT is not nil the TLS connection gets terminated and further<br/>receives and sends will be disallowed.  If the return value is zero you<br/>may continue using the connection.  If CONT is nil, GnuTLS actually<br/>sends an alert containing a close request and waits for the peer to<br/>reply with the same message.  In order to reuse the connection you<br/>should wait for an EOF from the peer.<br/><br/>This function may also return `gnutls-e-again', or<br/>`gnutls-e-interrupted'.
+<strong>gnutls-bye</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(gnutls-bye PROC CONT)<br/>
+<br/>
+Terminate current GnuTLS connection for process PROC.<br/>
+The connection should have been initiated using `gnutls-handshake'.<br/>
+<br/>
+If CONT is not nil the TLS connection gets terminated and further<br/>
+receives and sends will be disallowed.  If the return value is zero you<br/>
+may continue using the connection.  If CONT is nil, GnuTLS actually<br/>
+sends an alert containing a close request and waits for the peer to<br/>
+reply with the same message.  In order to reuse the connection you<br/>
+should wait for an EOF from the peer.<br/>
+<br/>
+This function may also return `gnutls-e-again', or<br/>
+`gnutls-e-interrupted'.

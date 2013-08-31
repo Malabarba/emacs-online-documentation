@@ -1,1 +1,24 @@
-vhdl-components-package-name is a variable defined in `vhdl-mode.el'.<br/>Its value is ((".*" . "\\&_components") . "components")<br/><br/>Documentation:<br/>Specifies how the name for the components package is obtained.<br/>The components package is a package containing all component declarations for<br/>the current design.  Its name can be obtained by modifying the project name<br/>(e.g. attaching or stripping off a substring).  If no project is defined, the<br/>DIRECTORY entry is chosen.<br/><br/>FROM REGEXP is a regular expression matching the original name:<br/>  ".*"       matches the entire string<br/>  "\(...\)"  matches a substring<br/>TO STRING specifies the string to be inserted as new name:<br/>  "\&"  means substitute entire matched text<br/>  "\N"  means substitute what matched the Nth "\(...\)"<br/>Examples:<br/>  ".*"           "\&"    inserts original string<br/>  ".*"           "\&_i"  attaches "_i" to original string<br/>  "\(.*\)_[io]$" "\1"    strips off "_i" or "_o" from original string<br/>  ".*"           "foo"   inserts constant string "foo"<br/>  ".*"           ""      inserts empty string<br/><br/>You can customize this variable.
+<strong>vhdl-components-package-name</strong> is a variable defined in `<code>vhdl-mode.el</code>'.<br/>
+Its value is ((".*" . "\\&_components") . "components")<br/>
+<br/>
+Documentation:<br/>
+Specifies how the name for the components package is obtained.<br/>
+The components package is a package containing all component declarations for<br/>
+the current design.  Its name can be obtained by modifying the project name<br/>
+(e.g. attaching or stripping off a substring).  If no project is defined, the<br/>
+DIRECTORY entry is chosen.<br/>
+<br/>
+FROM REGEXP is a regular expression matching the original name:<br/>
+  ".*"       matches the entire string<br/>
+  "\(...\)"  matches a substring<br/>
+TO STRING specifies the string to be inserted as new name:<br/>
+  "\&"  means substitute entire matched text<br/>
+  "\N"  means substitute what matched the Nth "\(...\)"<br/>
+Examples:<br/>
+  ".*"           "\&"    inserts original string<br/>
+  ".*"           "\&_i"  attaches "_i" to original string<br/>
+  "\(.*\)_[io]$" "\1"    strips off "_i" or "_o" from original string<br/>
+  ".*"           "foo"   inserts constant string "foo"<br/>
+  ".*"           ""      inserts empty string<br/>
+<br/>
+You can customize this variable.

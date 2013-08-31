@@ -1,1 +1,38 @@
-mh-fetch-x-image-url is a variable defined in `mh-e.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>*Control fetching of "X-Image-URL:" header field image.<br/><br/>Ths option controls the fetching of the "X-Image-URL:" header<br/>field image with the following values:<br/><br/>Ask Before Fetching<br/>     You are prompted before the image is fetched. MH-E will<br/>     remember your reply and will either use the already fetched<br/>     image the next time the same URL is encountered or silently<br/>     skip it if you didn't fetch it the first time. This is a<br/>     good setting.<br/><br/>Never Fetch<br/>     Images are never fetched and only displayed if they are<br/>     already present in the cache. This is the default.<br/><br/>There isn't a value of "Always Fetch" for privacy and DOS (denial of<br/>service) reasons. For example, fetching a URL can tip off a spammer<br/>that you've read his email (which is why you shouldn't blindly answer<br/>yes if you've set this option to "Ask Before Fetching"). Someone may<br/>also flood your network and fill your disk drive by sending a torrent<br/>of messages, each specifying a unique URL to a very large file.<br/><br/>The cache of images is found in the directory ".mhe-x-image-cache"<br/>within your MH directory. You can add your own face to the "From:"<br/>field too. See Info node `(mh-e)Picture'.<br/><br/>This setting only has effect if the option `mh-show-use-xface-flag' is<br/>turned on.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 7.3 of the MH-E package that is part of Emacs 22.1.<br/>
+<strong>mh-fetch-x-image-url</strong> is a variable defined in `<code>mh-e.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+*Control fetching of "X-Image-URL:" header field image.<br/>
+<br/>
+Ths option controls the fetching of the "X-Image-URL:" header<br/>
+field image with the following values:<br/>
+<br/>
+Ask Before Fetching<br/>
+     You are prompted before the image is fetched. MH-E will<br/>
+     remember your reply and will either use the already fetched<br/>
+     image the next time the same URL is encountered or silently<br/>
+     skip it if you didn't fetch it the first time. This is a<br/>
+     good setting.<br/>
+<br/>
+Never Fetch<br/>
+     Images are never fetched and only displayed if they are<br/>
+     already present in the cache. This is the default.<br/>
+<br/>
+There isn't a value of "Always Fetch" for privacy and DOS (denial of<br/>
+service) reasons. For example, fetching a URL can tip off a spammer<br/>
+that you've read his email (which is why you shouldn't blindly answer<br/>
+yes if you've set this option to "Ask Before Fetching"). Someone may<br/>
+also flood your network and fill your disk drive by sending a torrent<br/>
+of messages, each specifying a unique URL to a very large file.<br/>
+<br/>
+The cache of images is found in the directory ".mhe-x-image-cache"<br/>
+within your MH directory. You can add your own face to the "From:"<br/>
+field too. See Info node `(mh-e)Picture'.<br/>
+<br/>
+This setting only has effect if the option `mh-show-use-xface-flag' is<br/>
+turned on.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 7.3 of the MH-E package that is part of Emacs 22.1.<br/>

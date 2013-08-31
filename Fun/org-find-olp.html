@@ -1,1 +1,17 @@
-org-find-olp is a compiled Lisp function in `org.el'.<br/><br/>(org-find-olp PATH &optional THIS-BUFFER)<br/><br/>Return a marker pointing to the entry at outline path OLP.<br/>If anything goes wrong, throw an error.<br/>You can wrap this call to catch the error like this:<br/><br/>  (condition-case msg<br/>      (org-mobile-locate-entry (match-string 4))<br/>    (error (nth 1 msg)))<br/><br/>The return value will then be either a string with the error message,<br/>or a marker if everything is OK.<br/><br/>If THIS-BUFFER is set, the outline path does not contain a file,<br/>only headings.
+<strong>org-find-olp</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
+<br/>
+(org-find-olp PATH &optional THIS-BUFFER)<br/>
+<br/>
+Return a marker pointing to the entry at outline path OLP.<br/>
+If anything goes wrong, throw an error.<br/>
+You can wrap this call to catch the error like this:<br/>
+<br/>
+  (condition-case msg<br/>
+      (org-mobile-locate-entry (match-string 4))<br/>
+    (error (nth 1 msg)))<br/>
+<br/>
+The return value will then be either a string with the error message,<br/>
+or a marker if everything is OK.<br/>
+<br/>
+If THIS-BUFFER is set, the outline path does not contain a file,<br/>
+only headings.

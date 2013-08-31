@@ -1,1 +1,20 @@
-sh-here-document-word is a variable defined in `sh-script.el'.<br/>Its value is "EOF"<br/><br/>Documentation:<br/>Word to delimit here documents.<br/>If the first character of this string is "-", this is taken as<br/>part of the redirection operator, rather than part of the<br/>word (that is, "<<-" instead of "<<").  This is a feature<br/>used by some shells (for example Bash) to indicate that leading<br/>tabs inside the here document should be ignored.  In this case,<br/>Emacs indents the initial body and end of the here document with<br/>tabs, to the same level as the start (note that apart from this<br/>there is no support for indentation of here documents).  This<br/>will only work correctly if `sh-basic-offset' is a multiple of<br/>`tab-width'.<br/><br/>Any quote characters or leading whitespace in the word are<br/>removed when closing the here document.<br/><br/>You can customize this variable.
+<strong>sh-here-document-word</strong> is a variable defined in `<code>sh-script.el</code>'.<br/>
+Its value is "EOF"<br/>
+<br/>
+Documentation:<br/>
+Word to delimit here documents.<br/>
+If the first character of this string is "-", this is taken as<br/>
+part of the redirection operator, rather than part of the<br/>
+word (that is, "<<-" instead of "<<").  This is a feature<br/>
+used by some shells (for example Bash) to indicate that leading<br/>
+tabs inside the here document should be ignored.  In this case,<br/>
+Emacs indents the initial body and end of the here document with<br/>
+tabs, to the same level as the start (note that apart from this<br/>
+there is no support for indentation of here documents).  This<br/>
+will only work correctly if `sh-basic-offset' is a multiple of<br/>
+`tab-width'.<br/>
+<br/>
+Any quote characters or leading whitespace in the word are<br/>
+removed when closing the here document.<br/>
+<br/>
+You can customize this variable.

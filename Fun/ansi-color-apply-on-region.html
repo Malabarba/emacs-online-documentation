@@ -1,1 +1,21 @@
-ansi-color-apply-on-region is a compiled Lisp function in `ansi-color.el'.<br/><br/>(ansi-color-apply-on-region BEGIN END)<br/><br/>Translates SGR control sequences into overlays or extents.<br/>Delete all other control sequences without processing them.<br/><br/>SGR control sequences are applied by calling the function<br/>specified by `ansi-color-apply-face-function'.  The default<br/>function sets foreground and background colors to the text<br/>between BEGIN and END, using overlays.  The colors used are given<br/>in `ansi-color-faces-vector' and `ansi-color-names-vector'.  See<br/>`ansi-color-apply-sequence' for details.<br/><br/>Every call to this function will set and use the buffer-local<br/>variable `ansi-color-context-region' to save position and current<br/>ansi codes.  This information will be used for the next call to<br/>`ansi-color-apply-on-region'.  Specifically, it will override<br/>BEGIN, the start of the region and set the face with which to<br/>start.  Set `ansi-color-context-region' to nil if you don't want<br/>this.
+<strong>ansi-color-apply-on-region</strong> is a compiled Lisp function in `<code>ansi-color.el</code>'.<br/>
+<br/>
+(ansi-color-apply-on-region BEGIN END)<br/>
+<br/>
+Translates SGR control sequences into overlays or extents.<br/>
+Delete all other control sequences without processing them.<br/>
+<br/>
+SGR control sequences are applied by calling the function<br/>
+specified by `ansi-color-apply-face-function'.  The default<br/>
+function sets foreground and background colors to the text<br/>
+between BEGIN and END, using overlays.  The colors used are given<br/>
+in `ansi-color-faces-vector' and `ansi-color-names-vector'.  See<br/>
+`ansi-color-apply-sequence' for details.<br/>
+<br/>
+Every call to this function will set and use the buffer-local<br/>
+variable `ansi-color-context-region' to save position and current<br/>
+ansi codes.  This information will be used for the next call to<br/>
+`ansi-color-apply-on-region'.  Specifically, it will override<br/>
+BEGIN, the start of the region and set the face with which to<br/>
+start.  Set `ansi-color-context-region' to nil if you don't want<br/>
+this.

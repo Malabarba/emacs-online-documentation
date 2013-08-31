@@ -1,1 +1,32 @@
-define-mail-user-agent is a compiled Lisp function in `subr.el'.<br/><br/>(define-mail-user-agent SYMBOL COMPOSEFUNC SENDFUNC &optional ABORTFUNC HOOKVAR)<br/><br/>Define a symbol to identify a mail-sending package for `mail-user-agent'.<br/><br/>SYMBOL can be any Lisp symbol.  Its function definition and/or<br/>value as a variable do not matter for this usage; we use only certain<br/>properties on its property list, to encode the rest of the arguments.<br/><br/>COMPOSEFUNC is program callable function that composes an outgoing<br/>mail message buffer.  This function should set up the basics of the<br/>buffer without requiring user interaction.  It should populate the<br/>standard mail headers, leaving the `to:' and `subject:' headers blank<br/>by default.<br/><br/>COMPOSEFUNC should accept several optional arguments--the same<br/>arguments that `compose-mail' takes.  See that function's documentation.<br/><br/>SENDFUNC is the command a user would run to send the message.<br/><br/>Optional ABORTFUNC is the command a user would run to abort the<br/>message.  For mail packages that don't have a separate abort function,<br/>this can be `kill-buffer' (the equivalent of omitting this argument).<br/><br/>Optional HOOKVAR is a hook variable that gets run before the message<br/>is actually sent.  Callers that use the `mail-user-agent' may<br/>install a hook function temporarily on this hook variable.<br/>If HOOKVAR is nil, `mail-send-hook' is used.<br/><br/>The properties used on SYMBOL are `composefunc', `sendfunc',<br/>`abortfunc', and `hookvar'.
+<strong>define-mail-user-agent</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
+<br/>
+(define-mail-user-agent SYMBOL COMPOSEFUNC SENDFUNC &optional ABORTFUNC HOOKVAR)<br/>
+<br/>
+Define a symbol to identify a mail-sending package for `mail-user-agent'.<br/>
+<br/>
+SYMBOL can be any Lisp symbol.  Its function definition and/or<br/>
+value as a variable do not matter for this usage; we use only certain<br/>
+properties on its property list, to encode the rest of the arguments.<br/>
+<br/>
+COMPOSEFUNC is program callable function that composes an outgoing<br/>
+mail message buffer.  This function should set up the basics of the<br/>
+buffer without requiring user interaction.  It should populate the<br/>
+standard mail headers, leaving the `to:' and `subject:' headers blank<br/>
+by default.<br/>
+<br/>
+COMPOSEFUNC should accept several optional arguments--the same<br/>
+arguments that `compose-mail' takes.  See that function's documentation.<br/>
+<br/>
+SENDFUNC is the command a user would run to send the message.<br/>
+<br/>
+Optional ABORTFUNC is the command a user would run to abort the<br/>
+message.  For mail packages that don't have a separate abort function,<br/>
+this can be `kill-buffer' (the equivalent of omitting this argument).<br/>
+<br/>
+Optional HOOKVAR is a hook variable that gets run before the message<br/>
+is actually sent.  Callers that use the `mail-user-agent' may<br/>
+install a hook function temporarily on this hook variable.<br/>
+If HOOKVAR is nil, `mail-send-hook' is used.<br/>
+<br/>
+The properties used on SYMBOL are `composefunc', `sendfunc',<br/>
+`abortfunc', and `hookvar'.

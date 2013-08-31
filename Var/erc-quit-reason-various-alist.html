@@ -1,1 +1,26 @@
-erc-quit-reason-various-alist is a variable defined in `erc.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Alist of possible arguments to the /quit command.<br/><br/>Each element has the form:<br/>  (REGEXP RESULT)<br/><br/>If REGEXP matches the argument to /quit, then its relevant RESULT<br/>will be used.  RESULT may be either a string, or a function.  If<br/>a function, it should return the quit message as a string.<br/><br/>If no elements match, then the empty string is used.<br/><br/>As an example:<br/>  (setq erc-quit-reason-various-alist<br/>      '(("zippy" erc-quit-reason-zippy)<br/>	("xmms" dme:now-playing)<br/>	("version" erc-quit-reason-normal)<br/>	("home" "Gone home !")<br/>	("^$" "Default Reason")))<br/>If the user types "/quit zippy", then a Zippy the Pinhead quotation<br/>will be used as the quit message.<br/><br/>You can customize this variable.
+<strong>erc-quit-reason-various-alist</strong> is a variable defined in `<code>erc.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Alist of possible arguments to the /quit command.<br/>
+<br/>
+Each element has the form:<br/>
+  (REGEXP RESULT)<br/>
+<br/>
+If REGEXP matches the argument to /quit, then its relevant RESULT<br/>
+will be used.  RESULT may be either a string, or a function.  If<br/>
+a function, it should return the quit message as a string.<br/>
+<br/>
+If no elements match, then the empty string is used.<br/>
+<br/>
+As an example:<br/>
+  (setq erc-quit-reason-various-alist<br/>
+      '(("zippy" erc-quit-reason-zippy)<br/>
+	("xmms" dme:now-playing)<br/>
+	("version" erc-quit-reason-normal)<br/>
+	("home" "Gone home !")<br/>
+	("^$" "Default Reason")))<br/>
+If the user types "/quit zippy", then a Zippy the Pinhead quotation<br/>
+will be used as the quit message.<br/>
+<br/>
+You can customize this variable.

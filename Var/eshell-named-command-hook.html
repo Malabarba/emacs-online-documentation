@@ -1,1 +1,28 @@
-eshell-named-command-hook is a variable defined in `esh-cmd.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>A set of functions called before a named command is invoked.<br/>Each function will be passed the command name and arguments that were<br/>passed to `eshell-named-command'.<br/><br/>If any of the functions returns a non-nil value, the named command<br/>will not be invoked, and that value will be returned from<br/>`eshell-named-command'.<br/><br/>In order to substitute an alternate command form for execution, the<br/>hook function should throw it using the tag `eshell-replace-command'.<br/>For example:<br/><br/>  (add-hook 'eshell-named-command-hook 'subst-with-cd)<br/>  (defun subst-with-cd (command args)<br/>    (throw 'eshell-replace-command<br/>	   (eshell-parse-command "cd" args)))<br/><br/>Although useless, the above code will cause any non-glob, non-Lisp<br/>command (i.e., 'ls' as opposed to '*ls' or '(ls)') to be replaced by a<br/>call to `cd' using the arguments that were passed to the function.<br/><br/>You can customize this variable.
+<strong>eshell-named-command-hook</strong> is a variable defined in `<code>esh-cmd.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+A set of functions called before a named command is invoked.<br/>
+Each function will be passed the command name and arguments that were<br/>
+passed to `eshell-named-command'.<br/>
+<br/>
+If any of the functions returns a non-nil value, the named command<br/>
+will not be invoked, and that value will be returned from<br/>
+`eshell-named-command'.<br/>
+<br/>
+In order to substitute an alternate command form for execution, the<br/>
+hook function should throw it using the tag `eshell-replace-command'.<br/>
+For example:<br/>
+<br/>
+  (add-hook 'eshell-named-command-hook 'subst-with-cd)<br/>
+  (defun subst-with-cd (command args)<br/>
+    (throw 'eshell-replace-command<br/>
+	   (eshell-parse-command "cd" args)))<br/>
+<br/>
+Although useless, the above code will cause any non-glob, non-Lisp<br/>
+command (i.e., 'ls' as opposed to '*ls' or '(ls)') to be replaced by a<br/>
+call to `cd' using the arguments that were passed to the function.<br/>
+<br/>
+You can customize this variable.

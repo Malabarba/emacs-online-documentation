@@ -1,1 +1,42 @@
-gnus-default-article-saver is a variable defined in `gnus-art.el'.<br/>Its value is gnus-summary-save-in-rmail<br/><br/>Documentation:<br/>A function to save articles in your favorite format.<br/>The function will be called by way of the `gnus-summary-save-article'<br/>command, and friends such as `gnus-summary-save-article-rmail'.<br/><br/>Gnus provides the following functions:<br/><br/>* gnus-summary-save-in-rmail (Rmail format)<br/>* gnus-summary-save-in-mail (Unix mail format)<br/>* gnus-summary-save-in-folder (MH folder)<br/>* gnus-summary-save-in-file (article format)<br/>* gnus-summary-save-body-in-file (article body)<br/>* gnus-summary-save-in-vm (use VM's folder format)<br/>* gnus-summary-write-to-file (article format -- overwrite)<br/>* gnus-summary-write-body-to-file (article body -- overwrite)<br/>* gnus-summary-save-in-pipe (article format)<br/><br/>The symbol of each function may have the following properties:<br/><br/>* :decode<br/>The value non-nil means save decoded articles.  This is meaningful<br/>only with `gnus-summary-save-in-file', `gnus-summary-save-body-in-file',<br/>`gnus-summary-write-to-file', `gnus-summary-write-body-to-file', and<br/>`gnus-summary-save-in-pipe'.<br/><br/>* :function<br/>The value specifies an alternative function which appends, not<br/>overwrites, articles to a file.  This implies that when saving many<br/>articles at a time, `gnus-prompt-before-saving' is bound to t and all<br/>articles are saved in a single file.  This is meaningful only with<br/>`gnus-summary-write-to-file' and `gnus-summary-write-body-to-file'.<br/><br/>* :headers<br/>The value specifies the symbol of a variable of which the value<br/>specifies headers to be saved.  If it is omitted,<br/>`gnus-save-all-headers' and `gnus-saved-headers' control what<br/>headers should be saved.<br/><br/>You can customize this variable.
+<strong>gnus-default-article-saver</strong> is a variable defined in `<code>gnus-art.el</code>'.<br/>
+Its value is gnus-summary-save-in-rmail<br/>
+<br/>
+Documentation:<br/>
+A function to save articles in your favorite format.<br/>
+The function will be called by way of the `gnus-summary-save-article'<br/>
+command, and friends such as `gnus-summary-save-article-rmail'.<br/>
+<br/>
+Gnus provides the following functions:<br/>
+<br/>
+* gnus-summary-save-in-rmail (Rmail format)<br/>
+* gnus-summary-save-in-mail (Unix mail format)<br/>
+* gnus-summary-save-in-folder (MH folder)<br/>
+* gnus-summary-save-in-file (article format)<br/>
+* gnus-summary-save-body-in-file (article body)<br/>
+* gnus-summary-save-in-vm (use VM's folder format)<br/>
+* gnus-summary-write-to-file (article format -- overwrite)<br/>
+* gnus-summary-write-body-to-file (article body -- overwrite)<br/>
+* gnus-summary-save-in-pipe (article format)<br/>
+<br/>
+The symbol of each function may have the following properties:<br/>
+<br/>
+* :decode<br/>
+The value non-nil means save decoded articles.  This is meaningful<br/>
+only with `gnus-summary-save-in-file', `gnus-summary-save-body-in-file',<br/>
+`gnus-summary-write-to-file', `gnus-summary-write-body-to-file', and<br/>
+`gnus-summary-save-in-pipe'.<br/>
+<br/>
+* :function<br/>
+The value specifies an alternative function which appends, not<br/>
+overwrites, articles to a file.  This implies that when saving many<br/>
+articles at a time, `gnus-prompt-before-saving' is bound to t and all<br/>
+articles are saved in a single file.  This is meaningful only with<br/>
+`gnus-summary-write-to-file' and `gnus-summary-write-body-to-file'.<br/>
+<br/>
+* :headers<br/>
+The value specifies the symbol of a variable of which the value<br/>
+specifies headers to be saved.  If it is omitted,<br/>
+`gnus-save-all-headers' and `gnus-saved-headers' control what<br/>
+headers should be saved.<br/>
+<br/>
+You can customize this variable.

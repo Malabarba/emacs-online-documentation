@@ -1,1 +1,19 @@
-c-syntactic-skip-backward is a compiled Lisp function in `cc-engine.el'.<br/><br/>(c-syntactic-skip-backward SKIP-CHARS &optional LIMIT PAREN-LEVEL)<br/><br/>Like `skip-chars-backward' but only look at syntactically relevant chars,<br/>i.e. don't stop at positions inside syntactic whitespace or string<br/>literals.  Preprocessor directives are also ignored, with the exception<br/>of the one that the point starts within, if any.  If LIMIT is given,<br/>it's assumed to be at a syntactically relevant position.<br/><br/>If PAREN-LEVEL is non-nil, the function won't stop in nested paren<br/>sexps, and the search will also not go outside the current paren sexp.<br/>However, if LIMIT or the buffer limit is reached inside a nested paren<br/>then the point will be left at the limit.<br/><br/>Non-nil is returned if the point moved, nil otherwise.<br/><br/>Note that this function might do hidden buffer changes.  See the<br/>comment at the start of cc-engine.el for more info.
+<strong>c-syntactic-skip-backward</strong> is a compiled Lisp function in `<code>cc-engine.el</code>'.<br/>
+<br/>
+(c-syntactic-skip-backward SKIP-CHARS &optional LIMIT PAREN-LEVEL)<br/>
+<br/>
+Like `skip-chars-backward' but only look at syntactically relevant chars,<br/>
+i.e. don't stop at positions inside syntactic whitespace or string<br/>
+literals.  Preprocessor directives are also ignored, with the exception<br/>
+of the one that the point starts within, if any.  If LIMIT is given,<br/>
+it's assumed to be at a syntactically relevant position.<br/>
+<br/>
+If PAREN-LEVEL is non-nil, the function won't stop in nested paren<br/>
+sexps, and the search will also not go outside the current paren sexp.<br/>
+However, if LIMIT or the buffer limit is reached inside a nested paren<br/>
+then the point will be left at the limit.<br/>
+<br/>
+Non-nil is returned if the point moved, nil otherwise.<br/>
+<br/>
+Note that this function might do hidden buffer changes.  See the<br/>
+comment at the start of cc-engine.el for more info.

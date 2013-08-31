@@ -1,1 +1,33 @@
-gdb-stopped-functions is a variable defined in `gdb-mi.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>List of functions called whenever GDB stops.<br/><br/>Each function takes one argument, a parsed MI response, which<br/>contains fields of corresponding MI *stopped async record:<br/><br/>    ((stopped-threads . "all")<br/>     (thread-id . "1")<br/>     (frame (line . "38")<br/>            (fullname . "/home/sphinx/projects/gsoc/server.c")<br/>            (file . "server.c")<br/>            (args ((value . "0x804b038")<br/>                   (name . "arg")))<br/>            (func . "hello")<br/>            (addr . "0x0804869e"))<br/>     (reason . "end-stepping-range"))<br/><br/>Note that "reason" is only present in non-stop debugging mode.<br/><br/>`bindat-get-field' may be used to access the fields of response.<br/><br/>Each function is called after the new current thread was selected<br/>and GDB buffers were updated in `gdb-stopped'.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 23.2 of Emacs.<br/>
+<strong>gdb-stopped-functions</strong> is a variable defined in `<code>gdb-mi.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+List of functions called whenever GDB stops.<br/>
+<br/>
+Each function takes one argument, a parsed MI response, which<br/>
+contains fields of corresponding MI *stopped async record:<br/>
+<br/>
+    ((stopped-threads . "all")<br/>
+     (thread-id . "1")<br/>
+     (frame (line . "38")<br/>
+            (fullname . "/home/sphinx/projects/gsoc/server.c")<br/>
+            (file . "server.c")<br/>
+            (args ((value . "0x804b038")<br/>
+                   (name . "arg")))<br/>
+            (func . "hello")<br/>
+            (addr . "0x0804869e"))<br/>
+     (reason . "end-stepping-range"))<br/>
+<br/>
+Note that "reason" is only present in non-stop debugging mode.<br/>
+<br/>
+`bindat-get-field' may be used to access the fields of response.<br/>
+<br/>
+Each function is called after the new current thread was selected<br/>
+and GDB buffers were updated in `gdb-stopped'.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 23.2 of Emacs.<br/>

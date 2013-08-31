@@ -1,1 +1,114 @@
-ps-mode is an interactive autoloaded compiled Lisp function in `ps-mode.el'.<br/><br/>(ps-mode)<br/><br/>Parent mode: `prog-mode'.<br/><br/>Major mode for editing PostScript with GNU Emacs.<br/><br/>Entry to this mode calls `ps-mode-hook'.<br/><br/>The following variables hold user options, and can<br/>be set through the `customize' command:<br/><br/>  `ps-mode-auto-indent'<br/>  `ps-mode-tab'<br/>  `ps-mode-paper-size'<br/>  `ps-mode-print-function'<br/>  `ps-run-prompt'<br/>  `ps-run-font-lock-keywords-2'<br/>  `ps-run-x'<br/>  `ps-run-dumb'<br/>  `ps-run-init'<br/>  `ps-run-error-line-numbers'<br/>  `ps-run-tmp-dir'<br/><br/>Type C-h v for documentation on these options.<br/><br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>TAB		ps-mode-tabkey<br/>RET		ps-mode-newline<br/>>		ps-mode-r-gt<br/>]		ps-mode-r-angle<br/>}		ps-mode-r-brace<br/>DEL		ps-mode-backward-delete-char<br/><return>	ps-mode-newline<br/><br/>C-c C-b		ps-run-buffer<br/>C-c C-j		ps-mode-other-newline<br/>C-c C-k		ps-run-kill<br/>C-c C-l		ps-run-clear<br/>C-c C-o		ps-mode-comment-out-region<br/>C-c C-p		ps-mode-print-buffer<br/>C-c C-q		ps-run-quit<br/>C-c C-r		ps-run-region<br/>C-c C-s		ps-run-start<br/>C-c C-t		ps-mode-epsf-rich<br/>C-c C-u		ps-mode-uncomment-region<br/>C-c C-v		ps-run-boundingbox<br/><br/><br/><br/><br/>When starting an interactive PostScript process with M-x ps-run-start,<br/>a second window will be displayed, and `ps-run-mode-hook' will be called.<br/>The keymap for this second window is:<br/><br/>key             binding<br/>---             -------<br/><br/>C-c		Prefix Command<br/>C-d		comint-delchar-or-maybe-eof<br/>RET		comint-send-input<br/>ESC		Prefix Command<br/><C-down>	comint-next-input<br/><C-up>		comint-previous-input<br/><delete>	delete-char<br/><kp-delete>	delete-char<br/><mouse-2>	ps-run-mouse-goto-error<br/><br/>C-c C-e		ps-run-goto-error<br/>C-c C-k		ps-run-kill<br/>C-c C-q		ps-run-quit<br/><br/>C-c C-a		comint-bol-or-process-mark<br/>C-c C-c		comint-interrupt-subjob<br/>C-c C-d		comint-send-eof<br/>C-c C-e		comint-show-maximum-output<br/>  (that binding is currently shadowed by another mode)<br/>C-c C-l		comint-dynamic-list-input-ring<br/>C-c RET		comint-copy-old-input<br/>C-c C-n		comint-next-prompt<br/>C-c C-o		comint-delete-output<br/>C-c C-p		comint-previous-prompt<br/>C-c C-r		comint-show-output<br/>C-c C-s		comint-write-output<br/>C-c C-u		comint-kill-input<br/>C-c C-w		backward-kill-word<br/>C-c C-x		comint-get-next-from-history<br/>C-c C-z		comint-stop-subjob<br/>C-c ESC		Prefix Command<br/>C-c C-\		comint-quit-subjob<br/>C-c SPC		comint-accumulate<br/>C-c .		comint-insert-previous-argument<br/><br/>C-M-l		comint-show-output<br/>M-n		comint-next-input<br/>M-p		comint-previous-input<br/>M-r		comint-history-isearch-backward-regexp<br/><br/>C-c M-r		comint-previous-matching-input-from-input<br/>C-c M-s		comint-next-matching-input-from-input<br/><br/><br/><br/><br/>When Ghostscript encounters an error it displays an error message<br/>with a file position. Clicking mouse-2 on this number will bring<br/>point to the corresponding spot in the PostScript window, if input<br/>to the interpreter was sent from that window.<br/>Typing C-c C-e when the cursor is at the number has the same effect.
+<strong>ps-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>ps-mode.el</code>'.<br/>
+<br/>
+(ps-mode)<br/>
+<br/>
+Parent mode: `prog-mode'.<br/>
+<br/>
+Major mode for editing PostScript with GNU Emacs.<br/>
+<br/>
+Entry to this mode calls `ps-mode-hook'.<br/>
+<br/>
+The following variables hold user options, and can<br/>
+be set through the `customize' command:<br/>
+<br/>
+  `ps-mode-auto-indent'<br/>
+  `ps-mode-tab'<br/>
+  `ps-mode-paper-size'<br/>
+  `ps-mode-print-function'<br/>
+  `ps-run-prompt'<br/>
+  `ps-run-font-lock-keywords-2'<br/>
+  `ps-run-x'<br/>
+  `ps-run-dumb'<br/>
+  `ps-run-init'<br/>
+  `ps-run-error-line-numbers'<br/>
+  `ps-run-tmp-dir'<br/>
+<br/>
+Type C-h v for documentation on these options.<br/>
+<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+TAB		ps-mode-tabkey<br/>
+RET		ps-mode-newline<br/>
+>		ps-mode-r-gt<br/>
+]		ps-mode-r-angle<br/>
+}		ps-mode-r-brace<br/>
+DEL		ps-mode-backward-delete-char<br/>
+<return>	ps-mode-newline<br/>
+<br/>
+C-c C-b		ps-run-buffer<br/>
+C-c C-j		ps-mode-other-newline<br/>
+C-c C-k		ps-run-kill<br/>
+C-c C-l		ps-run-clear<br/>
+C-c C-o		ps-mode-comment-out-region<br/>
+C-c C-p		ps-mode-print-buffer<br/>
+C-c C-q		ps-run-quit<br/>
+C-c C-r		ps-run-region<br/>
+C-c C-s		ps-run-start<br/>
+C-c C-t		ps-mode-epsf-rich<br/>
+C-c C-u		ps-mode-uncomment-region<br/>
+C-c C-v		ps-run-boundingbox<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+When starting an interactive PostScript process with M-x ps-run-start,<br/>
+a second window will be displayed, and `ps-run-mode-hook' will be called.<br/>
+The keymap for this second window is:<br/>
+<br/>
+key             binding<br/>
+---             -------<br/>
+<br/>
+C-c		Prefix Command<br/>
+C-d		comint-delchar-or-maybe-eof<br/>
+RET		comint-send-input<br/>
+ESC		Prefix Command<br/>
+<C-down>	comint-next-input<br/>
+<C-up>		comint-previous-input<br/>
+<delete>	delete-char<br/>
+<kp-delete>	delete-char<br/>
+<mouse-2>	ps-run-mouse-goto-error<br/>
+<br/>
+C-c C-e		ps-run-goto-error<br/>
+C-c C-k		ps-run-kill<br/>
+C-c C-q		ps-run-quit<br/>
+<br/>
+C-c C-a		comint-bol-or-process-mark<br/>
+C-c C-c		comint-interrupt-subjob<br/>
+C-c C-d		comint-send-eof<br/>
+C-c C-e		comint-show-maximum-output<br/>
+  (that binding is currently shadowed by another mode)<br/>
+C-c C-l		comint-dynamic-list-input-ring<br/>
+C-c RET		comint-copy-old-input<br/>
+C-c C-n		comint-next-prompt<br/>
+C-c C-o		comint-delete-output<br/>
+C-c C-p		comint-previous-prompt<br/>
+C-c C-r		comint-show-output<br/>
+C-c C-s		comint-write-output<br/>
+C-c C-u		comint-kill-input<br/>
+C-c C-w		backward-kill-word<br/>
+C-c C-x		comint-get-next-from-history<br/>
+C-c C-z		comint-stop-subjob<br/>
+C-c ESC		Prefix Command<br/>
+C-c C-\		comint-quit-subjob<br/>
+C-c SPC		comint-accumulate<br/>
+C-c .		comint-insert-previous-argument<br/>
+<br/>
+C-M-l		comint-show-output<br/>
+M-n		comint-next-input<br/>
+M-p		comint-previous-input<br/>
+M-r		comint-history-isearch-backward-regexp<br/>
+<br/>
+C-c M-r		comint-previous-matching-input-from-input<br/>
+C-c M-s		comint-next-matching-input-from-input<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+When Ghostscript encounters an error it displays an error message<br/>
+with a file position. Clicking mouse-2 on this number will bring<br/>
+point to the corresponding spot in the PostScript window, if input<br/>
+to the interpreter was sent from that window.<br/>
+Typing C-c C-e when the cursor is at the number has the same effect.

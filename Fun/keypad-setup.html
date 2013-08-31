@@ -1,1 +1,22 @@
-keypad-setup is an autoloaded compiled Lisp function in `keypad.el'.<br/><br/>(keypad-setup SETUP &optional NUMLOCK SHIFT DECIMAL)<br/><br/>Set keypad bindings in `function-key-map' according to SETUP.<br/>If optional second argument NUMLOCK is non-nil, the NumLock On bindings<br/>are changed.  Otherwise, the NumLock Off bindings are changed.<br/>If optional third argument SHIFT is non-nil, the shifted keypad<br/>keys are bound.<br/><br/> Setup      Binding<br/> -------------------------------------------------------------<br/> 'prefix   Command prefix argument, i.e.  M-0 .. M-9 and M--<br/> 'S-cursor Bind shifted keypad keys to the shifted cursor movement keys.<br/> 'cursor   Bind keypad keys to the cursor movement keys.<br/> 'numeric  Plain numeric keypad, i.e. 0 .. 9 and .  (or DECIMAL arg)<br/> 'none     Removes all bindings for keypad keys in function-key-map;<br/>           this enables any user-defined bindings for the keypad keys<br/>           in the global and local keymaps.<br/><br/>If SETUP is 'numeric and the optional fourth argument DECIMAL is non-nil,<br/>the decimal key on the keypad is mapped to DECIMAL instead of `.'
+<strong>keypad-setup</strong> is an autoloaded compiled Lisp function in `<code>keypad.el</code>'.<br/>
+<br/>
+(keypad-setup SETUP &optional NUMLOCK SHIFT DECIMAL)<br/>
+<br/>
+Set keypad bindings in `function-key-map' according to SETUP.<br/>
+If optional second argument NUMLOCK is non-nil, the NumLock On bindings<br/>
+are changed.  Otherwise, the NumLock Off bindings are changed.<br/>
+If optional third argument SHIFT is non-nil, the shifted keypad<br/>
+keys are bound.<br/>
+<br/>
+ Setup      Binding<br/>
+ -------------------------------------------------------------<br/>
+ 'prefix   Command prefix argument, i.e.  M-0 .. M-9 and M--<br/>
+ 'S-cursor Bind shifted keypad keys to the shifted cursor movement keys.<br/>
+ 'cursor   Bind keypad keys to the cursor movement keys.<br/>
+ 'numeric  Plain numeric keypad, i.e. 0 .. 9 and .  (or DECIMAL arg)<br/>
+ 'none     Removes all bindings for keypad keys in function-key-map;<br/>
+           this enables any user-defined bindings for the keypad keys<br/>
+           in the global and local keymaps.<br/>
+<br/>
+If SETUP is 'numeric and the optional fourth argument DECIMAL is non-nil,<br/>
+the decimal key on the keypad is mapped to DECIMAL instead of `.'

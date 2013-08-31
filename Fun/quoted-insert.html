@@ -1,1 +1,25 @@
-quoted-insert is an interactive compiled Lisp function in `simple.el'.<br/><br/>It is bound to C-q.<br/><br/>(quoted-insert ARG)<br/><br/>Read next input character and insert it.<br/>This is useful for inserting control characters.<br/>With argument, insert ARG copies of the character.<br/><br/>If the first character you type after this command is an octal digit,<br/>you should type a sequence of octal digits which specify a character code.<br/>Any nondigit terminates the sequence.  If the terminator is a RET,<br/>it is discarded; any other terminator is used itself as input.<br/>The variable `read-quoted-char-radix' specifies the radix for this feature;<br/>set it to 10 or 16 to use decimal or hex instead of octal.<br/><br/>In overwrite mode, this function inserts the character anyway, and<br/>does not handle octal digits specially.  This means that if you use<br/>overwrite as your normal editing mode, you can use this function to<br/>insert characters when necessary.<br/><br/>In binary overwrite mode, this function does overwrite, and octal<br/>digits are interpreted as a character code.  This is intended to be<br/>useful for editing binary files.
+<strong>quoted-insert</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+It is bound to C-q.<br/>
+<br/>
+(quoted-insert ARG)<br/>
+<br/>
+Read next input character and insert it.<br/>
+This is useful for inserting control characters.<br/>
+With argument, insert ARG copies of the character.<br/>
+<br/>
+If the first character you type after this command is an octal digit,<br/>
+you should type a sequence of octal digits which specify a character code.<br/>
+Any nondigit terminates the sequence.  If the terminator is a RET,<br/>
+it is discarded; any other terminator is used itself as input.<br/>
+The variable `read-quoted-char-radix' specifies the radix for this feature;<br/>
+set it to 10 or 16 to use decimal or hex instead of octal.<br/>
+<br/>
+In overwrite mode, this function inserts the character anyway, and<br/>
+does not handle octal digits specially.  This means that if you use<br/>
+overwrite as your normal editing mode, you can use this function to<br/>
+insert characters when necessary.<br/>
+<br/>
+In binary overwrite mode, this function does overwrite, and octal<br/>
+digits are interpreted as a character code.  This is intended to be<br/>
+useful for editing binary files.

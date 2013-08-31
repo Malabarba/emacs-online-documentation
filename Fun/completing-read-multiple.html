@@ -1,1 +1,30 @@
-completing-read-multiple is an autoloaded compiled Lisp function in `crm.el'.<br/><br/>(completing-read-multiple PROMPT TABLE &optional PREDICATE REQUIRE-MATCH INITIAL-INPUT HIST DEF INHERIT-INPUT-METHOD)<br/><br/>Read multiple strings in the minibuffer, with completion.<br/>By using this functionality, a user may specify multiple strings at a<br/>single prompt, optionally using completion.<br/><br/>Multiple strings are specified by separating each of the strings with<br/>a prespecified separator character.  For example, if the separator<br/>character is a comma, the strings 'alice', 'bob', and 'eve' would be<br/>specified as 'alice,bob,eve'.<br/><br/>The default value for the separator character is the value of<br/>`crm-default-separator' (comma).  The separator character may be<br/>changed by modifying the value of `crm-separator'.<br/><br/>Contiguous strings of non-separator-characters are referred to as<br/>'elements'.  In the aforementioned example, the elements are: 'alice',<br/>'bob', and 'eve'.<br/><br/>Completion is available on a per-element basis.  For example, if the<br/>contents of the minibuffer are 'alice,bob,eve' and point is between<br/>'l' and 'i', pressing TAB operates on the element 'alice'.<br/><br/>The return value of this function is a list of the read strings.<br/><br/>See the documentation for `completing-read' for details on the arguments:<br/>PROMPT, TABLE, PREDICATE, REQUIRE-MATCH, INITIAL-INPUT, HIST, DEF, and<br/>INHERIT-INPUT-METHOD.
+<strong>completing-read-multiple</strong> is an autoloaded compiled Lisp function in `<code>crm.el</code>'.<br/>
+<br/>
+(completing-read-multiple PROMPT TABLE &optional PREDICATE REQUIRE-MATCH INITIAL-INPUT HIST DEF INHERIT-INPUT-METHOD)<br/>
+<br/>
+Read multiple strings in the minibuffer, with completion.<br/>
+By using this functionality, a user may specify multiple strings at a<br/>
+single prompt, optionally using completion.<br/>
+<br/>
+Multiple strings are specified by separating each of the strings with<br/>
+a prespecified separator character.  For example, if the separator<br/>
+character is a comma, the strings 'alice', 'bob', and 'eve' would be<br/>
+specified as 'alice,bob,eve'.<br/>
+<br/>
+The default value for the separator character is the value of<br/>
+`crm-default-separator' (comma).  The separator character may be<br/>
+changed by modifying the value of `crm-separator'.<br/>
+<br/>
+Contiguous strings of non-separator-characters are referred to as<br/>
+'elements'.  In the aforementioned example, the elements are: 'alice',<br/>
+'bob', and 'eve'.<br/>
+<br/>
+Completion is available on a per-element basis.  For example, if the<br/>
+contents of the minibuffer are 'alice,bob,eve' and point is between<br/>
+'l' and 'i', pressing TAB operates on the element 'alice'.<br/>
+<br/>
+The return value of this function is a list of the read strings.<br/>
+<br/>
+See the documentation for `completing-read' for details on the arguments:<br/>
+PROMPT, TABLE, PREDICATE, REQUIRE-MATCH, INITIAL-INPUT, HIST, DEF, and<br/>
+INHERIT-INPUT-METHOD.

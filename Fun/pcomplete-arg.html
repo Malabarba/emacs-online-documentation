@@ -1,1 +1,17 @@
-pcomplete-arg is a compiled Lisp function in `pcomplete.el'.<br/><br/>(pcomplete-arg &optional INDEX OFFSET)<br/><br/>Return the textual content of the INDEXth argument.<br/>INDEX is based from the current processing position.  If INDEX is<br/>positive, values returned are closer to the command argument; if<br/>negative, they are closer to the last argument.  If the INDEX is<br/>outside of the argument list, nil is returned.  The default value for<br/>INDEX is 0, meaning the current argument being examined.<br/><br/>The special indices `first' and `last' may be used to access those<br/>parts of the list.<br/><br/>The OFFSET argument is added to/taken away from the index that will be<br/>used.  This is really only useful with `first' and `last', for<br/>accessing absolute argument positions.
+<strong>pcomplete-arg</strong> is a compiled Lisp function in `<code>pcomplete.el</code>'.<br/>
+<br/>
+(pcomplete-arg &optional INDEX OFFSET)<br/>
+<br/>
+Return the textual content of the INDEXth argument.<br/>
+INDEX is based from the current processing position.  If INDEX is<br/>
+positive, values returned are closer to the command argument; if<br/>
+negative, they are closer to the last argument.  If the INDEX is<br/>
+outside of the argument list, nil is returned.  The default value for<br/>
+INDEX is 0, meaning the current argument being examined.<br/>
+<br/>
+The special indices `first' and `last' may be used to access those<br/>
+parts of the list.<br/>
+<br/>
+The OFFSET argument is added to/taken away from the index that will be<br/>
+used.  This is really only useful with `first' and `last', for<br/>
+accessing absolute argument positions.

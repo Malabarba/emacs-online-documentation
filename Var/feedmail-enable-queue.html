@@ -1,1 +1,27 @@
-feedmail-enable-queue is a variable defined in `feedmail.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>If non-nil, provide for stashing outgoing messages in a queue.<br/>This is the master on/off switch for feedmail message queuing.<br/>Queuing is quite handy for laptop-based users.  It's also handy if you<br/>get a lot of mail and process it more or less sequentially.  For<br/>example, you might change your mind about contents of a reply based on<br/>a message you see a bit later.<br/><br/>There is a separate queue for draft messages, intended to prevent<br/>you from accidentally sending incomplete messages.  The queues are<br/>disk-based and intended for later transmission.  The messages are<br/>queued in their raw state as they appear in the mail-mode buffer and<br/>can be arbitrarily edited later, before sending, by visiting the<br/>appropriate file in the queue directory (and setting the buffer to<br/>mail-mode or whatever).  If you visit a file in the queue directory<br/>and try to queue it again, it will just get saved in its existing file<br/>name.  You can move a message from the draft to the main queue or vice<br/>versa by pretending to send it and then selecting whichever queue<br/>directory you want at the prompt.  The right thing will happen.<br/><br/>To transmit all the messages in the queue, invoke the command<br/>`feedmail-run-the-queue' or `feedmail-run-the-queue-no-prompts'.<br/><br/>You can customize this variable.
+<strong>feedmail-enable-queue</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+If non-nil, provide for stashing outgoing messages in a queue.<br/>
+This is the master on/off switch for feedmail message queuing.<br/>
+Queuing is quite handy for laptop-based users.  It's also handy if you<br/>
+get a lot of mail and process it more or less sequentially.  For<br/>
+example, you might change your mind about contents of a reply based on<br/>
+a message you see a bit later.<br/>
+<br/>
+There is a separate queue for draft messages, intended to prevent<br/>
+you from accidentally sending incomplete messages.  The queues are<br/>
+disk-based and intended for later transmission.  The messages are<br/>
+queued in their raw state as they appear in the mail-mode buffer and<br/>
+can be arbitrarily edited later, before sending, by visiting the<br/>
+appropriate file in the queue directory (and setting the buffer to<br/>
+mail-mode or whatever).  If you visit a file in the queue directory<br/>
+and try to queue it again, it will just get saved in its existing file<br/>
+name.  You can move a message from the draft to the main queue or vice<br/>
+versa by pretending to send it and then selecting whichever queue<br/>
+directory you want at the prompt.  The right thing will happen.<br/>
+<br/>
+To transmit all the messages in the queue, invoke the command<br/>
+`feedmail-run-the-queue' or `feedmail-run-the-queue-no-prompts'.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,13 @@
-byte-compile-maybe-guarded is a Lisp macro in `bytecomp.el'.<br/><br/>(byte-compile-maybe-guarded CONDITION &rest BODY)<br/><br/>Execute forms in BODY, potentially guarded by CONDITION.<br/>CONDITION is a variable whose value is a test in an `if' or `cond'.<br/>BODY is the code to compile in the first arm of the if or the body of<br/>the cond clause.  If CONDITION's value is of the form (fboundp 'foo)<br/>or (boundp 'foo), the relevant warnings from BODY about foo's<br/>being undefined (or obsolete) will be suppressed.<br/><br/>If CONDITION's value is (not (featurep 'emacs)) or (featurep 'xemacs),<br/>that suppresses all warnings during execution of BODY.
+<strong>byte-compile-maybe-guarded</strong> is a Lisp macro in `<code>bytecomp.el</code>'.<br/>
+<br/>
+(byte-compile-maybe-guarded CONDITION &rest BODY)<br/>
+<br/>
+Execute forms in BODY, potentially guarded by CONDITION.<br/>
+CONDITION is a variable whose value is a test in an `if' or `cond'.<br/>
+BODY is the code to compile in the first arm of the if or the body of<br/>
+the cond clause.  If CONDITION's value is of the form (fboundp 'foo)<br/>
+or (boundp 'foo), the relevant warnings from BODY about foo's<br/>
+being undefined (or obsolete) will be suppressed.<br/>
+<br/>
+If CONDITION's value is (not (featurep 'emacs)) or (featurep 'xemacs),<br/>
+that suppresses all warnings during execution of BODY.

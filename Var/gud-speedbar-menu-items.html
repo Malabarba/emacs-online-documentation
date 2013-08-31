@@ -1,1 +1,37 @@
-gud-speedbar-menu-items is a variable defined in `gud.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Additional menu items to add to the speedbar frame.<br/><br/>Value: (["Jump to stack frame" speedbar-edit-line :visible<br/>  (not<br/>   (eq<br/>    (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>    'gdbmi))]<br/> ["Edit value" speedbar-edit-line :visible<br/>  (eq<br/>   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>   'gdbmi)]<br/> ["Delete expression" gdb-var-delete :visible<br/>  (eq<br/>   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>   'gdbmi)]<br/> ["Auto raise frame" gdb-speedbar-auto-raise :style toggle :selected gdb-speedbar-auto-raise :visible<br/>  (eq<br/>   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>   'gdbmi)]<br/> ("Output Format" :visible<br/>  (eq<br/>   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>   'gdbmi)<br/>  ["Binary"<br/>   (gdb-var-set-format "binary")<br/>   t]<br/>  ["Natural"<br/>   (gdb-var-set-format "natural")<br/>   t]<br/>  ["Hexadecimal"<br/>   (gdb-var-set-format "hexadecimal")<br/>   t]))<br/><br/>
+<strong>gud-speedbar-menu-items</strong> is a variable defined in `<code>gud.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Additional menu items to add to the speedbar frame.<br/>
+<br/>
+Value: (["Jump to stack frame" speedbar-edit-line :visible<br/>
+  (not<br/>
+   (eq<br/>
+    (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>
+    'gdbmi))]<br/>
+ ["Edit value" speedbar-edit-line :visible<br/>
+  (eq<br/>
+   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>
+   'gdbmi)]<br/>
+ ["Delete expression" gdb-var-delete :visible<br/>
+  (eq<br/>
+   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>
+   'gdbmi)]<br/>
+ ["Auto raise frame" gdb-speedbar-auto-raise :style toggle :selected gdb-speedbar-auto-raise :visible<br/>
+  (eq<br/>
+   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>
+   'gdbmi)]<br/>
+ ("Output Format" :visible<br/>
+  (eq<br/>
+   (buffer-local-value 'gud-minor-mode gud-comint-buffer)<br/>
+   'gdbmi)<br/>
+  ["Binary"<br/>
+   (gdb-var-set-format "binary")<br/>
+   t]<br/>
+  ["Natural"<br/>
+   (gdb-var-set-format "natural")<br/>
+   t]<br/>
+  ["Hexadecimal"<br/>
+   (gdb-var-set-format "hexadecimal")<br/>
+   t]))<br/>
+<br/>

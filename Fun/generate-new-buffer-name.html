@@ -1,1 +1,14 @@
-generate-new-buffer-name is a built-in function in `C source code'.<br/><br/>(generate-new-buffer-name NAME &optional IGNORE)<br/><br/>Return a string that is the name of no existing buffer based on NAME.<br/>If there is no live buffer named NAME, then return NAME.<br/>Otherwise modify name by appending `<NUMBER>', incrementing NUMBER<br/>(starting at 2) until an unused name is found, and then return that name.<br/>Optional second argument IGNORE specifies a name that is okay to use (if<br/>it is in the sequence to be tried) even if a buffer with that name exists.<br/><br/>If NAME begins with a space (i.e., a buffer that is not normally<br/>visible to users), then if buffer NAME already exists a random number<br/>is first appended to NAME, to speed up finding a non-existent buffer.
+<strong>generate-new-buffer-name</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(generate-new-buffer-name NAME &optional IGNORE)<br/>
+<br/>
+Return a string that is the name of no existing buffer based on NAME.<br/>
+If there is no live buffer named NAME, then return NAME.<br/>
+Otherwise modify name by appending `<NUMBER>', incrementing NUMBER<br/>
+(starting at 2) until an unused name is found, and then return that name.<br/>
+Optional second argument IGNORE specifies a name that is okay to use (if<br/>
+it is in the sequence to be tried) even if a buffer with that name exists.<br/>
+<br/>
+If NAME begins with a space (i.e., a buffer that is not normally<br/>
+visible to users), then if buffer NAME already exists a random number<br/>
+is first appended to NAME, to speed up finding a non-existent buffer.

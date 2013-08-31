@@ -1,1 +1,18 @@
-edebug-signal is a compiled Lisp function in `edebug.el'.<br/><br/>(edebug-signal SIGNAL-NAME SIGNAL-DATA)<br/><br/>Signal an error.  Args are SIGNAL-NAME, and associated DATA.<br/>A signal name is a symbol with an `error-conditions' property<br/>that is a list of condition names.<br/>A handler for any of those names will get to handle this signal.<br/>The symbol `error' should always be one of them.<br/><br/>DATA should be a list.  Its elements are printed as part of the error message.<br/>If the signal is handled, DATA is made available to the handler.<br/>See `condition-case'.<br/><br/>This is the Edebug replacement for the standard `signal'.  It should<br/>only be active while Edebug is.  It checks `debug-on-error' to see<br/>whether it should call the debugger.  When execution is resumed, the<br/>error is signaled again.
+<strong>edebug-signal</strong> is a compiled Lisp function in `<code>edebug.el</code>'.<br/>
+<br/>
+(edebug-signal SIGNAL-NAME SIGNAL-DATA)<br/>
+<br/>
+Signal an error.  Args are SIGNAL-NAME, and associated DATA.<br/>
+A signal name is a symbol with an `error-conditions' property<br/>
+that is a list of condition names.<br/>
+A handler for any of those names will get to handle this signal.<br/>
+The symbol `error' should always be one of them.<br/>
+<br/>
+DATA should be a list.  Its elements are printed as part of the error message.<br/>
+If the signal is handled, DATA is made available to the handler.<br/>
+See `condition-case'.<br/>
+<br/>
+This is the Edebug replacement for the standard `signal'.  It should<br/>
+only be active while Edebug is.  It checks `debug-on-error' to see<br/>
+whether it should call the debugger.  When execution is resumed, the<br/>
+error is signaled again.

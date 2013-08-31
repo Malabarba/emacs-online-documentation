@@ -1,1 +1,33 @@
-ps-right-footer is a variable defined in `ps-print.el'.<br/>Its value is<br/>("/pagenumberstring load" ps-time-stamp-locale-default ps-time-stamp-hh:mm:ss)<br/><br/><br/>Documentation:<br/>The items to display (each on a line) on the right part of the page footer.<br/>This applies to generating PostScript.<br/><br/>See the variable `ps-left-footer' for a description of the format of this<br/>variable.<br/><br/>There are the following basic functions implemented:<br/><br/>   `ps-time-stamp-locale-default'	Return the locale's "preferred" date<br/>					as, for example, "06/18/01".<br/><br/>   `ps-time-stamp-hh:mm:ss'		Return time as "17:28:31".<br/><br/>   `ps-time-stamp-mon-dd-yyyy'		Return date as "Jun 18 2001".<br/><br/>   `ps-time-stamp-yyyy-mm-dd'		Return date as "2001-06-18" (ISO<br/>					date).<br/><br/>   `ps-time-stamp-iso8601'		Alias for `ps-time-stamp-yyyy-mm-dd'.<br/><br/>You can also create your own time stamp function by using `format-time-string'<br/>(which see).<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 21.1 of Emacs.<br/>
+<strong>ps-right-footer</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
+Its value is<br/>
+("/pagenumberstring load" ps-time-stamp-locale-default ps-time-stamp-hh:mm:ss)<br/>
+<br/>
+<br/>
+Documentation:<br/>
+The items to display (each on a line) on the right part of the page footer.<br/>
+This applies to generating PostScript.<br/>
+<br/>
+See the variable `ps-left-footer' for a description of the format of this<br/>
+variable.<br/>
+<br/>
+There are the following basic functions implemented:<br/>
+<br/>
+   `ps-time-stamp-locale-default'	Return the locale's "preferred" date<br/>
+					as, for example, "06/18/01".<br/>
+<br/>
+   `ps-time-stamp-hh:mm:ss'		Return time as "17:28:31".<br/>
+<br/>
+   `ps-time-stamp-mon-dd-yyyy'		Return date as "Jun 18 2001".<br/>
+<br/>
+   `ps-time-stamp-yyyy-mm-dd'		Return date as "2001-06-18" (ISO<br/>
+					date).<br/>
+<br/>
+   `ps-time-stamp-iso8601'		Alias for `ps-time-stamp-yyyy-mm-dd'.<br/>
+<br/>
+You can also create your own time stamp function by using `format-time-string'<br/>
+(which see).<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 21.1 of Emacs.<br/>

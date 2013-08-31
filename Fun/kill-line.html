@@ -1,1 +1,33 @@
-kill-line is an interactive compiled Lisp function in `simple.el'.<br/><br/>It is bound to C-k, <deleteline>.<br/><br/>(kill-line &optional ARG)<br/><br/>Kill the rest of the current line; if no nonblanks there, kill thru newline.<br/>With prefix argument ARG, kill that many lines from point.<br/>Negative arguments kill lines backward.<br/>With zero argument, kills the text before point on the current line.<br/><br/>When calling from a program, nil means "no arg",<br/>a number counts as a prefix arg.<br/><br/>To kill a whole line, when point is not at the beginning, type C-a C-k C-k.<br/><br/>If `show-trailing-whitespace' is non-nil, this command will just<br/>kill the rest of the current line, even if there are only<br/>nonblanks there.<br/><br/>If `kill-whole-line' is non-nil, then this command kills the whole line<br/>including its terminating newline, when used at the beginning of a line<br/>with no argument.  As a consequence, you can always kill a whole line<br/>by typing C-a C-k.<br/><br/>If you want to append the killed line to the last killed text,<br/>use C-M-w before C-k.<br/><br/>If the buffer is read-only, Emacs will beep and refrain from deleting<br/>the line, but put the line in the kill ring anyway.  This means that<br/>you can use this command to copy text from a read-only buffer.<br/>(If the variable `kill-read-only-ok' is non-nil, then this won't<br/>even beep.)
+<strong>kill-line</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
+<br/>
+It is bound to C-k, <deleteline>.<br/>
+<br/>
+(kill-line &optional ARG)<br/>
+<br/>
+Kill the rest of the current line; if no nonblanks there, kill thru newline.<br/>
+With prefix argument ARG, kill that many lines from point.<br/>
+Negative arguments kill lines backward.<br/>
+With zero argument, kills the text before point on the current line.<br/>
+<br/>
+When calling from a program, nil means "no arg",<br/>
+a number counts as a prefix arg.<br/>
+<br/>
+To kill a whole line, when point is not at the beginning, type C-a C-k C-k.<br/>
+<br/>
+If `show-trailing-whitespace' is non-nil, this command will just<br/>
+kill the rest of the current line, even if there are only<br/>
+nonblanks there.<br/>
+<br/>
+If `kill-whole-line' is non-nil, then this command kills the whole line<br/>
+including its terminating newline, when used at the beginning of a line<br/>
+with no argument.  As a consequence, you can always kill a whole line<br/>
+by typing C-a C-k.<br/>
+<br/>
+If you want to append the killed line to the last killed text,<br/>
+use C-M-w before C-k.<br/>
+<br/>
+If the buffer is read-only, Emacs will beep and refrain from deleting<br/>
+the line, but put the line in the kill ring anyway.  This means that<br/>
+you can use this command to copy text from a read-only buffer.<br/>
+(If the variable `kill-read-only-ok' is non-nil, then this won't<br/>
+even beep.)

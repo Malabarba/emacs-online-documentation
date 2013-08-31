@@ -1,1 +1,45 @@
-c-lineup-cpp-define is a compiled Lisp function in `cc-align.el'.<br/><br/>(c-lineup-cpp-define LANGELEM)<br/><br/>Line up macro continuation lines according to the indentation of<br/>the construct preceding the macro.  E.g.:<br/><br/>v beg of preceding constr      v beg of preceding constr<br/>                             int dribble() {<br/>const char msg[] =             if (!running)<br/>  "Some text.";	         error("Not running!");<br/><br/>#define X(A, B)            #define X(A, B)    do {                <->      do {                <- c-lineup-cpp-define<br/>  printf (A, B);               printf (A, B); } while (0)                    } while (0)<br/><br/>If `c-syntactic-indentation-in-macros' is non-nil, the function<br/>returns the relative indentation to the macro start line to allow<br/>accumulation with other offsets.  E.g. in the following cases,<br/>cpp-define-intro is combined with the statement-block-intro that comes<br/>from the "do {" that hangs on the "#define" line:<br/><br/>                             int dribble() {<br/>const char msg[] =             if (!running)<br/>  "Some text.";	         error("Not running!");<br/><br/>#define X(A, B) do {       #define X(A, B) do {   printf (A, B);      <->      printf (A, B);    <- c-lineup-cpp-define<br/>  this->refs++;                this->refs++;    } while (0)             <->    } while (0)           <- c-lineup-cpp-define<br/><br/>The relative indentation returned by `c-lineup-cpp-define' is zero and<br/>two, respectively, in these two examples.  They are then added to the<br/>two column indentation that statement-block-intro gives in both cases<br/>here.<br/><br/>If the relative indentation is zero, then nil is returned instead.<br/>That is useful in a list expression to specify the default indentation<br/>on the top level.<br/><br/>If `c-syntactic-indentation-in-macros' is nil then this function keeps<br/>the current indentation, except for empty lines (ignoring the ending<br/>backslash) where it takes the indentation from the closest preceding<br/>nonempty line in the macro.  If there's no such line in the macro then<br/>the indentation is taken from the construct preceding it, as described<br/>above.<br/><br/>Works with: cpp-define-intro.
+<strong>c-lineup-cpp-define</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
+<br/>
+(c-lineup-cpp-define LANGELEM)<br/>
+<br/>
+Line up macro continuation lines according to the indentation of<br/>
+the construct preceding the macro.  E.g.:<br/>
+<br/>
+v beg of preceding constr      v beg of preceding constr<br/>
+                             int dribble() {<br/>
+const char msg[] =             if (!running)<br/>
+  "Some text.";	         error("Not running!");<br/>
+<br/>
+#define X(A, B)            #define X(A, B)    do {                <->      do {                <- c-lineup-cpp-define<br/>
+  printf (A, B);               printf (A, B); } while (0)                    } while (0)<br/>
+<br/>
+If `c-syntactic-indentation-in-macros' is non-nil, the function<br/>
+returns the relative indentation to the macro start line to allow<br/>
+accumulation with other offsets.  E.g. in the following cases,<br/>
+cpp-define-intro is combined with the statement-block-intro that comes<br/>
+from the "do {" that hangs on the "#define" line:<br/>
+<br/>
+                             int dribble() {<br/>
+const char msg[] =             if (!running)<br/>
+  "Some text.";	         error("Not running!");<br/>
+<br/>
+#define X(A, B) do {       #define X(A, B) do {   printf (A, B);      <->      printf (A, B);    <- c-lineup-cpp-define<br/>
+  this->refs++;                this->refs++;    } while (0)             <->    } while (0)           <- c-lineup-cpp-define<br/>
+<br/>
+The relative indentation returned by `c-lineup-cpp-define' is zero and<br/>
+two, respectively, in these two examples.  They are then added to the<br/>
+two column indentation that statement-block-intro gives in both cases<br/>
+here.<br/>
+<br/>
+If the relative indentation is zero, then nil is returned instead.<br/>
+That is useful in a list expression to specify the default indentation<br/>
+on the top level.<br/>
+<br/>
+If `c-syntactic-indentation-in-macros' is nil then this function keeps<br/>
+the current indentation, except for empty lines (ignoring the ending<br/>
+backslash) where it takes the indentation from the closest preceding<br/>
+nonempty line in the macro.  If there's no such line in the macro then<br/>
+the indentation is taken from the construct preceding it, as described<br/>
+above.<br/>
+<br/>
+Works with: cpp-define-intro.

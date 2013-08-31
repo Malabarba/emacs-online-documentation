@@ -1,1 +1,35 @@
-verilog-error-font-lock-keywords is a variable defined in `verilog-mode.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Keywords to also highlight in Verilog *compilation* buffers.<br/>Only used in XEmacs; GNU Emacs uses `verilog-error-regexp-emacs-alist'.<br/><br/>Value:<br/>(("\\(Error\\|Warning\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 bold t)<br/> ("\\(Error\\|Warning\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 bold t)<br/> ("([WE][0-9A-Z]+)[ 	]+\\([^ 	\n,]+\\)[, 	]+\\(line[ 	]+\\)?\\([0-9]+\\):.*$" 1 bold t)<br/> ("([WE][0-9A-Z]+)[ 	]+\\([^ 	\n,]+\\)[, 	]+\\(line[ 	]+\\)?\\([0-9]+\\):.*$" 3 bold t)<br/> (".*\\*[WE],[0-9A-Z]+\\([[0-9A-Z_,]+]\\)? (\\([^ 	,]+\\),\\([0-9]+\\)|" 2 bold t)<br/> (".*\\*[WE],[0-9A-Z]+\\([[0-9A-Z_,]+]\\)? (\\([^ 	,]+\\),\\([0-9]+\\)|" 3 bold t)<br/> ("[^\n]*\\[\\([^:]+\\):\\([0-9]+\\)\\]" 1 bold t)<br/> ("[^\n]*\\[\\([^:]+\\):\\([0-9]+\\)\\]" 2 bold t)<br/> ("\\(WARNING\\|ERROR\\|INFO\\): \\([^,]+\\), line \\([0-9]+\\):" 2 bold t)<br/> ("\\(WARNING\\|ERROR\\|INFO\\): \\([^,]+\\), line \\([0-9]+\\):" 3 bold t)<br/> ("\\([a-zA-Z]?:?[^:( 	\n]+\\)[:(][ 	]*\\([0-9]+\\)\\([) 	]\\|:\\([^0-9\n]\\|\\([0-9]+:\\)\\)\\)" 1 bold t)<br/> ("\\([a-zA-Z]?:?[^:( 	\n]+\\)[:(][ 	]*\\([0-9]+\\)\\([) 	]\\|:\\([^0-9\n]\\|\\([0-9]+:\\)\\)\\)" 1 bold t)<br/> ("\\(Error\\|Warning\\):[^(]*(\\([^ 	]+\\) line *\\([0-9]+\\))" 2 bold t)<br/> ("\\(Error\\|Warning\\):[^(]*(\\([^ 	]+\\) line *\\([0-9]+\\))" 3 bold t)<br/> ("Warning:.*(port.*(\\([^ 	]+\\) line \\([0-9]+\\))" 1 bold t)<br/> ("Warning:.*(port.*(\\([^ 	]+\\) line \\([0-9]+\\))" 1 bold t)<br/> ("\\(Error\\|Warning\\):[\n.]*\\([^ 	]+\\) *\\([0-9]+\\):" 2 bold t)<br/> ("\\(Error\\|Warning\\):[\n.]*\\([^ 	]+\\) *\\([0-9]+\\):" 3 bold t)<br/> ("syntax error:.*\n\\([^ 	]+\\) *\\([0-9]+\\):" 1 bold t)<br/> ("syntax error:.*\n\\([^ 	]+\\) *\\([0-9]+\\):" 2 bold t)<br/> (".*%?\\(Error\\|Warning\\)\\(-[^:]+\\|\\):[\n ]*\\([^ 	:]+\\):\\([0-9]+\\):" 3 bold t)<br/> (".*%?\\(Error\\|Warning\\)\\(-[^:]+\\|\\):[\n ]*\\([^ 	:]+\\):\\([0-9]+\\):" 4 bold t)<br/> ("^In file \\([^ 	]+\\)[ 	]+line[ 	]+\\([0-9]+\\):\n[^\n]*\n[^\n]*\n\\(Warning\\|Error\\|Failure\\)[^\n]*" 1 bold t)<br/> ("^In file \\([^ 	]+\\)[ 	]+line[ 	]+\\([0-9]+\\):\n[^\n]*\n[^\n]*\n\\(Warning\\|Error\\|Failure\\)[^\n]*" 2 bold t))<br/><br/>
+<strong>verilog-error-font-lock-keywords</strong> is a variable defined in `<code>verilog-mode.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Keywords to also highlight in Verilog *compilation* buffers.<br/>
+Only used in XEmacs; GNU Emacs uses `verilog-error-regexp-emacs-alist'.<br/>
+<br/>
+Value:<br/>
+(("\\(Error\\|Warning\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 bold t)<br/>
+ ("\\(Error\\|Warning\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 bold t)<br/>
+ ("([WE][0-9A-Z]+)[ 	]+\\([^ 	\n,]+\\)[, 	]+\\(line[ 	]+\\)?\\([0-9]+\\):.*$" 1 bold t)<br/>
+ ("([WE][0-9A-Z]+)[ 	]+\\([^ 	\n,]+\\)[, 	]+\\(line[ 	]+\\)?\\([0-9]+\\):.*$" 3 bold t)<br/>
+ (".*\\*[WE],[0-9A-Z]+\\([[0-9A-Z_,]+]\\)? (\\([^ 	,]+\\),\\([0-9]+\\)|" 2 bold t)<br/>
+ (".*\\*[WE],[0-9A-Z]+\\([[0-9A-Z_,]+]\\)? (\\([^ 	,]+\\),\\([0-9]+\\)|" 3 bold t)<br/>
+ ("[^\n]*\\[\\([^:]+\\):\\([0-9]+\\)\\]" 1 bold t)<br/>
+ ("[^\n]*\\[\\([^:]+\\):\\([0-9]+\\)\\]" 2 bold t)<br/>
+ ("\\(WARNING\\|ERROR\\|INFO\\): \\([^,]+\\), line \\([0-9]+\\):" 2 bold t)<br/>
+ ("\\(WARNING\\|ERROR\\|INFO\\): \\([^,]+\\), line \\([0-9]+\\):" 3 bold t)<br/>
+ ("\\([a-zA-Z]?:?[^:( 	\n]+\\)[:(][ 	]*\\([0-9]+\\)\\([) 	]\\|:\\([^0-9\n]\\|\\([0-9]+:\\)\\)\\)" 1 bold t)<br/>
+ ("\\([a-zA-Z]?:?[^:( 	\n]+\\)[:(][ 	]*\\([0-9]+\\)\\([) 	]\\|:\\([^0-9\n]\\|\\([0-9]+:\\)\\)\\)" 1 bold t)<br/>
+ ("\\(Error\\|Warning\\):[^(]*(\\([^ 	]+\\) line *\\([0-9]+\\))" 2 bold t)<br/>
+ ("\\(Error\\|Warning\\):[^(]*(\\([^ 	]+\\) line *\\([0-9]+\\))" 3 bold t)<br/>
+ ("Warning:.*(port.*(\\([^ 	]+\\) line \\([0-9]+\\))" 1 bold t)<br/>
+ ("Warning:.*(port.*(\\([^ 	]+\\) line \\([0-9]+\\))" 1 bold t)<br/>
+ ("\\(Error\\|Warning\\):[\n.]*\\([^ 	]+\\) *\\([0-9]+\\):" 2 bold t)<br/>
+ ("\\(Error\\|Warning\\):[\n.]*\\([^ 	]+\\) *\\([0-9]+\\):" 3 bold t)<br/>
+ ("syntax error:.*\n\\([^ 	]+\\) *\\([0-9]+\\):" 1 bold t)<br/>
+ ("syntax error:.*\n\\([^ 	]+\\) *\\([0-9]+\\):" 2 bold t)<br/>
+ (".*%?\\(Error\\|Warning\\)\\(-[^:]+\\|\\):[\n ]*\\([^ 	:]+\\):\\([0-9]+\\):" 3 bold t)<br/>
+ (".*%?\\(Error\\|Warning\\)\\(-[^:]+\\|\\):[\n ]*\\([^ 	:]+\\):\\([0-9]+\\):" 4 bold t)<br/>
+ ("^In file \\([^ 	]+\\)[ 	]+line[ 	]+\\([0-9]+\\):\n[^\n]*\n[^\n]*\n\\(Warning\\|Error\\|Failure\\)[^\n]*" 1 bold t)<br/>
+ ("^In file \\([^ 	]+\\)[ 	]+line[ 	]+\\([0-9]+\\):\n[^\n]*\n[^\n]*\n\\(Warning\\|Error\\|Failure\\)[^\n]*" 2 bold t))<br/>
+<br/>

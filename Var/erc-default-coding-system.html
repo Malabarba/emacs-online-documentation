@@ -1,1 +1,26 @@
-erc-default-coding-system is a variable defined in `erc.el'.<br/>Its value is (utf-8 . undecided)<br/><br/>  This variable is an alias for `erc-server-coding-system'.<br/>  This variable is obsolete since ERC 5.1;<br/>  use `erc-server-coding-system' instead.<br/><br/>Documentation:<br/>The default coding system for incoming and outgoing text.<br/>This is either a coding system, a cons, a function, or nil.<br/><br/>If a cons, the encoding system for outgoing text is in the car<br/>and the decoding system for incoming text is in the cdr. The most<br/>interesting use for this is to put `undecided' in the cdr. This<br/>means that `erc-coding-system-precedence' will be consulted, and the<br/>first match there will be used.<br/><br/>If a function, it is called with the argument `target' and should<br/>return a coding system or a cons as described above.<br/><br/>If you need to send non-ASCII text to people not using a client that<br/>does decoding on its own, you must tell ERC what encoding to use.<br/>Emacs cannot guess it, since it does not know what the people on the<br/>other end of the line are using.<br/><br/>You can customize this variable.
+<strong>erc-default-coding-system</strong> is a variable defined in `<code>erc.el</code>'.<br/>
+Its value is (utf-8 . undecided)<br/>
+<br/>
+  This variable is an alias for `erc-server-coding-system'.<br/>
+  This variable is obsolete since ERC 5.1;<br/>
+  use `erc-server-coding-system' instead.<br/>
+<br/>
+Documentation:<br/>
+The default coding system for incoming and outgoing text.<br/>
+This is either a coding system, a cons, a function, or nil.<br/>
+<br/>
+If a cons, the encoding system for outgoing text is in the car<br/>
+and the decoding system for incoming text is in the cdr. The most<br/>
+interesting use for this is to put `undecided' in the cdr. This<br/>
+means that `erc-coding-system-precedence' will be consulted, and the<br/>
+first match there will be used.<br/>
+<br/>
+If a function, it is called with the argument `target' and should<br/>
+return a coding system or a cons as described above.<br/>
+<br/>
+If you need to send non-ASCII text to people not using a client that<br/>
+does decoding on its own, you must tell ERC what encoding to use.<br/>
+Emacs cannot guess it, since it does not know what the people on the<br/>
+other end of the line are using.<br/>
+<br/>
+You can customize this variable.

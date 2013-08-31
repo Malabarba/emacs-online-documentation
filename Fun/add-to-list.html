@@ -1,1 +1,18 @@
-add-to-list is a compiled Lisp function in `subr.el'.<br/><br/>(add-to-list LIST-VAR ELEMENT &optional APPEND COMPARE-FN)<br/><br/>Add ELEMENT to the value of LIST-VAR if it isn't there yet.<br/>The test for presence of ELEMENT is done with `equal',<br/>or with COMPARE-FN if that's non-nil.<br/>If ELEMENT is added, it is added at the beginning of the list,<br/>unless the optional argument APPEND is non-nil, in which case<br/>ELEMENT is added at the end.<br/><br/>The return value is the new value of LIST-VAR.<br/><br/>If you want to use `add-to-list' on a variable that is not defined<br/>until a certain package is loaded, you should put the call to `add-to-list'<br/>into a hook function that will be run only after loading the package.<br/>`eval-after-load' provides one way to do this.  In some cases<br/>other hooks, such as major mode hooks, can do the job.
+<strong>add-to-list</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
+<br/>
+(add-to-list LIST-VAR ELEMENT &optional APPEND COMPARE-FN)<br/>
+<br/>
+Add ELEMENT to the value of LIST-VAR if it isn't there yet.<br/>
+The test for presence of ELEMENT is done with `equal',<br/>
+or with COMPARE-FN if that's non-nil.<br/>
+If ELEMENT is added, it is added at the beginning of the list,<br/>
+unless the optional argument APPEND is non-nil, in which case<br/>
+ELEMENT is added at the end.<br/>
+<br/>
+The return value is the new value of LIST-VAR.<br/>
+<br/>
+If you want to use `add-to-list' on a variable that is not defined<br/>
+until a certain package is loaded, you should put the call to `add-to-list'<br/>
+into a hook function that will be run only after loading the package.<br/>
+`eval-after-load' provides one way to do this.  In some cases<br/>
+other hooks, such as major mode hooks, can do the job.

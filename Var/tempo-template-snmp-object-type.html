@@ -1,1 +1,32 @@
-tempo-template-snmp-object-type's value is shown below.<br/><br/>Documentation:<br/>Not documented as a variable.<br/><br/>Value: (><br/> (P "Object Label: ")<br/> " OBJECT-TYPE" n> "SYNTAX  "<br/> (if tempo-interactive<br/>     (snmp-completing-read "Syntax: " snmp-mode-syntax-list nil nil)<br/>   p)<br/> n> "ACCESS  "<br/> (if tempo-interactive<br/>     (snmp-completing-read "Access: " snmp-mode-access-list nil t)<br/>   p)<br/> n> "STATUS  "<br/> (if tempo-interactive<br/>     (snmp-completing-read "Status: " snmp-mode-status-list nil t)<br/>   p)<br/> n> "DESCRIPTION" n> "\"" p "\"" n><br/> (P "Default Value: " defval t)<br/> (if<br/>     (string= ""<br/>	      (tempo-lookup-named 'defval))<br/>     nil<br/>   '(l "DEFVAL { "<br/>       (s defval)<br/>       " }" n>))<br/> "::= { "<br/> (p "OID: ")<br/> " }" n)<br/><br/>
+<strong>tempo-template-snmp-object-type</strong>'s value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Not documented as a variable.<br/>
+<br/>
+Value: (><br/>
+ (P "Object Label: ")<br/>
+ " OBJECT-TYPE" n> "SYNTAX  "<br/>
+ (if tempo-interactive<br/>
+     (snmp-completing-read "Syntax: " snmp-mode-syntax-list nil nil)<br/>
+   p)<br/>
+ n> "ACCESS  "<br/>
+ (if tempo-interactive<br/>
+     (snmp-completing-read "Access: " snmp-mode-access-list nil t)<br/>
+   p)<br/>
+ n> "STATUS  "<br/>
+ (if tempo-interactive<br/>
+     (snmp-completing-read "Status: " snmp-mode-status-list nil t)<br/>
+   p)<br/>
+ n> "DESCRIPTION" n> "\"" p "\"" n><br/>
+ (P "Default Value: " defval t)<br/>
+ (if<br/>
+     (string= ""<br/>
+	      (tempo-lookup-named 'defval))<br/>
+     nil<br/>
+   '(l "DEFVAL { "<br/>
+       (s defval)<br/>
+       " }" n>))<br/>
+ "::= { "<br/>
+ (p "OID: ")<br/>
+ " }" n)<br/>
+<br/>

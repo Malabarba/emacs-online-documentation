@@ -1,1 +1,43 @@
-epa--select-safe-coding-system is an alias for `select-safe-coding-system' in `epa.el'.<br/><br/>(epa--select-safe-coding-system FROM TO &optional DEFAULT-CODING-SYSTEM ACCEPT-DEFAULT-P FILE)<br/><br/>Ask a user to select a safe coding system from candidates.<br/>The candidates of coding systems which can safely encode a text<br/>between FROM and TO are shown in a popup window.  Among them, the most<br/>proper one is suggested as the default.<br/><br/>The list of `buffer-file-coding-system' of the current buffer, the<br/>default `buffer-file-coding-system', and the most preferred coding<br/>system (if it corresponds to a MIME charset) is treated as the<br/>default coding system list.  Among them, the first one that safely<br/>encodes the text is normally selected silently and returned without<br/>any user interaction.  See also the command `prefer-coding-system'.<br/><br/>However, the user is queried if the chosen coding system is<br/>inconsistent with what would be selected by `find-auto-coding' from<br/>coding cookies &c. if the contents of the region were read from a<br/>file.  (That could lead to data corruption in a file subsequently<br/>re-visited and edited.)<br/><br/>Optional 3rd arg DEFAULT-CODING-SYSTEM specifies a coding system or a<br/>list of coding systems to be prepended to the default coding system<br/>list.  However, if DEFAULT-CODING-SYSTEM is a list and the first<br/>element is t, the cdr part is used as the default coding system list,<br/>i.e. current `buffer-file-coding-system', default `buffer-file-coding-system',<br/>and the most preferred coding system are not used.<br/><br/>Optional 4th arg ACCEPT-DEFAULT-P, if non-nil, is a function to<br/>determine the acceptability of the silently selected coding system.<br/>It is called with that coding system, and should return nil if it<br/>should not be silently selected and thus user interaction is required.<br/><br/>Optional 5th arg FILE is the file name to use for this purpose.<br/>That is different from `buffer-file-name' when handling `write-region'<br/>(for example).<br/><br/>The variable `select-safe-coding-system-accept-default-p', if non-nil,<br/>overrides ACCEPT-DEFAULT-P.<br/><br/>Kludgy feature: if FROM is a string, the string is the target text,<br/>and TO is ignored.
+<strong>epa--select-safe-coding-system</strong> is an alias for `select-safe-coding-system' in `<code>epa.el</code>'.<br/>
+<br/>
+(epa--select-safe-coding-system FROM TO &optional DEFAULT-CODING-SYSTEM ACCEPT-DEFAULT-P FILE)<br/>
+<br/>
+Ask a user to select a safe coding system from candidates.<br/>
+The candidates of coding systems which can safely encode a text<br/>
+between FROM and TO are shown in a popup window.  Among them, the most<br/>
+proper one is suggested as the default.<br/>
+<br/>
+The list of `buffer-file-coding-system' of the current buffer, the<br/>
+default `buffer-file-coding-system', and the most preferred coding<br/>
+system (if it corresponds to a MIME charset) is treated as the<br/>
+default coding system list.  Among them, the first one that safely<br/>
+encodes the text is normally selected silently and returned without<br/>
+any user interaction.  See also the command `prefer-coding-system'.<br/>
+<br/>
+However, the user is queried if the chosen coding system is<br/>
+inconsistent with what would be selected by `find-auto-coding' from<br/>
+coding cookies &c. if the contents of the region were read from a<br/>
+file.  (That could lead to data corruption in a file subsequently<br/>
+re-visited and edited.)<br/>
+<br/>
+Optional 3rd arg DEFAULT-CODING-SYSTEM specifies a coding system or a<br/>
+list of coding systems to be prepended to the default coding system<br/>
+list.  However, if DEFAULT-CODING-SYSTEM is a list and the first<br/>
+element is t, the cdr part is used as the default coding system list,<br/>
+i.e. current `buffer-file-coding-system', default `buffer-file-coding-system',<br/>
+and the most preferred coding system are not used.<br/>
+<br/>
+Optional 4th arg ACCEPT-DEFAULT-P, if non-nil, is a function to<br/>
+determine the acceptability of the silently selected coding system.<br/>
+It is called with that coding system, and should return nil if it<br/>
+should not be silently selected and thus user interaction is required.<br/>
+<br/>
+Optional 5th arg FILE is the file name to use for this purpose.<br/>
+That is different from `buffer-file-name' when handling `write-region'<br/>
+(for example).<br/>
+<br/>
+The variable `select-safe-coding-system-accept-default-p', if non-nil,<br/>
+overrides ACCEPT-DEFAULT-P.<br/>
+<br/>
+Kludgy feature: if FROM is a string, the string is the target text,<br/>
+and TO is ignored.

@@ -1,1 +1,128 @@
-table-insert is an interactive autoloaded compiled Lisp function in `table.el'.<br/><br/>It is bound to <menu-bar> <tools> <Table> <Insert> <a Table...>.<br/><br/>(table-insert COLUMNS ROWS &optional CELL-WIDTH CELL-HEIGHT)<br/><br/>Insert an editable text table.<br/>Insert a table of specified number of COLUMNS and ROWS.  Optional<br/>parameter CELL-WIDTH and CELL-HEIGHT can specify the size of each<br/>cell.  The cell size is uniform across the table if the specified size<br/>is a number.  They can be a list of numbers to specify different size<br/>for each cell.  When called interactively, the list of number is<br/>entered by simply listing all the numbers with space characters<br/>delimiting them.<br/><br/>Examples:<br/><br/>M-x table-insert inserts a table at the current point location.<br/><br/>Suppose we have the following situation where `-!-' indicates the<br/>location of point.<br/><br/>    -!-<br/><br/>Type M-x table-insert and hit ENTER key.  As it asks table<br/>specification, provide 3 for number of columns, 1 for number of rows,<br/>5 for cell width and 1 for cell height.  Now you shall see the next<br/>table and the point is automatically moved to the beginning of the<br/>first cell.<br/><br/>    +-----+-----+-----+<br/>    |-!-  |     |     |<br/>    +-----+-----+-----+<br/><br/>Inside a table cell, there are special key bindings. <br/>Uses keymap `table-cell-map', which is not currently defined.<br/><br/><br/>M-9 M-x table-widen-cell (or C-u 9 M-x table-widen-cell) widens the first cell by 9 character<br/>width, which results as<br/><br/>    +--------------+-----+-----+<br/>    |-!-           |     |     |<br/>    +--------------+-----+-----+<br/><br/>Type TAB M-x table-widen-cell then type TAB M-2 M-7 M-x table-widen-cell (or C-u 2 7 M-x table-widen-cell).  Typing<br/>TAB moves the point forward by a cell. The result now looks like this:<br/><br/>    +--------------+------+--------------------------------+<br/>    |              |      |-!-                             |<br/>    +--------------+------+--------------------------------+<br/><br/>If you knew each width of the columns prior to the table creation,<br/>what you could have done better was to have had given the complete<br/>width information to `table-insert'.<br/><br/>Cell width(s): 14 6 32<br/><br/>instead of<br/><br/>Cell width(s): 5<br/><br/>This would have eliminated the previously mentioned width adjustment<br/>work all together.<br/><br/>If the point is in the last cell type S-TAB S-TAB to move it to the<br/>first cell.  Now type M-x table-heighten-cell which heighten the row by a line.<br/><br/>    +--------------+------+--------------------------------+<br/>    |-!-           |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/><br/>Type M-x table-insert-row-column and tell it to insert a row.<br/><br/>    +--------------+------+--------------------------------+<br/>    |-!-           |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/>    |              |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/><br/>Move the point under the table as shown below.<br/><br/>    +--------------+------+--------------------------------+<br/>    |              |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/>    |              |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/>    -!-<br/><br/>Type M-x table-insert-row instead of M-x table-insert-row-column.  M-x table-insert-row-column does not work<br/>when the point is outside of the table.  This insertion at<br/>outside of the table effectively appends a row at the end.<br/><br/>    +--------------+------+--------------------------------+<br/>    |              |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/>    |              |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/>    |-!-           |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/><br/>Text editing inside the table cell produces reasonably expected<br/>results.<br/><br/>    +--------------+------+--------------------------------+<br/>    |              |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/>    |              |      |Text editing inside the table   |<br/>    |              |      |cell produces reasonably        |<br/>    |              |      |expected results.-!-            |<br/>    +--------------+------+--------------------------------+<br/>    |              |      |                                |<br/>    |              |      |                                |<br/>    +--------------+------+--------------------------------+<br/><br/>Inside a table cell has a special keymap.<br/><br/><br/>Uses keymap `table-cell-map', which is not currently defined.<br/>
+<strong>table-insert</strong> is an interactive autoloaded compiled Lisp function in `<code>table.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <tools> <Table> <Insert> <a Table...>.<br/>
+<br/>
+(table-insert COLUMNS ROWS &optional CELL-WIDTH CELL-HEIGHT)<br/>
+<br/>
+Insert an editable text table.<br/>
+Insert a table of specified number of COLUMNS and ROWS.  Optional<br/>
+parameter CELL-WIDTH and CELL-HEIGHT can specify the size of each<br/>
+cell.  The cell size is uniform across the table if the specified size<br/>
+is a number.  They can be a list of numbers to specify different size<br/>
+for each cell.  When called interactively, the list of number is<br/>
+entered by simply listing all the numbers with space characters<br/>
+delimiting them.<br/>
+<br/>
+Examples:<br/>
+<br/>
+M-x table-insert inserts a table at the current point location.<br/>
+<br/>
+Suppose we have the following situation where `-!-' indicates the<br/>
+location of point.<br/>
+<br/>
+    -!-<br/>
+<br/>
+Type M-x table-insert and hit ENTER key.  As it asks table<br/>
+specification, provide 3 for number of columns, 1 for number of rows,<br/>
+5 for cell width and 1 for cell height.  Now you shall see the next<br/>
+table and the point is automatically moved to the beginning of the<br/>
+first cell.<br/>
+<br/>
+    +-----+-----+-----+<br/>
+    |-!-  |     |     |<br/>
+    +-----+-----+-----+<br/>
+<br/>
+Inside a table cell, there are special key bindings. <br/>
+Uses keymap `table-cell-map', which is not currently defined.<br/>
+<br/>
+<br/>
+M-9 M-x table-widen-cell (or C-u 9 M-x table-widen-cell) widens the first cell by 9 character<br/>
+width, which results as<br/>
+<br/>
+    +--------------+-----+-----+<br/>
+    |-!-           |     |     |<br/>
+    +--------------+-----+-----+<br/>
+<br/>
+Type TAB M-x table-widen-cell then type TAB M-2 M-7 M-x table-widen-cell (or C-u 2 7 M-x table-widen-cell).  Typing<br/>
+TAB moves the point forward by a cell. The result now looks like this:<br/>
+<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |-!-                             |<br/>
+    +--------------+------+--------------------------------+<br/>
+<br/>
+If you knew each width of the columns prior to the table creation,<br/>
+what you could have done better was to have had given the complete<br/>
+width information to `table-insert'.<br/>
+<br/>
+Cell width(s): 14 6 32<br/>
+<br/>
+instead of<br/>
+<br/>
+Cell width(s): 5<br/>
+<br/>
+This would have eliminated the previously mentioned width adjustment<br/>
+work all together.<br/>
+<br/>
+If the point is in the last cell type S-TAB S-TAB to move it to the<br/>
+first cell.  Now type M-x table-heighten-cell which heighten the row by a line.<br/>
+<br/>
+    +--------------+------+--------------------------------+<br/>
+    |-!-           |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+<br/>
+Type M-x table-insert-row-column and tell it to insert a row.<br/>
+<br/>
+    +--------------+------+--------------------------------+<br/>
+    |-!-           |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+<br/>
+Move the point under the table as shown below.<br/>
+<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+    -!-<br/>
+<br/>
+Type M-x table-insert-row instead of M-x table-insert-row-column.  M-x table-insert-row-column does not work<br/>
+when the point is outside of the table.  This insertion at<br/>
+outside of the table effectively appends a row at the end.<br/>
+<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+    |-!-           |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+<br/>
+Text editing inside the table cell produces reasonably expected<br/>
+results.<br/>
+<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |Text editing inside the table   |<br/>
+    |              |      |cell produces reasonably        |<br/>
+    |              |      |expected results.-!-            |<br/>
+    +--------------+------+--------------------------------+<br/>
+    |              |      |                                |<br/>
+    |              |      |                                |<br/>
+    +--------------+------+--------------------------------+<br/>
+<br/>
+Inside a table cell has a special keymap.<br/>
+<br/>
+<br/>
+Uses keymap `table-cell-map', which is not currently defined.<br/>

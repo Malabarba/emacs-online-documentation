@@ -1,1 +1,37 @@
-org-agenda-category-icon-alist is a variable defined in `org-agenda.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>Alist of category icon to be displayed in agenda views.<br/><br/>Each entry should have the following format:<br/><br/>  (CATEGORY-REGEXP FILE-OR-DATA TYPE DATA-P PROPS)<br/><br/>Where CATEGORY-REGEXP is a regexp matching the categories where<br/>the icon should be displayed.<br/>FILE-OR-DATA either a file path or a string containing image data.<br/><br/>The other fields can be omitted safely if not needed:<br/>TYPE indicates the image type.<br/>DATA-P is a boolean indicating whether the FILE-OR-DATA string is<br/>image data.<br/>PROPS are additional image attributes to assign to the image,<br/>like, e.g. `:ascent center'.<br/><br/>   ("Org" "/path/to/icon.png" nil nil :ascent center)<br/><br/>If you want to set the display properties yourself, just put a<br/>list as second element:<br/><br/>  (CATEGORY-REGEXP (MY PROPERTY LIST))<br/><br/>For example, to display a 16px horizontal space for Emacs<br/>category, you can use:<br/><br/>  ("Emacs" '(space . (:width (16))))<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 24.1 of Emacs.<br/>
+<strong>org-agenda-category-icon-alist</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+Alist of category icon to be displayed in agenda views.<br/>
+<br/>
+Each entry should have the following format:<br/>
+<br/>
+  (CATEGORY-REGEXP FILE-OR-DATA TYPE DATA-P PROPS)<br/>
+<br/>
+Where CATEGORY-REGEXP is a regexp matching the categories where<br/>
+the icon should be displayed.<br/>
+FILE-OR-DATA either a file path or a string containing image data.<br/>
+<br/>
+The other fields can be omitted safely if not needed:<br/>
+TYPE indicates the image type.<br/>
+DATA-P is a boolean indicating whether the FILE-OR-DATA string is<br/>
+image data.<br/>
+PROPS are additional image attributes to assign to the image,<br/>
+like, e.g. `:ascent center'.<br/>
+<br/>
+   ("Org" "/path/to/icon.png" nil nil :ascent center)<br/>
+<br/>
+If you want to set the display properties yourself, just put a<br/>
+list as second element:<br/>
+<br/>
+  (CATEGORY-REGEXP (MY PROPERTY LIST))<br/>
+<br/>
+For example, to display a 16px horizontal space for Emacs<br/>
+category, you can use:<br/>
+<br/>
+  ("Emacs" '(space . (:width (16))))<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 24.1 of Emacs.<br/>

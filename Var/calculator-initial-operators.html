@@ -1,1 +1,80 @@
-calculator-initial-operators is a variable defined in `calculator.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>A list of initial operators.<br/>This is a list in the same format as `calculator-operators'.  Whenever<br/>`calculator' starts, it looks at the value of this variable, and if it<br/>is not empty, its contents is prepended to `calculator-operators' and<br/>the appropriate key bindings are made.<br/><br/>This variable is then reset to nil.  Don't use this if you want to add<br/>user-defined operators, use `calculator-user-operators' instead.<br/><br/>Value: (("=" = identity 1 -1)<br/> (nobind "+" + + 2 4)<br/> (nobind "-" - - 2 4)<br/> (nobind "+" + + -1 9)<br/> (nobind "-" - - -1 9)<br/> ("(" \( identity -1 -1)<br/> (")" \) identity 1 10)<br/> ("|" or<br/>  (logior TX TY)<br/>  2 2)<br/> ("#" xor<br/>  (logxor TX TY)<br/>  2 2)<br/> ("&" and<br/>  (logand TX TY)<br/>  2 3)<br/> ("*" * * 2 5)<br/> ("/" / / 2 5)<br/> ("\\" div<br/>  (/ TX TY)<br/>  2 5)<br/> ("%" rem<br/>  (% TX TY)<br/>  2 5)<br/> ("L" log log 2 6)<br/> ("S" sin<br/>  (sin DX)<br/>  x 6)<br/> ("C" cos<br/>  (cos DX)<br/>  x 6)<br/> ("T" tan<br/>  (tan DX)<br/>  x 6)<br/> ("IS" asin<br/>  (D<br/>   (asin X))<br/>  x 6)<br/> ("IC" acos<br/>  (D<br/>   (acos X))<br/>  x 6)<br/> ("IT" atan<br/>  (D<br/>   (atan X))<br/>  x 6)<br/> ("Q" sqrt sqrt x 7)<br/> ("^" ^ calculator-expt 2 7)<br/> ("!" ! calculator-fact x 7)<br/> (";" 1/<br/>  (/ 1 X)<br/>  1 7)<br/> ("_" - - 1 8)<br/> ("~" ~<br/>  (lognot TX)<br/>  x 8)<br/> (">" repR calculator-repR 1 8)<br/> ("<" repL calculator-repL 1 8)<br/> ("v" avg<br/>  (/<br/>   (apply '+ L)<br/>   (length L))<br/>  0 8)<br/> ("l" tot<br/>  (apply '+ L)<br/>  0 8))<br/><br/>
+<strong>calculator-initial-operators</strong> is a variable defined in `<code>calculator.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+A list of initial operators.<br/>
+This is a list in the same format as `calculator-operators'.  Whenever<br/>
+`calculator' starts, it looks at the value of this variable, and if it<br/>
+is not empty, its contents is prepended to `calculator-operators' and<br/>
+the appropriate key bindings are made.<br/>
+<br/>
+This variable is then reset to nil.  Don't use this if you want to add<br/>
+user-defined operators, use `calculator-user-operators' instead.<br/>
+<br/>
+Value: (("=" = identity 1 -1)<br/>
+ (nobind "+" + + 2 4)<br/>
+ (nobind "-" - - 2 4)<br/>
+ (nobind "+" + + -1 9)<br/>
+ (nobind "-" - - -1 9)<br/>
+ ("(" \( identity -1 -1)<br/>
+ (")" \) identity 1 10)<br/>
+ ("|" or<br/>
+  (logior TX TY)<br/>
+  2 2)<br/>
+ ("#" xor<br/>
+  (logxor TX TY)<br/>
+  2 2)<br/>
+ ("&" and<br/>
+  (logand TX TY)<br/>
+  2 3)<br/>
+ ("*" * * 2 5)<br/>
+ ("/" / / 2 5)<br/>
+ ("\\" div<br/>
+  (/ TX TY)<br/>
+  2 5)<br/>
+ ("%" rem<br/>
+  (% TX TY)<br/>
+  2 5)<br/>
+ ("L" log log 2 6)<br/>
+ ("S" sin<br/>
+  (sin DX)<br/>
+  x 6)<br/>
+ ("C" cos<br/>
+  (cos DX)<br/>
+  x 6)<br/>
+ ("T" tan<br/>
+  (tan DX)<br/>
+  x 6)<br/>
+ ("IS" asin<br/>
+  (D<br/>
+   (asin X))<br/>
+  x 6)<br/>
+ ("IC" acos<br/>
+  (D<br/>
+   (acos X))<br/>
+  x 6)<br/>
+ ("IT" atan<br/>
+  (D<br/>
+   (atan X))<br/>
+  x 6)<br/>
+ ("Q" sqrt sqrt x 7)<br/>
+ ("^" ^ calculator-expt 2 7)<br/>
+ ("!" ! calculator-fact x 7)<br/>
+ (";" 1/<br/>
+  (/ 1 X)<br/>
+  1 7)<br/>
+ ("_" - - 1 8)<br/>
+ ("~" ~<br/>
+  (lognot TX)<br/>
+  x 8)<br/>
+ (">" repR calculator-repR 1 8)<br/>
+ ("<" repL calculator-repL 1 8)<br/>
+ ("v" avg<br/>
+  (/<br/>
+   (apply '+ L)<br/>
+   (length L))<br/>
+  0 8)<br/>
+ ("l" tot<br/>
+  (apply '+ L)<br/>
+  0 8))<br/>
+<br/>

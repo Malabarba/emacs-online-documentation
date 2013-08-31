@@ -1,1 +1,27 @@
-x-show-tip is a built-in function in `C source code'.<br/><br/>(x-show-tip STRING &optional FRAME PARMS TIMEOUT DX DY)<br/><br/>Show STRING in a "tooltip" window on frame FRAME.<br/>A tooltip window is a small X window displaying a string.<br/><br/>This is an internal function; Lisp code should call `tooltip-show'.<br/><br/>FRAME nil or omitted means use the selected frame.<br/><br/>PARMS is an optional list of frame parameters which can be used to<br/>change the tooltip's appearance.<br/><br/>Automatically hide the tooltip after TIMEOUT seconds.  TIMEOUT nil<br/>means use the default timeout of 5 seconds.<br/><br/>If the list of frame parameters PARMS contains a `left' parameters,<br/>the tooltip is displayed at that x-position.  Otherwise it is<br/>displayed at the mouse position, with offset DX added (default is 5 if<br/>DX isn't specified).  Likewise for the y-position; if a `top' frame<br/>parameter is specified, it determines the y-position of the tooltip<br/>window, otherwise it is displayed at the mouse position, with offset<br/>DY added (default is -10).<br/><br/>A tooltip's maximum size is specified by `x-max-tooltip-size'.<br/>Text larger than the specified size is clipped.
+<strong>x-show-tip</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(x-show-tip STRING &optional FRAME PARMS TIMEOUT DX DY)<br/>
+<br/>
+Show STRING in a "tooltip" window on frame FRAME.<br/>
+A tooltip window is a small X window displaying a string.<br/>
+<br/>
+This is an internal function; Lisp code should call `tooltip-show'.<br/>
+<br/>
+FRAME nil or omitted means use the selected frame.<br/>
+<br/>
+PARMS is an optional list of frame parameters which can be used to<br/>
+change the tooltip's appearance.<br/>
+<br/>
+Automatically hide the tooltip after TIMEOUT seconds.  TIMEOUT nil<br/>
+means use the default timeout of 5 seconds.<br/>
+<br/>
+If the list of frame parameters PARMS contains a `left' parameters,<br/>
+the tooltip is displayed at that x-position.  Otherwise it is<br/>
+displayed at the mouse position, with offset DX added (default is 5 if<br/>
+DX isn't specified).  Likewise for the y-position; if a `top' frame<br/>
+parameter is specified, it determines the y-position of the tooltip<br/>
+window, otherwise it is displayed at the mouse position, with offset<br/>
+DY added (default is -10).<br/>
+<br/>
+A tooltip's maximum size is specified by `x-max-tooltip-size'.<br/>
+Text larger than the specified size is clipped.

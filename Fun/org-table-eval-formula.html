@@ -1,1 +1,39 @@
-org-table-eval-formula is an interactive autoloaded compiled Lisp function in `org-table.el'.<br/><br/>(org-table-eval-formula &optional ARG EQUATION SUPPRESS-ALIGN SUPPRESS-CONST SUPPRESS-STORE SUPPRESS-ANALYSIS)<br/><br/>Replace the table field value at the cursor by the result of a calculation.<br/><br/>This function makes use of Dave Gillespie's Calc package, in my view the<br/>most exciting program ever written for GNU Emacs.  So you need to have Calc<br/>installed in order to use this function.<br/><br/>In a table, this command replaces the value in the current field with the<br/>result of a formula.  It also installs the formula as the "current" column<br/>formula, by storing it in a special line below the table.  When called<br/>with a `C-u' prefix, the current field must be a named field, and the<br/>formula is installed as valid in only this specific field.<br/><br/>When called with two `C-u' prefixes, insert the active equation<br/>for the field back into the current field, so that it can be<br/>edited there.  This is useful in order to use M-x org-table-show-reference<br/>to check the referenced fields.<br/><br/>When called, the command first prompts for a formula, which is read in<br/>the minibuffer.  Previously entered formulas are available through the<br/>history list, and the last used formula is offered as a default.<br/>These stored formulas are adapted correctly when moving, inserting, or<br/>deleting columns with the corresponding commands.<br/><br/>The formula can be any algebraic expression understood by the Calc package.<br/>For details, see the Org-mode manual.<br/><br/>This function can also be called from Lisp programs and offers<br/>additional arguments: EQUATION can be the formula to apply.  If this<br/>argument is given, the user will not be prompted.  SUPPRESS-ALIGN is<br/>used to speed-up recursive calls by by-passing unnecessary aligns.<br/>SUPPRESS-CONST suppresses the interpretation of constants in the<br/>formula, assuming that this has been done already outside the function.<br/>SUPPRESS-STORE means the formula should not be stored, either because<br/>it is already stored, or because it is a modified equation that should<br/>not overwrite the stored one.
+<strong>org-table-eval-formula</strong> is an interactive autoloaded compiled Lisp function in `<code>org-table.el</code>'.<br/>
+<br/>
+(org-table-eval-formula &optional ARG EQUATION SUPPRESS-ALIGN SUPPRESS-CONST SUPPRESS-STORE SUPPRESS-ANALYSIS)<br/>
+<br/>
+Replace the table field value at the cursor by the result of a calculation.<br/>
+<br/>
+This function makes use of Dave Gillespie's Calc package, in my view the<br/>
+most exciting program ever written for GNU Emacs.  So you need to have Calc<br/>
+installed in order to use this function.<br/>
+<br/>
+In a table, this command replaces the value in the current field with the<br/>
+result of a formula.  It also installs the formula as the "current" column<br/>
+formula, by storing it in a special line below the table.  When called<br/>
+with a `C-u' prefix, the current field must be a named field, and the<br/>
+formula is installed as valid in only this specific field.<br/>
+<br/>
+When called with two `C-u' prefixes, insert the active equation<br/>
+for the field back into the current field, so that it can be<br/>
+edited there.  This is useful in order to use M-x org-table-show-reference<br/>
+to check the referenced fields.<br/>
+<br/>
+When called, the command first prompts for a formula, which is read in<br/>
+the minibuffer.  Previously entered formulas are available through the<br/>
+history list, and the last used formula is offered as a default.<br/>
+These stored formulas are adapted correctly when moving, inserting, or<br/>
+deleting columns with the corresponding commands.<br/>
+<br/>
+The formula can be any algebraic expression understood by the Calc package.<br/>
+For details, see the Org-mode manual.<br/>
+<br/>
+This function can also be called from Lisp programs and offers<br/>
+additional arguments: EQUATION can be the formula to apply.  If this<br/>
+argument is given, the user will not be prompted.  SUPPRESS-ALIGN is<br/>
+used to speed-up recursive calls by by-passing unnecessary aligns.<br/>
+SUPPRESS-CONST suppresses the interpretation of constants in the<br/>
+formula, assuming that this has been done already outside the function.<br/>
+SUPPRESS-STORE means the formula should not be stored, either because<br/>
+it is already stored, or because it is a modified equation that should<br/>
+not overwrite the stored one.

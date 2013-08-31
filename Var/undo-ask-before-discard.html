@@ -1,1 +1,21 @@
-undo-ask-before-discard is a variable defined in `simple.el'.<br/>Its value is nil<br/><br/>Documentation:<br/>If non-nil ask about discarding undo info for the current command.<br/>Normally, Emacs discards the undo info for the current command if<br/>it exceeds `undo-outer-limit'.  But if you set this option<br/>non-nil, it asks in the echo area whether to discard the info.<br/>If you answer no, there is a slight risk that Emacs might crash, so<br/>only do it if you really want to undo the command.<br/><br/>This option is mainly intended for debugging.  You have to be<br/>careful if you use it for other purposes.  Garbage collection is<br/>inhibited while the question is asked, meaning that Emacs might<br/>leak memory.  So you should make sure that you do not wait<br/>excessively long before answering the question.<br/><br/>You can customize this variable.<br/><br/>This variable was introduced, or its default value was changed, in<br/>version 22.1 of Emacs.<br/>
+<strong>undo-ask-before-discard</strong> is a variable defined in `<code>simple.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+Documentation:<br/>
+If non-nil ask about discarding undo info for the current command.<br/>
+Normally, Emacs discards the undo info for the current command if<br/>
+it exceeds `undo-outer-limit'.  But if you set this option<br/>
+non-nil, it asks in the echo area whether to discard the info.<br/>
+If you answer no, there is a slight risk that Emacs might crash, so<br/>
+only do it if you really want to undo the command.<br/>
+<br/>
+This option is mainly intended for debugging.  You have to be<br/>
+careful if you use it for other purposes.  Garbage collection is<br/>
+inhibited while the question is asked, meaning that Emacs might<br/>
+leak memory.  So you should make sure that you do not wait<br/>
+excessively long before answering the question.<br/>
+<br/>
+You can customize this variable.<br/>
+<br/>
+This variable was introduced, or its default value was changed, in<br/>
+version 22.1 of Emacs.<br/>

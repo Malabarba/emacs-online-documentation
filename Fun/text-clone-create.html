@@ -1,1 +1,15 @@
-text-clone-create is a compiled Lisp function in `subr.el'.<br/><br/>(text-clone-create START END &optional SPREADP SYNTAX)<br/><br/>Create a text clone of START...END at point.<br/>Text clones are chunks of text that are automatically kept identical:<br/>changes done to one of the clones will be immediately propagated to the other.<br/><br/>The buffer's content at point is assumed to be already identical to<br/>the one between START and END.<br/>If SYNTAX is provided it's a regexp that describes the possible text of<br/>the clones; the clone will be shrunk or killed if necessary to ensure that<br/>its text matches the regexp.<br/>If SPREADP is non-nil it indicates that text inserted before/after the<br/>clone should be incorporated in the clone.
+<strong>text-clone-create</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
+<br/>
+(text-clone-create START END &optional SPREADP SYNTAX)<br/>
+<br/>
+Create a text clone of START...END at point.<br/>
+Text clones are chunks of text that are automatically kept identical:<br/>
+changes done to one of the clones will be immediately propagated to the other.<br/>
+<br/>
+The buffer's content at point is assumed to be already identical to<br/>
+the one between START and END.<br/>
+If SYNTAX is provided it's a regexp that describes the possible text of<br/>
+the clones; the clone will be shrunk or killed if necessary to ensure that<br/>
+its text matches the regexp.<br/>
+If SPREADP is non-nil it indicates that text inserted before/after the<br/>
+clone should be incorporated in the clone.

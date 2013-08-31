@@ -1,1 +1,44 @@
-Info-mode-menu is a variable defined in `info.el'.<br/>Its value is shown below.<br/><br/>Documentation:<br/>Menu for Info files.<br/><br/>Value: (keymap "Info"<br/>	(Up menu-item "Up" Info-up :enable<br/>	    (Info-check-pointer "up")<br/>	    :help "Go up in the Info tree")<br/>	(Next menu-item "Next" Info-next :enable<br/>	      (Info-check-pointer "next")<br/>	      :help "Go to the next node")<br/>	(Previous menu-item "Previous" Info-prev :enable<br/>		  (Info-check-pointer "prev[ious]*")<br/>		  :help "Go to the previous node")<br/>	(Backward menu-item "Backward" Info-backward-node :help "Go backward one node, considering all as a sequence")<br/>	(Forward menu-item "Forward" Info-forward-node :help "Go forward one node, considering all as a sequence")<br/>	(Beginning menu-item "Beginning" beginning-of-buffer :help "Go to beginning of this node")<br/>	(Top menu-item "Top" Info-top-node :help "Go to top node of file")<br/>	(Final\ Node menu-item "Final Node" Info-final-node :help "Go to final node in this file")<br/>	(Menu\ Item menu-item "Menu Item"<br/>		    (keymap "Menu Item"<br/>			    (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))<br/>	(Reference menu-item "Reference"<br/>		   (keymap "Reference"<br/>			   (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))<br/>	(Search\.\.\. menu-item "Search..." Info-search :help "Search for regular expression in this Info file")<br/>	(Search\ Next menu-item "Search Next" Info-search-next :help "Search for another occurrence of regular expression")<br/>	(Go\ to\ Node\.\.\. menu-item "Go to Node..." Info-goto-node :help "Go to a named node")<br/>	(Back\ in\ history menu-item "Back in history" Info-history-back :enable Info-history :help "Go back in history to the last node you were at")<br/>	(Forward\ in\ history menu-item "Forward in history" Info-history-forward :enable Info-history-forward :help "Go forward in history")<br/>	(History menu-item "History" Info-history :enable Info-history-list :help "Go to menu of visited nodes")<br/>	(Table\ of\ Contents menu-item "Table of Contents" Info-toc :help "Go to table of contents")<br/>	(Index menu-item "Index"<br/>	       (keymap "Index"<br/>		       (Lookup\ a\ String\.\.\. menu-item "Lookup a String..." Info-index :help "Look for a string in the index items")<br/>		       (Next\ Matching\ Item menu-item "Next Matching Item" Info-index-next :enable Info-index-alternatives :help "Look for another occurrence of previous item")<br/>		       (Lookup\ a\ string\ and\ display\ index\ of\ results\.\.\. menu-item "Lookup a string and display index of results..." Info-virtual-index :help "Look for a string in the index items and display node with results")<br/>		       (Lookup\ a\ string\ in\ all\ indices\.\.\. menu-item "Lookup a string in all indices..." info-apropos :help "Look for a string in the indices of all manuals")))<br/>	(Copy\ Node\ Name menu-item "Copy Node Name" Info-copy-current-node-name :help "Copy the name of the current node into the kill ring")<br/>	(Clone\ Info\ buffer menu-item "Clone Info buffer" clone-buffer :help "Create a twin copy of the current Info buffer.")<br/>	(Exit menu-item "Exit" Info-exit :help "Stop reading Info"))<br/><br/>
+<strong>Info-mode-menu</strong> is a variable defined in `<code>info.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+Documentation:<br/>
+Menu for Info files.<br/>
+<br/>
+Value: (keymap "Info"<br/>
+	(Up menu-item "Up" Info-up :enable<br/>
+	    (Info-check-pointer "up")<br/>
+	    :help "Go up in the Info tree")<br/>
+	(Next menu-item "Next" Info-next :enable<br/>
+	      (Info-check-pointer "next")<br/>
+	      :help "Go to the next node")<br/>
+	(Previous menu-item "Previous" Info-prev :enable<br/>
+		  (Info-check-pointer "prev[ious]*")<br/>
+		  :help "Go to the previous node")<br/>
+	(Backward menu-item "Backward" Info-backward-node :help "Go backward one node, considering all as a sequence")<br/>
+	(Forward menu-item "Forward" Info-forward-node :help "Go forward one node, considering all as a sequence")<br/>
+	(Beginning menu-item "Beginning" beginning-of-buffer :help "Go to beginning of this node")<br/>
+	(Top menu-item "Top" Info-top-node :help "Go to top node of file")<br/>
+	(Final\ Node menu-item "Final Node" Info-final-node :help "Go to final node in this file")<br/>
+	(Menu\ Item menu-item "Menu Item"<br/>
+		    (keymap "Menu Item"<br/>
+			    (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))<br/>
+	(Reference menu-item "Reference"<br/>
+		   (keymap "Reference"<br/>
+			   (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))<br/>
+	(Search\.\.\. menu-item "Search..." Info-search :help "Search for regular expression in this Info file")<br/>
+	(Search\ Next menu-item "Search Next" Info-search-next :help "Search for another occurrence of regular expression")<br/>
+	(Go\ to\ Node\.\.\. menu-item "Go to Node..." Info-goto-node :help "Go to a named node")<br/>
+	(Back\ in\ history menu-item "Back in history" Info-history-back :enable Info-history :help "Go back in history to the last node you were at")<br/>
+	(Forward\ in\ history menu-item "Forward in history" Info-history-forward :enable Info-history-forward :help "Go forward in history")<br/>
+	(History menu-item "History" Info-history :enable Info-history-list :help "Go to menu of visited nodes")<br/>
+	(Table\ of\ Contents menu-item "Table of Contents" Info-toc :help "Go to table of contents")<br/>
+	(Index menu-item "Index"<br/>
+	       (keymap "Index"<br/>
+		       (Lookup\ a\ String\.\.\. menu-item "Lookup a String..." Info-index :help "Look for a string in the index items")<br/>
+		       (Next\ Matching\ Item menu-item "Next Matching Item" Info-index-next :enable Info-index-alternatives :help "Look for another occurrence of previous item")<br/>
+		       (Lookup\ a\ string\ and\ display\ index\ of\ results\.\.\. menu-item "Lookup a string and display index of results..." Info-virtual-index :help "Look for a string in the index items and display node with results")<br/>
+		       (Lookup\ a\ string\ in\ all\ indices\.\.\. menu-item "Lookup a string in all indices..." info-apropos :help "Look for a string in the indices of all manuals")))<br/>
+	(Copy\ Node\ Name menu-item "Copy Node Name" Info-copy-current-node-name :help "Copy the name of the current node into the kill ring")<br/>
+	(Clone\ Info\ buffer menu-item "Clone Info buffer" clone-buffer :help "Create a twin copy of the current Info buffer.")<br/>
+	(Exit menu-item "Exit" Info-exit :help "Stop reading Info"))<br/>
+<br/>

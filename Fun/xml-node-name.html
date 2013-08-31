@@ -1,1 +1,19 @@
-xml-node-name is a compiled Lisp function in `xml.el'.<br/><br/>(xml-node-name NODE)<br/><br/>Return the tag associated with NODE.<br/>Without namespace-aware parsing, the tag is a symbol.<br/><br/>With namespace-aware parsing, the tag is a cons of a string<br/>representing the uri of the namespace with the local name of the<br/>tag.  For example,<br/><br/>    <foo><br/><br/>would be represented by<br/><br/>    '("" . "foo").<br/><br/>If you'd just like a plain symbol instead, use 'symbol-qnames in<br/>the PARSE-NS argument.
+<strong>xml-node-name</strong> is a compiled Lisp function in `<code>xml.el</code>'.<br/>
+<br/>
+(xml-node-name NODE)<br/>
+<br/>
+Return the tag associated with NODE.<br/>
+Without namespace-aware parsing, the tag is a symbol.<br/>
+<br/>
+With namespace-aware parsing, the tag is a cons of a string<br/>
+representing the uri of the namespace with the local name of the<br/>
+tag.  For example,<br/>
+<br/>
+    <foo><br/>
+<br/>
+would be represented by<br/>
+<br/>
+    '("" . "foo").<br/>
+<br/>
+If you'd just like a plain symbol instead, use 'symbol-qnames in<br/>
+the PARSE-NS argument.

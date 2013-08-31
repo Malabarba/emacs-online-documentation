@@ -1,1 +1,25 @@
-c-set-style is an interactive autoloaded compiled Lisp function in `cc-styles.el'.<br/><br/>(c-set-style STYLENAME &optional DONT-OVERRIDE)<br/><br/>Set the current buffer to use the style STYLENAME.<br/>STYLENAME, a string, must be an existing CC Mode style - These are contained<br/>in the variable `c-style-alist'.<br/><br/>The variable `c-indentation-style' will get set to STYLENAME.<br/><br/>"Setting the style" is done by setting CC Mode's "style variables" to the<br/>values indicated by the pertinent entry in `c-style-alist'.  Other variables<br/>might get set too.<br/><br/>If DONT-OVERRIDE is neither nil nor t, style variables whose default values<br/>have been set (more precisely, whose default values are not the symbol<br/>`set-from-style') will not be changed.  This avoids overriding global settings<br/>done in your init file.  It is useful to call c-set-style from a mode hook<br/>in this way.<br/><br/>If DONT-OVERRIDE is t, style variables that already have values (i.e., whose<br/>values are not the symbol `set-from-style') will not be overridden.  CC Mode<br/>calls c-set-style internally in this way whilst initializing a buffer; if<br/>cc-set-style is called like this from anywhere else, it will usually behave as<br/>a null operation.
+<strong>c-set-style</strong> is an interactive autoloaded compiled Lisp function in `<code>cc-styles.el</code>'.<br/>
+<br/>
+(c-set-style STYLENAME &optional DONT-OVERRIDE)<br/>
+<br/>
+Set the current buffer to use the style STYLENAME.<br/>
+STYLENAME, a string, must be an existing CC Mode style - These are contained<br/>
+in the variable `c-style-alist'.<br/>
+<br/>
+The variable `c-indentation-style' will get set to STYLENAME.<br/>
+<br/>
+"Setting the style" is done by setting CC Mode's "style variables" to the<br/>
+values indicated by the pertinent entry in `c-style-alist'.  Other variables<br/>
+might get set too.<br/>
+<br/>
+If DONT-OVERRIDE is neither nil nor t, style variables whose default values<br/>
+have been set (more precisely, whose default values are not the symbol<br/>
+`set-from-style') will not be changed.  This avoids overriding global settings<br/>
+done in your init file.  It is useful to call c-set-style from a mode hook<br/>
+in this way.<br/>
+<br/>
+If DONT-OVERRIDE is t, style variables that already have values (i.e., whose<br/>
+values are not the symbol `set-from-style') will not be overridden.  CC Mode<br/>
+calls c-set-style internally in this way whilst initializing a buffer; if<br/>
+cc-set-style is called like this from anywhere else, it will usually behave as<br/>
+a null operation.

@@ -1,1 +1,20 @@
-create-image is an autoloaded compiled Lisp function in `image.el'.<br/><br/>(create-image FILE-OR-DATA &optional TYPE DATA-P &rest PROPS)<br/><br/>Create an image.<br/>FILE-OR-DATA is an image file name or image data.<br/>Optional TYPE is a symbol describing the image type.  If TYPE is omitted<br/>or nil, try to determine the image type from its first few bytes<br/>of image data.  If that doesn't work, and FILE-OR-DATA is a file name,<br/>use its file extension as image type.<br/>Optional DATA-P non-nil means FILE-OR-DATA is a string containing image data.<br/>Optional PROPS are additional image attributes to assign to the image,<br/>like, e.g. `:mask MASK'.<br/>Value is the image created, or nil if images of type TYPE are not supported.<br/><br/>Images should not be larger than specified by `max-image-size'.<br/><br/>Image file names that are not absolute are searched for in the<br/>"images" sub-directory of `data-directory' and<br/>`x-bitmap-file-path' (in that order).
+<strong>create-image</strong> is an autoloaded compiled Lisp function in `<code>image.el</code>'.<br/>
+<br/>
+(create-image FILE-OR-DATA &optional TYPE DATA-P &rest PROPS)<br/>
+<br/>
+Create an image.<br/>
+FILE-OR-DATA is an image file name or image data.<br/>
+Optional TYPE is a symbol describing the image type.  If TYPE is omitted<br/>
+or nil, try to determine the image type from its first few bytes<br/>
+of image data.  If that doesn't work, and FILE-OR-DATA is a file name,<br/>
+use its file extension as image type.<br/>
+Optional DATA-P non-nil means FILE-OR-DATA is a string containing image data.<br/>
+Optional PROPS are additional image attributes to assign to the image,<br/>
+like, e.g. `:mask MASK'.<br/>
+Value is the image created, or nil if images of type TYPE are not supported.<br/>
+<br/>
+Images should not be larger than specified by `max-image-size'.<br/>
+<br/>
+Image file names that are not absolute are searched for in the<br/>
+"images" sub-directory of `data-directory' and<br/>
+`x-bitmap-file-path' (in that order).

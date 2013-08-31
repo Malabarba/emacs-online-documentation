@@ -1,1 +1,184 @@
-gud-menu-map is a variable defined in `gud.el'.<br/>Its value is shown below.<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>Menu for `gud-mode'.<br/><br/>Value: (keymap<br/> (mi menu-item "GDB-MI"<br/>     (keymap<br/>      (gdb-switch-when-another-stopped menu-item "Automatically switch to stopped thread" gdb-toggle-switch-when-another-stopped :help "Switch to stopped thread" :button<br/>				       (:toggle and<br/>						(default-boundp 'gdb-switch-when-another-stopped)<br/>						(default-value 'gdb-switch-when-another-stopped)))<br/>      (gdb-customize-reasons menu-item "Customize switching..."<br/>			     (lambda nil<br/>			       (interactive)<br/>			       (customize-option 'gdb-switch-reasons)))<br/>      (sep2 menu-item "--")<br/>      (current-thread menu-item "GUD controls current thread"<br/>		      (lambda nil<br/>			(interactive)<br/>			(setq gdb-gud-control-all-threads nil))<br/>		      :help "GUD start/stop commands apply to current thread only" :button<br/>		      (:radio not gdb-gud-control-all-threads))<br/>      (all-threads menu-item "GUD controls all threads"<br/>		   (lambda nil<br/>		     (interactive)<br/>		     (setq gdb-gud-control-all-threads t))<br/>		   :help "GUD start/stop commands apply to all threads" :button<br/>		   (:radio . gdb-gud-control-all-threads))<br/>      (sep1 menu-item "--")<br/>      (gdb-restore-windows menu-item "Restore Window Layout" gdb-restore-windows :help "Restore standard layout for debug session.")<br/>      (gdb-many-windows menu-item "Display Other Windows" gdb-many-windows :help "Toggle display of locals, stack and breakpoint information" :button<br/>			(:toggle . gdb-many-windows))<br/>      (gdb-customize menu-item "Customize"<br/>		     (lambda nil<br/>		       (interactive)<br/>		       (customize-group 'gdb))<br/>		     :help "Customize Gdb Graphical Mode options.")<br/>      "GDB-MI")<br/>     :visible<br/>     (eq gud-minor-mode 'gdbmi))<br/> (frames menu-item "GDB-Frames"<br/>	 (keymap<br/>	  (breakpoints "Breakpoints" . gdb-frame-breakpoints-buffer)<br/>	  (frames "Stack" . gdb-frame-stack-buffer)<br/>	  (locals "Locals" . gdb-frame-locals-buffer)<br/>	  (inferior "IO" . gdb-frame-io-buffer)<br/>	  (registers "Registers" . gdb-frame-registers-buffer)<br/>	  (disassembly "Disassembly" . gdb-frame-disassembly-buffer)<br/>	  (memory "Memory" . gdb-frame-memory-buffer)<br/>	  (threads "Threads" . gdb-frame-threads-buffer)<br/>	  (gdb "Gdb" . gdb-frame-gdb-buffer)<br/>	  "GDB-Frames")<br/>	 :visible<br/>	 (eq gud-minor-mode 'gdbmi))<br/> (displays menu-item "GDB-Windows"<br/>	   (keymap<br/>	    (breakpoints "Breakpoints" . gdb-display-breakpoints-buffer)<br/>	    (frames "Stack" . gdb-display-stack-buffer)<br/>	    (locals "Locals" . gdb-display-locals-buffer)<br/>	    (inferior "IO" . gdb-display-io-buffer)<br/>	    (registers "Registers" . gdb-display-registers-buffer)<br/>	    (disassembly "Disassembly" . gdb-display-disassembly-buffer)<br/>	    (memory "Memory" . gdb-display-memory-buffer)<br/>	    (threads "Threads" . gdb-display-threads-buffer)<br/>	    (gdb "Gdb" . gdb-display-gdb-buffer)<br/>	    "GDB-Windows")<br/>	   :visible<br/>	   (eq gud-minor-mode 'gdbmi))<br/> (cont menu-item "Continue" gud-cont :enable<br/>       (not gud-running)<br/>       :visible<br/>       (not<br/>	(eq gud-minor-mode 'gdbmi)))<br/> (next menu-item "Next Line" gud-next :enable<br/>       (not gud-running))<br/> (step menu-item "Step Line" gud-step :enable<br/>       (not gud-running))<br/> (nexti menu-item "Next Instruction" gud-nexti :enable<br/>	(not gud-running)<br/>	:visible<br/>	(memq gud-minor-mode<br/>	      '(gdbmi gdb dbx)))<br/> (stepi menu-item "Step Instruction" gud-stepi :enable<br/>	(not gud-running)<br/>	:visible<br/>	(memq gud-minor-mode<br/>	      '(gdbmi gdb dbx)))<br/> (finish menu-item "Finish Function" gud-finish :enable<br/>	 (not gud-running)<br/>	 :visible<br/>	 (memq gud-minor-mode<br/>	       '(gdbmi gdb xdb jdb pdb)))<br/> (watch menu-item "Watch Expression" gud-watch :enable<br/>	(not gud-running)<br/>	:visible<br/>	(eq gud-minor-mode 'gdbmi))<br/> (print menu-item "Print Expression" gud-print :enable<br/>	(not gud-running))<br/> (print* menu-item<br/>	 (if<br/>	     (eq gud-minor-mode 'jdb)<br/>	     "Dump object" "Print Dereference")<br/>	 gud-pstar :enable<br/>	 (not gud-running)<br/>	 :visible<br/>	 (memq gud-minor-mode<br/>	       '(gdbmi gdb jdb)))<br/> (pp menu-item "Print S-expression" gud-pp :enable<br/>     (and<br/>      (not gud-running)<br/>      (bound-and-true-p gdb-active-process))<br/>     :visible<br/>     (and<br/>      (string-equal<br/>       (buffer-local-value 'gud-target-name gud-comint-buffer)<br/>       "emacs")<br/>      (eq gud-minor-mode 'gdbmi)))<br/> (down menu-item "Down Stack" gud-down :enable<br/>       (not gud-running)<br/>       :visible<br/>       (memq gud-minor-mode<br/>	     '(gdbmi gdb dbx xdb jdb pdb)))<br/> (up menu-item "Up Stack" gud-up :enable<br/>     (not gud-running)<br/>     :visible<br/>     (memq gud-minor-mode<br/>	   '(gdbmi gdb dbx xdb jdb pdb)))<br/> (break menu-item "Set Breakpoint" gud-break :enable<br/>	(not gud-running)<br/>	:visible<br/>	(gud-tool-bar-item-visible-no-fringe))<br/> (tbreak menu-item "Temporary Breakpoint" gud-tbreak :enable<br/>	 (not gud-running)<br/>	 :visible<br/>	 (memq gud-minor-mode<br/>	       '(gdbmi gdb sdb xdb)))<br/> (remove menu-item "Remove Breakpoint" gud-remove :enable<br/>	 (not gud-running)<br/>	 :visible<br/>	 (gud-tool-bar-item-visible-no-fringe))<br/> (until menu-item "Continue to selection" gud-until :enable<br/>	(not gud-running)<br/>	:visible<br/>	(and<br/>	 (memq gud-minor-mode<br/>	       '(gdbmi gdb perldb))<br/>	 (gud-tool-bar-item-visible-no-fringe)))<br/> (stop menu-item "Stop" gud-stop-subjob :visible<br/>       (or<br/>	(not<br/>	 (memq gud-minor-mode<br/>	       '(gdbmi pdb)))<br/>	(gdb-show-stop-p)))<br/> (go menu-item<br/>     (if<br/>	 (bound-and-true-p gdb-active-process)<br/>	 "Continue" "Run")<br/>     gud-go :visible<br/>     (and<br/>      (eq gud-minor-mode 'gdbmi)<br/>      (gdb-show-run-p)))<br/> (run menu-item "Run" gud-run :enable<br/>      (not gud-running)<br/>      :visible<br/>      (memq gud-minor-mode<br/>	    '(gdbmi gdb dbx jdb)))<br/> (refresh "Refresh" . gud-refresh)<br/> (tooltips menu-item "Show GUD tooltips" gud-tooltip-mode :enable<br/>	   (and<br/>	    (not emacs-basic-display)<br/>	    (display-graphic-p)<br/>	    (fboundp 'x-show-tip))<br/>	   :visible<br/>	   (memq gud-minor-mode<br/>		 '(gdbmi dbx sdb xdb pdb))<br/>	   :button<br/>	   (:toggle . gud-tooltip-mode))<br/> (help "Info (debugger)" . gud-goto-info)<br/> "Gud")<br/><br/>
+<strong>gud-menu-map</strong> is a variable defined in `<code>gud.el</code>'.<br/>
+Its value is shown below.<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+Menu for `gud-mode'.<br/>
+<br/>
+Value: (keymap<br/>
+ (mi menu-item "GDB-MI"<br/>
+     (keymap<br/>
+      (gdb-switch-when-another-stopped menu-item "Automatically switch to stopped thread" gdb-toggle-switch-when-another-stopped :help "Switch to stopped thread" :button<br/>
+				       (:toggle and<br/>
+						(default-boundp 'gdb-switch-when-another-stopped)<br/>
+						(default-value 'gdb-switch-when-another-stopped)))<br/>
+      (gdb-customize-reasons menu-item "Customize switching..."<br/>
+			     (lambda nil<br/>
+			       (interactive)<br/>
+			       (customize-option 'gdb-switch-reasons)))<br/>
+      (sep2 menu-item "--")<br/>
+      (current-thread menu-item "GUD controls current thread"<br/>
+		      (lambda nil<br/>
+			(interactive)<br/>
+			(setq gdb-gud-control-all-threads nil))<br/>
+		      :help "GUD start/stop commands apply to current thread only" :button<br/>
+		      (:radio not gdb-gud-control-all-threads))<br/>
+      (all-threads menu-item "GUD controls all threads"<br/>
+		   (lambda nil<br/>
+		     (interactive)<br/>
+		     (setq gdb-gud-control-all-threads t))<br/>
+		   :help "GUD start/stop commands apply to all threads" :button<br/>
+		   (:radio . gdb-gud-control-all-threads))<br/>
+      (sep1 menu-item "--")<br/>
+      (gdb-restore-windows menu-item "Restore Window Layout" gdb-restore-windows :help "Restore standard layout for debug session.")<br/>
+      (gdb-many-windows menu-item "Display Other Windows" gdb-many-windows :help "Toggle display of locals, stack and breakpoint information" :button<br/>
+			(:toggle . gdb-many-windows))<br/>
+      (gdb-customize menu-item "Customize"<br/>
+		     (lambda nil<br/>
+		       (interactive)<br/>
+		       (customize-group 'gdb))<br/>
+		     :help "Customize Gdb Graphical Mode options.")<br/>
+      "GDB-MI")<br/>
+     :visible<br/>
+     (eq gud-minor-mode 'gdbmi))<br/>
+ (frames menu-item "GDB-Frames"<br/>
+	 (keymap<br/>
+	  (breakpoints "Breakpoints" . gdb-frame-breakpoints-buffer)<br/>
+	  (frames "Stack" . gdb-frame-stack-buffer)<br/>
+	  (locals "Locals" . gdb-frame-locals-buffer)<br/>
+	  (inferior "IO" . gdb-frame-io-buffer)<br/>
+	  (registers "Registers" . gdb-frame-registers-buffer)<br/>
+	  (disassembly "Disassembly" . gdb-frame-disassembly-buffer)<br/>
+	  (memory "Memory" . gdb-frame-memory-buffer)<br/>
+	  (threads "Threads" . gdb-frame-threads-buffer)<br/>
+	  (gdb "Gdb" . gdb-frame-gdb-buffer)<br/>
+	  "GDB-Frames")<br/>
+	 :visible<br/>
+	 (eq gud-minor-mode 'gdbmi))<br/>
+ (displays menu-item "GDB-Windows"<br/>
+	   (keymap<br/>
+	    (breakpoints "Breakpoints" . gdb-display-breakpoints-buffer)<br/>
+	    (frames "Stack" . gdb-display-stack-buffer)<br/>
+	    (locals "Locals" . gdb-display-locals-buffer)<br/>
+	    (inferior "IO" . gdb-display-io-buffer)<br/>
+	    (registers "Registers" . gdb-display-registers-buffer)<br/>
+	    (disassembly "Disassembly" . gdb-display-disassembly-buffer)<br/>
+	    (memory "Memory" . gdb-display-memory-buffer)<br/>
+	    (threads "Threads" . gdb-display-threads-buffer)<br/>
+	    (gdb "Gdb" . gdb-display-gdb-buffer)<br/>
+	    "GDB-Windows")<br/>
+	   :visible<br/>
+	   (eq gud-minor-mode 'gdbmi))<br/>
+ (cont menu-item "Continue" gud-cont :enable<br/>
+       (not gud-running)<br/>
+       :visible<br/>
+       (not<br/>
+	(eq gud-minor-mode 'gdbmi)))<br/>
+ (next menu-item "Next Line" gud-next :enable<br/>
+       (not gud-running))<br/>
+ (step menu-item "Step Line" gud-step :enable<br/>
+       (not gud-running))<br/>
+ (nexti menu-item "Next Instruction" gud-nexti :enable<br/>
+	(not gud-running)<br/>
+	:visible<br/>
+	(memq gud-minor-mode<br/>
+	      '(gdbmi gdb dbx)))<br/>
+ (stepi menu-item "Step Instruction" gud-stepi :enable<br/>
+	(not gud-running)<br/>
+	:visible<br/>
+	(memq gud-minor-mode<br/>
+	      '(gdbmi gdb dbx)))<br/>
+ (finish menu-item "Finish Function" gud-finish :enable<br/>
+	 (not gud-running)<br/>
+	 :visible<br/>
+	 (memq gud-minor-mode<br/>
+	       '(gdbmi gdb xdb jdb pdb)))<br/>
+ (watch menu-item "Watch Expression" gud-watch :enable<br/>
+	(not gud-running)<br/>
+	:visible<br/>
+	(eq gud-minor-mode 'gdbmi))<br/>
+ (print menu-item "Print Expression" gud-print :enable<br/>
+	(not gud-running))<br/>
+ (print* menu-item<br/>
+	 (if<br/>
+	     (eq gud-minor-mode 'jdb)<br/>
+	     "Dump object" "Print Dereference")<br/>
+	 gud-pstar :enable<br/>
+	 (not gud-running)<br/>
+	 :visible<br/>
+	 (memq gud-minor-mode<br/>
+	       '(gdbmi gdb jdb)))<br/>
+ (pp menu-item "Print S-expression" gud-pp :enable<br/>
+     (and<br/>
+      (not gud-running)<br/>
+      (bound-and-true-p gdb-active-process))<br/>
+     :visible<br/>
+     (and<br/>
+      (string-equal<br/>
+       (buffer-local-value 'gud-target-name gud-comint-buffer)<br/>
+       "emacs")<br/>
+      (eq gud-minor-mode 'gdbmi)))<br/>
+ (down menu-item "Down Stack" gud-down :enable<br/>
+       (not gud-running)<br/>
+       :visible<br/>
+       (memq gud-minor-mode<br/>
+	     '(gdbmi gdb dbx xdb jdb pdb)))<br/>
+ (up menu-item "Up Stack" gud-up :enable<br/>
+     (not gud-running)<br/>
+     :visible<br/>
+     (memq gud-minor-mode<br/>
+	   '(gdbmi gdb dbx xdb jdb pdb)))<br/>
+ (break menu-item "Set Breakpoint" gud-break :enable<br/>
+	(not gud-running)<br/>
+	:visible<br/>
+	(gud-tool-bar-item-visible-no-fringe))<br/>
+ (tbreak menu-item "Temporary Breakpoint" gud-tbreak :enable<br/>
+	 (not gud-running)<br/>
+	 :visible<br/>
+	 (memq gud-minor-mode<br/>
+	       '(gdbmi gdb sdb xdb)))<br/>
+ (remove menu-item "Remove Breakpoint" gud-remove :enable<br/>
+	 (not gud-running)<br/>
+	 :visible<br/>
+	 (gud-tool-bar-item-visible-no-fringe))<br/>
+ (until menu-item "Continue to selection" gud-until :enable<br/>
+	(not gud-running)<br/>
+	:visible<br/>
+	(and<br/>
+	 (memq gud-minor-mode<br/>
+	       '(gdbmi gdb perldb))<br/>
+	 (gud-tool-bar-item-visible-no-fringe)))<br/>
+ (stop menu-item "Stop" gud-stop-subjob :visible<br/>
+       (or<br/>
+	(not<br/>
+	 (memq gud-minor-mode<br/>
+	       '(gdbmi pdb)))<br/>
+	(gdb-show-stop-p)))<br/>
+ (go menu-item<br/>
+     (if<br/>
+	 (bound-and-true-p gdb-active-process)<br/>
+	 "Continue" "Run")<br/>
+     gud-go :visible<br/>
+     (and<br/>
+      (eq gud-minor-mode 'gdbmi)<br/>
+      (gdb-show-run-p)))<br/>
+ (run menu-item "Run" gud-run :enable<br/>
+      (not gud-running)<br/>
+      :visible<br/>
+      (memq gud-minor-mode<br/>
+	    '(gdbmi gdb dbx jdb)))<br/>
+ (refresh "Refresh" . gud-refresh)<br/>
+ (tooltips menu-item "Show GUD tooltips" gud-tooltip-mode :enable<br/>
+	   (and<br/>
+	    (not emacs-basic-display)<br/>
+	    (display-graphic-p)<br/>
+	    (fboundp 'x-show-tip))<br/>
+	   :visible<br/>
+	   (memq gud-minor-mode<br/>
+		 '(gdbmi dbx sdb xdb pdb))<br/>
+	   :button<br/>
+	   (:toggle . gud-tooltip-mode))<br/>
+ (help "Info (debugger)" . gud-goto-info)<br/>
+ "Gud")<br/>
+<br/>

@@ -1,1 +1,17 @@
-current-time-string is a built-in function in `C source code'.<br/><br/>(current-time-string &optional SPECIFIED-TIME)<br/><br/>Return the current local time, as a human-readable string.<br/>Programs can use this function to decode a time,<br/>since the number of columns in each field is fixed<br/>if the year is in the range 1000-9999.<br/>The format is `Sun Sep 16 01:03:52 1973'.<br/>However, see also the functions `decode-time' and `format-time-string'<br/>which provide a much more powerful and general facility.<br/><br/>If SPECIFIED-TIME is given, it is a time to format instead of the<br/>current time.  The argument should have the form (HIGH LOW . IGNORED).<br/>Thus, you can use times obtained from `current-time' and from<br/>`file-attributes'.  SPECIFIED-TIME can also have the form (HIGH . LOW),<br/>but this is considered obsolete.
+<strong>current-time-string</strong> is a built-in function in `<code>C source code</code>'.<br/>
+<br/>
+(current-time-string &optional SPECIFIED-TIME)<br/>
+<br/>
+Return the current local time, as a human-readable string.<br/>
+Programs can use this function to decode a time,<br/>
+since the number of columns in each field is fixed<br/>
+if the year is in the range 1000-9999.<br/>
+The format is `Sun Sep 16 01:03:52 1973'.<br/>
+However, see also the functions `decode-time' and `format-time-string'<br/>
+which provide a much more powerful and general facility.<br/>
+<br/>
+If SPECIFIED-TIME is given, it is a time to format instead of the<br/>
+current time.  The argument should have the form (HIGH LOW . IGNORED).<br/>
+Thus, you can use times obtained from `current-time' and from<br/>
+`file-attributes'.  SPECIFIED-TIME can also have the form (HIGH . LOW),<br/>
+but this is considered obsolete.

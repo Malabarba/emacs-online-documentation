@@ -1,1 +1,17 @@
-tty-color-alist is a compiled Lisp function in `tty-colors.el'.<br/><br/>(tty-color-alist &optional FRAME)<br/><br/>Return an alist of colors supported by FRAME's terminal.<br/>FRAME defaults to the selected frame.<br/>Each element of the returned alist is of the form:<br/> (NAME INDEX R G B)<br/>where NAME is the name of the color, a string;<br/>INDEX is the index of this color to be sent to the terminal driver<br/>when the color should be displayed; it is typically a small integer;<br/>R, G, and B are the intensities of, accordingly, red, green, and blue<br/>components of the color, represented as numbers between 0 and 65535.<br/>The file `etc/rgb.txt' in the Emacs distribution lists the standard<br/>RGB values of the X colors.  If RGB is nil, this color will not be<br/>considered by `tty-color-translate' as an approximation to another<br/>color.
+<strong>tty-color-alist</strong> is a compiled Lisp function in `<code>tty-colors.el</code>'.<br/>
+<br/>
+(tty-color-alist &optional FRAME)<br/>
+<br/>
+Return an alist of colors supported by FRAME's terminal.<br/>
+FRAME defaults to the selected frame.<br/>
+Each element of the returned alist is of the form:<br/>
+ (NAME INDEX R G B)<br/>
+where NAME is the name of the color, a string;<br/>
+INDEX is the index of this color to be sent to the terminal driver<br/>
+when the color should be displayed; it is typically a small integer;<br/>
+R, G, and B are the intensities of, accordingly, red, green, and blue<br/>
+components of the color, represented as numbers between 0 and 65535.<br/>
+The file `etc/rgb.txt' in the Emacs distribution lists the standard<br/>
+RGB values of the X colors.  If RGB is nil, this color will not be<br/>
+considered by `tty-color-translate' as an approximation to another<br/>
+color.

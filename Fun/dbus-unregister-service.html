@@ -1,1 +1,17 @@
-dbus-unregister-service is a compiled Lisp function in `dbus.el'.<br/><br/>(dbus-unregister-service BUS SERVICE)<br/><br/>Unregister all objects related to SERVICE from D-Bus BUS.<br/>BUS is either a Lisp symbol, `:system' or `:session', or a string<br/>denoting the bus address.  SERVICE must be a known service name.<br/><br/>The function returns a keyword, indicating the result of the<br/>operation.  One of the following keywords is returned:<br/><br/>`:released': Service has become the primary owner of the name.<br/><br/>`:non-existent': Service name does not exist on this bus.<br/><br/>`:not-owner': We are neither the primary owner nor waiting in the<br/>queue of this service.
+<strong>dbus-unregister-service</strong> is a compiled Lisp function in `<code>dbus.el</code>'.<br/>
+<br/>
+(dbus-unregister-service BUS SERVICE)<br/>
+<br/>
+Unregister all objects related to SERVICE from D-Bus BUS.<br/>
+BUS is either a Lisp symbol, `:system' or `:session', or a string<br/>
+denoting the bus address.  SERVICE must be a known service name.<br/>
+<br/>
+The function returns a keyword, indicating the result of the<br/>
+operation.  One of the following keywords is returned:<br/>
+<br/>
+`:released': Service has become the primary owner of the name.<br/>
+<br/>
+`:non-existent': Service name does not exist on this bus.<br/>
+<br/>
+`:not-owner': We are neither the primary owner nor waiting in the<br/>
+queue of this service.

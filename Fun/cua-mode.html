@@ -1,1 +1,33 @@
-cua-mode is an interactive autoloaded compiled Lisp function in `cua-base.el'.<br/><br/>It is bound to <menu-bar> <options> <cua-emulation-mode>, <menu-bar> <options> <cua-mode>.<br/><br/>(cua-mode &optional ARG)<br/><br/>Toggle Common User Access style editing (CUA mode).<br/>With a prefix argument ARG, enable CUA mode if ARG is positive,<br/>and disable it otherwise.  If called from Lisp, enable the mode<br/>if ARG is omitted or nil.<br/><br/>CUA mode is a global minor mode.  When enabled, typed text<br/>replaces the active selection, and you can use C-z, C-x, C-c, and<br/>C-v to undo, cut, copy, and paste in addition to the normal Emacs<br/>bindings.  The C-x and C-c keys only do cut and copy when the<br/>region is active, so in most cases, they do not conflict with the<br/>normal function of these prefix keys.<br/><br/>If you really need to perform a command which starts with one of<br/>the prefix keys even when the region is active, you have three<br/>options:<br/>- press the prefix key twice very quickly (within 0.2 seconds),<br/>- press the prefix key and the following key within 0.2 seconds, or<br/>- use the SHIFT key with the prefix key, i.e. C-S-x or C-S-c.<br/><br/>You can customize `cua-enable-cua-keys' to completely disable the<br/>CUA bindings, or `cua-prefix-override-inhibit-delay' to change<br/>the prefix fallback behavior.<br/><br/>CUA mode manages Transient Mark mode internally.  Trying to disable<br/>Transient Mark mode while CUA mode is enabled does not work; if you<br/>only want to highlight the region when it is selected using a<br/>shifted movement key, set `cua-highlight-region-shift-only'.
+<strong>cua-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>cua-base.el</code>'.<br/>
+<br/>
+It is bound to <menu-bar> <options> <cua-emulation-mode>, <menu-bar> <options> <cua-mode>.<br/>
+<br/>
+(cua-mode &optional ARG)<br/>
+<br/>
+Toggle Common User Access style editing (CUA mode).<br/>
+With a prefix argument ARG, enable CUA mode if ARG is positive,<br/>
+and disable it otherwise.  If called from Lisp, enable the mode<br/>
+if ARG is omitted or nil.<br/>
+<br/>
+CUA mode is a global minor mode.  When enabled, typed text<br/>
+replaces the active selection, and you can use C-z, C-x, C-c, and<br/>
+C-v to undo, cut, copy, and paste in addition to the normal Emacs<br/>
+bindings.  The C-x and C-c keys only do cut and copy when the<br/>
+region is active, so in most cases, they do not conflict with the<br/>
+normal function of these prefix keys.<br/>
+<br/>
+If you really need to perform a command which starts with one of<br/>
+the prefix keys even when the region is active, you have three<br/>
+options:<br/>
+- press the prefix key twice very quickly (within 0.2 seconds),<br/>
+- press the prefix key and the following key within 0.2 seconds, or<br/>
+- use the SHIFT key with the prefix key, i.e. C-S-x or C-S-c.<br/>
+<br/>
+You can customize `cua-enable-cua-keys' to completely disable the<br/>
+CUA bindings, or `cua-prefix-override-inhibit-delay' to change<br/>
+the prefix fallback behavior.<br/>
+<br/>
+CUA mode manages Transient Mark mode internally.  Trying to disable<br/>
+Transient Mark mode while CUA mode is enabled does not work; if you<br/>
+only want to highlight the region when it is selected using a<br/>
+shifted movement key, set `cua-highlight-region-shift-only'.

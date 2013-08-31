@@ -1,1 +1,19 @@
-feedmail-before-fcc-hook is a variable defined in `feedmail.el'.<br/>Its value is nil<br/><br/>  This variable may be risky if used as a file-local variable.<br/><br/>Documentation:<br/>User's last opportunity to modify the message before Fcc action.<br/>It has already had all the header prepping from the standard package.<br/>The next step after running the hook will be to save the message via<br/>Fcc: processing. The hook might be interested in these: (1)<br/>`feedmail-prepped-text-buffer' contains the header and body of the<br/>message, ready to go; (2) `feedmail-address-list' contains a list of<br/>simplified recipients of addressees to whom the message was sent (3)<br/>`feedmail-error-buffer' is an empty buffer intended to soak up errors<br/>for display to the user.  If the hook allows interactive activity, the<br/>user should not send more mail while in the hook since some of the<br/>internal buffers will be reused and things will get confused.<br/><br/>You can customize this variable.
+<strong>feedmail-before-fcc-hook</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
+Its value is nil<br/>
+<br/>
+  This variable may be risky if used as a file-local variable.<br/>
+<br/>
+Documentation:<br/>
+User's last opportunity to modify the message before Fcc action.<br/>
+It has already had all the header prepping from the standard package.<br/>
+The next step after running the hook will be to save the message via<br/>
+Fcc: processing. The hook might be interested in these: (1)<br/>
+`feedmail-prepped-text-buffer' contains the header and body of the<br/>
+message, ready to go; (2) `feedmail-address-list' contains a list of<br/>
+simplified recipients of addressees to whom the message was sent (3)<br/>
+`feedmail-error-buffer' is an empty buffer intended to soak up errors<br/>
+for display to the user.  If the hook allows interactive activity, the<br/>
+user should not send more mail while in the hook since some of the<br/>
+internal buffers will be reused and things will get confused.<br/>
+<br/>
+You can customize this variable.

@@ -1,1 +1,29 @@
-one-window-p is a compiled Lisp function in `window.el'.<br/><br/>(one-window-p &optional NOMINI ALL-FRAMES)<br/><br/>Return non-nil if the selected window is the only window.<br/>Optional arg NOMINI non-nil means don't count the minibuffer<br/>even if it is active.  Otherwise, the minibuffer is counted<br/>when it is active.<br/><br/>Optional argument ALL-FRAMES specifies the set of frames to<br/>consider, see also `next-window'.  ALL-FRAMES nil or omitted<br/>means consider windows on the selected frame only, plus the<br/>minibuffer window if specified by the NOMINI argument.  If the<br/>minibuffer counts, consider all windows on all frames that share<br/>that minibuffer too.  The remaining non-nil values of ALL-FRAMES<br/>with a special meaning are:<br/><br/>- t means consider all windows on all existing frames.<br/><br/>- `visible' means consider all windows on all visible frames on<br/>  the current terminal.<br/><br/>- 0 (the number zero) means consider all windows on all visible<br/>  and iconified frames on the current terminal.<br/><br/>- A frame means consider all windows on that frame only.<br/><br/>Anything else means consider all windows on the selected frame<br/>and no others.
+<strong>one-window-p</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
+<br/>
+(one-window-p &optional NOMINI ALL-FRAMES)<br/>
+<br/>
+Return non-nil if the selected window is the only window.<br/>
+Optional arg NOMINI non-nil means don't count the minibuffer<br/>
+even if it is active.  Otherwise, the minibuffer is counted<br/>
+when it is active.<br/>
+<br/>
+Optional argument ALL-FRAMES specifies the set of frames to<br/>
+consider, see also `next-window'.  ALL-FRAMES nil or omitted<br/>
+means consider windows on the selected frame only, plus the<br/>
+minibuffer window if specified by the NOMINI argument.  If the<br/>
+minibuffer counts, consider all windows on all frames that share<br/>
+that minibuffer too.  The remaining non-nil values of ALL-FRAMES<br/>
+with a special meaning are:<br/>
+<br/>
+- t means consider all windows on all existing frames.<br/>
+<br/>
+- `visible' means consider all windows on all visible frames on<br/>
+  the current terminal.<br/>
+<br/>
+- 0 (the number zero) means consider all windows on all visible<br/>
+  and iconified frames on the current terminal.<br/>
+<br/>
+- A frame means consider all windows on that frame only.<br/>
+<br/>
+Anything else means consider all windows on the selected frame<br/>
+and no others.

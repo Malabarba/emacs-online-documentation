@@ -70,13 +70,14 @@
   (docgen//log "First, let's require all built-in features. So we know everything is defined.")
   (mapc
    (lambda (f) (condition-case nil
-                   (progn (message "%s" f)
-                          (require f nil t))
-                 (error nil))) ;;no-error because some features are obsolete and throw errors.
+              (progn (message "%s" f)
+                     (require f nil t))
+            (error nil))) ;;no-error because some features are obsolete and throw errors.
    (docgen//full-feature-lister))
   ;; These lists will be used to create the functions.html and variables.html files
   (setq docgen//file-list-variable nil
-        docgen//file-list-function nil)
+        docgen//file-list-function nil
+        docgen//file-list-face nil)
   (docgen//log "Erase the sql-script, so we can make a new one.")
   ;; (when (file-readable-p docgen//sql-script-file)
   ;;   (delete-file docgen//sql-script-file t))
@@ -103,9 +104,17 @@
         (fill-column 1000)
         (docgen//file-list 'docgen//file-list-variable))
     (mapc 'docgen//symbol-to-file (docgen//variable-list)))
+  (docgen//log "Generate the doc for faces")
+  (let ((docgen//sql-table-name "Faces")
+        (docgen//description 'describe-face)
+        (docgen//format "Face/%s.html")
+        (fill-column 1000) 
+        (docgen//file-list 'docgen//file-list-face))
+    (mapc 'docgen//symbol-to-file (docgen//face-list)))
   (docgen//log "Recreate the index.html")
   (let ((fun    (concat docgen//dir "functions.html"))
         (var    (concat docgen//dir "variables.html"))
+        (face   (concat docgen//dir "faces.html"))
         (header (concat docgen//dir "header.htmlt"))
         (footer (concat docgen//dir "footer.htmlt")))
     (with-temp-file fun
@@ -118,6 +127,12 @@
       (insert-file-contents-literally header)
       (goto-char (point-max))
       (insert (docgen//cons-list-to-item-list docgen//file-list-variable "Variables"))
+      (goto-char (point-max))
+      (insert-file-contents-literally footer))
+    (with-temp-file face
+      (insert-file-contents-literally header)
+      (goto-char (point-max))
+      (insert (docgen//cons-list-to-item-list docgen//file-list-variable "Faces"))
       (goto-char (point-max))
       (insert-file-contents-literally footer))))
 
@@ -179,6 +194,10 @@ only forbidden character is the /."
 (defun docgen//variable-list ()
   ""
   (docgen//-list-all 'boundp))
+
+(defun docgen//face-list ()
+  ""
+  (docgen//-list-all 'facep))
 
 (defun docgen//-list-all (docgen//predicate)
   "List all internal symbols satifying the DOCGEN//PREDICATE.

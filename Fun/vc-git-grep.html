@@ -1,0 +1,21 @@
+<strong>vc-git-grep</strong> is an interactive compiled Lisp function in `<code>vc-git.el</code>'.</br>
+</br>
+</br>
+(vc-git-grep <u>REGEXP</u> &optional <u>FILES</u> <u>DIR</u>)</br>
+</br>
+Run git grep, searching for <u>REGEXP</u> in <u>FILES</u> in directory <u>DIR</u>.</br>
+The search is limited to file names matching shell pattern <u>FILES</u>.</br>
+<u>FILES</u> may use abbreviations defined in `grep-files-aliases', e.g.</br>
+entering `ch' is equivalent to `*.[ch]'.</br>
+</br>
+With C-u prefix, you can edit the constructed shell command line</br>
+before it is executed.</br>
+With two C-u prefixes, directly edit and run `grep-command'.</br>
+</br>
+Collect output in a buffer.  While git grep runs asynchronously, you</br>
+can use C-x ` (M-x next-error), or </br>
+Uses keymap `grep-mode-map', which is not currently defined.</br>
+M-x compile-goto-error in the grep output buffer,</br>
+to go to the lines where grep found matches.</br>
+</br>
+This command shares argument histories with M-x rgrep and M-x grep.

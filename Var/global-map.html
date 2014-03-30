@@ -36,6 +36,12 @@ global map.</br>
  (C-mouse-4 . mwheel-scroll)
  (S-mouse-4 . mwheel-scroll)
  (mouse-4 . mwheel-scroll)
+ (paste . clipboard-yank)
+ (copy . clipboard-kill-ring-save)
+ (cut . clipboard-kill-region)
+ (f18 . clipboard-yank)
+ (f16 . clipboard-kill-ring-save)
+ (f20 . clipboard-kill-region)
  (XF86WakeUp . ignore)
  (tool-bar menu-item "tool bar" ignore :filter tool-bar-make-keymap)
  (f10 . menu-bar-open)
@@ -823,7 +829,22 @@ global map.</br>
 				"Customize"))
 		    "Options")
 	   (buffer "Buffers" keymap "Buffers"
-		   [("*scratch*  "
+		   [("documentation-generator.el  "
+		     (nil)
+		     lambda nil
+		     (interactive)
+		     (funcall menu-bar-select-buffer-function #<buffer documentation-generator.el>))
+		    ("emacs-online-documentation  %"
+		     (nil)
+		     lambda nil
+		     (interactive)
+		     (funcall menu-bar-select-buffer-function #<buffer emacs-online-documentation>))
+		    ("*GNU Emacs*  %"
+		     (nil)
+		     lambda nil
+		     (interactive)
+		     (funcall menu-bar-select-buffer-function #<buffer *GNU Emacs*>))
+		    ("*scratch*  "
 		     (nil)
 		     lambda nil
 		     (interactive)
@@ -833,16 +854,11 @@ global map.</br>
 		     lambda nil
 		     (interactive)
 		     (funcall menu-bar-select-buffer-function #<buffer *Messages*>))
-		    ("loaddefs.el<lisp>  %"
+		    ("*Completions*  %"
 		     (nil)
 		     lambda nil
 		     (interactive)
-		     (funcall menu-bar-select-buffer-function #<buffer loaddefs.el<lisp>>))
-		    ("tramp-loaddefs.el  %"
-		     (nil)
-		     lambda nil
-		     (interactive)
-		     (funcall menu-bar-select-buffer-function #<buffer tramp-loaddefs.el>))]
+		     (funcall menu-bar-select-buffer-function #<buffer *Completions*>))]
 		   (command-separator "--")
 		   (next-buffer menu-item "Next Buffer" next-buffer :help "Switch to the \"next\" buffer in a cyclic order")
 		   (previous-buffer menu-item "Previous Buffer" previous-buffer :help "Switch to the \"previous\" buffer in a cyclic order")

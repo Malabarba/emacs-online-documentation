@@ -6,7 +6,22 @@ Not documented as a variable.</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
 (keymap "Buffers"
-	[("*scratch*  "
+	[("documentation-generator.el  "
+	  (nil)
+	  lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer documentation-generator.el>))
+	 ("emacs-online-documentation  %"
+	  (nil)
+	  lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer emacs-online-documentation>))
+	 ("*GNU Emacs*  %"
+	  (nil)
+	  lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer *GNU Emacs*>))
+	 ("*scratch*  "
 	  (nil)
 	  lambda nil
 	  (interactive)
@@ -16,16 +31,11 @@ Not documented as a variable.</br>
 	  lambda nil
 	  (interactive)
 	  (funcall menu-bar-select-buffer-function #<buffer *Messages*>))
-	 ("loaddefs.el<lisp>  %"
+	 ("*Completions*  %"
 	  (nil)
 	  lambda nil
 	  (interactive)
-	  (funcall menu-bar-select-buffer-function #<buffer loaddefs.el<lisp>>))
-	 ("tramp-loaddefs.el  %"
-	  (nil)
-	  lambda nil
-	  (interactive)
-	  (funcall menu-bar-select-buffer-function #<buffer tramp-loaddefs.el>))]
+	  (funcall menu-bar-select-buffer-function #<buffer *Completions*>))]
 	(command-separator "--")
 	(next-buffer menu-item "Next Buffer" next-buffer :help "Switch to the \"next\" buffer in a cyclic order")
 	(previous-buffer menu-item "Previous Buffer" previous-buffer :help "Switch to the \"previous\" buffer in a cyclic order")

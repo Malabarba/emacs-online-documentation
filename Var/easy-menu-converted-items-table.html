@@ -6,7 +6,17 @@ Not documented as a variable.</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
 #s(hash-table size 2463 test equal rehash-size 1.5 rehash-threshold 0.8 data
-	      (["None"
+	      (["Show Help for Symbol" help-follow-symbol :help "Show the docs for the symbol at point"]
+	       (Show\ Help\ for\ Symbol menu-item "Show Help for Symbol" help-follow-symbol :help "Show the docs for the symbol at point")
+	       ["Previous Topic" help-go-back :help "Go back to previous topic in this help buffer"]
+	       (Previous\ Topic menu-item "Previous Topic" help-go-back :help "Go back to previous topic in this help buffer")
+	       ["Next Topic" help-go-forward :help "Go back to next topic in this help buffer"]
+	       (Next\ Topic menu-item "Next Topic" help-go-forward :help "Go back to next topic in this help buffer")
+	       ["Move to Previous Button" backward-button :help "Move to the Next Button in the help buffer"]
+	       (Move\ to\ Previous\ Button menu-item "Move to Previous Button" backward-button :help "Move to the Next Button in the help buffer")
+	       ["Move to Next Button" forward-button :help "Move to the Next Button in the help buffer"]
+	       (Move\ to\ Next\ Button menu-item "Move to Next Button" forward-button :help "Move to the Next Button in the help buffer")
+	       ["None"
 		(progn
 		  (setq verilog-tool nil)
 		  (verilog-set-compile-command))
@@ -3024,16 +3034,6 @@ Not documented as a variable.</br>
 	       (Insert\ octal\ char menu-item "Insert octal char" hexl-insert-octal-char :help "Insert a character given by its octal code")
 	       ["Exit hexl mode" hexl-mode-exit :help "Exit hexl mode returning to previous mode"]
 	       (Exit\ hexl\ mode menu-item "Exit hexl mode" hexl-mode-exit :help "Exit hexl mode returning to previous mode")
-	       ["Show Help for Symbol" help-follow-symbol :help "Show the docs for the symbol at point"]
-	       (Show\ Help\ for\ Symbol menu-item "Show Help for Symbol" help-follow-symbol :help "Show the docs for the symbol at point")
-	       ["Previous Topic" help-go-back :help "Go back to previous topic in this help buffer"]
-	       (Previous\ Topic menu-item "Previous Topic" help-go-back :help "Go back to previous topic in this help buffer")
-	       ["Next Topic" help-go-forward :help "Go back to next topic in this help buffer"]
-	       (Next\ Topic menu-item "Next Topic" help-go-forward :help "Go back to next topic in this help buffer")
-	       ["Move to Previous Button" backward-button :help "Move to the Next Button in the help buffer"]
-	       (Move\ to\ Previous\ Button menu-item "Move to Previous Button" backward-button :help "Move to the Next Button in the help buffer")
-	       ["Move to Next Button" forward-button :help "Move to the Next Button in the help buffer"]
-	       (Move\ to\ Next\ Button menu-item "Move to Next Button" forward-button :help "Move to the Next Button in the help buffer")
 	       ["Show as Text" image-toggle-display :active t :help "Show image as text"]
 	       (Show\ as\ Text menu-item "Show as Text" image-toggle-display :help "Show image as text")
 	       ["Fit Frame to Image" image-mode-fit-frame :active t :help "Resize frame to match image"]

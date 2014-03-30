@@ -1,6 +1,5 @@
 <strong>input-decode-map</strong> is a variable defined in `<code>C source code</code>'.</br>
-Its value is <pre>(keymap)</pre></br>
-It is a terminal-local variable; global value is the same.</br>
+Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Keymap that decodes input escape sequences.</br>
@@ -17,4 +16,16 @@ If the binding is a function, it is called with one argument (the prompt)</br>
 and its return value (a key sequence) is used.</br>
 </br>
 The events that come from bindings in `input-decode-map' are not</br>
-themselves looked up in `input-decode-map'.
+themselves looked up in `input-decode-map'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (27 keymap
+     (C-backspace)
+     (C-delete))
+ (C-M-backspace)
+ (C-M-delete)
+ (M-backspace)
+ (M-delete))
+</pre></br>
+It is a terminal-local variable; global value is the same.</br>

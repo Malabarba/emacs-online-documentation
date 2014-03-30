@@ -15,8 +15,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "gud/break.pbm" :foreground "black")
-	     (:type xbm :file "gud/break.xbm" :foreground "black")
+	   '((:type pbm :file "gud/break.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/break.xbm" :foreground "black" :background "grey75")
 	     (:type xpm :file "low-color/gud/break.xpm")
 	     (:type xpm :file "gud/break.xpm")))
 	  ((<
@@ -24,12 +24,12 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/gud/break.xpm")
 	     (:type xpm :file "gud/break.xpm")
-	     (:type pbm :file "gud/break.pbm" :foreground "black")
-	     (:type xbm :file "gud/break.xbm" :foreground "black")))
+	     (:type pbm :file "gud/break.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/break.xbm" :foreground "black" :background "grey75")))
 	  (t
 	   '((:type xpm :file "gud/break.xpm")
-	     (:type pbm :file "gud/break.pbm" :foreground "black")
-	     (:type xbm :file "gud/break.xbm" :foreground "black"))))))
+	     (:type pbm :file "gud/break.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/break.xbm" :foreground "black" :background "grey75"))))))
  (remove menu-item "Remove Breakpoint" gud-remove :enable
 	 (not gud-running)
 	 :visible
@@ -39,8 +39,8 @@ Not documented as a variable.</br>
 	  (cond
 	   ((not
 	     (display-color-p))
-	    '((:type pbm :file "gud/remove.pbm" :foreground "black")
-	      (:type xbm :file "gud/remove.xbm" :foreground "black")
+	    '((:type pbm :file "gud/remove.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/remove.xbm" :foreground "black" :background "grey75")
 	      (:type xpm :file "low-color/gud/remove.xpm")
 	      (:type xpm :file "gud/remove.xpm")))
 	   ((<
@@ -48,12 +48,12 @@ Not documented as a variable.</br>
 	     256)
 	    '((:type xpm :file "low-color/gud/remove.xpm")
 	      (:type xpm :file "gud/remove.xpm")
-	      (:type pbm :file "gud/remove.pbm" :foreground "black")
-	      (:type xbm :file "gud/remove.xbm" :foreground "black")))
+	      (:type pbm :file "gud/remove.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/remove.xbm" :foreground "black" :background "grey75")))
 	   (t
 	    '((:type xpm :file "gud/remove.xpm")
-	      (:type pbm :file "gud/remove.pbm" :foreground "black")
-	      (:type xbm :file "gud/remove.xbm" :foreground "black"))))))
+	      (:type pbm :file "gud/remove.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/remove.xbm" :foreground "black" :background "grey75"))))))
  (print menu-item "Print Expression" gud-print :enable
 	(not gud-running)
 	:image
@@ -61,8 +61,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "gud/print.pbm" :foreground "black")
-	     (:type xbm :file "gud/print.xbm" :foreground "black")
+	   '((:type pbm :file "gud/print.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/print.xbm" :foreground "black" :background "grey75")
 	     (:type xpm :file "low-color/gud/print.xpm")
 	     (:type xpm :file "gud/print.xpm")))
 	  ((<
@@ -70,12 +70,12 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/gud/print.xpm")
 	     (:type xpm :file "gud/print.xpm")
-	     (:type pbm :file "gud/print.pbm" :foreground "black")
-	     (:type xbm :file "gud/print.xbm" :foreground "black")))
+	     (:type pbm :file "gud/print.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/print.xbm" :foreground "black" :background "grey75")))
 	  (t
 	   '((:type xpm :file "gud/print.xpm")
-	     (:type pbm :file "gud/print.pbm" :foreground "black")
-	     (:type xbm :file "gud/print.xbm" :foreground "black"))))))
+	     (:type pbm :file "gud/print.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/print.xbm" :foreground "black" :background "grey75"))))))
  (print* menu-item
 	 (if
 	     (eq gud-minor-mode 'jdb)
@@ -90,8 +90,8 @@ Not documented as a variable.</br>
 	  (cond
 	   ((not
 	     (display-color-p))
-	    '((:type pbm :file "gud/pstar.pbm" :foreground "black")
-	      (:type xbm :file "gud/pstar.xbm" :foreground "black")
+	    '((:type pbm :file "gud/pstar.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/pstar.xbm" :foreground "black" :background "grey75")
 	      (:type xpm :file "low-color/gud/pstar.xpm")
 	      (:type xpm :file "gud/pstar.xpm")))
 	   ((<
@@ -99,12 +99,12 @@ Not documented as a variable.</br>
 	     256)
 	    '((:type xpm :file "low-color/gud/pstar.xpm")
 	      (:type xpm :file "gud/pstar.xpm")
-	      (:type pbm :file "gud/pstar.pbm" :foreground "black")
-	      (:type xbm :file "gud/pstar.xbm" :foreground "black")))
+	      (:type pbm :file "gud/pstar.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/pstar.xbm" :foreground "black" :background "grey75")))
 	   (t
 	    '((:type xpm :file "gud/pstar.xpm")
-	      (:type pbm :file "gud/pstar.pbm" :foreground "black")
-	      (:type xbm :file "gud/pstar.xbm" :foreground "black"))))))
+	      (:type pbm :file "gud/pstar.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/pstar.xbm" :foreground "black" :background "grey75"))))))
  (pp menu-item "Print S-expression" gud-pp :enable
      (and
       (not gud-running)
@@ -120,8 +120,8 @@ Not documented as a variable.</br>
       (cond
        ((not
 	 (display-color-p))
-	'((:type pbm :file "gud/pp.pbm" :foreground "black")
-	  (:type xbm :file "gud/pp.xbm" :foreground "black")
+	'((:type pbm :file "gud/pp.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/pp.xbm" :foreground "black" :background "grey75")
 	  (:type xpm :file "low-color/gud/pp.xpm")
 	  (:type xpm :file "gud/pp.xpm")))
        ((<
@@ -129,12 +129,12 @@ Not documented as a variable.</br>
 	 256)
 	'((:type xpm :file "low-color/gud/pp.xpm")
 	  (:type xpm :file "gud/pp.xpm")
-	  (:type pbm :file "gud/pp.pbm" :foreground "black")
-	  (:type xbm :file "gud/pp.xbm" :foreground "black")))
+	  (:type pbm :file "gud/pp.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/pp.xbm" :foreground "black" :background "grey75")))
        (t
 	'((:type xpm :file "gud/pp.xpm")
-	  (:type pbm :file "gud/pp.pbm" :foreground "black")
-	  (:type xbm :file "gud/pp.xbm" :foreground "black"))))))
+	  (:type pbm :file "gud/pp.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/pp.xbm" :foreground "black" :background "grey75"))))))
  (watch menu-item "Watch Expression" gud-watch :enable
 	(not gud-running)
 	:visible
@@ -144,8 +144,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "gud/watch.pbm" :foreground "black")
-	     (:type xbm :file "gud/watch.xbm" :foreground "black")
+	   '((:type pbm :file "gud/watch.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/watch.xbm" :foreground "black" :background "grey75")
 	     (:type xpm :file "low-color/gud/watch.xpm")
 	     (:type xpm :file "gud/watch.xpm")))
 	  ((<
@@ -153,12 +153,12 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/gud/watch.xpm")
 	     (:type xpm :file "gud/watch.xpm")
-	     (:type pbm :file "gud/watch.pbm" :foreground "black")
-	     (:type xbm :file "gud/watch.xbm" :foreground "black")))
+	     (:type pbm :file "gud/watch.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/watch.xbm" :foreground "black" :background "grey75")))
 	  (t
 	   '((:type xpm :file "gud/watch.xpm")
-	     (:type pbm :file "gud/watch.pbm" :foreground "black")
-	     (:type xbm :file "gud/watch.xbm" :foreground "black"))))))
+	     (:type pbm :file "gud/watch.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/watch.xbm" :foreground "black" :background "grey75"))))))
  (run menu-item "Run" gud-run :enable
       (not gud-running)
       :visible
@@ -169,8 +169,8 @@ Not documented as a variable.</br>
        (cond
 	((not
 	  (display-color-p))
-	 '((:type pbm :file "gud/run.pbm" :foreground "black")
-	   (:type xbm :file "gud/run.xbm" :foreground "black")
+	 '((:type pbm :file "gud/run.pbm" :foreground "black" :background "grey75")
+	   (:type xbm :file "gud/run.xbm" :foreground "black" :background "grey75")
 	   (:type xpm :file "low-color/gud/run.xpm")
 	   (:type xpm :file "gud/run.xpm")))
 	((<
@@ -178,12 +178,12 @@ Not documented as a variable.</br>
 	  256)
 	 '((:type xpm :file "low-color/gud/run.xpm")
 	   (:type xpm :file "gud/run.xpm")
-	   (:type pbm :file "gud/run.pbm" :foreground "black")
-	   (:type xbm :file "gud/run.xbm" :foreground "black")))
+	   (:type pbm :file "gud/run.pbm" :foreground "black" :background "grey75")
+	   (:type xbm :file "gud/run.xbm" :foreground "black" :background "grey75")))
 	(t
 	 '((:type xpm :file "gud/run.xpm")
-	   (:type pbm :file "gud/run.pbm" :foreground "black")
-	   (:type xbm :file "gud/run.xbm" :foreground "black"))))))
+	   (:type pbm :file "gud/run.pbm" :foreground "black" :background "grey75")
+	   (:type xbm :file "gud/run.xbm" :foreground "black" :background "grey75"))))))
  (all-threads menu-item "Switch to non-stop/A mode" gdb-control-all-threads :image
 	      (find-image
 	       '((:type xpm :file "gud/thread.xpm")))
@@ -212,8 +212,8 @@ Not documented as a variable.</br>
       (cond
        ((not
 	 (display-color-p))
-	'((:type pbm :file "gud/go.pbm" :foreground "black")
-	  (:type xbm :file "gud/go.xbm" :foreground "black")
+	'((:type pbm :file "gud/go.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/go.xbm" :foreground "black" :background "grey75")
 	  (:type xpm :file "low-color/gud/go.xpm")
 	  (:type xpm :file "gud/go.xpm")))
        ((<
@@ -221,12 +221,12 @@ Not documented as a variable.</br>
 	 256)
 	'((:type xpm :file "low-color/gud/go.xpm")
 	  (:type xpm :file "gud/go.xpm")
-	  (:type pbm :file "gud/go.pbm" :foreground "black")
-	  (:type xbm :file "gud/go.xbm" :foreground "black")))
+	  (:type pbm :file "gud/go.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/go.xbm" :foreground "black" :background "grey75")))
        (t
 	'((:type xpm :file "gud/go.xpm")
-	  (:type pbm :file "gud/go.pbm" :foreground "black")
-	  (:type xbm :file "gud/go.xbm" :foreground "black"))))))
+	  (:type pbm :file "gud/go.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/go.xbm" :foreground "black" :background "grey75"))))))
  (stop menu-item "Stop" gud-stop-subjob :visible
        (or
 	(not
@@ -238,8 +238,8 @@ Not documented as a variable.</br>
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "gud/stop.pbm" :foreground "black")
-	    (:type xbm :file "gud/stop.xbm" :foreground "black")
+	  '((:type pbm :file "gud/stop.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/stop.xbm" :foreground "black" :background "grey75")
 	    (:type xpm :file "low-color/gud/stop.xpm")
 	    (:type xpm :file "gud/stop.xpm")))
 	 ((<
@@ -247,12 +247,12 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/gud/stop.xpm")
 	    (:type xpm :file "gud/stop.xpm")
-	    (:type pbm :file "gud/stop.pbm" :foreground "black")
-	    (:type xbm :file "gud/stop.xbm" :foreground "black")))
+	    (:type pbm :file "gud/stop.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/stop.xbm" :foreground "black" :background "grey75")))
 	 (t
 	  '((:type xpm :file "gud/stop.xpm")
-	    (:type pbm :file "gud/stop.pbm" :foreground "black")
-	    (:type xbm :file "gud/stop.xbm" :foreground "black"))))))
+	    (:type pbm :file "gud/stop.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/stop.xbm" :foreground "black" :background "grey75"))))))
  (cont menu-item "Continue" gud-cont :enable
        (not gud-running)
        :visible
@@ -263,8 +263,8 @@ Not documented as a variable.</br>
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "gud/cont.pbm" :foreground "black")
-	    (:type xbm :file "gud/cont.xbm" :foreground "black")
+	  '((:type pbm :file "gud/cont.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/cont.xbm" :foreground "black" :background "grey75")
 	    (:type xpm :file "low-color/gud/cont.xpm")
 	    (:type xpm :file "gud/cont.xpm")))
 	 ((<
@@ -272,12 +272,12 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/gud/cont.xpm")
 	    (:type xpm :file "gud/cont.xpm")
-	    (:type pbm :file "gud/cont.pbm" :foreground "black")
-	    (:type xbm :file "gud/cont.xbm" :foreground "black")))
+	    (:type pbm :file "gud/cont.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/cont.xbm" :foreground "black" :background "grey75")))
 	 (t
 	  '((:type xpm :file "gud/cont.xpm")
-	    (:type pbm :file "gud/cont.pbm" :foreground "black")
-	    (:type xbm :file "gud/cont.xbm" :foreground "black"))))))
+	    (:type pbm :file "gud/cont.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/cont.xbm" :foreground "black" :background "grey75"))))))
  (until menu-item "Continue to selection" gud-until :enable
 	(not gud-running)
 	:visible
@@ -290,8 +290,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "gud/until.pbm" :foreground "black")
-	     (:type xbm :file "gud/until.xbm" :foreground "black")
+	   '((:type pbm :file "gud/until.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/until.xbm" :foreground "black" :background "grey75")
 	     (:type xpm :file "low-color/gud/until.xpm")
 	     (:type xpm :file "gud/until.xpm")))
 	  ((<
@@ -299,12 +299,12 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/gud/until.xpm")
 	     (:type xpm :file "gud/until.xpm")
-	     (:type pbm :file "gud/until.pbm" :foreground "black")
-	     (:type xbm :file "gud/until.xbm" :foreground "black")))
+	     (:type pbm :file "gud/until.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/until.xbm" :foreground "black" :background "grey75")))
 	  (t
 	   '((:type xpm :file "gud/until.xpm")
-	     (:type pbm :file "gud/until.pbm" :foreground "black")
-	     (:type xbm :file "gud/until.xbm" :foreground "black"))))))
+	     (:type pbm :file "gud/until.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/until.xbm" :foreground "black" :background "grey75"))))))
  (next menu-item "Next Line" gud-next :enable
        (not gud-running)
        :image
@@ -312,8 +312,8 @@ Not documented as a variable.</br>
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "gud/next.pbm" :foreground "black")
-	    (:type xbm :file "gud/next.xbm" :foreground "black")
+	  '((:type pbm :file "gud/next.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/next.xbm" :foreground "black" :background "grey75")
 	    (:type xpm :file "low-color/gud/next.xpm")
 	    (:type xpm :file "gud/next.xpm")))
 	 ((<
@@ -321,12 +321,12 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/gud/next.xpm")
 	    (:type xpm :file "gud/next.xpm")
-	    (:type pbm :file "gud/next.pbm" :foreground "black")
-	    (:type xbm :file "gud/next.xbm" :foreground "black")))
+	    (:type pbm :file "gud/next.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/next.xbm" :foreground "black" :background "grey75")))
 	 (t
 	  '((:type xpm :file "gud/next.xpm")
-	    (:type pbm :file "gud/next.pbm" :foreground "black")
-	    (:type xbm :file "gud/next.xbm" :foreground "black"))))))
+	    (:type pbm :file "gud/next.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/next.xbm" :foreground "black" :background "grey75"))))))
  (step menu-item "Step Line" gud-step :enable
        (not gud-running)
        :image
@@ -334,8 +334,8 @@ Not documented as a variable.</br>
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "gud/step.pbm" :foreground "black")
-	    (:type xbm :file "gud/step.xbm" :foreground "black")
+	  '((:type pbm :file "gud/step.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/step.xbm" :foreground "black" :background "grey75")
 	    (:type xpm :file "low-color/gud/step.xpm")
 	    (:type xpm :file "gud/step.xpm")))
 	 ((<
@@ -343,12 +343,12 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/gud/step.xpm")
 	    (:type xpm :file "gud/step.xpm")
-	    (:type pbm :file "gud/step.pbm" :foreground "black")
-	    (:type xbm :file "gud/step.xbm" :foreground "black")))
+	    (:type pbm :file "gud/step.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/step.xbm" :foreground "black" :background "grey75")))
 	 (t
 	  '((:type xpm :file "gud/step.xpm")
-	    (:type pbm :file "gud/step.pbm" :foreground "black")
-	    (:type xbm :file "gud/step.xbm" :foreground "black"))))))
+	    (:type pbm :file "gud/step.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/step.xbm" :foreground "black" :background "grey75"))))))
  (finish menu-item "Finish Function" gud-finish :enable
 	 (not gud-running)
 	 :visible
@@ -359,8 +359,8 @@ Not documented as a variable.</br>
 	  (cond
 	   ((not
 	     (display-color-p))
-	    '((:type pbm :file "gud/finish.pbm" :foreground "black")
-	      (:type xbm :file "gud/finish.xbm" :foreground "black")
+	    '((:type pbm :file "gud/finish.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/finish.xbm" :foreground "black" :background "grey75")
 	      (:type xpm :file "low-color/gud/finish.xpm")
 	      (:type xpm :file "gud/finish.xpm")))
 	   ((<
@@ -368,12 +368,12 @@ Not documented as a variable.</br>
 	     256)
 	    '((:type xpm :file "low-color/gud/finish.xpm")
 	      (:type xpm :file "gud/finish.xpm")
-	      (:type pbm :file "gud/finish.pbm" :foreground "black")
-	      (:type xbm :file "gud/finish.xbm" :foreground "black")))
+	      (:type pbm :file "gud/finish.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/finish.xbm" :foreground "black" :background "grey75")))
 	   (t
 	    '((:type xpm :file "gud/finish.xpm")
-	      (:type pbm :file "gud/finish.pbm" :foreground "black")
-	      (:type xbm :file "gud/finish.xbm" :foreground "black"))))))
+	      (:type pbm :file "gud/finish.pbm" :foreground "black" :background "grey75")
+	      (:type xbm :file "gud/finish.xbm" :foreground "black" :background "grey75"))))))
  (nexti menu-item "Next Instruction" gud-nexti :enable
 	(not gud-running)
 	:visible
@@ -384,8 +384,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "gud/nexti.pbm" :foreground "black")
-	     (:type xbm :file "gud/nexti.xbm" :foreground "black")
+	   '((:type pbm :file "gud/nexti.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/nexti.xbm" :foreground "black" :background "grey75")
 	     (:type xpm :file "low-color/gud/nexti.xpm")
 	     (:type xpm :file "gud/nexti.xpm")))
 	  ((<
@@ -393,12 +393,12 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/gud/nexti.xpm")
 	     (:type xpm :file "gud/nexti.xpm")
-	     (:type pbm :file "gud/nexti.pbm" :foreground "black")
-	     (:type xbm :file "gud/nexti.xbm" :foreground "black")))
+	     (:type pbm :file "gud/nexti.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/nexti.xbm" :foreground "black" :background "grey75")))
 	  (t
 	   '((:type xpm :file "gud/nexti.xpm")
-	     (:type pbm :file "gud/nexti.pbm" :foreground "black")
-	     (:type xbm :file "gud/nexti.xbm" :foreground "black"))))))
+	     (:type pbm :file "gud/nexti.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/nexti.xbm" :foreground "black" :background "grey75"))))))
  (stepi menu-item "Step Instruction" gud-stepi :enable
 	(not gud-running)
 	:visible
@@ -409,8 +409,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "gud/stepi.pbm" :foreground "black")
-	     (:type xbm :file "gud/stepi.xbm" :foreground "black")
+	   '((:type pbm :file "gud/stepi.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/stepi.xbm" :foreground "black" :background "grey75")
 	     (:type xpm :file "low-color/gud/stepi.xpm")
 	     (:type xpm :file "gud/stepi.xpm")))
 	  ((<
@@ -418,12 +418,12 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/gud/stepi.xpm")
 	     (:type xpm :file "gud/stepi.xpm")
-	     (:type pbm :file "gud/stepi.pbm" :foreground "black")
-	     (:type xbm :file "gud/stepi.xbm" :foreground "black")))
+	     (:type pbm :file "gud/stepi.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/stepi.xbm" :foreground "black" :background "grey75")))
 	  (t
 	   '((:type xpm :file "gud/stepi.xpm")
-	     (:type pbm :file "gud/stepi.pbm" :foreground "black")
-	     (:type xbm :file "gud/stepi.xbm" :foreground "black"))))))
+	     (:type pbm :file "gud/stepi.pbm" :foreground "black" :background "grey75")
+	     (:type xbm :file "gud/stepi.xbm" :foreground "black" :background "grey75"))))))
  (up menu-item "Up Stack" gud-up :enable
      (not gud-running)
      :visible
@@ -434,8 +434,8 @@ Not documented as a variable.</br>
       (cond
        ((not
 	 (display-color-p))
-	'((:type pbm :file "gud/up.pbm" :foreground "black")
-	  (:type xbm :file "gud/up.xbm" :foreground "black")
+	'((:type pbm :file "gud/up.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/up.xbm" :foreground "black" :background "grey75")
 	  (:type xpm :file "low-color/gud/up.xpm")
 	  (:type xpm :file "gud/up.xpm")))
        ((<
@@ -443,12 +443,12 @@ Not documented as a variable.</br>
 	 256)
 	'((:type xpm :file "low-color/gud/up.xpm")
 	  (:type xpm :file "gud/up.xpm")
-	  (:type pbm :file "gud/up.pbm" :foreground "black")
-	  (:type xbm :file "gud/up.xbm" :foreground "black")))
+	  (:type pbm :file "gud/up.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/up.xbm" :foreground "black" :background "grey75")))
        (t
 	'((:type xpm :file "gud/up.xpm")
-	  (:type pbm :file "gud/up.pbm" :foreground "black")
-	  (:type xbm :file "gud/up.xbm" :foreground "black"))))))
+	  (:type pbm :file "gud/up.pbm" :foreground "black" :background "grey75")
+	  (:type xbm :file "gud/up.xbm" :foreground "black" :background "grey75"))))))
  (down menu-item "Down Stack" gud-down :enable
        (not gud-running)
        :visible
@@ -459,8 +459,8 @@ Not documented as a variable.</br>
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "gud/down.pbm" :foreground "black")
-	    (:type xbm :file "gud/down.xbm" :foreground "black")
+	  '((:type pbm :file "gud/down.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/down.xbm" :foreground "black" :background "grey75")
 	    (:type xpm :file "low-color/gud/down.xpm")
 	    (:type xpm :file "gud/down.xpm")))
 	 ((<
@@ -468,19 +468,19 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/gud/down.xpm")
 	    (:type xpm :file "gud/down.xpm")
-	    (:type pbm :file "gud/down.pbm" :foreground "black")
-	    (:type xbm :file "gud/down.xbm" :foreground "black")))
+	    (:type pbm :file "gud/down.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/down.xbm" :foreground "black" :background "grey75")))
 	 (t
 	  '((:type xpm :file "gud/down.xpm")
-	    (:type pbm :file "gud/down.pbm" :foreground "black")
-	    (:type xbm :file "gud/down.xbm" :foreground "black"))))))
+	    (:type pbm :file "gud/down.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "gud/down.xbm" :foreground "black" :background "grey75"))))))
  (help menu-item "Info (debugger)" gud-goto-info :image
        (find-image
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "info.pbm" :foreground "black")
-	    (:type xbm :file "info.xbm" :foreground "black")
+	  '((:type pbm :file "info.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "info.xbm" :foreground "black" :background "grey75")
 	    (:type xpm :file "low-color/info.xpm")
 	    (:type xpm :file "info.xpm")))
 	 ((<
@@ -488,10 +488,10 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/info.xpm")
 	    (:type xpm :file "info.xpm")
-	    (:type pbm :file "info.pbm" :foreground "black")
-	    (:type xbm :file "info.xbm" :foreground "black")))
+	    (:type pbm :file "info.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "info.xbm" :foreground "black" :background "grey75")))
 	 (t
 	  '((:type xpm :file "info.xpm")
-	    (:type pbm :file "info.pbm" :foreground "black")
-	    (:type xbm :file "info.xbm" :foreground "black")))))))
+	    (:type pbm :file "info.pbm" :foreground "black" :background "grey75")
+	    (:type xbm :file "info.xbm" :foreground "black" :background "grey75")))))))
 </pre></br>

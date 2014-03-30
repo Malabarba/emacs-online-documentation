@@ -1,8 +1,9 @@
-<strong>locate-user-emacs-file</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(locate-user-emacs-file NEW-NAME &optional OLD-NAME)<br/>
-<br/>
-Return an absolute per-user Emacs-specific file name.<br/>
-If OLD-NAME is non-nil and ~/OLD-NAME exists, return ~/OLD-NAME.<br/>
-Else return NEW-NAME in `user-emacs-directory', creating the<br/>
+<strong>locate-user-emacs-file</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(locate-user-emacs-file <u>NEW-NAME</u> &optional <u>OLD-NAME</u>)</br>
+</br>
+Return an absolute per-user Emacs-specific file name.</br>
+If <u>NEW-NAME</u> exists in `user-emacs-directory', return it.</br>
+Else if <u>OLD-NAME</u> is non-nil and ~/<u>OLD-NAME</u> exists, return ~/<u>OLD-NAME</u>.</br>
+Else return <u>NEW-NAME</u> in `user-emacs-directory', creating the</br>
 directory if it does not exist.

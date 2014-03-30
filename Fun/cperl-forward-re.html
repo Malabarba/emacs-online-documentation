@@ -1,18 +1,18 @@
-<strong>cperl-forward-re</strong> is a compiled Lisp function in `<code>cperl-mode.el</code>'.<br/>
-<br/>
-(cperl-forward-re LIM END IS-2ARG ST-L ERR-L ARGUMENT &optional OSTART OEND)<br/>
-<br/>
-Find the end of a regular expression or a stringish construct (q[] etc).<br/>
-The point should be before the starting delimiter.<br/>
-<br/>
-Goes to LIM if none is found.  If IS-2ARG is non-nil, assumes that it<br/>
-is s/// or tr/// like expression.  If END is nil, generates an error<br/>
-message if needed.  If SET-ST is non-nil, will use (or generate) a<br/>
-cached syntax table in ST-L.  If ERR-L is non-nil, will store the<br/>
-error message in its CAR (unless it already contains some error<br/>
-message).  ARGUMENT should be the name of the construct (used in error<br/>
-messages).  OSTART, OEND may be set in recursive calls when processing<br/>
-the second argument of 2ARG construct.<br/>
-<br/>
-Works *before* syntax recognition is done.  In IS-2ARG situation may<br/>
+<strong>cperl-forward-re</strong> is a compiled Lisp function in `<code>cperl-mode.el</code>'.</br>
+</br>
+(cperl-forward-re <u>LIM</u> <u>END</u> <u>IS-2ARG</u> <u>ST-L</u> <u>ERR-L</u> <u>ARGUMENT</u> &optional <u>OSTART</u> <u>OEND</u>)</br>
+</br>
+Find the end of a regular expression or a stringish construct (q[] etc).</br>
+The point should be before the starting delimiter.</br>
+</br>
+Goes to <u>LIM</u> if none is found.  If <u>IS-2ARG</u> is non-nil, assumes that it</br>
+is s/// or tr/// like expression.  If <u>END</u> is nil, generates an error</br>
+message if needed.  If SET-ST is non-nil, will use (or generate) a</br>
+cached syntax table in <u>ST-L</u>.  If <u>ERR-L</u> is non-nil, will store the</br>
+error message in its CAR (unless it already contains some error</br>
+message).  <u>ARGUMENT</u> should be the name of the construct (used in error</br>
+messages).  <u>OSTART</u>, <u>OEND</u> may be set in recursive calls when processing</br>
+the second argument of 2ARG construct.</br>
+</br>
+Works *before* syntax recognition is done.  In <u>IS-2ARG</u> situation may</br>
 modify syntax-type text property if the situation is too hard.

@@ -1,22 +1,21 @@
-<strong>compile-command</strong> is a variable defined in `<code>compile.el</code>'.<br/>
-Its value is "make -k "<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-  This variable is safe as a file local variable if its value<br/>
-  satisfies the predicate `(lambda (a) (and (stringp a) (or (not (boundp (quote compilation-read-command))) compilation-read-command)))'.<br/>
-<br/>
-Documentation:<br/>
-Last shell command used to do a compilation; default for next compilation.<br/>
-<br/>
-Sometimes it is useful for files to supply local values for this variable.<br/>
-You might also use mode hooks to specify it in certain modes, like this:<br/>
-<br/>
-    (add-hook 'c-mode-hook<br/>
-       (lambda ()<br/>
-	 (unless (or (file-exists-p "makefile")<br/>
-		     (file-exists-p "Makefile"))<br/>
-	   (set (make-local-variable 'compile-command)<br/>
-		(concat "make -k "<br/>
-			(file-name-sans-extension buffer-file-name))))))<br/>
-<br/>
+<strong>compile-command</strong> is a variable defined in `<code>compile.el</code>'.</br>
+Its value is <pre>"make -k "</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate `(lambda (a) (and (stringp a) (or (not (boundp (quote compilation-read-command))) compilation-read-command)))'.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Last shell command used to do a compilation; default for next compilation.</br>
+</br>
+Sometimes it is useful for files to supply local values for this variable.</br>
+You might also use mode hooks to specify it in certain modes, like this:</br>
+</br>
+    (add-hook 'c-mode-hook</br>
+       (lambda ()</br>
+	 (unless (or (file-exists-p "makefile")</br>
+		     (file-exists-p "Makefile"))</br>
+	   (set (make-local-variable 'compile-command)</br>
+		(concat "make -k "</br>
+			(if buffer-file-name</br>
+			  (shell-quote-argument</br>
+			    (file-name-sans-extension buffer-file-name))))))))</br>
+</br>
 You can customize this variable.

@@ -1,35 +1,36 @@
-<strong>allout-old-expose-topic</strong> is an interactive compiled Lisp function in `<code>allout.el</code>'.<br/>
-<br/>
-(allout-old-expose-topic SPEC &rest FOLLOWERS)<br/>
-<br/>
-Deprecated.  Use `allout-expose-topic' (with different schema<br/>
-format) instead.<br/>
-<br/>
-Dictate wholesale exposure scheme for current topic, according to SPEC.<br/>
-<br/>
-SPEC is either a number or a list.  Optional successive args<br/>
-dictate exposure for subsequent siblings of current topic.<br/>
-<br/>
-A simple spec (either a number, a special symbol, or the null list)<br/>
-dictates the overall exposure for a topic.  Non null lists are<br/>
-composite specs whose first element dictates the overall exposure for<br/>
-a topic, with the subsequent elements in the list interpreted as specs<br/>
-that dictate the exposure for the successive offspring of the topic.<br/>
-<br/>
-Simple (numeric and null-list) specs are interpreted as follows:<br/>
-<br/>
- - Numbers indicate the relative depth to open the corresponding topic:<br/>
-  - negative numbers force the topic to be close before opening to the<br/>
-    absolute value of the number.<br/>
-  - positive numbers just open to the relative depth indicated by the number.<br/>
-  - 0 just closes<br/>
- - `*' completely opens the topic, including bodies.<br/>
- - `+' shows all the sub headers, but not the bodies<br/>
- - `-' exposes the body and immediate offspring of the corresponding topic.<br/>
-<br/>
-If the spec is a list, the first element must be a number, which<br/>
-dictates the exposure depth of the topic as a whole.  Subsequent<br/>
-elements of the list are nested SPECs, dictating the specific exposure<br/>
-for the corresponding offspring of the topic.<br/>
-<br/>
-Optional FOLLOWERS arguments dictate exposure for succeeding siblings.
+<strong>allout-old-expose-topic</strong> is an interactive compiled Lisp function in `<code>allout.el</code>'.</br>
+</br>
+</br>
+(allout-old-expose-topic <u>SPEC</u> &rest <u>FOLLOWERS</u>)</br>
+</br>
+Deprecated.  Use `allout-expose-topic' (with different schema</br>
+format) instead.</br>
+</br>
+Dictate wholesale exposure scheme for current topic, according to <u>SPEC</u>.</br>
+</br>
+<u>SPEC</u> is either a number or a list.  Optional successive args</br>
+dictate exposure for subsequent siblings of current topic.</br>
+</br>
+A simple spec (either a number, a special symbol, or the null list)</br>
+dictates the overall exposure for a topic.  Non null lists are</br>
+composite specs whose first element dictates the overall exposure for</br>
+a topic, with the subsequent elements in the list interpreted as specs</br>
+that dictate the exposure for the successive offspring of the topic.</br>
+</br>
+Simple (numeric and null-list) specs are interpreted as follows:</br>
+</br>
+ - Numbers indicate the relative depth to open the corresponding topic:</br>
+  - negative numbers force the topic to be close before opening to the</br>
+    absolute value of the number.</br>
+  - positive numbers just open to the relative depth indicated by the number.</br>
+  - 0 just closes</br>
+ - `*' completely opens the topic, including bodies.</br>
+ - `+' shows all the sub headers, but not the bodies</br>
+ - `-' exposes the body and immediate offspring of the corresponding topic.</br>
+</br>
+If the spec is a list, the first element must be a number, which</br>
+dictates the exposure depth of the topic as a whole.  Subsequent</br>
+elements of the list are nested <u>SPEC</u>s, dictating the specific exposure</br>
+for the corresponding offspring of the topic.</br>
+</br>
+Optional <u>FOLLOWERS</u> arguments dictate exposure for succeeding siblings.

@@ -1,0 +1,17 @@
+<strong>todo-read-category</strong> is a compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+(todo-read-category <u>PROMPT</u> &optional <u>MATCH-TYPE</u> <u>FILE</u>)</br>
+</br>
+Choose and return a category name, prompting with <u>PROMPT</u>.</br>
+Show completions for existing categories with TAB or SPC.</br>
+</br>
+The argument <u>MATCH-TYPE</u> specifies the matching requirements on</br>
+the category name: with the value `todo' or `archive' the name</br>
+must complete to that of an existing todo or archive category,</br>
+respectively; with the value `add' the name must not be that of</br>
+an existing category; with all other values both existing and new</br>
+valid category names are accepted.</br>
+</br>
+With non-nil argument <u>FILE</u> prompt for a file and complete only</br>
+against categories in that file; otherwise complete against all</br>
+categories from `todo-category-completions-files'.

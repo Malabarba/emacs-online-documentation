@@ -1,28 +1,28 @@
-<strong>sbe</strong> is a Lisp macro in `<code>ob-table.el</code>'.<br/>
-<br/>
-(sbe SOURCE-BLOCK &rest VARIABLES)<br/>
-<br/>
-Return the results of calling SOURCE-BLOCK with VARIABLES.<br/>
-Each element of VARIABLES should be a two<br/>
-element list, whose first element is the name of the variable and<br/>
-second element is a string of its value.  The following call to<br/>
-`sbe' would be equivalent to the following source code block.<br/>
-<br/>
- (sbe 'source-block (n $2) (m 3))<br/>
-<br/>
-#+begin_src emacs-lisp :var results=source-block(n=val_at_col_2, m=3) :results silent<br/>
-results<br/>
-#+end_src<br/>
-<br/>
-NOTE: by default string variable names are interpreted as<br/>
-references to source-code blocks, to force interpretation of a<br/>
-cell's value as a string, prefix the identifier a "$" (e.g.,<br/>
-"$$2" instead of "$2" or "$@2$2" instead of "@2$2").<br/>
-<br/>
-NOTE: it is also possible to pass header arguments to the code<br/>
-block.  In this case a table cell should hold the string value of<br/>
-the header argument which can then be passed before all variables<br/>
-as shown in the example below.<br/>
-<br/>
-| 1 | 2 | :file nothing.png | nothing.png |<br/>
+<strong>sbe</strong> is a Lisp macro in `<code>ob-table.el</code>'.</br>
+</br>
+(sbe <u>SOURCE-BLOCK</u> &rest <u>VARIABLES</u>)</br>
+</br>
+Return the results of calling <u>SOURCE-BLOCK</u> with <u>VARIABLES</u>.</br>
+Each element of <u>VARIABLES</u> should be a two</br>
+element list, whose first element is the name of the variable and</br>
+second element is a string of its value.  The following call to</br>
+`sbe' would be equivalent to the following source code block.</br>
+</br>
+ (sbe 'source-block (n $2) (m 3))</br>
+</br>
+#+begin_src emacs-lisp :var results=source-block(n=val_at_col_2, m=3) :results silent</br>
+results</br>
+#+end_src</br>
+</br>
+NOTE: by default string variable names are interpreted as</br>
+references to source-code blocks, to force interpretation of a</br>
+cell's value as a string, prefix the identifier a "$" (e.g.,</br>
+"$$2" instead of "$2" or "$@2$2" instead of "@2$2").</br>
+</br>
+NOTE: it is also possible to pass header arguments to the code</br>
+block.  In this case a table cell should hold the string value of</br>
+the header argument which can then be passed before all variables</br>
+as shown in the example below.</br>
+</br>
+| 1 | 2 | :file nothing.png | nothing.png |</br>
 #+TBLFM: @1$4='(sbe test-sbe $3 (x $1) (y $2))

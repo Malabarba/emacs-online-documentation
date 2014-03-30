@@ -1,18 +1,16 @@
-<strong>byte-compile-dynamic</strong> is a variable defined in `<code>bytecomp.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable is safe as a file local variable if its value<br/>
-  satisfies the predicate `booleanp'.<br/>
-<br/>
-Documentation:<br/>
-If non-nil, compile function bodies so they load lazily.<br/>
-They are hidden in comments in the compiled file,<br/>
-and each one is brought into core when the<br/>
-function is called.<br/>
-<br/>
-To enable this option, make it a file-local variable<br/>
-in the source file you want it to apply to.<br/>
-For example, add  -*-byte-compile-dynamic: t;-*- on the first line.<br/>
-<br/>
-When this option is true, if you load the compiled file and then move it,<br/>
+<strong>byte-compile-dynamic</strong> is a variable defined in `<code>bytecomp.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate `booleanp'.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, compile function bodies so they load lazily.</br>
+They are hidden in comments in the compiled file,</br>
+and each one is brought into core when the</br>
+function is called.</br>
+</br>
+To enable this option, make it a file-local variable</br>
+in the source file you want it to apply to.</br>
+For example, add  -*-byte-compile-dynamic: t;-*- on the first line.</br>
+</br>
+When this option is true, if you load the compiled file and then move it,</br>
 the functions you loaded will not be able to run.

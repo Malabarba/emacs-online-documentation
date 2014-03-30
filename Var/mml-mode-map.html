@@ -1,97 +1,96 @@
-<strong>mml-mode-map</strong> is a variable defined in `<code>mml.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Attachments menu-item "Attachments"<br/>
-			(keymap "Attachments"<br/>
-				(Attach\ File\.\.\. menu-item "Attach File..." mml-attach-file :help "Attach a file at point")<br/>
-				(Attach\ Buffer\.\.\. menu-item "Attach Buffer..." mml-attach-buffer :help "Attach a buffer to the outgoing message")<br/>
-				(Attach\ External\.\.\. menu-item "Attach External..." mml-attach-external :help "Attach reference to an external file")<br/>
-				(Externalize\ Attachments menu-item "Externalize Attachments" menu-function-335 :key-sequence nil :visible<br/>
-							  (and<br/>
-							   (boundp 'gnus-gcc-externalize-attachments)<br/>
-							   (memq gnus-gcc-externalize-attachments<br/>
-								 '(all t nil)))<br/>
-							  :button<br/>
-							  (:toggle . gnus-gcc-externalize-attachments)<br/>
-							  :help "Save attachments as external parts in Gcc copies")<br/>
-				(nil menu-item "----")<br/>
-				(Change\ Security\ Method menu-item "Change Security Method"<br/>
-							  (keymap "Change Security Method"<br/>
-								  (PGP/MIME menu-item "PGP/MIME" menu-function-336 :key-sequence nil :button<br/>
-									    (:radio equal mml-secure-method "pgpmime")<br/>
-									    :help "Set Security Method to PGP/MIME")<br/>
-								  (S/MIME menu-item "S/MIME" menu-function-337 :key-sequence nil :button<br/>
-									  (:radio equal mml-secure-method "smime")<br/>
-									  :help "Set Security Method to S/MIME")<br/>
-								  (Inline\ PGP menu-item "Inline PGP" menu-function-338 :key-sequence nil :button<br/>
-									       (:radio equal mml-secure-method "pgp")<br/>
-									       :help "Set Security Method to inline PGP")))<br/>
-				(Sign\ Message menu-item "Sign Message" mml-secure-message-sign)<br/>
-				(Encrypt\ Message menu-item "Encrypt Message" mml-secure-message-encrypt)<br/>
-				(Sign\ and\ Encrypt\ Message menu-item "Sign and Encrypt Message" mml-secure-message-sign-encrypt)<br/>
-				(Encrypt/Sign\ off menu-item "Encrypt/Sign off" mml-unsecure-message :help "Don't Encrypt/Sign Message")<br/>
-				(Sign\ Part menu-item "Sign Part" mml-secure-sign)<br/>
-				(Encrypt\ Part menu-item "Encrypt Part" mml-secure-encrypt)<br/>
-				(nil-12 menu-item "----")<br/>
-				(Insert\ Part\.\.\. menu-item "Insert Part..." mml-insert-part :enable<br/>
-						    (message-in-body-p))<br/>
-				(Insert\ Multipart\.\.\. menu-item "Insert Multipart..." mml-insert-multipart :enable<br/>
-							 (message-in-body-p))<br/>
-				(Quote\ MML\ in\ region menu-item "Quote MML in region" mml-quote-region :enable<br/>
-							(message-mark-active-p)<br/>
-							:help "Quote MML tags in region")<br/>
-				(Validate\ MML menu-item "Validate MML" mml-validate)<br/>
-				(Preview menu-item "Preview" mml-preview)<br/>
-				(nil-18 menu-item "----")<br/>
-				(Emacs\ MIME\ manual menu-item "Emacs MIME manual" menu-function-339 :key-sequence nil :help "Display the Emacs MIME manual")<br/>
-				(PGG\ manual menu-item "PGG manual" menu-function-340 :key-sequence nil :visible<br/>
-					     (and<br/>
-					      (boundp 'mml2015-use)<br/>
-					      (equal mml2015-use 'pgg))<br/>
-					     :help "Display the PGG manual")<br/>
-				(EasyPG\ manual menu-item "EasyPG manual" menu-function-341 :key-sequence nil :visible<br/>
-						(and<br/>
-						 (boundp 'mml2015-use)<br/>
-						 (equal mml2015-use 'epg))<br/>
-						:help "Display the EasyPG manual"))))<br/>
- (3 keymap<br/>
-    (13 keymap<br/>
-	(67 keymap<br/>
-	    (115 . mml-secure-encrypt-smime)<br/>
-	    (111 . mml-secure-encrypt-pgp)<br/>
-	    (112 . mml-secure-encrypt-pgpmime))<br/>
-	(99 keymap<br/>
-	    (115 . mml-secure-message-encrypt-smime)<br/>
-	    (111 . mml-secure-message-encrypt-pgp)<br/>
-	    (112 . mml-secure-message-encrypt-pgpmime))<br/>
-	(83 keymap<br/>
-	    (115 . mml-secure-sign-smime)<br/>
-	    (111 . mml-secure-sign-pgp)<br/>
-	    (112 . mml-secure-sign-pgpmime))<br/>
-	(115 keymap<br/>
-	     (115 . mml-secure-message-sign-smime)<br/>
-	     (111 . mml-secure-message-sign-pgp)<br/>
-	     (112 . mml-secure-message-sign-pgpmime))<br/>
-	(80 . mml-preview)<br/>
-	(118 . mml-validate)<br/>
-	(112 . mml-insert-part)<br/>
-	(109 . mml-insert-multipart)<br/>
-	(113 . mml-quote-region)<br/>
-	(101 . mml-attach-external)<br/>
-	(98 . mml-attach-buffer)<br/>
-	(102 . mml-attach-file)<br/>
-	(14 . mml-unsecure-message)<br/>
-	(16 keymap<br/>
-	    (3 . mml-secure-encrypt)<br/>
-	    (19 . mml-secure-sign))<br/>
-	(5 . mml-secure-message-sign-encrypt)<br/>
-	(3 . mml-secure-message-encrypt)<br/>
-	(19 . mml-secure-message-sign))))<br/>
-<br/>
+<strong>mml-mode-map</strong> is a variable defined in `<code>mml.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Attachments menu-item "Attachments"
+			(keymap "Attachments"
+				(Attach\ File\.\.\. menu-item "Attach File..." mml-attach-file :help "Attach a file at point")
+				(Attach\ Buffer\.\.\. menu-item "Attach Buffer..." mml-attach-buffer :help "Attach a buffer to the outgoing message")
+				(Attach\ External\.\.\. menu-item "Attach External..." mml-attach-external :help "Attach reference to an external file")
+				(Externalize\ Attachments menu-item "Externalize Attachments" menu-function-190 :key-sequence nil :visible
+							  (and
+							   (boundp 'gnus-gcc-externalize-attachments)
+							   (memq gnus-gcc-externalize-attachments
+								 '(all t nil)))
+							  :button
+							  (:toggle . gnus-gcc-externalize-attachments)
+							  :help "Save attachments as external parts in Gcc copies")
+				(nil menu-item "----")
+				(Change\ Security\ Method menu-item "Change Security Method"
+							  (keymap "Change Security Method"
+								  (PGP/MIME menu-item "PGP/MIME" menu-function-191 :key-sequence nil :button
+									    (:radio equal mml-secure-method "pgpmime")
+									    :help "Set Security Method to PGP/MIME")
+								  (S/MIME menu-item "S/MIME" menu-function-192 :key-sequence nil :button
+									  (:radio equal mml-secure-method "smime")
+									  :help "Set Security Method to S/MIME")
+								  (Inline\ PGP menu-item "Inline PGP" menu-function-193 :key-sequence nil :button
+									       (:radio equal mml-secure-method "pgp")
+									       :help "Set Security Method to inline PGP")))
+				(Sign\ Message menu-item "Sign Message" mml-secure-message-sign)
+				(Encrypt\ Message menu-item "Encrypt Message" mml-secure-message-encrypt)
+				(Sign\ and\ Encrypt\ Message menu-item "Sign and Encrypt Message" mml-secure-message-sign-encrypt)
+				(Encrypt/Sign\ off menu-item "Encrypt/Sign off" mml-unsecure-message :help "Don't Encrypt/Sign Message")
+				(Sign\ Part menu-item "Sign Part" mml-secure-sign)
+				(Encrypt\ Part menu-item "Encrypt Part" mml-secure-encrypt)
+				(nil-12 menu-item "----")
+				(Insert\ Part\.\.\. menu-item "Insert Part..." mml-insert-part :enable
+						    (message-in-body-p))
+				(Insert\ Multipart\.\.\. menu-item "Insert Multipart..." mml-insert-multipart :enable
+							 (message-in-body-p))
+				(Quote\ MML\ in\ region menu-item "Quote MML in region" mml-quote-region :enable
+							(message-mark-active-p)
+							:help "Quote MML tags in region")
+				(Validate\ MML menu-item "Validate MML" mml-validate)
+				(Preview menu-item "Preview" mml-preview)
+				(nil-18 menu-item "----")
+				(Emacs\ MIME\ manual menu-item "Emacs MIME manual" menu-function-194 :key-sequence nil :help "Display the Emacs MIME manual")
+				(PGG\ manual menu-item "PGG manual" menu-function-195 :key-sequence nil :visible
+					     (and
+					      (boundp 'mml2015-use)
+					      (equal mml2015-use 'pgg))
+					     :help "Display the PGG manual")
+				(EasyPG\ manual menu-item "EasyPG manual" menu-function-196 :key-sequence nil :visible
+						(and
+						 (boundp 'mml2015-use)
+						 (equal mml2015-use 'epg))
+						:help "Display the EasyPG manual"))))
+ (3 keymap
+    (13 keymap
+	(67 keymap
+	    (115 . mml-secure-encrypt-smime)
+	    (111 . mml-secure-encrypt-pgp)
+	    (112 . mml-secure-encrypt-pgpmime))
+	(99 keymap
+	    (115 . mml-secure-message-encrypt-smime)
+	    (111 . mml-secure-message-encrypt-pgp)
+	    (112 . mml-secure-message-encrypt-pgpmime))
+	(83 keymap
+	    (115 . mml-secure-sign-smime)
+	    (111 . mml-secure-sign-pgp)
+	    (112 . mml-secure-sign-pgpmime))
+	(115 keymap
+	     (115 . mml-secure-message-sign-smime)
+	     (111 . mml-secure-message-sign-pgp)
+	     (112 . mml-secure-message-sign-pgpmime))
+	(80 . mml-preview)
+	(118 . mml-validate)
+	(112 . mml-insert-part)
+	(109 . mml-insert-multipart)
+	(113 . mml-quote-region)
+	(101 . mml-attach-external)
+	(98 . mml-attach-buffer)
+	(102 . mml-attach-file)
+	(14 . mml-unsecure-message)
+	(16 keymap
+	    (3 . mml-secure-encrypt)
+	    (19 . mml-secure-sign))
+	(5 . mml-secure-message-sign-encrypt)
+	(3 . mml-secure-message-encrypt)
+	(19 . mml-secure-message-sign))))
+</pre></br>

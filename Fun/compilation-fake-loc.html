@@ -1,20 +1,20 @@
-<strong>compilation-fake-loc</strong> is a compiled Lisp function in `<code>compile.el</code>'.<br/>
-<br/>
-(compilation-fake-loc MARKER FILE &optional LINE COL)<br/>
-<br/>
-Preassociate MARKER with FILE.<br/>
-FILE should be ABSOLUTE-FILENAME or (RELATIVE-FILENAME . DIRNAME).<br/>
-This is useful when you compile temporary files, but want<br/>
-automatic translation of the messages to the real buffer from<br/>
-which the temporary file came.  This may also affect previous messages<br/>
-about FILE.<br/>
-<br/>
-Optional args LINE and COL default to 1 and beginning of<br/>
-indentation respectively.  The marker is expected to reflect<br/>
-this.  In the simplest case the marker points to the first line<br/>
-of the region that was saved to the temp file.<br/>
-<br/>
-If you concatenate several regions into the temp file (e.g. a<br/>
-header with variable assignments and a code region), you must<br/>
-call this several times, once each for the last line of one<br/>
+<strong>compilation-fake-loc</strong> is a compiled Lisp function in `<code>compile.el</code>'.</br>
+</br>
+(compilation-fake-loc <u>MARKER</u> <u>FILE</u> &optional <u>LINE</u> <u>COL</u>)</br>
+</br>
+Preassociate <u>MARKER</u> with <u>FILE</u>.</br>
+<u>FILE</u> should be ABSOLUTE-FILENAME or (RELATIVE-FILENAME . DIRNAME).</br>
+This is useful when you compile temporary files, but want</br>
+automatic translation of the messages to the real buffer from</br>
+which the temporary file came.  This may also affect previous messages</br>
+about <u>FILE</u>.</br>
+</br>
+Optional args <u>LINE</u> and <u>COL</u> default to 1 and beginning of</br>
+indentation respectively.  The marker is expected to reflect</br>
+this.  In the simplest case the marker points to the first line</br>
+of the region that was saved to the temp file.</br>
+</br>
+If you concatenate several regions into the temp file (e.g. a</br>
+header with variable assignments and a code region), you must</br>
+call this several times, once each for the last line of one</br>
 region and the first line of the next region.

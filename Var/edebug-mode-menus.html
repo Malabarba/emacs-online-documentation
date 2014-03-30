@@ -1,61 +1,60 @@
-<strong>edebug-mode-menus</strong> is a variable defined in `<code>edebug.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Menus for Edebug.<br/>
-<br/>
-Value: ("Edebug"<br/>
- ["Stop" edebug-stop t]<br/>
- ["Step" edebug-step-mode t]<br/>
- ["Next" edebug-next-mode t]<br/>
- ["Trace" edebug-trace-mode t]<br/>
- ["Trace Fast" edebug-Trace-fast-mode t]<br/>
- ["Continue" edebug-continue-mode t]<br/>
- ["Continue Fast" edebug-Continue-fast-mode t]<br/>
- ["Go" edebug-go-mode t]<br/>
- ["Go Nonstop" edebug-Go-nonstop-mode t]<br/>
- "----"<br/>
- ["Help" edebug-help t]<br/>
- ["Abort" abort-recursive-edit t]<br/>
- ["Quit to Top Level" top-level t]<br/>
- ["Quit Nonstop" edebug-top-level-nonstop t]<br/>
- "----"<br/>
- ("Jumps"<br/>
-  ["Forward Sexp" edebug-forward-sexp t]<br/>
-  ["Step In" edebug-step-in t]<br/>
-  ["Step Out" edebug-step-out t]<br/>
-  ["Goto Here" edebug-goto-here t])<br/>
- ("Breaks"<br/>
-  ["Set Breakpoint" edebug-set-breakpoint t]<br/>
-  ["Unset Breakpoint" edebug-unset-breakpoint t]<br/>
-  ["Set Conditional Breakpoint" edebug-set-conditional-breakpoint t]<br/>
-  ["Set Global Break Condition" edebug-set-global-break-condition t]<br/>
-  ["Show Next Breakpoint" edebug-next-breakpoint t])<br/>
- ("Views"<br/>
-  ["Where am I?" edebug-where t]<br/>
-  ["Bounce to Current Point" edebug-bounce-point t]<br/>
-  ["View Outside Windows" edebug-view-outside t]<br/>
-  ["Previous Result" edebug-previous-result t]<br/>
-  ["Show Backtrace" edebug-backtrace t]<br/>
-  ["Display Freq Count" edebug-display-freq-count t])<br/>
- ("Eval"<br/>
-  ["Expression" edebug-eval-expression t]<br/>
-  ["Last Sexp" edebug-eval-last-sexp t]<br/>
-  ["Visit Eval List" edebug-visit-eval-list t])<br/>
- ("Options"<br/>
-  ["Edebug All Defs" edebug-all-defs :style toggle :selected edebug-all-defs]<br/>
-  ["Edebug All Forms" edebug-all-forms :style toggle :selected edebug-all-forms]<br/>
-  "----"<br/>
-  ["Tracing"<br/>
-   (edebug-toggle 'edebug-trace)<br/>
-   :style toggle :selected edebug-trace]<br/>
-  ["Test Coverage"<br/>
-   (edebug-toggle 'edebug-test-coverage)<br/>
-   :style toggle :selected edebug-test-coverage]<br/>
-  ["Save Windows" edebug-toggle-save-windows :style toggle :selected edebug-save-windows]<br/>
-  ["Save Point"<br/>
-   (edebug-toggle 'edebug-save-displayed-buffer-points)<br/>
-   :style toggle :selected edebug-save-displayed-buffer-points]))<br/>
-<br/>
+<strong>edebug-mode-menus</strong> is a variable defined in `<code>edebug.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Menus for Edebug.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("Edebug"
+ ["Stop" edebug-stop t]
+ ["Step" edebug-step-mode t]
+ ["Next" edebug-next-mode t]
+ ["Trace" edebug-trace-mode t]
+ ["Trace Fast" edebug-Trace-fast-mode t]
+ ["Continue" edebug-continue-mode t]
+ ["Continue Fast" edebug-Continue-fast-mode t]
+ ["Go" edebug-go-mode t]
+ ["Go Nonstop" edebug-Go-nonstop-mode t]
+ "----"
+ ["Help" edebug-help t]
+ ["Abort" abort-recursive-edit t]
+ ["Quit to Top Level" top-level t]
+ ["Quit Nonstop" edebug-top-level-nonstop t]
+ "----"
+ ("Jumps"
+  ["Forward Sexp" edebug-forward-sexp t]
+  ["Step In" edebug-step-in t]
+  ["Step Out" edebug-step-out t]
+  ["Goto Here" edebug-goto-here t])
+ ("Breaks"
+  ["Set Breakpoint" edebug-set-breakpoint t]
+  ["Unset Breakpoint" edebug-unset-breakpoint t]
+  ["Set Conditional Breakpoint" edebug-set-conditional-breakpoint t]
+  ["Set Global Break Condition" edebug-set-global-break-condition t]
+  ["Show Next Breakpoint" edebug-next-breakpoint t])
+ ("Views"
+  ["Where am I?" edebug-where t]
+  ["Bounce to Current Point" edebug-bounce-point t]
+  ["View Outside Windows" edebug-view-outside t]
+  ["Previous Result" edebug-previous-result t]
+  ["Show Backtrace" edebug-backtrace t]
+  ["Display Freq Count" edebug-display-freq-count t])
+ ("Eval"
+  ["Expression" edebug-eval-expression t]
+  ["Last Sexp" edebug-eval-last-sexp t]
+  ["Visit Eval List" edebug-visit-eval-list t])
+ ("Options"
+  ["Edebug All Defs" edebug-all-defs :style toggle :selected edebug-all-defs]
+  ["Edebug All Forms" edebug-all-forms :style toggle :selected edebug-all-forms]
+  "----"
+  ["Tracing"
+   (edebug-toggle 'edebug-trace)
+   :style toggle :selected edebug-trace]
+  ["Test Coverage"
+   (edebug-toggle 'edebug-test-coverage)
+   :style toggle :selected edebug-test-coverage]
+  ["Save Windows" edebug-toggle-save-windows :style toggle :selected edebug-save-windows]
+  ["Save Point"
+   (edebug-toggle 'edebug-save-displayed-buffer-points)
+   :style toggle :selected edebug-save-displayed-buffer-points]))
+</pre></br>

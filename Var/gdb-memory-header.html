@@ -1,34 +1,34 @@
-<strong>gdb-memory-header</strong> is a variable defined in `<code>gdb-mi.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Header line used in `gdb-memory-mode'.<br/>
-<br/>
-Value:<br/>
-(:eval<br/>
- (concat "Start address["<br/>
-	 (propertize "-" 'face font-lock-warning-face 'help-echo "mouse-1: decrement address" 'mouse-face 'mode-line-highlight 'local-map<br/>
-		     (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-show-previous-page))<br/>
-	 "|"<br/>
-	 (propertize "+" 'face font-lock-warning-face 'help-echo "mouse-1: increment address" 'mouse-face 'mode-line-highlight 'local-map<br/>
-		     (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-show-next-page))<br/>
-	 "]: "<br/>
-	 (propertize gdb-memory-address 'face font-lock-warning-face 'help-echo "mouse-1: set start address" 'mouse-face 'mode-line-highlight 'local-map<br/>
-		     (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-set-address-event))<br/>
-	 "  Rows: "<br/>
-	 (propertize<br/>
-	  (number-to-string gdb-memory-rows)<br/>
-	  'face font-lock-warning-face 'help-echo "mouse-1: set number of columns" 'mouse-face 'mode-line-highlight 'local-map<br/>
-	  (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-set-rows))<br/>
-	 "  Columns: "<br/>
-	 (propertize<br/>
-	  (number-to-string gdb-memory-columns)<br/>
-	  'face font-lock-warning-face 'help-echo "mouse-1: set number of columns" 'mouse-face 'mode-line-highlight 'local-map<br/>
-	  (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-set-columns))<br/>
-	 "  Display Format: "<br/>
-	 (propertize gdb-memory-format 'face font-lock-warning-face 'help-echo "mouse-3: select display format" 'mouse-face 'mode-line-highlight 'local-map gdb-memory-format-map)<br/>
-	 "  Unit Size: "<br/>
-	 (propertize<br/>
-	  (number-to-string gdb-memory-unit)<br/>
-	  'face font-lock-warning-face 'help-echo "mouse-3: select unit size" 'mouse-face 'mode-line-highlight 'local-map gdb-memory-unit-map)))<br/>
-<br/>
+<strong>gdb-memory-header</strong> is a variable defined in `<code>gdb-mi.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Header line used in `gdb-memory-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(:eval
+ (concat "Start address["
+	 (propertize "-" 'face font-lock-warning-face 'help-echo "mouse-1: decrement address" 'mouse-face 'mode-line-highlight 'local-map
+		     (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-show-previous-page))
+	 "|"
+	 (propertize "+" 'face font-lock-warning-face 'help-echo "mouse-1: increment address" 'mouse-face 'mode-line-highlight 'local-map
+		     (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-show-next-page))
+	 "]: "
+	 (propertize gdb-memory-address 'face font-lock-warning-face 'help-echo "mouse-1: set start address" 'mouse-face 'mode-line-highlight 'local-map
+		     (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-set-address-event))
+	 "  Rows: "
+	 (propertize
+	  (number-to-string gdb-memory-rows)
+	  'face font-lock-warning-face 'help-echo "mouse-1: set number of columns" 'mouse-face 'mode-line-highlight 'local-map
+	  (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-set-rows))
+	 "  Columns: "
+	 (propertize
+	  (number-to-string gdb-memory-columns)
+	  'face font-lock-warning-face 'help-echo "mouse-1: set number of columns" 'mouse-face 'mode-line-highlight 'local-map
+	  (gdb-make-header-line-mouse-map 'mouse-1 #'gdb-memory-set-columns))
+	 "  Display Format: "
+	 (propertize gdb-memory-format 'face font-lock-warning-face 'help-echo "mouse-3: select display format" 'mouse-face 'mode-line-highlight 'local-map gdb-memory-format-map)
+	 "  Unit Size: "
+	 (propertize
+	  (number-to-string gdb-memory-unit)
+	  'face font-lock-warning-face 'help-echo "mouse-3: select unit size" 'mouse-face 'mode-line-highlight 'local-map gdb-memory-unit-map)))
+</pre></br>

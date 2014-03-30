@@ -1,20 +1,20 @@
-<strong>window-min-width</strong> is a variable defined in `<code>window.el</code>'.<br/>
-Its value is 10<br/>
-<br/>
-Documentation:<br/>
-The minimum number of columns of any window.<br/>
-The value has to accommodate margins, fringes, or scrollbars if<br/>
-present.  A value less than `window-safe-min-width' is ignored.<br/>
-The value of this variable is honored when windows are resized or<br/>
-split.<br/>
-<br/>
-Applications should never rebind this variable.  To resize a<br/>
-window to a width less than the one specified here, an<br/>
-application should instead call `window-resize' with a non-nil<br/>
-IGNORE argument.  In order to have `split-window' make a window<br/>
-narrower, explicitly specify the SIZE argument of that function.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>window-min-width</strong> is a variable defined in `<code>window.el</code>'.</br>
+Its value is <pre>10</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The minimum total width, in columns, of any window.</br>
+The value has to accommodate two text columns as well as margins,</br>
+fringes, a scroll bar and a right divider, if present.  A value</br>
+less than `window-safe-min-width' is ignored.  The value of this</br>
+variable is honored when windows are resized or split.</br>
+</br>
+Applications should never rebind this variable.  To resize a</br>
+window to a width less than the one specified here, an</br>
+application should instead call `window-resize' with a non-nil</br>
+IGNORE argument.  In order to have `split-window' make a window</br>
+narrower, explicitly specify the SIZE argument of that function.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

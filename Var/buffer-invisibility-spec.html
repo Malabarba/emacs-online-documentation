@@ -1,15 +1,16 @@
-<strong>buffer-invisibility-spec</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is t<br/>
-Local in buffer *scratch*; global value is the same.<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-Invisibility spec of this buffer.<br/>
-The default is t, which means that text is invisible<br/>
-if it has a non-nil `invisible' property.<br/>
-If the value is a list, a text character is invisible if its `invisible'<br/>
-property is an element in that list (or is a list with members in common).<br/>
-If an element is a cons cell of the form (PROP . ELLIPSIS),<br/>
-then characters with property value PROP are invisible,<br/>
-and they have an ellipsis as well if ELLIPSIS is non-nil.
+<strong>buffer-invisibility-spec</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>t</pre></br>
+global value is the same.</br>
+<ul>  <li>Automatically becomes buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Invisibility spec of this buffer.</br>
+The default is t, which means that text is invisible if it has a non-nil</br>
+`invisible' property.</br>
+This variable can also be a list.  The list can have two kinds of elements:</br>
+`ATOM' and `(ATOM . ELLIPSIS)'.  A text character is invisible if its</br>
+`invisible' property is `ATOM', or has an `invisible' property that is a list</br>
+that contains `ATOM'.</br>
+If the `(ATOM . ELLIPSIS)' form is used, and `ELLIPSIS' is non-nil, an</br>
+ellipsis will be displayed after the invisible characters.</br>
+Setting this variable is very fast, much faster than scanning all the text in</br>
+the buffer looking for properties to change.

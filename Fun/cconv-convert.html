@@ -1,18 +1,18 @@
-<strong>cconv-convert</strong> is a compiled Lisp function in `<code>cconv.el</code>'.<br/>
-<br/>
-(cconv-convert FORM ENV EXTEND)<br/>
-<br/>
-Return FORM with all its lambdas changed so they are closed.<br/>
-ENV is a lexical environment mapping variables to the expression<br/>
-used to get its value.  This is used for variables that are copied into<br/>
-closures, moved into cons cells, ...<br/>
-ENV is a list where each entry takes the shape either:<br/>
- (VAR . (car EXP)): VAR has been moved into the car of a cons-cell, and EXP<br/>
-    is an expression that evaluates to this cons-cell.<br/>
- (VAR . (internal-get-closed-var N)): VAR has been copied into the closure<br/>
-    environment's Nth slot.<br/>
- (VAR . (apply-partially F ARG1 ARG2 ..)): VAR has been λ-lifted and takes<br/>
-    additional arguments ARGs.<br/>
-EXTEND is a list of variables which might need to be accessed even from places<br/>
-where they are shadowed, because some part of ENV causes them to be used at<br/>
+<strong>cconv-convert</strong> is a compiled Lisp function in `<code>cconv.el</code>'.</br>
+</br>
+(cconv-convert <u>FORM</u> <u>ENV</u> <u>EXTEND</u>)</br>
+</br>
+Return <u>FORM</u> with all its lambdas changed so they are closed.</br>
+<u>ENV</u> is a lexical environment mapping variables to the expression</br>
+used to get its value.  This is used for variables that are copied into</br>
+closures, moved into cons cells, ...</br>
+<u>ENV</u> is a list where each entry takes the shape either:</br>
+ (VAR . (car-safe EXP)): VAR has been moved into the car of a cons-cell, and EXP</br>
+    is an expression that evaluates to this cons-cell.</br>
+ (VAR . (internal-get-closed-var N)): VAR has been copied into the closure</br>
+    environment's Nth slot.</br>
+ (VAR . (apply-partially F ARG1 ARG2 ..)): VAR has been λ-lifted and takes</br>
+    additional arguments ARGs.</br>
+<u>EXTEND</u> is a list of variables which might need to be accessed even from places</br>
+where they are shadowed, because some part of <u>ENV</u> causes them to be used at</br>
 places where they originally did not directly appear.

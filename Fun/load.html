@@ -1,43 +1,47 @@
-<strong>load</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(load FILE &optional NOERROR NOMESSAGE NOSUFFIX MUST-SUFFIX)<br/>
-<br/>
-Execute a file of Lisp code named FILE.<br/>
-First try FILE with `.elc' appended, then try with `.el',<br/>
-then try FILE unmodified (the exact suffixes in the exact order are<br/>
-determined by `load-suffixes').  Environment variable references in<br/>
-FILE are replaced with their values by calling `substitute-in-file-name'.<br/>
-This function searches the directories in `load-path'.<br/>
-<br/>
-If optional second arg NOERROR is non-nil,<br/>
-report no error if FILE doesn't exist.<br/>
-Print messages at start and end of loading unless<br/>
-optional third arg NOMESSAGE is non-nil (but `force-load-messages'<br/>
-overrides that).<br/>
-If optional fourth arg NOSUFFIX is non-nil, don't try adding<br/>
-suffixes `.elc' or `.el' to the specified name FILE.<br/>
-If optional fifth arg MUST-SUFFIX is non-nil, insist on<br/>
-the suffix `.elc' or `.el'; don't accept just FILE unless<br/>
-it ends in one of those suffixes or includes a directory name.<br/>
-<br/>
-If NOSUFFIX is nil, then if a file could not be found, try looking for<br/>
-a different representation of the file by adding non-empty suffixes to<br/>
-its name, before trying another file.  Emacs uses this feature to find<br/>
-compressed versions of files when Auto Compression mode is enabled.<br/>
-If NOSUFFIX is non-nil, disable this feature.<br/>
-<br/>
-The suffixes that this function tries out, when NOSUFFIX is nil, are<br/>
-given by the return value of `get-load-suffixes' and the values listed<br/>
-in `load-file-rep-suffixes'.  If MUST-SUFFIX is non-nil, only the<br/>
-return value of `get-load-suffixes' is used, i.e. the file name is<br/>
-required to have a non-empty suffix.<br/>
-<br/>
-Loading a file records its definitions, and its `provide' and<br/>
-`require' calls, in an element of `load-history' whose<br/>
-car is the file name loaded.  See `load-history'.<br/>
-<br/>
-While the file is in the process of being loaded, the variable<br/>
-`load-in-progress' is non-nil and the variable `load-file-name'<br/>
-is bound to the file's name.<br/>
-<br/>
+<strong>load</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(load <u>FILE</u> &optional <u>NOERROR</u> <u>NOMESSAGE</u> <u>NOSUFFIX</u> <u>MUST-SUFFIX</u>)</br>
+</br>
+Execute a file of Lisp code named <u>FILE</u>.</br>
+First try <u>FILE</u> with `.elc' appended, then try with `.el',</br>
+then try <u>FILE</u> unmodified (the exact suffixes in the exact order are</br>
+determined by `load-suffixes').  Environment variable references in</br>
+<u>FILE</u> are replaced with their values by calling `substitute-in-file-name'.</br>
+This function searches the directories in `load-path'.</br>
+</br>
+If optional second arg <u>NOERROR</u> is non-nil,</br>
+report no error if <u>FILE</u> doesn't exist.</br>
+Print messages at start and end of loading unless</br>
+optional third arg <u>NOMESSAGE</u> is non-nil (but `force-load-messages'</br>
+overrides that).</br>
+If optional fourth arg <u>NOSUFFIX</u> is non-nil, don't try adding</br>
+suffixes `.elc' or `.el' to the specified name <u>FILE</u>.</br>
+If optional fifth arg <u>MUST-SUFFIX</u> is non-nil, insist on</br>
+the suffix `.elc' or `.el'; don't accept just <u>FILE</u> unless</br>
+it ends in one of those suffixes or includes a directory name.</br>
+</br>
+If <u>NOSUFFIX</u> is nil, then if a file could not be found, try looking for</br>
+a different representation of the file by adding non-empty suffixes to</br>
+its name, before trying another file.  Emacs uses this feature to find</br>
+compressed versions of files when Auto Compression mode is enabled.</br>
+If <u>NOSUFFIX</u> is non-nil, disable this feature.</br>
+</br>
+The suffixes that this function tries out, when <u>NOSUFFIX</u> is nil, are</br>
+given by the return value of `get-load-suffixes' and the values listed</br>
+in `load-file-rep-suffixes'.  If <u>MUST-SUFFIX</u> is non-nil, only the</br>
+return value of `get-load-suffixes' is used, i.e. the file name is</br>
+required to have a non-empty suffix.</br>
+</br>
+When searching suffixes, this function normally stops at the first</br>
+one that exists.  If the option `load-prefer-newer' is non-nil,</br>
+however, it tries all suffixes, and uses whichever file is the newest.</br>
+</br>
+Loading a file records its definitions, and its `provide' and</br>
+`require' calls, in an element of `load-history' whose</br>
+car is the file name loaded.  See `load-history'.</br>
+</br>
+While the file is in the process of being loaded, the variable</br>
+`load-in-progress' is non-nil and the variable `load-file-name'</br>
+is bound to the file's name.</br>
+</br>
 Return t if the file exists and loads successfully.

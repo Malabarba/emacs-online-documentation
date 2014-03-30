@@ -1,86 +1,86 @@
-<strong>vhdl-project-alist</strong> is a variable defined in `<code>vhdl-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-List of projects and their properties.<br/>
-  Name             : name used in option `vhdl-project' to choose project<br/>
-  Title            : title of project (single-line string)<br/>
-  Default directory: default project directory (absolute path)<br/>
-  Sources          : a) source files  : path + "/" + file name<br/>
-                     b) directory     : path + "/"<br/>
-                     c) directory tree: "-r " + path + "/"<br/>
-  Exclude regexp   : matches file/directory names to be excluded as sources<br/>
-  Compile options  : project-specific options for each compiler<br/>
-    Compiler name  : name of compiler for which these options are valid<br/>
-    Compile options: project-specific compiler options<br/>
-                     ("\1" inserts library name, "\2" default options)<br/>
-    Make options:    project-specific make options<br/>
-                     ("\1" inserts Makefile name, "\2" default options)<br/>
-    Exceptions     : file-specific exceptions<br/>
-      File name regexp: matches file names for which exceptions are valid<br/>
-      - Options       : file-specific compiler options string<br/>
-                        ("\1" inserts library name, "\2" default options,<br/>
-                        "\3" project-specific options)<br/>
-      - Do not compile: do not compile this file (in Makefile)<br/>
-  Compile directory: where compilation is run and the Makefile is placed<br/>
-                     ("\1" inserts compiler ID string)<br/>
-  Library name     : name of library (default is "work")<br/>
-  Library directory: path to library ("\1" inserts compiler ID string)<br/>
-  Makefile name    : name of Makefile<br/>
-                     ("\1" inserts compiler ID string, "\2" library name)<br/>
-  Description      : description of project (multi-line string)<br/>
-<br/>
-Project title and description are used to insert into the file header (see<br/>
-option `vhdl-file-header').<br/>
-<br/>
-The default directory must have an absolute path (use `M-TAB' for completion).<br/>
-All other paths can be absolute or relative to the default directory.  All<br/>
-paths must end with '/'.<br/>
-<br/>
-The design units found in the sources (files and directories) are shown in the<br/>
-hierarchy browser.  Path and file name can contain wildcards `*' and `?' as<br/>
-well as "./" and "../" ("sh" syntax).  Paths can also be absolute.<br/>
-Environment variables (e.g. "$EXAMPLE2") are resolved.  If no sources are<br/>
-specified, the default directory is taken as source directory.  Otherwise,<br/>
-the default directory is only taken as source directory if there is a sources<br/>
-entry with the empty string or "./".  Exclude regexp allows to filter out<br/>
-specific file and directory names from the list of sources (e.g. CVS<br/>
-directories).<br/>
-<br/>
-Files are compiled in the compile directory.  Makefiles are also placed into<br/>
-the compile directory.  Library directory specifies which directory the<br/>
-compiler compiles into (used to generate the Makefile).<br/>
-<br/>
-Since different compile/library directories and Makefiles may exist for<br/>
-different compilers within one project, these paths and names allow the<br/>
-insertion of a compiler-dependent ID string (defined in `vhdl-compiler-alist').<br/>
-Compile options, compile directory, library directory, and Makefile name<br/>
-overwrite the settings of the current compiler.<br/>
-<br/>
-File-specific compiler options (highest priority) overwrite project-specific<br/>
-options which overwrite default options (lowest priority).  Lower priority<br/>
-options can be inserted in higher priority options.  This allows to reuse<br/>
-default options (e.g. "-file") in project- or file-specific options (e.g.<br/>
-"-93 -file").<br/>
-<br/>
-NOTE: Reflect the new setting in the choice list of option `vhdl-project'<br/>
-      by restarting Emacs.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value:<br/>
-(("Example 1" "Source files in two directories, custom library name, VHDL'87" "~/example1/"<br/>
-  ("src/system/" "src/components/")<br/>
-  ""<br/>
-  (("ModelSim" "-87 \\2" "-f \\1 top_level" nil)<br/>
-   ("Synopsys" "-vhdl87 \\2" "-f \\1 top_level"<br/>
-    ((".*/datapath/.*" . "-optimize \\3")<br/>
-     (".*_tb\\.vhd"))))<br/>
-  "lib/" "example3_lib" "lib/example3/" "Makefile_\\2" "")<br/>
- ("Example 2" "Individual source files, multiple compilers in different directories" "$EXAMPLE2/"<br/>
-  ("vhdl/system.vhd" "vhdl/component_*.vhd")<br/>
-  "" nil "\\1/" "work" "\\1/work/" "Makefile" "")<br/>
- ("Example 3" "Source files in a directory tree, multiple compilers in same directory" "/home/me/example3/"<br/>
-  ("-r ./*/vhdl/")<br/>
-  "/CVS/" nil "./" "work" "work-\\1/" "Makefile-\\1" "-------------------------------------------------------------------------------\n-- This is a multi-line project description\n-- that can be used as a project dependent part of the file header.\n"))<br/>
-<br/>
+<strong>vhdl-project-alist</strong> is a variable defined in `<code>vhdl-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of projects and their properties.</br>
+  Name             : name used in option `vhdl-project' to choose project</br>
+  Title            : title of project (single-line string)</br>
+  Default directory: default project directory (absolute path)</br>
+  Sources          : a) source files  : path + "/" + file name</br>
+                     b) directory     : path + "/"</br>
+                     c) directory tree: "-r " + path + "/"</br>
+  Exclude regexp   : matches file/directory names to be excluded as sources</br>
+  Compile options  : project-specific options for each compiler</br>
+    Compiler name  : name of compiler for which these options are valid</br>
+    Compile options: project-specific compiler options</br>
+                     ("\1" inserts library name, "\2" default options)</br>
+    Make options:    project-specific make options</br>
+                     ("\1" inserts Makefile name, "\2" default options)</br>
+    Exceptions     : file-specific exceptions</br>
+      File name regexp: matches file names for which exceptions are valid</br>
+      - Options       : file-specific compiler options string</br>
+                        ("\1" inserts library name, "\2" default options,</br>
+                        "\3" project-specific options)</br>
+      - Do not compile: do not compile this file (in Makefile)</br>
+  Compile directory: where compilation is run and the Makefile is placed</br>
+                     ("\1" inserts compiler ID string)</br>
+  Library name     : name of library (default is "work")</br>
+  Library directory: path to library ("\1" inserts compiler ID string)</br>
+  Makefile name    : name of Makefile</br>
+                     ("\1" inserts compiler ID string, "\2" library name)</br>
+  Description      : description of project (multi-line string)</br>
+</br>
+Project title and description are used to insert into the file header (see</br>
+option `vhdl-file-header').</br>
+</br>
+The default directory must have an absolute path (use `M-TAB' for completion).</br>
+All other paths can be absolute or relative to the default directory.  All</br>
+paths must end with '/'.</br>
+</br>
+The design units found in the sources (files and directories) are shown in the</br>
+hierarchy browser.  Path and file name can contain wildcards `*' and `?' as</br>
+well as "./" and "../" ("sh" syntax).  Paths can also be absolute.</br>
+Environment variables (e.g. "$EXAMPLE2") are resolved.  If no sources are</br>
+specified, the default directory is taken as source directory.  Otherwise,</br>
+the default directory is only taken as source directory if there is a sources</br>
+entry with the empty string or "./".  Exclude regexp allows to filter out</br>
+specific file and directory names from the list of sources (e.g. CVS</br>
+directories).</br>
+</br>
+Files are compiled in the compile directory.  Makefiles are also placed into</br>
+the compile directory.  Library directory specifies which directory the</br>
+compiler compiles into (used to generate the Makefile).</br>
+</br>
+Since different compile/library directories and Makefiles may exist for</br>
+different compilers within one project, these paths and names allow the</br>
+insertion of a compiler-dependent ID string (defined in `vhdl-compiler-alist').</br>
+Compile options, compile directory, library directory, and Makefile name</br>
+overwrite the settings of the current compiler.</br>
+</br>
+File-specific compiler options (highest priority) overwrite project-specific</br>
+options which overwrite default options (lowest priority).  Lower priority</br>
+options can be inserted in higher priority options.  This allows to reuse</br>
+default options (e.g. "-file") in project- or file-specific options (e.g.</br>
+"-93 -file").</br>
+</br>
+NOTE: Reflect the new setting in the choice list of option `vhdl-project'</br>
+      by restarting Emacs.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("Example 1" "Source files in two directories, custom library name, VHDL'87" "~/example1/"
+  ("src/system/" "src/components/")
+  ""
+  (("ModelSim" "-87 \\2" "-f \\1 top_level" nil)
+   ("Synopsys" "-vhdl87 \\2" "-f \\1 top_level"
+    ((".*/datapath/.*" . "-optimize \\3")
+     (".*_tb\\.vhd"))))
+  "lib/" "example3_lib" "lib/example3/" "Makefile_\\2" "")
+ ("Example 2" "Individual source files, multiple compilers in different directories" "$EXAMPLE2/"
+  ("vhdl/system.vhd" "vhdl/component_*.vhd")
+  "" nil "\\1/" "work" "\\1/work/" "Makefile" "")
+ ("Example 3" "Source files in a directory tree, multiple compilers in same directory" "/home/me/example3/"
+  ("-r ./*/vhdl/")
+  "/CVS/" nil "./" "work" "work-\\1/" "Makefile-\\1" "-------------------------------------------------------------------------------\n-- This is a multi-line project description\n-- that can be used as a project dependent part of the file header.\n"))
+</pre></br>

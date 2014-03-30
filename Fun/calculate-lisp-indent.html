@@ -1,14 +1,14 @@
-<strong>calculate-lisp-indent</strong> is a compiled Lisp function in `<code>lisp-mode.el</code>'.<br/>
-<br/>
-(calculate-lisp-indent &optional PARSE-START)<br/>
-<br/>
-Return appropriate indentation for current line as Lisp code.<br/>
-In usual case returns an integer: the column to indent to.<br/>
-If the value is nil, that means don't change the indentation<br/>
-because the line starts inside a string.<br/>
-<br/>
-The value can also be a list of the form (COLUMN CONTAINING-SEXP-START).<br/>
-This means that following lines at the same level of indentation<br/>
-should not necessarily be indented the same as this line.<br/>
-Then COLUMN is the column to indent to, and CONTAINING-SEXP-START<br/>
+<strong>calculate-lisp-indent</strong> is a compiled Lisp function in `<code>lisp-mode.el</code>'.</br>
+</br>
+(calculate-lisp-indent &optional <u>PARSE-START</u>)</br>
+</br>
+Return appropriate indentation for current line as Lisp code.</br>
+In usual case returns an integer: the column to indent to.</br>
+If the value is nil, that means don't change the indentation</br>
+because the line starts inside a string.</br>
+</br>
+The value can also be a list of the form (COLUMN CONTAINING-SEXP-START).</br>
+This means that following lines at the same level of indentation</br>
+should not necessarily be indented the same as this line.</br>
+Then COLUMN is the column to indent to, and CONTAINING-SEXP-START</br>
 is the buffer position of the start of the containing expression.

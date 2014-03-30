@@ -1,37 +1,50 @@
-<strong>occur-edit-mode-map</strong> is a variable defined in `<code>replace.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `occur-edit-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (occur "Occur" keymap<br/>
-		  (occur-prev menu-item "Move to Previous Match" occur-prev :help "Move to the Nth (default 1) previous match in an Occur mode buffer")<br/>
-		  (occur-next menu-item "Move to Next Match" occur-next :help "Move to the Nth (default 1) next match in an Occur mode buffer")<br/>
-		  (occur-mode-display-occurrence menu-item "Display Occurrence" occur-mode-display-occurrence :help "Display in another window the occurrence the current line describes")<br/>
-		  (occur-mode-goto-occurrence menu-item "Go To Occurrence" occur-mode-goto-occurrence :help "Go to the occurrence the current line describes")<br/>
-		  (occur-mode-goto-occurrence-other-window menu-item "Go To Occurrence Other Window" occur-mode-goto-occurrence-other-window :help "Go to the occurrence the current line describes, in another window")<br/>
-		  (separator-2 "--")<br/>
-		  (occur-edit-buffer menu-item "Edit Occur Buffer" occur-edit-mode :help "Edit the *Occur* buffer and apply changes to the original buffers.")<br/>
-		  (occur-rename-buffer menu-item "Rename Occur Buffer" occur-rename-buffer :help "Rename the current *Occur* buffer to *Occur: original-buffer-name*.")<br/>
-		  (clone-buffer menu-item "Clone Occur Buffer" clone-buffer :help "Create and return a twin copy of the current *Occur* buffer")<br/>
-		  (revert-buffer menu-item "Revert Occur Buffer" revert-buffer :help "Replace the text in the *Occur* buffer with the results of rerunning occur")<br/>
-		  (quit-window menu-item "Quit Occur Window" quit-window :help "Quit the current *Occur* buffer.  Bury it, and maybe delete the selected frame")<br/>
-		  (kill-this-buffer menu-item "Kill Occur Buffer" kill-this-buffer :help "Kill the current *Occur* buffer")<br/>
-		  (separator-1 "--")<br/>
-		  (next-error-follow-minor-mode menu-item "Auto Occurrence Display" next-error-follow-minor-mode :help "Display another occurrence when moving the cursor" :button<br/>
-						(:toggle and<br/>
-							 (boundp 'next-error-follow-minor-mode)<br/>
-							 next-error-follow-minor-mode))))<br/>
- (15 . occur-mode-display-occurrence)<br/>
- (3 keymap<br/>
-    (6 . next-error-follow-minor-mode)<br/>
-    (3 . occur-cease-edit))<br/>
- (mouse-2 . occur-mode-mouse-goto)<br/>
- keymap<br/>
- (27 keymap<br/>
-     (9 . ispell-complete-word)))<br/>
-<br/>
+<strong>occur-edit-mode-map</strong> is a variable defined in `<code>replace.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `occur-edit-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (occur "Occur" keymap
+		  (occur-prev menu-item "Move to Previous Match" occur-prev :help "Move to the Nth (default 1) previous match in an Occur mode buffer")
+		  (occur-next menu-item "Move to Next Match" occur-next :help "Move to the Nth (default 1) next match in an Occur mode buffer")
+		  (occur-mode-display-occurrence menu-item "Display Occurrence" occur-mode-display-occurrence :help "Display in another window the occurrence the current line describes")
+		  (occur-mode-goto-occurrence menu-item "Go To Occurrence" occur-mode-goto-occurrence :help "Go to the occurrence the current line describes")
+		  (occur-mode-goto-occurrence-other-window menu-item "Go To Occurrence Other Window" occur-mode-goto-occurrence-other-window :help "Go to the occurrence the current line describes, in another window")
+		  (separator-2 "--")
+		  (occur-edit-buffer menu-item "Edit Occur Buffer" occur-edit-mode :help "Edit the *Occur* buffer and apply changes to the original buffers.")
+		  (occur-rename-buffer menu-item "Rename Occur Buffer" occur-rename-buffer :help "Rename the current *Occur* buffer to *Occur: original-buffer-name*.")
+		  (clone-buffer menu-item "Clone Occur Buffer" clone-buffer :help "Create and return a twin copy of the current *Occur* buffer")
+		  (revert-buffer menu-item "Revert Occur Buffer" revert-buffer :help "Replace the text in the *Occur* buffer with the results of rerunning occur")
+		  (quit-window menu-item "Quit Occur Window" quit-window :help "Quit the current *Occur* buffer.  Bury it, and maybe delete the selected frame")
+		  (kill-this-buffer menu-item "Kill Occur Buffer" kill-this-buffer :help "Kill the current *Occur* buffer")
+		  (separator-1 "--")
+		  (next-error-follow-minor-mode menu-item "Auto Occurrence Display" next-error-follow-minor-mode :help "Display another occurrence when moving the cursor" :button
+						(:toggle and
+							 (boundp 'next-error-follow-minor-mode)
+							 next-error-follow-minor-mode))))
+ (15 . occur-mode-display-occurrence)
+ (3 keymap
+    (6 . next-error-follow-minor-mode)
+    (3 . occur-cease-edit))
+ (mouse-2 . occur-mode-mouse-goto)
+ keymap
+ (menu-bar keymap
+	   (text "Text" keymap
+		 (center-line menu-item "Center Line" center-line :help "Center the current line")
+		 (center-paragraph menu-item "Center Paragraph" center-paragraph :help "Center the current paragraph")
+		 (center-region menu-item "Center Region" center-region :help "Center the marked region" :enable
+				(region-active-p))
+		 (sep "--")
+		 (paragraph-indent-minor-mode menu-item "Paragraph Indent" paragraph-indent-minor-mode :button
+					      (:toggle bound-and-true-p paragraph-indent-minor-mode)
+					      :help "Toggle paragraph indent minor mode")
+		 (toggle-text-mode-auto-fill menu-item "Auto Fill" toggle-text-mode-auto-fill :button
+					     (:toggle memq 'turn-on-auto-fill text-mode-hook)
+					     :help "Automatically fill text while typing in text modes (Auto Fill mode)")
+		 "Text"))
+ (27 keymap
+     (9 . ispell-complete-word)))
+</pre></br>

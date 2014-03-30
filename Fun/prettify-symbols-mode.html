@@ -1,0 +1,23 @@
+<strong>prettify-symbols-mode</strong> is an interactive compiled Lisp function in `<code>prog-mode.el</code>'.</br>
+</br>
+</br>
+(prettify-symbols-mode &optional <u>ARG</u>)</br>
+</br>
+Toggle Prettify Symbols mode.</br>
+With a prefix argument <u>ARG</u>, enable Prettify Symbols mode if <u>ARG</u> is</br>
+positive, and disable it otherwise.  If called from Lisp, enable</br>
+the mode if <u>ARG</u> is omitted or nil.</br>
+</br>
+When Prettify Symbols mode and font-locking are enabled, symbols are</br>
+prettified (displayed as composed characters) according to the rules</br>
+in `prettify-symbols-alist' (which see), which are locally defined</br>
+by major modes supporting prettifying.  To add further customizations</br>
+for a given major mode, you can modify `prettify-symbols-alist' thus:</br>
+</br>
+  (add-hook 'emacs-lisp-mode-hook</br>
+            (lambda ()</br>
+              (push '("&lt;=" . ?≤) prettify-symbols-alist)))</br>
+</br>
+You can enable this mode locally in desired buffers, or use</br>
+`global-prettify-symbols-mode' to enable it for all modes that</br>
+support it.

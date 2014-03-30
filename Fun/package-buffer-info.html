@@ -1,19 +1,9 @@
-<strong>package-buffer-info</strong> is a compiled Lisp function in `<code>package.el</code>'.<br/>
-<br/>
-(package-buffer-info)<br/>
-<br/>
-Return a vector describing the package in the current buffer.<br/>
-The vector has the form<br/>
-<br/>
-   [FILENAME REQUIRES DESCRIPTION VERSION COMMENTARY]<br/>
-<br/>
-FILENAME is the file name, a string, sans the ".el" extension.<br/>
-REQUIRES is a list of requirements, each requirement having the<br/>
- form (NAME VER); NAME is a string and VER is a version list.<br/>
-DESCRIPTION is the package description, a string.<br/>
-VERSION is the version, a string.<br/>
-COMMENTARY is the commentary section, a string, or nil if none.<br/>
-<br/>
-If the buffer does not contain a conforming package, signal an<br/>
-error.  If there is a package, narrow the buffer to the file's<br/>
+<strong>package-buffer-info</strong> is a compiled Lisp function in `<code>package.el</code>'.</br>
+</br>
+(package-buffer-info)</br>
+</br>
+Return a `package-desc' describing the package in the current buffer.</br>
+</br>
+If the buffer does not contain a conforming package, signal an</br>
+error.  If there is a package, narrow the buffer to the file's</br>
 boundaries.

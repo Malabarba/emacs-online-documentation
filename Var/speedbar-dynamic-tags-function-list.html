@@ -1,14 +1,15 @@
-<strong>speedbar-dynamic-tags-function-list</strong> is a variable defined in `<code>speedbar.el</code>'.<br/>
-Its value is ((speedbar-fetch-dynamic-imenu . speedbar-insert-imenu-list)<br/>
- (speedbar-fetch-dynamic-etags . speedbar-insert-etags-list))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Set to a list of functions which will return and insert a list of tags.<br/>
-Each element is of the form ( FETCH . INSERT ) where FETCH<br/>
-is a function which takes one parameter (the file to tag) and returns a<br/>
-list of tags.  The tag list can be of any form as long as the<br/>
-corresponding insert method can handle it.  If it returns t, then an<br/>
-error occurred, and the next fetch routine is tried.<br/>
-INSERT is a function which takes an INDENTation level, and a LIST of<br/>
+<strong>speedbar-dynamic-tags-function-list</strong> is a variable defined in `<code>speedbar.el</code>'.</br>
+Its value is <pre></br>
+((speedbar-fetch-dynamic-imenu . speedbar-insert-imenu-list)
+ (speedbar-fetch-dynamic-etags . speedbar-insert-etags-list))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Set to a list of functions which will return and insert a list of tags.</br>
+Each element is of the form ( FETCH . INSERT ) where FETCH</br>
+is a function which takes one parameter (the file to tag) and returns a</br>
+list of tags.  The tag list can be of any form as long as the</br>
+corresponding insert method can handle it.  If it returns t, then an</br>
+error occurred, and the next fetch routine is tried.</br>
+INSERT is a function which takes an INDENTation level, and a LIST of</br>
 tags to insert.  It will then create the speedbar buttons.

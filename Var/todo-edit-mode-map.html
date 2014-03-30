@@ -1,7 +1,11 @@
-<strong>todo-edit-mode-map</strong> is a variable defined in `<code>todo-mode.el</code>'.<br/>
-Its value is (keymap)<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `todo-edit-mode'.
+<strong>todo-edit-mode-map</strong> is a variable defined in `<code>todo-mode.el</code>'.</br>
+Its value is <pre></br>
+(keymap
+ (remap keymap
+	(newline . newline-and-indent))
+ (24 keymap
+     (17 . todo-edit-quit)))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Todo Edit mode keymap.

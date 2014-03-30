@@ -1,21 +1,22 @@
-<strong>byte-recompile-file</strong> is an interactive compiled Lisp function in `<code>bytecomp.el</code>'.<br/>
-<br/>
-(byte-recompile-file FILENAME &optional FORCE ARG LOAD)<br/>
-<br/>
-Recompile FILENAME file if it needs recompilation.<br/>
-This happens when its `.elc' file is older than itself.<br/>
-<br/>
-If the `.elc' file exists and is up-to-date, normally this function<br/>
-*does not* compile FILENAME.  If the prefix argument FORCE is non-nil,<br/>
-however, it compiles FILENAME even if the destination already<br/>
-exists and is up-to-date.<br/>
-<br/>
-If the `.elc' file does not exist, normally this function *does not*<br/>
-compile FILENAME.  If optional argument ARG is 0, it compiles<br/>
-the input file even if the `.elc' file does not exist.<br/>
-Any other non-nil value of ARG means to ask the user.<br/>
-<br/>
-If optional argument LOAD is non-nil, loads the file after compiling.<br/>
-<br/>
-If compilation is needed, this functions returns the result of<br/>
+<strong>byte-recompile-file</strong> is an interactive compiled Lisp function in `<code>bytecomp.el</code>'.</br>
+</br>
+</br>
+(byte-recompile-file <u>FILENAME</u> &optional <u>FORCE</u> <u>ARG</u> <u>LOAD</u>)</br>
+</br>
+Recompile <u>FILENAME</u> file if it needs recompilation.</br>
+This happens when its `.elc' file is older than itself.</br>
+</br>
+If the `.elc' file exists and is up-to-date, normally this function</br>
+*does not* compile <u>FILENAME</u>.  If the prefix argument <u>FORCE</u> is non-nil,</br>
+however, it compiles <u>FILENAME</u> even if the destination already</br>
+exists and is up-to-date.</br>
+</br>
+If the `.elc' file does not exist, normally this function *does not*</br>
+compile <u>FILENAME</u>.  If optional argument <u>ARG</u> is 0, it compiles</br>
+the input file even if the `.elc' file does not exist.</br>
+Any other non-nil value of <u>ARG</u> means to ask the user.</br>
+</br>
+If optional argument <u>LOAD</u> is non-nil, loads the file after compiling.</br>
+</br>
+If compilation is needed, this functions returns the result of</br>
 `byte-compile-file'; otherwise it returns 'no-byte-compile.

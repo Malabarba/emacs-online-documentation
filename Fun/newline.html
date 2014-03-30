@@ -1,12 +1,18 @@
-<strong>newline</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to RET.<br/>
-<br/>
-(newline &optional ARG)<br/>
-<br/>
-Insert a newline, and move to left margin of the new line if it's blank.<br/>
-If `use-hard-newlines' is non-nil, the newline is marked with the<br/>
-text-property `hard'.<br/>
-With ARG, insert that many newlines.<br/>
-Call `auto-fill-function' if the current column number is greater<br/>
-than the value of `fill-column' and ARG is nil.
+<strong>newline</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to RET.</br>
+</br>
+<code>(newline <em>&optional</em> <u>ARG</u> <u>INTERACTIVE</u></code>)</br>
+</br>
+Insert a newline, and move to left margin of the new line if it's blank.</br>
+If option `use-hard-newlines' is non-nil, the newline is marked with the</br>
+text-property `hard'.</br>
+With <u>ARG</u>, insert that many newlines.</br>
+</br>
+If `electric-indent-mode' is enabled, this indents the final new line</br>
+that it adds, and reindents the preceding line.  To just insert</br>
+a newline, use C-j.</br>
+</br>
+Calls `auto-fill-function' if the current column number is greater</br>
+than the value of `fill-column' and <u>ARG</u> is nil.</br>
+A non-nil <u>INTERACTIVE</u> argument means to run the `post-self-insert-hook'.

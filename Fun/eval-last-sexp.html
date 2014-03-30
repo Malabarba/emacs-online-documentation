@@ -1,13 +1,18 @@
-<strong>eval-last-sexp</strong> is an interactive compiled Lisp function in `<code>lisp-mode.el</code>'.<br/>
-<br/>
-It is bound to C-x C-e.<br/>
-<br/>
-(eval-last-sexp EVAL-LAST-SEXP-ARG-INTERNAL)<br/>
-<br/>
-Evaluate sexp before point; print value in minibuffer.<br/>
-Interactively, with prefix argument, print output into current buffer.<br/>
-Truncates long output according to the value of the variables<br/>
-`eval-expression-print-length' and `eval-expression-print-level'.<br/>
-<br/>
-If `eval-expression-debug-on-error' is non-nil, which is the default,<br/>
+<strong>eval-last-sexp</strong> is an interactive compiled Lisp function in `<code>lisp-mode.el</code>'.</br>
+</br>
+It is bound to C-x C-e.</br>
+</br>
+<code>(eval-last-sexp <u>EVAL-LAST-SEXP-ARG-INTERNAL</u></code>)</br>
+</br>
+Evaluate sexp before point; print value in the echo area.</br>
+Interactively, with prefix argument, print output into current buffer.</br>
+</br>
+Normally, this function truncates long output according to the value</br>
+of the variables `eval-expression-print-length' and</br>
+`eval-expression-print-level'.  With a prefix argument of zero,</br>
+however, there is no such truncation.  Such a prefix argument</br>
+also causes integers to be printed in several additional formats</br>
+(octal, hexadecimal, and character).</br>
+</br>
+If `eval-expression-debug-on-error' is non-nil, which is the default,</br>
 this command arranges for all errors to enter the debugger.

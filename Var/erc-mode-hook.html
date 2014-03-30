@@ -1,10 +1,13 @@
-<strong>erc-mode-hook</strong> is a variable defined in `<code>erc.el</code>'.<br/>
-Its value is (erc-imenu-setup)<br/>
-Original value was nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook run after `erc-mode' setup is finished.<br/>
-<br/>
+<strong>erc-mode-hook</strong> is a variable defined in `<code>erc.el</code>'.</br>
+Its value is <pre></br>
+(erc-munge-invisibility-spec erc-move-to-prompt-setup pcomplete-erc-setup erc-button-setup erc-imenu-setup)
+</pre></br>
+<strong>Original</strong> value was </br>
+<prenil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook run after entering ERC mode.</br>
+No problems result if this variable is not bound.</br>
+`add-hook' automatically binds it.  (This is true for all hook variables.)</br>
+</br>
 You can customize this variable.

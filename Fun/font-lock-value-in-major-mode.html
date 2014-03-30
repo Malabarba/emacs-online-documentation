@@ -1,6 +1,8 @@
-<strong>font-lock-value-in-major-mode</strong> is a compiled Lisp function in `<code>font-lock.el</code>'.<br/>
-<br/>
-(font-lock-value-in-major-mode ALIST)<br/>
-<br/>
-Return value in ALIST for `major-mode', or ALIST if it is not an alist.<br/>
-Structure is ((MAJOR-MODE . VALUE) ...) where MAJOR-MODE may be t.
+<strong>font-lock-value-in-major-mode</strong> is a compiled Lisp function in `<code>font-lock.el</code>'.</br>
+</br>
+(font-lock-value-in-major-mode <u>VALUES</u>)</br>
+</br>
+If <u>VALUES</u> is an list, use `major-mode' as a key and return the `assq' value.</br>
+<u>VALUES</u> should then be an alist on the form ((MAJOR-MODE . VALUE) ...) where</br>
+MAJOR-MODE may be t.</br>
+If <u>VALUES</u> isn't a list, return <u>VALUES</u>.

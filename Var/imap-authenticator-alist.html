@@ -1,18 +1,19 @@
-<strong>imap-authenticator-alist</strong> is a variable defined in `<code>imap.el</code>'.<br/>
-Its value is ((gssapi imap-gssapi-auth-p imap-gssapi-auth)<br/>
- (kerberos4 imap-kerberos4-auth-p imap-kerberos4-auth)<br/>
- (sasl imap-sasl-auth-p imap-sasl-auth)<br/>
- (cram-md5 imap-cram-md5-p imap-cram-md5-auth)<br/>
- (login imap-login-p imap-login-auth)<br/>
- (anonymous imap-anonymous-p imap-anonymous-auth)<br/>
- (digest-md5 imap-digest-md5-p imap-digest-md5-auth))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Definition of authenticators.<br/>
-<br/>
-(NAME CHECK AUTHENTICATE)<br/>
-<br/>
-NAME names the authenticator.  CHECK is a function returning non-nil if<br/>
-the server support the authenticator and AUTHENTICATE is a function<br/>
+<strong>imap-authenticator-alist</strong> is a variable defined in `<code>imap.el</code>'.</br>
+Its value is <pre></br>
+((gssapi imap-gssapi-auth-p imap-gssapi-auth)
+ (kerberos4 imap-kerberos4-auth-p imap-kerberos4-auth)
+ (sasl imap-sasl-auth-p imap-sasl-auth)
+ (cram-md5 imap-cram-md5-p imap-cram-md5-auth)
+ (login imap-login-p imap-login-auth)
+ (anonymous imap-anonymous-p imap-anonymous-auth)
+ (digest-md5 imap-digest-md5-p imap-digest-md5-auth))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Definition of authenticators.</br>
+</br>
+(NAME CHECK AUTHENTICATE)</br>
+</br>
+NAME names the authenticator.  CHECK is a function returning non-nil if</br>
+the server support the authenticator and AUTHENTICATE is a function</br>
 for doing the actual authentication.

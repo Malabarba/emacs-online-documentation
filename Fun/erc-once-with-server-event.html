@@ -1,19 +1,19 @@
-<strong>erc-once-with-server-event</strong> is a compiled Lisp function in `<code>erc.el</code>'.<br/>
-<br/>
-(erc-once-with-server-event EVENT &rest FORMS)<br/>
-<br/>
-Execute FORMS the next time EVENT occurs in the `current-buffer'.<br/>
-<br/>
-You should make sure that `current-buffer' is a server buffer.<br/>
-<br/>
-This function temporarily adds a function to EVENT's hook to<br/>
-execute FORMS.  After FORMS are run, the function is removed from<br/>
-EVENT's hook.  The last expression of FORMS should be either nil<br/>
-or t, where nil indicates that the other functions on EVENT's hook<br/>
-should be run too, and t indicates that other functions should<br/>
-not be run.<br/>
-<br/>
-Please be sure to use this function in server-buffers.  In<br/>
-channel-buffers it may not work at all, as it uses the LOCAL<br/>
-argument of `add-hook' and `remove-hook' to ensure multiserver<br/>
+<strong>erc-once-with-server-event</strong> is a compiled Lisp function in `<code>erc.el</code>'.</br>
+</br>
+(erc-once-with-server-event <u>EVENT</u> <u>F</u>)</br>
+</br>
+Run function <u>F</u> the next time <u>EVENT</u> occurs in the `current-buffer'.</br>
+</br>
+You should make sure that `current-buffer' is a server buffer.</br>
+</br>
+This function temporarily adds a function to <u>EVENT</u>'s hook to call <u>F</u> with</br>
+two arguments (`proc' and `parsed').  After <u>F</u> is called, the function is</br>
+removed from <u>EVENT</u>'s hook.  <u>F</u> should return either nil</br>
+or t, where nil indicates that the other functions on <u>EVENT</u>'s hook</br>
+should be run too, and t indicates that other functions should</br>
+not be run.</br>
+</br>
+Please be sure to use this function in server-buffers.  In</br>
+channel-buffers it may not work at all, as it uses the LOCAL</br>
+argument of `add-hook' and `remove-hook' to ensure multiserver</br>
 capabilities.

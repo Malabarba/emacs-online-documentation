@@ -1,5 +1,15 @@
-<strong>org-id-new</strong> is an interactive autoloaded Lisp function in `<code>org-id.el</code>'.<br/>
-<br/>
-[Arg list not available until function definition is loaded.]<br/>
-<br/>
-Documentation will be available after `org-id.el' is loaded.
+<strong>org-id-new</strong> is an autoloaded Lisp function in `<code>org-id.el</code>'.</br>
+</br>
+(org-id-new &optional <u>PREFIX</u>)</br>
+</br>
+Create a new globally unique ID.</br>
+</br>
+An ID consists of two parts separated by a colon:</br>
+- a prefix</br>
+- a unique part that will be created according to `org-id-method'.</br>
+</br>
+<u>PREFIX</u> can specify the prefix, the default is given by the variable</br>
+`org-id-prefix'.  However, if <u>PREFIX</u> is the symbol `none', don't use any</br>
+prefix even if `org-id-prefix' specifies one.</br>
+</br>
+So a typical ID could look like "Org:4nd91V40HI".

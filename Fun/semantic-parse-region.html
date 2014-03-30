@@ -1,20 +1,20 @@
-<strong>semantic-parse-region</strong> is a compiled Lisp function in `<code>semantic.el</code>'.<br/>
-<br/>
-(semantic-parse-region START END &optional NONTERMINAL DEPTH RETURNONERROR)<br/>
-<br/>
-Parse the area between START and END, and return any tags found.<br/>
-If END needs to be extended due to a lexical token being too large, it<br/>
-will be silently ignored.<br/>
-<br/>
-Optional arguments:<br/>
-NONTERMINAL is the rule to start parsing at.<br/>
-DEPTH specifies the lexical depth to descend for parsers that use<br/>
-lexical analysis as their first step.<br/>
-RETURNONERROR specifies that parsing should stop on the first<br/>
-unmatched syntax encountered.  When nil, parsing skips the syntax,<br/>
-adding it to the unmatched syntax cache.<br/>
-<br/>
-Must return a list of semantic tags which have been cooked<br/>
-(repositioned properly) but which DO NOT HAVE OVERLAYS associated<br/>
-with them.  When overloading this function, use `semantic--tag-expand'<br/>
+<strong>semantic-parse-region</strong> is a compiled Lisp function in `<code>semantic.el</code>'.</br>
+</br>
+(semantic-parse-region <u>START</u> <u>END</u> &optional <u>NONTERMINAL</u> <u>DEPTH</u> <u>RETURNONERROR</u>)</br>
+</br>
+Parse the area between <u>START</u> and <u>END</u>, and return any tags found.</br>
+If <u>END</u> needs to be extended due to a lexical token being too large, it</br>
+will be silently ignored.</br>
+</br>
+Optional arguments:</br>
+<u>NONTERMINAL</u> is the rule to start parsing at.</br>
+<u>DEPTH</u> specifies the lexical depth to descend for parsers that use</br>
+lexical analysis as their first step.</br>
+<u>RETURNONERROR</u> specifies that parsing should stop on the first</br>
+unmatched syntax encountered.  When nil, parsing skips the syntax,</br>
+adding it to the unmatched syntax cache.</br>
+</br>
+Must return a list of semantic tags which have been cooked</br>
+(repositioned properly) but which DO NOT HAVE OVERLAYS associated</br>
+with them.  When overloading this function, use `semantic--tag-expand'</br>
 to cook raw tags.

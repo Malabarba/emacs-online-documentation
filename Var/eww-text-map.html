@@ -1,0 +1,46 @@
+<strong>eww-text-map</strong> is a variable defined in `<code>eww.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ #^[nil nil keymap
+	#^^[3 0 nil eww-beginning-of-text nil
+	      (keymap
+	       (3 . eww-submit))
+	      nil eww-end-of-text nil nil nil shr-next-link nil nil nil eww-submit nil nil nil nil nil nil nil nil nil nil nil nil nil
+	      (keymap
+	       (9 . shr-previous-link))
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	#^^[1 0
+	      #^^[2 0
+		    #^^[3 0 nil eww-beginning-of-text nil
+			  (keymap
+			   (3 . eww-submit))
+			  nil eww-end-of-text nil nil nil shr-next-link nil nil nil eww-submit nil nil nil nil nil nil nil nil nil nil nil nil nil
+			  (keymap
+			   (9 . shr-previous-link))
+			  nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+ keymap
+ (menu-bar keymap
+	   (text "Text" keymap
+		 (center-line menu-item "Center Line" center-line :help "Center the current line")
+		 (center-paragraph menu-item "Center Paragraph" center-paragraph :help "Center the current paragraph")
+		 (center-region menu-item "Center Region" center-region :help "Center the marked region" :enable
+				(region-active-p))
+		 (sep "--")
+		 (paragraph-indent-minor-mode menu-item "Paragraph Indent" paragraph-indent-minor-mode :button
+					      (:toggle bound-and-true-p paragraph-indent-minor-mode)
+					      :help "Toggle paragraph indent minor mode")
+		 (toggle-text-mode-auto-fill menu-item "Auto Fill" toggle-text-mode-auto-fill :button
+					     (:toggle memq 'turn-on-auto-fill text-mode-hook)
+					     :help "Automatically fill text while typing in text modes (Auto Fill mode)")
+		 "Text"))
+ (27 keymap
+     (9 . ispell-complete-word)))
+</pre></br>

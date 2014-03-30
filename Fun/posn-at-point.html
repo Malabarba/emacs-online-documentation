@@ -1,14 +1,14 @@
-<strong>posn-at-point</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(posn-at-point &optional POS WINDOW)<br/>
-<br/>
-Return position information for buffer POS in WINDOW.<br/>
-POS defaults to point in WINDOW; WINDOW defaults to the selected window.<br/>
-<br/>
-Return nil if position is not visible in window.  Otherwise,<br/>
-the return value is similar to that returned by `event-start' for<br/>
-a mouse click at the upper left corner of the glyph corresponding<br/>
-to the given buffer position:<br/>
-   (WINDOW AREA-OR-POS (X . Y) TIMESTAMP OBJECT POS (COL . ROW)<br/>
-    IMAGE (DX . DY) (WIDTH . HEIGHT))<br/>
+<strong>posn-at-point</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(posn-at-point &optional <u>POS</u> <u>WINDOW</u>)</br>
+</br>
+Return position information for buffer <u>POS</u> in <u>WINDOW</u>.</br>
+<u>POS</u> defaults to point in <u>WINDOW</u>; <u>WINDOW</u> defaults to the selected window.</br>
+</br>
+Return nil if position is not visible in window.  Otherwise,</br>
+the return value is similar to that returned by `event-start' for</br>
+a mouse click at the upper left corner of the glyph corresponding</br>
+to the given buffer position:</br>
+   (<u>WINDOW</u> AREA-OR-POS (X . Y) TIMESTAMP OBJECT <u>POS</u> (COL . ROW)</br>
+    IMAGE (DX . DY) (WIDTH . HEIGHT))</br>
 The `posn-' functions access elements of such lists.

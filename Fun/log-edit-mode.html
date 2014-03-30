@@ -1,35 +1,38 @@
-<strong>log-edit-mode</strong> is an interactive compiled Lisp function in `<code>log-edit.el</code>'.<br/>
-<br/>
-(log-edit-mode)<br/>
-<br/>
-Parent mode: `text-mode'.<br/>
-<br/>
-Major mode for editing version-control log messages.<br/>
-When done editing the log entry, just type M-x log-edit-done which<br/>
-will trigger the actual commit of the file(s).<br/>
-Several other handy support commands are provided of course and<br/>
-the package from which this is used might also provide additional<br/>
-commands (under C-x v for VC, for example).<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-ESC		Prefix Command<br/>
-<br/>
-M-n		log-edit-next-comment<br/>
-M-p		log-edit-previous-comment<br/>
-M-r		log-edit-comment-search-backward<br/>
-M-s		log-edit-comment-search-forward<br/>
-<br/>
-C-c C-a		log-edit-insert-changelog<br/>
-C-c C-c		log-edit-done<br/>
-C-c C-d		log-edit-show-diff<br/>
-C-c C-f		log-edit-show-files<br/>
-C-c ?		log-edit-mode-help<br/>
-<br/>
-<br/>
-<br/>
-In addition to any hooks its parent mode `text-mode' might have run,<br/>
-this mode runs the hook `log-edit-mode-hook', as the final step<br/>
+<strong>log-edit-mode</strong> is an interactive compiled Lisp function in `<code>log-edit.el</code>'.</br>
+</br>
+</br>
+(log-edit-mode)</br>
+</br>
+Parent mode: `text-mode'.</br>
+</br>
+Major mode for editing version-control log messages.</br>
+When done editing the log entry, just type M-x log-edit-done which</br>
+will trigger the actual commit of the file(s).</br>
+Several other handy support commands are provided of course and</br>
+the package from which this is used might also provide additional</br>
+commands (under C-x v for VC, for example).</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-a		log-edit-beginning-of-line</br>
+C-c		Prefix Command</br>
+ESC		Prefix Command</br>
+</br>
+M-n		log-edit-next-comment</br>
+M-p		log-edit-previous-comment</br>
+M-r		log-edit-comment-search-backward</br>
+M-s		log-edit-comment-search-forward</br>
+</br>
+C-c C-a		log-edit-insert-changelog</br>
+C-c C-c		log-edit-done</br>
+C-c C-d		log-edit-show-diff</br>
+C-c C-f		log-edit-show-files</br>
+C-c C-k		log-edit-kill-buffer</br>
+C-c ?		log-edit-mode-help</br>
+</br>
+</br>
+</br>
+In addition to any hooks its parent mode `text-mode' might have run,</br>
+this mode runs the hook `log-edit-mode-hook', as the final step</br>
 during initialization.

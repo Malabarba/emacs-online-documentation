@@ -1,69 +1,71 @@
-<strong>tabulated-list-mode</strong> is an interactive compiled Lisp function in `<code>tabulated-list.el</code>'.<br/>
-<br/>
-(tabulated-list-mode)<br/>
-<br/>
-Parent mode: `special-mode'.<br/>
-<br/>
-Generic major mode for browsing a list of items.<br/>
-This mode is usually not used directly; instead, other major<br/>
-modes are derived from it, using `define-derived-mode'.<br/>
-<br/>
-In this major mode, the buffer is divided into multiple columns,<br/>
-which are labeled using the header line.  Each non-empty line<br/>
-belongs to one "entry", and the entries can be sorted according<br/>
-to their column values.<br/>
-<br/>
-An inheriting mode should usually do the following in their body:<br/>
-<br/>
- - Set `tabulated-list-format', specifying the column format.<br/>
- - Set `tabulated-list-revert-hook', if the buffer contents need<br/>
-   to be specially recomputed prior to `revert-buffer'.<br/>
- - Maybe set a `tabulated-list-entries' function (see below).<br/>
- - Maybe set `tabulated-list-printer' (see below).<br/>
- - Maybe set `tabulated-list-padding'.<br/>
- - Call `tabulated-list-init-header' to initialize `header-line-format'<br/>
-   according to `tabulated-list-format'.<br/>
-<br/>
-An inheriting mode is usually accompanied by a "list-FOO"<br/>
-command (e.g. `list-packages', `list-processes').  This command<br/>
-creates or switches to a buffer and enables the major mode in<br/>
-that buffer.  If `tabulated-list-entries' is not a function, the<br/>
-command should initialize it to a list of entries for displaying.<br/>
-Finally, it should call `tabulated-list-print'.<br/>
-<br/>
-`tabulated-list-print' calls the printer function specified by<br/>
-`tabulated-list-printer', once for each entry.  The default<br/>
-printer is `tabulated-list-print-entry', but a mode that keeps<br/>
-data in an ewoc may instead specify a printer function (e.g., one<br/>
-that calls `ewoc-enter-last'), with `tabulated-list-print-entry'<br/>
-as the ewoc pretty-printer.<br/>
-<br/>
-In addition to any hooks its parent mode `special-mode' might have run,<br/>
-this mode runs the hook `tabulated-list-mode-hook', as the final step<br/>
-during initialization.<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-TAB		forward-button<br/>
-ESC		Prefix Command<br/>
-SPC		scroll-up-command<br/>
--		negative-argument<br/>
-0 .. 9		digit-argument<br/>
-<		beginning-of-buffer<br/>
->		end-of-buffer<br/>
-?		describe-mode<br/>
-S		tabulated-list-sort<br/>
-g		revert-buffer<br/>
-h		describe-mode<br/>
-n		next-line<br/>
-p		previous-line<br/>
-q		quit-window<br/>
-DEL		scroll-down-command<br/>
-<backtab>	backward-button<br/>
-<follow-link>	mouse-face<br/>
-<mouse-2>	mouse-select-window<br/>
-<remap>		Prefix Command<br/>
-<br/>
-C-M-i		backward-button<br/>
-<br/>
+<strong>tabulated-list-mode</strong> is an interactive compiled Lisp function in `<code>tabulated-list.el</code>'.</br>
+</br>
+</br>
+(tabulated-list-mode)</br>
+</br>
+Parent mode: `special-mode'.</br>
+</br>
+Generic major mode for browsing a list of items.</br>
+This mode is usually not used directly; instead, other major</br>
+modes are derived from it, using `define-derived-mode'.</br>
+</br>
+In this major mode, the buffer is divided into multiple columns,</br>
+which are labeled using the header line.  Each non-empty line</br>
+belongs to one "entry", and the entries can be sorted according</br>
+to their column values.</br>
+</br>
+An inheriting mode should usually do the following in their body:</br>
+</br>
+ - Set `tabulated-list-format', specifying the column format.</br>
+ - Set `tabulated-list-revert-hook', if the buffer contents need</br>
+   to be specially recomputed prior to `revert-buffer'.</br>
+ - Maybe set a `tabulated-list-entries' function (see below).</br>
+ - Maybe set `tabulated-list-printer' (see below).</br>
+ - Maybe set `tabulated-list-padding'.</br>
+ - Call `tabulated-list-init-header' to initialize `header-line-format'</br>
+   according to `tabulated-list-format'.</br>
+</br>
+An inheriting mode is usually accompanied by a "list-FOO"</br>
+command (e.g. `list-packages', `list-processes').  This command</br>
+creates or switches to a buffer and enables the major mode in</br>
+that buffer.  If `tabulated-list-entries' is not a function, the</br>
+command should initialize it to a list of entries for displaying.</br>
+Finally, it should call `tabulated-list-print'.</br>
+</br>
+`tabulated-list-print' calls the printer function specified by</br>
+`tabulated-list-printer', once for each entry.  The default</br>
+printer is `tabulated-list-print-entry', but a mode that keeps</br>
+data in an ewoc may instead specify a printer function (e.g., one</br>
+that calls `ewoc-enter-last'), with `tabulated-list-print-entry'</br>
+as the ewoc pretty-printer.</br>
+</br>
+In addition to any hooks its parent mode `special-mode' might have run,</br>
+this mode runs the hook `tabulated-list-mode-hook', as the final step</br>
+during initialization.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+TAB		forward-button</br>
+ESC		Prefix Command</br>
+SPC		scroll-up-command</br>
+-		negative-argument</br>
+0 .. 9		digit-argument</br>
+&lt;		beginning-of-buffer</br>
+>		end-of-buffer</br>
+?		describe-mode</br>
+S		tabulated-list-sort</br>
+g		revert-buffer</br>
+h		describe-mode</br>
+n		next-line</br>
+p		previous-line</br>
+q		quit-window</br>
+DEL		scroll-down-command</br>
+S-SPC		scroll-down-command</br>
+&lt;backtab>	backward-button</br>
+&lt;follow-link>	mouse-face</br>
+&lt;mouse-2>	mouse-select-window</br>
+&lt;remap>		Prefix Command</br>
+</br>
+C-M-i		backward-button</br>
+</br>

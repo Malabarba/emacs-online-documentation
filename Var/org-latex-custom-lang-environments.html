@@ -1,0 +1,18 @@
+<strong>org-latex-custom-lang-environments</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist mapping languages to language-specific LaTeX environments.</br>
+</br>
+It is used during export of src blocks by the listings and minted</br>
+latex packages.  For example,</br>
+</br>
+  (setq org-latex-custom-lang-environments</br>
+     '((python "pythoncode")))</br>
+</br>
+would have the effect that if org encounters begin_src python</br>
+during latex export it will output</br>
+</br>
+  \begin{pythoncode}</br>
+  <src block body></br>
+  \end{pythoncode}

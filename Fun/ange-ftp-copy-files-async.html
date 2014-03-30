@@ -1,13 +1,13 @@
-<strong>ange-ftp-copy-files-async</strong> is a compiled Lisp function in `<code>ange-ftp.el</code>'.<br/>
-<br/>
-(ange-ftp-copy-files-async OKAY-P LINE VERBOSE-P FILES)<br/>
-<br/>
-Copy some files in the background.<br/>
-OKAY-P must be t, and LINE does not matter.  They are here to make this<br/>
- function a valid CONT argument for `ange-ftp-raw-send-cmd'.<br/>
-If VERBOSE-P is non-nil, print progress report in the echo area.<br/>
- When all the files have been copied already, a message is shown anyway.<br/>
-FILES is a list of files to copy in the form<br/>
-  (from-file to-file ok-if-already-exists keep-date)<br/>
-E.g.,<br/>
+<strong>ange-ftp-copy-files-async</strong> is a compiled Lisp function in `<code>ange-ftp.el</code>'.</br>
+</br>
+(ange-ftp-copy-files-async <u>OKAY-P</u> <u>LINE</u> <u>VERBOSE-P</u> <u>FILES</u>)</br>
+</br>
+Copy some files in the background.</br>
+<u>OKAY-P</u> must be t, and <u>LINE</u> does not matter.  They are here to make this</br>
+ function a valid CONT argument for `ange-ftp-raw-send-cmd'.</br>
+If <u>VERBOSE-P</u> is non-nil, print progress report in the echo area.</br>
+ When all the files have been copied already, a message is shown anyway.</br>
+<u>FILES</u> is a list of files to copy in the form</br>
+  (from-file to-file ok-if-already-exists keep-date)</br>
+E.g.,</br>
   (ange-ftp-copy-files-async t nil t '(("a" "b" t t) ("c" "d" t t)))

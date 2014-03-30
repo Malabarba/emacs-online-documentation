@@ -1,116 +1,116 @@
-<strong>rmail-mode-map</strong> is a variable defined in `<code>rmail.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap used in Rmail mode.<br/>
-<br/>
-Value: (keymap<br/>
- #^[nil nil keymap<br/>
-	#^^[3 0 nil nil nil<br/>
-	      (keymap<br/>
-	       (16 . rmail-previous-same-subject)<br/>
-	       (14 . rmail-next-same-subject)<br/>
-	       (19 keymap<br/>
-		   (11 . rmail-sort-by-labels)<br/>
-		   (12 . rmail-sort-by-lines)<br/>
-		   (3 . rmail-sort-by-correspondent)<br/>
-		   (18 . rmail-sort-by-recipient)<br/>
-		   (1 . rmail-sort-by-author)<br/>
-		   (19 . rmail-sort-by-subject)<br/>
-		   (4 . rmail-sort-by-date))<br/>
-	       (23 . rmail-widen))<br/>
-	      rmail-delete-backward nil nil nil nil nil nil nil nil nil nil rmail-output-as-seen nil nil nil nil nil nil nil nil nil nil nil<br/>
-	      (keymap<br/>
-	       (115 . rmail-search)<br/>
-	       (16 . rmail-previous-labeled-message)<br/>
-	       (112 . rmail-previous-message)<br/>
-	       (14 . rmail-next-labeled-message)<br/>
-	       (110 . rmail-next-message)<br/>
-	       (109 . rmail-retry-failure)<br/>
-	       (20 . rmail-summary-by-topic)<br/>
-	       (6 . rmail-summary-by-senders)<br/>
-	       (19 . rmail-summary-by-regexp)<br/>
-	       (18 . rmail-summary-by-recipients)<br/>
-	       (12 . rmail-summary-by-labels)<br/>
-	       (8 . rmail-summary))<br/>
-	      nil nil nil nil scroll-up-command nil nil nil nil nil nil nil nil nil nil nil nil negative-argument rmail-beginning-of-message rmail-end-of-message digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil rmail-first-message nil rmail-last-message describe-mode nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil rmail-add-label rmail-bury rmail-continue rmail-delete-forward rmail-edit-current-message rmail-forward rmail-get-new-mail rmail-summary rmail-input rmail-show-message rmail-kill-label rmail-summary-by-labels rmail-mail rmail-next-undeleted-message rmail-output rmail-previous-undeleted-message rmail-quit rmail-reply rmail-expunge-and-save rmail-toggle-header rmail-undelete-previous-message rmail-mime rmail-output-body-to-file rmail-expunge nil nil nil nil nil nil scroll-down-command]<br/>
-	#^^[1 0<br/>
-	      #^^[2 0<br/>
-		    #^^[3 0 nil nil nil<br/>
-			  (keymap<br/>
-			   (16 . rmail-previous-same-subject)<br/>
-			   (14 . rmail-next-same-subject)<br/>
-			   (19 keymap<br/>
-			       (11 . rmail-sort-by-labels)<br/>
-			       (12 . rmail-sort-by-lines)<br/>
-			       (3 . rmail-sort-by-correspondent)<br/>
-			       (18 . rmail-sort-by-recipient)<br/>
-			       (1 . rmail-sort-by-author)<br/>
-			       (19 . rmail-sort-by-subject)<br/>
-			       (4 . rmail-sort-by-date))<br/>
-			   (23 . rmail-widen))<br/>
-			  rmail-delete-backward nil nil nil nil nil nil nil nil nil nil rmail-output-as-seen nil nil nil nil nil nil nil nil nil nil nil<br/>
-			  (keymap<br/>
-			   (115 . rmail-search)<br/>
-			   (16 . rmail-previous-labeled-message)<br/>
-			   (112 . rmail-previous-message)<br/>
-			   (14 . rmail-next-labeled-message)<br/>
-			   (110 . rmail-next-message)<br/>
-			   (109 . rmail-retry-failure)<br/>
-			   (20 . rmail-summary-by-topic)<br/>
-			   (6 . rmail-summary-by-senders)<br/>
-			   (19 . rmail-summary-by-regexp)<br/>
-			   (18 . rmail-summary-by-recipients)<br/>
-			   (12 . rmail-summary-by-labels)<br/>
-			   (8 . rmail-summary))<br/>
-			  nil nil nil nil scroll-up-command nil nil nil nil nil nil nil nil nil nil nil nil negative-argument rmail-beginning-of-message rmail-end-of-message digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil rmail-first-message nil rmail-last-message describe-mode nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil rmail-add-label rmail-bury rmail-continue rmail-delete-forward rmail-edit-current-message rmail-forward rmail-get-new-mail rmail-summary rmail-input rmail-show-message rmail-kill-label rmail-summary-by-labels rmail-mail rmail-next-undeleted-message rmail-output rmail-previous-undeleted-message rmail-quit rmail-reply rmail-expunge-and-save rmail-toggle-header rmail-undelete-previous-message rmail-mime rmail-output-body-to-file rmail-expunge nil nil nil nil nil nil scroll-down-command]<br/>
-		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
- (menu-bar keymap<br/>
-	   (move "Move" keymap<br/>
-		 (first "First" . rmail-first-message)<br/>
-		 (last "Last" . rmail-last-message)<br/>
-		 (next "Next" . rmail-next-message)<br/>
-		 (previous "Previous" . rmail-previous-message)<br/>
-		 (search "Search..." . rmail-search)<br/>
-		 (search-back "Search Back..." . rmail-search-backwards)<br/>
-		 "Move")<br/>
-	   (delete "Delete" keymap<br/>
-		   (delete "Delete" . rmail-delete-forward)<br/>
-		   (undelete "Undelete" . rmail-undelete-previous-message)<br/>
-		   (expunge "Expunge" . rmail-expunge)<br/>
-		   (expunge/save "Expunge/Save" . rmail-expunge-and-save)<br/>
-		   "Delete")<br/>
-	   (mail "Mail" keymap<br/>
-		 (mail "Mail" . rmail-mail)<br/>
-		 (reply "Reply" . rmail-reply)<br/>
-		 (retry "Retry" . rmail-retry-failure)<br/>
-		 (forward "Forward" . rmail-forward)<br/>
-		 (resend menu-item "Resend..." rmail-resend :keys "C-u f")<br/>
-		 (continue "Continue" . rmail-continue)<br/>
-		 (lambda "----")<br/>
-		 (rmail-get-new-mail "Get New Mail" . rmail-get-new-mail)<br/>
-		 "Mail")<br/>
-	   (summary "Summary" keymap<br/>
-		    (all "All" . rmail-summary)<br/>
-		    (regexp "By Regexp..." . rmail-summary-by-regexp)<br/>
-		    (topic "By Topic..." . rmail-summary-by-topic)<br/>
-		    (recipients "By Recipients..." . rmail-summary-by-recipients)<br/>
-		    (labels "By Labels..." . rmail-summary-by-labels)<br/>
-		    (senders "By Senders..." . rmail-summary-by-senders)<br/>
-		    "Summary")<br/>
-	   (classify "Classify" keymap<br/>
-		     (add-label "Add Label..." . rmail-add-label)<br/>
-		     (kill-label "Kill Label..." . rmail-kill-label)<br/>
-		     (output "Output as seen..." . rmail-output-as-seen)<br/>
-		     (output-inbox "Output..." . rmail-output)<br/>
-		     (output-body "Output body to file..." . rmail-output-body-to-file)<br/>
-		     (output-menu)<br/>
-		     (input-menu)<br/>
-		     "Classify"))<br/>
- (remap keymap<br/>
-	(self-insert-command . undefined)))<br/>
-<br/>
+<strong>rmail-mode-map</strong> is a variable defined in `<code>rmail.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used in Rmail mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ #^[nil nil keymap
+	#^^[3 0 nil nil nil
+	      (keymap
+	       (16 . rmail-previous-same-subject)
+	       (14 . rmail-next-same-subject)
+	       (19 keymap
+		   (11 . rmail-sort-by-labels)
+		   (12 . rmail-sort-by-lines)
+		   (3 . rmail-sort-by-correspondent)
+		   (18 . rmail-sort-by-recipient)
+		   (1 . rmail-sort-by-author)
+		   (19 . rmail-sort-by-subject)
+		   (4 . rmail-sort-by-date))
+	       (23 . rmail-widen))
+	      rmail-delete-backward nil nil nil nil nil nil nil nil nil nil rmail-output-as-seen nil nil nil nil nil nil nil nil nil nil nil
+	      (keymap
+	       (115 . rmail-search)
+	       (16 . rmail-previous-labeled-message)
+	       (112 . rmail-previous-message)
+	       (14 . rmail-next-labeled-message)
+	       (110 . rmail-next-message)
+	       (109 . rmail-retry-failure)
+	       (20 . rmail-summary-by-topic)
+	       (6 . rmail-summary-by-senders)
+	       (19 . rmail-summary-by-regexp)
+	       (18 . rmail-summary-by-recipients)
+	       (12 . rmail-summary-by-labels)
+	       (8 . rmail-summary))
+	      nil nil nil nil scroll-up-command nil nil nil nil nil nil nil nil nil nil nil nil negative-argument rmail-beginning-of-message rmail-end-of-message digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil rmail-first-message nil rmail-last-message describe-mode nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil rmail-add-label rmail-bury rmail-continue rmail-delete-forward rmail-edit-current-message rmail-forward rmail-get-new-mail rmail-summary rmail-input rmail-show-message rmail-kill-label rmail-summary-by-labels rmail-mail rmail-next-undeleted-message rmail-output rmail-previous-undeleted-message rmail-quit rmail-reply rmail-expunge-and-save rmail-toggle-header rmail-undelete-previous-message rmail-mime rmail-output-body-to-file rmail-expunge nil nil nil nil nil nil scroll-down-command]
+	#^^[1 0
+	      #^^[2 0
+		    #^^[3 0 nil nil nil
+			  (keymap
+			   (16 . rmail-previous-same-subject)
+			   (14 . rmail-next-same-subject)
+			   (19 keymap
+			       (11 . rmail-sort-by-labels)
+			       (12 . rmail-sort-by-lines)
+			       (3 . rmail-sort-by-correspondent)
+			       (18 . rmail-sort-by-recipient)
+			       (1 . rmail-sort-by-author)
+			       (19 . rmail-sort-by-subject)
+			       (4 . rmail-sort-by-date))
+			   (23 . rmail-widen))
+			  rmail-delete-backward nil nil nil nil nil nil nil nil nil nil rmail-output-as-seen nil nil nil nil nil nil nil nil nil nil nil
+			  (keymap
+			   (115 . rmail-search)
+			   (16 . rmail-previous-labeled-message)
+			   (112 . rmail-previous-message)
+			   (14 . rmail-next-labeled-message)
+			   (110 . rmail-next-message)
+			   (109 . rmail-retry-failure)
+			   (20 . rmail-summary-by-topic)
+			   (6 . rmail-summary-by-senders)
+			   (19 . rmail-summary-by-regexp)
+			   (18 . rmail-summary-by-recipients)
+			   (12 . rmail-summary-by-labels)
+			   (8 . rmail-summary))
+			  nil nil nil nil scroll-up-command nil nil nil nil nil nil nil nil nil nil nil nil negative-argument rmail-beginning-of-message rmail-end-of-message digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil rmail-first-message nil rmail-last-message describe-mode nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil rmail-add-label rmail-bury rmail-continue rmail-delete-forward rmail-edit-current-message rmail-forward rmail-get-new-mail rmail-summary rmail-input rmail-show-message rmail-kill-label rmail-summary-by-labels rmail-mail rmail-next-undeleted-message rmail-output rmail-previous-undeleted-message rmail-quit rmail-reply rmail-expunge-and-save rmail-toggle-header rmail-undelete-previous-message rmail-mime rmail-output-body-to-file rmail-expunge nil nil nil nil nil nil scroll-down-command]
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+ (menu-bar keymap
+	   (move "Move" keymap
+		 (first "First" . rmail-first-message)
+		 (last "Last" . rmail-last-message)
+		 (next "Next" . rmail-next-message)
+		 (previous "Previous" . rmail-previous-message)
+		 (search "Search..." . rmail-search)
+		 (search-back "Search Back..." . rmail-search-backwards)
+		 "Move")
+	   (delete "Delete" keymap
+		   (delete "Delete" . rmail-delete-forward)
+		   (undelete "Undelete" . rmail-undelete-previous-message)
+		   (expunge "Expunge" . rmail-expunge)
+		   (expunge/save "Expunge/Save" . rmail-expunge-and-save)
+		   "Delete")
+	   (mail "Mail" keymap
+		 (mail "Mail" . rmail-mail)
+		 (reply "Reply" . rmail-reply)
+		 (retry "Retry" . rmail-retry-failure)
+		 (forward "Forward" . rmail-forward)
+		 (resend menu-item "Resend..." rmail-resend :keys "C-u f")
+		 (continue "Continue" . rmail-continue)
+		 (lambda "----")
+		 (rmail-get-new-mail "Get New Mail" . rmail-get-new-mail)
+		 "Mail")
+	   (summary "Summary" keymap
+		    (all "All" . rmail-summary)
+		    (regexp "By Regexp..." . rmail-summary-by-regexp)
+		    (topic "By Topic..." . rmail-summary-by-topic)
+		    (recipients "By Recipients..." . rmail-summary-by-recipients)
+		    (labels "By Labels..." . rmail-summary-by-labels)
+		    (senders "By Senders..." . rmail-summary-by-senders)
+		    "Summary")
+	   (classify "Classify" keymap
+		     (add-label "Add Label..." . rmail-add-label)
+		     (kill-label "Kill Label..." . rmail-kill-label)
+		     (output "Output as seen..." . rmail-output-as-seen)
+		     (output-inbox "Output..." . rmail-output)
+		     (output-body "Output body to file..." . rmail-output-body-to-file)
+		     (output-menu)
+		     (input-menu)
+		     "Classify"))
+ (33554464 . scroll-down-command)
+ (remap keymap
+	(self-insert-command . undefined)))
+</pre></br>

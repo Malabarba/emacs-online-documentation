@@ -1,27 +1,25 @@
-<strong>display-buffer-alist</strong> is a variable defined in `<code>window.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist of conditional actions for `display-buffer'.<br/>
-This is a list of elements (CONDITION . ACTION), where:<br/>
-<br/>
- CONDITION is either a regexp matching buffer names, or a<br/>
-  function that takes two arguments - a buffer name and the<br/>
-  ACTION argument of `display-buffer' - and returns a boolean.<br/>
-<br/>
- ACTION is a cons cell (FUNCTION . ALIST), where FUNCTION is a<br/>
-  function or a list of functions.  Each such function should<br/>
-  accept two arguments: a buffer to display and an alist of the<br/>
-  same form as ALIST.  See `display-buffer' for details.<br/>
-<br/>
-`display-buffer' scans this alist until it either finds a<br/>
-matching regular expression or the function specified by a<br/>
-condition returns non-nil.  In any of these cases, it adds the<br/>
-associated action to the list of actions it will try.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>display-buffer-alist</strong> is a variable defined in `<code>window.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of conditional actions for `display-buffer'.</br>
+This is a list of elements (CONDITION . ACTION), where:</br>
+</br>
+ CONDITION is either a regexp matching buffer names, or a</br>
+  function that takes two arguments - a buffer name and the</br>
+  ACTION argument of `display-buffer' - and returns a boolean.</br>
+</br>
+ ACTION is a cons cell (FUNCTION . ALIST), where FUNCTION is a</br>
+  function or a list of functions.  Each such function should</br>
+  accept two arguments: a buffer to display and an alist of the</br>
+  same form as ALIST.  See `display-buffer' for details.</br>
+</br>
+`display-buffer' scans this alist until it either finds a</br>
+matching regular expression or the function specified by a</br>
+condition returns non-nil.  In any of these cases, it adds the</br>
+associated action to the list of actions it will try.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

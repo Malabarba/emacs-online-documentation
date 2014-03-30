@@ -1,30 +1,31 @@
-<strong>allout-yank</strong> is an interactive compiled Lisp function in `<code>allout.el</code>'.<br/>
-<br/>
-(allout-yank &optional ARG)<br/>
-<br/>
-`allout-mode' yank, with depth and numbering adjustment of yanked topics.<br/>
-<br/>
-Non-topic yanks work no differently than normal yanks.<br/>
-<br/>
-If a topic is being yanked into a bare topic prefix, the depth of the<br/>
-yanked topic is adjusted to the depth of the topic prefix.<br/>
-<br/>
-  1 we're yanking in an `allout-mode' buffer<br/>
-  2 the stuff being yanked starts with a valid outline header prefix, and<br/>
-  3 it is being yanked at the end of a line which consists of only a valid<br/>
-    topic prefix.<br/>
-<br/>
-If these conditions hold then the depth of the yanked topics are all<br/>
-adjusted the amount it takes to make the first one at the depth of the<br/>
-header into which it's being yanked.<br/>
-<br/>
-The point is left in front of yanked, adjusted topics, rather than<br/>
-at the end (and vice-versa with the mark).  Non-adjusted yanks,<br/>
-however, (ones that don't qualify for adjustment) are handled<br/>
-exactly like normal yanks.<br/>
-<br/>
-Numbering of yanked topics, and the successive siblings at the depth<br/>
-into which they're being yanked, is adjusted.<br/>
-<br/>
-`allout-yank-pop' works with `allout-yank' just like normal `yank-pop'<br/>
+<strong>allout-yank</strong> is an interactive compiled Lisp function in `<code>allout.el</code>'.</br>
+</br>
+</br>
+(allout-yank &optional <u>ARG</u>)</br>
+</br>
+`allout-mode' yank, with depth and numbering adjustment of yanked topics.</br>
+</br>
+Non-topic yanks work no differently than normal yanks.</br>
+</br>
+If a topic is being yanked into a bare topic prefix, the depth of the</br>
+yanked topic is adjusted to the depth of the topic prefix.</br>
+</br>
+  1 we're yanking in an `allout-mode' buffer</br>
+  2 the stuff being yanked starts with a valid outline header prefix, and</br>
+  3 it is being yanked at the end of a line which consists of only a valid</br>
+    topic prefix.</br>
+</br>
+If these conditions hold then the depth of the yanked topics are all</br>
+adjusted the amount it takes to make the first one at the depth of the</br>
+header into which it's being yanked.</br>
+</br>
+The point is left in front of yanked, adjusted topics, rather than</br>
+at the end (and vice-versa with the mark).  Non-adjusted yanks,</br>
+however, (ones that don't qualify for adjustment) are handled</br>
+exactly like normal yanks.</br>
+</br>
+Numbering of yanked topics, and the successive siblings at the depth</br>
+into which they're being yanked, is adjusted.</br>
+</br>
+`allout-yank-pop' works with `allout-yank' just like normal `yank-pop'</br>
 works with normal `yank' in non-outline buffers.

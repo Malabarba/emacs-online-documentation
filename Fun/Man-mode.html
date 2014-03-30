@@ -1,69 +1,72 @@
-<strong>Man-mode</strong> is an interactive compiled Lisp function in `<code>man.el</code>'.<br/>
-<br/>
-(Man-mode)<br/>
-<br/>
-A mode for browsing Un*x manual pages.<br/>
-<br/>
-The following man commands are available in the buffer.  Try<br/>
-"C-h k <key> RET" for more information:<br/>
-<br/>
-M-x man       Prompt to retrieve a new manpage.<br/>
-M-x Man-follow-manual-reference       Retrieve reference in SEE ALSO section.<br/>
-M-x Man-next-manpage   Jump to next manpage in circular list.<br/>
-M-x Man-previous-manpage   Jump to previous manpage in circular list.<br/>
-M-x Man-next-section       Jump to next manpage section.<br/>
-M-x Man-previous-section       Jump to previous manpage section.<br/>
-M-x Man-goto-section       Go to a manpage section.<br/>
-M-x Man-goto-see-also-section       Jumps to the SEE ALSO manpage section.<br/>
-M-x Man-quit       Deletes the manpage window, bury its buffer.<br/>
-M-x Man-kill       Deletes the manpage window, kill its buffer.<br/>
-C-h m       Prints this help text.<br/>
-<br/>
-The following variables may be of some use.  Try<br/>
-"C-h v <variable-name> RET" for more information:<br/>
-<br/>
-`Man-notify-method'		What happens when manpage formatting is done.<br/>
-`Man-downcase-section-letters-flag' Force section letters to lower case.<br/>
-`Man-circular-pages-flag'	Treat multiple manpage list as circular.<br/>
-`Man-section-translations-alist' List of section numbers and their Un*x equiv.<br/>
-`Man-filter-list'		Background manpage filter command.<br/>
-`Man-mode-map'			Keymap bindings for Man mode buffers.<br/>
-`Man-mode-hook'			Normal hook run on entry to Man mode.<br/>
-`Man-section-regexp'		Regexp describing manpage section letters.<br/>
-`Man-heading-regexp'		Regexp describing section headers.<br/>
-`Man-see-also-regexp'		Regexp for SEE ALSO section (or your equiv).<br/>
-`Man-first-heading-regexp'	Regexp for first heading on a manpage.<br/>
-`Man-reference-regexp'		Regexp matching a references in SEE ALSO.<br/>
-`Man-switches'			Background `man' command switches.<br/>
-<br/>
-The following key bindings are currently in effect in the buffer:<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-TAB		forward-button<br/>
-RET		man-follow<br/>
-ESC		Prefix Command<br/>
-SPC		scroll-up-command<br/>
--		negative-argument<br/>
-.		beginning-of-buffer<br/>
-0 .. 9		digit-argument<br/>
-<		beginning-of-buffer<br/>
->		end-of-buffer<br/>
-?		describe-mode<br/>
-g		Man-goto-section<br/>
-k		Man-kill<br/>
-m		man<br/>
-n		Man-next-section<br/>
-p		Man-previous-section<br/>
-q		Man-quit<br/>
-r		Man-follow-manual-reference<br/>
-s		Man-goto-see-also-section<br/>
-DEL		scroll-down-command<br/>
-<backtab>	backward-button<br/>
-<remap>		Prefix Command<br/>
-<br/>
-M-n		Man-next-manpage<br/>
-M-p		Man-previous-manpage<br/>
-<br/>
-C-M-i		backward-button<br/>
-<br/>
+<strong>Man-mode</strong> is an interactive compiled Lisp function in `<code>man.el</code>'.</br>
+</br>
+</br>
+(Man-mode)</br>
+</br>
+A mode for browsing Un*x manual pages.</br>
+</br>
+The following man commands are available in the buffer.  Try</br>
+"C-h k &lt;key> RET" for more information:</br>
+</br>
+M-x man       Prompt to retrieve a new manpage.</br>
+M-x Man-follow-manual-reference       Retrieve reference in SEE ALSO section.</br>
+M-x Man-next-manpage   Jump to next manpage in circular list.</br>
+M-x Man-previous-manpage   Jump to previous manpage in circular list.</br>
+M-x Man-next-section       Jump to next manpage section.</br>
+M-x Man-previous-section       Jump to previous manpage section.</br>
+M-x Man-goto-section       Go to a manpage section.</br>
+M-x Man-goto-see-also-section       Jumps to the SEE ALSO manpage section.</br>
+M-x Man-quit       Deletes the manpage window, bury its buffer.</br>
+M-x Man-kill       Deletes the manpage window, kill its buffer.</br>
+C-h m       Prints this help text.</br>
+</br>
+The following variables may be of some use.  Try</br>
+"C-h v &lt;variable-name> RET" for more information:</br>
+</br>
+`Man-notify-method'		What happens when manpage formatting is done.</br>
+`Man-downcase-section-letters-flag' Force section letters to lower case.</br>
+`Man-circular-pages-flag'	Treat multiple manpage list as circular.</br>
+`Man-section-translations-alist' List of section numbers and their Un*x equiv.</br>
+`Man-filter-list'		Background manpage filter command.</br>
+`Man-mode-map'			Keymap bindings for Man mode buffers.</br>
+`Man-mode-hook'			Normal hook run on entry to Man mode.</br>
+`Man-section-regexp'		Regexp describing manpage section letters.</br>
+`Man-heading-regexp'		Regexp describing section headers.</br>
+`Man-see-also-regexp'		Regexp for SEE ALSO section (or your equiv).</br>
+`Man-first-heading-regexp'	Regexp for first heading on a manpage.</br>
+`Man-reference-regexp'		Regexp matching a references in SEE ALSO.</br>
+`Man-switches'			Background `man' command switches.</br>
+</br>
+The following key bindings are currently in effect in the buffer:</br>
+key             binding</br>
+---             -------</br>
+</br>
+TAB		forward-button</br>
+RET		man-follow</br>
+ESC		Prefix Command</br>
+SPC		scroll-up-command</br>
+-		negative-argument</br>
+.		beginning-of-buffer</br>
+0 .. 9		digit-argument</br>
+&lt;		beginning-of-buffer</br>
+>		end-of-buffer</br>
+?		describe-mode</br>
+g		Man-goto-section</br>
+k		Man-kill</br>
+m		man</br>
+n		Man-next-section</br>
+p		Man-previous-section</br>
+q		Man-quit</br>
+r		Man-follow-manual-reference</br>
+s		Man-goto-see-also-section</br>
+u		Man-update-manpage</br>
+DEL		scroll-down-command</br>
+S-SPC		scroll-down-command</br>
+&lt;backtab>	backward-button</br>
+&lt;remap>		Prefix Command</br>
+</br>
+M-n		Man-next-manpage</br>
+M-p		Man-previous-manpage</br>
+</br>
+C-M-i		backward-button</br>
+</br>

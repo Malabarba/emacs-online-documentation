@@ -1,26 +1,26 @@
-<strong>define-erc-module</strong> is a Lisp macro in `<code>erc.el</code>'.<br/>
-<br/>
-(define-erc-module NAME ALIAS DOC ENABLE-BODY DISABLE-BODY &optional LOCAL-P)<br/>
-<br/>
-Define a new minor mode using ERC conventions.<br/>
-Symbol NAME is the name of the module.<br/>
-Symbol ALIAS is the alias to use, or nil.<br/>
-DOC is the documentation string to use for the minor mode.<br/>
-ENABLE-BODY is a list of expressions used to enable the mode.<br/>
-DISABLE-BODY is a list of expressions used to disable the mode.<br/>
-If LOCAL-P is non-nil, the mode will be created as a buffer-local<br/>
-mode, rather than a global one.<br/>
-<br/>
-This will define a minor mode called erc-NAME-mode, possibly<br/>
-an alias erc-ALIAS-mode, as well as the helper functions<br/>
-erc-NAME-enable, and erc-NAME-disable.<br/>
-<br/>
-Example:<br/>
-<br/>
-  ;;;###autoload (autoload 'erc-replace-mode "erc-replace")<br/>
-  (define-erc-module replace nil<br/>
-    "This mode replaces incoming text according to `erc-replace-alist'."<br/>
-    ((add-hook 'erc-insert-modify-hook<br/>
-	       'erc-replace-insert))<br/>
-    ((remove-hook 'erc-insert-modify-hook<br/>
+<strong>define-erc-module</strong> is a Lisp macro in `<code>erc.el</code>'.</br>
+</br>
+(define-erc-module <u>NAME</u> <u>ALIAS</u> <u>DOC</u> <u>ENABLE-BODY</u> <u>DISABLE-BODY</u> &optional <u>LOCAL-P</u>)</br>
+</br>
+Define a new minor mode using ERC conventions.</br>
+Symbol <u>NAME</u> is the name of the module.</br>
+Symbol <u>ALIAS</u> is the alias to use, or nil.</br>
+<u>DOC</u> is the documentation string to use for the minor mode.</br>
+<u>ENABLE-BODY</u> is a list of expressions used to enable the mode.</br>
+<u>DISABLE-BODY</u> is a list of expressions used to disable the mode.</br>
+If <u>LOCAL-P</u> is non-nil, the mode will be created as a buffer-local</br>
+mode, rather than a global one.</br>
+</br>
+This will define a minor mode called erc-<u>NAME</u>-mode, possibly</br>
+an alias erc-<u>ALIAS</u>-mode, as well as the helper functions</br>
+erc-<u>NAME</u>-enable, and erc-<u>NAME</u>-disable.</br>
+</br>
+Example:</br>
+</br>
+  ;;;###autoload (autoload 'erc-replace-mode "erc-replace")</br>
+  (define-erc-module replace nil</br>
+    "This mode replaces incoming text according to `erc-replace-alist'."</br>
+    ((add-hook 'erc-insert-modify-hook</br>
+	       'erc-replace-insert))</br>
+    ((remove-hook 'erc-insert-modify-hook</br>
 		  'erc-replace-insert)))

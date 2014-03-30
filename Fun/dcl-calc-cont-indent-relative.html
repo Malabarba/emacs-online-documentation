@@ -1,27 +1,27 @@
-<strong>dcl-calc-cont-indent-relative</strong> is a compiled Lisp function in `<code>dcl-mode.el</code>'.<br/>
-<br/>
-(dcl-calc-cont-indent-relative CUR-INDENT EXTRA-INDENT)<br/>
-<br/>
-Indent continuation lines to align with words on previous line.<br/>
-<br/>
-Indent continuation lines to a position relative to preceding<br/>
-significant command line elements.<br/>
-<br/>
-Set `dcl-calc-cont-indent-function' to this function to customize<br/>
-indentation of continuation lines.<br/>
-<br/>
-Indented lines will align with either:<br/>
-<br/>
-* the second word on the command line<br/>
-  $ set default -<br/>
-        [-]<br/>
-* the word after an assignment<br/>
-  $ a = b + -<br/>
-        d<br/>
-* the third word if it's a qualifier<br/>
-  $ set terminal/width=80 -<br/>
-                /page=24<br/>
-* the innermost nonclosed parenthesis<br/>
-  $ if ((a.eq.b .and. -<br/>
-         d.eq.c .or. f$function(xxxx, -<br/>
-                                yyy)))<br/>
+<strong>dcl-calc-cont-indent-relative</strong> is a compiled Lisp function in `<code>dcl-mode.el</code>'.</br>
+</br>
+(dcl-calc-cont-indent-relative <u>CUR-INDENT</u> <u>EXTRA-INDENT</u>)</br>
+</br>
+Indent continuation lines to align with words on previous line.</br>
+</br>
+Indent continuation lines to a position relative to preceding</br>
+significant command line elements.</br>
+</br>
+Set `dcl-calc-cont-indent-function' to this function to customize</br>
+indentation of continuation lines.</br>
+</br>
+Indented lines will align with either:</br>
+</br>
+* the second word on the command line</br>
+  $ set default -</br>
+        [-]</br>
+* the word after an assignment</br>
+  $ a = b + -</br>
+        d</br>
+* the third word if it's a qualifier</br>
+  $ set terminal/width=80 -</br>
+                /page=24</br>
+* the innermost nonclosed parenthesis</br>
+  $ if ((a.eq.b .and. -</br>
+         d.eq.c .or. f$function(xxxx, -</br>
+                                yyy)))</br>

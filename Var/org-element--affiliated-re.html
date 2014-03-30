@@ -1,0 +1,12 @@
+<strong>org-element--affiliated-re</strong> is a variable defined in `<code>org-element.el</code>'.</br>
+Its value is <pre></br>
+"[ 	]*#\\+\\(?:\\(?1:\\(?:CAPTION\\|RESULTS\\)\\)\\(?:\\[\\(.*\\)\\]\\)?\\|\\(?1:\\(?:DATA\\|HEADERS?\\|LABEL\\|NAME\\|PLOT\\|RES\\(?:NAME\\|ULT\\)\\|\\(?:S\\(?:OURC\\|RCNAM\\)\\|TBLNAM\\)E\\)\\)\\|\\(?1:ATTR_[-_A-Za-z0-9]+\\)\\):\\(?: \\|$\\)"</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Regexp matching any affiliated keyword.</br>
+</br>
+Keyword name is put in match group 1.  Moreover, if keyword</br>
+belongs to `org-element-dual-keywords', put the dual value in</br>
+match group 2.</br>
+</br>
+Don't modify it, set `org-element-affiliated-keywords' instead.

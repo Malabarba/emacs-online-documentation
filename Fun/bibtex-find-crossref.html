@@ -1,18 +1,19 @@
-<strong>bibtex-find-crossref</strong> is an alias for `bibtex-search-crossref' in `<code>bibtex.el</code>'.<br/>
-<br/>
-(bibtex-find-crossref CROSSREF-KEY &optional PNT SPLIT NOERROR)<br/>
-<br/>
-Move point to the beginning of BibTeX entry CROSSREF-KEY.<br/>
-If `bibtex-files' is non-nil, search all these files.<br/>
-Otherwise the search is limited to the current buffer.<br/>
-Return position of entry if CROSSREF-KEY is found or nil otherwise.<br/>
-If CROSSREF-KEY is in the same buffer like current entry but before it<br/>
-an error is signaled.  If NOERROR is non-nil this error is suppressed.<br/>
-Optional arg PNT is the position of the referencing entry.  It defaults<br/>
-to position of point.  If optional arg SPLIT is non-nil, split window<br/>
-so that both the referencing and the crossrefed entry are displayed.<br/>
-<br/>
-If called interactively, CROSSREF-KEY defaults to either the crossref key<br/>
-of current entry or a key matched by `bibtex-cite-matcher-alist',<br/>
-whatever is nearer to the position of point.  SPLIT is t.  NOERROR is nil<br/>
+<strong>bibtex-find-crossref</strong> is an alias for `<strong><a href="bibtex-search-crossref">bibtex-search-crossref</a></strong>' in `<code>bibtex.el</code>'.</br>
+</br>
+</br>
+(bibtex-find-crossref <u>CROSSREF-KEY</u> &optional <u>PNT</u> <u>SPLIT</u> <u>NOERROR</u>)</br>
+</br>
+Move point to the beginning of BibTeX entry <u>CROSSREF-KEY</u>.</br>
+If `bibtex-files' is non-nil, search all these files.</br>
+Otherwise the search is limited to the current buffer.</br>
+Return position of entry if <u>CROSSREF-KEY</u> is found or nil otherwise.</br>
+If <u>CROSSREF-KEY</u> is in the same buffer like current entry but before it</br>
+an error is signaled.  If <u>NOERROR</u> is non-nil this error is suppressed.</br>
+Optional arg <u>PNT</u> is the position of the referencing entry.  It defaults</br>
+to position of point.  If optional arg <u>SPLIT</u> is non-nil, split window</br>
+so that both the referencing and the crossrefed entry are displayed.</br>
+</br>
+If called interactively, <u>CROSSREF-KEY</u> defaults to either the crossref key</br>
+of current entry or a key matched by `bibtex-cite-matcher-alist',</br>
+whatever is nearer to the position of point.  <u>SPLIT</u> is t.  <u>NOERROR</u> is nil</br>
 for a crossref key, t otherwise.

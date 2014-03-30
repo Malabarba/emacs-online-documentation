@@ -1,28 +1,27 @@
-<strong>perl-font-lock-keywords-2</strong> is a variable defined in `<code>perl-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Gaudy level highlighting for Perl mode.<br/>
-<br/>
-Value: (("\\<\\(package\\|sub\\)\\>[ 	]*\\(\\sw+\\)?"<br/>
-  (1 font-lock-keyword-face)<br/>
-  (2 font-lock-function-name-face nil t))<br/>
- ("\\<\\(import\\|no\\|require\\|use\\)\\>[ 	]*\\(\\sw+\\)?"<br/>
-  (1 font-lock-keyword-face)<br/>
-  (2 font-lock-constant-face nil t))<br/>
- "\\<\\(BEGIN\\|END\\|d\\(?:ie\\|o\\|ump\\)\\|e\\(?:ls\\(?:e\\|if\\)\\|val\\|x\\(?:ec\\|it\\)\\)\\|for\\(?:each\\)?\\|if\\|return\\|un\\(?:less\\|til\\)\\|while\\)\\>"<br/>
- ("\\<\\(local\\|my\\)\\>" . font-lock-type-face)<br/>
- ("&\\(\\sw+\\(::\\sw+\\)*\\)" 1 font-lock-function-name-face)<br/>
- ("[$*]{?\\(\\sw+\\(::\\sw+\\)*\\)" 1 font-lock-variable-name-face)<br/>
- ("\\([@%]\\|\\$#\\)\\(\\sw+\\(::\\sw+\\)*\\)"<br/>
-  (2<br/>
-   (cons font-lock-variable-name-face<br/>
-	 '(underline))))<br/>
- ("<\\(\\sw+\\)>" 1 font-lock-constant-face)<br/>
- ("\\<\\(continue\\|goto\\|last\\|next\\|redo\\)\\>[ 	]*\\(\\sw+\\)?"<br/>
-  (1 font-lock-keyword-face)<br/>
-  (2 font-lock-constant-face nil t))<br/>
- ("^[ 	]*\\(\\sw+\\)[ 	]*:[^:]" 1 font-lock-constant-face))<br/>
-<br/>
+<strong>perl-font-lock-keywords-2</strong> is a variable defined in `<code>perl-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Gaudy level highlighting for Perl mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\<\\(package\\|sub\\)\\>[ 	]*\\(\\sw+\\)?"
+  (1 font-lock-keyword-face)
+  (2 font-lock-function-name-face nil t))
+ ("\\<\\(import\\|no\\|require\\|use\\)\\>[ 	]*\\(\\sw+\\)?"
+  (1 font-lock-keyword-face)
+  (2 font-lock-constant-face nil t))
+ "\\<\\(BEGIN\\|END\\|d\\(?:ie\\|o\\|ump\\)\\|e\\(?:ls\\(?:e\\|if\\)\\|val\\|x\\(?:ec\\|it\\)\\)\\|for\\(?:each\\)?\\|if\\|return\\|un\\(?:less\\|til\\)\\|while\\)\\>"
+ ("\\<\\(local\\|my\\)\\>" . font-lock-type-face)
+ ("&\\(\\sw+\\(::\\sw+\\)*\\)" 1 font-lock-function-name-face)
+ ("[$*]{?\\(\\sw+\\(::\\sw+\\)*\\)" 1 font-lock-variable-name-face)
+ ("\\([@%]\\|\\$#\\)\\(\\sw+\\(::\\sw+\\)*\\)"
+  (2
+   (cons font-lock-variable-name-face
+	 '(underline))))
+ ("<\\(\\sw+\\)>" 1 font-lock-constant-face)
+ ("\\<\\(continue\\|goto\\|last\\|next\\|redo\\)\\>[ 	]*\\(\\sw+\\)?"
+  (1 font-lock-keyword-face)
+  (2 font-lock-constant-face nil t))
+ ("^[ 	]*\\(\\sw+\\)[ 	]*:[^:]" 1 font-lock-constant-face))
+</pre></br>

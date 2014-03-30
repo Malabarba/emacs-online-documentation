@@ -1,25 +1,23 @@
-<strong>tabulated-list-format</strong> is a variable defined in `<code>tabulated-list.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes permanently buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-The format of the current Tabulated List mode buffer.<br/>
-This should be a vector of elements (NAME WIDTH SORT . PROPS),<br/>
-where:<br/>
- - NAME is a string describing the column.<br/>
-   This is the label for the column in the header line.<br/>
-   Different columns must have non-`equal' names.<br/>
- - WIDTH is the width to reserve for the column.<br/>
-   For the final element, its numerical value is ignored.<br/>
- - SORT specifies how to sort entries by this column.<br/>
-   If nil, this column cannot be used for sorting.<br/>
-   If t, sort by comparing the string value printed in the column.<br/>
-   Otherwise, it should be a predicate function suitable for<br/>
-   `sort', accepting arguments with the same form as the elements<br/>
-   of `tabulated-list-entries'.<br/>
- - PROPS is a plist of additional column properties.<br/>
-   Currently supported properties are:<br/>
-   - `:right-align': if non-nil, the column should be right-aligned.<br/>
-   - `:pad-right': Number of additional padding spaces to the<br/>
+<strong>tabulated-list-format</strong> is a variable defined in `<code>tabulated-list.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes permanently buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+The format of the current Tabulated List mode buffer.</br>
+This should be a vector of elements (NAME WIDTH SORT . PROPS),</br>
+where:</br>
+ - NAME is a string describing the column.</br>
+   This is the label for the column in the header line.</br>
+   Different columns must have non-`equal' names.</br>
+ - WIDTH is the width to reserve for the column.</br>
+   For the final element, its numerical value is ignored.</br>
+ - SORT specifies how to sort entries by this column.</br>
+   If nil, this column cannot be used for sorting.</br>
+   If t, sort by comparing the string value printed in the column.</br>
+   Otherwise, it should be a predicate function suitable for</br>
+   `sort', accepting arguments with the same form as the elements</br>
+   of `tabulated-list-entries'.</br>
+ - PROPS is a plist of additional column properties.</br>
+   Currently supported properties are:</br>
+   - `:right-align': If non-nil, the column should be right-aligned.</br>
+   - `:pad-right': Number of additional padding spaces to the</br>
      right of the column (defaults to 1 if omitted).

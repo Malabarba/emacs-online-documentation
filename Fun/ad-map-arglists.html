@@ -1,12 +1,12 @@
-<strong>ad-map-arglists</strong> is a compiled Lisp function in `<code>advice.el</code>'.<br/>
-<br/>
-(ad-map-arglists SOURCE-ARGLIST TARGET-ARGLIST)<br/>
-<br/>
-Make `funcall/apply' form to map SOURCE-ARGLIST to TARGET-ARGLIST.<br/>
-The arguments supplied to TARGET-ARGLIST will be taken from SOURCE-ARGLIST just<br/>
-as if they had been supplied to a function with TARGET-ARGLIST directly.<br/>
-Excess source arguments will be neglected, missing source arguments will be<br/>
-supplied as nil.  Returns a `funcall' or `apply' form with the second element<br/>
-being `function' which has to be replaced by an actual function argument.<br/>
-Example: `(ad-map-arglists '(a &rest args) '(w x y z))' will return<br/>
-         `(funcall function a (car args) (car (cdr args)) (nth 2 args))'.
+<strong>ad-map-arglists</strong> is a compiled Lisp function in `<code>advice.el</code>'.</br>
+</br>
+(ad-map-arglists <u>SOURCE-ARGLIST</u> <u>TARGET-ARGLIST</u>)</br>
+</br>
+Make `funcall/apply' form to map <u>SOURCE-ARGLIST</u> to <u>TARGET-ARGLIST</u>.</br>
+The arguments supplied to <u>TARGET-ARGLIST</u> will be taken from <u>SOURCE-ARGLIST</u> just</br>
+as if they had been supplied to a function with <u>TARGET-ARGLIST</u> directly.</br>
+Excess source arguments will be neglected, missing source arguments will be</br>
+supplied as nil.  Returns a `funcall' or `apply' form with the second element</br>
+being `function' which has to be replaced by an actual function argument.</br>
+Example: `(ad-map-arglists '(a &rest args) '(w x y z))' will return</br>
+         `(funcall ad--addoit-function a (car args) (car (cdr args)) (nth 2 args))'.

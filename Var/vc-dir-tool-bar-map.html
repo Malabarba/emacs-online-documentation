@@ -1,290 +1,289 @@
-<strong>vc-dir-tool-bar-map</strong> is a variable defined in `<code>vc-dir.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (new-file menu-item "Visit New File..." find-file :enable<br/>
-	   (menu-bar-non-minibuffer-window-p)<br/>
-	   :help "Specify a new file's name, to edit the file" :image<br/>
-	   (find-image<br/>
-	    (cond<br/>
-	     ((not<br/>
-	       (display-color-p))<br/>
-	      '((:type pbm :file "new.pbm" :foreground "black")<br/>
-		(:type xbm :file "new.xbm" :foreground "black")<br/>
-		(:type xpm :file "low-color/new.xpm")<br/>
-		(:type xpm :file "new.xpm")))<br/>
-	     ((<<br/>
-	       (display-color-cells)<br/>
-	       256)<br/>
-	      '((:type xpm :file "low-color/new.xpm")<br/>
-		(:type xpm :file "new.xpm")<br/>
-		(:type pbm :file "new.pbm" :foreground "black")<br/>
-		(:type xbm :file "new.xbm" :foreground "black")))<br/>
-	     (t<br/>
-	      '((:type xpm :file "new.xpm")<br/>
-		(:type pbm :file "new.pbm" :foreground "black")<br/>
-		(:type xbm :file "new.xbm" :foreground "black")))))<br/>
-	   :label "New File" :vert-only t)<br/>
- (open-file menu-item "Open File..." menu-find-file-existing :enable<br/>
-	    (menu-bar-non-minibuffer-window-p)<br/>
-	    :help "Read an existing file into an Emacs buffer" :image<br/>
-	    (find-image<br/>
-	     (cond<br/>
-	      ((not<br/>
-		(display-color-p))<br/>
-	       '((:type pbm :file "open.pbm" :foreground "black")<br/>
-		 (:type xbm :file "open.xbm" :foreground "black")<br/>
-		 (:type xpm :file "low-color/open.xpm")<br/>
-		 (:type xpm :file "open.xpm")))<br/>
-	      ((<<br/>
-		(display-color-cells)<br/>
-		256)<br/>
-	       '((:type xpm :file "low-color/open.xpm")<br/>
-		 (:type xpm :file "open.xpm")<br/>
-		 (:type pbm :file "open.pbm" :foreground "black")<br/>
-		 (:type xbm :file "open.xbm" :foreground "black")))<br/>
-	      (t<br/>
-	       '((:type xpm :file "open.xpm")<br/>
-		 (:type pbm :file "open.pbm" :foreground "black")<br/>
-		 (:type xbm :file "open.xbm" :foreground "black")))))<br/>
-	    :label "Open" :vert-only t)<br/>
- (dired menu-item "Open Directory..." dired :enable<br/>
-	(menu-bar-non-minibuffer-window-p)<br/>
-	:help "Read a directory, to operate on its files" :image<br/>
-	(find-image<br/>
-	 (cond<br/>
-	  ((not<br/>
-	    (display-color-p))<br/>
-	   '((:type pbm :file "diropen.pbm" :foreground "black")<br/>
-	     (:type xbm :file "diropen.xbm" :foreground "black")<br/>
-	     (:type xpm :file "low-color/diropen.xpm")<br/>
-	     (:type xpm :file "diropen.xpm")))<br/>
-	  ((<<br/>
-	    (display-color-cells)<br/>
-	    256)<br/>
-	   '((:type xpm :file "low-color/diropen.xpm")<br/>
-	     (:type xpm :file "diropen.xpm")<br/>
-	     (:type pbm :file "diropen.pbm" :foreground "black")<br/>
-	     (:type xbm :file "diropen.xbm" :foreground "black")))<br/>
-	  (t<br/>
-	   '((:type xpm :file "diropen.xpm")<br/>
-	     (:type pbm :file "diropen.pbm" :foreground "black")<br/>
-	     (:type xbm :file "diropen.xbm" :foreground "black")))))<br/>
-	:vert-only t)<br/>
- (quit menu-item "Quit" quit-window :help "Quit" :image<br/>
-       (find-image<br/>
-	(cond<br/>
-	 ((not<br/>
-	   (display-color-p))<br/>
-	  '((:type pbm :file "close.pbm" :foreground "black")<br/>
-	    (:type xbm :file "close.xbm" :foreground "black")<br/>
-	    (:type xpm :file "low-color/close.xpm")<br/>
-	    (:type xpm :file "close.xpm")))<br/>
-	 ((<<br/>
-	   (display-color-cells)<br/>
-	   256)<br/>
-	  '((:type xpm :file "low-color/close.xpm")<br/>
-	    (:type xpm :file "close.xpm")<br/>
-	    (:type pbm :file "close.pbm" :foreground "black")<br/>
-	    (:type xbm :file "close.xbm" :foreground "black")))<br/>
-	 (t<br/>
-	  '((:type xpm :file "close.xpm")<br/>
-	    (:type pbm :file "close.pbm" :foreground "black")<br/>
-	    (:type xbm :file "close.xbm" :foreground "black")))))<br/>
-       :vert-only t)<br/>
- (next-action menu-item "Check In/Out" vc-next-action :help "Do the next logical version control operation on the current fileset" :image<br/>
-	      (find-image<br/>
-	       (cond<br/>
-		((not<br/>
-		  (display-color-p))<br/>
-		 '((:type pbm :file "saveas.pbm" :foreground "black")<br/>
-		   (:type xbm :file "saveas.xbm" :foreground "black")<br/>
-		   (:type xpm :file "low-color/saveas.xpm")<br/>
-		   (:type xpm :file "saveas.xpm")))<br/>
-		((<<br/>
-		  (display-color-cells)<br/>
-		  256)<br/>
-		 '((:type xpm :file "low-color/saveas.xpm")<br/>
-		   (:type xpm :file "saveas.xpm")<br/>
-		   (:type pbm :file "saveas.pbm" :foreground "black")<br/>
-		   (:type xbm :file "saveas.xbm" :foreground "black")))<br/>
-		(t<br/>
-		 '((:type xpm :file "saveas.xpm")<br/>
-		   (:type pbm :file "saveas.pbm" :foreground "black")<br/>
-		   (:type xbm :file "saveas.xbm" :foreground "black")))))<br/>
-	      :label "Commit")<br/>
- (log menu-item "Show History" vc-print-log :help "List the change log of the current file set in a window" :image<br/>
-      (find-image<br/>
-       (cond<br/>
-	((not<br/>
-	  (display-color-p))<br/>
-	 '((:type pbm :file "info.pbm" :foreground "black")<br/>
-	   (:type xbm :file "info.xbm" :foreground "black")<br/>
-	   (:type xpm :file "low-color/info.xpm")<br/>
-	   (:type xpm :file "info.xpm")))<br/>
-	((<<br/>
-	  (display-color-cells)<br/>
-	  256)<br/>
-	 '((:type xpm :file "low-color/info.xpm")<br/>
-	   (:type xpm :file "info.xpm")<br/>
-	   (:type pbm :file "info.pbm" :foreground "black")<br/>
-	   (:type xbm :file "info.xbm" :foreground "black")))<br/>
-	(t<br/>
-	 '((:type xpm :file "info.xpm")<br/>
-	   (:type pbm :file "info.pbm" :foreground "black")<br/>
-	   (:type xbm :file "info.xbm" :foreground "black")))))<br/>
-      :label "Log")<br/>
- (separator-1 "--")<br/>
- (kill menu-item "Kill Update Command" vc-dir-kill-dir-status-process :enable<br/>
-       (vc-dir-busy)<br/>
-       :help "Kill the command that updates the directory buffer" :image<br/>
-       (find-image<br/>
-	(cond<br/>
-	 ((not<br/>
-	   (display-color-p))<br/>
-	  '((:type pbm :file "cancel.pbm" :foreground "black")<br/>
-	    (:type xbm :file "cancel.xbm" :foreground "black")<br/>
-	    (:type xpm :file "low-color/cancel.xpm")<br/>
-	    (:type xpm :file "cancel.xpm")))<br/>
-	 ((<<br/>
-	   (display-color-cells)<br/>
-	   256)<br/>
-	  '((:type xpm :file "low-color/cancel.xpm")<br/>
-	    (:type xpm :file "cancel.xpm")<br/>
-	    (:type pbm :file "cancel.pbm" :foreground "black")<br/>
-	    (:type xbm :file "cancel.xbm" :foreground "black")))<br/>
-	 (t<br/>
-	  '((:type xpm :file "cancel.xpm")<br/>
-	    (:type pbm :file "cancel.pbm" :foreground "black")<br/>
-	    (:type xbm :file "cancel.xbm" :foreground "black")))))<br/>
-       :label "Stop" :vert-only t)<br/>
- (refresh menu-item "Refresh" revert-buffer :enable<br/>
-	  (not<br/>
-	   (vc-dir-busy))<br/>
-	  :help "Refresh the contents of the directory buffer" :image<br/>
-	  (find-image<br/>
-	   (cond<br/>
-	    ((not<br/>
-	      (display-color-p))<br/>
-	     '((:type pbm :file "refresh.pbm" :foreground "black")<br/>
-	       (:type xbm :file "refresh.xbm" :foreground "black")<br/>
-	       (:type xpm :file "low-color/refresh.xpm")<br/>
-	       (:type xpm :file "refresh.xpm")))<br/>
-	    ((<<br/>
-	      (display-color-cells)<br/>
-	      256)<br/>
-	     '((:type xpm :file "low-color/refresh.xpm")<br/>
-	       (:type xpm :file "refresh.xpm")<br/>
-	       (:type pbm :file "refresh.pbm" :foreground "black")<br/>
-	       (:type xbm :file "refresh.xbm" :foreground "black")))<br/>
-	    (t<br/>
-	     '((:type xpm :file "refresh.xpm")<br/>
-	       (:type pbm :file "refresh.pbm" :foreground "black")<br/>
-	       (:type xbm :file "refresh.xbm" :foreground "black")))))<br/>
-	  :vert-only t)<br/>
- (separator-2 "--")<br/>
- (cut menu-item "Cut" kill-region :enable<br/>
-      (and mark-active<br/>
-	   (not buffer-read-only))<br/>
-      :help "Cut (kill) text in region between mark and current position" :image<br/>
-      (find-image<br/>
-       (cond<br/>
-	((not<br/>
-	  (display-color-p))<br/>
-	 '((:type pbm :file "cut.pbm" :foreground "black")<br/>
-	   (:type xbm :file "cut.xbm" :foreground "black")<br/>
-	   (:type xpm :file "low-color/cut.xpm")<br/>
-	   (:type xpm :file "cut.xpm")))<br/>
-	((<<br/>
-	  (display-color-cells)<br/>
-	  256)<br/>
-	 '((:type xpm :file "low-color/cut.xpm")<br/>
-	   (:type xpm :file "cut.xpm")<br/>
-	   (:type pbm :file "cut.pbm" :foreground "black")<br/>
-	   (:type xbm :file "cut.xbm" :foreground "black")))<br/>
-	(t<br/>
-	 '((:type xpm :file "cut.xpm")<br/>
-	   (:type pbm :file "cut.pbm" :foreground "black")<br/>
-	   (:type xbm :file "cut.xbm" :foreground "black")))))<br/>
-      :vert-only t)<br/>
- (copy menu-item "Copy" kill-ring-save :enable mark-active :help "Copy text in region between mark and current position" :keys "\\[kill-ring-save]" :image<br/>
-       (find-image<br/>
-	(cond<br/>
-	 ((not<br/>
-	   (display-color-p))<br/>
-	  '((:type pbm :file "copy.pbm" :foreground "black")<br/>
-	    (:type xbm :file "copy.xbm" :foreground "black")<br/>
-	    (:type xpm :file "low-color/copy.xpm")<br/>
-	    (:type xpm :file "copy.xpm")))<br/>
-	 ((<<br/>
-	   (display-color-cells)<br/>
-	   256)<br/>
-	  '((:type xpm :file "low-color/copy.xpm")<br/>
-	    (:type xpm :file "copy.xpm")<br/>
-	    (:type pbm :file "copy.pbm" :foreground "black")<br/>
-	    (:type xbm :file "copy.xbm" :foreground "black")))<br/>
-	 (t<br/>
-	  '((:type xpm :file "copy.xpm")<br/>
-	    (:type pbm :file "copy.pbm" :foreground "black")<br/>
-	    (:type xbm :file "copy.xbm" :foreground "black")))))<br/>
-       :vert-only t)<br/>
- (paste menu-item "Paste" yank :enable<br/>
-	(and<br/>
-	 (or<br/>
-	  (and<br/>
-	   (fboundp 'x-selection-exists-p)<br/>
-	   (x-selection-exists-p 'CLIPBOARD))<br/>
-	  (if<br/>
-	      (featurep 'ns)<br/>
-	      (cdr yank-menu)<br/>
-	    kill-ring))<br/>
-	 (not buffer-read-only))<br/>
-	:help "Paste (yank) text most recently cut/copied" :image<br/>
-	(find-image<br/>
-	 (cond<br/>
-	  ((not<br/>
-	    (display-color-p))<br/>
-	   '((:type pbm :file "paste.pbm" :foreground "black")<br/>
-	     (:type xbm :file "paste.xbm" :foreground "black")<br/>
-	     (:type xpm :file "low-color/paste.xpm")<br/>
-	     (:type xpm :file "paste.xpm")))<br/>
-	  ((<<br/>
-	    (display-color-cells)<br/>
-	    256)<br/>
-	   '((:type xpm :file "low-color/paste.xpm")<br/>
-	     (:type xpm :file "paste.xpm")<br/>
-	     (:type pbm :file "paste.pbm" :foreground "black")<br/>
-	     (:type xbm :file "paste.xbm" :foreground "black")))<br/>
-	  (t<br/>
-	   '((:type xpm :file "paste.xpm")<br/>
-	     (:type pbm :file "paste.pbm" :foreground "black")<br/>
-	     (:type xbm :file "paste.xbm" :foreground "black")))))<br/>
-	:vert-only t)<br/>
- (separator-3 "--")<br/>
- (isearch-forward menu-item "Forward String..." isearch-forward :help "Search forward for a string as you type it" :image<br/>
-		  (find-image<br/>
-		   (cond<br/>
-		    ((not<br/>
-		      (display-color-p))<br/>
-		     '((:type pbm :file "search.pbm" :foreground "black")<br/>
-		       (:type xbm :file "search.xbm" :foreground "black")<br/>
-		       (:type xpm :file "low-color/search.xpm")<br/>
-		       (:type xpm :file "search.xpm")))<br/>
-		    ((<<br/>
-		      (display-color-cells)<br/>
-		      256)<br/>
-		     '((:type xpm :file "low-color/search.xpm")<br/>
-		       (:type xpm :file "search.xpm")<br/>
-		       (:type pbm :file "search.pbm" :foreground "black")<br/>
-		       (:type xbm :file "search.xbm" :foreground "black")))<br/>
-		    (t<br/>
-		     '((:type xpm :file "search.xpm")<br/>
-		       (:type pbm :file "search.pbm" :foreground "black")<br/>
-		       (:type xbm :file "search.xbm" :foreground "black")))))<br/>
-		  :label "Search" :vert-only t))<br/>
-<br/>
+<strong>vc-dir-tool-bar-map</strong> is a variable defined in `<code>vc-dir.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (new-file menu-item "Visit New File..." find-file :enable
+	   (menu-bar-non-minibuffer-window-p)
+	   :help "Specify a new file's name, to edit the file" :image
+	   (find-image
+	    (cond
+	     ((not
+	       (display-color-p))
+	      '((:type pbm :file "new.pbm" :foreground "black")
+		(:type xbm :file "new.xbm" :foreground "black")
+		(:type xpm :file "low-color/new.xpm")
+		(:type xpm :file "new.xpm")))
+	     ((<
+	       (display-color-cells)
+	       256)
+	      '((:type xpm :file "low-color/new.xpm")
+		(:type xpm :file "new.xpm")
+		(:type pbm :file "new.pbm" :foreground "black")
+		(:type xbm :file "new.xbm" :foreground "black")))
+	     (t
+	      '((:type xpm :file "new.xpm")
+		(:type pbm :file "new.pbm" :foreground "black")
+		(:type xbm :file "new.xbm" :foreground "black")))))
+	   :label "New File" :vert-only t)
+ (open-file menu-item "Open File..." menu-find-file-existing :enable
+	    (menu-bar-non-minibuffer-window-p)
+	    :help "Read an existing file into an Emacs buffer" :image
+	    (find-image
+	     (cond
+	      ((not
+		(display-color-p))
+	       '((:type pbm :file "open.pbm" :foreground "black")
+		 (:type xbm :file "open.xbm" :foreground "black")
+		 (:type xpm :file "low-color/open.xpm")
+		 (:type xpm :file "open.xpm")))
+	      ((<
+		(display-color-cells)
+		256)
+	       '((:type xpm :file "low-color/open.xpm")
+		 (:type xpm :file "open.xpm")
+		 (:type pbm :file "open.pbm" :foreground "black")
+		 (:type xbm :file "open.xbm" :foreground "black")))
+	      (t
+	       '((:type xpm :file "open.xpm")
+		 (:type pbm :file "open.pbm" :foreground "black")
+		 (:type xbm :file "open.xbm" :foreground "black")))))
+	    :label "Open" :vert-only t)
+ (dired menu-item "Open Directory..." dired :enable
+	(menu-bar-non-minibuffer-window-p)
+	:help "Read a directory, to operate on its files" :image
+	(find-image
+	 (cond
+	  ((not
+	    (display-color-p))
+	   '((:type pbm :file "diropen.pbm" :foreground "black")
+	     (:type xbm :file "diropen.xbm" :foreground "black")
+	     (:type xpm :file "low-color/diropen.xpm")
+	     (:type xpm :file "diropen.xpm")))
+	  ((<
+	    (display-color-cells)
+	    256)
+	   '((:type xpm :file "low-color/diropen.xpm")
+	     (:type xpm :file "diropen.xpm")
+	     (:type pbm :file "diropen.pbm" :foreground "black")
+	     (:type xbm :file "diropen.xbm" :foreground "black")))
+	  (t
+	   '((:type xpm :file "diropen.xpm")
+	     (:type pbm :file "diropen.pbm" :foreground "black")
+	     (:type xbm :file "diropen.xbm" :foreground "black")))))
+	:vert-only t)
+ (quit menu-item "Quit" quit-window :help "Quit" :image
+       (find-image
+	(cond
+	 ((not
+	   (display-color-p))
+	  '((:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")
+	    (:type xpm :file "low-color/close.xpm")
+	    (:type xpm :file "close.xpm")))
+	 ((<
+	   (display-color-cells)
+	   256)
+	  '((:type xpm :file "low-color/close.xpm")
+	    (:type xpm :file "close.xpm")
+	    (:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")))
+	 (t
+	  '((:type xpm :file "close.xpm")
+	    (:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")))))
+       :vert-only t)
+ (next-action menu-item "Check In/Out" vc-next-action :help "Do the next logical version control operation on the current fileset" :image
+	      (find-image
+	       (cond
+		((not
+		  (display-color-p))
+		 '((:type pbm :file "saveas.pbm" :foreground "black")
+		   (:type xbm :file "saveas.xbm" :foreground "black")
+		   (:type xpm :file "low-color/saveas.xpm")
+		   (:type xpm :file "saveas.xpm")))
+		((<
+		  (display-color-cells)
+		  256)
+		 '((:type xpm :file "low-color/saveas.xpm")
+		   (:type xpm :file "saveas.xpm")
+		   (:type pbm :file "saveas.pbm" :foreground "black")
+		   (:type xbm :file "saveas.xbm" :foreground "black")))
+		(t
+		 '((:type xpm :file "saveas.xpm")
+		   (:type pbm :file "saveas.pbm" :foreground "black")
+		   (:type xbm :file "saveas.xbm" :foreground "black")))))
+	      :label "Commit")
+ (log menu-item "Show History" vc-print-log :help "List the change log of the current file set in a window" :image
+      (find-image
+       (cond
+	((not
+	  (display-color-p))
+	 '((:type pbm :file "info.pbm" :foreground "black")
+	   (:type xbm :file "info.xbm" :foreground "black")
+	   (:type xpm :file "low-color/info.xpm")
+	   (:type xpm :file "info.xpm")))
+	((<
+	  (display-color-cells)
+	  256)
+	 '((:type xpm :file "low-color/info.xpm")
+	   (:type xpm :file "info.xpm")
+	   (:type pbm :file "info.pbm" :foreground "black")
+	   (:type xbm :file "info.xbm" :foreground "black")))
+	(t
+	 '((:type xpm :file "info.xpm")
+	   (:type pbm :file "info.pbm" :foreground "black")
+	   (:type xbm :file "info.xbm" :foreground "black")))))
+      :label "Log")
+ (separator-1 "--")
+ (kill menu-item "Kill Update Command" vc-dir-kill-dir-status-process :enable
+       (vc-dir-busy)
+       :help "Kill the command that updates the directory buffer" :image
+       (find-image
+	(cond
+	 ((not
+	   (display-color-p))
+	  '((:type pbm :file "cancel.pbm" :foreground "black")
+	    (:type xbm :file "cancel.xbm" :foreground "black")
+	    (:type xpm :file "low-color/cancel.xpm")
+	    (:type xpm :file "cancel.xpm")))
+	 ((<
+	   (display-color-cells)
+	   256)
+	  '((:type xpm :file "low-color/cancel.xpm")
+	    (:type xpm :file "cancel.xpm")
+	    (:type pbm :file "cancel.pbm" :foreground "black")
+	    (:type xbm :file "cancel.xbm" :foreground "black")))
+	 (t
+	  '((:type xpm :file "cancel.xpm")
+	    (:type pbm :file "cancel.pbm" :foreground "black")
+	    (:type xbm :file "cancel.xbm" :foreground "black")))))
+       :label "Stop" :vert-only t)
+ (refresh menu-item "Refresh" revert-buffer :enable
+	  (not
+	   (vc-dir-busy))
+	  :help "Refresh the contents of the directory buffer" :image
+	  (find-image
+	   (cond
+	    ((not
+	      (display-color-p))
+	     '((:type pbm :file "refresh.pbm" :foreground "black")
+	       (:type xbm :file "refresh.xbm" :foreground "black")
+	       (:type xpm :file "low-color/refresh.xpm")
+	       (:type xpm :file "refresh.xpm")))
+	    ((<
+	      (display-color-cells)
+	      256)
+	     '((:type xpm :file "low-color/refresh.xpm")
+	       (:type xpm :file "refresh.xpm")
+	       (:type pbm :file "refresh.pbm" :foreground "black")
+	       (:type xbm :file "refresh.xbm" :foreground "black")))
+	    (t
+	     '((:type xpm :file "refresh.xpm")
+	       (:type pbm :file "refresh.pbm" :foreground "black")
+	       (:type xbm :file "refresh.xbm" :foreground "black")))))
+	  :vert-only t)
+ (separator-2 "--")
+ (cut menu-item "Cut" kill-region :enable
+      (and mark-active
+	   (not buffer-read-only))
+      :help "Cut (kill) text in region between mark and current position" :image
+      (find-image
+       (cond
+	((not
+	  (display-color-p))
+	 '((:type pbm :file "cut.pbm" :foreground "black")
+	   (:type xbm :file "cut.xbm" :foreground "black")
+	   (:type xpm :file "low-color/cut.xpm")
+	   (:type xpm :file "cut.xpm")))
+	((<
+	  (display-color-cells)
+	  256)
+	 '((:type xpm :file "low-color/cut.xpm")
+	   (:type xpm :file "cut.xpm")
+	   (:type pbm :file "cut.pbm" :foreground "black")
+	   (:type xbm :file "cut.xbm" :foreground "black")))
+	(t
+	 '((:type xpm :file "cut.xpm")
+	   (:type pbm :file "cut.pbm" :foreground "black")
+	   (:type xbm :file "cut.xbm" :foreground "black")))))
+      :vert-only t)
+ (copy menu-item "Copy" kill-ring-save :enable mark-active :help "Copy text in region between mark and current position" :keys "\\[kill-ring-save]" :image
+       (find-image
+	(cond
+	 ((not
+	   (display-color-p))
+	  '((:type pbm :file "copy.pbm" :foreground "black")
+	    (:type xbm :file "copy.xbm" :foreground "black")
+	    (:type xpm :file "low-color/copy.xpm")
+	    (:type xpm :file "copy.xpm")))
+	 ((<
+	   (display-color-cells)
+	   256)
+	  '((:type xpm :file "low-color/copy.xpm")
+	    (:type xpm :file "copy.xpm")
+	    (:type pbm :file "copy.pbm" :foreground "black")
+	    (:type xbm :file "copy.xbm" :foreground "black")))
+	 (t
+	  '((:type xpm :file "copy.xpm")
+	    (:type pbm :file "copy.pbm" :foreground "black")
+	    (:type xbm :file "copy.xbm" :foreground "black")))))
+       :vert-only t)
+ (paste menu-item "Paste" yank :enable
+	(and
+	 (or
+	  (and
+	   (fboundp 'x-selection-exists-p)
+	   (x-selection-exists-p 'CLIPBOARD))
+	  (if
+	      (featurep 'ns)
+	      (cdr yank-menu)
+	    kill-ring))
+	 (not buffer-read-only))
+	:help "Paste (yank) text most recently cut/copied" :image
+	(find-image
+	 (cond
+	  ((not
+	    (display-color-p))
+	   '((:type pbm :file "paste.pbm" :foreground "black")
+	     (:type xbm :file "paste.xbm" :foreground "black")
+	     (:type xpm :file "low-color/paste.xpm")
+	     (:type xpm :file "paste.xpm")))
+	  ((<
+	    (display-color-cells)
+	    256)
+	   '((:type xpm :file "low-color/paste.xpm")
+	     (:type xpm :file "paste.xpm")
+	     (:type pbm :file "paste.pbm" :foreground "black")
+	     (:type xbm :file "paste.xbm" :foreground "black")))
+	  (t
+	   '((:type xpm :file "paste.xpm")
+	     (:type pbm :file "paste.pbm" :foreground "black")
+	     (:type xbm :file "paste.xbm" :foreground "black")))))
+	:vert-only t)
+ (separator-3 "--")
+ (isearch-forward menu-item "Forward String..." isearch-forward :help "Search forward for a string as you type it" :image
+		  (find-image
+		   (cond
+		    ((not
+		      (display-color-p))
+		     '((:type pbm :file "search.pbm" :foreground "black")
+		       (:type xbm :file "search.xbm" :foreground "black")
+		       (:type xpm :file "low-color/search.xpm")
+		       (:type xpm :file "search.xpm")))
+		    ((<
+		      (display-color-cells)
+		      256)
+		     '((:type xpm :file "low-color/search.xpm")
+		       (:type xpm :file "search.xpm")
+		       (:type pbm :file "search.pbm" :foreground "black")
+		       (:type xbm :file "search.xbm" :foreground "black")))
+		    (t
+		     '((:type xpm :file "search.xpm")
+		       (:type pbm :file "search.pbm" :foreground "black")
+		       (:type xbm :file "search.xbm" :foreground "black")))))
+		  :label "Search" :vert-only t))
+</pre></br>

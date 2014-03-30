@@ -1,32 +1,31 @@
-<strong>speedbar-initial-expansion-mode-alist</strong> is a variable defined in `<code>speedbar.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of named expansion elements for filling the speedbar frame.<br/>
-These expansion lists are only valid for regular files.  Special modes<br/>
-still get to override this list on a mode-by-mode basis.  This list of<br/>
-lists is of the form (NAME MENU KEYMAP FN1 FN2 ...).  NAME is a string<br/>
-representing the types of things to be displayed.  MENU is an easymenu<br/>
-structure used when in this mode.  KEYMAP is a local keymap to install<br/>
-over the regular speedbar keymap.  FN1 ...  are functions that will be<br/>
-called in order.  These functions will always get the default<br/>
-directory to use passed in as the first parameter, and a 0 as the<br/>
-second parameter.  The 0 indicates the uppermost indentation level.<br/>
-They must assume that the cursor is at the position where they start<br/>
-inserting buttons.<br/>
-<br/>
-Value:<br/>
-(("Project" ede-speedbar-menu ede-speedbar-key-map<br/>
-  (lambda<br/>
-    (dir depth)<br/>
-    (eieio-speedbar-buttons dir depth 'ede-speedbar-toplevel-buttons)))<br/>
- ("vhdl project" vhdl-speedbar-menu-items vhdl-speedbar-key-map vhdl-speedbar-display-projects)<br/>
- ("vhdl directory" vhdl-speedbar-menu-items vhdl-speedbar-key-map vhdl-speedbar-display-directory)<br/>
- ("GUD" gud-speedbar-menu-items gud-speedbar-key-map gud-expansion-speedbar-buttons)<br/>
- ("Info" Info-speedbar-menu-items Info-speedbar-key-map Info-speedbar-hierarchy-buttons)<br/>
- ("buffers" speedbar-buffer-easymenu-definition speedbar-buffers-key-map speedbar-buffer-buttons)<br/>
- ("quick buffers" speedbar-buffer-easymenu-definition speedbar-buffers-key-map speedbar-buffer-buttons-temp)<br/>
- ("files" speedbar-easymenu-definition-special speedbar-file-key-map speedbar-directory-buttons speedbar-default-directory-list))<br/>
-<br/>
+<strong>speedbar-initial-expansion-mode-alist</strong> is a variable defined in `<code>speedbar.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of named expansion elements for filling the speedbar frame.</br>
+These expansion lists are only valid for regular files.  Special modes</br>
+still get to override this list on a mode-by-mode basis.  This list of</br>
+lists is of the form (NAME MENU KEYMAP FN1 FN2 ...).  NAME is a string</br>
+representing the types of things to be displayed.  MENU is an easymenu</br>
+structure used when in this mode.  KEYMAP is a local keymap to install</br>
+over the regular speedbar keymap.  FN1 ...  are functions that will be</br>
+called in order.  These functions will always get the default</br>
+directory to use passed in as the first parameter, and a 0 as the</br>
+second parameter.  The 0 indicates the uppermost indentation level.</br>
+They must assume that the cursor is at the position where they start</br>
+inserting buttons.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("EIEIO" eieio-class-speedbar-menu eieio-class-speedbar-key-map eieio-class-speedbar)
+ ("vhdl project" vhdl-speedbar-menu-items vhdl-speedbar-mode-map vhdl-speedbar-display-projects)
+ ("vhdl directory" vhdl-speedbar-menu-items vhdl-speedbar-mode-map vhdl-speedbar-display-directory)
+ ("Project" ede-speedbar-menu ede-speedbar-key-map
+  (lambda
+    (dir depth)
+    (eieio-speedbar-buttons dir depth 'ede-speedbar-toplevel-buttons)))
+ ("GUD" gud-speedbar-menu-items gud-speedbar-key-map gud-expansion-speedbar-buttons)
+ ("Info" Info-speedbar-menu-items Info-speedbar-key-map Info-speedbar-hierarchy-buttons)
+ ("buffers" speedbar-buffer-easymenu-definition speedbar-buffers-key-map speedbar-buffer-buttons)
+ ("quick buffers" speedbar-buffer-easymenu-definition speedbar-buffers-key-map speedbar-buffer-buttons-temp)
+ ("files" speedbar-easymenu-definition-special speedbar-file-key-map speedbar-directory-buttons speedbar-default-directory-list))
+</pre></br>

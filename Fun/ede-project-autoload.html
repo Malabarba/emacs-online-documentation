@@ -1,5 +1,79 @@
-<strong>ede-project-autoload</strong> is a Lisp function.<br/>
-<br/>
-(ede-project-autoload NEWNAME &rest SLOTS)<br/>
-<br/>
-Create a new object with name NAME of class type ede-project-autoload
+ede-project-autoload is an  object constructor function in `auto.el'.</br>
+Creates an object of class ede-project-autoload.</br>
+Create a new object with name NAME of class type ede-project-autoload</br>
+</br>
+Class description:</br>
+ede-project-autoload is a class in `auto.el'.</br>
+</br>
+Class representing minimal knowledge set to run preliminary EDE functions.</br>
+When more advanced functionality is needed from a project type, that projects</br>
+type is required and the load function used.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: name</br>
+  Name of this project type</br>
+</br>
+Slot: file</br>
+  The lisp file belonging to this class.</br>
+</br>
+Slot: proj-file</br>
+  Name of a project file of this type.</br>
+</br>
+Slot: proj-root-dirmatch    type = (or string ede-project-autoload-dirmatch)    default = ""</br>
+  To avoid loading a project, check if the directory matches this.</br>
+For projects that use directory name matches, a function would load that project.</br>
+Specifying this matcher will allow EDE to check without loading the project.</br>
+</br>
+Slot: proj-root    type = function</br>
+  A function symbol to call for the project root.</br>
+This function takes no arguments, and returns the current directories</br>
+root, if available.  Leave blank to use the EDE directory walking</br>
+routine instead.</br>
+</br>
+Slot: initializers    default = nil</br>
+  Initializers passed to the project object.</br>
+These are used so there can be multiple types of projects</br>
+associated with a single object class, based on the initializers used.</br>
+</br>
+Slot: load-type</br>
+  Fn symbol used to load this project file.</br>
+</br>
+Slot: class-sym</br>
+  Symbol representing the project class to use.</br>
+</br>
+Slot: generic-p    default = nil</br>
+  Generic projects are added to the project list at the end.</br>
+The add routine will set this to non-nil so that future non-generic placement will</br>
+be successful.</br>
+</br>
+Slot: new-p    default = t</br>
+  Non-nil if this is an option when a user creates a project.</br>
+</br>
+Slot: safe-p    default = t</br>
+  Non-nil if the project load files are "safe".</br>
+An unsafe project is one that loads project variables via Emacs</br>
+Lisp code.  A safe project is one that loads project variables by</br>
+scanning files without loading Lisp code from them.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`ede-project-root' :PRIMARY (this)</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+</br>
+`ede-project-root-directory' :PRIMARY (this &optional file)</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+Optional FILE is the file to test.  If there is no FILE, use</br>
+the current buffer.</br>
+</br>
+`ede-dir-to-projectfile' :PRIMARY (this dir)</br>
+Return a full file name of project THIS found in DIR.</br>
+Return nil if the project file does not exist.</br>
+</br>
+`ede-auto-load-project' :PRIMARY (this dir)</br>
+Load in the project associated with THIS project autoload description.</br>
+THIS project description should be valid for DIR, where the project will</br>
+be loaded.</br>
+</br>

@@ -1,199 +1,198 @@
-<strong>idlwave-mode-map</strong> is a variable defined in `<code>idlwave.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap used in IDL mode.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Debug menu-item "Debug"<br/>
-		  (keymap "Debug"<br/>
-			  (Start\ IDL\ shell menu-item "Start IDL shell" idlwave-shell)<br/>
-			  (Save\ and\ \.RUN\ buffer menu-item "Save and .RUN buffer" idlwave-shell-save-and-run :enable<br/>
-						    (and<br/>
-						     (boundp 'idlwave-shell-automatic-start)<br/>
-						     idlwave-shell-automatic-start))))<br/>
-	   (IDLWAVE menu-item "IDLWAVE"<br/>
-		    (keymap "IDLWAVE"<br/>
-			    (PRO/FUNC\ menu menu-item "PRO/FUNC menu" idlwave-function-menu)<br/>
-			    (Motion menu-item "Motion"<br/>
-				    (keymap "Motion"<br/>
-					    (Subprogram\ Start menu-item "Subprogram Start" idlwave-beginning-of-subprogram)<br/>
-					    (Subprogram\ End menu-item "Subprogram End" idlwave-end-of-subprogram)<br/>
-					    (Block\ Start menu-item "Block Start" idlwave-beginning-of-block)<br/>
-					    (Block\ End menu-item "Block End" idlwave-end-of-block)<br/>
-					    (Up\ Block menu-item "Up Block" idlwave-backward-up-block)<br/>
-					    (Down\ Block menu-item "Down Block" idlwave-down-block)<br/>
-					    (Skip\ Block\ Backward menu-item "Skip Block Backward" idlwave-backward-block)<br/>
-					    (Skip\ Block\ Forward menu-item "Skip Block Forward" idlwave-forward-block)))<br/>
-			    (Mark menu-item "Mark"<br/>
-				  (keymap "Mark"<br/>
-					  (Subprogram menu-item "Subprogram" idlwave-mark-subprogram)<br/>
-					  (Block menu-item "Block" idlwave-mark-block)<br/>
-					  (Header menu-item "Header" idlwave-mark-doclib)))<br/>
-			    (Format menu-item "Format"<br/>
-				    (keymap "Format"<br/>
-					    (Indent\ Entire\ Statement menu-item "Indent Entire Statement" idlwave-indent-statement :keys<br/>
-								       (indent-for-tab-command "C-u "))<br/>
-					    (Indent\ Subprogram menu-item "Indent Subprogram" idlwave-indent-subprogram)<br/>
-					    (\(Un\)Comment\ Region menu-item "(Un)Comment Region" idlwave-toggle-comment-region)<br/>
-					    (Continue/Split\ line menu-item "Continue/Split line" idlwave-split-line)<br/>
-					    (nil-7 menu-item "--")<br/>
-					    (Toggle\ Auto\ Fill menu-item "Toggle Auto Fill" idlwave-auto-fill-mode :button<br/>
-								(:toggle symbol-value idlwave-fill-function))))<br/>
-			    (Templates menu-item "Templates"<br/>
-				       (keymap "Templates"<br/>
-					       (Procedure menu-item "Procedure" idlwave-procedure)<br/>
-					       (Function menu-item "Function" idlwave-function)<br/>
-					       (Doc\ Header menu-item "Doc Header" idlwave-doc-header)<br/>
-					       (Log menu-item "Log" idlwave-doc-modification)<br/>
-					       (nil-7 menu-item "--")<br/>
-					       (Case menu-item "Case" idlwave-case)<br/>
-					       (For menu-item "For" idlwave-for)<br/>
-					       (Repeat menu-item "Repeat" idlwave-repeat)<br/>
-					       (While menu-item "While" idlwave-while)<br/>
-					       (nil-7-9 menu-item "--")<br/>
-					       (Close\ Block menu-item "Close Block" idlwave-close-block)))<br/>
-			    (Completion menu-item "Completion"<br/>
-					(keymap "Completion"<br/>
-						(Complete menu-item "Complete" idlwave-complete)<br/>
-						(Complete\ Specific menu-item "Complete Specific"<br/>
-								    (keymap "Complete Specific"<br/>
-									    (1\ Procedure\ Name menu-item "1 Procedure Name" menu-function-63 :key-sequence nil)<br/>
-									    (2\ Procedure\ Keyword menu-item "2 Procedure Keyword" menu-function-64 :key-sequence nil)<br/>
-									    (nil-7 menu-item "--")<br/>
-									    (3\ Function\ Name menu-item "3 Function Name" menu-function-65 :key-sequence nil)<br/>
-									    (4\ Function\ Keyword menu-item "4 Function Keyword" menu-function-66 :key-sequence nil)<br/>
-									    (nil-7-5 menu-item "--")<br/>
-									    (5\ Procedure\ Method\ Name menu-item "5 Procedure Method Name" menu-function-67 :key-sequence nil)<br/>
-									    (6\ Procedure\ Method\ Keyword menu-item "6 Procedure Method Keyword" menu-function-68 :key-sequence nil)<br/>
-									    (nil-7-8 menu-item "--")<br/>
-									    (7\ Function\ Method\ Name menu-item "7 Function Method Name" menu-function-69 :key-sequence nil)<br/>
-									    (8\ Function\ Method\ Keyword menu-item "8 Function Method Keyword" menu-function-70 :key-sequence nil)<br/>
-									    (nil-7-11 menu-item "--")<br/>
-									    (9\ Class\ Name menu-item "9 Class Name" idlwave-complete-class)))))<br/>
-			    (Routine\ Info menu-item "Routine Info"<br/>
-					   (keymap "Routine Info"<br/>
-						   (Show\ Routine\ Info menu-item "Show Routine Info" idlwave-routine-info)<br/>
-						   (Online\ Context\ Help menu-item "Online Context Help" idlwave-context-help)<br/>
-						   (nil-7 menu-item "--")<br/>
-						   (Find\ Routine\ Source menu-item "Find Routine Source" idlwave-find-module)<br/>
-						   (Resolve\ Routine menu-item "Resolve Routine" idlwave-resolve :enable<br/>
-								     (featurep 'idlw-shell))<br/>
-						   (nil-7-5 menu-item "--")<br/>
-						   (Update\ Routine\ Info menu-item "Update Routine Info" idlwave-update-routine-info)<br/>
-						   (Rescan\ XML\ Help\ Catalog menu-item "Rescan XML Help Catalog" idlwave-convert-xml-system-routine-info)<br/>
-						   (nil-7-8 menu-item "--")<br/>
-						   (nil menu-item "IDL User Catalog")<br/>
-						   (Select\ Catalog\ Directories menu-item "Select Catalog Directories" menu-function-71 :key-sequence nil)<br/>
-						   (Scan\ Directories menu-item "Scan Directories" menu-function-72 :key-sequence nil :enable<br/>
-								      (and idlwave-path-alist<br/>
-									   (not idlwave-catalog-process)))<br/>
-						   (Scan\ Directories\ & menu-item "Scan Directories &" menu-function-73 :key-sequence nil :enable<br/>
-									 (and idlwave-path-alist<br/>
-									      (not idlwave-catalog-process)))<br/>
-						   (nil-7-13 menu-item "--")<br/>
-						   (nil-14 menu-item "Routine Shadows")<br/>
-						   (Check\ Current\ Buffer menu-item "Check Current Buffer" idlwave-list-buffer-load-path-shadows)<br/>
-						   (Check\ Compiled\ Routines menu-item "Check Compiled Routines" idlwave-list-shell-load-path-shadows)<br/>
-						   (Check\ Everything menu-item "Check Everything" idlwave-list-all-load-path-shadows)))<br/>
-			    (Misc menu-item "Misc"<br/>
-				  (keymap "Misc"<br/>
-					  (Kill\ auto-created\ buffers menu-item "Kill auto-created buffers" idlwave-kill-autoloaded-buffers)<br/>
-					  (nil-7 menu-item "--")<br/>
-					  (Insert\ TAB\ character menu-item "Insert TAB character" idlwave-hard-tab)))<br/>
-			    (nil-7 menu-item "--")<br/>
-			    (External menu-item "External"<br/>
-				      (keymap "External"<br/>
-					      (Start\ IDL\ shell menu-item "Start IDL shell" idlwave-shell)<br/>
-					      (Edit\ file\ in\ IDLDE menu-item "Edit file in IDLDE" idlwave-edit-in-idlde)<br/>
-					      (Launch\ IDL\ Help menu-item "Launch IDL Help" idlwave-launch-idlhelp)))<br/>
-			    (nil-7-10 menu-item "--")<br/>
-			    (Customize menu-item "Customize"<br/>
-				       (keymap "Customize"<br/>
-					       (Browse\ IDLWAVE\ Group menu-item "Browse IDLWAVE Group" idlwave-customize)<br/>
-					       (nil-7 menu-item "--")<br/>
-					       (Build\ Full\ Customize\ Menu menu-item "Build Full Customize Menu" idlwave-create-customize-menu :enable<br/>
-									     (fboundp 'customize-menu-create))))<br/>
-			    (Documentation menu-item "Documentation"<br/>
-					   (keymap "Documentation"<br/>
-						   (Describe\ Mode menu-item "Describe Mode" describe-mode)<br/>
-						   (Abbreviation\ List menu-item "Abbreviation List" idlwave-list-abbrevs)<br/>
-						   (nil-7 menu-item "--")<br/>
-						   (Commentary\ in\ idlwave\.el menu-item "Commentary in idlwave.el" idlwave-show-commentary)<br/>
-						   (Commentary\ in\ idlw-shell\.el menu-item "Commentary in idlw-shell.el" idlwave-shell-show-commentary)<br/>
-						   (nil-7-5 menu-item "--")<br/>
-						   (Info menu-item "Info" idlwave-info)<br/>
-						   (nil-7-7 menu-item "--")<br/>
-						   (Help\ with\ Topic menu-item "Help with Topic" idlwave-help-assistant-help-with-topic :enable idlwave-help-use-assistant)<br/>
-						   (Launch\ IDL\ Help menu-item "Launch IDL Help" idlwave-launch-idlhelp))))))<br/>
- (44 lambda nil<br/>
-     (interactive)<br/>
-     (self-insert-command 1)<br/>
-     (idlwave-surround 0 -1 1))<br/>
- (62 lambda nil<br/>
-     (interactive)<br/>
-     (self-insert-command 1)<br/>
-     (idlwave-custom-ltgtr-surround 'gtr))<br/>
- (60 lambda nil<br/>
-     (interactive)<br/>
-     (self-insert-command 1)<br/>
-     (idlwave-custom-ltgtr-surround nil))<br/>
- (61 lambda nil<br/>
-     (interactive)<br/>
-     (self-insert-command 1)<br/>
-     (idlwave-expand-equal -1 -1))<br/>
- (38 lambda nil<br/>
-     (interactive)<br/>
-     (self-insert-command 1)<br/>
-     (idlwave-custom-ampersand-surround))<br/>
- (S-mouse-3 . idlwave-mouse-context-help)<br/>
- (M-tab . idlwave-complete)<br/>
- (S-iso-lefttab . idlwave-indent-statement)<br/>
- (27 keymap<br/>
-     (9 . idlwave-complete)<br/>
-     (67108927 . idlwave-help-assistant-help-with-topic)<br/>
-     (63 . idlwave-context-help)<br/>
-     (115 . idlwave-edit-in-idlde)<br/>
-     (113 . idlwave-fill-paragraph)<br/>
-     (17 . idlwave-indent-subprogram)<br/>
-     (13 . idlwave-split-line)<br/>
-     (21 . idlwave-backward-up-block)<br/>
-     (4 . idlwave-down-block)<br/>
-     (16 . idlwave-backward-block)<br/>
-     (14 . idlwave-forward-block)<br/>
-     (8 . idlwave-mark-subprogram)<br/>
-     (5 . idlwave-end-of-subprogram)<br/>
-     (1 . idlwave-beginning-of-subprogram))<br/>
- (7 . idlwave-keyboard-quit)<br/>
- (34 . idlwave-show-matching-quote)<br/>
- (39 . idlwave-show-matching-quote)<br/>
- (C-tab . idlwave-hard-tab)<br/>
- (3 keymap<br/>
-    (61 . idlwave-resolve)<br/>
-    (9 . idlwave-update-routine-info)<br/>
-    (63 . idlwave-routine-info)<br/>
-    (20 . idlwave-find-module-this-file)<br/>
-    (22 . idlwave-find-module)<br/>
-    (2 . idlwave-list-buffer-load-path-shadows)<br/>
-    (12 . idlwave-shell-recenter-shell-window)<br/>
-    (19 . idlwave-shell)<br/>
-    (11 . idlwave-kill-autoloaded-buffers)<br/>
-    (23 . idlwave-while)<br/>
-    (18 . idlwave-repeat)<br/>
-    (6 . idlwave-for)<br/>
-    (4 . idlwave-debug-map)<br/>
-    (3 . idlwave-case)<br/>
-    (13 . idlwave-doc-modification)<br/>
-    (8 . idlwave-doc-header)<br/>
-    (1 . idlwave-auto-fill-mode)<br/>
-    (14 . idlwave-next-statement)<br/>
-    (16 . idlwave-previous-statement)<br/>
-    (93 . idlwave-close-block)<br/>
-    (125 . idlwave-end-of-block)<br/>
-    (123 . idlwave-beginning-of-block)<br/>
-    (59 . idlwave-toggle-comment-region)<br/>
-    (32 . idlwave-hard-tab)))<br/>
-<br/>
+<strong>idlwave-mode-map</strong> is a variable defined in `<code>idlwave.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used in IDL mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Debug menu-item "Debug"
+		  (keymap "Debug"
+			  (Start\ IDL\ shell menu-item "Start IDL shell" idlwave-shell)
+			  (Save\ and\ \.RUN\ buffer menu-item "Save and .RUN buffer" idlwave-shell-save-and-run :enable
+						    (and
+						     (boundp 'idlwave-shell-automatic-start)
+						     idlwave-shell-automatic-start))))
+	   (IDLWAVE menu-item "IDLWAVE"
+		    (keymap "IDLWAVE"
+			    (PRO/FUNC\ menu menu-item "PRO/FUNC menu" idlwave-function-menu)
+			    (Motion menu-item "Motion"
+				    (keymap "Motion"
+					    (Subprogram\ Start menu-item "Subprogram Start" idlwave-beginning-of-subprogram)
+					    (Subprogram\ End menu-item "Subprogram End" idlwave-end-of-subprogram)
+					    (Block\ Start menu-item "Block Start" idlwave-beginning-of-block)
+					    (Block\ End menu-item "Block End" idlwave-end-of-block)
+					    (Up\ Block menu-item "Up Block" idlwave-backward-up-block)
+					    (Down\ Block menu-item "Down Block" idlwave-down-block)
+					    (Skip\ Block\ Backward menu-item "Skip Block Backward" idlwave-backward-block)
+					    (Skip\ Block\ Forward menu-item "Skip Block Forward" idlwave-forward-block)))
+			    (Mark menu-item "Mark"
+				  (keymap "Mark"
+					  (Subprogram menu-item "Subprogram" idlwave-mark-subprogram)
+					  (Block menu-item "Block" idlwave-mark-block)
+					  (Header menu-item "Header" idlwave-mark-doclib)))
+			    (Format menu-item "Format"
+				    (keymap "Format"
+					    (Indent\ Entire\ Statement menu-item "Indent Entire Statement" idlwave-indent-statement :keys
+								       (indent-for-tab-command "C-u "))
+					    (Indent\ Subprogram menu-item "Indent Subprogram" idlwave-indent-subprogram)
+					    (\(Un\)Comment\ Region menu-item "(Un)Comment Region" idlwave-toggle-comment-region)
+					    (Continue/Split\ line menu-item "Continue/Split line" idlwave-split-line)
+					    (nil menu-item "--")
+					    (Toggle\ Auto\ Fill menu-item "Toggle Auto Fill" idlwave-auto-fill-mode :button
+								(:toggle symbol-value idlwave-fill-function))))
+			    (Templates menu-item "Templates"
+				       (keymap "Templates"
+					       (Procedure menu-item "Procedure" idlwave-procedure)
+					       (Function menu-item "Function" idlwave-function)
+					       (Doc\ Header menu-item "Doc Header" idlwave-doc-header)
+					       (Log menu-item "Log" idlwave-doc-modification)
+					       (nil menu-item "--")
+					       (Case menu-item "Case" idlwave-case)
+					       (For menu-item "For" idlwave-for)
+					       (Repeat menu-item "Repeat" idlwave-repeat)
+					       (While menu-item "While" idlwave-while)
+					       (nil-9 menu-item "--")
+					       (Close\ Block menu-item "Close Block" idlwave-close-block)))
+			    (Completion menu-item "Completion"
+					(keymap "Completion"
+						(Complete menu-item "Complete" idlwave-complete)
+						(Complete\ Specific menu-item "Complete Specific"
+								    (keymap "Complete Specific"
+									    (1\ Procedure\ Name menu-item "1 Procedure Name" menu-function-65 :key-sequence nil)
+									    (2\ Procedure\ Keyword menu-item "2 Procedure Keyword" menu-function-66 :key-sequence nil)
+									    (nil menu-item "--")
+									    (3\ Function\ Name menu-item "3 Function Name" menu-function-67 :key-sequence nil)
+									    (4\ Function\ Keyword menu-item "4 Function Keyword" menu-function-68 :key-sequence nil)
+									    (nil-5 menu-item "--")
+									    (5\ Procedure\ Method\ Name menu-item "5 Procedure Method Name" menu-function-69 :key-sequence nil)
+									    (6\ Procedure\ Method\ Keyword menu-item "6 Procedure Method Keyword" menu-function-70 :key-sequence nil)
+									    (nil-8 menu-item "--")
+									    (7\ Function\ Method\ Name menu-item "7 Function Method Name" menu-function-71 :key-sequence nil)
+									    (8\ Function\ Method\ Keyword menu-item "8 Function Method Keyword" menu-function-72 :key-sequence nil)
+									    (nil-11 menu-item "--")
+									    (9\ Class\ Name menu-item "9 Class Name" idlwave-complete-class)))))
+			    (Routine\ Info menu-item "Routine Info"
+					   (keymap "Routine Info"
+						   (Show\ Routine\ Info menu-item "Show Routine Info" idlwave-routine-info)
+						   (Online\ Context\ Help menu-item "Online Context Help" idlwave-context-help)
+						   (nil menu-item "--")
+						   (Find\ Routine\ Source menu-item "Find Routine Source" idlwave-find-module)
+						   (Resolve\ Routine menu-item "Resolve Routine" idlwave-resolve :enable
+								     (featurep 'idlw-shell))
+						   (nil-5 menu-item "--")
+						   (Update\ Routine\ Info menu-item "Update Routine Info" idlwave-update-routine-info)
+						   (Rescan\ XML\ Help\ Catalog menu-item "Rescan XML Help Catalog" idlwave-convert-xml-system-routine-info)
+						   (nil-8 menu-item "--")
+						   (nil-9 menu-item "IDL User Catalog")
+						   (Select\ Catalog\ Directories menu-item "Select Catalog Directories" menu-function-73 :key-sequence nil)
+						   (Scan\ Directories menu-item "Scan Directories" menu-function-74 :key-sequence nil :enable
+								      (and idlwave-path-alist
+									   (not idlwave-catalog-process)))
+						   (Scan\ Directories\ & menu-item "Scan Directories &" menu-function-75 :key-sequence nil :enable
+									 (and idlwave-path-alist
+									      (not idlwave-catalog-process)))
+						   (nil-13 menu-item "--")
+						   (nil-14 menu-item "Routine Shadows")
+						   (Check\ Current\ Buffer menu-item "Check Current Buffer" idlwave-list-buffer-load-path-shadows)
+						   (Check\ Compiled\ Routines menu-item "Check Compiled Routines" idlwave-list-shell-load-path-shadows)
+						   (Check\ Everything menu-item "Check Everything" idlwave-list-all-load-path-shadows)))
+			    (Misc menu-item "Misc"
+				  (keymap "Misc"
+					  (Kill\ auto-created\ buffers menu-item "Kill auto-created buffers" idlwave-kill-autoloaded-buffers)
+					  (nil menu-item "--")
+					  (Insert\ TAB\ character menu-item "Insert TAB character" idlwave-hard-tab)))
+			    (nil menu-item "--")
+			    (External menu-item "External"
+				      (keymap "External"
+					      (Start\ IDL\ shell menu-item "Start IDL shell" idlwave-shell)
+					      (Edit\ file\ in\ IDLDE menu-item "Edit file in IDLDE" idlwave-edit-in-idlde)
+					      (Launch\ IDL\ Help menu-item "Launch IDL Help" idlwave-launch-idlhelp)))
+			    (nil-10 menu-item "--")
+			    (Customize menu-item "Customize"
+				       (keymap "Customize"
+					       (Browse\ IDLWAVE\ Group menu-item "Browse IDLWAVE Group" idlwave-customize)
+					       (nil menu-item "--")
+					       (Build\ Full\ Customize\ Menu menu-item "Build Full Customize Menu" idlwave-create-customize-menu :enable
+									     (fboundp 'customize-menu-create))))
+			    (Documentation menu-item "Documentation"
+					   (keymap "Documentation"
+						   (Describe\ Mode menu-item "Describe Mode" describe-mode)
+						   (Abbreviation\ List menu-item "Abbreviation List" idlwave-list-abbrevs)
+						   (nil menu-item "--")
+						   (Commentary\ in\ idlwave\.el menu-item "Commentary in idlwave.el" idlwave-show-commentary)
+						   (Commentary\ in\ idlw-shell\.el menu-item "Commentary in idlw-shell.el" idlwave-shell-show-commentary)
+						   (nil-5 menu-item "--")
+						   (Info menu-item "Info" idlwave-info)
+						   (nil-7 menu-item "--")
+						   (Help\ with\ Topic menu-item "Help with Topic" idlwave-help-assistant-help-with-topic :enable idlwave-help-use-assistant)
+						   (Launch\ IDL\ Help menu-item "Launch IDL Help" idlwave-launch-idlhelp))))))
+ (44 lambda nil
+     (interactive)
+     (self-insert-command 1)
+     (idlwave-surround 0 -1 1))
+ (62 lambda nil
+     (interactive)
+     (self-insert-command 1)
+     (idlwave-custom-ltgtr-surround 'gtr))
+ (60 lambda nil
+     (interactive)
+     (self-insert-command 1)
+     (idlwave-custom-ltgtr-surround nil))
+ (61 lambda nil
+     (interactive)
+     (self-insert-command 1)
+     (idlwave-expand-equal -1 -1))
+ (38 lambda nil
+     (interactive)
+     (self-insert-command 1)
+     (idlwave-custom-ampersand-surround))
+ (S-mouse-3 . idlwave-mouse-context-help)
+ (M-tab . idlwave-complete)
+ (S-iso-lefttab . idlwave-indent-statement)
+ (27 keymap
+     (9 . idlwave-complete)
+     (67108927 . idlwave-help-assistant-help-with-topic)
+     (63 . idlwave-context-help)
+     (115 . idlwave-edit-in-idlde)
+     (113 . idlwave-fill-paragraph)
+     (17 . idlwave-indent-subprogram)
+     (13 . idlwave-split-line)
+     (21 . idlwave-backward-up-block)
+     (4 . idlwave-down-block)
+     (16 . idlwave-backward-block)
+     (14 . idlwave-forward-block)
+     (8 . idlwave-mark-subprogram)
+     (5 . idlwave-end-of-subprogram)
+     (1 . idlwave-beginning-of-subprogram))
+ (7 . idlwave-keyboard-quit)
+ (34 . idlwave-show-matching-quote)
+ (39 . idlwave-show-matching-quote)
+ (C-tab . idlwave-hard-tab)
+ (3 keymap
+    (61 . idlwave-resolve)
+    (9 . idlwave-update-routine-info)
+    (63 . idlwave-routine-info)
+    (20 . idlwave-find-module-this-file)
+    (22 . idlwave-find-module)
+    (2 . idlwave-list-buffer-load-path-shadows)
+    (12 . idlwave-shell-recenter-shell-window)
+    (19 . idlwave-shell)
+    (11 . idlwave-kill-autoloaded-buffers)
+    (23 . idlwave-while)
+    (18 . idlwave-repeat)
+    (6 . idlwave-for)
+    (4 . idlwave-debug-map)
+    (3 . idlwave-case)
+    (13 . idlwave-doc-modification)
+    (8 . idlwave-doc-header)
+    (1 . idlwave-auto-fill-mode)
+    (14 . idlwave-next-statement)
+    (16 . idlwave-previous-statement)
+    (93 . idlwave-close-block)
+    (125 . idlwave-end-of-block)
+    (123 . idlwave-beginning-of-block)
+    (59 . idlwave-toggle-comment-region)
+    (32 . idlwave-hard-tab)))
+</pre></br>

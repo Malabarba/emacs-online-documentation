@@ -1,5 +1,21 @@
-<strong>ede-buffer-documentation-files</strong> is a Lisp function in `<code>base.el</code>'.<br/>
-<br/>
-(ede-buffer-documentation-files &rest LOCAL-ARGS)<br/>
-<br/>
-Return all documentation in project THIS based on BUFFER.
+<strong>ede-buffer-documentation-files</strong> is a Lisp function in `<code>base.el</code>'.</br>
+</br>
+(ede-buffer-documentation-files &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Return all documentation in project THIS based on BUFFER.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`ede-project' :PRIMARY (this buffer)</br>
+Return all documentation in project THIS based on BUFFER.</br>
+</br>
+Defined in `base.el'</br>
+</br>
+`ede-target' :PRIMARY (this buffer)</br>
+Check for some documentation files for THIS.</br>
+Also do a quick check to see if there is a Documentation tag in this BUFFER.</br>
+</br>
+Defined in `base.el'</br>
+</br>

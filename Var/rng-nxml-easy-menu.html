@@ -1,34 +1,35 @@
-<strong>rng-nxml-easy-menu</strong> is a variable defined in `<code>rng-nxml.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: ("XML"<br/>
- ["Show Outline Only" nxml-hide-all-text-content]<br/>
- ["Show Everything" nxml-show-all]<br/>
- "---"<br/>
- ["Validation" rng-validate-mode :style toggle :selected rng-validate-mode]<br/>
- "---"<br/>
- ("Set Schema"<br/>
-  ["Automatically" rng-auto-set-schema]<br/>
-  ("For Document Type" :filter<br/>
-   (lambda<br/>
-     (menu)<br/>
-     (mapcar<br/>
-      (lambda<br/>
-	(type-id)<br/>
-	(vector type-id<br/>
-		(list 'rng-set-document-type type-id)))<br/>
-      (rng-possible-type-ids))))<br/>
-  ["Any Well-Formed XML" rng-set-vacuous-schema]<br/>
-  ["File..." rng-set-schema-file])<br/>
- ["Show Schema Location" rng-what-schema]<br/>
- ["Save Schema Location" rng-save-schema-location :help "Save the location of the schema currently being used for this buffer"]<br/>
- "---"<br/>
- ["First Error" rng-first-error :active rng-validate-mode]<br/>
- ["Next Error" rng-next-error :active rng-validate-mode]<br/>
- "---"<br/>
- ["Customize nXML"<br/>
-  (customize-group 'nxml)])<br/>
-<br/>
+<strong>rng-nxml-easy-menu</strong> is a variable defined in `<code>rng-nxml.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("XML"
+ ["Show Outline Only" nxml-hide-all-text-content]
+ ["Show Everything" nxml-show-all]
+ "---"
+ ["Validation" rng-validate-mode :style toggle :selected rng-validate-mode]
+ "---"
+ ("Set Schema"
+  ["Automatically" rng-auto-set-schema]
+  ("For Document Type" :filter
+   (lambda
+     (menu)
+     (mapcar
+      (lambda
+	(type-id)
+	(vector type-id
+		(list 'rng-set-document-type type-id)))
+      (rng-possible-type-ids))))
+  ["Any Well-Formed XML" rng-set-vacuous-schema]
+  ["File..." rng-set-schema-file])
+ ["Show Schema Location" rng-what-schema]
+ ["Save Schema Location" rng-save-schema-location :help "Save the location of the schema currently being used for this buffer"]
+ "---"
+ ["First Error" rng-first-error :active rng-validate-mode]
+ ["Next Error" rng-next-error :active rng-validate-mode]
+ "---"
+ ["Customize nXML"
+  (customize-group 'nxml)])
+</pre></br>

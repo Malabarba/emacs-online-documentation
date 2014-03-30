@@ -1,102 +1,101 @@
-<strong>compilation-mode-tool-bar-map</strong> is a variable defined in `<code>compile.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (separator-2)<br/>
- (undo)<br/>
- (separator-compile "--")<br/>
- (previous-error-no-select menu-item "previous-error-no-select" previous-error-no-select :image<br/>
-			   (find-image<br/>
-			    (cond<br/>
-			     ((not<br/>
-			       (display-color-p))<br/>
-			      '((:type pbm :file "left-arrow.pbm" :foreground "black")<br/>
-				(:type xbm :file "left-arrow.xbm" :foreground "black")<br/>
-				(:type xpm :file "low-color/left-arrow.xpm")<br/>
-				(:type xpm :file "left-arrow.xpm")))<br/>
-			     ((<<br/>
-			       (display-color-cells)<br/>
-			       256)<br/>
-			      '((:type xpm :file "low-color/left-arrow.xpm")<br/>
-				(:type xpm :file "left-arrow.xpm")<br/>
-				(:type pbm :file "left-arrow.pbm" :foreground "black")<br/>
-				(:type xbm :file "left-arrow.xbm" :foreground "black")))<br/>
-			     (t<br/>
-			      '((:type xpm :file "left-arrow.xpm")<br/>
-				(:type pbm :file "left-arrow.pbm" :foreground "black")<br/>
-				(:type xbm :file "left-arrow.xbm" :foreground "black")))))<br/>
-			   :rtl "right-arrow" :help "Goto previous error")<br/>
- (next-error-no-select menu-item "next-error-no-select" next-error-no-select :image<br/>
-		       (find-image<br/>
-			(cond<br/>
-			 ((not<br/>
-			   (display-color-p))<br/>
-			  '((:type pbm :file "right-arrow.pbm" :foreground "black")<br/>
-			    (:type xbm :file "right-arrow.xbm" :foreground "black")<br/>
-			    (:type xpm :file "low-color/right-arrow.xpm")<br/>
-			    (:type xpm :file "right-arrow.xpm")))<br/>
-			 ((<<br/>
-			   (display-color-cells)<br/>
-			   256)<br/>
-			  '((:type xpm :file "low-color/right-arrow.xpm")<br/>
-			    (:type xpm :file "right-arrow.xpm")<br/>
-			    (:type pbm :file "right-arrow.pbm" :foreground "black")<br/>
-			    (:type xbm :file "right-arrow.xbm" :foreground "black")))<br/>
-			 (t<br/>
-			  '((:type xpm :file "right-arrow.xpm")<br/>
-			    (:type pbm :file "right-arrow.pbm" :foreground "black")<br/>
-			    (:type xbm :file "right-arrow.xbm" :foreground "black")))))<br/>
-		       :rtl "left-arrow" :help "Goto next error")<br/>
- (kill-compilation menu-item "kill-compilation" kill-compilation :image<br/>
-		   (find-image<br/>
-		    (cond<br/>
-		     ((not<br/>
-		       (display-color-p))<br/>
-		      '((:type pbm :file "cancel.pbm" :foreground "black")<br/>
-			(:type xbm :file "cancel.xbm" :foreground "black")<br/>
-			(:type xpm :file "low-color/cancel.xpm")<br/>
-			(:type xpm :file "cancel.xpm")))<br/>
-		     ((<<br/>
-		       (display-color-cells)<br/>
-		       256)<br/>
-		      '((:type xpm :file "low-color/cancel.xpm")<br/>
-			(:type xpm :file "cancel.xpm")<br/>
-			(:type pbm :file "cancel.pbm" :foreground "black")<br/>
-			(:type xbm :file "cancel.xbm" :foreground "black")))<br/>
-		     (t<br/>
-		      '((:type xpm :file "cancel.xpm")<br/>
-			(:type pbm :file "cancel.pbm" :foreground "black")<br/>
-			(:type xbm :file "cancel.xbm" :foreground "black")))))<br/>
-		   :enable<br/>
-		   (let<br/>
-		       ((buffer<br/>
-			 (compilation-find-buffer)))<br/>
-		     (get-buffer-process buffer))<br/>
-		   :help "Stop compilation")<br/>
- (recompile menu-item "recompile" recompile :image<br/>
-	    (find-image<br/>
-	     (cond<br/>
-	      ((not<br/>
-		(display-color-p))<br/>
-	       '((:type pbm :file "refresh.pbm" :foreground "black")<br/>
-		 (:type xbm :file "refresh.xbm" :foreground "black")<br/>
-		 (:type xpm :file "low-color/refresh.xpm")<br/>
-		 (:type xpm :file "refresh.xpm")))<br/>
-	      ((<<br/>
-		(display-color-cells)<br/>
-		256)<br/>
-	       '((:type xpm :file "low-color/refresh.xpm")<br/>
-		 (:type xpm :file "refresh.xpm")<br/>
-		 (:type pbm :file "refresh.pbm" :foreground "black")<br/>
-		 (:type xbm :file "refresh.xbm" :foreground "black")))<br/>
-	      (t<br/>
-	       '((:type xpm :file "refresh.xpm")<br/>
-		 (:type pbm :file "refresh.pbm" :foreground "black")<br/>
-		 (:type xbm :file "refresh.xbm" :foreground "black")))))<br/>
-	    :help "Restart compilation"))<br/>
-<br/>
+<strong>compilation-mode-tool-bar-map</strong> is a variable defined in `<code>compile.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (separator-2)
+ (undo)
+ (separator-compile "--")
+ (previous-error-no-select menu-item "previous-error-no-select" previous-error-no-select :image
+			   (find-image
+			    (cond
+			     ((not
+			       (display-color-p))
+			      '((:type pbm :file "left-arrow.pbm" :foreground "black")
+				(:type xbm :file "left-arrow.xbm" :foreground "black")
+				(:type xpm :file "low-color/left-arrow.xpm")
+				(:type xpm :file "left-arrow.xpm")))
+			     ((<
+			       (display-color-cells)
+			       256)
+			      '((:type xpm :file "low-color/left-arrow.xpm")
+				(:type xpm :file "left-arrow.xpm")
+				(:type pbm :file "left-arrow.pbm" :foreground "black")
+				(:type xbm :file "left-arrow.xbm" :foreground "black")))
+			     (t
+			      '((:type xpm :file "left-arrow.xpm")
+				(:type pbm :file "left-arrow.pbm" :foreground "black")
+				(:type xbm :file "left-arrow.xbm" :foreground "black")))))
+			   :rtl "right-arrow" :help "Goto previous error")
+ (next-error-no-select menu-item "next-error-no-select" next-error-no-select :image
+		       (find-image
+			(cond
+			 ((not
+			   (display-color-p))
+			  '((:type pbm :file "right-arrow.pbm" :foreground "black")
+			    (:type xbm :file "right-arrow.xbm" :foreground "black")
+			    (:type xpm :file "low-color/right-arrow.xpm")
+			    (:type xpm :file "right-arrow.xpm")))
+			 ((<
+			   (display-color-cells)
+			   256)
+			  '((:type xpm :file "low-color/right-arrow.xpm")
+			    (:type xpm :file "right-arrow.xpm")
+			    (:type pbm :file "right-arrow.pbm" :foreground "black")
+			    (:type xbm :file "right-arrow.xbm" :foreground "black")))
+			 (t
+			  '((:type xpm :file "right-arrow.xpm")
+			    (:type pbm :file "right-arrow.pbm" :foreground "black")
+			    (:type xbm :file "right-arrow.xbm" :foreground "black")))))
+		       :rtl "left-arrow" :help "Goto next error")
+ (kill-compilation menu-item "kill-compilation" kill-compilation :image
+		   (find-image
+		    (cond
+		     ((not
+		       (display-color-p))
+		      '((:type pbm :file "cancel.pbm" :foreground "black")
+			(:type xbm :file "cancel.xbm" :foreground "black")
+			(:type xpm :file "low-color/cancel.xpm")
+			(:type xpm :file "cancel.xpm")))
+		     ((<
+		       (display-color-cells)
+		       256)
+		      '((:type xpm :file "low-color/cancel.xpm")
+			(:type xpm :file "cancel.xpm")
+			(:type pbm :file "cancel.pbm" :foreground "black")
+			(:type xbm :file "cancel.xbm" :foreground "black")))
+		     (t
+		      '((:type xpm :file "cancel.xpm")
+			(:type pbm :file "cancel.pbm" :foreground "black")
+			(:type xbm :file "cancel.xbm" :foreground "black")))))
+		   :enable
+		   (let
+		       ((buffer
+			 (compilation-find-buffer)))
+		     (get-buffer-process buffer))
+		   :help "Stop compilation")
+ (recompile menu-item "recompile" recompile :image
+	    (find-image
+	     (cond
+	      ((not
+		(display-color-p))
+	       '((:type pbm :file "refresh.pbm" :foreground "black")
+		 (:type xbm :file "refresh.xbm" :foreground "black")
+		 (:type xpm :file "low-color/refresh.xpm")
+		 (:type xpm :file "refresh.xpm")))
+	      ((<
+		(display-color-cells)
+		256)
+	       '((:type xpm :file "low-color/refresh.xpm")
+		 (:type xpm :file "refresh.xpm")
+		 (:type pbm :file "refresh.pbm" :foreground "black")
+		 (:type xbm :file "refresh.xbm" :foreground "black")))
+	      (t
+	       '((:type xpm :file "refresh.xpm")
+		 (:type pbm :file "refresh.pbm" :foreground "black")
+		 (:type xbm :file "refresh.xbm" :foreground "black")))))
+	    :help "Restart compilation"))
+</pre></br>

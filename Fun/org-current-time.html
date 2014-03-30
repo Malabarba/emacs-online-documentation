@@ -1,5 +1,8 @@
-<strong>org-current-time</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
-<br/>
-(org-current-time)<br/>
-<br/>
-Current time, possibly rounded to `org-time-stamp-rounding-minutes'.
+<strong>org-current-time</strong> is a compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+(org-current-time &optional <u>ROUNDING-MINUTES</u> <u>PAST</u>)</br>
+</br>
+Current time, possibly rounded to <u>ROUNDING-MINUTES</u>.</br>
+When <u>ROUNDING-MINUTES</u> is not an integer, fall back on the car of</br>
+`org-time-stamp-rounding-minutes'.  When <u>PAST</u> is non-nil, ensure</br>
+the rounding returns a past time.

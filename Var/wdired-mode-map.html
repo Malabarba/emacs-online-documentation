@@ -1,35 +1,34 @@
-<strong>wdired-mode-map</strong> is a variable defined in `<code>wdired.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (remap keymap<br/>
-	(downcase-word . wdired-downcase-word)<br/>
-	(capitalize-word . wdired-capitalize-word)<br/>
-	(upcase-word . wdired-upcase-word))<br/>
- (menu-bar keymap<br/>
-	   (wdired "WDired" keymap<br/>
-		   (wdired-finish-edit "Commit Changes" . wdired-finish-edit)<br/>
-		   (wdired-abort-changes menu-item "Abort Changes" wdired-abort-changes :help "Abort changes and return to dired mode")<br/>
-		   (dashes "--")<br/>
-		   (wdired-customize "Options" . wdired-customize)<br/>
-		   "WDired"))<br/>
- (14 . wdired-next-line)<br/>
- (down . wdired-next-line)<br/>
- (16 . wdired-previous-line)<br/>
- (up . wdired-previous-line)<br/>
- (15 . ignore)<br/>
- (10 . ignore)<br/>
- (13 . ignore)<br/>
- (3 keymap<br/>
-    (27 . wdired-abort-changes)<br/>
-    (11 . wdired-abort-changes)<br/>
-    (3 . wdired-finish-edit))<br/>
- (24 keymap<br/>
-     (17 . wdired-exit)<br/>
-     (19 . wdired-finish-edit)))<br/>
-<br/>
+<strong>wdired-mode-map</strong> is a variable defined in `<code>wdired.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used in `wdired-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (remap keymap
+	(downcase-word . wdired-downcase-word)
+	(capitalize-word . wdired-capitalize-word)
+	(upcase-word . wdired-upcase-word))
+ (menu-bar keymap
+	   (wdired "WDired" keymap
+		   (wdired-finish-edit "Commit Changes" . wdired-finish-edit)
+		   (wdired-abort-changes menu-item "Abort Changes" wdired-abort-changes :help "Abort changes and return to dired mode")
+		   (dashes "--")
+		   (wdired-customize "Options" . wdired-customize)
+		   "WDired"))
+ (14 . wdired-next-line)
+ (down . wdired-next-line)
+ (16 . wdired-previous-line)
+ (up . wdired-previous-line)
+ (15 . ignore)
+ (10 . ignore)
+ (13 . ignore)
+ (3 keymap
+    (27 . wdired-abort-changes)
+    (11 . wdired-abort-changes)
+    (3 . wdired-finish-edit))
+ (24 keymap
+     (17 . wdired-exit)
+     (19 . wdired-finish-edit)))
+</pre></br>

@@ -1,203 +1,204 @@
-<strong>calculator-mode</strong> is an interactive compiled Lisp function in `<code>calculator.el</code>'.<br/>
-<br/>
-(calculator-mode)<br/>
-<br/>
-A [not so] simple calculator for Emacs.<br/>
-<br/>
-This calculator is used in the same way as other popular calculators<br/>
-like xcalc or calc.exe - but using an Emacs interface.<br/>
-<br/>
-Expressions are entered using normal infix notation, parens are used as<br/>
-normal.  Unary functions are usually postfix, but some depends on the<br/>
-value of `calculator-unary-style' (if the style for an operator below is<br/>
-specified, then it is fixed, otherwise it depends on this variable).<br/>
-`+' and `-' can be used as either binary operators or prefix unary<br/>
-operators.  Numbers can be entered with exponential notation using `e',<br/>
-except when using a non-decimal radix mode for input (in this case `e'<br/>
-will be the hexadecimal digit).  If the result of a calculation is too<br/>
-large (out of range for Emacs), the value of "inf" is returned.<br/>
-<br/>
-Here are the editing keys:<br/>
-* `RET' `='      evaluate the current expression<br/>
-* `C-insert'     copy the whole current expression to the `kill-ring'<br/>
-* `C-return'     evaluate, save result the `kill-ring' and exit<br/>
-* `insert'       paste a number if the one was copied (normally)<br/>
-* `delete' `C-d' clear last argument or whole expression (hit twice)<br/>
-* `backspace'    delete a digit or a previous expression element<br/>
-* `h' `?'        pop-up a quick reference help<br/>
-* `ESC' `q'      exit (`ESC' can be used if `calculator-bind-escape' is<br/>
-                 non-nil, otherwise use three consecutive `ESC's)<br/>
-<br/>
-These operators are pre-defined:<br/>
-* `+' `-' `*' `/' the common binary operators<br/>
-* `\' `%'         integer division and reminder<br/>
-* `_' `;'         postfix unary negation and reciprocal<br/>
-* `^' `L'         binary operators for x^y and log(x) in base y<br/>
-* `Q' `!'         unary square root and factorial<br/>
-* `S' `C' `T'     unary trigonometric operators - sin, cos and tan<br/>
-* `|' `#' `&' `~' bitwise operators - or, xor, and, not<br/>
-<br/>
-The trigonometric functions can be inverted if prefixed with an `I', see<br/>
-below for the way to use degrees instead of the default radians.<br/>
-<br/>
-Two special postfix unary operators are `>' and `<': whenever a binary<br/>
-operator is performed, it is remembered along with its arguments; then<br/>
-`>' (`<') will apply the same operator with the same right (left)<br/>
-argument.<br/>
-<br/>
-hex/oct/bin modes can be set for input and for display separately.<br/>
-Another toggle-able mode is for using degrees instead of radians for<br/>
-trigonometric functions.<br/>
-The keys to switch modes are (`X' is shortcut for `H'):<br/>
-* `D'             switch to all-decimal mode, or toggle degrees/radians<br/>
-* `B' `O' `H' `X' binary/octal/hexadecimal modes for input & display<br/>
-* `i' `o'         followed by one of `D' `B' `O' `H' `X' (case<br/>
-                  insensitive) sets only the input or display radix mode<br/>
-The prompt indicates the current modes:<br/>
-* "D=": degrees mode;<br/>
-* "?=": (? is B/O/H) this is the radix for both input and output;<br/>
-* "=?": (? is B/O/H) the display radix (when input is decimal);<br/>
-* "??": (? is D/B/O/H) 1st char for input radix, 2nd for display.<br/>
-<br/>
-Also, the quote key can be used to switch display modes for decimal<br/>
-numbers (double-quote rotates back), and the two brace characters<br/>
-("{" and "}" change display parameters that these displayers use (if<br/>
-they handle such).  If output is using any radix mode, then these keys<br/>
-toggle digit grouping mode and the chunk size.<br/>
-<br/>
-Values can be saved for future reference in either a list of saved<br/>
-values, or in registers.<br/>
-<br/>
-The list of saved values is useful for statistics operations on some<br/>
-collected data.  It is possible to navigate in this list, and if the<br/>
-value shown is the current one on the list, an indication is displayed<br/>
-as "[N]" if this is the last number and there are N numbers, or<br/>
-"[M/N]" if the M-th value is shown.<br/>
-* `SPC'            evaluate the current value as usual, but also adds<br/>
-                   the result to the list of saved values<br/>
-* `l' `v'          computes total / average of saved values<br/>
-* `up' `C-p'       browse to the previous value in the list<br/>
-* `down' `C-n'     browse to the next value in the list<br/>
-* `delete' `C-d'   remove current value from the list (if it is on it)<br/>
-* `C-delete' `C-c' delete the whole list<br/>
-<br/>
-Registers are variable-like place-holders for values:<br/>
-* `s' followed by a character attach the current value to that character<br/>
-* `g' followed by a character fetches the attached value<br/>
-<br/>
-There are many variables that can be used to customize the calculator.<br/>
-Some interesting customization variables are:<br/>
-* `calculator-electric-mode'  use only the echo-area electrically.<br/>
-* `calculator-unary-style'    set most unary ops to pre/postfix style.<br/>
-* `calculator-user-registers' to define user-preset registers.<br/>
-* `calculator-user-operators' to add user-defined operators.<br/>
-See the documentation for these variables, and "calculator.el" for<br/>
-more information.<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		calculator-clear-saved<br/>
-C-d		calculator-clear<br/>
-C-g		calculator-quit<br/>
-C-h		calculator-backspace<br/>
-C-j		calculator-enter<br/>
-RET		calculator-enter<br/>
-C-n		calculator-saved-down<br/>
-C-p		calculator-saved-up<br/>
-C-y		calculator-paste<br/>
-ESC		Prefix Command<br/>
-SPC		calculator-save-on-list<br/>
-"		calculator-rotate-displayer-back<br/>
-'		calculator-rotate-displayer<br/>
-+		calculator-op-or-exp<br/>
--		calculator-op-or-exp<br/>
-.		calculator-decimal<br/>
-0 .. 9		calculator-digit<br/>
-?		calculator-help<br/>
-B		calculator-radix-mode<br/>
-D		calculator-dec/deg-mode<br/>
-H		calculator-radix-mode<br/>
-O		calculator-radix-mode<br/>
-X		calculator-radix-mode<br/>
-[		calculator-open-paren<br/>
-]		calculator-close-paren<br/>
-a .. d		calculator-digit<br/>
-e		calculator-exp<br/>
-f		calculator-digit<br/>
-g		calculator-get-register<br/>
-h		calculator-help<br/>
-i		Prefix Command<br/>
-o		Prefix Command<br/>
-q		calculator-quit<br/>
-s		calculator-set-register<br/>
-{		calculator-displayer-prev<br/>
-}		calculator-displayer-next<br/>
-DEL		calculator-clear<br/>
-<C-delete>	calculator-clear-saved<br/>
-<C-insert>	calculator-copy<br/>
-<C-kp-enter>	calculator-save-and-quit<br/>
-<C-return>	calculator-save-and-quit<br/>
-<S-insert>	calculator-paste<br/>
-<backspace>	calculator-backspace<br/>
-<copy>		calculator-copy<br/>
-<delete>	calculator-clear<br/>
-<down>		calculator-saved-down<br/>
-<enter>		calculator-enter<br/>
-<f1>		calculator-help<br/>
-<help>		calculator-help<br/>
-<insert>	calculator-paste<br/>
-<kp-0>		calculator-digit<br/>
-<kp-1>		calculator-digit<br/>
-<kp-2>		calculator-digit<br/>
-<kp-3>		calculator-digit<br/>
-<kp-4>		calculator-digit<br/>
-<kp-5>		calculator-digit<br/>
-<kp-6>		calculator-digit<br/>
-<kp-7>		calculator-digit<br/>
-<kp-8>		calculator-digit<br/>
-<kp-9>		calculator-digit<br/>
-<kp-add>	calculator-op-or-exp<br/>
-<kp-decimal>	calculator-decimal<br/>
-<kp-divide>	calculator-op<br/>
-<kp-enter>	calculator-enter<br/>
-<kp-multiply>	calculator-op<br/>
-<kp-subtract>	calculator-op-or-exp<br/>
-<linefeed>	calculator-enter<br/>
-<mouse-2>	calculator-paste<br/>
-<paste>		calculator-paste<br/>
-<remap>		Prefix Command<br/>
-<return>	calculator-enter<br/>
-<space>		calculator-save-on-list<br/>
-<up>		calculator-saved-up<br/>
-<br/>
-ESC ESC		Prefix Command<br/>
-<br/>
-M-ESC ESC	calculator-quit<br/>
-<br/>
-o B		calculator-radix-output-mode<br/>
-o D		calculator-radix-output-mode<br/>
-o H		calculator-radix-output-mode<br/>
-o O		calculator-radix-output-mode<br/>
-o X		calculator-radix-output-mode<br/>
-o b		calculator-radix-output-mode<br/>
-o d		calculator-radix-output-mode<br/>
-o h		calculator-radix-output-mode<br/>
-o o		calculator-radix-output-mode<br/>
-o x		calculator-radix-output-mode<br/>
-<br/>
-i B		calculator-radix-input-mode<br/>
-i D		calculator-radix-input-mode<br/>
-i H		calculator-radix-input-mode<br/>
-i O		calculator-radix-input-mode<br/>
-i X		calculator-radix-input-mode<br/>
-i b		calculator-radix-input-mode<br/>
-i d		calculator-radix-input-mode<br/>
-i h		calculator-radix-input-mode<br/>
-i o		calculator-radix-input-mode<br/>
-i x		calculator-radix-input-mode<br/>
-<br/>
-<br/>
-<br/>
-This mode runs the hook `calculator-mode-hook', as the final step<br/>
+<strong>calculator-mode</strong> is an interactive compiled Lisp function in `<code>calculator.el</code>'.</br>
+</br>
+</br>
+(calculator-mode)</br>
+</br>
+A [not so] simple calculator for Emacs.</br>
+</br>
+This calculator is used in the same way as other popular calculators</br>
+like xcalc or calc.exe - but using an Emacs interface.</br>
+</br>
+Expressions are entered using normal infix notation, parens are used as</br>
+normal.  Unary functions are usually postfix, but some depends on the</br>
+value of `calculator-unary-style' (if the style for an operator below is</br>
+specified, then it is fixed, otherwise it depends on this variable).</br>
+`+' and `-' can be used as either binary operators or prefix unary</br>
+operators.  Numbers can be entered with exponential notation using `e',</br>
+except when using a non-decimal radix mode for input (in this case `e'</br>
+will be the hexadecimal digit).  If the result of a calculation is too</br>
+large (out of range for Emacs), the value of "inf" is returned.</br>
+</br>
+Here are the editing keys:</br>
+* `RET' `='      evaluate the current expression</br>
+* `C-insert'     copy the whole current expression to the `kill-ring'</br>
+* `C-return'     evaluate, save result the `kill-ring' and exit</br>
+* `insert'       paste a number if the one was copied (normally)</br>
+* `delete' `C-d' clear last argument or whole expression (hit twice)</br>
+* `backspace'    delete a digit or a previous expression element</br>
+* `h' `?'        pop-up a quick reference help</br>
+* `ESC' `q'      exit (`ESC' can be used if `calculator-bind-escape' is</br>
+                 non-nil, otherwise use three consecutive `ESC's)</br>
+</br>
+These operators are pre-defined:</br>
+* `+' `-' `*' `/' the common binary operators</br>
+* `\' `%'         integer division and reminder</br>
+* `_' `;'         postfix unary negation and reciprocal</br>
+* `^' `L'         binary operators for x^y and log(x) in base y</br>
+* `Q' `!'         unary square root and factorial</br>
+* `S' `C' `T'     unary trigonometric operators - sin, cos and tan</br>
+* `|' `#' `&' `~' bitwise operators - or, xor, and, not</br>
+</br>
+The trigonometric functions can be inverted if prefixed with an `I', see</br>
+below for the way to use degrees instead of the default radians.</br>
+</br>
+Two special postfix unary operators are `>' and `&lt;': whenever a binary</br>
+operator is performed, it is remembered along with its arguments; then</br>
+`>' (`&lt;') will apply the same operator with the same right (left)</br>
+argument.</br>
+</br>
+hex/oct/bin modes can be set for input and for display separately.</br>
+Another toggle-able mode is for using degrees instead of radians for</br>
+trigonometric functions.</br>
+The keys to switch modes are (`X' is shortcut for `H'):</br>
+* `D'             switch to all-decimal mode, or toggle degrees/radians</br>
+* `B' `O' `H' `X' binary/octal/hexadecimal modes for input & display</br>
+* `i' `o'         followed by one of `D' `B' `O' `H' `X' (case</br>
+                  insensitive) sets only the input or display radix mode</br>
+The prompt indicates the current modes:</br>
+* "D=": degrees mode;</br>
+* "?=": (? is B/O/H) this is the radix for both input and output;</br>
+* "=?": (? is B/O/H) the display radix (when input is decimal);</br>
+* "??": (? is D/B/O/H) 1st char for input radix, 2nd for display.</br>
+</br>
+Also, the quote key can be used to switch display modes for decimal</br>
+numbers (double-quote rotates back), and the two brace characters</br>
+("{" and "}" change display parameters that these displayers use (if</br>
+they handle such).  If output is using any radix mode, then these keys</br>
+toggle digit grouping mode and the chunk size.</br>
+</br>
+Values can be saved for future reference in either a list of saved</br>
+values, or in registers.</br>
+</br>
+The list of saved values is useful for statistics operations on some</br>
+collected data.  It is possible to navigate in this list, and if the</br>
+value shown is the current one on the list, an indication is displayed</br>
+as "[N]" if this is the last number and there are N numbers, or</br>
+"[M/N]" if the M-th value is shown.</br>
+* `SPC'            evaluate the current value as usual, but also adds</br>
+                   the result to the list of saved values</br>
+* `l' `v'          computes total / average of saved values</br>
+* `up' `C-p'       browse to the previous value in the list</br>
+* `down' `C-n'     browse to the next value in the list</br>
+* `delete' `C-d'   remove current value from the list (if it is on it)</br>
+* `C-delete' `C-c' delete the whole list</br>
+</br>
+Registers are variable-like place-holders for values:</br>
+* `s' followed by a character attach the current value to that character</br>
+* `g' followed by a character fetches the attached value</br>
+</br>
+There are many variables that can be used to customize the calculator.</br>
+Some interesting customization variables are:</br>
+* `calculator-electric-mode'  use only the echo-area electrically.</br>
+* `calculator-unary-style'    set most unary ops to pre/postfix style.</br>
+* `calculator-user-registers' to define user-preset registers.</br>
+* `calculator-user-operators' to add user-defined operators.</br>
+See the documentation for these variables, and "calculator.el" for</br>
+more information.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		calculator-clear-saved</br>
+C-d		calculator-clear</br>
+C-g		calculator-quit</br>
+C-h		calculator-backspace</br>
+C-j		calculator-enter</br>
+RET		calculator-enter</br>
+C-n		calculator-saved-down</br>
+C-p		calculator-saved-up</br>
+C-y		calculator-paste</br>
+ESC		Prefix Command</br>
+SPC		calculator-save-on-list</br>
+"		calculator-rotate-displayer-back</br>
+'		calculator-rotate-displayer</br>
++		calculator-op-or-exp</br>
+-		calculator-op-or-exp</br>
+.		calculator-decimal</br>
+0 .. 9		calculator-digit</br>
+?		calculator-help</br>
+B		calculator-radix-mode</br>
+D		calculator-dec/deg-mode</br>
+H		calculator-radix-mode</br>
+O		calculator-radix-mode</br>
+X		calculator-radix-mode</br>
+[		calculator-open-paren</br>
+]		calculator-close-paren</br>
+a .. d		calculator-digit</br>
+e		calculator-exp</br>
+f		calculator-digit</br>
+g		calculator-get-register</br>
+h		calculator-help</br>
+i		Prefix Command</br>
+o		Prefix Command</br>
+q		calculator-quit</br>
+s		calculator-set-register</br>
+{		calculator-displayer-prev</br>
+}		calculator-displayer-next</br>
+DEL		calculator-clear</br>
+&lt;C-delete>	calculator-clear-saved</br>
+&lt;C-insert>	calculator-copy</br>
+&lt;C-kp-enter>	calculator-save-and-quit</br>
+&lt;C-return>	calculator-save-and-quit</br>
+&lt;S-insert>	calculator-paste</br>
+&lt;backspace>	calculator-backspace</br>
+&lt;copy>		calculator-copy</br>
+&lt;delete>	calculator-clear</br>
+&lt;down>		calculator-saved-down</br>
+&lt;enter>		calculator-enter</br>
+&lt;f1>		calculator-help</br>
+&lt;help>		calculator-help</br>
+&lt;insert>	calculator-paste</br>
+&lt;kp-0>		calculator-digit</br>
+&lt;kp-1>		calculator-digit</br>
+&lt;kp-2>		calculator-digit</br>
+&lt;kp-3>		calculator-digit</br>
+&lt;kp-4>		calculator-digit</br>
+&lt;kp-5>		calculator-digit</br>
+&lt;kp-6>		calculator-digit</br>
+&lt;kp-7>		calculator-digit</br>
+&lt;kp-8>		calculator-digit</br>
+&lt;kp-9>		calculator-digit</br>
+&lt;kp-add>	calculator-op-or-exp</br>
+&lt;kp-decimal>	calculator-decimal</br>
+&lt;kp-divide>	calculator-op</br>
+&lt;kp-enter>	calculator-enter</br>
+&lt;kp-multiply>	calculator-op</br>
+&lt;kp-subtract>	calculator-op-or-exp</br>
+&lt;linefeed>	calculator-enter</br>
+&lt;mouse-2>	calculator-paste</br>
+&lt;paste>		calculator-paste</br>
+&lt;remap>		Prefix Command</br>
+&lt;return>	calculator-enter</br>
+&lt;space>		calculator-save-on-list</br>
+&lt;up>		calculator-saved-up</br>
+</br>
+ESC ESC		Prefix Command</br>
+</br>
+M-ESC ESC	calculator-quit</br>
+</br>
+o B		calculator-radix-output-mode</br>
+o D		calculator-radix-output-mode</br>
+o H		calculator-radix-output-mode</br>
+o O		calculator-radix-output-mode</br>
+o X		calculator-radix-output-mode</br>
+o b		calculator-radix-output-mode</br>
+o d		calculator-radix-output-mode</br>
+o h		calculator-radix-output-mode</br>
+o o		calculator-radix-output-mode</br>
+o x		calculator-radix-output-mode</br>
+</br>
+i B		calculator-radix-input-mode</br>
+i D		calculator-radix-input-mode</br>
+i H		calculator-radix-input-mode</br>
+i O		calculator-radix-input-mode</br>
+i X		calculator-radix-input-mode</br>
+i b		calculator-radix-input-mode</br>
+i d		calculator-radix-input-mode</br>
+i h		calculator-radix-input-mode</br>
+i o		calculator-radix-input-mode</br>
+i x		calculator-radix-input-mode</br>
+</br>
+</br>
+</br>
+This mode runs the hook `calculator-mode-hook', as the final step</br>
 during initialization.

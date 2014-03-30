@@ -1,27 +1,27 @@
-<strong>get-lru-window</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(get-lru-window &optional ALL-FRAMES DEDICATED NOT-SELECTED)<br/>
-<br/>
-Return the least recently used window on frames specified by ALL-FRAMES.<br/>
-Return a full-width window if possible.  A minibuffer window is<br/>
-never a candidate.  A dedicated window is never a candidate<br/>
-unless DEDICATED is non-nil, so if all windows are dedicated, the<br/>
-value is nil.  Avoid returning the selected window if possible.<br/>
-Optional argument NOT-SELECTED non-nil means never return the<br/>
-selected window.<br/>
-<br/>
-The following non-nil values of the optional argument ALL-FRAMES<br/>
-have special meanings:<br/>
-<br/>
-- t means consider all windows on all existing frames.<br/>
-<br/>
-- `visible' means consider all windows on all visible frames on<br/>
-  the current terminal.<br/>
-<br/>
-- 0 (the number zero) means consider all windows on all visible<br/>
-  and iconified frames on the current terminal.<br/>
-<br/>
-- A frame means consider all windows on that frame only.<br/>
-<br/>
-Any other value of ALL-FRAMES means consider all windows on the<br/>
+<strong>get-lru-window</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(get-lru-window &optional <u>ALL-FRAMES</u> <u>DEDICATED</u> <u>NOT-SELECTED</u>)</br>
+</br>
+Return the least recently used window on frames specified by <u>ALL-FRAMES</u>.</br>
+Return a full-width window if possible.  A minibuffer window is</br>
+never a candidate.  A dedicated window is never a candidate</br>
+unless <u>DEDICATED</u> is non-nil, so if all windows are dedicated, the</br>
+value is nil.  Avoid returning the selected window if possible.</br>
+Optional argument <u>NOT-SELECTED</u> non-nil means never return the</br>
+selected window.</br>
+</br>
+The following non-nil values of the optional argument <u>ALL-FRAMES</u></br>
+have special meanings:</br>
+</br>
+- t means consider all windows on all existing frames.</br>
+</br>
+- `visible' means consider all windows on all visible frames on</br>
+  the current terminal.</br>
+</br>
+- 0 (the number zero) means consider all windows on all visible</br>
+  and iconified frames on the current terminal.</br>
+</br>
+- A frame means consider all windows on that frame only.</br>
+</br>
+Any other value of <u>ALL-FRAMES</u> means consider all windows on the</br>
 selected frame and no others.

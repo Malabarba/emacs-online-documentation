@@ -1,25 +1,25 @@
-<strong>antlr-makefile-specification</strong> is a variable defined in `<code>antlr-mode.el</code>'.<br/>
-Its value is ("<br/>
-" ("GENS" "GENS%d" " \\<br/>
-	") "$(ANTLR)")<br/>
-<br/>
-Documentation:<br/>
-Variable to specify the appearance of the generated makefile rules.<br/>
-This variable influences the output of M-x antlr-show-makefile-rules.<br/>
-It looks like (RULE-SEP GEN-VAR-SPEC COMMAND).<br/>
-<br/>
-RULE-SEP is the string to separate different makefile rules.  COMMAND is<br/>
-a string with the command which runs the Antlr tool, it should include<br/>
-all options except the option "-glib" which is automatically added<br/>
-if necessary.<br/>
-<br/>
-If GEN-VAR-SPEC is nil, each target directly consists of a list of<br/>
-files.  If GEN-VAR-SPEC looks like (GEN-VAR GEN-VAR-FORMAT GEN-SEP), a<br/>
-Makefile variable is created for each rule target.<br/>
-<br/>
-Then, GEN-VAR is a string with the name of the variable which contains<br/>
-the file names of all makefile rules.  GEN-VAR-FORMAT is a format string<br/>
-producing the variable of each target with substitution COUNT/%d where<br/>
-COUNT starts with 1.  GEN-SEP is used to separate long variable values.<br/>
-<br/>
+<strong>antlr-makefile-specification</strong> is a variable defined in `<code>antlr-mode.el</code>'.</br>
+Its value is <pre>("
+" ("GENS" "GENS%d" " \\
+	") "$(ANTLR)")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Variable to specify the appearance of the generated makefile rules.</br>
+This variable influences the output of M-x antlr-show-makefile-rules.</br>
+It looks like (RULE-SEP GEN-VAR-SPEC COMMAND).</br>
+</br>
+RULE-SEP is the string to separate different makefile rules.  COMMAND is</br>
+a string with the command which runs the Antlr tool, it should include</br>
+all options except the option "-glib" which is automatically added</br>
+if necessary.</br>
+</br>
+If GEN-VAR-SPEC is nil, each target directly consists of a list of</br>
+files.  If GEN-VAR-SPEC looks like (GEN-VAR GEN-VAR-FORMAT GEN-SEP), a</br>
+Makefile variable is created for each rule target.</br>
+</br>
+Then, GEN-VAR is a string with the name of the variable which contains</br>
+the file names of all makefile rules.  GEN-VAR-FORMAT is a format string</br>
+producing the variable of each target with substitution COUNT/%d where</br>
+COUNT starts with 1.  GEN-SEP is used to separate long variable values.</br>
+</br>
 You can customize this variable.

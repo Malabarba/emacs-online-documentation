@@ -1,5 +1,9 @@
-<strong>org-get-wdays</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
-<br/>
-(org-get-wdays TS)<br/>
-<br/>
-Get the deadline lead time appropriate for timestring TS.
+<strong>org-get-wdays</strong> is a compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+(org-get-wdays <u>TS</u> &optional <u>DELAY</u> <u>ZERO-DELAY</u>)</br>
+</br>
+Get the deadline lead time appropriate for timestring <u>TS</u>.</br>
+When <u>DELAY</u> is non-nil, get the delay time for scheduled items</br>
+instead of the deadline lead time.  When <u>ZERO-DELAY</u> is non-nil</br>
+and `org-scheduled-delay-days' is 0, enforce 0 as the delay,</br>
+don't try to find the delay cookie in the scheduled timestamp.

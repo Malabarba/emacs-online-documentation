@@ -1,5 +1,9 @@
-<strong>cl--loop-let</strong> is a compiled Lisp function in `<code>cl-macs.el</code>'.<br/>
-<br/>
-(cl--loop-let SPECS BODY PAR)<br/>
-<br/>
-Not documented.
+<strong>cl--loop-let</strong> is a compiled Lisp function in `<code>cl-macs.el</code>'.</br>
+</br>
+(cl--loop-let <u>SPECS</u> <u>BODY</u> <u>PAR</u>)</br>
+</br>
+Build an expression equivalent to (let <u>SPECS</u> <u>BODY</u>).</br>
+<u>SPECS</u> can include bindings using `cl-loop's destructuring (not to be</br>
+confused with the patterns of `cl-destructuring-bind').</br>
+If <u>PAR</u> is nil, do the bindings step by step, like `let*'.</br>
+If <u>BODY</u> is `setq', then use <u>SPECS</u> for assignments rather than for bindings.

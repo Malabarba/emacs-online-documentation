@@ -1,27 +1,27 @@
-<strong>remote-file-name-inhibit-cache</strong> is a variable defined in `<code>tramp-compat.el</code>'.<br/>
-Its value is 10<br/>
-<br/>
-Documentation:<br/>
-Whether to use the remote file-name cache for read access.<br/>
-When `nil', never expire cached values (caution)<br/>
-When `t', never use the cache (safe, but may be slow)<br/>
-A number means use cached values for that amount of seconds since caching.<br/>
-<br/>
-The attributes of remote files are cached for better performance.<br/>
-If they are changed outside of Emacs's control, the cached values<br/>
-become invalid, and must be reread.  If you are sure that nothing<br/>
-other than Emacs changes the files, you can set this variable to `nil'.<br/>
-<br/>
-If a remote file is checked regularly, it might be a good idea to<br/>
-let-bind this variable to a value less than the interval between<br/>
-consecutive checks.  For example:<br/>
-<br/>
-  (defun display-time-file-nonempty-p (file)<br/>
-    (let ((remote-file-name-inhibit-cache (- display-time-interval 5)))<br/>
-      (and (file-exists-p file)<br/>
-           (< 0 (nth 7 (file-attributes (file-chase-links file)))))))<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>remote-file-name-inhibit-cache</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre>10</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Whether to use the remote file-name cache for read access.</br>
+When `nil', never expire cached values (caution)</br>
+When `t', never use the cache (safe, but may be slow)</br>
+A number means use cached values for that amount of seconds since caching.</br>
+</br>
+The attributes of remote files are cached for better performance.</br>
+If they are changed outside of Emacs's control, the cached values</br>
+become invalid, and must be reread.  If you are sure that nothing</br>
+other than Emacs changes the files, you can set this variable to `nil'.</br>
+</br>
+If a remote file is checked regularly, it might be a good idea to</br>
+let-bind this variable to a value less than the interval between</br>
+consecutive checks.  For example:</br>
+</br>
+  (defun display-time-file-nonempty-p (file)</br>
+    (let ((remote-file-name-inhibit-cache (- display-time-interval 5)))</br>
+      (and (file-exists-p file)</br>
+           (< 0 (nth 7 (file-attributes (file-chase-links file)))))))</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

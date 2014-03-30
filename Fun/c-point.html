@@ -1,24 +1,24 @@
-<strong>c-point</strong> is a Lisp macro in `<code>cc-defs.el</code>'.<br/>
-<br/>
-(c-point POSITION &optional POINT)<br/>
-<br/>
-Return the value of certain commonly referenced POSITIONs relative to POINT.<br/>
-The current point is used if POINT isn't specified.  POSITION can be<br/>
-one of the following symbols:<br/>
-<br/>
-`bol'   -- beginning of line<br/>
-`eol'   -- end of line<br/>
-`bod'   -- beginning of defun<br/>
-`eod'   -- end of defun<br/>
-`boi'   -- beginning of indentation<br/>
-`ionl'  -- indentation of next line<br/>
-`iopl'  -- indentation of previous line<br/>
-`bonl'  -- beginning of next line<br/>
-`eonl'  -- end of next line<br/>
-`bopl'  -- beginning of previous line<br/>
-`eopl'  -- end of previous line<br/>
-`bosws' -- beginning of syntactic whitespace<br/>
-`eosws' -- end of syntactic whitespace<br/>
-<br/>
-If the referenced position doesn't exist, the closest accessible point<br/>
+<strong>c-point</strong> is a Lisp macro in `<code>cc-defs.el</code>'.</br>
+</br>
+(c-point <u>POSITION</u> &optional <u>POINT</u>)</br>
+</br>
+Return the value of certain commonly referenced <u>POSITION</u>s relative to <u>POINT</u>.</br>
+The current point is used if <u>POINT</u> isn't specified.  <u>POSITION</u> can be</br>
+one of the following symbols:</br>
+</br>
+`bol'   -- beginning of line</br>
+`eol'   -- end of line</br>
+`bod'   -- beginning of defun</br>
+`eod'   -- end of defun</br>
+`boi'   -- beginning of indentation</br>
+`ionl'  -- indentation of next line</br>
+`iopl'  -- indentation of previous line</br>
+`bonl'  -- beginning of next line</br>
+`eonl'  -- end of next line</br>
+`bopl'  -- beginning of previous line</br>
+`eopl'  -- end of previous line</br>
+`bosws' -- beginning of syntactic whitespace</br>
+`eosws' -- end of syntactic whitespace</br>
+</br>
+If the referenced position doesn't exist, the closest accessible point</br>
 to it is returned.  This function does not modify the point or the mark.

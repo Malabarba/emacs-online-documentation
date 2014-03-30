@@ -1,47 +1,47 @@
-<strong>ps-multibyte-buffer</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Specifies the multi-byte buffer handling.<br/>
-<br/>
-Valid values are:<br/>
-<br/>
-  nil			  This is the value to use the default settings;<br/>
-			  by default, this only works to print buffers with<br/>
-			  only ASCII and Latin characters.   But this default<br/>
-			  setting can be changed by setting the variable<br/>
-			  `ps-mule-font-info-database-default' differently.<br/>
-			  The initial value of this variable is<br/>
-			  `ps-mule-font-info-database-latin' (see<br/>
-			  documentation).<br/>
-<br/>
-  `non-latin-printer'	  This is the value to use when you have a Japanese<br/>
-			  or Korean PostScript printer and want to print<br/>
-			  buffer with ASCII, Latin-1, Japanese (JISX0208 and<br/>
-			  JISX0201-Kana) and Korean characters.  At present,<br/>
-			  it was not tested with the Korean characters<br/>
-			  printing.  If you have a korean PostScript printer,<br/>
-			  please, test it.<br/>
-<br/>
-  `bdf-font'		  This is the value to use when you want to print<br/>
-			  buffer with BDF fonts.  BDF fonts include both latin<br/>
-			  and non-latin fonts.  BDF (Bitmap Distribution<br/>
-			  Format) is a format used for distributing X's font<br/>
-			  source file.  BDF fonts are included in<br/>
-			  `intlfonts-1.2' which is a collection of X11 fonts<br/>
-			  for all characters supported by Emacs.  In order to<br/>
-			  use this value, be sure to have installed<br/>
-			  `intlfonts-1.2' and set the variable<br/>
-			  `bdf-directory-list' appropriately (see ps-bdf.el for<br/>
-			  documentation of this variable).<br/>
-<br/>
-  `bdf-font-except-latin' This is like `bdf-font' except that it uses<br/>
-			  PostScript default fonts to print ASCII and Latin-1<br/>
-			  characters.  This is convenient when you want or<br/>
-			  need to use both latin and non-latin characters on<br/>
-			  the same buffer.  See `ps-font-family',<br/>
-			  `ps-header-font-family' and `ps-font-info-database'.<br/>
-<br/>
-Any other value is treated as nil.<br/>
-<br/>
+<strong>ps-multibyte-buffer</strong> is a variable defined in `<code>ps-print.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specifies the multi-byte buffer handling.</br>
+</br>
+Valid values are:</br>
+</br>
+  nil			  This is the value to use the default settings;</br>
+			  by default, this only works to print buffers with</br>
+			  only ASCII and Latin characters.   But this default</br>
+			  setting can be changed by setting the variable</br>
+			  `ps-mule-font-info-database-default' differently.</br>
+			  The initial value of this variable is</br>
+			  `ps-mule-font-info-database-latin' (see</br>
+			  documentation).</br>
+</br>
+  `non-latin-printer'	  This is the value to use when you have a Japanese</br>
+			  or Korean PostScript printer and want to print</br>
+			  buffer with ASCII, Latin-1, Japanese (JISX0208 and</br>
+			  JISX0201-Kana) and Korean characters.  At present,</br>
+			  it was not tested with the Korean characters</br>
+			  printing.  If you have a korean PostScript printer,</br>
+			  please, test it.</br>
+</br>
+  `bdf-font'		  This is the value to use when you want to print</br>
+			  buffer with BDF fonts.  BDF fonts include both latin</br>
+			  and non-latin fonts.  BDF (Bitmap Distribution</br>
+			  Format) is a format used for distributing X's font</br>
+			  source file.  BDF fonts are included in</br>
+			  `intlfonts-1.2' which is a collection of X11 fonts</br>
+			  for all characters supported by Emacs.  In order to</br>
+			  use this value, be sure to have installed</br>
+			  `intlfonts-1.2' and set the variable</br>
+			  `bdf-directory-list' appropriately (see ps-bdf.el for</br>
+			  documentation of this variable).</br>
+</br>
+  `bdf-font-except-latin' This is like `bdf-font' except that it uses</br>
+			  PostScript default fonts to print ASCII and Latin-1</br>
+			  characters.  This is convenient when you want or</br>
+			  need to use both latin and non-latin characters on</br>
+			  the same buffer.  See `ps-font-family',</br>
+			  `ps-header-font-family' and `ps-font-info-database'.</br>
+</br>
+Any other value is treated as nil.</br>
+</br>
 You can customize this variable.

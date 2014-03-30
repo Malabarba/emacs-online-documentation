@@ -1,32 +1,32 @@
-<strong>Info-directory-list</strong> is a variable defined in `<code>info.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-List of directories to search for Info documentation files.<br/>
-If nil, meaning not yet initialized, Info uses the environment<br/>
-variable INFOPATH to initialize it, or `Info-default-directory-list'<br/>
-if there is no INFOPATH variable in the environment, or the<br/>
-concatenation of the two if INFOPATH ends with a `path-separator'.<br/>
-<br/>
-When `Info-directory-list' is initialized from the value of<br/>
-`Info-default-directory-list', and Emacs is installed in one of the<br/>
-standard directories, the directory of Info files that come with Emacs<br/>
-is put last (so that local Info files override standard ones).<br/>
-<br/>
-When `Info-directory-list' is initialized from the value of<br/>
-`Info-default-directory-list', and Emacs is not installed in one<br/>
-of the standard directories, the first element of the resulting<br/>
-list is the directory where Emacs installs the Info files that<br/>
-come with it.  This is so that Emacs's own manual, which suits the<br/>
-version of Emacs you are using, will always be found first.  This<br/>
-is useful when you install an experimental version of Emacs without<br/>
-removing the standard installation.<br/>
-<br/>
-If you want to override the order of directories in<br/>
-`Info-default-directory-list', set INFOPATH in the environment.<br/>
-<br/>
-If you run the Emacs executable from the `src' directory in the Emacs<br/>
-source tree, and INFOPATH is not defined, the `info' directory in the<br/>
-source tree is used as the first element of `Info-directory-list', in<br/>
-place of the installation Info directory.  This is useful when you run<br/>
+<strong>Info-directory-list</strong> is a variable defined in `<code>info.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of directories to search for Info documentation files.</br>
+If nil, meaning not yet initialized, Info uses the environment</br>
+variable INFOPATH to initialize it, or `Info-default-directory-list'</br>
+if there is no INFOPATH variable in the environment, or the</br>
+concatenation of the two if INFOPATH ends with a `path-separator'.</br>
+</br>
+When `Info-directory-list' is initialized from the value of</br>
+`Info-default-directory-list', and Emacs is installed in one of the</br>
+standard directories, the directory of Info files that come with Emacs</br>
+is put last (so that local Info files override standard ones).</br>
+</br>
+When `Info-directory-list' is initialized from the value of</br>
+`Info-default-directory-list', and Emacs is not installed in one</br>
+of the standard directories, the first element of the resulting</br>
+list is the directory where Emacs installs the Info files that</br>
+come with it.  This is so that Emacs's own manual, which suits the</br>
+version of Emacs you are using, will always be found first.  This</br>
+is useful when you install an experimental version of Emacs without</br>
+removing the standard installation.</br>
+</br>
+If you want to override the order of directories in</br>
+`Info-default-directory-list', set INFOPATH in the environment.</br>
+</br>
+If you run the Emacs executable from the `src' directory in the Emacs</br>
+source tree, and INFOPATH is not defined, the `info' directory in the</br>
+source tree is used as the first element of `Info-directory-list', in</br>
+place of the installation Info directory.  This is useful when you run</br>
 a version of Emacs without installing it.

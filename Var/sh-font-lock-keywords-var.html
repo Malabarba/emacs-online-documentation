@@ -1,30 +1,33 @@
-<strong>sh-font-lock-keywords-var</strong> is a variable defined in `<code>sh-script.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Default expressions to highlight in Shell Script modes.  See `sh-feature'.<br/>
-<br/>
-Value: ((csh sh-append shell<br/>
-      ("\\${?[#?]?\\([[:alpha:]_][[:alnum:]_]*\\|0\\)" 1 font-lock-variable-name-face))<br/>
- (es sh-append executable-font-lock-keywords<br/>
-     ("\\$#?\\([[:alpha:]_][[:alnum:]_]*\\|[0-9]+\\)" 1 font-lock-variable-name-face))<br/>
- (rc sh-append es)<br/>
- (bash sh-append sh<br/>
-       ("\\$(\\(\\sw+\\)"<br/>
-	(1 'sh-quoted-exec t)))<br/>
- (sh sh-append shell<br/>
-     ("\\$\\({#?\\)?\\([[:alpha:]_][[:alnum:]_]*\\|[-#?@!]\\)" 2 font-lock-variable-name-face)<br/>
-     ("^\\(\\sw+\\)[ 	]*(" 1 font-lock-function-name-face)<br/>
-     ("\\<\\(function\\)\\>[ 	]*\\(\\sw+\\)?"<br/>
-      (1 font-lock-keyword-face)<br/>
-      (2 font-lock-function-name-face nil t))<br/>
-     ("\\(?:^\\s *\\|[[();&|]\\s *\\|\\(?:\\s +-[ao]\\|if\\|else\\|then\\|while\\|do\\)\\s +\\)\\(!\\)" 1 font-lock-negation-char-face))<br/>
- (shell<br/>
-  ("\\(^\\|[^\\]\\)\\(\\\\\\\\\\)*\\(\\\\\\)$" 3 'sh-escaped-newline)<br/>
-  ("\\\\[^[:alnum:]]" 0 font-lock-string-face)<br/>
-  ("\\${?\\([[:alpha:]_][[:alnum:]_]*\\|[0-9]+\\|[$*_]\\)" 1 font-lock-variable-name-face))<br/>
- (rpm sh-append rpm2<br/>
-      ("%{?\\(\\sw+\\)" 1 font-lock-keyword-face))<br/>
- (rpm2 sh-append shell<br/>
-       ("^\\(\\sw+\\):" 1 font-lock-variable-name-face)))<br/>
-<br/>
+<strong>sh-font-lock-keywords-var</strong> is a variable defined in `<code>sh-script.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Default expressions to highlight in Shell Script modes.  See `sh-feature'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((csh sh-append shell
+      ("\\${?[#?]?\\([[:alpha:]_][[:alnum:]_]*\\|0\\)" 1 font-lock-variable-name-face))
+ (es sh-append executable-font-lock-keywords
+     ("\\$#?\\([[:alpha:]_][[:alnum:]_]*\\|[0-9]+\\)" 1 font-lock-variable-name-face))
+ (rc sh-append es)
+ (bash sh-append sh
+       ("\\$(\\(\\sw+\\)"
+	(1 'sh-quoted-exec t)))
+ (sh sh-append shell
+     ("\\$\\({#?\\)?\\([[:alpha:]_][[:alnum:]_]*\\|[-#?@!]\\)" 2 font-lock-variable-name-face)
+     ("^\\(\\sw+\\)[ 	]*(" 1 font-lock-function-name-face)
+     ("\\<\\(function\\)\\>[ 	]*\\(\\sw+\\)?"
+      (1 font-lock-keyword-face)
+      (2 font-lock-function-name-face nil t))
+     ("\\(?:^\\s *\\|[[();&|]\\s *\\|\\(?:\\s +-[ao]\\|if\\|else\\|then\\|while\\|do\\)\\s +\\)\\(!\\)" 1 font-lock-negation-char-face))
+ (shell
+  ("\\(^\\|[^\\]\\)\\(\\\\\\\\\\)*\\(\\\\\\)$" 3 'sh-escaped-newline)
+  ("\\\\[^[:alnum:]]" 0 font-lock-string-face)
+  ("\\${?\\([[:alpha:]_][[:alnum:]_]*\\|[0-9]+\\|[$*_]\\)" 1 font-lock-variable-name-face))
+ (rpm sh-append rpm2
+      ("%{?\\(\\sw+\\)" 1 font-lock-keyword-face))
+ (rpm2 sh-append shell
+       ("^Summary:\\(.*\\)$"
+	(1 font-lock-doc-face t))
+       ("^\\(\\sw+\\):" 1 font-lock-variable-name-face)))
+</pre></br>

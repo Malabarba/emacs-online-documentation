@@ -1,25 +1,26 @@
-<strong>tree-widget-themes-load-path</strong> is a variable defined in `<code>tree-widget.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-List of locations in which to search for the themes sub-directory.<br/>
-Each element is an expression that will be recursively evaluated until<br/>
-it returns a single directory or a list of directories.<br/>
-The default is to search in the `load-path' first, then in the<br/>
-"images" sub directory in the data directory, then in the data<br/>
-directory.<br/>
-The data directory is the value of the variable `data-directory' on<br/>
-Emacs, and what `(locate-data-directory "tree-widget")' returns on<br/>
-XEmacs.<br/>
-<br/>
-Value: (load-path<br/>
- (let<br/>
-     ((dir<br/>
-       (if<br/>
-	   (fboundp 'locate-data-directory)<br/>
-	   (locate-data-directory "tree-widget")<br/>
-	 data-directory)))<br/>
-   (and dir<br/>
-	(list dir<br/>
-	      (expand-file-name "images" dir)))))<br/>
-<br/>
+<strong>tree-widget-themes-load-path</strong> is a variable defined in `<code>tree-widget.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of locations in which to search for the themes sub-directory.</br>
+Each element is an expression that will be recursively evaluated until</br>
+it returns a single directory or a list of directories.</br>
+The default is to search in the `load-path' first, then in the</br>
+"images" sub directory in the data directory, then in the data</br>
+directory.</br>
+The data directory is the value of the variable `data-directory' on</br>
+Emacs, and what `(locate-data-directory "tree-widget")' returns on</br>
+XEmacs.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(load-path
+ (let
+     ((dir
+       (if
+	   (fboundp 'locate-data-directory)
+	   (locate-data-directory "tree-widget")
+	 data-directory)))
+   (and dir
+	(list dir
+	      (expand-file-name "images" dir)))))
+</pre></br>

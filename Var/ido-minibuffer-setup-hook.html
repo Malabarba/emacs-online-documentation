@@ -1,22 +1,17 @@
-<strong>ido-minibuffer-setup-hook</strong> is a variable defined in `<code>ido.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Ido-specific customization of minibuffer setup.<br/>
-<br/>
-This hook is run during minibuffer setup if `ido' is active.<br/>
-It is intended for use in customizing ido for interoperation<br/>
-with other packages.  For instance:<br/>
-<br/>
-  (add-hook 'ido-minibuffer-setup-hook<br/>
-	    (function<br/>
-	     (lambda ()<br/>
-	       (make-local-variable 'max-mini-window-height)<br/>
-	       (setq max-mini-window-height 3))))<br/>
-<br/>
-will constrain Emacs to a maximum minibuffer height of 3 lines when<br/>
-ido is running.  Copied from `icomplete-minibuffer-setup-hook'.<br/>
-<br/>
+<strong>ido-minibuffer-setup-hook</strong> is a variable defined in `<code>ido.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Ido-specific customization of minibuffer setup.</br>
+</br>
+This hook is run during minibuffer setup if Ido is active.</br>
+It is intended for use in customizing Ido for interoperation</br>
+with other packages.  For instance:</br>
+</br>
+  (add-hook 'ido-minibuffer-setup-hook</br>
+	    (lambda () (setq-local max-mini-window-height 3)))</br>
+</br>
+will constrain Emacs to a maximum minibuffer height of 3 lines when</br>
+Ido is running.  Copied from `icomplete-minibuffer-setup-hook'.</br>
+</br>
 You can customize this variable.

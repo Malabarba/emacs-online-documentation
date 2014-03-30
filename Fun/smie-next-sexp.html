@@ -1,22 +1,22 @@
-<strong>smie-next-sexp</strong> is a compiled Lisp function in `<code>smie.el</code>'.<br/>
-<br/>
-(smie-next-sexp NEXT-TOKEN NEXT-SEXP OP-FORW OP-BACK HALFSEXP)<br/>
-<br/>
-Skip over one sexp.<br/>
-NEXT-TOKEN is a function of no argument that moves forward by one<br/>
-token (after skipping comments if needed) and returns it.<br/>
-NEXT-SEXP is a lower-level function to skip one sexp.<br/>
-OP-FORW is the accessor to the forward level of the level data.<br/>
-OP-BACK is the accessor to the backward level of the level data.<br/>
-HALFSEXP if non-nil, means skip over a partial sexp if needed.  I.e. if the<br/>
-first token we see is an operator, skip over its left-hand-side argument.<br/>
-HALFSEXP can also be a token, in which case it means to parse as if<br/>
-we had just successfully passed this token.<br/>
-Possible return values:<br/>
-  (FORW-LEVEL POS TOKEN): we couldn't skip TOKEN because its back-level<br/>
-    is too high.  FORW-LEVEL is the forw-level of TOKEN,<br/>
-    POS is its start position in the buffer.<br/>
-  (t POS TOKEN): same thing when we bump on the wrong side of a paren.<br/>
-    Instead of t, the `car' can also be some other non-nil non-number value.<br/>
-  (nil POS TOKEN): we skipped over a paren-like pair.<br/>
+<strong>smie-next-sexp</strong> is a compiled Lisp function in `<code>smie.el</code>'.</br>
+</br>
+(smie-next-sexp <u>NEXT-TOKEN</u> <u>NEXT-SEXP</u> <u>OP-FORW</u> <u>OP-BACK</u> <u>HALFSEXP</u>)</br>
+</br>
+Skip over one sexp.</br>
+<u>NEXT-TOKEN</u> is a function of no argument that moves forward by one</br>
+token (after skipping comments if needed) and returns it.</br>
+<u>NEXT-SEXP</u> is a lower-level function to skip one sexp.</br>
+<u>OP-FORW</u> is the accessor to the forward level of the level data.</br>
+<u>OP-BACK</u> is the accessor to the backward level of the level data.</br>
+<u>HALFSEXP</u> if non-nil, means skip over a partial sexp if needed.  I.e. if the</br>
+first token we see is an operator, skip over its left-hand-side argument.</br>
+<u>HALFSEXP</u> can also be a token, in which case it means to parse as if</br>
+we had just successfully passed this token.</br>
+Possible return values:</br>
+  (FORW-LEVEL POS TOKEN): we couldn't skip TOKEN because its back-level</br>
+    is too high.  FORW-LEVEL is the forw-level of TOKEN,</br>
+    POS is its start position in the buffer.</br>
+  (t POS TOKEN): same thing when we bump on the wrong side of a paren.</br>
+    Instead of t, the `car' can also be some other non-nil non-number value.</br>
+  (nil POS TOKEN): we skipped over a paren-like pair.</br>
   nil: we skipped over an identifier, matched parentheses, ...

@@ -1,13 +1,14 @@
-<strong>self-insert-command</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
-<br/>
-It is bound to many ordinary text characters.<br/>
-<br/>
-(self-insert-command N)<br/>
-<br/>
-Insert the character you type.<br/>
-Whichever character you type to run this command is inserted.<br/>
-Before insertion, `expand-abbrev' is executed if the inserted character does<br/>
-not have word syntax and the previous character in the buffer does.<br/>
-After insertion, the value of `auto-fill-function' is called if the<br/>
-`auto-fill-chars' table has a non-nil value for the inserted character.<br/>
+<strong>self-insert-command</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+</br>
+It is bound to many ordinary text characters.</br>
+</br>
+<code>(self-insert-command <u>N</u></code>)</br>
+</br>
+Insert the character you type.</br>
+Whichever character you type to run this command is inserted.</br>
+The numeric prefix argument <u>N</u> says how many times to repeat the insertion.</br>
+Before insertion, `expand-abbrev' is executed if the inserted character does</br>
+not have word syntax and the previous character in the buffer does.</br>
+After insertion, the value of `auto-fill-function' is called if the</br>
+`auto-fill-chars' table has a non-nil value for the inserted character.</br>
 At the end, it runs `post-self-insert-hook'.

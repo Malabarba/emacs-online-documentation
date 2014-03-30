@@ -1,14 +1,19 @@
-<strong>emacs-bzr-get-version</strong> is a compiled Lisp function in `<code>version.el</code>'.<br/>
-<br/>
-(emacs-bzr-get-version &optional DIR EXTERNAL)<br/>
-<br/>
-Try to return as a string the bzr revision of the Emacs sources.<br/>
-The format is: [revno] revision_id, where revno may be absent.<br/>
-Value is nil if the sources do not seem to be under bzr, or if we could<br/>
-not determine the revision.  Note that this reports on the current state<br/>
-of the sources, which may not correspond to the running Emacs.<br/>
-<br/>
-Optional argument DIR is a directory to use instead of `source-directory'.<br/>
-Optional argument EXTERNAL non-nil means to maybe ask `bzr' itself,<br/>
-if the sources appear to be under bzr.  If `force', always ask bzr.<br/>
-Otherwise only ask bzr if we cannot find any information ourselves.
+<strong>emacs-bzr-get-version</strong> is an alias for `<strong><a href="emacs-repository-get-version">emacs-repository-get-version</a></strong>' in `<code>version.el</code>'.</br>
+</br>
+(emacs-bzr-get-version &optional <u>DIR</u> <u>EXTERNAL</u>)</br>
+</br>
+This function is obsolete since 24.4;</br>
+use `emacs-repository-get-version' instead.</br>
+</br>
+Try to return as a string the repository revision of the Emacs sources.</br>
+The format of the returned string is dependent on the VCS in use.</br>
+Value is nil if the sources do not seem to be under version</br>
+control, or if we could not determine the revision.  Note that</br>
+this reports on the current state of the sources, which may not</br>
+correspond to the running Emacs.</br>
+</br>
+Optional argument <u>DIR</u> is a directory to use instead of</br>
+`source-directory'.  Optional argument <u>EXTERNAL</u> non-nil means to</br>
+maybe ask the VCS itself, if the sources appear to be under</br>
+version control.  If `force', always ask.  the VCS. Otherwise</br>
+only ask the VCS if we cannot find any information ourselves.

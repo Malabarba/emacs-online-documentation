@@ -1,16 +1,16 @@
-<strong>semantic-lex</strong> is an autoloaded compiled Lisp function in `<code>lex.el</code>'.<br/>
-<br/>
-(semantic-lex START END &optional DEPTH LENGTH)<br/>
-<br/>
-Lexically analyze text in the current buffer between START and END.<br/>
-Optional argument DEPTH indicates at what level to scan over entire<br/>
-lists.  The last argument, LENGTH specifies that `semantic-lex'<br/>
-should only return LENGTH tokens.  The return value is a token stream.<br/>
-Each element is a list, such of the form<br/>
-  (symbol start-expression .  end-expression)<br/>
-where SYMBOL denotes the token type.<br/>
-See `semantic-lex-tokens' variable for details on token types.  END<br/>
-does not mark the end of the text scanned, only the end of the<br/>
-beginning of text scanned.  Thus, if a string extends past END, the<br/>
-end of the return token will be larger than END.  To truly restrict<br/>
+<strong>semantic-lex</strong> is an autoloaded compiled Lisp function in `<code>lex.el</code>'.</br>
+</br>
+(semantic-lex <u>START</u> <u>END</u> &optional <u>DEPTH</u> <u>LENGTH</u>)</br>
+</br>
+Lexically analyze text in the current buffer between <u>START</u> and <u>END</u>.</br>
+Optional argument <u>DEPTH</u> indicates at what level to scan over entire</br>
+lists.  The last argument, <u>LENGTH</u> specifies that `semantic-lex'</br>
+should only return <u>LENGTH</u> tokens.  The return value is a token stream.</br>
+Each element is a list, such of the form</br>
+  (symbol start-expression .  end-expression)</br>
+where SYMBOL denotes the token type.</br>
+See `semantic-lex-tokens' variable for details on token types.  <u>END</u></br>
+does not mark the end of the text scanned, only the end of the</br>
+beginning of text scanned.  Thus, if a string extends past <u>END</u>, the</br>
+end of the return token will be larger than <u>END</u>.  To truly restrict</br>
 scanning, use `narrow-to-region'.

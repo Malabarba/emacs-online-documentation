@@ -1,0 +1,43 @@
+<strong>vc-cvs-sticky-tag-display</strong> is a variable defined in `<code>vc-cvs.el</code>'.</br>
+Its value is <pre>t</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specify the mode-line display of sticky tags.</br>
+Value t means default display, nil means no display at all.  If the</br>
+value is a function or macro, it is called with the sticky tag and</br>
+its' type as parameters, in that order.  TYPE can have three different</br>
+values: `symbolic-name' (TAG is a string), `revision-number' (TAG is a</br>
+string) and `date' (TAG is a date as returned by `encode-time').  The</br>
+return value of the function or macro will be displayed as a string.</br>
+</br>
+Here's an example that will display the formatted date for sticky</br>
+dates and the word "Sticky" for sticky tag names and revisions.</br>
+</br>
+  (lambda (tag type)</br>
+    (cond ((eq type 'date) (format-time-string</br>
+                              vc-cvs-sticky-date-format-string tag))</br>
+          ((eq type 'revision-number) "Sticky")</br>
+          ((eq type 'symbolic-name) "Sticky")))</br>
+</br>
+Here's an example that will abbreviate to the first character only,</br>
+any text before the first occurrence of `-' for sticky symbolic tags.</br>
+If the sticky tag is a revision number, the word "Sticky" is</br>
+displayed.  Date and time is displayed for sticky dates.</br>
+</br>
+   (lambda (tag type)</br>
+     (cond ((eq type 'date) (format-time-string "%Y%m%d %H:%M" tag))</br>
+           ((eq type 'revision-number) "Sticky")</br>
+           ((eq type 'symbolic-name)</br>
+            (condition-case nil</br>
+                (progn</br>
+                  (string-match "\\([^-]*\\)\\(.*\\)" tag)</br>
+                  (concat (substring (match-string 1 tag) 0 1) ":"</br>
+                          (substring (match-string 2 tag) 1 nil)))</br>
+              (error tag)))))       ; Fall-back to given tag name.</br>
+</br>
+See also variable `vc-cvs-sticky-date-format-string'.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 22.1 of Emacs.

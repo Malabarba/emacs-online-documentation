@@ -1,25 +1,38 @@
-<strong>fit-window-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(fit-window-to-buffer &optional WINDOW MAX-HEIGHT MIN-HEIGHT)<br/>
-<br/>
-Adjust height of WINDOW to display its buffer's contents exactly.<br/>
-WINDOW must be a live window and defaults to the selected one.<br/>
-<br/>
-Optional argument MAX-HEIGHT specifies the maximum height of<br/>
-WINDOW and defaults to the height of WINDOW's frame.  Optional<br/>
-argument MIN-HEIGHT specifies the minimum height of WINDOW and<br/>
-defaults to `window-min-height'.  Both MAX-HEIGHT and MIN-HEIGHT<br/>
-are specified in lines and include the mode line and header line,<br/>
-if any.<br/>
-<br/>
-If WINDOW is a full height window, then if the option<br/>
-`fit-frame-to-buffer' is non-nil, this calls the function<br/>
-`fit-frame-to-buffer' to adjust the frame height.<br/>
-<br/>
-Return the number of lines by which WINDOW was enlarged or<br/>
-shrunk.  If an error occurs during resizing, return nil but don't<br/>
-signal an error.<br/>
-<br/>
-Note that even if this function makes WINDOW large enough to show<br/>
-_all_ lines of its buffer you might not see the first lines when<br/>
-WINDOW was scrolled.
+<strong>fit-window-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+</br>
+(fit-window-to-buffer &optional <u>WINDOW</u> <u>MAX-HEIGHT</u> <u>MIN-HEIGHT</u> <u>MAX-WIDTH</u> <u>MIN-WIDTH</u>)</br>
+</br>
+Adjust size of <u>WINDOW</u> to display its buffer's contents exactly.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.</br>
+</br>
+If <u>WINDOW</u> is part of a vertical combination, adjust <u>WINDOW</u>'s</br>
+height.  The new height is calculated from the actual height of</br>
+the accessible portion of its buffer.  The optional argument</br>
+<u>MAX-HEIGHT</u> specifies a maximum height and defaults to the height</br>
+of <u>WINDOW</u>'s frame.  The optional argument <u>MIN-HEIGHT</u> specifies a</br>
+minimum height and defaults to `window-min-height'.  Both</br>
+<u>MAX-HEIGHT</u> and <u>MIN-HEIGHT</u> are specified in lines and include mode</br>
+and header line and a bottom divider, if any.</br>
+</br>
+If <u>WINDOW</u> is part of a horizontal combination and the value of</br>
+the option `fit-window-to-buffer-horizontally' is non-nil, adjust</br>
+<u>WINDOW</u>'s height.  The new width of <u>WINDOW</u> is calculated from the</br>
+maximum length of its buffer's lines that follow the current</br>
+start position of <u>WINDOW</u>.  The optional argument <u>MAX-WIDTH</u></br>
+specifies a maximum width and defaults to the width of <u>WINDOW</u>'s</br>
+frame.  The optional argument <u>MIN-WIDTH</u> specifies a minimum width</br>
+and defaults to `window-min-width'.  Both <u>MAX-WIDTH</u> and <u>MIN-WIDTH</u></br>
+are specified in columns and include fringes, margins, a</br>
+scrollbar and a vertical divider, if any.</br>
+</br>
+Fit pixelwise if the option `window-resize-pixelwise' is non-nil.</br>
+If <u>WINDOW</u> is its frame's root window and the option</br>
+`fit-frame-to-buffer' is non-nil, call `fit-frame-to-buffer' to</br>
+adjust the frame's size.</br>
+</br>
+Note that even if this function makes <u>WINDOW</u> large enough to show</br>
+_all_ parts of its buffer you might not see the first part when</br>
+<u>WINDOW</u> was scrolled.  If <u>WINDOW</u> is resized horizontally, you will</br>
+not see the top of its buffer unless <u>WINDOW</u> starts at its minimum</br>
+accessible position.

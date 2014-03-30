@@ -1,15 +1,13 @@
-<strong>smerge-refine-forward-function</strong> is a variable defined in `<code>smerge-mode.el</code>'.<br/>
-Its value is smerge-refine-forward<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function used to determine an "atomic" element.<br/>
-You can set it to `forward-char' to get char-level granularity.<br/>
-Its behavior has mainly two restrictions:<br/>
-- if this function encounters a newline, it's important that it stops right<br/>
-  after the newline.<br/>
-  This only matters if `smerge-refine-ignore-whitespace' is nil.<br/>
-- it needs to be unaffected by changes performed by the `preproc' argument<br/>
-  to `smerge-refine-subst'.<br/>
+<strong>smerge-refine-forward-function</strong> is a variable defined in `<code>smerge-mode.el</code>'.</br>
+Its value is <pre>smerge-refine-forward</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function used to determine an "atomic" element.</br>
+You can set it to `forward-char' to get char-level granularity.</br>
+Its behavior has mainly two restrictions:</br>
+- if this function encounters a newline, it's important that it stops right</br>
+  after the newline.</br>
+  This only matters if `smerge-refine-ignore-whitespace' is nil.</br>
+- it needs to be unaffected by changes performed by the `preproc' argument</br>
+  to `smerge-refine-subst'.</br>
   This only matters if `smerge-refine-weight-hack' is nil.

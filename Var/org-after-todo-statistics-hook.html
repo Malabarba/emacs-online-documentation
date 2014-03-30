@@ -1,19 +1,17 @@
-<strong>org-after-todo-statistics-hook</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook that is called after a TODO statistics cookie has been updated.<br/>
-Each function is called with two arguments: the number of not-done entries<br/>
-and the number of done entries.<br/>
-<br/>
-For example, the following function, when added to this hook, will switch<br/>
-an entry to DONE when all children are done, and back to TODO when new<br/>
-entries are set to a TODO status.  Note that this hook is only called<br/>
-when there is a statistics cookie in the headline!<br/>
-<br/>
- (defun org-summary-todo (n-done n-not-done)<br/>
-   "Switch entry to DONE when all subentries are done, to TODO otherwise."<br/>
-   (let (org-log-done org-log-states)   ; turn off logging<br/>
-     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))<br/>
+<strong>org-after-todo-statistics-hook</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook that is called after a TODO statistics cookie has been updated.</br>
+Each function is called with two arguments: the number of not-done entries</br>
+and the number of done entries.</br>
+</br>
+For example, the following function, when added to this hook, will switch</br>
+an entry to DONE when all children are done, and back to TODO when new</br>
+entries are set to a TODO status.  Note that this hook is only called</br>
+when there is a statistics cookie in the headline!</br>
+</br>
+ (defun org-summary-todo (n-done n-not-done)</br>
+   "Switch entry to DONE when all subentries are done, to TODO otherwise."</br>
+   (let (org-log-done org-log-states)   ; turn off logging</br>
+     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))</br>

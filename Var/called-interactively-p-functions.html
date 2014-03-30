@@ -1,0 +1,12 @@
+<strong>called-interactively-p-functions</strong> is a variable defined in `<code>subr.el</code>'.</br>
+Its value is <pre></br>
+(edebug--called-interactively-skip advice--called-interactively-skip)
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Special hook called to skip special frames in `called-interactively-p'.</br>
+The functions are called with 3 arguments: (I FRAME1 FRAME2),</br>
+where FRAME1 is a "current frame", FRAME2 is the next frame,</br>
+I is the index of the frame after FRAME2.  It should return nil</br>
+if those frames don't seem special and otherwise, it should return</br>
+the number of frames to skip (minus 1).

@@ -1,29 +1,30 @@
-<strong>tildify-string-alist</strong> is a variable defined in `<code>tildify.el</code>'.<br/>
-Its value is ((latex-mode . "~")<br/>
- (tex-mode . latex-mode)<br/>
- (plain-tex-mode . latex-mode)<br/>
- (sgml-mode . "&nbsp;")<br/>
- (xml-mode . sgml-mode)<br/>
- (html-mode . sgml-mode)<br/>
- (t . " "))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Alist specifying what is a hard space in the current major mode.<br/>
-<br/>
-Each alist item is of the form (MAJOR-MODE . STRING) or<br/>
-(MAJOR-MODE . SYMBOL).<br/>
-<br/>
-MAJOR-MODE defines major mode, for which the item applies.  It can be either:<br/>
-- a symbol equal to the major mode of the buffer to be fixed<br/>
-- t for default item, this applies to all major modes not defined in another<br/>
-  alist item<br/>
-<br/>
-STRING defines the hard space, which is inserted at places defined by<br/>
-`tildify-pattern-alist'.  For example it can be "~" for TeX or "&nbsp;"<br/>
-for SGML.<br/>
-<br/>
-The form (MAJOR-MODE . SYMBOL) defines alias item for MAJOR-MODE.  For this<br/>
-mode, the item for the mode SYMBOL is looked up in the alist instead.<br/>
-<br/>
+<strong>tildify-string-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
+Its value is <pre></br>
+((latex-mode . "~")
+ (tex-mode . latex-mode)
+ (plain-tex-mode . latex-mode)
+ (sgml-mode . "&nbsp;")
+ (xml-mode . sgml-mode)
+ (html-mode . sgml-mode)
+ (t . " "))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist specifying what is a hard space in the current major mode.</br>
+</br>
+Each alist item is of the form (MAJOR-MODE . STRING) or</br>
+(MAJOR-MODE . SYMBOL).</br>
+</br>
+MAJOR-MODE defines major mode, for which the item applies.  It can be either:</br>
+- a symbol equal to the major mode of the buffer to be fixed</br>
+- t for default item, this applies to all major modes not defined in another</br>
+  alist item</br>
+</br>
+STRING defines the hard space, which is inserted at places defined by</br>
+`tildify-pattern-alist'.  For example it can be "~" for TeX or "&nbsp;"</br>
+for SGML.</br>
+</br>
+The form (MAJOR-MODE . SYMBOL) defines alias item for MAJOR-MODE.  For this</br>
+mode, the item for the mode SYMBOL is looked up in the alist instead.</br>
+</br>
 You can customize this variable.

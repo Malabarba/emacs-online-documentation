@@ -1,84 +1,80 @@
-<strong>antlr-mode-menu</strong> is a variable defined in `<code>antlr-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Major mode menu.<br/>
-<br/>
-Value:<br/>
-(keymap "Antlr"<br/>
-	(Insert\ File\ Option menu-item "Insert File Option" nil :filter<br/>
-			      (lambda<br/>
-				(menu)<br/>
-				(easy-menu-filter-return<br/>
-				 (#[(x)<br/>
-				    "\301\302\"\207"<br/>
-				    [x antlr-options-menu-filter 1]<br/>
-				    3]<br/>
-				  menu)<br/>
-				 "Insert File Option")))<br/>
-	(Insert\ Grammar\ Option menu-item "Insert Grammar Option" nil :filter<br/>
-				 (lambda<br/>
-				   (menu)<br/>
-				   (easy-menu-filter-return<br/>
-				    (#[(x)<br/>
-				       "\301\302\"\207"<br/>
-				       [x antlr-options-menu-filter 2]<br/>
-				       3]<br/>
-				     menu)<br/>
-				    "Insert Grammar Option")))<br/>
-	(Insert\ Rule\ Option menu-item "Insert Rule Option" nil :filter<br/>
-			      (lambda<br/>
-				(menu)<br/>
-				(easy-menu-filter-return<br/>
-				 (#[(x)<br/>
-				    "\301\302\"\207"<br/>
-				    [x antlr-options-menu-filter 3]<br/>
-				    3]<br/>
-				  menu)<br/>
-				 "Insert Rule Option")))<br/>
-	(Insert\ Subrule\ Option menu-item "Insert Subrule Option" nil :filter<br/>
-				 (lambda<br/>
-				   (menu)<br/>
-				   (easy-menu-filter-return<br/>
-				    (#[(x)<br/>
-				       "\301\302\"\207"<br/>
-				       [x antlr-options-menu-filter 4]<br/>
-				       3]<br/>
-				     menu)<br/>
-				    "Insert Subrule Option")))<br/>
-	(nil-9 menu-item "---")<br/>
-	(Forward/Backward menu-item "Forward/Backward"<br/>
-			  (keymap "Forward/Backward"<br/>
-				  (Backward\ Rule menu-item "Backward Rule" antlr-beginning-of-rule)<br/>
-				  (Forward\ Rule menu-item "Forward Rule" antlr-end-of-rule)<br/>
-				  (Start\ of\ Rule\ Body menu-item "Start of Rule Body" antlr-beginning-of-body :enable<br/>
-							 (antlr-inside-rule-p))<br/>
-				  (End\ of\ Rule\ Body menu-item "End of Rule Body" antlr-end-of-body :enable<br/>
-						       (antlr-inside-rule-p))<br/>
-				  (nil-9 menu-item "---")<br/>
-				  (Backward\ Statement menu-item "Backward Statement" c-beginning-of-statement)<br/>
-				  (Forward\ Statement menu-item "Forward Statement" c-end-of-statement)<br/>
-				  (Backward\ Into\ Nomencl\. menu-item "Backward Into Nomencl." c-backward-into-nomenclature)<br/>
-				  (Forward\ Into\ Nomencl\. menu-item "Forward Into Nomencl." c-forward-into-nomenclature)))<br/>
-	(Indent\ Region menu-item "Indent Region" indent-region :enable<br/>
-			(and<br/>
-			 (not buffer-read-only)<br/>
-			 (c-region-is-active-p)))<br/>
-	(Comment\ Out\ Region menu-item "Comment Out Region" comment-region :enable<br/>
-			      (and<br/>
-			       (not buffer-read-only)<br/>
-			       (c-region-is-active-p)))<br/>
-	(Uncomment\ Region menu-item "Uncomment Region" menu-function-200 :key-sequence nil :enable<br/>
-			   (and<br/>
-			    (not buffer-read-only)<br/>
-			    (c-region-is-active-p)))<br/>
-	(nil-9-9 menu-item "---")<br/>
-	(Hide\ Actions\ \(incl\.\ Args\) menu-item "Hide Actions (incl. Args)" antlr-hide-actions)<br/>
-	(Hide\ Actions\ \(excl\.\ Args\) menu-item "Hide Actions (excl. Args)" menu-function-201 :key-sequence nil)<br/>
-	(Unhide\ All\ Actions menu-item "Unhide All Actions" menu-function-202 :key-sequence nil)<br/>
-	(nil-9-13 menu-item "---")<br/>
-	(Run\ Tool\ on\ Grammar menu-item "Run Tool on Grammar" antlr-run-tool)<br/>
-	(Show\ Makefile\ Rules menu-item "Show Makefile Rules" antlr-show-makefile-rules)<br/>
-	(nil-9-16 menu-item "---")<br/>
-	(Customize\ Antlr menu-item "Customize Antlr" menu-function-203 :key-sequence nil))<br/>
-<br/>
+<strong>antlr-mode-menu</strong> is a variable defined in `<code>antlr-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Major mode menu.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Antlr"
+	(Insert\ File\ Option menu-item "Insert File Option" nil :filter
+			      #[257 "\302\301!\300\"\207"
+				    ["Insert File Option"
+				     #[(x)
+				       "\301\302\"\207"
+				       [x antlr-options-menu-filter 1]
+				       3]
+				     easy-menu-filter-return]
+				    4 "\n\n(fn MENU)"])
+	(Insert\ Grammar\ Option menu-item "Insert Grammar Option" nil :filter
+				 #[257 "\302\301!\300\"\207"
+				       ["Insert Grammar Option"
+					#[(x)
+					  "\301\302\"\207"
+					  [x antlr-options-menu-filter 2]
+					  3]
+					easy-menu-filter-return]
+				       4 "\n\n(fn MENU)"])
+	(Insert\ Rule\ Option menu-item "Insert Rule Option" nil :filter
+			      #[257 "\302\301!\300\"\207"
+				    ["Insert Rule Option"
+				     #[(x)
+				       "\301\302\"\207"
+				       [x antlr-options-menu-filter 3]
+				       3]
+				     easy-menu-filter-return]
+				    4 "\n\n(fn MENU)"])
+	(Insert\ Subrule\ Option menu-item "Insert Subrule Option" nil :filter
+				 #[257 "\302\301!\300\"\207"
+				       ["Insert Subrule Option"
+					#[(x)
+					  "\301\302\"\207"
+					  [x antlr-options-menu-filter 4]
+					  3]
+					easy-menu-filter-return]
+				       4 "\n\n(fn MENU)"])
+	(nil menu-item "---")
+	(Forward/Backward menu-item "Forward/Backward"
+			  (keymap "Forward/Backward"
+				  (Backward\ Rule menu-item "Backward Rule" antlr-beginning-of-rule)
+				  (Forward\ Rule menu-item "Forward Rule" antlr-end-of-rule)
+				  (Start\ of\ Rule\ Body menu-item "Start of Rule Body" antlr-beginning-of-body :enable
+							 (antlr-inside-rule-p))
+				  (End\ of\ Rule\ Body menu-item "End of Rule Body" antlr-end-of-body :enable
+						       (antlr-inside-rule-p))
+				  (nil menu-item "---")
+				  (Backward\ Statement menu-item "Backward Statement" c-beginning-of-statement)
+				  (Forward\ Statement menu-item "Forward Statement" c-end-of-statement)
+				  (Backward\ Into\ Nomencl\. menu-item "Backward Into Nomencl." c-backward-into-nomenclature)
+				  (Forward\ Into\ Nomencl\. menu-item "Forward Into Nomencl." c-forward-into-nomenclature)))
+	(Indent\ Region menu-item "Indent Region" indent-region :enable
+			(and
+			 (not buffer-read-only)
+			 (c-region-is-active-p)))
+	(Comment\ Out\ Region menu-item "Comment Out Region" comment-region :enable
+			      (and
+			       (not buffer-read-only)
+			       (c-region-is-active-p)))
+	(Uncomment\ Region menu-item "Uncomment Region" menu-function-272 :key-sequence nil :enable
+			   (and
+			    (not buffer-read-only)
+			    (c-region-is-active-p)))
+	(nil-9 menu-item "---")
+	(Hide\ Actions\ \(incl\.\ Args\) menu-item "Hide Actions (incl. Args)" antlr-hide-actions)
+	(Hide\ Actions\ \(excl\.\ Args\) menu-item "Hide Actions (excl. Args)" menu-function-273 :key-sequence nil)
+	(Unhide\ All\ Actions menu-item "Unhide All Actions" menu-function-274 :key-sequence nil)
+	(nil-13 menu-item "---")
+	(Run\ Tool\ on\ Grammar menu-item "Run Tool on Grammar" antlr-run-tool)
+	(Show\ Makefile\ Rules menu-item "Show Makefile Rules" antlr-show-makefile-rules)
+	(nil-16 menu-item "---")
+	(Customize\ Antlr menu-item "Customize Antlr" menu-function-275 :key-sequence nil))
+</pre></br>

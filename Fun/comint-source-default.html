@@ -1,32 +1,32 @@
-<strong>comint-source-default</strong> is a compiled Lisp function in `<code>comint.el</code>'.<br/>
-<br/>
-(comint-source-default PREVIOUS-DIR/FILE SOURCE-MODES)<br/>
-<br/>
-Compute the defaults for `load-file' and `compile-file' commands.<br/>
-<br/>
-PREVIOUS-DIR/FILE is a pair (DIRECTORY . FILENAME) from the last<br/>
-source-file processing command, or nil if there hasn't been one yet.<br/>
-SOURCE-MODES is a list used to determine what buffers contain source<br/>
-files: if the major mode of the buffer is in SOURCE-MODES, it's source.<br/>
-Typically, (lisp-mode) or (scheme-mode).<br/>
-<br/>
-If the command is given while the cursor is inside a string, *and*<br/>
-the string is an existing filename, *and* the filename is not a directory,<br/>
-then the string is taken as default.  This allows you to just position<br/>
-your cursor over a string that's a filename and have it taken as default.<br/>
-<br/>
-If the command is given in a file buffer whose major mode is in<br/>
-SOURCE-MODES, then the filename is the default file, and the<br/>
-file's directory is the default directory.<br/>
-<br/>
-If the buffer isn't a source file buffer (e.g., it's the process buffer),<br/>
-then the default directory & file are what was used in the last source-file<br/>
-processing command (i.e., PREVIOUS-DIR/FILE).  If this is the first time<br/>
-the command has been run (PREVIOUS-DIR/FILE is nil), the default directory<br/>
-is the cwd, with no default file.  ("no default file" = nil)<br/>
-<br/>
-SOURCE-MODES is typically going to be something like (tea-mode)<br/>
-for T programs, (lisp-mode) for Lisp programs, (soar-mode lisp-mode)<br/>
-for Soar programs, etc.<br/>
-<br/>
+<strong>comint-source-default</strong> is a compiled Lisp function in `<code>comint.el</code>'.</br>
+</br>
+(comint-source-default <u>PREVIOUS-DIR/FILE</u> <u>SOURCE-MODES</u>)</br>
+</br>
+Compute the defaults for `load-file' and `compile-file' commands.</br>
+</br>
+<u>PREVIOUS-DIR/FILE</u> is a pair (DIRECTORY . FILENAME) from the last</br>
+source-file processing command, or nil if there hasn't been one yet.</br>
+<u>SOURCE-MODES</u> is a list used to determine what buffers contain source</br>
+files: if the major mode of the buffer is in <u>SOURCE-MODES</u>, it's source.</br>
+Typically, (lisp-mode) or (scheme-mode).</br>
+</br>
+If the command is given while the cursor is inside a string, *and*</br>
+the string is an existing filename, *and* the filename is not a directory,</br>
+then the string is taken as default.  This allows you to just position</br>
+your cursor over a string that's a filename and have it taken as default.</br>
+</br>
+If the command is given in a file buffer whose major mode is in</br>
+<u>SOURCE-MODES</u>, then the filename is the default file, and the</br>
+file's directory is the default directory.</br>
+</br>
+If the buffer isn't a source file buffer (e.g., it's the process buffer),</br>
+then the default directory & file are what was used in the last source-file</br>
+processing command (i.e., <u>PREVIOUS-DIR/FILE</u>).  If this is the first time</br>
+the command has been run (<u>PREVIOUS-DIR/FILE</u> is nil), the default directory</br>
+is the cwd, with no default file.  ("no default file" = nil)</br>
+</br>
+<u>SOURCE-MODES</u> is typically going to be something like (tea-mode)</br>
+for T programs, (lisp-mode) for Lisp programs, (soar-mode lisp-mode)</br>
+for Soar programs, etc.</br>
+</br>
 The function returns a pair: (default-directory . default-file).

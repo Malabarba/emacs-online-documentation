@@ -1,36 +1,39 @@
-<strong>mh-folder-font-lock-keywords</strong> is a variable defined in `<code>mh-folder.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keywords (regular expressions) used to fontify the MH-Folder buffer.<br/>
-<br/>
-Value: (("^\\+.*"<br/>
-  (0 'mh-search-folder))<br/>
- ("^\\( *[0-9]+\\)D.*"<br/>
-  (0 'mh-folder-deleted))<br/>
- ("^\\( *[0-9]+\\)\\^.*"<br/>
-  (0 'mh-folder-refiled))<br/>
- ("\\(<<\\([^\n]+\\)?\\)"<br/>
-  (1 'mh-folder-body nil t))<br/>
- (mh-folder-font-lock-subject<br/>
-  (1 'mh-folder-followup append t)<br/>
-  (2 'mh-folder-subject append t))<br/>
- ("^\\( *[0-9]+\\+\\).*"<br/>
-  (1 'mh-folder-cur-msg-number))<br/>
- ("^\\( *[0-9]+\\)[^D^0-9]"<br/>
-  (1 'mh-folder-msg-number))<br/>
- ("\\([0-9][0-9]/[0-9][0-9]\\)"<br/>
-  (1 'mh-folder-date))<br/>
- ("\\(To:\\)\\(..............\\)"<br/>
-  (1 'mh-folder-to)<br/>
-  (2 'mh-folder-address))<br/>
- ("^ *[0-9]+.\\([bct]\\).....[ ]*\\(..................\\)"<br/>
-  (1 'mh-folder-sent-to-me-hint)<br/>
-  (2 'mh-folder-sent-to-me-sender))<br/>
- (mh-folder-font-lock-unseen<br/>
-  (1 'bold prepend t))<br/>
- (mh-folder-font-lock-tick<br/>
-  (1 'mh-folder-tick prepend t)))<br/>
-<br/>
+<strong>mh-folder-font-lock-keywords</strong> is a variable defined in `<code>mh-folder.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keywords (regular expressions) used to fontify the MH-Folder buffer.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^\\+.*"
+  (0 'mh-search-folder))
+ ("^\\( *[0-9]+\\)\\^.*"
+  (0 'mh-folder-refiled))
+ ("^\\( *[0-9]+\\)D.*"
+  (0 'mh-folder-deleted))
+ ("^\\( *[0-9]+\\)B.*"
+  (0 'mh-folder-blacklisted))
+ ("^\\( *[0-9]+\\)W.*"
+  (0 'mh-folder-whitelisted))
+ ("\\(<<\\([^\n]+\\)?\\)"
+  (1 'mh-folder-body nil t))
+ (mh-folder-font-lock-subject
+  (1 'mh-folder-followup append t)
+  (2 'mh-folder-subject append t))
+ ("^\\( *[0-9]+\\+\\).*"
+  (1 'mh-folder-cur-msg-number))
+ ("^\\( *[0-9]+\\)[^^DBW0-9]"
+  (1 'mh-folder-msg-number))
+ ("\\([0-9][0-9]/[0-9][0-9]\\)"
+  (1 'mh-folder-date))
+ ("\\(To:\\)\\(..............\\)"
+  (1 'mh-folder-to)
+  (2 'mh-folder-address))
+ ("^ *[0-9]+.\\([bct]\\).....[ ]*\\(..................\\)"
+  (1 'mh-folder-sent-to-me-hint)
+  (2 'mh-folder-sent-to-me-sender))
+ (mh-folder-font-lock-unseen
+  (1 'bold prepend t))
+ (mh-folder-font-lock-tick
+  (1 'mh-folder-tick prepend t)))
+</pre></br>

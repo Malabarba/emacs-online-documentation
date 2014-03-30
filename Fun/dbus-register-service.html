@@ -1,35 +1,35 @@
-<strong>dbus-register-service</strong> is a compiled Lisp function in `<code>dbus.el</code>'.<br/>
-<br/>
-(dbus-register-service BUS SERVICE &rest FLAGS)<br/>
-<br/>
-Register known name SERVICE on the D-Bus BUS.<br/>
-<br/>
-BUS is either a Lisp symbol, `:system' or `:session', or a string<br/>
-denoting the bus address.<br/>
-<br/>
-SERVICE is the D-Bus service name that should be registered.  It must<br/>
-be a known name.<br/>
-<br/>
-FLAGS are keywords, which control how the service name is registered.<br/>
-The following keywords are recognized:<br/>
-<br/>
-`:allow-replacement': Allow another service to become the primary<br/>
-owner if requested.<br/>
-<br/>
-`:replace-existing': Request to replace the current primary owner.<br/>
-<br/>
-`:do-not-queue': If we can not become the primary owner do not place<br/>
-us in the queue.<br/>
-<br/>
-The function returns a keyword, indicating the result of the<br/>
-operation.  One of the following keywords is returned:<br/>
-<br/>
-`:primary-owner': Service has become the primary owner of the<br/>
-requested name.<br/>
-<br/>
-`:in-queue': Service could not become the primary owner and has been<br/>
-placed in the queue.<br/>
-<br/>
-`:exists': Service is already in the queue.<br/>
-<br/>
+<strong>dbus-register-service</strong> is a compiled Lisp function in `<code>dbus.el</code>'.</br>
+</br>
+(dbus-register-service <u>BUS</u> <u>SERVICE</u> &rest <u>FLAGS</u>)</br>
+</br>
+Register known name <u>SERVICE</u> on the D-Bus <u>BUS</u>.</br>
+</br>
+<u>BUS</u> is either a Lisp symbol, `:system' or `:session', or a string</br>
+denoting the bus address.</br>
+</br>
+<u>SERVICE</u> is the D-Bus service name that should be registered.  It must</br>
+be a known name.</br>
+</br>
+<u>FLAGS</u> are keywords, which control how the service name is registered.</br>
+The following keywords are recognized:</br>
+</br>
+`:allow-replacement': Allow another service to become the primary</br>
+owner if requested.</br>
+</br>
+`:replace-existing': Request to replace the current primary owner.</br>
+</br>
+`:do-not-queue': If we can not become the primary owner do not place</br>
+us in the queue.</br>
+</br>
+The function returns a keyword, indicating the result of the</br>
+operation.  One of the following keywords is returned:</br>
+</br>
+`:primary-owner': Service has become the primary owner of the</br>
+requested name.</br>
+</br>
+`:in-queue': Service could not become the primary owner and has been</br>
+placed in the queue.</br>
+</br>
+`:exists': Service is already in the queue.</br>
+</br>
 `:already-owner': Service is already the primary owner.

@@ -1,0 +1,35 @@
+<strong>lisp-cl-font-lock-keywords-2</strong> is a variable defined in `<code>lisp-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Gaudy level highlighting for Lisp modes.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("(\\(def\\(?:c\\(?:lass\\|onstant\\)\\|generic\\|ine-\\(?:co\\(?:mpiler-macro\\|ndition\\)\\|m\\(?:ethod-combination\\|odify-macro\\)\\|s\\(?:etf-expander\\|ymbol-macro\\)\\)\\|m\\(?:acro\\|ethod\\)\\|pa\\(?:ckage\\|rameter\\)\\|s\\(?:etf\\|\\(?:truc\\|ubs\\)t\\)\\|type\\|un\\|var\\)\\)\\_>[ 	'(]*\\(setf[ 	]+\\(?:\\sw\\|\\s_\\)+\\|\\(?:\\sw\\|\\s_\\)+\\)?"
+  (1 font-lock-keyword-face)
+  (2
+   (let
+       ((type
+	 (get
+	  (intern-soft
+	   (match-string 1))
+	  'lisp-define-type)))
+     (cond
+      ((eq type 'var)
+       font-lock-variable-name-face)
+      ((eq type 'type)
+       font-lock-type-face)
+      (t font-lock-function-name-face)))
+   nil t))
+ ("\\[\\(\\^\\)" 1 font-lock-negation-char-face prepend)
+ ("(\\(b\\(?:\\(?:loc\\|rea\\)k\\)\\|c\\(?:ase\\|case\\|o\\(?:mpiler-let\\|nd\\(?:ition-case\\)?\\)\\|typecase\\)\\|d\\(?:e\\(?:cla\\(?:im\\|re\\)\\|structuring-bind\\)\\|o\\(?:\\*\\|list\\|times\\)?\\)\\|e\\(?:case\\|typecase\\|val-when\\)\\|flet\\|go\\|handler-\\(?:bind\\|case\\)\\|i\\(?:f\\|gnore-errors\\|n-package\\)\\|l\\(?:a\\(?:bels\\|mbda\\)\\|et[*f]?\\|o\\(?:cally\\|op\\)\\)\\|m\\(?:acrolet\\|ultiple-value-\\(?:bind\\|prog1\\)\\)\\|pro\\(?:claim\\|g[*12nv]?\\)\\|re\\(?:start-\\(?:bind\\|case\\)\\|turn\\(?:-from\\)?\\)\\|symbol-macrolet\\|t\\(?:agbody\\|\\(?:h\\|ypecas\\)e\\)\\|un\\(?:less\\|wind-protect\\)\\|w\\(?:h\\(?:en\\|ile\\)\\|ith-\\(?:accessors\\|co\\(?:mpilation-unit\\|ndition-restarts\\)\\|hash-table-iterator\\|input-from-string\\|o\\(?:pen-\\(?:file\\|stream\\)\\|utput-to-string\\)\\|package-iterator\\|s\\(?:imple-restart\\|lots\\|tandard-io-syntax\\)\\)\\)\\)\\_>" . 1)
+ ("(\\(catch\\|throw\\|provide\\|require\\)\\_>[ 	']*\\(\\(?:\\sw\\|\\s_\\)+\\)?"
+  (1 font-lock-keyword-face)
+  (2 font-lock-constant-face nil t))
+ ("(\\(a\\(?:\\(?:bo\\|sse\\)rt\\)\\|c\\(?:error\\|heck-type\\)\\|error\\|signal\\|warn\\)\\_>"
+  (1 font-lock-warning-face))
+ ("`\\(\\(?:\\sw\\|\\s_\\)\\(?:\\sw\\|\\s_\\)+\\)'"
+  (1 font-lock-constant-face prepend))
+ ("\\_<:\\(?:\\sw\\|\\s_\\)+\\_>" 0 font-lock-builtin-face)
+ ("\\_<\\&\\(?:\\sw\\|\\s_\\)+\\_>" . font-lock-type-face))
+</pre></br>

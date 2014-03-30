@@ -1,38 +1,39 @@
-<strong>vera-mode-menu</strong> is a variable defined in `<code>vera-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Menu keymap for Vera Mode.<br/>
-<br/>
-Value: (keymap "Vera"<br/>
-	(\(Un\)Comment\ Out\ Region menu-item "(Un)Comment Out Region" vera-comment-uncomment-region :enable<br/>
-	 (mark))<br/>
-	(nil-7 menu-item "--")<br/>
-	(Move\ Forward\ Statement menu-item "Move Forward Statement" vera-forward-statement)<br/>
-	(Move\ Backward\ Statement menu-item "Move Backward Statement" vera-backward-statement)<br/>
-	(Move\ Forward\ Same\ Indent menu-item "Move Forward Same Indent" vera-forward-same-indent)<br/>
-	(Move\ Backward\ Same\ Indent menu-item "Move Backward Same Indent" vera-backward-same-indent)<br/>
-	(nil-7-6 menu-item "--")<br/>
-	(Indent\ Line menu-item "Indent Line" indent-according-to-mode)<br/>
-	(Indent\ Region menu-item "Indent Region" vera-indent-region :enable<br/>
-			(mark))<br/>
-	(Indent\ Buffer menu-item "Indent Buffer" vera-indent-buffer)<br/>
-	(nil-7-10 menu-item "--")<br/>
-	(Fontify\ Buffer menu-item "Fontify Buffer" vera-fontify-buffer)<br/>
-	(nil-7-12 menu-item "--")<br/>
-	(Documentation menu-item "Documentation" describe-mode)<br/>
-	(Version menu-item "Version" vera-version)<br/>
-	(Bug\ Report\.\.\. menu-item "Bug Report..." vera-submit-bug-report)<br/>
-	(nil-7-16 menu-item "--")<br/>
-	(Options menu-item "Options"<br/>
-		 (keymap "Options"<br/>
-			 (Indentation\ Offset\.\.\. menu-item "Indentation Offset..." menu-function-293 :key-sequence nil)<br/>
-			 (Underscore\ is\ Part\ of\ Word menu-item "Underscore is Part of Word" menu-function-294 :key-sequence nil :button<br/>
-							 (:toggle . vera-underscore-is-part-of-word))<br/>
-			 (Use\ Intelligent\ Tab menu-item "Use Intelligent Tab" menu-function-295 :key-sequence nil :button<br/>
-						(:toggle . vera-intelligent-tab))<br/>
-			 (nil-7 menu-item "--")<br/>
-			 (Save\ Options menu-item "Save Options" customize-save-customized)<br/>
-			 (nil-7-5 menu-item "--")<br/>
-			 (Customize\.\.\. menu-item "Customize..." vera-customize))))<br/>
-<br/>
+<strong>vera-mode-menu</strong> is a variable defined in `<code>vera-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu keymap for Vera Mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Vera"
+	(\(Un\)Comment\ Out\ Region menu-item "(Un)Comment Out Region" vera-comment-uncomment-region :enable
+	 (mark))
+	(nil menu-item "--")
+	(Move\ Forward\ Statement menu-item "Move Forward Statement" vera-forward-statement)
+	(Move\ Backward\ Statement menu-item "Move Backward Statement" vera-backward-statement)
+	(Move\ Forward\ Same\ Indent menu-item "Move Forward Same Indent" vera-forward-same-indent)
+	(Move\ Backward\ Same\ Indent menu-item "Move Backward Same Indent" vera-backward-same-indent)
+	(nil-6 menu-item "--")
+	(Indent\ Line menu-item "Indent Line" indent-according-to-mode)
+	(Indent\ Region menu-item "Indent Region" vera-indent-region :enable
+			(mark))
+	(Indent\ Buffer menu-item "Indent Buffer" vera-indent-buffer)
+	(nil-10 menu-item "--")
+	(Fontify\ Buffer menu-item "Fontify Buffer" vera-fontify-buffer)
+	(nil-12 menu-item "--")
+	(Documentation menu-item "Documentation" describe-mode)
+	(Version menu-item "Version" vera-version)
+	(Bug\ Report\.\.\. menu-item "Bug Report..." vera-submit-bug-report)
+	(nil-16 menu-item "--")
+	(Options menu-item "Options"
+		 (keymap "Options"
+			 (Indentation\ Offset\.\.\. menu-item "Indentation Offset..." menu-function-337 :key-sequence nil)
+			 (Underscore\ is\ Part\ of\ Word menu-item "Underscore is Part of Word" menu-function-338 :key-sequence nil :button
+							 (:toggle . vera-underscore-is-part-of-word))
+			 (Use\ Intelligent\ Tab menu-item "Use Intelligent Tab" menu-function-339 :key-sequence nil :button
+						(:toggle . vera-intelligent-tab))
+			 (nil menu-item "--")
+			 (Save\ Options menu-item "Save Options" customize-save-customized)
+			 (nil-5 menu-item "--")
+			 (Customize\.\.\. menu-item "Customize..." vera-customize))))
+</pre></br>

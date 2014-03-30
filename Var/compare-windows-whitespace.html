@@ -1,20 +1,23 @@
-<strong>compare-windows-whitespace</strong> is a variable defined in `<code>compare-w.el</code>'.<br/>
-Its value is "\\(\\s-\\|<br/>
-\\)+"<br/>
-<br/>
-Documentation:<br/>
-Regexp or function that defines whitespace sequences for `compare-windows'.<br/>
-That command optionally ignores changes in whitespace.<br/>
-<br/>
-The value of `compare-windows-whitespace' is normally a regexp, but it<br/>
-can also be a function.  The function's job is to categorize any<br/>
-whitespace around (including before) point; it should also advance<br/>
-past any whitespace.  The function is called in each window, with<br/>
-point at the current scanning point.  It gets one argument, the point<br/>
-where M-x compare-windows was originally called; it should not look at<br/>
-any text before that point.<br/>
-<br/>
-If the function returns the same value for both windows, then the<br/>
-whitespace is considered to match, and is skipped.<br/>
-<br/>
-You can customize this variable.
+<strong>compare-windows-whitespace</strong> is a variable defined in `<code>compare-w.el</code>'.</br>
+Its value is <pre>"\\(\\s-\\|
+\\|\240\\)+"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Regexp or function that defines whitespace sequences for `compare-windows'.</br>
+That command optionally ignores changes in whitespace.</br>
+</br>
+The value of `compare-windows-whitespace' is normally a regexp, but it</br>
+can also be a function.  The function's job is to categorize any</br>
+whitespace around (including before) point; it should also advance</br>
+past any whitespace.  The function is called in each window, with</br>
+point at the current scanning point.  It gets one argument, the point</br>
+where M-x compare-windows was originally called; it should not look at</br>
+any text before that point.</br>
+</br>
+If the function returns the same value for both windows, then the</br>
+whitespace is considered to match, and is skipped.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

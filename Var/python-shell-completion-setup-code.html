@@ -1,8 +1,8 @@
-<strong>python-shell-completion-setup-code</strong> is a variable defined in `<code>python.el</code>'.<br/>
-Its value is<br/>
-"try:\n    import readline\nexcept ImportError:\n    def __COMPLETER_all_completions(text): []\nelse:\n    import rlcompleter\n    readline.set_completer(rlcompleter.Completer().complete)\n    def __COMPLETER_all_completions(text):\n        import sys\n        completions = []\n        try:\n            i = 0\n            while True:\n                res = readline.get_completer()(text, i)\n                if not res: break\n                i += 1\n                completions.append(res)\n        except NameError:\n            pass\n        return completions"<br/>
-<br/>
-Documentation:<br/>
-Code used to setup completion in inferior Python processes.<br/>
-<br/>
+<strong>python-shell-completion-setup-code</strong> is a variable defined in `<code>python.el</code>'.</br>
+Its value is <pre></br>
+"try:\n    import readline\nexcept ImportError:\n    def __COMPLETER_all_completions(text): []\nelse:\n    import rlcompleter\n    readline.set_completer(rlcompleter.Completer().complete)\n    def __COMPLETER_all_completions(text):\n        import sys\n        completions = []\n        try:\n            i = 0\n            while True:\n                res = readline.get_completer()(text, i)\n                if not res: break\n                i += 1\n                completions.append(res)\n        except NameError:\n            pass\n        return completions"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Code used to setup completion in inferior Python processes.</br>
+</br>
 You can customize this variable.

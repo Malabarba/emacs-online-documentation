@@ -1,16 +1,14 @@
-<strong>dired-default-directory-alist</strong> is a variable defined in `<code>dired-x.el</code>'.<br/>
-Its value is ((dired-mode if<br/>
-	     (fboundp 'dired-current-directory)<br/>
-	     (dired-current-directory)<br/>
-	     default-directory))<br/>
-<br/>
-<br/>
-  This variable is obsolete since 24.1;<br/>
-  this feature is due to be removed.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist of major modes and their opinion on `default-directory'.<br/>
-Each element has the form (MAJOR . EXPRESSION).<br/>
-The function `dired-default-directory' evaluates EXPRESSION to<br/>
+<strong>dired-default-directory-alist</strong> is a variable defined in `<code>dired-x.el</code>'.</br>
+Its value is <pre></br>
+((dired-mode if
+	     (fboundp 'dired-current-directory)
+	     (dired-current-directory)
+	     default-directory))
+</pre></br>
+<ul><li>  <strong>This variable is obsolete since 24.1;</br>
+  this feature is due to be removed.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of major modes and their opinion on `default-directory'.</br>
+Each element has the form (MAJOR . EXPRESSION).</br>
+The function `dired-default-directory' evaluates EXPRESSION to</br>
 determine a default directory.

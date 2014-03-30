@@ -1,16 +1,16 @@
-<strong>soap-wsdl-resolve-references</strong> is a compiled Lisp function in `<code>soap-client.el</code>'.<br/>
-<br/>
-(soap-wsdl-resolve-references WSDL)<br/>
-<br/>
-Resolve all references inside the WSDL structure.<br/>
-<br/>
-When the WSDL elements are created from the XML document, they<br/>
-refer to each other by name.  For example, the ELEMENT-TYPE slot<br/>
-of an SOAP-ARRAY-TYPE will contain the name of the element and<br/>
-the user would have to call `soap-wsdl-get' to obtain the actual<br/>
-element.<br/>
-<br/>
-After the entire document is loaded, we resolve all these<br/>
-references to the actual elements they refer to so that at<br/>
-runtime, we don't have to call `soap-wsdl-get' each time we<br/>
+<strong>soap-wsdl-resolve-references</strong> is a compiled Lisp function in `<code>soap-client.el</code>'.</br>
+</br>
+(soap-wsdl-resolve-references <u>WSDL</u>)</br>
+</br>
+Resolve all references inside the <u>WSDL</u> structure.</br>
+</br>
+When the <u>WSDL</u> elements are created from the XML document, they</br>
+refer to each other by name.  For example, the ELEMENT-TYPE slot</br>
+of an SOAP-ARRAY-TYPE will contain the name of the element and</br>
+the user would have to call `soap-wsdl-get' to obtain the actual</br>
+element.</br>
+</br>
+After the entire document is loaded, we resolve all these</br>
+references to the actual elements they refer to so that at</br>
+runtime, we don't have to call `soap-wsdl-get' each time we</br>
 traverse an element tree.

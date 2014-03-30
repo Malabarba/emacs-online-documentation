@@ -1,0 +1,67 @@
+<strong>erc-button-alist</strong> is a variable defined in `<code>erc-button.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of regexps matching buttons in ERC buffers.</br>
+Each entry has the form (REGEXP BUTTON FORM CALLBACK PAR...), where</br>
+</br>
+REGEXP is the string matching text around the button or a symbol</br>
+  indicating a variable holding that string, or a list of</br>
+  strings, or an alist with the strings in the car.  Note that</br>
+  entries in lists or alists are considered to be nicks or other</br>
+  complete words.  Therefore they are enclosed in </br>
+Uses keymap ` and \', which is not currently defined.</br>
+</br>
+  while searching.  REGEXP can also be the quoted symbol</br>
+  'nicknames, which matches the nickname of any user on the</br>
+  current server.</br>
+</br>
+BUTTON is the number of the regexp grouping actually matching the</br>
+  button,  This is ignored if REGEXP is 'nicknames.</br>
+</br>
+FORM is a lisp expression which must eval to true for the button to</br>
+  be added,</br>
+</br>
+CALLBACK is the function to call when the user push this button.</br>
+  CALLBACK can also be a symbol.  Its variable value will be used</br>
+  as the callback function.</br>
+</br>
+PAR is a number of a regexp grouping whose text will be passed to</br>
+  CALLBACK.  There can be several PAR arguments.  If REGEXP is</br>
+  'nicknames, these are ignored, and CALLBACK will be called with</br>
+  the nickname matched as the argument.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.3 of Emacs.
+</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(('nicknames 0 erc-button-buttonize-nicks erc-nick-popup 0)
+ (erc-button-url-regexp 0 t browse-url 0)
+ ("<URL: *\\([^<> ]+\\) *>" 0 t browse-url 1)
+ ("[`]\\([a-zA-Z][-a-zA-Z_0-9]+\\)[']" 1 t erc-button-describe-symbol 1)
+ ("\\bInfo:[\"]\\([^\"]+\\)[\"]" 0 t Info-goto-node 1)
+ ("\\b\\(Ward\\|Wiki\\|WardsWiki\\|TheWiki\\):\\([A-Z][a-z]+\\([A-Z][a-z]+\\)+\\)" 0 t
+  (lambda
+    (page)
+    (browse-url
+     (concat "http://c2.com/cgi-bin/wiki?" page)))
+  2)
+ ("EmacsWiki:\\([A-Z][a-z]+\\([A-Z][a-z]+\\)+\\)" 0 t erc-browse-emacswiki 1)
+ ("Lisp:\\([a-zA-Z.+-]+\\)" 0 t erc-browse-emacswiki-lisp 1)
+ ("\\bGoogle:\\([^ 	\n\f]+\\)" 0 t
+  (lambda
+    (keywords)
+    (browse-url
+     (format erc-button-google-url keywords)))
+  1)
+ ("\\brfc[#: ]?\\([0-9]+\\)" 0 t
+  (lambda
+    (num)
+    (browse-url
+     (format erc-button-rfc-url num)))
+  1)
+ ("\\s-\\(@\\([0-9][0-9][0-9]\\)\\)" 1 t erc-button-beats-to-time 2))
+</pre></br>

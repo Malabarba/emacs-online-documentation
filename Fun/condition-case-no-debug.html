@@ -1,9 +1,10 @@
-<strong>condition-case-no-debug</strong> is an alias for `condition-case-unless-debug' in `<code>subr.el</code>'.<br/>
-<br/>
-(condition-case-no-debug VAR BODYFORM &rest HANDLERS)<br/>
-<br/>
-This function is obsolete since 24.1;<br/>
-use `condition-case-unless-debug' instead.<br/>
-<br/>
-Like `condition-case' except that it does not catch anything when debugging.<br/>
-More specifically if `debug-on-error' is set, then it does not catch any signal.
+<strong>condition-case-no-debug</strong> is an alias for `<strong><a href="condition-case-unless-debug">condition-case-unless-debug</a></strong>' in `<code>subr.el</code>'.</br>
+</br>
+(condition-case-no-debug <u>VAR</u> <u>BODYFORM</u> &rest <u>HANDLERS</u>)</br>
+</br>
+This function is obsolete since 24.1;</br>
+use `condition-case-unless-debug' instead.</br>
+</br>
+Like `condition-case' except that it does not prevent debugging.</br>
+More specifically if `debug-on-error' is set then the debugger will be invoked</br>
+even if this catches the signal.

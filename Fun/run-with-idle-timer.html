@@ -1,17 +1,18 @@
-<strong>run-with-idle-timer</strong> is an interactive compiled Lisp function in `<code>timer.el</code>'.<br/>
-<br/>
-(run-with-idle-timer SECS REPEAT FUNCTION &rest ARGS)<br/>
-<br/>
-Perform an action the next time Emacs is idle for SECS seconds.<br/>
-The action is to call FUNCTION with arguments ARGS.<br/>
-SECS may be an integer, a floating point number, or the internal<br/>
-time format returned by, e.g., `current-idle-time'.<br/>
-If Emacs is currently idle, and has been idle for N seconds (N < SECS),<br/>
-then it will call FUNCTION in SECS - N seconds from now.  Using<br/>
-SECS <= N is not recommended if this function is invoked from an idle<br/>
-timer, because FUNCTION will then be called immediately.<br/>
-<br/>
-If REPEAT is non-nil, do the action each time Emacs has been idle for<br/>
-exactly SECS seconds (that is, only once for each time Emacs becomes idle).<br/>
-<br/>
+<strong>run-with-idle-timer</strong> is an interactive compiled Lisp function in `<code>timer.el</code>'.</br>
+</br>
+</br>
+(run-with-idle-timer <u>SECS</u> <u>REPEAT</u> <u>FUNCTION</u> &rest <u>ARGS</u>)</br>
+</br>
+Perform an action the next time Emacs is idle for <u>SECS</u> seconds.</br>
+The action is to call <u>FUNCTION</u> with arguments <u>ARGS</u>.</br>
+<u>SECS</u> may be an integer, a floating point number, or the internal</br>
+time format returned by, e.g., `current-idle-time'.</br>
+If Emacs is currently idle, and has been idle for N seconds (N &lt; <u>SECS</u>),</br>
+then it will call <u>FUNCTION</u> in <u>SECS</u> - N seconds from now.  Using</br>
+<u>SECS</u> &lt;= N is not recommended if this function is invoked from an idle</br>
+timer, because <u>FUNCTION</u> will then be called immediately.</br>
+</br>
+If <u>REPEAT</u> is non-nil, do the action each time Emacs has been idle for</br>
+exactly <u>SECS</u> seconds (that is, only once for each time Emacs becomes idle).</br>
+</br>
 This function returns a timer object which you can use in `cancel-timer'.

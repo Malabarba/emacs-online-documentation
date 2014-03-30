@@ -1,60 +1,63 @@
-<strong>org-agenda-prefix-format</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
-Its value is ((agenda . " %i %-12:c%?-12t% s")<br/>
- (timeline . "  % s")<br/>
- (todo . " %i %-12:c")<br/>
- (tags . " %i %-12:c")<br/>
- (search . " %i %-12:c"))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Format specifications for the prefix of items in the agenda views.<br/>
-An alist with five entries, each for the different agenda types.  The<br/>
-keys of the sublists are `agenda', `timeline', `todo', `search' and `tags'.<br/>
-The values are format strings.<br/>
-<br/>
-This format works similar to a printf format, with the following meaning:<br/>
-<br/>
-  %c   the category of the item, "Diary" for entries from the diary,<br/>
-       or as given by the CATEGORY keyword or derived from the file name<br/>
-  %e   the effort required by the item<br/>
-  %i   the icon category of the item, see `org-agenda-category-icon-alist'<br/>
-  %T   the last tag of the item (ignore inherited tags, which come first)<br/>
-  %t   the HH:MM time-of-day specification if one applies to the entry<br/>
-  %s   Scheduling/Deadline information, a short string<br/>
-  %(expression) Eval EXPRESSION and replace the control string<br/>
-                by the result<br/>
-<br/>
-All specifiers work basically like the standard `%s' of printf, but may<br/>
-contain two additional characters:  a question mark just after the `%'<br/>
-and a whitespace/punctuation character just before the final letter.<br/>
-<br/>
-If the first character after `%' is a question mark, the entire field<br/>
-will only be included if the corresponding value applies to the current<br/>
-entry.  This is useful for fields which should have fixed width when<br/>
-present, but zero width when absent.  For example, "%?-12t" will<br/>
-result in a 12 character time field if a time of the day is specified,<br/>
-but will completely disappear in entries which do not contain a time.<br/>
-<br/>
-If there is punctuation or whitespace character just before the final<br/>
-format letter, this character will be appended to the field value if<br/>
-the value is not empty.  For example, the format "%-12:c" leads to<br/>
-"Diary: " if the category is "Diary".  If the category were be<br/>
-empty, no additional colon would be inserted.<br/>
-<br/>
-The default value for the agenda sublist is "  %-12:c%?-12t% s",<br/>
-which means:<br/>
-<br/>
-- Indent the line with two space characters<br/>
-- Give the category a 12 chars wide field, padded with whitespace on<br/>
-  the right (because of `-').  Append a colon if there is a category<br/>
-  (because of `:').<br/>
-- If there is a time-of-day, put it into a 12 chars wide field.  If no<br/>
-  time, don't put in an empty field, just skip it (because of '?').<br/>
-- Finally, put the scheduling information.<br/>
-<br/>
-See also the variables `org-agenda-remove-times-when-in-prefix' and<br/>
-`org-agenda-remove-tags'.<br/>
-<br/>
-Custom commands can set this variable in the options section.<br/>
-<br/>
+<strong>org-agenda-prefix-format</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+Its value is <pre></br>
+((agenda . " %i %-12:c%?-12t% s")
+ (timeline . "  % s")
+ (todo . " %i %-12:c")
+ (tags . " %i %-12:c")
+ (search . " %i %-12:c"))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Format specifications for the prefix of items in the agenda views.</br>
+An alist with five entries, each for the different agenda types.  The</br>
+keys of the sublists are `agenda', `timeline', `todo', `search' and `tags'.</br>
+The values are format strings.</br>
+</br>
+This format works similar to a printf format, with the following meaning:</br>
+</br>
+  %c   the category of the item, "Diary" for entries from the diary,</br>
+       or as given by the CATEGORY keyword or derived from the file name</br>
+  %e   the effort required by the item</br>
+  %l   the level of the item (insert X space(s) if item is of level X)</br>
+  %i   the icon category of the item, see `org-agenda-category-icon-alist'</br>
+  %T   the last tag of the item (ignore inherited tags, which come first)</br>
+  %t   the HH:MM time-of-day specification if one applies to the entry</br>
+  %s   Scheduling/Deadline information, a short string</br>
+  %b   show breadcrumbs, i.e., the names of the higher levels</br>
+  %(expression) Eval EXPRESSION and replace the control string</br>
+                by the result</br>
+</br>
+All specifiers work basically like the standard `%s' of printf, but may</br>
+contain two additional characters: a question mark just after the `%'</br>
+and a whitespace/punctuation character just before the final letter.</br>
+</br>
+If the first character after `%' is a question mark, the entire field</br>
+will only be included if the corresponding value applies to the current</br>
+entry.  This is useful for fields which should have fixed width when</br>
+present, but zero width when absent.  For example, "%?-12t" will</br>
+result in a 12 character time field if a time of the day is specified,</br>
+but will completely disappear in entries which do not contain a time.</br>
+</br>
+If there is punctuation or whitespace character just before the</br>
+final format letter, this character will be appended to the field</br>
+value if the value is not empty.  For example, the format</br>
+"%-12:c" leads to "Diary: " if the category is "Diary".  If</br>
+the category is empty, no additional colon is inserted.</br>
+</br>
+The default value for the agenda sublist is "  %-12:c%?-12t% s",</br>
+which means:</br>
+</br>
+- Indent the line with two space characters</br>
+- Give the category a 12 chars wide field, padded with whitespace on</br>
+  the right (because of `-').  Append a colon if there is a category</br>
+  (because of `:').</br>
+- If there is a time-of-day, put it into a 12 chars wide field.  If no</br>
+  time, don't put in an empty field, just skip it (because of '?').</br>
+- Finally, put the scheduling information.</br>
+</br>
+See also the variables `org-agenda-remove-times-when-in-prefix' and</br>
+`org-agenda-remove-tags'.</br>
+</br>
+Custom commands can set this variable in the options section.</br>
+</br>
 You can customize this variable.

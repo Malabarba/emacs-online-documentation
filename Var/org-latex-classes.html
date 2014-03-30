@@ -1,0 +1,115 @@
+<strong>org-latex-classes</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of LaTeX classes and associated header and structure.</br>
+If #+LATEX_CLASS is set in the buffer, use its value and the</br>
+associated information.  Here is the structure of each cell:</br>
+</br>
+  (class-name</br>
+    header-string</br>
+    (numbered-section . unnumbered-section)</br>
+    ...)</br>
+</br>
+The header string</br>
+-----------------</br>
+</br>
+The HEADER-STRING is the header that will be inserted into the</br>
+LaTeX file.  It should contain the \documentclass macro, and</br>
+anything else that is needed for this setup.  To this header, the</br>
+following commands will be added:</br>
+</br>
+- Calls to \usepackage for all packages mentioned in the</br>
+  variables `org-latex-default-packages-alist' and</br>
+  `org-latex-packages-alist'.  Thus, your header definitions</br>
+  should avoid to also request these packages.</br>
+</br>
+- Lines specified via "#+LATEX_HEADER:" and</br>
+  "#+LATEX_HEADER_EXTRA:" keywords.</br>
+</br>
+If you need more control about the sequence in which the header</br>
+is built up, or if you want to exclude one of these building</br>
+blocks for a particular class, you can use the following</br>
+macro-like placeholders.</br>
+</br>
+ [DEFAULT-PACKAGES]      \usepackage statements for default packages</br>
+ [NO-DEFAULT-PACKAGES]   do not include any of the default packages</br>
+ [PACKAGES]              \usepackage statements for packages</br>
+ [NO-PACKAGES]           do not include the packages</br>
+ [EXTRA]                 the stuff from #+LATEX_HEADER(_EXTRA)</br>
+ [NO-EXTRA]              do not include #+LATEX_HEADER(_EXTRA) stuff</br>
+</br>
+So a header like</br>
+</br>
+  \documentclass{article}</br>
+  [NO-DEFAULT-PACKAGES]</br>
+  [EXTRA]</br>
+  \providecommand{\alert}[1]{\textbf{#1}}</br>
+  [PACKAGES]</br>
+</br>
+will omit the default packages, and will include the</br>
+#+LATEX_HEADER and #+LATEX_HEADER_EXTRA lines, then have a call</br>
+to \providecommand, and then place \usepackage commands based</br>
+on the content of `org-latex-packages-alist'.</br>
+</br>
+If your header, `org-latex-default-packages-alist' or</br>
+`org-latex-packages-alist' inserts "\usepackage[AUTO]{inputenc}",</br>
+AUTO will automatically be replaced with a coding system derived</br>
+from `buffer-file-coding-system'.  See also the variable</br>
+`org-latex-inputenc-alist' for a way to influence this mechanism.</br>
+</br>
+Likewise, if your header contains "\usepackage[AUTO]{babel}",</br>
+AUTO will be replaced with the language related to the language</br>
+code specified by `org-export-default-language', which see.  Note</br>
+that constructions such as "\usepackage[french,AUTO,english]{babel}"</br>
+are permitted.</br>
+</br>
+The sectioning structure</br>
+------------------------</br>
+</br>
+The sectioning structure of the class is given by the elements</br>
+following the header string.  For each sectioning level, a number</br>
+of strings is specified.  A %s formatter is mandatory in each</br>
+section string and will be replaced by the title of the section.</br>
+</br>
+Instead of a cons cell (numbered . unnumbered), you can also</br>
+provide a list of 2 or 4 elements,</br>
+</br>
+  (numbered-open numbered-close)</br>
+</br>
+or</br>
+</br>
+  (numbered-open numbered-close unnumbered-open unnumbered-close)</br>
+</br>
+providing opening and closing strings for a LaTeX environment</br>
+that should represent the document section.  The opening clause</br>
+should have a %s to represent the section title.</br>
+</br>
+Instead of a list of sectioning commands, you can also specify</br>
+a function name.  That function will be called with two</br>
+parameters, the (reduced) level of the headline, and a predicate</br>
+non-nil when the headline should be numbered.  It must return</br>
+a format string in which the section title will be added.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("article" "\\documentclass[11pt]{article}"
+  ("\\section{%s}" . "\\section*{%s}")
+  ("\\subsection{%s}" . "\\subsection*{%s}")
+  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+  ("\\paragraph{%s}" . "\\paragraph*{%s}")
+  ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+ ("report" "\\documentclass[11pt]{report}"
+  ("\\part{%s}" . "\\part*{%s}")
+  ("\\chapter{%s}" . "\\chapter*{%s}")
+  ("\\section{%s}" . "\\section*{%s}")
+  ("\\subsection{%s}" . "\\subsection*{%s}")
+  ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
+ ("book" "\\documentclass[11pt]{book}"
+  ("\\part{%s}" . "\\part*{%s}")
+  ("\\chapter{%s}" . "\\chapter*{%s}")
+  ("\\section{%s}" . "\\section*{%s}")
+  ("\\subsection{%s}" . "\\subsection*{%s}")
+  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+</pre></br>

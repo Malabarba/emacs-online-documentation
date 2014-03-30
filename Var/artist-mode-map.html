@@ -1,95 +1,94 @@
-<strong>artist-mode-map</strong> is a variable defined in `<code>artist.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `artist-minor-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (artist "Artist" keymap<br/>
-		   (pen-line menu-item "Pen" artist-select-op-pen-line :help "Draw using the Pen style" :button<br/>
-			     (:radio eq artist-curr-go 'pen-line))<br/>
-		   (s-line menu-item "Line" artist-select-op-straight-line :help "Draw using the Line style" :button<br/>
-			   (:radio eq artist-curr-go 's-line))<br/>
-		   (rectangle menu-item "Rectangle" artist-select-op-rectangle :help "Draw using the Rectangle style" :button<br/>
-			      (:radio eq artist-curr-go 'rectangle))<br/>
-		   (square menu-item "Square" artist-select-op-square :help "Draw using the Square style" :button<br/>
-			   (:radio eq artist-curr-go 'square))<br/>
-		   (spolyline menu-item "Poly-line" artist-select-op-straight-poly-line :help "Draw using the Poly-line style" :button<br/>
-			      (:radio eq artist-curr-go 'spolyline))<br/>
-		   (circle menu-item "Ellipse" artist-select-op-circle :help "Draw using the Ellipse style" :button<br/>
-			   (:radio eq artist-curr-go 'circle))<br/>
-		   (text-ovwrt menu-item "Text" artist-select-op-text-overwrite :help "Draw using the Text style" :button<br/>
-			       (:radio eq artist-curr-go 'text-ovwrt))<br/>
-		   (spray-get-size menu-item "Spray-can" artist-select-op-spray-set-size :help "Draw using the Spray-can style" :button<br/>
-				   (:radio eq artist-curr-go 'spray-get-size))<br/>
-		   (erase-rect menu-item "Erase" artist-select-op-erase-rectangle :help "Draw using the Erase style" :button<br/>
-			       (:radio eq artist-curr-go 'erase-rect))<br/>
-		   (vaporize-lines menu-item "Vaporize" artist-select-op-vaporize-lines :help "Draw using the Vaporize style" :button<br/>
-				   (:radio eq artist-curr-go 'vaporize-lines))<br/>
-		   (artist-separator menu-item "--")<br/>
-		   (set-fill menu-item "Character for Fill..." artist-select-fill-char :help "Choose the character to insert when filling in shapes")<br/>
-		   (set-line menu-item "Character for Line..." artist-select-line-char :help "Choose the character to insert when drawing lines")<br/>
-		   (set-erase menu-item "Character to Erase..." artist-select-erase-char :help "Choose a specific character to erase")<br/>
-		   (rubber-band menu-item "Rubber-banding" artist-toggle-rubber-banding :help "Toggle rubber-banding" :button<br/>
-				(:toggle . artist-rubber-banding))<br/>
-		   (trimming menu-item "Trim Line Endings" artist-toggle-trim-line-endings :help "Toggle trimming of line-endings" :button<br/>
-			     (:toggle . artist-trim-line-endings))<br/>
-		   (borders menu-item "Draw Shape Borders" artist-toggle-borderless-shapes :help "Toggle whether shapes are drawn with borders" :button<br/>
-			    (:toggle not artist-borderless-shapes))<br/>
-		   (spray-chars menu-item "Characters for Spray" artist-select-spray-chars :help "Choose characters for sprayed by the spray-can")))<br/>
- (3 keymap<br/>
-    (3 . artist-mode-off)<br/>
-    (1 keymap<br/>
-       (2 . artist-submit-bug-report)<br/>
-       (102 . artist-select-op-flood-fill)<br/>
-       (25 . artist-select-op-paste)<br/>
-       (27 keymap<br/>
-	   (119 . artist-select-op-copy-rectangle))<br/>
-       (11 . artist-select-op-cut-rectangle)<br/>
-       (86 . artist-select-op-vaporize-lines)<br/>
-       (118 . artist-select-op-vaporize-line)<br/>
-       (69 . artist-select-op-erase-rectangle)<br/>
-       (4 . artist-select-op-erase-char)<br/>
-       (122 . artist-select-op-spray-set-size)<br/>
-       (83 . artist-select-op-spray-can)<br/>
-       (84 . artist-select-op-text-overwrite)<br/>
-       (116 . artist-select-op-text-see-thru)<br/>
-       (99 . artist-select-op-circle)<br/>
-       (101 . artist-select-op-ellipse)<br/>
-       (80 . artist-select-op-straight-poly-line)<br/>
-       (112 . artist-select-op-poly-line)<br/>
-       (115 . artist-select-op-square)<br/>
-       (82 . artist-select-op-square)<br/>
-       (114 . artist-select-op-rectangle)<br/>
-       (76 . artist-select-op-straight-line)<br/>
-       (108 . artist-select-op-line)<br/>
-       (19 . artist-toggle-borderless-shapes)<br/>
-       (20 . artist-toggle-trim-line-endings)<br/>
-       (18 . artist-toggle-rubber-banding)<br/>
-       (15 . artist-select-operation)<br/>
-       (12 . artist-select-line-char)<br/>
-       (6 . artist-select-fill-char)<br/>
-       (5 . artist-select-erase-char)))<br/>
- (62 . artist-toggle-second-arrow)<br/>
- (60 . artist-toggle-first-arrow)<br/>
- (6 . artist-forward-char)<br/>
- (right . artist-forward-char)<br/>
- (2 . artist-backward-char)<br/>
- (left . artist-backward-char)<br/>
- (14 . artist-next-line)<br/>
- (down . artist-next-line)<br/>
- (16 . artist-previous-line)<br/>
- (up . artist-previous-line)<br/>
- (13 . artist-key-set-point)<br/>
- (C-mouse-5 . artist-select-next-op-in-list)<br/>
- (C-mouse-4 . artist-select-prev-op-in-list)<br/>
- (S-down-mouse-3 . artist-down-mouse-3)<br/>
- (down-mouse-3 . artist-down-mouse-3)<br/>
- (S-down-mouse-2 . artist-mouse-choose-operation)<br/>
- (down-mouse-2 . artist-mouse-choose-operation)<br/>
- (S-down-mouse-1 . artist-down-mouse-1)<br/>
- (down-mouse-1 . artist-down-mouse-1))<br/>
-<br/>
+<strong>artist-mode-map</strong> is a variable defined in `<code>artist.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `artist-minor-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (artist "Artist" keymap
+		   (pen-line menu-item "Pen" artist-select-op-pen-line :help "Draw using the Pen style" :button
+			     (:radio eq artist-curr-go 'pen-line))
+		   (s-line menu-item "Line" artist-select-op-straight-line :help "Draw using the Line style" :button
+			   (:radio eq artist-curr-go 's-line))
+		   (rectangle menu-item "Rectangle" artist-select-op-rectangle :help "Draw using the Rectangle style" :button
+			      (:radio eq artist-curr-go 'rectangle))
+		   (square menu-item "Square" artist-select-op-square :help "Draw using the Square style" :button
+			   (:radio eq artist-curr-go 'square))
+		   (spolyline menu-item "Poly-line" artist-select-op-straight-poly-line :help "Draw using the Poly-line style" :button
+			      (:radio eq artist-curr-go 'spolyline))
+		   (circle menu-item "Ellipse" artist-select-op-circle :help "Draw using the Ellipse style" :button
+			   (:radio eq artist-curr-go 'circle))
+		   (text-ovwrt menu-item "Text" artist-select-op-text-overwrite :help "Draw using the Text style" :button
+			       (:radio eq artist-curr-go 'text-ovwrt))
+		   (spray-get-size menu-item "Spray-can" artist-select-op-spray-set-size :help "Draw using the Spray-can style" :button
+				   (:radio eq artist-curr-go 'spray-get-size))
+		   (erase-rect menu-item "Erase" artist-select-op-erase-rectangle :help "Draw using the Erase style" :button
+			       (:radio eq artist-curr-go 'erase-rect))
+		   (vaporize-lines menu-item "Vaporize" artist-select-op-vaporize-lines :help "Draw using the Vaporize style" :button
+				   (:radio eq artist-curr-go 'vaporize-lines))
+		   (artist-separator menu-item "--")
+		   (set-fill menu-item "Character for Fill..." artist-select-fill-char :help "Choose the character to insert when filling in shapes")
+		   (set-line menu-item "Character for Line..." artist-select-line-char :help "Choose the character to insert when drawing lines")
+		   (set-erase menu-item "Character to Erase..." artist-select-erase-char :help "Choose a specific character to erase")
+		   (rubber-band menu-item "Rubber-banding" artist-toggle-rubber-banding :help "Toggle rubber-banding" :button
+				(:toggle . artist-rubber-banding))
+		   (trimming menu-item "Trim Line Endings" artist-toggle-trim-line-endings :help "Toggle trimming of line-endings" :button
+			     (:toggle . artist-trim-line-endings))
+		   (borders menu-item "Draw Shape Borders" artist-toggle-borderless-shapes :help "Toggle whether shapes are drawn with borders" :button
+			    (:toggle not artist-borderless-shapes))
+		   (spray-chars menu-item "Characters for Spray" artist-select-spray-chars :help "Choose characters for sprayed by the spray-can")))
+ (3 keymap
+    (3 . artist-mode-off)
+    (1 keymap
+       (2 . artist-submit-bug-report)
+       (102 . artist-select-op-flood-fill)
+       (25 . artist-select-op-paste)
+       (27 keymap
+	   (119 . artist-select-op-copy-rectangle))
+       (11 . artist-select-op-cut-rectangle)
+       (86 . artist-select-op-vaporize-lines)
+       (118 . artist-select-op-vaporize-line)
+       (69 . artist-select-op-erase-rectangle)
+       (4 . artist-select-op-erase-char)
+       (122 . artist-select-op-spray-set-size)
+       (83 . artist-select-op-spray-can)
+       (84 . artist-select-op-text-overwrite)
+       (116 . artist-select-op-text-see-thru)
+       (99 . artist-select-op-circle)
+       (101 . artist-select-op-ellipse)
+       (80 . artist-select-op-straight-poly-line)
+       (112 . artist-select-op-poly-line)
+       (115 . artist-select-op-square)
+       (82 . artist-select-op-square)
+       (114 . artist-select-op-rectangle)
+       (76 . artist-select-op-straight-line)
+       (108 . artist-select-op-line)
+       (19 . artist-toggle-borderless-shapes)
+       (20 . artist-toggle-trim-line-endings)
+       (18 . artist-toggle-rubber-banding)
+       (15 . artist-select-operation)
+       (12 . artist-select-line-char)
+       (6 . artist-select-fill-char)
+       (5 . artist-select-erase-char)))
+ (62 . artist-toggle-second-arrow)
+ (60 . artist-toggle-first-arrow)
+ (6 . artist-forward-char)
+ (right . artist-forward-char)
+ (2 . artist-backward-char)
+ (left . artist-backward-char)
+ (14 . artist-next-line)
+ (down . artist-next-line)
+ (16 . artist-previous-line)
+ (up . artist-previous-line)
+ (13 . artist-key-set-point)
+ (C-mouse-5 . artist-select-next-op-in-list)
+ (C-mouse-4 . artist-select-prev-op-in-list)
+ (S-down-mouse-3 . artist-down-mouse-3)
+ (down-mouse-3 . artist-down-mouse-3)
+ (S-down-mouse-2 . artist-mouse-choose-operation)
+ (down-mouse-2 . artist-mouse-choose-operation)
+ (S-down-mouse-1 . artist-down-mouse-1)
+ (down-mouse-1 . artist-down-mouse-1))
+</pre></br>

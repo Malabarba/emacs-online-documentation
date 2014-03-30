@@ -1,0 +1,21 @@
+<strong>add-face-text-property</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(add-face-text-property <u>START</u> <u>END</u> <u>FACE</u> &optional <u>APPEND</u> <u>OBJECT</u>)</br>
+</br>
+Add the face property to the text from <u>START</u> to <u>END</u>.</br>
+<u>FACE</u> specifies the face to add.  It should be a valid value of the</br>
+`face' property (typically a face name or a plist of face attributes</br>
+and values).</br>
+</br>
+If any text in the region already has a non-nil `face' property, those</br>
+face(s) are retained.  This is done by setting the `face' property to</br>
+a list of faces, with <u>FACE</u> as the first element (by default) and the</br>
+pre-existing faces as the remaining elements.</br>
+</br>
+If optional fourth argument <u>APPEND</u> is non-nil, append <u>FACE</u> to the end</br>
+of the face list instead.</br>
+</br>
+If optional fifth argument <u>OBJECT</u> is a buffer (or nil, which means the</br>
+current buffer), <u>START</u> and <u>END</u> are buffer positions (integers or</br>
+markers).  If <u>OBJECT</u> is a string, <u>START</u> and <u>END</u> are 0-based indices</br>
+into it.

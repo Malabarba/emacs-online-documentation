@@ -1,33 +1,118 @@
-<strong>todo-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>todo-mode.el</code>'.<br/>
-<br/>
-(todo-mode)<br/>
-<br/>
-Major mode for editing TODO lists.<br/>
-<br/>
-This mode runs the hook `todo-mode-hook', as the final step<br/>
-during initialization.<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-+		todo-forward-category<br/>
--		todo-backward-category<br/>
-E		todo-edit-multiline<br/>
-I		todo-insert-item-here<br/>
-P		todo-print<br/>
-S		todo-save-top-priorities<br/>
-d		todo-file-item<br/>
-e		todo-edit-item<br/>
-f		todo-file-item<br/>
-i		todo-insert-item<br/>
-j		todo-jump-to-category<br/>
-k		todo-delete-item<br/>
-l		todo-lower-item<br/>
-n		todo-forward-item<br/>
-p		todo-backward-item<br/>
-q		todo-quit<br/>
-r		todo-raise-item<br/>
-s		todo-save<br/>
-t		todo-top-priorities<br/>
-<remap>		Prefix Command<br/>
-<br/>
+<strong>todo-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+</br>
+(todo-mode)</br>
+</br>
+Parent mode: `special-mode'.</br>
+</br>
+Major mode for displaying, navigating and editing todo lists.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+0 .. 9		digit-argument</br>
+</br>
+#		todo-set-item-priority</br>
+*		todo-toggle-mark-item</br>
+-		negative-argument</br>
+A		Prefix Command</br>
+C		Prefix Command</br>
+F		Prefix Command</br>
+H		todo-toggle-item-highlighting</br>
+N		todo-toggle-prefix-numbers</br>
+P		Prefix Command</br>
+S		todo-search</br>
+V		todo-toggle-view-done-only</br>
+X		todo-clear-matches</br>
+b		todo-backward-category</br>
+d		todo-item-done</br>
+e		Prefix Command</br>
+f		todo-forward-category</br>
+h		todo-toggle-item-header</br>
+i		todo-insert-item</br>
+j		todo-jump-to-category</br>
+k		todo-delete-item</br>
+l		todo-lower-item-priority</br>
+m		todo-move-item</br>
+n		todo-next-item</br>
+p		todo-previous-item</br>
+q		todo-quit</br>
+r		todo-raise-item-priority</br>
+s		todo-save</br>
+t		todo-show</br>
+u		todo-item-undone</br>
+v		todo-toggle-view-done-items</br>
+&lt;remap>		Prefix Command</br>
+</br>
+A c		todo-choose-archive</br>
+A d		todo-archive-done-item</br>
+A f		todo-find-archive</br>
+</br>
+C *		todo-mark-category</br>
+C a		todo-add-category</br>
+C e		Prefix Command</br>
+C g		todo-merge-category</br>
+C k		todo-delete-category</br>
+C m		todo-move-category</br>
+C r		todo-rename-category</br>
+C t		Prefix Command</br>
+C u		todo-unmark-category</br>
+C v		todo-toggle-view-done-items</br>
+</br>
+F H		todo-toggle-item-highlighting</br>
+F N		todo-toggle-prefix-numbers</br>
+F V		todo-toggle-view-done-only</br>
+F a		todo-add-file</br>
+F c		todo-show-categories-table</br>
+F e		todo-edit-file</br>
+F f		todo-find-filtered-items-file</br>
+F h		todo-toggle-item-header</br>
+F k		todo-delete-file</br>
+F r		todo-rename-file</br>
+F t		Prefix Command</br>
+F x		Prefix Command</br>
+F y		Prefix Command</br>
+</br>
+P B		todo-print-buffer</br>
+P F		todo-print-buffer-to-file</br>
+</br>
+e c		todo-edit-done-item-comment</br>
+e d		Prefix Command</br>
+e e		todo-edit-item</br>
+e m		todo-edit-multiline-item</br>
+e t		todo-edit-item-time</br>
+e y		Prefix Command</br>
+</br>
+&lt;remap> &lt;newline>		newline-and-indent</br>
+</br>
+C e k		todo-edit-category-diary-nonmarking</br>
+C e y		todo-edit-category-diary-inclusion</br>
+</br>
+C t s		todo-set-top-priorities-in-category</br>
+</br>
+F x m		todo-filter-regexp-items-multifile</br>
+F x x		todo-filter-regexp-items</br>
+</br>
+F y m		todo-filter-diary-items-multifile</br>
+F y y		todo-filter-diary-items</br>
+</br>
+F t m		todo-filter-top-priorities-multifile</br>
+F t s		todo-set-top-priorities-in-file</br>
+F t t		todo-filter-top-priorities</br>
+</br>
+e y k		todo-edit-item-diary-nonmarking</br>
+e y y		todo-edit-item-diary-inclusion</br>
+</br>
+e d a		todo-edit-item-date-to-today</br>
+e d c		todo-edit-item-date-from-calendar</br>
+e d d		todo-edit-item-date-day</br>
+e d m		todo-edit-item-date-month</br>
+e d n		todo-edit-item-date-day-name</br>
+e d t		todo-edit-item-header</br>
+e d y		todo-edit-item-date-year</br>
+</br>
+</br>
+</br>
+In addition to any hooks its parent mode `special-mode' might have run,</br>
+this mode runs the hook `todo-mode-hook', as the final step</br>
+during initialization.

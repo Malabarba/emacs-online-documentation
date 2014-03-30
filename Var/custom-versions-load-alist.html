@@ -1,29 +1,33 @@
-<strong>custom-versions-load-alist</strong> is a variable defined in `<code>cus-load.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-For internal use by custom.<br/>
-<br/>
-Value:<br/>
-(("20.3.3" "dos-vars")<br/>
- ("21.2" mm-util)<br/>
- ("24.2" which-func)<br/>
- ("20.4" hilit-chg crisp sh-script compile)<br/>
- ("19.29" time-stamp)<br/>
- ("23.4" ede)<br/>
- ("20.8" sql)<br/>
- ("21.3" sql gnus-agent ange-ftp)<br/>
- ("22" ps-print ebnf2ps)<br/>
- ("22.3" message)<br/>
- ("20.1" time-stamp)<br/>
- ("20.3" xscheme etags browse-url dabbrev sendmail vcursor uce msb compile hexl which-func avoid find-func paren add-log debug ffap rmail cus-edit diary-lib vc)<br/>
- ("23.3" diary-lib rmail desktop rmailsum calendar)<br/>
- ("20" ebnf2ps ps-print)<br/>
- ("23.2" bytecomp comint rmailmm rmail diary-lib desktop lunar mm-encode elint doc-view gnus-sum calendar gnus-group help-fns dired ansi-color tramp-gvfs auth-source message gdb-mi)<br/>
- ("24.3" perl-mode cus-edit ediff-wind icalendar gnus-picon em-term rcirc erc-backend avoid org-id message ido proced "complete" sh-script calc bug-reference tramp ffap emacs-lock pcmpl-gnu minibuf-eldef nnmail verilog-mode apropos org-datetree compile sql debug gnus-sync wdired erc-match org-capture hexl executable pcmpl-rpm cal-html which-func calendar diff-mode flymake server vhdl-mode org org-latex erc-button reftex-vars smerge-mode allout gdb-mi org-agenda man gnus-msg tramp-smb)<br/>
- ("22.2" gnus-sum bibtex-style mail-source sql dired gdb-mi find-dired tls desktop css-mode vc-mtn vc-hg)<br/>
- ("21.1" strokes dabbrev ezimage sgml-mode cal-hebrew sendmail ange-ftp gnus-group gnus-start vc-cvs debug vc-rcs net-utils vc-sccs smtpmail vc server browse-url message paren wid-edit fortran rmailedit find-func ps-print hideshow sb-image gnus-sum cperl-mode latin1-disp gnus-art gnus-agent nnmail rmail add-log flyspell etags cus-edit)<br/>
- ("22.1" uudecode calendar comint dabbrev add-log tcl latin1-disp imap gnus-delay mml2015 ange-ftp gnus-srvr hi-lock view mail-source descr-text fortran allout ielm smime mail-extr rmail gnus-util shadowfile cal-dst gnus-score hl-line sh-script bookmark glasses cus-edit gnus-int locate diary-lib ispell vc-svn gnus-msg landmark diff-mode mm-view cal-tex gnus-fun vc-cvs find-func gnus-cite starttls flow-fill mm-uu gnus-start make-mode generic-x info deuglify keypad sendmail spam desktop mm-url sql autorevert pop3 gnus-spec ffap grep mml gnus time sgml-mode gnus-win mml-sec tex-mode iswitchb gnus-art compile imenu warnings dired gdb-mi server vc gnus-sum tls binhex gnus-group mm-decode message compare-w nnmail mm-util gnus-agent)<br/>
- ("23.1" f90 gnus-dired informat smiley gnus-msg fortran bibtex vc-cvs mml spam-report rmailmm woman server misearch vc-git gnus-util vc-mtn hideif info ffap allout smime filesets gnus-score gnus copyright dired-aux fortune browse-url nnmail icomplete compile vc-hg cus-edit checkdoc vc-arch view gnus-bookmark tex-mode rmail mm-uu gdb-mi face-remap sendmail net-utils nnmairix pcmpl-unix gnus-draft tls calendar time holidays pop3 gnus-art descr-text gnus-sum imap mm-decode gnus-group message)<br/>
- ("24.1" ob-exp em-smart ob-lisp vc-sccs mm-view gnus-msg cc-fonts server org-gnus org-src esh-ext shr em-rebind rmail esh-mode url-cache org-archive org-freemind pcmpl-unix vc-svn em-unix gnus-srvr vc-bzr org-docbook woman dirtrack smiley esh-io em-cmpl copyright em-ls ob-R tramp org-exp-blocks ob-lob js esh-var saveplace em-dirs image-mode em-script vc-git gnus-registry flyspell calendar doc-view org-faces em-pred mm-decode netrc ob-plantuml mml2015 gssapi org-attach mml electric vc-hg gnus log-edit package-x diary-lib gnus-group pop3 cus-edit gnus-art dired-x auth-source org-ctags org-habit "cl-indent" url-queue browse-url hl-line org-publish ob-ditaa em-hist compile esh-proc esh-arg battery org-capture org-clock gnus-int ange-ftp vc org-timer gnus-gravatar erc-backend ob-picolisp org-crypt em-term ido gnus-async ob-js gnus-util comint gnus-start allout feedmail "cc-guess" etags org-taskjuggler cus-theme verilog-mode appt esh-cmd emacs-lock org-inlinetask em-prompt org-wl em-banner glasses org-table esh-util org-html gnus-picon org-beamer org-mobile arc-mode vc-cvs em-glob man ibuffer org-list allout-widgets erc-join ob-scheme org-exp "cc-vars" ob-tangle gnus-html org-agenda ses calc smtpmail ob sendmail find-dired org-entities sql org-icalendar message em-alias org nnir package bibtex org-bibtex rcirc gnus-sum org-latex vc-rcs sieve-manage org-odt info rst f90 prolog))<br/>
-<br/>
+<strong>custom-versions-load-alist</strong> is a variable defined in `<code>cus-load.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+For internal use by custom.</br>
+This is an alist whose members have as car a version string, and as</br>
+elements the files that have variables or faces that contain that</br>
+version.  These files should be loaded before showing the customization</br>
+buffer that `customize-changed-options' generates.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("19.29" time-stamp)
+ ("20" ps-print ebnf2ps)
+ ("20.1" time-stamp)
+ ("20.3" paren avoid xscheme msb sendmail etags find-func dabbrev compile which-func hexl uce vc add-log ffap rmail vcursor browse-url diary-lib cus-edit debug)
+ ("20.3.3" dos-vars)
+ ("20.4" crisp compile hilit-chg sh-script)
+ ("20.8" sql)
+ ("21.1" paren sb-image strokes dabbrev debug net-utils latin1-disp sgml-mode wid-edit server nnmail gnus-start rmail find-func message ange-ftp hideshow ezimage vc-cvs rmailedit vc cal-hebrew browse-url vc-rcs etags flyspell cus-edit gnus-group fortran add-log sendmail smtpmail ps-print vc-sccs gnus-agent gnus-sum gnus-art cperl-mode)
+ ("21.3" gnus-agent sql ange-ftp)
+ ("22" ps-print ebnf2ps)
+ ("22.1" add-log generic-x bookmark gnus-util gnus-score allout dabbrev sgml-mode fortran sql uudecode ispell landmark gnus-int find-func hi-lock gnus-srvr cal-dst binhex gnus-win sh-script comint mail-extr shadowfile descr-text smime time latin1-disp vc flow-fill calendar hl-line tex-mode glasses info view nnmail ielm mml mm-util mml2015 locate cal-tex spam mm-url sendmail keypad mm-view imap warnings vc-svn diary-lib starttls ffap ange-ftp gnus tls gnus-cite vc-cvs gnus-group gnus-delay make-mode compare-w tcl pop3 mm-uu imenu gnus-agent gnus-art diff-mode rmail desktop compile gnus-sum mml-sec gnus-fun grep dired deuglify autorevert gnus-start gdb-mi message gnus-msg cus-edit server mail-source mm-decode gnus-spec)
+ ("22.2" vc-mtn tls mail-source find-dired vc-hg bibtex-style gnus-sum dired css-mode desktop sql gdb-mi)
+ ("22.3" message)
+ ("23.1" view nnmail checkdoc vc-git cus-edit compile net-utils smiley hideif vc-arch fortune f90 misearch mml descr-text info face-remap dired-aux gnus-draft bibtex gnus gnus-util smime ffap pop3 tls spam-report gnus-dired mm-decode copyright allout mm-uu gnus-sum vc-hg calendar holidays gdb-mi gnus-score informat fortran rmail rmailmm gnus-group server vc-mtn filesets message gnus-msg pcmpl-unix vc-cvs sendmail woman gnus-bookmark browse-url time imap tex-mode gnus-art icomplete nnmairix)
+ ("23.2" mm-encode rmail gnus-group gnus-sum help-fns diary-lib dired calendar tramp-gvfs elint auth-source bytecomp ansi-color doc-view lunar desktop comint message rmailmm gdb-mi)
+ ("23.3" diary-lib desktop rmailsum rmail calendar)
+ ("23.4" ede)
+ ("24.1" gnus-picon ob-exp org-inlinetask esh-arg em-hist ob-plantuml url-cache ange-ftp em-prompt mm-decode pcmpl-unix em-banner hl-line appt gnus-srvr ibuffer em-term cc-vars pop3 em-script em-cmpl gnus-async em-alias org-timer ob-js dired-x etags em-glob em-rebind em-dirs erc-join vc-bzr allout netrc vc elec-pair dirtrack mm-view esh-util em-smart em-pred org-capture cus-edit vc-git smtpmail org-mobile org-crypt vc-sccs smiley org-src gnus-msg shr gnus-art esh-proc gnus-start org-gnus org-entities emacs-lock man cc-fonts vc-hg gnus-html arc-mode gssapi image-mode esh-var rmail vc-cvs org-attach cc-guess auth-source woman esh-cmd calendar cus-theme gnus-group find-dired server ob-picolisp ido battery f90 copyright diary-lib url-queue saveplace vc-rcs cl-indent ob-lob ob-core bibtex gnus-int em-ls gnus-gravatar verilog-mode sieve-manage gnus-sum glasses package-x org-habit browse-url doc-view org-table package ox-odt flyspell info rst ob-ditaa mml esh-mode org-clock allout-widgets mml2015 nnir message tramp feedmail sendmail erc-backend esh-io sql ox-icalendar org-ctags rcirc ses vc-svn log-edit ob-lisp org-archive calc org gnus-util ob-R org-list em-unix org-bibtex esh-ext js prolog ob-tangle org-faces compile org-agenda gnus gnus-registry)
+ ("24.2" which-func)
+ ("24.3" em-term erc-match ido pcmpl-gnu executable ox sql cus-edit proced ffap sh-script icalendar debug server perl-mode erc-button org-id message gdb-mi diff-mode rcirc minibuf-eldef hexl pcmpl-rpm cal-html avoid verilog-mode emacs-lock tramp org-agenda ediff-wind vhdl-mode smerge-mode ox-odt gnus-picon allout bug-reference calc erc-backend which-func gnus-msg semantic/complete wdired man org reftex-vars calendar nnmail tramp-smb org-capture gnus-sync flymake apropos compile org-datetree)
+ ("24.4" gnus-sum compare-w f90 sql imenu saveplace cookie1 ob-ruby man ob-ocaml comint log-edit gnutls ede/linux smie nnimap ido gulp verilog-mode gdb-mi ansi-color package icomplete ruby-mode org-faces bibtex quickurl apropos gnus-start sieve-manage find-file shr info org-protocol gnus-art ob-ditaa tramp-cache m4-mode gnus-sync vhdl-mode autorevert unrmail mml-smime rmail type-break timeclock flyspell message vc-svn desktop cfengine strokes org-gnus tramp-adb org-attach calc info-xref erc org-src epa idlwave ob-core bookmark mml2015 flymake ange-ftp org-mobile ob-python sh-script pcmpl-x elec-pair js ox-latex ox-man term tramp remember recentf reftex-vars gnus doc-view org-clock ox-texinfo ox-beamer calendar eww mm-util ox dired tramp-smb org-archive octave ox-ascii ox-html rlogin hi-lock em-term org-agenda ox-odt pop3 org))
+</pre></br>

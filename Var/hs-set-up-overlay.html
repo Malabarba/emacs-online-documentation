@@ -1,20 +1,20 @@
-<strong>hs-set-up-overlay</strong> is a variable defined in `<code>hideshow.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Function called with one arg, OV, a newly initialized overlay.<br/>
-Hideshow puts a unique overlay on each range of text to be hidden<br/>
-in the buffer.  Here is a simple example of how to use this variable:<br/>
-<br/>
-  (defun display-code-line-counts (ov)<br/>
-    (when (eq 'code (overlay-get ov 'hs))<br/>
-      (overlay-put ov 'display<br/>
-                   (format "... / %d"<br/>
-                           (count-lines (overlay-start ov)<br/>
-                                        (overlay-end ov))))))<br/>
-<br/>
-  (setq hs-set-up-overlay 'display-code-line-counts)<br/>
-<br/>
-This example shows how to get information from the overlay as well<br/>
-as how to set its `display' property.  See `hs-make-overlay' and<br/>
+<strong>hs-set-up-overlay</strong> is a variable defined in `<code>hideshow.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Function called with one arg, OV, a newly initialized overlay.</br>
+Hideshow puts a unique overlay on each range of text to be hidden</br>
+in the buffer.  Here is a simple example of how to use this variable:</br>
+</br>
+  (defun display-code-line-counts (ov)</br>
+    (when (eq 'code (overlay-get ov 'hs))</br>
+      (overlay-put ov 'display</br>
+                   (format "... / %d"</br>
+                           (count-lines (overlay-start ov)</br>
+                                        (overlay-end ov))))))</br>
+</br>
+  (setq hs-set-up-overlay 'display-code-line-counts)</br>
+</br>
+This example shows how to get information from the overlay as well</br>
+as how to set its `display' property.  See `hs-make-overlay' and</br>
 info node `(elisp)Overlays'.

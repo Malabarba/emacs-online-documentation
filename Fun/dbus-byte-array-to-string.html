@@ -1,6 +1,8 @@
-<strong>dbus-byte-array-to-string</strong> is a compiled Lisp function in `<code>dbus.el</code>'.<br/>
-<br/>
-(dbus-byte-array-to-string BYTE-ARRAY)<br/>
-<br/>
-Transforms BYTE-ARRAY into UTF8 coded string.<br/>
-BYTE-ARRAY must be a list of structure (c1 c2 ...).
+<strong>dbus-byte-array-to-string</strong> is a compiled Lisp function in `<code>dbus.el</code>'.</br>
+</br>
+(dbus-byte-array-to-string <u>BYTE-ARRAY</u> &optional <u>MULTIBYTE</u>)</br>
+</br>
+Transforms <u>BYTE-ARRAY</u> into UTF8 coded string.</br>
+<u>BYTE-ARRAY</u> must be a list of structure (c1 c2 ...), or a byte</br>
+array as produced by `dbus-string-to-byte-array'.  The resulting</br>
+string is unibyte encoded, unless <u>MULTIBYTE</u> is non-nil.

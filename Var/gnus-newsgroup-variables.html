@@ -1,24 +1,24 @@
-<strong>gnus-newsgroup-variables</strong> is a variable defined in `<code>gnus-sum.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-A list of variables that have separate values in different newsgroups.<br/>
-A list of newsgroup (summary buffer) local variables, or cons of<br/>
-variables and their default expressions to be evalled (when the default<br/>
-values are not nil), that should be made global while the summary buffer<br/>
-is active.<br/>
-<br/>
-Note: The default expressions will be evaluated (using function `eval')<br/>
-before assignment to the local variable rather than just assigned to it.<br/>
-If the default expression is the symbol `global', that symbol will not<br/>
-be evaluated but the global value of the local variable will be used<br/>
-instead.<br/>
-<br/>
-These variables can be used to set variables in the group parameters<br/>
-while still allowing them to affect operations done in other buffers.<br/>
-For example:<br/>
-<br/>
-(setq gnus-newsgroup-variables<br/>
-     '(message-use-followup-to<br/>
-       (gnus-visible-headers .<br/>
-	 "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^To:")))<br/>
+<strong>gnus-newsgroup-variables</strong> is a variable defined in `<code>gnus-sum.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A list of variables that have separate values in different newsgroups.</br>
+A list of newsgroup (summary buffer) local variables, or cons of</br>
+variables and their default expressions to be evalled (when the default</br>
+values are not nil), that should be made global while the summary buffer</br>
+is active.</br>
+</br>
+Note: The default expressions will be evaluated (using function `eval')</br>
+before assignment to the local variable rather than just assigned to it.</br>
+If the default expression is the symbol `global', that symbol will not</br>
+be evaluated but the global value of the local variable will be used</br>
+instead.</br>
+</br>
+These variables can be used to set variables in the group parameters</br>
+while still allowing them to affect operations done in other buffers.</br>
+For example:</br>
+</br>
+(setq gnus-newsgroup-variables</br>
+     '(message-use-followup-to</br>
+       (gnus-visible-headers .</br>
+	 "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^To:")))</br>

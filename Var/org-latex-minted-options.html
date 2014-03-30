@@ -1,0 +1,22 @@
+<strong>org-latex-minted-options</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Association list of options for the latex minted package.</br>
+</br>
+These options are supplied within square brackets in</br>
+\begin{minted} environments.  Each element of the alist should</br>
+be a list containing two strings: the name of the option, and the</br>
+value.  For example,</br>
+</br>
+  (setq org-latex-minted-options</br>
+    '(("bgcolor" "bg") ("frame" "lines")))</br>
+</br>
+will result in src blocks being exported with</br>
+</br>
+\begin{minted}[bgcolor=bg,frame=lines]{<LANG>}</br>
+</br>
+as the start of the minted environment. Note that the same</br>
+options will be applied to blocks of all languages.</br>
+</br>
+You can customize this variable.

@@ -1,19 +1,20 @@
-<strong>mm-content-transfer-encoding-defaults</strong> is a variable defined in `<code>mm-encode.el</code>'.<br/>
-Its value is (("text/x-patch" 8bit)<br/>
- ("text/.*" qp-or-base64)<br/>
- ("message/rfc822" 8bit)<br/>
- ("application/emacs-lisp" qp-or-base64)<br/>
- ("application/x-emacs-lisp" qp-or-base64)<br/>
- ("application/x-patch" qp-or-base64)<br/>
- (".*" base64))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Alist of regexps that match MIME types and their encodings.<br/>
-If the encoding is `qp-or-base64', then either quoted-printable<br/>
-or base64 will be used, depending on what is more efficient.<br/>
-<br/>
-This list is only consulted when encoding MIME parts in the<br/>
-bodies -- not for the regular non-MIME-ish messages.<br/>
-<br/>
+<strong>mm-content-transfer-encoding-defaults</strong> is a variable defined in `<code>mm-encode.el</code>'.</br>
+Its value is <pre></br>
+(("text/x-patch" 8bit)
+ ("text/.*" qp-or-base64)
+ ("message/rfc822" 8bit)
+ ("application/emacs-lisp" qp-or-base64)
+ ("application/x-emacs-lisp" qp-or-base64)
+ ("application/x-patch" qp-or-base64)
+ (".*" base64))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of regexps that match MIME types and their encodings.</br>
+If the encoding is `qp-or-base64', then either quoted-printable</br>
+or base64 will be used, depending on what is more efficient.</br>
+</br>
+This list is only consulted when encoding MIME parts in the</br>
+bodies -- not for the regular non-MIME-ish messages.</br>
+</br>
 You can customize this variable.

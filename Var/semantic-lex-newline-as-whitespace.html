@@ -1,23 +1,24 @@
-<strong>semantic-lex-newline-as-whitespace</strong> is a variable defined in `<code>lex.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Detect and create newline tokens.<br/>
-Use this ONLY if newlines are not whitespace characters (such as when<br/>
-they are comment end characters) AND when you want whitespace tokens.<br/>
-<br/>
-Value: ((looking-at "\\s-*\\(\n\\|\\s>\\)")<br/>
- (if<br/>
-     (eq<br/>
-      (semantic-lex-token-class<br/>
-       (car semantic-lex-token-stream))<br/>
-      'whitespace)<br/>
-     (setcdr<br/>
-      (semantic-lex-token-bounds<br/>
-       (car semantic-lex-token-stream))<br/>
-      (match-end 0))<br/>
-   (semantic-lex-push-token<br/>
-    (semantic-lex-token 'whitespace<br/>
-			(match-beginning 0)<br/>
-			(match-end 0)))))<br/>
-<br/>
+<strong>semantic-lex-newline-as-whitespace</strong> is a variable defined in `<code>lex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Detect and create newline tokens.</br>
+Use this ONLY if newlines are not whitespace characters (such as when</br>
+they are comment end characters) AND when you want whitespace tokens.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((looking-at "\\s-*\\(\n\\|\\s>\\)")
+ (if
+     (eq
+      (semantic-lex-token-class
+       (car semantic-lex-token-stream))
+      'whitespace)
+     (setcdr
+      (semantic-lex-token-bounds
+       (car semantic-lex-token-stream))
+      (match-end 0))
+   (semantic-lex-push-token
+    (semantic-lex-token 'whitespace
+			(match-beginning 0)
+			(match-end 0)))))
+</pre></br>

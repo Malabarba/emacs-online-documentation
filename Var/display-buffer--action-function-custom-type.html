@@ -1,15 +1,17 @@
-<strong>display-buffer--action-function-custom-type</strong> is a variable defined in `<code>window.el</code>'.<br/>
-Its value is (choice :tag "Function"<br/>
-	(const :tag "--" ignore)<br/>
-	(const display-buffer-reuse-window)<br/>
-	(const display-buffer-pop-up-window)<br/>
-	(const display-buffer-same-window)<br/>
-	(const display-buffer-pop-up-frame)<br/>
-	(const display-buffer-use-some-window)<br/>
-	(function :tag "Other function"))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Custom type for `display-buffer' action functions.
+<strong>display-buffer--action-function-custom-type</strong> is a variable defined in `<code>window.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Custom type for `display-buffer' action functions.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(choice :tag "Function"
+	(const :tag "--" ignore)
+	(const display-buffer-reuse-window)
+	(const display-buffer-pop-up-window)
+	(const display-buffer-same-window)
+	(const display-buffer-pop-up-frame)
+	(const display-buffer-in-previous-window)
+	(const display-buffer-use-some-window)
+	(function :tag "Other function"))
+</pre></br>

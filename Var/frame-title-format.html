@@ -1,14 +1,13 @@
-<strong>frame-title-format</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is (multiple-frames "%b"<br/>
-		 ("" invocation-name "@" system-name))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Template for displaying the title bar of visible frames.<br/>
-(Assuming the window manager supports this feature.)<br/>
-<br/>
-This variable has the same structure as `mode-line-format', except that<br/>
-the %c and %l constructs are ignored.  It is used only on frames for<br/>
+<strong>frame-title-format</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre></br>
+(multiple-frames "%b"
+		 ("" invocation-name "@" system-name))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Template for displaying the title bar of visible frames.</br>
+(Assuming the window manager supports this feature.)</br>
+</br>
+This variable has the same structure as `mode-line-format', except that</br>
+the %c and %l constructs are ignored.  It is used only on frames for</br>
 which no explicit name has been set (see `modify-frame-parameters').

@@ -1,13 +1,12 @@
-<strong>def-gdb-auto-update-handler</strong> is a Lisp macro in `<code>gdb-mi.el</code>'.<br/>
-<br/>
-(def-gdb-auto-update-handler HANDLER-NAME TRIGGER-NAME CUSTOM-DEFUN &optional NOPRESERVE)<br/>
-<br/>
-Define a handler HANDLER-NAME for TRIGGER-NAME with CUSTOM-DEFUN.<br/>
-<br/>
-Handlers are normally called from the buffers they put output in.<br/>
-<br/>
-Delete ((current-buffer) . TRIGGER-NAME) from<br/>
-`gdb-pending-triggers', erase current buffer and evaluate<br/>
-CUSTOM-DEFUN. Then `gdb-update-buffer-name' is called.<br/>
-<br/>
-If NOPRESERVE is non-nil, window point is not restored after CUSTOM-DEFUN.
+<strong>def-gdb-auto-update-handler</strong> is a Lisp macro in `<code>gdb-mi.el</code>'.</br>
+</br>
+(def-gdb-auto-update-handler <u>HANDLER-NAME</u> <u>CUSTOM-DEFUN</u> &optional <u>NOPRESERVE</u>)</br>
+</br>
+Define a handler <u>HANDLER-NAME</u> calling <u>CUSTOM-DEFUN</u>.</br>
+</br>
+Handlers are normally called from the buffers they put output in.</br>
+</br>
+Erase current buffer and evaluate <u>CUSTOM-DEFUN</u>.</br>
+Then call `gdb-update-buffer-name'.</br>
+</br>
+If <u>NOPRESERVE</u> is non-nil, window point is not restored after <u>CUSTOM-DEFUN</u>.

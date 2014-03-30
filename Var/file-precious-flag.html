@@ -1,23 +1,23 @@
-<strong>file-precious-flag</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Non-nil means protect against I/O errors while saving files.<br/>
-Some modes set this non-nil in particular buffers.<br/>
-<br/>
-This feature works by writing the new contents into a temporary file<br/>
-and then renaming the temporary file to replace the original.<br/>
-In this way, any I/O error in writing leaves the original untouched,<br/>
-and there is never any instant where the file is nonexistent.<br/>
-<br/>
-Note that this feature forces backups to be made by copying.<br/>
-Yet, at the same time, saving a precious file<br/>
-breaks any hard links between it and other files.<br/>
-<br/>
-This feature is advisory: for example, if the directory in which the<br/>
-file is being saved is not writable, Emacs may ignore a non-nil value<br/>
-of `file-precious-flag' and write directly into the file.<br/>
-<br/>
-See also: `break-hardlink-on-save'.<br/>
-<br/>
+<strong>file-precious-flag</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Non-nil means protect against I/O errors while saving files.</br>
+Some modes set this non-nil in particular buffers.</br>
+</br>
+This feature works by writing the new contents into a temporary file</br>
+and then renaming the temporary file to replace the original.</br>
+In this way, any I/O error in writing leaves the original untouched,</br>
+and there is never any instant where the file is nonexistent.</br>
+</br>
+Note that this feature forces backups to be made by copying.</br>
+Yet, at the same time, saving a precious file</br>
+breaks any hard links between it and other files.</br>
+</br>
+This feature is advisory: for example, if the directory in which the</br>
+file is being saved is not writable, Emacs may ignore a non-nil value</br>
+of `file-precious-flag' and write directly into the file.</br>
+</br>
+See also: `break-hardlink-on-save'.</br>
+</br>
 You can customize this variable.

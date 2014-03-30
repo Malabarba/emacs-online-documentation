@@ -1,24 +1,22 @@
-<strong>auto-coding-functions</strong> is a variable defined in `<code>mule.el</code>'.<br/>
-Its value is<br/>
-(sgml-xml-auto-coding-function sgml-html-meta-auto-coding-function)<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A list of functions which attempt to determine a coding system.<br/>
-<br/>
-Each function in this list should be written to operate on the<br/>
-current buffer, but should not modify it in any way.  The buffer<br/>
-will contain undecoded text of parts of the file.  Each function<br/>
-should take one argument, SIZE, which says how many characters<br/>
-(starting from point) it should look at.<br/>
-<br/>
-If one of these functions succeeds in determining a coding<br/>
-system, it should return that coding system.  Otherwise, it<br/>
-should return nil.<br/>
-<br/>
-If a file has a `coding:' tag, that takes precedence over these<br/>
-functions, so they won't be called at all.<br/>
-<br/>
+<strong>auto-coding-functions</strong> is a variable defined in `<code>mule.el</code>'.</br>
+Its value is <pre></br>
+(sgml-xml-auto-coding-function sgml-html-meta-auto-coding-function)
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A list of functions which attempt to determine a coding system.</br>
+</br>
+Each function in this list should be written to operate on the</br>
+current buffer, but should not modify it in any way.  The buffer</br>
+will contain undecoded text of parts of the file.  Each function</br>
+should take one argument, SIZE, which says how many characters</br>
+(starting from point) it should look at.</br>
+</br>
+If one of these functions succeeds in determining a coding</br>
+system, it should return that coding system.  Otherwise, it</br>
+should return nil.</br>
+</br>
+If a file has a `coding:' tag, that takes precedence over these</br>
+functions, so they won't be called at all.</br>
+</br>
 You can customize this variable.

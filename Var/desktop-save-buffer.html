@@ -1,19 +1,16 @@
-<strong>desktop-save-buffer</strong> is a variable defined in `<code>desktop.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-When non-nil, save buffer status in desktop file.<br/>
-This variable becomes buffer local when set.<br/>
-<br/>
-If the value is a function, it is called by `desktop-save' with argument<br/>
-DESKTOP-DIRNAME to obtain auxiliary information to save in the desktop<br/>
-file along with the state of the buffer for which it was called.<br/>
-<br/>
-When file names are returned, they should be formatted using the call<br/>
-"(desktop-file-name FILE-NAME DESKTOP-DIRNAME)".<br/>
-<br/>
-Later, when `desktop-read' evaluates the desktop file, auxiliary information<br/>
-is passed as the argument DESKTOP-BUFFER-MISC to functions in<br/>
+<strong>desktop-save-buffer</strong> is a variable defined in `<code>desktop.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+When non-nil, save buffer status in desktop file.</br>
+</br>
+If the value is a function, it is called by `desktop-save' with argument</br>
+DESKTOP-DIRNAME to obtain auxiliary information to save in the desktop</br>
+file along with the state of the buffer for which it was called.</br>
+</br>
+When file names are returned, they should be formatted using the call</br>
+"(desktop-file-name FILE-NAME DESKTOP-DIRNAME)".</br>
+</br>
+Later, when `desktop-read' evaluates the desktop file, auxiliary information</br>
+is passed as the argument DESKTOP-BUFFER-MISC to functions in</br>
 `desktop-buffer-mode-handlers'.

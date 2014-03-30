@@ -1,50 +1,50 @@
-<strong>read-key-sequence</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(read-key-sequence PROMPT &optional CONTINUE-ECHO DONT-DOWNCASE-LAST CAN-RETURN-SWITCH-FRAME CMD-LOOP)<br/>
-<br/>
-Read a sequence of keystrokes and return as a string or vector.<br/>
-The sequence is sufficient to specify a non-prefix command in the<br/>
-current local and global maps.<br/>
-<br/>
-First arg PROMPT is a prompt string.  If nil, do not prompt specially.<br/>
-Second (optional) arg CONTINUE-ECHO, if non-nil, means this key echos<br/>
-as a continuation of the previous key.<br/>
-<br/>
-The third (optional) arg DONT-DOWNCASE-LAST, if non-nil, means do not<br/>
-convert the last event to lower case.  (Normally any upper case event<br/>
-is converted to lower case if the original event is undefined and the lower<br/>
-case equivalent is defined.)  A non-nil value is appropriate for reading<br/>
-a key sequence to be defined.<br/>
-<br/>
-A C-g typed while in this function is treated like any other character,<br/>
-and `quit-flag' is not set.<br/>
-<br/>
-If the key sequence starts with a mouse click, then the sequence is read<br/>
-using the keymaps of the buffer of the window clicked in, not the buffer<br/>
-of the selected window as normal.<br/>
-<br/>
-`read-key-sequence' drops unbound button-down events, since you normally<br/>
-only care about the click or drag events which follow them.  If a drag<br/>
-or multi-click event is unbound, but the corresponding click event would<br/>
-be bound, `read-key-sequence' turns the event into a click event at the<br/>
-drag's starting position.  This means that you don't have to distinguish<br/>
-between click and drag, double, or triple events unless you want to.<br/>
-<br/>
-`read-key-sequence' prefixes mouse events on mode lines, the vertical<br/>
-lines separating windows, and scroll bars with imaginary keys<br/>
-`mode-line', `vertical-line', and `vertical-scroll-bar'.<br/>
-<br/>
-Optional fourth argument CAN-RETURN-SWITCH-FRAME non-nil means that this<br/>
-function will process a switch-frame event if the user switches frames<br/>
-before typing anything.  If the user switches frames in the middle of a<br/>
-key sequence, or at the start of the sequence but CAN-RETURN-SWITCH-FRAME<br/>
-is nil, then the event will be put off until after the current key sequence.<br/>
-<br/>
-`read-key-sequence' checks `function-key-map' for function key<br/>
-sequences, where they wouldn't conflict with ordinary bindings.  See<br/>
-`function-key-map' for more details.<br/>
-<br/>
-The optional fifth argument CMD-LOOP, if non-nil, means<br/>
-that this key sequence is being read by something that will<br/>
-read commands one after another.  It should be nil if the caller<br/>
+<strong>read-key-sequence</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(read-key-sequence <u>PROMPT</u> &optional <u>CONTINUE-ECHO</u> <u>DONT-DOWNCASE-LAST</u> <u>CAN-RETURN-SWITCH-FRAME</u> <u>CMD-LOOP</u>)</br>
+</br>
+Read a sequence of keystrokes and return as a string or vector.</br>
+The sequence is sufficient to specify a non-prefix command in the</br>
+current local and global maps.</br>
+</br>
+First arg <u>PROMPT</u> is a prompt string.  If nil, do not prompt specially.</br>
+Second (optional) arg <u>CONTINUE-ECHO</u>, if non-nil, means this key echos</br>
+as a continuation of the previous key.</br>
+</br>
+The third (optional) arg <u>DONT-DOWNCASE-LAST</u>, if non-nil, means do not</br>
+convert the last event to lower case.  (Normally any upper case event</br>
+is converted to lower case if the original event is undefined and the lower</br>
+case equivalent is defined.)  A non-nil value is appropriate for reading</br>
+a key sequence to be defined.</br>
+</br>
+A C-g typed while in this function is treated like any other character,</br>
+and `quit-flag' is not set.</br>
+</br>
+If the key sequence starts with a mouse click, then the sequence is read</br>
+using the keymaps of the buffer of the window clicked in, not the buffer</br>
+of the selected window as normal.</br>
+</br>
+`read-key-sequence' drops unbound button-down events, since you normally</br>
+only care about the click or drag events which follow them.  If a drag</br>
+or multi-click event is unbound, but the corresponding click event would</br>
+be bound, `read-key-sequence' turns the event into a click event at the</br>
+drag's starting position.  This means that you don't have to distinguish</br>
+between click and drag, double, or triple events unless you want to.</br>
+</br>
+`read-key-sequence' prefixes mouse events on mode lines, the vertical</br>
+lines separating windows, and scroll bars with imaginary keys</br>
+`mode-line', `vertical-line', and `vertical-scroll-bar'.</br>
+</br>
+Optional fourth argument <u>CAN-RETURN-SWITCH-FRAME</u> non-nil means that this</br>
+function will process a switch-frame event if the user switches frames</br>
+before typing anything.  If the user switches frames in the middle of a</br>
+key sequence, or at the start of the sequence but <u>CAN-RETURN-SWITCH-FRAME</u></br>
+is nil, then the event will be put off until after the current key sequence.</br>
+</br>
+`read-key-sequence' checks `function-key-map' for function key</br>
+sequences, where they wouldn't conflict with ordinary bindings.  See</br>
+`function-key-map' for more details.</br>
+</br>
+The optional fifth argument <u>CMD-LOOP</u>, if non-nil, means</br>
+that this key sequence is being read by something that will</br>
+read commands one after another.  It should be nil if the caller</br>
 will read just one key sequence.

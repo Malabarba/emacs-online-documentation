@@ -1,72 +1,72 @@
-<strong>Info-mode-map</strong> is a variable defined in `<code>info.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap containing Info commands.<br/>
-<br/>
-Value: (keymap<br/>
- #^[nil nil keymap<br/>
-	#^^[3 0 nil nil nil nil nil nil nil nil nil Info-next-reference nil nil nil Info-follow-nearest-node nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>
-	      (keymap<br/>
-	       (110 . clone-buffer)<br/>
-	       (9 . Info-prev-reference))<br/>
-	      nil nil nil nil Info-scroll-up nil nil nil nil nil nil nil nil nil nil nil Info-index-next negative-argument beginning-of-buffer nil undefined Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item nil nil Info-top-node nil Info-final-node Info-summary nil nil nil nil nil nil nil nil nil Info-virtual-index nil nil Info-history nil nil nil nil nil nil Info-search-case-sensitively Info-toc nil nil nil nil nil nil Info-backward-node nil Info-forward-node Info-up nil nil nil beginning-of-buffer Info-copy-current-node-name Info-directory end-of-buffer Info-follow-reference Info-goto-node Info-help Info-index nil nil Info-history-back Info-menu Info-next nil Info-prev Info-exit Info-history-forward Info-search Info-top-node Info-up nil Info-copy-current-node-name nil nil nil nil nil nil nil Info-scroll-down]<br/>
-	#^^[1 0<br/>
-	      #^^[2 0<br/>
-		    #^^[3 0 nil nil nil nil nil nil nil nil nil Info-next-reference nil nil nil Info-follow-nearest-node nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>
-			  (keymap<br/>
-			   (110 . clone-buffer)<br/>
-			   (9 . Info-prev-reference))<br/>
-			  nil nil nil nil Info-scroll-up nil nil nil nil nil nil nil nil nil nil nil Info-index-next negative-argument beginning-of-buffer nil undefined Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item nil nil Info-top-node nil Info-final-node Info-summary nil nil nil nil nil nil nil nil nil Info-virtual-index nil nil Info-history nil nil nil nil nil nil Info-search-case-sensitively Info-toc nil nil nil nil nil nil Info-backward-node nil Info-forward-node Info-up nil nil nil beginning-of-buffer Info-copy-current-node-name Info-directory end-of-buffer Info-follow-reference Info-goto-node Info-help Info-index nil nil Info-history-back Info-menu Info-next nil Info-prev Info-exit Info-history-forward Info-search Info-top-node Info-up nil Info-copy-current-node-name nil nil nil nil nil nil nil Info-scroll-down]<br/>
-		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
- (menu-bar keymap<br/>
-	   (Info menu-item "Info"<br/>
-		 (keymap "Info"<br/>
-			 (Up menu-item "Up" Info-up :enable<br/>
-			     (Info-check-pointer "up")<br/>
-			     :help "Go up in the Info tree")<br/>
-			 (Next menu-item "Next" Info-next :enable<br/>
-			       (Info-check-pointer "next")<br/>
-			       :help "Go to the next node")<br/>
-			 (Previous menu-item "Previous" Info-prev :enable<br/>
-				   (Info-check-pointer "prev[ious]*")<br/>
-				   :help "Go to the previous node")<br/>
-			 (Backward menu-item "Backward" Info-backward-node :help "Go backward one node, considering all as a sequence")<br/>
-			 (Forward menu-item "Forward" Info-forward-node :help "Go forward one node, considering all as a sequence")<br/>
-			 (Beginning menu-item "Beginning" beginning-of-buffer :help "Go to beginning of this node")<br/>
-			 (Top menu-item "Top" Info-top-node :help "Go to top node of file")<br/>
-			 (Final\ Node menu-item "Final Node" Info-final-node :help "Go to final node in this file")<br/>
-			 (Menu\ Item menu-item "Menu Item"<br/>
-				     (keymap "Menu Item"<br/>
-					     (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))<br/>
-			 (Reference menu-item "Reference"<br/>
-				    (keymap "Reference"<br/>
-					    (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))<br/>
-			 (Search\.\.\. menu-item "Search..." Info-search :help "Search for regular expression in this Info file")<br/>
-			 (Search\ Next menu-item "Search Next" Info-search-next :help "Search for another occurrence of regular expression")<br/>
-			 (Go\ to\ Node\.\.\. menu-item "Go to Node..." Info-goto-node :help "Go to a named node")<br/>
-			 (Back\ in\ history menu-item "Back in history" Info-history-back :enable Info-history :help "Go back in history to the last node you were at")<br/>
-			 (Forward\ in\ history menu-item "Forward in history" Info-history-forward :enable Info-history-forward :help "Go forward in history")<br/>
-			 (History menu-item "History" Info-history :enable Info-history-list :help "Go to menu of visited nodes")<br/>
-			 (Table\ of\ Contents menu-item "Table of Contents" Info-toc :help "Go to table of contents")<br/>
-			 (Index menu-item "Index"<br/>
-				(keymap "Index"<br/>
-					(Lookup\ a\ String\.\.\. menu-item "Lookup a String..." Info-index :help "Look for a string in the index items")<br/>
-					(Next\ Matching\ Item menu-item "Next Matching Item" Info-index-next :enable Info-index-alternatives :help "Look for another occurrence of previous item")<br/>
-					(Lookup\ a\ string\ and\ display\ index\ of\ results\.\.\. menu-item "Lookup a string and display index of results..." Info-virtual-index :help "Look for a string in the index items and display node with results")<br/>
-					(Lookup\ a\ string\ in\ all\ indices\.\.\. menu-item "Lookup a string in all indices..." info-apropos :help "Look for a string in the indices of all manuals")))<br/>
-			 (Copy\ Node\ Name menu-item "Copy Node Name" Info-copy-current-node-name :help "Copy the name of the current node into the kill ring")<br/>
-			 (Clone\ Info\ buffer menu-item "Clone Info buffer" clone-buffer :help "Create a twin copy of the current Info buffer.")<br/>
-			 (Exit menu-item "Exit" Info-exit :help "Stop reading Info"))))<br/>
- (XF86Forward . Info-history-forward)<br/>
- (XF86Back . Info-history-back)<br/>
- (follow-link . mouse-face)<br/>
- (mouse-2 . Info-mouse-follow-nearest-node)<br/>
- (backtab . Info-prev-reference)<br/>
- (remap keymap<br/>
-	(self-insert-command . undefined)))<br/>
-<br/>
+<strong>Info-mode-map</strong> is a variable defined in `<code>info.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap containing Info commands.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ #^[nil nil keymap
+	#^^[3 0 nil nil nil nil nil nil nil nil nil Info-next-reference nil nil nil Info-follow-nearest-node nil nil nil nil nil nil nil nil nil nil nil nil nil
+	      (keymap
+	       (110 . clone-buffer)
+	       (9 . Info-prev-reference))
+	      nil nil nil nil Info-scroll-up nil nil nil nil nil nil nil nil nil nil nil Info-index-next negative-argument beginning-of-buffer nil undefined Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item nil nil Info-top-node nil Info-final-node Info-summary nil nil nil nil nil nil nil nil describe-mode Info-virtual-index nil nil Info-history nil nil nil nil nil nil Info-search-case-sensitively Info-toc nil nil nil nil nil nil Info-backward-node nil Info-forward-node Info-up nil nil nil beginning-of-buffer Info-copy-current-node-name Info-directory end-of-buffer Info-follow-reference Info-goto-node Info-help Info-index nil nil Info-history-back Info-menu Info-next nil Info-prev Info-exit Info-history-forward Info-search Info-top-node Info-up nil Info-copy-current-node-name nil nil nil nil nil nil nil Info-scroll-down]
+	#^^[1 0
+	      #^^[2 0
+		    #^^[3 0 nil nil nil nil nil nil nil nil nil Info-next-reference nil nil nil Info-follow-nearest-node nil nil nil nil nil nil nil nil nil nil nil nil nil
+			  (keymap
+			   (110 . clone-buffer)
+			   (9 . Info-prev-reference))
+			  nil nil nil nil Info-scroll-up nil nil nil nil nil nil nil nil nil nil nil Info-index-next negative-argument beginning-of-buffer nil undefined Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item Info-nth-menu-item nil nil Info-top-node nil Info-final-node Info-summary nil nil nil nil nil nil nil nil describe-mode Info-virtual-index nil nil Info-history nil nil nil nil nil nil Info-search-case-sensitively Info-toc nil nil nil nil nil nil Info-backward-node nil Info-forward-node Info-up nil nil nil beginning-of-buffer Info-copy-current-node-name Info-directory end-of-buffer Info-follow-reference Info-goto-node Info-help Info-index nil nil Info-history-back Info-menu Info-next nil Info-prev Info-exit Info-history-forward Info-search Info-top-node Info-up nil Info-copy-current-node-name nil nil nil nil nil nil nil Info-scroll-down]
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+ (menu-bar keymap
+	   (Info menu-item "Info"
+		 (keymap "Info"
+			 (Up menu-item "Up" Info-up :enable
+			     (Info-check-pointer "up")
+			     :help "Go up in the Info tree")
+			 (Next menu-item "Next" Info-next :enable
+			       (Info-check-pointer "next")
+			       :help "Go to the next node")
+			 (Previous menu-item "Previous" Info-prev :enable
+				   (Info-check-pointer "prev[ious]*")
+				   :help "Go to the previous node")
+			 (Backward menu-item "Backward" Info-backward-node :help "Go backward one node, considering all as a sequence")
+			 (Forward menu-item "Forward" Info-forward-node :help "Go forward one node, considering all as a sequence")
+			 (Beginning menu-item "Beginning" beginning-of-buffer :help "Go to beginning of this node")
+			 (Top menu-item "Top" Info-top-node :help "Go to top node of file")
+			 (Final\ Node menu-item "Final Node" Info-final-node :help "Go to final node in this file")
+			 (Menu\ Item menu-item "Menu Item"
+				     (keymap "Menu Item"
+					     (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))
+			 (Reference menu-item "Reference"
+				    (keymap "Reference"
+					    (You\ should\ never\ see\ this menu-item "You should never see this" report-emacs-bug)))
+			 (Search\.\.\. menu-item "Search..." Info-search :help "Search for regular expression in this Info file")
+			 (Search\ Next menu-item "Search Next" Info-search-next :help "Search for another occurrence of regular expression")
+			 (Go\ to\ Node\.\.\. menu-item "Go to Node..." Info-goto-node :help "Go to a named node")
+			 (Back\ in\ history menu-item "Back in history" Info-history-back :enable Info-history :help "Go back in history to the last node you were at")
+			 (Forward\ in\ history menu-item "Forward in history" Info-history-forward :enable Info-history-forward :help "Go forward in history")
+			 (History menu-item "History" Info-history :enable Info-history-list :help "Go to menu of visited nodes")
+			 (Table\ of\ Contents menu-item "Table of Contents" Info-toc :help "Go to table of contents")
+			 (Index menu-item "Index"
+				(keymap "Index"
+					(Lookup\ a\ String\.\.\. menu-item "Lookup a String..." Info-index :help "Look for a string in the index items")
+					(Next\ Matching\ Item menu-item "Next Matching Item" Info-index-next :enable Info-index-alternatives :help "Look for another occurrence of previous item")
+					(Lookup\ a\ string\ and\ display\ index\ of\ results\.\.\. menu-item "Lookup a string and display index of results..." Info-virtual-index :help "Look for a string in the index items and display node with results")
+					(Lookup\ a\ string\ in\ all\ indices\.\.\. menu-item "Lookup a string in all indices..." info-apropos :help "Look for a string in the indices of all manuals")))
+			 (Copy\ Node\ Name menu-item "Copy Node Name" Info-copy-current-node-name :help "Copy the name of the current node into the kill ring")
+			 (Clone\ Info\ buffer menu-item "Clone Info buffer" clone-buffer :help "Create a twin copy of the current Info buffer.")
+			 (Exit menu-item "Exit" Info-exit :help "Stop reading Info"))))
+ (XF86Forward . Info-history-forward)
+ (XF86Back . Info-history-back)
+ (follow-link . mouse-face)
+ (mouse-2 . Info-mouse-follow-nearest-node)
+ (backtab . Info-prev-reference)
+ (33554464 . Info-scroll-down)
+ (remap keymap
+	(self-insert-command . undefined)))
+</pre></br>

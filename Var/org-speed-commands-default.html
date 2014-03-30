@@ -1,64 +1,66 @@
-<strong>org-speed-commands-default</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-The default speed commands.<br/>
-<br/>
-Value: (("Outline Navigation")<br/>
- ("n" org-speed-move-safe 'outline-next-visible-heading)<br/>
- ("p" org-speed-move-safe 'outline-previous-visible-heading)<br/>
- ("f" org-speed-move-safe 'org-forward-heading-same-level)<br/>
- ("b" org-speed-move-safe 'org-backward-heading-same-level)<br/>
- ("u" org-speed-move-safe 'outline-up-heading)<br/>
- ("j" . org-goto)<br/>
- ("g" org-refile t)<br/>
- ("Outline Visibility")<br/>
- ("c" . org-cycle)<br/>
- ("C" . org-shifttab)<br/>
- (" " . org-display-outline-path)<br/>
- ("=" . org-columns)<br/>
- ("Outline Structure Editing")<br/>
- ("U" . org-shiftmetaup)<br/>
- ("D" . org-shiftmetadown)<br/>
- ("r" . org-metaright)<br/>
- ("l" . org-metaleft)<br/>
- ("R" . org-shiftmetaright)<br/>
- ("L" . org-shiftmetaleft)<br/>
- ("i" progn<br/>
-  (forward-char 1)<br/>
-  (call-interactively 'org-insert-heading-respect-content))<br/>
- ("^" . org-sort)<br/>
- ("w" . org-refile)<br/>
- ("a" . org-archive-subtree-default-with-confirmation)<br/>
- ("." . org-mark-subtree)<br/>
- ("#" . org-toggle-comment)<br/>
- ("Clock Commands")<br/>
- ("I" . org-clock-in)<br/>
- ("O" . org-clock-out)<br/>
- ("Meta Data Editing")<br/>
- ("t" . org-todo)<br/>
- ("," org-priority)<br/>
- ("0" org-priority 32)<br/>
- ("1" org-priority 65)<br/>
- ("2" org-priority 66)<br/>
- ("3" org-priority 67)<br/>
- (":" . org-set-tags-command)<br/>
- ("e" . org-set-effort)<br/>
- ("E" . org-inc-effort)<br/>
- ("W" lambda<br/>
-  (m)<br/>
-  (interactive "sMinutes before warning: ")<br/>
-  (org-entry-put<br/>
-   (point)<br/>
-   "APPT_WARNTIME" m))<br/>
- ("Agenda Views etc")<br/>
- ("v" . org-agenda)<br/>
- ("/" . org-sparse-tree)<br/>
- ("Misc")<br/>
- ("o" . org-open-at-point)<br/>
- ("?" . org-speed-command-help)<br/>
- ("<" org-agenda-set-restriction-lock 'subtree)<br/>
- (">" org-agenda-remove-restriction-lock))<br/>
-<br/>
+<strong>org-speed-commands-default</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+The default speed commands.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("Outline Navigation")
+ ("n" org-speed-move-safe 'outline-next-visible-heading)
+ ("p" org-speed-move-safe 'outline-previous-visible-heading)
+ ("f" org-speed-move-safe 'org-forward-heading-same-level)
+ ("b" org-speed-move-safe 'org-backward-heading-same-level)
+ ("F" . org-next-block)
+ ("B" . org-previous-block)
+ ("u" org-speed-move-safe 'outline-up-heading)
+ ("j" . org-goto)
+ ("g" org-refile t)
+ ("Outline Visibility")
+ ("c" . org-cycle)
+ ("C" . org-shifttab)
+ (" " . org-display-outline-path)
+ ("s" . org-narrow-to-subtree)
+ ("=" . org-columns)
+ ("Outline Structure Editing")
+ ("U" . org-shiftmetaup)
+ ("D" . org-shiftmetadown)
+ ("r" . org-metaright)
+ ("l" . org-metaleft)
+ ("R" . org-shiftmetaright)
+ ("L" . org-shiftmetaleft)
+ ("i" progn
+  (forward-char 1)
+  (call-interactively 'org-insert-heading-respect-content))
+ ("^" . org-sort)
+ ("w" . org-refile)
+ ("a" . org-archive-subtree-default-with-confirmation)
+ ("@" . org-mark-subtree)
+ ("#" . org-toggle-comment)
+ ("Clock Commands")
+ ("I" . org-clock-in)
+ ("O" . org-clock-out)
+ ("Meta Data Editing")
+ ("t" . org-todo)
+ ("," org-priority)
+ ("0" org-priority 32)
+ ("1" org-priority 65)
+ ("2" org-priority 66)
+ ("3" org-priority 67)
+ (":" . org-set-tags-command)
+ ("e" . org-set-effort)
+ ("E" . org-inc-effort)
+ ("W" lambda
+  (m)
+  (interactive "sMinutes before warning: ")
+  (org-entry-put
+   (point)
+   "APPT_WARNTIME" m))
+ ("Agenda Views etc")
+ ("v" . org-agenda)
+ ("/" . org-sparse-tree)
+ ("Misc")
+ ("o" . org-open-at-point)
+ ("?" . org-speed-command-help)
+ ("<" org-agenda-set-restriction-lock 'subtree)
+ (">" org-agenda-remove-restriction-lock))
+</pre></br>

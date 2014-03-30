@@ -1,37 +1,36 @@
-<strong>ansi-color-map</strong> is a variable defined in `<code>ansi-color.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A brand new color map suitable for `ansi-color-get-face'.<br/>
-<br/>
-The value of this variable is usually constructed by<br/>
-`ansi-color-make-color-map'.  The values in the array are such that the<br/>
-numbers included in an SGR control sequences point to the correct<br/>
-foreground or background colors.<br/>
-<br/>
-Example: The sequence [34m specifies a blue foreground.  Therefore:<br/>
-     (aref ansi-color-map 34)<br/>
-          => (foreground-color . "blue")<br/>
-<br/>
-Value: [default bold default italic underline success warning error nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>
-  (foreground-color . "black")<br/>
-  (foreground-color . "red")<br/>
-  (foreground-color . "green")<br/>
-  (foreground-color . "yellow")<br/>
-  (foreground-color . "blue")<br/>
-  (foreground-color . "magenta")<br/>
-  (foreground-color . "cyan")<br/>
-  (foreground-color . "white")<br/>
-  nil nil<br/>
-  (background-color . "black")<br/>
-  (background-color . "red")<br/>
-  (background-color . "green")<br/>
-  (background-color . "yellow")<br/>
-  (background-color . "blue")<br/>
-  (background-color . "magenta")<br/>
-  (background-color . "cyan")<br/>
-  (background-color . "white")<br/>
-  nil nil]<br/>
-<br/>
+<strong>ansi-color-map</strong> is a variable defined in `<code>ansi-color.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A brand new color map suitable for `ansi-color-get-face'.</br>
+</br>
+The value of this variable is usually constructed by</br>
+`ansi-color-make-color-map'.  The values in the array are such that the</br>
+numbers included in an SGR control sequences point to the correct</br>
+foreground or background colors.</br>
+</br>
+Example: The sequence \033[34m specifies a blue foreground.  Therefore:</br>
+     (aref ansi-color-map 34)</br>
+          => (foreground-color . "blue")</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+[default bold default italic underline success warning error nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil
+  (foreground-color . "black")
+  (foreground-color . "red3")
+  (foreground-color . "green3")
+  (foreground-color . "yellow3")
+  (foreground-color . "blue2")
+  (foreground-color . "magenta3")
+  (foreground-color . "cyan3")
+  (foreground-color . "gray90")
+  nil nil
+  (background-color . "black")
+  (background-color . "red3")
+  (background-color . "green3")
+  (background-color . "yellow3")
+  (background-color . "blue2")
+  (background-color . "magenta3")
+  (background-color . "cyan3")
+  (background-color . "gray90")
+  nil nil]
+</pre></br>

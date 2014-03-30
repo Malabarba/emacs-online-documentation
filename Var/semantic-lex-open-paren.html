@@ -1,12 +1,13 @@
-<strong>semantic-lex-open-paren</strong> is a variable defined in `<code>lex.el</code>'.<br/>
-Its value is ((looking-at "\\s(")<br/>
- (setq semantic-lex-current-depth<br/>
-       (1+ semantic-lex-current-depth))<br/>
- (semantic-lex-push-token<br/>
-  (semantic-lex-token 'open-paren<br/>
-		      (match-beginning 0)<br/>
-		      (match-end 0))))<br/>
-<br/>
-<br/>
-Documentation:<br/>
+<strong>semantic-lex-open-paren</strong> is a variable defined in `<code>lex.el</code>'.</br>
+Its value is <pre></br>
+((looking-at "\\s(")
+ (setq semantic-lex-current-depth
+       (1+ semantic-lex-current-depth))
+ (semantic-lex-push-token
+  (semantic-lex-token 'open-paren
+		      (match-beginning 0)
+		      (match-end 0))))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
 Detect and create an open parenthesis token.

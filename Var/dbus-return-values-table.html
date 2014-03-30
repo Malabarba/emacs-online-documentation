@@ -1,11 +1,17 @@
-<strong>dbus-return-values-table</strong> is a variable defined in `<code>dbus.el</code>'.<br/>
-Its value is #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data<br/>
-	      ())<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Hash table for temporary storing arguments of reply messages.<br/>
-A key in this hash table is a list (:serial BUS SERIAL), like in<br/>
-`dbus-registered-objects-table'.  BUS is either a Lisp symbol,<br/>
-`:system' or `:session', or a string denoting the bus address.<br/>
-SERIAL is the serial number of the reply message.
+<strong>dbus-return-values-table</strong> is a variable defined in `<code>dbus.el</code>'.</br>
+Its value is <pre></br>
+#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data
+	      ())
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Hash table for temporary storing arguments of reply messages.</br>
+A key in this hash table is a list (:serial BUS SERIAL), like in</br>
+`dbus-registered-objects-table'.  BUS is either a Lisp symbol,</br>
+`:system' or `:session', or a string denoting the bus address.</br>
+SERIAL is the serial number of the reply message.</br>
+</br>
+The value of an entry is a cons (STATE . RESULT).  STATE can be</br>
+either `:pending' (we are still waiting for the result),</br>
+`:complete' (the result is available) or `:error' (the reply</br>
+message was an error message).

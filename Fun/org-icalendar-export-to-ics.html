@@ -1,0 +1,27 @@
+<strong>org-icalendar-export-to-ics</strong> is an interactive autoloaded Lisp function in `<code>ox-icalendar.el</code>'.</br>
+</br>
+</br>
+(org-icalendar-export-to-ics &optional <u>ASYNC</u> <u>SUBTREEP</u> <u>VISIBLE-ONLY</u> <u>BODY-ONLY</u>)</br>
+</br>
+Export current buffer to an iCalendar file.</br>
+</br>
+If narrowing is active in the current buffer, only export its</br>
+narrowed part.</br>
+</br>
+If a region is active, export that region.</br>
+</br>
+A non-nil optional argument <u>ASYNC</u> means the process should happen</br>
+asynchronously.  The resulting file should be accessible through</br>
+the `org-export-stack' interface.</br>
+</br>
+When optional argument <u>SUBTREEP</u> is non-nil, export the sub-tree</br>
+at point, extracting information from the headline properties</br>
+first.</br>
+</br>
+When optional argument <u>VISIBLE-ONLY</u> is non-nil, don't export</br>
+contents of hidden elements.</br>
+</br>
+When optional argument <u>BODY-ONLY</u> is non-nil, only write code</br>
+between "BEGIN:VCALENDAR" and "END:VCALENDAR".</br>
+</br>
+Return ICS file name.

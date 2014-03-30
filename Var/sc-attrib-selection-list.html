@@ -1,23 +1,21 @@
-<strong>sc-attrib-selection-list</strong> is a variable defined in `<code>supercite.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-An alist for selecting preferred attribution based on mail headers.<br/>
-Each element of this list has the following form:<br/>
-<br/>
-   (INFOKEY ((REGEXP . ATTRIBUTION)<br/>
-             (REGEXP . ATTRIBUTION)<br/>
-             (...)))<br/>
-<br/>
-Where INFOKEY is a key for `sc-mail-field', REGEXP is a regular<br/>
-expression to match against the INFOKEY's value.  ATTRIBUTION can be a<br/>
-string or a list.  If it's a string, then it is the attribution that is<br/>
-selected by `sc-select-attribution'.  If it is a list, it is `eval'd<br/>
-and the return value must be a string, which is used as the selected<br/>
-attribution.  Note that the variable `sc-preferred-attribution-list'<br/>
-must contain an element of the string "sc-consult" for this variable<br/>
-to be consulted during attribution selection.<br/>
-<br/>
+<strong>sc-attrib-selection-list</strong> is a variable defined in `<code>supercite.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+An alist for selecting preferred attribution based on mail headers.</br>
+Each element of this list has the following form:</br>
+</br>
+   (INFOKEY ((REGEXP . ATTRIBUTION)</br>
+             (REGEXP . ATTRIBUTION)</br>
+             (...)))</br>
+</br>
+Where INFOKEY is a key for `sc-mail-field', REGEXP is a regular</br>
+expression to match against the INFOKEY's value.  ATTRIBUTION can be a</br>
+string or a list.  If it's a string, then it is the attribution that is</br>
+selected by `sc-select-attribution'.  If it is a list, it is `eval'd</br>
+and the return value must be a string, which is used as the selected</br>
+attribution.  Note that the variable `sc-preferred-attribution-list'</br>
+must contain an element of the string "sc-consult" for this variable</br>
+to be consulted during attribution selection.</br>
+</br>
 You can customize this variable.

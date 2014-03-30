@@ -1,5 +1,27 @@
-<strong>eieio-instance-tracker</strong> is a Lisp function.<br/>
-<br/>
-(eieio-instance-tracker &rest STUFF)<br/>
-<br/>
-You cannot create a new object of type eieio-instance-tracker
+eieio-instance-tracker is an  object constructor function in `eieio-base.el'.</br>
+Creates an object of class eieio-instance-tracker.</br>
+You cannot create a new object of type eieio-instance-tracker</br>
+</br>
+Class description:</br>
+eieio-instance-tracker is an abstract class in `eieio-base.el'.</br>
+ Children `semanticdb-project-database', `srecode-mode-table', `ede-cpp-root-project'.</br>
+</br>
+This special class enables instance tracking.</br>
+Inheritors from this class must overload `tracking-symbol' which is</br>
+a variable symbol used to store a list of all instances.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+</br>
+Class Allocated Slots:</br>
+</br>
+Slot: tracking-symbol    type = symbol   value = unbound</br>
+</br>
+ The symbol used to maintain a list of our instances.</br>
+The instance list is treated as a variable, with new instances added to it.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`delete-instance' :PRIMARY (this)</br>
+Remove THIS from the master list of this class.</br>
+</br>

@@ -1,30 +1,30 @@
-<strong>texinfo-multi-file-update</strong> is a compiled Lisp function in `<code>texnfo-upd.el</code>'.<br/>
-<br/>
-(texinfo-multi-file-update FILES &optional UPDATE-EVERYTHING)<br/>
-<br/>
-Update first node pointers in each file in FILES.<br/>
-Return a list of the node names.<br/>
-<br/>
-The first file in the list is an outer file; the remaining are<br/>
-files included in the outer file with `@include' commands.<br/>
-<br/>
-If optional arg UPDATE-EVERYTHING non-nil, update every menu and<br/>
-pointer in each of the included files.<br/>
-<br/>
-Also update the `Top' level node pointers of the outer file.<br/>
-<br/>
-Requirements:<br/>
-<br/>
-  * the first file in the FILES list must be the outer file,<br/>
-  * each of the included files must contain exactly one highest<br/>
-    hierarchical level node,<br/>
-  * this node must be the first node in the included file,<br/>
-  * each highest hierarchical level node must be of the same type.<br/>
-<br/>
-Thus, normally, each included file contains one, and only one, chapter.<br/>
-<br/>
-However, when an included file does not have any node lines in<br/>
-it, this command does not try to create a menu entry for it.<br/>
-Consequently, you can include any file, such as a version or an<br/>
-update file without node lines, not just files that are<br/>
+<strong>texinfo-multi-file-update</strong> is a compiled Lisp function in `<code>texnfo-upd.el</code>'.</br>
+</br>
+(texinfo-multi-file-update <u>FILES</u> &optional <u>UPDATE-EVERYTHING</u>)</br>
+</br>
+Update first node pointers in each file in <u>FILES</u>.</br>
+Return a list of the node names.</br>
+</br>
+The first file in the list is an outer file; the remaining are</br>
+files included in the outer file with `@include' commands.</br>
+</br>
+If optional arg <u>UPDATE-EVERYTHING</u> non-nil, update every menu and</br>
+pointer in each of the included files.</br>
+</br>
+Also update the `Top' level node pointers of the outer file.</br>
+</br>
+Requirements:</br>
+</br>
+  * the first file in the <u>FILES</u> list must be the outer file,</br>
+  * each of the included files must contain exactly one highest</br>
+    hierarchical level node,</br>
+  * this node must be the first node in the included file,</br>
+  * each highest hierarchical level node must be of the same type.</br>
+</br>
+Thus, normally, each included file contains one, and only one, chapter.</br>
+</br>
+However, when an included file does not have any node lines in</br>
+it, this command does not try to create a menu entry for it.</br>
+Consequently, you can include any file, such as a version or an</br>
+update file without node lines, not just files that are</br>
 chapters.

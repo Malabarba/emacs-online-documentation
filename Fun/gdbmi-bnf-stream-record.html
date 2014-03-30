@@ -1,0 +1,16 @@
+<strong>gdbmi-bnf-stream-record</strong> is a compiled Lisp function in `<code>gdb-mi.el</code>'.</br>
+</br>
+(gdbmi-bnf-stream-record)</br>
+</br>
+Implement the following GDB/MI output grammar rule:</br>
+  stream-record ==></br>
+       console-stream-output | target-stream-output | log-stream-output</br>
+</br>
+  console-stream-output ==></br>
+       '~' c-string</br>
+</br>
+  target-stream-output ==></br>
+       '@' c-string</br>
+</br>
+  log-stream-output ==></br>
+       '&' c-string

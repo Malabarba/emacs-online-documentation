@@ -1,80 +1,81 @@
-<strong>calculator-initial-operators</strong> is a variable defined in `<code>calculator.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-A list of initial operators.<br/>
-This is a list in the same format as `calculator-operators'.  Whenever<br/>
-`calculator' starts, it looks at the value of this variable, and if it<br/>
-is not empty, its contents is prepended to `calculator-operators' and<br/>
-the appropriate key bindings are made.<br/>
-<br/>
-This variable is then reset to nil.  Don't use this if you want to add<br/>
-user-defined operators, use `calculator-user-operators' instead.<br/>
-<br/>
-Value: (("=" = identity 1 -1)<br/>
- (nobind "+" + + 2 4)<br/>
- (nobind "-" - - 2 4)<br/>
- (nobind "+" + + -1 9)<br/>
- (nobind "-" - - -1 9)<br/>
- ("(" \( identity -1 -1)<br/>
- (")" \) identity 1 10)<br/>
- ("|" or<br/>
-  (logior TX TY)<br/>
-  2 2)<br/>
- ("#" xor<br/>
-  (logxor TX TY)<br/>
-  2 2)<br/>
- ("&" and<br/>
-  (logand TX TY)<br/>
-  2 3)<br/>
- ("*" * * 2 5)<br/>
- ("/" / / 2 5)<br/>
- ("\\" div<br/>
-  (/ TX TY)<br/>
-  2 5)<br/>
- ("%" rem<br/>
-  (% TX TY)<br/>
-  2 5)<br/>
- ("L" log log 2 6)<br/>
- ("S" sin<br/>
-  (sin DX)<br/>
-  x 6)<br/>
- ("C" cos<br/>
-  (cos DX)<br/>
-  x 6)<br/>
- ("T" tan<br/>
-  (tan DX)<br/>
-  x 6)<br/>
- ("IS" asin<br/>
-  (D<br/>
-   (asin X))<br/>
-  x 6)<br/>
- ("IC" acos<br/>
-  (D<br/>
-   (acos X))<br/>
-  x 6)<br/>
- ("IT" atan<br/>
-  (D<br/>
-   (atan X))<br/>
-  x 6)<br/>
- ("Q" sqrt sqrt x 7)<br/>
- ("^" ^ calculator-expt 2 7)<br/>
- ("!" ! calculator-fact x 7)<br/>
- (";" 1/<br/>
-  (/ 1 X)<br/>
-  1 7)<br/>
- ("_" - - 1 8)<br/>
- ("~" ~<br/>
-  (lognot TX)<br/>
-  x 8)<br/>
- (">" repR calculator-repR 1 8)<br/>
- ("<" repL calculator-repL 1 8)<br/>
- ("v" avg<br/>
-  (/<br/>
-   (apply '+ L)<br/>
-   (length L))<br/>
-  0 8)<br/>
- ("l" tot<br/>
-  (apply '+ L)<br/>
-  0 8))<br/>
-<br/>
+<strong>calculator-initial-operators</strong> is a variable defined in `<code>calculator.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A list of initial operators.</br>
+This is a list in the same format as `calculator-operators'.  Whenever</br>
+`calculator' starts, it looks at the value of this variable, and if it</br>
+is not empty, its contents is prepended to `calculator-operators' and</br>
+the appropriate key bindings are made.</br>
+</br>
+This variable is then reset to nil.  Don't use this if you want to add</br>
+user-defined operators, use `calculator-user-operators' instead.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("=" = identity 1 -1)
+ (nobind "+" + + 2 4)
+ (nobind "-" - - 2 4)
+ (nobind "+" + + -1 9)
+ (nobind "-" - - -1 9)
+ ("(" \( identity -1 -1)
+ (")" \) identity 1 10)
+ ("|" or
+  (logior TX TY)
+  2 2)
+ ("#" xor
+  (logxor TX TY)
+  2 2)
+ ("&" and
+  (logand TX TY)
+  2 3)
+ ("*" * * 2 5)
+ ("/" / / 2 5)
+ ("\\" div
+  (/ TX TY)
+  2 5)
+ ("%" rem
+  (% TX TY)
+  2 5)
+ ("L" log log 2 6)
+ ("S" sin
+  (sin DX)
+  x 6)
+ ("C" cos
+  (cos DX)
+  x 6)
+ ("T" tan
+  (tan DX)
+  x 6)
+ ("IS" asin
+  (D
+   (asin X))
+  x 6)
+ ("IC" acos
+  (D
+   (acos X))
+  x 6)
+ ("IT" atan
+  (D
+   (atan X))
+  x 6)
+ ("Q" sqrt sqrt x 7)
+ ("^" ^ calculator-expt 2 7)
+ ("!" ! calculator-fact x 7)
+ (";" 1/
+  (/ 1 X)
+  1 7)
+ ("_" - - 1 8)
+ ("~" ~
+  (lognot TX)
+  x 8)
+ (">" repR calculator-repR 1 8)
+ ("<" repL calculator-repL 1 8)
+ ("v" avg
+  (/
+   (apply '+ L)
+   (length L))
+  0 8)
+ ("l" tot
+  (apply '+ L)
+  0 8))
+</pre></br>

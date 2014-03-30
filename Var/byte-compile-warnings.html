@@ -1,32 +1,32 @@
-<strong>byte-compile-warnings</strong> is a variable defined in `<code>bytecomp.el</code>'.<br/>
-Its value is t<br/>
-<br/>
-  This variable is safe as a file local variable if its value<br/>
-  satisfies the predicate which is a byte-compiled expression.<br/>
-<br/>
-Documentation:<br/>
-List of warnings that the byte-compiler should issue (t for all).<br/>
-<br/>
-Elements of the list may be:<br/>
-<br/>
-  free-vars   references to variables not in the current lexical scope.<br/>
-  unresolved  calls to unknown functions.<br/>
-  callargs    function calls with args that don't match the definition.<br/>
-  redefine    function name redefined from a macro to ordinary function or vice<br/>
-              versa, or redefined to take a different number of arguments.<br/>
-  obsolete    obsolete variables and functions.<br/>
-  noruntime   functions that may not be defined at runtime (typically<br/>
-              defined only under `eval-when-compile').<br/>
-  cl-functions    calls to runtime functions from the CL package (as<br/>
-		  distinguished from macros and aliases).<br/>
-  interactive-only<br/>
-	      commands that normally shouldn't be called from Lisp code.<br/>
-  make-local  calls to make-variable-buffer-local that may be incorrect.<br/>
-  mapcar      mapcar called for effect.<br/>
-  constants   let-binding of, or assignment to, constants/nonvariables.<br/>
-  suspicious  constructs that usually don't do what the coder wanted.<br/>
-<br/>
-If the list begins with `not', then the remaining elements specify warnings to<br/>
-suppress.  For example, (not mapcar) will suppress warnings about mapcar.<br/>
-<br/>
+<strong>byte-compile-warnings</strong> is a variable defined in `<code>bytecomp.el</code>'.</br>
+Its value is <pre>t</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate which is a byte-compiled expression.</br>
+</ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of warnings that the byte-compiler should issue (t for all).</br>
+</br>
+Elements of the list may be:</br>
+</br>
+  free-vars   references to variables not in the current lexical scope.</br>
+  unresolved  calls to unknown functions.</br>
+  callargs    function calls with args that don't match the definition.</br>
+  redefine    function name redefined from a macro to ordinary function or vice</br>
+              versa, or redefined to take a different number of arguments.</br>
+  obsolete    obsolete variables and functions.</br>
+  noruntime   functions that may not be defined at runtime (typically</br>
+              defined only under `eval-when-compile').</br>
+  cl-functions    calls to runtime functions (as distinguished from macros and</br>
+                  aliases) from the old CL package (not the newer cl-lib).</br>
+  interactive-only</br>
+	      commands that normally shouldn't be called from Lisp code.</br>
+  lexical     global/dynamic variables lacking a prefix.</br>
+  make-local  calls to make-variable-buffer-local that may be incorrect.</br>
+  mapcar      mapcar called for effect.</br>
+  constants   let-binding of, or assignment to, constants/nonvariables.</br>
+  suspicious  constructs that usually don't do what the coder wanted.</br>
+</br>
+If the list begins with `not', then the remaining elements specify warnings to</br>
+suppress.  For example, (not mapcar) will suppress warnings about mapcar.</br>
+</br>
 You can customize this variable.

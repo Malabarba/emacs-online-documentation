@@ -1,214 +1,215 @@
-<strong>c-style-alist</strong> is a variable defined in `<code>cc-styles.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Styles of indentation.<br/>
-Elements of this alist are of the form:<br/>
-<br/>
-  (STYLE-STRING [BASE-STYLE] (VARIABLE . VALUE) [(VARIABLE . VALUE) ...])<br/>
-<br/>
-where STYLE-STRING is a short descriptive string used to select a<br/>
-style, VARIABLE is any Emacs variable, and VALUE is the intended value<br/>
-for that variable when using the selected style.<br/>
-<br/>
-Optional BASE-STYLE if present, is a string and must follow<br/>
-STYLE-STRING.  BASE-STYLE names a style that this style inherits from.<br/>
-By default, all styles inherit from the "user" style, which is<br/>
-computed at run time.  Style loops generate errors.<br/>
-<br/>
-Two variables are treated specially.  When VARIABLE is<br/>
-`c-offsets-alist', the VALUE is a list containing elements of the<br/>
-form:<br/>
-<br/>
-  (SYNTACTIC-SYMBOL . OFFSET)<br/>
-<br/>
-as described in `c-offsets-alist'.  These are passed directly to<br/>
-`c-set-offset' so there is no need to set every syntactic symbol in<br/>
-your style, only those that are different from the default.<br/>
-<br/>
-When VARIABLE is `c-special-indent-hook', its VALUE is added to<br/>
-`c-special-indent-hook' using `add-hook'.  If VALUE is a list, each<br/>
-element of the list is added with `add-hook'.<br/>
-<br/>
-Do not change this variable directly.  Use the function `c-add-style'<br/>
-to add new styles or modify existing styles (it is not a good idea to<br/>
-modify existing styles -- you should create a new style that inherits<br/>
-the existing style).<br/>
-<br/>
-Value: (("gnu"<br/>
-  (c-basic-offset . 2)<br/>
-  (c-comment-only-line-offset 0 . 0)<br/>
-  (c-hanging-braces-alist<br/>
-   (substatement-open before after)<br/>
-   (arglist-cont-nonempty))<br/>
-  (c-offsets-alist<br/>
-   (statement-block-intro . +)<br/>
-   (knr-argdecl-intro . 5)<br/>
-   (substatement-open . +)<br/>
-   (substatement-label . 0)<br/>
-   (label . 0)<br/>
-   (statement-case-open . +)<br/>
-   (statement-cont . +)<br/>
-   (arglist-intro . c-lineup-arglist-intro-after-paren)<br/>
-   (arglist-close . c-lineup-arglist)<br/>
-   (inline-open . 0)<br/>
-   (brace-list-open . +)<br/>
-   (topmost-intro-cont first c-lineup-topmost-intro-cont c-lineup-gnu-DEFUN-intro-cont))<br/>
-  (c-special-indent-hook . c-gnu-impose-minimum)<br/>
-  (c-block-comment-prefix . ""))<br/>
- ("k&r"<br/>
-  (c-basic-offset . 5)<br/>
-  (c-comment-only-line-offset . 0)<br/>
-  (c-offsets-alist<br/>
-   (statement-block-intro . +)<br/>
-   (knr-argdecl-intro . 0)<br/>
-   (substatement-open . 0)<br/>
-   (substatement-label . 0)<br/>
-   (label . 0)<br/>
-   (statement-cont . +)))<br/>
- ("bsd"<br/>
-  (c-basic-offset . 8)<br/>
-  (c-comment-only-line-offset . 0)<br/>
-  (c-offsets-alist<br/>
-   (statement-block-intro . +)<br/>
-   (knr-argdecl-intro . +)<br/>
-   (substatement-open . 0)<br/>
-   (substatement-label . 0)<br/>
-   (label . 0)<br/>
-   (statement-cont . +)<br/>
-   (inline-open . 0)<br/>
-   (inexpr-class . 0)))<br/>
- ("stroustrup"<br/>
-  (c-basic-offset . 4)<br/>
-  (c-comment-only-line-offset . 0)<br/>
-  (c-offsets-alist<br/>
-   (statement-block-intro . +)<br/>
-   (substatement-open . 0)<br/>
-   (substatement-label . 0)<br/>
-   (label . 0)<br/>
-   (statement-cont . +)))<br/>
- ("whitesmith"<br/>
-  (c-basic-offset . 4)<br/>
-  (c-comment-only-line-offset . 0)<br/>
-  (c-offsets-alist<br/>
-   (defun-open . +)<br/>
-   (defun-close . c-lineup-whitesmith-in-block)<br/>
-   (defun-block-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)<br/>
-   (class-open . +)<br/>
-   (class-close . +)<br/>
-   (inline-open . +)<br/>
-   (inline-close . c-lineup-whitesmith-in-block)<br/>
-   (knr-argdecl-intro . +)<br/>
-   (block-open . 0)<br/>
-   (block-close . c-lineup-whitesmith-in-block)<br/>
-   (brace-list-open . +)<br/>
-   (brace-list-close . c-lineup-whitesmith-in-block)<br/>
-   (brace-list-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)<br/>
-   (brace-list-entry add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)<br/>
-   (brace-entry-open add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)<br/>
-   (statement add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)<br/>
-   (statement-block-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)<br/>
-   (substatement-open . +)<br/>
-   (substatement-label . +)<br/>
-   (label . 0)<br/>
-   (arglist-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)<br/>
-   (arglist-cont add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)<br/>
-   (arglist-cont-nonempty add c-lineup-whitesmith-in-block c-indent-multi-line-block)<br/>
-   (arglist-close . c-lineup-whitesmith-in-block)<br/>
-   (inclass . c-lineup-whitesmith-in-block)<br/>
-   (extern-lang-open . +)<br/>
-   (namespace-open . +)<br/>
-   (module-open . +)<br/>
-   (composition-open . +)<br/>
-   (extern-lang-close . +)<br/>
-   (namespace-close . +)<br/>
-   (module-close . +)<br/>
-   (composition-close . +)<br/>
-   (inextern-lang . c-lineup-whitesmith-in-block)<br/>
-   (innamespace . c-lineup-whitesmith-in-block)<br/>
-   (inmodule . c-lineup-whitesmith-in-block)<br/>
-   (incomposition . c-lineup-whitesmith-in-block)<br/>
-   (inexpr-class . 0)))<br/>
- ("ellemtel"<br/>
-  (c-basic-offset . 3)<br/>
-  (c-comment-only-line-offset . 0)<br/>
-  (c-hanging-braces-alist<br/>
-   (substatement-open before after)<br/>
-   (arglist-cont-nonempty))<br/>
-  (c-offsets-alist<br/>
-   (topmost-intro . 0)<br/>
-   (substatement . +)<br/>
-   (substatement-open . 0)<br/>
-   (case-label . +)<br/>
-   (access-label . -)<br/>
-   (inclass . +)<br/>
-   (inline-open . 0)))<br/>
- ("linux"<br/>
-  (c-basic-offset . 8)<br/>
-  (c-comment-only-line-offset . 0)<br/>
-  (c-hanging-braces-alist<br/>
-   (brace-list-open)<br/>
-   (brace-entry-open)<br/>
-   (substatement-open after)<br/>
-   (block-close . c-snug-do-while)<br/>
-   (arglist-cont-nonempty))<br/>
-  (c-cleanup-list brace-else-brace)<br/>
-  (c-offsets-alist<br/>
-   (statement-block-intro . +)<br/>
-   (knr-argdecl-intro . 0)<br/>
-   (substatement-open . 0)<br/>
-   (substatement-label . 0)<br/>
-   (label . 0)<br/>
-   (statement-cont . +)))<br/>
- ("python"<br/>
-  (indent-tabs-mode . t)<br/>
-  (fill-column . 78)<br/>
-  (c-basic-offset . 8)<br/>
-  (c-offsets-alist<br/>
-   (substatement-open . 0)<br/>
-   (inextern-lang . 0)<br/>
-   (arglist-intro . +)<br/>
-   (knr-argdecl-intro . +))<br/>
-  (c-hanging-braces-alist<br/>
-   (brace-list-open)<br/>
-   (brace-list-intro)<br/>
-   (brace-list-close)<br/>
-   (brace-entry-open)<br/>
-   (substatement-open after)<br/>
-   (block-close . c-snug-do-while)<br/>
-   (arglist-cont-nonempty))<br/>
-  (c-block-comment-prefix . ""))<br/>
- ("java"<br/>
-  (c-basic-offset . 4)<br/>
-  (c-comment-only-line-offset 0 . 0)<br/>
-  (c-offsets-alist<br/>
-   (inline-open . 0)<br/>
-   (topmost-intro-cont . +)<br/>
-   (statement-block-intro . +)<br/>
-   (knr-argdecl-intro . 5)<br/>
-   (substatement-open . +)<br/>
-   (substatement-label . +)<br/>
-   (label . +)<br/>
-   (statement-case-open . +)<br/>
-   (statement-cont . +)<br/>
-   (arglist-intro . c-lineup-arglist-intro-after-paren)<br/>
-   (arglist-close . c-lineup-arglist)<br/>
-   (access-label . 0)<br/>
-   (inher-cont . c-lineup-java-inher)<br/>
-   (func-decl-cont . c-lineup-java-throws)))<br/>
- ("awk"<br/>
-  (c-basic-offset . 4)<br/>
-  (c-comment-only-line-offset . 0)<br/>
-  (c-hanging-braces-alist<br/>
-   (defun-open after)<br/>
-   (defun-close . c-snug-1line-defun-close)<br/>
-   (substatement-open after)<br/>
-   (block-close . c-snug-do-while)<br/>
-   (arglist-cont-nonempty))<br/>
-  (c-hanging-semi&comma-criteria)<br/>
-  (c-cleanup-list)<br/>
-  (c-offsets-alist<br/>
-   (statement-block-intro . +)<br/>
-   (substatement-open . 0)<br/>
-   (statement-cont . +))))<br/>
-<br/>
+<strong>c-style-alist</strong> is a variable defined in `<code>cc-styles.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Styles of indentation.</br>
+Elements of this alist are of the form:</br>
+</br>
+  (STYLE-STRING [BASE-STYLE] (VARIABLE . VALUE) [(VARIABLE . VALUE) ...])</br>
+</br>
+where STYLE-STRING is a short descriptive string used to select a</br>
+style, VARIABLE is any Emacs variable, and VALUE is the intended value</br>
+for that variable when using the selected style.</br>
+</br>
+Optional BASE-STYLE if present, is a string and must follow</br>
+STYLE-STRING.  BASE-STYLE names a style that this style inherits from.</br>
+By default, all styles inherit from the "user" style, which is</br>
+computed at run time.  Style loops generate errors.</br>
+</br>
+Two variables are treated specially.  When VARIABLE is</br>
+`c-offsets-alist', the VALUE is a list containing elements of the</br>
+form:</br>
+</br>
+  (SYNTACTIC-SYMBOL . OFFSET)</br>
+</br>
+as described in `c-offsets-alist'.  These are passed directly to</br>
+`c-set-offset' so there is no need to set every syntactic symbol in</br>
+your style, only those that are different from the default.</br>
+</br>
+When VARIABLE is `c-special-indent-hook', its VALUE is added to</br>
+`c-special-indent-hook' using `add-hook'.  If VALUE is a list, each</br>
+element of the list is added with `add-hook'.</br>
+</br>
+Do not change this variable directly.  Use the function `c-add-style'</br>
+to add new styles or modify existing styles (it is not a good idea to</br>
+modify existing styles -- you should create a new style that inherits</br>
+the existing style).</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("gnu"
+  (c-basic-offset . 2)
+  (c-comment-only-line-offset 0 . 0)
+  (c-hanging-braces-alist
+   (substatement-open before after)
+   (arglist-cont-nonempty))
+  (c-offsets-alist
+   (statement-block-intro . +)
+   (knr-argdecl-intro . 5)
+   (substatement-open . +)
+   (substatement-label . 0)
+   (label . 0)
+   (statement-case-open . +)
+   (statement-cont . +)
+   (arglist-intro . c-lineup-arglist-intro-after-paren)
+   (arglist-close . c-lineup-arglist)
+   (inline-open . 0)
+   (brace-list-open . +)
+   (topmost-intro-cont first c-lineup-topmost-intro-cont c-lineup-gnu-DEFUN-intro-cont))
+  (c-special-indent-hook . c-gnu-impose-minimum)
+  (c-block-comment-prefix . ""))
+ ("k&r"
+  (c-basic-offset . 5)
+  (c-comment-only-line-offset . 0)
+  (c-offsets-alist
+   (statement-block-intro . +)
+   (knr-argdecl-intro . 0)
+   (substatement-open . 0)
+   (substatement-label . 0)
+   (label . 0)
+   (statement-cont . +)))
+ ("bsd"
+  (c-basic-offset . 8)
+  (c-comment-only-line-offset . 0)
+  (c-offsets-alist
+   (statement-block-intro . +)
+   (knr-argdecl-intro . +)
+   (substatement-open . 0)
+   (substatement-label . 0)
+   (label . 0)
+   (statement-cont . +)
+   (inline-open . 0)
+   (inexpr-class . 0)))
+ ("stroustrup"
+  (c-basic-offset . 4)
+  (c-comment-only-line-offset . 0)
+  (c-offsets-alist
+   (statement-block-intro . +)
+   (substatement-open . 0)
+   (substatement-label . 0)
+   (label . 0)
+   (statement-cont . +)))
+ ("whitesmith"
+  (c-basic-offset . 4)
+  (c-comment-only-line-offset . 0)
+  (c-offsets-alist
+   (defun-open . +)
+   (defun-close . c-lineup-whitesmith-in-block)
+   (defun-block-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)
+   (class-open . +)
+   (class-close . +)
+   (inline-open . +)
+   (inline-close . c-lineup-whitesmith-in-block)
+   (knr-argdecl-intro . +)
+   (block-open . 0)
+   (block-close . c-lineup-whitesmith-in-block)
+   (brace-list-open . +)
+   (brace-list-close . c-lineup-whitesmith-in-block)
+   (brace-list-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)
+   (brace-list-entry add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)
+   (brace-entry-open add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)
+   (statement add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)
+   (statement-block-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)
+   (substatement-open . +)
+   (substatement-label . +)
+   (label . 0)
+   (arglist-intro add c-lineup-whitesmith-in-block c-indent-multi-line-block)
+   (arglist-cont add c-lineup-after-whitesmith-blocks c-indent-multi-line-block)
+   (arglist-cont-nonempty add c-lineup-whitesmith-in-block c-indent-multi-line-block)
+   (arglist-close . c-lineup-whitesmith-in-block)
+   (inclass . c-lineup-whitesmith-in-block)
+   (extern-lang-open . +)
+   (namespace-open . +)
+   (module-open . +)
+   (composition-open . +)
+   (extern-lang-close . +)
+   (namespace-close . +)
+   (module-close . +)
+   (composition-close . +)
+   (inextern-lang . c-lineup-whitesmith-in-block)
+   (innamespace . c-lineup-whitesmith-in-block)
+   (inmodule . c-lineup-whitesmith-in-block)
+   (incomposition . c-lineup-whitesmith-in-block)
+   (inexpr-class . 0)))
+ ("ellemtel"
+  (c-basic-offset . 3)
+  (c-comment-only-line-offset . 0)
+  (c-hanging-braces-alist
+   (substatement-open before after)
+   (arglist-cont-nonempty))
+  (c-offsets-alist
+   (topmost-intro . 0)
+   (substatement . +)
+   (substatement-open . 0)
+   (case-label . +)
+   (access-label . -)
+   (inclass . +)
+   (inline-open . 0)))
+ ("linux"
+  (c-basic-offset . 8)
+  (c-comment-only-line-offset . 0)
+  (c-hanging-braces-alist
+   (brace-list-open)
+   (brace-entry-open)
+   (substatement-open after)
+   (block-close . c-snug-do-while)
+   (arglist-cont-nonempty))
+  (c-cleanup-list brace-else-brace)
+  (c-offsets-alist
+   (statement-block-intro . +)
+   (knr-argdecl-intro . 0)
+   (substatement-open . 0)
+   (substatement-label . 0)
+   (label . 0)
+   (statement-cont . +)))
+ ("python"
+  (indent-tabs-mode . t)
+  (fill-column . 78)
+  (c-basic-offset . 8)
+  (c-offsets-alist
+   (substatement-open . 0)
+   (inextern-lang . 0)
+   (arglist-intro . +)
+   (knr-argdecl-intro . +))
+  (c-hanging-braces-alist
+   (brace-list-open)
+   (brace-list-intro)
+   (brace-list-close)
+   (brace-entry-open)
+   (substatement-open after)
+   (block-close . c-snug-do-while)
+   (arglist-cont-nonempty))
+  (c-block-comment-prefix . ""))
+ ("java"
+  (c-basic-offset . 4)
+  (c-comment-only-line-offset 0 . 0)
+  (c-offsets-alist
+   (inline-open . 0)
+   (topmost-intro-cont . +)
+   (statement-block-intro . +)
+   (knr-argdecl-intro . 5)
+   (substatement-open . +)
+   (substatement-label . +)
+   (label . +)
+   (statement-case-open . +)
+   (statement-cont . +)
+   (arglist-intro . c-lineup-arglist-intro-after-paren)
+   (arglist-close . c-lineup-arglist)
+   (access-label . 0)
+   (inher-cont . c-lineup-java-inher)
+   (func-decl-cont . c-lineup-java-throws)))
+ ("awk"
+  (c-basic-offset . 4)
+  (c-comment-only-line-offset . 0)
+  (c-hanging-braces-alist
+   (defun-open after)
+   (defun-close . c-snug-1line-defun-close)
+   (substatement-open after)
+   (block-close . c-snug-do-while)
+   (arglist-cont-nonempty))
+  (c-hanging-semi&comma-criteria)
+  (c-cleanup-list)
+  (c-offsets-alist
+   (statement-block-intro . +)
+   (substatement-open . 0)
+   (statement-cont . +))))
+</pre></br>

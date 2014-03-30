@@ -1,18 +1,15 @@
-<strong>time-to-seconds</strong> is an alias for `float-time' in `<code>time-date.el</code>'.<br/>
-<br/>
-(time-to-seconds &optional SPECIFIED-TIME)<br/>
-<br/>
-This function is obsolete since 21.1;<br/>
-use `float-time' instead.<br/>
-<br/>
-Return the current time, as a float number of seconds since the epoch.<br/>
-If SPECIFIED-TIME is given, it is the time to convert to float<br/>
-instead of the current time.  The argument should have the form<br/>
-(HIGH LOW) or (HIGH LOW USEC) or (HIGH LOW USEC PSEC).  Thus,<br/>
-you can use times from `current-time' and from `file-attributes'.<br/>
-SPECIFIED-TIME can also have the form (HIGH . LOW), but this is<br/>
-considered obsolete.<br/>
-<br/>
-WARNING: Since the result is floating point, it may not be exact.<br/>
-If precise time stamps are required, use either `current-time',<br/>
+<strong>time-to-seconds</strong> is an alias for `<strong><a href="float-time">float-time</a></strong>' in `<code>time-date.el</code>'.</br>
+</br>
+(time-to-seconds &optional <u>SPECIFIED-TIME</u>)</br>
+</br>
+Return the current time, as a float number of seconds since the epoch.</br>
+If <u>SPECIFIED-TIME</u> is given, it is the time to convert to float</br>
+instead of the current time.  The argument should have the form</br>
+(HIGH LOW) or (HIGH LOW USEC) or (HIGH LOW USEC PSEC).  Thus,</br>
+you can use times from `current-time' and from `file-attributes'.</br>
+<u>SPECIFIED-TIME</u> can also have the form (HIGH . LOW), but this is</br>
+considered obsolete.</br>
+</br>
+WARNING: Since the result is floating point, it may not be exact.</br>
+If precise time stamps are required, use either `current-time',</br>
 or (if you need time as a string) `format-time-string'.

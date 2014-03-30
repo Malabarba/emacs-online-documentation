@@ -1,0 +1,17 @@
+<strong>set-transient-map</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+</br>
+(set-transient-map <u>MAP</u> &optional <u>KEEP-PRED</u> <u>ON-EXIT</u>)</br>
+</br>
+Set <u>MAP</u> as a temporary keymap taking precedence over other keymaps.</br>
+Normally, <u>MAP</u> is used only once, to look up the very next key.</br>
+However, if the optional argument <u>KEEP-PRED</u> is t, <u>MAP</u> stays</br>
+active if a key from <u>MAP</u> is used.  <u>KEEP-PRED</u> can also be a</br>
+function of no arguments: if it returns non-nil, then <u>MAP</u> stays</br>
+active.</br>
+</br>
+Optional arg <u>ON-EXIT</u>, if non-nil, specifies a function that is</br>
+called, with no arguments, after <u>MAP</u> is deactivated.</br>
+</br>
+This uses `overriding-terminal-local-map' which takes precedence over all other</br>
+keymaps.  As usual, if no match for a key is found in <u>MAP</u>, the normal key</br>
+lookup sequence then continues.

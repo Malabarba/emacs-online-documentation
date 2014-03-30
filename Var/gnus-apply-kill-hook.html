@@ -1,24 +1,22 @@
-<strong>gnus-apply-kill-hook</strong> is a variable defined in `<code>gnus.el</code>'.<br/>
-Its value is (gnus-apply-kill-file)<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A hook called to apply kill files to a group.<br/>
-This hook is intended to apply a kill file to the selected newsgroup.<br/>
-The function `gnus-apply-kill-file' is called by default.<br/>
-<br/>
-Since a general kill file is too heavy to use only for a few<br/>
-newsgroups, I recommend you to use a lighter hook function.  For<br/>
-example, if you'd like to apply a kill file to articles which contains<br/>
-a string `rmgroup' in subject in newsgroup `control', you can use the<br/>
-following hook:<br/>
-<br/>
- (setq gnus-apply-kill-hook<br/>
-      (list<br/>
-	(lambda ()<br/>
-	  (cond ((string-match "control" gnus-newsgroup-name)<br/>
-		 (gnus-kill "Subject" "rmgroup")<br/>
-		 (gnus-expunge "X"))))))<br/>
-<br/>
+<strong>gnus-apply-kill-hook</strong> is a variable defined in `<code>gnus.el</code>'.</br>
+Its value is <pre>(gnus-apply-kill-file)</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A hook called to apply kill files to a group.</br>
+This hook is intended to apply a kill file to the selected newsgroup.</br>
+The function `gnus-apply-kill-file' is called by default.</br>
+</br>
+Since a general kill file is too heavy to use only for a few</br>
+newsgroups, I recommend you to use a lighter hook function.  For</br>
+example, if you'd like to apply a kill file to articles which contains</br>
+a string `rmgroup' in subject in newsgroup `control', you can use the</br>
+following hook:</br>
+</br>
+ (setq gnus-apply-kill-hook</br>
+      (list</br>
+	(lambda ()</br>
+	  (cond ((string-match "control" gnus-newsgroup-name)</br>
+		 (gnus-kill "Subject" "rmgroup")</br>
+		 (gnus-expunge "X"))))))</br>
+</br>
 You can customize this variable.

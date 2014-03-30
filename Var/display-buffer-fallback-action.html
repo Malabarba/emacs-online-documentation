@@ -1,12 +1,10 @@
-<strong>display-buffer-fallback-action</strong> is a variable defined in `<code>window.el</code>'.<br/>
-Its value is<br/>
-((display-buffer--maybe-same-window display-buffer-reuse-window display-buffer--maybe-pop-up-frame-or-window display-buffer-use-some-window display-buffer-pop-up-frame))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Default fallback action for `display-buffer'.<br/>
-This is the action used by `display-buffer' if no other actions<br/>
-specified, e.g. by the user options `display-buffer-alist' or<br/>
+<strong>display-buffer-fallback-action</strong> is a variable defined in `<code>window.el</code>'.</br>
+Its value is <pre></br>
+((display-buffer--maybe-same-window display-buffer-reuse-window display-buffer--maybe-pop-up-frame-or-window display-buffer-in-previous-window display-buffer-use-some-window display-buffer-pop-up-frame))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Default fallback action for `display-buffer'.</br>
+This is the action used by `display-buffer' if no other actions</br>
+specified, e.g. by the user options `display-buffer-alist' or</br>
 `display-buffer-base-action'.  See `display-buffer'.

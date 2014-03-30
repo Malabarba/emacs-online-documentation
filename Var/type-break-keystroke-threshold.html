@@ -1,26 +1,26 @@
-<strong>type-break-keystroke-threshold</strong> is a variable defined in `<code>type-break.el</code>'.<br/>
-Its value is (2100 . 10500)<br/>
-<br/>
-Documentation:<br/>
-Upper and lower bound on number of keystrokes for considering typing break.<br/>
-This structure is a pair of numbers (MIN . MAX).<br/>
-<br/>
-The first number is the minimum number of keystrokes that must have been<br/>
-entered since the last typing break before considering another one, even if<br/>
-the scheduled time has elapsed; the break is simply rescheduled until later<br/>
-if the minimum threshold hasn't been reached.  If this first value is nil,<br/>
-then there is no minimum threshold; as soon as the scheduled time has<br/>
-elapsed, the user will always be queried.<br/>
-<br/>
-The second number is the maximum number of keystrokes that can be entered<br/>
-before a typing break is requested immediately, pre-empting the originally<br/>
-scheduled break.  If this second value is nil, then no pre-emptive breaks<br/>
-will occur; only scheduled ones will.<br/>
-<br/>
-Keys with bucky bits (shift, control, meta, etc) are counted as only one<br/>
-keystroke even though they really require multiple keys to generate them.<br/>
-<br/>
-The command `type-break-guesstimate-keystroke-threshold' can be used to<br/>
-guess a reasonably good pair of values for this variable.<br/>
-<br/>
+<strong>type-break-keystroke-threshold</strong> is a variable defined in `<code>type-break.el</code>'.</br>
+Its value is <pre>(2100 . 10500)</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Upper and lower bound on number of keystrokes for considering typing break.</br>
+This structure is a pair of numbers (MIN . MAX).</br>
+</br>
+The first number is the minimum number of keystrokes that must have been</br>
+entered since the last typing break before considering another one, even if</br>
+the scheduled time has elapsed; the break is simply rescheduled until later</br>
+if the minimum threshold hasn't been reached.  If this first value is nil,</br>
+then there is no minimum threshold; as soon as the scheduled time has</br>
+elapsed, the user will always be queried.</br>
+</br>
+The second number is the maximum number of keystrokes that can be entered</br>
+before a typing break is requested immediately, pre-empting the originally</br>
+scheduled break.  If this second value is nil, then no pre-emptive breaks</br>
+will occur; only scheduled ones will.</br>
+</br>
+Keys with bucky bits (shift, control, meta, etc) are counted as only one</br>
+keystroke even though they really require multiple keys to generate them.</br>
+</br>
+The command `type-break-guesstimate-keystroke-threshold' can be used to</br>
+guess a reasonably good pair of values for this variable.</br>
+</br>
 You can customize this variable.

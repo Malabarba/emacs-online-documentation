@@ -1,0 +1,26 @@
+<strong>htmlize-html-charset</strong> is a variable defined in `<code>htmlize.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*The charset declared by the resulting HTML documents.</br>
+When non-nil, causes htmlize to insert the following in the HEAD section</br>
+of the generated HTML:</br>
+</br>
+  <meta http-equiv="Content-Type" content="text/html; charset=CHARSET"></br>
+</br>
+where CHARSET is the value you've set for htmlize-html-charset.  Valid</br>
+charsets are defined by MIME and include strings like "iso-8859-1",</br>
+"iso-8859-15", "utf-8", etc.</br>
+</br>
+If you are using non-Latin-1 charsets, you might need to set this for</br>
+your documents to render correctly.  Also, the W3C validator requires</br>
+submitted HTML documents to declare a charset.  So if you care about</br>
+validation, you can use this to prevent the validator from bitching.</br>
+</br>
+Needless to say, if you set this, you should actually make sure that</br>
+the buffer is in the encoding you're claiming it is in.  (Under Mule</br>
+that is done by ensuring the correct "file coding system" for the</br>
+buffer.)  If you don't understand what that means, this option is</br>
+probably not for you.</br>
+</br>
+You can customize this variable.

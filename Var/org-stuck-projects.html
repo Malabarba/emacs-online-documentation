@@ -1,32 +1,32 @@
-<strong>org-stuck-projects</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
-Its value is ("+LEVEL=2/-DONE" ("TODO" "NEXT" "NEXTACTION") nil "")<br/>
-<br/>
-Documentation:<br/>
-How to identify stuck projects.<br/>
-This is a list of four items:<br/>
-1. A tags/todo/property matcher string that is used to identify a project.<br/>
-   See the manual for a description of tag and property searches.<br/>
-   The entire tree below a headline matched by this is considered one project.<br/>
-2. A list of TODO keywords identifying non-stuck projects.<br/>
-   If the project subtree contains any headline with one of these todo<br/>
-   keywords, the project is considered to be not stuck.  If you specify<br/>
-   "*" as a keyword, any TODO keyword will mark the project unstuck.<br/>
-3. A list of tags identifying non-stuck projects.<br/>
-   If the project subtree contains any headline with one of these tags,<br/>
-   the project is considered to be not stuck.  If you specify "*" as<br/>
-   a tag, any tag will mark the project unstuck.  Note that this is about<br/>
-   the explicit presence of a tag somewhere in the subtree, inherited<br/>
-   tags do not count here.  If inherited tags make a project not stuck,<br/>
-   use "-TAG" in the tags part of the matcher under (1.) above.<br/>
-4. An arbitrary regular expression matching non-stuck projects.<br/>
-<br/>
-If the project turns out to be not stuck, search continues also in the<br/>
-subtree to see if any of the subtasks have project status.<br/>
-<br/>
-See also the variable `org-tags-match-list-sublevels' which applies<br/>
-to projects matched by this search as well.<br/>
-<br/>
-After defining this variable, you may use M-x org-agenda-list-stuck-projects<br/>
-or `C-c a #' to produce the list.<br/>
-<br/>
+<strong>org-stuck-projects</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+Its value is <pre>("+LEVEL=2/-DONE" ("TODO" "NEXT" "NEXTACTION") nil "")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+How to identify stuck projects.</br>
+This is a list of four items:</br>
+1. A tags/todo/property matcher string that is used to identify a project.</br>
+   See the manual for a description of tag and property searches.</br>
+   The entire tree below a headline matched by this is considered one project.</br>
+2. A list of TODO keywords identifying non-stuck projects.</br>
+   If the project subtree contains any headline with one of these todo</br>
+   keywords, the project is considered to be not stuck.  If you specify</br>
+   "*" as a keyword, any TODO keyword will mark the project unstuck.</br>
+3. A list of tags identifying non-stuck projects.</br>
+   If the project subtree contains any headline with one of these tags,</br>
+   the project is considered to be not stuck.  If you specify "*" as</br>
+   a tag, any tag will mark the project unstuck.  Note that this is about</br>
+   the explicit presence of a tag somewhere in the subtree, inherited</br>
+   tags do not count here.  If inherited tags make a project not stuck,</br>
+   use "-TAG" in the tags part of the matcher under (1.) above.</br>
+4. An arbitrary regular expression matching non-stuck projects.</br>
+</br>
+If the project turns out to be not stuck, search continues also in the</br>
+subtree to see if any of the subtasks have project status.</br>
+</br>
+See also the variable `org-tags-match-list-sublevels' which applies</br>
+to projects matched by this search as well.</br>
+</br>
+After defining this variable, you may use M-x org-agenda-list-stuck-projects</br>
+or `C-c a #' to produce the list.</br>
+</br>
 You can customize this variable.

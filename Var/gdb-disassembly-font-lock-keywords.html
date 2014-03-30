@@ -1,18 +1,17 @@
-<strong>gdb-disassembly-font-lock-keywords</strong> is a variable defined in `<code>gdb-mi.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Font lock keywords used in `gdb-disassembly-mode'.<br/>
-<br/>
-Value: (("<\\(\\(\\sw\\|[_.]\\)+\\)\\(\\+[0-9]+\\)?>"<br/>
-  (1 font-lock-function-name-face))<br/>
- ("^0x[0-9a-f]+ \\(<\\(\\(\\sw\\|[_.]\\)+\\)\\+[0-9]+>\\)?:[ 	]+\\(\\sw+\\)"<br/>
-  (4 font-lock-keyword-face))<br/>
- ("%\\sw+" . font-lock-variable-name-face)<br/>
- ("^\\(Dump of assembler code for function\\) \\(.+\\):"<br/>
-  (1 font-lock-comment-face)<br/>
-  (2 font-lock-function-name-face))<br/>
- ("^\\(End of assembler dump\\.\\)" . font-lock-comment-face))<br/>
-<br/>
+<strong>gdb-disassembly-font-lock-keywords</strong> is a variable defined in `<code>gdb-mi.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Font lock keywords used in `gdb-disassembly-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("<\\(\\(\\sw\\|[_.]\\)+\\)\\(\\+[0-9]+\\)?>"
+  (1 font-lock-function-name-face))
+ ("^0x[0-9a-f]+ \\(<\\(\\(\\sw\\|[_.]\\)+\\)\\+[0-9]+>\\)?:[ 	]+\\(\\sw+\\)"
+  (4 font-lock-keyword-face))
+ ("%\\sw+" . font-lock-variable-name-face)
+ ("^\\(Dump of assembler code for function\\) \\(.+\\):"
+  (1 font-lock-comment-face)
+  (2 font-lock-function-name-face))
+ ("^\\(End of assembler dump\\.\\)" . font-lock-comment-face))
+</pre></br>

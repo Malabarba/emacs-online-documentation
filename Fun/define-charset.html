@@ -1,131 +1,131 @@
-<strong>define-charset</strong> is a compiled Lisp function in `<code>mule.el</code>'.<br/>
-<br/>
-(define-charset NAME DOCSTRING &rest PROPS)<br/>
-<br/>
-Define NAME (symbol) as a charset with DOCSTRING.<br/>
-The remaining arguments must come in pairs ATTRIBUTE VALUE.  ATTRIBUTE<br/>
-may be any symbol.  The following have special meanings, and one of<br/>
-`:code-offset', `:map', `:subset', `:superset' must be specified.<br/>
-<br/>
-`:short-name'<br/>
-<br/>
-VALUE must be a short string to identify the charset.  If omitted,<br/>
-NAME is used.<br/>
-<br/>
-`:long-name'<br/>
-<br/>
-VALUE must be a string longer than `:short-name' to identify the<br/>
-charset.  If omitted, the value of the `:short-name' attribute is used.<br/>
-<br/>
-`:dimension'<br/>
-<br/>
-VALUE must be an integer 0, 1, 2, or 3, specifying the dimension of<br/>
-code-points of the charsets.  If omitted, it is calculated from the<br/>
-value of the `:code-space' attribute.<br/>
-<br/>
-`:code-space'<br/>
-<br/>
-VALUE must be a vector of length at most 8 specifying the byte code<br/>
-range of each dimension in this format:<br/>
-	[ MIN-1 MAX-1 MIN-2 MAX-2 ... ]<br/>
-where MIN-N is the minimum byte value of Nth dimension of code-point,<br/>
-MAX-N is the maximum byte value of that.<br/>
-<br/>
-`:min-code'<br/>
-<br/>
-VALUE must be an integer specifying the minimum code point of the<br/>
-charset.  If omitted, it is calculated from `:code-space'.  VALUE may<br/>
-be a cons (HIGH . LOW), where HIGH is the most significant 16 bits of<br/>
-the code point and LOW is the least significant 16 bits.<br/>
-<br/>
-`:max-code'<br/>
-<br/>
-VALUE must be an integer specifying the maximum code point of the<br/>
-charset.  If omitted, it is calculated from `:code-space'.  VALUE may<br/>
-be a cons (HIGH . LOW), where HIGH is the most significant 16 bits of<br/>
-the code point and LOW is the least significant 16 bits.<br/>
-<br/>
-`:iso-final-char'<br/>
-<br/>
-VALUE must be a character in the range 32 to 127 (inclusive)<br/>
-specifying the final char of the charset for ISO-2022 encoding.  If<br/>
-omitted, the charset can't be encoded by ISO-2022 based<br/>
-coding-systems.<br/>
-<br/>
-`:iso-revision-number'<br/>
-<br/>
-VALUE must be an integer in the range 0..63, specifying the revision<br/>
-number of the charset for ISO-2022 encoding.<br/>
-<br/>
-`:emacs-mule-id'<br/>
-<br/>
-VALUE must be an integer of 0, 129..255.  If omitted, the charset<br/>
-can't be encoded by coding-systems of type `emacs-mule'.<br/>
-<br/>
-`:ascii-compatible-p'<br/>
-<br/>
-VALUE must be nil or t (default nil).  If VALUE is t, the charset is<br/>
-compatible with ASCII, i.e. the first 128 code points map to ASCII.<br/>
-<br/>
-`:supplementary-p'<br/>
-<br/>
-VALUE must be nil or t.  If the VALUE is t, the charset is<br/>
-supplementary, which means it is used only as a parent or a<br/>
-subset of some other charset, or it is provided just for backward<br/>
-compatibility.<br/>
-<br/>
-`:invalid-code'<br/>
-<br/>
-VALUE must be a nonnegative integer that can be used as an invalid<br/>
-code point of the charset.  If the minimum code is 0 and the maximum<br/>
-code is greater than Emacs's maximum integer value, `:invalid-code'<br/>
-should not be omitted.<br/>
-<br/>
-`:code-offset'<br/>
-<br/>
-VALUE must be an integer added to the index number of a character to<br/>
-get the corresponding character code.<br/>
-<br/>
-`:map'<br/>
-<br/>
-VALUE must be vector or string.<br/>
-<br/>
-If it is a vector, the format is [ CODE-1 CHAR-1 CODE-2 CHAR-2 ... ],<br/>
-where CODE-n is a code-point of the charset, and CHAR-n is the<br/>
-corresponding character code.<br/>
-<br/>
-If it is a string, it is a name of file that contains the above<br/>
-information.   Each line of the file must be this format:<br/>
-	0xXXX 0xYYY<br/>
-where XXX is a hexadecimal representation of CODE-n and YYY is a<br/>
-hexadecimal representation of CHAR-n.  A line starting with `#' is a<br/>
-comment line.<br/>
-<br/>
-`:subset'<br/>
-<br/>
-VALUE must be a list:<br/>
-	( PARENT MIN-CODE MAX-CODE OFFSET )<br/>
-PARENT is a parent charset.  MIN-CODE and MAX-CODE specify the range<br/>
-of characters inherited from the parent.  OFFSET is an integer value<br/>
-to add to a code point of the parent charset to get the corresponding<br/>
-code point of this charset.<br/>
-<br/>
-`:superset'<br/>
-<br/>
-VALUE must be a list of parent charsets.  The charset inherits<br/>
-characters from them.  Each element of the list may be a cons (PARENT<br/>
-. OFFSET), where PARENT is a parent charset, and OFFSET is an offset<br/>
-value to add to a code point of PARENT to get the corresponding code<br/>
-point of this charset.<br/>
-<br/>
-`:unify-map'<br/>
-<br/>
-VALUE must be vector or string.<br/>
-<br/>
-If it is a vector, the format is [ CODE-1 CHAR-1 CODE-2 CHAR-2 ... ],<br/>
-where CODE-n is a code-point of the charset, and CHAR-n is the<br/>
-corresponding Unicode character code.<br/>
-<br/>
-If it is a string, it is a name of file that contains the above<br/>
-information.  The file format is the same as what described for `:map'<br/>
+<strong>define-charset</strong> is a compiled Lisp function in `<code>mule.el</code>'.</br>
+</br>
+(define-charset <u>NAME</u> <u>DOCSTRING</u> &rest <u>PROPS</u>)</br>
+</br>
+Define <u>NAME</u> (symbol) as a charset with <u>DOCSTRING</u>.</br>
+The remaining arguments must come in pairs ATTRIBUTE VALUE.  ATTRIBUTE</br>
+may be any symbol.  The following have special meanings, and one of</br>
+`:code-offset', `:map', `:subset', `:superset' must be specified.</br>
+</br>
+`:short-name'</br>
+</br>
+VALUE must be a short string to identify the charset.  If omitted,</br>
+<u>NAME</u> is used.</br>
+</br>
+`:long-name'</br>
+</br>
+VALUE must be a string longer than `:short-name' to identify the</br>
+charset.  If omitted, the value of the `:short-name' attribute is used.</br>
+</br>
+`:dimension'</br>
+</br>
+VALUE must be an integer 0, 1, 2, or 3, specifying the dimension of</br>
+code-points of the charsets.  If omitted, it is calculated from the</br>
+value of the `:code-space' attribute.</br>
+</br>
+`:code-space'</br>
+</br>
+VALUE must be a vector of length at most 8 specifying the byte code</br>
+range of each dimension in this format:</br>
+	[ MIN-1 MAX-1 MIN-2 MAX-2 ... ]</br>
+where MIN-N is the minimum byte value of Nth dimension of code-point,</br>
+MAX-N is the maximum byte value of that.</br>
+</br>
+`:min-code'</br>
+</br>
+VALUE must be an integer specifying the minimum code point of the</br>
+charset.  If omitted, it is calculated from `:code-space'.  VALUE may</br>
+be a cons (HIGH . LOW), where HIGH is the most significant 16 bits of</br>
+the code point and LOW is the least significant 16 bits.</br>
+</br>
+`:max-code'</br>
+</br>
+VALUE must be an integer specifying the maximum code point of the</br>
+charset.  If omitted, it is calculated from `:code-space'.  VALUE may</br>
+be a cons (HIGH . LOW), where HIGH is the most significant 16 bits of</br>
+the code point and LOW is the least significant 16 bits.</br>
+</br>
+`:iso-final-char'</br>
+</br>
+VALUE must be a character in the range 32 to 127 (inclusive)</br>
+specifying the final char of the charset for ISO-2022 encoding.  If</br>
+omitted, the charset can't be encoded by ISO-2022 based</br>
+coding-systems.</br>
+</br>
+`:iso-revision-number'</br>
+</br>
+VALUE must be an integer in the range 0..63, specifying the revision</br>
+number of the charset for ISO-2022 encoding.</br>
+</br>
+`:emacs-mule-id'</br>
+</br>
+VALUE must be an integer of 0, 129..255.  If omitted, the charset</br>
+can't be encoded by coding-systems of type `emacs-mule'.</br>
+</br>
+`:ascii-compatible-p'</br>
+</br>
+VALUE must be nil or t (default nil).  If VALUE is t, the charset is</br>
+compatible with ASCII, i.e. the first 128 code points map to ASCII.</br>
+</br>
+`:supplementary-p'</br>
+</br>
+VALUE must be nil or t.  If the VALUE is t, the charset is</br>
+supplementary, which means it is used only as a parent or a</br>
+subset of some other charset, or it is provided just for backward</br>
+compatibility.</br>
+</br>
+`:invalid-code'</br>
+</br>
+VALUE must be a nonnegative integer that can be used as an invalid</br>
+code point of the charset.  If the minimum code is 0 and the maximum</br>
+code is greater than Emacs's maximum integer value, `:invalid-code'</br>
+should not be omitted.</br>
+</br>
+`:code-offset'</br>
+</br>
+VALUE must be an integer added to the index number of a character to</br>
+get the corresponding character code.</br>
+</br>
+`:map'</br>
+</br>
+VALUE must be vector or string.</br>
+</br>
+If it is a vector, the format is [ CODE-1 CHAR-1 CODE-2 CHAR-2 ... ],</br>
+where CODE-n is a code-point of the charset, and CHAR-n is the</br>
+corresponding character code.</br>
+</br>
+If it is a string, it is a name of file that contains the above</br>
+information.   Each line of the file must be this format:</br>
+	0xXXX 0xYYY</br>
+where XXX is a hexadecimal representation of CODE-n and YYY is a</br>
+hexadecimal representation of CHAR-n.  A line starting with `#' is a</br>
+comment line.</br>
+</br>
+`:subset'</br>
+</br>
+VALUE must be a list:</br>
+	( PARENT MIN-CODE MAX-CODE OFFSET )</br>
+PARENT is a parent charset.  MIN-CODE and MAX-CODE specify the range</br>
+of characters inherited from the parent.  OFFSET is an integer value</br>
+to add to a code point of the parent charset to get the corresponding</br>
+code point of this charset.</br>
+</br>
+`:superset'</br>
+</br>
+VALUE must be a list of parent charsets.  The charset inherits</br>
+characters from them.  Each element of the list may be a cons (PARENT</br>
+. OFFSET), where PARENT is a parent charset, and OFFSET is an offset</br>
+value to add to a code point of PARENT to get the corresponding code</br>
+point of this charset.</br>
+</br>
+`:unify-map'</br>
+</br>
+VALUE must be vector or string.</br>
+</br>
+If it is a vector, the format is [ CODE-1 CHAR-1 CODE-2 CHAR-2 ... ],</br>
+where CODE-n is a code-point of the charset, and CHAR-n is the</br>
+corresponding Unicode character code.</br>
+</br>
+If it is a string, it is a name of file that contains the above</br>
+information.  The file format is the same as what described for `:map'</br>
 attribute.

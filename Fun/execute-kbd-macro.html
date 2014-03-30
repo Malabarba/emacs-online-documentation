@@ -1,10 +1,11 @@
-<strong>execute-kbd-macro</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(execute-kbd-macro MACRO &optional COUNT LOOPFUNC)<br/>
-<br/>
-Execute MACRO as string of editor command characters.<br/>
-If MACRO is a symbol, its function definition is used.<br/>
-COUNT is a repeat count, or nil for once, or 0 for infinite loop.<br/>
-<br/>
-Optional third arg LOOPFUNC may be a function that is called prior to<br/>
-each iteration of the macro.  Iteration stops if LOOPFUNC returns nil.
+<strong>execute-kbd-macro</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(execute-kbd-macro <u>MACRO</u> &optional <u>COUNT</u> <u>LOOPFUNC</u>)</br>
+</br>
+Execute <u>MACRO</u> as string of editor command characters.</br>
+<u>MACRO</u> can also be a vector of keyboard events.  If <u>MACRO</u> is a symbol,</br>
+its function definition is used.</br>
+<u>COUNT</u> is a repeat count, or nil for once, or 0 for infinite loop.</br>
+</br>
+Optional third arg <u>LOOPFUNC</u> may be a function that is called prior to</br>
+each iteration of the macro.  Iteration stops if <u>LOOPFUNC</u> returns nil.

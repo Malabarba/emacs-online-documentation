@@ -1,28 +1,31 @@
-<strong>display-buffer-in-atom-window</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(display-buffer-in-atom-window BUFFER ALIST)<br/>
-<br/>
-Display BUFFER in an atomic window.<br/>
-This function displays BUFFER in a new window that will be<br/>
-combined with an existing window to form an atomic window.  If<br/>
-the existing window is already part of an atomic window, add the<br/>
-new window to that atomic window.  Operations like `split-window'<br/>
-or `delete-window', when applied to a constituent of an atomic<br/>
-window, are applied atomically to the root of that atomic window.<br/>
-<br/>
-ALIST is an association list of symbols and values.  The<br/>
-following symbols can be used.<br/>
-<br/>
-`window' specifies the existing window the new window shall be<br/>
-  combined with.  Use `window-atom-root' to make the new window a<br/>
-  sibling of an atomic window's root.  If an internal window is<br/>
-  specified here, all children of that window become part of the<br/>
-  atomic window too.  If no window is specified, the new window<br/>
-  becomes a sibling of the selected window.<br/>
-<br/>
-`side' denotes the side of the existing window where the new<br/>
-  window shall be located.  Valid values are `below', `right',<br/>
-  `above' and `left'.  The default is `below'.<br/>
-<br/>
-The return value is the new window, nil when creating that window<br/>
+<strong>display-buffer-in-atom-window</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(display-buffer-in-atom-window <u>BUFFER</u> <u>ALIST</u>)</br>
+</br>
+Display <u>BUFFER</u> in an atomic window.</br>
+This function displays <u>BUFFER</u> in a new window that will be</br>
+combined with an existing window to form an atomic window.  If</br>
+the existing window is already part of an atomic window, add the</br>
+new window to that atomic window.  Operations like `split-window'</br>
+or `delete-window', when applied to a constituent of an atomic</br>
+window, are applied atomically to the root of that atomic window.</br>
+</br>
+<u>ALIST</u> is an association list of symbols and values.  The</br>
+following symbols can be used.</br>
+</br>
+`window' specifies the existing window the new window shall be</br>
+  combined with.  Use `window-atom-root' to make the new window a</br>
+  sibling of an atomic window's root.  If an internal window is</br>
+  specified here, all children of that window become part of the</br>
+  atomic window too.  If no window is specified, the new window</br>
+  becomes a sibling of the selected window.  By default, the</br>
+  `window-atom' parameter of the existing window is set to `main'</br>
+  provided it is live and was not set before.</br>
+</br>
+`side' denotes the side of the existing window where the new</br>
+  window shall be located.  Valid values are `below', `right',</br>
+  `above' and `left'.  The default is `below'.  By default, the</br>
+  `window-atom' parameter of the new window is set to this value.</br>
+</br>
+The return value is the new window, nil when creating that window</br>
 failed.

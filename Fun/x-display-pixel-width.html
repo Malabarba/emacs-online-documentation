@@ -1,8 +1,12 @@
-<strong>x-display-pixel-width</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(x-display-pixel-width &optional TERMINAL)<br/>
-<br/>
-Return the width in pixels of the X display TERMINAL.<br/>
-The optional argument TERMINAL specifies which display to ask about.<br/>
-TERMINAL should be a terminal object, a frame or a display name (a string).<br/>
-If omitted or nil, that stands for the selected frame's display.
+<strong>x-display-pixel-width</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(x-display-pixel-width &optional <u>TERMINAL</u>)</br>
+</br>
+Return the width in pixels of the X display <u>TERMINAL</u>.</br>
+The optional argument <u>TERMINAL</u> specifies which display to ask about.</br>
+<u>TERMINAL</u> should be a terminal object, a frame or a display name (a string).</br>
+If omitted or nil, that stands for the selected frame's display.</br>
+</br>
+On "multi-monitor" setups this refers to the pixel width for all</br>
+physical monitors associated with <u>TERMINAL</u>.  To get information for</br>
+each physical monitor, use `display-monitor-attributes-list'.

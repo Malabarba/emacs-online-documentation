@@ -1,0 +1,23 @@
+<strong>todo-move-item</strong> is an interactive compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+</br>
+(todo-move-item &optional <u>FILE</u>)</br>
+</br>
+Move at least one todo or done item to another category.</br>
+If there are marked items, move all of these; otherwise, move</br>
+the item at point.</br>
+</br>
+With prefix argument <u>FILE</u>, prompt for a specific todo file and</br>
+choose (with TAB completion) a category in it to move the item or</br>
+items to; otherwise, choose and move to any category in either</br>
+the current todo file or one of the files in</br>
+`todo-category-completions-files'.  If the chosen category is</br>
+not an existing categories, then it is created and the item(s)</br>
+become(s) the first entry/entries in that category.</br>
+</br>
+With moved todo items, prompt to set the priority in the category</br>
+moved to (with multiple todo items, the one that had the highest</br>
+priority in the category moved from gets the new priority and the</br>
+rest of the moved todo items are inserted in sequence below it).</br>
+Moved done items are appended to the top of the done items</br>
+section in the category moved to.

@@ -1,27 +1,28 @@
-<strong>org-yank</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.<br/>
-<br/>
-(org-yank &optional ARG)<br/>
-<br/>
-Yank.  If the kill is a subtree, treat it specially.<br/>
-This command will look at the current kill and check if is a single<br/>
-subtree, or a series of subtrees[1].  If it passes the test, and if the<br/>
-cursor is at the beginning of a line or after the stars of a currently<br/>
-empty headline, then the yank is handled specially.  How exactly depends<br/>
-on the value of the following variables, both set by default.<br/>
-<br/>
-org-yank-folded-subtrees<br/>
-    When set, the subtree(s) will be folded after insertion, but only<br/>
-    if doing so would now swallow text after the yanked text.<br/>
-<br/>
-org-yank-adjusted-subtrees<br/>
-    When set, the subtree will be promoted or demoted in order to<br/>
-    fit into the local outline tree structure, which means that the level<br/>
-    will be adjusted so that it becomes the smaller one of the two<br/>
-    *visible* surrounding headings.<br/>
-<br/>
-Any prefix to this command will cause `yank' to be called directly with<br/>
-no special treatment.  In particular, a simple C-u prefix will just<br/>
-plainly yank the text as it is.<br/>
-<br/>
-[1] The test checks if the first non-white line is a heading<br/>
+<strong>org-yank</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+</br>
+(org-yank &optional <u>ARG</u>)</br>
+</br>
+Yank.  If the kill is a subtree, treat it specially.</br>
+This command will look at the current kill and check if is a single</br>
+subtree, or a series of subtrees[1].  If it passes the test, and if the</br>
+cursor is at the beginning of a line or after the stars of a currently</br>
+empty headline, then the yank is handled specially.  How exactly depends</br>
+on the value of the following variables, both set by default.</br>
+</br>
+org-yank-folded-subtrees</br>
+    When set, the subtree(s) will be folded after insertion, but only</br>
+    if doing so would now swallow text after the yanked text.</br>
+</br>
+org-yank-adjusted-subtrees</br>
+    When set, the subtree will be promoted or demoted in order to</br>
+    fit into the local outline tree structure, which means that the level</br>
+    will be adjusted so that it becomes the smaller one of the two</br>
+    *visible* surrounding headings.</br>
+</br>
+Any prefix to this command will cause `yank' to be called directly with</br>
+no special treatment.  In particular, a simple C-u prefix will just</br>
+plainly yank the text as it is.</br>
+</br>
+[1] The test checks if the first non-white line is a heading</br>
     and if there are no other headings with fewer stars.

@@ -1,33 +1,33 @@
-<strong>declare-function</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
-<br/>
-(declare-function FN FILE &optional ARGLIST FILEONLY)<br/>
-<br/>
-Tell the byte-compiler that function FN is defined, in FILE.<br/>
-Optional ARGLIST is the argument list used by the function.  The<br/>
-FILE argument is not used by the byte-compiler, but by the<br/>
-`check-declare' package, which checks that FILE contains a<br/>
-definition for FN.  ARGLIST is used by both the byte-compiler and<br/>
-`check-declare' to check for consistency.<br/>
-<br/>
-FILE can be either a Lisp file (in which case the ".el"<br/>
-extension is optional), or a C file.  C files are expanded<br/>
-relative to the Emacs "src/" directory.  Lisp files are<br/>
-searched for using `locate-library', and if that fails they are<br/>
-expanded relative to the location of the file containing the<br/>
-declaration.  A FILE with an "ext:" prefix is an external file.<br/>
-`check-declare' will check such files if they are found, and skip<br/>
-them without error if they are not.<br/>
-<br/>
-FILEONLY non-nil means that `check-declare' will only check that<br/>
-FILE exists, not that it defines FN.  This is intended for<br/>
-function-definitions that `check-declare' does not recognize, e.g.<br/>
-`defstruct'.<br/>
-<br/>
-To specify a value for FILEONLY without passing an argument list,<br/>
-set ARGLIST to t.  This is necessary because nil means an<br/>
-empty argument list, rather than an unspecified one.<br/>
-<br/>
-Note that for the purposes of `check-declare', this statement<br/>
-must be the first non-whitespace on a line.<br/>
-<br/>
+<strong>declare-function</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(declare-function <u>FN</u> <u>FILE</u> &optional <u>ARGLIST</u> <u>FILEONLY</u>)</br>
+</br>
+Tell the byte-compiler that function <u>FN</u> is defined, in <u>FILE</u>.</br>
+Optional <u>ARGLIST</u> is the argument list used by the function.</br>
+The <u>FILE</u> argument is not used by the byte-compiler, but by the</br>
+`check-declare' package, which checks that <u>FILE</u> contains a</br>
+definition for <u>FN</u>.  <u>ARGLIST</u> is used by both the byte-compiler</br>
+and `check-declare' to check for consistency.</br>
+</br>
+<u>FILE</u> can be either a Lisp file (in which case the ".el"</br>
+extension is optional), or a C file.  C files are expanded</br>
+relative to the Emacs "src/" directory.  Lisp files are</br>
+searched for using `locate-library', and if that fails they are</br>
+expanded relative to the location of the file containing the</br>
+declaration.  A <u>FILE</u> with an "ext:" prefix is an external file.</br>
+`check-declare' will check such files if they are found, and skip</br>
+them without error if they are not.</br>
+</br>
+<u>FILEONLY</u> non-nil means that `check-declare' will only check that</br>
+<u>FILE</u> exists, not that it defines <u>FN</u>.  This is intended for</br>
+function-definitions that `check-declare' does not recognize, e.g.</br>
+`defstruct'.</br>
+</br>
+To specify a value for <u>FILEONLY</u> without passing an argument list,</br>
+set <u>ARGLIST</u> to t.  This is necessary because nil means an</br>
+empty argument list, rather than an unspecified one.</br>
+</br>
+Note that for the purposes of `check-declare', this statement</br>
+must be the first non-whitespace on a line.</br>
+</br>
 For more information, see Info node `(elisp)Declaring Functions'.

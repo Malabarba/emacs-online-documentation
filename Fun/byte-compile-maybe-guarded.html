@@ -1,13 +1,13 @@
-<strong>byte-compile-maybe-guarded</strong> is a Lisp macro in `<code>bytecomp.el</code>'.<br/>
-<br/>
-(byte-compile-maybe-guarded CONDITION &rest BODY)<br/>
-<br/>
-Execute forms in BODY, potentially guarded by CONDITION.<br/>
-CONDITION is a variable whose value is a test in an `if' or `cond'.<br/>
-BODY is the code to compile in the first arm of the if or the body of<br/>
-the cond clause.  If CONDITION's value is of the form (fboundp 'foo)<br/>
-or (boundp 'foo), the relevant warnings from BODY about foo's<br/>
-being undefined (or obsolete) will be suppressed.<br/>
-<br/>
-If CONDITION's value is (not (featurep 'emacs)) or (featurep 'xemacs),<br/>
-that suppresses all warnings during execution of BODY.
+<strong>byte-compile-maybe-guarded</strong> is a Lisp macro in `<code>bytecomp.el</code>'.</br>
+</br>
+(byte-compile-maybe-guarded <u>CONDITION</u> &rest <u>BODY</u>)</br>
+</br>
+Execute forms in <u>BODY</u>, potentially guarded by <u>CONDITION</u>.</br>
+<u>CONDITION</u> is a variable whose value is a test in an `if' or `cond'.</br>
+<u>BODY</u> is the code to compile in the first arm of the if or the body of</br>
+the cond clause.  If <u>CONDITION</u>'s value is of the form (fboundp 'foo)</br>
+or (boundp 'foo), the relevant warnings from <u>BODY</u> about foo's</br>
+being undefined (or obsolete) will be suppressed.</br>
+</br>
+If <u>CONDITION</u>'s value is (not (featurep 'emacs)) or (featurep 'xemacs),</br>
+that suppresses all warnings during execution of <u>BODY</u>.

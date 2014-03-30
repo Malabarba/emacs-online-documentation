@@ -1,46 +1,69 @@
-<strong>Man-mode-map</strong> is a variable defined in `<code>man.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for Man mode.<br/>
-<br/>
-Value: (keymap<br/>
- (63 . describe-mode)<br/>
- (13 . man-follow)<br/>
- (109 . man)<br/>
- (113 . Man-quit)<br/>
- (107 . Man-kill)<br/>
- (115 . Man-goto-see-also-section)<br/>
- (103 . Man-goto-section)<br/>
- (114 . Man-follow-manual-reference)<br/>
- (46 . beginning-of-buffer)<br/>
- (60 . beginning-of-buffer)<br/>
- (62 . end-of-buffer)<br/>
- (27 keymap<br/>
-     (112 . Man-previous-manpage)<br/>
-     (110 . Man-next-manpage))<br/>
- (112 . Man-previous-section)<br/>
- (110 . Man-next-section)<br/>
- (127 . scroll-down-command)<br/>
- (32 . scroll-up-command)<br/>
- (57 . digit-argument)<br/>
- (56 . digit-argument)<br/>
- (55 . digit-argument)<br/>
- (54 . digit-argument)<br/>
- (53 . digit-argument)<br/>
- (52 . digit-argument)<br/>
- (51 . digit-argument)<br/>
- (50 . digit-argument)<br/>
- (49 . digit-argument)<br/>
- (48 . digit-argument)<br/>
- (45 . negative-argument)<br/>
- (remap keymap<br/>
-	(self-insert-command . undefined))<br/>
- keymap<br/>
- (backtab . backward-button)<br/>
- (27 keymap<br/>
-     (9 . backward-button))<br/>
- (9 . forward-button))<br/>
-<br/>
+<strong>Man-mode-map</strong> is a variable defined in `<code>man.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for Man mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Man menu-item "Man"
+		(keymap "Man"
+			(Next\ Section menu-item "Next Section" Man-next-section)
+			(Previous\ Section menu-item "Previous Section" Man-previous-section)
+			(Go\ To\ Section\.\.\. menu-item "Go To Section..." Man-goto-section)
+			(Go\ To\ \"SEE\ ALSO\"\ Section menu-item "Go To \"SEE ALSO\" Section" Man-goto-see-also-section :enable
+							(cl-member Man-see-also-regexp Man--sections :test #'string-match-p))
+			(Follow\ Reference\.\.\. menu-item "Follow Reference..." Man-follow-manual-reference :enable Man--refpages :help "Go to a manpage referred to in the \"SEE ALSO\" section")
+			(nil menu-item "--")
+			(Next\ Manpage menu-item "Next Manpage" Man-next-manpage :enable
+				       (>
+					(length Man-page-list)
+					1))
+			(Previous\ Manpage menu-item "Previous Manpage" Man-previous-manpage :enable
+					   (>
+					    (length Man-page-list)
+					    1))
+			(nil-8 menu-item "--")
+			(Man\.\.\. menu-item "Man..." man)
+			(Kill\ Buffer menu-item "Kill Buffer" Man-kill)
+			(Quit menu-item "Quit" Man-quit))))
+ (63 . describe-mode)
+ (13 . man-follow)
+ (109 . man)
+ (117 . Man-update-manpage)
+ (113 . Man-quit)
+ (107 . Man-kill)
+ (115 . Man-goto-see-also-section)
+ (103 . Man-goto-section)
+ (114 . Man-follow-manual-reference)
+ (46 . beginning-of-buffer)
+ (60 . beginning-of-buffer)
+ (62 . end-of-buffer)
+ (27 keymap
+     (112 . Man-previous-manpage)
+     (110 . Man-next-manpage))
+ (112 . Man-previous-section)
+ (110 . Man-next-section)
+ (127 . scroll-down-command)
+ (32 . scroll-up-command)
+ (33554464 . scroll-down-command)
+ (57 . digit-argument)
+ (56 . digit-argument)
+ (55 . digit-argument)
+ (54 . digit-argument)
+ (53 . digit-argument)
+ (52 . digit-argument)
+ (51 . digit-argument)
+ (50 . digit-argument)
+ (49 . digit-argument)
+ (48 . digit-argument)
+ (45 . negative-argument)
+ (remap keymap
+	(self-insert-command . undefined))
+ keymap
+ (backtab . backward-button)
+ (27 keymap
+     (9 . backward-button))
+ (9 . forward-button))
+</pre></br>

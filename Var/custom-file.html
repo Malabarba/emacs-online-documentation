@@ -1,37 +1,37 @@
-<strong>custom-file</strong> is a variable defined in `<code>cus-edit.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-File used for storing customization information.<br/>
-The default is nil, which means to use your init file<br/>
-as specified by `user-init-file'.  If the value is not nil,<br/>
-it should be an absolute file name.<br/>
-<br/>
-You can set this option through Custom, if you carefully read the<br/>
-last paragraph below.  However, usually it is simpler to write<br/>
-something like the following in your init file:<br/>
-<br/>
-(setq custom-file "~/.emacs-custom.el")<br/>
-(load custom-file)<br/>
-<br/>
-Note that both lines are necessary: the first line tells Custom to<br/>
-save all customizations in this file, but does not load it.<br/>
-<br/>
-When you change this variable outside Custom, look in the<br/>
-previous custom file (usually your init file) for the<br/>
-forms `(custom-set-variables ...)'  and `(custom-set-faces ...)',<br/>
-and copy them (whichever ones you find) to the new custom file.<br/>
-This will preserve your existing customizations.<br/>
-<br/>
-If you save this option using Custom, Custom will write all<br/>
-currently saved customizations, including the new one for this<br/>
-option itself, into the file you specify, overwriting any<br/>
-`custom-set-variables' and `custom-set-faces' forms already<br/>
-present in that file.  It will not delete any customizations from<br/>
-the old custom file.  You should do that manually if that is what you<br/>
-want.  You also have to put something like `(load "CUSTOM-FILE")<br/>
-in your init file, where CUSTOM-FILE is the actual name of the<br/>
-file.  Otherwise, Emacs will not load the file when it starts up,<br/>
-and hence will not set `custom-file' to that file either.<br/>
-<br/>
+<strong>custom-file</strong> is a variable defined in `<code>cus-edit.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+File used for storing customization information.</br>
+The default is nil, which means to use your init file</br>
+as specified by `user-init-file'.  If the value is not nil,</br>
+it should be an absolute file name.</br>
+</br>
+You can set this option through Custom, if you carefully read the</br>
+last paragraph below.  However, usually it is simpler to write</br>
+something like the following in your init file:</br>
+</br>
+(setq custom-file "~/.emacs-custom.el")</br>
+(load custom-file)</br>
+</br>
+Note that both lines are necessary: the first line tells Custom to</br>
+save all customizations in this file, but does not load it.</br>
+</br>
+When you change this variable outside Custom, look in the</br>
+previous custom file (usually your init file) for the</br>
+forms `(custom-set-variables ...)'  and `(custom-set-faces ...)',</br>
+and copy them (whichever ones you find) to the new custom file.</br>
+This will preserve your existing customizations.</br>
+</br>
+If you save this option using Custom, Custom will write all</br>
+currently saved customizations, including the new one for this</br>
+option itself, into the file you specify, overwriting any</br>
+`custom-set-variables' and `custom-set-faces' forms already</br>
+present in that file.  It will not delete any customizations from</br>
+the old custom file.  You should do that manually if that is what you</br>
+want.  You also have to put something like `(load "CUSTOM-FILE")</br>
+in your init file, where CUSTOM-FILE is the actual name of the</br>
+file.  Otherwise, Emacs will not load the file when it starts up,</br>
+and hence will not set `custom-file' to that file either.</br>
+</br>
 You can customize this variable.

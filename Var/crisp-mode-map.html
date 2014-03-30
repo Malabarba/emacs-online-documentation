@@ -1,118 +1,117 @@
-<strong>crisp-mode-map</strong> is a variable defined in `<code>crisp.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Local keymap for CRiSP emulation mode.<br/>
-All the bindings are done here instead of globally to try and be<br/>
-nice to the world.<br/>
-<br/>
-Value: (keymap<br/>
- (M-end . end-of-line)<br/>
- (C-end .<br/>
-	#[nil "\300\301!\207"<br/>
-	      [move-to-window-line -1]<br/>
-	      2 nil nil])<br/>
- (end . crisp-end)<br/>
- (M-home . beginning-of-line)<br/>
- (C-home .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [move-to-window-line 0]<br/>
-	       2 nil nil])<br/>
- (home . crisp-home)<br/>
- (C-right . forward-word)<br/>
- (C-left . backward-word)<br/>
- (S-backspace . backward-kill-word)<br/>
- (S-delete . kill-word)<br/>
- (f14 . undo)<br/>
- (27 keymap<br/>
-     (57 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "9"]<br/>
-	       2 nil nil])<br/>
-     (56 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "8"]<br/>
-	       2 nil nil])<br/>
-     (55 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "7"]<br/>
-	       2 nil nil])<br/>
-     (54 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "6"]<br/>
-	       2 nil nil])<br/>
-     (53 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "5"]<br/>
-	       2 nil nil])<br/>
-     (52 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "4"]<br/>
-	       2 nil nil])<br/>
-     (51 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "3"]<br/>
-	       2 nil nil])<br/>
-     (50 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "2"]<br/>
-	       2 nil nil])<br/>
-     (49 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "1"]<br/>
-	       2 nil nil])<br/>
-     (48 .<br/>
-	 #[nil "\300\301!\207"<br/>
-	       [bookmark-set "0"]<br/>
-	       2 nil nil])<br/>
-     (120 . crisp-meta-x-wrapper)<br/>
-     (119 . save-buffer)<br/>
-     (117 . undo)<br/>
-     (112 . crisp-unbury-buffer)<br/>
-     (110 . bury-buffer)<br/>
-     (109 . set-mark-command)<br/>
-     (108 . crisp-mark-line)<br/>
-     (106 . bookmark-jump)<br/>
-     (105 . overwrite-mode)<br/>
-     (104 . help)<br/>
-     (103 . goto-line)<br/>
-     (101 . find-file)<br/>
-     (100 .<br/>
-	  #[nil "\300 \210\301 \207"<br/>
-		[beginning-of-line kill-line]<br/>
-		1 nil nil]))<br/>
- (6 . fill-paragraph-or-region)<br/>
- (f18 . crisp-yank-clipboard)<br/>
- (f20 . crisp-kill-region)<br/>
- (f16 . crisp-set-clipboard)<br/>
- (insert . crisp-yank-clipboard)<br/>
- (f24 . crisp-kill-line)<br/>
- (kp-subtract . crisp-kill-line)<br/>
- (kp-add . crisp-copy-line)<br/>
- (SunF37 . kill-buffer)<br/>
- (M-f10 . compile)<br/>
- (f10 . execute-extended-command)<br/>
- (M-f9 . load-library)<br/>
- (f9 . find-file)<br/>
- (M-f8 . save-kbd-macro)<br/>
- (f8 . call-last-kbd-macro)<br/>
- (M-f7 . end-kbd-macro)<br/>
- (f7 . start-kbd-macro)<br/>
- (f6 . query-replace)<br/>
- (M-f5 . search-backward-regexp)<br/>
- (f19 . search-forward-regexp)<br/>
- (f5 . search-forward-regexp)<br/>
- (C-f4 . delete-other-windows)<br/>
- (f4 . delete-window)<br/>
- (f3 keymap<br/>
-     (right . split-window-right)<br/>
-     (down . split-window-below))<br/>
- (f2 keymap<br/>
-     (up . shrink-window)<br/>
-     (right . enlarge-window-horizontally)<br/>
-     (left . shrink-window-horizontally)<br/>
-     (down . enlarge-window))<br/>
- (f1 . other-window))<br/>
-<br/>
+<strong>crisp-mode-map</strong> is a variable defined in `<code>crisp.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Local keymap for CRiSP emulation mode.</br>
+All the bindings are done here instead of globally to try and be</br>
+nice to the world.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (M-end . end-of-line)
+ (C-end .
+	#[nil "\300\301!\207"
+	      [move-to-window-line -1]
+	      2 nil nil])
+ (end . crisp-end)
+ (M-home . beginning-of-line)
+ (C-home .
+	 #[nil "\300\301!\207"
+	       [move-to-window-line 0]
+	       2 nil nil])
+ (home . crisp-home)
+ (C-right . forward-word)
+ (C-left . backward-word)
+ (S-backspace . backward-kill-word)
+ (S-delete . kill-word)
+ (f14 . undo)
+ (27 keymap
+     (57 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "9"]
+	       2 nil nil])
+     (56 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "8"]
+	       2 nil nil])
+     (55 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "7"]
+	       2 nil nil])
+     (54 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "6"]
+	       2 nil nil])
+     (53 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "5"]
+	       2 nil nil])
+     (52 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "4"]
+	       2 nil nil])
+     (51 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "3"]
+	       2 nil nil])
+     (50 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "2"]
+	       2 nil nil])
+     (49 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "1"]
+	       2 nil nil])
+     (48 .
+	 #[nil "\300\301!\207"
+	       [bookmark-set "0"]
+	       2 nil nil])
+     (120 . crisp-meta-x-wrapper)
+     (119 . save-buffer)
+     (117 . undo)
+     (112 . crisp-unbury-buffer)
+     (110 . bury-buffer)
+     (109 . set-mark-command)
+     (108 . crisp-mark-line)
+     (106 . bookmark-jump)
+     (105 . overwrite-mode)
+     (104 . help)
+     (103 . goto-line)
+     (101 . find-file)
+     (100 .
+	  #[nil "\300 \210\301 \207"
+		[beginning-of-line kill-line]
+		1 nil nil]))
+ (6 . fill-paragraph-or-region)
+ (f18 . crisp-yank-clipboard)
+ (f20 . crisp-kill-region)
+ (f16 . crisp-set-clipboard)
+ (insert . crisp-yank-clipboard)
+ (f24 . crisp-kill-line)
+ (kp-subtract . crisp-kill-line)
+ (kp-add . crisp-copy-line)
+ (SunF37 . kill-buffer)
+ (M-f10 . compile)
+ (f10 . execute-extended-command)
+ (M-f9 . load-library)
+ (f9 . find-file)
+ (M-f8 . save-kbd-macro)
+ (f8 . call-last-kbd-macro)
+ (M-f7 . end-kbd-macro)
+ (f7 . start-kbd-macro)
+ (f6 . query-replace)
+ (M-f5 . search-backward-regexp)
+ (f19 . search-forward-regexp)
+ (f5 . search-forward-regexp)
+ (C-f4 . delete-other-windows)
+ (f4 . delete-window)
+ (f3 keymap
+     (right . split-window-right)
+     (down . split-window-below))
+ (f2 keymap
+     (up . shrink-window)
+     (right . enlarge-window-horizontally)
+     (left . shrink-window-horizontally)
+     (down . enlarge-window))
+ (f1 . other-window))
+</pre></br>

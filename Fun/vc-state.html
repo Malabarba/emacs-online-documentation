@@ -1,60 +1,60 @@
-<strong>vc-state</strong> is a compiled Lisp function in `<code>vc-hooks.el</code>'.<br/>
-<br/>
-(vc-state FILE &optional BACKEND)<br/>
-<br/>
-Return the version control state of FILE.<br/>
-<br/>
-A return of nil from this function means we have no information on the<br/>
-status of this file.  Otherwise, the value returned is one of:<br/>
-<br/>
-  'up-to-date        The working file is unmodified with respect to the<br/>
-                     latest version on the current branch, and not locked.<br/>
-<br/>
-  'edited            The working file has been edited by the user.  If<br/>
-                     locking is used for the file, this state means that<br/>
-                     the current version is locked by the calling user.<br/>
-                     This status should *not* be reported for files<br/>
-                     which have a changed mtime but the same content<br/>
-                     as the repo copy.<br/>
-<br/>
-  USER               The current version of the working file is locked by<br/>
-                     some other USER (a string).<br/>
-<br/>
-  'needs-update      The file has not been edited by the user, but there is<br/>
-                     a more recent version on the current branch stored<br/>
-                     in the repository.<br/>
-<br/>
-  'needs-merge       The file has been edited by the user, and there is also<br/>
-                     a more recent version on the current branch stored in<br/>
-                     the repository.  This state can only occur if locking<br/>
-                     is not used for the file.<br/>
-<br/>
-  'unlocked-changes  The working version of the file is not locked,<br/>
-                     but the working file has been changed with respect<br/>
-                     to that version.  This state can only occur for files<br/>
-                     with locking; it represents an erroneous condition that<br/>
-                     should be resolved by the user (vc-next-action will<br/>
-                     prompt the user to do it).<br/>
-<br/>
-  'added             Scheduled to go into the repository on the next commit.<br/>
-                     Often represented by vc-working-revision = "0" in VCSes<br/>
-                     with monotonic IDs like Subversion and Mercurial.<br/>
-<br/>
-  'removed           Scheduled to be deleted from the repository on next commit.<br/>
-<br/>
-  'conflict          The file contains conflicts as the result of a merge.<br/>
-                     For now the conflicts are text conflicts.  In the<br/>
-                     future this might be extended to deal with metadata<br/>
-                     conflicts too.<br/>
-<br/>
-  'missing           The file is not present in the file system, but the VC<br/>
-                     system still tracks it.<br/>
-<br/>
-  'ignored           The file showed up in a dir-status listing with a flag<br/>
-                     indicating the version-control system is ignoring it,<br/>
-                     Note: This property is not set reliably (some VCSes<br/>
-                     don't have useful directory-status commands) so assume<br/>
-                     that any file with vc-state nil might be ignorable<br/>
-                     without VC knowing it.<br/>
-<br/>
+<strong>vc-state</strong> is a compiled Lisp function in `<code>vc-hooks.el</code>'.</br>
+</br>
+(vc-state <u>FILE</u> &optional <u>BACKEND</u>)</br>
+</br>
+Return the version control state of <u>FILE</u>.</br>
+</br>
+A return of nil from this function means we have no information on the</br>
+status of this file.  Otherwise, the value returned is one of:</br>
+</br>
+  'up-to-date        The working file is unmodified with respect to the</br>
+                     latest version on the current branch, and not locked.</br>
+</br>
+  'edited            The working file has been edited by the user.  If</br>
+                     locking is used for the file, this state means that</br>
+                     the current version is locked by the calling user.</br>
+                     This status should *not* be reported for files</br>
+                     which have a changed mtime but the same content</br>
+                     as the repo copy.</br>
+</br>
+  USER               The current version of the working file is locked by</br>
+                     some other USER (a string).</br>
+</br>
+  'needs-update      The file has not been edited by the user, but there is</br>
+                     a more recent version on the current branch stored</br>
+                     in the repository.</br>
+</br>
+  'needs-merge       The file has been edited by the user, and there is also</br>
+                     a more recent version on the current branch stored in</br>
+                     the repository.  This state can only occur if locking</br>
+                     is not used for the file.</br>
+</br>
+  'unlocked-changes  The working version of the file is not locked,</br>
+                     but the working file has been changed with respect</br>
+                     to that version.  This state can only occur for files</br>
+                     with locking; it represents an erroneous condition that</br>
+                     should be resolved by the user (vc-next-action will</br>
+                     prompt the user to do it).</br>
+</br>
+  'added             Scheduled to go into the repository on the next commit.</br>
+                     Often represented by vc-working-revision = "0" in VCSes</br>
+                     with monotonic IDs like Subversion and Mercurial.</br>
+</br>
+  'removed           Scheduled to be deleted from the repository on next commit.</br>
+</br>
+  'conflict          The file contains conflicts as the result of a merge.</br>
+                     For now the conflicts are text conflicts.  In the</br>
+                     future this might be extended to deal with metadata</br>
+                     conflicts too.</br>
+</br>
+  'missing           The file is not present in the file system, but the VC</br>
+                     system still tracks it.</br>
+</br>
+  'ignored           The file showed up in a dir-status listing with a flag</br>
+                     indicating the version-control system is ignoring it,</br>
+                     Note: This property is not set reliably (some VCSes</br>
+                     don't have useful directory-status commands) so assume</br>
+                     that any file with vc-state nil might be ignorable</br>
+                     without VC knowing it.</br>
+</br>
   'unregistered      The file is not under version control.

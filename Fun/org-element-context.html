@@ -1,14 +1,18 @@
-<strong>org-element-context</strong> is an autoloaded Lisp function in `<code>org-element.el</code>'.<br/>
-<br/>
-(org-element-context)<br/>
-<br/>
-Return closest element or object around point.<br/>
-<br/>
-Return value is a list like (TYPE PROPS) where TYPE is the type<br/>
-of the element or object and PROPS a plist of properties<br/>
-associated to it.<br/>
-<br/>
-Possible types are defined in `org-element-all-elements' and<br/>
-`org-element-all-objects'.  Properties depend on element or<br/>
-object type, but always include `:begin', `:end', `:parent' and<br/>
-`:post-blank'.
+<strong>org-element-context</strong> is an autoloaded compiled Lisp function in `<code>org-element.el</code>'.</br>
+</br>
+(org-element-context &optional <u>ELEMENT</u>)</br>
+</br>
+Return closest element or object around point.</br>
+</br>
+Return value is a list like (TYPE PROPS) where TYPE is the type</br>
+of the element or object and PROPS a plist of properties</br>
+associated to it.</br>
+</br>
+Possible types are defined in `org-element-all-elements' and</br>
+`org-element-all-objects'.  Properties depend on element or</br>
+object type, but always include `:begin', `:end', `:parent' and</br>
+`:post-blank'.</br>
+</br>
+Optional argument <u>ELEMENT</u>, when non-nil, is the closest element</br>
+containing point, as returned by `org-element-at-point'.</br>
+Providing it allows for quicker computation.

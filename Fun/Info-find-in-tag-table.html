@@ -1,14 +1,15 @@
-<strong>Info-find-in-tag-table</strong> is a compiled Lisp function in `<code>info.el</code>'.<br/>
-<br/>
-(Info-find-in-tag-table MARKER REGEXP)<br/>
-<br/>
-Find a node in a tag table.<br/>
-MARKER specifies the buffer and position to start searching at.<br/>
-REGEXP is a regular expression matching nodes or references.  Its first<br/>
-group should match `Node:' or `Ref:'.<br/>
-If a match was found, value is a list (FOUND-ANCHOR POS MODE), where<br/>
-FOUND-ANCHOR is non-nil if a `Ref:' was matched, POS is the position<br/>
-where the match was found, and MODE is `major-mode' of the buffer in<br/>
-which the match was found.<br/>
-This function tries to find a case-sensitive match first, then a<br/>
-case-insensitive match is tried.
+<strong>Info-find-in-tag-table</strong> is a compiled Lisp function in `<code>info.el</code>'.</br>
+</br>
+(Info-find-in-tag-table <u>MARKER</u> <u>REGEXP</u> &optional <u>STRICT-CASE</u>)</br>
+</br>
+Find a node in a tag table.</br>
+<u>MARKER</u> specifies the buffer and position to start searching at.</br>
+<u>REGEXP</u> is a regular expression matching nodes or references.  Its first</br>
+group should match `Node:' or `Ref:'.</br>
+If a match was found, value is a list (FOUND-ANCHOR POS MODE), where</br>
+FOUND-ANCHOR is non-nil if a `Ref:' was matched, POS is the position</br>
+where the match was found, and MODE is `major-mode' of the buffer in</br>
+which the match was found.</br>
+This function tries to find a case-sensitive match first, then a</br>
+case-insensitive match is tried (unless optional argument <u>STRICT-CASE</u></br>
+is non-nil).

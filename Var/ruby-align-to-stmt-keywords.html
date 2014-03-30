@@ -1,0 +1,33 @@
+<strong>ruby-align-to-stmt-keywords</strong> is a variable defined in `<code>ruby-mode.el</code>'.</br>
+Its value is <pre>(def)</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate `listp'.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keywords after which we align the expression body to statement.</br>
+</br>
+When nil, an expression that begins with one these keywords is</br>
+indented to the column of the keyword.  Example:</br>
+</br>
+  tee = if foo</br>
+          bar</br>
+        else</br>
+          qux</br>
+        end</br>
+</br>
+If this value is t or contains a symbol with the name of given</br>
+keyword, the expression is indented to align to the beginning of</br>
+the statement:</br>
+</br>
+  tee = if foo</br>
+    bar</br>
+  else</br>
+    qux</br>
+  end</br>
+</br>
+Only has effect when `ruby-use-smie' is t.</br>
+</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

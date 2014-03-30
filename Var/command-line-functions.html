@@ -1,12 +1,10 @@
-<strong>command-line-functions</strong> is a variable defined in `<code>startup.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of functions to process unrecognized command-line arguments.<br/>
-Each function should access the dynamically bound variables<br/>
-`argi' (the current argument) and `command-line-args-left' (the remaining<br/>
-arguments).  The function should return non-nil only if it recognizes and<br/>
-processes `argi'.  If it does so, it may consume successive arguments by<br/>
+<strong>command-line-functions</strong> is a variable defined in `<code>startup.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of functions to process unrecognized command-line arguments.</br>
+Each function should access the dynamically bound variables</br>
+`argi' (the current argument) and `command-line-args-left' (the remaining</br>
+arguments).  The function should return non-nil only if it recognizes and</br>
+processes `argi'.  If it does so, it may consume successive arguments by</br>
 altering `command-line-args-left' to remove them.

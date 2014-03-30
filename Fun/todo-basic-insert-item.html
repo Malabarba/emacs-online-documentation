@@ -1,0 +1,101 @@
+<strong>todo-basic-insert-item</strong> is a compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+(todo-basic-insert-item &optional <u>ARG</u> <u>DIARY</u> <u>NONMARKING</u> <u>DATE-TYPE</u> <u>TIME</u> <u>REGION-OR-HERE</u>)</br>
+</br>
+Insert a new todo item into a category.</br>
+This is the function from which the generated Todo mode item</br>
+insertion commands derive.</br>
+</br>
+The generated commands have mnemonic key bindings based on the</br>
+arguments' values and their order in the command's argument list,</br>
+as follows: (1) for <u>DIARY</u> `d', (2) for <u>NONMARKING</u> `k', (3) for</br>
+<u>DATE-TYPE</u> either `c' for calendar or `d' for date or `n' for</br>
+weekday name, (4) for <u>TIME</u> `t', (5) for <u>REGION-OR-HERE</u> either `r'</br>
+for region or `h' for here.  Sequences of these keys are appended</br>
+to the insertion prefix key `i'.  Keys that allow a following</br>
+key (i.e., any but `r' or `h') must be doubled when used finally.</br>
+For example, the command bound to the key sequence `i y h' will</br>
+insert a new item with today's date, marked according to the</br>
+<u>DIARY</u> argument described below, and with priority according to</br>
+the HERE argument; `i y y' does the same except that the priority</br>
+is not given by HERE but by prompting.</br>
+</br>
+In command invocations, <u>ARG</u> is passed as a prefix argument as</br>
+follows.  With no prefix argument, add the item to the current</br>
+category; with one prefix argument (`C-u'), prompt for a category</br>
+from the current todo file; with two prefix arguments (`C-u C-u'),</br>
+first prompt for a todo file, then a category in that file.  If</br>
+a non-existing category is entered, ask whether to add it to the</br>
+todo file; if answered affirmatively, add the category and</br>
+insert the item there.</br>
+</br>
+The remaining arguments are set or left nil by the generated item</br>
+insertion commands; their meanings are described in the follows</br>
+paragraphs.</br>
+</br>
+When argument <u>DIARY</u> is non-nil, this overrides the intent of the</br>
+user option `todo-include-in-diary' for this item: if</br>
+`todo-include-in-diary' is nil, include the item in the Fancy</br>
+Diary display, and if it is non-nil, exclude the item from the</br>
+Fancy Diary display.  When <u>DIARY</u> is nil, `todo-include-in-diary'</br>
+has its intended effect.</br>
+</br>
+When the item is included in the Fancy Diary display and the</br>
+argument <u>NONMARKING</u> is non-nil, this overrides the intent of the</br>
+user option `todo-diary-nonmarking' for this item: if</br>
+`todo-diary-nonmarking' is nil, append `diary-nonmarking-symbol'</br>
+to the item, and if it is non-nil, omit `diary-nonmarking-symbol'.</br>
+</br>
+The argument <u>DATE-TYPE</u> determines the content of the item's</br>
+mandatory date header string and how it is added:</br>
+- If <u>DATE-TYPE</u> is the symbol `calendar', the Calendar pops up and</br>
+  when the user puts the cursor on a date and hits RET, that</br>
+  date, in the format set by `calendar-date-display-form',</br>
+  becomes the date in the header.</br>
+- If <u>DATE-TYPE</u> is a string matching the regexp</br>
+  `todo-date-pattern', that string becomes the date in the</br>
+  header.  This case is for the command</br>
+  `todo-insert-item-from-calendar' which is called from the</br>
+  Calendar.</br>
+- If <u>DATE-TYPE</u> is the symbol `date', the header contains the date</br>
+  in the format set by `calendar-date-display-form', with year,</br>
+  month and day individually prompted for (month with tab</br>
+  completion).</br>
+- If <u>DATE-TYPE</u> is the symbol `dayname' the header contains a</br>
+  weekday name instead of a date, prompted for with tab</br>
+  completion.</br>
+- If <u>DATE-TYPE</u> has any other value (including nil or none) the</br>
+  header contains the current date (in the format set by</br>
+  `calendar-date-display-form').</br>
+</br>
+With non-nil argument <u>TIME</u> prompt for a time string, which must</br>
+match `diary-time-regexp'.  Typing `&lt;return>' at the prompt</br>
+returns the current time, if the user option</br>
+`todo-always-add-time-string' is non-nil, otherwise the empty</br>
+string (i.e., no time string).  If <u>TIME</u> is absent or nil, add or</br>
+omit the current time string according as</br>
+`todo-always-add-time-string' is non-nil or nil, respectively.</br>
+</br>
+The argument <u>REGION-OR-HERE</u> determines the source and location of</br>
+the new item:</br>
+- If the <u>REGION-OR-HERE</u> is the symbol `here', prompt for the text of</br>
+  the new item and, if the command was invoked with point in the todo</br>
+  items section of the current category, give the new item the</br>
+  priority of the item at point, lowering the latter's priority and</br>
+  the priority of the remaining items.  If point is in the done items</br>
+  section of the category, insert the new item as the first todo item</br>
+  in the category.  Likewise, if the command with `here' is invoked</br>
+  outside of the current category, jump to the chosen category and</br>
+  insert the new item as the first item in the category.</br>
+- If <u>REGION-OR-HERE</u> is the symbol `region', use the region of the</br>
+  current buffer as the text of the new item, depending on the</br>
+  value of user option `todo-use-only-highlighted-region': if</br>
+  this is non-nil, then use the region only when it is</br>
+  highlighted; otherwise, use the region regardless of</br>
+  highlighting.  An error is signalled if there is no region in</br>
+  the current buffer.  Prompt for the item's priority in the</br>
+  category (an integer between 1 and one more than the number of</br>
+  items in the category), and insert the item accordingly.</br>
+- If <u>REGION-OR-HERE</u> has any other value (in particular, nil or</br>
+  none), prompt for the text and the item's priority, and insert</br>
+  the item accordingly.

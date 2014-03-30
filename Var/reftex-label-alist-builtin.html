@@ -1,78 +1,78 @@
-<strong>reftex-label-alist-builtin</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-The default label environment descriptions.<br/>
-Lower-case symbols correspond to a style file of the same name in the LaTeX<br/>
-distribution.  Mixed-case symbols are convenience aliases.<br/>
-<br/>
-Value: ((Sideways "Alias for -->rotating"<br/>
-	   (rotating))<br/>
- (AMSTeX "amsmath with eqref macro"<br/>
-	 ((nil 101 nil "~\\eqref{%s}")<br/>
-	  amsmath))<br/>
- (amsmath "AMS-LaTeX math environments"<br/>
-	  (("align" 101 nil nil eqnarray-like)<br/>
-	   ("gather" 101 nil nil eqnarray-like)<br/>
-	   ("multline" 101 nil nil t)<br/>
-	   ("flalign" 101 nil nil eqnarray-like)<br/>
-	   ("alignat" 101 nil nil alignat-like)<br/>
-	   ("xalignat" 101 nil nil alignat-like)<br/>
-	   ("xxalignat" 101 nil nil alignat-like)<br/>
-	   ("subequations" 101 nil nil t)))<br/>
- (endnotes "The \\endnote macro"<br/>
-	   (("\\endnote[]{}" 78 "en:" "~\\ref{%s}" 2<br/>
-	     (regexp "endnotes?" "notes?" "Anmerkung\\(en\\)?" "Anm\\."))))<br/>
- (fancybox "The Beqnarray environment"<br/>
-	   (("Beqnarray" 101 nil nil eqnarray-like)))<br/>
- (floatfig "The floatingfigure environment"<br/>
-	   (("floatingfigure" 102 nil nil caption)))<br/>
- (longtable "The longtable environment"<br/>
-	    (("longtable" 116 nil nil caption)))<br/>
- (picinpar "The figwindow and tabwindow environments"<br/>
-	   (("figwindow" 102 nil nil 1)<br/>
-	    ("tabwindow" 102 nil nil 1)))<br/>
- (rotating "Sidewaysfigure and table"<br/>
-	   (("sidewaysfigure" 102 nil nil caption)<br/>
-	    ("sidewaystable" 116 nil nil caption)))<br/>
- (sidecap "CSfigure and SCtable"<br/>
-	  (("SCfigure" 102 nil nil caption)<br/>
-	   ("SCtable" 116 nil nil caption)))<br/>
- (subfigure "Subfigure environments/macro"<br/>
-	    (("subfigure" 102 nil nil caption)<br/>
-	     ("subfigure*" 102 nil nil caption)<br/>
-	     ("\\subfigure[]{}" 102 nil nil 1)))<br/>
- (supertab "Supertabular environment"<br/>
-	   (("supertabular" 116 nil nil "\\tablecaption{")))<br/>
- (wrapfig "The wrapfigure environment"<br/>
-	  (("wrapfigure" 102 nil nil caption)))<br/>
- (ctable "The ctable package"<br/>
-	 (("\\ctable[]{}{}{}" 116 "tab:" "\\ref{%s}" 1<br/>
-	   ("table" "Tabelle"))))<br/>
- (listings "The listings package"<br/>
-	   (("lstlisting" 108 "lst:" "~\\ref{%s}" nil<br/>
-	     (regexp "[Ll]isting"))))<br/>
- (minted "The minted package"<br/>
-	 (("minted" 108 "lst:" "~\\ref{%s}" nil<br/>
-	   (regexp "[Ll]isting"))))<br/>
- (LaTeX "LaTeX default environments"<br/>
-	(("section" 115 "%S" "~\\ref{%s}"<br/>
-	  (nil . t)<br/>
-	  (regexp "parts?" "chapters?" "chap\\." "sections?" "sect?\\." "paragraphs?" "par\\." "\\\\S" "\247" "Teile?" "Kapitel" "Kap\\." "Abschnitte?" "appendi\\(x\\|ces\\)" "App\\." "Anh\"?ange?" "Anh\\."))<br/>
-	 ("enumerate" 105 "item:" "~\\ref{%s}" item<br/>
-	  (regexp "items?" "Punkte?"))<br/>
-	 ("equation" 101 "eq:" "~(\\ref{%s})" t<br/>
-	  (regexp "equations?" "eqs?\\." "eqn\\." "Gleichung\\(en\\)?" "Gl\\."))<br/>
-	 ("eqnarray" 101 "eq:" nil eqnarray-like)<br/>
-	 ("figure" 102 "fig:" "~\\ref{%s}" caption<br/>
-	  (regexp "figure?[sn]?" "figs?\\." "Abbildung\\(en\\)?" "Abb\\."))<br/>
-	 ("figure*" 102 nil nil caption)<br/>
-	 ("table" 116 "tab:" "~\\ref{%s}" caption<br/>
-	  (regexp "tables?" "tab\\." "Tabellen?"))<br/>
-	 ("table*" 116 nil nil caption)<br/>
-	 ("\\footnote[]{}" 110 "fn:" "~\\ref{%s}" 2<br/>
-	  (regexp "footnotes?" "Fussnoten?"))<br/>
-	 ("any" 32 " " "~\\ref{%s}" nil))))<br/>
-<br/>
+<strong>reftex-label-alist-builtin</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+The default label environment descriptions.</br>
+Lower-case symbols correspond to a style file of the same name in the LaTeX</br>
+distribution.  Mixed-case symbols are convenience aliases.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((Sideways "Alias for -->rotating"
+	   (rotating))
+ (AMSTeX "amsmath with eqref macro"
+	 ((nil 101 nil "~\\eqref{%s}")
+	  amsmath))
+ (amsmath "AMS-LaTeX math environments"
+	  (("align" 101 nil nil eqnarray-like)
+	   ("gather" 101 nil nil eqnarray-like)
+	   ("multline" 101 nil nil t)
+	   ("flalign" 101 nil nil eqnarray-like)
+	   ("alignat" 101 nil nil alignat-like)
+	   ("xalignat" 101 nil nil alignat-like)
+	   ("xxalignat" 101 nil nil alignat-like)
+	   ("subequations" 101 nil nil t)))
+ (endnotes "The \\endnote macro"
+	   (("\\endnote[]{}" 78 "en:" "~\\ref{%s}" 2
+	     (regexp "endnotes?" "notes?" "Anmerkung\\(en\\)?" "Anm\\."))))
+ (fancybox "The Beqnarray environment"
+	   (("Beqnarray" 101 nil nil eqnarray-like)))
+ (floatfig "The floatingfigure environment"
+	   (("floatingfigure" 102 nil nil caption)))
+ (longtable "The longtable environment"
+	    (("longtable" 116 nil nil caption)))
+ (picinpar "The figwindow and tabwindow environments"
+	   (("figwindow" 102 nil nil 1)
+	    ("tabwindow" 102 nil nil 1)))
+ (rotating "Sidewaysfigure and table"
+	   (("sidewaysfigure" 102 nil nil caption)
+	    ("sidewaystable" 116 nil nil caption)))
+ (sidecap "CSfigure and SCtable"
+	  (("SCfigure" 102 nil nil caption)
+	   ("SCtable" 116 nil nil caption)))
+ (subfigure "Subfigure environments/macro"
+	    (("subfigure" 102 nil nil caption)
+	     ("subfigure*" 102 nil nil caption)
+	     ("\\subfigure[]{}" 102 nil nil 1)))
+ (supertab "Supertabular environment"
+	   (("supertabular" 116 nil nil "\\tablecaption{")))
+ (wrapfig "The wrapfigure environment"
+	  (("wrapfigure" 102 nil nil caption)))
+ (ctable "The ctable package"
+	 (("\\ctable[]{}{}{}" 116 "tab:" "~\\ref{%s}" 1
+	   ("table" "Tabelle"))))
+ (listings "The listings package"
+	   (("lstlisting" 108 "lst:" "~\\ref{%s}" nil
+	     (regexp "[Ll]isting"))))
+ (minted "The minted package"
+	 (("minted" 108 "lst:" "~\\ref{%s}" nil
+	   (regexp "[Ll]isting"))))
+ (LaTeX "LaTeX default environments"
+	(("section" 115 "%S" "~\\ref{%s}"
+	  (nil . t)
+	  (regexp "parts?" "chapters?" "chap\\." "sections?" "sect?\\." "paragraphs?" "par\\." "\\\\S" "\247" "Teile?" "Kapitel" "Kap\\." "Abschnitte?" "appendi\\(x\\|ces\\)" "App\\." "Anh\"?ange?" "Anh\\."))
+	 ("enumerate" 105 "item:" "~\\ref{%s}" item
+	  (regexp "items?" "Punkte?"))
+	 ("equation" 101 "eq:" "~(\\ref{%s})" t
+	  (regexp "equations?" "eqs?\\." "eqn\\." "Gleichung\\(en\\)?" "Gl\\."))
+	 ("eqnarray" 101 "eq:" nil eqnarray-like)
+	 ("figure" 102 "fig:" "~\\ref{%s}" caption
+	  (regexp "figure?[sn]?" "figs?\\." "Abbildung\\(en\\)?" "Abb\\."))
+	 ("figure*" 102 nil nil caption)
+	 ("table" 116 "tab:" "~\\ref{%s}" caption
+	  (regexp "tables?" "tab\\." "Tabellen?"))
+	 ("table*" 116 nil nil caption)
+	 ("\\footnote[]{}" 110 "fn:" "~\\ref{%s}" 2
+	  (regexp "footnotes?" "Fussnoten?"))
+	 ("any" 32 " " "~\\ref{%s}" nil)))
+ (Texinfo "Texinfo default environments" nil))
+</pre></br>

@@ -1,0 +1,9 @@
+<strong>tramp-call-process</strong> is a compiled Lisp function in `<code>tramp.el</code>'.</br>
+</br>
+(tramp-call-process <u>PROGRAM</u> &optional <u>INFILE</u> <u>DESTINATION</u> <u>DISPLAY</u> &rest <u>ARGS</u>)</br>
+</br>
+Calls `call-process' on the local host.</br>
+This is needed because for some Emacs flavors Tramp has</br>
+defadvised `call-process' to behave like `process-file'.  The</br>
+Lisp error raised when <u>PROGRAM</u> is nil is trapped also, returning 1.</br>
+Furthermore, traces are written with verbosity of 6.

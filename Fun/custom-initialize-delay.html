@@ -1,17 +1,17 @@
-<strong>custom-initialize-delay</strong> is a compiled Lisp function in `<code>custom.el</code>'.<br/>
-<br/>
-(custom-initialize-delay SYMBOL VALUE)<br/>
-<br/>
-Delay initialization of SYMBOL to the next Emacs start.<br/>
-This is used in files that are preloaded (or for autoloaded<br/>
-variables), so that the initialization is done in the run-time<br/>
-context rather than the build-time context.  This also has the<br/>
-side-effect that the (delayed) initialization is performed with<br/>
-the :set function.<br/>
-<br/>
-For variables in preloaded files, you can simply use this<br/>
-function for the :initialize property.  For autoloaded variables,<br/>
-you will also need to add an autoload stanza calling this<br/>
-function, and another one setting the standard-value property.<br/>
-Or you can wrap the defcustom in a progn, to force the autoloader<br/>
+<strong>custom-initialize-delay</strong> is a compiled Lisp function in `<code>custom.el</code>'.</br>
+</br>
+(custom-initialize-delay <u>SYMBOL</u> <u>VALUE</u>)</br>
+</br>
+Delay initialization of <u>SYMBOL</u> to the next Emacs start.</br>
+This is used in files that are preloaded (or for autoloaded</br>
+variables), so that the initialization is done in the run-time</br>
+context rather than the build-time context.  This also has the</br>
+side-effect that the (delayed) initialization is performed with</br>
+the :set function.</br>
+</br>
+For variables in preloaded files, you can simply use this</br>
+function for the :initialize property.  For autoloaded variables,</br>
+you will also need to add an autoload stanza calling this</br>
+function, and another one setting the standard-value property.</br>
+Or you can wrap the defcustom in a progn, to force the autoloader</br>
 to include all of it.

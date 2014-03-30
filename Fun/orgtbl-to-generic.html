@@ -1,62 +1,65 @@
-<strong>orgtbl-to-generic</strong> is an autoloaded Lisp function in `<code>org-table.el</code>'.<br/>
-<br/>
-(orgtbl-to-generic TABLE PARAMS)<br/>
-<br/>
-Convert the orgtbl-mode TABLE to some other format.<br/>
-This generic routine can be used for many standard cases.<br/>
-TABLE is a list, each entry either the symbol `hline' for a horizontal<br/>
-separator line, or a list of fields for that line.<br/>
-PARAMS is a property list of parameters that can influence the conversion.<br/>
-For the generic converter, some parameters are obligatory: you need to<br/>
-specify either :lfmt, or all of (:lstart :lend :sep).<br/>
-<br/>
-Valid parameters are:<br/>
-<br/>
-:splice     When set to t, return only table body lines, don't wrap<br/>
-            them into :tstart and :tend.  Default is nil.  When :splice<br/>
-            is non-nil, this also means that the exporter should not look<br/>
-            for and interpret header and footer sections.<br/>
-<br/>
-:hline      String to be inserted on horizontal separation lines.<br/>
-            May be nil to ignore hlines.<br/>
-<br/>
-:sep        Separator between two fields<br/>
-:remove-nil-lines Do not include lines that evaluate to nil.<br/>
-<br/>
-Each in the following group may be either a string or a function<br/>
-of no arguments returning a string:<br/>
-<br/>
-:tstart     String to start the table.  Ignored when :splice is t.<br/>
-:tend       String to end the table.  Ignored when :splice is t.<br/>
-:lstart     String to start a new table line.<br/>
-:llstart    String to start the last table line, defaults to :lstart.<br/>
-:lend       String to end a table line<br/>
-:llend      String to end the last table line, defaults to :lend.<br/>
-<br/>
-Each in the following group may be a string, a function of one<br/>
-argument (the field or line) returning a string, or a plist<br/>
-mapping columns to either of the above:<br/>
-<br/>
-:lfmt       Format for entire line, with enough %s to capture all fields.<br/>
-            If this is present, :lstart, :lend, and :sep are ignored.<br/>
-:llfmt      Format for the entire last line, defaults to :lfmt.<br/>
-:fmt        A format to be used to wrap the field, should contain<br/>
-            %s for the original field value.  For example, to wrap<br/>
-            everything in dollars, you could use :fmt "$%s$".<br/>
-            This may also be a property list with column numbers and<br/>
-            formats.  For example :fmt (2 "$%s$" 4 "%s%%")<br/>
-:hlstart :hllstart :hlend :hllend :hlsep :hlfmt :hllfmt :hfmt<br/>
-            Same as above, specific for the header lines in the table.<br/>
-            All lines before the first hline are treated as header.<br/>
-            If any of these is not present, the data line value is used.<br/>
-<br/>
-This may be either a string or a function of two arguments:<br/>
-<br/>
-:efmt       Use this format to print numbers with exponentials.<br/>
-            The format should have %s twice for inserting mantissa<br/>
-            and exponent, for example "%s\\times10^{%s}".  This<br/>
-            may also be a property list with column numbers and<br/>
-            formats.  :fmt will still be applied after :efmt.<br/>
-<br/>
-In addition to this, the parameters :skip and :skipcols are always handled<br/>
+<strong>orgtbl-to-generic</strong> is an autoloaded Lisp function in `<code>org-table.el</code>'.</br>
+</br>
+(orgtbl-to-generic <u>TABLE</u> <u>PARAMS</u> &optional <u>BACKEND</u>)</br>
+</br>
+Convert the orgtbl-mode <u>TABLE</u> to some other format.</br>
+This generic routine can be used for many standard cases.</br>
+<u>TABLE</u> is a list, each entry either the symbol `hline' for a horizontal</br>
+separator line, or a list of fields for that line.</br>
+<u>PARAMS</u> is a property list of parameters that can influence the conversion.</br>
+A third optional argument <u>BACKEND</u> can be used to convert the content of</br>
+the cells using a specific export back-end.</br>
+</br>
+For the generic converter, some parameters are obligatory: you need to</br>
+specify either :lfmt, or all of (:lstart :lend :sep).</br>
+</br>
+Valid parameters are:</br>
+</br>
+:splice     When set to t, return only table body lines, don't wrap</br>
+            them into :tstart and :tend.  Default is nil.  When :splice</br>
+            is non-nil, this also means that the exporter should not look</br>
+            for and interpret header and footer sections.</br>
+</br>
+:hline      String to be inserted on horizontal separation lines.</br>
+            May be nil to ignore hlines.</br>
+</br>
+:sep        Separator between two fields</br>
+:remove-nil-lines Do not include lines that evaluate to nil.</br>
+</br>
+Each in the following group may be either a string or a function</br>
+of no arguments returning a string:</br>
+</br>
+:tstart     String to start the table.  Ignored when :splice is t.</br>
+:tend       String to end the table.  Ignored when :splice is t.</br>
+:lstart     String to start a new table line.</br>
+:llstart    String to start the last table line, defaults to :lstart.</br>
+:lend       String to end a table line</br>
+:llend      String to end the last table line, defaults to :lend.</br>
+</br>
+Each in the following group may be a string, a function of one</br>
+argument (the field or line) returning a string, or a plist</br>
+mapping columns to either of the above:</br>
+</br>
+:lfmt       Format for entire line, with enough %s to capture all fields.</br>
+            If this is present, :lstart, :lend, and :sep are ignored.</br>
+:llfmt      Format for the entire last line, defaults to :lfmt.</br>
+:fmt        A format to be used to wrap the field, should contain</br>
+            %s for the original field value.  For example, to wrap</br>
+            everything in dollars, you could use :fmt "$%s$".</br>
+            This may also be a property list with column numbers and</br>
+            formats.  For example :fmt (2 "$%s$" 4 "%s%%")</br>
+:hlstart :hllstart :hlend :hllend :hlsep :hlfmt :hllfmt :hfmt</br>
+            Same as above, specific for the header lines in the table.</br>
+            All lines before the first hline are treated as header.</br>
+            If any of these is not present, the data line value is used.</br>
+</br>
+This may be either a string or a function of two arguments:</br>
+</br>
+:efmt       Use this format to print numbers with exponentials.</br>
+            The format should have %s twice for inserting mantissa</br>
+            and exponent, for example "%s\\times10^{%s}".  This</br>
+            may also be a property list with column numbers and</br>
+            formats.  :fmt will still be applied after :efmt.</br>
+</br>
+In addition to this, the parameters :skip and :skipcols are always handled</br>
 directly by `orgtbl-send-table'.  See manual.

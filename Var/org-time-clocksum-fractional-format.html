@@ -1,8 +1,20 @@
-<strong>org-time-clocksum-fractional-format</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is "%.2f"<br/>
-<br/>
-Documentation:<br/>
-The format string used when creating CLOCKSUM lines, or when<br/>
-org-mode generates a time duration.<br/>
-<br/>
+<strong>org-time-clocksum-fractional-format</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre>"%.2f"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The format string used when creating CLOCKSUM lines,</br>
+or when Org mode generates a time duration, if</br>
+`org-time-clocksum-use-fractional' is enabled.</br>
+</br>
+The value can be a single format string containing one</br>
+%-sequence, which will be filled with the number of hours as</br>
+a float.</br>
+</br>
+Alternatively, the value can be a plist associating any of the</br>
+keys :years, :months, :weeks, :days, :hours or :minutes with</br>
+a format string.  The time duration is formatted using the</br>
+largest time unit which gives a non-zero integer part.  If all</br>
+specified formats have zero integer part, the smallest time unit</br>
+is used.</br>
+</br>
 You can customize this variable.

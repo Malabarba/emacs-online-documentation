@@ -1,5 +1,66 @@
-<strong>ede-sourcecode</strong> is a Lisp function.<br/>
-<br/>
-(ede-sourcecode NEWNAME &rest SLOTS)<br/>
-<br/>
-Create a new object with name NAME of class type ede-sourcecode
+ede-sourcecode is an  object constructor function in `source.el'.</br>
+Creates an object of class ede-sourcecode.</br>
+Create a new object with name NAME of class type ede-sourcecode</br>
+</br>
+Class description:</br>
+ede-sourcecode is a class in `source.el'.</br>
+ Inherits from `eieio-instance-inheritor'.</br>
+</br>
+Description of some type of source code.</br>
+Objects will use sourcecode objects to define the types of source</br>
+that they are willing to use.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: parent-instance    type = eieio-instance-inheritor-child</br>
+  The parent of this instance.</br>
+If a slot of this class is referenced, and is unbound, then the parent</br>
+is checked for a value.</br>
+</br>
+Slot: name    type = string</br>
+  The name of this type of source code.</br>
+Such as "C" or "Emacs Lisp"</br>
+</br>
+Slot: sourcepattern    type = string    default = ".*"</br>
+  Emacs regexp matching sourcecode this target accepts.</br>
+</br>
+Slot: auxsourcepattern    type = (or null string)    default = nil</br>
+  Emacs regexp matching auxiliary source code this target accepts.</br>
+Aux source are source code files needed for compilation, which are not compiled</br>
+themselves.</br>
+</br>
+Slot: enable-subdirectories    type = boolean    default = nil</br>
+  Non nil if this sourcecode type uses subdirectories.</br>
+If sourcecode always lives near the target creating it, this should be nil.</br>
+If sourcecode can, or typically lives in a subdirectory of the owning</br>
+target, set this to t.</br>
+</br>
+Slot: garbagepattern    type = list    default = nil</br>
+  Shell file regexp matching files considered as garbage.</br>
+This is a list of items added to an `rm' command when executing a `clean'</br>
+type directive.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`ede-want-any-auxiliary-files-p' :PRIMARY (this filenames)</br>
+Return non-nil if THIS will accept any aux files in FILENAMES.</br>
+</br>
+`ede-want-any-files-p' :PRIMARY (this filenames)</br>
+Return non-nil if THIS will accept any files in FILENAMES.</br>
+</br>
+`ede-buffer-header-file' :PRIMARY (this filename)</br>
+Return a list of file names of header files for THIS with FILENAME.</br>
+Used to guess header files, but uses the auxsource regular expression.</br>
+</br>
+`ede-want-file-source-p' :PRIMARY (this filename)</br>
+Return non-nil if THIS will take FILENAME as an auxiliary .</br>
+</br>
+`ede-want-any-source-files-p' :PRIMARY (this filenames)</br>
+Return non-nil if THIS will accept any source files in FILENAMES.</br>
+</br>
+`ede-want-file-p' :PRIMARY (this filename)</br>
+Return non-nil if sourcecode definition THIS will take FILENAME.</br>
+</br>
+`ede-want-file-auxiliary-p' :PRIMARY (this filename)</br>
+Return non-nil if THIS will take FILENAME as an auxiliary .</br>
+</br>

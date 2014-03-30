@@ -1,43 +1,44 @@
-<strong>menu-bar-search-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (search-forward menu-item "String Forward..." nonincremental-search-forward :help "Search forward for a string")<br/>
- (search-backward menu-item "String Backwards..." nonincremental-search-backward :help "Search backwards for a string")<br/>
- (re-search-forward menu-item "Regexp Forward..." nonincremental-re-search-forward :help "Search forward for a regular expression")<br/>
- (re-search-backward menu-item "Regexp Backwards..." nonincremental-re-search-backward :help "Search backwards for a regular expression")<br/>
- (separator-repeat-search "--")<br/>
- (repeat-search-fwd menu-item "Repeat Forward" nonincremental-repeat-search-forward :enable<br/>
-		    (or<br/>
-		     (and<br/>
-		      (eq menu-bar-last-search-type 'string)<br/>
-		      search-ring)<br/>
-		     (and<br/>
-		      (eq menu-bar-last-search-type 'regexp)<br/>
-		      regexp-search-ring))<br/>
-		    :help "Repeat last search forward")<br/>
- (repeat-search-back menu-item "Repeat Backwards" nonincremental-repeat-search-backward :enable<br/>
-		     (or<br/>
-		      (and<br/>
-		       (eq menu-bar-last-search-type 'string)<br/>
-		       search-ring)<br/>
-		      (and<br/>
-		       (eq menu-bar-last-search-type 'regexp)<br/>
-		       regexp-search-ring))<br/>
-		     :help "Repeat last search backwards")<br/>
- (separator-tag-search "--")<br/>
- (tags-srch menu-item "Search Tagged Files..." tags-search :help "Search for a regexp in all tagged files")<br/>
- (tags-continue menu-item "Continue Tags Search" tags-loop-continue :help "Continue last tags search operation")<br/>
- (separator-tag-isearch "--")<br/>
- (i-search menu-item "Incremental Search"<br/>
-	   (keymap<br/>
-	    (isearch-forward menu-item "Forward String..." isearch-forward :help "Search forward for a string as you type it")<br/>
-	    (isearch-backward menu-item "Backward String..." isearch-backward :help "Search backwards for a string as you type it")<br/>
-	    (isearch-forward-regexp menu-item "Forward Regexp..." isearch-forward-regexp :help "Search forward for a regular expression as you type it")<br/>
-	    (isearch-backward-regexp menu-item "Backward Regexp..." isearch-backward-regexp :help "Search backwards for a regular expression as you type it")<br/>
-	    "Incremental Search"))<br/>
- "Search")<br/>
-<br/>
+<strong>menu-bar-search-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (search-forward menu-item "String Forward..." nonincremental-search-forward :help "Search forward for a string")
+ (search-backward menu-item "String Backwards..." nonincremental-search-backward :help "Search backwards for a string")
+ (re-search-forward menu-item "Regexp Forward..." nonincremental-re-search-forward :help "Search forward for a regular expression")
+ (re-search-backward menu-item "Regexp Backwards..." nonincremental-re-search-backward :help "Search backwards for a regular expression")
+ (separator-repeat-search "--")
+ (repeat-search-fwd menu-item "Repeat Forward" nonincremental-repeat-search-forward :enable
+		    (or
+		     (and
+		      (eq menu-bar-last-search-type 'string)
+		      search-ring)
+		     (and
+		      (eq menu-bar-last-search-type 'regexp)
+		      regexp-search-ring))
+		    :help "Repeat last search forward")
+ (repeat-search-back menu-item "Repeat Backwards" nonincremental-repeat-search-backward :enable
+		     (or
+		      (and
+		       (eq menu-bar-last-search-type 'string)
+		       search-ring)
+		      (and
+		       (eq menu-bar-last-search-type 'regexp)
+		       regexp-search-ring))
+		     :help "Repeat last search backwards")
+ (separator-tag-search "--")
+ (tags-srch menu-item "Search Tagged Files..." tags-search :help "Search for a regexp in all tagged files")
+ (tags-continue menu-item "Continue Tags Search" tags-loop-continue :help "Continue last tags search operation")
+ (separator-tag-isearch "--")
+ (i-search menu-item "Incremental Search"
+	   (keymap
+	    (isearch-forward menu-item "Forward String..." isearch-forward :help "Search forward for a string as you type it")
+	    (isearch-backward menu-item "Backward String..." isearch-backward :help "Search backwards for a string as you type it")
+	    (isearch-forward-regexp menu-item "Forward Regexp..." isearch-forward-regexp :help "Search forward for a regular expression as you type it")
+	    (isearch-backward-regexp menu-item "Backward Regexp..." isearch-backward-regexp :help "Search backwards for a regular expression as you type it")
+	    "Incremental Search"))
+ "Search")
+</pre></br>

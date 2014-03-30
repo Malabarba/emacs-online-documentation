@@ -1,5 +1,56 @@
-<strong>eieio-speedbar</strong> is a Lisp function.<br/>
-<br/>
-(eieio-speedbar &rest STUFF)<br/>
-<br/>
-You cannot create a new object of type eieio-speedbar
+eieio-speedbar is an  object constructor function in `eieio-speedbar.el'.</br>
+Creates an object of class eieio-speedbar.</br>
+You cannot create a new object of type eieio-speedbar</br>
+</br>
+Class description:</br>
+eieio-speedbar is an abstract class in `eieio-speedbar.el'.</br>
+ Children `eieio-speedbar-file-button', `eieio-speedbar-directory-button'.</br>
+</br>
+Class which provides basic speedbar support for child classes.</br>
+Add one of the child classes to this class to the parent list of a class.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: expanded    type = boolean    default = nil</br>
+  State of an object being expanded in speedbar.</br>
+</br>
+</br>
+Class Allocated Slots:</br>
+</br>
+Slot: buttonface    type = (or symbol face)   value = speedbar-tag-face</br>
+</br>
+ The face used on the textual part of the button for this class.</br>
+See `speedbar-make-tag-line' for details.</br>
+</br>
+Slot: buttontype    type = symbol   value = nil</br>
+</br>
+ The type of expansion button used for objects of this class.</br>
+Possible values are those symbols supported by the `exp-button-type' argument</br>
+to `speedbar-make-tag-line'.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`eieio-speedbar-child-make-tag-lines' :PRIMARY (object depth)</br>
+Base method for creating tag lines for non-object children.</br>
+</br>
+`eieio-speedbar-child-description' :PRIMARY (obj)</br>
+Return a description for a child of OBJ which is not an object.</br>
+</br>
+`eieio-speedbar-expand' :PRIMARY (object depth)</br>
+Expand OBJECT at indentation DEPTH.</br>
+Inserts a list of new tag lines representing expanded elements within</br>
+OBJECT.</br>
+</br>
+`eieio-speedbar-make-tag-line' :PRIMARY (object depth)</br>
+Insert a tag line into speedbar at point for OBJECT.</br>
+All objects a child of symbol `eieio-speedbar' can be created from</br>
+this method.  Override this if you need non-traditional tag lines.</br>
+Argument DEPTH is the depth at which the tag line is inserted.</br>
+</br>
+`eieio-speedbar-object-children' :PRIMARY (object)</br>
+Return a list of children to be displayed in speedbar.</br>
+If the return value is a list of OBJECTs, then those objects are</br>
+queried for details.  If the return list is made of strings,</br>
+then this object will be queried for the details needed</br>
+to create a speedbar button.</br>
+</br>

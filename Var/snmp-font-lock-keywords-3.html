@@ -1,25 +1,24 @@
-<strong>snmp-font-lock-keywords-3</strong> is a variable defined in `<code>snmp-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Gaudy SNMP MIB mode expression highlighting.<br/>
-<br/>
-Value: (("\\([^\n]+\\)[ 	]+::=[ 	]+\\(SEQUENCE\\)[ 	]+{"<br/>
-  (1 font-lock-constant-face)<br/>
-  (2 font-lock-keyword-face))<br/>
- ("::=[ 	]*{[ 	]*\\([a-z0-9].*[ 	]+\\)?\\([0-9]+\\)[ 	]*}"<br/>
-  (1 font-lock-constant-face nil t)<br/>
-  (2 font-lock-variable-name-face))<br/>
- ("ACCESS\\|BEGIN\\|DE\\(FVAL\\|SCRIPTION\\)\\|END\\|FROM\\|I\\(MPORTS\\|NDEX\\)\\|S\\(TATUS\\|YNTAX\\)"<br/>
-  (0 font-lock-keyword-face))<br/>
- ("^[ 	]*\\([a-z][-a-zA-Z0-9]+\\)[ 	]+\\(\\(MODULE-\\(COMPLIANCE\\|IDENTITY\\)\\|OBJECT-\\(COMPLIANCE\\|GROUP\\|IDENTITY\\|TYPE\\)\\|TRAP-\\(GROUP\\|TYPE\\)\\)\\|\\(OBJECT\\)[ 	]+\\(IDENTIFIER\\)[ 	]*::=\\)"<br/>
-  (1 font-lock-variable-name-face)<br/>
-  (3 font-lock-keyword-face nil t)<br/>
-  (7 font-lock-keyword-face nil t)<br/>
-  (8 font-lock-keyword-face nil t))<br/>
- ("^[ 	]*\\([A-Z][-a-zA-Z0-9]+\\)[ 	]+\\(DEFINITIONS\\)[ 	]*::="<br/>
-  (1 font-lock-function-name-face)<br/>
-  (2 font-lock-keyword-face)))<br/>
-<br/>
+<strong>snmp-font-lock-keywords-3</strong> is a variable defined in `<code>snmp-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Gaudy SNMP MIB mode expression highlighting.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\([^\n]+\\)[ 	]+::=[ 	]+\\(SEQUENCE\\)[ 	]+{"
+  (1 font-lock-constant-face)
+  (2 font-lock-keyword-face))
+ ("::=[ 	]*{[ 	]*\\([a-z0-9].*[ 	]+\\)?\\([0-9]+\\)[ 	]*}"
+  (1 font-lock-constant-face nil t)
+  (2 font-lock-variable-name-face))
+ ("ACCESS\\|BEGIN\\|DE\\(FVAL\\|SCRIPTION\\)\\|END\\|FROM\\|I\\(MPORTS\\|NDEX\\)\\|S\\(TATUS\\|YNTAX\\)"
+  (0 font-lock-keyword-face))
+ ("^[ 	]*\\([a-z][-a-zA-Z0-9]+\\)[ 	]+\\(\\(MODULE-\\(COMPLIANCE\\|IDENTITY\\)\\|OBJECT-\\(COMPLIANCE\\|GROUP\\|IDENTITY\\|TYPE\\)\\|TRAP-\\(GROUP\\|TYPE\\)\\)\\|\\(OBJECT\\)[ 	]+\\(IDENTIFIER\\)[ 	]*::=\\)"
+  (1 font-lock-variable-name-face)
+  (3 font-lock-keyword-face nil t)
+  (7 font-lock-keyword-face nil t)
+  (8 font-lock-keyword-face nil t))
+ ("^[ 	]*\\([A-Z][-a-zA-Z0-9]+\\)[ 	]+\\(DEFINITIONS\\)[ 	]*::="
+  (1 font-lock-function-name-face)
+  (2 font-lock-keyword-face)))
+</pre></br>

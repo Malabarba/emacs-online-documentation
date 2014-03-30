@@ -1,8 +1,12 @@
-<strong>letf</strong> is a Lisp macro in `<code>cl.el</code>'.<br/>
-<br/>
-(letf BINDINGS &rest BODY)<br/>
-<br/>
-Dynamically scoped let-style bindings for places.<br/>
-For more details, see `cl-letf'.  This macro behaves like that one<br/>
-in almost every respect (apart from details that relate to some<br/>
-deprecated usage of `symbol-function' in place forms).
+<strong>letf</strong> is an alias for `<strong><a href="cl-letf">cl-letf</a></strong>' in `<code>cl.el</code>'.</br>
+</br>
+(letf ((<u>PLACE</u> <u>VALUE</u>) ...) <u>BODY</u>...)</br>
+</br>
+Temporarily bind to <u>PLACE</u>s.</br>
+This is the analogue of `let', but with generalized variables (in the</br>
+sense of `setf') for the <u>PLACE</u>s.  Each <u>PLACE</u> is set to the corresponding</br>
+<u>VALUE</u>, then the <u>BODY</u> forms are executed.  On exit, either normally or</br>
+because of a `throw' or error, the <u>PLACE</u>s are set back to their original</br>
+values.  Note that this macro is *not* available in Common Lisp.</br>
+As a special case, if `(<u>PLACE</u>)' is used instead of `(<u>PLACE</u> <u>VALUE</u>)',</br>
+the <u>PLACE</u> is not modified before executing <u>BODY</u>.

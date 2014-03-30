@@ -1,22 +1,23 @@
-<strong>make-local-variable</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(make-local-variable VARIABLE)<br/>
-<br/>
-Make VARIABLE have a separate value in the current buffer.<br/>
-Other buffers will continue to share a common default value.<br/>
-(The buffer-local value of VARIABLE starts out as the same value<br/>
-VARIABLE previously had.  If VARIABLE was void, it remains void.)<br/>
-Return VARIABLE.<br/>
-<br/>
-If the variable is already arranged to become local when set,<br/>
-this function causes a local value to exist for this buffer,<br/>
-just as setting the variable would do.<br/>
-<br/>
-This function returns VARIABLE, and therefore<br/>
-  (set (make-local-variable 'VARIABLE) VALUE-EXP)<br/>
-works.<br/>
-<br/>
-See also `make-variable-buffer-local'.<br/>
-<br/>
-Do not use `make-local-variable' to make a hook variable buffer-local.<br/>
+<strong>make-local-variable</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+</br>
+</br>
+(make-local-variable <u>VARIABLE</u>)</br>
+</br>
+Make <u>VARIABLE</u> have a separate value in the current buffer.</br>
+Other buffers will continue to share a common default value.</br>
+(The buffer-local value of <u>VARIABLE</u> starts out as the same value</br>
+<u>VARIABLE</u> previously had.  If <u>VARIABLE</u> was void, it remains void.)</br>
+Return <u>VARIABLE</u>.</br>
+</br>
+If the variable is already arranged to become local when set,</br>
+this function causes a local value to exist for this buffer,</br>
+just as setting the variable would do.</br>
+</br>
+This function returns <u>VARIABLE</u>, and therefore</br>
+  (set (make-local-variable '<u>VARIABLE</u>) VALUE-EXP)</br>
+works.</br>
+</br>
+See also `make-variable-buffer-local'.</br>
+</br>
+Do not use `make-local-variable' to make a hook variable buffer-local.</br>
 Instead, use `add-hook' and specify t for the LOCAL argument.

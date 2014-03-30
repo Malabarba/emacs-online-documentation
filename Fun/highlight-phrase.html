@@ -1,14 +1,17 @@
-<strong>highlight-phrase</strong> is an alias for `hi-lock-face-phrase-buffer' in `<code>hi-lock.el</code>'.<br/>
-<br/>
-It is bound to M-s h p.<br/>
-<br/>
-(highlight-phrase REGEXP &optional FACE)<br/>
-<br/>
-Set face of each match of phrase REGEXP to FACE.<br/>
-If called interactively, replaces whitespace in REGEXP with<br/>
-arbitrary whitespace and makes initial lower-case letters case-insensitive.<br/>
-<br/>
-If Font Lock mode is enabled in the buffer, it is used to<br/>
-highlight REGEXP.  If Font Lock mode is disabled, overlays are<br/>
-used for highlighting; in this case, the highlighting will not be<br/>
-updated as you type.
+<strong>highlight-phrase</strong> is an alias for `<strong><a href="hi-lock-face-phrase-buffer">hi-lock-face-phrase-buffer</a></strong>' in `<code>hi-lock.el</code>'.</br>
+</br>
+It is bound to M-s h p.</br>
+</br>
+<code>(highlight-phrase <u>REGEXP</u> <em>&optional</em> <u>FACE</u></code>)</br>
+</br>
+Set face of each match of phrase <u>REGEXP</u> to <u>FACE</u>.</br>
+Interactively, prompt for <u>REGEXP</u> using `read-regexp', then <u>FACE</u>.</br>
+Use the global history list for <u>FACE</u>.</br>
+</br>
+When called interactively, replace whitespace in user-provided</br>
+regexp with arbitrary whitespace, and make initial lower-case</br>
+letters case-insensitive, before highlighting with `hi-lock-set-pattern'.</br>
+</br>
+Use Font lock mode, if enabled, to highlight <u>REGEXP</u>.  Otherwise,</br>
+use overlays for highlighting.  If overlays are used, the</br>
+highlighting will not update as you type.

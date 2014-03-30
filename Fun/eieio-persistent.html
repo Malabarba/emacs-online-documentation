@@ -1,5 +1,58 @@
-<strong>eieio-persistent</strong> is a Lisp function.<br/>
-<br/>
-(eieio-persistent &rest STUFF)<br/>
-<br/>
-You cannot create a new object of type eieio-persistent
+eieio-persistent is an  object constructor function in `eieio-base.el'.</br>
+Creates an object of class eieio-persistent.</br>
+You cannot create a new object of type eieio-persistent</br>
+</br>
+Class description:</br>
+eieio-persistent is an abstract class in `eieio-base.el'.</br>
+ Children `srecode-map', `semanticdb-project-database-file'.</br>
+</br>
+This special class enables persistence through save files</br>
+Use the `object-save' method to write this object to disk.  The save</br>
+format is Emacs Lisp code which calls the constructor for the saved</br>
+object.  For this reason, only slots which do not have an `:initarg'</br>
+specified will not be saved.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: file    type = string</br>
+  The save file for this persistent object.</br>
+This must be a string, and must be specified when the new object is</br>
+instantiated.</br>
+</br>
+</br>
+Class Allocated Slots:</br>
+</br>
+Slot: do-backups    type = boolean   value = t</br>
+</br>
+ Saving this object should make backup files.</br>
+Setting to nil will mean no backups are made.</br>
+</br>
+Slot: file-header-line    type = string   value = ";; EIEIO PERSISTENT OBJECT"</br>
+</br>
+ Header line for the save file.</br>
+This is used with the `object-write' method.</br>
+</br>
+Slot: extension    type = string   value = ".eieio"</br>
+</br>
+ Extension of files saved by this object.</br>
+Enables auto-choosing nice file names based on name.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`eieio-persistent-save' :PRIMARY (this &optional file)</br>
+Save persistent object THIS to disk.</br>
+Optional argument FILE overrides the file name specified in the object</br>
+instance.</br>
+</br>
+`eieio-persistent-path-relative' :PRIMARY (this file)</br>
+For object THIS, make absolute file name FILE relative.</br>
+</br>
+`eieio-persistent-save-interactive' :PRIMARY (this prompt &optional name)</br>
+Prepare to save THIS.  Use in an `interactive' statement.</br>
+Query user for file name with PROMPT if THIS does not yet specify</br>
+a file.  Optional argument NAME specifies a default file name.</br>
+</br>
+`object-write' :PRIMARY (this &optional comment)</br>
+Write persistent object THIS out to the current stream.</br>
+Optional argument COMMENT is a header line comment.</br>
+</br>

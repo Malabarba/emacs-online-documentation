@@ -1,17 +1,17 @@
-<strong>current-input-mode</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(current-input-mode)<br/>
-<br/>
-Return information about the way Emacs currently reads keyboard input.<br/>
-The value is a list of the form (INTERRUPT FLOW META QUIT), where<br/>
-  INTERRUPT is non-nil if Emacs is using interrupt-driven input; if<br/>
-    nil, Emacs is using CBREAK mode.<br/>
-  FLOW is non-nil if Emacs uses ^S/^Q flow control for output to the<br/>
-    terminal; this does not apply if Emacs uses interrupt-driven input.<br/>
-  META is t if accepting 8-bit input with 8th bit as Meta flag.<br/>
-    META nil means ignoring the top bit, on the assumption it is parity.<br/>
-    META is neither t nor nil if accepting 8-bit input and using<br/>
-    all 8 bits as the character code.<br/>
-  QUIT is the character Emacs currently uses to quit.<br/>
-The elements of this list correspond to the arguments of<br/>
+<strong>current-input-mode</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(current-input-mode)</br>
+</br>
+Return information about the way Emacs currently reads keyboard input.</br>
+The value is a list of the form (INTERRUPT FLOW META QUIT), where</br>
+  INTERRUPT is non-nil if Emacs is using interrupt-driven input; if</br>
+    nil, Emacs is using CBREAK mode.</br>
+  FLOW is non-nil if Emacs uses ^S/^Q flow control for output to the</br>
+    terminal; this does not apply if Emacs uses interrupt-driven input.</br>
+  META is t if accepting 8-bit input with 8th bit as Meta flag.</br>
+    META nil means ignoring the top bit, on the assumption it is parity.</br>
+    META is neither t nor nil if accepting 8-bit input and using</br>
+    all 8 bits as the character code.</br>
+  QUIT is the character Emacs currently uses to quit.</br>
+The elements of this list correspond to the arguments of</br>
 `set-input-mode'.

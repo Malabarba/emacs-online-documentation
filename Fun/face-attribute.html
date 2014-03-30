@@ -1,21 +1,21 @@
-<strong>face-attribute</strong> is a compiled Lisp function in `<code>faces.el</code>'.<br/>
-<br/>
-(face-attribute FACE ATTRIBUTE &optional FRAME INHERIT)<br/>
-<br/>
-Return the value of FACE's ATTRIBUTE on FRAME.<br/>
-If the optional argument FRAME is given, report on face FACE in that frame.<br/>
-If FRAME is t, report on the defaults for face FACE (for new frames).<br/>
-If FRAME is omitted or nil, use the selected frame.<br/>
-<br/>
-If INHERIT is nil, only attributes directly defined by FACE are considered,<br/>
-  so the return value may be `unspecified', or a relative value.<br/>
-If INHERIT is non-nil, FACE's definition of ATTRIBUTE is merged with the<br/>
-  faces specified by its `:inherit' attribute; however the return value<br/>
-  may still be `unspecified' or relative.<br/>
-If INHERIT is a face or a list of faces, then the result is further merged<br/>
-  with that face (or faces), until it becomes specified and absolute.<br/>
-<br/>
-To ensure that the return value is always specified and absolute, use a<br/>
-value of `default' for INHERIT; this will resolve any unspecified or<br/>
-relative values by merging with the `default' face (which is always<br/>
+<strong>face-attribute</strong> is a compiled Lisp function in `<code>faces.el</code>'.</br>
+</br>
+(face-attribute <u>FACE</u> <u>ATTRIBUTE</u> &optional <u>FRAME</u> <u>INHERIT</u>)</br>
+</br>
+Return the value of <u>FACE</u>'s <u>ATTRIBUTE</u> on <u>FRAME</u>.</br>
+If the optional argument <u>FRAME</u> is given, report on face <u>FACE</u> in that frame.</br>
+If <u>FRAME</u> is t, report on the defaults for face <u>FACE</u> (for new frames).</br>
+If <u>FRAME</u> is omitted or nil, use the selected frame.</br>
+</br>
+If <u>INHERIT</u> is nil, only attributes directly defined by <u>FACE</u> are considered,</br>
+  so the return value may be `unspecified', or a relative value.</br>
+If <u>INHERIT</u> is non-nil, <u>FACE</u>'s definition of <u>ATTRIBUTE</u> is merged with the</br>
+  faces specified by its `:inherit' attribute; however the return value</br>
+  may still be `unspecified' or relative.</br>
+If <u>INHERIT</u> is a face or a list of faces, then the result is further merged</br>
+  with that face (or faces), until it becomes specified and absolute.</br>
+</br>
+To ensure that the return value is always specified and absolute, use a</br>
+value of `default' for <u>INHERIT</u>; this will resolve any unspecified or</br>
+relative values by merging with the `default' face (which is always</br>
 completely specified).

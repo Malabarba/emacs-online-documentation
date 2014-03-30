@@ -1,14 +1,14 @@
-<strong>define-obsolete-function-alias</strong> is a Lisp macro in `<code>byte-run.el</code>'.<br/>
-<br/>
-(define-obsolete-function-alias OBSOLETE-NAME CURRENT-NAME WHEN &optional DOCSTRING)<br/>
-<br/>
-Set OBSOLETE-NAME's function definition to CURRENT-NAME and mark it obsolete.<br/>
-<br/>
-(define-obsolete-function-alias 'old-fun 'new-fun "22.1" "old-fun's doc.")<br/>
-<br/>
-is equivalent to the following two lines of code:<br/>
-<br/>
-(defalias 'old-fun 'new-fun "old-fun's doc.")<br/>
-(make-obsolete 'old-fun 'new-fun "22.1")<br/>
-<br/>
+<strong>define-obsolete-function-alias</strong> is a Lisp macro in `<code>byte-run.el</code>'.</br>
+</br>
+(define-obsolete-function-alias <u>OBSOLETE-NAME</u> <u>CURRENT-NAME</u> <u>WHEN</u> &optional <u>DOCSTRING</u>)</br>
+</br>
+Set <u>OBSOLETE-NAME</u>'s function definition to <u>CURRENT-NAME</u> and mark it obsolete.</br>
+</br>
+<code>(define-obsolete-function-alias 'old-fun 'new-fun "22.1" "old-fun's doc."</code>)</br>
+</br>
+is equivalent to the following two lines of code:</br>
+</br>
+(defalias 'old-fun 'new-fun "old-fun's doc.")</br>
+(make-obsolete 'old-fun 'new-fun "22.1")</br>
+</br>
 See the docstrings of `defalias' and `make-obsolete' for more details.

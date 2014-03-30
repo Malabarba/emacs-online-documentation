@@ -1,22 +1,22 @@
-<strong>eshell-apply-indices</strong> is a compiled Lisp function in `<code>esh-var.el</code>'.<br/>
-<br/>
-(eshell-apply-indices VALUE INDICES)<br/>
-<br/>
-Apply to VALUE all of the given INDICES, returning the sub-result.<br/>
-The format of INDICES is:<br/>
-<br/>
-  ((INT-OR-NAME-OR-OTHER INT-OR-NAME INT-OR-NAME ...)<br/>
-   ...)<br/>
-<br/>
-Each member of INDICES represents a level of nesting.  If the first<br/>
-member of a sublist is not an integer or name, and the value it's<br/>
-reference is a string, that will be used as the regexp with which is<br/>
-to divide the string into sub-parts.  The default is whitespace.<br/>
-Otherwise, each INT-OR-NAME refers to an element of the list value.<br/>
-Integers imply a direct index, and names, an associate lookup using<br/>
-`assoc'.<br/>
-<br/>
-For example, to retrieve the second element of a user's record in<br/>
-'/etc/passwd', the variable reference would look like:<br/>
-<br/>
+<strong>eshell-apply-indices</strong> is a compiled Lisp function in `<code>esh-var.el</code>'.</br>
+</br>
+(eshell-apply-indices <u>VALUE</u> <u>INDICES</u>)</br>
+</br>
+Apply to <u>VALUE</u> all of the given <u>INDICES</u>, returning the sub-result.</br>
+The format of <u>INDICES</u> is:</br>
+</br>
+  ((INT-OR-NAME-OR-OTHER INT-OR-NAME INT-OR-NAME ...)</br>
+   ...)</br>
+</br>
+Each member of <u>INDICES</u> represents a level of nesting.  If the first</br>
+member of a sublist is not an integer or name, and the value it's</br>
+reference is a string, that will be used as the regexp with which is</br>
+to divide the string into sub-parts.  The default is whitespace.</br>
+Otherwise, each INT-OR-NAME refers to an element of the list value.</br>
+Integers imply a direct index, and names, an associate lookup using</br>
+`assoc'.</br>
+</br>
+For example, to retrieve the second element of a user's record in</br>
+'/etc/passwd', the variable reference would look like:</br>
+</br>
   ${egrep johnw /etc/passwd}[: 2]

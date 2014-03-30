@@ -1,23 +1,20 @@
-<strong>c-get-state-before-change-functions</strong> is a variable defined in `<code>cc-engine.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-If non-nil, a list of functions called from c-before-change-hook.<br/>
-Typically these will record enough state to allow<br/>
-`c-before-font-lock-function' to extend the region to fontify,<br/>
-and may do such things as removing text-properties which must be<br/>
-recalculated.<br/>
-<br/>
-These functions will be run in the order given.  Each of them<br/>
-takes 2 parameters, the BEG and END supplied to every<br/>
-before-change function; on entry, the buffer will have been<br/>
-widened and match-data will have been saved; point is undefined<br/>
-on both entry and exit; the return value is ignored.<br/>
-<br/>
-The functions are called even when font locking isn't enabled.<br/>
-<br/>
-When the mode is initialized, the functions are called with<br/>
+<strong>c-get-state-before-change-functions</strong> is a variable defined in `<code>cc-engine.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, a list of functions called from c-before-change-hook.</br>
+Typically these will record enough state to allow</br>
+`c-before-font-lock-function' to extend the region to fontify,</br>
+and may do such things as removing text-properties which must be</br>
+recalculated.</br>
+</br>
+These functions will be run in the order given.  Each of them</br>
+takes 2 parameters, the BEG and END supplied to every</br>
+before-change function; on entry, the buffer will have been</br>
+widened and match-data will have been saved; point is undefined</br>
+on both entry and exit; the return value is ignored.</br>
+</br>
+The functions are called even when font locking isn't enabled.</br>
+</br>
+When the mode is initialized, the functions are called with</br>
 parameters (point-min) and (point-max).

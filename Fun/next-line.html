@@ -1,32 +1,38 @@
-<strong>next-line</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to C-n, <down>.<br/>
-<br/>
-(next-line &optional ARG TRY-VSCROLL)<br/>
-<br/>
-Move cursor vertically down ARG lines.<br/>
-Interactively, vscroll tall lines if `auto-window-vscroll' is enabled.<br/>
-If there is no character in the target line exactly under the current column,<br/>
-the cursor is positioned after the character in that line which spans this<br/>
-column, or at the end of the line if it is not long enough.<br/>
-If there is no line in the buffer after this one, behavior depends on the<br/>
-value of `next-line-add-newlines'.  If non-nil, it inserts a newline character<br/>
-to create a line, and moves the cursor to that line.  Otherwise it moves the<br/>
-cursor to the end of the buffer.<br/>
-<br/>
-If the variable `line-move-visual' is non-nil, this command moves<br/>
-by display lines.  Otherwise, it moves by buffer lines, without<br/>
-taking variable-width characters or continued lines into account.<br/>
-<br/>
-The command C-x C-n can be used to create<br/>
-a semipermanent goal column for this command.<br/>
-Then instead of trying to move exactly vertically (or as close as possible),<br/>
-this command moves to the specified goal column (or as close as possible).<br/>
-The goal column is stored in the variable `goal-column', which is nil<br/>
-when there is no goal column.  Note that setting `goal-column'<br/>
-overrides `line-move-visual' and causes this command to move by buffer<br/>
-lines rather than by display lines.<br/>
-<br/>
-If you are thinking of using this in a Lisp program, consider<br/>
-using `forward-line' instead.  It is usually easier to use<br/>
+<strong>next-line</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to C-n, &lt;down>.</br>
+</br>
+<code>(next-line <em>&optional</em> <u>ARG</u> <u>TRY-VSCROLL</u></code>)</br>
+</br>
+Move cursor vertically down <u>ARG</u> lines.</br>
+Interactively, vscroll tall lines if `auto-window-vscroll' is enabled.</br>
+Non-interactively, use <u>TRY-VSCROLL</u> to control whether to vscroll tall</br>
+lines: if either `auto-window-vscroll' or <u>TRY-VSCROLL</u> is nil, this</br>
+function will not vscroll.</br>
+</br>
+<u>ARG</u> defaults to 1.</br>
+</br>
+If there is no character in the target line exactly under the current column,</br>
+the cursor is positioned after the character in that line which spans this</br>
+column, or at the end of the line if it is not long enough.</br>
+If there is no line in the buffer after this one, behavior depends on the</br>
+value of `next-line-add-newlines'.  If non-nil, it inserts a newline character</br>
+to create a line, and moves the cursor to that line.  Otherwise it moves the</br>
+cursor to the end of the buffer.</br>
+</br>
+If the variable `line-move-visual' is non-nil, this command moves</br>
+by display lines.  Otherwise, it moves by buffer lines, without</br>
+taking variable-width characters or continued lines into account.</br>
+</br>
+The command C-x C-n can be used to create</br>
+a semipermanent goal column for this command.</br>
+Then instead of trying to move exactly vertically (or as close as possible),</br>
+this command moves to the specified goal column (or as close as possible).</br>
+The goal column is stored in the variable `goal-column', which is nil</br>
+when there is no goal column.  Note that setting `goal-column'</br>
+overrides `line-move-visual' and causes this command to move by buffer</br>
+lines rather than by display lines.</br>
+</br>
+If you are thinking of using this in a Lisp program, consider</br>
+using `forward-line' instead.  It is usually easier to use</br>
 and more reliable (no dependence on goal column, etc.).

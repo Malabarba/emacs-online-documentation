@@ -1,42 +1,42 @@
-<strong>with-temp-buffer-window</strong> is a Lisp macro in `<code>window.el</code>'.<br/>
-<br/>
-(with-temp-buffer-window BUFFER-OR-NAME ACTION QUIT-FUNCTION &rest BODY)<br/>
-<br/>
-Bind `standard-output' to BUFFER-OR-NAME, eval BODY, show the buffer.<br/>
-BUFFER-OR-NAME must specify either a live buffer, or the name of a<br/>
-buffer (if it does not exist, this macro creates it).<br/>
-<br/>
-This construct makes buffer BUFFER-OR-NAME empty before running BODY.<br/>
-It does not make the buffer current for BODY.<br/>
-Instead it binds `standard-output' to that buffer, so that output<br/>
-generated with `prin1' and similar functions in BODY goes into<br/>
-the buffer.<br/>
-<br/>
-At the end of BODY, this marks the specified buffer unmodified and<br/>
-read-only, and displays it in a window (but does not select it, or make<br/>
-the buffer current).  The display happens by calling `display-buffer'<br/>
-with the ACTION argument.  If `temp-buffer-resize-mode' is enabled,<br/>
-the relevant window shrinks automatically.<br/>
-<br/>
-This returns the value returned by BODY, unless QUIT-FUNCTION specifies<br/>
-a function.  In that case, it runs the function with two arguments -<br/>
-the window showing the specified buffer and the value returned by<br/>
-BODY - and returns the value returned by that function.<br/>
-<br/>
-If the buffer is displayed on a new frame, the window manager may<br/>
-decide to select that frame.  In that case, it's usually a good<br/>
-strategy if QUIT-FUNCTION selects the window showing the buffer<br/>
-before reading any value from the minibuffer; for example, when<br/>
-asking a `yes-or-no-p' question.<br/>
-<br/>
-This runs the hook `temp-buffer-window-setup-hook' before BODY,<br/>
-with the specified buffer temporarily current.  It runs the<br/>
-hook `temp-buffer-window-show-hook' after displaying the buffer,<br/>
-with that buffer temporarily current, and the window that was used to<br/>
-display it temporarily selected.<br/>
-<br/>
-This construct is similar to `with-output-to-temp-buffer', but<br/>
-runs different hooks.  In particular, it does not run<br/>
-`temp-buffer-setup-hook', which usually puts the buffer in Help mode.<br/>
-Also, it does not call `temp-buffer-show-function' (the ACTION<br/>
-argument replaces this).
+<strong>with-temp-buffer-window</strong> is a Lisp macro in `<code>window.el</code>'.</br>
+</br>
+(with-temp-buffer-window <u>BUFFER-OR-NAME</u> <u>ACTION</u> <u>QUIT-FUNCTION</u> &rest <u>BODY</u>)</br>
+</br>
+Evaluate <u>BODY</u> in a buffer <u>BUFFER-OR-NAME</u> and show that buffer.</br>
+<u>BUFFER-OR-NAME</u> must specify either a live buffer, or the name of</br>
+a buffer (if it does not exist, this macro creates it).</br>
+</br>
+Make the buffer specified by <u>BUFFER-OR-NAME</u> empty before running</br>
+<u>BODY</u> and make that buffer current for running the forms in <u>BODY</u>.</br>
+In addition, bind `standard-output' to that buffer, so that</br>
+output generated with `prin1' and similar functions in <u>BODY</u> goes</br>
+into that buffer.</br>
+</br>
+At the end of <u>BODY</u>, mark the specified buffer unmodified and</br>
+read-only, and display it in a window (but do not select it).</br>
+The display happens by calling `display-buffer' passing it the</br>
+<u>ACTION</u> argument.  If `temp-buffer-resize-mode' is enabled, the</br>
+corresponding window may shrink automatically.</br>
+</br>
+Return the value returned by <u>BODY</u>, unless <u>QUIT-FUNCTION</u> specifies</br>
+a function.  In that case, run that function with two arguments -</br>
+the window showing the specified buffer and the value returned by</br>
+<u>BODY</u> - and return the value returned by that function.</br>
+</br>
+If the buffer is displayed on a new frame, the window manager may</br>
+decide to select that frame.  In that case, it's usually a good</br>
+strategy if <u>QUIT-FUNCTION</u> selects the window showing the buffer</br>
+before reading any value from the minibuffer; for example, when</br>
+asking a `yes-or-no-p' question.</br>
+</br>
+This runs the hook `temp-buffer-window-setup-hook' before <u>BODY</u>,</br>
+with the specified buffer temporarily current.  It runs the hook</br>
+`temp-buffer-window-show-hook' after displaying the buffer, with</br>
+that buffer temporarily current, and the window that was used to</br>
+display it temporarily selected.</br>
+</br>
+This construct is similar to `with-output-to-temp-buffer' but,</br>
+unlike that, makes <u>BUFFER-OR-NAME</u> current when running <u>BODY</u>.</br>
+Also, it neither runs `temp-buffer-setup-hook' which usually puts</br>
+the buffer in Help mode, nor `temp-buffer-show-function' (the</br>
+<u>ACTION</u> argument replaces this).

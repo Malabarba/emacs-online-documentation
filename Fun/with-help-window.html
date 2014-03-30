@@ -1,7 +1,12 @@
-<strong>with-help-window</strong> is a Lisp macro in `<code>help.el</code>'.<br/>
-<br/>
-(with-help-window BUFFER-NAME &rest BODY)<br/>
-<br/>
-Display buffer with name BUFFER-NAME in a help window evaluating BODY.<br/>
-Select help window if the actual value of the user option<br/>
-`help-window-select' says so.  Return last value in BODY.
+<strong>with-help-window</strong> is a Lisp macro in `<code>help.el</code>'.</br>
+</br>
+(with-help-window <u>BUFFER-NAME</u> &rest <u>BODY</u>)</br>
+</br>
+Display buffer with name <u>BUFFER-NAME</u> in a help window.</br>
+Evaluate the forms in <u>BODY</u> with the buffer specified by</br>
+<u>BUFFER-NAME</u> current, put that buffer in `help-mode', display the</br>
+buffer in a window (see `with-temp-buffer-window' for details)</br>
+and issue a message how to deal with that "help" window when</br>
+it's no more needed.  Select the help window if the current value</br>
+of the user option `help-window-select' says so.  Return last</br>
+value in <u>BODY</u>.

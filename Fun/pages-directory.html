@@ -1,35 +1,35 @@
-<strong>pages-directory</strong> is an interactive compiled Lisp function in `<code>page-ext.el</code>'.<br/>
-<br/>
-It is bound to C-x C-p C-d.<br/>
-<br/>
-(pages-directory PAGES-LIST-ALL-HEADERS-P COUNT-LINES-P &optional REGEXP)<br/>
-<br/>
-Display a directory of the page headers in a temporary buffer.<br/>
-A header is the first non-blank line after the page-delimiter.<br/>
-M-x pages-directory-mode<br/>
-You may move point to one of the lines in the temporary buffer,<br/>
-then use <br/>
-Uses keymap `pages-directory-goto', which is not currently defined.<br/>
- to go to the same line in the pages buffer.<br/>
-<br/>
-In interactive use:<br/>
-<br/>
-    1. With no prefix arg, display all headers.<br/>
-<br/>
-    2. With prefix arg, display the headers of only those pages that<br/>
-       contain matches to a regular expression for which you are<br/>
-       prompted.<br/>
-<br/>
-    3. With numeric prefix arg, for every page, print the number of<br/>
-       lines within each page.<br/>
-<br/>
-    4. With negative numeric prefix arg, for only those pages that<br/>
-       match a regular expression, print the number of lines within<br/>
-       each page.<br/>
-<br/>
-When called from a program, non-nil first arg means list all headers;<br/>
-non-nil second arg means print numbers of lines in each page; if first<br/>
-arg is nil, optional third arg is regular expression.<br/>
-<br/>
-If the buffer is narrowed, the `pages-directory' command creates a<br/>
+<strong>pages-directory</strong> is an interactive compiled Lisp function in `<code>page-ext.el</code>'.</br>
+</br>
+It is bound to C-x C-p C-d.</br>
+</br>
+<code>(pages-directory <u>PAGES-LIST-ALL-HEADERS-P</u> <u>COUNT-LINES-P</u> <em>&optional</em> <u>REGEXP</u></code>)</br>
+</br>
+Display a directory of the page headers in a temporary buffer.</br>
+A header is the first non-blank line after the page-delimiter.</br>
+M-x pages-directory-mode</br>
+You may move point to one of the lines in the temporary buffer,</br>
+then use </br>
+Uses keymap `pages-directory-goto', which is not currently defined.</br>
+ to go to the same line in the pages buffer.</br>
+</br>
+In interactive use:</br>
+</br>
+    1. With no prefix arg, display all headers.</br>
+</br>
+    2. With prefix arg, display the headers of only those pages that</br>
+       contain matches to a regular expression for which you are</br>
+       prompted.</br>
+</br>
+    3. With numeric prefix arg, for every page, print the number of</br>
+       lines within each page.</br>
+</br>
+    4. With negative numeric prefix arg, for only those pages that</br>
+       match a regular expression, print the number of lines within</br>
+       each page.</br>
+</br>
+When called from a program, non-nil first arg means list all headers;</br>
+non-nil second arg means print numbers of lines in each page; if first</br>
+arg is nil, optional third arg is regular expression.</br>
+</br>
+If the buffer is narrowed, the `pages-directory' command creates a</br>
 directory for only the accessible portion of the buffer.

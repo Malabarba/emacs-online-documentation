@@ -1,17 +1,23 @@
-<strong>async-shell-command</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to M-&.<br/>
-<br/>
-(async-shell-command COMMAND &optional OUTPUT-BUFFER ERROR-BUFFER)<br/>
-<br/>
-Execute string COMMAND asynchronously in background.<br/>
-<br/>
-Like `shell-command', but adds `&' at the end of COMMAND<br/>
-to execute it asynchronously.<br/>
-<br/>
-The output appears in the buffer `*Async Shell Command*'.<br/>
-That buffer is in shell mode.<br/>
-<br/>
-In Elisp, you will often be better served by calling `start-process'<br/>
-directly, since it offers more control and does not impose the use of a<br/>
+<strong>async-shell-command</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to M-&.</br>
+</br>
+<code>(async-shell-command <u>COMMAND</u> <em>&optional</em> <u>OUTPUT-BUFFER</u> <u>ERROR-BUFFER</u></code>)</br>
+</br>
+Execute string <u>COMMAND</u> asynchronously in background.</br>
+</br>
+Like `shell-command', but adds `&' at the end of <u>COMMAND</u></br>
+to execute it asynchronously.</br>
+</br>
+The output appears in the buffer `*Async Shell Command*'.</br>
+That buffer is in shell mode.</br>
+</br>
+You can configure `async-shell-command-buffer' to specify what to do in</br>
+case when `*Async Shell Command*' buffer is already taken by another</br>
+running shell command.  To run <u>COMMAND</u> without displaying the output</br>
+in a window you can configure `display-buffer-alist' to use the action</br>
+`display-buffer-no-window' for the buffer `*Async Shell Command*'.</br>
+</br>
+In Elisp, you will often be better served by calling `start-process'</br>
+directly, since it offers more control and does not impose the use of a</br>
 shell (with its need to quote arguments).

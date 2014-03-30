@@ -1,81 +1,81 @@
-<strong>regi-interpret</strong> is a compiled Lisp function in `<code>regi.el</code>'.<br/>
-<br/>
-(regi-interpret FRAME &optional START END)<br/>
-<br/>
-Interpret the regi frame FRAME.<br/>
-If optional START and END are supplied, they indicate the region of<br/>
-interest, and the buffer is narrowed to the beginning of the line<br/>
-containing START, and beginning of the line after the line containing<br/>
-END.  Otherwise, point and mark are not set and processing continues<br/>
-until your FUNC returns the `abort' symbol (see below).  Beware!  Not<br/>
-supplying a START or END could put you in an infinite loop.<br/>
-<br/>
-A regi frame is a list of entries of the form:<br/>
-<br/>
-     (PRED FUNC [NEGATE-P [CASE-FOLD-SEARCH]])<br/>
-<br/>
-PRED is a predicate against which each line in the region is tested,<br/>
-and if a match occurs, FUNC is `eval'd.  Point is then moved to the<br/>
-beginning of the next line, the frame is reset and checking continues.<br/>
-If a match doesn't occur, the next entry is checked against the<br/>
-current line until all entries in the frame are checked.  At this<br/>
-point, if no match occurred, the frame is reset and point is moved to<br/>
-the next line.  Checking continues until every line in the region is<br/>
-checked.  Optional NEGATE-P inverts the result of PRED before FUNC is<br/>
-called and `case-fold-search' is bound to the optional value of<br/>
-CASE-FOLD-SEARCH for the PRED check.<br/>
-<br/>
-PRED can be a string, variable, function or one of the following<br/>
-symbols: t, nil, `begin', `end', and `every'.  If PRED is a string, or<br/>
-a variable or list that evaluates to a string, it is interpreted as a<br/>
-regular expression and is matched against the current line (from the<br/>
-beginning) using `looking-at'.  If PRED does not evaluate to a string,<br/>
-it is interpreted as a binary value (nil or non-nil).<br/>
-<br/>
-PRED can also be one of the following symbols:<br/>
-<br/>
-t       -- always produces a true outcome<br/>
-`begin' -- always executes before anything else<br/>
-`end'   -- always executes after everything else<br/>
-`every' -- execute after frame is matched on a line<br/>
-<br/>
-Note that NEGATE-P and CASE-FOLD-SEARCH are meaningless if PRED is one<br/>
-of these special symbols.  Only the first occurrence of each symbol in<br/>
-a frame entry is used, the rest are ignored.<br/>
-<br/>
-Your FUNC can return values which control regi processing.  If a list<br/>
-is returned from your function, it can contain any combination of the<br/>
-following elements:<br/>
-<br/>
-the symbol `continue'<br/>
-     Tells regi to continue processing frame-entries after a match,<br/>
-     instead of resetting to the first entry and advancing to the next<br/>
-     line, as is the default behavior.  When returning this symbol,<br/>
-     you must take care not to enter an infinite loop.<br/>
-<br/>
-the symbol `abort'<br/>
-     Tells regi to terminate processing this frame.  any end<br/>
-     frame-entry is still processed.<br/>
-<br/>
-the list `(frame . NEWFRAME)'<br/>
-     Tells regi to use NEWFRAME as its current frame.  In other words,<br/>
-     your FUNC can modify the executing regi frame on the fly.<br/>
-<br/>
-the list `(step . STEP)'<br/>
-     Tells regi to move STEP number of lines forward during normal<br/>
-     processing.  By default, regi moves forward 1 line.  STEP can be<br/>
-     negative, but be careful of infinite loops.<br/>
-<br/>
-You should usually take care to explicitly return nil from your<br/>
-function if no action is to take place.  Your FUNC will always be<br/>
-`eval'ed.  The following variables will be temporarily bound to some<br/>
-useful information:<br/>
-<br/>
-`curline'<br/>
-     the current line in the buffer, as a string<br/>
-<br/>
-`curframe'<br/>
-     the full, current frame being executed<br/>
-<br/>
-`curentry'<br/>
+<strong>regi-interpret</strong> is a compiled Lisp function in `<code>regi.el</code>'.</br>
+</br>
+(regi-interpret <u>FRAME</u> &optional <u>START</u> <u>END</u>)</br>
+</br>
+Interpret the regi frame <u>FRAME</u>.</br>
+If optional <u>START</u> and <u>END</u> are supplied, they indicate the region of</br>
+interest, and the buffer is narrowed to the beginning of the line</br>
+containing <u>START</u>, and beginning of the line after the line containing</br>
+<u>END</u>.  Otherwise, point and mark are not set and processing continues</br>
+until your FUNC returns the `abort' symbol (see below).  Beware!  Not</br>
+supplying a <u>START</u> or <u>END</u> could put you in an infinite loop.</br>
+</br>
+A regi frame is a list of entries of the form:</br>
+</br>
+     (PRED FUNC [NEGATE-P [CASE-FOLD-SEARCH]])</br>
+</br>
+PRED is a predicate against which each line in the region is tested,</br>
+and if a match occurs, FUNC is `eval'd.  Point is then moved to the</br>
+beginning of the next line, the frame is reset and checking continues.</br>
+If a match doesn't occur, the next entry is checked against the</br>
+current line until all entries in the frame are checked.  At this</br>
+point, if no match occurred, the frame is reset and point is moved to</br>
+the next line.  Checking continues until every line in the region is</br>
+checked.  Optional NEGATE-P inverts the result of PRED before FUNC is</br>
+called and `case-fold-search' is bound to the optional value of</br>
+CASE-FOLD-SEARCH for the PRED check.</br>
+</br>
+PRED can be a string, variable, function or one of the following</br>
+symbols: t, nil, `begin', `end', and `every'.  If PRED is a string, or</br>
+a variable or list that evaluates to a string, it is interpreted as a</br>
+regular expression and is matched against the current line (from the</br>
+beginning) using `looking-at'.  If PRED does not evaluate to a string,</br>
+it is interpreted as a binary value (nil or non-nil).</br>
+</br>
+PRED can also be one of the following symbols:</br>
+</br>
+t       -- always produces a true outcome</br>
+`begin' -- always executes before anything else</br>
+`end'   -- always executes after everything else</br>
+`every' -- execute after frame is matched on a line</br>
+</br>
+Note that NEGATE-P and CASE-FOLD-SEARCH are meaningless if PRED is one</br>
+of these special symbols.  Only the first occurrence of each symbol in</br>
+a frame entry is used, the rest are ignored.</br>
+</br>
+Your FUNC can return values which control regi processing.  If a list</br>
+is returned from your function, it can contain any combination of the</br>
+following elements:</br>
+</br>
+the symbol `continue'</br>
+     Tells regi to continue processing frame-entries after a match,</br>
+     instead of resetting to the first entry and advancing to the next</br>
+     line, as is the default behavior.  When returning this symbol,</br>
+     you must take care not to enter an infinite loop.</br>
+</br>
+the symbol `abort'</br>
+     Tells regi to terminate processing this frame.  any end</br>
+     frame-entry is still processed.</br>
+</br>
+the list `(frame . NEWFRAME)'</br>
+     Tells regi to use NEWFRAME as its current frame.  In other words,</br>
+     your FUNC can modify the executing regi frame on the fly.</br>
+</br>
+the list `(step . STEP)'</br>
+     Tells regi to move STEP number of lines forward during normal</br>
+     processing.  By default, regi moves forward 1 line.  STEP can be</br>
+     negative, but be careful of infinite loops.</br>
+</br>
+You should usually take care to explicitly return nil from your</br>
+function if no action is to take place.  Your FUNC will always be</br>
+`eval'ed.  The following variables will be temporarily bound to some</br>
+useful information:</br>
+</br>
+`curline'</br>
+     the current line in the buffer, as a string</br>
+</br>
+`curframe'</br>
+     the full, current frame being executed</br>
+</br>
+`curentry'</br>
      the current frame entry being executed.

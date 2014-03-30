@@ -1,172 +1,170 @@
-<strong>ex-token-alist</strong> is a variable defined in `<code>viper-ex.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value:<br/>
-(("!"<br/>
-  (ex-command))<br/>
- ("&"<br/>
-  (ex-substitute t))<br/>
- ("="<br/>
-  (ex-line-no))<br/>
- (">"<br/>
-  (ex-line "right"))<br/>
- ("<"<br/>
-  (ex-line "left"))<br/>
- ("Buffer"<br/>
-  (if ex-cycle-other-window<br/>
-      (viper-switch-to-buffer)<br/>
-    (viper-switch-to-buffer-other-window)))<br/>
- ("Next"<br/>
-  (ex-next<br/>
-   (not ex-cycle-other-window)))<br/>
- ("PreviousRelatedFile"<br/>
-  (ex-next-related-buffer -1))<br/>
- ("RelatedFile"<br/>
-  (ex-next-related-buffer 1))<br/>
- ("W" "Write")<br/>
- ("WWrite"<br/>
-  (save-some-buffers t))<br/>
- ("Write"<br/>
-  (save-some-buffers))<br/>
- ("a" "append")<br/>
- ("args"<br/>
-  (ex-args))<br/>
- ("buffer"<br/>
-  (if ex-cycle-other-window<br/>
-      (viper-switch-to-buffer-other-window)<br/>
-    (viper-switch-to-buffer)))<br/>
- ("c" "change")<br/>
- ("ch" "chdir")<br/>
- ("cd"<br/>
-  (ex-cd))<br/>
- ("chdir"<br/>
-  (ex-cd))<br/>
- ("copy"<br/>
-  (ex-copy nil))<br/>
- ("customize"<br/>
-  (customize-group "viper"))<br/>
- ("delete"<br/>
-  (ex-delete))<br/>
- ("edit"<br/>
-  (ex-edit))<br/>
- ("file"<br/>
-  (ex-set-visited-file-name))<br/>
- ("g" "global")<br/>
- ("global"<br/>
-  (ex-global nil)<br/>
-  is-mashed)<br/>
- ("goto"<br/>
-  (ex-goto))<br/>
- ("help"<br/>
-  (ex-help))<br/>
- ("join"<br/>
-  (ex-line "join"))<br/>
- ("k"<br/>
-  (ex-mark)<br/>
-  one-letter)<br/>
- ("kmark"<br/>
-  (ex-mark))<br/>
- ("m" "move")<br/>
- ("make"<br/>
-  (ex-compile))<br/>
- ("map"<br/>
-  (ex-map))<br/>
- ("mark"<br/>
-  (ex-mark))<br/>
- ("move"<br/>
-  (ex-copy t))<br/>
- ("next"<br/>
-  (ex-next ex-cycle-other-window))<br/>
- ("p" "print")<br/>
- ("preserve"<br/>
-  (ex-preserve))<br/>
- ("print"<br/>
-  (ex-print))<br/>
- ("put"<br/>
-  (ex-put))<br/>
- ("pwd"<br/>
-  (ex-pwd))<br/>
- ("quit"<br/>
-  (ex-quit))<br/>
- ("r" "read")<br/>
- ("re" "read")<br/>
- ("read"<br/>
-  (ex-read))<br/>
- ("recover"<br/>
-  (ex-recover))<br/>
- ("rewind"<br/>
-  (ex-rewind))<br/>
- ("s" "substitute")<br/>
- ("su" "substitute")<br/>
- ("sub" "substitute")<br/>
- ("set"<br/>
-  (ex-set))<br/>
- ("shell"<br/>
-  (ex-shell))<br/>
- ("source"<br/>
-  (ex-source))<br/>
- ("stop"<br/>
-  (suspend-emacs))<br/>
- ("sr"<br/>
-  (ex-substitute t t))<br/>
- ("submitReport"<br/>
-  (viper-submit-report))<br/>
- ("substitute"<br/>
-  (ex-substitute)<br/>
-  is-mashed)<br/>
- ("suspend"<br/>
-  (suspend-emacs))<br/>
- ("t" "transfer")<br/>
- ("tag"<br/>
-  (ex-tag))<br/>
- ("transfer"<br/>
-  (ex-copy nil))<br/>
- ("u" "undo")<br/>
- ("un" "undo")<br/>
- ("undo"<br/>
-  (viper-undo))<br/>
- ("unmap"<br/>
-  (ex-unmap))<br/>
- ("v" "vglobal")<br/>
- ("version"<br/>
-  (viper-version))<br/>
- ("vglobal"<br/>
-  (ex-global t)<br/>
-  is-mashed)<br/>
- ("visual"<br/>
-  (ex-edit))<br/>
- ("w" "write")<br/>
- ("wq"<br/>
-  (ex-write t))<br/>
- ("write"<br/>
-  (ex-write nil))<br/>
- ("xit"<br/>
-  (ex-write t))<br/>
- ("yank"<br/>
-  (ex-yank))<br/>
- ("~"<br/>
-  (ex-substitute t t))<br/>
- ("append"<br/>
-  (ex-cmd-obsolete "append"))<br/>
- ("change"<br/>
-  (ex-cmd-obsolete "change"))<br/>
- ("insert"<br/>
-  (ex-cmd-obsolete "insert"))<br/>
- ("open"<br/>
-  (ex-cmd-obsolete "open"))<br/>
- ("list"<br/>
-  (ex-cmd-not-yet "list"))<br/>
- ("z"<br/>
-  (ex-cmd-not-yet "z"))<br/>
- ("#"<br/>
-  (ex-cmd-not-yet "#"))<br/>
- ("abbreviate"<br/>
-  (error "`%s': Vi abbreviations are obsolete.  Use the more powerful Emacs abbrevs" ex-token))<br/>
- ("unabbreviate"<br/>
-  (error "`%s': Vi abbreviations are obsolete.  Use the more powerful Emacs abbrevs" ex-token)))<br/>
-<br/>
+<strong>ex-token-alist</strong> is a variable defined in `<code>viper-ex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("!"
+  (ex-command))
+ ("&"
+  (ex-substitute t))
+ ("="
+  (ex-line-no))
+ (">"
+  (ex-line "right"))
+ ("<"
+  (ex-line "left"))
+ ("Buffer"
+  (if ex-cycle-other-window
+      (viper-switch-to-buffer)
+    (viper-switch-to-buffer-other-window)))
+ ("Next"
+  (ex-next
+   (not ex-cycle-other-window)))
+ ("PreviousRelatedFile"
+  (ex-next-related-buffer -1))
+ ("RelatedFile"
+  (ex-next-related-buffer 1))
+ ("W" "Write")
+ ("WWrite"
+  (save-some-buffers t))
+ ("Write"
+  (save-some-buffers))
+ ("a" "append")
+ ("args"
+  (ex-args))
+ ("buffer"
+  (if ex-cycle-other-window
+      (viper-switch-to-buffer-other-window)
+    (viper-switch-to-buffer)))
+ ("c" "change")
+ ("ch" "chdir")
+ ("cd"
+  (ex-cd))
+ ("chdir"
+  (ex-cd))
+ ("copy"
+  (ex-copy nil))
+ ("customize"
+  (customize-group "viper"))
+ ("delete"
+  (ex-delete))
+ ("edit"
+  (ex-edit))
+ ("file"
+  (ex-set-visited-file-name))
+ ("g" "global")
+ ("global"
+  (ex-global nil)
+  is-mashed)
+ ("goto"
+  (ex-goto))
+ ("help"
+  (ex-help))
+ ("join"
+  (ex-line "join"))
+ ("k"
+  (ex-mark)
+  one-letter)
+ ("kmark"
+  (ex-mark))
+ ("m" "move")
+ ("make"
+  (ex-compile))
+ ("map"
+  (ex-map))
+ ("mark"
+  (ex-mark))
+ ("move"
+  (ex-copy t))
+ ("next"
+  (ex-next ex-cycle-other-window))
+ ("p" "print")
+ ("preserve"
+  (ex-preserve))
+ ("print"
+  (ex-print))
+ ("put"
+  (ex-put))
+ ("pwd"
+  (ex-pwd))
+ ("quit"
+  (ex-quit))
+ ("r" "read")
+ ("re" "read")
+ ("read"
+  (ex-read))
+ ("recover"
+  (ex-recover))
+ ("rewind"
+  (ex-rewind))
+ ("s" "substitute")
+ ("su" "substitute")
+ ("sub" "substitute")
+ ("set"
+  (ex-set))
+ ("shell"
+  (ex-shell))
+ ("source"
+  (ex-source))
+ ("stop"
+  (suspend-emacs))
+ ("sr"
+  (ex-substitute t t))
+ ("submitReport"
+  (viper-submit-report))
+ ("substitute"
+  (ex-substitute)
+  is-mashed)
+ ("suspend"
+  (suspend-emacs))
+ ("t" "transfer")
+ ("tag"
+  (ex-tag))
+ ("transfer"
+  (ex-copy nil))
+ ("u" "undo")
+ ("un" "undo")
+ ("undo"
+  (viper-undo))
+ ("unmap"
+  (ex-unmap))
+ ("v" "vglobal")
+ ("version"
+  (viper-version))
+ ("vglobal"
+  (ex-global t)
+  is-mashed)
+ ("visual"
+  (ex-edit))
+ ("w" "write")
+ ("wq"
+  (ex-write t))
+ ("write"
+  (ex-write nil))
+ ("xit"
+  (ex-write t))
+ ("yank"
+  (ex-yank))
+ ("~"
+  (ex-substitute t t))
+ ("append"
+  (ex-cmd-obsolete "append"))
+ ("change"
+  (ex-cmd-obsolete "change"))
+ ("insert"
+  (ex-cmd-obsolete "insert"))
+ ("open"
+  (ex-cmd-obsolete "open"))
+ ("list"
+  (ex-cmd-not-yet "list"))
+ ("z"
+  (ex-cmd-not-yet "z"))
+ ("#"
+  (ex-cmd-not-yet "#"))
+ ("abbreviate"
+  (error "`%s': Vi abbreviations are obsolete.  Use the more powerful Emacs abbrevs" ex-token))
+ ("unabbreviate"
+  (error "`%s': Vi abbreviations are obsolete.  Use the more powerful Emacs abbrevs" ex-token)))
+</pre></br>

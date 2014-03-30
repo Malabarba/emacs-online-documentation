@@ -1,47 +1,55 @@
-<strong>octave-mode-menu</strong> is a variable defined in `<code>octave-mod.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Menu for Octave mode.<br/>
-<br/>
-Value:<br/>
-(keymap "Octave"<br/>
-	(Lines menu-item "Lines"<br/>
-	       (keymap "Lines"<br/>
-		       (Previous\ Code\ Line menu-item "Previous Code Line" octave-previous-code-line)<br/>
-		       (Next\ Code\ Line menu-item "Next Code Line" octave-next-code-line)<br/>
-		       (Begin\ of\ Continuation menu-item "Begin of Continuation" octave-beginning-of-line)<br/>
-		       (End\ of\ Continuation menu-item "End of Continuation" octave-end-of-line)<br/>
-		       (Split\ Line\ at\ Point menu-item "Split Line at Point" octave-indent-new-comment-line)))<br/>
-	(Blocks menu-item "Blocks"<br/>
-		(keymap "Blocks"<br/>
-			(Mark\ Block menu-item "Mark Block" octave-mark-block)<br/>
-			(Close\ Block menu-item "Close Block" smie-close-block)))<br/>
-	(Functions menu-item "Functions"<br/>
-		   (keymap "Functions"<br/>
-			   (Indent\ Function menu-item "Indent Function" octave-indent-defun)<br/>
-			   (Insert\ Function menu-item "Insert Function" octave-insert-defun)))<br/>
-	(nil menu-item "-")<br/>
-	(Debug menu-item "Debug"<br/>
-	       (keymap "Debug"<br/>
-		       (Send\ Current\ Line menu-item "Send Current Line" octave-send-line)<br/>
-		       (Send\ Current\ Block menu-item "Send Current Block" octave-send-block)<br/>
-		       (Send\ Current\ Function menu-item "Send Current Function" octave-send-defun)<br/>
-		       (Send\ Region menu-item "Send Region" octave-send-region)<br/>
-		       (Show\ Process\ Buffer menu-item "Show Process Buffer" octave-show-process-buffer)<br/>
-		       (Hide\ Process\ Buffer menu-item "Hide Process Buffer" octave-hide-process-buffer)<br/>
-		       (Kill\ Process menu-item "Kill Process" octave-kill-process)))<br/>
-	(nil-5 menu-item "-")<br/>
-	(Indent\ Line menu-item "Indent Line" indent-according-to-mode)<br/>
-	(Complete\ Symbol menu-item "Complete Symbol" completion-at-point)<br/>
-	(nil-8 menu-item "-")<br/>
-	(Toggle\ Abbrev\ Mode menu-item "Toggle Abbrev Mode" abbrev-mode :button<br/>
-			      (:toggle . abbrev-mode))<br/>
-	(Toggle\ Auto-Fill\ Mode menu-item "Toggle Auto-Fill Mode" auto-fill-mode :button<br/>
-				 (:toggle . auto-fill-function))<br/>
-	(nil-11 menu-item "-")<br/>
-	(Submit\ Bug\ Report menu-item "Submit Bug Report" octave-submit-bug-report)<br/>
-	(nil-13 menu-item "-")<br/>
-	(Describe\ Octave\ Mode menu-item "Describe Octave Mode" describe-mode)<br/>
-	(Lookup\ Octave\ Index menu-item "Lookup Octave Index" info-lookup-symbol))<br/>
-<br/>
+<strong>octave-mode-menu</strong> is a variable defined in `<code>octave.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for Octave mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Octave"
+	(Split\ Line\ at\ Point menu-item "Split Line at Point" octave-indent-new-comment-line)
+	(Previous\ Code\ Line menu-item "Previous Code Line" octave-previous-code-line)
+	(Next\ Code\ Line menu-item "Next Code Line" octave-next-code-line)
+	(Begin\ of\ Line menu-item "Begin of Line" octave-beginning-of-line)
+	(End\ of\ Line menu-item "End of Line" octave-end-of-line)
+	(Mark\ Block menu-item "Mark Block" octave-mark-block)
+	(Close\ Block menu-item "Close Block" smie-close-block)
+	(nil menu-item "---")
+	(Start\ Octave\ Process menu-item "Start Octave Process" run-octave)
+	(Documentation\ Lookup menu-item "Documentation Lookup" info-lookup-symbol)
+	(Help\ on\ Function menu-item "Help on Function" octave-help)
+	(Search\ help menu-item "Search help" octave-lookfor)
+	(Find\ Function\ Definition menu-item "Find Function Definition" octave-find-definition)
+	(Insert\ Function menu-item "Insert Function" octave-insert-defun)
+	(Update\ Function\ File\ Comment menu-item "Update Function File Comment" octave-update-function-file-comment)
+	(nil-15 menu-item "---")
+	(Function\ Syntax\ Hints menu-item "Function Syntax Hints" menu-function-38 :key-sequence nil :button
+				 (:toggle bound-and-true-p eldoc-mode)
+				 :help "Display function signatures after typing `SPC' or `('")
+	(Delimiter\ Matching menu-item "Delimiter Matching" show-paren-mode :visible
+			     (fboundp 'smie--matching-block-data)
+			     :button
+			     (:toggle . show-paren-mode)
+			     :help "Highlight matched pairs such as `if ... end'")
+	(Auto\ Fill menu-item "Auto Fill" auto-fill-mode :button
+		    (:toggle . auto-fill-function)
+		    :help "Automatic line breaking")
+	(Electric\ Layout menu-item "Electric Layout" electric-layout-mode :button
+			  (:toggle . electric-layout-mode)
+			  :help "Automatically insert newlines around some chars")
+	(nil-20 menu-item "---")
+	(Debug menu-item "Debug"
+	       (keymap "Debug"
+		       (Send\ Current\ Line menu-item "Send Current Line" octave-send-line)
+		       (Send\ Current\ Block menu-item "Send Current Block" octave-send-block)
+		       (Send\ Current\ Function menu-item "Send Current Function" octave-send-defun)
+		       (Send\ Region menu-item "Send Region" octave-send-region)
+		       (Send\ Buffer menu-item "Send Buffer" octave-send-buffer)
+		       (Source\ Current\ File menu-item "Source Current File" octave-source-file)
+		       (Show\ Process\ Buffer menu-item "Show Process Buffer" octave-show-process-buffer)
+		       (Hide\ Process\ Buffer menu-item "Hide Process Buffer" octave-hide-process-buffer)
+		       (Kill\ Process menu-item "Kill Process" octave-kill-process)))
+	(nil-22 menu-item "---")
+	(Octave\ Mode\ Manual menu-item "Octave Mode Manual" menu-function-39 :key-sequence nil)
+	(Customize\ Octave menu-item "Customize Octave" menu-function-40 :key-sequence nil)
+	(Submit\ Bug\ Report menu-item "Submit Bug Report" report-emacs-bug))
+</pre></br>

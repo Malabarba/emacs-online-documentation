@@ -1,23 +1,23 @@
-<strong>calculator-displayer</strong> is a variable defined in `<code>calculator.el</code>'.<br/>
-Its value is (std 110)<br/>
-<br/>
-Documentation:<br/>
-A displayer specification for numerical values.<br/>
-This is the displayer used to show all numbers in an expression.  Result<br/>
-values will be displayed according to the first element of<br/>
-`calculator-displayers'.<br/>
-<br/>
-The displayer is a symbol, a string or an expression.  A symbol should<br/>
-be the name of a one-argument function, a string is used with a single<br/>
-argument and an expression will be evaluated with the variable `num'<br/>
-bound to whatever should be displayed.  If it is a function symbol, it<br/>
-should be able to handle special symbol arguments, currently 'left and<br/>
-'right which will be sent by special keys to modify display parameters<br/>
-associated with the displayer function (for example to change the number<br/>
-of digits displayed).<br/>
-<br/>
-An exception to the above is the case of the list (std C) where C is a<br/>
-character, in this case the `calculator-standard-displayer' function<br/>
-will be used with this character for a format string.<br/>
-<br/>
+<strong>calculator-displayer</strong> is a variable defined in `<code>calculator.el</code>'.</br>
+Its value is <pre>(std 110)</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A displayer specification for numerical values.</br>
+This is the displayer used to show all numbers in an expression.  Result</br>
+values will be displayed according to the first element of</br>
+`calculator-displayers'.</br>
+</br>
+The displayer is a symbol, a string or an expression.  A symbol should</br>
+be the name of a one-argument function, a string is used with a single</br>
+argument and an expression will be evaluated with the variable `num'</br>
+bound to whatever should be displayed.  If it is a function symbol, it</br>
+should be able to handle special symbol arguments, currently `left' and</br>
+`right' which will be sent by special keys to modify display parameters</br>
+associated with the displayer function (for example to change the number</br>
+of digits displayed).</br>
+</br>
+An exception to the above is the case of the list (std C) where C is a</br>
+character, in this case the `calculator-standard-displayer' function</br>
+will be used with this character for a format string.</br>
+</br>
 You can customize this variable.

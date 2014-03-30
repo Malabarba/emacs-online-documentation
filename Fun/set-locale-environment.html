@@ -1,30 +1,31 @@
-<strong>set-locale-environment</strong> is an interactive compiled Lisp function in `<code>mule-cmds.el</code>'.<br/>
-<br/>
-(set-locale-environment &optional LOCALE-NAME FRAME)<br/>
-<br/>
-Set up multilingual environment for using LOCALE-NAME.<br/>
-This sets the language environment, the coding system priority,<br/>
-the default input method and sometimes other things.<br/>
-<br/>
-LOCALE-NAME should be a string which is the name of a locale supported<br/>
-by the system.  Often it is of the form xx_XX.CODE, where xx is a<br/>
-language, XX is a country, and CODE specifies a character set and<br/>
-coding system.  For example, the locale name "ja_JP.EUC" might name<br/>
-a locale for Japanese in Japan using the `japanese-iso-8bit'<br/>
-coding-system.  The name may also have a modifier suffix, e.g. `@euro'<br/>
-or `@cyrillic'.<br/>
-<br/>
-If LOCALE-NAME is nil, its value is taken from the environment<br/>
-variables LC_ALL, LC_CTYPE and LANG (the first one that is set).<br/>
-<br/>
-The locale names supported by your system can typically be found in a<br/>
-directory named `/usr/share/locale' or `/usr/lib/locale'.  LOCALE-NAME<br/>
-will be translated according to the table specified by<br/>
-`locale-translation-file-name'.<br/>
-<br/>
-If FRAME is non-nil, only set the keyboard coding system and the<br/>
-terminal coding system for the terminal of that frame, and don't<br/>
-touch session-global parameters like the language environment.<br/>
-<br/>
-See also `locale-charset-language-names', `locale-language-names',<br/>
+<strong>set-locale-environment</strong> is an interactive compiled Lisp function in `<code>mule-cmds.el</code>'.</br>
+</br>
+</br>
+(set-locale-environment &optional <u>LOCALE-NAME</u> <u>FRAME</u>)</br>
+</br>
+Set up multilingual environment for using <u>LOCALE-NAME</u>.</br>
+This sets the language environment, the coding system priority,</br>
+the default input method and sometimes other things.</br>
+</br>
+<u>LOCALE-NAME</u> should be a string which is the name of a locale supported</br>
+by the system.  Often it is of the form xx_XX.CODE, where xx is a</br>
+language, XX is a country, and CODE specifies a character set and</br>
+coding system.  For example, the locale name "ja_JP.EUC" might name</br>
+a locale for Japanese in Japan using the `japanese-iso-8bit'</br>
+coding-system.  The name may also have a modifier suffix, e.g. `@euro'</br>
+or `@cyrillic'.</br>
+</br>
+If <u>LOCALE-NAME</u> is nil, its value is taken from the environment</br>
+variables LC_ALL, LC_CTYPE and LANG (the first one that is set).</br>
+</br>
+The locale names supported by your system can typically be found in a</br>
+directory named `/usr/share/locale' or `/usr/lib/locale'.  <u>LOCALE-NAME</u></br>
+will be translated according to the table specified by</br>
+`locale-translation-file-name'.</br>
+</br>
+If <u>FRAME</u> is non-nil, only set the keyboard coding system and the</br>
+terminal coding system for the terminal of that frame, and don't</br>
+touch session-global parameters like the language environment.</br>
+</br>
+See also `locale-charset-language-names', `locale-language-names',</br>
 `locale-preferred-coding-systems' and `locale-coding-system'.

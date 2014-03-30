@@ -1,25 +1,25 @@
-<strong>goto-line</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to M-g g, M-g M-g, <menu-bar> <edit> <goto> <go-to-line>.<br/>
-<br/>
-(goto-line LINE &optional BUFFER)<br/>
-<br/>
-Go to LINE, counting from line 1 at beginning of buffer.<br/>
-If called interactively, a numeric prefix argument specifies<br/>
-LINE; without a numeric prefix argument, read LINE from the<br/>
-minibuffer.<br/>
-<br/>
-If optional argument BUFFER is non-nil, switch to that buffer and<br/>
-move to line LINE there.  If called interactively with C-u<br/>
-as argument, BUFFER is the most recently selected other buffer.<br/>
-<br/>
-Prior to moving point, this function sets the mark (without<br/>
-activating it), unless Transient Mark mode is enabled and the<br/>
-mark is already active.<br/>
-<br/>
-This function is usually the wrong thing to use in a Lisp program.<br/>
-What you probably want instead is something like:<br/>
-  (goto-char (point-min))<br/>
-  (forward-line (1- N))<br/>
-If at all possible, an even better solution is to use char counts<br/>
+<strong>goto-line</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to M-g g, M-g M-g, &lt;menu-bar> &lt;edit> &lt;goto> &lt;go-to-line>.</br>
+</br>
+<code>(goto-line <u>LINE</u> <em>&optional</em> <u>BUFFER</u></code>)</br>
+</br>
+Go to <u>LINE</u>, counting from line 1 at beginning of buffer.</br>
+If called interactively, a numeric prefix argument specifies</br>
+<u>LINE</u>; without a numeric prefix argument, read <u>LINE</u> from the</br>
+minibuffer.</br>
+</br>
+If optional argument <u>BUFFER</u> is non-nil, switch to that buffer and</br>
+move to line <u>LINE</u> there.  If called interactively with C-u</br>
+as argument, <u>BUFFER</u> is the most recently selected other buffer.</br>
+</br>
+Prior to moving point, this function sets the mark (without</br>
+activating it), unless Transient Mark mode is enabled and the</br>
+mark is already active.</br>
+</br>
+This function is usually the wrong thing to use in a Lisp program.</br>
+What you probably want instead is something like:</br>
+  (goto-char (point-min))</br>
+  (forward-line (1- N))</br>
+If at all possible, an even better solution is to use char counts</br>
 rather than line counts.

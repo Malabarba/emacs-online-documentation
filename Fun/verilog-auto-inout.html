@@ -1,51 +1,51 @@
-<strong>verilog-auto-inout</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
-<br/>
-(verilog-auto-inout)<br/>
-<br/>
-Expand AUTOINOUT statements, as part of M-x verilog-auto.<br/>
-Make inout statements for any inout signal in an /*AUTOINST*/ that<br/>
-isn't declared elsewhere inside the module.<br/>
-<br/>
-Limitations:<br/>
-  This ONLY detects outputs of AUTOINSTants (see `verilog-read-sub-decls').<br/>
-<br/>
-  If placed inside the parenthesis of a module declaration, it creates<br/>
-  Verilog 2001 style, else uses Verilog 1995 style.<br/>
-<br/>
-  If any concatenation, or bit-subscripts are missing in the AUTOINSTant's<br/>
-  instantiation, all bets are off.  (For example due to an AUTO_TEMPLATE).<br/>
-<br/>
-  Typedefs must match `verilog-typedef-regexp', which is disabled by default.<br/>
-<br/>
-  Signals matching `verilog-auto-inout-ignore-regexp' are not included.<br/>
-<br/>
-An example (see `verilog-auto-inst' for what else is going on here):<br/>
-<br/>
-	module ExampInout (ov,i);<br/>
-	   input i;<br/>
-	   /*AUTOINOUT*/<br/>
-	   InstModule instName<br/>
-	     (/*AUTOINST*/);<br/>
-	endmodule<br/>
-<br/>
-Typing M-x verilog-auto will make this into:<br/>
-<br/>
-	module ExampInout (ov,i);<br/>
-	   input i;<br/>
-	   /*AUTOINOUT*/<br/>
-	   // Beginning of automatic inouts (from unused autoinst inouts)<br/>
-	   inout [31:0]	ov;	// From inst of inst.v<br/>
-	   // End of automatics<br/>
-	   InstModule instName<br/>
-	     (/*AUTOINST*/<br/>
-	      // Inouts<br/>
-	      .ov	(ov[31:0]),<br/>
-	      // Inputs<br/>
-	      .i	(i));<br/>
-	endmodule<br/>
-<br/>
-You may also provide an optional regular expression, in which case only<br/>
-signals matching the regular expression will be included.  For example the<br/>
-same expansion will result from only extracting inouts starting with i:<br/>
-<br/>
+<strong>verilog-auto-inout</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+</br>
+(verilog-auto-inout)</br>
+</br>
+Expand AUTOINOUT statements, as part of M-x verilog-auto.</br>
+Make inout statements for any inout signal in an /*AUTOINST*/ that</br>
+isn't declared elsewhere inside the module.</br>
+</br>
+Limitations:</br>
+  This ONLY detects outputs of AUTOINSTants (see `verilog-read-sub-decls').</br>
+</br>
+  If placed inside the parenthesis of a module declaration, it creates</br>
+  Verilog 2001 style, else uses Verilog 1995 style.</br>
+</br>
+  If any concatenation, or bit-subscripts are missing in the AUTOINSTant's</br>
+  instantiation, all bets are off.  (For example due to an AUTO_TEMPLATE).</br>
+</br>
+  Typedefs must match `verilog-typedef-regexp', which is disabled by default.</br>
+</br>
+  Signals matching `verilog-auto-inout-ignore-regexp' are not included.</br>
+</br>
+An example (see `verilog-auto-inst' for what else is going on here):</br>
+</br>
+	module ExampInout (ov,i);</br>
+	   input i;</br>
+	   /*AUTOINOUT*/</br>
+	   InstModule instName</br>
+	     (/*AUTOINST*/);</br>
+	endmodule</br>
+</br>
+Typing M-x verilog-auto will make this into:</br>
+</br>
+	module ExampInout (ov,i);</br>
+	   input i;</br>
+	   /*AUTOINOUT*/</br>
+	   // Beginning of automatic inouts (from unused autoinst inouts)</br>
+	   inout [31:0]	ov;	// From inst of inst.v</br>
+	   // End of automatics</br>
+	   InstModule instName</br>
+	     (/*AUTOINST*/</br>
+	      // Inouts</br>
+	      .ov	(ov[31:0]),</br>
+	      // Inputs</br>
+	      .i	(i));</br>
+	endmodule</br>
+</br>
+You may also provide an optional regular expression, in which case only</br>
+signals matching the regular expression will be included.  For example the</br>
+same expansion will result from only extracting inouts starting with i:</br>
+</br>
 	   /*AUTOINOUT("^i")*/

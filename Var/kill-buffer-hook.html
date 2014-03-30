@@ -1,12 +1,12 @@
-<strong>kill-buffer-hook</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is<br/>
-(erc-kill-buffer-function reftex-kill-buffer-hook save-place-to-alist tramp-delete-temp-file-function browse-url-delete-temp-file vc-kill-buffer-hook)<br/>
-<br/>
-<br/>
-  This variable's value is permanent if it is given a local binding.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook run when a buffer is killed.<br/>
-The buffer being killed is current while the hook is running.<br/>
-See `kill-buffer'.
+<strong>kill-buffer-hook</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre></br>
+(reftex-kill-buffer-hook erc-kill-buffer-function save-place-to-alist tramp-delete-temp-file-function browse-url-delete-temp-file uniquify-kill-buffer-function vc-kill-buffer-hook)
+</pre></br>
+<ul>  <li>This variable's value is permanent if it is given a local binding.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook run when a buffer is killed.</br>
+The buffer being killed is current while the hook is running.</br>
+See `kill-buffer'.</br>
+</br>
+Note: Be careful with let-binding this hook considering it is</br>
+frequently used for cleanup.

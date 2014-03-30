@@ -1,0 +1,20 @@
+<strong>gdbmi-bnf-async-record</strong> is a compiled Lisp function in `<code>gdb-mi.el</code>'.</br>
+</br>
+(gdbmi-bnf-async-record)</br>
+</br>
+Implementation of the following GDB/MI output grammar rules:</br>
+</br>
+  async-record ==></br>
+       exec-async-output | status-async-output | notify-async-output</br>
+</br>
+  exec-async-output ==></br>
+       [ token ] '*' async-output</br>
+</br>
+  status-async-output ==></br>
+       [ token ] '+' async-output</br>
+</br>
+  notify-async-output ==></br>
+       [ token ] '=' async-output</br>
+</br>
+  async-output ==></br>
+       async-class ( ',' result )* nl

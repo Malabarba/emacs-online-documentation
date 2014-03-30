@@ -1,12 +1,19 @@
-<strong>Info-goto-node</strong> is an interactive compiled Lisp function in `<code>info.el</code>'.<br/>
-<br/>
-(Info-goto-node NODENAME &optional FORK)<br/>
-<br/>
-Go to Info node named NODENAME.  Give just NODENAME or (FILENAME)NODENAME.<br/>
-If NODENAME is of the form (FILENAME)NODENAME, the node is in the Info file<br/>
-FILENAME; otherwise, NODENAME should be in the current Info file (or one of<br/>
-its sub-files).<br/>
-Completion is available, but only for node names in the current Info file.<br/>
-If FORK is non-nil (interactively with a prefix arg), show the node in<br/>
-a new Info buffer.<br/>
-If FORK is a string, it is the name to use for the new buffer.
+<strong>Info-goto-node</strong> is an interactive compiled Lisp function in `<code>info.el</code>'.</br>
+</br>
+</br>
+(Info-goto-node <u>NODENAME</u> &optional <u>FORK</u> <u>STRICT-CASE</u>)</br>
+</br>
+Go to Info node named <u>NODENAME</u>.  Give just <u>NODENAME</u> or (FILENAME)<u>NODENAME</u>.</br>
+If <u>NODENAME</u> is of the form (FILENAME)<u>NODENAME</u>, the node is in the Info file</br>
+FILENAME; otherwise, <u>NODENAME</u> should be in the current Info file (or one of</br>
+its sub-files).</br>
+Completion is available for node names in the current Info file as well as</br>
+in the Info file FILENAME after the closing parenthesis in (FILENAME).</br>
+Empty <u>NODENAME</u> in (FILENAME) defaults to the Top node.</br>
+If <u>FORK</u> is non-nil (interactively with a prefix arg), show the node in</br>
+a new Info buffer.</br>
+If <u>FORK</u> is a string, it is the name to use for the new buffer.</br>
+</br>
+This function first looks for a case-sensitive match for the node part</br>
+of <u>NODENAME</u>; if none is found it then tries a case-insensitive match</br>
+(unless <u>STRICT-CASE</u> is non-nil).

@@ -1,10 +1,10 @@
-<strong>term-setup-hook</strong> is a variable defined in `<code>startup.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Normal hook run after loading terminal-specific Lisp code.<br/>
-It also follows `emacs-startup-hook'.  This hook exists for users to set,<br/>
-so as to override the definitions made by the terminal-specific file.<br/>
-Emacs never sets this variable itself.
+<strong>term-setup-hook</strong> is a variable defined in `<code>startup.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  <strong>This variable is obsolete since 24.4;</br>
+  use either `emacs-startup-hook' or `tty-setup-hook' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Normal hook run immediately after `emacs-startup-hook'.</br>
+In new code, there is no reason to use this instead of `emacs-startup-hook'.</br>
+If you want to execute terminal-specific Lisp code, for example</br>
+to override the definitions made by the terminal-specific file,</br>
+see `tty-setup-hook'.

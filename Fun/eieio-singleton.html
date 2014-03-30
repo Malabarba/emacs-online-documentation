@@ -1,5 +1,28 @@
-<strong>eieio-singleton</strong> is a Lisp function.<br/>
-<br/>
-(eieio-singleton &rest STUFF)<br/>
-<br/>
-You cannot create a new object of type eieio-singleton
+eieio-singleton is an  object constructor function in `eieio-base.el'.</br>
+Creates an object of class eieio-singleton.</br>
+You cannot create a new object of type eieio-singleton</br>
+</br>
+Class description:</br>
+eieio-singleton is an abstract class in `eieio-base.el'.</br>
+</br>
+This special class causes subclasses to be singletons.</br>
+A singleton is a class which will only ever have one instance.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+</br>
+Class Allocated Slots:</br>
+</br>
+Slot: singleton    type = eieio-singleton   value = unbound</br>
+</br>
+ The only instance of this class that will be instantiated.</br>
+Multiple calls to `make-instance' will return this object.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`constructor' :STATIC (class name &rest slots)</br>
+Constructor for singleton CLASS.</br>
+NAME and SLOTS initialize the new object.</br>
+This constructor guarantees that no matter how many you request,</br>
+only one object ever exists.</br>
+</br>

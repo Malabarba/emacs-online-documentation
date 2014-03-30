@@ -1,16 +1,14 @@
-<strong>jit-lock-after-change-extend-region-functions</strong> is a variable defined in `<code>jit-lock.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook that can extend the text to refontify after a change.<br/>
-This is run after every buffer change.  The functions are called with<br/>
-the three arguments of `after-change-functions': START END OLD-LEN.<br/>
-The extended region to refontify is returned indirectly by modifying<br/>
-the variables `jit-lock-start' and `jit-lock-end'.<br/>
-<br/>
-Note that extending the region this way is not strictly necessary, except<br/>
-that the nature of the redisplay code tends to otherwise leave some of<br/>
-the rehighlighted text displayed with the old highlight until the next<br/>
+<strong>jit-lock-after-change-extend-region-functions</strong> is a variable defined in `<code>jit-lock.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook that can extend the text to refontify after a change.</br>
+This is run after every buffer change.  The functions are called with</br>
+the three arguments of `after-change-functions': START END OLD-LEN.</br>
+The extended region to refontify is returned indirectly by modifying</br>
+the variables `jit-lock-start' and `jit-lock-end'.</br>
+</br>
+Note that extending the region this way is not strictly necessary, except</br>
+that the nature of the redisplay code tends to otherwise leave some of</br>
+the rehighlighted text displayed with the old highlight until the next</br>
 redisplay (see comment about repeated redisplay in `jit-lock-fontify-now').

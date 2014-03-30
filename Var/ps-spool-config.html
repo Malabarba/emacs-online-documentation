@@ -1,34 +1,34 @@
-<strong>ps-spool-config</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
-Its value is lpr-switches<br/>
-<br/>
-Documentation:<br/>
-Specify who is responsible for setting duplex and page size.<br/>
-<br/>
-Valid values are:<br/>
-<br/>
-  `lpr-switches'    duplex and page size are configured by `ps-lpr-switches'.<br/>
-		    Don't forget to set `ps-lpr-switches' to select duplex<br/>
-		    printing for your printer.<br/>
-<br/>
-  `setpagedevice'   duplex and page size are configured by ps-print using the<br/>
-		    setpagedevice PostScript operator.<br/>
-<br/>
-  nil               duplex and page size are configured by ps-print *not* using<br/>
-		    the setpagedevice PostScript operator.<br/>
-<br/>
-Any other value is treated as nil.<br/>
-<br/>
-WARNING: The setpagedevice PostScript operator affects ghostview utility when<br/>
-	 viewing file generated using landscape.  Also on some printers,<br/>
-	 setpagedevice affects zebra stripes; on other printers, setpagedevice<br/>
-	 affects the left margin.<br/>
-	 Besides all that, if your printer does not have the paper size<br/>
-	 specified by setpagedevice, your printing will be aborted.<br/>
-	 So, if you need to use setpagedevice, set `ps-spool-config' to<br/>
-	 `setpagedevice', generate a test file and send it to your printer; if<br/>
-	 the printed file isn't OK, set `ps-spool-config' to nil.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 20 of Emacs.<br/>
+<strong>ps-spool-config</strong> is a variable defined in `<code>ps-print.el</code>'.</br>
+Its value is <pre>lpr-switches</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specify who is responsible for setting duplex and page size.</br>
+</br>
+Valid values are:</br>
+</br>
+  `lpr-switches'    duplex and page size are configured by `ps-lpr-switches'.</br>
+		    Don't forget to set `ps-lpr-switches' to select duplex</br>
+		    printing for your printer.</br>
+</br>
+  `setpagedevice'   duplex and page size are configured by ps-print using the</br>
+		    setpagedevice PostScript operator.</br>
+</br>
+  nil               duplex and page size are configured by ps-print *not* using</br>
+		    the setpagedevice PostScript operator.</br>
+</br>
+Any other value is treated as nil.</br>
+</br>
+WARNING: The setpagedevice PostScript operator affects ghostview utility when</br>
+	 viewing file generated using landscape.  Also on some printers,</br>
+	 setpagedevice affects zebra stripes; on other printers, setpagedevice</br>
+	 affects the left margin.</br>
+	 Besides all that, if your printer does not have the paper size</br>
+	 specified by setpagedevice, your printing will be aborted.</br>
+	 So, if you need to use setpagedevice, set `ps-spool-config' to</br>
+	 `setpagedevice', generate a test file and send it to your printer; if</br>
+	 the printed file isn't OK, set `ps-spool-config' to nil.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 20 of Emacs.

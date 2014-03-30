@@ -1,26 +1,26 @@
-<strong>c-hanging-semi&comma-criteria</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
-Its value is set-from-style<br/>
-<br/>
-Documentation:<br/>
-*List of functions that decide whether to insert a newline or not.<br/>
-The functions in this list are called, in order, whenever the<br/>
-auto-newline minor mode is activated (as evidenced by a `/a' or `/ah'<br/>
-string in the mode line), and a semicolon or comma is typed (see<br/>
-`c-electric-semi&comma').  Each function in this list is called with<br/>
-no arguments, and should return one of the following values:<br/>
-<br/>
-  nil             -- no determination made, continue checking<br/>
-  'stop           -- do not insert a newline, and stop checking<br/>
-  (anything else) -- insert a newline, and stop checking<br/>
-<br/>
-If every function in the list is called with no determination made,<br/>
-then no newline is inserted.<br/>
-<br/>
-This is a style variable.  Apart from the valid values described<br/>
-above, it can be set to the symbol `set-from-style'.  In that case,<br/>
-it takes its value from the style system (see `c-default-style' and<br/>
-`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>
-the value set here overrides the style system (there is a variable<br/>
-`c-old-style-variable-behavior' that changes this, though).<br/>
-<br/>
+<strong>c-hanging-semi&comma-criteria</strong> is a variable defined in `<code>cc-vars.el</code>'.</br>
+Its value is <pre>set-from-style</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*List of functions that decide whether to insert a newline or not.</br>
+The functions in this list are called, in order, whenever the</br>
+auto-newline minor mode is activated (as evidenced by a `/a' or `/ah'</br>
+string in the mode line), and a semicolon or comma is typed (see</br>
+`c-electric-semi&comma').  Each function in this list is called with</br>
+no arguments, and should return one of the following values:</br>
+</br>
+  nil             -- no determination made, continue checking</br>
+  'stop           -- do not insert a newline, and stop checking</br>
+  (anything else) -- insert a newline, and stop checking</br>
+</br>
+If every function in the list is called with no determination made,</br>
+then no newline is inserted.</br>
+</br>
+This is a style variable.  Apart from the valid values described</br>
+above, it can be set to the symbol `set-from-style'.  In that case,</br>
+it takes its value from the style system (see `c-default-style' and</br>
+`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,</br>
+the value set here overrides the style system (there is a variable</br>
+`c-old-style-variable-behavior' that changes this, though).</br>
+</br>
 You can customize this variable.

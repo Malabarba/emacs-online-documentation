@@ -1,0 +1,68 @@
+<strong>eww-mode-map</strong> is a variable defined in `<code>eww.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `eww-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Eww menu-item "Eww"
+		(keymap "Eww"
+			(Exit menu-item "Exit" eww-quit)
+			(Close\ browser menu-item "Close browser" quit-window)
+			(Reload menu-item "Reload" eww-reload)
+			(Back\ to\ previous\ page menu-item "Back to previous page" eww-back-url :enable
+						  (not
+						   (zerop
+						    (length eww-history))))
+			(Forward\ to\ next\ page menu-item "Forward to next page" eww-forward-url :enable
+						 (not
+						  (zerop eww-history-position)))
+			(Browse\ with\ external\ browser menu-item "Browse with external browser" eww-browse-with-external-browser)
+			(Download menu-item "Download" eww-download)
+			(View\ page\ source menu-item "View page source" eww-view-source)
+			(Copy\ page\ URL menu-item "Copy page URL" eww-copy-page-url)
+			(List\ histories menu-item "List histories" eww-list-histories)
+			(Add\ bookmark menu-item "Add bookmark" eww-add-bookmark)
+			(List\ bookmarks menu-item "List bookmarks" eww-list-bookmarks)
+			(List\ cookies menu-item "List cookies" url-cookie-list))))
+ (66 . eww-list-bookmarks)
+ (98 . eww-add-bookmark)
+ (72 . eww-list-histories)
+ (118 . eww-view-source)
+ (67 . url-cookie-list)
+ (119 . eww-copy-page-url)
+ (100 . eww-download)
+ (38 . eww-browse-with-external-browser)
+ (116 . eww-top-url)
+ (117 . eww-up-url)
+ (112 . eww-previous-url)
+ (110 . eww-next-url)
+ (114 . eww-forward-url)
+ (108 . eww-back-url)
+ (32 . scroll-up-command)
+ (127 . scroll-down-command)
+ (33554464 . scroll-down-command)
+ (delete . scroll-down-command)
+ (27 keymap
+     (112 . eww-previous-bookmark)
+     (110 . eww-next-bookmark)
+     (9 . shr-previous-link))
+ (9 . shr-next-link)
+ (103 . eww-reload)
+ (113 . quit-window)
+ (57 . digit-argument)
+ (56 . digit-argument)
+ (55 . digit-argument)
+ (54 . digit-argument)
+ (53 . digit-argument)
+ (52 . digit-argument)
+ (51 . digit-argument)
+ (50 . digit-argument)
+ (49 . digit-argument)
+ (48 . digit-argument)
+ (45 . negative-argument)
+ (remap keymap
+	(self-insert-command . undefined)))
+</pre></br>

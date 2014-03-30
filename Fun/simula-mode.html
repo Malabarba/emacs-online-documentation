@@ -1,61 +1,62 @@
-<strong>simula-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>simula.el</code>'.<br/>
-<br/>
-(simula-mode)<br/>
-<br/>
-Parent mode: `prog-mode'.<br/>
-<br/>
-Major mode for editing SIMULA code.<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-TAB		simula-indent-command<br/>
-ESC		Prefix Command<br/>
-:		simula-electric-label<br/>
-DEL		backward-delete-char-untabify<br/>
-<br/>
-C-M-q		simula-indent-exp<br/>
-<br/>
-C-c C-d		simula-forward-down-level<br/>
-C-c C-n		simula-next-statement<br/>
-C-c C-p		simula-previous-statement<br/>
-C-c C-u		simula-backward-up-level<br/>
-<br/>
-<br/>
-Variables controlling indentation style:<br/>
- `simula-tab-always-indent'<br/>
-    Non-nil means TAB in SIMULA mode should always reindent the current line,<br/>
-    regardless of where in the line point is when the TAB command is used.<br/>
- `simula-indent-level'<br/>
-    Indentation of SIMULA statements with respect to containing block.<br/>
- `simula-substatement-offset'<br/>
-    Extra indentation after DO, THEN, ELSE, WHEN and OTHERWISE.<br/>
- `simula-continued-statement-offset' 3<br/>
-    Extra indentation for lines not starting a statement or substatement,<br/>
-    e.g. a nested FOR-loop.  If value is a list, each line in a multiple-<br/>
-    line continued statement will have the car of the list extra indentation<br/>
-    with respect to the previous line of the statement.<br/>
- `simula-label-offset' -4711<br/>
-    Offset of SIMULA label lines relative to usual indentation.<br/>
- `simula-if-indent' '(0 . 0)<br/>
-    Extra indentation of THEN and ELSE with respect to the starting IF.<br/>
-    Value is a cons cell, the car is extra THEN indentation and the cdr<br/>
-    extra ELSE indentation.  IF after ELSE is indented as the starting IF.<br/>
- `simula-inspect-indent' '(0 . 0)<br/>
-    Extra indentation of WHEN and OTHERWISE with respect to the<br/>
-    corresponding INSPECT.  Value is a cons cell, the car is<br/>
-    extra WHEN indentation and the cdr extra OTHERWISE indentation.<br/>
- `simula-electric-indent' nil<br/>
-    If this variable is non-nil, `simula-indent-line'<br/>
-    will check the previous line to see if it has to be reindented.<br/>
- `simula-abbrev-keyword' 'upcase<br/>
-    Determine how SIMULA keywords will be expanded.  Value is one of<br/>
-    the symbols `upcase', `downcase', `capitalize', (as in) `abbrev-table',<br/>
-    or nil if they should not be changed.<br/>
- `simula-abbrev-stdproc' 'abbrev-table<br/>
-    Determine how standard SIMULA procedure and class names will be<br/>
-    expanded.  Value is one of the symbols `upcase', `downcase', `capitalize',<br/>
-    (as in) `abbrev-table', or nil if they should not be changed.<br/>
-<br/>
-Turning on SIMULA mode calls the value of the variable simula-mode-hook<br/>
+<strong>simula-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>simula.el</code>'.</br>
+</br>
+</br>
+(simula-mode)</br>
+</br>
+Parent mode: `prog-mode'.</br>
+</br>
+Major mode for editing SIMULA code.</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+TAB		simula-indent-command</br>
+ESC		Prefix Command</br>
+:		simula-electric-label</br>
+DEL		backward-delete-char-untabify</br>
+</br>
+C-M-q		simula-indent-exp</br>
+</br>
+C-c C-d		simula-forward-down-level</br>
+C-c C-n		simula-next-statement</br>
+C-c C-p		simula-previous-statement</br>
+C-c C-u		simula-backward-up-level</br>
+</br>
+</br>
+Variables controlling indentation style:</br>
+ `simula-tab-always-indent'</br>
+    Non-nil means TAB in SIMULA mode should always reindent the current line,</br>
+    regardless of where in the line point is when the TAB command is used.</br>
+ `simula-indent-level'</br>
+    Indentation of SIMULA statements with respect to containing block.</br>
+ `simula-substatement-offset'</br>
+    Extra indentation after DO, THEN, ELSE, WHEN and OTHERWISE.</br>
+ `simula-continued-statement-offset' 3</br>
+    Extra indentation for lines not starting a statement or substatement,</br>
+    e.g. a nested FOR-loop.  If value is a list, each line in a multiple-</br>
+    line continued statement will have the car of the list extra indentation</br>
+    with respect to the previous line of the statement.</br>
+ `simula-label-offset' -4711</br>
+    Offset of SIMULA label lines relative to usual indentation.</br>
+ `simula-if-indent' '(0 . 0)</br>
+    Extra indentation of THEN and ELSE with respect to the starting IF.</br>
+    Value is a cons cell, the car is extra THEN indentation and the cdr</br>
+    extra ELSE indentation.  IF after ELSE is indented as the starting IF.</br>
+ `simula-inspect-indent' '(0 . 0)</br>
+    Extra indentation of WHEN and OTHERWISE with respect to the</br>
+    corresponding INSPECT.  Value is a cons cell, the car is</br>
+    extra WHEN indentation and the cdr extra OTHERWISE indentation.</br>
+ `simula-electric-indent' nil</br>
+    If this variable is non-nil, `simula-indent-line'</br>
+    will check the previous line to see if it has to be reindented.</br>
+ `simula-abbrev-keyword' 'upcase</br>
+    Determine how SIMULA keywords will be expanded.  Value is one of</br>
+    the symbols `upcase', `downcase', `capitalize', (as in) `abbrev-table',</br>
+    or nil if they should not be changed.</br>
+ `simula-abbrev-stdproc' 'abbrev-table</br>
+    Determine how standard SIMULA procedure and class names will be</br>
+    expanded.  Value is one of the symbols `upcase', `downcase', `capitalize',</br>
+    (as in) `abbrev-table', or nil if they should not be changed.</br>
+</br>
+Turning on SIMULA mode calls the value of the variable simula-mode-hook</br>
 with no arguments, if that value is non-nil.

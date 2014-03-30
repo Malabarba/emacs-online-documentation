@@ -1,68 +1,80 @@
-<strong>emacs-lisp-mode-map</strong> is a variable defined in `<code>lisp-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for Emacs Lisp mode.<br/>
-All commands in `lisp-mode-shared-map' are inherited by this map.<br/>
-<br/>
-Value: (keymap<br/>
- (24 keymap<br/>
-     (1 keymap<br/>
-	(12 . edebug-where)<br/>
-	(3 . edebug-go-mode)<br/>
-	(14 . edebug-next-mode)<br/>
-	(19 . edebug-step-mode)))<br/>
- (menu-bar keymap<br/>
-	   (emacs-lisp "Emacs-Lisp" keymap<br/>
-		       (indent-line menu-item "Indent Line" lisp-indent-line)<br/>
-		       (indent-region menu-item "Indent Region" indent-region :help "Indent each nonblank line in the region" :enable mark-active)<br/>
-		       (comment-region menu-item "Comment Out Region" comment-region :help "Comment or uncomment each line in the region" :enable mark-active)<br/>
-		       (separator-format "--")<br/>
-		       (eval-sexp menu-item "Evaluate Last S-expression" eval-last-sexp :help "Evaluate sexp before point; print value in minibuffer")<br/>
-		       (eval-region menu-item "Evaluate Region" eval-region :help "Execute the region as Lisp code" :enable mark-active)<br/>
-		       (eval-buffer menu-item "Evaluate Buffer" eval-buffer :help "Execute the current buffer as Lisp code")<br/>
-		       (ielm menu-item "Interactive Expression Evaluation" ielm :help "Interactively evaluate Emacs Lisp expressions")<br/>
-		       (separator-eval "--")<br/>
-		       (byte-compile menu-item "Byte-compile This File" emacs-lisp-byte-compile :help "Byte compile the file containing the current buffer")<br/>
-		       (emacs-byte-compile-and-load menu-item "Byte-compile and Load" emacs-lisp-byte-compile-and-load :help "Byte-compile the current file (if it has changed), then load compiled code")<br/>
-		       (byte-recompile menu-item "Byte-recompile Directory..." byte-recompile-directory :help "Recompile every `.el' file in DIRECTORY that needs recompilation")<br/>
-		       (disas menu-item "Disassemble Byte Compiled Object..." disassemble :help "Print disassembled code for OBJECT in a buffer")<br/>
-		       (separator-byte "--")<br/>
-		       (edebug-defun menu-item "Instrument Function for Debugging" edebug-defun :help "Evaluate the top level form point is in, stepping through with Edebug" :keys "C-u C-M-x")<br/>
-		       (lint "Linting" keymap<br/>
-			     (lint-d menu-item "Lint Defun" elint-defun :help "Lint the function at point")<br/>
-			     (lint-b menu-item "Lint Buffer" elint-current-buffer :help "Lint the current buffer")<br/>
-			     (lint-f menu-item "Lint File..." elint-file :help "Lint a file")<br/>
-			     (lint-di menu-item "Lint Directory..." elint-directory :help "Lint a directory"))<br/>
-		       (profiling "Profiling" keymap<br/>
-				  (prof-func menu-item "Instrument Function..." elp-instrument-function :help "Instrument a function for profiling")<br/>
-				  (prof-pack menu-item "Instrument Package..." elp-instrument-package :help "Instrument for profiling all function that start with a prefix")<br/>
-				  (prof-res menu-item "Show Profiling Results" elp-results :help "Display current profiling results")<br/>
-				  (prof-resfunc menu-item "Reset Counters for Function..." elp-reset-function :help "Reset the profiling information for a function")<br/>
-				  (prof-resall menu-item "Reset Counters for All Functions" elp-reset-all :help "Reset the profiling information for all functions being profiled")<br/>
-				  (sep-rem "--")<br/>
-				  (prof-restfunc menu-item "Remove Instrumentation for Function..." elp-restore-function :help "Restore an instrumented function to its original definition")<br/>
-				  (prof-restall menu-item "Remove Instrumentation for All Functions" elp-restore-all :help "Restore the original definitions of all functions being profiled"))<br/>
-		       (tracing "Tracing" keymap<br/>
-				(tr-f menu-item "Trace Function..." trace-function :help "Trace the function given as an argument")<br/>
-				(tr-q menu-item "Trace Function Quietly..." trace-function-background :help "Trace the function with trace output going quietly to a buffer")<br/>
-				(tr-sep "--")<br/>
-				(tr-uf menu-item "Untrace Function..." untrace-function :help "Untrace function, and possibly activate all remaining advice")<br/>
-				(tr-a menu-item "Untrace All" untrace-all :help "Untrace all currently traced functions"))<br/>
-		       (re-builder menu-item "Construct Regexp" re-builder :help "Construct a regexp interactively")<br/>
-		       (checkdoc menu-item "Check Documentation Strings" checkdoc :help "Check documentation strings for style requirements")<br/>
-		       (eldoc menu-item "Auto-Display Documentation Strings" eldoc-mode :button<br/>
-			      (:toggle bound-and-true-p eldoc-mode)<br/>
-			      :help "Display the documentation string for the item under cursor")<br/>
-		       "Emacs-Lisp"))<br/>
- (27 keymap<br/>
-     (17 . indent-pp-sexp)<br/>
-     (24 . eval-defun)<br/>
-     (9 . completion-at-point))<br/>
- "Emacs-Lisp" keymap<br/>
- (127 . backward-delete-char-untabify)<br/>
- (27 keymap<br/>
-     (17 . indent-sexp)))<br/>
-<br/>
+<strong>emacs-lisp-mode-map</strong> is a variable defined in `<code>lisp-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for Emacs Lisp mode.</br>
+All commands in `lisp-mode-shared-map' are inherited by this map.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (24 keymap
+     (1 keymap
+	(12 . edebug-where)
+	(3 . edebug-go-mode)
+	(14 . edebug-next-mode)
+	(19 . edebug-step-mode)))
+ (menu-bar keymap
+	   (emacs-lisp "Emacs-Lisp" keymap
+		       (indent-line menu-item "Indent Line" lisp-indent-line)
+		       (indent-region menu-item "Indent Region" indent-region :help "Indent each nonblank line in the region" :enable mark-active)
+		       (comment-region menu-item "Comment Out Region" comment-region :help "Comment or uncomment each line in the region" :enable mark-active)
+		       (separator-format "--")
+		       (eval-sexp menu-item "Evaluate Last S-expression" eval-last-sexp :help "Evaluate sexp before point; print value in echo area")
+		       (eval-region menu-item "Evaluate Region" eval-region :help "Execute the region as Lisp code" :enable mark-active)
+		       (eval-buffer menu-item "Evaluate Buffer" eval-buffer :help "Execute the current buffer as Lisp code")
+		       (ielm menu-item "Interactive Expression Evaluation" ielm :help "Interactively evaluate Emacs Lisp expressions")
+		       (separator-eval "--")
+		       (byte-compile menu-item "Byte-compile This File" emacs-lisp-byte-compile :help "Byte compile the file containing the current buffer")
+		       (emacs-byte-compile-and-load menu-item "Byte-compile and Load" emacs-lisp-byte-compile-and-load :help "Byte-compile the current file (if it has changed), then load compiled code")
+		       (byte-recompile menu-item "Byte-recompile Directory..." byte-recompile-directory :help "Recompile every `.el' file in DIRECTORY that needs recompilation")
+		       (disas menu-item "Disassemble Byte Compiled Object..." disassemble :help "Print disassembled code for OBJECT in a buffer")
+		       (separator-byte "--")
+		       (edebug-defun menu-item "Instrument Function for Debugging" edebug-defun :help "Evaluate the top level form point is in, stepping through with Edebug" :keys "C-u C-M-x")
+		       (lint "Linting" keymap
+			     (lint-d menu-item "Lint Defun" elint-defun :help "Lint the function at point")
+			     (lint-b menu-item "Lint Buffer" elint-current-buffer :help "Lint the current buffer")
+			     (lint-f menu-item "Lint File..." elint-file :help "Lint a file")
+			     (lint-di menu-item "Lint Directory..." elint-directory :help "Lint a directory"))
+		       (profiling "Profiling" keymap
+				  (prof-natprof-start menu-item "Start Native Profiler..." profiler-start :help "Start recording profiling information")
+				  (prof-natprof-report menu-item "Show Profiler Report" profiler-report :help "Show the current profiler report" :enable
+						       (and
+							(featurep 'profiler)
+							(profiler-running-p)))
+				  (prof-natprof-stop menu-item "Stop Native Profiler" profiler-stop :help "Stop recording profiling information" :enable
+						     (and
+						      (featurep 'profiler)
+						      (profiler-running-p)))
+				  (sep-natprof "--")
+				  (prof-func menu-item "Instrument Function..." elp-instrument-function :help "Instrument a function for profiling")
+				  (prof-pack menu-item "Instrument Package..." elp-instrument-package :help "Instrument for profiling all function that start with a prefix")
+				  (prof-res menu-item "Show Profiling Results" elp-results :help "Display current profiling results")
+				  (prof-resfunc menu-item "Reset Counters for Function..." elp-reset-function :help "Reset the profiling information for a function")
+				  (prof-resall menu-item "Reset Counters for All Functions" elp-reset-all :help "Reset the profiling information for all functions being profiled")
+				  (sep-rem "--")
+				  (prof-restfunc menu-item "Remove Instrumentation for Function..." elp-restore-function :help "Restore an instrumented function to its original definition")
+				  (prof-restall menu-item "Remove Instrumentation for All Functions" elp-restore-all :help "Restore the original definitions of all functions being profiled"))
+		       (tracing "Tracing" keymap
+				(tr-f menu-item "Trace Function..." trace-function :help "Trace the function given as an argument")
+				(tr-q menu-item "Trace Function Quietly..." trace-function-background :help "Trace the function with trace output going quietly to a buffer")
+				(tr-sep "--")
+				(tr-uf menu-item "Untrace Function..." untrace-function :help "Untrace function, and possibly activate all remaining advice")
+				(tr-a menu-item "Untrace All" untrace-all :help "Untrace all currently traced functions"))
+		       (re-builder menu-item "Construct Regexp" re-builder :help "Construct a regexp interactively")
+		       (checkdoc menu-item "Check Documentation Strings" checkdoc :help "Check documentation strings for style requirements")
+		       (eldoc menu-item "Auto-Display Documentation Strings" eldoc-mode :button
+			      (:toggle bound-and-true-p eldoc-mode)
+			      :help "Display the documentation string for the item under cursor")
+		       "Emacs-Lisp"))
+ (27 keymap
+     (17 . indent-pp-sexp)
+     (24 . eval-defun)
+     (9 . completion-at-point))
+ "Emacs-Lisp" keymap
+ (127 . backward-delete-char-untabify)
+ (27 keymap
+     (17 . indent-sexp))
+ keymap
+ (27 keymap
+     (17 . prog-indent-sexp)))
+</pre></br>

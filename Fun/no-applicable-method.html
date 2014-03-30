@@ -1,5 +1,20 @@
-<strong>no-applicable-method</strong> is a compiled Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(no-applicable-method &rest LOCAL-ARGS)<br/>
-<br/>
-Called if there are no implementations for OBJECT in METHOD.
+<strong>no-applicable-method</strong> is a compiled Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(no-applicable-method &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Called if there are no implementations for OBJECT in METHOD.</br>
+</br>
+This is a generic function with only one primary method.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-default-superclass' :PRIMARY (object method &rest args)</br>
+Called if there are no implementations for OBJECT in METHOD.</br>
+OBJECT is the object which has no method implementation.</br>
+ARGS are the arguments that were passed to METHOD.</br>
+</br>
+Implement this for a class to block this signal.  The return</br>
+value becomes the return value of the original method call.</br>
+</br>
+Defined in `eieio.el'</br>
+</br>

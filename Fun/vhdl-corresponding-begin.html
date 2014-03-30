@@ -1,14 +1,14 @@
-<strong>vhdl-corresponding-begin</strong> is a compiled Lisp function in `<code>vhdl-mode.el</code>'.<br/>
-<br/>
-(vhdl-corresponding-begin &optional LIM)<br/>
-<br/>
-If the word at the current position corresponds to an "end"<br/>
-keyword, then return a vector containing enough information to find<br/>
-the corresponding "begin" keyword, else return nil.  The keyword to<br/>
-search backward for is aref 0.  The column in which the keyword must<br/>
-appear is aref 1 or nil if any column is suitable.  The supplementary<br/>
-keyword to search forward for is aref 2 or nil if this is not<br/>
-required.  If aref 3 is t, then the "begin" keyword may be found in<br/>
-the middle of a statement.<br/>
-Assumes that the caller will make sure that we are not in the middle<br/>
+<strong>vhdl-corresponding-begin</strong> is a compiled Lisp function in `<code>vhdl-mode.el</code>'.</br>
+</br>
+(vhdl-corresponding-begin &optional <u>LIM</u>)</br>
+</br>
+If the word at the current position corresponds to an "end"</br>
+keyword, then return a vector containing enough information to find</br>
+the corresponding "begin" keyword, else return nil.  The keyword to</br>
+search backward for is aref 0.  The column in which the keyword must</br>
+appear is aref 1 or nil if any column is suitable.  The supplementary</br>
+keyword to search forward for is aref 2 or nil if this is not</br>
+required.  If aref 3 is t, then the "begin" keyword may be found in</br>
+the middle of a statement.</br>
+Assumes that the caller will make sure that we are not in the middle</br>
 of an identifier that just happens to contain an "end" keyword.

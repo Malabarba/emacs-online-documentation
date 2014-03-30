@@ -1,27 +1,27 @@
-<strong>dabbrev-abbrev-char-regexp</strong> is a variable defined in `<code>dabbrev.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Regexp to recognize a character in an abbreviation or expansion.<br/>
-This regexp will be surrounded with \\( ... \\) when actually used.<br/>
-<br/>
-Set this variable to "\\sw" if you want ordinary words or<br/>
-"\\sw\\|\\s_" if you want symbols (including characters whose<br/>
-syntax is "symbol" as well as those whose syntax is "word".<br/>
-<br/>
-The value nil has a special meaning: the abbreviation is from point to<br/>
-previous word-start, but the search is for symbols.<br/>
-<br/>
-For instance, if you are programming in Lisp, `yes-or-no-p' is a symbol,<br/>
-while `yes', `or', `no' and `p' are considered words.  If this<br/>
-variable is nil, then expanding `yes-or-no-' looks for a symbol<br/>
-starting with or containing `no-'.  If you set this variable to<br/>
-"\\sw\\|\\s_", that expansion looks for a symbol starting with<br/>
-`yes-or-no-'.  Finally, if you set this variable to "\\sw", then<br/>
-expanding `yes-or-no-' signals an error because `-' is not part of a word;<br/>
-but expanding `yes-or-no' looks for a word starting with `no'.<br/>
-<br/>
-The recommended value is nil, which will make dabbrev default to<br/>
-using "\\sw\\|\\s_".<br/>
-<br/>
+<strong>dabbrev-abbrev-char-regexp</strong> is a variable defined in `<code>dabbrev.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Regexp to recognize a character in an abbreviation or expansion.</br>
+This regexp will be surrounded with \\( ... \\) when actually used.</br>
+</br>
+Set this variable to "\\sw" if you want ordinary words or</br>
+"\\sw\\|\\s_" if you want symbols (including characters whose</br>
+syntax is "symbol" as well as those whose syntax is "word".</br>
+</br>
+The value nil has a special meaning: the abbreviation is from point to</br>
+previous word-start, but the search is for symbols.</br>
+</br>
+For instance, if you are programming in Lisp, `yes-or-no-p' is a symbol,</br>
+while `yes', `or', `no' and `p' are considered words.  If this</br>
+variable is nil, then expanding `yes-or-no-' looks for a symbol</br>
+starting with or containing `no-'.  If you set this variable to</br>
+"\\sw\\|\\s_", that expansion looks for a symbol starting with</br>
+`yes-or-no-'.  Finally, if you set this variable to "\\sw", then</br>
+expanding `yes-or-no-' signals an error because `-' is not part of a word;</br>
+but expanding `yes-or-no' looks for a word starting with `no'.</br>
+</br>
+The recommended value is nil, which will make dabbrev default to</br>
+using "\\sw\\|\\s_".</br>
+</br>
 You can customize this variable.

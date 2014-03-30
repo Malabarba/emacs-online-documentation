@@ -1,64 +1,66 @@
-<strong>scheme-mode-map</strong> is a variable defined in `<code>scheme.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for Scheme mode.<br/>
-All commands in `lisp-mode-shared-map' are inherited by this map.<br/>
-<br/>
-Value: (keymap<br/>
- (3 keymap<br/>
-    (11 . scheme-compile-file)<br/>
-    (12 . scheme-load-file)<br/>
-    (26 . switch-to-scheme)<br/>
-    (20 . scheme-trace-procedure)<br/>
-    (18 . scheme-send-region)<br/>
-    (27 keymap<br/>
-	(99 . scheme-compile-definition)<br/>
-	(114 . scheme-send-region-and-go)<br/>
-	(101 . scheme-send-definition-and-go))<br/>
-    (5 . scheme-send-definition)<br/>
-    (24 . scheme-expand-current-form)<br/>
-    (21 . xscheme-send-control-u-interrupt)<br/>
-    (3 . scheme-compile-definition-and-go)<br/>
-    (2 . xscheme-send-breakpoint-interrupt)<br/>
-    (19 . xscheme-select-process-buffer))<br/>
- (24 keymap<br/>
-     (5 . scheme-send-last-sexp))<br/>
- (27 keymap<br/>
-     (26 . xscheme-send-region)<br/>
-     (13 . xscheme-send-previous-expression)<br/>
-     (122 . xscheme-send-definition)<br/>
-     (111 . xscheme-send-buffer)<br/>
-     (24 . scheme-send-definition))<br/>
- (menu-bar keymap<br/>
-	   (scheme "Scheme" keymap<br/>
-		   (send-sexp "Evaluate Last S-expression" . scheme-send-last-sexp)<br/>
-		   (send-region "Evaluate Region" . scheme-send-region)<br/>
-		   (send-region-go "Evaluate Region & Go" . scheme-send-region-and-go)<br/>
-		   (send-def "Evaluate Last Definition" . scheme-send-definition)<br/>
-		   (send-def-go "Evaluate Last Definition & Go" . scheme-send-definition-and-go)<br/>
-		   (trace-proc "Trace procedure" . scheme-trace-procedure)<br/>
-		   (exp-form "Expand current form" . scheme-expand-current-form)<br/>
-		   (com-def "Compile Definition" . scheme-compile-definition)<br/>
-		   (com-def-go "Compile Definition & Go" . scheme-compile-definition-and-go)<br/>
-		   (switch "Switch to Scheme" . switch-to-scheme)<br/>
-		   (load-file "Load Scheme File" . scheme-load-file)<br/>
-		   (compile-file "Compile Scheme File" . scheme-compile-file)<br/>
-		   (separator-eval "--")<br/>
-		   (indent-line "Indent Line" . lisp-indent-line)<br/>
-		   (indent-region "Indent Region" . indent-region)<br/>
-		   (comment-region "Comment Out Region" . comment-region)<br/>
-		   (uncomment-region "Uncomment Out Region" lambda<br/>
-				     (beg end)<br/>
-				     (interactive "r")<br/>
-				     (comment-region beg end<br/>
-						     '(4)))<br/>
-		   (run-scheme "Run Inferior Scheme" . run-scheme)<br/>
-		   "Scheme"))<br/>
- keymap<br/>
- (127 . backward-delete-char-untabify)<br/>
- (27 keymap<br/>
-     (17 . indent-sexp)))<br/>
-<br/>
+<strong>scheme-mode-map</strong> is a variable defined in `<code>scheme.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for Scheme mode.</br>
+All commands in `lisp-mode-shared-map' are inherited by this map.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (3 keymap
+    (11 . scheme-compile-file)
+    (12 . scheme-load-file)
+    (26 . switch-to-scheme)
+    (20 . scheme-trace-procedure)
+    (18 . scheme-send-region)
+    (27 keymap
+	(99 . scheme-compile-definition)
+	(114 . scheme-send-region-and-go)
+	(101 . scheme-send-definition-and-go))
+    (5 . scheme-send-definition)
+    (24 . scheme-expand-current-form)
+    (21 . xscheme-send-control-u-interrupt)
+    (3 . scheme-compile-definition-and-go)
+    (2 . xscheme-send-breakpoint-interrupt)
+    (19 . xscheme-select-process-buffer))
+ (24 keymap
+     (5 . scheme-send-last-sexp))
+ (27 keymap
+     (26 . xscheme-send-region)
+     (13 . xscheme-send-previous-expression)
+     (122 . xscheme-send-definition)
+     (111 . xscheme-send-buffer)
+     (24 . scheme-send-definition))
+ (menu-bar keymap
+	   (scheme "Scheme" keymap
+		   (send-sexp "Evaluate Last S-expression" . scheme-send-last-sexp)
+		   (send-region "Evaluate Region" . scheme-send-region)
+		   (send-region-go "Evaluate Region & Go" . scheme-send-region-and-go)
+		   (send-def "Evaluate Last Definition" . scheme-send-definition)
+		   (send-def-go "Evaluate Last Definition & Go" . scheme-send-definition-and-go)
+		   (trace-proc "Trace procedure" . scheme-trace-procedure)
+		   (exp-form "Expand current form" . scheme-expand-current-form)
+		   (com-def "Compile Definition" . scheme-compile-definition)
+		   (com-def-go "Compile Definition & Go" . scheme-compile-definition-and-go)
+		   (switch "Switch to Scheme" . switch-to-scheme)
+		   (load-file "Load Scheme File" . scheme-load-file)
+		   (compile-file "Compile Scheme File" . scheme-compile-file)
+		   (separator-eval "--")
+		   (indent-line "Indent Line" . lisp-indent-line)
+		   (indent-region "Indent Region" . indent-region)
+		   (comment-region "Comment Out Region" . comment-region)
+		   (uncomment-region "Uncomment Out Region" lambda
+				     (beg end)
+				     (interactive "r")
+				     (comment-region beg end
+						     '(4)))
+		   (run-scheme "Run Inferior Scheme" . run-scheme)
+		   "Scheme"))
+ keymap
+ (127 . backward-delete-char-untabify)
+ (27 keymap
+     (17 . indent-sexp))
+ keymap
+ (27 keymap
+     (17 . prog-indent-sexp)))
+</pre></br>

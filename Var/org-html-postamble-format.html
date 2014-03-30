@@ -1,0 +1,27 @@
+<strong>org-html-postamble-format</strong> is a variable defined in `<code>ox-html.el</code>'.</br>
+Its value is <pre></br>
+(("en" "<p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n<p class=\"creator\">%c</p>\n<p class=\"validation\">%v</p>"))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of languages and format strings for the HTML postamble.</br>
+</br>
+The first element of each list is the language code, as used for</br>
+the LANGUAGE keyword.  See `org-export-default-language'.</br>
+</br>
+The second element of each list is a format string to format the</br>
+postamble itself.  This format string can contain these elements:</br>
+</br>
+  %t stands for the title.</br>
+  %a stands for the author's name.</br>
+  %e stands for the author's email.</br>
+  %d stands for the date.</br>
+  %c will be replaced by `org-html-creator-string'.</br>
+  %v will be replaced by `org-html-validation-link'.</br>
+  %T will be replaced by the export time.</br>
+  %C will be replaced by the last modification time.</br>
+</br>
+If you need to use a "%" character, you need to escape it</br>
+like that: "%%".</br>
+</br>
+You can customize this variable.

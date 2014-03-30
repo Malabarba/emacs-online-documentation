@@ -1,0 +1,21 @@
+<strong>Man-parse-man-k</strong> is a compiled Lisp function in `<code>man.el</code>'.</br>
+</br>
+(Man-parse-man-k)</br>
+</br>
+Parse "man -k" output and return the list of page names.</br>
+</br>
+The current buffer should contain the output of a command of the</br>
+form "man -k keyword", which is traditionally also available with</br>
+apropos(1).</br>
+</br>
+While POSIX man(1p) is a bit vague about what to expect here,</br>
+this function tries to parse some commonly used formats, which</br>
+can be described in the following informal way, with square brackets</br>
+indicating optional parts and whitespace being interpreted</br>
+somewhat loosely.</br>
+</br>
+foo[, bar [, ...]] [other stuff] (sec) - description</br>
+foo(sec)[, bar(sec) [, ...]] [other stuff] - description</br>
+</br>
+For more details and some regression tests, please see</br>
+test/automated/man-tests.el in the emacs bzr repository.

@@ -1,13 +1,16 @@
-<strong>hi-lock-menu</strong> is a variable defined in `<code>hi-lock.el</code>'.<br/>
-Its value is<br/>
-(keymap "Hi Lock"<br/>
-	(highlight-regexp menu-item "Highlight Regexp..." highlight-regexp :help "Highlight text matching PATTERN (a regexp).")<br/>
-	(highlight-phrase menu-item "Highlight Phrase..." highlight-phrase :help "Highlight text matching PATTERN (a regexp processed to match phrases).")<br/>
-	(highlight-lines-matching-regexp menu-item "Highlight Lines..." highlight-lines-matching-regexp :help "Highlight lines containing match of PATTERN (a regexp).")<br/>
-	(unhighlight-regexp menu-item "Remove Highlighting..." unhighlight-regexp :help "Remove previously entered highlighting pattern." :enable hi-lock-interactive-patterns)<br/>
-	(hi-lock-write-interactive-patterns menu-item "Patterns to Buffer" hi-lock-write-interactive-patterns :help "Insert interactively added REGEXPs into buffer at point." :enable hi-lock-interactive-patterns)<br/>
-	(hi-lock-find-patterns menu-item "Patterns from Buffer" hi-lock-find-patterns :help "Use patterns (if any) near top of buffer."))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Menu for hi-lock mode.
+<strong>hi-lock-menu</strong> is a variable defined in `<code>hi-lock.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for hi-lock mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Hi Lock"
+	(highlight-regexp menu-item "Highlight Regexp..." highlight-regexp :help "Highlight text matching PATTERN (a regexp).")
+	(highlight-phrase menu-item "Highlight Phrase..." highlight-phrase :help "Highlight text matching PATTERN (a regexp processed to match phrases).")
+	(highlight-lines-matching-regexp menu-item "Highlight Lines..." highlight-lines-matching-regexp :help "Highlight lines containing match of PATTERN (a regexp).")
+	(highlight-symbol-at-point menu-item "Highlight Symbol at Point" highlight-symbol-at-point :help "Highlight symbol found near point without prompting.")
+	(unhighlight-regexp menu-item "Remove Highlighting..." unhighlight-regexp :help "Remove previously entered highlighting pattern." :enable hi-lock-interactive-patterns)
+	(hi-lock-write-interactive-patterns menu-item "Patterns to Buffer" hi-lock-write-interactive-patterns :help "Insert interactively added REGEXPs into buffer at point." :enable hi-lock-interactive-patterns)
+	(hi-lock-find-patterns menu-item "Patterns from Buffer" hi-lock-find-patterns :help "Use patterns (if any) near top of buffer."))
+</pre></br>

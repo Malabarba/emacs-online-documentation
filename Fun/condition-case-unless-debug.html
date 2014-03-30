@@ -1,6 +1,7 @@
-<strong>condition-case-unless-debug</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
-<br/>
-(condition-case-unless-debug VAR BODYFORM &rest HANDLERS)<br/>
-<br/>
-Like `condition-case' except that it does not catch anything when debugging.<br/>
-More specifically if `debug-on-error' is set, then it does not catch any signal.
+<strong>condition-case-unless-debug</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(condition-case-unless-debug <u>VAR</u> <u>BODYFORM</u> &rest <u>HANDLERS</u>)</br>
+</br>
+Like `condition-case' except that it does not prevent debugging.</br>
+More specifically if `debug-on-error' is set then the debugger will be invoked</br>
+even if this catches the signal.

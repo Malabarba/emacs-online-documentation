@@ -1,13 +1,15 @@
-<strong>window-state-put</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(window-state-put STATE &optional WINDOW IGNORE)<br/>
-<br/>
-Put window state STATE into WINDOW.<br/>
-STATE should be the state of a window returned by an earlier<br/>
-invocation of `window-state-get'.  Optional argument WINDOW must<br/>
-specify a live window and defaults to the selected one.<br/>
-<br/>
-Optional argument IGNORE non-nil means ignore minimum window<br/>
-sizes and fixed size restrictions.  IGNORE equal `safe' means<br/>
-windows can get as small as `window-safe-min-height' and<br/>
+<strong>window-state-put</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(window-state-put <u>STATE</u> &optional <u>WINDOW</u> <u>IGNORE</u>)</br>
+</br>
+Put window state <u>STATE</u> into <u>WINDOW</u>.</br>
+<u>STATE</u> should be the state of a window returned by an earlier</br>
+invocation of `window-state-get'.  Optional argument <u>WINDOW</u> must</br>
+specify a valid window and defaults to the selected one.  If</br>
+<u>WINDOW</u> is not live, replace <u>WINDOW</u> by a live one before putting</br>
+<u>STATE</u> into it.</br>
+</br>
+Optional argument <u>IGNORE</u> non-nil means ignore minimum window</br>
+sizes and fixed size restrictions.  <u>IGNORE</u> equal `safe' means</br>
+windows can get as small as `window-safe-min-height' and</br>
 `window-safe-min-width'.

@@ -1,17 +1,17 @@
-<strong>epg-context-set-passphrase-callback</strong> is a compiled Lisp function in `<code>epg.el</code>'.<br/>
-<br/>
-(epg-context-set-passphrase-callback CONTEXT PASSPHRASE-CALLBACK)<br/>
-<br/>
-Set the function used to query passphrase.<br/>
-<br/>
-PASSPHRASE-CALLBACK is either a function, or a cons-cell whose<br/>
-car is a function and cdr is a callback data.<br/>
-<br/>
-The function gets three arguments: the context, the key-id in<br/>
-question, and the callback data (if any).<br/>
-<br/>
-The callback may not be called if you use GnuPG 2.x, which relies<br/>
-on the external program called `gpg-agent' for passphrase query.<br/>
-If you really want to intercept passphrase query, consider<br/>
-installing GnuPG 1.x _along with_ GnuPG 2.x, which does passphrase<br/>
+<strong>epg-context-set-passphrase-callback</strong> is a compiled Lisp function in `<code>epg.el</code>'.</br>
+</br>
+(epg-context-set-passphrase-callback <u>CONTEXT</u> <u>PASSPHRASE-CALLBACK</u>)</br>
+</br>
+Set the function used to query passphrase.</br>
+</br>
+<u>PASSPHRASE-CALLBACK</u> is either a function, or a cons-cell whose</br>
+car is a function and cdr is a callback data.</br>
+</br>
+The function gets three arguments: the context, the key-id in</br>
+question, and the callback data (if any).</br>
+</br>
+The callback may not be called if you use GnuPG 2.x, which relies</br>
+on the external program called `gpg-agent' for passphrase query.</br>
+If you really want to intercept passphrase query, consider</br>
+installing GnuPG 1.x _along with_ GnuPG 2.x, which does passphrase</br>
 query by itself and Emacs can intercept them.

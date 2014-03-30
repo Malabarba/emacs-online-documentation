@@ -1,39 +1,38 @@
-<strong>hide-ifdef-mode-map</strong> is a variable defined in `<code>hideif.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap used with `hide-ifdef-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Hide-Ifdef menu-item "Hide-Ifdef"<br/>
-		       (keymap "Hide-Ifdef"<br/>
-			       (Hide\ some\ ifdefs menu-item "Hide some ifdefs" hide-ifdefs :help "Hide the contents of some #ifdefs")<br/>
-			       (Show\ all\ ifdefs menu-item "Show all ifdefs" show-ifdefs :help "Cancel the effects of `hide-ifdef': show the contents of all #ifdefs")<br/>
-			       (Hide\ ifdef\ block menu-item "Hide ifdef block" hide-ifdef-block :help "Hide the ifdef block (true or false part) enclosing or before the cursor")<br/>
-			       (Show\ ifdef\ block menu-item "Show ifdef block" show-ifdef-block :help "Show the ifdef block (true or false part) enclosing or before the cursor")<br/>
-			       (Define\ a\ variable\.\.\. menu-item "Define a variable..." hide-ifdef-define :help "Define a VAR so that #ifdef VAR would be included")<br/>
-			       (Undefine\ a\ variable\.\.\. menu-item "Undefine a variable..." hide-ifdef-undef :help "Undefine a VAR so that #ifdef VAR would not be included")<br/>
-			       (Define\ an\ alist\.\.\. menu-item "Define an alist..." hide-ifdef-set-define-alist :help "Set the association for NAME to `hide-ifdef-env'")<br/>
-			       (Use\ an\ alist\.\.\. menu-item "Use an alist..." hide-ifdef-use-define-alist :help "Set `hide-ifdef-env' to the define list specified by NAME")<br/>
-			       (Toggle\ read\ only menu-item "Toggle read only" hide-ifdef-toggle-read-only :button<br/>
-						   (:toggle . hide-ifdef-read-only)<br/>
-						   :help "Buffer should be read-only while hiding text")<br/>
-			       (Toggle\ shadowing menu-item "Toggle shadowing" hide-ifdef-toggle-shadowing :button<br/>
-						  (:toggle . hide-ifdef-shadow)<br/>
-						  :help "Text should be shadowed instead of hidden"))))<br/>
- (3 keymap<br/>
-    (64 keymap<br/>
-	(23 . hide-ifdef-toggle-shadowing)<br/>
-	(17 . hide-ifdef-toggle-read-only)<br/>
-	(19 . show-ifdef-block)<br/>
-	(4 . hide-ifdef-block)<br/>
-	(115 . show-ifdefs)<br/>
-	(104 . hide-ifdefs)<br/>
-	(85 . hide-ifdef-use-define-alist)<br/>
-	(68 . hide-ifdef-set-define-alist)<br/>
-	(117 . hide-ifdef-undef)<br/>
-	(100 . hide-ifdef-define))))<br/>
-<br/>
+<strong>hide-ifdef-mode-map</strong> is a variable defined in `<code>hideif.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used with `hide-ifdef-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Hide-Ifdef menu-item "Hide-Ifdef"
+		       (keymap "Hide-Ifdef"
+			       (Hide\ some\ ifdefs menu-item "Hide some ifdefs" hide-ifdefs :help "Hide the contents of some #ifdefs")
+			       (Show\ all\ ifdefs menu-item "Show all ifdefs" show-ifdefs :help "Cancel the effects of `hide-ifdef': show the contents of all #ifdefs")
+			       (Hide\ ifdef\ block menu-item "Hide ifdef block" hide-ifdef-block :help "Hide the ifdef block (true or false part) enclosing or before the cursor")
+			       (Show\ ifdef\ block menu-item "Show ifdef block" show-ifdef-block :help "Show the ifdef block (true or false part) enclosing or before the cursor")
+			       (Define\ a\ variable\.\.\. menu-item "Define a variable..." hide-ifdef-define :help "Define a VAR so that #ifdef VAR would be included")
+			       (Undefine\ a\ variable\.\.\. menu-item "Undefine a variable..." hide-ifdef-undef :help "Undefine a VAR so that #ifdef VAR would not be included")
+			       (Define\ an\ alist\.\.\. menu-item "Define an alist..." hide-ifdef-set-define-alist :help "Set the association for NAME to `hide-ifdef-env'")
+			       (Use\ an\ alist\.\.\. menu-item "Use an alist..." hide-ifdef-use-define-alist :help "Set `hide-ifdef-env' to the define list specified by NAME")
+			       (Toggle\ read\ only menu-item "Toggle read only" hide-ifdef-toggle-read-only :button
+						   (:toggle . hide-ifdef-read-only)
+						   :help "Buffer should be read-only while hiding text")
+			       (Toggle\ shadowing menu-item "Toggle shadowing" hide-ifdef-toggle-shadowing :button
+						  (:toggle . hide-ifdef-shadow)
+						  :help "Text should be shadowed instead of hidden"))))
+ (3 keymap
+    (64 keymap
+	(23 . hide-ifdef-toggle-shadowing)
+	(17 . hide-ifdef-toggle-read-only)
+	(19 . show-ifdef-block)
+	(4 . hide-ifdef-block)
+	(115 . show-ifdefs)
+	(104 . hide-ifdefs)
+	(85 . hide-ifdef-use-define-alist)
+	(68 . hide-ifdef-set-define-alist)
+	(117 . hide-ifdef-undef)
+	(100 . hide-ifdef-define))))
+</pre></br>

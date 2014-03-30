@@ -1,25 +1,25 @@
-<strong>split-window-internal</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(split-window-internal OLD TOTAL-SIZE SIDE NORMAL-SIZE)<br/>
-<br/>
-Split window OLD.<br/>
-Second argument TOTAL-SIZE specifies the number of lines or columns of the<br/>
-new window.  In any case TOTAL-SIZE must be a positive integer.<br/>
-<br/>
-Third argument SIDE nil (or `below') specifies that the new window shall<br/>
-be located below WINDOW.  SIDE `above' means the new window shall be<br/>
-located above WINDOW.  In both cases TOTAL-SIZE specifies the number of<br/>
-lines of the new window including space reserved for the mode and/or<br/>
-header line.<br/>
-<br/>
-SIDE t (or `right') specifies that the new window shall be located on<br/>
-the right side of WINDOW.  SIDE `left' means the new window shall be<br/>
-located on the left of WINDOW.  In both cases TOTAL-SIZE specifies the<br/>
-number of columns of the new window including space reserved for fringes<br/>
-and the scrollbar or a divider column.<br/>
-<br/>
-Fourth argument NORMAL-SIZE specifies the normal size of the new window<br/>
-according to the SIDE argument.<br/>
-<br/>
-The new total and normal sizes of all involved windows must have been<br/>
+<strong>split-window-internal</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(split-window-internal <u>OLD</u> <u>PIXEL-SIZE</u> <u>SIDE</u> <u>NORMAL-SIZE</u>)</br>
+</br>
+Split window <u>OLD</u>.</br>
+Second argument <u>PIXEL-SIZE</u> specifies the number of pixels of the</br>
+new window.  In any case TOTAL-SIZE must be a positive integer.</br>
+</br>
+Third argument <u>SIDE</u> nil (or `below') specifies that the new window shall</br>
+be located below WINDOW.  <u>SIDE</u> `above' means the new window shall be</br>
+located above WINDOW.  In both cases <u>PIXEL-SIZE</u> specifies the pixel</br>
+height of the new window including space reserved for the mode and/or</br>
+header line.</br>
+</br>
+<u>SIDE</u> t (or `right') specifies that the new window shall be located on</br>
+the right side of WINDOW.  <u>SIDE</u> `left' means the new window shall be</br>
+located on the left of WINDOW.  In both cases <u>PIXEL-SIZE</u> specifies the</br>
+width of the new window including space reserved for fringes and the</br>
+scrollbar or a divider column.</br>
+</br>
+Fourth argument <u>NORMAL-SIZE</u> specifies the normal size of the new window</br>
+according to the <u>SIDE</u> argument.</br>
+</br>
+The new pixel and normal sizes of all involved windows must have been</br>
 set correctly.  See the code of `split-window' for how this is done.

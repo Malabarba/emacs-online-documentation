@@ -1,14 +1,30 @@
-<strong>orgtbl-radio-table-templates</strong> is a variable defined in `<code>org-table.el</code>'.<br/>
-Its value is<br/>
-((latex-mode "% BEGIN RECEIVE ORGTBL %n\n% END RECEIVE ORGTBL %n\n\\begin{comment}\n#+ORGTBL: SEND %n orgtbl-to-latex :splice nil :skip 0\n| | |\n\\end{comment}\n")<br/>
- (texinfo-mode "@c BEGIN RECEIVE ORGTBL %n\n@c END RECEIVE ORGTBL %n\n@ignore\n#+ORGTBL: SEND %n orgtbl-to-html :splice nil :skip 0\n| | |\n@end ignore\n")<br/>
- (html-mode "<!-- BEGIN RECEIVE ORGTBL %n -->\n<!-- END RECEIVE ORGTBL %n -->\n<!--\n#+ORGTBL: SEND %n orgtbl-to-html :splice nil :skip 0\n| | |\n-->\n")<br/>
- (org-mode "#+ BEGIN RECEIVE ORGTBL %n\n#+ END RECEIVE ORGTBL %n\n\n#+ORGTBL: SEND %n orgtbl-to-orgtbl :splice nil :skip 0\n| | |\n"))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Templates for radio tables in different major modes.<br/>
-All occurrences of %n in a template will be replaced with the name of the<br/>
-table, obtained by prompting the user.<br/>
-<br/>
+<strong>orgtbl-radio-table-templates</strong> is a variable defined in `<code>org-table.el</code>'.</br>
+Its value is <pre></br>
+((latex-mode "% BEGIN RECEIVE ORGTBL %n\n% END RECEIVE ORGTBL %n\n\\begin{comment}\n#+ORGTBL: SEND %n orgtbl-to-latex :splice nil :skip 0\n| | |\n\\end{comment}\n")
+ (texinfo-mode "@c BEGIN RECEIVE ORGTBL %n\n@c END RECEIVE ORGTBL %n\n@ignore\n#+ORGTBL: SEND %n orgtbl-to-html :splice nil :skip 0\n| | |\n@end ignore\n")
+ (html-mode "<!-- BEGIN RECEIVE ORGTBL %n -->\n<!-- END RECEIVE ORGTBL %n -->\n<!--\n#+ORGTBL: SEND %n orgtbl-to-html :splice nil :skip 0\n| | |\n-->\n")
+ (org-mode "#+ BEGIN RECEIVE ORGTBL %n\n#+ END RECEIVE ORGTBL %n\n\n#+ORGTBL: SEND %n orgtbl-to-orgtbl :splice nil :skip 0\n| | |\n"))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Templates for radio tables in different major modes.</br>
+Each template must define lines that will be treated as a comment and that</br>
+must contain the "BEGIN RECEIVE ORGTBL %n" and "END RECEIVE ORGTBL"</br>
+lines where "%n" will be replaced with the name of the table during</br>
+insertion of the template.  The transformed table will later be inserted</br>
+between these lines.</br>
+</br>
+The template should also contain a minimal table in a multiline comment.</br>
+If multiline comments are not possible in the buffer language,</br>
+you can pack it into a string that will not be used when the code</br>
+is compiled or executed.  Above the table will you need a line with</br>
+the fixed string "#+ORGTBL: SEND", followed by instruction on how to</br>
+convert the table into a data structure useful in the</br>
+language of the buffer.  Check the manual for the section on</br>
+"Translator functions", and more generally check out</br>
+http://orgmode.org/manual/Tables-in-arbitrary-syntax.html#Tables-in-arbitrary-syntax</br>
+</br>
+All occurrences of %n in a template will be replaced with the name of the</br>
+table, obtained by prompting the user.</br>
+</br>
 You can customize this variable.

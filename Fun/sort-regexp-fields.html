@@ -1,28 +1,29 @@
-<strong>sort-regexp-fields</strong> is an interactive autoloaded compiled Lisp function in `<code>sort.el</code>'.<br/>
-<br/>
-(sort-regexp-fields REVERSE RECORD-REGEXP KEY-REGEXP BEG END)<br/>
-<br/>
-Sort the text in the region region lexicographically.<br/>
-If called interactively, prompt for two regular expressions,<br/>
-RECORD-REGEXP and KEY-REGEXP.<br/>
-<br/>
-RECORD-REGEXP specifies the textual units to be sorted.<br/>
-  For example, to sort lines, RECORD-REGEXP would be "^.*$".<br/>
-<br/>
-KEY-REGEXP specifies the part of each record (i.e. each match for<br/>
-  RECORD-REGEXP) to be used for sorting.<br/>
-  If it is "\\digit", use the digit'th "\\(...\\)"<br/>
-  match field specified by RECORD-REGEXP.<br/>
-  If it is "\\&", use the whole record.<br/>
-  Otherwise, KEY-REGEXP should be a regular expression with which<br/>
-  to search within the record.  If a match for KEY-REGEXP is not<br/>
-  found within a record, that record is ignored.<br/>
-<br/>
-With a negative prefix arg, sort in reverse order.<br/>
-<br/>
-The variable `sort-fold-case' determines whether alphabetic case affects<br/>
-the sort order.<br/>
-<br/>
-For example: to sort lines in the region by the first word on each line<br/>
- starting with the letter "f",<br/>
- RECORD-REGEXP would be "^.*$" and KEY would be "\\<f\\w*\\>"
+<strong>sort-regexp-fields</strong> is an interactive autoloaded compiled Lisp function in `<code>sort.el</code>'.</br>
+</br>
+</br>
+(sort-regexp-fields <u>REVERSE</u> <u>RECORD-REGEXP</u> <u>KEY-REGEXP</u> <u>BEG</u> <u>END</u>)</br>
+</br>
+Sort the text in the region region lexicographically.</br>
+If called interactively, prompt for two regular expressions,</br>
+<u>RECORD-REGEXP</u> and <u>KEY-REGEXP</u>.</br>
+</br>
+<u>RECORD-REGEXP</u> specifies the textual units to be sorted.</br>
+  For example, to sort lines, <u>RECORD-REGEXP</u> would be "^.*$".</br>
+</br>
+<u>KEY-REGEXP</u> specifies the part of each record (i.e. each match for</br>
+  <u>RECORD-REGEXP</u>) to be used for sorting.</br>
+  If it is "\\digit", use the digit'th "\\(...\\)"</br>
+  match field specified by <u>RECORD-REGEXP</u>.</br>
+  If it is "\\&", use the whole record.</br>
+  Otherwise, <u>KEY-REGEXP</u> should be a regular expression with which</br>
+  to search within the record.  If a match for <u>KEY-REGEXP</u> is not</br>
+  found within a record, that record is ignored.</br>
+</br>
+With a negative prefix arg, sort in reverse order.</br>
+</br>
+The variable `sort-fold-case' determines whether alphabetic case affects</br>
+the sort order.</br>
+</br>
+For example: to sort lines in the region by the first word on each line</br>
+ starting with the letter "f",</br>
+ <u>RECORD-REGEXP</u> would be "^.*$" and KEY would be "\\&lt;f\\w*\\>"

@@ -1,13 +1,23 @@
-<strong>window-height</strong> is an alias for `window-total-height' in `<code>window.el</code>'.<br/>
-<br/>
-(window-height &optional WINDOW)<br/>
-<br/>
-Return the total height, in lines, of window WINDOW.<br/>
-WINDOW must be a valid window and defaults to the selected one.<br/>
-<br/>
-The return value includes the mode line and header line, if any.<br/>
-If WINDOW is an internal window, the total height is the height<br/>
-of the screen areas spanned by its children.<br/>
-<br/>
-On a graphical display, this total height is reported as an<br/>
-integer multiple of the default character height.
+<strong>window-height</strong> is an alias for `<strong><a href="window-total-height">window-total-height</a></strong>' in `<code>window.el</code>'.</br>
+</br>
+(window-height &optional <u>WINDOW</u> <u>ROUND</u>)</br>
+</br>
+Return the height of window <u>WINDOW</u> in lines.</br>
+<u>WINDOW</u> must be a valid window and defaults to the selected one.</br>
+</br>
+The return value includes the heights of <u>WINDOW</u>'s mode and header line</br>
+and its bottom divider, if any.  If <u>WINDOW</u> is an internal window, the</br>
+total height is the height of the screen areas spanned by its children.</br>
+</br>
+If <u>WINDOW</u>'s pixel height is not an integral multiple of its frame's</br>
+character height, the number of lines occupied by <u>WINDOW</u> is rounded</br>
+internally.  This is done in a way such that, if <u>WINDOW</u> is a parent</br>
+window, the sum of the total heights of all its children internally</br>
+equals the total height of <u>WINDOW</u>.</br>
+</br>
+If the optional argument <u>ROUND</u> is `ceiling', return the smallest integer</br>
+larger than <u>WINDOW</u>'s pixel height divided by the character height of</br>
+<u>WINDOW</u>'s frame.  <u>ROUND</u> `floor' means to return the largest integer</br>
+smaller than <u>WINDOW</u>'s pixel height divided by the character height of</br>
+<u>WINDOW</u>'s frame.  Any other value of <u>ROUND</u> means to return the internal</br>
+total height of <u>WINDOW</u>.

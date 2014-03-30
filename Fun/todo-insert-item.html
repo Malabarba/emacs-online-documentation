@@ -1,7 +1,21 @@
-<strong>todo-insert-item</strong> is an interactive autoloaded compiled Lisp function in `<code>todo-mode.el</code>'.<br/>
-<br/>
-(todo-insert-item ARG)<br/>
-<br/>
-Insert new TODO list entry.<br/>
-With a prefix argument ARG solicit the category, otherwise use the current<br/>
-category.
+<strong>todo-insert-item</strong> is an interactive compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+</br>
+(todo-insert-item &optional <u>ARG</u>)</br>
+</br>
+Insert a new todo item into a category.</br>
+</br>
+With no prefix argument <u>ARG</u>, add the item to the current</br>
+category; with one prefix argument (`C-u'), prompt for a category</br>
+from the current todo file; with two prefix arguments (`C-u</br>
+C-u'), first prompt for a todo file, then a category in that</br>
+file.  If a non-existing category is entered, ask whether to add</br>
+it to the todo file; if answered affirmatively, add the category</br>
+and insert the item there.</br>
+</br>
+There are a number of item insertion parameters which can be</br>
+combined by entering specific keys to produce different insertion</br>
+commands.  After entering each key, a message shows which have</br>
+already been entered and which remain available.  See</br>
+`todo-basic-insert-item' for details of the parameters and their</br>
+effects.

@@ -1,23 +1,24 @@
-<strong>auto-coding-alist</strong> is a variable defined in `<code>mule.el</code>'.<br/>
-Its value is (("\\.\\(arc\\|zip\\|lzh\\|lha\\|zoo\\|[jew]ar\\|xpi\\|rar\\|7z\\|ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|7Z\\)\\'" . no-conversion-multibyte)<br/>
- ("\\.\\(exe\\|EXE\\)\\'" . no-conversion)<br/>
- ("\\.\\(sx[dmicw]\\|odt\\|tar\\|t[bg]z\\)\\'" . no-conversion)<br/>
- ("\\.\\(gz\\|Z\\|bz\\|bz2\\|xz\\|gpg\\)\\'" . no-conversion)<br/>
- ("\\.\\(jpe?g\\|png\\|gif\\|tiff?\\|p[bpgn]m\\)\\'" . no-conversion)<br/>
- ("\\.pdf\\'" . no-conversion)<br/>
- ("/#[^/]+#\\'" . emacs-mule))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Alist of filename patterns vs corresponding coding systems.<br/>
-Each element looks like (REGEXP . CODING-SYSTEM).<br/>
-A file whose name matches REGEXP is decoded by CODING-SYSTEM on reading.<br/>
-<br/>
-The settings in this alist take priority over `coding:' tags<br/>
-in the file (see the function `set-auto-coding')<br/>
-and the contents of `file-coding-system-alist'.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>auto-coding-alist</strong> is a variable defined in `<code>mule.el</code>'.</br>
+Its value is <pre></br>
+(("\\.\\(arc\\|zip\\|lzh\\|lha\\|zoo\\|[jew]ar\\|xpi\\|rar\\|7z\\|ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|7Z\\)\\'" . no-conversion-multibyte)
+ ("\\.\\(exe\\|EXE\\)\\'" . no-conversion)
+ ("\\.\\(sx[dmicw]\\|odt\\|tar\\|t[bg]z\\)\\'" . no-conversion)
+ ("\\.\\(gz\\|Z\\|bz\\|bz2\\|xz\\|gpg\\)\\'" . no-conversion)
+ ("\\.\\(jpe?g\\|png\\|gif\\|tiff?\\|p[bpgn]m\\)\\'" . no-conversion)
+ ("\\.pdf\\'" . no-conversion)
+ ("/#[^/]+#\\'" . utf-8-emacs-unix))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of filename patterns vs corresponding coding systems.</br>
+Each element looks like (REGEXP . CODING-SYSTEM).</br>
+A file whose name matches REGEXP is decoded by CODING-SYSTEM on reading.</br>
+</br>
+The settings in this alist take priority over `coding:' tags</br>
+in the file (see the function `set-auto-coding')</br>
+and the contents of `file-coding-system-alist'.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

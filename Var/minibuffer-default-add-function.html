@@ -1,14 +1,12 @@
-<strong>minibuffer-default-add-function</strong> is a variable defined in `<code>simple.el</code>'.<br/>
-Its value is minibuffer-default-add-completions<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function run by `goto-history-element' before consuming default values.<br/>
-This is useful to dynamically add more elements to the list of default values<br/>
-when `goto-history-element' reaches the end of this list.<br/>
-Before calling this function `goto-history-element' sets the variable<br/>
-`minibuffer-default-add-done' to t, so it will call this function only<br/>
-once.  In special cases, when this function needs to be called more<br/>
-than once, it can set `minibuffer-default-add-done' to nil explicitly,<br/>
+<strong>minibuffer-default-add-function</strong> is a variable defined in `<code>simple.el</code>'.</br>
+Its value is <pre>minibuffer-default-add-completions</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function run by `goto-history-element' before consuming default values.</br>
+This is useful to dynamically add more elements to the list of default values</br>
+when `goto-history-element' reaches the end of this list.</br>
+Before calling this function `goto-history-element' sets the variable</br>
+`minibuffer-default-add-done' to t, so it will call this function only</br>
+once.  In special cases, when this function needs to be called more</br>
+than once, it can set `minibuffer-default-add-done' to nil explicitly,</br>
 overriding the setting of this variable to t in `goto-history-element'.

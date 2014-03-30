@@ -1,12 +1,20 @@
-<strong>fit-frame-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(fit-frame-to-buffer &optional FRAME MAX-HEIGHT MIN-HEIGHT)<br/>
-<br/>
-Adjust height of FRAME to display its buffer contents exactly.<br/>
-FRAME can be any live frame and defaults to the selected one.<br/>
-<br/>
-Optional argument MAX-HEIGHT specifies the maximum height of FRAME.<br/>
-It defaults to the height of the display below the current<br/>
-top line of FRAME, minus `fit-frame-to-buffer-bottom-margin'.<br/>
-Optional argument MIN-HEIGHT specifies the minimum height of FRAME.<br/>
-The default corresponds to `window-min-height'.
+<strong>fit-frame-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+</br>
+(fit-frame-to-buffer &optional <u>FRAME</u> <u>MAX-HEIGHT</u> <u>MIN-HEIGHT</u> <u>MAX-WIDTH</u> <u>MIN-WIDTH</u> <u>ONLY</u>)</br>
+</br>
+Adjust size of <u>FRAME</u> to display the contents of its buffer exactly.</br>
+<u>FRAME</u> can be any live frame and defaults to the selected one.</br>
+Fit only if <u>FRAME</u>'s root window is live.  <u>MAX-HEIGHT</u>, <u>MIN-HEIGHT</u>,</br>
+<u>MAX-WIDTH</u> and <u>MIN-WIDTH</u> specify bounds on the new total size of</br>
+<u>FRAME</u>'s root window.  <u>MIN-HEIGHT</u> and <u>MIN-WIDTH</u> default to the values of</br>
+`window-min-height' and `window-min-width' respectively.</br>
+</br>
+If the optional argument <u>ONLY</u> is `vertically', resize the frame</br>
+vertically only.  If <u>ONLY</u> is `horizontally', resize the frame</br>
+horizontally only.</br>
+</br>
+The new position and size of <u>FRAME</u> can be additionally determined</br>
+by customizing the options `fit-frame-to-buffer-sizes' and</br>
+`fit-frame-to-buffer-margins' or the corresponding parameters of</br>
+<u>FRAME</u>.

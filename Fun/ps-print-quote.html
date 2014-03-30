@@ -1,25 +1,25 @@
-<strong>ps-print-quote</strong> is a compiled Lisp function in `<code>ps-print.el</code>'.<br/>
-<br/>
-(ps-print-quote ELT)<br/>
-<br/>
-Quote ELT for printing (used for showing settings).<br/>
-<br/>
-If ELT is nil, return an empty string.<br/>
-If ELT is string, return it.<br/>
-Otherwise, ELT should be a cons (LEN . SYM) where SYM is a variable symbol and<br/>
-LEN is the field length where SYM name will be inserted.  The variable<br/>
-`ps-prefix-quote' is used to form the string, if `ps-prefix-quote' is nil, it's<br/>
-used "(setq " as prefix; otherwise, it's used "      ".  So, the string<br/>
-generated is:<br/>
-<br/>
-   * If `ps-prefix-quote' is nil:<br/>
-      "(setq SYM-NAME   SYM-VALUE"<br/>
-	     |<------->|<br/>
-		 LEN<br/>
-<br/>
-   * If `ps-prefix-quote' is non-nil:<br/>
-      "      SYM-NAME   SYM-VALUE"<br/>
-	     |<------->|<br/>
-		 LEN<br/>
-<br/>
+<strong>ps-print-quote</strong> is a compiled Lisp function in `<code>ps-print.el</code>'.</br>
+</br>
+(ps-print-quote <u>ELT</u>)</br>
+</br>
+Quote <u>ELT</u> for printing (used for showing settings).</br>
+</br>
+If <u>ELT</u> is nil, return an empty string.</br>
+If <u>ELT</u> is string, return it.</br>
+Otherwise, <u>ELT</u> should be a cons (LEN . SYM) where SYM is a variable symbol and</br>
+LEN is the field length where SYM name will be inserted.  The variable</br>
+`ps-prefix-quote' is used to form the string, if `ps-prefix-quote' is nil, it's</br>
+used "(setq " as prefix; otherwise, it's used "      ".  So, the string</br>
+generated is:</br>
+</br>
+   * If `ps-prefix-quote' is nil:</br>
+      "(setq SYM-NAME   SYM-VALUE"</br>
+	     |&lt;------->|</br>
+		 LEN</br>
+</br>
+   * If `ps-prefix-quote' is non-nil:</br>
+      "      SYM-NAME   SYM-VALUE"</br>
+	     |&lt;------->|</br>
+		 LEN</br>
+</br>
 If `ps-prefix-quote' is nil, it's set to t after generating string.

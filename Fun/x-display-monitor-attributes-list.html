@@ -1,0 +1,19 @@
+<strong>x-display-monitor-attributes-list</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(x-display-monitor-attributes-list &optional <u>TERMINAL</u>)</br>
+</br>
+Return a list of physical monitor attributes on the X display <u>TERMINAL</u>.</br>
+</br>
+The optional argument <u>TERMINAL</u> specifies which display to ask about.</br>
+<u>TERMINAL</u> should be a terminal object, a frame or a display name (a string).</br>
+If omitted or nil, that stands for the selected frame's display.</br>
+</br>
+In addition to the standard attribute keys listed in</br>
+`display-monitor-attributes-list', the following keys are contained in</br>
+the attributes:</br>
+</br>
+ source -- String describing the source from which multi-monitor</br>
+	   information is obtained, one of "Gdk", "XRandr",</br>
+	   "Xinerama", or "fallback"</br>
+</br>
+Internal use only, use `display-monitor-attributes-list' instead.

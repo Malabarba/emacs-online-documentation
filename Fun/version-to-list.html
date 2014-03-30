@@ -1,39 +1,41 @@
-<strong>version-to-list</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(version-to-list VER)<br/>
-<br/>
-Convert version string VER into a list of integers.<br/>
-<br/>
-The version syntax is given by the following EBNF:<br/>
-<br/>
-   VERSION ::= NUMBER ( SEPARATOR NUMBER )*.<br/>
-<br/>
-   NUMBER ::= (0|1|2|3|4|5|6|7|8|9)+.<br/>
-<br/>
-   SEPARATOR ::= `version-separator' (which see)<br/>
-	       | `version-regexp-alist' (which see).<br/>
-<br/>
-The NUMBER part is optional if SEPARATOR is a match for an element<br/>
-in `version-regexp-alist'.<br/>
-<br/>
-Examples of valid version syntax:<br/>
-<br/>
-   1.0pre2   1.0.7.5   22.8beta3   0.9alpha1   6.9.30Beta<br/>
-<br/>
-Examples of invalid version syntax:<br/>
-<br/>
-   1.0prepre2   1.0..7.5   22.8X3   alpha3.2   .5<br/>
-<br/>
-Examples of version conversion:<br/>
-<br/>
-   Version String    Version as a List of Integers<br/>
-   "1.0.7.5"         (1  0  7 5)<br/>
-   "1.0pre2"         (1  0 -1 2)<br/>
-   "1.0PRE2"         (1  0 -1 2)<br/>
-   "22.8beta3"       (22 8 -2 3)<br/>
-   "22.8Beta3"       (22 8 -2 3)<br/>
-   "0.9alpha1"       (0  9 -3 1)<br/>
-   "0.9AlphA1"       (0  9 -3 1)<br/>
-   "0.9alpha"        (0  9 -3)<br/>
-<br/>
+<strong>version-to-list</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+</br>
+(version-to-list <u>VER</u>)</br>
+</br>
+Convert version string <u>VER</u> into a list of integers.</br>
+</br>
+The version syntax is given by the following EBNF:</br>
+</br>
+   VERSION ::= NUMBER ( SEPARATOR NUMBER )*.</br>
+</br>
+   NUMBER ::= (0|1|2|3|4|5|6|7|8|9)+.</br>
+</br>
+   SEPARATOR ::= `version-separator' (which see)</br>
+	       | `version-regexp-alist' (which see).</br>
+</br>
+The NUMBER part is optional if SEPARATOR is a match for an element</br>
+in `version-regexp-alist'.</br>
+</br>
+Examples of valid version syntax:</br>
+</br>
+   1.0pre2   1.0.7.5   22.8beta3   0.9alpha1   6.9.30Beta</br>
+</br>
+Examples of invalid version syntax:</br>
+</br>
+   1.0prepre2   1.0..7.5   22.8X3   alpha3.2   .5</br>
+</br>
+Examples of version conversion:</br>
+</br>
+   Version String    Version as a List of Integers</br>
+   "1.0.7.5"         (1  0  7 5)</br>
+   "1.0pre2"         (1  0 -1 2)</br>
+   "1.0PRE2"         (1  0 -1 2)</br>
+   "22.8beta3"       (22 8 -2 3)</br>
+   "22.8Beta3"       (22 8 -2 3)</br>
+   "0.9alpha1"       (0  9 -3 1)</br>
+   "0.9AlphA1"       (0  9 -3 1)</br>
+   "0.9alpha"        (0  9 -3)</br>
+   "0.9snapshot"     (0  9 -4)</br>
+   "1.0-git"         (1  0 -4)</br>
+</br>
 See documentation for `version-separator' and `version-regexp-alist'.

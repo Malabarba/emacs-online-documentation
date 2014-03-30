@@ -1,13 +1,14 @@
-<strong>ange-ftp-make-compressed-filename-alist</strong> is a variable defined in `<code>ange-ftp.el</code>'.<br/>
-Its value is ((cms . ange-ftp-cms-make-compressed-filename)<br/>
- (vms . ange-ftp-vms-make-compressed-filename))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Alist of host-type-specific functions to process file names for compression.<br/>
-Each element has the form (TYPE . FUNC).<br/>
-FUNC should take one argument, a file name, and return a list<br/>
-of the form (COMPRESSING NEWNAME).<br/>
-COMPRESSING should be t if the specified file should be compressed,<br/>
-and nil if it should be uncompressed (that is, if it is a compressed file).<br/>
+<strong>ange-ftp-make-compressed-filename-alist</strong> is a variable defined in `<code>ange-ftp.el</code>'.</br>
+Its value is <pre></br>
+((cms . ange-ftp-cms-make-compressed-filename)
+ (vms . ange-ftp-vms-make-compressed-filename))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of host-type-specific functions to process file names for compression.</br>
+Each element has the form (TYPE . FUNC).</br>
+FUNC should take one argument, a file name, and return a list</br>
+of the form (COMPRESSING NEWNAME).</br>
+COMPRESSING should be t if the specified file should be compressed,</br>
+and nil if it should be uncompressed (that is, if it is a compressed file).</br>
 NEWNAME should be the name to give the new compressed or uncompressed file.

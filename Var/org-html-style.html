@@ -1,0 +1,37 @@
+<strong>org-html-style</strong> is a variable defined in `<code>ox-html.el</code>'.</br>
+Its value is <pre>""</pre></br>
+<ul>  <li>This variable is an alias for `<strong><a href="org-html-head">org-html-head</a></strong>'.</li>
+<li>  <strong>This variable is obsolete since 24.4;</br>
+  use `<a href="org-html-head">org-html-head</a>' instead.</strong></li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Org-wide head definitions for exported HTML files.</br>
+</br>
+This variable can contain the full HTML structure to provide a</br>
+style, including the surrounding HTML tags.  You can consider</br>
+including definitions for the following classes: title, todo,</br>
+done, timestamp, timestamp-kwd, tag, target.</br>
+</br>
+For example, a valid value would be:</br>
+</br>
+   <style type="text/css"></br>
+    <![CDATA[</br>
+       p { font-weight: normal; color: gray; }</br>
+       h1 { color: black; }</br>
+      .title { text-align: center; }</br>
+      .todo, .timestamp-kwd { color: red; }</br>
+      .done { color: green; }</br>
+    ]]></br>
+   </style></br>
+</br>
+If you want to refer to an external style, use something like</br>
+</br>
+   <link rel="stylesheet" type="text/css" href="mystyles.css" /></br>
+</br>
+As the value of this option simply gets inserted into the HTML</br>
+<head> header, you can use it to add any arbitrary text to the</br>
+header.</br>
+</br>
+You can set this on a per-file basis using #+HTML_HEAD:,</br>
+or for publication projects using the :html-head property.</br>
+</br>
+You can customize this variable.

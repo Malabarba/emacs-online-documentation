@@ -1,37 +1,36 @@
-<strong>allout-use-mode-specific-leader</strong> is a variable defined in `<code>allout.el</code>'.<br/>
-Its value is t<br/>
-<br/>
-  This variable is safe as a file local variable if its value<br/>
-  satisfies the predicate which is a byte-compiled expression.<br/>
-<br/>
-Documentation:<br/>
-When non-nil, use mode-specific topic-header prefixes.<br/>
-<br/>
-Allout outline mode will use the mode-specific `allout-mode-leaders' or<br/>
-comment-start string, if any, to lead the topic prefix string, so topic<br/>
-headers look like comments in the programming language.  It will also use<br/>
-the comment-start string, with an '_' appended, for `allout-primary-bullet'.<br/>
-<br/>
-String values are used as literals, not regular expressions, so<br/>
-do not escape any regular-expression characters.<br/>
-<br/>
-Value t means to first check for assoc value in `allout-mode-leaders'<br/>
-alist, then use comment-start string, if any, then use default (`.').<br/>
-(See note about use of comment-start strings, below.)<br/>
-<br/>
-Set to the symbol for either of `allout-mode-leaders' or<br/>
-`comment-start' to use only one of them, respectively.<br/>
-<br/>
-Value nil means to always use the default (`.') and leave<br/>
-`allout-primary-bullet' unaltered.<br/>
-<br/>
-comment-start strings that do not end in spaces are tripled in<br/>
-the header-prefix, and an `_' underscore is tacked on the end, to<br/>
-distinguish them from regular comment strings.  comment-start<br/>
-strings that do end in spaces are not tripled, but an underscore<br/>
-is substituted for the space.  [This presumes that the space is<br/>
-for appearance, not comment syntax.  You can use<br/>
-`allout-mode-leaders' to override this behavior, when<br/>
-undesired.]<br/>
-<br/>
+<strong>allout-use-mode-specific-leader</strong> is a variable defined in `<code>allout.el</code>'.</br>
+Its value is <pre>t</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate which is a byte-compiled expression.</br>
+</ul></br>
+<strong id="documentation">Documentation:</strong></br>
+When non-nil, use mode-specific topic-header prefixes.</br>
+</br>
+Allout outline mode will use the mode-specific `allout-mode-leaders' or</br>
+comment-start string, if any, to lead the topic prefix string, so topic</br>
+headers look like comments in the programming language.  It will also use</br>
+the comment-start string, with an '_' appended, for `allout-primary-bullet'.</br>
+</br>
+String values are used as literals, not regular expressions, so</br>
+do not escape any regular-expression characters.</br>
+</br>
+Value t means to first check for assoc value in `allout-mode-leaders'</br>
+alist, then use comment-start string, if any, then use default (`.').</br>
+(See note about use of comment-start strings, below.)</br>
+</br>
+Set to the symbol for either of `allout-mode-leaders' or</br>
+`comment-start' to use only one of them, respectively.</br>
+</br>
+Value nil means to always use the default (`.') and leave</br>
+`allout-primary-bullet' unaltered.</br>
+</br>
+comment-start strings that do not end in spaces are tripled in</br>
+the header-prefix, and an `_' underscore is tacked on the end, to</br>
+distinguish them from regular comment strings.  comment-start</br>
+strings that do end in spaces are not tripled, but an underscore</br>
+is substituted for the space.  [This presumes that the space is</br>
+for appearance, not comment syntax.  You can use</br>
+`allout-mode-leaders' to override this behavior, when</br>
+undesired.]</br>
+</br>
 You can customize this variable.

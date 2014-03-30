@@ -1,44 +1,45 @@
-<strong>list-load-path-shadows</strong> is an interactive autoloaded compiled Lisp function in `<code>shadow.el</code>'.<br/>
-<br/>
-(list-load-path-shadows &optional STRINGP)<br/>
-<br/>
-Display a list of Emacs Lisp files that shadow other files.<br/>
-<br/>
-If STRINGP is non-nil, returns any shadows as a string.<br/>
-Otherwise, if interactive shows any shadows in a `*Shadows*' buffer;<br/>
-else prints messages listing any shadows.<br/>
-<br/>
-This function lists potential load path problems.  Directories in<br/>
-the `load-path' variable are searched, in order, for Emacs Lisp<br/>
-files.  When a previously encountered file name is found again, a<br/>
-message is displayed indicating that the later file is "hidden" by<br/>
-the earlier.<br/>
-<br/>
-For example, suppose `load-path' is set to<br/>
-<br/>
-("/usr/gnu/emacs/site-lisp" "/usr/gnu/emacs/share/emacs/19.30/lisp")<br/>
-<br/>
-and that each of these directories contains a file called XXX.el.  Then<br/>
-XXX.el in the site-lisp directory is referred to by all of:<br/>
-(require 'XXX), (autoload .... "XXX"), (load-library "XXX") etc.<br/>
-<br/>
-The first XXX.el file prevents Emacs from seeing the second (unless<br/>
-the second is loaded explicitly via `load-file').<br/>
-<br/>
-When not intended, such shadowings can be the source of subtle<br/>
-problems.  For example, the above situation may have arisen because the<br/>
-XXX package was not distributed with versions of Emacs prior to<br/>
-19.30.  An Emacs maintainer downloaded XXX from elsewhere and installed<br/>
-it.  Later, XXX was updated and included in the Emacs distribution.<br/>
-Unless the Emacs maintainer checks for this, the new version of XXX<br/>
-will be hidden behind the old (which may no longer work with the new<br/>
-Emacs version).<br/>
-<br/>
-This function performs these checks and flags all possible<br/>
-shadowings.  Because a .el file may exist without a corresponding .elc<br/>
-(or vice-versa), these suffixes are essentially ignored.  A file<br/>
-XXX.elc in an early directory (that does not contain XXX.el) is<br/>
-considered to shadow a later file XXX.el, and vice-versa.<br/>
-<br/>
-Shadowings are located by calling the (non-interactive) companion<br/>
+<strong>list-load-path-shadows</strong> is an interactive autoloaded compiled Lisp function in `<code>shadow.el</code>'.</br>
+</br>
+</br>
+(list-load-path-shadows &optional <u>STRINGP</u>)</br>
+</br>
+Display a list of Emacs Lisp files that shadow other files.</br>
+</br>
+If <u>STRINGP</u> is non-nil, returns any shadows as a string.</br>
+Otherwise, if interactive shows any shadows in a `*Shadows*' buffer;</br>
+else prints messages listing any shadows.</br>
+</br>
+This function lists potential load path problems.  Directories in</br>
+the `load-path' variable are searched, in order, for Emacs Lisp</br>
+files.  When a previously encountered file name is found again, a</br>
+message is displayed indicating that the later file is "hidden" by</br>
+the earlier.</br>
+</br>
+For example, suppose `load-path' is set to</br>
+</br>
+<code>("/usr/share/emacs/site-lisp" "/usr/share/emacs/24.3/lisp"</code>)</br>
+</br>
+and that each of these directories contains a file called XXX.el.  Then</br>
+XXX.el in the site-lisp directory is referred to by all of:</br>
+(require 'XXX), (autoload .... "XXX"), (load-library "XXX") etc.</br>
+</br>
+The first XXX.el file prevents Emacs from seeing the second (unless</br>
+the second is loaded explicitly via `load-file').</br>
+</br>
+When not intended, such shadowings can be the source of subtle</br>
+problems.  For example, the above situation may have arisen because the</br>
+XXX package was not distributed with versions of Emacs prior to</br>
+24.3.  A system administrator downloaded XXX from elsewhere and installed</br>
+it.  Later, XXX was updated and included in the Emacs distribution.</br>
+Unless the system administrator checks for this, the new version of XXX</br>
+will be hidden behind the old (which may no longer work with the new</br>
+Emacs version).</br>
+</br>
+This function performs these checks and flags all possible</br>
+shadowings.  Because a .el file may exist without a corresponding .elc</br>
+(or vice-versa), these suffixes are essentially ignored.  A file</br>
+XXX.elc in an early directory (that does not contain XXX.el) is</br>
+considered to shadow a later file XXX.el, and vice-versa.</br>
+</br>
+Shadowings are located by calling the (non-interactive) companion</br>
 function, `load-path-shadows-find'.

@@ -1,5 +1,14 @@
-<strong>todo-backward-item</strong> is an interactive compiled Lisp function in `<code>todo-mode.el</code>'.<br/>
-<br/>
-(todo-backward-item)<br/>
-<br/>
-Select previous entry of TODO list.
+<strong>todo-backward-item</strong> is a compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+(todo-backward-item &optional <u>COUNT</u>)</br>
+</br>
+Move point up to start of item with next higher priority.</br>
+With positive numerical prefix <u>COUNT</u>, move point <u>COUNT</u> items</br>
+upward.</br>
+</br>
+If the category's done items are visible, this command called</br>
+with a prefix argument only moves point to a higher item, e.g.,</br>
+with point on the first done item and called with prefix 1, it</br>
+moves to the last todo item; but if called with point on the</br>
+first done item without a prefix argument, it moves point the the</br>
+empty line above the done items separator.

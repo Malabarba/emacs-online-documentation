@@ -1,15 +1,16 @@
-<strong>mode-line-client</strong> is a variable defined in `<code>bindings.el</code>'.<br/>
-Its value is (""<br/>
- (:propertize<br/>
-  (""<br/>
-   (:eval<br/>
-    (if<br/>
-	(frame-parameter nil 'client)<br/>
-	"@" "")))<br/>
-  help-echo "emacsclient frame"))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Mode line construct for identifying emacsclient frames.
+<strong>mode-line-client</strong> is a variable defined in `<code>bindings.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Mode line construct for identifying emacsclient frames.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(""
+ (:propertize
+  (""
+   (:eval
+    (if
+	(frame-parameter nil 'client)
+	"@" "")))
+  help-echo "emacsclient frame"))
+</pre></br>

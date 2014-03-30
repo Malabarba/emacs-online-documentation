@@ -1,23 +1,20 @@
-<strong>write-file-hooks</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable is an alias for `write-file-functions'.<br/>
-  This variable is obsolete since 22.1;<br/>
-  use `write-file-functions' instead.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of functions to be called before writing out a buffer to a file.<br/>
-If one of them returns non-nil, the file is considered already written<br/>
-and the rest are not called.<br/>
-These hooks are considered to pertain to the visited file.<br/>
-So any buffer-local binding of this variable is discarded if you change<br/>
-the visited file name with M-x set-visited-file-name, but not when you<br/>
-change the major mode.<br/>
-<br/>
-This hook is not run if any of the functions in<br/>
-`write-contents-functions' returns non-nil.  Both hooks pertain<br/>
-to how to save a buffer to file, for instance, choosing a suitable<br/>
-coding system and setting mode bits.  (See Info<br/>
-node `(elisp)Saving Buffers'.)  To perform various checks or<br/>
+<strong>write-file-hooks</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>This variable is an alias for `<strong><a href="write-file-functions">write-file-functions</a></strong>'.</li>
+<li>  <strong>This variable is obsolete since 22.1;</br>
+  use `<a href="write-file-functions">write-file-functions</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of functions to be called before writing out a buffer to a file.</br>
+If one of them returns non-nil, the file is considered already written</br>
+and the rest are not called.</br>
+These hooks are considered to pertain to the visited file.</br>
+So any buffer-local binding of this variable is discarded if you change</br>
+the visited file name with M-x set-visited-file-name, but not when you</br>
+change the major mode.</br>
+</br>
+This hook is not run if any of the functions in</br>
+`write-contents-functions' returns non-nil.  Both hooks pertain</br>
+to how to save a buffer to file, for instance, choosing a suitable</br>
+coding system and setting mode bits.  (See Info</br>
+node `(elisp)Saving Buffers'.)  To perform various checks or</br>
 updates before the buffer is saved, use `before-save-hook'.

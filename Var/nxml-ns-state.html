@@ -1,15 +1,15 @@
-<strong>nxml-ns-state</strong> is a variable defined in `<code>nxml-ns.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Contains the state of namespace processing.<br/>
-The state is never modified destructively and so can be saved and<br/>
-restored without copying.<br/>
-<br/>
-The value is a stack represented by a list.  The list has length<br/>
-N + 1 where N is the number of open elements.  Each member of the<br/>
-list represents the bindings in effect for a particular element.<br/>
-Each member is itself a list whose car is the default namespace<br/>
-(a symbol or nil) and whose cdr is an alist of (PREFIX . NS) pairs<br/>
-where PREFIX is a string (never nil) and NS is the namespace URI<br/>
+<strong>nxml-ns-state</strong> is a variable defined in `<code>nxml-ns.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Contains the state of namespace processing.</br>
+The state is never modified destructively and so can be saved and</br>
+restored without copying.</br>
+</br>
+The value is a stack represented by a list.  The list has length</br>
+N + 1 where N is the number of open elements.  Each member of the</br>
+list represents the bindings in effect for a particular element.</br>
+Each member is itself a list whose car is the default namespace</br>
+(a symbol or nil) and whose cdr is an alist of (PREFIX . NS) pairs</br>
+where PREFIX is a string (never nil) and NS is the namespace URI</br>
 symbol.

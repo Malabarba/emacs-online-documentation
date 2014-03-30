@@ -1,25 +1,24 @@
-<strong>org-context-choice</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Contexts for the reveal options.<br/>
-<br/>
-Value: (choice<br/>
- (const :tag "Always" t)<br/>
- (const :tag "Never" nil)<br/>
- (repeat :greedy t :tag "Individual contexts"<br/>
-	 (cons<br/>
-	  (choice :tag "Context"<br/>
-		  (const agenda)<br/>
-		  (const org-goto)<br/>
-		  (const occur-tree)<br/>
-		  (const tags-tree)<br/>
-		  (const link-search)<br/>
-		  (const mark-goto)<br/>
-		  (const bookmark-jump)<br/>
-		  (const isearch)<br/>
-		  (const default))<br/>
-	  (boolean))))<br/>
-<br/>
+<strong>org-context-choice</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Contexts for the reveal options.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(choice
+ (const :tag "Always" t)
+ (const :tag "Never" nil)
+ (repeat :greedy t :tag "Individual contexts"
+	 (cons
+	  (choice :tag "Context"
+		  (const agenda)
+		  (const org-goto)
+		  (const occur-tree)
+		  (const tags-tree)
+		  (const link-search)
+		  (const mark-goto)
+		  (const bookmark-jump)
+		  (const isearch)
+		  (const default))
+	  (boolean))))
+</pre></br>

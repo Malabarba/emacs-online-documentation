@@ -1,31 +1,41 @@
-<strong>org-refile</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.<br/>
-<br/>
-(org-refile &optional GOTO DEFAULT-BUFFER RFLOC)<br/>
-<br/>
-Move the entry or entries at point to another heading.<br/>
-The list of target headings is compiled using the information in<br/>
-`org-refile-targets', which see.<br/>
-<br/>
-At the target location, the entry is filed as a subitem of the target<br/>
-heading.  Depending on `org-reverse-note-order', the new subitem will<br/>
-either be the first or the last subitem.<br/>
-<br/>
-If there is an active region, all entries in that region will be moved.<br/>
-However, the region must fulfill the requirement that the first heading<br/>
-is the first one sets the top-level of the moved text - at most siblings<br/>
-below it are allowed.<br/>
-<br/>
-With prefix arg GOTO, the command will only visit the target location<br/>
-and not actually move anything.<br/>
-<br/>
-With a double prefix arg C-u C-u, go to the location where the last refiling operation has put the subtree.<br/>
-With a prefix argument of `2', refile to the running clock.<br/>
-<br/>
-RFLOC can be a refile location obtained in a different way.<br/>
-<br/>
-See also `org-refile-use-outline-path' and `org-completion-use-ido'.<br/>
-<br/>
-If you are using target caching (see `org-refile-use-cache'),<br/>
-you have to clear the target cache in order to find new targets.<br/>
-This can be done with a 0 prefix (`C-0 C-c C-w') or a triple<br/>
+<strong>org-refile</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+</br>
+(org-refile &optional <u>GOTO</u> <u>DEFAULT-BUFFER</u> <u>RFLOC</u> <u>MSG</u>)</br>
+</br>
+Move the entry or entries at point to another heading.</br>
+The list of target headings is compiled using the information in</br>
+`org-refile-targets', which see.</br>
+</br>
+At the target location, the entry is filed as a subitem of the target</br>
+heading.  Depending on `org-reverse-note-order', the new subitem will</br>
+either be the first or the last subitem.</br>
+</br>
+If there is an active region, all entries in that region will be moved.</br>
+However, the region must fulfill the requirement that the first heading</br>
+is the first one sets the top-level of the moved text - at most siblings</br>
+below it are allowed.</br>
+</br>
+With prefix arg <u>GOTO</u>, the command will only visit the target location</br>
+and not actually move anything.</br>
+</br>
+With a double prefix arg C-u C-u, go to the location where the last refiling operation has put the subtree.</br>
+</br>
+With a numeric prefix argument of `2', refile to the running clock.</br>
+</br>
+With a numeric prefix argument of `3', emulate `org-refile-keep'</br>
+being set to `t' and copy to the target location, don't move it.</br>
+Beware that keeping refiled entries may result in duplicated ID</br>
+properties.</br>
+</br>
+<u>RFLOC</u> can be a refile location obtained in a different way.</br>
+</br>
+<u>MSG</u> is a string to replace "Refile" in the default prompt with</br>
+another verb.  E.g. `org-copy' sets this parameter to "Copy".</br>
+</br>
+See also `org-refile-use-outline-path' and `org-completion-use-ido'.</br>
+</br>
+If you are using target caching (see `org-refile-use-cache'),</br>
+you have to clear the target cache in order to find new targets.</br>
+This can be done with a 0 prefix (`C-0 C-c C-w') or a triple</br>
 prefix argument (`C-u C-u C-u C-c C-w').

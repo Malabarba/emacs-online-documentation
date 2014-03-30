@@ -1,19 +1,20 @@
-<strong>sc-name-filter-alist</strong> is a variable defined in `<code>supercite.el</code>'.<br/>
-Its value is (("^\\(Mr\\|Mrs\\|Ms\\|Dr\\)[.]?$" . 0)<br/>
- ("^\\(Jr\\|Sr\\)[.]?$" . last)<br/>
- ("^ASTS$" . 0)<br/>
- ("^[I]+$" . last))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Name list components which are filtered out as noise.<br/>
-This variable contains an association list where each element is of<br/>
-the form:  (REGEXP . POSITION).<br/>
-<br/>
-REGEXP is a regular expression which matches the name list component.<br/>
-Match is performed using `string-match'.  POSITION is the position in<br/>
-the name list which can match the regular expression, starting at zero<br/>
-for the first element.  Use `last' to match the last element in the<br/>
-list and `any' to match all elements.<br/>
-<br/>
+<strong>sc-name-filter-alist</strong> is a variable defined in `<code>supercite.el</code>'.</br>
+Its value is <pre></br>
+(("^\\(Mr\\|Mrs\\|Ms\\|Dr\\)[.]?$" . 0)
+ ("^\\(Jr\\|Sr\\)[.]?$" . last)
+ ("^ASTS$" . 0)
+ ("^[I]+$" . last))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Name list components which are filtered out as noise.</br>
+This variable contains an association list where each element is of</br>
+the form:  (REGEXP . POSITION).</br>
+</br>
+REGEXP is a regular expression which matches the name list component.</br>
+Match is performed using `string-match'.  POSITION is the position in</br>
+the name list which can match the regular expression, starting at zero</br>
+for the first element.  Use `last' to match the last element in the</br>
+list and `any' to match all elements.</br>
+</br>
 You can customize this variable.

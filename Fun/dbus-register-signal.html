@@ -1,56 +1,56 @@
-<strong>dbus-register-signal</strong> is a compiled Lisp function in `<code>dbus.el</code>'.<br/>
-<br/>
-(dbus-register-signal BUS SERVICE PATH INTERFACE SIGNAL HANDLER &rest ARGS)<br/>
-<br/>
-Register for a signal on the D-Bus BUS.<br/>
-<br/>
-BUS is either a Lisp symbol, `:system' or `:session', or a string<br/>
-denoting the bus address.<br/>
-<br/>
-SERVICE is the D-Bus service name used by the sending D-Bus object.<br/>
-It can be either a known name or the unique name of the D-Bus object<br/>
-sending the signal.<br/>
-<br/>
-PATH is the D-Bus object path SERVICE is registered.  INTERFACE<br/>
-is an interface offered by SERVICE.  It must provide SIGNAL.<br/>
-HANDLER is a Lisp function to be called when the signal is<br/>
-received.  It must accept as arguments the values SIGNAL is<br/>
-sending.<br/>
-<br/>
-SERVICE, PATH, INTERFACE and SIGNAL can be nil.  This is<br/>
-interpreted as a wildcard for the respective argument.<br/>
-<br/>
-The remaining arguments ARGS can be keywords or keyword string pairs.<br/>
-The meaning is as follows:<br/>
-<br/>
-`:argN' STRING:<br/>
-`:pathN' STRING: This stands for the Nth argument of the<br/>
-signal.  `:pathN' arguments can be used for object path wildcard<br/>
-matches as specified by D-Bus, while an `:argN' argument<br/>
-requires an exact match.<br/>
-<br/>
-`:arg-namespace' STRING: Register for the signals, which first<br/>
-argument defines the service or interface namespace STRING.<br/>
-<br/>
-`:path-namespace' STRING: Register for the object path namespace<br/>
-STRING.  All signals sent from an object path, which has STRING as<br/>
-the preceding string, are matched.  This requires PATH to be nil.<br/>
-<br/>
-`:eavesdrop': Register for unicast signals which are not directed<br/>
-to the D-Bus object Emacs is registered at D-Bus BUS, if the<br/>
-security policy of BUS allows this.<br/>
-<br/>
-Example:<br/>
-<br/>
-(defun my-signal-handler (device)<br/>
-  (message "Device %s added" device))<br/>
-<br/>
-(dbus-register-signal<br/>
-  :system "org.freedesktop.Hal" "/org/freedesktop/Hal/Manager"<br/>
-  "org.freedesktop.Hal.Manager" "DeviceAdded" 'my-signal-handler)<br/>
-<br/>
-  => ((:signal :system "org.freedesktop.Hal.Manager" "DeviceAdded")<br/>
-      ("org.freedesktop.Hal" "/org/freedesktop/Hal/Manager" my-signal-handler))<br/>
-<br/>
-`dbus-register-signal' returns an object, which can be used in<br/>
+<strong>dbus-register-signal</strong> is a compiled Lisp function in `<code>dbus.el</code>'.</br>
+</br>
+(dbus-register-signal <u>BUS</u> <u>SERVICE</u> <u>PATH</u> <u>INTERFACE</u> <u>SIGNAL</u> <u>HANDLER</u> &rest <u>ARGS</u>)</br>
+</br>
+Register for a signal on the D-Bus <u>BUS</u>.</br>
+</br>
+<u>BUS</u> is either a Lisp symbol, `:system' or `:session', or a string</br>
+denoting the bus address.</br>
+</br>
+<u>SERVICE</u> is the D-Bus service name used by the sending D-Bus object.</br>
+It can be either a known name or the unique name of the D-Bus object</br>
+sending the signal.</br>
+</br>
+<u>PATH</u> is the D-Bus object path <u>SERVICE</u> is registered.  <u>INTERFACE</u></br>
+is an interface offered by <u>SERVICE</u>.  It must provide <u>SIGNAL</u>.</br>
+<u>HANDLER</u> is a Lisp function to be called when the signal is</br>
+received.  It must accept as arguments the values <u>SIGNAL</u> is</br>
+sending.</br>
+</br>
+<u>SERVICE</u>, <u>PATH</u>, <u>INTERFACE</u> and <u>SIGNAL</u> can be nil.  This is</br>
+interpreted as a wildcard for the respective argument.</br>
+</br>
+The remaining arguments <u>ARGS</u> can be keywords or keyword string pairs.</br>
+The meaning is as follows:</br>
+</br>
+`:argN' STRING:</br>
+`:pathN' STRING: This stands for the Nth argument of the</br>
+signal.  `:pathN' arguments can be used for object path wildcard</br>
+matches as specified by D-Bus, while an `:argN' argument</br>
+requires an exact match.</br>
+</br>
+`:arg-namespace' STRING: Register for the signals, which first</br>
+argument defines the service or interface namespace STRING.</br>
+</br>
+`:path-namespace' STRING: Register for the object path namespace</br>
+STRING.  All signals sent from an object path, which has STRING as</br>
+the preceding string, are matched.  This requires <u>PATH</u> to be nil.</br>
+</br>
+`:eavesdrop': Register for unicast signals which are not directed</br>
+to the D-Bus object Emacs is registered at D-Bus <u>BUS</u>, if the</br>
+security policy of <u>BUS</u> allows this.</br>
+</br>
+Example:</br>
+</br>
+<code>(defun my-signal-handler (device</code>)</br>
+  (message "Device %s added" device))</br>
+</br>
+(dbus-register-signal</br>
+  :system "org.freedesktop.Hal" "/org/freedesktop/Hal/Manager"</br>
+  "org.freedesktop.Hal.Manager" "DeviceAdded" 'my-signal-handler)</br>
+</br>
+  => ((:signal :system "org.freedesktop.Hal.Manager" "DeviceAdded")</br>
+      ("org.freedesktop.Hal" "/org/freedesktop/Hal/Manager" my-signal-handler))</br>
+</br>
+`dbus-register-signal' returns an object, which can be used in</br>
 `dbus-unregister-object' for removing the registration.

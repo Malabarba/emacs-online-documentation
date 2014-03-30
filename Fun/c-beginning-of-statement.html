@@ -1,20 +1,21 @@
-<strong>c-beginning-of-statement</strong> is an interactive compiled Lisp function in `<code>cc-cmds.el</code>'.<br/>
-<br/>
-(c-beginning-of-statement &optional COUNT LIM SENTENCE-FLAG)<br/>
-<br/>
-Go to the beginning of the innermost C statement.<br/>
-With prefix arg, go back N - 1 statements.  If already at the<br/>
-beginning of a statement then go to the beginning of the closest<br/>
-preceding one, moving into nested blocks if necessary (use<br/>
-C-M-b to skip over a block).  If within or next to a<br/>
-comment or multiline string, move by sentences instead of statements.<br/>
-<br/>
-When called from a program, this function takes 3 optional args: the<br/>
-repetition count, a buffer position limit which is the farthest back<br/>
-to search for the syntactic context, and a flag saying whether to do<br/>
-sentence motion in or near comments and multiline strings.<br/>
-<br/>
-Note that for use in programs, `c-beginning-of-statement-1' is<br/>
-usually better.  It has much better defined semantics than this one,<br/>
-which is intended for interactive use, and might therefore change to<br/>
+<strong>c-beginning-of-statement</strong> is an interactive compiled Lisp function in `<code>cc-cmds.el</code>'.</br>
+</br>
+</br>
+(c-beginning-of-statement &optional <u>COUNT</u> <u>LIM</u> <u>SENTENCE-FLAG</u>)</br>
+</br>
+Go to the beginning of the innermost C statement.</br>
+With prefix arg, go back N - 1 statements.  If already at the</br>
+beginning of a statement then go to the beginning of the closest</br>
+preceding one, moving into nested blocks if necessary (use</br>
+C-M-b to skip over a block).  If within or next to a</br>
+comment or multiline string, move by sentences instead of statements.</br>
+</br>
+When called from a program, this function takes 3 optional args: the</br>
+repetition count, a buffer position limit which is the farthest back</br>
+to search for the syntactic context, and a flag saying whether to do</br>
+sentence motion in or near comments and multiline strings.</br>
+</br>
+Note that for use in programs, `c-beginning-of-statement-1' is</br>
+usually better.  It has much better defined semantics than this one,</br>
+which is intended for interactive use, and might therefore change to</br>
 be more "DWIM:ey".

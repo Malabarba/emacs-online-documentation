@@ -1,19 +1,20 @@
-<strong>cl-defstruct</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.<br/>
-<br/>
-(cl-defstruct NAME SLOTS...)<br/>
-<br/>
-Define a struct type.<br/>
-This macro defines a new data type called NAME that stores data<br/>
-in SLOTs.  It defines a `make-NAME' constructor, a `copy-NAME'<br/>
-copier, a `NAME-p' predicate, and slot accessors named `NAME-SLOT'.<br/>
-You can use the accessors to set the corresponding slots, via `setf'.<br/>
-<br/>
-NAME may instead take the form (NAME OPTIONS...), where each<br/>
-OPTION is either a single keyword or (KEYWORD VALUE) where<br/>
-KEYWORD can be one of :conc-name, :constructor, :copier, :predicate,<br/>
-:type, :named, :initial-offset, :print-function, or :include.<br/>
-<br/>
-Each SLOT may instead take the form (SLOT SLOT-OPTS...), where<br/>
-SLOT-OPTS are keyword-value pairs for that slot.  Currently, only<br/>
-one keyword is supported, `:read-only'.  If this has a non-nil<br/>
-value, that slot cannot be set via `setf'.
+<strong>cl-defstruct</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.</br>
+</br>
+(cl-defstruct <u>NAME</u> <u>SLOTS</u>...)</br>
+</br>
+Define a struct type.</br>
+This macro defines a new data type called <u>NAME</u> that stores data</br>
+in SLOTs.  It defines a `make-<u>NAME</u>' constructor, a `copy-<u>NAME</u>'</br>
+copier, a `<u>NAME</u>-p' predicate, and slot accessors named `NAME-SLOT'.</br>
+You can use the accessors to set the corresponding slots, via `setf'.</br>
+</br>
+<u>NAME</u> may instead take the form (<u>NAME</u> OPTIONS...), where each</br>
+OPTION is either a single keyword or (KEYWORD VALUE) where</br>
+KEYWORD can be one of :conc-name, :constructor, :copier, :predicate,</br>
+:type, :named, :initial-offset, :print-function, or :include.</br>
+</br>
+Each SLOT may instead take the form (SNAME SDEFAULT SOPTIONS...), where</br>
+SDEFAULT is the default value of that slot and SOPTIONS are keyword-value</br>
+pairs for that slot.</br>
+Currently, only one keyword is supported, `:read-only'.  If this has a</br>
+non-nil value, that slot cannot be set via `setf'.

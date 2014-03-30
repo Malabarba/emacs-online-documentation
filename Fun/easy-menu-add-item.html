@@ -1,24 +1,24 @@
-<strong>easy-menu-add-item</strong> is a compiled Lisp function in `<code>easymenu.el</code>'.<br/>
-<br/>
-(easy-menu-add-item MAP PATH ITEM &optional BEFORE)<br/>
-<br/>
-To the submenu of MAP with path PATH, add ITEM.<br/>
-<br/>
-If an item with the same name is already present in this submenu,<br/>
-then ITEM replaces it.  Otherwise, ITEM is added to this submenu.<br/>
-In the latter case, ITEM is normally added at the end of the submenu.<br/>
-However, if BEFORE is a string and there is an item in the submenu<br/>
-with that name, then ITEM is added before that item.<br/>
-<br/>
-MAP should normally be a keymap; nil stands for the local menu-bar keymap.<br/>
-It can also be a symbol, which has earlier been used as the first<br/>
-argument in a call to `easy-menu-define', or the value of such a symbol.<br/>
-<br/>
-PATH is a list of strings for locating the submenu where ITEM is to be<br/>
-added.  If PATH is nil, MAP itself is used.  Otherwise, the first<br/>
-element should be the name of a submenu directly under MAP.  This<br/>
-submenu is then traversed recursively with the remaining elements of PATH.<br/>
-<br/>
-ITEM is either defined as in `easy-menu-define' or a non-nil value returned<br/>
-by `easy-menu-item-present-p' or `easy-menu-remove-item' or a menu defined<br/>
+<strong>easy-menu-add-item</strong> is a compiled Lisp function in `<code>easymenu.el</code>'.</br>
+</br>
+(easy-menu-add-item <u>MAP</u> <u>PATH</u> <u>ITEM</u> &optional <u>BEFORE</u>)</br>
+</br>
+To the submenu of <u>MAP</u> with path <u>PATH</u>, add <u>ITEM</u>.</br>
+</br>
+If an item with the same name is already present in this submenu,</br>
+then <u>ITEM</u> replaces it.  Otherwise, <u>ITEM</u> is added to this submenu.</br>
+In the latter case, <u>ITEM</u> is normally added at the end of the submenu.</br>
+However, if <u>BEFORE</u> is a string and there is an item in the submenu</br>
+with that name, then <u>ITEM</u> is added before that item.</br>
+</br>
+<u>MAP</u> should normally be a keymap; nil stands for the local menu-bar keymap.</br>
+It can also be a symbol, which has earlier been used as the first</br>
+argument in a call to `easy-menu-define', or the value of such a symbol.</br>
+</br>
+<u>PATH</u> is a list of strings for locating the submenu where <u>ITEM</u> is to be</br>
+added.  If <u>PATH</u> is nil, <u>MAP</u> itself is used.  Otherwise, the first</br>
+element should be the name of a submenu directly under <u>MAP</u>.  This</br>
+submenu is then traversed recursively with the remaining elements of <u>PATH</u>.</br>
+</br>
+<u>ITEM</u> is either defined as in `easy-menu-define' or a non-nil value returned</br>
+by `easy-menu-item-present-p' or `easy-menu-remove-item' or a menu defined</br>
 earlier by `easy-menu-define' or `easy-menu-create-menu'.

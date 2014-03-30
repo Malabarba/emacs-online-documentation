@@ -1,114 +1,126 @@
-<strong>mh-letter-mode-map</strong> is a variable defined in `<code>mh-letter.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for MH-Letter mode.<br/>
-<br/>
-Value: (keymap<br/>
- (backtab . mh-letter-previous-header-field)<br/>
- (9 . mh-letter-next-header-field-or-indent)<br/>
- (3 keymap<br/>
-    (27 keymap<br/>
-	(100 . mh-insert-auto-fields))<br/>
-    (25 . mh-yank-cur-msg)<br/>
-    (23 . mh-check-whom)<br/>
-    (20 . mh-letter-toggle-header-field-display)<br/>
-    (19 . mh-insert-signature)<br/>
-    (17 . mh-fully-kill-draft)<br/>
-    (15 . mh-open-line)<br/>
-    (13 keymap<br/>
-	(120 . mh-mh-compose-external-type)<br/>
-	(117 . mh-mh-to-mime-undo)<br/>
-	(116 . mh-mh-compose-external-compressed-tar)<br/>
-	(115 keymap<br/>
-	     (115 . mh-mml-secure-message-sign)<br/>
-	     (101 . mh-mml-secure-message-signencrypt))<br/>
-	(110 . mh-mml-unsecure-message)<br/>
-	(109 . mh-mml-to-mime)<br/>
-	(105 . mh-compose-insertion)<br/>
-	(103 . mh-mh-compose-anon-ftp)<br/>
-	(102 . mh-compose-forward)<br/>
-	(101 keymap<br/>
-	     (115 . mh-mml-secure-message-signencrypt)<br/>
-	     (101 . mh-mml-secure-message-encrypt))<br/>
-	(24 . mh-mh-compose-external-type)<br/>
-	(21 . mh-mh-to-mime-undo)<br/>
-	(20 . mh-mh-compose-external-compressed-tar)<br/>
-	(19 . mh-mml-secure-message-sign)<br/>
-	(14 . mh-mml-unsecure-message)<br/>
-	(13 . mh-mml-to-mime)<br/>
-	(9 . mh-compose-insertion)<br/>
-	(7 . mh-mh-compose-anon-ftp)<br/>
-	(6 . mh-compose-forward)<br/>
-	(5 . mh-mml-secure-message-encrypt))<br/>
-    (9 . mh-insert-letter)<br/>
-    (6 keymap<br/>
-       (116 . mh-to-field)<br/>
-       (115 . mh-to-field)<br/>
-       (114 . mh-to-field)<br/>
-       (109 . mh-to-field)<br/>
-       (108 . mh-to-field)<br/>
-       (102 . mh-to-fcc)<br/>
-       (100 . mh-to-field)<br/>
-       (99 . mh-to-field)<br/>
-       (98 . mh-to-field)<br/>
-       (97 . mh-to-field)<br/>
-       (20 . mh-to-field)<br/>
-       (19 . mh-to-field)<br/>
-       (18 . mh-to-field)<br/>
-       (13 . mh-to-field)<br/>
-       (12 . mh-to-field)<br/>
-       (6 . mh-to-fcc)<br/>
-       (4 . mh-to-field)<br/>
-       (3 . mh-to-field)<br/>
-       (2 . mh-to-field)<br/>
-       (1 . mh-to-field))<br/>
-    (5 . mh-mh-to-mime)<br/>
-    (4 . mh-insert-identity)<br/>
-    (3 . mh-send-letter)<br/>
-    (30 . mh-insert-signature)<br/>
-    (28 . mh-fully-kill-draft)<br/>
-    (63 . mh-help))<br/>
- (44 . mh-letter-confirm-address)<br/>
- (32 . mh-letter-complete-or-space)<br/>
- (menu-bar keymap<br/>
-	   (Letter menu-item "Letter"<br/>
-		   (keymap "Letter"<br/>
-			   (Send\ This\ Draft menu-item "Send This Draft" mh-send-letter)<br/>
-			   (Split\ Current\ Line menu-item "Split Current Line" mh-open-line)<br/>
-			   (Check\ Recipient menu-item "Check Recipient" mh-check-whom)<br/>
-			   (Yank\ Current\ Message menu-item "Yank Current Message" mh-yank-cur-msg)<br/>
-			   (Insert\ a\ Message\.\.\. menu-item "Insert a Message..." mh-insert-letter)<br/>
-			   (Insert\ Signature menu-item "Insert Signature" mh-insert-signature)<br/>
-			   (Encrypt/Sign\ Message menu-item "Encrypt/Sign Message"<br/>
-						  (keymap "Encrypt/Sign Message"<br/>
-							  (Sign\ Message menu-item "Sign Message" mh-mml-secure-message-sign :enable mh-pgp-support-flag)<br/>
-							  (Encrypt\ Message menu-item "Encrypt Message" mh-mml-secure-message-encrypt :enable mh-pgp-support-flag)<br/>
-							  (Sign+Encrypt\ Message menu-item "Sign+Encrypt Message" mh-mml-secure-message-signencrypt :enable mh-pgp-support-flag)<br/>
-							  (Disable\ Security menu-item "Disable Security" mh-mml-unsecure-message :enable mh-pgp-support-flag)<br/>
-							  (nil-7 menu-item "--")<br/>
-							  (nil menu-item "Security Method")<br/>
-							  (PGP\ \(MIME\) menu-item "PGP (MIME)" menu-function-344 :key-sequence nil :button<br/>
-									 (:radio equal mh-mml-method-default "pgpmime"))<br/>
-							  (PGP menu-item "PGP" menu-function-345 :key-sequence nil :button<br/>
-							       (:radio equal mh-mml-method-default "pgp"))<br/>
-							  (S/MIME menu-item "S/MIME" menu-function-346 :key-sequence nil :button<br/>
-								  (:radio equal mh-mml-method-default "smime"))<br/>
-							  (nil-7-9 menu-item "--")<br/>
-							  (Save\ Method\ as\ Default menu-item "Save Method as Default" menu-function-347 :key-sequence nil)))<br/>
-			   (Compose\ Insertion\.\.\. menu-item "Compose Insertion..." mh-compose-insertion)<br/>
-			   (Compose\ Compressed\ tar\ \(MH\)\.\.\. menu-item "Compose Compressed tar (MH)..." mh-mh-compose-external-compressed-tar)<br/>
-			   (Compose\ Get\ File\ \(MH\)\.\.\. menu-item "Compose Get File (MH)..." mh-mh-compose-anon-ftp)<br/>
-			   (Compose\ Forward\.\.\. menu-item "Compose Forward..." mh-compose-forward)<br/>
-			   (Pull\ in\ All\ Compositions\ \(MH\) menu-item "Pull in All Compositions (MH)" mh-mh-to-mime :enable<br/>
-								(mh-mh-directive-present-p))<br/>
-			   (Pull\ in\ All\ Compositions\ \(MML\) menu-item "Pull in All Compositions (MML)" mh-mml-to-mime :enable<br/>
-								 (mh-mml-tag-present-p))<br/>
-			   (Revert\ to\ Non-MIME\ Edit\ \(MH\) menu-item "Revert to Non-MIME Edit (MH)" mh-mh-to-mime-undo :enable<br/>
-							       (equal mh-compose-insertion 'mh))<br/>
-			   (Kill\ This\ Draft menu-item "Kill This Draft" mh-fully-kill-draft))))<br/>
- (27 keymap<br/>
-     (9 . mh-letter-complete)))<br/>
-<br/>
+<strong>mh-letter-mode-map</strong> is a variable defined in `<code>mh-letter.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for MH-Letter mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (backtab . mh-letter-previous-header-field)
+ (9 . mh-letter-next-header-field-or-indent)
+ (3 keymap
+    (27 keymap
+	(100 . mh-insert-auto-fields))
+    (25 . mh-yank-cur-msg)
+    (23 . mh-check-whom)
+    (20 . mh-letter-toggle-header-field-display)
+    (19 . mh-insert-signature)
+    (17 . mh-fully-kill-draft)
+    (15 . mh-open-line)
+    (13 keymap
+	(120 . mh-mh-compose-external-type)
+	(117 . mh-mh-to-mime-undo)
+	(116 . mh-mh-compose-external-compressed-tar)
+	(115 keymap
+	     (115 . mh-mml-secure-message-sign)
+	     (101 . mh-mml-secure-message-signencrypt))
+	(110 . mh-mml-unsecure-message)
+	(109 . mh-mml-to-mime)
+	(105 . mh-compose-insertion)
+	(103 . mh-mh-compose-anon-ftp)
+	(102 . mh-compose-forward)
+	(101 keymap
+	     (115 . mh-mml-secure-message-signencrypt)
+	     (101 . mh-mml-secure-message-encrypt))
+	(24 . mh-mh-compose-external-type)
+	(21 . mh-mh-to-mime-undo)
+	(20 . mh-mh-compose-external-compressed-tar)
+	(19 . mh-mml-secure-message-sign)
+	(14 . mh-mml-unsecure-message)
+	(13 . mh-mml-to-mime)
+	(9 . mh-compose-insertion)
+	(7 . mh-mh-compose-anon-ftp)
+	(6 . mh-compose-forward)
+	(5 . mh-mml-secure-message-encrypt))
+    (9 . mh-insert-letter)
+    (6 keymap
+       (116 . mh-to-field)
+       (115 . mh-to-field)
+       (114 . mh-to-field)
+       (109 . mh-to-field)
+       (108 . mh-to-field)
+       (102 . mh-to-fcc)
+       (100 . mh-to-field)
+       (99 . mh-to-field)
+       (98 . mh-to-field)
+       (97 . mh-to-field)
+       (20 . mh-to-field)
+       (19 . mh-to-field)
+       (18 . mh-to-field)
+       (13 . mh-to-field)
+       (12 . mh-to-field)
+       (6 . mh-to-fcc)
+       (4 . mh-to-field)
+       (3 . mh-to-field)
+       (2 . mh-to-field)
+       (1 . mh-to-field))
+    (5 . mh-mh-to-mime)
+    (4 . mh-insert-identity)
+    (3 . mh-send-letter)
+    (30 . mh-insert-signature)
+    (28 . mh-fully-kill-draft)
+    (63 . mh-help))
+ (44 . mh-letter-confirm-address)
+ (32 . mh-letter-complete-or-space)
+ (menu-bar keymap
+	   (Letter menu-item "Letter"
+		   (keymap "Letter"
+			   (Send\ This\ Draft menu-item "Send This Draft" mh-send-letter)
+			   (Split\ Current\ Line menu-item "Split Current Line" mh-open-line)
+			   (Check\ Recipient menu-item "Check Recipient" mh-check-whom)
+			   (Yank\ Current\ Message menu-item "Yank Current Message" mh-yank-cur-msg)
+			   (Insert\ a\ Message\.\.\. menu-item "Insert a Message..." mh-insert-letter)
+			   (Insert\ Signature menu-item "Insert Signature" mh-insert-signature)
+			   (Encrypt/Sign\ Message menu-item "Encrypt/Sign Message"
+						  (keymap "Encrypt/Sign Message"
+							  (Sign\ Message menu-item "Sign Message" mh-mml-secure-message-sign :enable mh-pgp-support-flag)
+							  (Encrypt\ Message menu-item "Encrypt Message" mh-mml-secure-message-encrypt :enable mh-pgp-support-flag)
+							  (Sign+Encrypt\ Message menu-item "Sign+Encrypt Message" mh-mml-secure-message-signencrypt :enable mh-pgp-support-flag)
+							  (Disable\ Security menu-item "Disable Security" mh-mml-unsecure-message :enable mh-pgp-support-flag)
+							  (nil menu-item "--")
+							  (nil-5 menu-item "Security Method")
+							  (PGP\ \(MIME\) menu-item "PGP (MIME)" menu-function-359 :key-sequence nil :button
+									 (:radio equal mh-mml-method-default "pgpmime"))
+							  (PGP menu-item "PGP" menu-function-360 :key-sequence nil :button
+							       (:radio equal mh-mml-method-default "pgp"))
+							  (S/MIME menu-item "S/MIME" menu-function-361 :key-sequence nil :button
+								  (:radio equal mh-mml-method-default "smime"))
+							  (nil-9 menu-item "--")
+							  (Save\ Method\ as\ Default menu-item "Save Method as Default" menu-function-362 :key-sequence nil)))
+			   (Compose\ Insertion\.\.\. menu-item "Compose Insertion..." mh-compose-insertion)
+			   (Compose\ Compressed\ tar\ \(MH\)\.\.\. menu-item "Compose Compressed tar (MH)..." mh-mh-compose-external-compressed-tar)
+			   (Compose\ Get\ File\ \(MH\)\.\.\. menu-item "Compose Get File (MH)..." mh-mh-compose-anon-ftp)
+			   (Compose\ Forward\.\.\. menu-item "Compose Forward..." mh-compose-forward)
+			   (Pull\ in\ All\ Compositions\ \(MH\) menu-item "Pull in All Compositions (MH)" mh-mh-to-mime :enable
+								(mh-mh-directive-present-p))
+			   (Pull\ in\ All\ Compositions\ \(MML\) menu-item "Pull in All Compositions (MML)" mh-mml-to-mime :enable
+								 (mh-mml-tag-present-p))
+			   (Revert\ to\ Non-MIME\ Edit\ \(MH\) menu-item "Revert to Non-MIME Edit (MH)" mh-mh-to-mime-undo :enable
+							       (equal mh-compose-insertion 'mh))
+			   (Kill\ This\ Draft menu-item "Kill This Draft" mh-fully-kill-draft)))
+	   (text "Text" keymap
+		 (center-line menu-item "Center Line" center-line :help "Center the current line")
+		 (center-paragraph menu-item "Center Paragraph" center-paragraph :help "Center the current paragraph")
+		 (center-region menu-item "Center Region" center-region :help "Center the marked region" :enable
+				(region-active-p))
+		 (sep "--")
+		 (paragraph-indent-minor-mode menu-item "Paragraph Indent" paragraph-indent-minor-mode :button
+					      (:toggle bound-and-true-p paragraph-indent-minor-mode)
+					      :help "Toggle paragraph indent minor mode")
+		 (toggle-text-mode-auto-fill menu-item "Auto Fill" toggle-text-mode-auto-fill :button
+					     (:toggle memq 'turn-on-auto-fill text-mode-hook)
+					     :help "Automatically fill text while typing in text modes (Auto Fill mode)")
+		 "Text"))
+ (27 keymap
+     (9 . mh-letter-complete)))
+</pre></br>

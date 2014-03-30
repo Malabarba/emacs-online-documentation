@@ -1,45 +1,45 @@
-<strong>idlwave-query-class</strong> is a variable defined in `<code>idlwave.el</code>'.<br/>
-Its value is ((method-default) (keyword-default))<br/>
-<br/>
-Documentation:<br/>
-Association list governing specification of object classes for completion.<br/>
-<br/>
-When IDLWAVE tries to complete object-oriented methods, it usually<br/>
-cannot determine the class of a given object from context.  In order<br/>
-to provide the user with a correct list of methods or keywords, it<br/>
-needs to determine the appropriate class.  IDLWAVE has two ways of<br/>
-doing this (well, three ways if you count the shell... see<br/>
-`idlwave-shell-query-for-class'):<br/>
-<br/>
-1. Combine the items of all available classes which contain this<br/>
-   method for the purpose of completion.  So when completing a method,<br/>
-   all methods of all known classes are available, and when completing<br/>
-   a keyword, all keywords allowed for this method in any class are<br/>
-   shown.  This behavior is very much like normal completion and is<br/>
-   therefore the default.  It works much better than one might think -<br/>
-   only for the INIT, GETPROPERTY and SETPROPERTY the keyword lists<br/>
-   become uncomfortably long.  See also<br/>
-   `idlwave-completion-show-classes'.<br/>
-<br/>
-2. The second possibility is to ask the user on each occasion.  To<br/>
-   make this less interruptive, IDLWAVE can store the class as a text<br/>
-   property on the object operator `->'.  For a given object in the<br/>
-   source code, class selection will then be needed only once<br/>
-   - for example to complete the method.  Keywords to the method can<br/>
-   then be completed directly, because the class is already known.<br/>
-   You will have to turn on the storage of the selected class<br/>
-   explicitly with the variable `idlwave-store-inquired-class'.<br/>
-<br/>
-This variable allows you to configure IDLWAVE's method and<br/>
-method-keyword completion behavior.  Its value is an alist, which<br/>
-should contain at least two elements: (method-default . VALUE) and<br/>
-(keyword-default . VALUE), where VALUE is either t or nil.  These<br/>
-specify if the class should be found during method and keyword<br/>
-completion, respectively.<br/>
-<br/>
-The alist may have additional entries specifying exceptions from the<br/>
-keyword completion rule for specific methods, like INIT or<br/>
-GETPROPERTY.  In order to turn on class specification for the INIT<br/>
-method, add an entry ("INIT" . t).  The method name must be ALL-CAPS.<br/>
-<br/>
+<strong>idlwave-query-class</strong> is a variable defined in `<code>idlwave.el</code>'.</br>
+Its value is <pre>((method-default) (keyword-default))</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Association list governing specification of object classes for completion.</br>
+</br>
+When IDLWAVE tries to complete object-oriented methods, it usually</br>
+cannot determine the class of a given object from context.  In order</br>
+to provide the user with a correct list of methods or keywords, it</br>
+needs to determine the appropriate class.  IDLWAVE has two ways of</br>
+doing this (well, three ways if you count the shell... see</br>
+`idlwave-shell-query-for-class'):</br>
+</br>
+1. Combine the items of all available classes which contain this</br>
+   method for the purpose of completion.  So when completing a method,</br>
+   all methods of all known classes are available, and when completing</br>
+   a keyword, all keywords allowed for this method in any class are</br>
+   shown.  This behavior is very much like normal completion and is</br>
+   therefore the default.  It works much better than one might think -</br>
+   only for the INIT, GETPROPERTY and SETPROPERTY the keyword lists</br>
+   become uncomfortably long.  See also</br>
+   `idlwave-completion-show-classes'.</br>
+</br>
+2. The second possibility is to ask the user on each occasion.  To</br>
+   make this less interruptive, IDLWAVE can store the class as a text</br>
+   property on the object operator `->'.  For a given object in the</br>
+   source code, class selection will then be needed only once</br>
+   - for example to complete the method.  Keywords to the method can</br>
+   then be completed directly, because the class is already known.</br>
+   You will have to turn on the storage of the selected class</br>
+   explicitly with the variable `idlwave-store-inquired-class'.</br>
+</br>
+This variable allows you to configure IDLWAVE's method and</br>
+method-keyword completion behavior.  Its value is an alist, which</br>
+should contain at least two elements: (method-default . VALUE) and</br>
+(keyword-default . VALUE), where VALUE is either t or nil.  These</br>
+specify if the class should be found during method and keyword</br>
+completion, respectively.</br>
+</br>
+The alist may have additional entries specifying exceptions from the</br>
+keyword completion rule for specific methods, like INIT or</br>
+GETPROPERTY.  In order to turn on class specification for the INIT</br>
+method, add an entry ("INIT" . t).  The method name must be ALL-CAPS.</br>
+</br>
 You can customize this variable.

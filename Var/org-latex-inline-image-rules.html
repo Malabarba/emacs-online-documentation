@@ -1,0 +1,22 @@
+<strong>org-latex-inline-image-rules</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+Its value is <pre></br>
+(("file" . "\\.\\(pdf\\|jpeg\\|jpg\\|png\\|ps\\|eps\\|tikz\\|pgf\\|svg\\)\\'"))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Rules characterizing image files that can be inlined into LaTeX.</br>
+</br>
+A rule consists in an association whose key is the type of link</br>
+to consider, and value is a regexp that will be matched against</br>
+link's path.</br>
+</br>
+Note that, by default, the image extension *actually* allowed</br>
+depend on the way the LaTeX file is processed.  When used with</br>
+pdflatex, pdf, jpg and png images are OK.  When processing</br>
+through dvi to Postscript, only ps and eps are allowed.  The</br>
+default we use here encompasses both.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

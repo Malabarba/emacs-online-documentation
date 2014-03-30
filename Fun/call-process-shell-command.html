@@ -1,23 +1,23 @@
-<strong>call-process-shell-command</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(call-process-shell-command COMMAND &optional INFILE BUFFER DISPLAY &rest ARGS)<br/>
-<br/>
-Execute the shell command COMMAND synchronously in separate process.<br/>
-The remaining arguments are optional.<br/>
-The program's input comes from file INFILE (nil means `/dev/null').<br/>
-Insert output in BUFFER before point; t means current buffer;<br/>
- nil for BUFFER means discard it; 0 means discard and don't wait.<br/>
-BUFFER can also have the form (REAL-BUFFER STDERR-FILE); in that case,<br/>
-REAL-BUFFER says what to do with standard output, as above,<br/>
-while STDERR-FILE says what to do with standard error in the child.<br/>
-STDERR-FILE may be nil (discard standard error output),<br/>
-t (mix it with ordinary output), or a file name string.<br/>
-<br/>
-Fourth arg DISPLAY non-nil means redisplay buffer as output is inserted.<br/>
-Remaining arguments are strings passed as additional arguments for COMMAND.<br/>
-Wildcards and redirection are handled as usual in the shell.<br/>
-<br/>
-If BUFFER is 0, `call-process-shell-command' returns immediately with value nil.<br/>
-Otherwise it waits for COMMAND to terminate and returns a numeric exit<br/>
-status or a signal description string.<br/>
+<strong>call-process-shell-command</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+</br>
+(call-process-shell-command <u>COMMAND</u> &optional <u>INFILE</u> <u>BUFFER</u> <u>DISPLAY</u> &rest <u>ARGS</u>)</br>
+</br>
+Execute the shell command <u>COMMAND</u> synchronously in separate process.</br>
+The remaining arguments are optional.</br>
+The program's input comes from file <u>INFILE</u> (nil means `/dev/null').</br>
+Insert output in <u>BUFFER</u> before point; t means current buffer;</br>
+ nil for <u>BUFFER</u> means discard it; 0 means discard and don't wait.</br>
+<u>BUFFER</u> can also have the form (REAL-BUFFER STDERR-FILE); in that case,</br>
+REAL-BUFFER says what to do with standard output, as above,</br>
+while STDERR-FILE says what to do with standard error in the child.</br>
+STDERR-FILE may be nil (discard standard error output),</br>
+t (mix it with ordinary output), or a file name string.</br>
+</br>
+Fourth arg <u>DISPLAY</u> non-nil means redisplay buffer as output is inserted.</br>
+Remaining arguments are strings passed as additional arguments for <u>COMMAND</u>.</br>
+Wildcards and redirection are handled as usual in the shell.</br>
+</br>
+If <u>BUFFER</u> is 0, `call-process-shell-command' returns immediately with value nil.</br>
+Otherwise it waits for <u>COMMAND</u> to terminate and returns a numeric exit</br>
+status or a signal description string.</br>
 If you quit, the process is killed with SIGINT, or SIGKILL if you quit again.

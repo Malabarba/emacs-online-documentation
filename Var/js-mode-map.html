@@ -1,26 +1,25 @@
-<strong>js-mode-map</strong> is a variable defined in `<code>js.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `js-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Javascript menu-item "Javascript"<br/>
-		       (keymap "Javascript"<br/>
-			       (Select\ New\ Mozilla\ Context\.\.\. menu-item "Select New Mozilla Context..." js-set-js-context :enable<br/>
-								    (fboundp #'inferior-moz-process))<br/>
-			       (Evaluate\ Expression\ in\ Mozilla\ Context\.\.\. menu-item "Evaluate Expression in Mozilla Context..." js-eval :enable<br/>
-										 (fboundp #'inferior-moz-process))<br/>
-			       (Send\ Current\ Function\ to\ Mozilla\.\.\. menu-item "Send Current Function to Mozilla..." js-eval-defun :enable<br/>
-									   (fboundp #'inferior-moz-process)))))<br/>
- (27 keymap<br/>
-     (46 . js-find-symbol)<br/>
-     (24 . js-eval-defun))<br/>
- (3 keymap<br/>
-    (10 . js-set-js-context)<br/>
-    (27 keymap<br/>
-	(58 . js-eval))))<br/>
-<br/>
+<strong>js-mode-map</strong> is a variable defined in `<code>js.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `js-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Javascript menu-item "Javascript"
+		       (keymap "Javascript"
+			       (Select\ New\ Mozilla\ Context\.\.\. menu-item "Select New Mozilla Context..." js-set-js-context :enable
+								    (fboundp #'inferior-moz-process))
+			       (Evaluate\ Expression\ in\ Mozilla\ Context\.\.\. menu-item "Evaluate Expression in Mozilla Context..." js-eval :enable
+										 (fboundp #'inferior-moz-process))
+			       (Send\ Current\ Function\ to\ Mozilla\.\.\. menu-item "Send Current Function to Mozilla..." js-eval-defun :enable
+									   (fboundp #'inferior-moz-process)))))
+ (27 keymap
+     (46 . js-find-symbol)
+     (24 . js-eval-defun))
+ (3 keymap
+    (10 . js-set-js-context)
+    (27 keymap
+	(58 . js-eval))))
+</pre></br>

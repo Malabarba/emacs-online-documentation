@@ -1,22 +1,30 @@
-<strong>byte-compile-macro-environment</strong> is a variable defined in `<code>bytecomp.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Alist of macros defined in the file being compiled.<br/>
-Each element looks like (MACRONAME . DEFINITION).  It is<br/>
-(MACRONAME . nil) when a macro is redefined as a function.<br/>
-<br/>
-Value: ((declare-function . byte-compile-macroexpand-declare-function)<br/>
- (eval-when-compile lambda<br/>
-		    (&rest body)<br/>
-		    (list 'quote<br/>
-			  (byte-compile-eval<br/>
-			   (byte-compile-top-level<br/>
-			    (byte-compile-preprocess<br/>
-			     (cons 'progn body))))))<br/>
- (eval-and-compile lambda<br/>
-		   (&rest body)<br/>
-		   (byte-compile-eval-before-compile<br/>
-		    (cons 'progn body))<br/>
-		   (cons 'progn body)))<br/>
-<br/>
+<strong>byte-compile-macro-environment</strong> is a variable defined in `<code>bytecomp.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of macros defined in the file being compiled.</br>
+Each element looks like (MACRONAME . DEFINITION).  It is</br>
+(MACRONAME . nil) when a macro is redefined as a function.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((declare-function . byte-compile-macroexpand-declare-function)
+ (eval-when-compile lambda
+		    (&rest body)
+		    (list 'quote
+			  (byte-compile-eval
+			   (byte-compile-top-level
+			    (byte-compile-preprocess
+			     (cons 'progn body))))))
+ (eval-and-compile lambda
+		   (&rest body)
+		   `(progn ,@(mapcar
+			      (lambda
+				(exp)
+				(let
+				    ((cexp
+				      (byte-compile-top-level
+				       (byte-compile-preprocess exp))))
+				  (eval cexp)
+				  cexp))
+			      body))))
+</pre></br>

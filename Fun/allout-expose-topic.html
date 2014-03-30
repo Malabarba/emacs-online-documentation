@@ -1,59 +1,60 @@
-<strong>allout-expose-topic</strong> is an interactive compiled Lisp function in `<code>allout.el</code>'.<br/>
-<br/>
-(allout-expose-topic SPEC)<br/>
-<br/>
-Apply exposure specs to successive outline topic items.<br/>
-<br/>
-Use the more convenient frontend, `allout-new-exposure', if you don't<br/>
-need evaluation of the arguments, or even better, the `allout-layout'<br/>
-variable-keyed mode-activation/auto-exposure feature of allout outline<br/>
-mode.  See the respective documentation strings for more details.<br/>
-<br/>
-Cursor is left at start position.<br/>
-<br/>
-SPEC is either a number or a list.<br/>
-<br/>
-Successive specs on a list are applied to successive sibling topics.<br/>
-<br/>
-A simple spec (either a number, one of a few symbols, or the null<br/>
-list) dictates the exposure for the corresponding topic.<br/>
-<br/>
-Non-null lists recursively designate exposure specs for respective<br/>
-subtopics of the current topic.<br/>
-<br/>
-The `:' repeat spec is used to specify exposure for any number of<br/>
-successive siblings, up to the trailing ones for which there are<br/>
-explicit specs following the `:'.<br/>
-<br/>
-Simple (numeric and null-list) specs are interpreted as follows:<br/>
-<br/>
- Numbers indicate the relative depth to open the corresponding topic.<br/>
-     - negative numbers force the topic to be closed before opening to the<br/>
-       absolute value of the number, so all siblings are open only to<br/>
-       that level.<br/>
-     - positive numbers open to the relative depth indicated by the<br/>
-       number, but do not force already opened subtopics to be closed.<br/>
-     - 0 means to close topic -- hide all offspring.<br/>
-  :  - `repeat'<br/>
-       apply prior element to all siblings at current level, *up to*<br/>
-       those siblings that would be covered by specs following the `:'<br/>
-       on the list.  Ie, apply to all topics at level but the last<br/>
-       ones.  (Only first of multiple colons at same level is<br/>
-       respected -- subsequent ones are discarded.)<br/>
-  *  - completely opens the topic, including bodies.<br/>
-  +  - shows all the sub headers, but not the bodies<br/>
-  -  - exposes the body of the corresponding topic.<br/>
-<br/>
-Examples:<br/>
-(allout-expose-topic '(-1 : 0))<br/>
-	Close this and all following topics at current level, exposing<br/>
-	only their immediate children, but close down the last topic<br/>
-	at this current level completely.<br/>
-(allout-expose-topic '(-1 () : 1 0))<br/>
-	Close current topic so only the immediate subtopics are shown;<br/>
-	show the children in the second to last topic, and completely<br/>
-	close the last one.<br/>
-(allout-expose-topic '(-2 : -1 *))<br/>
-        Expose children and grandchildren of all topics at current<br/>
-	level except the last two; expose children of the second to<br/>
+<strong>allout-expose-topic</strong> is an interactive compiled Lisp function in `<code>allout.el</code>'.</br>
+</br>
+</br>
+(allout-expose-topic <u>SPEC</u>)</br>
+</br>
+Apply exposure specs to successive outline topic items.</br>
+</br>
+Use the more convenient frontend, `allout-new-exposure', if you don't</br>
+need evaluation of the arguments, or even better, the `allout-layout'</br>
+variable-keyed mode-activation/auto-exposure feature of allout outline</br>
+mode.  See the respective documentation strings for more details.</br>
+</br>
+Cursor is left at start position.</br>
+</br>
+<u>SPEC</u> is either a number or a list.</br>
+</br>
+Successive specs on a list are applied to successive sibling topics.</br>
+</br>
+A simple spec (either a number, one of a few symbols, or the null</br>
+list) dictates the exposure for the corresponding topic.</br>
+</br>
+Non-null lists recursively designate exposure specs for respective</br>
+subtopics of the current topic.</br>
+</br>
+The `:' repeat spec is used to specify exposure for any number of</br>
+successive siblings, up to the trailing ones for which there are</br>
+explicit specs following the `:'.</br>
+</br>
+Simple (numeric and null-list) specs are interpreted as follows:</br>
+</br>
+ Numbers indicate the relative depth to open the corresponding topic.</br>
+     - negative numbers force the topic to be closed before opening to the</br>
+       absolute value of the number, so all siblings are open only to</br>
+       that level.</br>
+     - positive numbers open to the relative depth indicated by the</br>
+       number, but do not force already opened subtopics to be closed.</br>
+     - 0 means to close topic -- hide all offspring.</br>
+  :  - `repeat'</br>
+       apply prior element to all siblings at current level, *up to*</br>
+       those siblings that would be covered by specs following the `:'</br>
+       on the list.  Ie, apply to all topics at level but the last</br>
+       ones.  (Only first of multiple colons at same level is</br>
+       respected -- subsequent ones are discarded.)</br>
+  *  - completely opens the topic, including bodies.</br>
+  +  - shows all the sub headers, but not the bodies</br>
+  -  - exposes the body of the corresponding topic.</br>
+</br>
+Examples:</br>
+(allout-expose-topic '(-1 : 0))</br>
+	Close this and all following topics at current level, exposing</br>
+	only their immediate children, but close down the last topic</br>
+	at this current level completely.</br>
+(allout-expose-topic '(-1 () : 1 0))</br>
+	Close current topic so only the immediate subtopics are shown;</br>
+	show the children in the second to last topic, and completely</br>
+	close the last one.</br>
+(allout-expose-topic '(-2 : -1 *))</br>
+        Expose children and grandchildren of all topics at current</br>
+	level except the last two; expose children of the second to</br>
 	last and completely open the last one.

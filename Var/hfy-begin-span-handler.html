@@ -1,31 +1,31 @@
-<strong>hfy-begin-span-handler</strong> is a variable defined in `<code>htmlfontify.el</code>'.<br/>
-Its value is hfy-begin-span<br/>
-<br/>
-Documentation:<br/>
-Handler to begin a span of text.<br/>
-The signature of the handler is (lambda (STYLE TEXT-BLOCK<br/>
-TEXT-ID TEXT-BEGINS-BLOCK-P) ...).  The handler must insert<br/>
-appropriate tags to begin a span of text.<br/>
-<br/>
-STYLE is the name of the style that begins at point.  It is<br/>
-derived from the face attributes as part of `hfy-face-to-css'<br/>
-callback.  The other arguments TEXT-BLOCK, TEXT-ID,<br/>
-TEXT-BEGINS-BLOCK-P are non-nil only if the buffer contains<br/>
-invisible text.<br/>
-<br/>
-TEXT-BLOCK is a string that identifies a single chunk of visible<br/>
-or invisible text of which the current position is a part.  For<br/>
-visible portions, it's value is "nil". For invisible portions,<br/>
-it's value is computed as part of `hfy-invisible-name'.<br/>
-<br/>
-TEXT-ID marks a unique position within a block.  It is set to<br/>
-value of `point' at the current buffer position.<br/>
-<br/>
-TEXT-BEGINS-BLOCK-P is a boolean and is non-nil if the current<br/>
-span also begins a invisible portion of text.<br/>
-<br/>
-An implementation can use TEXT-BLOCK, TEXT-ID,<br/>
-TEXT-BEGINS-BLOCK-P to implement fold/unfold-on-mouse-click like<br/>
-behaviour.<br/>
-<br/>
+<strong>hfy-begin-span-handler</strong> is a variable defined in `<code>htmlfontify.el</code>'.</br>
+Its value is <pre>hfy-begin-span</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Handler to begin a span of text.</br>
+The signature of the handler is (lambda (STYLE TEXT-BLOCK</br>
+TEXT-ID TEXT-BEGINS-BLOCK-P) ...).  The handler must insert</br>
+appropriate tags to begin a span of text.</br>
+</br>
+STYLE is the name of the style that begins at point.  It is</br>
+derived from the face attributes as part of `hfy-face-to-css'</br>
+callback.  The other arguments TEXT-BLOCK, TEXT-ID,</br>
+TEXT-BEGINS-BLOCK-P are non-nil only if the buffer contains</br>
+invisible text.</br>
+</br>
+TEXT-BLOCK is a string that identifies a single chunk of visible</br>
+or invisible text of which the current position is a part.  For</br>
+visible portions, it's value is "nil". For invisible portions,</br>
+it's value is computed as part of `hfy-invisible-name'.</br>
+</br>
+TEXT-ID marks a unique position within a block.  It is set to</br>
+value of `point' at the current buffer position.</br>
+</br>
+TEXT-BEGINS-BLOCK-P is a boolean and is non-nil if the current</br>
+span also begins a invisible portion of text.</br>
+</br>
+An implementation can use TEXT-BLOCK, TEXT-ID,</br>
+TEXT-BEGINS-BLOCK-P to implement fold/unfold-on-mouse-click like</br>
+behavior.</br>
+</br>
 The default handler is `hfy-begin-span'.

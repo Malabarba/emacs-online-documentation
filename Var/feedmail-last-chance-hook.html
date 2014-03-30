@@ -1,22 +1,20 @@
-<strong>feedmail-last-chance-hook</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-User's last opportunity to modify the message on its way out.<br/>
-When this hook runs, the current buffer is already the appropriate<br/>
-buffer.  It has already had all the header prepping from the standard<br/>
-package.  The next step after running the hook will be to save the<br/>
-message via FCC: processing. The hook might be interested in these:<br/>
-(1) `feedmail-prepped-text-buffer' contains the header and body of the<br/>
-message, ready to go; (2) `feedmail-address-list' contains a list<br/>
-of simplified recipients of addresses which are to be given to the<br/>
-subprocess (the hook may change the list); (3) `feedmail-error-buffer'<br/>
-is an empty buffer intended to soak up errors for display to the user.<br/>
-If the hook allows interactive activity, the user should not send more<br/>
-mail while in the hook since some of the internal buffers will be<br/>
-reused and things will get confused.  It's not necessary to<br/>
-arrange for the undoing of any changes you make to the buffer.<br/>
-<br/>
+<strong>feedmail-last-chance-hook</strong> is a variable defined in `<code>feedmail.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+User's last opportunity to modify the message on its way out.</br>
+When this hook runs, the current buffer is already the appropriate</br>
+buffer.  It has already had all the header prepping from the standard</br>
+package.  The next step after running the hook will be to save the</br>
+message via FCC: processing. The hook might be interested in these:</br>
+(1) `feedmail-prepped-text-buffer' contains the header and body of the</br>
+message, ready to go; (2) `feedmail-address-list' contains a list</br>
+of simplified recipients of addresses which are to be given to the</br>
+subprocess (the hook may change the list); (3) `feedmail-error-buffer'</br>
+is an empty buffer intended to soak up errors for display to the user.</br>
+If the hook allows interactive activity, the user should not send more</br>
+mail while in the hook since some of the internal buffers will be</br>
+reused and things will get confused.  It's not necessary to</br>
+arrange for the undoing of any changes you make to the buffer.</br>
+</br>
 You can customize this variable.

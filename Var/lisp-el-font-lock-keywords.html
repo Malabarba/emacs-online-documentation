@@ -1,0 +1,25 @@
+<strong>lisp-el-font-lock-keywords</strong> is a variable defined in `<code>lisp-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Default expressions to highlight in Emacs Lisp mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("(\\(cl-def\\(?:macro\\|s\\(?:\\(?:truc\\|ubs\\)t\\)\\|type\\|un\\)\\|def\\(?:a\\(?:dvice\\|lias\\)\\|c\\(?:lass\\|onst\\|ustom\\)\\|face\\|g\\(?:eneric\\|roup\\)\\|ine-\\(?:derived-mode\\|g\\(?:\\(?:eneric\\|lobal\\(?:\\(?:ized\\)?-minor\\)\\)-mode\\)\\|minor-mode\\|skeleton\\|widget\\)\\|m\\(?:acro\\|ethod\\)\\|subst\\|theme\\|un\\|var\\(?:-local\\|alias\\)?\\)\\)\\_>[ 	'(]*\\(\\(?:\\sw\\|\\s_\\)+\\)?"
+  (1 font-lock-keyword-face)
+  (2
+   (let
+       ((type
+	 (get
+	  (intern-soft
+	   (match-string 1))
+	  'lisp-define-type)))
+     (cond
+      ((eq type 'var)
+       font-lock-variable-name-face)
+      ((eq type 'type)
+       font-lock-type-face)
+      (t font-lock-function-name-face)))
+   nil t))
+ ("^;;;###\\([-a-z]*autoload\\)" 1 font-lock-warning-face prepend))
+</pre></br>

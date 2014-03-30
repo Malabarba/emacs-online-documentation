@@ -1,75 +1,77 @@
-<strong>package-menu-mode-map</strong> is a variable defined in `<code>package.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Local keymap for `package-menu-mode' buffers.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (package-menu "Package" keymap<br/>
-			 (mc menu-item "View Commentary" package-menu-view-commentary :help "Display information about this package")<br/>
-			 (mh menu-item "Help" package-menu-quick-help :help "Show short key binding help for package-menu-mode")<br/>
-			 (s5 "--")<br/>
-			 (mx menu-item "Execute Actions" package-menu-execute :help "Perform all the marked actions")<br/>
-			 (mt menu-item "Mark Obsolete Packages" package-menu-mark-obsolete-for-deletion :help "Mark all obsolete packages for deletion")<br/>
-			 (s4 "--")<br/>
-			 (mr menu-item "Refresh Package List" package-menu-refresh :help "Download the ELPA archive")<br/>
-			 (mg menu-item "Update Package List" revert-buffer :help "Update the list of packages")<br/>
-			 (s3 "--")<br/>
-			 (mupgrades menu-item "Mark Upgradable Packages" package-menu-mark-upgrades :help "Mark packages that have a newer version for upgrading")<br/>
-			 (mi menu-item "Mark for Install" package-menu-mark-install :help "Mark a package for installation and move to the next line")<br/>
-			 (md menu-item "Mark for Deletion" package-menu-mark-delete :help "Mark a package for deletion and move to the next line")<br/>
-			 (munm menu-item "Unmark Backwards" package-menu-backup-unmark :help "Back up one line and clear any marks on that package")<br/>
-			 (mu menu-item "Unmark" package-menu-mark-unmark :help "Clear any marks on a package and move to the next line")<br/>
-			 (s2 "--")<br/>
-			 (mp menu-item "Previous" previous-line :help "Previous Line")<br/>
-			 (mn menu-item "Next" next-line :help "Next Line")<br/>
-			 (s1 "--")<br/>
-			 (mq menu-item "Quit" quit-window :help "Quit package selection")<br/>
-			 "Package"))<br/>
- (63 . package-menu-describe-package)<br/>
- (104 . package-menu-quick-help)<br/>
- (120 . package-menu-execute)<br/>
- (126 . package-menu-mark-obsolete-for-deletion)<br/>
- (114 . package-menu-refresh)<br/>
- (85 . package-menu-mark-upgrades)<br/>
- (105 . package-menu-mark-install)<br/>
- (100 . package-menu-mark-delete)<br/>
- (127 . package-menu-backup-unmark)<br/>
- (117 . package-menu-mark-unmark)<br/>
- (13 . package-menu-describe-package)<br/>
- keymap<br/>
- (mouse-2 . mouse-select-window)<br/>
- (follow-link . mouse-face)<br/>
- (83 . tabulated-list-sort)<br/>
- (112 . previous-line)<br/>
- (110 . next-line)<br/>
- (103 . revert-buffer)<br/>
- (60 . beginning-of-buffer)<br/>
- (62 . end-of-buffer)<br/>
- (104 . describe-mode)<br/>
- (63 . describe-mode)<br/>
- (127 . scroll-down-command)<br/>
- (32 . scroll-up-command)<br/>
- (113 . quit-window)<br/>
- (57 . digit-argument)<br/>
- (56 . digit-argument)<br/>
- (55 . digit-argument)<br/>
- (54 . digit-argument)<br/>
- (53 . digit-argument)<br/>
- (52 . digit-argument)<br/>
- (51 . digit-argument)<br/>
- (50 . digit-argument)<br/>
- (49 . digit-argument)<br/>
- (48 . digit-argument)<br/>
- (45 . negative-argument)<br/>
- (remap keymap<br/>
-	(self-insert-command . undefined))<br/>
- keymap<br/>
- (backtab . backward-button)<br/>
- (27 keymap<br/>
-     (9 . backward-button))<br/>
- (9 . forward-button))<br/>
-<br/>
+<strong>package-menu-mode-map</strong> is a variable defined in `<code>package.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Local keymap for `package-menu-mode' buffers.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (package-menu "Package" keymap
+			 (mc menu-item "View Commentary" package-menu-view-commentary :help "Display information about this package")
+			 (mh menu-item "Help" package-menu-quick-help :help "Show short key binding help for package-menu-mode")
+			 (s5 "--")
+			 (mx menu-item "Execute Actions" package-menu-execute :help "Perform all the marked actions")
+			 (mt menu-item "Mark Obsolete Packages" package-menu-mark-obsolete-for-deletion :help "Mark all obsolete packages for deletion")
+			 (s4 "--")
+			 (mr menu-item "Refresh Package List" package-menu-refresh :help "Download the ELPA archive")
+			 (mg menu-item "Update Package List" revert-buffer :help "Update the list of packages")
+			 (mf menu-item "Filter Package List..." package-menu-filter :help "Filter package selection (q to go back)")
+			 (s3 "--")
+			 (mupgrades menu-item "Mark Upgradable Packages" package-menu-mark-upgrades :help "Mark packages that have a newer version for upgrading")
+			 (mi menu-item "Mark for Install" package-menu-mark-install :help "Mark a package for installation and move to the next line")
+			 (md menu-item "Mark for Deletion" package-menu-mark-delete :help "Mark a package for deletion and move to the next line")
+			 (munm menu-item "Unmark Backwards" package-menu-backup-unmark :help "Back up one line and clear any marks on that package")
+			 (mu menu-item "Unmark" package-menu-mark-unmark :help "Clear any marks on a package and move to the next line")
+			 (s2 "--")
+			 (mp menu-item "Previous" previous-line :help "Previous Line")
+			 (mn menu-item "Next" next-line :help "Next Line")
+			 (s1 "--")
+			 (mq menu-item "Quit" quit-window :help "Quit package selection")
+			 "Package"))
+ (63 . package-menu-describe-package)
+ (104 . package-menu-quick-help)
+ (120 . package-menu-execute)
+ (126 . package-menu-mark-obsolete-for-deletion)
+ (102 . package-menu-filter)
+ (114 . package-menu-refresh)
+ (85 . package-menu-mark-upgrades)
+ (105 . package-menu-mark-install)
+ (100 . package-menu-mark-delete)
+ (127 . package-menu-backup-unmark)
+ (117 . package-menu-mark-unmark)
+ (13 . package-menu-describe-package)
+ keymap
+ (mouse-2 . mouse-select-window)
+ (follow-link . mouse-face)
+ (83 . tabulated-list-sort)
+ (112 . previous-line)
+ (110 . next-line)
+ (103 . revert-buffer)
+ (60 . beginning-of-buffer)
+ (62 . end-of-buffer)
+ (104 . describe-mode)
+ (63 . describe-mode)
+ (127 . scroll-down-command)
+ (33554464 . scroll-down-command)
+ (32 . scroll-up-command)
+ (113 . quit-window)
+ (57 . digit-argument)
+ (56 . digit-argument)
+ (55 . digit-argument)
+ (54 . digit-argument)
+ (53 . digit-argument)
+ (52 . digit-argument)
+ (51 . digit-argument)
+ (50 . digit-argument)
+ (49 . digit-argument)
+ (48 . digit-argument)
+ (45 . negative-argument)
+ (remap keymap
+	(self-insert-command . undefined))
+ keymap
+ (backtab . backward-button)
+ (27 keymap
+     (9 . backward-button))
+ (9 . forward-button))
+</pre></br>

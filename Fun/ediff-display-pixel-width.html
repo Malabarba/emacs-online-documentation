@@ -1,6 +1,13 @@
-<strong>ediff-display-pixel-width</strong> is an alias for `display-pixel-width' in `<code>ediff-init.el</code>'.<br/>
-<br/>
-(ediff-display-pixel-width &optional DISPLAY)<br/>
-<br/>
-Return the width of DISPLAY's screen in pixels.<br/>
-For character terminals, each character counts as a single pixel.
+<strong>ediff-display-pixel-width</strong> is an alias for `<strong><a href="display-pixel-width">display-pixel-width</a></strong>' in `<code>ediff-init.el</code>'.</br>
+</br>
+(ediff-display-pixel-width &optional <u>DISPLAY</u>)</br>
+</br>
+Return the width of <u>DISPLAY</u>'s screen in pixels.</br>
+If <u>DISPLAY</u> is omitted or nil, it defaults to the selected frame's display.</br>
+</br>
+For character terminals, each character counts as a single pixel.</br>
+</br>
+For graphical terminals, note that on "multi-monitor" setups this</br>
+refers to the pixel width for all physical monitors associated</br>
+with <u>DISPLAY</u>.  To get information for each physical monitor, use</br>
+`display-monitor-attributes-list'.

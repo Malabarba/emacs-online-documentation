@@ -1,5 +1,26 @@
-<strong>chart-axis</strong> is a Lisp function.<br/>
-<br/>
-(chart-axis NEWNAME &rest SLOTS)<br/>
-<br/>
-Create a new object with name NAME of class type chart-axis
+chart-axis is an  object constructor function in `chart.el'.</br>
+Creates an object of class chart-axis.</br>
+Create a new object with name NAME of class type chart-axis</br>
+</br>
+Class description:</br>
+chart-axis is a class in `chart.el'.</br>
+ Children `chart-axis-names', `chart-axis-range'.</br>
+</br>
+Superclass used for display of an axis.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: name    default = "Generic Axis"</br>
+Slot: loweredge    default = t</br>
+Slot: name-face    default = (quote bold)</br>
+Slot: labels-face    default = (quote italic)</br>
+Slot: chart    default = nil</br>
+Specialized Methods:</br>
+</br>
+`chart-axis-draw' :PRIMARY 1537</br>
+Draw some axis for A in direction DIR with MARGIN in boundary.</br>
+ZONE is a zone specification.</br>
+START and END represent the boundary.</br>
+</br>
+<code>(fn A <em>&optional</em> DIR MARGIN ZONE START END</code>)</br>
+</br>

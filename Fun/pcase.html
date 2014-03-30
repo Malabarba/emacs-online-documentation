@@ -1,36 +1,36 @@
-<strong>pcase</strong> is an autoloaded Lisp macro in `<code>pcase.el</code>'.<br/>
-<br/>
-(pcase EXP &rest CASES)<br/>
-<br/>
-Perform ML-style pattern matching on EXP.<br/>
-CASES is a list of elements of the form (UPATTERN CODE...).<br/>
-<br/>
-UPatterns can take the following forms:<br/>
-  _		matches anything.<br/>
-  SELFQUOTING	matches itself.  This includes keywords, numbers, and strings.<br/>
-  SYMBOL	matches anything and binds it to SYMBOL.<br/>
-  (or UPAT...)	matches if any of the patterns matches.<br/>
-  (and UPAT...)	matches if all the patterns match.<br/>
-  `QPAT		matches if the QPattern QPAT matches.<br/>
-  (pred PRED)	matches if PRED applied to the object returns non-nil.<br/>
-  (guard BOOLEXP)	matches if BOOLEXP evaluates to non-nil.<br/>
-  (let UPAT EXP)	matches if EXP matches UPAT.<br/>
-If a SYMBOL is used twice in the same pattern (i.e. the pattern is<br/>
-"non-linear"), then the second occurrence is turned into an `eq'uality test.<br/>
-<br/>
-QPatterns can take the following forms:<br/>
-  (QPAT1 . QPAT2)	matches if QPAT1 matches the car and QPAT2 the cdr.<br/>
-  ,UPAT			matches if the UPattern UPAT matches.<br/>
-  STRING		matches if the object is `equal' to STRING.<br/>
-  ATOM			matches if the object is `eq' to ATOM.<br/>
-QPatterns for vectors are not implemented yet.<br/>
-<br/>
-PRED can take the form<br/>
-  FUNCTION	     in which case it gets called with one argument.<br/>
-  (FUN ARG1 .. ARGN) in which case it gets called with an N+1'th argument<br/>
-                        which is the value being matched.<br/>
-A PRED of the form FUNCTION is equivalent to one of the form (FUNCTION).<br/>
-PRED patterns can refer to variables bound earlier in the pattern.<br/>
-E.g. you can match pairs where the cdr is larger than the car with a pattern<br/>
-like `(,a . ,(pred (< a))) or, with more checks:<br/>
-`(,(and a (pred numberp)) . ,(and (pred numberp) (pred (< a))))
+<strong>pcase</strong> is an autoloaded Lisp macro in `<code>pcase.el</code>'.</br>
+</br>
+(pcase <u>EXP</u> &rest <u>CASES</u>)</br>
+</br>
+Perform ML-style pattern matching on <u>EXP</u>.</br>
+<u>CASES</u> is a list of elements of the form (UPATTERN CODE...).</br>
+</br>
+UPatterns can take the following forms:</br>
+  _		matches anything.</br>
+  SELFQUOTING	matches itself.  This includes keywords, numbers, and strings.</br>
+  SYMBOL	matches anything and binds it to SYMBOL.</br>
+  (or UPAT...)	matches if any of the patterns matches.</br>
+  (and UPAT...)	matches if all the patterns match.</br>
+  `QPAT		matches if the QPattern QPAT matches.</br>
+  (pred PRED)	matches if PRED applied to the object returns non-nil.</br>
+  (guard BOOLEXP)	matches if BOOLEXP evaluates to non-nil.</br>
+  (let UPAT <u>EXP</u>)	matches if <u>EXP</u> matches UPAT.</br>
+If a SYMBOL is used twice in the same pattern (i.e. the pattern is</br>
+"non-linear"), then the second occurrence is turned into an `eq'uality test.</br>
+</br>
+QPatterns can take the following forms:</br>
+  (QPAT1 . QPAT2)	matches if QPAT1 matches the car and QPAT2 the cdr.</br>
+  ,UPAT			matches if the UPattern UPAT matches.</br>
+  STRING		matches if the object is `equal' to STRING.</br>
+  ATOM			matches if the object is `eq' to ATOM.</br>
+QPatterns for vectors are not implemented yet.</br>
+</br>
+PRED can take the form</br>
+  FUNCTION	     in which case it gets called with one argument.</br>
+  (FUN ARG1 .. ARGN) in which case it gets called with an N+1'th argument</br>
+                        which is the value being matched.</br>
+A PRED of the form FUNCTION is equivalent to one of the form (FUNCTION).</br>
+PRED patterns can refer to variables bound earlier in the pattern.</br>
+E.g. you can match pairs where the cdr is larger than the car with a pattern</br>
+like `(,a . ,(pred (&lt; a))) or, with more checks:</br>
+`(,(and a (pred numberp)) . ,(and (pred numberp) (pred (&lt; a))))

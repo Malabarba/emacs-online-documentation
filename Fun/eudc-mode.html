@@ -1,14 +1,41 @@
-<strong>eudc-mode</strong> is an interactive compiled Lisp function in `<code>eudc.el</code>'.<br/>
-<br/>
-(eudc-mode)<br/>
-<br/>
-Major mode used in buffers displaying the results of directory queries.<br/>
-There is no sense in calling this command from a buffer other than<br/>
-one containing the results of a directory query.<br/>
-<br/>
-These are the special commands of EUDC mode:<br/>
-    q -- Kill this buffer.<br/>
-    f -- Display a form to query the current directory server.<br/>
-    n -- Move to next record.<br/>
-    p -- Move to previous record.<br/>
-    b -- Insert record at point into the BBDB database.
+<strong>eudc-mode</strong> is an interactive compiled Lisp function in `<code>eudc.el</code>'.</br>
+</br>
+</br>
+(eudc-mode)</br>
+</br>
+Parent mode: `special-mode'.</br>
+</br>
+Major mode used in buffers displaying the results of directory queries.</br>
+There is no sense in calling this command from a buffer other than</br>
+one containing the results of a directory query.</br>
+</br>
+These are the special commands of EUDC mode:</br>
+    q -- Kill this buffer.</br>
+    f -- Display a form to query the current directory server.</br>
+    n -- Move to next record.</br>
+    p -- Move to previous record.</br>
+    b -- Insert record at point into the BBDB database.</br>
+</br>
+In addition to any hooks its parent mode `special-mode' might have run,</br>
+this mode runs the hook `eudc-mode-hook', as the final step</br>
+during initialization.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+TAB		widget-forward</br>
+RET		widget-button-press</br>
+ESC		Prefix Command</br>
+b		eudc-try-bbdb-insert</br>
+f		eudc-query-form</br>
+n		eudc-move-to-next-record</br>
+p		eudc-move-to-previous-record</br>
+q		kill-this-buffer</br>
+x		kill-this-buffer</br>
+&lt;S-tab>		widget-backward</br>
+&lt;backtab>	widget-backward</br>
+&lt;down-mouse-1>	widget-button-click</br>
+&lt;down-mouse-2>	widget-button-click</br>
+</br>
+C-M-i		widget-backward</br>
+</br>

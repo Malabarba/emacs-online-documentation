@@ -1,43 +1,43 @@
-<strong>scheme-buffer</strong> is a variable defined in `<code>cmuscheme.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-*The current scheme process buffer.<br/>
-<br/>
-MULTIPLE PROCESS SUPPORT<br/>
-===========================================================================<br/>
-Cmuscheme.el supports, in a fairly simple fashion, running multiple Scheme<br/>
-processes.  To run multiple Scheme processes, you start the first up with<br/>
-M-x run-scheme.  It will be in a buffer named *scheme*.  Rename this buffer<br/>
-with M-x rename-buffer.  You may now start up a new process with another<br/>
-M-x run-scheme.  It will be in a new buffer, named *scheme*.  You can<br/>
-switch between the different process buffers with C-x b.<br/>
-<br/>
-Commands that send text from source buffers to Scheme processes --<br/>
-like `scheme-send-definition' or `scheme-compile-region' -- have to choose a<br/>
-process to send to, when you have more than one Scheme process around.  This<br/>
-is determined by the global variable `scheme-buffer'.  Suppose you<br/>
-have three inferior Schemes running:<br/>
-    Buffer	Process<br/>
-    foo		scheme<br/>
-    bar		scheme<2><br/>
-    *scheme*    scheme<3><br/>
-If you do a M-x scheme-send-definition-and-go command on some Scheme source<br/>
-code, what process do you send it to?<br/>
-<br/>
-- If you're in a process buffer (foo, bar, or *scheme*),<br/>
-  you send it to that process.<br/>
-- If you're in some other buffer (e.g., a source file), you<br/>
-  send it to the process attached to buffer `scheme-buffer'.<br/>
-This process selection is performed by function `scheme-proc'.<br/>
-<br/>
-Whenever M-x run-scheme fires up a new process, it resets `scheme-buffer'<br/>
-to be the new process's buffer.  If you only run one process, this will<br/>
-do the right thing.  If you run multiple processes, you can change<br/>
-`scheme-buffer' to another process buffer with M-x set-variable.<br/>
-<br/>
-More sophisticated approaches are, of course, possible.  If you find yourself<br/>
-needing to switch back and forth between multiple processes frequently,<br/>
-you may wish to consider ilisp.el, a larger, more sophisticated package<br/>
-for running inferior Lisp and Scheme processes.  The approach taken here is<br/>
+<strong>scheme-buffer</strong> is a variable defined in `<code>cmuscheme.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The current scheme process buffer.</br>
+</br>
+MULTIPLE PROCESS SUPPORT</br>
+===========================================================================</br>
+Cmuscheme.el supports, in a fairly simple fashion, running multiple Scheme</br>
+processes.  To run multiple Scheme processes, you start the first up with</br>
+M-x run-scheme.  It will be in a buffer named *scheme*.  Rename this buffer</br>
+with M-x rename-buffer.  You may now start up a new process with another</br>
+M-x run-scheme.  It will be in a new buffer, named *scheme*.  You can</br>
+switch between the different process buffers with C-x b.</br>
+</br>
+Commands that send text from source buffers to Scheme processes --</br>
+like `scheme-send-definition' or `scheme-compile-region' -- have to choose a</br>
+process to send to, when you have more than one Scheme process around.  This</br>
+is determined by the global variable `scheme-buffer'.  Suppose you</br>
+have three inferior Schemes running:</br>
+    Buffer	Process</br>
+    foo		scheme</br>
+    bar		scheme<2></br>
+    *scheme*    scheme<3></br>
+If you do a M-x scheme-send-definition-and-go command on some Scheme source</br>
+code, what process do you send it to?</br>
+</br>
+- If you're in a process buffer (foo, bar, or *scheme*),</br>
+  you send it to that process.</br>
+- If you're in some other buffer (e.g., a source file), you</br>
+  send it to the process attached to buffer `scheme-buffer'.</br>
+This process selection is performed by function `scheme-proc'.</br>
+</br>
+Whenever M-x run-scheme fires up a new process, it resets `scheme-buffer'</br>
+to be the new process's buffer.  If you only run one process, this will</br>
+do the right thing.  If you run multiple processes, you might need to</br>
+set `scheme-buffer' to whichever process buffer you want to use.</br>
+</br>
+More sophisticated approaches are, of course, possible.  If you find yourself</br>
+needing to switch back and forth between multiple processes frequently,</br>
+you may wish to consider ilisp.el, a larger, more sophisticated package</br>
+for running inferior Lisp and Scheme processes.  The approach taken here is</br>
 for a minimal, simple implementation.  Feel free to extend it.

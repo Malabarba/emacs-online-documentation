@@ -1,5 +1,20 @@
-<strong>no-next-method</strong> is a compiled Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(no-next-method &rest LOCAL-ARGS)<br/>
-<br/>
-Called from `call-next-method' when no additional methods are available.
+<strong>no-next-method</strong> is a compiled Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(no-next-method &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Called from `call-next-method' when no additional methods are available.</br>
+</br>
+This is a generic function with only one primary method.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-default-superclass' :PRIMARY (object &rest args)</br>
+Called from `call-next-method' when no additional methods are available.</br>
+OBJECT is othe object being called on `call-next-method'.</br>
+ARGS are the arguments it is called by.</br>
+This method signals `no-next-method' by default.  Override this</br>
+method to not throw an error, and its return value becomes the</br>
+return value of `call-next-method'.</br>
+</br>
+Defined in `eieio.el'</br>
+</br>

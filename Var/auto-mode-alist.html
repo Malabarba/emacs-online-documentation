@@ -1,203 +1,208 @@
-<strong>auto-mode-alist</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist of filename patterns vs corresponding major mode functions.<br/>
-Each element looks like (REGEXP . FUNCTION) or (REGEXP FUNCTION NON-NIL).<br/>
-(NON-NIL stands for anything that is not nil; the value does not matter.)<br/>
-Visiting a file whose name matches REGEXP specifies FUNCTION as the<br/>
-mode function to use.  FUNCTION will be called, unless it is nil.<br/>
-<br/>
-If the element has the form (REGEXP FUNCTION NON-NIL), then after<br/>
-calling FUNCTION (if it's not nil), we delete the suffix that matched<br/>
-REGEXP and search the list again for another match.<br/>
-<br/>
-The extensions whose FUNCTION is `archive-mode' should also<br/>
-appear in `auto-coding-alist' with `no-conversion' coding system.<br/>
-<br/>
-See also `interpreter-mode-alist', which detects executable script modes<br/>
-based on the interpreters they specify to run,<br/>
-and `magic-mode-alist', which determines modes based on file contents.<br/>
-<br/>
-Value: (("\\.adb\\.dg\\'" . ada-mode)<br/>
- ("\\.ads\\.dg\\'" . ada-mode)<br/>
- ("\\.adb\\'" . ada-mode)<br/>
- ("\\.ads\\'" . ada-mode)<br/>
- ("\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'" nil epa-file)<br/>
- ("\\.\\(?:3fr\\|a\\(?:r[tw]\\|vs\\)\\|bmp[23]?\\|c\\(?:als?\\|myka?\\|r[2w]\\|u[rt]\\)\\|d\\(?:c[mrx]\\|ds\\|ng\\|px\\)\\|f\\(?:ax\\|its\\)\\|gif\\(?:87\\)?\\|hrz\\|ic\\(?:on\\|[bo]\\)\\|j\\(?:2c\\|ng\\|p\\(?:eg\\|[2cgx]\\)\\)\\|k\\(?:25\\|dc\\)\\|m\\(?:iff\\|ng\\|rw\\|s\\(?:l\\|vg\\)\\|tv\\)\\|nef\\|o\\(?:rf\\|tb\\)\\|p\\(?:bm\\|c\\(?:ds\\|[dltx]\\)\\|db\\|ef\\|gm\\|i\\(?:ct\\|x\\)\\|jpeg\\|n\\(?:g\\(?:24\\|32\\|8\\)\\|[gm]\\)\\|pm\\|sd\\|tif\\|wp\\)\\|r\\(?:a[fs]\\|gb[ao]?\\|l[ae]\\)\\|s\\(?:c[rt]\\|fw\\|gi\\|r[2f]\\|un\\|vgz?\\)\\|t\\(?:ga\\|i\\(?:ff\\(?:64\\)?\\|le\\|m\\)\\|tf\\)\\|uyvy\\|v\\(?:da\\|i\\(?:car\\|d\\|ff\\)\\|st\\)\\|w\\(?:bmp\\|pg\\)\\|x\\(?:3f\\|bm\\|cf\\|pm\\|wd\\|[cv]\\)\\|y\\(?:cbcra?\\|uv\\)\\)\\'" . image-mode)<br/>
- ("\\.elc\\'" . emacs-lisp-byte-code-mode)<br/>
- ("\\.dz\\'" nil jka-compr)<br/>
- ("\\.xz\\'" nil jka-compr)<br/>
- ("\\.lzma\\'" nil jka-compr)<br/>
- ("\\.lz\\'" nil jka-compr)<br/>
- ("\\.g?z\\'" nil jka-compr)<br/>
- ("\\.bz2\\'" nil jka-compr)<br/>
- ("\\.Z\\'" nil jka-compr)<br/>
- ("\\.vr[hi]?\\'" . vera-mode)<br/>
- ("\\.rb\\'" . ruby-mode)<br/>
- ("\\.re?st\\'" . rst-mode)<br/>
- ("\\.py\\'" . python-mode)<br/>
- ("\\.awk\\'" . awk-mode)<br/>
- ("\\.\\(u?lpc\\|pike\\|pmod\\(\\.in\\)?\\)\\'" . pike-mode)<br/>
- ("\\.idl\\'" . idl-mode)<br/>
- ("\\.java\\'" . java-mode)<br/>
- ("\\.m\\'" . objc-mode)<br/>
- ("\\.ii\\'" . c++-mode)<br/>
- ("\\.i\\'" . c-mode)<br/>
- ("\\.lex\\'" . c-mode)<br/>
- ("\\.y\\(acc\\)?\\'" . c-mode)<br/>
- ("\\.[ch]\\'" . c-mode)<br/>
- ("\\.\\(CC?\\|HH?\\)\\'" . c++-mode)<br/>
- ("\\.[ch]\\(pp\\|xx\\|\\+\\+\\)\\'" . c++-mode)<br/>
- ("\\.\\(cc\\|hh\\)\\'" . c++-mode)<br/>
- ("\\.[sx]?html?\\(\\.[a-zA-Z_]+\\)?\\'" . html-mode)<br/>
- ("\\.svgz?\\'" . image-mode)<br/>
- ("\\.svgz?\\'" . xml-mode)<br/>
- ("\\.x[bp]m\\'" . image-mode)<br/>
- ("\\.x[bp]m\\'" . c-mode)<br/>
- ("\\.p[bpgn]m\\'" . image-mode)<br/>
- ("\\.tiff?\\'" . image-mode)<br/>
- ("\\.gif\\'" . image-mode)<br/>
- ("\\.png\\'" . image-mode)<br/>
- ("\\.jpe?g\\'" . image-mode)<br/>
- ("\\.te?xt\\'" . text-mode)<br/>
- ("\\.[tT]e[xX]\\'" . tex-mode)<br/>
- ("\\.ins\\'" . tex-mode)<br/>
- ("\\.ltx\\'" . latex-mode)<br/>
- ("\\.dtx\\'" . doctex-mode)<br/>
- ("\\.org\\'" . org-mode)<br/>
- ("\\.el\\'" . emacs-lisp-mode)<br/>
- ("Project\\.ede\\'" . emacs-lisp-mode)<br/>
- ("\\.\\(scm\\|stk\\|ss\\|sch\\)\\'" . scheme-mode)<br/>
- ("\\.l\\'" . lisp-mode)<br/>
- ("\\.li?sp\\'" . lisp-mode)<br/>
- ("\\.[fF]\\'" . fortran-mode)<br/>
- ("\\.for\\'" . fortran-mode)<br/>
- ("\\.p\\'" . pascal-mode)<br/>
- ("\\.pas\\'" . pascal-mode)<br/>
- ("\\.\\(dpr\\|DPR\\)\\'" . delphi-mode)<br/>
- ("\\.ad[abs]\\'" . ada-mode)<br/>
- ("\\.ad[bs].dg\\'" . ada-mode)<br/>
- ("\\.\\([pP]\\([Llm]\\|erl\\|od\\)\\|al\\)\\'" . perl-mode)<br/>
- ("Imakefile\\'" . makefile-imake-mode)<br/>
- ("Makeppfile\\(?:\\.mk\\)?\\'" . makefile-makepp-mode)<br/>
- ("\\.makepp\\'" . makefile-makepp-mode)<br/>
- ("\\.mk\\'" . makefile-gmake-mode)<br/>
- ("\\.make\\'" . makefile-gmake-mode)<br/>
- ("[Mm]akefile\\'" . makefile-gmake-mode)<br/>
- ("\\.am\\'" . makefile-automake-mode)<br/>
- ("\\.texinfo\\'" . texinfo-mode)<br/>
- ("\\.te?xi\\'" . texinfo-mode)<br/>
- ("\\.[sS]\\'" . asm-mode)<br/>
- ("\\.asm\\'" . asm-mode)<br/>
- ("\\.css\\'" . css-mode)<br/>
- ("\\.mixal\\'" . mixal-mode)<br/>
- ("\\.gcov\\'" . compilation-mode)<br/>
- ("/\\.[a-z0-9-]*gdbinit" . gdb-script-mode)<br/>
- ("[cC]hange\\.?[lL]og?\\'" . change-log-mode)<br/>
- ("[cC]hange[lL]og[-.][0-9]+\\'" . change-log-mode)<br/>
- ("\\$CHANGE_LOG\\$\\.TXT" . change-log-mode)<br/>
- ("\\.scm\\.[0-9]*\\'" . scheme-mode)<br/>
- ("\\.[ck]?sh\\'\\|\\.shar\\'\\|/\\.z?profile\\'" . sh-mode)<br/>
- ("\\.bash\\'" . sh-mode)<br/>
- ("\\(/\\|\\`\\)\\.\\(bash_profile\\|z?login\\|bash_login\\|z?logout\\)\\'" . sh-mode)<br/>
- ("\\(/\\|\\`\\)\\.\\(bash_logout\\|shrc\\|[kz]shrc\\|bashrc\\|t?cshrc\\|esrc\\)\\'" . sh-mode)<br/>
- ("\\(/\\|\\`\\)\\.\\([kz]shenv\\|xinitrc\\|startxrc\\|xsession\\)\\'" . sh-mode)<br/>
- ("\\.m?spec\\'" . sh-mode)<br/>
- ("\\.m[mes]\\'" . nroff-mode)<br/>
- ("\\.man\\'" . nroff-mode)<br/>
- ("\\.sty\\'" . latex-mode)<br/>
- ("\\.cl[so]\\'" . latex-mode)<br/>
- ("\\.bbl\\'" . latex-mode)<br/>
- ("\\.bib\\'" . bibtex-mode)<br/>
- ("\\.bst\\'" . bibtex-style-mode)<br/>
- ("\\.sql\\'" . sql-mode)<br/>
- ("\\.m[4c]\\'" . m4-mode)<br/>
- ("\\.mf\\'" . metafont-mode)<br/>
- ("\\.mp\\'" . metapost-mode)<br/>
- ("\\.vhdl?\\'" . vhdl-mode)<br/>
- ("\\.article\\'" . text-mode)<br/>
- ("\\.letter\\'" . text-mode)<br/>
- ("\\.i?tcl\\'" . tcl-mode)<br/>
- ("\\.exp\\'" . tcl-mode)<br/>
- ("\\.itk\\'" . tcl-mode)<br/>
- ("\\.icn\\'" . icon-mode)<br/>
- ("\\.sim\\'" . simula-mode)<br/>
- ("\\.mss\\'" . scribe-mode)<br/>
- ("\\.f9[05]\\'" . f90-mode)<br/>
- ("\\.f0[38]\\'" . f90-mode)<br/>
- ("\\.indent\\.pro\\'" . fundamental-mode)<br/>
- ("\\.\\(pro\\|PRO\\)\\'" . idlwave-mode)<br/>
- ("\\.srt\\'" . srecode-template-mode)<br/>
- ("\\.prolog\\'" . prolog-mode)<br/>
- ("\\.tar\\'" . tar-mode)<br/>
- ("\\.\\(arc\\|zip\\|lzh\\|lha\\|zoo\\|[jew]ar\\|xpi\\|rar\\|7z\\|ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|7Z\\)\\'" . archive-mode)<br/>
- ("\\.\\(sx[dmicw]\\|od[fgpst]\\|oxt\\)\\'" . archive-mode)<br/>
- ("\\.\\(deb\\|[oi]pk\\)\\'" . archive-mode)<br/>
- ("\\`/tmp/Re" . text-mode)<br/>
- ("/Message[0-9]*\\'" . text-mode)<br/>
- ("\\`/tmp/fol/" . text-mode)<br/>
- ("\\.oak\\'" . scheme-mode)<br/>
- ("\\.sgml?\\'" . sgml-mode)<br/>
- ("\\.x[ms]l\\'" . xml-mode)<br/>
- ("\\.dbk\\'" . xml-mode)<br/>
- ("\\.dtd\\'" . sgml-mode)<br/>
- ("\\.ds\\(ss\\)?l\\'" . dsssl-mode)<br/>
- ("\\.js\\'" . javascript-mode)<br/>
- ("\\.json\\'" . javascript-mode)<br/>
- ("\\.[ds]?vh?\\'" . verilog-mode)<br/>
- ("\\.by\\'" . bovine-grammar-mode)<br/>
- ("\\.wy\\'" . wisent-grammar-mode)<br/>
- ("[]>:/\\]\\..*\\(emacs\\|gnus\\|viper\\)\\'" . emacs-lisp-mode)<br/>
- ("\\`\\..*emacs\\'" . emacs-lisp-mode)<br/>
- ("[:/]_emacs\\'" . emacs-lisp-mode)<br/>
- ("/crontab\\.X*[0-9]+\\'" . shell-script-mode)<br/>
- ("\\.ml\\'" . lisp-mode)<br/>
- ("\\.ld[si]?\\'" . ld-script-mode)<br/>
- ("ld\\.?script\\'" . ld-script-mode)<br/>
- ("\\.xs\\'" . c-mode)<br/>
- ("\\.x[abdsru]?[cnw]?\\'" . ld-script-mode)<br/>
- ("\\.zone\\'" . dns-mode)<br/>
- ("\\.soa\\'" . dns-mode)<br/>
- ("\\.asd\\'" . lisp-mode)<br/>
- ("\\.\\(asn\\|mib\\|smi\\)\\'" . snmp-mode)<br/>
- ("\\.\\(as\\|mi\\|sm\\)2\\'" . snmpv2-mode)<br/>
- ("\\.\\(diffs?\\|patch\\|rej\\)\\'" . diff-mode)<br/>
- ("\\.\\(dif\\|pat\\)\\'" . diff-mode)<br/>
- ("\\.[eE]?[pP][sS]\\'" . ps-mode)<br/>
- ("\\.\\(?:PDF\\|DVI\\|OD[FGPST]\\|DOCX?\\|XLSX?\\|PPTX?\\|pdf\\|dvi\\|od[fgpst]\\|docx?\\|xlsx?\\|pptx?\\)\\'" . doc-view-mode-maybe)<br/>
- ("configure\\.\\(ac\\|in\\)\\'" . autoconf-mode)<br/>
- ("\\.s\\(v\\|iv\\|ieve\\)\\'" . sieve-mode)<br/>
- ("BROWSE\\'" . ebrowse-tree-mode)<br/>
- ("\\.ebrowse\\'" . ebrowse-tree-mode)<br/>
- ("#\\*mail\\*" . mail-mode)<br/>
- ("\\.g\\'" . antlr-mode)<br/>
- ("\\.mod\\'" . m2-mode)<br/>
- ("\\.ses\\'" . ses-mode)<br/>
- ("\\.docbook\\'" . sgml-mode)<br/>
- ("\\.com\\'" . dcl-mode)<br/>
- ("/config\\.\\(?:bat\\|log\\)\\'" . fundamental-mode)<br/>
- ("\\.\\(?:[iI][nN][iI]\\|[lL][sS][tT]\\|[rR][eE][gG]\\|[sS][yY][sS]\\)\\'" . conf-mode)<br/>
- ("\\.\\(?:desktop\\|la\\)\\'" . conf-unix-mode)<br/>
- ("\\.ppd\\'" . conf-ppd-mode)<br/>
- ("java.+\\.conf\\'" . conf-javaprop-mode)<br/>
- ("\\.properties\\(?:\\.[a-zA-Z0-9._-]+\\)?\\'" . conf-javaprop-mode)<br/>
- ("\\`/etc/\\(?:DIR_COLORS\\|ethers\\|.?fstab\\|.*hosts\\|lesskey\\|login\\.?de\\(?:fs\\|vperm\\)\\|magic\\|mtab\\|pam\\.d/.*\\|permissions\\(?:\\.d/.+\\)?\\|protocols\\|rpc\\|services\\)\\'" . conf-space-mode)<br/>
- ("\\`/etc/\\(?:acpid?/.+\\|aliases\\(?:\\.d/.+\\)?\\|default/.+\\|group-?\\|hosts\\..+\\|inittab\\|ksysguarddrc\\|opera6rc\\|passwd-?\\|shadow-?\\|sysconfig/.+\\)\\'" . conf-mode)<br/>
- ("[cC]hange[lL]og[-.][-0-9a-z]+\\'" . change-log-mode)<br/>
- ("/\\.?\\(?:gnokiirc\\|kde.*rc\\|mime\\.types\\|wgetrc\\)\\'" . conf-mode)<br/>
- ("/\\.\\(?:enigma\\|gltron\\|gtk\\|hxplayer\\|net\\|neverball\\|qt/.+\\|realplayer\\|scummvm\\|sversion\\|sylpheed/.+\\|xmp\\)rc\\'" . conf-mode)<br/>
- ("/\\.\\(?:gdbtkinit\\|grip\\|orbital/.+txt\\|rhosts\\|tuxracer/options\\)\\'" . conf-mode)<br/>
- ("/\\.?X\\(?:default\\|resource\\|re\\)s\\>" . conf-xdefaults-mode)<br/>
- ("/X11.+app-defaults/" . conf-xdefaults-mode)<br/>
- ("/X11.+locale/.+/Compose\\'" . conf-colon-mode)<br/>
- ("/X11.+locale/compose\\.dir\\'" . conf-javaprop-mode)<br/>
- ("\\.~?[0-9]+\\.[0-9][-.0-9]*~?\\'" nil t)<br/>
- ("\\.\\(?:orig\\|in\\|[bB][aA][kK]\\)\\'" nil t)<br/>
- ("[/.]c\\(?:on\\)?f\\(?:i?g\\)?\\(?:\\.[a-zA-Z0-9._-]+\\)?\\'" . conf-mode-maybe)<br/>
- ("\\.[1-9]\\'" . nroff-mode)<br/>
- ("\\.tgz\\'" . tar-mode)<br/>
- ("\\.tbz2?\\'" . tar-mode))<br/>
-<br/>
+<strong>auto-mode-alist</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of filename patterns vs corresponding major mode functions.</br>
+Each element looks like (REGEXP . FUNCTION) or (REGEXP FUNCTION NON-NIL).</br>
+(NON-NIL stands for anything that is not nil; the value does not matter.)</br>
+Visiting a file whose name matches REGEXP specifies FUNCTION as the</br>
+mode function to use.  FUNCTION will be called, unless it is nil.</br>
+</br>
+If the element has the form (REGEXP FUNCTION NON-NIL), then after</br>
+calling FUNCTION (if it's not nil), we delete the suffix that matched</br>
+REGEXP and search the list again for another match.</br>
+</br>
+The extensions whose FUNCTION is `archive-mode' should also</br>
+appear in `auto-coding-alist' with `no-conversion' coding system.</br>
+</br>
+See also `interpreter-mode-alist', which detects executable script modes</br>
+based on the interpreters they specify to run,</br>
+and `magic-mode-alist', which determines modes based on file contents.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\.adb\\.dg\\'" . ada-mode)
+ ("\\.ads\\.dg\\'" . ada-mode)
+ ("\\.adb\\'" . ada-mode)
+ ("\\.ads\\'" . ada-mode)
+ ("\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'" nil epa-file)
+ ("\\.\\(?:3fr\\|a\\(?:r[tw]\\|vs\\)\\|bmp[23]?\\|c\\(?:als?\\|myka?\\|r[2w]\\|u[rt]\\)\\|d\\(?:c[mrx]\\|ds\\|ng\\|px\\)\\|exr\\|f\\(?:ax\\|its\\)\\|gif\\(?:87\\)?\\|hrz\\|ic\\(?:on\\|[bo]\\)\\|j\\(?:\\(?:pe\\|[np]\\)g\\)\\|k\\(?:25\\|dc\\)\\|m\\(?:iff\\|ng\\|rw\\|s\\(?:l\\|vg\\)\\|tv\\)\\|nef\\|o\\(?:rf\\|tb\\)\\|p\\(?:bm\\|c\\(?:ds\\|[dltx]\\)\\|db\\|ef\\|gm\\|i\\(?:ct\\|x\\)\\|jpeg\\|n\\(?:g\\(?:24\\|32\\|8\\)\\|[gm]\\)\\|pm\\|sd\\|tif\\|wp\\)\\|r\\(?:a[fs]\\|gb[ao]?\\|l[ae]\\)\\|s\\(?:c[rt]\\|fw\\|gi\\|r[2f]\\|un\\|vgz?\\)\\|t\\(?:ga\\|i\\(?:ff\\(?:64\\)?\\|le\\|m\\)\\|tf\\)\\|uyvy\\|v\\(?:da\\|i\\(?:car\\|d\\|ff\\)\\|st\\)\\|w\\(?:bmp\\|pg\\)\\|x\\(?:3f\\|bm\\|cf\\|pm\\|wd\\|[cv]\\)\\|y\\(?:cbcra?\\|uv\\)\\)\\'" . image-mode)
+ ("\\.elc\\'" . emacs-lisp-byte-code-mode)
+ ("\\.dz\\'" nil jka-compr)
+ ("\\.xz\\'" nil jka-compr)
+ ("\\.lzma\\'" nil jka-compr)
+ ("\\.lz\\'" nil jka-compr)
+ ("\\.g?z\\'" nil jka-compr)
+ ("\\.bz2\\'" nil jka-compr)
+ ("\\.Z\\'" nil jka-compr)
+ ("\\.vr[hi]?\\'" . vera-mode)
+ ("\\.tod[tyr]\\'" . todo-filtered-items-mode)
+ ("\\.toda\\'" . todo-archive-mode)
+ ("\\.todo\\'" . todo-mode)
+ ("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . ruby-mode)
+ ("\\.re?st\\'" . rst-mode)
+ ("\\.py\\'" . python-mode)
+ ("\\.awk\\'" . awk-mode)
+ ("\\.\\(u?lpc\\|pike\\|pmod\\(\\.in\\)?\\)\\'" . pike-mode)
+ ("\\.idl\\'" . idl-mode)
+ ("\\.java\\'" . java-mode)
+ ("\\.m\\'" . objc-mode)
+ ("\\.ii\\'" . c++-mode)
+ ("\\.i\\'" . c-mode)
+ ("\\.lex\\'" . c-mode)
+ ("\\.y\\(acc\\)?\\'" . c-mode)
+ ("\\.[ch]\\'" . c-mode)
+ ("\\.\\(CC?\\|HH?\\)\\'" . c++-mode)
+ ("\\.[ch]\\(pp\\|xx\\|\\+\\+\\)\\'" . c++-mode)
+ ("\\.\\(cc\\|hh\\)\\'" . c++-mode)
+ ("\\.\\(bat\\|cmd\\)\\'" . bat-mode)
+ ("\\.[sx]?html?\\(\\.[a-zA-Z_]+\\)?\\'" . html-mode)
+ ("\\.svgz?\\'" . image-mode)
+ ("\\.svgz?\\'" . xml-mode)
+ ("\\.x[bp]m\\'" . image-mode)
+ ("\\.x[bp]m\\'" . c-mode)
+ ("\\.p[bpgn]m\\'" . image-mode)
+ ("\\.tiff?\\'" . image-mode)
+ ("\\.gif\\'" . image-mode)
+ ("\\.png\\'" . image-mode)
+ ("\\.jpe?g\\'" . image-mode)
+ ("\\.te?xt\\'" . text-mode)
+ ("\\.[tT]e[xX]\\'" . tex-mode)
+ ("\\.ins\\'" . tex-mode)
+ ("\\.ltx\\'" . latex-mode)
+ ("\\.dtx\\'" . doctex-mode)
+ ("\\.org\\'" . org-mode)
+ ("\\.el\\'" . emacs-lisp-mode)
+ ("Project\\.ede\\'" . emacs-lisp-mode)
+ ("\\.\\(scm\\|stk\\|ss\\|sch\\)\\'" . scheme-mode)
+ ("\\.l\\'" . lisp-mode)
+ ("\\.li?sp\\'" . lisp-mode)
+ ("\\.[fF]\\'" . fortran-mode)
+ ("\\.for\\'" . fortran-mode)
+ ("\\.p\\'" . pascal-mode)
+ ("\\.pas\\'" . pascal-mode)
+ ("\\.\\(dpr\\|DPR\\)\\'" . delphi-mode)
+ ("\\.ad[abs]\\'" . ada-mode)
+ ("\\.ad[bs].dg\\'" . ada-mode)
+ ("\\.\\([pP]\\([Llm]\\|erl\\|od\\)\\|al\\)\\'" . perl-mode)
+ ("Imakefile\\'" . makefile-imake-mode)
+ ("Makeppfile\\(?:\\.mk\\)?\\'" . makefile-makepp-mode)
+ ("\\.makepp\\'" . makefile-makepp-mode)
+ ("\\.mk\\'" . makefile-gmake-mode)
+ ("\\.make\\'" . makefile-gmake-mode)
+ ("[Mm]akefile\\'" . makefile-gmake-mode)
+ ("\\.am\\'" . makefile-automake-mode)
+ ("\\.texinfo\\'" . texinfo-mode)
+ ("\\.te?xi\\'" . texinfo-mode)
+ ("\\.[sS]\\'" . asm-mode)
+ ("\\.asm\\'" . asm-mode)
+ ("\\.css\\'" . css-mode)
+ ("\\.mixal\\'" . mixal-mode)
+ ("\\.gcov\\'" . compilation-mode)
+ ("/\\.[a-z0-9-]*gdbinit" . gdb-script-mode)
+ ("-gdb\\.gdb" . gdb-script-mode)
+ ("[cC]hange\\.?[lL]og?\\'" . change-log-mode)
+ ("[cC]hange[lL]og[-.][0-9]+\\'" . change-log-mode)
+ ("\\$CHANGE_LOG\\$\\.TXT" . change-log-mode)
+ ("\\.scm\\.[0-9]*\\'" . scheme-mode)
+ ("\\.[ck]?sh\\'\\|\\.shar\\'\\|/\\.z?profile\\'" . sh-mode)
+ ("\\.bash\\'" . sh-mode)
+ ("\\(/\\|\\`\\)\\.\\(bash_\\(profile\\|history\\|log\\(in\\|out\\)\\)\\|z?log\\(in\\|out\\)\\)\\'" . sh-mode)
+ ("\\(/\\|\\`\\)\\.\\(shrc\\|[kz]shrc\\|bashrc\\|t?cshrc\\|esrc\\)\\'" . sh-mode)
+ ("\\(/\\|\\`\\)\\.\\([kz]shenv\\|xinitrc\\|startxrc\\|xsession\\)\\'" . sh-mode)
+ ("\\.m?spec\\'" . sh-mode)
+ ("\\.m[mes]\\'" . nroff-mode)
+ ("\\.man\\'" . nroff-mode)
+ ("\\.sty\\'" . latex-mode)
+ ("\\.cl[so]\\'" . latex-mode)
+ ("\\.bbl\\'" . latex-mode)
+ ("\\.bib\\'" . bibtex-mode)
+ ("\\.bst\\'" . bibtex-style-mode)
+ ("\\.sql\\'" . sql-mode)
+ ("\\.m[4c]\\'" . m4-mode)
+ ("\\.mf\\'" . metafont-mode)
+ ("\\.mp\\'" . metapost-mode)
+ ("\\.vhdl?\\'" . vhdl-mode)
+ ("\\.article\\'" . text-mode)
+ ("\\.letter\\'" . text-mode)
+ ("\\.i?tcl\\'" . tcl-mode)
+ ("\\.exp\\'" . tcl-mode)
+ ("\\.itk\\'" . tcl-mode)
+ ("\\.icn\\'" . icon-mode)
+ ("\\.sim\\'" . simula-mode)
+ ("\\.mss\\'" . scribe-mode)
+ ("\\.f9[05]\\'" . f90-mode)
+ ("\\.f0[38]\\'" . f90-mode)
+ ("\\.indent\\.pro\\'" . fundamental-mode)
+ ("\\.\\(pro\\|PRO\\)\\'" . idlwave-mode)
+ ("\\.srt\\'" . srecode-template-mode)
+ ("\\.prolog\\'" . prolog-mode)
+ ("\\.tar\\'" . tar-mode)
+ ("\\.\\(arc\\|zip\\|lzh\\|lha\\|zoo\\|[jew]ar\\|xpi\\|rar\\|7z\\|ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|7Z\\)\\'" . archive-mode)
+ ("\\.oxt\\'" . archive-mode)
+ ("\\.\\(deb\\|[oi]pk\\)\\'" . archive-mode)
+ ("\\`/tmp/Re" . text-mode)
+ ("/Message[0-9]*\\'" . text-mode)
+ ("\\`/tmp/fol/" . text-mode)
+ ("\\.oak\\'" . scheme-mode)
+ ("\\.sgml?\\'" . sgml-mode)
+ ("\\.x[ms]l\\'" . xml-mode)
+ ("\\.dbk\\'" . xml-mode)
+ ("\\.dtd\\'" . sgml-mode)
+ ("\\.ds\\(ss\\)?l\\'" . dsssl-mode)
+ ("\\.js\\'" . javascript-mode)
+ ("\\.json\\'" . javascript-mode)
+ ("\\.[ds]?vh?\\'" . verilog-mode)
+ ("\\.by\\'" . bovine-grammar-mode)
+ ("\\.wy\\'" . wisent-grammar-mode)
+ ("[]>:/\\]\\..*\\(emacs\\|gnus\\|viper\\)\\'" . emacs-lisp-mode)
+ ("\\`\\..*emacs\\'" . emacs-lisp-mode)
+ ("[:/]_emacs\\'" . emacs-lisp-mode)
+ ("/crontab\\.X*[0-9]+\\'" . shell-script-mode)
+ ("\\.ml\\'" . lisp-mode)
+ ("\\.ld[si]?\\'" . ld-script-mode)
+ ("ld\\.?script\\'" . ld-script-mode)
+ ("\\.xs\\'" . c-mode)
+ ("\\.x[abdsru]?[cnw]?\\'" . ld-script-mode)
+ ("\\.zone\\'" . dns-mode)
+ ("\\.soa\\'" . dns-mode)
+ ("\\.asd\\'" . lisp-mode)
+ ("\\.\\(asn\\|mib\\|smi\\)\\'" . snmp-mode)
+ ("\\.\\(as\\|mi\\|sm\\)2\\'" . snmpv2-mode)
+ ("\\.\\(diffs?\\|patch\\|rej\\)\\'" . diff-mode)
+ ("\\.\\(dif\\|pat\\)\\'" . diff-mode)
+ ("\\.[eE]?[pP][sS]\\'" . ps-mode)
+ ("\\.\\(?:PDF\\|DVI\\|OD[FGPST]\\|DOCX?\\|XLSX?\\|PPTX?\\|pdf\\|djvu\\|dvi\\|od[fgpst]\\|docx?\\|xlsx?\\|pptx?\\)\\'" . doc-view-mode-maybe)
+ ("configure\\.\\(ac\\|in\\)\\'" . autoconf-mode)
+ ("\\.s\\(v\\|iv\\|ieve\\)\\'" . sieve-mode)
+ ("BROWSE\\'" . ebrowse-tree-mode)
+ ("\\.ebrowse\\'" . ebrowse-tree-mode)
+ ("#\\*mail\\*" . mail-mode)
+ ("\\.g\\'" . antlr-mode)
+ ("\\.mod\\'" . m2-mode)
+ ("\\.ses\\'" . ses-mode)
+ ("\\.docbook\\'" . sgml-mode)
+ ("\\.com\\'" . dcl-mode)
+ ("/config\\.\\(?:bat\\|log\\)\\'" . fundamental-mode)
+ ("\\.\\(?:[iI][nN][iI]\\|[lL][sS][tT]\\|[rR][eE][gG]\\|[sS][yY][sS]\\)\\'" . conf-mode)
+ ("\\.\\(?:desktop\\|la\\)\\'" . conf-unix-mode)
+ ("\\.ppd\\'" . conf-ppd-mode)
+ ("java.+\\.conf\\'" . conf-javaprop-mode)
+ ("\\.properties\\(?:\\.[a-zA-Z0-9._-]+\\)?\\'" . conf-javaprop-mode)
+ ("\\`/etc/\\(?:DIR_COLORS\\|ethers\\|.?fstab\\|.*hosts\\|lesskey\\|login\\.?de\\(?:fs\\|vperm\\)\\|magic\\|mtab\\|pam\\.d/.*\\|permissions\\(?:\\.d/.+\\)?\\|protocols\\|rpc\\|services\\)\\'" . conf-space-mode)
+ ("\\`/etc/\\(?:acpid?/.+\\|aliases\\(?:\\.d/.+\\)?\\|default/.+\\|group-?\\|hosts\\..+\\|inittab\\|ksysguarddrc\\|opera6rc\\|passwd-?\\|shadow-?\\|sysconfig/.+\\)\\'" . conf-mode)
+ ("[cC]hange[lL]og[-.][-0-9a-z]+\\'" . change-log-mode)
+ ("/\\.?\\(?:gnokiirc\\|kde.*rc\\|mime\\.types\\|wgetrc\\)\\'" . conf-mode)
+ ("/\\.\\(?:enigma\\|gltron\\|gtk\\|hxplayer\\|net\\|neverball\\|qt/.+\\|realplayer\\|scummvm\\|sversion\\|sylpheed/.+\\|xmp\\)rc\\'" . conf-mode)
+ ("/\\.\\(?:gdbtkinit\\|grip\\|orbital/.+txt\\|rhosts\\|tuxracer/options\\)\\'" . conf-mode)
+ ("/\\.?X\\(?:default\\|resource\\|re\\)s\\>" . conf-xdefaults-mode)
+ ("/X11.+app-defaults/" . conf-xdefaults-mode)
+ ("/X11.+locale/.+/Compose\\'" . conf-colon-mode)
+ ("/X11.+locale/compose\\.dir\\'" . conf-javaprop-mode)
+ ("\\.~?[0-9]+\\.[0-9][-.0-9]*~?\\'" nil t)
+ ("\\.\\(?:orig\\|in\\|[bB][aA][kK]\\)\\'" nil t)
+ ("[/.]c\\(?:on\\)?f\\(?:i?g\\)?\\(?:\\.[a-zA-Z0-9._-]+\\)?\\'" . conf-mode-maybe)
+ ("\\.[1-9]\\'" . nroff-mode)
+ ("\\.tgz\\'" . tar-mode)
+ ("\\.tbz2?\\'" . tar-mode)
+ ("\\.txz\\'" . tar-mode))
+</pre></br>

@@ -1,25 +1,23 @@
-<strong>tramp-file-name-structure</strong> is a variable defined in `<code>tramp.el</code>'.<br/>
-Its value is<br/>
-("^/\\(\\(?:\\(?:\\([a-zA-Z_0-9-]+\\):\\)?\\(?:\\([^/|: 	]+\\)@\\)?\\(\\(?:[a-zA-Z0-9_.-]+\\|\\[\\(?:\\(?:[a-zA-Z0-9]+\\)?:\\)+[a-zA-Z0-9.]+]\\)\\(?:#[0-9]+\\)?\\)?|\\)+\\)?\\(?:\\([a-zA-Z_0-9-]+\\):\\)?\\(?:\\([^/|: 	]+\\)@\\)?\\(\\(?:[a-zA-Z0-9_.-]+\\|\\[\\(?:\\(?:[a-zA-Z0-9]+\\)?:\\)+[a-zA-Z0-9.]+]\\)\\(?:#[0-9]+\\)?\\)?:\\(.*$\\)" 5 6 7 8 1)<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of six elements (REGEXP METHOD USER HOST FILE HOP), detailing the Tramp file name structure.<br/>
-<br/>
-The first element REGEXP is a regular expression matching a Tramp file<br/>
-name.  The regex should contain parentheses around the method name,<br/>
-the user name, the host name, and the file name parts.<br/>
-<br/>
-The second element METHOD is a number, saying which pair of<br/>
-parentheses matches the method name.  The third element USER is<br/>
-similar, but for the user name.  The fourth element HOST is similar,<br/>
-but for the host name.  The fifth element FILE is for the file name.<br/>
-The last element HOP is the ad-hoc hop definition, which could be a<br/>
-cascade of several hops.<br/>
-<br/>
-These numbers are passed directly to `match-string', which see.  That<br/>
-means the opening parentheses are counted to identify the pair.<br/>
-<br/>
+<strong>tramp-file-name-structure</strong> is a variable defined in `<code>tramp.el</code>'.</br>
+Its value is <pre></br>
+("^/\\(\\(?:\\(?:\\([a-zA-Z_0-9-]+\\):\\)?\\(?:\\([^/|: 	]+\\)@\\)?\\(\\(?:[a-zA-Z0-9_.-]+\\|\\[\\(?:\\(?:\\(?:[a-zA-Z0-9]+\\)?:\\)+[a-zA-Z0-9.]+\\)?]\\)\\(?:#[0-9]+\\)?\\)?|\\)+\\)?\\(?:\\([a-zA-Z_0-9-]+\\):\\)?\\(?:\\([^/|: 	]+\\)@\\)?\\(\\(?:[a-zA-Z0-9_.-]+\\|\\[\\(?:\\(?:\\(?:[a-zA-Z0-9]+\\)?:\\)+[a-zA-Z0-9.]+\\)?]\\)\\(?:#[0-9]+\\)?\\)?:\\(.*$\\)" 5 6 7 8 1)
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of six elements (REGEXP METHOD USER HOST FILE HOP), detailing the Tramp file name structure.</br>
+</br>
+The first element REGEXP is a regular expression matching a Tramp file</br>
+name.  The regex should contain parentheses around the method name,</br>
+the user name, the host name, and the file name parts.</br>
+</br>
+The second element METHOD is a number, saying which pair of</br>
+parentheses matches the method name.  The third element USER is</br>
+similar, but for the user name.  The fourth element HOST is similar,</br>
+but for the host name.  The fifth element FILE is for the file name.</br>
+The last element HOP is the ad-hoc hop definition, which could be a</br>
+cascade of several hops.</br>
+</br>
+These numbers are passed directly to `match-string', which see.  That</br>
+means the opening parentheses are counted to identify the pair.</br>
+</br>
 See also `tramp-file-name-regexp'.

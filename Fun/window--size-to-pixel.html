@@ -1,0 +1,17 @@
+<strong>window--size-to-pixel</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(window--size-to-pixel <u>WINDOW</u> <u>SIZE</u> &optional <u>HORIZONTAL</u> <u>PIXELWISE</u> <u>ROUND-MAYBE</u>)</br>
+</br>
+For <u>WINDOW</u> convert <u>SIZE</u> lines to pixels.</br>
+<u>SIZE</u> is supposed to specify a height of <u>WINDOW</u> in terms of text</br>
+lines.  The return value is the number of pixels specifying that</br>
+height.</br>
+</br>
+<u>WINDOW</u> must be a valid window.  Optional argument <u>HORIZONTAL</u></br>
+non-nil means convert <u>SIZE</u> columns to pixels.</br>
+</br>
+Optional argument <u>PIXELWISE</u> non-nil means <u>SIZE</u> already specifies</br>
+pixels but may have to be adjusted to a multiple of the character</br>
+size of <u>WINDOW</u>'s frame.  Optional argument <u>ROUND-MAYBE</u> non-nil</br>
+means round to the nearest multiple of the character size of</br>
+<u>WINDOW</u>'s frame if the option `window-resize-pixelwise' is nil.

@@ -1,0 +1,20 @@
+<strong>org-element-object-successor-alist</strong> is a variable defined in `<code>org-element.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of translations between object type and successor name.</br>
+Sharing the same successor comes handy when, for example, the</br>
+regexp matching one object can also match the other object.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((subscript . sub/superscript)
+ (superscript . sub/superscript)
+ (bold . text-markup)
+ (code . text-markup)
+ (italic . text-markup)
+ (strike-through . text-markup)
+ (underline . text-markup)
+ (verbatim . text-markup)
+ (entity . latex-or-entity)
+ (latex-fragment . latex-or-entity))
+</pre></br>

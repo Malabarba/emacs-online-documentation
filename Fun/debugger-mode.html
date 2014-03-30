@@ -1,44 +1,50 @@
-<strong>debugger-mode</strong> is a compiled Lisp function in `<code>debug.el</code>'.<br/>
-<br/>
-(debugger-mode)<br/>
-<br/>
-Mode for backtrace buffers, selected in debugger.<br/>
-<br/>
-A line starts with `*' if exiting that frame will call the debugger.<br/>
-Type b or u to set or remove the `*'.<br/>
-<br/>
-When in debugger due to frame being exited,<br/>
-use the r command to override the value<br/>
-being returned from that frame.<br/>
-<br/>
-Use M-x debug-on-entry and M-x cancel-debug-on-entry to control<br/>
-which functions will enter the debugger when called.<br/>
-<br/>
-Complete list of commands:<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-0 .. 9		digit-argument<br/>
-<br/>
-TAB		forward-button<br/>
-RET		debug-help-follow<br/>
-ESC		Prefix Command<br/>
-SPC		next-line<br/>
--		negative-argument<br/>
-R		debugger-record-expression<br/>
-b		debugger-frame<br/>
-c		debugger-continue<br/>
-d		debugger-step-through<br/>
-e		debugger-eval-expression<br/>
-h		describe-mode<br/>
-j		debugger-jump<br/>
-l		debugger-list-functions<br/>
-q		top-level<br/>
-r		debugger-return-value<br/>
-u		debugger-frame-clear<br/>
-<backtab>	backward-button<br/>
-<mouse-2>	push-button<br/>
-<remap>		Prefix Command<br/>
-<br/>
-C-M-i		backward-button<br/>
-<br/>
+<strong>debugger-mode</strong> is an interactive compiled Lisp function in `<code>debug.el</code>'.</br>
+</br>
+</br>
+(debugger-mode)</br>
+</br>
+Mode for backtrace buffers, selected in debugger.</br>
+</br>
+A line starts with `*' if exiting that frame will call the debugger.</br>
+Type b or u to set or remove the `*'.</br>
+</br>
+When in debugger due to frame being exited,</br>
+use the r command to override the value</br>
+being returned from that frame.</br>
+</br>
+Use M-x debug-on-entry and M-x cancel-debug-on-entry to control</br>
+which functions will enter the debugger when called.</br>
+</br>
+Complete list of commands:</br>
+key             binding</br>
+---             -------</br>
+</br>
+0 .. 9		digit-argument</br>
+</br>
+TAB		forward-button</br>
+RET		debug-help-follow</br>
+ESC		Prefix Command</br>
+SPC		next-line</br>
+-		negative-argument</br>
+R		debugger-record-expression</br>
+b		debugger-frame</br>
+c		debugger-continue</br>
+d		debugger-step-through</br>
+e		debugger-eval-expression</br>
+h		describe-mode</br>
+j		debugger-jump</br>
+l		debugger-list-functions</br>
+q		top-level</br>
+r		debugger-return-value</br>
+u		debugger-frame-clear</br>
+v		debugger-toggle-locals</br>
+&lt;backtab>	backward-button</br>
+&lt;mouse-2>	push-button</br>
+&lt;remap>		Prefix Command</br>
+</br>
+C-M-i		backward-button</br>
+</br>
+</br>
+</br>
+This mode runs the hook `debugger-mode-hook', as the final step</br>
+during initialization.

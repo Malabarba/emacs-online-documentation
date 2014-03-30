@@ -1,19 +1,32 @@
-<strong>bib-mode-map</strong> is a variable defined in `<code>bib-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `bib-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (27 keymap<br/>
-     (96 . abbrev-mode))<br/>
- (3 keymap<br/>
-    (0 . mark-bib)<br/>
-    (21 . unread-bib))<br/>
- (13 . return-key-bib)<br/>
- keymap<br/>
- (27 keymap<br/>
-     (9 . ispell-complete-word)))<br/>
-<br/>
+<strong>bib-mode-map</strong> is a variable defined in `<code>bib-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `bib-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (27 keymap
+     (96 . abbrev-mode))
+ (3 keymap
+    (0 . mark-bib)
+    (21 . unread-bib))
+ (13 . return-key-bib)
+ keymap
+ (menu-bar keymap
+	   (text "Text" keymap
+		 (center-line menu-item "Center Line" center-line :help "Center the current line")
+		 (center-paragraph menu-item "Center Paragraph" center-paragraph :help "Center the current paragraph")
+		 (center-region menu-item "Center Region" center-region :help "Center the marked region" :enable
+				(region-active-p))
+		 (sep "--")
+		 (paragraph-indent-minor-mode menu-item "Paragraph Indent" paragraph-indent-minor-mode :button
+					      (:toggle bound-and-true-p paragraph-indent-minor-mode)
+					      :help "Toggle paragraph indent minor mode")
+		 (toggle-text-mode-auto-fill menu-item "Auto Fill" toggle-text-mode-auto-fill :button
+					     (:toggle memq 'turn-on-auto-fill text-mode-hook)
+					     :help "Automatically fill text while typing in text modes (Auto Fill mode)")
+		 "Text"))
+ (27 keymap
+     (9 . ispell-complete-word)))
+</pre></br>

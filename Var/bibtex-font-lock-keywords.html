@@ -1,21 +1,20 @@
-<strong>bibtex-font-lock-keywords</strong> is a variable defined in `<code>bibtex.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Default expressions to highlight in BibTeX mode.<br/>
-<br/>
-Value: (("^[ 	]*\\(@[ 	]*[^\"#%'(),={} 	\n0-9][^\"#%'(),={} 	\n]*\\)[ 	]*[({][ 	\n]*\\([][[:alnum:].:;?!`'/*@+|()<>&_^$-]+\\)?"<br/>
-  (1 font-lock-function-name-face)<br/>
-  (2 font-lock-constant-face nil t))<br/>
- ("^[ 	]*\\(OPT[^\"#%'(),={} 	\n0-9][^\"#%'(),={} 	\n]*\\)[ 	]*=" 1 font-lock-comment-face)<br/>
- ("^[ 	]*\\([^\"#%'(),={} 	\n0-9][^\"#%'(),={} 	\n]*\\)[ 	]*=" 1 font-lock-variable-name-face)<br/>
- (bibtex-font-lock-url)<br/>
- (bibtex-font-lock-crossref)<br/>
- ((lambda<br/>
-    (bound)<br/>
-    (bibtex-font-lock-cite<br/>
-     '("\\\\cite[ 	\n]*{\\([^}]+\\)}" . 1)<br/>
-     bound))))<br/>
-<br/>
+<strong>bibtex-font-lock-keywords</strong> is a variable defined in `<code>bibtex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Default expressions to highlight in BibTeX mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^[ 	]*\\(@[ 	]*[^\"#%'(),={} 	\n0-9][^\"#%'(),={} 	\n]*\\)[ 	]*[({][ 	\n]*\\([][[:alnum:].:;?!`'/*@+|()<>&_^$-]+\\)?"
+  (1 font-lock-function-name-face)
+  (2 font-lock-constant-face nil t))
+ ("^[ 	]*\\(OPT[^\"#%'(),={} 	\n0-9][^\"#%'(),={} 	\n]*\\)[ 	]*=" 1 font-lock-comment-face)
+ ("^[ 	]*\\([^\"#%'(),={} 	\n0-9][^\"#%'(),={} 	\n]*\\)[ 	]*=" 1 font-lock-variable-name-face)
+ (bibtex-font-lock-url)
+ (bibtex-font-lock-crossref)
+ ((lambda
+    (bound)
+    (bibtex-font-lock-cite
+     '("\\\\cite[ 	\n]*{\\([^}]+\\)}" . 1)
+     bound))))
+</pre></br>

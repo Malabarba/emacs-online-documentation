@@ -1,25 +1,22 @@
-<strong>special-display-function</strong> is a variable defined in `<code>window.el</code>'.<br/>
-Its value is special-display-popup-frame<br/>
-<br/>
-  This variable is obsolete since 24.3;<br/>
-  use `display-buffer-alist' instead.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function to call for displaying special buffers.<br/>
-This function is called with two arguments - the buffer and,<br/>
-optionally, a list - and should return a window displaying that<br/>
-buffer.  The default value usually makes a separate frame for the<br/>
-buffer using `special-display-frame-alist' to specify the frame<br/>
-parameters.  See the definition of `special-display-popup-frame'<br/>
-for how to specify such a function.<br/>
-<br/>
-A buffer is special when its name is either listed in<br/>
-`special-display-buffer-names' or matches a regexp in<br/>
-`special-display-regexps'.<br/>
-<br/>
-The specified function should call `display-buffer-record-window'<br/>
-with corresponding arguments to set up the quit-restore parameter<br/>
-of the window used.<br/>
-<br/>
+<strong>special-display-function</strong> is a variable defined in `<code>window.el</code>'.</br>
+Its value is <pre>special-display-popup-frame</pre></br>
+<ul><li>  <strong>This variable is obsolete since 24.3;</br>
+  use `<a href="display-buffer-alist">display-buffer-alist</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to call for displaying special buffers.</br>
+This function is called with two arguments - the buffer and,</br>
+optionally, a list - and should return a window displaying that</br>
+buffer.  The default value usually makes a separate frame for the</br>
+buffer using `special-display-frame-alist' to specify the frame</br>
+parameters.  See the definition of `special-display-popup-frame'</br>
+for how to specify such a function.</br>
+</br>
+A buffer is special when its name is either listed in</br>
+`special-display-buffer-names' or matches a regexp in</br>
+`special-display-regexps'.</br>
+</br>
+The specified function should call `display-buffer-record-window'</br>
+with corresponding arguments to set up the quit-restore parameter</br>
+of the window used.</br>
+</br>
 You can customize this variable.

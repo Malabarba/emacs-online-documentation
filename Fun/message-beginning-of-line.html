@@ -1,0 +1,17 @@
+<strong>message-beginning-of-line</strong> is an interactive compiled Lisp function in `<code>message.el</code>'.</br>
+</br>
+</br>
+(message-beginning-of-line &optional <u>N</u>)</br>
+</br>
+Move point to beginning of header value or to beginning of line.</br>
+The prefix argument <u>N</u> is passed directly to `beginning-of-line'.</br>
+</br>
+This command is identical to `beginning-of-line' if point is</br>
+outside the message header or if the option `message-beginning-of-line'</br>
+is nil.</br>
+</br>
+If point is in the message header and on a (non-continued) header</br>
+line, move point to the beginning of the header value or the beginning of line,</br>
+whichever is closer.  If point is already at beginning of line, move point to</br>
+beginning of header value.  Therefore, repeated calls will toggle point</br>
+between beginning of field and beginning of line.

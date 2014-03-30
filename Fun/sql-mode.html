@@ -1,51 +1,52 @@
-<strong>sql-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>sql.el</code>'.<br/>
-<br/>
-(sql-mode)<br/>
-<br/>
-Parent mode: `prog-mode'.<br/>
-<br/>
-Major mode to edit SQL.<br/>
-<br/>
-You can send SQL statements to the SQLi buffer using<br/>
-M-x sql-send-region.  Such a buffer must exist before you can do this.<br/>
-See `sql-help' on how to create SQLi buffers.<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-<remap>		Prefix Command<br/>
-<br/>
-<remap> <beginning-of-defun>	sql-beginning-of-statement<br/>
-<remap> <end-of-defun>		sql-end-of-statement<br/>
-<br/>
-C-c C-b		sql-send-buffer<br/>
-C-c C-c		sql-send-paragraph<br/>
-C-c TAB		sql-product-interactive<br/>
-C-c C-l		Prefix Command<br/>
-C-c C-r		sql-send-region<br/>
-C-c C-s		sql-send-string<br/>
-<br/>
-C-c C-l a	sql-list-all<br/>
-C-c C-l t	sql-list-table<br/>
-<br/>
-<br/>
-Customization: Entry to this mode runs the `sql-mode-hook'.<br/>
-<br/>
-When you put a buffer in SQL mode, the buffer stores the last SQLi<br/>
-buffer created as its destination in the variable `sql-buffer'.  This<br/>
-will be the buffer M-x sql-send-region sends the region to.  If this<br/>
-SQLi buffer is killed, M-x sql-send-region is no longer able to<br/>
-determine where the strings should be sent to.  You can set the<br/>
-value of `sql-buffer' using M-x sql-set-sqli-buffer.<br/>
-<br/>
-For information on how to create multiple SQLi buffers, see<br/>
-`sql-interactive-mode'.<br/>
-<br/>
-Note that SQL doesn't have an escape character unless you specify<br/>
-one.  If you specify backslash as escape character in SQL, you<br/>
-must tell Emacs.  Here's how to do that in your init file:<br/>
-<br/>
-(add-hook 'sql-mode-hook<br/>
-          (lambda ()<br/>
+<strong>sql-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>sql.el</code>'.</br>
+</br>
+</br>
+(sql-mode)</br>
+</br>
+Parent mode: `prog-mode'.</br>
+</br>
+Major mode to edit SQL.</br>
+</br>
+You can send SQL statements to the SQLi buffer using</br>
+M-x sql-send-region.  Such a buffer must exist before you can do this.</br>
+See `sql-help' on how to create SQLi buffers.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+&lt;remap>		Prefix Command</br>
+</br>
+&lt;remap> &lt;beginning-of-defun>	sql-beginning-of-statement</br>
+&lt;remap> &lt;end-of-defun>		sql-end-of-statement</br>
+</br>
+C-c C-b		sql-send-buffer</br>
+C-c C-c		sql-send-paragraph</br>
+C-c TAB		sql-product-interactive</br>
+C-c C-l		Prefix Command</br>
+C-c C-r		sql-send-region</br>
+C-c C-s		sql-send-string</br>
+</br>
+C-c C-l a	sql-list-all</br>
+C-c C-l t	sql-list-table</br>
+</br>
+</br>
+Customization: Entry to this mode runs the `sql-mode-hook'.</br>
+</br>
+When you put a buffer in SQL mode, the buffer stores the last SQLi</br>
+buffer created as its destination in the variable `sql-buffer'.  This</br>
+will be the buffer M-x sql-send-region sends the region to.  If this</br>
+SQLi buffer is killed, M-x sql-send-region is no longer able to</br>
+determine where the strings should be sent to.  You can set the</br>
+value of `sql-buffer' using M-x sql-set-sqli-buffer.</br>
+</br>
+For information on how to create multiple SQLi buffers, see</br>
+`sql-interactive-mode'.</br>
+</br>
+Note that SQL doesn't have an escape character unless you specify</br>
+one.  If you specify backslash as escape character in SQL, you</br>
+must tell Emacs.  Here's how to do that in your init file:</br>
+</br>
+<code>(add-hook 'sql-mode-hoo</code>k</br>
+          (lambda ()</br>
 	    (modify-syntax-entry ?\\ "." sql-mode-syntax-table)))

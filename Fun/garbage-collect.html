@@ -1,18 +1,19 @@
-<strong>garbage-collect</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(garbage-collect)<br/>
-<br/>
-Reclaim storage for Lisp objects no longer needed.<br/>
-Garbage collection happens automatically if you cons more than<br/>
-`gc-cons-threshold' bytes of Lisp data since previous garbage collection.<br/>
-`garbage-collect' normally returns a list with info on amount of space in use,<br/>
-where each entry has the form (NAME SIZE USED FREE), where:<br/>
-- NAME is a symbol describing the kind of objects this entry represents,<br/>
-- SIZE is the number of bytes used by each one,<br/>
-- USED is the number of those objects that were found live in the heap,<br/>
-- FREE is the number of those objects that are not live but that Emacs<br/>
-  keeps around for future allocations (maybe because it does not know how<br/>
-  to return them to the OS).<br/>
-However, if there was overflow in pure space, `garbage-collect'<br/>
-returns nil, because real GC can't be done.<br/>
+<strong>garbage-collect</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+</br>
+</br>
+(garbage-collect)</br>
+</br>
+Reclaim storage for Lisp objects no longer needed.</br>
+Garbage collection happens automatically if you cons more than</br>
+`gc-cons-threshold' bytes of Lisp data since previous garbage collection.</br>
+`garbage-collect' normally returns a list with info on amount of space in use,</br>
+where each entry has the form (NAME SIZE USED FREE), where:</br>
+- NAME is a symbol describing the kind of objects this entry represents,</br>
+- SIZE is the number of bytes used by each one,</br>
+- USED is the number of those objects that were found live in the heap,</br>
+- FREE is the number of those objects that are not live but that Emacs</br>
+  keeps around for future allocations (maybe because it does not know how</br>
+  to return them to the OS).</br>
+However, if there was overflow in pure space, `garbage-collect'</br>
+returns nil, because real GC can't be done.</br>
 See Info node `(elisp)Garbage Collection'.

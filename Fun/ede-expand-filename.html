@@ -1,11 +1,35 @@
-<strong>ede-expand-filename</strong> is a Lisp function in `<code>files.el</code>'.<br/>
-<br/>
-(ede-expand-filename &rest LOCAL-ARGS)<br/>
-<br/>
-Return a fully qualified file name based on project THIS.<br/>
-FILENAME should be just a filename which occurs in a directory controlled<br/>
-by this project.<br/>
-Optional argument FORCE forces the default filename to be provided even if it<br/>
-doesn't exist.<br/>
-If FORCE equals 'newfile, then the cache is ignored and a new file in THIS<br/>
-is returned.
+<strong>ede-expand-filename</strong> is a Lisp function in `<code>files.el</code>'.</br>
+</br>
+(ede-expand-filename &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+Optional argument FORCE forces the default filename to be provided even if it</br>
+doesn't exist.</br>
+If FORCE equals 'newfile, then the cache is ignored and a new file in THIS</br>
+is returned.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`ede-project' :PRIMARY (this filename &optional force)</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+Optional argument FORCE forces the default filename to be provided even if it</br>
+doesn't exist.</br>
+If FORCE equals 'newfile, then the cache is ignored and a new file in THIS</br>
+is returned.</br>
+</br>
+Defined in `files.el'</br>
+</br>
+`ede-target' :PRIMARY (this filename &optional force)</br>
+Return a fully qualified file name based on target THIS.</br>
+FILENAME should be a filename which occurs in a directory in which THIS works.</br>
+Optional argument FORCE forces the default filename to be provided even if it</br>
+doesn't exist.</br>
+</br>
+Defined in `files.el'</br>
+</br>

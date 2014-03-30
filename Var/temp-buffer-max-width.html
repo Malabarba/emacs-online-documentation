@@ -1,0 +1,36 @@
+<strong>temp-buffer-max-width</strong> is a variable defined in `<code>help.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Maximum width of a window displaying a temporary buffer.</br>
+This is effective only when Temp Buffer Resize mode is enabled.</br>
+The value is the maximum width (in columns) which</br>
+`resize-temp-buffer-window' will give to a window displaying a</br>
+temporary buffer.  It can also be a function to be called to</br>
+choose the width for such a buffer.  It gets one argument, the</br>
+buffer, and should return a positive integer.  At the time the</br>
+function is called, the window to be resized is selected.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.
+</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(lambda
+  (buffer)
+  (if
+      (eq
+       (selected-window)
+       (frame-root-window))
+      (/
+       (x-display-pixel-width)
+       (frame-char-width)
+       2)
+    (/
+     (-
+      (frame-width)
+      2)
+     2)))
+</pre></br>

@@ -1,21 +1,23 @@
-<strong>special-event-map</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap defining bindings for special events to execute at low level.<br/>
-<br/>
-Value: (keymap<br/>
- (drag-n-drop . x-dnd-handle-drag-n-drop-event)<br/>
- (sigusr2 . ignore)<br/>
- (sigusr1 . ignore)<br/>
- (config-changed-event . dynamic-setting-handle-config-changed-event)<br/>
- (dbus-event . dbus-handle-event)<br/>
- (save-session . handle-save-session)<br/>
- (make-frame-visible . dframe-handle-make-frame-visible)<br/>
- (iconify-frame . dframe-handle-iconify-frame)<br/>
- (ns-unput-working-text . ns-unput-working-text)<br/>
- (ns-put-working-text . ns-put-working-text)<br/>
- (delete-frame . dframe-handle-delete-frame))<br/>
-<br/>
+<strong>special-event-map</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap defining bindings for special events to execute at low level.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (drag-n-drop . x-dnd-handle-drag-n-drop-event)
+ (sigusr2 . ignore)
+ (sigusr1 . ignore)
+ (focus-out . handle-focus-out)
+ (focus-in . handle-focus-in)
+ (config-changed-event . dynamic-setting-handle-config-changed-event)
+ (file-notify . file-notify-handle-event)
+ (dbus-event . dbus-handle-event)
+ (save-session . handle-save-session)
+ (make-frame-visible . dframe-handle-make-frame-visible)
+ (iconify-frame . dframe-handle-iconify-frame)
+ (ns-unput-working-text . ns-unput-working-text)
+ (ns-put-working-text . ns-put-working-text)
+ (delete-frame . dframe-handle-delete-frame))
+</pre></br>

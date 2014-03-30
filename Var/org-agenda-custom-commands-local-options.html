@@ -1,145 +1,163 @@
-<strong>org-agenda-custom-commands-local-options</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Selection of examples for agenda command settings.<br/>
-This will be spliced into the custom type of<br/>
-`org-agenda-custom-commands'.<br/>
-<br/>
-Value: (repeat :tag "Local settings for this command.  Remember to quote values"<br/>
-	(choice :tag "Setting"<br/>
-		(list :tag "Heading for this block"<br/>
-		      (const org-agenda-overriding-header)<br/>
-		      (string :tag "Headline"))<br/>
-		(list :tag "Files to be searched"<br/>
-		      (const org-agenda-files)<br/>
-		      (list<br/>
-		       (const :format "" quote)<br/>
-		       (repeat<br/>
-			(file))))<br/>
-		(list :tag "Sorting strategy"<br/>
-		      (const org-agenda-sorting-strategy)<br/>
-		      (list<br/>
-		       (const :format "" quote)<br/>
-		       (repeat<br/>
-			(choice<br/>
-			 (const time-up)<br/>
-			 (const time-down)<br/>
-			 (const category-keep)<br/>
-			 (const category-up)<br/>
-			 (const category-down)<br/>
-			 (const tag-down)<br/>
-			 (const tag-up)<br/>
-			 (const priority-up)<br/>
-			 (const priority-down)<br/>
-			 (const todo-state-up)<br/>
-			 (const todo-state-down)<br/>
-			 (const effort-up)<br/>
-			 (const effort-down)<br/>
-			 (const habit-up)<br/>
-			 (const habit-down)<br/>
-			 (const alpha-up)<br/>
-			 (const alpha-down)<br/>
-			 (const user-defined-up)<br/>
-			 (const user-defined-down)))))<br/>
-		(list :tag "Prefix format"<br/>
-		      (const org-agenda-prefix-format :value "  %-12:c%?-12t% s")<br/>
-		      (string))<br/>
-		(list :tag "Number of days in agenda"<br/>
-		      (const org-agenda-span)<br/>
-		      (choice<br/>
-		       (const :tag "Day" 'day)<br/>
-		       (const :tag "Week" 'week)<br/>
-		       (const :tag "Month" 'month)<br/>
-		       (const :tag "Year" 'year)<br/>
-		       (integer :tag "Custom")))<br/>
-		(list :tag "Fixed starting date"<br/>
-		      (const org-agenda-start-day)<br/>
-		      (string :value "2007-11-01"))<br/>
-		(list :tag "Start on day of week"<br/>
-		      (const org-agenda-start-on-weekday)<br/>
-		      (choice :value 1<br/>
-			      (const :tag "Today" nil)<br/>
-			      (integer :tag "Weekday No.")))<br/>
-		(list :tag "Include data from diary"<br/>
-		      (const org-agenda-include-diary)<br/>
-		      (boolean))<br/>
-		(list :tag "Deadline Warning days"<br/>
-		      (const org-deadline-warning-days)<br/>
-		      (integer :value 1))<br/>
-		(list :tag "Category filter preset"<br/>
-		      (const org-agenda-category-filter-preset)<br/>
-		      (list<br/>
-		       (const :format "" quote)<br/>
-		       (repeat<br/>
-			(string :tag "+category or -category"))))<br/>
-		(list :tag "Tags filter preset"<br/>
-		      (const org-agenda-tag-filter-preset)<br/>
-		      (list<br/>
-		       (const :format "" quote)<br/>
-		       (repeat<br/>
-			(string :tag "+tag or -tag"))))<br/>
-		(list :tag "Set daily/weekly entry types"<br/>
-		      (const org-agenda-entry-types)<br/>
-		      (list<br/>
-		       (const :format "" quote)<br/>
-		       (set :greedy t :value<br/>
-			    (:deadline :scheduled :timestamp :sexp)<br/>
-			    (const :deadline)<br/>
-			    (const :scheduled)<br/>
-			    (const :timestamp)<br/>
-			    (const :sexp))))<br/>
-		(list :tag "Standard skipping condition" :value<br/>
-		      (org-agenda-skip-function<br/>
-		       '(org-agenda-skip-entry-if))<br/>
-		      (const org-agenda-skip-function)<br/>
-		      (list<br/>
-		       (const :format "" quote)<br/>
-		       (list<br/>
-			(choice :tag "Skipping range"<br/>
-				(const :tag "Skip entry" org-agenda-skip-entry-if)<br/>
-				(const :tag "Skip subtree" org-agenda-skip-subtree-if))<br/>
-			(repeat :inline t :tag "Conditions for skipping"<br/>
-				(choice :tag "Condition type"<br/>
-					(list :tag "Regexp matches" :inline t<br/>
-					      (const :format "" 'regexp)<br/>
-					      (regexp))<br/>
-					(list :tag "Regexp does not match" :inline t<br/>
-					      (const :format "" 'notregexp)<br/>
-					      (regexp))<br/>
-					(list :tag "TODO state is" :inline t<br/>
-					      (const 'todo)<br/>
-					      (choice<br/>
-					       (const :tag "any not-done state" 'todo)<br/>
-					       (const :tag "any done state" 'done)<br/>
-					       (const :tag "any state" 'any)<br/>
-					       (list :tag "Keyword list"<br/>
-						     (const :format "" quote)<br/>
-						     (repeat<br/>
-						      (string :tag "Keyword")))))<br/>
-					(list :tag "TODO state is not" :inline t<br/>
-					      (const 'nottodo)<br/>
-					      (choice<br/>
-					       (const :tag "any not-done state" 'todo)<br/>
-					       (const :tag "any done state" 'done)<br/>
-					       (const :tag "any state" 'any)<br/>
-					       (list :tag "Keyword list"<br/>
-						     (const :format "" quote)<br/>
-						     (repeat<br/>
-						      (string :tag "Keyword")))))<br/>
-					(const :tag "scheduled" 'scheduled)<br/>
-					(const :tag "not scheduled" 'notscheduled)<br/>
-					(const :tag "deadline" 'deadline)<br/>
-					(const :tag "no deadline" 'notdeadline)<br/>
-					(const :tag "timestamp" 'timestamp)<br/>
-					(const :tag "no timestamp" 'nottimestamp))))))<br/>
-		(list :tag "Non-standard skipping condition" :value<br/>
-		      (org-agenda-skip-function)<br/>
-		      (const org-agenda-skip-function)<br/>
-		      (sexp :tag "Function or form (quoted!)"))<br/>
-		(list :tag "Any variable"<br/>
-		      (variable :tag "Variable")<br/>
-		      (sexp :tag "Value (sexp)"))))<br/>
-<br/>
+<strong>org-agenda-custom-commands-local-options</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Selection of examples for agenda command settings.</br>
+This will be spliced into the custom type of</br>
+`org-agenda-custom-commands'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(repeat :tag "Local settings for this command.  Remember to quote values"
+	(choice :tag "Setting"
+		(list :tag "Heading for this block"
+		      (const org-agenda-overriding-header)
+		      (string :tag "Headline"))
+		(list :tag "Files to be searched"
+		      (const org-agenda-files)
+		      (list
+		       (const :format "" quote)
+		       (repeat
+			(file))))
+		(list :tag "Sorting strategy"
+		      (const org-agenda-sorting-strategy)
+		      (list
+		       (const :format "" quote)
+		       (repeat
+			(choice
+			 (const time-up)
+			 (const time-down)
+			 (const timestamp-up)
+			 (const timestamp-down)
+			 (const scheduled-up)
+			 (const scheduled-down)
+			 (const deadline-up)
+			 (const deadline-down)
+			 (const ts-up)
+			 (const ts-down)
+			 (const tsia-up)
+			 (const tsia-down)
+			 (const category-keep)
+			 (const category-up)
+			 (const category-down)
+			 (const tag-down)
+			 (const tag-up)
+			 (const priority-up)
+			 (const priority-down)
+			 (const todo-state-up)
+			 (const todo-state-down)
+			 (const effort-up)
+			 (const effort-down)
+			 (const habit-up)
+			 (const habit-down)
+			 (const alpha-up)
+			 (const alpha-down)
+			 (const user-defined-up)
+			 (const user-defined-down)))))
+		(list :tag "Prefix format"
+		      (const org-agenda-prefix-format :value "  %-12:c%?-12t% s")
+		      (string))
+		(list :tag "Number of days in agenda"
+		      (const org-agenda-span)
+		      (choice
+		       (const :tag "Day" day)
+		       (const :tag "Week" week)
+		       (const :tag "Fortnight" fortnight)
+		       (const :tag "Month" month)
+		       (const :tag "Year" year)
+		       (integer :tag "Custom")))
+		(list :tag "Fixed starting date"
+		      (const org-agenda-start-day)
+		      (string :value "2007-11-01"))
+		(list :tag "Start on day of week"
+		      (const org-agenda-start-on-weekday)
+		      (choice :value 1
+			      (const :tag "Today" nil)
+			      (integer :tag "Weekday No.")))
+		(list :tag "Include data from diary"
+		      (const org-agenda-include-diary)
+		      (boolean))
+		(list :tag "Deadline Warning days"
+		      (const org-deadline-warning-days)
+		      (integer :value 1))
+		(list :tag "Category filter preset"
+		      (const org-agenda-category-filter-preset)
+		      (list
+		       (const :format "" quote)
+		       (repeat
+			(string :tag "+category or -category"))))
+		(list :tag "Tags filter preset"
+		      (const org-agenda-tag-filter-preset)
+		      (list
+		       (const :format "" quote)
+		       (repeat
+			(string :tag "+tag or -tag"))))
+		(list :tag "Regexp filter preset"
+		      (const org-agenda-regexp-filter-preset)
+		      (list
+		       (const :format "" quote)
+		       (repeat
+			(string :tag "+regexp or -regexp"))))
+		(list :tag "Set daily/weekly entry types"
+		      (const org-agenda-entry-types)
+		      (list
+		       (const :format "" quote)
+		       (set :greedy t :value
+			    (:deadline :scheduled :timestamp :sexp)
+			    (const :deadline)
+			    (const :scheduled)
+			    (const :deadline*)
+			    (const :scheduled*)
+			    (const :timestamp)
+			    (const :sexp))))
+		(list :tag "Standard skipping condition" :value
+		      (org-agenda-skip-function
+		       '(org-agenda-skip-entry-if))
+		      (const org-agenda-skip-function)
+		      (list
+		       (const :format "" quote)
+		       (list
+			(choice :tag "Skipping range"
+				(const :tag "Skip entry" org-agenda-skip-entry-if)
+				(const :tag "Skip subtree" org-agenda-skip-subtree-if))
+			(repeat :inline t :tag "Conditions for skipping"
+				(choice :tag "Condition type"
+					(list :tag "Regexp matches" :inline t
+					      (const :format "" regexp)
+					      (regexp))
+					(list :tag "Regexp does not match" :inline t
+					      (const :format "" notregexp)
+					      (regexp))
+					(list :tag "TODO state is" :inline t
+					      (const todo)
+					      (choice
+					       (const :tag "any not-done state" todo)
+					       (const :tag "any done state" done)
+					       (const :tag "any state" any)
+					       (list :tag "Keyword list"
+						     (const :format "" quote)
+						     (repeat
+						      (string :tag "Keyword")))))
+					(list :tag "TODO state is not" :inline t
+					      (const nottodo)
+					      (choice
+					       (const :tag "any not-done state" todo)
+					       (const :tag "any done state" done)
+					       (const :tag "any state" any)
+					       (list :tag "Keyword list"
+						     (const :format "" quote)
+						     (repeat
+						      (string :tag "Keyword")))))
+					(const :tag "scheduled" scheduled)
+					(const :tag "not scheduled" notscheduled)
+					(const :tag "deadline" deadline)
+					(const :tag "no deadline" notdeadline)
+					(const :tag "timestamp" timestamp)
+					(const :tag "no timestamp" nottimestamp))))))
+		(list :tag "Non-standard skipping condition" :value
+		      (org-agenda-skip-function)
+		      (const org-agenda-skip-function)
+		      (sexp :tag "Function or form (quoted!)"))
+		(list :tag "Any variable"
+		      (variable :tag "Variable")
+		      (sexp :tag "Value (sexp)"))))
+</pre></br>

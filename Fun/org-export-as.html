@@ -1,0 +1,30 @@
+<strong>org-export-as</strong> is an autoloaded compiled Lisp function in `<code>ox.el</code>'.</br>
+</br>
+(org-export-as <u>BACKEND</u> &optional <u>SUBTREEP</u> <u>VISIBLE-ONLY</u> <u>BODY-ONLY</u> <u>EXT-PLIST</u>)</br>
+</br>
+Transcode current Org buffer into <u>BACKEND</u> code.</br>
+</br>
+<u>BACKEND</u> is either an export back-end, as returned by, e.g.,</br>
+`org-export-create-backend', or a symbol referring to</br>
+a registered back-end.</br>
+</br>
+If narrowing is active in the current buffer, only transcode its</br>
+narrowed part.</br>
+</br>
+If a region is active, transcode that region.</br>
+</br>
+When optional argument <u>SUBTREEP</u> is non-nil, transcode the</br>
+sub-tree at point, extracting information from the headline</br>
+properties first.</br>
+</br>
+When optional argument <u>VISIBLE-ONLY</u> is non-nil, don't export</br>
+contents of hidden elements.</br>
+</br>
+When optional argument <u>BODY-ONLY</u> is non-nil, only return body</br>
+code, without surrounding template.</br>
+</br>
+Optional argument <u>EXT-PLIST</u>, when provided, is a property list</br>
+with external parameters overriding Org default settings, but</br>
+still inferior to file-local settings.</br>
+</br>
+Return code as a string.

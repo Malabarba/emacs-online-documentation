@@ -1,19 +1,19 @@
-<strong>lookup-key</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(lookup-key KEYMAP KEY &optional ACCEPT-DEFAULT)<br/>
-<br/>
-In keymap KEYMAP, look up key sequence KEY.  Return the definition.<br/>
-A value of nil means undefined.  See doc of `define-key'<br/>
-for kinds of definitions.<br/>
-<br/>
-A number as value means KEY is "too long";<br/>
-that is, characters or symbols in it except for the last one<br/>
-fail to be a valid sequence of prefix characters in KEYMAP.<br/>
-The number is how many characters at the front of KEY<br/>
-it takes to reach a non-prefix key.<br/>
-<br/>
-Normally, `lookup-key' ignores bindings for t, which act as default<br/>
-bindings, used when nothing else in the keymap applies; this makes it<br/>
-usable as a general function for probing keymaps.  However, if the<br/>
-third optional argument ACCEPT-DEFAULT is non-nil, `lookup-key' will<br/>
+<strong>lookup-key</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(lookup-key <u>KEYMAP</u> <u>KEY</u> &optional <u>ACCEPT-DEFAULT</u>)</br>
+</br>
+In keymap <u>KEYMAP</u>, look up key sequence <u>KEY</u>.  Return the definition.</br>
+A value of nil means undefined.  See doc of `define-key'</br>
+for kinds of definitions.</br>
+</br>
+A number as value means <u>KEY</u> is "too long";</br>
+that is, characters or symbols in it except for the last one</br>
+fail to be a valid sequence of prefix characters in <u>KEYMAP</u>.</br>
+The number is how many characters at the front of <u>KEY</u></br>
+it takes to reach a non-prefix key.</br>
+</br>
+Normally, `lookup-key' ignores bindings for t, which act as default</br>
+bindings, used when nothing else in the keymap applies; this makes it</br>
+usable as a general function for probing keymaps.  However, if the</br>
+third optional argument <u>ACCEPT-DEFAULT</u> is non-nil, `lookup-key' will</br>
 recognize the default bindings, just as `read-key-sequence' does.

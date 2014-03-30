@@ -1,26 +1,26 @@
-<strong>with-electric-help</strong> is an autoloaded compiled Lisp function in `<code>ehelp.el</code>'.<br/>
-<br/>
-(with-electric-help THUNK &optional BUFFER NOERASE MINHEIGHT)<br/>
-<br/>
-Pop up an "electric" help buffer.<br/>
-THUNK is a function of no arguments which is called to initialize the<br/>
-contents of BUFFER.  BUFFER defaults to `*Help*'.  BUFFER will be<br/>
-erased before THUNK is called unless NOERASE is non-nil.  THUNK will<br/>
-be called while BUFFER is current and with `standard-output' bound to<br/>
-the buffer specified by BUFFER.<br/>
-<br/>
-If THUNK returns nil, we display BUFFER starting at the top, and shrink<br/>
-the window to fit.  If THUNK returns non-nil, we don't do those things.<br/>
-<br/>
-After THUNK has been called, this function "electrically" pops up a<br/>
-window in which BUFFER is displayed and allows the user to scroll<br/>
-through that buffer in `electric-help-mode'.  The window's height will<br/>
-be at least MINHEIGHT if this value is non-nil.<br/>
-<br/>
-If THUNK returns nil, we display BUFFER starting at the top, and<br/>
-shrink the window to fit if `electric-help-shrink-window' is non-nil.<br/>
-If THUNK returns non-nil, we don't do those things.<br/>
-<br/>
-When the user exits (with `electric-help-exit', or otherwise), the help<br/>
-buffer's window disappears (i.e., we use `save-window-excursion'), and<br/>
-BUFFER is put back into its original major mode.
+<strong>with-electric-help</strong> is an autoloaded compiled Lisp function in `<code>ehelp.el</code>'.</br>
+</br>
+(with-electric-help <u>THUNK</u> &optional <u>BUFFER</u> <u>NOERASE</u> <u>MINHEIGHT</u>)</br>
+</br>
+Pop up an "electric" help buffer.</br>
+<u>THUNK</u> is a function of no arguments which is called to initialize the</br>
+contents of <u>BUFFER</u>.  <u>BUFFER</u> defaults to `*Help*'.  <u>BUFFER</u> will be</br>
+erased before <u>THUNK</u> is called unless <u>NOERASE</u> is non-nil.  <u>THUNK</u> will</br>
+be called while <u>BUFFER</u> is current and with `standard-output' bound to</br>
+the buffer specified by <u>BUFFER</u>.</br>
+</br>
+If <u>THUNK</u> returns nil, we display <u>BUFFER</u> starting at the top, and shrink</br>
+the window to fit.  If <u>THUNK</u> returns non-nil, we don't do those things.</br>
+</br>
+After <u>THUNK</u> has been called, this function "electrically" pops up a</br>
+window in which <u>BUFFER</u> is displayed and allows the user to scroll</br>
+through that buffer in `electric-help-mode'.  The window's height will</br>
+be at least <u>MINHEIGHT</u> if this value is non-nil.</br>
+</br>
+If <u>THUNK</u> returns nil, we display <u>BUFFER</u> starting at the top, and</br>
+shrink the window to fit if `electric-help-shrink-window' is non-nil.</br>
+If <u>THUNK</u> returns non-nil, we don't do those things.</br>
+</br>
+When the user exits (with `electric-help-exit', or otherwise), the help</br>
+buffer's window disappears (i.e., we use `save-window-excursion'), and</br>
+<u>BUFFER</u> is put back into its original major mode.

@@ -1,56 +1,54 @@
-<strong>htmlfontify-manual</strong> is a variable defined in `<code>htmlfontify.el</code>'.<br/>
-Its value is "Htmlfontify Manual"<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Copy and convert buffers and files to HTML, adding hyperlinks between files<br/>
-(driven by etags) if requested.<br/>
-<br/>
-Interactive functions:<br/>
-  `htmlfontify-buffer'<br/>
-  `htmlfontify-run-etags'<br/>
-  `htmlfontify-copy-and-link-dir'<br/>
-  `htmlfontify-load-rgb-file'<br/>
-  `htmlfontify-unload-rgb-file'<br/>
-<br/>
-In order to:<br/>
-<br/>
-fontify a file you have open:           M-x htmlfontify-buffer<br/>
-prepare the etags map for a directory:  M-x htmlfontify-run-etags<br/>
-copy a directory, fontifying as you go: M-x htmlfontify-copy-and-link-dir<br/>
-<br/>
-The following might be useful when running non-windowed or in batch mode:<br/>
-(note that they shouldn't be necessary - we have a built in map)<br/>
-<br/>
-load an X11 style rgb.txt file:         M-x htmlfontify-load-rgb-file<br/>
-unload the current rgb.txt file:        M-x htmlfontify-unload-rgb-file<br/>
-<br/>
-And here's a programmatic example:<br/>
-<br/>
-(defun rtfm-build-page-header (file style)<br/>
-  (format "#define  TEMPLATE red+black.html<br/>
-#define  DEBUG    1<br/>
-#include <build/menu-dirlist|>\n<br/>
-html-css-url := /css/red+black.css<br/>
-title        := rtfm.etla.org ( %s / src/%s )<br/>
-bodytag      :=<br/>
-head         <=STYLESHEET;\n<br/>
-%s<br/>
-STYLESHEET<br/>
-main-title   := rtfm / %s / src/%s\n<br/>
-main-content <=MAIN_CONTENT;\n" rtfm-section file style rtfm-section file))<br/>
-<br/>
-(defun rtfm-build-page-footer (file) "\nMAIN_CONTENT\n")<br/>
-<br/>
-(defun rtfm-build-source-docs (section srcdir destdir)<br/>
-  (interactive<br/>
-   "s section[eg- emacs / p4-blame]:\nD source-dir: \nD output-dir: ")<br/>
-  (require 'htmlfontify)<br/>
-  (hfy-load-tags-cache srcdir)<br/>
-  (let ((hfy-page-header  'rtfm-build-page-header)<br/>
-        (hfy-page-footer  'rtfm-build-page-footer)<br/>
-        (rtfm-section                     section)<br/>
-        (hfy-index-file                   "index"))<br/>
-    (htmlfontify-run-etags srcdir)<br/>
+<strong>htmlfontify-manual</strong> is a variable defined in `<code>htmlfontify.el</code>'.</br>
+Its value is <pre>"Htmlfontify Manual"</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Copy and convert buffers and files to HTML, adding hyperlinks between files</br>
+(driven by etags) if requested.</br>
+</br>
+Interactive functions:</br>
+  `htmlfontify-buffer'</br>
+  `htmlfontify-run-etags'</br>
+  `htmlfontify-copy-and-link-dir'</br>
+  `htmlfontify-load-rgb-file'</br>
+  `htmlfontify-unload-rgb-file'</br>
+</br>
+In order to:</br>
+</br>
+fontify a file you have open:           M-x htmlfontify-buffer</br>
+prepare the etags map for a directory:  M-x htmlfontify-run-etags</br>
+copy a directory, fontifying as you go: M-x htmlfontify-copy-and-link-dir</br>
+</br>
+The following might be useful when running non-windowed or in batch mode:</br>
+(note that they shouldn't be necessary - we have a built in map)</br>
+</br>
+load an X11 style rgb.txt file:         M-x htmlfontify-load-rgb-file</br>
+unload the current rgb.txt file:        M-x htmlfontify-unload-rgb-file</br>
+</br>
+And here's a programmatic example:</br>
+</br>
+(defun rtfm-build-page-header (file style)</br>
+  (format "#define  TEMPLATE red+black.html</br>
+#define  DEBUG    1</br>
+#include <build/menu-dirlist|>\n</br>
+html-css-url := /css/red+black.css</br>
+title        := rtfm.etla.org ( %s / src/%s )</br>
+bodytag      :=</br>
+head         <=STYLESHEET;\n</br>
+%s</br>
+STYLESHEET</br>
+main-title   := rtfm / %s / src/%s\n</br>
+main-content <=MAIN_CONTENT;\n" rtfm-section file style rtfm-section file))</br>
+</br>
+(defun rtfm-build-page-footer (file) "\nMAIN_CONTENT\n")</br>
+</br>
+(defun rtfm-build-source-docs (section srcdir destdir)</br>
+  (interactive</br>
+   "s section[eg- emacs / p4-blame]:\nD source-dir: \nD output-dir: ")</br>
+  (require 'htmlfontify)</br>
+  (hfy-load-tags-cache srcdir)</br>
+  (let ((hfy-page-header  'rtfm-build-page-header)</br>
+        (hfy-page-footer  'rtfm-build-page-footer)</br>
+        (rtfm-section                     section)</br>
+        (hfy-index-file                   "index"))</br>
+    (htmlfontify-run-etags srcdir)</br>
     (htmlfontify-copy-and-link-dir srcdir destdir ".src" ".html")))

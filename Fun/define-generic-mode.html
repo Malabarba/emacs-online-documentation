@@ -1,36 +1,36 @@
-<strong>define-generic-mode</strong> is an autoloaded Lisp macro in `<code>generic.el</code>'.<br/>
-<br/>
-(define-generic-mode MODE COMMENT-LIST KEYWORD-LIST FONT-LOCK-LIST AUTO-MODE-LIST FUNCTION-LIST &optional DOCSTRING)<br/>
-<br/>
-Create a new generic mode MODE.<br/>
-<br/>
-MODE is the name of the command for the generic mode; don't quote it.<br/>
-The optional DOCSTRING is the documentation for the mode command.  If<br/>
-you do not supply it, `define-generic-mode' uses a default<br/>
-documentation string instead.<br/>
-<br/>
-COMMENT-LIST is a list in which each element is either a character, a<br/>
-string of one or two characters, or a cons cell.  A character or a<br/>
-string is set up in the mode's syntax table as a "comment starter".<br/>
-If the entry is a cons cell, the `car' is set up as a "comment<br/>
-starter" and the `cdr' as a "comment ender".  (Use nil for the<br/>
-latter if you want comments to end at the end of the line.)  Note that<br/>
-the syntax table has limitations about what comment starters and<br/>
-enders are actually possible.<br/>
-<br/>
-KEYWORD-LIST is a list of keywords to highlight with<br/>
-`font-lock-keyword-face'.  Each keyword should be a string.<br/>
-<br/>
-FONT-LOCK-LIST is a list of additional expressions to highlight.  Each<br/>
-element of this list should have the same form as an element of<br/>
-`font-lock-keywords'.<br/>
-<br/>
-AUTO-MODE-LIST is a list of regular expressions to add to<br/>
-`auto-mode-alist'.  These regular expressions are added when Emacs<br/>
-runs the macro expansion.<br/>
-<br/>
-FUNCTION-LIST is a list of functions to call to do some additional<br/>
-setup.  The mode command calls these functions just before it runs the<br/>
-mode hook `MODE-hook'.<br/>
-<br/>
+<strong>define-generic-mode</strong> is a Lisp macro in `<code>generic.el</code>'.</br>
+</br>
+(define-generic-mode <u>MODE</u> <u>COMMENT-LIST</u> <u>KEYWORD-LIST</u> <u>FONT-LOCK-LIST</u> <u>AUTO-MODE-LIST</u> <u>FUNCTION-LIST</u> &optional <u>DOCSTRING</u>)</br>
+</br>
+Create a new generic mode <u>MODE</u>.</br>
+</br>
+<u>MODE</u> is the name of the command for the generic mode; don't quote it.</br>
+The optional <u>DOCSTRING</u> is the documentation for the mode command.  If</br>
+you do not supply it, `define-generic-mode' uses a default</br>
+documentation string instead.</br>
+</br>
+<u>COMMENT-LIST</u> is a list in which each element is either a character, a</br>
+string of one or two characters, or a cons cell.  A character or a</br>
+string is set up in the mode's syntax table as a "comment starter".</br>
+If the entry is a cons cell, the `car' is set up as a "comment</br>
+starter" and the `cdr' as a "comment ender".  (Use nil for the</br>
+latter if you want comments to end at the end of the line.)  Note that</br>
+the syntax table has limitations about what comment starters and</br>
+enders are actually possible.</br>
+</br>
+<u>KEYWORD-LIST</u> is a list of keywords to highlight with</br>
+`font-lock-keyword-face'.  Each keyword should be a string.</br>
+</br>
+<u>FONT-LOCK-LIST</u> is a list of additional expressions to highlight.  Each</br>
+element of this list should have the same form as an element of</br>
+`font-lock-keywords'.</br>
+</br>
+<u>AUTO-MODE-LIST</u> is a list of regular expressions to add to</br>
+`auto-mode-alist'.  These regular expressions are added when Emacs</br>
+runs the macro expansion.</br>
+</br>
+<u>FUNCTION-LIST</u> is a list of functions to call to do some additional</br>
+setup.  The mode command calls these functions just before it runs the</br>
+mode hook `<u>MODE</u>-hook'.</br>
+</br>
 See the file generic-x.el for some examples of `define-generic-mode'.

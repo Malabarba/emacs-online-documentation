@@ -1,5 +1,25 @@
-<strong>todo-jump-to-category</strong> is an interactive compiled Lisp function in `<code>todo-mode.el</code>'.<br/>
-<br/>
-(todo-jump-to-category)<br/>
-<br/>
-Jump to a category.  Default is previous category.
+<strong>todo-jump-to-category</strong> is an interactive compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+</br>
+(todo-jump-to-category &optional <u>FILE</u> <u>WHERE</u>)</br>
+</br>
+Prompt for a category in a todo file and jump to it.</br>
+</br>
+With non-nil <u>FILE</u> (interactively a prefix argument), prompt for a</br>
+specific todo file and choose (with TAB completion) a category</br>
+in it to jump to; otherwise, choose and jump to any category in</br>
+either the current todo file or a file in</br>
+`todo-category-completions-files'.</br>
+</br>
+Also accept a non-existing category name and ask whether to add a</br>
+new category by that name; on confirmation, add it and jump to</br>
+that category, and if option `todo-add-item-if-new-category' is</br>
+non-nil (the default), then prompt for the first item.</br>
+</br>
+In noninteractive calls non-nil <u>WHERE</u> specifies either the goal</br>
+category or its file.  If its value is `archive', the choice of</br>
+categories is restricted to the current archive file or the</br>
+archive you were prompted to choose; this is used by</br>
+`todo-jump-to-archive-category'.  If its value is the name of a</br>
+category, jump directly to that category; this is used in Todo</br>
+Categories mode.

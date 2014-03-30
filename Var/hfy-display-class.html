@@ -1,34 +1,34 @@
-<strong>hfy-display-class</strong> is a variable defined in `<code>htmlfontify.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Display class to use to determine which display class to use when<br/>
-calculating a face's attributes.  This is useful when, for example, you<br/>
-are running Emacs on a tty or in batch mode, and want htmlfontify to have<br/>
-access to the face spec you would use if you were connected to an X display.<br/>
-<br/>
-Some valid class specification elements are:<br/>
-<br/>
-  '(class      color)<br/>
-  '(class      grayscale)<br/>
-  '(background dark)<br/>
-  '(background light)<br/>
-  '(type       x-toolkit)<br/>
-  '(type       tty)<br/>
-  '(type       motif)<br/>
-  '(type       lucid)<br/>
-Multiple values for a tag may be combined, to indicate that any one or more<br/>
-of these values in the specification key constitutes a match, eg:<br/>
-<br/>
-'((class color grayscale) (type tty)) would match any of:<br/>
-<br/>
-  '((class color))<br/>
-  '((class grayscale))<br/>
-  '((class color grayscale))<br/>
-  '((class color foo))<br/>
-  '((type  tty))<br/>
-  '((type  tty) (class color))<br/>
-<br/>
-and so on.<br/>
-<br/>
+<strong>hfy-display-class</strong> is a variable defined in `<code>htmlfontify.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Display class to use to determine which display class to use when</br>
+calculating a face's attributes.  This is useful when, for example, you</br>
+are running Emacs on a tty or in batch mode, and want htmlfontify to have</br>
+access to the face spec you would use if you were connected to an X display.</br>
+</br>
+Some valid class specification elements are:</br>
+</br>
+  '(class      color)</br>
+  '(class      grayscale)</br>
+  '(background dark)</br>
+  '(background light)</br>
+  '(type       x-toolkit)</br>
+  '(type       tty)</br>
+  '(type       motif)</br>
+  '(type       lucid)</br>
+Multiple values for a tag may be combined, to indicate that any one or more</br>
+of these values in the specification key constitutes a match, eg:</br>
+</br>
+'((class color grayscale) (type tty)) would match any of:</br>
+</br>
+  '((class color))</br>
+  '((class grayscale))</br>
+  '((class color grayscale))</br>
+  '((class color foo))</br>
+  '((type  tty))</br>
+  '((type  tty) (class color))</br>
+</br>
+and so on.</br>
+</br>
 You can customize this variable.

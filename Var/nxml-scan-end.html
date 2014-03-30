@@ -1,18 +1,16 @@
-<strong>nxml-scan-end</strong> is a variable defined in `<code>nxml-rap.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-Marker giving position up to which we have scanned.<br/>
-nxml-scan-end must be >= nxml-prolog-end.  Furthermore, nxml-scan-end<br/>
-must not be an inside position in the following sense.  A position is<br/>
-inside if the following character is a part of, but not the first<br/>
-character of, a CDATA section, comment or processing instruction.<br/>
-Furthermore all positions >= nxml-prolog-end and < nxml-scan-end that<br/>
-are inside positions must have a non-nil `nxml-inside' property whose<br/>
-value is a symbol specifying what it is inside.  Any characters with a<br/>
-non-nil `fontified' property must have position < nxml-scan-end and<br/>
-the correct face.  Dependent regions must also be established for any<br/>
-unclosed constructs starting before nxml-scan-end.<br/>
+<strong>nxml-scan-end</strong> is a variable defined in `<code>nxml-rap.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Marker giving position up to which we have scanned.</br>
+nxml-scan-end must be >= nxml-prolog-end.  Furthermore, nxml-scan-end</br>
+must not be an inside position in the following sense.  A position is</br>
+inside if the following character is a part of, but not the first</br>
+character of, a CDATA section, comment or processing instruction.</br>
+Furthermore all positions >= nxml-prolog-end and < nxml-scan-end that</br>
+are inside positions must have a non-nil `nxml-inside' property whose</br>
+value is a symbol specifying what it is inside.  Any characters with a</br>
+non-nil `fontified' property must have position < nxml-scan-end and</br>
+the correct face.  Dependent regions must also be established for any</br>
+unclosed constructs starting before nxml-scan-end.</br>
 There must be no `nxml-inside' properties after nxml-scan-end.

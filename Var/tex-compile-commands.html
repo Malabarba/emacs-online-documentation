@@ -1,47 +1,46 @@
-<strong>tex-compile-commands</strong> is a variable defined in `<code>tex-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of commands for `tex-compile'.<br/>
-Each element should be of the form (FORMAT IN OUT) where<br/>
-FORMAT is an expression that evaluates to a string that can contain<br/>
-  - `%r' the main file name without extension.<br/>
-  - `%f' the main file name.<br/>
-IN can be either a string (with the same % escapes in it) indicating<br/>
-  the name of the input file, or t to indicate that the input is all<br/>
-  the TeX files of the document, or nil if we don't know.<br/>
-OUT describes the output file and is either a %-escaped string<br/>
-  or nil to indicate that there is no output file.<br/>
-<br/>
-Value: (((concat "pdf" tex-command " "<br/>
-	  (if<br/>
-	      (< 0<br/>
-		 (length tex-start-commands))<br/>
-	      (shell-quote-argument tex-start-commands))<br/>
-	  " %f")<br/>
-  t "%r.pdf")<br/>
- ((concat tex-command " "<br/>
-	  (if<br/>
-	      (< 0<br/>
-		 (length tex-start-commands))<br/>
-	      (shell-quote-argument tex-start-commands))<br/>
-	  " %f")<br/>
-  t "%r.dvi")<br/>
- ("xdvi %r &" "%r.dvi")<br/>
- ("\\doc-view \"%r.pdf\"" "%r.pdf")<br/>
- ("xpdf %r.pdf &" "%r.pdf")<br/>
- ("gv %r.ps &" "%r.ps")<br/>
- ("yap %r &" "%r.dvi")<br/>
- ("advi %r &" "%r.dvi")<br/>
- ("gv %r.pdf &" "%r.pdf")<br/>
- ("bibtex %r" "%r.aux" "%r.bbl")<br/>
- ("makeindex %r" "%r.idx" "%r.ind")<br/>
- ("texindex %r.??")<br/>
- ("dvipdfm %r" "%r.dvi" "%r.pdf")<br/>
- ("dvipdf %r" "%r.dvi" "%r.pdf")<br/>
- ("dvips -o %r.ps %r" "%r.dvi" "%r.ps")<br/>
- ("ps2pdf %r.ps" "%r.ps" "%r.pdf")<br/>
- ("lpr %r.ps" "%r.ps"))<br/>
-<br/>
+<strong>tex-compile-commands</strong> is a variable defined in `<code>tex-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of commands for `tex-compile'.</br>
+Each element should be of the form (FORMAT IN OUT) where</br>
+FORMAT is an expression that evaluates to a string that can contain</br>
+  - `%r' the main file name without extension.</br>
+  - `%f' the main file name.</br>
+IN can be either a string (with the same % escapes in it) indicating</br>
+  the name of the input file, or t to indicate that the input is all</br>
+  the TeX files of the document, or nil if we don't know.</br>
+OUT describes the output file and is either a %-escaped string</br>
+  or nil to indicate that there is no output file.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(((concat "pdf" tex-command " "
+	  (if
+	      (< 0
+		 (length tex-start-commands))
+	      (shell-quote-argument tex-start-commands))
+	  " %f")
+  t "%r.pdf")
+ ((concat tex-command " "
+	  (if
+	      (< 0
+		 (length tex-start-commands))
+	      (shell-quote-argument tex-start-commands))
+	  " %f")
+  t "%r.dvi")
+ ("xdvi %r &" "%r.dvi")
+ ("\\doc-view \"%r.pdf\"" "%r.pdf")
+ ("xpdf %r.pdf &" "%r.pdf")
+ ("gv %r.ps &" "%r.ps")
+ ("yap %r &" "%r.dvi")
+ ("advi %r &" "%r.dvi")
+ ("gv %r.pdf &" "%r.pdf")
+ ("bibtex %r" "%r.aux" "%r.bbl")
+ ("makeindex %r" "%r.idx" "%r.ind")
+ ("texindex %r.??")
+ ("dvipdfm %r" "%r.dvi" "%r.pdf")
+ ("dvipdf %r" "%r.dvi" "%r.pdf")
+ ("dvips -o %r.ps %r" "%r.dvi" "%r.ps")
+ ("ps2pdf %r.ps" "%r.ps" "%r.pdf")
+ ("lpr %r.ps" "%r.ps"))
+</pre></br>

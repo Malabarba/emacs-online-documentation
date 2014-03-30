@@ -1,20 +1,17 @@
-<strong>comint-output-filter-functions</strong> is a variable defined in `<code>comint.el</code>'.<br/>
-Its value is<br/>
-(ansi-color-process-output comint-postoutput-scroll-to-bottom comint-watch-for-password-prompt)<br/>
-<br/>
-<br/>
-  This variable's value is permanent if it is given a local binding.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Functions to call after output is inserted into the buffer.<br/>
-One possible function is `comint-postoutput-scroll-to-bottom'.<br/>
-These functions get one argument, a string containing the text as originally<br/>
-inserted.  Note that this might not be the same as the buffer contents between<br/>
-`comint-last-output-start' and the buffer's `process-mark', if other filter<br/>
-functions have already modified the buffer.<br/>
-<br/>
-See also `comint-preoutput-filter-functions'.<br/>
-<br/>
-You can use `add-hook' to add functions to this list<br/>
+<strong>comint-output-filter-functions</strong> is a variable defined in `<code>comint.el</code>'.</br>
+Its value is <pre></br>
+(ansi-color-process-output comint-postoutput-scroll-to-bottom comint-watch-for-password-prompt)
+</pre></br>
+<ul>  <li>This variable's value is permanent if it is given a local binding.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Functions to call after output is inserted into the buffer.</br>
+One possible function is `comint-postoutput-scroll-to-bottom'.</br>
+These functions get one argument, a string containing the text as originally</br>
+inserted.  Note that this might not be the same as the buffer contents between</br>
+`comint-last-output-start' and the buffer's `process-mark', if other filter</br>
+functions have already modified the buffer.</br>
+</br>
+See also `comint-preoutput-filter-functions'.</br>
+</br>
+You can use `add-hook' to add functions to this list</br>
 either globally or locally.

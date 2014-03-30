@@ -1,232 +1,230 @@
-<strong>vhdl-mode-map</strong> is a variable defined in `<code>vhdl-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for VHDL Mode.<br/>
-<br/>
-Value: (keymap<br/>
- (46 . vhdl-electric-period)<br/>
- (44 . vhdl-electric-comma)<br/>
- (59 . vhdl-electric-semicolon)<br/>
- (39 . vhdl-electric-quote)<br/>
- (93 . vhdl-electric-close-bracket)<br/>
- (91 . vhdl-electric-open-bracket)<br/>
- (45 . vhdl-electric-dash)<br/>
- (13 . vhdl-electric-return)<br/>
- (9 . vhdl-electric-tab)<br/>
- (32 . vhdl-electric-space)<br/>
- (M-delete . kill-word)<br/>
- (delete . delete-char)<br/>
- (backspace . backward-delete-char-untabify)<br/>
- (27 keymap<br/>
-     (9 . insert-tab)<br/>
-     (28 . vhdl-indent-region)<br/>
-     (94 . vhdl-delete-indentation)<br/>
-     (17 . vhdl-indent-sexp)<br/>
-     (8 . vhdl-mark-defun)<br/>
-     (5 . vhdl-forward-same-indent)<br/>
-     (1 . vhdl-backward-same-indent)<br/>
-     (21 . vhdl-backward-up-list)<br/>
-     (2 . vhdl-backward-sexp)<br/>
-     (6 . vhdl-forward-sexp)<br/>
-     (101 . vhdl-end-of-statement)<br/>
-     (97 . vhdl-beginning-of-statement))<br/>
- (3 keymap<br/>
-    (22 . vhdl-version)<br/>
-    (8 . vhdl-doc-mode)<br/>
-    (21 keymap<br/>
-	(27 keymap<br/>
-	    (115 . vhdl-update-sensitivity-list-buffer))<br/>
-	(19 . vhdl-update-sensitivity-list-process))<br/>
-    (2 . vhdl-beautify-buffer)<br/>
-    (24 keymap<br/>
-	(23 . vhdl-fixup-whitespace-buffer)<br/>
-	(3 . vhdl-fix-case-buffer)<br/>
-	(27 keymap<br/>
-	    (119 . vhdl-fixup-whitespace-region)<br/>
-	    (99 . vhdl-fix-case-region))<br/>
-	(16 . vhdl-fix-clause))<br/>
-    (12 keymap<br/>
-	(3 . vhdl-comment-uncomment-line)<br/>
-	(7 . goto-line)<br/>
-	(15 . vhdl-line-open)<br/>
-	(16 . vhdl-line-transpose-previous)<br/>
-	(14 . vhdl-line-transpose-next)<br/>
-	(9 . vhdl-line-expand)<br/>
-	(25 . vhdl-line-yank)<br/>
-	(27 keymap<br/>
-	    (119 . vhdl-line-copy))<br/>
-	(23 . vhdl-line-kill))<br/>
-    (6 keymap<br/>
-       (27 keymap<br/>
-	   (102 . vhdl-fill-region))<br/>
-       (9 . vhdl-fill-same-indent)<br/>
-       (7 . vhdl-fill-group)<br/>
-       (6 . vhdl-fill-list)<br/>
-       (12 . vhdl-fill-list))<br/>
-    (1 keymap<br/>
-       (3 . vhdl-align-inline-comment-group)<br/>
-       (2 . vhdl-align-buffer)<br/>
-       (27 keymap<br/>
-	   (99 . vhdl-align-inline-comment-region)<br/>
-	   (97 . vhdl-align-region))<br/>
-       (4 . vhdl-align-declarations)<br/>
-       (12 . vhdl-align-list)<br/>
-       (9 . vhdl-align-same-indent)<br/>
-       (1 . vhdl-align-group)<br/>
-       (7 . vhdl-align-group))<br/>
-    (9 keymap<br/>
-       (13 . vhdl-model-insert)<br/>
-       (4 . vhdl-template-insert-directive)<br/>
-       (16 . vhdl-template-insert-package)<br/>
-       (20 . vhdl-template-insert-construct)<br/>
-       (19 . vhdl-statistics-buffer)<br/>
-       (6 . vhdl-fontify-buffer)<br/>
-       (2 . vhdl-indent-buffer)<br/>
-       (7 . vhdl-indent-group)<br/>
-       (12 . indent-according-to-mode))<br/>
-    (45 . vhdl-comment-append-inline)<br/>
-    (3 . vhdl-comment-uncomment-region)<br/>
-    (27 keymap<br/>
-	(109 . vhdl-show-messages)<br/>
-	(98 . vhdl-beautify-region)<br/>
-	(45 . vhdl-comment-display-line)<br/>
-	(107 . vhdl-generate-makefile)<br/>
-	(11 . vhdl-make))<br/>
-    (11 . vhdl-compile)<br/>
-    (16 keymap<br/>
-	(18 . vhdl-port-reverse-direction)<br/>
-	(6 . vhdl-port-flatten)<br/>
-	(20 . vhdl-port-paste-testbench)<br/>
-	(26 . vhdl-port-paste-initializations)<br/>
-	(7 . vhdl-port-paste-generic-map)<br/>
-	(19 . vhdl-port-paste-signals)<br/>
-	(9 . vhdl-port-paste-instance)<br/>
-	(3 . vhdl-port-paste-component)<br/>
-	(5 . vhdl-port-paste-entity)<br/>
-	(27 keymap<br/>
-	    (99 . vhdl-port-paste-constants)<br/>
-	    (119 . vhdl-port-copy))<br/>
-	(23 . vhdl-port-copy)<br/>
-	(24 . vhdl-export-project)<br/>
-	(13 . vhdl-import-project)<br/>
-	(4 . vhdl-duplicate-project))<br/>
-    (19 keymap<br/>
-	(6 . vhdl-subprog-flatten)<br/>
-	(3 . vhdl-subprog-paste-call)<br/>
-	(2 . vhdl-subprog-paste-body)<br/>
-	(4 . vhdl-subprog-paste-declaration)<br/>
-	(27 keymap<br/>
-	    (119 . vhdl-subprog-copy))<br/>
-	(23 . vhdl-subprog-copy)<br/>
-	(11 . vhdl-set-compiler)<br/>
-	(16 . vhdl-set-project))<br/>
-    (13 keymap<br/>
-	(11 . vhdl-compose-components-package)<br/>
-	(6 . vhdl-compose-configuration)<br/>
-	(23 . vhdl-compose-wire-components)<br/>
-	(16 . vhdl-compose-place-component)<br/>
-	(14 . vhdl-compose-new-component)<br/>
-	(19 . vhdl-stutter-mode)<br/>
-	(5 . vhdl-electric-mode)<br/>
-	(101 . vhdl-model-example-model))<br/>
-    (20 keymap<br/>
-	(17 . vhdl-template-search-prompt)<br/>
-	(4 keymap<br/>
-	   (70 . vhdl-template-directive-synthesis-off)<br/>
-	   (78 . vhdl-template-directive-synthesis-on)<br/>
-	   (102 . vhdl-template-directive-translate-off)<br/>
-	   (110 . vhdl-template-directive-translate-on))<br/>
-	(16 keymap<br/>
-	    (116 . vhdl-template-package-textio)<br/>
-	    (85 . vhdl-template-package-std-logic-unsigned)<br/>
-	    (84 . vhdl-template-package-std-logic-textio)<br/>
-	    (83 . vhdl-template-package-std-logic-signed)<br/>
-	    (77 . vhdl-template-package-std-logic-misc)<br/>
-	    (65 . vhdl-template-package-std-logic-arith)<br/>
-	    (115 . vhdl-template-package-std-logic-1164)<br/>
-	    (110 . vhdl-template-package-numeric-std)<br/>
-	    (98 . vhdl-template-package-numeric-bit))<br/>
-	(119 keymap<br/>
-	     (99 . vhdl-template-clocked-wait)<br/>
-	     (105 . vhdl-template-with)<br/>
-	     (108 . vhdl-template-while-loop)<br/>
-	     (97 . vhdl-template-wait))<br/>
-	(118 keymap<br/>
-	     (97 . vhdl-template-variable))<br/>
-	(117 keymap<br/>
-	     (115 . vhdl-template-use))<br/>
-	(116 keymap<br/>
-	     (121 . vhdl-template-type))<br/>
-	(115 keymap<br/>
-	     (117 . vhdl-template-subtype)<br/>
-	     (105 . vhdl-template-signal)<br/>
-	     (115 . vhdl-template-selected-signal-asst))<br/>
-	(114 keymap<br/>
-	     (116 . vhdl-template-return)<br/>
-	     (112 . vhdl-template-report))<br/>
-	(112 keymap<br/>
-	     (115 . vhdl-template-process-seq)<br/>
-	     (99 . vhdl-template-process-comb)<br/>
-	     (100 . vhdl-template-procedure-decl)<br/>
-	     (98 . vhdl-template-procedure-body)<br/>
-	     (111 . vhdl-template-port))<br/>
-	(40 . vhdl-template-paired-parens)<br/>
-	(80 keymap<br/>
-	    (98 . vhdl-template-package-body)<br/>
-	    (100 . vhdl-template-package-decl))<br/>
-	(111 keymap<br/>
-	     (116 . vhdl-template-others))<br/>
-	(110 keymap<br/>
-	     (101 . vhdl-template-next))<br/>
-	(109 keymap<br/>
-	     (97 . vhdl-template-map))<br/>
-	(20 . vhdl-template-insert-date)<br/>
-	(13 . vhdl-template-modify)<br/>
-	(108 keymap<br/>
-	     (111 . vhdl-template-bare-loop)<br/>
-	     (105 . vhdl-template-library))<br/>
-	(105 keymap<br/>
-	     (116 . vhdl-template-if-then)<br/>
-	     (103 . vhdl-template-if-generate))<br/>
-	(8 . vhdl-template-header)<br/>
-	(103 keymap<br/>
-	     (116 . vhdl-template-group-template)<br/>
-	     (100 . vhdl-template-group-decl)<br/>
-	     (101 . vhdl-template-generic))<br/>
-	(6 . vhdl-template-footer)<br/>
-	(102 keymap<br/>
-	     (100 . vhdl-template-function-decl)<br/>
-	     (98 . vhdl-template-function-body)<br/>
-	     (108 . vhdl-template-for-loop)<br/>
-	     (103 . vhdl-template-for-generate)<br/>
-	     (105 . vhdl-template-file))<br/>
-	(101 keymap<br/>
-	     (120 . vhdl-template-exit)<br/>
-	     (110 . vhdl-template-entity)<br/>
-	     (105 . vhdl-template-elsif)<br/>
-	     (108 . vhdl-template-else))<br/>
-	(100 keymap<br/>
-	     (105 . vhdl-template-disconnect))<br/>
-	(67 keymap<br/>
-	    (115 . vhdl-template-configuration-spec)<br/>
-	    (100 . vhdl-template-configuration-decl)<br/>
-	    (99 . vhdl-template-component-conf)<br/>
-	    (98 . vhdl-template-block-configuration))<br/>
-	(99 keymap<br/>
-	    (111 . vhdl-template-constant)<br/>
-	    (115 . vhdl-template-conditional-signal-asst)<br/>
-	    (105 . vhdl-template-component-inst)<br/>
-	    (100 . vhdl-template-component-decl)<br/>
-	    (97 . vhdl-template-case-is))<br/>
-	(98 keymap<br/>
-	    (108 . vhdl-template-block))<br/>
-	(97 keymap<br/>
-	    (115 . vhdl-template-attribute-spec)<br/>
-	    (100 . vhdl-template-attribute-decl)<br/>
-	    (116 . vhdl-template-assert)<br/>
-	    (114 . vhdl-template-architecture)<br/>
-	    (108 . vhdl-template-alias)))))<br/>
-<br/>
+<strong>vhdl-mode-map</strong> is a variable defined in `<code>vhdl-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for VHDL Mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (46 . vhdl-electric-period)
+ (44 . vhdl-electric-comma)
+ (59 . vhdl-electric-semicolon)
+ (39 . vhdl-electric-quote)
+ (93 . vhdl-electric-close-bracket)
+ (91 . vhdl-electric-open-bracket)
+ (45 . vhdl-electric-dash)
+ (13 . vhdl-electric-return)
+ (9 . vhdl-electric-tab)
+ (32 . vhdl-electric-space)
+ (27 keymap
+     (9 . insert-tab)
+     (28 . vhdl-indent-region)
+     (94 . vhdl-delete-indentation)
+     (17 . vhdl-indent-sexp)
+     (8 . vhdl-mark-defun)
+     (5 . vhdl-forward-same-indent)
+     (1 . vhdl-backward-same-indent)
+     (21 . vhdl-backward-up-list)
+     (2 . vhdl-backward-sexp)
+     (6 . vhdl-forward-sexp)
+     (101 . vhdl-end-of-statement)
+     (97 . vhdl-beginning-of-statement))
+ (3 keymap
+    (22 . vhdl-version)
+    (8 . vhdl-doc-mode)
+    (21 keymap
+	(27 keymap
+	    (115 . vhdl-update-sensitivity-list-buffer))
+	(19 . vhdl-update-sensitivity-list-process))
+    (2 . vhdl-beautify-buffer)
+    (24 keymap
+	(23 . vhdl-fixup-whitespace-buffer)
+	(3 . vhdl-fix-case-buffer)
+	(16 . vhdl-fix-clause)
+	(27 keymap
+	    (119 . vhdl-fixup-whitespace-region)
+	    (99 . vhdl-fix-case-region)
+	    (115 . vhdl-fix-statement-buffer))
+	(19 . vhdl-fix-statement-region))
+    (12 keymap
+	(3 . vhdl-comment-uncomment-line)
+	(7 . goto-line)
+	(15 . vhdl-line-open)
+	(16 . vhdl-line-transpose-previous)
+	(14 . vhdl-line-transpose-next)
+	(9 . vhdl-line-expand)
+	(25 . vhdl-line-yank)
+	(27 keymap
+	    (119 . vhdl-line-copy))
+	(23 . vhdl-line-kill))
+    (6 keymap
+       (27 keymap
+	   (102 . vhdl-fill-region))
+       (9 . vhdl-fill-same-indent)
+       (7 . vhdl-fill-group)
+       (6 . vhdl-fill-list)
+       (12 . vhdl-fill-list))
+    (1 keymap
+       (3 . vhdl-align-inline-comment-group)
+       (2 . vhdl-align-buffer)
+       (27 keymap
+	   (99 . vhdl-align-inline-comment-region)
+	   (97 . vhdl-align-region))
+       (4 . vhdl-align-declarations)
+       (12 . vhdl-align-list)
+       (9 . vhdl-align-same-indent)
+       (1 . vhdl-align-group)
+       (7 . vhdl-align-group))
+    (9 keymap
+       (13 . vhdl-model-insert)
+       (4 . vhdl-template-insert-directive)
+       (16 . vhdl-template-insert-package)
+       (20 . vhdl-template-insert-construct)
+       (19 . vhdl-statistics-buffer)
+       (6 . vhdl-fontify-buffer)
+       (2 . vhdl-indent-buffer)
+       (7 . vhdl-indent-group)
+       (12 . indent-according-to-mode))
+    (45 . vhdl-comment-append-inline)
+    (3 . vhdl-comment-uncomment-region)
+    (27 keymap
+	(109 . vhdl-show-messages)
+	(98 . vhdl-beautify-region)
+	(45 . vhdl-comment-display-line)
+	(107 . vhdl-generate-makefile)
+	(11 . vhdl-make))
+    (11 . vhdl-compile)
+    (16 keymap
+	(18 . vhdl-port-reverse-direction)
+	(6 . vhdl-port-flatten)
+	(20 . vhdl-port-paste-testbench)
+	(26 . vhdl-port-paste-initializations)
+	(7 . vhdl-port-paste-generic-map)
+	(19 . vhdl-port-paste-signals)
+	(9 . vhdl-port-paste-instance)
+	(3 . vhdl-port-paste-component)
+	(5 . vhdl-port-paste-entity)
+	(27 keymap
+	    (99 . vhdl-port-paste-constants)
+	    (119 . vhdl-port-copy))
+	(23 . vhdl-port-copy)
+	(24 . vhdl-export-project)
+	(13 . vhdl-import-project)
+	(4 . vhdl-duplicate-project))
+    (19 keymap
+	(6 . vhdl-subprog-flatten)
+	(3 . vhdl-subprog-paste-call)
+	(2 . vhdl-subprog-paste-body)
+	(4 . vhdl-subprog-paste-declaration)
+	(27 keymap
+	    (119 . vhdl-subprog-copy))
+	(23 . vhdl-subprog-copy)
+	(11 . vhdl-set-compiler)
+	(16 . vhdl-set-project))
+    (13 keymap
+	(11 . vhdl-compose-components-package)
+	(6 . vhdl-compose-configuration)
+	(23 . vhdl-compose-wire-components)
+	(16 . vhdl-compose-place-component)
+	(14 . vhdl-compose-new-component)
+	(19 . vhdl-stutter-mode)
+	(5 . vhdl-electric-mode)
+	(101 . vhdl-model-example-model))
+    (20 keymap
+	(17 . vhdl-template-search-prompt)
+	(4 keymap
+	   (70 . vhdl-template-directive-synthesis-off)
+	   (78 . vhdl-template-directive-synthesis-on)
+	   (102 . vhdl-template-directive-translate-off)
+	   (110 . vhdl-template-directive-translate-on))
+	(16 keymap
+	    (116 . vhdl-template-package-textio)
+	    (85 . vhdl-template-package-std-logic-unsigned)
+	    (84 . vhdl-template-package-std-logic-textio)
+	    (83 . vhdl-template-package-std-logic-signed)
+	    (77 . vhdl-template-package-std-logic-misc)
+	    (65 . vhdl-template-package-std-logic-arith)
+	    (115 . vhdl-template-package-std-logic-1164)
+	    (110 . vhdl-template-package-numeric-std)
+	    (98 . vhdl-template-package-numeric-bit))
+	(119 keymap
+	     (99 . vhdl-template-clocked-wait)
+	     (105 . vhdl-template-with)
+	     (108 . vhdl-template-while-loop)
+	     (97 . vhdl-template-wait))
+	(118 keymap
+	     (97 . vhdl-template-variable))
+	(117 keymap
+	     (115 . vhdl-template-use))
+	(116 keymap
+	     (121 . vhdl-template-type))
+	(115 keymap
+	     (117 . vhdl-template-subtype)
+	     (105 . vhdl-template-signal)
+	     (115 . vhdl-template-selected-signal-asst))
+	(114 keymap
+	     (116 . vhdl-template-return)
+	     (112 . vhdl-template-report))
+	(112 keymap
+	     (115 . vhdl-template-process-seq)
+	     (99 . vhdl-template-process-comb)
+	     (100 . vhdl-template-procedure-decl)
+	     (98 . vhdl-template-procedure-body)
+	     (111 . vhdl-template-port))
+	(40 . vhdl-template-paired-parens)
+	(80 keymap
+	    (98 . vhdl-template-package-body)
+	    (100 . vhdl-template-package-decl))
+	(111 keymap
+	     (116 . vhdl-template-others))
+	(110 keymap
+	     (101 . vhdl-template-next))
+	(109 keymap
+	     (97 . vhdl-template-map))
+	(20 . vhdl-template-insert-date)
+	(13 . vhdl-template-modify)
+	(108 keymap
+	     (111 . vhdl-template-bare-loop)
+	     (105 . vhdl-template-library))
+	(105 keymap
+	     (116 . vhdl-template-if-then)
+	     (103 . vhdl-template-if-generate))
+	(8 . vhdl-template-header)
+	(103 keymap
+	     (116 . vhdl-template-group-template)
+	     (100 . vhdl-template-group-decl)
+	     (101 . vhdl-template-generic))
+	(6 . vhdl-template-footer)
+	(102 keymap
+	     (100 . vhdl-template-function-decl)
+	     (98 . vhdl-template-function-body)
+	     (108 . vhdl-template-for-loop)
+	     (103 . vhdl-template-for-generate)
+	     (105 . vhdl-template-file))
+	(101 keymap
+	     (120 . vhdl-template-exit)
+	     (110 . vhdl-template-entity)
+	     (105 . vhdl-template-elsif)
+	     (108 . vhdl-template-else))
+	(100 keymap
+	     (105 . vhdl-template-disconnect))
+	(67 keymap
+	    (115 . vhdl-template-configuration-spec)
+	    (100 . vhdl-template-configuration-decl)
+	    (99 . vhdl-template-component-conf)
+	    (98 . vhdl-template-block-configuration))
+	(99 keymap
+	    (111 . vhdl-template-constant)
+	    (115 . vhdl-template-conditional-signal-asst)
+	    (105 . vhdl-template-component-inst)
+	    (100 . vhdl-template-component-decl)
+	    (97 . vhdl-template-case-is))
+	(98 keymap
+	    (108 . vhdl-template-block))
+	(97 keymap
+	    (115 . vhdl-template-attribute-spec)
+	    (100 . vhdl-template-attribute-decl)
+	    (116 . vhdl-template-assert)
+	    (114 . vhdl-template-architecture)
+	    (108 . vhdl-template-alias)))))
+</pre></br>

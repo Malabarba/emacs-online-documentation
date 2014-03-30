@@ -1,20 +1,22 @@
-<strong>coordinates-in-window-p</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(coordinates-in-window-p COORDINATES WINDOW)<br/>
-<br/>
-Return non-nil if COORDINATES are in WINDOW.<br/>
-WINDOW must be a live window and defaults to the selected one.<br/>
-COORDINATES is a cons of the form (X . Y), X and Y being distances<br/>
-measured in characters from the upper-left corner of the frame.<br/>
-(0 . 0) denotes the character in the upper left corner of the<br/>
-frame.<br/>
-If COORDINATES are in the text portion of WINDOW,<br/>
-   the coordinates relative to the window are returned.<br/>
-If they are in the mode line of WINDOW, `mode-line' is returned.<br/>
-If they are in the top mode line of WINDOW, `header-line' is returned.<br/>
-If they are in the left fringe of WINDOW, `left-fringe' is returned.<br/>
-If they are in the right fringe of WINDOW, `right-fringe' is returned.<br/>
-If they are on the border between WINDOW and its right sibling,<br/>
-  `vertical-line' is returned.<br/>
-If they are in the windows's left or right marginal areas, `left-margin'<br/>
+<strong>coordinates-in-window-p</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(coordinates-in-window-p <u>COORDINATES</u> <u>WINDOW</u>)</br>
+</br>
+Return non-nil if <u>COORDINATES</u> are in <u>WINDOW</u>.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.</br>
+<u>COORDINATES</u> is a cons of the form (X . Y), X and Y being distances</br>
+measured in characters from the upper-left corner of the frame.</br>
+(0 . 0) denotes the character in the upper left corner of the</br>
+frame.</br>
+If <u>COORDINATES</u> are in the text portion of <u>WINDOW</u>,</br>
+   the coordinates relative to the window are returned.</br>
+If they are in the bottom divider of <u>WINDOW</u>, `bottom-divider' is returned.</br>
+If they are in the right divider of <u>WINDOW</u>, `right-divider' is returned.</br>
+If they are in the mode line of <u>WINDOW</u>, `mode-line' is returned.</br>
+If they are in the header line of <u>WINDOW</u>, `header-line' is returned.</br>
+If they are in the left fringe of <u>WINDOW</u>, `left-fringe' is returned.</br>
+If they are in the right fringe of <u>WINDOW</u>, `right-fringe' is returned.</br>
+If they are on the border between <u>WINDOW</u> and its right sibling,</br>
+  `vertical-line' is returned.</br>
+If they are in the windows's left or right marginal areas, `left-margin'</br>
   or `right-margin' is returned.

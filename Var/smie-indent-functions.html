@@ -1,12 +1,10 @@
-<strong>smie-indent-functions</strong> is a variable defined in `<code>smie.el</code>'.<br/>
-Its value is<br/>
-(smie-indent-fixindent smie-indent-bob smie-indent-close smie-indent-comment smie-indent-comment-continue smie-indent-comment-close smie-indent-comment-inside smie-indent-inside-string smie-indent-keyword smie-indent-after-keyword smie-indent-exps)<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Functions to compute the indentation.<br/>
-Each function is called with no argument, shouldn't move point, and should<br/>
-return either nil if it has no opinion, or an integer representing the column<br/>
+<strong>smie-indent-functions</strong> is a variable defined in `<code>smie.el</code>'.</br>
+Its value is <pre></br>
+(smie-indent-fixindent smie-indent-bob smie-indent-close smie-indent-comment smie-indent-comment-continue smie-indent-comment-close smie-indent-comment-inside smie-indent-inside-string smie-indent-keyword smie-indent-after-keyword smie-indent-exps)
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Functions to compute the indentation.</br>
+Each function is called with no argument, shouldn't move point, and should</br>
+return either nil if it has no opinion, or an integer representing the column</br>
 to which that point should be aligned, if we were to reindent it.

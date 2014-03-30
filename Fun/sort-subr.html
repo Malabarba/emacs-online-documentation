@@ -1,46 +1,46 @@
-<strong>sort-subr</strong> is an autoloaded compiled Lisp function in `<code>sort.el</code>'.<br/>
-<br/>
-(sort-subr REVERSE NEXTRECFUN ENDRECFUN &optional STARTKEYFUN ENDKEYFUN PREDICATE)<br/>
-<br/>
-General text sorting routine to divide buffer into records and sort them.<br/>
-<br/>
-We divide the accessible portion of the buffer into disjoint pieces<br/>
-called sort records.  A portion of each sort record (perhaps all of<br/>
-it) is designated as the sort key.  The records are rearranged in the<br/>
-buffer in order by their sort keys.  The records may or may not be<br/>
-contiguous.<br/>
-<br/>
-Usually the records are rearranged in order of ascending sort key.<br/>
-If REVERSE is non-nil, they are rearranged in order of descending sort key.<br/>
-The variable `sort-fold-case' determines whether alphabetic case affects<br/>
-the sort order.<br/>
-<br/>
-The next four arguments are functions to be called to move point<br/>
-across a sort record.  They will be called many times from within sort-subr.<br/>
-<br/>
-NEXTRECFUN is called with point at the end of the previous record.<br/>
-It moves point to the start of the next record.<br/>
-It should move point to the end of the buffer if there are no more records.<br/>
-The first record is assumed to start at the position of point when sort-subr<br/>
-is called.<br/>
-<br/>
-ENDRECFUN is called with point within the record.<br/>
-It should move point to the end of the record.<br/>
-<br/>
-STARTKEYFUN moves from the start of the record to the start of the key.<br/>
-It may return either a non-nil value to be used as the key, or<br/>
-else the key is the substring between the values of point after<br/>
-STARTKEYFUN and ENDKEYFUN are called.  If STARTKEYFUN is nil, the key<br/>
-starts at the beginning of the record.<br/>
-<br/>
-ENDKEYFUN moves from the start of the sort key to the end of the sort key.<br/>
-ENDKEYFUN may be nil if STARTKEYFUN returns a value or if it would be the<br/>
-same as ENDRECFUN.<br/>
-<br/>
-PREDICATE, if non-nil, is the predicate function for comparing<br/>
-keys; it is called with two arguments, the keys to compare, and<br/>
-should return non-nil if the first key should sort before the<br/>
-second key.  If PREDICATE is nil, comparison is done with `<' if<br/>
-the keys are numbers, with `compare-buffer-substrings' if the<br/>
-keys are cons cells (the car and cdr of each cons cell are taken<br/>
-as start and end positions), and with `string<' otherwise.
+<strong>sort-subr</strong> is an autoloaded compiled Lisp function in `<code>sort.el</code>'.</br>
+</br>
+(sort-subr <u>REVERSE</u> <u>NEXTRECFUN</u> <u>ENDRECFUN</u> &optional <u>STARTKEYFUN</u> <u>ENDKEYFUN</u> <u>PREDICATE</u>)</br>
+</br>
+General text sorting routine to divide buffer into records and sort them.</br>
+</br>
+We divide the accessible portion of the buffer into disjoint pieces</br>
+called sort records.  A portion of each sort record (perhaps all of</br>
+it) is designated as the sort key.  The records are rearranged in the</br>
+buffer in order by their sort keys.  The records may or may not be</br>
+contiguous.</br>
+</br>
+Usually the records are rearranged in order of ascending sort key.</br>
+If <u>REVERSE</u> is non-nil, they are rearranged in order of descending sort key.</br>
+The variable `sort-fold-case' determines whether alphabetic case affects</br>
+the sort order.</br>
+</br>
+The next four arguments are functions to be called to move point</br>
+across a sort record.  They will be called many times from within sort-subr.</br>
+</br>
+<u>NEXTRECFUN</u> is called with point at the end of the previous record.</br>
+It moves point to the start of the next record.</br>
+It should move point to the end of the buffer if there are no more records.</br>
+The first record is assumed to start at the position of point when sort-subr</br>
+is called.</br>
+</br>
+<u>ENDRECFUN</u> is called with point within the record.</br>
+It should move point to the end of the record.</br>
+</br>
+<u>STARTKEYFUN</u> moves from the start of the record to the start of the key.</br>
+It may return either a non-nil value to be used as the key, or</br>
+else the key is the substring between the values of point after</br>
+<u>STARTKEYFUN</u> and <u>ENDKEYFUN</u> are called.  If <u>STARTKEYFUN</u> is nil, the key</br>
+starts at the beginning of the record.</br>
+</br>
+<u>ENDKEYFUN</u> moves from the start of the sort key to the end of the sort key.</br>
+<u>ENDKEYFUN</u> may be nil if <u>STARTKEYFUN</u> returns a value or if it would be the</br>
+same as <u>ENDRECFUN</u>.</br>
+</br>
+<u>PREDICATE</u>, if non-nil, is the predicate function for comparing</br>
+keys; it is called with two arguments, the keys to compare, and</br>
+should return non-nil if the first key should sort before the</br>
+second key.  If <u>PREDICATE</u> is nil, comparison is done with `&lt;' if</br>
+the keys are numbers, with `compare-buffer-substrings' if the</br>
+keys are cons cells (the car and cdr of each cons cell are taken</br>
+as start and end positions), and with `string&lt;' otherwise.

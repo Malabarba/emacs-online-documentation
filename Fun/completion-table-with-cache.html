@@ -1,0 +1,12 @@
+<strong>completion-table-with-cache</strong> is a compiled Lisp function in `<code>minibuffer.el</code>'.</br>
+</br>
+(completion-table-with-cache <u>FUN</u> &optional <u>IGNORE-CASE</u>)</br>
+</br>
+Create dynamic completion table from function <u>FUN</u>, with cache.</br>
+This is a wrapper for `completion-table-dynamic' that saves the last</br>
+argument-result pair from <u>FUN</u>, so that several lookups with the</br>
+same argument (or with an argument that starts with the first one)</br>
+only need to call <u>FUN</u> once.  This can be useful when <u>FUN</u> performs a</br>
+relatively slow operation, such as calling an external process.</br>
+</br>
+When <u>IGNORE-CASE</u> is non-nil, <u>FUN</u> is expected to be case-insensitive.

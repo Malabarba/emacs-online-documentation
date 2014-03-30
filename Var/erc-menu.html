@@ -1,0 +1,103 @@
+<strong>erc-menu</strong> is a variable defined in `<code>erc.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+ERC menu</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "ERC"
+	(Connect\ to\ server\.\.\. menu-item "Connect to server..." erc)
+	(Disconnect\ from\ server\.\.\. menu-item "Disconnect from server..." erc-quit-server :enable erc-server-connected)
+	(nil menu-item "-")
+	(List\ channels\.\.\. menu-item "List channels..." erc-list-channels :enable
+			      (and erc-server-connected
+				   (fboundp 'erc-list-channels)))
+	(Join\ channel\.\.\. menu-item "Join channel..." erc-join-channel :enable erc-server-connected)
+	(Start\ a\ query\.\.\. menu-item "Start a query..." erc-cmd-QUERY :enable erc-server-connected)
+	(Input\ action\.\.\. menu-item "Input action..." erc-input-action :enable
+			     (erc-default-target))
+	(nil-7 menu-item "-")
+	(Current\ channel menu-item "Current channel"
+			  (keymap "Current channel"
+				  (List\ users\ in\ channel menu-item "List users in channel" erc-channel-names :enable erc-channel-users)
+				  (List\ channel\ operators menu-item "List channel operators" erc-cmd-OPS :enable erc-channel-users)
+				  (Set\ topic\.\.\. menu-item "Set topic..." erc-set-topic :enable
+						    (and
+						     (and
+						      (erc-default-target)
+						      (not
+						       (erc-query-buffer-p)))
+						     (or
+						      (not
+						       (member "t" erc-channel-modes))
+						      (erc-channel-user-op-p
+						       (erc-current-nick)))))
+				  (Channel\ modes menu-item "Channel modes"
+						  (keymap "Channel modes"
+							  (Change\ mode\.\.\. menu-item "Change mode..." erc-insert-mode-command :enable
+									      (erc-channel-user-op-p
+									       (erc-current-nick)))
+							  (No\ external\ send menu-item "No external send" menu-function-182 :key-sequence nil :enable
+									      (erc-channel-user-op-p
+									       (erc-current-nick))
+									      :button
+									      (:toggle member "n" erc-channel-modes))
+							  (Topic\ set\ by\ channel\ operator menu-item "Topic set by channel operator" menu-function-183 :key-sequence nil :enable
+											     (erc-channel-user-op-p
+											      (erc-current-nick))
+											     :button
+											     (:toggle member "t" erc-channel-modes))
+							  (Invite\ only menu-item "Invite only" menu-function-184 :key-sequence nil :enable
+									(erc-channel-user-op-p
+									 (erc-current-nick))
+									:button
+									(:toggle member "i" erc-channel-modes))
+							  (Private menu-item "Private" menu-function-185 :key-sequence nil :enable
+								   (erc-channel-user-op-p
+								    (erc-current-nick))
+								   :button
+								   (:toggle member "p" erc-channel-modes))
+							  (Secret menu-item "Secret" menu-function-186 :key-sequence nil :enable
+								  (erc-channel-user-op-p
+								   (erc-current-nick))
+								  :button
+								  (:toggle member "s" erc-channel-modes))
+							  (Moderated menu-item "Moderated" menu-function-187 :key-sequence nil :enable
+								     (erc-channel-user-op-p
+								      (erc-current-nick))
+								     :button
+								     (:toggle member "m" erc-channel-modes))
+							  (Set\ a\ limit\.\.\. menu-item "Set a limit..." erc-set-channel-limit :enable
+									       (erc-channel-user-op-p
+										(erc-current-nick)))
+							  (Set\ a\ key\.\.\. menu-item "Set a key..." erc-set-channel-key :enable
+									     (erc-channel-user-op-p
+									      (erc-current-nick)))))
+				  (Leave\ this\ channel\.\.\. menu-item "Leave this channel..." erc-part-from-channel :enable erc-channel-users)))
+	(nil-9 menu-item "-")
+	(Pals\,\ fools\ and\ other\ keywords menu-item "Pals, fools and other keywords"
+					     (keymap "Pals, fools and other keywords"
+						     (Add\ pal\.\.\. menu-item "Add pal..." erc-add-pal)
+						     (Delete\ pal\.\.\. menu-item "Delete pal..." erc-delete-pal)
+						     (Add\ fool\.\.\. menu-item "Add fool..." erc-add-fool)
+						     (Delete\ fool\.\.\. menu-item "Delete fool..." erc-delete-fool)
+						     (Add\ keyword\.\.\. menu-item "Add keyword..." erc-add-keyword)
+						     (Delete\ keyword\.\.\. menu-item "Delete keyword..." erc-delete-keyword)
+						     (Add\ dangerous\ host\.\.\. menu-item "Add dangerous host..." erc-add-dangerous-host)
+						     (Delete\ dangerous\ host\.\.\. menu-item "Delete dangerous host..." erc-delete-dangerous-host)))
+	(nil-11 menu-item "-")
+	(IRC\ services menu-item "IRC services"
+		       (keymap "IRC services"
+			       (Identify\ to\ NickServ\.\.\. menu-item "Identify to NickServ..." erc-nickserv-identify :enable
+							     (and erc-server-connected
+								  (functionp 'erc-nickserv-identify)))))
+	(nil-13 menu-item "-")
+	(Save\ buffer\ in\ log menu-item "Save buffer in log" erc-save-buffer-in-logs :enable
+			       (fboundp 'erc-save-buffer-in-logs))
+	(Truncate\ buffer menu-item "Truncate buffer" erc-truncate-buffer :enable
+			  (fboundp 'erc-truncate-buffer))
+	(nil-16 menu-item "-")
+	(Customize\ ERC menu-item "Customize ERC" menu-function-188 :key-sequence nil)
+	(Enable/Disable\ ERC\ Modules menu-item "Enable/Disable ERC Modules" menu-function-189 :key-sequence nil)
+	(Show\ ERC\ version menu-item "Show ERC version" erc-version))
+</pre></br>

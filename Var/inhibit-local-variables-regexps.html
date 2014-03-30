@@ -1,14 +1,14 @@
-<strong>inhibit-local-variables-regexps</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is<br/>
-("\\.tar\\'" "\\.t[bg]z\\'" "\\.arc\\'" "\\.zip\\'" "\\.lzh\\'" "\\.lha\\'" "\\.zoo\\'" "\\.[jew]ar\\'" "\\.xpi\\'" "\\.rar\\'" "\\.7z\\'" "\\.sx[dmicw]\\'" "\\.odt\\'" "\\.tiff?\\'" "\\.gif\\'" "\\.png\\'" "\\.jpe?g\\'")<br/>
-<br/>
-<br/>
-Documentation:<br/>
-List of regexps matching file names in which to ignore local variables.<br/>
-This includes `-*-' lines as well as trailing "Local Variables" sections.<br/>
-Files matching this list are typically binary file formats.<br/>
-They may happen to contain sequences that look like local variable<br/>
-specifications, but are not really, or they may be containers for<br/>
-member files with their own local variable sections, which are<br/>
-not appropriate for the containing file.<br/>
-See also `inhibit-local-variables-suffixes'.
+<strong>inhibit-local-variables-regexps</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre></br>
+("\\.tar\\'" "\\.t[bg]z\\'" "\\.arc\\'" "\\.zip\\'" "\\.lzh\\'" "\\.lha\\'" "\\.zoo\\'" "\\.[jew]ar\\'" "\\.xpi\\'" "\\.rar\\'" "\\.7z\\'" "\\.sx[dmicw]\\'" "\\.odt\\'" "\\.diff\\'" "\\.patch\\'" "\\.tiff?\\'" "\\.gif\\'" "\\.png\\'" "\\.jpe?g\\'")
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of regexps matching file names in which to ignore local variables.</br>
+This includes `-*-' lines as well as trailing "Local Variables" sections.</br>
+Files matching this list are typically binary file formats.</br>
+They may happen to contain sequences that look like local variable</br>
+specifications, but are not really, or they may be containers for</br>
+member files with their own local variable sections, which are</br>
+not appropriate for the containing file.</br>
+The function `inhibit-local-variables-p' uses this.

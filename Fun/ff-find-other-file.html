@@ -1,55 +1,56 @@
-<strong>ff-find-other-file</strong> is an interactive autoloaded compiled Lisp function in `<code>find-file.el</code>'.<br/>
-<br/>
-(ff-find-other-file &optional IN-OTHER-WINDOW IGNORE-INCLUDE)<br/>
-<br/>
-Find the header or source file corresponding to this file.<br/>
-Being on a `#include' line pulls in that file.<br/>
-<br/>
-If optional IN-OTHER-WINDOW is non-nil, find the file in the other window.<br/>
-If optional IGNORE-INCLUDE is non-nil, ignore being on `#include' lines.<br/>
-<br/>
-Variables of interest include:<br/>
-<br/>
- - `ff-case-fold-search'<br/>
-   Non-nil means ignore cases in matches (see `case-fold-search').<br/>
-   If you have extensions in different cases, you will want this to be nil.<br/>
-<br/>
- - `ff-always-in-other-window'<br/>
-   If non-nil, always open the other file in another window, unless an<br/>
-   argument is given to `ff-find-other-file'.<br/>
-<br/>
- - `ff-ignore-include'<br/>
-   If non-nil, ignores #include lines.<br/>
-<br/>
- - `ff-always-try-to-create'<br/>
-   If non-nil, always attempt to create the other file if it was not found.<br/>
-<br/>
- - `ff-quiet-mode'<br/>
-   If non-nil, traces which directories are being searched.<br/>
-<br/>
- - `ff-special-constructs'<br/>
-   A list of regular expressions specifying how to recognize special<br/>
-   constructs such as include files etc, and an associated method for<br/>
-   extracting the filename from that construct.<br/>
-<br/>
- - `ff-other-file-alist'<br/>
-   Alist of extensions to find given the current file's extension.<br/>
-<br/>
- - `ff-search-directories'<br/>
-   List of directories searched through with each extension specified in<br/>
-   `ff-other-file-alist' that matches this file's extension.<br/>
-<br/>
- - `ff-pre-find-hook'<br/>
-   List of functions to be called before the search for the file starts.<br/>
-<br/>
- - `ff-pre-load-hook'<br/>
-   List of functions to be called before the other file is loaded.<br/>
-<br/>
- - `ff-post-load-hook'<br/>
-   List of functions to be called after the other file is loaded.<br/>
-<br/>
- - `ff-not-found-hook'<br/>
-   List of functions to be called if the other file could not be found.<br/>
-<br/>
- - `ff-file-created-hook'<br/>
+<strong>ff-find-other-file</strong> is an interactive autoloaded compiled Lisp function in `<code>find-file.el</code>'.</br>
+</br>
+</br>
+(ff-find-other-file &optional <u>IN-OTHER-WINDOW</u> <u>IGNORE-INCLUDE</u>)</br>
+</br>
+Find the header or source file corresponding to this file.</br>
+Being on a `#include' line pulls in that file.</br>
+</br>
+If optional <u>IN-OTHER-WINDOW</u> is non-nil, find the file in the other window.</br>
+If optional <u>IGNORE-INCLUDE</u> is non-nil, ignore being on `#include' lines.</br>
+</br>
+Variables of interest include:</br>
+</br>
+ - `ff-case-fold-search'</br>
+   Non-nil means ignore cases in matches (see `case-fold-search').</br>
+   If you have extensions in different cases, you will want this to be nil.</br>
+</br>
+ - `ff-always-in-other-window'</br>
+   If non-nil, always open the other file in another window, unless an</br>
+   argument is given to `ff-find-other-file'.</br>
+</br>
+ - `ff-ignore-include'</br>
+   If non-nil, ignores #include lines.</br>
+</br>
+ - `ff-always-try-to-create'</br>
+   If non-nil, always attempt to create the other file if it was not found.</br>
+</br>
+ - `ff-quiet-mode'</br>
+   If non-nil, traces which directories are being searched.</br>
+</br>
+ - `ff-special-constructs'</br>
+   A list of regular expressions specifying how to recognize special</br>
+   constructs such as include files etc, and an associated method for</br>
+   extracting the filename from that construct.</br>
+</br>
+ - `ff-other-file-alist'</br>
+   Alist of extensions to find given the current file's extension.</br>
+</br>
+ - `ff-search-directories'</br>
+   List of directories searched through with each extension specified in</br>
+   `ff-other-file-alist' that matches this file's extension.</br>
+</br>
+ - `ff-pre-find-hook'</br>
+   List of functions to be called before the search for the file starts.</br>
+</br>
+ - `ff-pre-load-hook'</br>
+   List of functions to be called before the other file is loaded.</br>
+</br>
+ - `ff-post-load-hook'</br>
+   List of functions to be called after the other file is loaded.</br>
+</br>
+ - `ff-not-found-hook'</br>
+   List of functions to be called if the other file could not be found.</br>
+</br>
+ - `ff-file-created-hook'</br>
    List of functions to be called if the other file has been created.

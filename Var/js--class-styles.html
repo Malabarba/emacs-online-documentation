@@ -1,58 +1,57 @@
-<strong>js--class-styles</strong> is a variable defined in `<code>js.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of JavaScript class definition styles.<br/>
-<br/>
-A class definition style is a plist with the following keys:<br/>
-<br/>
-:name is a human-readable name of the class type<br/>
-<br/>
-:class-decl is a regular expression giving the start of the<br/>
-class.  Its first group must match the name of its class.  If there<br/>
-is a parent class, the second group should match, and it should be<br/>
-the name of the class.<br/>
-<br/>
-If :prototype is present and non-nil, the parser will merge<br/>
-declarations for this constructs with others at the same lexical<br/>
-level that have the same name.  Otherwise, multiple definitions<br/>
-will create multiple top-level entries.  Don't use :prototype<br/>
-unnecessarily: it has an associated cost in performance.<br/>
-<br/>
-If :strip-prototype is present and non-nil, then if the class<br/>
-name as matched contains<br/>
-<br/>
-<br/>
-Value: ((:name "Plain" :class-decl "^\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\.prototype\\s-*=\\s-*{" :prototype t :contexts<br/>
-	(toplevel)<br/>
-	:framework javascript)<br/>
- (:name "MochiKit" :class-decl "^\\s-*MochiKit\\.Base\\.update\\s-*(\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :prototype t :contexts<br/>
-	(toplevel)<br/>
-	:framework mochikit)<br/>
- (:name "Prototype (Obsolete)" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*=\\s-*Class\\.create()" :contexts<br/>
-	(toplevel)<br/>
-	:framework prototype)<br/>
- (:name "Prototype (Modern)" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)\\s-*=\\s-*Class\\.create\\s-*(\\s-*\\(?:\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*,\\s-*\\)?{?" :contexts<br/>
-	(toplevel)<br/>
-	:framework prototype)<br/>
- (:name "Prototype (Object.extend)" :class-decl "^\\s-*Object\\.extend\\s-*(\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*,\\s-*{" :prototype t :contexts<br/>
-	(toplevel)<br/>
-	:framework prototype)<br/>
- (:name "Prototype (Object.extend) 2" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*=\\s-*Object\\.extend\\s-*(" :prototype t :contexts<br/>
-	(toplevel)<br/>
-	:framework prototype)<br/>
- (:name "Dojo" :class-decl "^\\s-*dojo\\.declare\\s-*(\"\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :contexts<br/>
-	(toplevel)<br/>
-	:framework dojo)<br/>
- (:name "ExtJS (style 1)" :class-decl "^\\s-*Ext\\.extend\\s-*(\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*,\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :prototype t :contexts<br/>
-	(toplevel)<br/>
-	:framework extjs)<br/>
- (:name "ExtJS (style 2)" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)\\s-*=\\s-*Ext\\.extend\\s-*(\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :contexts<br/>
-	(toplevel)<br/>
-	:framework extjs)<br/>
- (:name "Merrill Press" :class-decl "^\\s-*var\\s-+\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)\\s-*=\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\.extend\\(?:Final\\)?\\s-*(\\s-*{?\\s-*$" :contexts<br/>
-	(toplevel)<br/>
-	:framework merrillpress))<br/>
-<br/>
+<strong>js--class-styles</strong> is a variable defined in `<code>js.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of JavaScript class definition styles.</br>
+</br>
+A class definition style is a plist with the following keys:</br>
+</br>
+:name is a human-readable name of the class type</br>
+</br>
+:class-decl is a regular expression giving the start of the</br>
+class.  Its first group must match the name of its class.  If there</br>
+is a parent class, the second group should match, and it should be</br>
+the name of the class.</br>
+</br>
+If :prototype is present and non-nil, the parser will merge</br>
+declarations for this constructs with others at the same lexical</br>
+level that have the same name.  Otherwise, multiple definitions</br>
+will create multiple top-level entries.  Don't use :prototype</br>
+unnecessarily: it has an associated cost in performance.</br>
+</br>
+If :strip-prototype is present and non-nil, then if the class</br>
+name as matched contains</br>
+</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((:name "Plain" :class-decl "^\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\.prototype\\s-*=\\s-*{" :prototype t :contexts
+	(toplevel)
+	:framework javascript)
+ (:name "MochiKit" :class-decl "^\\s-*MochiKit\\.Base\\.update\\s-*(\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :prototype t :contexts
+	(toplevel)
+	:framework mochikit)
+ (:name "Prototype (Obsolete)" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*=\\s-*Class\\.create()" :contexts
+	(toplevel)
+	:framework prototype)
+ (:name "Prototype (Modern)" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)\\s-*=\\s-*Class\\.create\\s-*(\\s-*\\(?:\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*,\\s-*\\)?{?" :contexts
+	(toplevel)
+	:framework prototype)
+ (:name "Prototype (Object.extend)" :class-decl "^\\s-*Object\\.extend\\s-*(\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*,\\s-*{" :prototype t :contexts
+	(toplevel)
+	:framework prototype)
+ (:name "Prototype (Object.extend) 2" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*=\\s-*Object\\.extend\\s-*(" :prototype t :contexts
+	(toplevel)
+	:framework prototype)
+ (:name "Dojo" :class-decl "^\\s-*dojo\\.declare\\s-*(\"\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :contexts
+	(toplevel)
+	:framework dojo)
+ (:name "ExtJS (style 1)" :class-decl "^\\s-*Ext\\.extend\\s-*(\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\s-*,\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :prototype t :contexts
+	(toplevel)
+	:framework extjs)
+ (:name "ExtJS (style 2)" :class-decl "^\\s-*\\(?:var\\s-+\\)?\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)\\s-*=\\s-*Ext\\.extend\\s-*(\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)" :contexts
+	(toplevel)
+	:framework extjs)
+ (:name "Merrill Press" :class-decl "^\\s-*var\\s-+\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)\\s-*=\\s-*\\([a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\(?:\\.[a-zA-Z_$]\\(?:\\s_\\|\\sw\\)*\\)*\\)\\.extend\\(?:Final\\)?\\s-*(\\s-*{?\\s-*$" :contexts
+	(toplevel)
+	:framework merrillpress))
+</pre></br>

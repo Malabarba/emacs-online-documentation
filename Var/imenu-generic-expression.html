@@ -1,46 +1,37 @@
-<strong>imenu-generic-expression</strong> is a variable defined in `<code>imenu.el</code>'.<br/>
-Its value is<br/>
-((nil "^\\s-*(\\(def\\(?:advice\\|generic\\|ine-\\(?:compiler-macro\\|derived-mode\\|g\\(?:\\(?:eneric\\|lobal\\(?:\\(?:ized\\)?-minor\\)\\)-mode\\)\\|m\\(?:ethod-combination\\|inor-mode\\|odify-macro\\)\\|s\\(?:etf-expander\\|keleton\\)\\)\\|m\\(?:acro\\|ethod\\)\\|s\\(?:etf\\|ubst\\)\\|un\\*?\\)\\)\\s-+\\(\\(\\sw\\|\\s_\\)+\\)" 2)<br/>
- ("Variables" "^\\s-*(\\(def\\(?:c\\(?:onst\\(?:ant\\)?\\|ustom\\)\\|ine-symbol-macro\\|parameter\\)\\)\\s-+\\(\\(\\sw\\|\\s_\\)+\\)" 2)<br/>
- ("Variables" "^\\s-*(defvar\\s-+\\(\\(\\sw\\|\\s_\\)+\\)[[:space:]\n]+[^)]" 1)<br/>
- ("Types" "^\\s-*(\\(def\\(?:class\\|face\\|group\\|ine-\\(?:condition\\|widget\\)\\|package\\|struct\\|t\\(?:\\(?:hem\\|yp\\)e\\)\\)\\)\\s-+'?\\(\\(\\sw\\|\\s_\\)+\\)" 2))<br/>
-<br/>
-Local in buffer *scratch*; global value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of definition matchers for creating an Imenu index.<br/>
-Each element of this list should have the form<br/>
-<br/>
-  (MENU-TITLE REGEXP INDEX [FUNCTION] [ARGUMENTS...])<br/>
-<br/>
-MENU-TITLE should be nil (in which case the matches for this<br/>
-element are put in the top level of the buffer index) or a<br/>
-string (which specifies the title of a submenu into which the<br/>
-matches are put).<br/>
-REGEXP is a regular expression matching a definition construct<br/>
-which is to be displayed in the menu.  REGEXP may also be a<br/>
-function, called without arguments.  It is expected to search<br/>
-backwards.  It must return true and set `match-data' if it finds<br/>
-another element.<br/>
-INDEX is an integer specifying which subexpression of REGEXP<br/>
-matches the definition's name; this subexpression is displayed as<br/>
-the menu item.<br/>
-FUNCTION, if present, specifies a function to call when the index<br/>
-item is selected by the user.  This function is called with<br/>
-arguments consisting of the item name, the buffer position, and<br/>
-the ARGUMENTS.<br/>
-<br/>
-The variable `imenu-case-fold-search' determines whether or not<br/>
-the regexp matches are case sensitive, and `imenu-syntax-alist'<br/>
-can be used to alter the syntax table for the search.<br/>
-<br/>
-If non-nil this pattern is passed to `imenu--generic-function' to<br/>
-create a buffer index.<br/>
-<br/>
-For example, see the value of `fortran-imenu-generic-expression'<br/>
-used by `fortran-mode' with `imenu-syntax-alist' set locally to<br/>
-give the characters which normally have "symbol" syntax<br/>
+<strong>imenu-generic-expression</strong> is a variable defined in `<code>imenu.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of definition matchers for creating an Imenu index.</br>
+Each element of this list should have the form</br>
+</br>
+  (MENU-TITLE REGEXP INDEX [FUNCTION] [ARGUMENTS...])</br>
+</br>
+MENU-TITLE should be nil (in which case the matches for this</br>
+element are put in the top level of the buffer index) or a</br>
+string (which specifies the title of a submenu into which the</br>
+matches are put).</br>
+REGEXP is a regular expression matching a definition construct</br>
+which is to be displayed in the menu.  REGEXP may also be a</br>
+function, called without arguments.  It is expected to search</br>
+backwards.  It must return true and set `match-data' if it finds</br>
+another element.</br>
+INDEX is an integer specifying which subexpression of REGEXP</br>
+matches the definition's name; this subexpression is displayed as</br>
+the menu item.</br>
+FUNCTION, if present, specifies a function to call when the index</br>
+item is selected by the user.  This function is called with</br>
+arguments consisting of the item name, the buffer position, and</br>
+the ARGUMENTS.</br>
+</br>
+The variable `imenu-case-fold-search' determines whether or not</br>
+the regexp matches are case sensitive, and `imenu-syntax-alist'</br>
+can be used to alter the syntax table for the search.</br>
+</br>
+If non-nil this pattern is passed to `imenu--generic-function' to</br>
+create a buffer index.</br>
+</br>
+For example, see the value of `fortran-imenu-generic-expression'</br>
+used by `fortran-mode' with `imenu-syntax-alist' set locally to</br>
+give the characters which normally have "symbol" syntax</br>
 "word" syntax during matching.

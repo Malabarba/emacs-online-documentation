@@ -1,17 +1,17 @@
-<strong>c-lineup-java-throws</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
-<br/>
-(c-lineup-java-throws LANGELEM)<br/>
-<br/>
-Line up Java throws declarations.<br/>
-If exception names follow on the same line as the throws keyword,<br/>
-they are lined up under each other.  Otherwise, they are indented by<br/>
-adding `c-basic-offset' to the column of the throws keyword.  The<br/>
-throws keyword itself is also indented by `c-basic-offset' from the<br/>
-function declaration start if it doesn't hang.  E.g.:<br/>
-<br/>
-int foo()           int foo() throws Cyphr,<br/>
-    throws     <->                   Bar,    <- c-lineup-java-throws<br/>
-        Bar    <->                   Vlod    <- c-lineup-java-throws<br/>
-<--><--> c-basic-offset<br/>
-<br/>
+<strong>c-lineup-java-throws</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.</br>
+</br>
+(c-lineup-java-throws <u>LANGELEM</u>)</br>
+</br>
+Line up Java throws declarations.</br>
+If exception names follow on the same line as the throws keyword,</br>
+they are lined up under each other.  Otherwise, they are indented by</br>
+adding `c-basic-offset' to the column of the throws keyword.  The</br>
+throws keyword itself is also indented by `c-basic-offset' from the</br>
+function declaration start if it doesn't hang.  E.g.:</br>
+</br>
+int foo()           int foo() throws Cyphr,</br>
+    throws     &lt;->                   Bar,    &lt;- c-lineup-java-throws</br>
+        Bar    &lt;->                   Vlod    &lt;- c-lineup-java-throws</br>
+&lt;-->&lt;--> c-basic-offset</br>
+</br>
 Works with: func-decl-cont.

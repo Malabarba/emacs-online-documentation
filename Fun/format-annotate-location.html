@@ -1,20 +1,20 @@
-<strong>format-annotate-location</strong> is a compiled Lisp function in `<code>format.el</code>'.<br/>
-<br/>
-(format-annotate-location LOC ALL IGNORE TRANSLATIONS)<br/>
-<br/>
-Return annotation(s) needed at location LOC.<br/>
-This includes any properties that change between LOC - 1 and LOC.<br/>
-If ALL is true, don't look at previous location, but generate annotations for<br/>
-all non-nil properties.<br/>
-Third argument IGNORE is a list of text-properties not to consider.<br/>
-Use the TRANSLATIONS alist (see `format-annotate-region' for doc).<br/>
-<br/>
-Return value is a vector of 3 elements:<br/>
-1. List of annotations to close<br/>
-2. List of annotations to open.<br/>
-3. List of properties that were ignored or couldn't be annotated.<br/>
-<br/>
-The annotations in lists 1 and 2 need not be strings.<br/>
-They can be whatever the FORMAT-FN in `format-annotate-region'<br/>
-can handle.  If that is `enriched-make-annotation', they can be<br/>
+<strong>format-annotate-location</strong> is a compiled Lisp function in `<code>format.el</code>'.</br>
+</br>
+(format-annotate-location <u>LOC</u> <u>ALL</u> <u>IGNORE</u> <u>TRANSLATIONS</u>)</br>
+</br>
+Return annotation(s) needed at location <u>LOC</u>.</br>
+This includes any properties that change between <u>LOC</u> - 1 and <u>LOC</u>.</br>
+If <u>ALL</u> is true, don't look at previous location, but generate annotations for</br>
+all non-nil properties.</br>
+Third argument <u>IGNORE</u> is a list of text-properties not to consider.</br>
+Use the <u>TRANSLATIONS</u> alist (see `format-annotate-region' for doc).</br>
+</br>
+Return value is a vector of 3 elements:</br>
+1. List of annotations to close</br>
+2. List of annotations to open.</br>
+3. List of properties that were ignored or couldn't be annotated.</br>
+</br>
+The annotations in lists 1 and 2 need not be strings.</br>
+They can be whatever the FORMAT-FN in `format-annotate-region'</br>
+can handle.  If that is `enriched-make-annotation', they can be</br>
 either strings, or lists of the form (PARAMETER VALUE).

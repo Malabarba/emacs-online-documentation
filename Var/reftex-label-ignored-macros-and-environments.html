@@ -1,0 +1,24 @@
+<strong>reftex-label-ignored-macros-and-environments</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of macros and environments to be ignored when searching for labels.</br>
+The purpose is to ignore environments and macros that use keyval</br>
+style label=foo arguments, but the label has a different meaning</br>
+than a \label{foo}.  Standard \label{...} definitions are never</br>
+ignored.</br>
+</br>
+E.g., TikZ defines several macros/environments where [label=foo]</br>
+defines the label to be printed at some node or edge, but it's</br>
+not a label used for referencing.</br>
+</br>
+Note that this feature is only supported if you are using AUCTeX</br>
+and the functions `TeX-current-macro' and</br>
+`LaTeX-current-environment' are bound.  Also note that this</br>
+feature might slow down the reftex parsing process for large TeX</br>
+files.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

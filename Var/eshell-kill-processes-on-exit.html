@@ -1,22 +1,22 @@
-<strong>eshell-kill-processes-on-exit</strong> is a variable defined in `<code>esh-proc.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-If non-nil, kill active processes when exiting an Eshell buffer.<br/>
-Emacs will only kill processes owned by that Eshell buffer.<br/>
-<br/>
-If nil, ownership of background and foreground processes reverts to<br/>
-Emacs itself, and will die only if the user exits Emacs, calls<br/>
-`kill-process', or terminates the processes externally.<br/>
-<br/>
-If `ask', Emacs prompts the user before killing any processes.<br/>
-<br/>
-If `every', it prompts once for every process.<br/>
-<br/>
-If t, it kills all buffer-owned processes without asking.<br/>
-<br/>
-Processes are first sent SIGHUP, then SIGINT, then SIGQUIT, then<br/>
-SIGKILL.  The variable `eshell-kill-process-wait-time' specifies how<br/>
-long to delay between signals.<br/>
-<br/>
+<strong>eshell-kill-processes-on-exit</strong> is a variable defined in `<code>esh-proc.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, kill active processes when exiting an Eshell buffer.</br>
+Emacs will only kill processes owned by that Eshell buffer.</br>
+</br>
+If nil, ownership of background and foreground processes reverts to</br>
+Emacs itself, and will die only if the user exits Emacs, calls</br>
+`kill-process', or terminates the processes externally.</br>
+</br>
+If `ask', Emacs prompts the user before killing any processes.</br>
+</br>
+If `every', it prompts once for every process.</br>
+</br>
+If t, it kills all buffer-owned processes without asking.</br>
+</br>
+Processes are first sent SIGHUP, then SIGINT, then SIGQUIT, then</br>
+SIGKILL.  The variable `eshell-kill-process-wait-time' specifies how</br>
+long to delay between signals.</br>
+</br>
 You can customize this variable.

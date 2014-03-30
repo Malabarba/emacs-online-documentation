@@ -1,0 +1,10 @@
+<strong>ses--advice-copy-region-as-kill</strong> is a compiled Lisp function in `<code>ses.el</code>'.</br>
+</br>
+(ses--advice-copy-region-as-kill <u>CRAK-FUN</u> <u>BEG</u> <u>END</u> &rest <u>ARGS</u>)</br>
+</br>
+It doesn't make sense to copy read-only or intangible attributes into the</br>
+kill ring.  It probably doesn't make sense to copy keymap properties.</br>
+We'll assume copying front-sticky properties doesn't make sense, either.</br>
+</br>
+This advice also includes some SES-specific code because otherwise it's too</br>
+hard to override how mouse-1 works.

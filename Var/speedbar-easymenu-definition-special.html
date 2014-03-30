@@ -1,66 +1,67 @@
-<strong>speedbar-easymenu-definition-special</strong> is a variable defined in `<code>speedbar.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Additional menu items while in file-mode.<br/>
-<br/>
-Value: (["Edit Item On Line" speedbar-edit-line t]<br/>
- ["Show All Files" speedbar-toggle-show-all-files :style toggle :selected speedbar-show-unknown-files]<br/>
- ["Expand File Tags" speedbar-expand-line<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *.\\+. "))]<br/>
- ["Flush Cache & Expand" speedbar-flush-expand-line<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *.\\+. "))]<br/>
- ["Expand All Descendants" speedbar-expand-line-descendants<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *.\\+. "))]<br/>
- ["Contract File Tags" speedbar-contract-line<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *.-. "))]<br/>
- "----"<br/>
- ["File/Tag Information" speedbar-item-info t]<br/>
- ["Load Lisp File" speedbar-item-load<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *\\[[+-]\\] .+\\(\\.el\\)\\( \\|$\\)"))]<br/>
- ["Byte Compile File" speedbar-item-byte-compile<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *\\[[+-]\\] .+\\(\\.el\\)\\( \\|$\\)"))]<br/>
- ["Copy File" speedbar-item-copy<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *\\["))]<br/>
- ["Rename File" speedbar-item-rename<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *[[<]"))]<br/>
- ["Create Directory" speedbar-create-directory<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *[[<]"))]<br/>
- ["Delete File" speedbar-item-delete<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *[[<]"))]<br/>
- ["Delete Object" speedbar-item-object-delete<br/>
-  (save-excursion<br/>
-    (beginning-of-line)<br/>
-    (looking-at "[0-9]+: *\\[[+-]\\] [^ \n]+ \\*?[!#]$"))]<br/>
- "----"<br/>
- ["Create EDE Target" ede-new-target<br/>
-  (ede-current-project)]<br/>
- ["Add to project" ede-speedbar-file-add-to-project<br/>
-  (ede-current-project)]<br/>
- ["Compile project" ede-speedbar-compile-project<br/>
-  (ede-current-project)]<br/>
- ["Compile file target" ede-speedbar-compile-file-target<br/>
-  (ede-current-project)]<br/>
- ["Make distribution" ede-make-dist<br/>
-  (ede-current-project)])<br/>
-<br/>
+<strong>speedbar-easymenu-definition-special</strong> is a variable defined in `<code>speedbar.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Additional menu items while in file-mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(["Edit Item On Line" speedbar-edit-line t]
+ ["Show All Files" speedbar-toggle-show-all-files :style toggle :selected speedbar-show-unknown-files]
+ ["Expand File Tags" speedbar-expand-line
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *.\\+. "))]
+ ["Flush Cache & Expand" speedbar-flush-expand-line
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *.\\+. "))]
+ ["Expand All Descendants" speedbar-expand-line-descendants
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *.\\+. "))]
+ ["Contract File Tags" speedbar-contract-line
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *.-. "))]
+ "----"
+ ["File/Tag Information" speedbar-item-info t]
+ ["Load Lisp File" speedbar-item-load
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *\\[[+-]\\] .+\\(\\.el\\)\\( \\|$\\)"))]
+ ["Byte Compile File" speedbar-item-byte-compile
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *\\[[+-]\\] .+\\(\\.el\\)\\( \\|$\\)"))]
+ ["Copy File" speedbar-item-copy
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *\\["))]
+ ["Rename File" speedbar-item-rename
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *[[<]"))]
+ ["Create Directory" speedbar-create-directory
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *[[<]"))]
+ ["Delete File" speedbar-item-delete
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *[[<]"))]
+ ["Delete Object" speedbar-item-object-delete
+  (save-excursion
+    (beginning-of-line)
+    (looking-at "[0-9]+: *\\[[+-]\\] [^ \n]+ \\*?[!#]$"))]
+ "----"
+ ["Create EDE Target" ede-new-target
+  (ede-current-project)]
+ ["Add to project" ede-speedbar-file-add-to-project
+  (ede-current-project)]
+ ["Compile project" ede-speedbar-compile-project
+  (ede-current-project)]
+ ["Compile file target" ede-speedbar-compile-file-target
+  (ede-current-project)]
+ ["Make distribution" ede-make-dist
+  (ede-current-project)])
+</pre></br>

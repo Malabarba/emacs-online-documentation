@@ -1,18 +1,31 @@
-<strong>ruby-mode-map</strong> is a variable defined in `<code>ruby-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap used in Ruby mode.<br/>
-<br/>
-Value: (keymap<br/>
- (3 keymap<br/>
-    (123 . ruby-toggle-block))<br/>
- (27 keymap<br/>
-     (17 . ruby-indent-exp)<br/>
-     (14 . ruby-end-of-block)<br/>
-     (16 . ruby-beginning-of-block)<br/>
-     (6 . ruby-forward-sexp)<br/>
-     (2 . ruby-backward-sexp)))<br/>
-<br/>
+<strong>ruby-mode-map</strong> is a variable defined in `<code>ruby-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used in Ruby mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Ruby menu-item "Ruby"
+		 (keymap "Ruby"
+			 (Beginning\ of\ Block menu-item "Beginning of Block" ruby-beginning-of-block)
+			 (End\ of\ Block menu-item "End of Block" ruby-end-of-block)
+			 (Toggle\ Block menu-item "Toggle Block" ruby-toggle-block)
+			 (nil menu-item "--")
+			 (Backward\ Sexp menu-item "Backward Sexp" ruby-backward-sexp :visible
+					 (not ruby-use-smie))
+			 (Backward\ Sexp-5 menu-item "Backward Sexp" backward-sexp :visible ruby-use-smie)
+			 (Forward\ Sexp menu-item "Forward Sexp" ruby-forward-sexp :visible
+					(not ruby-use-smie))
+			 (Forward\ Sexp-7 menu-item "Forward Sexp" forward-sexp :visible ruby-use-smie)
+			 (Indent\ Sexp menu-item "Indent Sexp" ruby-indent-exp :visible
+				       (not ruby-use-smie))
+			 (Indent\ Sexp-9 menu-item "Indent Sexp" prog-indent-sexp :visible ruby-use-smie))))
+ (3 keymap
+    (123 . ruby-toggle-block))
+ (27 keymap
+     (14 . ruby-end-of-block)
+     (16 . ruby-beginning-of-block)
+     (4 . smie-down-list)))
+</pre></br>

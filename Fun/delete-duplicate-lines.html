@@ -1,0 +1,22 @@
+<strong>delete-duplicate-lines</strong> is an interactive autoloaded compiled Lisp function in `<code>sort.el</code>'.</br>
+</br>
+</br>
+(delete-duplicate-lines <u>BEG</u> <u>END</u> &optional <u>REVERSE</u> <u>ADJACENT</u> <u>KEEP-BLANKS</u> <u>INTERACTIVE</u>)</br>
+</br>
+Delete all but one copy of any identical lines in the region.</br>
+Non-interactively, arguments <u>BEG</u> and <u>END</u> delimit the region.</br>
+Normally it searches forwards, keeping the first instance of</br>
+each identical line.  If <u>REVERSE</u> is non-nil (interactively, with</br>
+a C-u prefix), it searches backwards and keeps the last instance of</br>
+each repeated line.</br>
+</br>
+Identical lines need not be adjacent, unless the argument</br>
+<u>ADJACENT</u> is non-nil (interactively, with a C-u C-u prefix).</br>
+This is a more efficient mode of operation, and may be useful</br>
+on large regions that have already been sorted.</br>
+</br>
+If the argument <u>KEEP-BLANKS</u> is non-nil (interactively, with a</br>
+C-u C-u C-u prefix), it retains repeated blank lines.</br>
+</br>
+Returns the number of deleted lines.  Interactively, or if <u>INTERACTIVE</u></br>
+is non-nil, it also prints a message describing the number of deletions.

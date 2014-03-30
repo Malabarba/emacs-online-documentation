@@ -1,17 +1,17 @@
-<strong>compose-last-chars</strong> is an interactive compiled Lisp function in `<code>composite.el</code>'.<br/>
-<br/>
-It is bound to <compose-last-chars>.<br/>
-<br/>
-(compose-last-chars ARGS)<br/>
-<br/>
-Compose last characters.<br/>
-The argument is a parameterized event of the form<br/>
-	(compose-last-chars N COMPONENTS),<br/>
-where N is the number of characters before point to compose,<br/>
-COMPONENTS, if non-nil, is the same as the argument to `compose-region'<br/>
-(which see).  If it is nil, `compose-chars-after' is called,<br/>
-and that function finds a proper rule to compose the target characters.<br/>
-This function is intended to be used from input methods.<br/>
-The global keymap binds special event `compose-last-chars' to this<br/>
-function.  Input method may generate an event (compose-last-chars N COMPONENTS)<br/>
+<strong>compose-last-chars</strong> is an interactive compiled Lisp function in `<code>composite.el</code>'.</br>
+</br>
+It is bound to &lt;compose-last-chars>.</br>
+</br>
+<code>(compose-last-chars <u>ARGS</u></code>)</br>
+</br>
+Compose last characters.</br>
+The argument is a parameterized event of the form</br>
+	(compose-last-chars N COMPONENTS),</br>
+where N is the number of characters before point to compose,</br>
+COMPONENTS, if non-nil, is the same as the argument to `compose-region'</br>
+(which see).  If it is nil, `compose-chars-after' is called,</br>
+and that function finds a proper rule to compose the target characters.</br>
+This function is intended to be used from input methods.</br>
+The global keymap binds special event `compose-last-chars' to this</br>
+function.  Input method may generate an event (compose-last-chars N COMPONENTS)</br>
 after a sequence of character events.

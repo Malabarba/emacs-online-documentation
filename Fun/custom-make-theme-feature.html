@@ -1,12 +1,12 @@
-<strong>custom-make-theme-feature</strong> is a compiled Lisp function in `<code>custom.el</code>'.<br/>
-<br/>
-(custom-make-theme-feature THEME)<br/>
-<br/>
-Given a symbol THEME, create a new symbol by appending "-theme".<br/>
-Store this symbol in the `theme-feature' property of THEME.<br/>
-Calling `provide-theme' to provide THEME actually puts `THEME-theme'<br/>
-into `features'.<br/>
-<br/>
-This allows for a file-name convention for autoloading themes:<br/>
-Every theme X has a property `provide-theme' whose value is "X-theme".<br/>
+<strong>custom-make-theme-feature</strong> is a compiled Lisp function in `<code>custom.el</code>'.</br>
+</br>
+(custom-make-theme-feature <u>THEME</u>)</br>
+</br>
+Given a symbol <u>THEME</u>, create a new symbol by appending "-theme".</br>
+Store this symbol in the `theme-feature' property of <u>THEME</u>.</br>
+Calling `provide-theme' to provide <u>THEME</u> actually puts `<u>THEME</u>-theme'</br>
+into `features'.</br>
+</br>
+This allows for a file-name convention for autoloading themes:</br>
+Every theme X has a property `provide-theme' whose value is "X-theme".</br>
 (load-theme X) then attempts to load the file `X-theme.el'.

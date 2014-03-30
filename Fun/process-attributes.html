@@ -1,54 +1,54 @@
-<strong>process-attributes</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(process-attributes PID)<br/>
-<br/>
-Return attributes of the process given by its PID, a number.<br/>
-<br/>
-Value is an alist where each element is a cons cell of the form<br/>
-<br/>
-    (KEY . VALUE)<br/>
-<br/>
-If this functionality is unsupported, the value is nil.<br/>
-<br/>
-See `list-system-processes' for getting a list of all process IDs.<br/>
-<br/>
-The KEYs of the attributes that this function may return are listed<br/>
-below, together with the type of the associated VALUE (in parentheses).<br/>
-Not all platforms support all of these attributes; unsupported<br/>
-attributes will not appear in the returned alist.<br/>
-Unless explicitly indicated otherwise, numbers can have either<br/>
-integer or floating point values.<br/>
-<br/>
- euid    -- Effective user User ID of the process (number)<br/>
- user    -- User name corresponding to euid (string)<br/>
- egid    -- Effective user Group ID of the process (number)<br/>
- group   -- Group name corresponding to egid (string)<br/>
- comm    -- Command name (executable name only) (string)<br/>
- state   -- Process state code, such as "S", "R", or "T" (string)<br/>
- ppid    -- Parent process ID (number)<br/>
- pgrp    -- Process group ID (number)<br/>
- sess    -- Session ID, i.e. process ID of session leader (number)<br/>
- ttname  -- Controlling tty name (string)<br/>
- tpgid   -- ID of foreground process group on the process's tty (number)<br/>
- minflt  -- number of minor page faults (number)<br/>
- majflt  -- number of major page faults (number)<br/>
- cminflt -- cumulative number of minor page faults (number)<br/>
- cmajflt -- cumulative number of major page faults (number)<br/>
- utime   -- user time used by the process, in (current-time) format,<br/>
-              which is a list of integers (HIGH LOW USEC PSEC)<br/>
- stime   -- system time used by the process (current-time)<br/>
- time    -- sum of utime and stime (current-time)<br/>
- cutime  -- user time used by the process and its children (current-time)<br/>
- cstime  -- system time used by the process and its children (current-time)<br/>
- ctime   -- sum of cutime and cstime (current-time)<br/>
- pri     -- priority of the process (number)<br/>
- nice    -- nice value of the process (number)<br/>
- thcount -- process thread count (number)<br/>
- start   -- time the process started (current-time)<br/>
- vsize   -- virtual memory size of the process in KB's (number)<br/>
- rss     -- resident set size of the process in KB's (number)<br/>
- etime   -- elapsed time the process is running, in (HIGH LOW USEC PSEC) format<br/>
- pcpu    -- percents of CPU time used by the process (floating-point number)<br/>
- pmem    -- percents of total physical memory used by process's resident set<br/>
-              (floating-point number)<br/>
+<strong>process-attributes</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(process-attributes <u>PID</u>)</br>
+</br>
+Return attributes of the process given by its <u>PID</u>, a number.</br>
+</br>
+Value is an alist where each element is a cons cell of the form</br>
+</br>
+    (KEY . VALUE)</br>
+</br>
+If this functionality is unsupported, the value is nil.</br>
+</br>
+See `list-system-processes' for getting a list of all process IDs.</br>
+</br>
+The KEYs of the attributes that this function may return are listed</br>
+below, together with the type of the associated VALUE (in parentheses).</br>
+Not all platforms support all of these attributes; unsupported</br>
+attributes will not appear in the returned alist.</br>
+Unless explicitly indicated otherwise, numbers can have either</br>
+integer or floating point values.</br>
+</br>
+ euid    -- Effective user User ID of the process (number)</br>
+ user    -- User name corresponding to euid (string)</br>
+ egid    -- Effective user Group ID of the process (number)</br>
+ group   -- Group name corresponding to egid (string)</br>
+ comm    -- Command name (executable name only) (string)</br>
+ state   -- Process state code, such as "S", "R", or "T" (string)</br>
+ ppid    -- Parent process ID (number)</br>
+ pgrp    -- Process group ID (number)</br>
+ sess    -- Session ID, i.e. process ID of session leader (number)</br>
+ ttname  -- Controlling tty name (string)</br>
+ tpgid   -- ID of foreground process group on the process's tty (number)</br>
+ minflt  -- number of minor page faults (number)</br>
+ majflt  -- number of major page faults (number)</br>
+ cminflt -- cumulative number of minor page faults (number)</br>
+ cmajflt -- cumulative number of major page faults (number)</br>
+ utime   -- user time used by the process, in (current-time) format,</br>
+              which is a list of integers (HIGH LOW USEC PSEC)</br>
+ stime   -- system time used by the process (current-time)</br>
+ time    -- sum of utime and stime (current-time)</br>
+ cutime  -- user time used by the process and its children (current-time)</br>
+ cstime  -- system time used by the process and its children (current-time)</br>
+ ctime   -- sum of cutime and cstime (current-time)</br>
+ pri     -- priority of the process (number)</br>
+ nice    -- nice value of the process (number)</br>
+ thcount -- process thread count (number)</br>
+ start   -- time the process started (current-time)</br>
+ vsize   -- virtual memory size of the process in KB's (number)</br>
+ rss     -- resident set size of the process in KB's (number)</br>
+ etime   -- elapsed time the process is running, in (HIGH LOW USEC PSEC) format</br>
+ pcpu    -- percents of CPU time used by the process (floating-point number)</br>
+ pmem    -- percents of total physical memory used by process's resident set</br>
+              (floating-point number)</br>
  args    -- command line which invoked the process (string).

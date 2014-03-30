@@ -1,23 +1,24 @@
-<strong>semantic-analyze-possible-completions</strong> is an interactive autoloaded Lisp function in `<code>complete.el</code>'.<br/>
-<br/>
-(semantic-analyze-possible-completions CONTEXT &rest FLAGS)<br/>
-<br/>
-Return a list of semantic tags which are possible completions.<br/>
-CONTEXT is either a position (such as point), or a precalculated<br/>
-context.  Passing in a context is useful if the caller also needs<br/>
-to access parts of the analysis.<br/>
-The remaining FLAGS arguments are passed to the mode specific completion engine.<br/>
-Bad flags should be ignored by modes that don't use them.<br/>
-See `semantic-analyze-possible-completions-default' for details on the default FLAGS.<br/>
-<br/>
-Completions run through the following filters:<br/>
-  * Elements currently in scope<br/>
-  * Constants currently in scope<br/>
-  * Elements match the :prefix in the CONTEXT.<br/>
-  * Type of the completion matches the type of the context.<br/>
-Context type matching can identify the following:<br/>
-  * No specific type<br/>
-  * Assignment into a variable of some type.<br/>
-  * Argument to a function with type constraints.<br/>
-When called interactively, displays the list of possible completions<br/>
+<strong>semantic-analyze-possible-completions</strong> is an interactive autoloaded Lisp function in `<code>complete.el</code>'.</br>
+</br>
+</br>
+(semantic-analyze-possible-completions <u>CONTEXT</u> &rest <u>FLAGS</u>)</br>
+</br>
+Return a list of semantic tags which are possible completions.</br>
+<u>CONTEXT</u> is either a position (such as point), or a precalculated</br>
+context.  Passing in a context is useful if the caller also needs</br>
+to access parts of the analysis.</br>
+The remaining <u>FLAGS</u> arguments are passed to the mode specific completion engine.</br>
+Bad flags should be ignored by modes that don't use them.</br>
+See `semantic-analyze-possible-completions-default' for details on the default <u>FLAGS</u>.</br>
+</br>
+Completions run through the following filters:</br>
+  * Elements currently in scope</br>
+  * Constants currently in scope</br>
+  * Elements match the :prefix in the <u>CONTEXT</u>.</br>
+  * Type of the completion matches the type of the context.</br>
+Context type matching can identify the following:</br>
+  * No specific type</br>
+  * Assignment into a variable of some type.</br>
+  * Argument to a function with type constraints.</br>
+When called interactively, displays the list of possible completions</br>
 in a buffer.

@@ -1,41 +1,41 @@
-<strong>find-operation-coding-system</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(find-operation-coding-system OPERATION ARGUMENTS...)<br/>
-<br/>
-Choose a coding system for an operation based on the target name.<br/>
-The value names a pair of coding systems: (DECODING-SYSTEM . ENCODING-SYSTEM).<br/>
-DECODING-SYSTEM is the coding system to use for decoding<br/>
-(in case OPERATION does decoding), and ENCODING-SYSTEM is the coding system<br/>
-for encoding (in case OPERATION does encoding).<br/>
-<br/>
-The first argument OPERATION specifies an I/O primitive:<br/>
-  For file I/O, `insert-file-contents' or `write-region'.<br/>
-  For process I/O, `call-process', `call-process-region', or `start-process'.<br/>
-  For network I/O, `open-network-stream'.<br/>
-<br/>
-The remaining arguments should be the same arguments that were passed<br/>
-to the primitive.  Depending on which primitive, one of those arguments<br/>
-is selected as the TARGET.  For example, if OPERATION does file I/O,<br/>
-whichever argument specifies the file name is TARGET.<br/>
-<br/>
-TARGET has a meaning which depends on OPERATION:<br/>
-  For file I/O, TARGET is a file name (except for the special case below).<br/>
-  For process I/O, TARGET is a process name.<br/>
-  For network I/O, TARGET is a service name or a port number.<br/>
-<br/>
-This function looks up what is specified for TARGET in<br/>
-`file-coding-system-alist', `process-coding-system-alist',<br/>
-or `network-coding-system-alist' depending on OPERATION.<br/>
-They may specify a coding system, a cons of coding systems,<br/>
-or a function symbol to call.<br/>
-In the last case, we call the function with one argument,<br/>
-which is a list of all the arguments given to this function.<br/>
-If the function can't decide a coding system, it can return<br/>
-`undecided' so that the normal code-detection is performed.<br/>
-<br/>
-If OPERATION is `insert-file-contents', the argument corresponding to<br/>
-TARGET may be a cons (FILENAME . BUFFER).  In that case, FILENAME is a<br/>
-file name to look up, and BUFFER is a buffer that contains the file's<br/>
-contents (not yet decoded).  If `file-coding-system-alist' specifies a<br/>
-function to call for FILENAME, that function should examine the<br/>
+<strong>find-operation-coding-system</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(find-operation-coding-system <u>OPERATION</u> <u>ARGUMENTS</u>...)</br>
+</br>
+Choose a coding system for an operation based on the target name.</br>
+The value names a pair of coding systems: (DECODING-SYSTEM . ENCODING-SYSTEM).</br>
+DECODING-SYSTEM is the coding system to use for decoding</br>
+(in case <u>OPERATION</u> does decoding), and ENCODING-SYSTEM is the coding system</br>
+for encoding (in case <u>OPERATION</u> does encoding).</br>
+</br>
+The first argument <u>OPERATION</u> specifies an I/O primitive:</br>
+  For file I/O, `insert-file-contents' or `write-region'.</br>
+  For process I/O, `call-process', `call-process-region', or `start-process'.</br>
+  For network I/O, `open-network-stream'.</br>
+</br>
+The remaining arguments should be the same arguments that were passed</br>
+to the primitive.  Depending on which primitive, one of those arguments</br>
+is selected as the TARGET.  For example, if <u>OPERATION</u> does file I/O,</br>
+whichever argument specifies the file name is TARGET.</br>
+</br>
+TARGET has a meaning which depends on <u>OPERATION</u>:</br>
+  For file I/O, TARGET is a file name (except for the special case below).</br>
+  For process I/O, TARGET is a process name.</br>
+  For network I/O, TARGET is a service name or a port number.</br>
+</br>
+This function looks up what is specified for TARGET in</br>
+`file-coding-system-alist', `process-coding-system-alist',</br>
+or `network-coding-system-alist' depending on <u>OPERATION</u>.</br>
+They may specify a coding system, a cons of coding systems,</br>
+or a function symbol to call.</br>
+In the last case, we call the function with one argument,</br>
+which is a list of all the arguments given to this function.</br>
+If the function can't decide a coding system, it can return</br>
+`undecided' so that the normal code-detection is performed.</br>
+</br>
+If <u>OPERATION</u> is `insert-file-contents', the argument corresponding to</br>
+TARGET may be a cons (FILENAME . BUFFER).  In that case, FILENAME is a</br>
+file name to look up, and BUFFER is a buffer that contains the file's</br>
+contents (not yet decoded).  If `file-coding-system-alist' specifies a</br>
+function to call for FILENAME, that function should examine the</br>
 contents of BUFFER instead of reading the file.

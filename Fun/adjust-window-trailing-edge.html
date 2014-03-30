@@ -1,13 +1,16 @@
-<strong>adjust-window-trailing-edge</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(adjust-window-trailing-edge WINDOW DELTA &optional HORIZONTAL)<br/>
-<br/>
-Move WINDOW's bottom edge by DELTA lines.<br/>
-Optional argument HORIZONTAL non-nil means move WINDOW's right<br/>
-edge by DELTA columns.  WINDOW must be a valid window and<br/>
-defaults to the selected one.<br/>
-<br/>
-If DELTA is greater than zero, move the edge downwards or to the<br/>
-right.  If DELTA is less than zero, move the edge upwards or to<br/>
-the left.  If the edge can't be moved by DELTA lines or columns,<br/>
+<strong>adjust-window-trailing-edge</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(adjust-window-trailing-edge <u>WINDOW</u> <u>DELTA</u> &optional <u>HORIZONTAL</u> <u>PIXELWISE</u>)</br>
+</br>
+Move <u>WINDOW</u>'s bottom edge by <u>DELTA</u> lines.</br>
+Optional argument <u>HORIZONTAL</u> non-nil means move <u>WINDOW</u>'s right</br>
+edge by <u>DELTA</u> columns.  <u>WINDOW</u> must be a valid window and</br>
+defaults to the selected one.</br>
+</br>
+Optional argument <u>PIXELWISE</u> non-nil means interpret <u>DELTA</u> as</br>
+number of pixels.</br>
+</br>
+If <u>DELTA</u> is greater than zero, move the edge downwards or to the</br>
+right.  If <u>DELTA</u> is less than zero, move the edge upwards or to</br>
+the left.  If the edge can't be moved by <u>DELTA</u> lines or columns,</br>
 move it as far as possible in the desired direction.

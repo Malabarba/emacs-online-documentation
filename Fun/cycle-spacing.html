@@ -1,0 +1,21 @@
+<strong>cycle-spacing</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+</br>
+(cycle-spacing &optional <u>N</u> <u>PRESERVE-NL-BACK</u> <u>SINGLE-SHOT</u>)</br>
+</br>
+Manipulate whitespace around point in a smart way.</br>
+In interactive use, this function behaves differently in successive</br>
+consecutive calls.</br>
+</br>
+The first call in a sequence acts like `just-one-space'.</br>
+It deletes all spaces and tabs around point, leaving one space</br>
+(or <u>N</u> spaces).  <u>N</u> is the prefix argument.  If <u>N</u> is negative,</br>
+it deletes newlines as well, leaving -<u>N</u> spaces.</br>
+(If <u>PRESERVE-NL-BACK</u> is non-nil, it does not delete newlines before point.)</br>
+</br>
+The second call in a sequence (or the first call if the above does</br>
+not result in any changes) deletes all spaces.</br>
+</br>
+The third call in a sequence restores the original whitespace (and point).</br>
+</br>
+If <u>SINGLE-SHOT</u> is non-nil, it only performs the first step in the sequence.

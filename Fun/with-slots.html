@@ -1,22 +1,22 @@
-<strong>with-slots</strong> is a Lisp macro in `<code>eieio.el</code>'.<br/>
-<br/>
-(with-slots SPEC-LIST OBJECT &rest BODY)<br/>
-<br/>
-Bind SPEC-LIST lexically to slot values in OBJECT, and execute BODY.<br/>
-This establishes a lexical environment for referring to the slots in<br/>
-the instance named by the given slot-names as though they were<br/>
-variables.  Within such a context the value of the slot can be<br/>
-specified by using its slot name, as if it were a lexically bound<br/>
-variable.  Both setf and setq can be used to set the value of the<br/>
-slot.<br/>
-<br/>
-SPEC-LIST is of a form similar to `let'.  For example:<br/>
-<br/>
-  ((VAR1 SLOT1)<br/>
-    SLOT2<br/>
-    SLOTN<br/>
-   (VARN+1 SLOTN+1))<br/>
-<br/>
-Where each VAR is the local variable given to the associated<br/>
-SLOT.  A slot specified without a variable name is given a<br/>
+<strong>with-slots</strong> is a Lisp macro in `<code>eieio.el</code>'.</br>
+</br>
+(with-slots <u>SPEC-LIST</u> <u>OBJECT</u> &rest <u>BODY</u>)</br>
+</br>
+Bind <u>SPEC-LIST</u> lexically to slot values in <u>OBJECT</u>, and execute <u>BODY</u>.</br>
+This establishes a lexical environment for referring to the slots in</br>
+the instance named by the given slot-names as though they were</br>
+variables.  Within such a context the value of the slot can be</br>
+specified by using its slot name, as if it were a lexically bound</br>
+variable.  Both setf and setq can be used to set the value of the</br>
+slot.</br>
+</br>
+<u>SPEC-LIST</u> is of a form similar to `let'.  For example:</br>
+</br>
+  ((VAR1 SLOT1)</br>
+    SLOT2</br>
+    SLOTN</br>
+   (VARN+1 SLOTN+1))</br>
+</br>
+Where each VAR is the local variable given to the associated</br>
+SLOT.  A slot specified without a variable name is given a</br>
 variable name of the same name as the slot.

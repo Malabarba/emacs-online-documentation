@@ -1,16 +1,14 @@
-<strong>kill-emacs-hook</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is<br/>
-(org-babel-remove-temporary-directory tex-delete-last-temp-files ps-run-cleanup)<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook run when `kill-emacs' is called.<br/>
-Since `kill-emacs' may be invoked when the terminal is disconnected (or<br/>
-in other similar situations), functions placed on this hook should not<br/>
-expect to be able to interact with the user.  To ask for confirmation,<br/>
-see `kill-emacs-query-functions' instead.<br/>
-<br/>
-Before Emacs 24.1, the hook was not run in batch mode, i.e., if<br/>
+<strong>kill-emacs-hook</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre></br>
+(org-babel-remove-temporary-directory tex-delete-last-temp-files ps-run-cleanup)
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook run when `kill-emacs' is called.</br>
+Since `kill-emacs' may be invoked when the terminal is disconnected (or</br>
+in other similar situations), functions placed on this hook should not</br>
+expect to be able to interact with the user.  To ask for confirmation,</br>
+see `kill-emacs-query-functions' instead.</br>
+</br>
+Before Emacs 24.1, the hook was not run in batch mode, i.e., if</br>
 `noninteractive' was non-nil.

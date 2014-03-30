@@ -1,34 +1,36 @@
-<strong>org-agenda-to-appt</strong> is an interactive autoloaded compiled Lisp function in `<code>org-agenda.el</code>'.<br/>
-<br/>
-(org-agenda-to-appt &optional REFRESH FILTER &rest ARGS)<br/>
-<br/>
-Activate appointments found in `org-agenda-files'.<br/>
-With a C-u prefix, refresh the list of<br/>
-appointments.<br/>
-<br/>
-If FILTER is t, interactively prompt the user for a regular<br/>
-expression, and filter out entries that don't match it.<br/>
-<br/>
-If FILTER is a string, use this string as a regular expression<br/>
-for filtering entries out.<br/>
-<br/>
-If FILTER is a function, filter out entries against which<br/>
-calling the function returns nil.  This function takes one<br/>
-argument: an entry from `org-agenda-get-day-entries'.<br/>
-<br/>
-FILTER can also be an alist with the car of each cell being<br/>
-either 'headline or 'category.  For example:<br/>
-<br/>
-  '((headline "IMPORTANT")<br/>
-    (category "Work"))<br/>
-<br/>
-will only add headlines containing IMPORTANT or headlines<br/>
-belonging to the "Work" category.<br/>
-<br/>
-ARGS are symbols indicating what kind of entries to consider.<br/>
-By default `org-agenda-to-appt' will use :deadline, :scheduled<br/>
-and :timestamp entries.  See the docstring of `org-diary' for<br/>
-details and examples.<br/>
-<br/>
-If an entry has a APPT_WARNTIME property, its value will be used<br/>
+<strong>org-agenda-to-appt</strong> is an interactive autoloaded compiled Lisp function in `<code>org-agenda.el</code>'.</br>
+</br>
+</br>
+(org-agenda-to-appt &optional <u>REFRESH</u> <u>FILTER</u> &rest <u>ARGS</u>)</br>
+</br>
+Activate appointments found in `org-agenda-files'.</br>
+With a C-u prefix, refresh the list of</br>
+appointments.</br>
+</br>
+If <u>FILTER</u> is t, interactively prompt the user for a regular</br>
+expression, and filter out entries that don't match it.</br>
+</br>
+If <u>FILTER</u> is a string, use this string as a regular expression</br>
+for filtering entries out.</br>
+</br>
+If <u>FILTER</u> is a function, filter out entries against which</br>
+calling the function returns nil.  This function takes one</br>
+argument: an entry from `org-agenda-get-day-entries'.</br>
+</br>
+<u>FILTER</u> can also be an alist with the car of each cell being</br>
+either 'headline or 'category.  For example:</br>
+</br>
+  '((headline "IMPORTANT")</br>
+    (category "Work"))</br>
+</br>
+will only add headlines containing IMPORTANT or headlines</br>
+belonging to the "Work" category.</br>
+</br>
+<u>ARGS</u> are symbols indicating what kind of entries to consider.</br>
+By default `org-agenda-to-appt' will use :deadline*, :scheduled*</br>
+(i.e., deadlines and scheduled items with a hh:mm specification)</br>
+and :timestamp entries.  See the docstring of `org-diary' for</br>
+details and examples.</br>
+</br>
+If an entry has a APPT_WARNTIME property, its value will be used</br>
 to override `appt-message-warning-time'.

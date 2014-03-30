@@ -1,38 +1,39 @@
-<strong>ibuffer-fontification-alist</strong> is a variable defined in `<code>ibuffer.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-An alist describing how to fontify buffers.<br/>
-Each element should be of the form (PRIORITY FORM FACE), where<br/>
-PRIORITY is an integer, FORM is an arbitrary form to evaluate in the<br/>
-buffer, and FACE is the face to use for fontification.  If the FORM<br/>
-evaluates to non-nil, then FACE will be put on the buffer name.  The<br/>
-element with the highest PRIORITY takes precedence.<br/>
-<br/>
-If you change this variable, you must kill the Ibuffer buffer and<br/>
-recreate it for the change to take effect.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: ((10 buffer-read-only font-lock-constant-face)<br/>
- (15<br/>
-  (and buffer-file-name<br/>
-       (string-match ibuffer-compressed-file-name-regexp buffer-file-name))<br/>
-  font-lock-doc-face)<br/>
- (20<br/>
-  (string-match "^*"<br/>
-		(buffer-name))<br/>
-  font-lock-keyword-face)<br/>
- (25<br/>
-  (and<br/>
-   (string-match "^ "<br/>
-		 (buffer-name))<br/>
-   (null buffer-file-name))<br/>
-  italic)<br/>
- (30<br/>
-  (memq major-mode ibuffer-help-buffer-modes)<br/>
-  font-lock-comment-face)<br/>
- (35<br/>
-  (eq major-mode 'dired-mode)<br/>
-  font-lock-function-name-face))<br/>
-<br/>
+<strong>ibuffer-fontification-alist</strong> is a variable defined in `<code>ibuffer.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+An alist describing how to fontify buffers.</br>
+Each element should be of the form (PRIORITY FORM FACE), where</br>
+PRIORITY is an integer, FORM is an arbitrary form to evaluate in the</br>
+buffer, and FACE is the face to use for fontification.  If the FORM</br>
+evaluates to non-nil, then FACE will be put on the buffer name.  The</br>
+element with the highest PRIORITY takes precedence.</br>
+</br>
+If you change this variable, you must kill the Ibuffer buffer and</br>
+recreate it for the change to take effect.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((10 buffer-read-only font-lock-constant-face)
+ (15
+  (and buffer-file-name
+       (string-match ibuffer-compressed-file-name-regexp buffer-file-name))
+  font-lock-doc-face)
+ (20
+  (string-match "^*"
+		(buffer-name))
+  font-lock-keyword-face)
+ (25
+  (and
+   (string-match "^ "
+		 (buffer-name))
+   (null buffer-file-name))
+  italic)
+ (30
+  (memq major-mode ibuffer-help-buffer-modes)
+  font-lock-comment-face)
+ (35
+  (derived-mode-p 'dired-mode)
+  font-lock-function-name-face))
+</pre></br>

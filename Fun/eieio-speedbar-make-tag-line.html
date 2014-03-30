@@ -1,9 +1,25 @@
-<strong>eieio-speedbar-make-tag-line</strong> is a Lisp function in `<code>eieio-speedbar.el</code>'.<br/>
-<br/>
-(eieio-speedbar-make-tag-line &rest LOCAL-ARGS)<br/>
-<br/>
-Insert a tag line into speedbar at point for OBJECT.<br/>
-By default, all objects appear as simple TAGS with no need to inherit from<br/>
-the special `eieio-speedbar' classes.  Child classes should redefine this<br/>
-method to create more accurate tag lines.<br/>
-Argument DEPTH is the depth at which the tag line is inserted.
+<strong>eieio-speedbar-make-tag-line</strong> is a Lisp function in `<code>eieio-speedbar.el</code>'.</br>
+</br>
+(eieio-speedbar-make-tag-line &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Insert a tag line into speedbar at point for OBJECT.</br>
+By default, all objects appear as simple TAGS with no need to inherit from</br>
+the special `eieio-speedbar' classes.  Child classes should redefine this</br>
+method to create more accurate tag lines.</br>
+Argument DEPTH is the depth at which the tag line is inserted.</br>
+</br>
+This is a generic function.</br>
+</br>
+Implementations:</br>
+</br>
+Generic :PRIMARY</br>
+Undocumented</br>
+</br>
+`eieio-speedbar' :PRIMARY (object depth)</br>
+Insert a tag line into speedbar at point for OBJECT.</br>
+All objects a child of symbol `eieio-speedbar' can be created from</br>
+this method.  Override this if you need non-traditional tag lines.</br>
+Argument DEPTH is the depth at which the tag line is inserted.</br>
+</br>
+Defined in `eieio-speedbar.el'</br>
+</br>

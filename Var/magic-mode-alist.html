@@ -1,15 +1,13 @@
-<strong>magic-mode-alist</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist of buffer beginnings vs. corresponding major mode functions.<br/>
-Each element looks like (REGEXP . FUNCTION) or (MATCH-FUNCTION . FUNCTION).<br/>
-After visiting a file, if REGEXP matches the text at the beginning of the<br/>
-buffer, or calling MATCH-FUNCTION returns non-nil, `normal-mode' will<br/>
-call FUNCTION rather than allowing `auto-mode-alist' to decide the buffer's<br/>
-major mode.<br/>
-<br/>
-If FUNCTION is nil, then it is not called.  (That is a way of saying<br/>
+<strong>magic-mode-alist</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of buffer beginnings vs. corresponding major mode functions.</br>
+Each element looks like (REGEXP . FUNCTION) or (MATCH-FUNCTION . FUNCTION).</br>
+After visiting a file, if REGEXP matches the text at the beginning of the</br>
+buffer, or calling MATCH-FUNCTION returns non-nil, `normal-mode' will</br>
+call FUNCTION rather than allowing `auto-mode-alist' to decide the buffer's</br>
+major mode.</br>
+</br>
+If FUNCTION is nil, then it is not called.  (That is a way of saying</br>
 "allow `auto-mode-alist' to decide for these files.")

@@ -1,16 +1,16 @@
-<strong>c-in-literal</strong> is a compiled Lisp function in `<code>cc-engine.el</code>'.<br/>
-<br/>
-(c-in-literal &optional LIM DETECT-CPP)<br/>
-<br/>
-Return the type of literal point is in, if any.<br/>
-The return value is `c' if in a C-style comment, `c++' if in a C++<br/>
-style comment, `string' if in a string literal, `pound' if DETECT-CPP<br/>
-is non-nil and in a preprocessor line, or nil if somewhere else.<br/>
-Optional LIM is used as the backward limit of the search.  If omitted,<br/>
-or nil, `c-beginning-of-defun' is used.<br/>
-<br/>
-The last point calculated is cached if the cache is enabled, i.e. if<br/>
-`c-in-literal-cache' is bound to a two element vector.<br/>
-<br/>
-Note that this function might do hidden buffer changes.  See the<br/>
+<strong>c-in-literal</strong> is a compiled Lisp function in `<code>cc-engine.el</code>'.</br>
+</br>
+(c-in-literal &optional <u>LIM</u> <u>DETECT-CPP</u>)</br>
+</br>
+Return the type of literal point is in, if any.</br>
+The return value is `c' if in a C-style comment, `c++' if in a C++</br>
+style comment, `string' if in a string literal, `pound' if <u>DETECT-CPP</u></br>
+is non-nil and in a preprocessor line, or nil if somewhere else.</br>
+Optional <u>LIM</u> is used as the backward limit of the search.  If omitted,</br>
+or nil, `c-beginning-of-defun' is used.</br>
+</br>
+The last point calculated is cached if the cache is enabled, i.e. if</br>
+`c-in-literal-cache' is bound to a two element vector.</br>
+</br>
+Note that this function might do hidden buffer changes.  See the</br>
 comment at the start of cc-engine.el for more info.

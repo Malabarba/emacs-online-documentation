@@ -1,28 +1,29 @@
-<strong>eudc-ph-bbdb-conversion-alist</strong> is a variable defined in `<code>eudc-vars.el</code>'.<br/>
-Its value is ((name . name)<br/>
- (net . email)<br/>
- (address eudc-bbdbify-address address "Address")<br/>
- (phone<br/>
-  (eudc-bbdbify-phone phone "Phone")<br/>
-  (eudc-bbdbify-phone office_phone "Office Phone")))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-A mapping from BBDB to PH/QI fields.<br/>
-This is a list of cons cells (BBDB-FIELD . SPEC-OR-LIST) where<br/>
-BBDB-FIELD is the name of a field that must be defined in your BBDB<br/>
-environment (standard field names are `name', `company', `net', `phone',<br/>
-`address' and `notes').  SPEC-OR-LIST is either a single SPEC or a list<br/>
-of SPECs.  Lists of specs are valid only for the `phone' and `address'<br/>
-BBDB fields.  SPECs are sexps which are evaluated:<br/>
-  a string evaluates to itself,<br/>
-  a symbol evaluates to the symbol value.  Symbols naming PH/QI fields<br/>
-    present in the record evaluate to the value of the field in the record,<br/>
-  a form is evaluated as a function.  The argument list may contain PH/QI<br/>
-    field names which eval to the corresponding values in the<br/>
-    record.  The form evaluation should return something appropriate for<br/>
-    the particular BBDB-FIELD (see `bbdb-create-internal').<br/>
-    `eudc-bbdbify-phone' and `eudc-bbdbify-address' are provided as convenience<br/>
-    functions to parse phones and addresses.<br/>
-<br/>
+<strong>eudc-ph-bbdb-conversion-alist</strong> is a variable defined in `<code>eudc-vars.el</code>'.</br>
+Its value is <pre></br>
+((name . name)
+ (net . email)
+ (address eudc-bbdbify-address address "Address")
+ (phone
+  (eudc-bbdbify-phone phone "Phone")
+  (eudc-bbdbify-phone office_phone "Office Phone")))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A mapping from BBDB to PH/QI fields.</br>
+This is a list of cons cells (BBDB-FIELD . SPEC-OR-LIST) where</br>
+BBDB-FIELD is the name of a field that must be defined in your BBDB</br>
+environment (standard field names are `name', `company', `net', `phone',</br>
+`address' and `notes').  SPEC-OR-LIST is either a single SPEC or a list</br>
+of SPECs.  Lists of specs are valid only for the `phone' and `address'</br>
+BBDB fields.  SPECs are sexps which are evaluated:</br>
+  a string evaluates to itself,</br>
+  a symbol evaluates to the symbol value.  Symbols naming PH/QI fields</br>
+    present in the record evaluate to the value of the field in the record,</br>
+  a form is evaluated as a function.  The argument list may contain PH/QI</br>
+    field names which eval to the corresponding values in the</br>
+    record.  The form evaluation should return something appropriate for</br>
+    the particular BBDB-FIELD (see `bbdb-create-internal').</br>
+    `eudc-bbdbify-phone' and `eudc-bbdbify-address' are provided as convenience</br>
+    functions to parse phones and addresses.</br>
+</br>
 You can customize this variable.

@@ -1,16 +1,16 @@
-<strong>mh-scan-format-nmh</strong> is a variable defined in `<code>mh-scan.el</code>'.<br/>
-Its value is<br/>
-"%4(msg)%<(cur)+%| %>%<{replied}-%?(nonnull(comp{to}))%<(mymbox{to})t%>%?(nonnull(comp{cc}))%<(mymbox{cc})c%>%?(nonnull(comp{bcc}))%<(mymbox{bcc})b%>%?(nonnull(comp{newsgroups}))n%>%<(zero) %>%02(mon{date})/%02(mday{date})%<{date} %|*%>%<(mymbox{from})%<{to}To:%14(decode(friendly{to}))%>%>%<(zero)%17(decode(friendly{from}))%>  %(decode{subject})%<{body}<<%{body}%>"<br/>
-<br/>
-Documentation:<br/>
-*Scan format string for nmh.<br/>
-This string is passed to the scan program via the -format arg.<br/>
-This format is identical to the default except that additional<br/>
-hints for fontification have been added to the fifth<br/>
-column (remember that in Emacs, the first column is 0).<br/>
-<br/>
-The values of the fifth column, in priority order, are: "-" if<br/>
-the message has been replied to, t if an address on the To: field<br/>
-matches one of the mailboxes of the current user, "c" if the Cc:<br/>
-field matches, "b" if the Bcc: field matches, and "n" if a<br/>
+<strong>mh-scan-format-nmh</strong> is a variable defined in `<code>mh-scan.el</code>'.</br>
+Its value is <pre></br>
+"%4(msg)%<(cur)+%| %>%<{replied}-%?(nonnull(comp{to}))%<(mymbox{to})t%>%?(nonnull(comp{cc}))%<(mymbox{cc})c%>%?(nonnull(comp{bcc}))%<(mymbox{bcc})b%>%?(nonnull(comp{newsgroups}))n%>%<(zero) %>%02(mon{date})/%02(mday{date})%<{date} %|*%>%<(mymbox{from})%<{to}To:%14(decode(friendly{to}))%>%>%<(zero)%17(decode(friendly{from}))%>  %(decode{subject})%<{body}<<%{body}%>"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Scan format string for nmh.</br>
+This string is passed to the scan program via the -format arg.</br>
+This format is identical to the default except that additional</br>
+hints for fontification have been added to the fifth</br>
+column (remember that in Emacs, the first column is 0).</br>
+</br>
+The values of the fifth column, in priority order, are: "-" if</br>
+the message has been replied to, t if an address on the To: field</br>
+matches one of the mailboxes of the current user, "c" if the Cc:</br>
+field matches, "b" if the Bcc: field matches, and "n" if a</br>
 non-empty Newsgroups: field is present.

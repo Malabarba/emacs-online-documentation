@@ -1,0 +1,60 @@
+<strong>tty-menu-navigation-map</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used while processing TTY menus.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (mouse-movement . tty-menu-mouse-movement)
+ (C-down-mouse-3 . tty-menu-ignore)
+ (C-down-mouse-2 . tty-menu-ignore)
+ (C-down-mouse-1 . tty-menu-ignore)
+ (down-mouse-1 . tty-menu-ignore)
+ (mode-line keymap
+	    (C-down-mouse-3 . tty-menu-ignore)
+	    (C-down-mouse-2 . tty-menu-ignore)
+	    (C-down-mouse-1 . tty-menu-ignore)
+	    (down-mouse-3 . tty-menu-ignore)
+	    (down-mouse-2 . tty-menu-ignore)
+	    (down-mouse-1 . tty-menu-ignore))
+ (header-line keymap
+	      (drag-mouse-1 . tty-menu-select)
+	      (mouse-1 . tty-menu-select))
+ (S-drag-mouse-3 . tty-menu-prev-item)
+ (S-mouse-3 . tty-menu-prev-item)
+ (S-drag-mouse-2 . tty-menu-prev-item)
+ (S-mouse-2 . tty-menu-prev-item)
+ (S-drag-mouse-1 . tty-menu-next-item)
+ (S-mouse-1 . tty-menu-next-item)
+ (wheel-right . tty-menu-next-menu)
+ (wheel-left . tty-menu-prev-menu)
+ (wheel-up . tty-menu-prev-item)
+ (wheel-down . tty-menu-next-item)
+ (drag-mouse-3 . tty-menu-select)
+ (mouse-3 . tty-menu-select)
+ (drag-mouse-2 . tty-menu-select)
+ (mouse-2 . tty-menu-select)
+ (drag-mouse-1 . tty-menu-select)
+ (mouse-1 . tty-menu-select)
+ (linefeed . tty-menu-select)
+ (return . tty-menu-select)
+ (18 . tty-menu-select)
+ (menu-bar keymap
+	   (t . tty-menu-exit))
+ (f10 . tty-menu-exit)
+ (10 . tty-menu-select)
+ (13 . tty-menu-select)
+ (up . tty-menu-prev-item)
+ (16 . tty-menu-prev-item)
+ (down . tty-menu-next-item)
+ (14 . tty-menu-next-item)
+ (left . tty-menu-prev-menu)
+ (right . tty-menu-next-menu)
+ (2 . tty-menu-prev-menu)
+ (6 . tty-menu-next-menu)
+ (27 keymap
+     (27 keymap
+	 (27 . tty-menu-exit)))
+ (7 . tty-menu-exit))
+</pre></br>

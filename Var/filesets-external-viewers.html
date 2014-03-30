@@ -1,76 +1,75 @@
-<strong>filesets-external-viewers</strong> is a variable defined in `<code>filesets.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Association list of file patterns and external viewers for use with<br/>
-`filesets-find-or-display-file'.<br/>
-<br/>
-Has the form ((FILE-PATTERN VIEWER PROPERTIES) ...), VIEWER being either a<br/>
-function or a command name as string.<br/>
-<br/>
-Properties is an association list determining filesets' behavior in<br/>
-several conditions.  Choose one from this list:<br/>
-<br/>
-:ignore-on-open-all ... Don't open files of this type automatically --<br/>
-i.e. on open-all-files-events or when running commands<br/>
-<br/>
-:capture-output ... capture an external viewer output<br/>
-<br/>
-:constraintp FUNCTION ... use this viewer only if FUNCTION returns non-nil<br/>
-<br/>
-:constraint-flag SEXP ... use this viewer only if SEXP evaluates to non-nil<br/>
-<br/>
-:open-hook HOOK ... run hooks after spawning the viewer -- mainly useful<br/>
-in conjunction with :capture-output<br/>
-<br/>
-:args (FORMAT-STRING or SYMBOL or FUNCTION) ... a list of arguments<br/>
-(defaults to (list "%S")) when using shell commands<br/>
-<br/>
-Avoid modifying this variable and achieve minor speed-ups by setting the<br/>
-variables my-ps-viewer, my-pdf-viewer, my-dvi-viewer, my-pic-viewer.<br/>
-<br/>
-In order to view pdf or rtf files in an Emacs buffer, you could use these:<br/>
-<br/>
-<br/>
-      ("^.+\\.pdf\\'" "pdftotext"<br/>
-       ((:capture-output t)<br/>
-	(:args ("%S - | fmt -w " window-width))<br/>
-	(:ignore-on-read-text t)<br/>
-	(:constraintp (lambda ()<br/>
-			(and (filesets-which-command-p "pdftotext")<br/>
-			     (filesets-which-command-p "fmt"))))))<br/>
-      ("^.+\\.rtf\\'" "rtf2htm"<br/>
-       ((:capture-output t)<br/>
-	(:args ("%S 2> /dev/null | w3m -dump -T text/html"))<br/>
-	(:ignore-on-read-text t)<br/>
-	(:constraintp (lambda ()<br/>
-			(and (filesets-which-command-p "rtf2htm")<br/>
-			     (filesets-which-command-p "w3m"))))))<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (("^.+\\..?html?$" browse-url<br/>
-  ((:ignore-on-open-all t)))<br/>
- ("^.+\\.pdf$" "xpdf"<br/>
-  ((:ignore-on-open-all t)<br/>
-   (:ignore-on-read-text t)<br/>
-   (:constraint-flag "xpdf")))<br/>
- ("^.+\\.e?ps\\(.gz\\)?$" "ggv"<br/>
-  ((:ignore-on-open-all t)<br/>
-   (:ignore-on-read-text t)<br/>
-   (:constraint-flag "ggv")))<br/>
- ("^.+\\.dvi$" "xdvi"<br/>
-  ((:ignore-on-open-all t)<br/>
-   (:ignore-on-read-text t)<br/>
-   (:constraint-flag "xdvi")))<br/>
- ("^.+\\.doc$" "antiword"<br/>
-  ((:capture-output t)<br/>
-   (:ignore-on-read-text t)<br/>
-   (:constraint-flag "antiword")))<br/>
- ("^.+\\.\\(tiff\\|xpm\\|gif\\|pgn\\)$" "gqview"<br/>
-  ((:ignore-on-open-all t)<br/>
-   (:ignore-on-read-text t)<br/>
-   (:constraint-flag "gqview"))))<br/>
-<br/>
+<strong>filesets-external-viewers</strong> is a variable defined in `<code>filesets.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Association list of file patterns and external viewers for use with</br>
+`filesets-find-or-display-file'.</br>
+</br>
+Has the form ((FILE-PATTERN VIEWER PROPERTIES) ...), VIEWER being either a</br>
+function or a command name as string.</br>
+</br>
+Properties is an association list determining filesets' behavior in</br>
+several conditions.  Choose one from this list:</br>
+</br>
+:ignore-on-open-all ... Don't open files of this type automatically --</br>
+i.e. on open-all-files-events or when running commands</br>
+</br>
+:capture-output ... capture an external viewer output</br>
+</br>
+:constraintp FUNCTION ... use this viewer only if FUNCTION returns non-nil</br>
+</br>
+:constraint-flag SEXP ... use this viewer only if SEXP evaluates to non-nil</br>
+</br>
+:open-hook HOOK ... run hooks after spawning the viewer -- mainly useful</br>
+in conjunction with :capture-output</br>
+</br>
+:args (FORMAT-STRING or SYMBOL or FUNCTION) ... a list of arguments</br>
+(defaults to (list "%S")) when using shell commands</br>
+</br>
+Avoid modifying this variable and achieve minor speed-ups by setting the</br>
+variables my-ps-viewer, my-pdf-viewer, my-dvi-viewer, my-pic-viewer.</br>
+</br>
+In order to view pdf or rtf files in an Emacs buffer, you could use these:</br>
+</br>
+</br>
+      ("^.+\\.pdf\\'" "pdftotext"</br>
+       ((:capture-output t)</br>
+	(:args ("%S - | fmt -w " window-width))</br>
+	(:ignore-on-read-text t)</br>
+	(:constraintp (lambda ()</br>
+			(and (filesets-which-command-p "pdftotext")</br>
+			     (filesets-which-command-p "fmt"))))))</br>
+      ("^.+\\.rtf\\'" "rtf2htm"</br>
+       ((:capture-output t)</br>
+	(:args ("%S 2> /dev/null | w3m -dump -T text/html"))</br>
+	(:ignore-on-read-text t)</br>
+	(:constraintp (lambda ()</br>
+			(and (filesets-which-command-p "rtf2htm")</br>
+			     (filesets-which-command-p "w3m"))))))</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^.+\\..?html?$" browse-url
+  ((:ignore-on-open-all t)))
+ ("^.+\\.pdf$" "xpdf"
+  ((:ignore-on-open-all t)
+   (:ignore-on-read-text t)
+   (:constraint-flag "xpdf")))
+ ("^.+\\.e?ps\\(.gz\\)?$" "ggv"
+  ((:ignore-on-open-all t)
+   (:ignore-on-read-text t)
+   (:constraint-flag "ggv")))
+ ("^.+\\.dvi$" "xdvi"
+  ((:ignore-on-open-all t)
+   (:ignore-on-read-text t)
+   (:constraint-flag "xdvi")))
+ ("^.+\\.doc$" "antiword"
+  ((:capture-output t)
+   (:ignore-on-read-text t)
+   (:constraint-flag "antiword")))
+ ("^.+\\.\\(tiff\\|xpm\\|gif\\|pgn\\)$" "gqview"
+  ((:ignore-on-open-all t)
+   (:ignore-on-read-text t)
+   (:constraint-flag "gqview"))))
+</pre></br>

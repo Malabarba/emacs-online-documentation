@@ -1,17 +1,17 @@
-<strong>smerge-refine-subst</strong> is a compiled Lisp function in `<code>smerge-mode.el</code>'.<br/>
-<br/>
-(smerge-refine-subst BEG1 END1 BEG2 END2 PROPS-C &optional PREPROC PROPS-R PROPS-A)<br/>
-<br/>
-Show fine differences in the two regions BEG1..END1 and BEG2..END2.<br/>
-PROPS-C is an alist of properties to put (via overlays) on the changes.<br/>
-PROPS-R is an alist of properties to put on removed characters.<br/>
-PROPS-A is an alist of properties to put on added characters.<br/>
-If PROPS-R and PROPS-A are nil, put PROPS-C on all changes.<br/>
-If PROPS-C is nil, but PROPS-R and PROPS-A are non-nil,<br/>
-put PROPS-A on added characters, PROPS-R on removed characters.<br/>
-If PROPS-C, PROPS-R and PROPS-A are non-nil, put PROPS-C on changed characters,<br/>
-PROPS-A on added characters, and PROPS-R on removed characters.<br/>
-<br/>
-If non-nil, PREPROC is called with no argument in a buffer that contains<br/>
-a copy of a region, just before preparing it to for `diff'.  It can be<br/>
+<strong>smerge-refine-subst</strong> is a compiled Lisp function in `<code>smerge-mode.el</code>'.</br>
+</br>
+(smerge-refine-subst <u>BEG1</u> <u>END1</u> <u>BEG2</u> <u>END2</u> <u>PROPS-C</u> &optional <u>PREPROC</u> <u>PROPS-R</u> <u>PROPS-A</u>)</br>
+</br>
+Show fine differences in the two regions <u>BEG1</u>..<u>END1</u> and <u>BEG2</u>..<u>END2</u>.</br>
+<u>PROPS-C</u> is an alist of properties to put (via overlays) on the changes.</br>
+<u>PROPS-R</u> is an alist of properties to put on removed characters.</br>
+<u>PROPS-A</u> is an alist of properties to put on added characters.</br>
+If <u>PROPS-R</u> and <u>PROPS-A</u> are nil, put <u>PROPS-C</u> on all changes.</br>
+If <u>PROPS-C</u> is nil, but <u>PROPS-R</u> and <u>PROPS-A</u> are non-nil,</br>
+put <u>PROPS-A</u> on added characters, <u>PROPS-R</u> on removed characters.</br>
+If <u>PROPS-C</u>, <u>PROPS-R</u> and <u>PROPS-A</u> are non-nil, put <u>PROPS-C</u> on changed characters,</br>
+<u>PROPS-A</u> on added characters, and <u>PROPS-R</u> on removed characters.</br>
+</br>
+If non-nil, <u>PREPROC</u> is called with no argument in a buffer that contains</br>
+a copy of a region, just before preparing it to for `diff'.  It can be</br>
 used to replace chars to try and eliminate some spurious differences.

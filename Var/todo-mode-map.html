@@ -1,45 +1,146 @@
-<strong>todo-mode-map</strong> is a variable defined in `<code>todo-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-TODO mode keymap.<br/>
-<br/>
-Value: (keymap<br/>
- #^[nil nil keymap<br/>
-	#^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-forward-category nil todo-backward-category nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-edit-multiline nil nil nil todo-insert-item-here nil nil nil nil nil nil todo-print nil nil todo-save-top-priorities nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-file-item todo-edit-item todo-file-item nil nil todo-insert-item todo-jump-to-category todo-delete-item todo-lower-item nil todo-forward-item nil todo-backward-item todo-quit todo-raise-item todo-save todo-top-priorities nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	#^^[1 0<br/>
-	      #^^[2 0<br/>
-		    #^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-forward-category nil todo-backward-category nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-edit-multiline nil nil nil todo-insert-item-here nil nil nil nil nil nil todo-print nil nil todo-save-top-priorities nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-file-item todo-edit-item todo-file-item nil nil todo-insert-item todo-jump-to-category todo-delete-item todo-lower-item nil todo-forward-item nil todo-backward-item todo-quit todo-raise-item todo-save todo-top-priorities nil nil nil nil nil nil nil nil nil nil nil]<br/>
-		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
- (menu-bar keymap<br/>
-	   (Todo menu-item "Todo"<br/>
-		 (keymap "Todo"<br/>
-			 (Next\ category menu-item "Next category" todo-forward-category)<br/>
-			 (Previous\ category menu-item "Previous category" todo-backward-category)<br/>
-			 (Jump\ to\ category menu-item "Jump to category" todo-jump-to-category)<br/>
-			 (Show\ top\ priority\ items menu-item "Show top priority items" todo-top-priorities)<br/>
-			 (Print\ categories menu-item "Print categories" todo-print)<br/>
-			 (nil-9 menu-item "---")<br/>
-			 (Edit\ item menu-item "Edit item" todo-edit-item)<br/>
-			 (File\ item menu-item "File item" todo-file-item)<br/>
-			 (Insert\ new\ item menu-item "Insert new item" todo-insert-item)<br/>
-			 (Insert\ item\ here menu-item "Insert item here" todo-insert-item-here)<br/>
-			 (Kill\ item menu-item "Kill item" todo-delete-item)<br/>
-			 (nil-9-11 menu-item "---")<br/>
-			 (Lower\ item\ priority menu-item "Lower item priority" todo-lower-item)<br/>
-			 (Raise\ item\ priority menu-item "Raise item priority" todo-raise-item)<br/>
-			 (nil-9-14 menu-item "---")<br/>
-			 (Next\ item menu-item "Next item" todo-forward-item)<br/>
-			 (Previous\ item menu-item "Previous item" todo-backward-item)<br/>
-			 (nil-9-17 menu-item "---")<br/>
-			 (Save menu-item "Save" todo-save)<br/>
-			 (Save\ Top\ Priorities menu-item "Save Top Priorities" todo-save-top-priorities)<br/>
-			 (nil-9-20 menu-item "---")<br/>
-			 (Quit menu-item "Quit" todo-quit))))<br/>
- (remap keymap<br/>
-	(self-insert-command . undefined)))<br/>
-<br/>
+<strong>todo-mode-map</strong> is a variable defined in `<code>todo-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Todo mode keymap.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ #^[nil nil keymap
+	#^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-set-item-priority nil nil nil nil nil nil todo-toggle-mark-item nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil
+	      (keymap
+	       (100 . todo-archive-done-item)
+	       (99 . todo-choose-archive)
+	       (102 . todo-find-archive))
+	      nil
+	      (keymap
+	       (117 . todo-unmark-category)
+	       (42 . todo-mark-category)
+	       (101 keymap
+		    (107 . todo-edit-category-diary-nonmarking)
+		    (121 . todo-edit-category-diary-inclusion))
+	       (116 keymap
+		    (115 . todo-set-top-priorities-in-category))
+	       (107 . todo-delete-category)
+	       (109 . todo-move-category)
+	       (103 . todo-merge-category)
+	       (114 . todo-rename-category)
+	       (97 . todo-add-category)
+	       (118 . todo-toggle-view-done-items))
+	      nil nil
+	      (keymap
+	       (99 . todo-show-categories-table)
+	       (78 . todo-toggle-prefix-numbers)
+	       (72 . todo-toggle-item-highlighting)
+	       (101 . todo-edit-file)
+	       (107 . todo-delete-file)
+	       (104 . todo-toggle-item-header)
+	       (120 keymap
+		    (109 . todo-filter-regexp-items-multifile)
+		    (120 . todo-filter-regexp-items))
+	       (121 keymap
+		    (109 . todo-filter-diary-items-multifile)
+		    (121 . todo-filter-diary-items))
+	       (116 keymap
+		    (115 . todo-set-top-priorities-in-file)
+		    (109 . todo-filter-top-priorities-multifile)
+		    (116 . todo-filter-top-priorities))
+	       (86 . todo-toggle-view-done-only)
+	       (102 . todo-find-filtered-items-file)
+	       (114 . todo-rename-file)
+	       (97 . todo-add-file))
+	      nil todo-toggle-item-highlighting nil nil nil nil nil todo-toggle-prefix-numbers nil
+	      (keymap
+	       (70 . todo-print-buffer-to-file)
+	       (66 . todo-print-buffer))
+	      nil nil todo-search nil nil todo-toggle-view-done-only nil todo-clear-matches nil nil nil nil nil nil nil nil nil todo-backward-category nil todo-item-done
+	      (keymap
+	       (99 . todo-edit-done-item-comment)
+	       (121 keymap
+		    (107 . todo-edit-item-diary-nonmarking)
+		    (121 . todo-edit-item-diary-inclusion))
+	       (116 . todo-edit-item-time)
+	       (100 keymap
+		    (100 . todo-edit-item-date-day)
+		    (109 . todo-edit-item-date-month)
+		    (121 . todo-edit-item-date-year)
+		    (110 . todo-edit-item-date-day-name)
+		    (97 . todo-edit-item-date-to-today)
+		    (99 . todo-edit-item-date-from-calendar)
+		    (116 . todo-edit-item-header))
+	       (109 . todo-edit-multiline-item)
+	       (101 . todo-edit-item))
+	      todo-forward-category nil todo-toggle-item-header todo-insert-item todo-jump-to-category todo-delete-item todo-lower-item-priority todo-move-item todo-next-item nil todo-previous-item todo-quit todo-raise-item-priority todo-save todo-show todo-item-undone todo-toggle-view-done-items nil nil nil nil nil nil nil nil nil]
+	#^^[1 0
+	      #^^[2 0
+		    #^^[3 0 nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil todo-set-item-priority nil nil nil nil nil nil todo-toggle-mark-item nil nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil nil nil nil nil
+			  (keymap
+			   (100 . todo-archive-done-item)
+			   (99 . todo-choose-archive)
+			   (102 . todo-find-archive))
+			  nil
+			  (keymap
+			   (117 . todo-unmark-category)
+			   (42 . todo-mark-category)
+			   (101 keymap
+				(107 . todo-edit-category-diary-nonmarking)
+				(121 . todo-edit-category-diary-inclusion))
+			   (116 keymap
+				(115 . todo-set-top-priorities-in-category))
+			   (107 . todo-delete-category)
+			   (109 . todo-move-category)
+			   (103 . todo-merge-category)
+			   (114 . todo-rename-category)
+			   (97 . todo-add-category)
+			   (118 . todo-toggle-view-done-items))
+			  nil nil
+			  (keymap
+			   (99 . todo-show-categories-table)
+			   (78 . todo-toggle-prefix-numbers)
+			   (72 . todo-toggle-item-highlighting)
+			   (101 . todo-edit-file)
+			   (107 . todo-delete-file)
+			   (104 . todo-toggle-item-header)
+			   (120 keymap
+				(109 . todo-filter-regexp-items-multifile)
+				(120 . todo-filter-regexp-items))
+			   (121 keymap
+				(109 . todo-filter-diary-items-multifile)
+				(121 . todo-filter-diary-items))
+			   (116 keymap
+				(115 . todo-set-top-priorities-in-file)
+				(109 . todo-filter-top-priorities-multifile)
+				(116 . todo-filter-top-priorities))
+			   (86 . todo-toggle-view-done-only)
+			   (102 . todo-find-filtered-items-file)
+			   (114 . todo-rename-file)
+			   (97 . todo-add-file))
+			  nil todo-toggle-item-highlighting nil nil nil nil nil todo-toggle-prefix-numbers nil
+			  (keymap
+			   (70 . todo-print-buffer-to-file)
+			   (66 . todo-print-buffer))
+			  nil nil todo-search nil nil todo-toggle-view-done-only nil todo-clear-matches nil nil nil nil nil nil nil nil nil todo-backward-category nil todo-item-done
+			  (keymap
+			   (99 . todo-edit-done-item-comment)
+			   (121 keymap
+				(107 . todo-edit-item-diary-nonmarking)
+				(121 . todo-edit-item-diary-inclusion))
+			   (116 . todo-edit-item-time)
+			   (100 keymap
+				(100 . todo-edit-item-date-day)
+				(109 . todo-edit-item-date-month)
+				(121 . todo-edit-item-date-year)
+				(110 . todo-edit-item-date-day-name)
+				(97 . todo-edit-item-date-to-today)
+				(99 . todo-edit-item-date-from-calendar)
+				(116 . todo-edit-item-header))
+			   (109 . todo-edit-multiline-item)
+			   (101 . todo-edit-item))
+			  todo-forward-category nil todo-toggle-item-header todo-insert-item todo-jump-to-category todo-delete-item todo-lower-item-priority todo-move-item todo-next-item nil todo-previous-item todo-quit todo-raise-item-priority todo-save todo-show todo-item-undone todo-toggle-view-done-items nil nil nil nil nil nil nil nil nil]
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+ (remap keymap
+	(newline . newline-and-indent)
+	(self-insert-command . undefined)))
+</pre></br>

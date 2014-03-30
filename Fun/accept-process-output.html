@@ -1,19 +1,19 @@
-<strong>accept-process-output</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(accept-process-output &optional PROCESS SECONDS MILLISEC JUST-THIS-ONE)<br/>
-<br/>
-Allow any pending output from subprocesses to be read by Emacs.<br/>
-It is read into the process' buffers or given to their filter functions.<br/>
-Non-nil arg PROCESS means do not return until some output has been received<br/>
-from PROCESS.<br/>
-<br/>
-Non-nil second arg SECONDS and third arg MILLISEC are number of seconds<br/>
-and milliseconds to wait; return after that much time whether or not<br/>
-there is any subprocess output.  If SECONDS is a floating point number,<br/>
-it specifies a fractional number of seconds to wait.<br/>
-The MILLISEC argument is obsolete and should be avoided.<br/>
-<br/>
-If optional fourth arg JUST-THIS-ONE is non-nil, only accept output<br/>
-from PROCESS, suspending reading output from other processes.<br/>
-If JUST-THIS-ONE is an integer, don't run any timers either.<br/>
+<strong>accept-process-output</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(accept-process-output &optional <u>PROCESS</u> <u>SECONDS</u> <u>MILLISEC</u> <u>JUST-THIS-ONE</u>)</br>
+</br>
+Allow any pending output from subprocesses to be read by Emacs.</br>
+It is given to their filter functions.</br>
+Non-nil arg <u>PROCESS</u> means do not return until some output has been received</br>
+from <u>PROCESS</u>.</br>
+</br>
+Non-nil second arg <u>SECONDS</u> and third arg <u>MILLISEC</u> are number of seconds</br>
+and milliseconds to wait; return after that much time whether or not</br>
+there is any subprocess output.  If <u>SECONDS</u> is a floating point number,</br>
+it specifies a fractional number of seconds to wait.</br>
+The <u>MILLISEC</u> argument is obsolete and should be avoided.</br>
+</br>
+If optional fourth arg <u>JUST-THIS-ONE</u> is non-nil, only accept output</br>
+from <u>PROCESS</u>, suspending reading output from other processes.</br>
+If <u>JUST-THIS-ONE</u> is an integer, don't run any timers either.</br>
 Return non-nil if we received any output before the timeout expired.

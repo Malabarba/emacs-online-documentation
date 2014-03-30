@@ -1,8 +1,9 @@
-<strong>orgstruct-make-binding</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
-<br/>
-(orgstruct-make-binding FUN N &rest KEYS)<br/>
-<br/>
-Create a function for binding in the structure minor mode.<br/>
-FUN is the command to call inside a table.  N is used to create a unique<br/>
-command name.  KEYS are keys that should be checked in for a command<br/>
-to execute outside of tables.
+<strong>orgstruct-make-binding</strong> is a compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+(orgstruct-make-binding <u>FUN</u> <u>KEY</u> <u>DISABLE-WHEN-HEADING-PREFIX</u>)</br>
+</br>
+Create a function for binding in the structure minor mode.</br>
+<u>FUN</u> is the command to call inside a table.  <u>KEY</u> is the key that</br>
+should be checked in for a command to execute outside of tables.</br>
+Non-nil `disable-when-heading-prefix' means to disable the command</br>
+if `orgstruct-heading-prefix-regexp' is not empty.

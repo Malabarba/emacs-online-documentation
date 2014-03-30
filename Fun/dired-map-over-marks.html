@@ -1,30 +1,30 @@
-<strong>dired-map-over-marks</strong> is a Lisp macro in `<code>dired.el</code>'.<br/>
-<br/>
-(dired-map-over-marks BODY ARG &optional SHOW-PROGRESS DISTINGUISH-ONE-MARKED)<br/>
-<br/>
-Eval BODY with point on each marked line.  Return a list of BODY's results.<br/>
-If no marked file could be found, execute BODY on the current<br/>
-line.  ARG, if non-nil, specifies the files to use instead of the<br/>
-marked files.<br/>
-<br/>
-If ARG is an integer, use the next ARG (or previous -ARG, if<br/>
-ARG<0) files.  In that case, point is dragged along.  This is so<br/>
-that commands on the next ARG (instead of the marked) files can<br/>
-be chained easily.<br/>
-For any other non-nil value of ARG, use the current file.<br/>
-<br/>
-If optional third arg SHOW-PROGRESS evaluates to non-nil,<br/>
-redisplay the dired buffer after each file is processed.<br/>
-<br/>
-No guarantee is made about the position on the marked line.  BODY<br/>
-must ensure this itself if it depends on this.<br/>
-<br/>
-Search starts at the beginning of the buffer, thus the car of the<br/>
-list corresponds to the line nearest to the buffer's bottom.<br/>
-This is also true for (positive and negative) integer values of<br/>
-ARG.<br/>
-<br/>
-BODY should not be too long as it is expanded four times.<br/>
-<br/>
-If DISTINGUISH-ONE-MARKED is non-nil, then if we find just one<br/>
+<strong>dired-map-over-marks</strong> is a Lisp macro in `<code>dired.el</code>'.</br>
+</br>
+(dired-map-over-marks <u>BODY</u> <u>ARG</u> &optional <u>SHOW-PROGRESS</u> <u>DISTINGUISH-ONE-MARKED</u>)</br>
+</br>
+Eval <u>BODY</u> with point on each marked line.  Return a list of <u>BODY</u>'s results.</br>
+If no marked file could be found, execute <u>BODY</u> on the current</br>
+line.  <u>ARG</u>, if non-nil, specifies the files to use instead of the</br>
+marked files.</br>
+</br>
+If <u>ARG</u> is an integer, use the next <u>ARG</u> (or previous -<u>ARG</u>, if</br>
+<u>ARG</u>&lt;0) files.  In that case, point is dragged along.  This is so</br>
+that commands on the next <u>ARG</u> (instead of the marked) files can</br>
+be chained easily.</br>
+For any other non-nil value of <u>ARG</u>, use the current file.</br>
+</br>
+If optional third arg <u>SHOW-PROGRESS</u> evaluates to non-nil,</br>
+redisplay the dired buffer after each file is processed.</br>
+</br>
+No guarantee is made about the position on the marked line.</br>
+<u>BODY</u> must ensure this itself if it depends on this.</br>
+</br>
+Search starts at the beginning of the buffer, thus the car of the</br>
+list corresponds to the line nearest to the buffer's bottom.</br>
+This is also true for (positive and negative) integer values of</br>
+<u>ARG</u>.</br>
+</br>
+<u>BODY</u> should not be too long as it is expanded four times.</br>
+</br>
+If <u>DISTINGUISH-ONE-MARKED</u> is non-nil, then if we find just one</br>
 marked file, return (t FILENAME) instead of (FILENAME).

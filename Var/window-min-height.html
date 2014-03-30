@@ -1,19 +1,20 @@
-<strong>window-min-height</strong> is a variable defined in `<code>window.el</code>'.<br/>
-Its value is 4<br/>
-<br/>
-Documentation:<br/>
-The minimum number of lines of any window.<br/>
-The value has to accommodate a mode- or header-line if present.<br/>
-A value less than `window-safe-min-height' is ignored.  The value<br/>
-of this variable is honored when windows are resized or split.<br/>
-<br/>
-Applications should never rebind this variable.  To resize a<br/>
-window to a height less than the one specified here, an<br/>
-application should instead call `window-resize' with a non-nil<br/>
-IGNORE argument.  In order to have `split-window' make a window<br/>
-shorter, explicitly specify the SIZE argument of that function.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>window-min-height</strong> is a variable defined in `<code>window.el</code>'.</br>
+Its value is <pre>4</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The minimum total height, in lines, of any window.</br>
+The value has to accommodate one text line, a mode and header</br>
+line, and a bottom divider, if present.  A value less than</br>
+`window-safe-min-height' is ignored.  The value of this variable</br>
+is honored when windows are resized or split.</br>
+</br>
+Applications should never rebind this variable.  To resize a</br>
+window to a height less than the one specified here, an</br>
+application should instead call `window-resize' with a non-nil</br>
+IGNORE argument.  In order to have `split-window' make a window</br>
+shorter, explicitly specify the SIZE argument of that function.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

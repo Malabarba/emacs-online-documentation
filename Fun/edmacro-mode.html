@@ -1,74 +1,75 @@
-<strong>edmacro-mode</strong> is an interactive compiled Lisp function in `<code>edmacro.el</code>'.<br/>
-<br/>
-(edmacro-mode)<br/>
-<br/>
-Keyboard Macro Editing mode.  Press C-c C-c to save and exit.<br/>
-To abort the edit, just kill this buffer with C-x k RET.<br/>
-<br/>
-Press C-c C-q to insert the name of any key by typing the key.<br/>
-<br/>
-The editing buffer contains a "Command:" line and any number of<br/>
-"Key:" lines at the top.  These are followed by a "Macro:" line<br/>
-and the macro itself as spelled-out keystrokes: `C-x C-f foo RET'.<br/>
-<br/>
-The "Command:" line specifies the command name to which the macro<br/>
-is bound, or "none" for no command name.  Write "last-kbd-macro"<br/>
-to refer to the current keyboard macro (as used by M-x call-last-kbd-macro).<br/>
-<br/>
-The "Key:" lines specify key sequences to which the macro is bound,<br/>
-or "none" for no key bindings.<br/>
-<br/>
-You can edit these lines to change the places where the new macro<br/>
-is stored.<br/>
-<br/>
-<br/>
-Format of keyboard macros during editing:<br/>
-<br/>
-Text is divided into "words" separated by whitespace.  Except for<br/>
-the words described below, the characters of each word go directly<br/>
-as characters of the macro.  The whitespace that separates words<br/>
-is ignored.  Whitespace in the macro must be written explicitly,<br/>
-as in "foo SPC bar RET".<br/>
-<br/>
- * The special words RET, SPC, TAB, DEL, LFD, ESC, and NUL represent<br/>
-   special control characters.  The words must be written in uppercase.<br/>
-<br/>
- * A word in angle brackets, e.g., <return>, <down>, or <f1>, represents<br/>
-   a function key.  (Note that in the standard configuration, the<br/>
-   function key <return> and the control key RET are synonymous.)<br/>
-   You can use angle brackets on the words RET, SPC, etc., but they<br/>
-   are not required there.<br/>
-<br/>
- * Keys can be written by their ASCII code, using a backslash followed<br/>
-   by up to six octal digits.  This is the only way to represent keys<br/>
-   with codes above \377.<br/>
-<br/>
- * One or more prefixes M- (meta), C- (control), S- (shift), A- (alt),<br/>
-   H- (hyper), and s- (super) may precede a character or key notation.<br/>
-   For function keys, the prefixes may go inside or outside of the<br/>
-   brackets:  C-<down> = <C-down>.  The prefixes may be written in<br/>
-   any order:  M-C-x = C-M-x.<br/>
-<br/>
-   Prefixes are not allowed on multi-key words, e.g., C-abc, except<br/>
-   that the Meta prefix is allowed on a sequence of digits and optional<br/>
-   minus sign:  M--123 = M-- M-1 M-2 M-3.<br/>
-<br/>
- * The `^' notation for control characters also works:  ^M = C-m.<br/>
-<br/>
- * Double angle brackets enclose command names:  <<next-line>> is<br/>
-   shorthand for M-x next-line RET.<br/>
-<br/>
- * Finally, REM or ;; causes the rest of the line to be ignored as a<br/>
-   comment.<br/>
-<br/>
-Any word may be prefixed by a multiplier in the form of a decimal<br/>
-number and `*':  3*<right> = <right> <right> <right>, and<br/>
-10*foo = foofoofoofoofoofoofoofoofoofoo.<br/>
-<br/>
-Multiple text keys can normally be strung together to form a word,<br/>
-but you may need to add whitespace if the word would look like one<br/>
-of the above notations:  `; ; ;' is a keyboard macro with three<br/>
-semicolons, but `;;;' is a comment.  Likewise, `\ 1 2 3' is four<br/>
-keys but `\123' is a single key written in octal, and `< right >'<br/>
-is seven keys but `<right>' is a single function key.  When in<br/>
+<strong>edmacro-mode</strong> is an interactive compiled Lisp function in `<code>edmacro.el</code>'.</br>
+</br>
+</br>
+(edmacro-mode)</br>
+</br>
+Keyboard Macro Editing mode.  Press C-c C-c to save and exit.</br>
+To abort the edit, just kill this buffer with C-x k RET.</br>
+</br>
+Press C-c C-q to insert the name of any key by typing the key.</br>
+</br>
+The editing buffer contains a "Command:" line and any number of</br>
+"Key:" lines at the top.  These are followed by a "Macro:" line</br>
+and the macro itself as spelled-out keystrokes: `C-x C-f foo RET'.</br>
+</br>
+The "Command:" line specifies the command name to which the macro</br>
+is bound, or "none" for no command name.  Write "last-kbd-macro"</br>
+to refer to the current keyboard macro (as used by M-x call-last-kbd-macro).</br>
+</br>
+The "Key:" lines specify key sequences to which the macro is bound,</br>
+or "none" for no key bindings.</br>
+</br>
+You can edit these lines to change the places where the new macro</br>
+is stored.</br>
+</br>
+</br>
+Format of keyboard macros during editing:</br>
+</br>
+Text is divided into "words" separated by whitespace.  Except for</br>
+the words described below, the characters of each word go directly</br>
+as characters of the macro.  The whitespace that separates words</br>
+is ignored.  Whitespace in the macro must be written explicitly,</br>
+as in "foo SPC bar RET".</br>
+</br>
+ * The special words RET, SPC, TAB, DEL, LFD, ESC, and NUL represent</br>
+   special control characters.  The words must be written in uppercase.</br>
+</br>
+ * A word in angle brackets, e.g., &lt;return>, &lt;down>, or &lt;f1>, represents</br>
+   a function key.  (Note that in the standard configuration, the</br>
+   function key &lt;return> and the control key RET are synonymous.)</br>
+   You can use angle brackets on the words RET, SPC, etc., but they</br>
+   are not required there.</br>
+</br>
+ * Keys can be written by their ASCII code, using a backslash followed</br>
+   by up to six octal digits.  This is the only way to represent keys</br>
+   with codes above \377.</br>
+</br>
+ * One or more prefixes M- (meta), C- (control), S- (shift), A- (alt),</br>
+   H- (hyper), and s- (super) may precede a character or key notation.</br>
+   For function keys, the prefixes may go inside or outside of the</br>
+   brackets:  C-&lt;down> = &lt;C-down>.  The prefixes may be written in</br>
+   any order:  M-C-x = C-M-x.</br>
+</br>
+   Prefixes are not allowed on multi-key words, e.g., C-abc, except</br>
+   that the Meta prefix is allowed on a sequence of digits and optional</br>
+   minus sign:  M--123 = M-- M-1 M-2 M-3.</br>
+</br>
+ * The `^' notation for control characters also works:  ^M = C-m.</br>
+</br>
+ * Double angle brackets enclose command names:  &lt;&lt;next-line>> is</br>
+   shorthand for M-x next-line RET.</br>
+</br>
+ * Finally, REM or ;; causes the rest of the line to be ignored as a</br>
+   comment.</br>
+</br>
+Any word may be prefixed by a multiplier in the form of a decimal</br>
+number and `*':  3*&lt;right> = &lt;right> &lt;right> &lt;right>, and</br>
+10*foo = foofoofoofoofoofoofoofoofoofoo.</br>
+</br>
+Multiple text keys can normally be strung together to form a word,</br>
+but you may need to add whitespace if the word would look like one</br>
+of the above notations:  `; ; ;' is a keyboard macro with three</br>
+semicolons, but `;;;' is a comment.  Likewise, `\ 1 2 3' is four</br>
+keys but `\123' is a single key written in octal, and `&lt; right >'</br>
+is seven keys but `&lt;right>' is a single function key.  When in</br>
 doubt, use whitespace.

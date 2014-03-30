@@ -1,11 +1,15 @@
-<strong>default-file-name-coding-system</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is utf-8-unix<br/>
-<br/>
-Documentation:<br/>
-Default coding system for encoding file names.<br/>
-This variable is used only when `file-name-coding-system' is nil.<br/>
-<br/>
-This variable is set/changed by the command `set-language-environment'.<br/>
-User should not set this variable manually,<br/>
-instead use `file-name-coding-system' to get a constant encoding<br/>
-of file names regardless of the current language environment.
+<strong>default-file-name-coding-system</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>utf-8-unix</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Default coding system for encoding file names.</br>
+This variable is used only when `file-name-coding-system' is nil.</br>
+</br>
+This variable is set/changed by the command `set-language-environment'.</br>
+User should not set this variable manually,</br>
+instead use `file-name-coding-system' to get a constant encoding</br>
+of file names regardless of the current language environment.</br>
+</br>
+On MS-Windows, the value of this variable is largely ignored if</br>
+`w32-unicode-filenames' (which see) is non-nil.  Emacs on Windows</br>
+behaves as if file names were encoded in `utf-8'.

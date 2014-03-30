@@ -1,33 +1,37 @@
-<strong>eval-after-load</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(eval-after-load FILE FORM)<br/>
-<br/>
-Arrange that if FILE is loaded, FORM will be run immediately afterwards.<br/>
-If FILE is already loaded, evaluate FORM right now.<br/>
-<br/>
-If a matching file is loaded again, FORM will be evaluated again.<br/>
-<br/>
-If FILE is a string, it may be either an absolute or a relative file<br/>
-name, and may have an extension (e.g. ".el") or may lack one, and<br/>
-additionally may or may not have an extension denoting a compressed<br/>
-format (e.g. ".gz").<br/>
-<br/>
-When FILE is absolute, this first converts it to a true name by chasing<br/>
-symbolic links.  Only a file of this name (see next paragraph regarding<br/>
-extensions) will trigger the evaluation of FORM.  When FILE is relative,<br/>
-a file whose absolute true name ends in FILE will trigger evaluation.<br/>
-<br/>
-When FILE lacks an extension, a file name with any extension will trigger<br/>
-evaluation.  Otherwise, its extension must match FILE's.  A further<br/>
-extension for a compressed format (e.g. ".gz") on FILE will not affect<br/>
-this name matching.<br/>
-<br/>
-Alternatively, FILE can be a feature (i.e. a symbol), in which case FORM<br/>
-is evaluated at the end of any file that `provide's this feature.<br/>
-If the feature is provided when evaluating code not associated with a<br/>
-file, FORM is evaluated immediately after the provide statement.<br/>
-<br/>
-Usually FILE is just a library name like "font-lock" or a feature name<br/>
-like 'font-lock.<br/>
-<br/>
+<strong>eval-after-load</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+</br>
+(eval-after-load <u>FILE</u> <u>FORM</u>)</br>
+</br>
+This function has a compiler macro.</br>
+</br>
+Arrange that if <u>FILE</u> is loaded, <u>FORM</u> will be run immediately afterwards.</br>
+If <u>FILE</u> is already loaded, evaluate <u>FORM</u> right now.</br>
+<u>FORM</u> can be an Elisp expression (in which case it's passed to `eval'),</br>
+or a function (in which case it's passed to `funcall' with no argument).</br>
+</br>
+If a matching file is loaded again, <u>FORM</u> will be evaluated again.</br>
+</br>
+If <u>FILE</u> is a string, it may be either an absolute or a relative file</br>
+name, and may have an extension (e.g. ".el") or may lack one, and</br>
+additionally may or may not have an extension denoting a compressed</br>
+format (e.g. ".gz").</br>
+</br>
+When <u>FILE</u> is absolute, this first converts it to a true name by chasing</br>
+symbolic links.  Only a file of this name (see next paragraph regarding</br>
+extensions) will trigger the evaluation of <u>FORM</u>.  When <u>FILE</u> is relative,</br>
+a file whose absolute true name ends in <u>FILE</u> will trigger evaluation.</br>
+</br>
+When <u>FILE</u> lacks an extension, a file name with any extension will trigger</br>
+evaluation.  Otherwise, its extension must match <u>FILE</u>'s.  A further</br>
+extension for a compressed format (e.g. ".gz") on <u>FILE</u> will not affect</br>
+this name matching.</br>
+</br>
+Alternatively, <u>FILE</u> can be a feature (i.e. a symbol), in which case <u>FORM</u></br>
+is evaluated at the end of any file that `provide's this feature.</br>
+If the feature is provided when evaluating code not associated with a</br>
+file, <u>FORM</u> is evaluated immediately after the provide statement.</br>
+</br>
+Usually <u>FILE</u> is just a library name like "font-lock" or a feature name</br>
+like 'font-lock.</br>
+</br>
 This function makes or adds to an entry on `after-load-alist'.

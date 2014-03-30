@@ -1,0 +1,39 @@
+<strong>eww-bookmark-mode-map</strong> is a variable defined in `<code>eww.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `eww-bookmark-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Eww\ Bookmark menu-item "Eww Bookmark"
+			  (keymap "Eww Bookmark"
+				  (Exit menu-item "Exit" quit-window)
+				  (Browse menu-item "Browse" eww-bookmark-browse :enable
+					  (get-text-property
+					   (line-beginning-position)
+					   'eww-bookmark))
+				  (Kill menu-item "Kill" eww-bookmark-kill :enable
+					(get-text-property
+					 (line-beginning-position)
+					 'eww-bookmark))
+				  (Yank menu-item "Yank" eww-bookmark-yank :enable eww-bookmark-kill-ring))))
+ (13 . eww-bookmark-browse)
+ (25 . eww-bookmark-yank)
+ (11 . eww-bookmark-kill)
+ (113 . quit-window)
+ (57 . digit-argument)
+ (56 . digit-argument)
+ (55 . digit-argument)
+ (54 . digit-argument)
+ (53 . digit-argument)
+ (52 . digit-argument)
+ (51 . digit-argument)
+ (50 . digit-argument)
+ (49 . digit-argument)
+ (48 . digit-argument)
+ (45 . negative-argument)
+ (remap keymap
+	(self-insert-command . undefined)))
+</pre></br>

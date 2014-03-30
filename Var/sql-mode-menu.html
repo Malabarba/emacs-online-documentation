@@ -1,76 +1,75 @@
-<strong>sql-mode-menu</strong> is a variable defined in `<code>sql.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Menu for `sql-mode'.<br/>
-<br/>
-Value: (keymap "SQL"<br/>
-	(Send\ Paragraph menu-item "Send Paragraph" sql-send-paragraph :enable<br/>
-			 (sql-buffer-live-p sql-buffer))<br/>
-	(Send\ Region menu-item "Send Region" sql-send-region :enable<br/>
-		      (and mark-active<br/>
-			   (sql-buffer-live-p sql-buffer)))<br/>
-	(Send\ Buffer menu-item "Send Buffer" sql-send-buffer :enable<br/>
-		      (sql-buffer-live-p sql-buffer))<br/>
-	(Send\ String menu-item "Send String" sql-send-string :enable<br/>
-		      (sql-buffer-live-p sql-buffer))<br/>
-	(nil-7 menu-item "--")<br/>
-	(List\ all\ objects menu-item "List all objects" sql-list-all :enable<br/>
-			    (and<br/>
-			     (sql-buffer-live-p sql-buffer)<br/>
-			     (sql-get-product-feature sql-product :list-all)))<br/>
-	(List\ table\ details menu-item "List table details" sql-list-table :enable<br/>
-			      (and<br/>
-			       (sql-buffer-live-p sql-buffer)<br/>
-			       (sql-get-product-feature sql-product :list-table)))<br/>
-	(nil-7-7 menu-item "--")<br/>
-	(Start\ SQLi\ session menu-item "Start SQLi session" sql-product-interactive :enable<br/>
-			      (sql-get-product-feature sql-product :sqli-comint-func)<br/>
-			      :visible<br/>
-			      (not sql-connection-alist))<br/>
-	(Start\.\.\. menu-item "Start..."<br/>
-		     ("--"<br/>
-		      ["New SQLi Session" sql-product-interactive<br/>
-		       (sql-get-product-feature sql-product :sqli-comint-func)])<br/>
-		     :filter<br/>
-		     (lambda<br/>
-		       (menu)<br/>
-		       (easy-menu-filter-return<br/>
-			(sql-connection-menu-filter menu)<br/>
-			"Start..."))<br/>
-		     :visible sql-connection-alist)<br/>
-	(-- menu-item "--" :visible :enable sql-connection-alist)<br/>
-	(Show\ SQLi\ buffer menu-item "Show SQLi buffer" sql-show-sqli-buffer)<br/>
-	(Set\ SQLi\ buffer menu-item "Set SQLi buffer" sql-set-sqli-buffer)<br/>
-	(Pop\ to\ SQLi\ buffer\ after\ send menu-item "Pop to SQLi buffer after send" sql-toggle-pop-to-buffer-after-send-region :button<br/>
-					    (:toggle . sql-pop-to-buffer-after-send-region))<br/>
-	(---14 menu-item "--" nil :enable 'nil)<br/>
-	(Product menu-item "Product"<br/>
-		 (keymap "Product"<br/>
-			 (ANSI menu-item "ANSI" sql-highlight-ansi-keywords :button<br/>
-			       (:radio eq sql-product 'ansi))<br/>
-			 (DB2 menu-item "DB2" sql-highlight-db2-keywords :button<br/>
-			      (:radio eq sql-product 'db2))<br/>
-			 (Informix menu-item "Informix" sql-highlight-informix-keywords :button<br/>
-				   (:radio eq sql-product 'informix))<br/>
-			 (Ingres menu-item "Ingres" sql-highlight-ingres-keywords :button<br/>
-				 (:radio eq sql-product 'ingres))<br/>
-			 (Interbase menu-item "Interbase" sql-highlight-interbase-keywords :button<br/>
-				    (:radio eq sql-product 'interbase))<br/>
-			 (Linter menu-item "Linter" sql-highlight-linter-keywords :button<br/>
-				 (:radio eq sql-product 'linter))<br/>
-			 (Microsoft menu-item "Microsoft" sql-highlight-ms-keywords :button<br/>
-				    (:radio eq sql-product 'ms))<br/>
-			 (MySQL menu-item "MySQL" sql-highlight-mysql-keywords :button<br/>
-				(:radio eq sql-product 'mysql))<br/>
-			 (Oracle menu-item "Oracle" sql-highlight-oracle-keywords :button<br/>
-				 (:radio eq sql-product 'oracle))<br/>
-			 (Postgres menu-item "Postgres" sql-highlight-postgres-keywords :button<br/>
-				   (:radio eq sql-product 'postgres))<br/>
-			 (Solid menu-item "Solid" sql-highlight-solid-keywords :button<br/>
-				(:radio eq sql-product 'solid))<br/>
-			 (SQLite menu-item "SQLite" sql-highlight-sqlite-keywords :button<br/>
-				 (:radio eq sql-product 'sqlite))<br/>
-			 (Sybase menu-item "Sybase" sql-highlight-sybase-keywords :button<br/>
-				 (:radio eq sql-product 'sybase)))))<br/>
-<br/>
+<strong>sql-mode-menu</strong> is a variable defined in `<code>sql.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for `sql-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "SQL"
+	(Send\ Paragraph menu-item "Send Paragraph" sql-send-paragraph :enable
+			 (sql-buffer-live-p sql-buffer))
+	(Send\ Region menu-item "Send Region" sql-send-region :enable
+		      (and mark-active
+			   (sql-buffer-live-p sql-buffer)))
+	(Send\ Buffer menu-item "Send Buffer" sql-send-buffer :enable
+		      (sql-buffer-live-p sql-buffer))
+	(Send\ String menu-item "Send String" sql-send-string :enable
+		      (sql-buffer-live-p sql-buffer))
+	(nil menu-item "--")
+	(List\ all\ objects menu-item "List all objects" sql-list-all :enable
+			    (and
+			     (sql-buffer-live-p sql-buffer)
+			     (sql-get-product-feature sql-product :list-all)))
+	(List\ table\ details menu-item "List table details" sql-list-table :enable
+			      (and
+			       (sql-buffer-live-p sql-buffer)
+			       (sql-get-product-feature sql-product :list-table)))
+	(nil-7 menu-item "--")
+	(Start\ SQLi\ session menu-item "Start SQLi session" sql-product-interactive :enable
+			      (sql-get-product-feature sql-product :sqli-comint-func)
+			      :visible
+			      (not sql-connection-alist))
+	(Start\.\.\. menu-item "Start..."
+		     ("--"
+		      ["New SQLi Session" sql-product-interactive
+		       (sql-get-product-feature sql-product :sqli-comint-func)])
+		     :filter
+		     #[257 "\302\301!\300\"\207"
+			   ["Start..." sql-connection-menu-filter easy-menu-filter-return]
+			   4 "\n\n(fn MENU)"]
+		     :visible sql-connection-alist)
+	(-- menu-item "--" :visible :enable sql-connection-alist)
+	(Show\ SQLi\ buffer menu-item "Show SQLi buffer" sql-show-sqli-buffer)
+	(Set\ SQLi\ buffer menu-item "Set SQLi buffer" sql-set-sqli-buffer)
+	(Pop\ to\ SQLi\ buffer\ after\ send menu-item "Pop to SQLi buffer after send" sql-toggle-pop-to-buffer-after-send-region :button
+					    (:toggle . sql-pop-to-buffer-after-send-region))
+	(---14 menu-item "--" nil :enable 'nil)
+	(Product menu-item "Product"
+		 (keymap "Product"
+			 (ANSI menu-item "ANSI" sql-highlight-ansi-keywords :button
+			       (:radio eq sql-product 'ansi))
+			 (DB2 menu-item "DB2" sql-highlight-db2-keywords :button
+			      (:radio eq sql-product 'db2))
+			 (Informix menu-item "Informix" sql-highlight-informix-keywords :button
+				   (:radio eq sql-product 'informix))
+			 (Ingres menu-item "Ingres" sql-highlight-ingres-keywords :button
+				 (:radio eq sql-product 'ingres))
+			 (Interbase menu-item "Interbase" sql-highlight-interbase-keywords :button
+				    (:radio eq sql-product 'interbase))
+			 (Linter menu-item "Linter" sql-highlight-linter-keywords :button
+				 (:radio eq sql-product 'linter))
+			 (Microsoft menu-item "Microsoft" sql-highlight-ms-keywords :button
+				    (:radio eq sql-product 'ms))
+			 (MySQL menu-item "MySQL" sql-highlight-mysql-keywords :button
+				(:radio eq sql-product 'mysql))
+			 (Oracle menu-item "Oracle" sql-highlight-oracle-keywords :button
+				 (:radio eq sql-product 'oracle))
+			 (Postgres menu-item "Postgres" sql-highlight-postgres-keywords :button
+				   (:radio eq sql-product 'postgres))
+			 (Solid menu-item "Solid" sql-highlight-solid-keywords :button
+				(:radio eq sql-product 'solid))
+			 (SQLite menu-item "SQLite" sql-highlight-sqlite-keywords :button
+				 (:radio eq sql-product 'sqlite))
+			 (Sybase menu-item "Sybase" sql-highlight-sybase-keywords :button
+				 (:radio eq sql-product 'sybase)))))
+</pre></br>

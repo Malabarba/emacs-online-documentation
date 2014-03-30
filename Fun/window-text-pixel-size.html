@@ -1,0 +1,37 @@
+<strong>window-text-pixel-size</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(window-text-pixel-size &optional <u>WINDOW</u> <u>FROM</u> <u>TO</u> <u>X-LIMIT</u> <u>Y-LIMIT</u> <u>MODE-AND-HEADER-LINE</u>)</br>
+</br>
+Return the size of the text of <u>WINDOW</u>'s buffer in pixels.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.  The</br>
+return value is a cons of the maximum pixel-width of any text line and</br>
+the maximum pixel-height of all text lines.</br>
+</br>
+The optional argument <u>FROM</u>, if non-nil, specifies the first text</br>
+position and defaults to the minimum accessible position of the buffer.</br>
+If <u>FROM</u> is t, use the minimum accessible position that is not a newline</br>
+character.  <u>TO</u>, if non-nil, specifies the last text position and</br>
+defaults to the maximum accessible position of the buffer.  If <u>TO</u> is t,</br>
+use the maximum accessible position that is not a newline character.</br>
+</br>
+The optional argument <u>X-LIMIT</u>, if non-nil, specifies the maximum text</br>
+width that can be returned.  <u>X-LIMIT</u> nil or omitted, means to use the</br>
+pixel-width of <u>WINDOW</u>'s body; use this if you do not intend to change</br>
+the width of <u>WINDOW</u>.  Use the maximum width <u>WINDOW</u> may assume if you</br>
+intend to change <u>WINDOW</u>'s width.  In any case, text whose x-coordinate</br>
+is beyond <u>X-LIMIT</u> is ignored.  Since calculating the width of long lines</br>
+can take some time, it's always a good idea to make this argument as</br>
+small as possible; in particular, if the buffer contains long lines that</br>
+shall be truncated anyway.</br>
+</br>
+The optional argument <u>Y-LIMIT</u>, if non-nil, specifies the maximum text</br>
+height that can be returned.  Text lines whose y-coordinate is beyond</br>
+<u>Y-LIMIT</u> are ignored.  Since calculating the text height of a large</br>
+buffer can take some time, it makes sense to specify this argument if</br>
+the size of the buffer is unknown.</br>
+</br>
+Optional argument <u>MODE-AND-HEADER-LINE</u> nil or omitted means do not</br>
+include the height of the mode- or header-line of <u>WINDOW</u> in the return</br>
+value.  If it is either the symbol `mode-line' or `header-line', include</br>
+only the height of that line, if present, in the return value.  If t,</br>
+include the height of both, if present, in the return value.

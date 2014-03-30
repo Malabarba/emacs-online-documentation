@@ -1,20 +1,20 @@
-<strong>display-supports-face-attributes-p</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(display-supports-face-attributes-p ATTRIBUTES &optional DISPLAY)<br/>
-<br/>
-Return non-nil if all the face attributes in ATTRIBUTES are supported.<br/>
-The optional argument DISPLAY can be a display name, a frame, or<br/>
-nil (meaning the selected frame's display).<br/>
-<br/>
-The definition of `supported' is somewhat heuristic, but basically means<br/>
-that a face containing all the attributes in ATTRIBUTES, when merged<br/>
-with the default face for display, can be represented in a way that's<br/>
-<br/>
- (1) different in appearance than the default face, and<br/>
- (2) `close in spirit' to what the attributes specify, if not exact.<br/>
-<br/>
-Point (2) implies that a `:weight black' attribute will be satisfied by<br/>
-any display that can display bold, and a `:foreground "yellow"' as long<br/>
-as it can display a yellowish color, but `:slant italic' will _not_ be<br/>
-satisfied by the tty display code's automatic substitution of a `dim'<br/>
+<strong>display-supports-face-attributes-p</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(display-supports-face-attributes-p <u>ATTRIBUTES</u> &optional <u>DISPLAY</u>)</br>
+</br>
+Return non-nil if all the face attributes in <u>ATTRIBUTES</u> are supported.</br>
+The optional argument <u>DISPLAY</u> can be a display name, a frame, or</br>
+nil (meaning the selected frame's display).</br>
+</br>
+The definition of `supported' is somewhat heuristic, but basically means</br>
+that a face containing all the attributes in <u>ATTRIBUTES</u>, when merged</br>
+with the default face for display, can be represented in a way that's</br>
+</br>
+ (1) different in appearance than the default face, and</br>
+ (2) `close in spirit' to what the attributes specify, if not exact.</br>
+</br>
+Point (2) implies that a `:weight black' attribute will be satisfied by</br>
+any display that can display bold, and a `:foreground "yellow"' as long</br>
+as it can display a yellowish color, but `:slant italic' will _not_ be</br>
+satisfied by the tty display code's automatic substitution of a `dim'</br>
 face for italic.

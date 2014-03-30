@@ -1,17 +1,15 @@
-<strong>allout-encryption-ciphertext-rejection-regexps</strong> is a variable defined in `<code>allout.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-Variable for regexps matching plaintext to remove before encryption.<br/>
-<br/>
-This is used to detect strings in encryption results that would<br/>
-register as allout mode structural elements, for example, as a<br/>
-topic prefix.<br/>
-<br/>
-Entries must be symbols that are bound to the desired regexp values.<br/>
-<br/>
-Encryptions that result in matches will be retried, up to<br/>
-`allout-encryption-ciphertext-rejection-limit' times, after which<br/>
+<strong>allout-encryption-ciphertext-rejection-regexps</strong> is a variable defined in `<code>allout.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Variable for regexps matching plaintext to remove before encryption.</br>
+</br>
+This is used to detect strings in encryption results that would</br>
+register as allout mode structural elements, for example, as a</br>
+topic prefix.</br>
+</br>
+Entries must be symbols that are bound to the desired regexp values.</br>
+</br>
+Encryptions that result in matches will be retried, up to</br>
+`allout-encryption-ciphertext-rejection-limit' times, after which</br>
 an error is raised.

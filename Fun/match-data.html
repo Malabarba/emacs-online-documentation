@@ -1,23 +1,23 @@
-<strong>match-data</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(match-data &optional INTEGERS REUSE RESEAT)<br/>
-<br/>
-Return a list containing all info on what the last search matched.<br/>
-Element 2N is `(match-beginning N)'; element 2N + 1 is `(match-end N)'.<br/>
-All the elements are markers or nil (nil if the Nth pair didn't match)<br/>
-if the last match was on a buffer; integers or nil if a string was matched.<br/>
-Use `set-match-data' to reinstate the data in this list.<br/>
-<br/>
-If INTEGERS (the optional first argument) is non-nil, always use<br/>
-integers (rather than markers) to represent buffer positions.  In<br/>
-this case, and if the last match was in a buffer, the buffer will get<br/>
-stored as one additional element at the end of the list.<br/>
-<br/>
-If REUSE is a list, reuse it as part of the value.  If REUSE is long<br/>
-enough to hold all the values, and if INTEGERS is non-nil, no consing<br/>
-is done.<br/>
-<br/>
-If optional third arg RESEAT is non-nil, any previous markers on the<br/>
-REUSE list will be modified to point to nowhere.<br/>
-<br/>
+<strong>match-data</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(match-data &optional <u>INTEGERS</u> <u>REUSE</u> <u>RESEAT</u>)</br>
+</br>
+Return a list containing all info on what the last search matched.</br>
+Element 2N is `(match-beginning N)'; element 2N + 1 is `(match-end N)'.</br>
+All the elements are markers or nil (nil if the Nth pair didn't match)</br>
+if the last match was on a buffer; integers or nil if a string was matched.</br>
+Use `set-match-data' to reinstate the data in this list.</br>
+</br>
+If <u>INTEGERS</u> (the optional first argument) is non-nil, always use</br>
+integers (rather than markers) to represent buffer positions.  In</br>
+this case, and if the last match was in a buffer, the buffer will get</br>
+stored as one additional element at the end of the list.</br>
+</br>
+If <u>REUSE</u> is a list, reuse it as part of the value.  If <u>REUSE</u> is long</br>
+enough to hold all the values, and if <u>INTEGERS</u> is non-nil, no consing</br>
+is done.</br>
+</br>
+If optional third arg <u>RESEAT</u> is non-nil, any previous markers on the</br>
+<u>REUSE</u> list will be modified to point to nowhere.</br>
+</br>
 Return value is undefined if the last search failed.

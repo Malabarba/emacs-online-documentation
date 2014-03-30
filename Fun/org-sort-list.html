@@ -1,31 +1,36 @@
-<strong>org-sort-list</strong> is an interactive compiled Lisp function in `<code>org-list.el</code>'.<br/>
-<br/>
-(org-sort-list &optional WITH-CASE SORTING-TYPE GETKEY-FUNC COMPARE-FUNC)<br/>
-<br/>
-Sort list items.<br/>
-The cursor may be at any item of the list that should be sorted.<br/>
-Sublists are not sorted.  Checkboxes, if any, are ignored.<br/>
-<br/>
-Sorting can be alphabetically, numerically, by date/time as given<br/>
-by a time stamp, by a property or by priority.<br/>
-<br/>
-Comparing entries ignores case by default.  However, with an<br/>
-optional argument WITH-CASE, the sorting considers case as well.<br/>
-<br/>
-The command prompts for the sorting type unless it has been given<br/>
-to the function through the SORTING-TYPE argument, which needs to<br/>
-be a character, (?n ?N ?a ?A ?t ?T ?f ?F).  Here is the precise<br/>
-meaning of each character:<br/>
-<br/>
-n   Numerically, by converting the beginning of the item to a number.<br/>
-a   Alphabetically.  Only the first line of item is checked.<br/>
-t   By date/time, either the first active time stamp in the entry, if<br/>
-    any, or by the first inactive one.  In a timer list, sort the timers.<br/>
-<br/>
-Capital letters will reverse the sort order.<br/>
-<br/>
-If the SORTING-TYPE is ?f or ?F, then GETKEY-FUNC specifies<br/>
-a function to be called with point at the beginning of the<br/>
-record.  It must return either a string or a number that should<br/>
-serve as the sorting key for that record.  It will then use<br/>
-COMPARE-FUNC to compare entries.
+<strong>org-sort-list</strong> is an interactive compiled Lisp function in `<code>org-list.el</code>'.</br>
+</br>
+</br>
+(org-sort-list &optional <u>WITH-CASE</u> <u>SORTING-TYPE</u> <u>GETKEY-FUNC</u> <u>COMPARE-FUNC</u>)</br>
+</br>
+Sort list items.</br>
+The cursor may be at any item of the list that should be sorted.</br>
+Sublists are not sorted.  Checkboxes, if any, are ignored.</br>
+</br>
+Sorting can be alphabetically, numerically, by date/time as given</br>
+by a time stamp, by a property or by priority.</br>
+</br>
+Comparing entries ignores case by default.  However, with an</br>
+optional argument <u>WITH-CASE</u>, the sorting considers case as well.</br>
+</br>
+The command prompts for the sorting type unless it has been given</br>
+to the function through the <u>SORTING-TYPE</u> argument, which needs to</br>
+be a character, (?n ?N ?a ?A ?t ?T ?f ?F ?x ?X).  Here is the</br>
+detailed meaning of each character:</br>
+</br>
+n   Numerically, by converting the beginning of the item to a number.</br>
+a   Alphabetically.  Only the first line of item is checked.</br>
+t   By date/time, either the first active time stamp in the entry, if</br>
+    any, or by the first inactive one.  In a timer list, sort the timers.</br>
+x   By "checked" status of a check list.</br>
+</br>
+Capital letters will reverse the sort order.</br>
+</br>
+If the <u>SORTING-TYPE</u> is ?f or ?F, then <u>GETKEY-FUNC</u> specifies</br>
+a function to be called with point at the beginning of the</br>
+record.  It must return either a string or a number that should</br>
+serve as the sorting key for that record.  It will then use</br>
+<u>COMPARE-FUNC</u> to compare entries.</br>
+</br>
+Sorting is done against the visible part of the headlines, it</br>
+ignores hidden links.

@@ -1,5 +1,81 @@
-<strong>chart</strong> is a Lisp function.<br/>
-<br/>
-(chart NEWNAME &rest SLOTS)<br/>
-<br/>
-Create a new object with name NAME of class type chart
+chart is an  object constructor function in `chart.el'.</br>
+Creates an object of class chart.</br>
+Create a new object with name NAME of class type chart</br>
+</br>
+Class description:</br>
+chart is a class in `chart.el'.</br>
+ Children `chart-bar'.</br>
+</br>
+Superclass for all charts to be displayed in an Emacs buffer.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: title    default = "Emacs Chart"</br>
+Slot: title-face    default = (quote bold-italic)</br>
+Slot: x-axis    default = nil</br>
+Slot: x-margin    default = 5</br>
+Slot: x-width</br>
+Slot: y-axis    default = nil</br>
+Slot: y-margin    default = 5</br>
+Slot: y-width</br>
+Slot: key-label    default = "Key"</br>
+Slot: sequences    default = nil</br>
+Specialized Methods:</br>
+</br>
+`chart-draw-axis' :PRIMARY 257</br>
+Draw axis into the current buffer defined by chart C.</br>
+</br>
+<code>(fn C</code>)</br>
+</br>
+`chart-add-sequence' :PRIMARY 769</br>
+Add to chart object C the sequence object SEQ.</br>
+If AXIS-LABEL, then the axis stored in C is updated with the bounds of SEQ,</br>
+or is created with the bounds of SEQ.</br>
+</br>
+(fn C &optional SEQ AXIS-LABEL)</br>
+</br>
+`chart-draw' :PRIMARY 513</br>
+Start drawing a chart object C in optional BUFF.</br>
+Erases current contents of buffer.</br>
+</br>
+(fn C &optional BUFF)</br>
+</br>
+`chart-translate-ypos' :PRIMARY 514</br>
+Translate in chart C the coordinate Y into a screen row.</br>
+</br>
+(fn C Y)</br>
+</br>
+`chart-translate-xpos' :PRIMARY 514</br>
+Translate in chart C the coordinate X into a screen column.</br>
+</br>
+(fn C X)</br>
+</br>
+`chart-sort' :PRIMARY 514</br>
+Sort the data in chart C using predicate PRED.</br>
+See `chart-sort-matchlist' for more details.</br>
+</br>
+(fn C PRED)</br>
+</br>
+`chart-translate-namezone' :PRIMARY 514</br>
+Return a dot-pair representing a positional range for a name.</br>
+The name in chart C of the Nth name resides.</br>
+Automatically compensates for direction.</br>
+</br>
+(fn C N)</br>
+</br>
+`chart-trim' :PRIMARY 514</br>
+Trim all sequences in chart C to be at most MAX elements long.</br>
+</br>
+(fn C MAX)</br>
+</br>
+`chart-size-in-dir' :PRIMARY 514</br>
+Return the physical size of chart C in direction DIR.</br>
+</br>
+(fn C DIR)</br>
+</br>
+`chart-draw-title' :PRIMARY 257</br>
+Draw a title upon the chart.</br>
+Argument C is the chart object.</br>
+</br>
+(fn C)</br>
+</br>

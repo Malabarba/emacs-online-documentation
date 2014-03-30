@@ -1,28 +1,29 @@
-<strong>browse-url-filename-alist</strong> is a variable defined in `<code>browse-url.el</code>'.<br/>
-Its value is (("^/\\(ftp@\\|anonymous@\\)?\\([^:]+\\):/*" . "ftp://\\2/")<br/>
- ("^/\\([^:@]+@\\)?\\([^:]+\\):/*" . "ftp://\\1\\2/")<br/>
- ("^/+" . "file:///"))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-An alist of (REGEXP . STRING) pairs used by `browse-url-of-file'.<br/>
-Any substring of a filename matching one of the REGEXPs is replaced by<br/>
-the corresponding STRING using `replace-match', not treating STRING<br/>
-literally.  All pairs are applied in the order given.  The default<br/>
-value converts ange-ftp/EFS-style file names into ftp URLs and prepends<br/>
-`file:' to any file name beginning with `/'.<br/>
-<br/>
-For example, adding to the default a specific translation of an ange-ftp<br/>
-address to an HTTP URL:<br/>
-<br/>
-    (setq browse-url-filename-alist<br/>
-	  '(("/webmaster@webserver:/home/www/html/" .<br/>
-	     "http://www.acme.co.uk/")<br/>
-            ("^/\(ftp@\|anonymous@\)?\([^:]+\):/*" . "ftp://\2/")<br/>
-            ("^/\([^:@]+@\)?\([^:]+\):/*" . "ftp://\1\2/")<br/>
-	    ("^/+" . "file:/")))<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 23.1 of Emacs.<br/>
+<strong>browse-url-filename-alist</strong> is a variable defined in `<code>browse-url.el</code>'.</br>
+Its value is <pre></br>
+(("^/\\(ftp@\\|anonymous@\\)?\\([^:]+\\):/*" . "ftp://\\2/")
+ ("^/\\([^:@]+@\\)?\\([^:]+\\):/*" . "ftp://\\1\\2/")
+ ("^/+" . "file:///"))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+An alist of (REGEXP . STRING) pairs used by `browse-url-of-file'.</br>
+Any substring of a filename matching one of the REGEXPs is replaced by</br>
+the corresponding STRING using `replace-match', not treating STRING</br>
+literally.  All pairs are applied in the order given.  The default</br>
+value converts ange-ftp/EFS-style file names into ftp URLs and prepends</br>
+`file:' to any file name beginning with `/'.</br>
+</br>
+For example, adding to the default a specific translation of an ange-ftp</br>
+address to an HTTP URL:</br>
+</br>
+    (setq browse-url-filename-alist</br>
+	  '(("/webmaster@webserver:/home/www/html/" .</br>
+	     "http://www.acme.co.uk/")</br>
+            ("^/\(ftp@\|anonymous@\)?\([^:]+\):/*" . "ftp://\2/")</br>
+            ("^/\([^:@]+@\)?\([^:]+\):/*" . "ftp://\1\2/")</br>
+	    ("^/+" . "file:/")))</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 23.1 of Emacs.

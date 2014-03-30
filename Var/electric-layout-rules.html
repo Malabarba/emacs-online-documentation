@@ -1,9 +1,14 @@
-<strong>electric-layout-rules</strong> is a variable defined in `<code>electric.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-List of rules saying where to automatically insert newlines.<br/>
-Each rule has the form (CHAR . WHERE) where CHAR is the char<br/>
-that was just inserted and WHERE specifies where to insert newlines<br/>
-and can be: nil, `before', `after', `around', or a function of no<br/>
-arguments that returns one of those symbols.
+<strong>electric-layout-rules</strong> is a variable defined in `<code>electric.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of rules saying where to automatically insert newlines.</br>
+</br>
+Each rule has the form (CHAR . WHERE) where CHAR is the char that</br>
+was just inserted and WHERE specifies where to insert newlines</br>
+and can be: nil, `before', `after', `around', `after-stay', or a</br>
+function of no arguments that returns one of those symbols.</br>
+</br>
+The symbols specify where in relation to CHAR the newline</br>
+character(s) should be inserted. `after-stay' means insert a</br>
+newline after CHAR but stay in the same place.

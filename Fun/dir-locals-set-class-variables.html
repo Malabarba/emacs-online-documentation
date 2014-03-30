@@ -1,33 +1,33 @@
-<strong>dir-locals-set-class-variables</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
-<br/>
-(dir-locals-set-class-variables CLASS VARIABLES)<br/>
-<br/>
-Map the type CLASS to a list of variable settings.<br/>
-CLASS is the project class, a symbol.  VARIABLES is a list<br/>
-that declares directory-local variables for the class.<br/>
-An element in VARIABLES is either of the form:<br/>
-    (MAJOR-MODE . ALIST)<br/>
-or<br/>
-    (DIRECTORY . LIST)<br/>
-<br/>
-In the first form, MAJOR-MODE is a symbol, and ALIST is an alist<br/>
-whose elements are of the form (VARIABLE . VALUE).<br/>
-<br/>
-In the second form, DIRECTORY is a directory name (a string), and<br/>
-LIST is a list of the form accepted by the function.<br/>
-<br/>
-When a file is visited, the file's class is found.  A directory<br/>
-may be assigned a class using `dir-locals-set-directory-class'.<br/>
-Then variables are set in the file's buffer according to the<br/>
-VARIABLES list of the class.  The list is processed in order.<br/>
-<br/>
-* If the element is of the form (MAJOR-MODE . ALIST), and the<br/>
-  buffer's major mode is derived from MAJOR-MODE (as determined<br/>
-  by `derived-mode-p'), then all the variables in ALIST are<br/>
-  applied.  A MAJOR-MODE of nil may be used to match any buffer.<br/>
-  `make-local-variable' is called for each variable before it is<br/>
-  set.<br/>
-<br/>
-* If the element is of the form (DIRECTORY . LIST), and DIRECTORY<br/>
-  is an initial substring of the file's directory, then LIST is<br/>
+<strong>dir-locals-set-class-variables</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(dir-locals-set-class-variables <u>CLASS</u> <u>VARIABLES</u>)</br>
+</br>
+Map the type <u>CLASS</u> to a list of variable settings.</br>
+<u>CLASS</u> is the project class, a symbol.  <u>VARIABLES</u> is a list</br>
+that declares directory-local variables for the class.</br>
+An element in <u>VARIABLES</u> is either of the form:</br>
+    (MAJOR-MODE . ALIST)</br>
+or</br>
+    (DIRECTORY . LIST)</br>
+</br>
+In the first form, MAJOR-MODE is a symbol, and ALIST is an alist</br>
+whose elements are of the form (VARIABLE . VALUE).</br>
+</br>
+In the second form, DIRECTORY is a directory name (a string), and</br>
+LIST is a list of the form accepted by the function.</br>
+</br>
+When a file is visited, the file's class is found.  A directory</br>
+may be assigned a class using `dir-locals-set-directory-class'.</br>
+Then variables are set in the file's buffer according to the</br>
+<u>VARIABLES</u> list of the class.  The list is processed in order.</br>
+</br>
+* If the element is of the form (MAJOR-MODE . ALIST), and the</br>
+  buffer's major mode is derived from MAJOR-MODE (as determined</br>
+  by `derived-mode-p'), then all the variables in ALIST are</br>
+  applied.  A MAJOR-MODE of nil may be used to match any buffer.</br>
+  `make-local-variable' is called for each variable before it is</br>
+  set.</br>
+</br>
+* If the element is of the form (DIRECTORY . LIST), and DIRECTORY</br>
+  is an initial substring of the file's directory, then LIST is</br>
   applied by recursively following these rules.

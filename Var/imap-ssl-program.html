@@ -1,15 +1,13 @@
-<strong>imap-ssl-program</strong> is a variable defined in `<code>imap.el</code>'.<br/>
-Its value is<br/>
-("openssl s_client -quiet -ssl3 -connect %s:%p" "openssl s_client -quiet -ssl2 -connect %s:%p" "s_client -quiet -ssl3 -connect %s:%p" "s_client -quiet -ssl2 -connect %s:%p")<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A string, or list of strings, containing commands for SSL connections.<br/>
-Within a string, %s is replaced with the server address and %p with<br/>
-port number on server.  The program should accept IMAP commands on<br/>
-stdin and return responses to stdout.  Each entry in the list is tried<br/>
-until a successful connection is made.<br/>
-<br/>
+<strong>imap-ssl-program</strong> is a variable defined in `<code>imap.el</code>'.</br>
+Its value is <pre></br>
+("openssl s_client -quiet -ssl3 -connect %s:%p" "openssl s_client -quiet -ssl2 -connect %s:%p" "s_client -quiet -ssl3 -connect %s:%p" "s_client -quiet -ssl2 -connect %s:%p")
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A string, or list of strings, containing commands for SSL connections.</br>
+Within a string, %s is replaced with the server address and %p with</br>
+port number on server.  The program should accept IMAP commands on</br>
+stdin and return responses to stdout.  Each entry in the list is tried</br>
+until a successful connection is made.</br>
+</br>
 You can customize this variable.

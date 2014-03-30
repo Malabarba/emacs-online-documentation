@@ -1,0 +1,26 @@
+<strong>org-html-mathjax-options</strong> is a variable defined in `<code>ox-html.el</code>'.</br>
+Its value is <pre></br>
+((path "http://orgmode.org/mathjax/MathJax.js")
+ (scale "100")
+ (align "center")
+ (indent "2em")
+ (mathml nil))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Options for MathJax setup.</br>
+</br>
+path        The path where to find MathJax</br>
+scale       Scaling for the HTML-CSS backend, usually between 100 and 133</br>
+align       How to align display math: left, center, or right</br>
+indent      If align is not center, how far from the left/right side?</br>
+mathml      Should a MathML player be used if available?</br>
+            This is faster and reduces bandwidth use, but currently</br>
+            sometimes has lower spacing quality.  Therefore, the default is</br>
+            nil.  When browsers get better, this switch can be flipped.</br>
+</br>
+You can also customize this for each buffer, using something like</br>
+</br>
+#+MATHJAX: scale:"133" align:"right" mathml:t path:"/MathJax/"</br>
+</br>
+You can customize this variable.

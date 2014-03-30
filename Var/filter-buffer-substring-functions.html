@@ -1,25 +1,6 @@
-<strong>filter-buffer-substring-functions</strong> is a variable defined in `<code>simple.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-This variable is a wrapper hook around `filter-buffer-substring'.<br/>
-Each member of the hook should be a function accepting four arguments:<br/>
-(FUN BEG END DELETE), where FUN is itself a function of three arguments<br/>
-(BEG END DELETE).  The arguments BEG, END, and DELETE are the same<br/>
-as those of `filter-buffer-substring' in each case.<br/>
-<br/>
-The first hook function to be called receives a FUN equivalent<br/>
-to the default operation of `filter-buffer-substring',<br/>
-i.e. one that returns the buffer-substring between BEG and<br/>
-END (processed by any `buffer-substring-filters').  Normally,<br/>
-the hook function will call FUN and then do its own processing<br/>
-of the result.  The next hook function receives a FUN equivalent<br/>
-to the previous hook function, calls it, and does its own<br/>
-processing, and so on.  The overall result is that of all hook<br/>
-functions acting in sequence.<br/>
-<br/>
-Any hook may choose not to call FUN though, in which case it<br/>
-effectively replaces the default behavior with whatever it chooses.<br/>
-Of course, a later hook function may do the same thing.
+<strong>filter-buffer-substring-functions</strong> is a variable defined in `<code>simple.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  <strong>This variable is obsolete since 24.4;</br>
+  use `<a href="filter-buffer-substring-function">filter-buffer-substring-function</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+This variable is a wrapper hook around `filter-buffer-substring'.

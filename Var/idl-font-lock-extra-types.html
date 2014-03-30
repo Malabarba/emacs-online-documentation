@@ -1,26 +1,26 @@
-<strong>idl-font-lock-extra-types</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-*List of extra types (aside from the type keywords) to recognize in IDL mode.<br/>
-Each list item should be a regexp matching a single identifier.<br/>
-<br/>
-<br/>
-Note that items on this list that don't include any regexp special<br/>
-characters are automatically optimized using `regexp-opt', so you<br/>
-should not use `regexp-opt' explicitly to build regexps here.<br/>
-<br/>
-On decoration level 3 (and higher, where applicable), a method is used<br/>
-that finds most types and declarations by syntax alone.  This variable<br/>
-is still used as a first step, but other types are recognized<br/>
-correctly anyway in most cases.  Therefore this variable should be<br/>
-fairly restrictive and not contain patterns that are uncertain.<br/>
-<br/>
-Note that this variable is only consulted when the major mode is<br/>
-initialized.  If you change it later you have to reinitialize CC Mode<br/>
-by doing M-x idl-mode.<br/>
-<br/>
-Despite the name, this variable is not only used for font locking but<br/>
-also elsewhere in CC Mode to tell types from other identifiers.<br/>
-<br/>
+<strong>idl-font-lock-extra-types</strong> is a variable defined in `<code>cc-vars.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*List of extra types (aside from the type keywords) to recognize in IDL mode.</br>
+Each list item should be a regexp matching a single identifier.</br>
+</br>
+</br>
+Note that items on this list that don't include any regexp special</br>
+characters are automatically optimized using `regexp-opt', so you</br>
+should not use `regexp-opt' explicitly to build regexps here.</br>
+</br>
+On decoration level 3 (and higher, where applicable), a method is used</br>
+that finds most types and declarations by syntax alone.  This variable</br>
+is still used as a first step, but other types are recognized</br>
+correctly anyway in most cases.  Therefore this variable should be</br>
+fairly restrictive and not contain patterns that are uncertain.</br>
+</br>
+Note that this variable is only consulted when the major mode is</br>
+initialized.  If you change it later you have to reinitialize CC Mode</br>
+by doing M-x idl-mode.</br>
+</br>
+Despite the name, this variable is not only used for font locking but</br>
+also elsewhere in CC Mode to tell types from other identifiers.</br>
+</br>
 You can customize this variable.

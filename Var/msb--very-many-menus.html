@@ -1,60 +1,59 @@
-<strong>msb--very-many-menus</strong> is a variable defined in `<code>msb.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (((and<br/>
-   (boundp 'server-buffer-clients)<br/>
-   server-buffer-clients 'multi)<br/>
-  1010 "Clients (%d)")<br/>
- ((and<br/>
-   (boundp 'vc-mode)<br/>
-   vc-mode 'multi)<br/>
-  1020 "Version Control (%d)")<br/>
- ((and buffer-file-name<br/>
-       (buffer-modified-p)<br/>
-       'multi)<br/>
-  1030 "Changed files (%d)")<br/>
- ((and<br/>
-   (get-buffer-process<br/>
-    (current-buffer))<br/>
-   'multi)<br/>
-  1040 "Processes (%d)")<br/>
- ((and msb-display-invisible-buffers-p<br/>
-       (msb-invisible-buffer-p)<br/>
-       'multi)<br/>
-  1090 "Invisible buffers (%d)")<br/>
- ((eq major-mode 'dired-mode)<br/>
-  2010 "Dired (%d)" msb-dired-item-handler msb-sort-by-directory)<br/>
- ((eq major-mode 'Man-mode)<br/>
-  5030 "Manuals (%d)")<br/>
- ((eq major-mode 'w3-mode)<br/>
-  5020 "WWW (%d)")<br/>
- ((or<br/>
-   (memq major-mode<br/>
-	 '(rmail-mode rmail-edit-mode vm-summary-mode vm-mode mail-mode))<br/>
-   (memq major-mode<br/>
-	 '(mh-letter-mode mh-show-mode mh-folder-mode))<br/>
-   (memq major-mode<br/>
-	 '(gnus-summary-mode message-mode gnus-group-mode gnus-article-mode score-mode gnus-browse-killed-mode)))<br/>
-  5010 "Mail (%d)")<br/>
- ((and<br/>
-   (not buffer-file-name)<br/>
-   'no-multi)<br/>
-  5099 "Other non-file buffers (%d)")<br/>
- ((and<br/>
-   (string-match "/\\.[^/]*$" buffer-file-name)<br/>
-   'multi)<br/>
-  3090 "Hidden Files (%d)")<br/>
- ((memq major-mode<br/>
-	'(c-mode c++-mode))<br/>
-  3010 "C/C++ Files (%d)")<br/>
- ((eq major-mode 'emacs-lisp-mode)<br/>
-  3020 "Elisp Files (%d)")<br/>
- ((eq major-mode 'latex-mode)<br/>
-  3030 "LaTeX Files (%d)")<br/>
- ('no-multi 3099 "Other files (%d)"))<br/>
-<br/>
+<strong>msb--very-many-menus</strong> is a variable defined in `<code>msb.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(((and
+   (boundp 'server-buffer-clients)
+   server-buffer-clients 'multi)
+  1010 "Clients (%d)")
+ ((and
+   (boundp 'vc-mode)
+   vc-mode 'multi)
+  1020 "Version Control (%d)")
+ ((and buffer-file-name
+       (buffer-modified-p)
+       'multi)
+  1030 "Changed files (%d)")
+ ((and
+   (get-buffer-process
+    (current-buffer))
+   'multi)
+  1040 "Processes (%d)")
+ ((and msb-display-invisible-buffers-p
+       (msb-invisible-buffer-p)
+       'multi)
+  1090 "Invisible buffers (%d)")
+ ((eq major-mode 'dired-mode)
+  2010 "Dired (%d)" msb-dired-item-handler msb-sort-by-directory)
+ ((eq major-mode 'Man-mode)
+  5030 "Manuals (%d)")
+ ((eq major-mode 'w3-mode)
+  5020 "WWW (%d)")
+ ((or
+   (memq major-mode
+	 '(rmail-mode rmail-edit-mode vm-summary-mode vm-mode mail-mode))
+   (memq major-mode
+	 '(mh-letter-mode mh-show-mode mh-folder-mode))
+   (memq major-mode
+	 '(gnus-summary-mode message-mode gnus-group-mode gnus-article-mode score-mode gnus-browse-killed-mode)))
+  5010 "Mail (%d)")
+ ((and
+   (not buffer-file-name)
+   'no-multi)
+  5099 "Other non-file buffers (%d)")
+ ((and
+   (string-match "/\\.[^/]*$" buffer-file-name)
+   'multi)
+  3090 "Hidden Files (%d)")
+ ((memq major-mode
+	'(c-mode c++-mode))
+  3010 "C/C++ Files (%d)")
+ ((eq major-mode 'emacs-lisp-mode)
+  3020 "Elisp Files (%d)")
+ ((eq major-mode 'latex-mode)
+  3030 "LaTeX Files (%d)")
+ ('no-multi 3099 "Other files (%d)"))
+</pre></br>

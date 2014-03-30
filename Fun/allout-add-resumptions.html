@@ -1,29 +1,29 @@
-<strong>allout-add-resumptions</strong> is a compiled Lisp function in `<code>allout.el</code>'.<br/>
-<br/>
-(allout-add-resumptions &rest PAIRS)<br/>
-<br/>
-Set name/value PAIRS.<br/>
-<br/>
-Old settings are preserved for later resumption using `allout-do-resumptions'.<br/>
-<br/>
-The new values are set as a buffer local.  On resumption, the prior buffer<br/>
-scope of the variable is restored along with its value.  If it was a void<br/>
-buffer-local value, then it is left as nil on resumption.<br/>
-<br/>
-The pairs are lists whose car is the name of the variable and car of the<br/>
-cdr is the new value: '(some-var some-value)'.  The pairs can actually be<br/>
-triples, where the third element qualifies the disposition of the setting,<br/>
-as described further below.<br/>
-<br/>
-If the optional third element is the symbol 'extend, then the new value<br/>
-created by `cons'ing the second element of the pair onto the front of the<br/>
-existing value.<br/>
-<br/>
-If the optional third element is the symbol 'append, then the new value is<br/>
-extended from the existing one by `append'ing a list containing the second<br/>
-element of the pair onto the end of the existing value.<br/>
-<br/>
-Extension, and resumptions in general, should not be used for hook<br/>
-functions -- use the 'local mode of `add-hook' for that, instead.<br/>
-<br/>
+<strong>allout-add-resumptions</strong> is a compiled Lisp function in `<code>allout.el</code>'.</br>
+</br>
+(allout-add-resumptions &rest <u>PAIRS</u>)</br>
+</br>
+Set name/value <u>PAIRS</u>.</br>
+</br>
+Old settings are preserved for later resumption using `allout-do-resumptions'.</br>
+</br>
+The new values are set as a buffer local.  On resumption, the prior buffer</br>
+scope of the variable is restored along with its value.  If it was a void</br>
+buffer-local value, then it is left as nil on resumption.</br>
+</br>
+The pairs are lists whose car is the name of the variable and car of the</br>
+cdr is the new value: '(some-var some-value)'.  The pairs can actually be</br>
+triples, where the third element qualifies the disposition of the setting,</br>
+as described further below.</br>
+</br>
+If the optional third element is the symbol 'extend, then the new value</br>
+created by `cons'ing the second element of the pair onto the front of the</br>
+existing value.</br>
+</br>
+If the optional third element is the symbol 'append, then the new value is</br>
+extended from the existing one by `append'ing a list containing the second</br>
+element of the pair onto the end of the existing value.</br>
+</br>
+Extension, and resumptions in general, should not be used for hook</br>
+functions -- use the 'local mode of `add-hook' for that, instead.</br>
+</br>
 The settings are stored on `allout-mode-prior-settings'.

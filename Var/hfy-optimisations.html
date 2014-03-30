@@ -1,34 +1,34 @@
-<strong>hfy-optimisations</strong> is a variable defined in `<code>htmlfontify.el</code>'.<br/>
-Its value is (keep-overlays)<br/>
-<br/>
-Documentation:<br/>
-Optimizations to turn on: So far, the following have been implemented:<br/>
-<br/>
-  merge-adjacent-tags: If two (or more) span tags are adjacent, identical and<br/>
-                       separated by nothing more than whitespace, they will<br/>
-                       be merged into one span.<br/>
-  zap-comment-links  : Suppress hyperlinking of tags found in comments.<br/>
-  zap-string-links   : Suppress hyperlinking of tags found in strings.<br/>
-  div-wrapper        : Add <div class="default"> </div> tags around the<br/>
-                       output.<br/>
-  keep-overlays      : More of a bell (or possibly whistle) than an<br/>
-                       optimization - If on, preserve overlay highlighting<br/>
-                       (cf ediff or goo-font-lock) as well as basic faces.<br/>
-<br/>
-  body-text-only     : Emit only body-text. In concrete terms,<br/>
-                       1. Suppress calls to `hfy-page-header'and<br/>
-                          `hfy-page-footer'<br/>
-                       2. Pretend that `div-wrapper' option above is<br/>
-                          turned off<br/>
-                       3. Don't enclose output in <pre> </pre> tags<br/>
-  And the following are planned but not yet available:<br/>
-<br/>
-  kill-context-leak  : Suppress hyperlinking between files highlighted by<br/>
-                       different modes.<br/>
-<br/>
-Note: like compiler optimizations, these optimize the _output_ of the code,<br/>
-not the processing of the source itself, and are therefore likely to slow<br/>
-htmlfontify down, at least a little.  Except for skip-refontification,<br/>
-which can never slow you down, but may result in incomplete fontification.<br/>
-<br/>
+<strong>hfy-optimisations</strong> is a variable defined in `<code>htmlfontify.el</code>'.</br>
+Its value is <pre>(keep-overlays)</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Optimizations to turn on: So far, the following have been implemented:</br>
+</br>
+  merge-adjacent-tags: If two (or more) span tags are adjacent, identical and</br>
+                       separated by nothing more than whitespace, they will</br>
+                       be merged into one span.</br>
+  zap-comment-links  : Suppress hyperlinking of tags found in comments.</br>
+  zap-string-links   : Suppress hyperlinking of tags found in strings.</br>
+  div-wrapper        : Add <div class="default"> </div> tags around the</br>
+                       output.</br>
+  keep-overlays      : More of a bell (or possibly whistle) than an</br>
+                       optimization - If on, preserve overlay highlighting</br>
+                       (cf ediff or goo-font-lock) as well as basic faces.</br>
+</br>
+  body-text-only     : Emit only body-text. In concrete terms,</br>
+                       1. Suppress calls to `hfy-page-header'and</br>
+                          `hfy-page-footer'</br>
+                       2. Pretend that `div-wrapper' option above is</br>
+                          turned off</br>
+                       3. Don't enclose output in <pre> </pre> tags</br>
+  And the following are planned but not yet available:</br>
+</br>
+  kill-context-leak  : Suppress hyperlinking between files highlighted by</br>
+                       different modes.</br>
+</br>
+Note: like compiler optimizations, these optimize the _output_ of the code,</br>
+not the processing of the source itself, and are therefore likely to slow</br>
+htmlfontify down, at least a little.  Except for skip-refontification,</br>
+which can never slow you down, but may result in incomplete fontification.</br>
+</br>
 You can customize this variable.

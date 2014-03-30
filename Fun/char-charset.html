@@ -1,8 +1,10 @@
-<strong>char-charset</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(char-charset CH &optional RESTRICTION)<br/>
-<br/>
-Return the charset of highest priority that contains CH.<br/>
-If optional 2nd arg RESTRICTION is non-nil, it is a list of charsets<br/>
-from which to find the charset.  It may also be a coding system.  In<br/>
+<strong>char-charset</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(char-charset <u>CH</u> &optional <u>RESTRICTION</u>)</br>
+</br>
+Return the charset of highest priority that contains <u>CH</u>.</br>
+ASCII characters are an exception: for them, this function always</br>
+returns `ascii'.</br>
+If optional 2nd arg <u>RESTRICTION</u> is non-nil, it is a list of charsets</br>
+from which to find the charset.  It may also be a coding system.  In</br>
 that case, find the charset from what supported by that coding system.

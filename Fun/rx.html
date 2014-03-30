@@ -1,299 +1,299 @@
-<strong>rx</strong> is an autoloaded Lisp macro in `<code>rx.el</code>'.<br/>
-<br/>
-(rx &rest REGEXPS)<br/>
-<br/>
-Translate regular expressions REGEXPS in sexp form to a regexp string.<br/>
-REGEXPS is a non-empty sequence of forms of the sort listed below.<br/>
-<br/>
-Note that `rx' is a Lisp macro; when used in a Lisp program being<br/>
- compiled, the translation is performed by the compiler.<br/>
-See `rx-to-string' for how to do such a translation at run-time.<br/>
-<br/>
-The following are valid subforms of regular expressions in sexp<br/>
-notation.<br/>
-<br/>
-STRING<br/>
-     matches string STRING literally.<br/>
-<br/>
-CHAR<br/>
-     matches character CHAR literally.<br/>
-<br/>
-`not-newline', `nonl'<br/>
-     matches any character except a newline.<br/>
-<br/>
-`anything'<br/>
-     matches any character<br/>
-<br/>
-`(any SET ...)'<br/>
-`(in SET ...)'<br/>
-`(char SET ...)'<br/>
-     matches any character in SET ....  SET may be a character or string.<br/>
-     Ranges of characters can be specified as `A-Z' in strings.<br/>
-     Ranges may also be specified as conses like `(?A . ?Z)'.<br/>
-<br/>
-     SET may also be the name of a character class: `digit',<br/>
-     `control', `hex-digit', `blank', `graph', `print', `alnum',<br/>
-     `alpha', `ascii', `nonascii', `lower', `punct', `space', `upper',<br/>
-     `word', or one of their synonyms.<br/>
-<br/>
-`(not (any SET ...))'<br/>
-     matches any character not in SET ...<br/>
-<br/>
-`line-start', `bol'<br/>
-     matches the empty string, but only at the beginning of a line<br/>
-     in the text being matched<br/>
-<br/>
-`line-end', `eol'<br/>
-     is similar to `line-start' but matches only at the end of a line<br/>
-<br/>
-`string-start', `bos', `bot'<br/>
-     matches the empty string, but only at the beginning of the<br/>
-     string being matched against.<br/>
-<br/>
-`string-end', `eos', `eot'<br/>
-     matches the empty string, but only at the end of the<br/>
-     string being matched against.<br/>
-<br/>
-`buffer-start'<br/>
-     matches the empty string, but only at the beginning of the<br/>
-     buffer being matched against.  Actually equivalent to `string-start'.<br/>
-<br/>
-`buffer-end'<br/>
-     matches the empty string, but only at the end of the<br/>
-     buffer being matched against.  Actually equivalent to `string-end'.<br/>
-<br/>
-`point'<br/>
-     matches the empty string, but only at point.<br/>
-<br/>
-`word-start', `bow'<br/>
-     matches the empty string, but only at the beginning of a word.<br/>
-<br/>
-`word-end', `eow'<br/>
-     matches the empty string, but only at the end of a word.<br/>
-<br/>
-`word-boundary'<br/>
-     matches the empty string, but only at the beginning or end of a<br/>
-     word.<br/>
-<br/>
-`(not word-boundary)'<br/>
-`not-word-boundary'<br/>
-     matches the empty string, but not at the beginning or end of a<br/>
-     word.<br/>
-<br/>
-`symbol-start'<br/>
-     matches the empty string, but only at the beginning of a symbol.<br/>
-<br/>
-`symbol-end'<br/>
-     matches the empty string, but only at the end of a symbol.<br/>
-<br/>
-`digit', `numeric', `num'<br/>
-     matches 0 through 9.<br/>
-<br/>
-`control', `cntrl'<br/>
-     matches ASCII control characters.<br/>
-<br/>
-`hex-digit', `hex', `xdigit'<br/>
-     matches 0 through 9, a through f and A through F.<br/>
-<br/>
-`blank'<br/>
-     matches space and tab only.<br/>
-<br/>
-`graphic', `graph'<br/>
-     matches graphic characters--everything except ASCII control chars,<br/>
-     space, and DEL.<br/>
-<br/>
-`printing', `print'<br/>
-     matches printing characters--everything except ASCII control chars<br/>
-     and DEL.<br/>
-<br/>
-`alphanumeric', `alnum'<br/>
-     matches letters and digits.  (But at present, for multibyte characters,<br/>
-     it matches anything that has word syntax.)<br/>
-<br/>
-`letter', `alphabetic', `alpha'<br/>
-     matches letters.  (But at present, for multibyte characters,<br/>
-     it matches anything that has word syntax.)<br/>
-<br/>
-`ascii'<br/>
-     matches ASCII (unibyte) characters.<br/>
-<br/>
-`nonascii'<br/>
-     matches non-ASCII (multibyte) characters.<br/>
-<br/>
-`lower', `lower-case'<br/>
-     matches anything lower-case.<br/>
-<br/>
-`upper', `upper-case'<br/>
-     matches anything upper-case.<br/>
-<br/>
-`punctuation', `punct'<br/>
-     matches punctuation.  (But at present, for multibyte characters,<br/>
-     it matches anything that has non-word syntax.)<br/>
-<br/>
-`space', `whitespace', `white'<br/>
-     matches anything that has whitespace syntax.<br/>
-<br/>
-`word', `wordchar'<br/>
-     matches anything that has word syntax.<br/>
-<br/>
-`not-wordchar'<br/>
-     matches anything that has non-word syntax.<br/>
-<br/>
-`(syntax SYNTAX)'<br/>
-     matches a character with syntax SYNTAX.  SYNTAX must be one<br/>
-     of the following symbols, or a symbol corresponding to the syntax<br/>
-     character, e.g. `\.' for `\s.'.<br/>
-<br/>
-     `whitespace'		(\s- in string notation)<br/>
-     `punctuation'		(\s.)<br/>
-     `word'			(\sw)<br/>
-     `symbol'			(\s_)<br/>
-     `open-parenthesis'		(\s()<br/>
-     `close-parenthesis'	(\s))<br/>
-     `expression-prefix'	(\s')<br/>
-     `string-quote'		(\s")<br/>
-     `paired-delimiter'		(\s$)<br/>
-     `escape'			(\s\)<br/>
-     `character-quote'		(\s/)<br/>
-     `comment-start'		(\s<)<br/>
-     `comment-end'		(\s>)<br/>
-     `string-delimiter'		(\s|)<br/>
-     `comment-delimiter'	(\s!)<br/>
-<br/>
-`(not (syntax SYNTAX))'<br/>
-     matches a character that doesn't have syntax SYNTAX.<br/>
-<br/>
-`(category CATEGORY)'<br/>
-     matches a character with category CATEGORY.  CATEGORY must be<br/>
-     either a character to use for C, or one of the following symbols.<br/>
-<br/>
-     `consonant'			(\c0 in string notation)<br/>
-     `base-vowel'			(\c1)<br/>
-     `upper-diacritical-mark'		(\c2)<br/>
-     `lower-diacritical-mark'		(\c3)<br/>
-     `tone-mark'		        (\c4)<br/>
-     `symbol'			        (\c5)<br/>
-     `digit'			        (\c6)<br/>
-     `vowel-modifying-diacritical-mark'	(\c7)<br/>
-     `vowel-sign'			(\c8)<br/>
-     `semivowel-lower'			(\c9)<br/>
-     `not-at-end-of-line'		(\c<)<br/>
-     `not-at-beginning-of-line'		(\c>)<br/>
-     `alpha-numeric-two-byte'		(\cA)<br/>
-     `chinse-two-byte'			(\cC)<br/>
-     `greek-two-byte'			(\cG)<br/>
-     `japanese-hiragana-two-byte'	(\cH)<br/>
-     `indian-tow-byte'			(\cI)<br/>
-     `japanese-katakana-two-byte'	(\cK)<br/>
-     `korean-hangul-two-byte'		(\cN)<br/>
-     `cyrillic-two-byte'		(\cY)<br/>
-     `combining-diacritic'		(\c^)<br/>
-     `ascii'				(\ca)<br/>
-     `arabic'				(\cb)<br/>
-     `chinese'				(\cc)<br/>
-     `ethiopic'				(\ce)<br/>
-     `greek'				(\cg)<br/>
-     `korean'				(\ch)<br/>
-     `indian'				(\ci)<br/>
-     `japanese'				(\cj)<br/>
-     `japanese-katakana'		(\ck)<br/>
-     `latin'				(\cl)<br/>
-     `lao'				(\co)<br/>
-     `tibetan'				(\cq)<br/>
-     `japanese-roman'			(\cr)<br/>
-     `thai'				(\ct)<br/>
-     `vietnamese'			(\cv)<br/>
-     `hebrew'				(\cw)<br/>
-     `cyrillic'				(\cy)<br/>
-     `can-break'			(\c|)<br/>
-<br/>
-`(not (category CATEGORY))'<br/>
-     matches a character that doesn't have category CATEGORY.<br/>
-<br/>
-`(and SEXP1 SEXP2 ...)'<br/>
-`(: SEXP1 SEXP2 ...)'<br/>
-`(seq SEXP1 SEXP2 ...)'<br/>
-`(sequence SEXP1 SEXP2 ...)'<br/>
-     matches what SEXP1 matches, followed by what SEXP2 matches, etc.<br/>
-<br/>
-`(submatch SEXP1 SEXP2 ...)'<br/>
-`(group SEXP1 SEXP2 ...)'<br/>
-     like `and', but makes the match accessible with `match-end',<br/>
-     `match-beginning', and `match-string'.<br/>
-<br/>
-`(submatch-n N SEXP1 SEXP2 ...)'<br/>
-`(group-n N SEXP1 SEXP2 ...)'<br/>
-     like `group', but make it an explicitly-numbered group with<br/>
-     group number N.<br/>
-<br/>
-`(or SEXP1 SEXP2 ...)'<br/>
-`(| SEXP1 SEXP2 ...)'<br/>
-     matches anything that matches SEXP1 or SEXP2, etc.  If all<br/>
-     args are strings, use `regexp-opt' to optimize the resulting<br/>
-     regular expression.<br/>
-<br/>
-`(minimal-match SEXP)'<br/>
-     produce a non-greedy regexp for SEXP.  Normally, regexps matching<br/>
-     zero or more occurrences of something are "greedy" in that they<br/>
-     match as much as they can, as long as the overall regexp can<br/>
-     still match.  A non-greedy regexp matches as little as possible.<br/>
-<br/>
-`(maximal-match SEXP)'<br/>
-     produce a greedy regexp for SEXP.  This is the default.<br/>
-<br/>
-Below, `SEXP ...' represents a sequence of regexp forms, treated as if<br/>
-enclosed in `(and ...)'.<br/>
-<br/>
-`(zero-or-more SEXP ...)'<br/>
-`(0+ SEXP ...)'<br/>
-     matches zero or more occurrences of what SEXP ... matches.<br/>
-<br/>
-`(* SEXP ...)'<br/>
-     like `zero-or-more', but always produces a greedy regexp, independent<br/>
-     of `rx-greedy-flag'.<br/>
-<br/>
-`(*? SEXP ...)'<br/>
-     like `zero-or-more', but always produces a non-greedy regexp,<br/>
-     independent of `rx-greedy-flag'.<br/>
-<br/>
-`(one-or-more SEXP ...)'<br/>
-`(1+ SEXP ...)'<br/>
-     matches one or more occurrences of SEXP ...<br/>
-<br/>
-`(+ SEXP ...)'<br/>
-     like `one-or-more', but always produces a greedy regexp.<br/>
-<br/>
-`(+? SEXP ...)'<br/>
-     like `one-or-more', but always produces a non-greedy regexp.<br/>
-<br/>
-`(zero-or-one SEXP ...)'<br/>
-`(optional SEXP ...)'<br/>
-`(opt SEXP ...)'<br/>
-     matches zero or one occurrences of A.<br/>
-<br/>
-`(? SEXP ...)'<br/>
-     like `zero-or-one', but always produces a greedy regexp.<br/>
-<br/>
-`(?? SEXP ...)'<br/>
-     like `zero-or-one', but always produces a non-greedy regexp.<br/>
-<br/>
-`(repeat N SEXP)'<br/>
-`(= N SEXP ...)'<br/>
-     matches N occurrences.<br/>
-<br/>
-`(>= N SEXP ...)'<br/>
-     matches N or more occurrences.<br/>
-<br/>
-`(repeat N M SEXP)'<br/>
-`(** N M SEXP ...)'<br/>
-     matches N to M occurrences.<br/>
-<br/>
-`(backref N)'<br/>
-     matches what was matched previously by submatch N.<br/>
-<br/>
-`(eval FORM)'<br/>
-     evaluate FORM and insert result.  If result is a string,<br/>
-     `regexp-quote' it.<br/>
-<br/>
-`(regexp REGEXP)'<br/>
+<strong>rx</strong> is an autoloaded Lisp macro in `<code>rx.el</code>'.</br>
+</br>
+(rx &rest <u>REGEXPS</u>)</br>
+</br>
+Translate regular expressions <u>REGEXPS</u> in sexp form to a regexp string.</br>
+<u>REGEXPS</u> is a non-empty sequence of forms of the sort listed below.</br>
+</br>
+Note that `rx' is a Lisp macro; when used in a Lisp program being</br>
+compiled, the translation is performed by the compiler.</br>
+See `rx-to-string' for how to do such a translation at run-time.</br>
+</br>
+The following are valid subforms of regular expressions in sexp</br>
+notation.</br>
+</br>
+STRING</br>
+     matches string STRING literally.</br>
+</br>
+CHAR</br>
+     matches character CHAR literally.</br>
+</br>
+`not-newline', `nonl'</br>
+     matches any character except a newline.</br>
+</br>
+`anything'</br>
+     matches any character</br>
+</br>
+`(any SET ...)'</br>
+`(in SET ...)'</br>
+`(char SET ...)'</br>
+     matches any character in SET ....  SET may be a character or string.</br>
+     Ranges of characters can be specified as `A-Z' in strings.</br>
+     Ranges may also be specified as conses like `(?A . ?Z)'.</br>
+</br>
+     SET may also be the name of a character class: `digit',</br>
+     `control', `hex-digit', `blank', `graph', `print', `alnum',</br>
+     `alpha', `ascii', `nonascii', `lower', `punct', `space', `upper',</br>
+     `word', or one of their synonyms.</br>
+</br>
+`(not (any SET ...))'</br>
+     matches any character not in SET ...</br>
+</br>
+`line-start', `bol'</br>
+     matches the empty string, but only at the beginning of a line</br>
+     in the text being matched</br>
+</br>
+`line-end', `eol'</br>
+     is similar to `line-start' but matches only at the end of a line</br>
+</br>
+`string-start', `bos', `bot'</br>
+     matches the empty string, but only at the beginning of the</br>
+     string being matched against.</br>
+</br>
+`string-end', `eos', `eot'</br>
+     matches the empty string, but only at the end of the</br>
+     string being matched against.</br>
+</br>
+`buffer-start'</br>
+     matches the empty string, but only at the beginning of the</br>
+     buffer being matched against.  Actually equivalent to `string-start'.</br>
+</br>
+`buffer-end'</br>
+     matches the empty string, but only at the end of the</br>
+     buffer being matched against.  Actually equivalent to `string-end'.</br>
+</br>
+`point'</br>
+     matches the empty string, but only at point.</br>
+</br>
+`word-start', `bow'</br>
+     matches the empty string, but only at the beginning of a word.</br>
+</br>
+`word-end', `eow'</br>
+     matches the empty string, but only at the end of a word.</br>
+</br>
+`word-boundary'</br>
+     matches the empty string, but only at the beginning or end of a</br>
+     word.</br>
+</br>
+`(not word-boundary)'</br>
+`not-word-boundary'</br>
+     matches the empty string, but not at the beginning or end of a</br>
+     word.</br>
+</br>
+`symbol-start'</br>
+     matches the empty string, but only at the beginning of a symbol.</br>
+</br>
+`symbol-end'</br>
+     matches the empty string, but only at the end of a symbol.</br>
+</br>
+`digit', `numeric', `num'</br>
+     matches 0 through 9.</br>
+</br>
+`control', `cntrl'</br>
+     matches ASCII control characters.</br>
+</br>
+`hex-digit', `hex', `xdigit'</br>
+     matches 0 through 9, a through f and A through F.</br>
+</br>
+`blank'</br>
+     matches space and tab only.</br>
+</br>
+`graphic', `graph'</br>
+     matches graphic characters--everything except ASCII control chars,</br>
+     space, and DEL.</br>
+</br>
+`printing', `print'</br>
+     matches printing characters--everything except ASCII control chars</br>
+     and DEL.</br>
+</br>
+`alphanumeric', `alnum'</br>
+     matches letters and digits.  (But at present, for multibyte characters,</br>
+     it matches anything that has word syntax.)</br>
+</br>
+`letter', `alphabetic', `alpha'</br>
+     matches letters.  (But at present, for multibyte characters,</br>
+     it matches anything that has word syntax.)</br>
+</br>
+`ascii'</br>
+     matches ASCII (unibyte) characters.</br>
+</br>
+`nonascii'</br>
+     matches non-ASCII (multibyte) characters.</br>
+</br>
+`lower', `lower-case'</br>
+     matches anything lower-case.</br>
+</br>
+`upper', `upper-case'</br>
+     matches anything upper-case.</br>
+</br>
+`punctuation', `punct'</br>
+     matches punctuation.  (But at present, for multibyte characters,</br>
+     it matches anything that has non-word syntax.)</br>
+</br>
+`space', `whitespace', `white'</br>
+     matches anything that has whitespace syntax.</br>
+</br>
+`word', `wordchar'</br>
+     matches anything that has word syntax.</br>
+</br>
+`not-wordchar'</br>
+     matches anything that has non-word syntax.</br>
+</br>
+`(syntax SYNTAX)'</br>
+     matches a character with syntax SYNTAX.  SYNTAX must be one</br>
+     of the following symbols, or a symbol corresponding to the syntax</br>
+     character, e.g. `\.' for `\s.'.</br>
+</br>
+     `whitespace'		(\s- in string notation)</br>
+     `punctuation'		(\s.)</br>
+     `word'			(\sw)</br>
+     `symbol'			(\s_)</br>
+     `open-parenthesis'		(\s()</br>
+     `close-parenthesis'	(\s))</br>
+     `expression-prefix'	(\s')</br>
+     `string-quote'		(\s")</br>
+     `paired-delimiter'		(\s$)</br>
+     `escape'			(\s\)</br>
+     `character-quote'		(\s/)</br>
+     `comment-start'		(\s&lt;)</br>
+     `comment-end'		(\s>)</br>
+     `string-delimiter'		(\s|)</br>
+     `comment-delimiter'	(\s!)</br>
+</br>
+`(not (syntax SYNTAX))'</br>
+     matches a character that doesn't have syntax SYNTAX.</br>
+</br>
+`(category CATEGORY)'</br>
+     matches a character with category CATEGORY.  CATEGORY must be</br>
+     either a character to use for C, or one of the following symbols.</br>
+</br>
+     `consonant'			(\c0 in string notation)</br>
+     `base-vowel'			(\c1)</br>
+     `upper-diacritical-mark'		(\c2)</br>
+     `lower-diacritical-mark'		(\c3)</br>
+     `tone-mark'		        (\c4)</br>
+     `symbol'			        (\c5)</br>
+     `digit'			        (\c6)</br>
+     `vowel-modifying-diacritical-mark'	(\c7)</br>
+     `vowel-sign'			(\c8)</br>
+     `semivowel-lower'			(\c9)</br>
+     `not-at-end-of-line'		(\c&lt;)</br>
+     `not-at-beginning-of-line'		(\c>)</br>
+     `alpha-numeric-two-byte'		(\cA)</br>
+     `chinese-two-byte'			(\cC)</br>
+     `greek-two-byte'			(\cG)</br>
+     `japanese-hiragana-two-byte'	(\cH)</br>
+     `indian-tow-byte'			(\cI)</br>
+     `japanese-katakana-two-byte'	(\cK)</br>
+     `korean-hangul-two-byte'		(\cN)</br>
+     `cyrillic-two-byte'		(\cY)</br>
+     `combining-diacritic'		(\c^)</br>
+     `ascii'				(\ca)</br>
+     `arabic'				(\cb)</br>
+     `chinese'				(\cc)</br>
+     `ethiopic'				(\ce)</br>
+     `greek'				(\cg)</br>
+     `korean'				(\ch)</br>
+     `indian'				(\ci)</br>
+     `japanese'				(\cj)</br>
+     `japanese-katakana'		(\ck)</br>
+     `latin'				(\cl)</br>
+     `lao'				(\co)</br>
+     `tibetan'				(\cq)</br>
+     `japanese-roman'			(\cr)</br>
+     `thai'				(\ct)</br>
+     `vietnamese'			(\cv)</br>
+     `hebrew'				(\cw)</br>
+     `cyrillic'				(\cy)</br>
+     `can-break'			(\c|)</br>
+</br>
+`(not (category CATEGORY))'</br>
+     matches a character that doesn't have category CATEGORY.</br>
+</br>
+`(and SEXP1 SEXP2 ...)'</br>
+`(: SEXP1 SEXP2 ...)'</br>
+`(seq SEXP1 SEXP2 ...)'</br>
+`(sequence SEXP1 SEXP2 ...)'</br>
+     matches what SEXP1 matches, followed by what SEXP2 matches, etc.</br>
+</br>
+`(submatch SEXP1 SEXP2 ...)'</br>
+`(group SEXP1 SEXP2 ...)'</br>
+     like `and', but makes the match accessible with `match-end',</br>
+     `match-beginning', and `match-string'.</br>
+</br>
+`(submatch-n N SEXP1 SEXP2 ...)'</br>
+`(group-n N SEXP1 SEXP2 ...)'</br>
+     like `group', but make it an explicitly-numbered group with</br>
+     group number N.</br>
+</br>
+`(or SEXP1 SEXP2 ...)'</br>
+`(| SEXP1 SEXP2 ...)'</br>
+     matches anything that matches SEXP1 or SEXP2, etc.  If all</br>
+     args are strings, use `regexp-opt' to optimize the resulting</br>
+     regular expression.</br>
+</br>
+`(minimal-match SEXP)'</br>
+     produce a non-greedy regexp for SEXP.  Normally, regexps matching</br>
+     zero or more occurrences of something are "greedy" in that they</br>
+     match as much as they can, as long as the overall regexp can</br>
+     still match.  A non-greedy regexp matches as little as possible.</br>
+</br>
+`(maximal-match SEXP)'</br>
+     produce a greedy regexp for SEXP.  This is the default.</br>
+</br>
+Below, `SEXP ...' represents a sequence of regexp forms, treated as if</br>
+enclosed in `(and ...)'.</br>
+</br>
+`(zero-or-more SEXP ...)'</br>
+`(0+ SEXP ...)'</br>
+     matches zero or more occurrences of what SEXP ... matches.</br>
+</br>
+`(* SEXP ...)'</br>
+     like `zero-or-more', but always produces a greedy regexp, independent</br>
+     of `rx-greedy-flag'.</br>
+</br>
+`(*? SEXP ...)'</br>
+     like `zero-or-more', but always produces a non-greedy regexp,</br>
+     independent of `rx-greedy-flag'.</br>
+</br>
+`(one-or-more SEXP ...)'</br>
+`(1+ SEXP ...)'</br>
+     matches one or more occurrences of SEXP ...</br>
+</br>
+`(+ SEXP ...)'</br>
+     like `one-or-more', but always produces a greedy regexp.</br>
+</br>
+`(+? SEXP ...)'</br>
+     like `one-or-more', but always produces a non-greedy regexp.</br>
+</br>
+`(zero-or-one SEXP ...)'</br>
+`(optional SEXP ...)'</br>
+`(opt SEXP ...)'</br>
+     matches zero or one occurrences of A.</br>
+</br>
+`(? SEXP ...)'</br>
+     like `zero-or-one', but always produces a greedy regexp.</br>
+</br>
+`(?? SEXP ...)'</br>
+     like `zero-or-one', but always produces a non-greedy regexp.</br>
+</br>
+`(repeat N SEXP)'</br>
+`(= N SEXP ...)'</br>
+     matches N occurrences.</br>
+</br>
+`(>= N SEXP ...)'</br>
+     matches N or more occurrences.</br>
+</br>
+`(repeat N M SEXP)'</br>
+`(** N M SEXP ...)'</br>
+     matches N to M occurrences.</br>
+</br>
+`(backref N)'</br>
+     matches what was matched previously by submatch N.</br>
+</br>
+`(eval FORM)'</br>
+     evaluate FORM and insert result.  If result is a string,</br>
+     `regexp-quote' it.</br>
+</br>
+`(regexp REGEXP)'</br>
      include REGEXP in string notation in the result.

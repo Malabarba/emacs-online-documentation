@@ -1,21 +1,19 @@
-<strong>buffer-stale-function</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function to check whether a non-file buffer needs reverting.<br/>
-This should be a function with one optional argument NOCONFIRM.<br/>
-Auto Revert Mode passes t for NOCONFIRM.  The function should return<br/>
-non-nil if the buffer should be reverted.  A return value of<br/>
-`fast' means that the need for reverting was not checked, but<br/>
-that reverting the buffer is fast.  The buffer is current when<br/>
-this function is called.<br/>
-<br/>
-The idea behind the NOCONFIRM argument is that it should be<br/>
-non-nil if the buffer is going to be reverted without asking the<br/>
-user.  In such situations, one has to be careful with potentially<br/>
-time consuming operations.<br/>
-<br/>
-For more information on how this variable is used by Auto Revert mode,<br/>
+<strong>buffer-stale-function</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre>buffer-stale--default-function</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to check whether a non-file buffer needs reverting.</br>
+This should be a function with one optional argument NOCONFIRM.</br>
+Auto Revert Mode passes t for NOCONFIRM.  The function should return</br>
+non-nil if the buffer should be reverted.  A return value of</br>
+`fast' means that the need for reverting was not checked, but</br>
+that reverting the buffer is fast.  The buffer is current when</br>
+this function is called.</br>
+</br>
+The idea behind the NOCONFIRM argument is that it should be</br>
+non-nil if the buffer is going to be reverted without asking the</br>
+user.  In such situations, one has to be careful with potentially</br>
+time consuming operations.</br>
+</br>
+For more information on how this variable is used by Auto Revert mode,</br>
 see Info node `(emacs)Supporting additional buffers'.

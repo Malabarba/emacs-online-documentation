@@ -1,17 +1,32 @@
-<strong>window-in-direction</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(window-in-direction DIRECTION &optional WINDOW IGNORE)<br/>
-<br/>
-Return window in DIRECTION as seen from WINDOW.<br/>
-More precisely, return the nearest window in direction DIRECTION<br/>
-as seen from the position of `window-point' in window WINDOW.<br/>
-DIRECTION must be one of `above', `below', `left' or `right'.<br/>
-WINDOW must be a live window and defaults to the selected one.<br/>
-<br/>
-Do not return a window whose `no-other-window' parameter is<br/>
-non-nil.  If the nearest window's `no-other-window' parameter is<br/>
-non-nil, try to find another window in the indicated direction.<br/>
-If, however, the optional argument IGNORE is non-nil, return that<br/>
-window even if its `no-other-window' parameter is non-nil.<br/>
-<br/>
+<strong>window-in-direction</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(window-in-direction <u>DIRECTION</u> &optional <u>WINDOW</u> <u>IGNORE</u> <u>SIGN</u> <u>WRAP</u> <u>MINI</u>)</br>
+</br>
+Return window in <u>DIRECTION</u> as seen from <u>WINDOW</u>.</br>
+More precisely, return the nearest window in direction <u>DIRECTION</u></br>
+as seen from the position of `window-point' in window <u>WINDOW</u>.</br>
+<u>DIRECTION</u> must be one of `above', `below', `left' or `right'.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.</br>
+</br>
+Do not return a window whose `no-other-window' parameter is</br>
+non-nil.  If the nearest window's `no-other-window' parameter is</br>
+non-nil, try to find another window in the indicated direction.</br>
+If, however, the optional argument <u>IGNORE</u> is non-nil, return that</br>
+window even if its `no-other-window' parameter is non-nil.</br>
+</br>
+Optional argument <u>SIGN</u> a negative number means to use the right</br>
+or bottom edge of <u>WINDOW</u> as reference position instead of</br>
+`window-point'.  <u>SIGN</u> a positive number means to use the left or</br>
+top edge of <u>WINDOW</u> as reference position.</br>
+</br>
+Optional argument <u>WRAP</u> non-nil means to wrap <u>DIRECTION</u> around</br>
+frame borders.  This means to return for <u>WINDOW</u> at the top of the</br>
+frame and <u>DIRECTION</u> `above' the minibuffer window if the frame</br>
+has one, and a window at the bottom of the frame otherwise.</br>
+</br>
+Optional argument <u>MINI</u> nil means to return the minibuffer window</br>
+if and only if it is currently active.  <u>MINI</u> non-nil means to</br>
+return the minibuffer window even when it's not active.  However,</br>
+if <u>WRAP</u> non-nil, always act as if <u>MINI</u> were nil.</br>
+</br>
 Return nil if no suitable window can be found.

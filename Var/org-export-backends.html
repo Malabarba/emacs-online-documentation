@@ -1,5 +1,47 @@
-<strong>org-export-backends</strong> is a variable defined in `<code>org-exp.el</code>'.<br/>
-Its value is (docbook html beamer ascii latex)<br/>
-<br/>
-Documentation:<br/>
-List of Org supported export backends.
+<strong>org-export-backends</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre>(ascii html icalendar latex)</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of export back-ends that should be always available.</br>
+</br>
+If a description starts with <C>, the file is not part of Emacs</br>
+and loading it will require that you have downloaded and properly</br>
+installed the Org mode distribution.</br>
+</br>
+Unlike to `org-modules', libraries in this list will not be</br>
+loaded along with Org, but only once the export framework is</br>
+needed.</br>
+</br>
+This variable needs to be set before org.el is loaded.  If you</br>
+need to make a change while Emacs is running, use the customize</br>
+interface or run the following code, where VAL stands for the new</br>
+value of the variable, after updating it:</br>
+</br>
+  (progn</br>
+    (setq org-export--registered-backends</br>
+          (org-remove-if-not</br>
+           (lambda (backend)</br>
+             (let ((name (org-export-backend-name backend)))</br>
+               (or (memq name val)</br>
+                   (catch 'parentp</br>
+                     (dolist (b val)</br>
+                       (and (org-export-derived-backend-p b name)</br>
+                            (throw 'parentp t)))))))</br>
+           org-export--registered-backends))</br>
+    (let ((new-list (mapcar 'org-export-backend-name</br>
+                            org-export--registered-backends)))</br>
+      (dolist (backend val)</br>
+        (cond</br>
+         ((not (load (format "ox-%s" backend) t t))</br>
+          (message "Problems while trying to load export back-end `%s'"</br>
+                   backend))</br>
+         ((not (memq backend new-list)) (push backend new-list))))</br>
+      (set-default 'org-export-backends new-list)))</br>
+</br>
+Adding a back-end to this list will also pull the back-end it</br>
+depends on, if any.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

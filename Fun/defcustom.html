@@ -1,126 +1,126 @@
-<strong>defcustom</strong> is a Lisp macro in `<code>custom.el</code>'.<br/>
-<br/>
-(defcustom SYMBOL STANDARD DOC &rest ARGS)<br/>
-<br/>
-Declare SYMBOL as a customizable variable.<br/>
-SYMBOL is the variable name; it should not be quoted.<br/>
-STANDARD is an expression specifying the variable's standard<br/>
-value.  It should not be quoted.  It is evaluated once by<br/>
-`defcustom', and the value is assigned to SYMBOL if the variable<br/>
-is unbound.  The expression itself is also stored, so that<br/>
-Customize can re-evaluate it later to get the standard value.<br/>
-DOC is the variable documentation.<br/>
-<br/>
-This macro uses `defvar' as a subroutine, which also marks the<br/>
-variable as "special", so that it is always dynamically bound<br/>
-even when `lexical-binding' is t.<br/>
-<br/>
-The remaining arguments to `defcustom' should have the form<br/>
-<br/>
-   [KEYWORD VALUE]...<br/>
-<br/>
-The following keywords are meaningful:<br/>
-<br/>
-:type	VALUE should be a widget type for editing the symbol's value.<br/>
-:options VALUE should be a list of valid members of the widget type.<br/>
-:initialize<br/>
-	VALUE should be a function used to initialize the<br/>
-	variable.  It takes two arguments, the symbol and value<br/>
-	given in the `defcustom' call.  The default is<br/>
-	`custom-initialize-reset'.<br/>
-:set	VALUE should be a function to set the value of the symbol<br/>
-        when using the Customize user interface.<br/>
-	It takes two arguments, the symbol to set and the value to<br/>
-	give it.  The default choice of function is `set-default'.<br/>
-:get	VALUE should be a function to extract the value of symbol.<br/>
-	The function takes one argument, a symbol, and should return<br/>
-	the current value for that symbol.  The default choice of function<br/>
-	is `default-value'.<br/>
-:require<br/>
-	VALUE should be a feature symbol.  If you save a value<br/>
-	for this option, then when your init file loads the value,<br/>
-	it does (require VALUE) first.<br/>
-:set-after VARIABLES<br/>
-	Specifies that SYMBOL should be set after the list of variables<br/>
-        VARIABLES when both have been customized.<br/>
-:risky	Set SYMBOL's `risky-local-variable' property to VALUE.<br/>
-:safe	Set SYMBOL's `safe-local-variable' property to VALUE.<br/>
-        See Info node `(elisp) File Local Variables'.<br/>
-<br/>
-The following common keywords are also meaningful.<br/>
-<br/>
-:group  VALUE should be a customization group.<br/>
-        Add SYMBOL (or FACE with `defface') to that group.<br/>
-:link LINK-DATA<br/>
-        Include an external link after the documentation string for this<br/>
-        item.  This is a sentence containing an active field which<br/>
-        references some other documentation.<br/>
-<br/>
-        There are several alternatives you can use for LINK-DATA:<br/>
-<br/>
-        (custom-manual INFO-NODE)<br/>
-             Link to an Info node; INFO-NODE is a string which specifies<br/>
-             the node name, as in "(emacs)Top".<br/>
-<br/>
-        (info-link INFO-NODE)<br/>
-             Like `custom-manual' except that the link appears in the<br/>
-             customization buffer with the Info node name.<br/>
-<br/>
-        (url-link URL)<br/>
-             Link to a web page; URL is a string which specifies the URL.<br/>
-<br/>
-        (emacs-commentary-link LIBRARY)<br/>
-             Link to the commentary section of LIBRARY.<br/>
-<br/>
-        (emacs-library-link LIBRARY)<br/>
-             Link to an Emacs Lisp LIBRARY file.<br/>
-<br/>
-        (file-link FILE)<br/>
-             Link to FILE.<br/>
-<br/>
-        (function-link FUNCTION)<br/>
-             Link to the documentation of FUNCTION.<br/>
-<br/>
-        (variable-link VARIABLE)<br/>
-             Link to the documentation of VARIABLE.<br/>
-<br/>
-        (custom-group-link GROUP)<br/>
-             Link to another customization GROUP.<br/>
-<br/>
-        You can specify the text to use in the customization buffer by<br/>
-        adding `:tag NAME' after the first element of the LINK-DATA; for<br/>
-        example, (info-link :tag "foo" "(emacs)Top") makes a link to the<br/>
-        Emacs manual which appears in the buffer as `foo'.<br/>
-<br/>
-        An item can have more than one external link; however, most items<br/>
-        have none at all.<br/>
-:version<br/>
-        VALUE should be a string specifying that the variable was<br/>
-        first introduced, or its default value was changed, in Emacs<br/>
-        version VERSION.<br/>
-:package-version<br/>
-        VALUE should be a list with the form (PACKAGE . VERSION)<br/>
-        specifying that the variable was first introduced, or its<br/>
-        default value was changed, in PACKAGE version VERSION.  This<br/>
-        keyword takes priority over :version.  The PACKAGE and VERSION<br/>
-        must appear in the alist `customize-package-emacs-version-alist'.<br/>
-        Since PACKAGE must be unique and the user might see it in an<br/>
-        error message, a good choice is the official name of the<br/>
-        package, such as MH-E or Gnus.<br/>
-:tag LABEL<br/>
-        Use LABEL, a string, instead of the item's name, to label the item<br/>
-        in customization menus and buffers.<br/>
-:load FILE<br/>
-        Load file FILE (a string) before displaying this customization<br/>
-        item.  Loading is done with `load', and only if the file is<br/>
-        not already loaded.<br/>
-<br/>
-If SYMBOL has a local binding, then this form affects the local<br/>
-binding.  This is normally not what you want.  Thus, if you need<br/>
-to load a file defining variables with this form, or with<br/>
-`defvar' or `defconst', you should always load that file<br/>
-_outside_ any bindings for these variables.  (`defvar' and<br/>
-`defconst' behave similarly in this respect.)<br/>
-<br/>
-See Info node `(elisp) Customization' in the Emacs Lisp manual<br/>
+<strong>defcustom</strong> is a Lisp macro in `<code>custom.el</code>'.</br>
+</br>
+(defcustom <u>SYMBOL</u> <u>STANDARD</u> <u>DOC</u> &rest <u>ARGS</u>)</br>
+</br>
+Declare <u>SYMBOL</u> as a customizable variable.</br>
+<u>SYMBOL</u> is the variable name; it should not be quoted.</br>
+<u>STANDARD</u> is an expression specifying the variable's standard</br>
+value.  It should not be quoted.  It is evaluated once by</br>
+`defcustom', and the value is assigned to <u>SYMBOL</u> if the variable</br>
+is unbound.  The expression itself is also stored, so that</br>
+Customize can re-evaluate it later to get the standard value.</br>
+<u>DOC</u> is the variable documentation.</br>
+</br>
+This macro uses `defvar' as a subroutine, which also marks the</br>
+variable as "special", so that it is always dynamically bound</br>
+even when `lexical-binding' is t.</br>
+</br>
+The remaining arguments to `defcustom' should have the form</br>
+</br>
+   [KEYWORD VALUE]...</br>
+</br>
+The following keywords are meaningful:</br>
+</br>
+:type	VALUE should be a widget type for editing the symbol's value.</br>
+:options VALUE should be a list of valid members of the widget type.</br>
+:initialize</br>
+	VALUE should be a function used to initialize the</br>
+	variable.  It takes two arguments, the symbol and value</br>
+	given in the `defcustom' call.  The default is</br>
+	`custom-initialize-reset'.</br>
+:set	VALUE should be a function to set the value of the symbol</br>
+        when using the Customize user interface.</br>
+	It takes two arguments, the symbol to set and the value to</br>
+	give it.  The default choice of function is `set-default'.</br>
+:get	VALUE should be a function to extract the value of symbol.</br>
+	The function takes one argument, a symbol, and should return</br>
+	the current value for that symbol.  The default choice of function</br>
+	is `default-value'.</br>
+:require</br>
+	VALUE should be a feature symbol.  If you save a value</br>
+	for this option, then when your init file loads the value,</br>
+	it does (require VALUE) first.</br>
+:set-after VARIABLES</br>
+	Specifies that <u>SYMBOL</u> should be set after the list of variables</br>
+        VARIABLES when both have been customized.</br>
+:risky	Set <u>SYMBOL</u>'s `risky-local-variable' property to VALUE.</br>
+:safe	Set <u>SYMBOL</u>'s `safe-local-variable' property to VALUE.</br>
+        See Info node `(elisp) File Local Variables'.</br>
+</br>
+The following common keywords are also meaningful.</br>
+</br>
+:group  VALUE should be a customization group.</br>
+        Add <u>SYMBOL</u> (or FACE with `defface') to that group.</br>
+:link LINK-DATA</br>
+        Include an external link after the documentation string for this</br>
+        item.  This is a sentence containing an active field which</br>
+        references some other documentation.</br>
+</br>
+        There are several alternatives you can use for LINK-DATA:</br>
+</br>
+        (custom-manual INFO-NODE)</br>
+             Link to an Info node; INFO-NODE is a string which specifies</br>
+             the node name, as in "(emacs)Top".</br>
+</br>
+        (info-link INFO-NODE)</br>
+             Like `custom-manual' except that the link appears in the</br>
+             customization buffer with the Info node name.</br>
+</br>
+        (url-link URL)</br>
+             Link to a web page; URL is a string which specifies the URL.</br>
+</br>
+        (emacs-commentary-link LIBRARY)</br>
+             Link to the commentary section of LIBRARY.</br>
+</br>
+        (emacs-library-link LIBRARY)</br>
+             Link to an Emacs Lisp LIBRARY file.</br>
+</br>
+        (file-link FILE)</br>
+             Link to FILE.</br>
+</br>
+        (function-link FUNCTION)</br>
+             Link to the documentation of FUNCTION.</br>
+</br>
+        (variable-link VARIABLE)</br>
+             Link to the documentation of VARIABLE.</br>
+</br>
+        (custom-group-link GROUP)</br>
+             Link to another customization GROUP.</br>
+</br>
+        You can specify the text to use in the customization buffer by</br>
+        adding `:tag NAME' after the first element of the LINK-DATA; for</br>
+        example, (info-link :tag "foo" "(emacs)Top") makes a link to the</br>
+        Emacs manual which appears in the buffer as `foo'.</br>
+</br>
+        An item can have more than one external link; however, most items</br>
+        have none at all.</br>
+:version</br>
+        VALUE should be a string specifying that the variable was</br>
+        first introduced, or its default value was changed, in Emacs</br>
+        version VERSION.</br>
+:package-version</br>
+        VALUE should be a list with the form (PACKAGE . VERSION)</br>
+        specifying that the variable was first introduced, or its</br>
+        default value was changed, in PACKAGE version VERSION.  This</br>
+        keyword takes priority over :version.  The PACKAGE and VERSION</br>
+        must appear in the alist `customize-package-emacs-version-alist'.</br>
+        Since PACKAGE must be unique and the user might see it in an</br>
+        error message, a good choice is the official name of the</br>
+        package, such as MH-E or Gnus.</br>
+:tag LABEL</br>
+        Use LABEL, a string, instead of the item's name, to label the item</br>
+        in customization menus and buffers.</br>
+:load FILE</br>
+        Load file FILE (a string) before displaying this customization</br>
+        item.  Loading is done with `load', and only if the file is</br>
+        not already loaded.</br>
+</br>
+If <u>SYMBOL</u> has a local binding, then this form affects the local</br>
+binding.  This is normally not what you want.  Thus, if you need</br>
+to load a file defining variables with this form, or with</br>
+`defvar' or `defconst', you should always load that file</br>
+_outside_ any bindings for these variables.  (`defvar' and</br>
+`defconst' behave similarly in this respect.)</br>
+</br>
+See Info node `(elisp) Customization' in the Emacs Lisp manual</br>
 for more information.

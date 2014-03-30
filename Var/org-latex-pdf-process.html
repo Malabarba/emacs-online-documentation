@@ -1,0 +1,37 @@
+<strong>org-latex-pdf-process</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+Its value is <pre></br>
+("pdflatex -interaction nonstopmode -output-directory %o %f" "pdflatex -interaction nonstopmode -output-directory %o %f" "pdflatex -interaction nonstopmode -output-directory %o %f")
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Commands to process a LaTeX file to a PDF file.</br>
+This is a list of strings, each of them will be given to the</br>
+shell as a command.  %f in the command will be replaced by the</br>
+full file name, %b by the file base name (i.e. without directory</br>
+and extension parts) and %o by the base directory of the file.</br>
+</br>
+The reason why this is a list is that it usually takes several</br>
+runs of `pdflatex', maybe mixed with a call to `bibtex'.  Org</br>
+does not have a clever mechanism to detect which of these</br>
+commands have to be run to get to a stable result, and it also</br>
+does not do any error checking.</br>
+</br>
+By default, Org uses 3 runs of `pdflatex' to do the processing.</br>
+If you have texi2dvi on your system and if that does not cause</br>
+the infamous egrep/locale bug:</br>
+</br>
+     http://lists.gnu.org/archive/html/bug-texinfo/2010-03/msg00031.html</br>
+</br>
+then `texi2dvi' is the superior choice as it automates the LaTeX</br>
+build process by calling the "correct" combinations of</br>
+auxiliary programs.  Org does offer `texi2dvi' as one of the</br>
+customize options.  Alternatively, `rubber' and `latexmk' also</br>
+provide similar functionality.  The latter supports `biber' out</br>
+of the box.</br>
+</br>
+Alternatively, this may be a Lisp function that does the</br>
+processing, so you could use this to apply the machinery of</br>
+AUCTeX or the Emacs LaTeX mode.  This function should accept the</br>
+file name as its single argument.</br>
+</br>
+You can customize this variable.

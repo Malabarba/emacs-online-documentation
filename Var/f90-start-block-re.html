@@ -1,11 +1,9 @@
-<strong>f90-start-block-re</strong> is a variable defined in `<code>f90.el</code>'.<br/>
-Its value is<br/>
-"^[ 	0-9]*\\(\\(\\(\\sw+[ 	]*:[ 	]*\\)?\\(do\\|select[ 	]*\\(case\\|type\\)\\|if[ 	]*(\\(.*\\|.*\n\\([^if]*\\([^i].\\|.[^f]\\|.\\>\\)\\)\\)\\<then\\|\\(where\\|forall\\)[ 	]*(.*)[ 	]*\\(!\\|$\\)\\)\\)\\|type[ 	,]\\([^i(!\n\"& 	]\\|i[^s!\n\"& 	]\\|is\\sw\\)\\|program\\|\\(?:abstract[ 	]*\\)?interface\\|\\(?:sub\\)?module\\|function\\|subroutine\\|enum[^e]\\|associate\\|block\\|critical\\)[ 	]*"<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Regexp matching the start of an F90 "block", from the line start.<br/>
-A simple regexp cannot do this in fully correct fashion, so this<br/>
-tries to strike a compromise between complexity and flexibility.<br/>
+<strong>f90-start-block-re</strong> is a variable defined in `<code>f90.el</code>'.</br>
+Its value is <pre></br>
+"^[ 	0-9]*\\(\\(\\(\\(?:\\sw\\|\\s_\\)+[ 	]*:[ 	]*\\)?\\(do\\|select[ 	]*\\(case\\|type\\)\\|if[ 	]*(\\(.*\\|.*\n\\([^if]*\\([^i].\\|.[^f]\\|.\\_>\\)\\)\\)\\_<then\\|\\(where\\|forall\\)[ 	]*(.*)[ 	]*\\(!\\|$\\)\\)\\)\\|type[ 	,]\\([^i(!\n\"& 	]\\|i[^s!\n\"& 	]\\|is\\(?:\\sw\\|\\s_\\)\\)\\|program\\|\\(?:abstract[ 	]*\\)?interface\\|\\(?:sub\\)?module\\|function\\|subroutine\\|enum[^e]\\|associate\\|block\\|critical\\)[ 	]*"</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Regexp matching the start of an F90 "block", from the line start.</br>
+A simple regexp cannot do this in fully correct fashion, so this</br>
+tries to strike a compromise between complexity and flexibility.</br>
 Used in the F90 entry in `hs-special-modes-alist'.

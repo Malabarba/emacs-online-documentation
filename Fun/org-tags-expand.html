@@ -1,0 +1,27 @@
+<strong>org-tags-expand</strong> is a compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+(org-tags-expand <u>MATCH</u> &optional <u>SINGLE-AS-LIST</u> <u>DOWNCASED</u>)</br>
+</br>
+Expand group tags in <u>MATCH</u>.</br>
+</br>
+This replaces every group tag in <u>MATCH</u> with a regexp tag search.</br>
+For example, a group tag "Work" defined as { Work : Lab Conf }</br>
+will be replaced like this:</br>
+</br>
+   Work =>  {\(?:Work\|Lab\|Conf\)}</br>
+  +Work => +{\(?:Work\|Lab\|Conf\)}</br>
+  -Work => -{\(?:Work\|Lab\|Conf\)}</br>
+</br>
+Replacing by a regexp preserves the structure of the match.</br>
+E.g., this expansion</br>
+</br>
+  Work|Home => {\(?:Work\|Lab\|Conf\}|Home</br>
+</br>
+will match anything tagged with "Lab" and "Home", or tagged</br>
+with "Conf" and "Home" or tagged with "Work" and "home".</br>
+</br>
+When the optional argument <u>SINGLE-AS-LIST</u> is non-nil, <u>MATCH</u> is</br>
+assumed to be a single group tag, and the function will return</br>
+the list of tags in this group.</br>
+</br>
+When DOWNCASE is non-nil, expand downcased TAGS.

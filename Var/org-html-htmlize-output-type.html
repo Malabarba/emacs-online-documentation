@@ -1,0 +1,21 @@
+<strong>org-html-htmlize-output-type</strong> is a variable defined in `<code>ox-html.el</code>'.</br>
+Its value is <pre>inline-css</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Output type to be used by htmlize when formatting code snippets.</br>
+Choices are `css', to export the CSS selectors only, or `inline-css', to</br>
+export the CSS attribute values inline in the HTML.  We use as default</br>
+`inline-css', in order to make the resulting HTML self-containing.</br>
+</br>
+However, this will fail when using Emacs in batch mode for export, because</br>
+then no rich font definitions are in place.  It will also not be good if</br>
+people with different Emacs setup contribute HTML files to a website,</br>
+because the fonts will represent the individual setups.  In these cases,</br>
+it is much better to let Org/Htmlize assign classes only, and to use</br>
+a style file to define the look of these classes.</br>
+To get a start for your css file, start Emacs session and make sure that</br>
+all the faces you are interested in are defined, for example by loading files</br>
+in all modes you want.  Then, use the command</br>
+M-x org-html-htmlize-generate-css to extract class definitions.</br>
+</br>
+You can customize this variable.

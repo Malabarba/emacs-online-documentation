@@ -1,5 +1,76 @@
-<strong>ede-project-placeholder</strong> is a Lisp function.<br/>
-<br/>
-(ede-project-placeholder NEWNAME &rest SLOTS)<br/>
-<br/>
-Create a new object with name NAME of class type ede-project-placeholder
+ede-project-placeholder is an  object constructor function in `base.el'.</br>
+Creates an object of class ede-project-placeholder.</br>
+Create a new object with name NAME of class type ede-project-placeholder</br>
+</br>
+Class description:</br>
+ede-project-placeholder is a class in `base.el'.</br>
+ Inherits from `eieio-speedbar-directory-button'.</br>
+ Children `ede-project'.</br>
+</br>
+Placeholder object for projects not loaded into memory.</br>
+Projects placeholders will be stored in a user specific location</br>
+and querying them will cause the actual project to get loaded.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: expanded    type = boolean    default = nil</br>
+  State of an object being expanded in speedbar.</br>
+</br>
+Slot: name    type = string    default = "Untitled"</br>
+  The name used when generating distribution files.</br>
+</br>
+Slot: version    type = string    default = "1.0"</br>
+  The version number used when distributing files.</br>
+</br>
+Slot: directory    type = string</br>
+  Directory this project is associated with.</br>
+</br>
+Slot: dirinode</br>
+  The inode id for :directory.</br>
+</br>
+Slot: file    type = string</br>
+  The File uniquely tagging this project instance.</br>
+For some project types, this will be the file that stores the project configuration.</br>
+In other projects types, this file is merely a unique identifier to this type of project.</br>
+</br>
+Slot: rootproject    type = (or null ede-project-placeholder-child)    default = nil</br>
+  Pointer to our root project.</br>
+</br>
+</br>
+Class Allocated Slots:</br>
+</br>
+Slot: buttonface    type = (or symbol face)   value = speedbar-directory-face</br>
+</br>
+ The face used on the textual part of the button for this class.</br>
+See `speedbar-make-tag-line' for details.</br>
+</br>
+Slot: buttontype    type = symbol   value = angle</br>
+</br>
+ The type of expansion button used for objects of this class.</br>
+Possible values are those symbols supported by the `exp-button-type' argument</br>
+to `speedbar-make-tag-line'.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`ede-find-subproject-for-directory' :PRIMARY (proj dir)</br>
+Find a subproject of PROJ that corresponds to DIR.</br>
+</br>
+`ede-project-root' :PRIMARY (this)</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+</br>
+`ede-project-root-directory' :PRIMARY (this &optional file)</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+Optional FILE is the file to test.  It is ignored in preference</br>
+of the anchor file for the project.</br>
+</br>
+`project-add-file' :PRIMARY (this file)</br>
+Make sure placeholder THIS is replaced with the real thing, and pass through.</br>
+</br>
+`ede--project-inode' :PRIMARY (proj)</br>
+Get the inode of the directory project PROJ is in.</br>
+</br>
+`project-interactive-select-target' :PRIMARY (this prompt)</br>
+Make sure placeholder THIS is replaced with the real thing, and pass through.</br>
+</br>

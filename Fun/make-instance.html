@@ -1,23 +1,23 @@
-<strong>make-instance</strong> is a compiled Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(make-instance CLASS &rest INITARGS)<br/>
-<br/>
-Make a new instance of CLASS based on INITARGS.<br/>
-CLASS is a class symbol.  For example:<br/>
-<br/>
-  (make-instance 'foo)<br/>
-<br/>
-  INITARGS is a property list with keywords based on the :initarg<br/>
-for each slot.  For example:<br/>
-<br/>
-  (make-instance 'foo :slot1 value1 :slotN valueN)<br/>
-<br/>
-Compatibility note:<br/>
-<br/>
-If the first element of INITARGS is a string, it is used as the<br/>
-name of the class.<br/>
-<br/>
-In EIEIO, the class' constructor requires a name for use when printing.<br/>
-`make-instance' in CLOS doesn't use names the way Emacs does, so the<br/>
-class is used as the name slot instead when INITARGS doesn't start with<br/>
+<strong>make-instance</strong> is a compiled Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(make-instance <u>CLASS</u> &rest <u>INITARGS</u>)</br>
+</br>
+Make a new instance of <u>CLASS</u> based on <u>INITARGS</u>.</br>
+<u>CLASS</u> is a class symbol.  For example:</br>
+</br>
+  (make-instance 'foo)</br>
+</br>
+  <u>INITARGS</u> is a property list with keywords based on the :initarg</br>
+for each slot.  For example:</br>
+</br>
+  (make-instance 'foo :slot1 value1 :slotN valueN)</br>
+</br>
+Compatibility note:</br>
+</br>
+If the first element of <u>INITARGS</u> is a string, it is used as the</br>
+name of the class.</br>
+</br>
+In EIEIO, the class' constructor requires a name for use when printing.</br>
+`make-instance' in CLOS doesn't use names the way Emacs does, so the</br>
+class is used as the name slot instead when <u>INITARGS</u> doesn't start with</br>
 a string.

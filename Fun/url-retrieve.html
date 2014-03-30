@@ -1,34 +1,34 @@
-<strong>url-retrieve</strong> is an autoloaded compiled Lisp function in `<code>url.el</code>'.<br/>
-<br/>
-(url-retrieve URL CALLBACK &optional CBARGS SILENT INHIBIT-COOKIES)<br/>
-<br/>
-Retrieve URL asynchronously and call CALLBACK with CBARGS when finished.<br/>
-URL is either a string or a parsed URL.  If it is a string<br/>
-containing characters that are not valid in a URI, those<br/>
-characters are percent-encoded; see `url-encode-url'.<br/>
-<br/>
-CALLBACK is called when the object has been completely retrieved, with<br/>
-the current buffer containing the object, and any MIME headers associated<br/>
-with it.  It is called as (apply CALLBACK STATUS CBARGS).<br/>
-STATUS is a plist representing what happened during the request,<br/>
-with most recent events first, or an empty list if no events have<br/>
-occurred.  Each pair is one of:<br/>
-<br/>
-(:redirect REDIRECTED-TO) - the request was redirected to this URL<br/>
-(:error (ERROR-SYMBOL . DATA)) - an error occurred.  The error can be<br/>
-signaled with (signal ERROR-SYMBOL DATA).<br/>
-<br/>
-Return the buffer URL will load into, or nil if the process has<br/>
-already completed (i.e. URL was a mailto URL or similar; in this case<br/>
-the callback is not called).<br/>
-<br/>
-The variables `url-request-data', `url-request-method' and<br/>
-`url-request-extra-headers' can be dynamically bound around the<br/>
-request; dynamic binding of other variables doesn't necessarily<br/>
-take effect.<br/>
-<br/>
-If SILENT, then don't message progress reports and the like.<br/>
-If INHIBIT-COOKIES, cookies will neither be stored nor sent to<br/>
-the server.<br/>
-If URL is a multibyte string, it will be encoded as utf-8 and<br/>
-URL-encoded before it's used.
+<strong>url-retrieve</strong> is an autoloaded compiled Lisp function in `<code>url.el</code>'.</br>
+</br>
+(url-retrieve <u>URL</u> <u>CALLBACK</u> &optional <u>CBARGS</u> <u>SILENT</u> <u>INHIBIT-COOKIES</u>)</br>
+</br>
+Retrieve <u>URL</u> asynchronously and call <u>CALLBACK</u> with <u>CBARGS</u> when finished.</br>
+<u>URL</u> is either a string or a parsed <u>URL</u>.  If it is a string</br>
+containing characters that are not valid in a URI, those</br>
+characters are percent-encoded; see `url-encode-url'.</br>
+</br>
+<u>CALLBACK</u> is called when the object has been completely retrieved, with</br>
+the current buffer containing the object, and any MIME headers associated</br>
+with it.  It is called as (apply <u>CALLBACK</u> STATUS <u>CBARGS</u>).</br>
+STATUS is a plist representing what happened during the request,</br>
+with most recent events first, or an empty list if no events have</br>
+occurred.  Each pair is one of:</br>
+</br>
+<code>(:redirect REDIRECTED-TO) - the request was redirected to this <u>UR</u></code><u>L</u></br>
+(:error (ERROR-SYMBOL . DATA)) - an error occurred.  The error can be</br>
+signaled with (signal ERROR-SYMBOL DATA).</br>
+</br>
+Return the buffer <u>URL</u> will load into, or nil if the process has</br>
+already completed (i.e. <u>URL</u> was a mailto <u>URL</u> or similar; in this case</br>
+the callback is not called).</br>
+</br>
+The variables `url-request-data', `url-request-method' and</br>
+`url-request-extra-headers' can be dynamically bound around the</br>
+request; dynamic binding of other variables doesn't necessarily</br>
+take effect.</br>
+</br>
+If <u>SILENT</u>, then don't message progress reports and the like.</br>
+If <u>INHIBIT-COOKIES</u>, cookies will neither be stored nor sent to</br>
+the server.</br>
+If <u>URL</u> is a multibyte string, it will be encoded as utf-8 and</br>
+<u>URL</u>-encoded before it's used.

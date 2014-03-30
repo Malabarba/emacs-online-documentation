@@ -1,0 +1,20 @@
+<strong>erc-insert-timestamp-right</strong> is a compiled Lisp function in `<code>erc-stamp.el</code>'.</br>
+</br>
+(erc-insert-timestamp-right <u>STRING</u>)</br>
+</br>
+Insert timestamp on the right side of the screen.</br>
+<u>STRING</u> is the timestamp to insert.  The function is a possible value</br>
+for `erc-insert-timestamp-function'.</br>
+</br>
+If `erc-timestamp-only-if-changed-flag' is nil, a timestamp is always</br>
+printed.  If this variable is non-nil, a timestamp is only printed if</br>
+it is different from the last.</br>
+</br>
+If `erc-timestamp-right-column' is set, its value will be used as the</br>
+column at which the timestamp is to be printed.  If it is nil, and</br>
+`erc-fill-mode' is active, then the timestamp will be printed just</br>
+before `erc-fill-column'.  Otherwise, if the current buffer is</br>
+shown in a window, that window's width is used.  If the buffer is</br>
+not shown, and `fill-column' is set, then the timestamp will be</br>
+printed just `fill-column'.  As a last resort, the timestamp will</br>
+be printed just before the window-width.

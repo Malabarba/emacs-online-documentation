@@ -1,42 +1,42 @@
-<strong>c-hanging-braces-alist</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
-Its value is set-from-style<br/>
-<br/>
-Documentation:<br/>
-*Controls the insertion of newlines before and after braces<br/>
-when the auto-newline feature is active.  This variable contains an<br/>
-association list with elements of the following form:<br/>
-(SYNTACTIC-SYMBOL . ACTION).<br/>
-<br/>
-When a brace (either opening or closing) is inserted, the syntactic<br/>
-context it defines is looked up in this list, and if found, the<br/>
-associated ACTION is used to determine where newlines are inserted.<br/>
-If the context is not found, the default is to insert a newline both<br/>
-before and after the brace.<br/>
-<br/>
-SYNTACTIC-SYMBOL can be statement-cont, brace-list-intro,<br/>
-inexpr-class-open, inexpr-class-close, and any of the *-open and<br/>
-*-close symbols.  See `c-offsets-alist' for details, except for<br/>
-inexpr-class-open and inexpr-class-close, which doesn't have any<br/>
-corresponding symbols there.  Those two symbols are used for the<br/>
-opening and closing braces, respectively, of anonymous inner classes<br/>
-in Java.<br/>
-<br/>
-ACTION can be either a function symbol or a list containing any<br/>
-combination of the symbols `before' or `after'.  If the list is empty,<br/>
-no newlines are inserted either before or after the brace.<br/>
-<br/>
-When ACTION is a function symbol, the function is called with a two<br/>
-arguments: the syntactic symbol for the brace and the buffer position<br/>
-at which the brace was inserted.  The function must return a list as<br/>
-described in the preceding paragraph.  Note that during the call to<br/>
-the function, the variable `c-syntactic-context' is set to the entire<br/>
-syntactic context for the brace line.<br/>
-<br/>
-This is a style variable.  Apart from the valid values described<br/>
-above, it can be set to the symbol `set-from-style'.  In that case,<br/>
-it takes its value from the style system (see `c-default-style' and<br/>
-`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>
-the value set here overrides the style system (there is a variable<br/>
-`c-old-style-variable-behavior' that changes this, though).<br/>
-<br/>
+<strong>c-hanging-braces-alist</strong> is a variable defined in `<code>cc-vars.el</code>'.</br>
+Its value is <pre>set-from-style</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Controls the insertion of newlines before and after braces</br>
+when the auto-newline feature is active.  This variable contains an</br>
+association list with elements of the following form:</br>
+(SYNTACTIC-SYMBOL . ACTION).</br>
+</br>
+When a brace (either opening or closing) is inserted, the syntactic</br>
+context it defines is looked up in this list, and if found, the</br>
+associated ACTION is used to determine where newlines are inserted.</br>
+If the context is not found, the default is to insert a newline both</br>
+before and after the brace.</br>
+</br>
+SYNTACTIC-SYMBOL can be statement-cont, brace-list-intro,</br>
+inexpr-class-open, inexpr-class-close, and any of the *-open and</br>
+*-close symbols.  See `c-offsets-alist' for details, except for</br>
+inexpr-class-open and inexpr-class-close, which doesn't have any</br>
+corresponding symbols there.  Those two symbols are used for the</br>
+opening and closing braces, respectively, of anonymous inner classes</br>
+in Java.</br>
+</br>
+ACTION can be either a function symbol or a list containing any</br>
+combination of the symbols `before' or `after'.  If the list is empty,</br>
+no newlines are inserted either before or after the brace.</br>
+</br>
+When ACTION is a function symbol, the function is called with a two</br>
+arguments: the syntactic symbol for the brace and the buffer position</br>
+at which the brace was inserted.  The function must return a list as</br>
+described in the preceding paragraph.  Note that during the call to</br>
+the function, the variable `c-syntactic-context' is set to the entire</br>
+syntactic context for the brace line.</br>
+</br>
+This is a style variable.  Apart from the valid values described</br>
+above, it can be set to the symbol `set-from-style'.  In that case,</br>
+it takes its value from the style system (see `c-default-style' and</br>
+`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,</br>
+the value set here overrides the style system (there is a variable</br>
+`c-old-style-variable-behavior' that changes this, though).</br>
+</br>
 You can customize this variable.

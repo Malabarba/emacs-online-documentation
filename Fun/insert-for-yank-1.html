@@ -1,29 +1,29 @@
-<strong>insert-for-yank-1</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(insert-for-yank-1 STRING)<br/>
-<br/>
-Insert STRING at point for the `yank' command.<br/>
-This function is like `insert', except it honors the variables<br/>
-`yank-handled-properties' and `yank-excluded-properties', and the<br/>
-`yank-handler' text property.<br/>
-<br/>
-Properties listed in `yank-handled-properties' are processed,<br/>
-then those listed in `yank-excluded-properties' are discarded.<br/>
-<br/>
-If STRING has a non-nil `yank-handler' property on its first<br/>
-character, the normal insert behavior is altered.  The value of<br/>
-the `yank-handler' property must be a list of one to four<br/>
-elements, of the form (FUNCTION PARAM NOEXCLUDE UNDO).<br/>
-FUNCTION, if non-nil, should be a function of one argument, an<br/>
- object to insert; it is called instead of `insert'.<br/>
-PARAM, if present and non-nil, replaces STRING as the argument to<br/>
- FUNCTION or `insert'; e.g. if FUNCTION is `yank-rectangle', PARAM<br/>
- may be a list of strings to insert as a rectangle.<br/>
-If NOEXCLUDE is present and non-nil, the normal removal of<br/>
- `yank-excluded-properties' is not performed; instead FUNCTION is<br/>
- responsible for the removal.  This may be necessary if FUNCTION<br/>
- adjusts point before or after inserting the object.<br/>
-UNDO, if present and non-nil, should be a function to be called<br/>
- by `yank-pop' to undo the insertion of the current object.  It is<br/>
- given two arguments, the start and end of the region.  FUNCTION<br/>
+<strong>insert-for-yank-1</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+</br>
+(insert-for-yank-1 <u>STRING</u>)</br>
+</br>
+Insert <u>STRING</u> at point for the `yank' command.</br>
+This function is like `insert', except it honors the variables</br>
+`yank-handled-properties' and `yank-excluded-properties', and the</br>
+`yank-handler' text property.</br>
+</br>
+Properties listed in `yank-handled-properties' are processed,</br>
+then those listed in `yank-excluded-properties' are discarded.</br>
+</br>
+If <u>STRING</u> has a non-nil `yank-handler' property on its first</br>
+character, the normal insert behavior is altered.  The value of</br>
+the `yank-handler' property must be a list of one to four</br>
+elements, of the form (FUNCTION PARAM NOEXCLUDE UNDO).</br>
+FUNCTION, if non-nil, should be a function of one argument, an</br>
+ object to insert; it is called instead of `insert'.</br>
+PARAM, if present and non-nil, replaces <u>STRING</u> as the argument to</br>
+ FUNCTION or `insert'; e.g. if FUNCTION is `yank-rectangle', PARAM</br>
+ may be a list of strings to insert as a rectangle.</br>
+If NOEXCLUDE is present and non-nil, the normal removal of</br>
+ `yank-excluded-properties' is not performed; instead FUNCTION is</br>
+ responsible for the removal.  This may be necessary if FUNCTION</br>
+ adjusts point before or after inserting the object.</br>
+UNDO, if present and non-nil, should be a function to be called</br>
+ by `yank-pop' to undo the insertion of the current object.  It is</br>
+ given two arguments, the start and end of the region.  FUNCTION</br>
  may set `yank-undo-function' to override UNDO.

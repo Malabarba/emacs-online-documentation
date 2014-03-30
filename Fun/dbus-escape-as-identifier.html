@@ -1,20 +1,20 @@
-<strong>dbus-escape-as-identifier</strong> is a compiled Lisp function in `<code>dbus.el</code>'.<br/>
-<br/>
-(dbus-escape-as-identifier STRING)<br/>
-<br/>
-Escape an arbitrary STRING so it follows the rules for a C identifier.<br/>
-The escaped string can be used as object path component, interface element<br/>
-component, bus name component or member name in D-Bus.<br/>
-<br/>
-The escaping consists of replacing all non-alphanumerics, and the<br/>
-first character if it's a digit, with an underscore and two<br/>
-lower-case hex digits:<br/>
-<br/>
-   "0123abc_xyz\x01\xff" -> "_30123abc_5fxyz_01_ff"<br/>
-<br/>
-i.e. similar to URI encoding, but with "_" taking the role of "%",<br/>
-and a smaller allowed set. As a special case, "" is escaped to<br/>
-"_".<br/>
-<br/>
-Returns the escaped string.  Algorithm taken from<br/>
-telepathy-glib's `tp-escape-as-identifier'.
+<strong>dbus-escape-as-identifier</strong> is a compiled Lisp function in `<code>dbus.el</code>'.</br>
+</br>
+(dbus-escape-as-identifier <u>STRING</u>)</br>
+</br>
+Escape an arbitrary <u>STRING</u> so it follows the rules for a C identifier.</br>
+The escaped string can be used as object path component, interface element</br>
+component, bus name component or member name in D-Bus.</br>
+</br>
+The escaping consists of replacing all non-alphanumerics, and the</br>
+first character if it's a digit, with an underscore and two</br>
+lower-case hex digits:</br>
+</br>
+   "0123abc_xyz\x01\xff" -> "_30123abc_5fxyz_01_ff"</br>
+</br>
+i.e. similar to URI encoding, but with "_" taking the role of "%",</br>
+and a smaller allowed set. As a special case, "" is escaped to</br>
+"_".</br>
+</br>
+Returns the escaped string.  Algorithm taken from</br>
+telepathy-glib's `tp_escape_as_identifier'.

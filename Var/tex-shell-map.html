@@ -1,125 +1,124 @@
-<strong>tex-shell-map</strong> is a variable defined in `<code>tex-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for the TeX shell.<br/>
-Inherits `shell-mode-map' with a few additions.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (tex "TeX" keymap<br/>
-		(tex-view menu-item "Tex View" tex-view :enable<br/>
-			  (stringp tex-print-file))<br/>
-		(tex-print menu-item "Tex Print" tex-print :enable<br/>
-			   (stringp tex-print-file))<br/>
-		(tex-alt-print menu-item "Tex Print (alt printer)" tex-alt-print :enable<br/>
-			       (stringp tex-print-file))<br/>
-		(tex-show-print-queue "Show Print Queue" . tex-show-print-queue)<br/>
-		(tex-recenter-output-buffer menu-item "Tex Recenter" tex-recenter-output-buffer :enable<br/>
-					    (get-buffer "*tex-shell*"))<br/>
-		(tex-kill-job menu-item "Tex Kill" tex-kill-job :enable<br/>
-			      (tex-shell-running))<br/>
-		"TeX"))<br/>
- (3 keymap<br/>
-    (22 . tex-view)<br/>
-    (16 . tex-print)<br/>
-    (17 . tex-show-print-queue)<br/>
-    (12 . tex-recenter-output-buffer)<br/>
-    (11 . tex-kill-job))<br/>
- keymap<br/>
- (10 . kermit-send-input-cr)<br/>
- (28 . kermit-esc)<br/>
- (menu-bar keymap<br/>
-	   (completion "Complete" keymap<br/>
-		       (complete "Complete at Point" . completion-at-point)<br/>
-		       (complete-file "Complete File Name" . comint-dynamic-complete-filename)<br/>
-		       (complete-env-variable "Complete Env. Variable Name" . shell-dynamic-complete-environment-variable)<br/>
-		       (complete-listing "File Completion Listing" . comint-dynamic-list-filename-completions)<br/>
-		       (complete-expand "Expand File Name" . comint-replace-by-expanded-filename)<br/>
-		       (expand-directory "Expand Directory Reference" . shell-replace-by-expanded-directory)<br/>
-		       "Complete"))<br/>
- (27 keymap<br/>
-     (63 . comint-dynamic-list-filename-completions)<br/>
-     (13 . shell-resync-dirs))<br/>
- (9 . completion-at-point)<br/>
- (3 keymap<br/>
-    (92 . kermit-esc)<br/>
-    (17 . kermit-send-char)<br/>
-    (2 . shell-backward-command)<br/>
-    (6 . shell-forward-command))<br/>
- keymap<br/>
- (menu-bar keymap<br/>
-	   (signals "Signals" keymap<br/>
-		    (break "BREAK" . comint-interrupt-subjob)<br/>
-		    (stop "STOP" . comint-stop-subjob)<br/>
-		    (cont "CONT" . comint-continue-subjob)<br/>
-		    (quit "QUIT" . comint-quit-subjob)<br/>
-		    (kill "KILL" . comint-kill-subjob)<br/>
-		    (eof "EOF" . comint-send-eof)<br/>
-		    "Signals")<br/>
-	   (inout "In/Out" keymap<br/>
-		  (expand-history "Expand History Before Point" . comint-replace-by-expanded-history)<br/>
-		  (list-history "List Input History" . comint-dynamic-list-input-ring)<br/>
-		  (previous-history "Previous Input" . comint-previous-input)<br/>
-		  (next-history "Next Input" . comint-next-input)<br/>
-		  (previous-matching-history-from-input "Previous Matching Current Input" . comint-previous-matching-input-from-input)<br/>
-		  (next-matching-history-from-input "Next Matching Current Input" . comint-next-matching-input-from-input)<br/>
-		  (previous-matching-history "Previous Matching Input..." . comint-previous-matching-input)<br/>
-		  (next-matching-history "Next Matching Input..." . comint-next-matching-input)<br/>
-		  (backward-matching-history "Backward Matching Input..." . comint-backward-matching-input)<br/>
-		  (forward-matching-history "Forward Matching Input..." . comint-forward-matching-input)<br/>
-		  (history-isearch-backward "Isearch Input String Backward..." . comint-history-isearch-backward)<br/>
-		  (history-isearch-backward-regexp "Isearch Input Regexp Backward..." . comint-history-isearch-backward-regexp)<br/>
-		  (copy-input "Copy Old Input" . comint-copy-old-input)<br/>
-		  (kill-input "Kill Current Input" . comint-kill-input)<br/>
-		  (show-output "Show Current Output Group" . comint-show-output)<br/>
-		  (show-maximum-output "Show Maximum Output" . comint-show-maximum-output)<br/>
-		  (previous-prompt "Backward Output Group" . comint-previous-prompt)<br/>
-		  (next-prompt "Forward Output Group" . comint-next-prompt)<br/>
-		  (write-output "Write Current Output Group to File" . comint-write-output)<br/>
-		  (append-output-to-file "Append Current Output Group to File" . comint-append-output-to-file)<br/>
-		  (delete-output "Delete Current Output Group" . comint-delete-output)<br/>
-		  "In/Out")<br/>
-	   (completion "Complete" keymap<br/>
-		       (complete "Complete at Point" . completion-at-point)<br/>
-		       (complete-file "Complete File Name" . comint-dynamic-complete-filename)<br/>
-		       (complete-listing "File Completion Listing" . comint-dynamic-list-filename-completions)<br/>
-		       (complete-expand "Expand File Name" . comint-replace-by-expanded-filename)<br/>
-		       "Complete"))<br/>
- (mouse-2 . comint-insert-input)<br/>
- (kp-delete . delete-char)<br/>
- (delete . delete-char)<br/>
- (4 . comint-delchar-or-maybe-eof)<br/>
- (13 . comint-send-input)<br/>
- (3 keymap<br/>
-    (46 . comint-insert-previous-argument)<br/>
-    (19 . comint-write-output)<br/>
-    (4 . comint-send-eof)<br/>
-    (16 . comint-previous-prompt)<br/>
-    (14 . comint-next-prompt)<br/>
-    (12 . comint-dynamic-list-input-ring)<br/>
-    (5 . comint-show-maximum-output)<br/>
-    (18 . comint-show-output)<br/>
-    (15 . comint-delete-output)<br/>
-    (13 . comint-copy-old-input)<br/>
-    (28 . comint-quit-subjob)<br/>
-    (26 . comint-stop-subjob)<br/>
-    (3 . comint-interrupt-subjob)<br/>
-    (23 . backward-kill-word)<br/>
-    (21 . comint-kill-input)<br/>
-    (1 . comint-bol-or-process-mark)<br/>
-    (24 . comint-get-next-from-history)<br/>
-    (32 . comint-accumulate)<br/>
-    (27 keymap<br/>
-	(115 . comint-next-matching-input-from-input)<br/>
-	(114 . comint-previous-matching-input-from-input)))<br/>
- (C-down . comint-next-input)<br/>
- (C-up . comint-previous-input)<br/>
- (27 keymap<br/>
-     (12 . comint-show-output)<br/>
-     (114 . comint-history-isearch-backward-regexp)<br/>
-     (110 . comint-next-input)<br/>
-     (112 . comint-previous-input)))<br/>
-<br/>
+<strong>tex-shell-map</strong> is a variable defined in `<code>tex-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for the TeX shell.</br>
+Inherits `shell-mode-map' with a few additions.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (tex "TeX" keymap
+		(tex-view menu-item "Tex View" tex-view :enable
+			  (stringp tex-print-file))
+		(tex-print menu-item "Tex Print" tex-print :enable
+			   (stringp tex-print-file))
+		(tex-alt-print menu-item "Tex Print (alt printer)" tex-alt-print :enable
+			       (stringp tex-print-file))
+		(tex-show-print-queue "Show Print Queue" . tex-show-print-queue)
+		(tex-recenter-output-buffer menu-item "Tex Recenter" tex-recenter-output-buffer :enable
+					    (get-buffer "*tex-shell*"))
+		(tex-kill-job menu-item "Tex Kill" tex-kill-job :enable
+			      (tex-shell-running))
+		"TeX"))
+ (3 keymap
+    (22 . tex-view)
+    (16 . tex-print)
+    (17 . tex-show-print-queue)
+    (12 . tex-recenter-output-buffer)
+    (11 . tex-kill-job))
+ keymap
+ (10 . kermit-send-input-cr)
+ (28 . kermit-esc)
+ (menu-bar keymap
+	   (completion "Complete" keymap
+		       (complete "Complete at Point" . completion-at-point)
+		       (complete-file "Complete File Name" . comint-dynamic-complete-filename)
+		       (complete-env-variable "Complete Env. Variable Name" . shell-dynamic-complete-environment-variable)
+		       (complete-listing "File Completion Listing" . comint-dynamic-list-filename-completions)
+		       (complete-expand "Expand File Name" . comint-replace-by-expanded-filename)
+		       (expand-directory "Expand Directory Reference" . shell-replace-by-expanded-directory)
+		       "Complete"))
+ (27 keymap
+     (63 . comint-dynamic-list-filename-completions)
+     (13 . shell-resync-dirs))
+ (9 . completion-at-point)
+ (3 keymap
+    (92 . kermit-esc)
+    (17 . kermit-send-char)
+    (2 . shell-backward-command)
+    (6 . shell-forward-command))
+ keymap
+ (menu-bar keymap
+	   (signals "Signals" keymap
+		    (break "BREAK" . comint-interrupt-subjob)
+		    (stop "STOP" . comint-stop-subjob)
+		    (cont "CONT" . comint-continue-subjob)
+		    (quit "QUIT" . comint-quit-subjob)
+		    (kill "KILL" . comint-kill-subjob)
+		    (eof "EOF" . comint-send-eof)
+		    "Signals")
+	   (inout "In/Out" keymap
+		  (expand-history "Expand History Before Point" . comint-replace-by-expanded-history)
+		  (list-history "List Input History" . comint-dynamic-list-input-ring)
+		  (previous-history "Previous Input" . comint-previous-input)
+		  (next-history "Next Input" . comint-next-input)
+		  (previous-matching-history-from-input "Previous Matching Current Input" . comint-previous-matching-input-from-input)
+		  (next-matching-history-from-input "Next Matching Current Input" . comint-next-matching-input-from-input)
+		  (previous-matching-history "Previous Matching Input..." . comint-previous-matching-input)
+		  (next-matching-history "Next Matching Input..." . comint-next-matching-input)
+		  (backward-matching-history "Backward Matching Input..." . comint-backward-matching-input)
+		  (forward-matching-history "Forward Matching Input..." . comint-forward-matching-input)
+		  (history-isearch-backward "Isearch Input String Backward..." . comint-history-isearch-backward)
+		  (history-isearch-backward-regexp "Isearch Input Regexp Backward..." . comint-history-isearch-backward-regexp)
+		  (copy-input "Copy Old Input" . comint-copy-old-input)
+		  (kill-input "Kill Current Input" . comint-kill-input)
+		  (show-output "Show Current Output Group" . comint-show-output)
+		  (show-maximum-output "Show Maximum Output" . comint-show-maximum-output)
+		  (previous-prompt "Backward Output Group" . comint-previous-prompt)
+		  (next-prompt "Forward Output Group" . comint-next-prompt)
+		  (write-output "Write Current Output Group to File" . comint-write-output)
+		  (append-output-to-file "Append Current Output Group to File" . comint-append-output-to-file)
+		  (delete-output "Delete Current Output Group" . comint-delete-output)
+		  "In/Out")
+	   (completion "Complete" keymap
+		       (complete "Complete at Point" . completion-at-point)
+		       (complete-file "Complete File Name" . comint-dynamic-complete-filename)
+		       (complete-listing "File Completion Listing" . comint-dynamic-list-filename-completions)
+		       (complete-expand "Expand File Name" . comint-replace-by-expanded-filename)
+		       "Complete"))
+ (mouse-2 . comint-insert-input)
+ (kp-delete . delete-forward-char)
+ (delete . delete-forward-char)
+ (4 . comint-delchar-or-maybe-eof)
+ (13 . comint-send-input)
+ (3 keymap
+    (46 . comint-insert-previous-argument)
+    (19 . comint-write-output)
+    (4 . comint-send-eof)
+    (16 . comint-previous-prompt)
+    (14 . comint-next-prompt)
+    (12 . comint-dynamic-list-input-ring)
+    (5 . comint-show-maximum-output)
+    (18 . comint-show-output)
+    (15 . comint-delete-output)
+    (13 . comint-copy-old-input)
+    (28 . comint-quit-subjob)
+    (26 . comint-stop-subjob)
+    (3 . comint-interrupt-subjob)
+    (23 . backward-kill-word)
+    (21 . comint-kill-input)
+    (1 . comint-bol-or-process-mark)
+    (24 . comint-get-next-from-history)
+    (32 . comint-accumulate)
+    (27 keymap
+	(115 . comint-next-matching-input-from-input)
+	(114 . comint-previous-matching-input-from-input)))
+ (C-down . comint-next-input)
+ (C-up . comint-previous-input)
+ (27 keymap
+     (12 . comint-show-output)
+     (114 . comint-history-isearch-backward-regexp)
+     (110 . comint-next-input)
+     (112 . comint-previous-input)))
+</pre></br>

@@ -1,32 +1,31 @@
-<strong>semantic-new-buffer-setup-functions</strong> is a variable defined in `<code>semantic.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist of functions to call to set up Semantic parsing in the buffer.<br/>
-Each element has the form (MODE . FN), where MODE is a value of<br/>
-`major-mode' for the buffer and FN is the corresponding function<br/>
-to call, with no arguments, to set up the parser.<br/>
-<br/>
-These functions are called by `semantic-new-buffer-fcn', before<br/>
-`semantic-inhibit-functions'.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: ((c-mode . semantic-default-c-setup)<br/>
- (c++-mode . semantic-default-c-setup)<br/>
- (html-mode . semantic-default-html-setup)<br/>
- (java-mode . wisent-java-default-setup)<br/>
- (js-mode . wisent-javascript-setup-parser)<br/>
- (python-mode . wisent-python-default-setup)<br/>
- (scheme-mode . semantic-default-scheme-setup)<br/>
- (srecode-template-mode . srecode-template-setup-parser)<br/>
- (texinfo-mode . semantic-default-texi-setup)<br/>
- (makefile-automake-mode . semantic-default-make-setup)<br/>
- (makefile-gmake-mode . semantic-default-make-setup)<br/>
- (makefile-makepp-mode . semantic-default-make-setup)<br/>
- (makefile-bsdmake-mode . semantic-default-make-setup)<br/>
- (makefile-imake-mode . semantic-default-make-setup)<br/>
- (makefile-mode . semantic-default-make-setup))<br/>
-<br/>
+<strong>semantic-new-buffer-setup-functions</strong> is a variable defined in `<code>semantic.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of functions to call to set up Semantic parsing in the buffer.</br>
+Each element has the form (MODE . FN), where MODE is a value of</br>
+`major-mode' for the buffer and FN is the corresponding function</br>
+to call, with no arguments, to set up the parser.</br>
+</br>
+These functions are called by `semantic-new-buffer-fcn', before</br>
+`semantic-inhibit-functions'.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((c-mode . semantic-default-c-setup)
+ (c++-mode . semantic-default-c-setup)
+ (html-mode . semantic-default-html-setup)
+ (java-mode . wisent-java-default-setup)
+ (js-mode . wisent-javascript-setup-parser)
+ (python-mode . wisent-python-default-setup)
+ (scheme-mode . semantic-default-scheme-setup)
+ (srecode-template-mode . srecode-template-setup-parser)
+ (texinfo-mode . semantic-default-texi-setup)
+ (makefile-automake-mode . semantic-default-make-setup)
+ (makefile-gmake-mode . semantic-default-make-setup)
+ (makefile-makepp-mode . semantic-default-make-setup)
+ (makefile-bsdmake-mode . semantic-default-make-setup)
+ (makefile-imake-mode . semantic-default-make-setup)
+ (makefile-mode . semantic-default-make-setup))
+</pre></br>

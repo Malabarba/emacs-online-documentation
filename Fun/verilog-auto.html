@@ -1,71 +1,75 @@
-<strong>verilog-auto</strong> is an interactive compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
-<br/>
-(verilog-auto &optional INJECT)<br/>
-<br/>
-Expand AUTO statements.<br/>
-Look for any /*AUTO...*/ commands in the code, as used in<br/>
-instantiations or argument headers.  Update the list of signals<br/>
-following the /*AUTO...*/ command.<br/>
-<br/>
-Use M-x verilog-delete-auto to remove the AUTOs.<br/>
-<br/>
-Use M-x verilog-diff-auto to see differences in AUTO expansion.<br/>
-<br/>
-Use M-x verilog-inject-auto to insert AUTOs for the first time.<br/>
-<br/>
-Use M-x verilog-faq for a pointer to frequently asked questions.<br/>
-<br/>
-The hooks `verilog-before-auto-hook' and `verilog-auto-hook' are<br/>
-called before and after this function, respectively.<br/>
-<br/>
-For example:<br/>
-	module ModuleName (/*AUTOARG*/);<br/>
-	/*AUTOINPUT*/<br/>
-	/*AUTOOUTPUT*/<br/>
-	/*AUTOWIRE*/<br/>
-	/*AUTOREG*/<br/>
-	InstMod instName #(/*AUTOINSTPARAM*/) (/*AUTOINST*/);<br/>
-<br/>
-You can also update the AUTOs from the shell using:<br/>
-	emacs --batch  <filenames.v>  -f verilog-batch-auto<br/>
-Or fix indentation with:<br/>
-	emacs --batch  <filenames.v>  -f verilog-batch-indent<br/>
-Likewise, you can delete or inject AUTOs with:<br/>
-	emacs --batch  <filenames.v>  -f verilog-batch-delete-auto<br/>
-	emacs --batch  <filenames.v>  -f verilog-batch-inject-auto<br/>
-Or check if AUTOs have the same expansion<br/>
-	emacs --batch  <filenames.v>  -f verilog-batch-diff-auto<br/>
-<br/>
-Using C-h f, see also:<br/>
-    `verilog-auto-arg'          for AUTOARG module instantiations<br/>
-    `verilog-auto-ascii-enum'   for AUTOASCIIENUM enumeration decoding<br/>
-    `verilog-auto-assign-modport' for AUTOASSIGNMODPORT assignment to/from modport<br/>
-    `verilog-auto-inout-comp'   for AUTOINOUTCOMP copy complemented i/o<br/>
-    `verilog-auto-inout-in'     for AUTOINOUTIN inputs for all i/o<br/>
-    `verilog-auto-inout-modport'  for AUTOINOUTMODPORT i/o from an interface modport<br/>
-    `verilog-auto-inout-module' for AUTOINOUTMODULE copying i/o from elsewhere<br/>
-    `verilog-auto-inout-param'  for AUTOINOUTPARAM copying params from elsewhere<br/>
-    `verilog-auto-inout'        for AUTOINOUT making hierarchy inouts<br/>
-    `verilog-auto-input'        for AUTOINPUT making hierarchy inputs<br/>
-    `verilog-auto-insert-lisp'  for AUTOINSERTLISP insert code from lisp function<br/>
-    `verilog-auto-inst'         for AUTOINST instantiation pins<br/>
-    `verilog-auto-star'         for AUTOINST .* SystemVerilog pins<br/>
-    `verilog-auto-inst-param'   for AUTOINSTPARAM instantiation params<br/>
-    `verilog-auto-logic'        for AUTOLOGIC declaring logic signals<br/>
-    `verilog-auto-output'       for AUTOOUTPUT making hierarchy outputs<br/>
-    `verilog-auto-output-every' for AUTOOUTPUTEVERY making all outputs<br/>
-    `verilog-auto-reg'          for AUTOREG registers<br/>
-    `verilog-auto-reg-input'    for AUTOREGINPUT instantiation registers<br/>
-    `verilog-auto-reset'        for AUTORESET flop resets<br/>
-    `verilog-auto-sense'        for AUTOSENSE always sensitivity lists<br/>
-    `verilog-auto-tieoff'       for AUTOTIEOFF output tieoffs<br/>
-    `verilog-auto-undef'        for AUTOUNDEF `undef of local `defines<br/>
-    `verilog-auto-unused'       for AUTOUNUSED unused inputs/inouts<br/>
-    `verilog-auto-wire'         for AUTOWIRE instantiation wires<br/>
-<br/>
-    `verilog-read-defines'      for reading `define values<br/>
-    `verilog-read-includes'     for reading `includes<br/>
-<br/>
-If you have bugs with these autos, please file an issue at<br/>
-URL `http://www.veripool.org/verilog-mode' or contact the AUTOAUTHOR<br/>
+<strong>verilog-auto</strong> is an interactive compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+</br>
+</br>
+(verilog-auto &optional <u>INJECT</u>)</br>
+</br>
+Expand AUTO statements.</br>
+Look for any /*AUTO...*/ commands in the code, as used in</br>
+instantiations or argument headers.  Update the list of signals</br>
+following the /*AUTO...*/ command.</br>
+</br>
+Use M-x verilog-delete-auto to remove the AUTOs.</br>
+</br>
+Use M-x verilog-diff-auto to see differences in AUTO expansion.</br>
+</br>
+Use M-x verilog-inject-auto to insert AUTOs for the first time.</br>
+</br>
+Use M-x verilog-faq for a pointer to frequently asked questions.</br>
+</br>
+For new users, we recommend setting `verilog-case-fold' to nil</br>
+and `verilog-auto-arg-sort' to t.</br>
+</br>
+The hooks `verilog-before-auto-hook' and `verilog-auto-hook' are</br>
+called before and after this function, respectively.</br>
+</br>
+For example:</br>
+	module ModuleName (/*AUTOARG*/);</br>
+	/*AUTOINPUT*/</br>
+	/*AUTOOUTPUT*/</br>
+	/*AUTOWIRE*/</br>
+	/*AUTOREG*/</br>
+	InstMod instName #(/*AUTOINSTPARAM*/) (/*AUTOINST*/);</br>
+</br>
+You can also update the AUTOs from the shell using:</br>
+	emacs --batch  &lt;filenames.v>  -f verilog-batch-auto</br>
+Or fix indentation with:</br>
+	emacs --batch  &lt;filenames.v>  -f verilog-batch-indent</br>
+Likewise, you can delete or inject AUTOs with:</br>
+	emacs --batch  &lt;filenames.v>  -f verilog-batch-delete-auto</br>
+	emacs --batch  &lt;filenames.v>  -f verilog-batch-inject-auto</br>
+Or check if AUTOs have the same expansion</br>
+	emacs --batch  &lt;filenames.v>  -f verilog-batch-diff-auto</br>
+</br>
+Using C-h f, see also:</br>
+    `verilog-auto-arg'          for AUTOARG module instantiations</br>
+    `verilog-auto-ascii-enum'   for AUTOASCIIENUM enumeration decoding</br>
+    `verilog-auto-assign-modport' for AUTOASSIGNMODPORT assignment to/from modport</br>
+    `verilog-auto-inout'        for AUTOINOUT making hierarchy inouts</br>
+    `verilog-auto-inout-comp'   for AUTOINOUTCOMP copy complemented i/o</br>
+    `verilog-auto-inout-in'     for AUTOINOUTIN inputs for all i/o</br>
+    `verilog-auto-inout-modport'  for AUTOINOUTMODPORT i/o from an interface modport</br>
+    `verilog-auto-inout-module' for AUTOINOUTMODULE copying i/o from elsewhere</br>
+    `verilog-auto-inout-param'  for AUTOINOUTPARAM copying params from elsewhere</br>
+    `verilog-auto-input'        for AUTOINPUT making hierarchy inputs</br>
+    `verilog-auto-insert-lisp'  for AUTOINSERTLISP insert code from lisp function</br>
+    `verilog-auto-inst'         for AUTOINST instantiation pins</br>
+    `verilog-auto-star'         for AUTOINST .* SystemVerilog pins</br>
+    `verilog-auto-inst-param'   for AUTOINSTPARAM instantiation params</br>
+    `verilog-auto-logic'        for AUTOLOGIC declaring logic signals</br>
+    `verilog-auto-output'       for AUTOOUTPUT making hierarchy outputs</br>
+    `verilog-auto-output-every' for AUTOOUTPUTEVERY making all outputs</br>
+    `verilog-auto-reg'          for AUTOREG registers</br>
+    `verilog-auto-reg-input'    for AUTOREGINPUT instantiation registers</br>
+    `verilog-auto-reset'        for AUTORESET flop resets</br>
+    `verilog-auto-sense'        for AUTOSENSE or AS always sensitivity lists</br>
+    `verilog-auto-tieoff'       for AUTOTIEOFF output tieoffs</br>
+    `verilog-auto-undef'        for AUTOUNDEF `undef of local `defines</br>
+    `verilog-auto-unused'       for AUTOUNUSED unused inputs/inouts</br>
+    `verilog-auto-wire'         for AUTOWIRE instantiation wires</br>
+</br>
+    `verilog-read-defines'      for reading `define values</br>
+    `verilog-read-includes'     for reading `includes</br>
+</br>
+If you have bugs with these autos, please file an issue at</br>
+URL `http://www.veripool.org/verilog-mode' or contact the AUTOAUTHOR</br>
 Wilson Snyder (wsnyder@wsnyder.org).

@@ -1,0 +1,290 @@
+<strong>org-export--registered-backends</strong> is a variable defined in `<code>ox.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of backends currently available in the exporter.</br>
+This variable is set with `org-export-define-backend' and</br>
+`org-export-define-derived-backend' functions.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+([cl-struct-org-export-backend latex nil
+			       ((bold . org-latex-bold)
+				(center-block . org-latex-center-block)
+				(clock . org-latex-clock)
+				(code . org-latex-code)
+				(comment lambda
+					 (&rest args)
+					 "")
+				(comment-block lambda
+					       (&rest args)
+					       "")
+				(drawer . org-latex-drawer)
+				(dynamic-block . org-latex-dynamic-block)
+				(entity . org-latex-entity)
+				(example-block . org-latex-example-block)
+				(export-block . org-latex-export-block)
+				(export-snippet . org-latex-export-snippet)
+				(fixed-width . org-latex-fixed-width)
+				(footnote-definition . org-latex-footnote-definition)
+				(footnote-reference . org-latex-footnote-reference)
+				(headline . org-latex-headline)
+				(horizontal-rule . org-latex-horizontal-rule)
+				(inline-src-block . org-latex-inline-src-block)
+				(inlinetask . org-latex-inlinetask)
+				(italic . org-latex-italic)
+				(item . org-latex-item)
+				(keyword . org-latex-keyword)
+				(latex-environment . org-latex-latex-environment)
+				(latex-fragment . org-latex-latex-fragment)
+				(line-break . org-latex-line-break)
+				(link . org-latex-link)
+				(paragraph . org-latex-paragraph)
+				(plain-list . org-latex-plain-list)
+				(plain-text . org-latex-plain-text)
+				(planning . org-latex-planning)
+				(property-drawer lambda
+						 (&rest args)
+						 "")
+				(quote-block . org-latex-quote-block)
+				(quote-section . org-latex-quote-section)
+				(radio-target . org-latex-radio-target)
+				(section . org-latex-section)
+				(special-block . org-latex-special-block)
+				(src-block . org-latex-src-block)
+				(statistics-cookie . org-latex-statistics-cookie)
+				(strike-through . org-latex-strike-through)
+				(subscript . org-latex-subscript)
+				(superscript . org-latex-superscript)
+				(table . org-latex-table)
+				(table-cell . org-latex-table-cell)
+				(table-row . org-latex-table-row)
+				(target . org-latex-target)
+				(template . org-latex-template)
+				(timestamp . org-latex-timestamp)
+				(underline . org-latex-underline)
+				(verbatim . org-latex-verbatim)
+				(verse-block . org-latex-verse-block))
+			       ((:latex-class "LATEX_CLASS" nil org-latex-default-class t)
+				(:latex-class-options "LATEX_CLASS_OPTIONS" nil nil t)
+				(:latex-header "LATEX_HEADER" nil nil newline)
+				(:latex-header-extra "LATEX_HEADER_EXTRA" nil nil newline)
+				(:latex-hyperref-p nil "texht" org-latex-with-hyperref t)
+				(:date "DATE" nil "\\today" t))
+			       nil
+			       ("LATEX" "TEX")
+			       (108 "Export to LaTeX"
+				    ((76 "As LaTeX buffer" org-latex-export-as-latex)
+				     (108 "As LaTeX file" org-latex-export-to-latex)
+				     (112 "As PDF file" org-latex-export-to-pdf)
+				     (111 "As PDF file and open"
+					  (lambda
+					    (a s v b)
+					    (if a
+						(org-latex-export-to-pdf t s v b)
+					      (org-open-file
+					       (org-latex-export-to-pdf nil s v b)))))))]
+ [cl-struct-org-export-backend icalendar ascii
+			       ((clock . ignore)
+				(footnote-definition . ignore)
+				(footnote-reference . ignore)
+				(headline . org-icalendar-entry)
+				(inlinetask . ignore)
+				(planning . ignore)
+				(section . ignore)
+				(inner-template lambda
+						(c i)
+						c)
+				(template . org-icalendar-template))
+			       ((:exclude-tags "ICALENDAR_EXCLUDE_TAGS" nil org-icalendar-exclude-tags split)
+				(:with-timestamps nil "<" org-icalendar-with-timestamps)
+				(:with-vtodo nil nil org-icalendar-include-todo)
+				(:icalendar-agenda-view nil nil nil))
+			       ((:filter-headline . org-icalendar-clear-blank-lines))
+			       nil
+			       (99 "Export to iCalendar"
+				   ((102 "Current file" org-icalendar-export-to-ics)
+				    (97 "All agenda files"
+					(lambda
+					  (a s v b)
+					  (org-icalendar-export-agenda-files a)))
+				    (99 "Combine all agenda files"
+					(lambda
+					  (a s v b)
+					  (org-icalendar-combine-agenda-files a)))))]
+ [cl-struct-org-export-backend html nil
+			       ((bold . org-html-bold)
+				(center-block . org-html-center-block)
+				(clock . org-html-clock)
+				(code . org-html-code)
+				(drawer . org-html-drawer)
+				(dynamic-block . org-html-dynamic-block)
+				(entity . org-html-entity)
+				(example-block . org-html-example-block)
+				(export-block . org-html-export-block)
+				(export-snippet . org-html-export-snippet)
+				(fixed-width . org-html-fixed-width)
+				(footnote-definition . org-html-footnote-definition)
+				(footnote-reference . org-html-footnote-reference)
+				(headline . org-html-headline)
+				(horizontal-rule . org-html-horizontal-rule)
+				(inline-src-block . org-html-inline-src-block)
+				(inlinetask . org-html-inlinetask)
+				(inner-template . org-html-inner-template)
+				(italic . org-html-italic)
+				(item . org-html-item)
+				(keyword . org-html-keyword)
+				(latex-environment . org-html-latex-environment)
+				(latex-fragment . org-html-latex-fragment)
+				(line-break . org-html-line-break)
+				(link . org-html-link)
+				(paragraph . org-html-paragraph)
+				(plain-list . org-html-plain-list)
+				(plain-text . org-html-plain-text)
+				(planning . org-html-planning)
+				(property-drawer . org-html-property-drawer)
+				(quote-block . org-html-quote-block)
+				(quote-section . org-html-quote-section)
+				(radio-target . org-html-radio-target)
+				(section . org-html-section)
+				(special-block . org-html-special-block)
+				(src-block . org-html-src-block)
+				(statistics-cookie . org-html-statistics-cookie)
+				(strike-through . org-html-strike-through)
+				(subscript . org-html-subscript)
+				(superscript . org-html-superscript)
+				(table . org-html-table)
+				(table-cell . org-html-table-cell)
+				(table-row . org-html-table-row)
+				(target . org-html-target)
+				(template . org-html-template)
+				(timestamp . org-html-timestamp)
+				(underline . org-html-underline)
+				(verbatim . org-html-verbatim)
+				(verse-block . org-html-verse-block))
+			       ((:html-extension nil nil org-html-extension)
+				(:html-link-org-as-html nil nil org-html-link-org-files-as-html)
+				(:html-doctype "HTML_DOCTYPE" nil org-html-doctype)
+				(:html-container "HTML_CONTAINER" nil org-html-container-element)
+				(:html-html5-fancy nil "html5-fancy" org-html-html5-fancy)
+				(:html-link-use-abs-url nil "html-link-use-abs-url" org-html-link-use-abs-url)
+				(:html-link-home "HTML_LINK_HOME" nil org-html-link-home)
+				(:html-link-up "HTML_LINK_UP" nil org-html-link-up)
+				(:html-mathjax "HTML_MATHJAX" nil "" space)
+				(:html-postamble nil "html-postamble" org-html-postamble)
+				(:html-preamble nil "html-preamble" org-html-preamble)
+				(:html-head "HTML_HEAD" nil org-html-head newline)
+				(:html-head-extra "HTML_HEAD_EXTRA" nil org-html-head-extra newline)
+				(:html-head-include-default-style nil "html-style" org-html-head-include-default-style)
+				(:html-head-include-scripts nil "html-scripts" org-html-head-include-scripts)
+				(:html-table-attributes nil nil org-html-table-default-attributes)
+				(:html-table-row-tags nil nil org-html-table-row-tags)
+				(:html-xml-declaration nil nil org-html-xml-declaration)
+				(:html-inline-images nil nil org-html-inline-images)
+				(:infojs-opt "INFOJS_OPT" nil nil)
+				(:creator "CREATOR" nil org-html-creator-string)
+				(:with-latex nil "tex" org-html-with-latex)
+				(:latex-header "LATEX_HEADER" nil nil newline))
+			       ((:filter-options . org-html-infojs-install-script)
+				(:filter-final-output . org-html-final-function))
+			       ("HTML")
+			       (104 "Export to HTML"
+				    ((72 "As HTML buffer" org-html-export-as-html)
+				     (104 "As HTML file" org-html-export-to-html)
+				     (111 "As HTML file and open"
+					  (lambda
+					    (a s v b)
+					    (if a
+						(org-html-export-to-html t s v b)
+					      (org-open-file
+					       (org-html-export-to-html nil s v b)))))))]
+ [cl-struct-org-export-backend ascii nil
+			       ((bold . org-ascii-bold)
+				(center-block . org-ascii-center-block)
+				(clock . org-ascii-clock)
+				(code . org-ascii-code)
+				(comment lambda
+					 (&rest args)
+					 "")
+				(comment-block lambda
+					       (&rest args)
+					       "")
+				(drawer . org-ascii-drawer)
+				(dynamic-block . org-ascii-dynamic-block)
+				(entity . org-ascii-entity)
+				(example-block . org-ascii-example-block)
+				(export-block . org-ascii-export-block)
+				(export-snippet . org-ascii-export-snippet)
+				(fixed-width . org-ascii-fixed-width)
+				(footnote-reference . org-ascii-footnote-reference)
+				(headline . org-ascii-headline)
+				(horizontal-rule . org-ascii-horizontal-rule)
+				(inline-src-block . org-ascii-inline-src-block)
+				(inlinetask . org-ascii-inlinetask)
+				(inner-template . org-ascii-inner-template)
+				(italic . org-ascii-italic)
+				(item . org-ascii-item)
+				(keyword . org-ascii-keyword)
+				(latex-environment . org-ascii-latex-environment)
+				(latex-fragment . org-ascii-latex-fragment)
+				(line-break . org-ascii-line-break)
+				(link . org-ascii-link)
+				(paragraph . org-ascii-paragraph)
+				(plain-list . org-ascii-plain-list)
+				(plain-text . org-ascii-plain-text)
+				(planning . org-ascii-planning)
+				(quote-block . org-ascii-quote-block)
+				(quote-section . org-ascii-quote-section)
+				(radio-target . org-ascii-radio-target)
+				(section . org-ascii-section)
+				(special-block . org-ascii-special-block)
+				(src-block . org-ascii-src-block)
+				(statistics-cookie . org-ascii-statistics-cookie)
+				(strike-through . org-ascii-strike-through)
+				(subscript . org-ascii-subscript)
+				(superscript . org-ascii-superscript)
+				(table . org-ascii-table)
+				(table-cell . org-ascii-table-cell)
+				(table-row . org-ascii-table-row)
+				(target . org-ascii-target)
+				(template . org-ascii-template)
+				(timestamp . org-ascii-timestamp)
+				(underline . org-ascii-underline)
+				(verbatim . org-ascii-verbatim)
+				(verse-block . org-ascii-verse-block))
+			       ((:ascii-charset nil nil org-ascii-charset))
+			       ((:filter-headline . org-ascii-filter-headline-blank-lines)
+				(:filter-parse-tree org-ascii-filter-paragraph-spacing org-ascii-filter-comment-spacing)
+				(:filter-section . org-ascii-filter-headline-blank-lines))
+			       ("ASCII")
+			       (116 "Export to Plain Text"
+				    ((65 "As ASCII buffer"
+					 (lambda
+					   (a s v b)
+					   (org-ascii-export-as-ascii a s v b
+								      '(:ascii-charset ascii))))
+				     (97 "As ASCII file"
+					 (lambda
+					   (a s v b)
+					   (org-ascii-export-to-ascii a s v b
+								      '(:ascii-charset ascii))))
+				     (76 "As Latin1 buffer"
+					 (lambda
+					   (a s v b)
+					   (org-ascii-export-as-ascii a s v b
+								      '(:ascii-charset latin1))))
+				     (108 "As Latin1 file"
+					  (lambda
+					    (a s v b)
+					    (org-ascii-export-to-ascii a s v b
+								       '(:ascii-charset latin1))))
+				     (85 "As UTF-8 buffer"
+					 (lambda
+					   (a s v b)
+					   (org-ascii-export-as-ascii a s v b
+								      '(:ascii-charset utf-8))))
+				     (117 "As UTF-8 file"
+					  (lambda
+					    (a s v b)
+					    (org-ascii-export-to-ascii a s v b
+								       '(:ascii-charset utf-8))))))])
+</pre></br>

@@ -1,11 +1,13 @@
-<strong>replace-match-maybe-edit</strong> is a compiled Lisp function in `<code>replace.el</code>'.<br/>
-<br/>
-(replace-match-maybe-edit NEWTEXT FIXEDCASE LITERAL NOEDIT MATCH-DATA)<br/>
-<br/>
-Make a replacement with `replace-match', editing `\?'.<br/>
-NEWTEXT, FIXEDCASE, LITERAL are just passed on.  If NOEDIT is true, no<br/>
-check for `\?' is made to save time.  MATCH-DATA is used for the<br/>
-replacement.  In case editing is done, it is changed to use markers.<br/>
-<br/>
-The return value is non-nil if there has been no `\?' or NOEDIT was<br/>
-passed in.  If LITERAL is set, no checking is done, anyway.
+<strong>replace-match-maybe-edit</strong> is a compiled Lisp function in `<code>replace.el</code>'.</br>
+</br>
+(replace-match-maybe-edit <u>NEWTEXT</u> <u>FIXEDCASE</u> <u>LITERAL</u> <u>NOEDIT</u> <u>MATCH-DATA</u> <u>BACKWARD</u>)</br>
+</br>
+Make a replacement with `replace-match', editing `\?'.</br>
+<u>FIXEDCASE</u>, <u>LITERAL</u> are passed to `replace-match' (which see).</br>
+After possibly editing it (if `\?' is present), <u>NEWTEXT</u> is also</br>
+passed to `replace-match'.  If <u>NOEDIT</u> is true, no check for `\?'</br>
+is made (to save time).  <u>MATCH-DATA</u> is used for the replacement.</br>
+In case editing is done, it is changed to use markers.</br>
+</br>
+The return value is non-nil if there has been no `\?' or <u>NOEDIT</u> was</br>
+passed in.  If <u>LITERAL</u> is set, no checking is done, anyway.

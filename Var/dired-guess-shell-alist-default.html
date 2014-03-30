@@ -1,168 +1,169 @@
-<strong>dired-guess-shell-alist-default</strong> is a variable defined in `<code>dired-x.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Default alist used for shell command guessing.<br/>
-See `dired-guess-shell-alist-user'.<br/>
-<br/>
-Value: (("\\.tar\\'"<br/>
-  (if dired-guess-shell-gnutar<br/>
-      (concat dired-guess-shell-gnutar " xvf")<br/>
-    "tar xvf")<br/>
-  (if dired-guess-shell-gnutar<br/>
-      (concat "mkdir "<br/>
-	      (file-name-sans-extension file)<br/>
-	      "; " dired-guess-shell-gnutar " -C "<br/>
-	      (file-name-sans-extension file)<br/>
-	      " -xvf")<br/>
-    (concat "mkdir "<br/>
-	    (file-name-sans-extension file)<br/>
-	    "; tar -C "<br/>
-	    (file-name-sans-extension file)<br/>
-	    " -xvf"))<br/>
-  (if dired-guess-shell-gnutar<br/>
-      (concat dired-guess-shell-gnutar " tvf")<br/>
-    "tar tvf"))<br/>
- ("\\.tar\\.Z\\'"<br/>
-  (if dired-guess-shell-gnutar<br/>
-      (concat dired-guess-shell-gnutar " zxvf")<br/>
-    (concat "zcat * | tar xvf -"))<br/>
-  (concat "znew"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")<br/>
-	  " " dired-guess-shell-znew-switches))<br/>
- ("\\.t\\(ar\\.\\)?gz\\'"<br/>
-  (if dired-guess-shell-gnutar<br/>
-      (concat dired-guess-shell-gnutar " zxvf")<br/>
-    (concat "gunzip -qc * | tar xvf -"))<br/>
-  (if dired-guess-shell-gnutar<br/>
-      (concat "mkdir "<br/>
-	      (file-name-sans-extension file)<br/>
-	      "; " dired-guess-shell-gnutar " -C "<br/>
-	      (file-name-sans-extension file)<br/>
-	      " -zxvf")<br/>
-    (concat "mkdir "<br/>
-	    (file-name-sans-extension file)<br/>
-	    "; gunzip -qc * | tar -C "<br/>
-	    (file-name-sans-extension file)<br/>
-	    " -xvf -"))<br/>
-  (concat "gunzip"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q" ""))<br/>
-  (if dired-guess-shell-gnutar<br/>
-      (concat dired-guess-shell-gnutar " ztvf")<br/>
-    (concat "gunzip -qc * | tar tvf -")))<br/>
- ("\\.t\\(ar\\.bz2\\|bz\\)\\'" "bunzip2 -c * | tar xvf -"<br/>
-  (concat "mkdir "<br/>
-	  (file-name-sans-extension file)<br/>
-	  "; bunzip2 -c * | tar -C "<br/>
-	  (file-name-sans-extension file)<br/>
-	  " -xvf -")<br/>
-  "bunzip2")<br/>
- ("\\.t\\(ar\\.\\)?xz\\'" "unxz -c * | tar xvf -"<br/>
-  (concat "mkdir "<br/>
-	  (file-name-sans-extension file)<br/>
-	  "; unxz -c * | tar -C "<br/>
-	  (file-name-sans-extension file)<br/>
-	  " -xvf -")<br/>
-  "unxz")<br/>
- ("\\.shar\\.Z\\'" "zcat * | unshar")<br/>
- ("\\.shar\\.g?z\\'" "gunzip -qc * | unshar")<br/>
- ("\\.e?ps\\'" "ghostview" "xloadimage" "lpr")<br/>
- ("\\.e?ps\\.g?z\\'" "gunzip -qc * | ghostview -"<br/>
-  (concat "gunzip"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")))<br/>
- ("\\.e?ps\\.Z\\'" "zcat * | ghostview -"<br/>
-  (concat "znew"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")<br/>
-	  " " dired-guess-shell-znew-switches))<br/>
- ("\\.patch\\'" "cat * | patch")<br/>
- ("\\.patch\\.g?z\\'" "gunzip -qc * | patch"<br/>
-  (concat "gunzip"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")))<br/>
- ("\\.patch\\.Z\\'" "zcat * | patch"<br/>
-  (concat "znew"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")<br/>
-	  " " dired-guess-shell-znew-switches))<br/>
- ("\\.\\(?:[0-9]\\|man\\)\\'"<br/>
-  (let<br/>
-      ((loc<br/>
-	(Man-support-local-filenames)))<br/>
-    (cond<br/>
-     ((eq loc 'man-db)<br/>
-      "man -l")<br/>
-     ((eq loc 'man)<br/>
-      "man ./")<br/>
-     (t "cat * | tbl | nroff -man -h | col -b"))))<br/>
- ("\\.\\(?:[0-9]\\|man\\)\\.g?z\\'"<br/>
-  (let<br/>
-      ((loc<br/>
-	(Man-support-local-filenames)))<br/>
-    (cond<br/>
-     ((eq loc 'man-db)<br/>
-      "man -l")<br/>
-     ((eq loc 'man)<br/>
-      "man ./")<br/>
-     (t "gunzip -qc * | tbl | nroff -man -h | col -b")))<br/>
-  (concat "gunzip"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")))<br/>
- ("\\.[0-9]\\.Z\\'"<br/>
-  (let<br/>
-      ((loc<br/>
-	(Man-support-local-filenames)))<br/>
-    (cond<br/>
-     ((eq loc 'man-db)<br/>
-      "man -l")<br/>
-     ((eq loc 'man)<br/>
-      "man ./")<br/>
-     (t "zcat * | tbl | nroff -man -h | col -b")))<br/>
-  (concat "znew"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")<br/>
-	  " " dired-guess-shell-znew-switches))<br/>
- ("\\.pod\\'" "perldoc" "pod2man * | nroff -man")<br/>
- ("\\.dvi\\'" "xdvi" "dvips")<br/>
- ("\\.au\\'" "play")<br/>
- ("\\.mpe?g\\'\\|\\.avi\\'" "xine -p")<br/>
- ("\\.ogg\\'" "ogg123")<br/>
- ("\\.mp3\\'" "mpg123")<br/>
- ("\\.wav\\'" "play")<br/>
- ("\\.uu\\'" "uudecode")<br/>
- ("\\.hqx\\'" "mcvert")<br/>
- ("\\.sh\\'" "sh")<br/>
- ("\\.xbm\\'" "bitmap")<br/>
- ("\\.gp\\'" "gnuplot")<br/>
- ("\\.p[bgpn]m\\'" "xloadimage")<br/>
- ("\\.gif\\'" "xloadimage")<br/>
- ("\\.tif\\'" "xloadimage")<br/>
- ("\\.png\\'" "display")<br/>
- ("\\.jpe?g\\'" "xloadimage")<br/>
- ("\\.fig\\'" "xfig")<br/>
- ("\\.out\\'" "xgraph")<br/>
- ("\\.tex\\'" "latex" "tex")<br/>
- ("\\.texi\\(nfo\\)?\\'" "makeinfo" "texi2dvi")<br/>
- ("\\.pdf\\'" "xpdf")<br/>
- ("\\.doc\\'" "antiword" "strings")<br/>
- ("\\.rpm\\'" "rpm -qilp" "rpm -ivh")<br/>
- ("\\.dia\\'" "dia")<br/>
- ("\\.mgp\\'" "mgp")<br/>
- ("\\.zip\\'" "unzip" "unzip -l"<br/>
-  (concat "unzip"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")<br/>
-	  " -d "<br/>
-	  (file-name-sans-extension file)))<br/>
- ("\\.zoo\\'" "zoo x//")<br/>
- ("\\.lzh\\'" "lharc x")<br/>
- ("\\.arc\\'" "arc x")<br/>
- ("\\.shar\\'" "unshar")<br/>
- ("\\.rar\\'" "unrar x")<br/>
- ("\\.7z\\'" "7z x")<br/>
- ("\\.g?z\\'"<br/>
-  (concat "gunzip"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")))<br/>
- ("\\.dz\\'" "dictunzip")<br/>
- ("\\.bz2\\'" "bunzip2")<br/>
- ("\\.xz\\'" "unxz")<br/>
- ("\\.Z\\'" "uncompress"<br/>
-  (concat "znew"<br/>
-	  (if dired-guess-shell-gzip-quiet " -q")<br/>
-	  " " dired-guess-shell-znew-switches))<br/>
- ("\\.sign?\\'" "gpg --verify"))<br/>
-<br/>
+<strong>dired-guess-shell-alist-default</strong> is a variable defined in `<code>dired-x.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Default alist used for shell command guessing.</br>
+See `dired-guess-shell-alist-user'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\.tar\\'"
+  (if dired-guess-shell-gnutar
+      (concat dired-guess-shell-gnutar " xvf")
+    "tar xvf")
+  (if dired-guess-shell-gnutar
+      (concat "mkdir "
+	      (file-name-sans-extension file)
+	      "; " dired-guess-shell-gnutar " -C "
+	      (file-name-sans-extension file)
+	      " -xvf")
+    (concat "mkdir "
+	    (file-name-sans-extension file)
+	    "; tar -C "
+	    (file-name-sans-extension file)
+	    " -xvf"))
+  (if dired-guess-shell-gnutar
+      (concat dired-guess-shell-gnutar " tvf")
+    "tar tvf"))
+ ("\\.tar\\.Z\\'"
+  (if dired-guess-shell-gnutar
+      (concat dired-guess-shell-gnutar " zxvf")
+    (concat "zcat * | tar xvf -"))
+  (concat "znew"
+	  (if dired-guess-shell-gzip-quiet " -q")
+	  " " dired-guess-shell-znew-switches))
+ ("\\.t\\(ar\\.\\)?gz\\'"
+  (if dired-guess-shell-gnutar
+      (concat dired-guess-shell-gnutar " zxvf")
+    (concat "gunzip -qc * | tar xvf -"))
+  (if dired-guess-shell-gnutar
+      (concat "mkdir "
+	      (file-name-sans-extension file)
+	      "; " dired-guess-shell-gnutar " -C "
+	      (file-name-sans-extension file)
+	      " -zxvf")
+    (concat "mkdir "
+	    (file-name-sans-extension file)
+	    "; gunzip -qc * | tar -C "
+	    (file-name-sans-extension file)
+	    " -xvf -"))
+  (concat "gunzip"
+	  (if dired-guess-shell-gzip-quiet " -q" ""))
+  (if dired-guess-shell-gnutar
+      (concat dired-guess-shell-gnutar " ztvf")
+    (concat "gunzip -qc * | tar tvf -")))
+ ("\\.t\\(ar\\.bz2\\|bz\\)\\'" "bunzip2 -c * | tar xvf -"
+  (concat "mkdir "
+	  (file-name-sans-extension file)
+	  "; bunzip2 -c * | tar -C "
+	  (file-name-sans-extension file)
+	  " -xvf -")
+  "bunzip2")
+ ("\\.t\\(ar\\.\\)?xz\\'" "unxz -c * | tar xvf -"
+  (concat "mkdir "
+	  (file-name-sans-extension file)
+	  "; unxz -c * | tar -C "
+	  (file-name-sans-extension file)
+	  " -xvf -")
+  "unxz")
+ ("\\.shar\\.Z\\'" "zcat * | unshar")
+ ("\\.shar\\.g?z\\'" "gunzip -qc * | unshar")
+ ("\\.e?ps\\'" "ghostview" "xloadimage" "lpr")
+ ("\\.e?ps\\.g?z\\'" "gunzip -qc * | ghostview -"
+  (concat "gunzip"
+	  (if dired-guess-shell-gzip-quiet " -q")))
+ ("\\.e?ps\\.Z\\'" "zcat * | ghostview -"
+  (concat "znew"
+	  (if dired-guess-shell-gzip-quiet " -q")
+	  " " dired-guess-shell-znew-switches))
+ ("\\.patch\\'" "cat * | patch")
+ ("\\.patch\\.g?z\\'" "gunzip -qc * | patch"
+  (concat "gunzip"
+	  (if dired-guess-shell-gzip-quiet " -q")))
+ ("\\.patch\\.Z\\'" "zcat * | patch"
+  (concat "znew"
+	  (if dired-guess-shell-gzip-quiet " -q")
+	  " " dired-guess-shell-znew-switches))
+ ("\\.\\(?:[0-9]\\|man\\)\\'"
+  (let
+      ((loc
+	(Man-support-local-filenames)))
+    (cond
+     ((eq loc 'man-db)
+      "man -l")
+     ((eq loc 'man)
+      "man ./")
+     (t "cat * | tbl | nroff -man -h | col -b"))))
+ ("\\.\\(?:[0-9]\\|man\\)\\.g?z\\'"
+  (let
+      ((loc
+	(Man-support-local-filenames)))
+    (cond
+     ((eq loc 'man-db)
+      "man -l")
+     ((eq loc 'man)
+      "man ./")
+     (t "gunzip -qc * | tbl | nroff -man -h | col -b")))
+  (concat "gunzip"
+	  (if dired-guess-shell-gzip-quiet " -q")))
+ ("\\.[0-9]\\.Z\\'"
+  (let
+      ((loc
+	(Man-support-local-filenames)))
+    (cond
+     ((eq loc 'man-db)
+      "man -l")
+     ((eq loc 'man)
+      "man ./")
+     (t "zcat * | tbl | nroff -man -h | col -b")))
+  (concat "znew"
+	  (if dired-guess-shell-gzip-quiet " -q")
+	  " " dired-guess-shell-znew-switches))
+ ("\\.pod\\'" "perldoc" "pod2man * | nroff -man")
+ ("\\.dvi\\'" "xdvi" "dvips")
+ ("\\.au\\'" "play")
+ ("\\.mpe?g\\'\\|\\.avi\\'" "xine -p")
+ ("\\.ogg\\'" "ogg123")
+ ("\\.mp3\\'" "mpg123")
+ ("\\.wav\\'" "play")
+ ("\\.uu\\'" "uudecode")
+ ("\\.hqx\\'" "mcvert")
+ ("\\.sh\\'" "sh")
+ ("\\.xbm\\'" "bitmap")
+ ("\\.gp\\'" "gnuplot")
+ ("\\.p[bgpn]m\\'" "xloadimage")
+ ("\\.gif\\'" "xloadimage")
+ ("\\.tif\\'" "xloadimage")
+ ("\\.png\\'" "display")
+ ("\\.jpe?g\\'" "xloadimage")
+ ("\\.fig\\'" "xfig")
+ ("\\.out\\'" "xgraph")
+ ("\\.tex\\'" "latex" "tex")
+ ("\\.texi\\(nfo\\)?\\'" "makeinfo" "texi2dvi")
+ ("\\.pdf\\'" "xpdf")
+ ("\\.doc\\'" "antiword" "strings")
+ ("\\.rpm\\'" "rpm -qilp" "rpm -ivh")
+ ("\\.dia\\'" "dia")
+ ("\\.mgp\\'" "mgp")
+ ("\\.zip\\'" "unzip" "unzip -l"
+  (concat "unzip"
+	  (if dired-guess-shell-gzip-quiet " -q")
+	  " -d "
+	  (file-name-sans-extension file)))
+ ("\\.zoo\\'" "zoo x//")
+ ("\\.lzh\\'" "lharc x")
+ ("\\.arc\\'" "arc x")
+ ("\\.shar\\'" "unshar")
+ ("\\.rar\\'" "unrar x")
+ ("\\.7z\\'" "7z x")
+ ("\\.g?z\\'"
+  (concat "gunzip"
+	  (if dired-guess-shell-gzip-quiet " -q")))
+ ("\\.dz\\'" "dictunzip")
+ ("\\.bz2\\'" "bunzip2")
+ ("\\.xz\\'" "unxz")
+ ("\\.Z\\'" "uncompress"
+  (concat "znew"
+	  (if dired-guess-shell-gzip-quiet " -q")
+	  " " dired-guess-shell-znew-switches))
+ ("\\.sign?\\'" "gpg --verify"))
+</pre></br>

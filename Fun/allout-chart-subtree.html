@@ -1,30 +1,30 @@
-<strong>allout-chart-subtree</strong> is a compiled Lisp function in `<code>allout.el</code>'.<br/>
-<br/>
-(allout-chart-subtree &optional LEVELS VISIBLE ORIG-DEPTH PREV-DEPTH)<br/>
-<br/>
-Produce a location "chart" of subtopics of the containing topic.<br/>
-<br/>
-Optional argument LEVELS specifies a depth limit (relative to start<br/>
-depth) for the chart.  Null LEVELS means no limit.<br/>
-<br/>
-When optional argument VISIBLE is non-nil, the chart includes<br/>
-only the visible subelements of the charted subjects.<br/>
-<br/>
-The remaining optional args are for internal use by the function.<br/>
-<br/>
-Point is left at the end of the subtree.<br/>
-<br/>
-Charts are used to capture outline structure, so that outline-altering<br/>
-routines need to assess the structure only once, and then use the chart<br/>
-for their elaborate manipulations.<br/>
-<br/>
-The chart entries for the topics are in reverse order, so the<br/>
-last topic is listed first.  The entry for each topic consists of<br/>
-an integer indicating the point at the beginning of the topic<br/>
-prefix.  Charts for offspring consist of a list containing,<br/>
-recursively, the charts for the respective subtopics.  The chart<br/>
-for a topics' offspring precedes the entry for the topic itself.<br/>
-<br/>
-The other function parameters are for internal recursion, and should<br/>
-not be specified by external callers.  ORIG-DEPTH is depth of topic at<br/>
-starting point, and PREV-DEPTH is depth of prior topic.
+<strong>allout-chart-subtree</strong> is a compiled Lisp function in `<code>allout.el</code>'.</br>
+</br>
+(allout-chart-subtree &optional <u>LEVELS</u> <u>VISIBLE</u> <u>ORIG-DEPTH</u> <u>PREV-DEPTH</u>)</br>
+</br>
+Produce a location "chart" of subtopics of the containing topic.</br>
+</br>
+Optional argument <u>LEVELS</u> specifies a depth limit (relative to start</br>
+depth) for the chart.  Null <u>LEVELS</u> means no limit.</br>
+</br>
+When optional argument <u>VISIBLE</u> is non-nil, the chart includes</br>
+only the visible subelements of the charted subjects.</br>
+</br>
+The remaining optional args are for internal use by the function.</br>
+</br>
+Point is left at the end of the subtree.</br>
+</br>
+Charts are used to capture outline structure, so that outline-altering</br>
+routines need to assess the structure only once, and then use the chart</br>
+for their elaborate manipulations.</br>
+</br>
+The chart entries for the topics are in reverse order, so the</br>
+last topic is listed first.  The entry for each topic consists of</br>
+an integer indicating the point at the beginning of the topic</br>
+prefix.  Charts for offspring consist of a list containing,</br>
+recursively, the charts for the respective subtopics.  The chart</br>
+for a topics' offspring precedes the entry for the topic itself.</br>
+</br>
+The other function parameters are for internal recursion, and should</br>
+not be specified by external callers.  <u>ORIG-DEPTH</u> is depth of topic at</br>
+starting point, and <u>PREV-DEPTH</u> is depth of prior topic.

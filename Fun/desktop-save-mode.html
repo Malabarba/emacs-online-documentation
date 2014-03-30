@@ -1,12 +1,24 @@
-<strong>desktop-save-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>desktop.el</code>'.<br/>
-<br/>
-(desktop-save-mode &optional ARG)<br/>
-<br/>
-Toggle desktop saving (Desktop Save mode).<br/>
-With a prefix argument ARG, enable Desktop Save mode if ARG is<br/>
-positive, and disable it otherwise.  If called from Lisp, enable<br/>
-the mode if ARG is omitted or nil.<br/>
-<br/>
-If Desktop Save mode is enabled, the state of Emacs is saved from<br/>
-one session to another.  See variable `desktop-save' and function<br/>
-`desktop-read' for details.
+<strong>desktop-save-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>desktop.el</code>'.</br>
+</br>
+</br>
+(desktop-save-mode &optional <u>ARG</u>)</br>
+</br>
+Toggle desktop saving (Desktop Save mode).</br>
+With a prefix argument <u>ARG</u>, enable Desktop Save mode if <u>ARG</u> is positive,</br>
+and disable it otherwise.  If called from Lisp, enable the mode if <u>ARG</u></br>
+is omitted or nil.</br>
+</br>
+When Desktop Save mode is enabled, the state of Emacs is saved from</br>
+one session to another.  In particular, Emacs will save the desktop when</br>
+it exits (this may prompt you; see the option `desktop-save').  The next</br>
+time Emacs starts, if this mode is active it will restore the desktop.</br>
+</br>
+To manually save the desktop at any time, use the command `M-x desktop-save'.</br>
+To load it, use `M-x desktop-read'.</br>
+</br>
+Once a desktop file exists, Emacs will auto-save it according to the</br>
+option `desktop-auto-save-timeout'.</br>
+</br>
+To see all the options you can set, browse the `desktop' customization group.</br>
+</br>
+For further details, see info node `(emacs)Saving Emacs Sessions'.

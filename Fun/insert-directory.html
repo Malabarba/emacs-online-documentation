@@ -1,26 +1,20 @@
-<strong>insert-directory</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
-<br/>
-(insert-directory FILE SWITCHES &optional WILDCARD FULL-DIRECTORY-P)<br/>
-<br/>
-Insert directory listing for FILE, formatted according to SWITCHES.<br/>
-Leaves point after the inserted text.<br/>
-SWITCHES may be a string of options, or a list of strings.<br/>
-Optional third arg WILDCARD means treat FILE as shell wildcard.<br/>
-Optional fourth arg FULL-DIRECTORY-P means file is a directory and<br/>
-switches do not contain `d', so that a full listing is expected.<br/>
-<br/>
-This version of the function comes from `ls-lisp.el'.<br/>
-If the value of `ls-lisp-use-insert-directory-program' is non-nil then<br/>
-it works exactly like the version from `files.el' and runs a directory<br/>
-listing program whose name is in the variable<br/>
-`insert-directory-program'; if also WILDCARD is non-nil then it runs<br/>
-the shell specified by `shell-file-name'.  If the value of<br/>
-`ls-lisp-use-insert-directory-program' is nil then it runs a Lisp<br/>
-emulation.<br/>
-<br/>
-The Lisp emulation does not run any external programs or shells.  It<br/>
-supports ordinary shell wildcards if `ls-lisp-support-shell-wildcards'<br/>
-is non-nil; otherwise, it interprets wildcards as regular expressions<br/>
-to match file names.  It does not support all `ls' switches -- those<br/>
-that work are: A a B C c F G g h i n R r S s t U u X.  The l switch<br/>
-is assumed to be always present and cannot be turned off.
+<strong>insert-directory</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(insert-directory <u>FILE</u> <u>SWITCHES</u> &optional <u>WILDCARD</u> <u>FULL-DIRECTORY-P</u>)</br>
+</br>
+Insert directory listing for <u>FILE</u>, formatted according to <u>SWITCHES</u>.</br>
+Leaves point after the inserted text.</br>
+<u>SWITCHES</u> may be a string of options, or a list of strings</br>
+representing individual options.</br>
+Optional third arg <u>WILDCARD</u> means treat <u>FILE</u> as shell wildcard.</br>
+Optional fourth arg <u>FULL-DIRECTORY-P</u> means file is a directory and</br>
+switches do not contain `d', so that a full listing is expected.</br>
+</br>
+This works by running a directory listing program</br>
+whose name is in the variable `insert-directory-program'.</br>
+If <u>WILDCARD</u>, it also runs the shell specified by `shell-file-name'.</br>
+</br>
+When <u>SWITCHES</u> contains the long `--dired' option, this function</br>
+treats it specially, for the sake of dired.  However, the</br>
+normally equivalent short `-D' option is just passed on to</br>
+`insert-directory-program', as any other option.

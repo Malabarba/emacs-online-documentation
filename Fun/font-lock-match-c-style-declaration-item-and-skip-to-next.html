@@ -1,22 +1,22 @@
-<strong>font-lock-match-c-style-declaration-item-and-skip-to-next</strong> is a compiled Lisp function in `<code>font-lock.el</code>'.<br/>
-<br/>
-(font-lock-match-c-style-declaration-item-and-skip-to-next LIMIT)<br/>
-<br/>
-Match, and move over, any declaration/definition item after point.<br/>
-Matches after point, but ignores leading whitespace and `*' characters.<br/>
-Does not move further than LIMIT.<br/>
-<br/>
-The expected syntax of a declaration/definition item is `word' (preceded by<br/>
-optional whitespace and `*' characters and proceeded by optional whitespace)<br/>
-optionally followed by a `('.  Everything following the item (but belonging to<br/>
-it) is expected to be skip-able by `scan-sexps', and items are expected to be<br/>
-separated with a `,' and to be terminated with a `;'.<br/>
-<br/>
-Thus the regexp matches after point:	word (<br/>
-					^^^^ ^<br/>
-Where the match subexpressions are:	  1  2<br/>
-<br/>
-The item is delimited by (match-beginning 1) and (match-end 1).<br/>
-If (match-beginning 2) is non-nil, the item is followed by a `('.<br/>
-<br/>
+<strong>font-lock-match-c-style-declaration-item-and-skip-to-next</strong> is a compiled Lisp function in `<code>font-lock.el</code>'.</br>
+</br>
+(font-lock-match-c-style-declaration-item-and-skip-to-next <u>LIMIT</u>)</br>
+</br>
+Match, and move over, any declaration/definition item after point.</br>
+Matches after point, but ignores leading whitespace and `*' characters.</br>
+Does not move further than <u>LIMIT</u>.</br>
+</br>
+The expected syntax of a declaration/definition item is `word' (preceded by</br>
+optional whitespace and `*' characters and proceeded by optional whitespace)</br>
+optionally followed by a `('.  Everything following the item (but belonging to</br>
+it) is expected to be skip-able by `scan-sexps', and items are expected to be</br>
+separated with a `,' and to be terminated with a `;'.</br>
+</br>
+Thus the regexp matches after point:	word (</br>
+					^^^^ ^</br>
+Where the match subexpressions are:	  1  2</br>
+</br>
+The item is delimited by (match-beginning 1) and (match-end 1).</br>
+If (match-beginning 2) is non-nil, the item is followed by a `('.</br>
+</br>
 This function could be MATCHER in a MATCH-ANCHORED `font-lock-keywords' item.

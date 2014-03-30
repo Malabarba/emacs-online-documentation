@@ -1,26 +1,26 @@
-<strong>number-sequence</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(number-sequence FROM &optional TO INC)<br/>
-<br/>
-Return a sequence of numbers from FROM to TO (both inclusive) as a list.<br/>
-INC is the increment used between numbers in the sequence and defaults to 1.<br/>
-So, the Nth element of the list is (+ FROM (* N INC)) where N counts from<br/>
-zero.  TO is only included if there is an N for which TO = FROM + N * INC.<br/>
-If TO is nil or numerically equal to FROM, return (FROM).<br/>
-If INC is positive and TO is less than FROM, or INC is negative<br/>
-and TO is larger than FROM, return nil.<br/>
-If INC is zero and TO is neither nil nor numerically equal to<br/>
-FROM, signal an error.<br/>
-<br/>
-This function is primarily designed for integer arguments.<br/>
-Nevertheless, FROM, TO and INC can be integer or float.  However,<br/>
-floating point arithmetic is inexact.  For instance, depending on<br/>
-the machine, it may quite well happen that<br/>
-(number-sequence 0.4 0.6 0.2) returns the one element list (0.4),<br/>
-whereas (number-sequence 0.4 0.8 0.2) returns a list with three<br/>
-elements.  Thus, if some of the arguments are floats and one wants<br/>
-to make sure that TO is included, one may have to explicitly write<br/>
-TO as (+ FROM (* N INC)) or use a variable whose value was<br/>
-computed with this exact expression.  Alternatively, you can,<br/>
-of course, also replace TO with a slightly larger value<br/>
-(or a slightly more negative value if INC is negative).
+<strong>number-sequence</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+</br>
+(number-sequence <u>FROM</u> &optional <u>TO</u> <u>INC</u>)</br>
+</br>
+Return a sequence of numbers from <u>FROM</u> to <u>TO</u> (both inclusive) as a list.</br>
+<u>INC</u> is the increment used between numbers in the sequence and defaults to 1.</br>
+So, the Nth element of the list is (+ <u>FROM</u> (* N <u>INC</u>)) where N counts from</br>
+zero.  <u>TO</u> is only included if there is an N for which <u>TO</u> = <u>FROM</u> + N * <u>INC</u>.</br>
+If <u>TO</u> is nil or numerically equal to <u>FROM</u>, return (<u>FROM</u>).</br>
+If <u>INC</u> is positive and <u>TO</u> is less than <u>FROM</u>, or <u>INC</u> is negative</br>
+and <u>TO</u> is larger than <u>FROM</u>, return nil.</br>
+If <u>INC</u> is zero and <u>TO</u> is neither nil nor numerically equal to</br>
+<u>FROM</u>, signal an error.</br>
+</br>
+This function is primarily designed for integer arguments.</br>
+Nevertheless, <u>FROM</u>, <u>TO</u> and <u>INC</u> can be integer or float.  However,</br>
+floating point arithmetic is inexact.  For instance, depending on</br>
+the machine, it may quite well happen that</br>
+(number-sequence 0.4 0.6 0.2) returns the one element list (0.4),</br>
+whereas (number-sequence 0.4 0.8 0.2) returns a list with three</br>
+elements.  Thus, if some of the arguments are floats and one wants</br>
+to make sure that <u>TO</u> is included, one may have to explicitly write</br>
+<u>TO</u> as (+ <u>FROM</u> (* N <u>INC</u>)) or use a variable whose value was</br>
+computed with this exact expression.  Alternatively, you can,</br>
+of course, also replace <u>TO</u> with a slightly larger value</br>
+(or a slightly more negative value if <u>INC</u> is negative).

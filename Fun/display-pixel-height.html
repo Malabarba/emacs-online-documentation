@@ -1,6 +1,13 @@
-<strong>display-pixel-height</strong> is a compiled Lisp function in `<code>frame.el</code>'.<br/>
-<br/>
-(display-pixel-height &optional DISPLAY)<br/>
-<br/>
-Return the height of DISPLAY's screen in pixels.<br/>
-For character terminals, each character counts as a single pixel.
+<strong>display-pixel-height</strong> is a compiled Lisp function in `<code>frame.el</code>'.</br>
+</br>
+(display-pixel-height &optional <u>DISPLAY</u>)</br>
+</br>
+Return the height of <u>DISPLAY</u>'s screen in pixels.</br>
+If <u>DISPLAY</u> is omitted or nil, it defaults to the selected frame's display.</br>
+</br>
+For character terminals, each character counts as a single pixel.</br>
+</br>
+For graphical terminals, note that on "multi-monitor" setups this</br>
+refers to the pixel height for all physical monitors associated</br>
+with <u>DISPLAY</u>.  To get information for each physical monitor, use</br>
+`display-monitor-attributes-list'.

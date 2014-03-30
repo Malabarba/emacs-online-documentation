@@ -1,27 +1,25 @@
-<strong>ad-add-advice</strong> is an autoloaded compiled Lisp function in `<code>advice.el</code>'.<br/>
-<br/>
-(ad-add-advice FUNCTION ADVICE CLASS POSITION)<br/>
-<br/>
-Add a piece of ADVICE to FUNCTION's list of advices in CLASS.<br/>
-<br/>
-ADVICE has the form (NAME PROTECTED ENABLED DEFINITION), where<br/>
-NAME is the advice name; PROTECTED is a flag specifying whether<br/>
-to protect against non-local exits; ENABLED is a flag specifying<br/>
-whether to initially enable the advice; and DEFINITION has the<br/>
-form (advice . LAMBDA), where LAMBDA is a lambda expression.<br/>
-<br/>
-If FUNCTION already has a piece of advice with the same name,<br/>
-then POSITION is ignored, and the old advice is overwritten with<br/>
-the new one.<br/>
-<br/>
-If FUNCTION already has one or more pieces of advice of the<br/>
-specified CLASS, then POSITION determines where the new piece<br/>
-goes.  POSITION can either be `first', `last' or a number (where<br/>
-0 corresponds to `first', and numbers outside the valid range are<br/>
-mapped to the closest extremal position).<br/>
-<br/>
-If FUNCTION was not advised already, its advice info will be<br/>
-initialized.  Redefining a piece of advice whose name is part of<br/>
-the cache-id will clear the cache.<br/>
-<br/>
-See Info node `(elisp)Computed Advice' for detailed documentation.
+<strong>ad-add-advice</strong> is an autoloaded compiled Lisp function in `<code>advice.el</code>'.</br>
+</br>
+(ad-add-advice <u>FUNCTION</u> <u>ADVICE</u> <u>CLASS</u> <u>POSITION</u>)</br>
+</br>
+Add a piece of <u>ADVICE</u> to <u>FUNCTION</u>'s list of advices in <u>CLASS</u>.</br>
+</br>
+<u>ADVICE</u> has the form (NAME PROTECTED ENABLED DEFINITION), where</br>
+NAME is the advice name; PROTECTED is a flag specifying whether</br>
+to protect against non-local exits; ENABLED is a flag specifying</br>
+whether to initially enable the advice; and DEFINITION has the</br>
+form (advice . LAMBDA), where LAMBDA is a lambda expression.</br>
+</br>
+If <u>FUNCTION</u> already has a piece of advice with the same name,</br>
+then <u>POSITION</u> is ignored, and the old advice is overwritten with</br>
+the new one.</br>
+</br>
+If <u>FUNCTION</u> already has one or more pieces of advice of the</br>
+specified <u>CLASS</u>, then <u>POSITION</u> determines where the new piece</br>
+goes.  <u>POSITION</u> can either be `first', `last' or a number (where</br>
+0 corresponds to `first', and numbers outside the valid range are</br>
+mapped to the closest extremal position).</br>
+</br>
+If <u>FUNCTION</u> was not advised already, its advice info will be</br>
+initialized.  Redefining a piece of advice whose name is part of</br>
+the cache-id will clear the cache.

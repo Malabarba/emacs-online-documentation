@@ -1,29 +1,27 @@
-<strong>gnus-article-sort-functions</strong> is a variable defined in `<code>gnus-sum.el</code>'.<br/>
-Its value is (gnus-article-sort-by-number)<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-*List of functions used for sorting articles in the summary buffer.<br/>
-<br/>
-Each function takes two articles and returns non-nil if the first<br/>
-article should be sorted before the other.  If you use more than one<br/>
-function, the primary sort function should be the last.  You should<br/>
-probably always include `gnus-article-sort-by-number' in the list of<br/>
-sorting functions -- preferably first.  Also note that sorting by date<br/>
-is often much slower than sorting by number, and the sorting order is<br/>
-very similar.  (Sorting by date means sorting by the time the message<br/>
-was sent, sorting by number means sorting by arrival time.)<br/>
-<br/>
-Each item can also be a list `(not F)' where F is a function;<br/>
-this reverses the sort order.<br/>
-<br/>
-Ready-made functions include `gnus-article-sort-by-number',<br/>
-`gnus-article-sort-by-author', `gnus-article-sort-by-subject',<br/>
-`gnus-article-sort-by-date', `gnus-article-sort-by-random'<br/>
-and `gnus-article-sort-by-score'.<br/>
-<br/>
-When threading is turned on, the variable `gnus-thread-sort-functions'<br/>
-controls how articles are sorted.<br/>
-<br/>
+<strong>gnus-article-sort-functions</strong> is a variable defined in `<code>gnus-sum.el</code>'.</br>
+Its value is <pre>(gnus-article-sort-by-number)</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+*List of functions used for sorting articles in the summary buffer.</br>
+</br>
+Each function takes two articles and returns non-nil if the first</br>
+article should be sorted before the other.  If you use more than one</br>
+function, the primary sort function should be the last.  You should</br>
+probably always include `gnus-article-sort-by-number' in the list of</br>
+sorting functions -- preferably first.  Also note that sorting by date</br>
+is often much slower than sorting by number, and the sorting order is</br>
+very similar.  (Sorting by date means sorting by the time the message</br>
+was sent, sorting by number means sorting by arrival time.)</br>
+</br>
+Each item can also be a list `(not F)' where F is a function;</br>
+this reverses the sort order.</br>
+</br>
+Ready-made functions include `gnus-article-sort-by-number',</br>
+`gnus-article-sort-by-author', `gnus-article-sort-by-subject',</br>
+`gnus-article-sort-by-date', `gnus-article-sort-by-random'</br>
+and `gnus-article-sort-by-score'.</br>
+</br>
+When threading is turned on, the variable `gnus-thread-sort-functions'</br>
+controls how articles are sorted.</br>
+</br>
 You can customize this variable.

@@ -1,5 +1,30 @@
-<strong>slot-unbound</strong> is a Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(slot-unbound &rest LOCAL-ARGS)<br/>
-<br/>
-Slot unbound is invoked during an attempt to reference an unbound slot.
+<strong>slot-unbound</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(slot-unbound &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Slot unbound is invoked during an attempt to reference an unbound slot.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-default-superclass' :PRIMARY (object class slot-name fn)</br>
+Slot unbound is invoked during an attempt to reference an unbound slot.</br>
+OBJECT is the instance of the object being reference.  CLASS is the</br>
+class of OBJECT, and SLOT-NAME is the offending slot.  This function</br>
+throws the signal `unbound-slot'.  You can overload this function and</br>
+return the value to use in place of the unbound value.</br>
+Argument FN is the function signaling this error.</br>
+Use `slot-boundp' to determine if a slot is bound or not.</br>
+</br>
+In CLOS, the argument list is (CLASS OBJECT SLOT-NAME), but</br>
+EIEIO can only dispatch on the first argument, so the first two are swapped.</br>
+</br>
+Defined in `eieio.el'</br>
+</br>
+`eieio-instance-inheritor' :PRIMARY (object class slot-name fn)</br>
+If a slot OBJECT in this CLASS is unbound, try to inherit, or throw a signal.</br>
+SLOT-NAME is the offending slot.  FN is the function signaling the error.</br>
+</br>
+Defined in `eieio-base.el'</br>
+</br>

@@ -1,42 +1,40 @@
-<strong>artist-menu-map</strong> is a variable defined in `<code>artist.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value:<br/>
-(keymap<br/>
- (pen-line menu-item "Pen" artist-select-op-pen-line :help "Draw using the Pen style" :button<br/>
-	   (:radio eq artist-curr-go 'pen-line))<br/>
- (s-line menu-item "Line" artist-select-op-straight-line :help "Draw using the Line style" :button<br/>
-	 (:radio eq artist-curr-go 's-line))<br/>
- (rectangle menu-item "Rectangle" artist-select-op-rectangle :help "Draw using the Rectangle style" :button<br/>
-	    (:radio eq artist-curr-go 'rectangle))<br/>
- (square menu-item "Square" artist-select-op-square :help "Draw using the Square style" :button<br/>
-	 (:radio eq artist-curr-go 'square))<br/>
- (spolyline menu-item "Poly-line" artist-select-op-straight-poly-line :help "Draw using the Poly-line style" :button<br/>
-	    (:radio eq artist-curr-go 'spolyline))<br/>
- (circle menu-item "Ellipse" artist-select-op-circle :help "Draw using the Ellipse style" :button<br/>
-	 (:radio eq artist-curr-go 'circle))<br/>
- (text-ovwrt menu-item "Text" artist-select-op-text-overwrite :help "Draw using the Text style" :button<br/>
-	     (:radio eq artist-curr-go 'text-ovwrt))<br/>
- (spray-get-size menu-item "Spray-can" artist-select-op-spray-set-size :help "Draw using the Spray-can style" :button<br/>
-		 (:radio eq artist-curr-go 'spray-get-size))<br/>
- (erase-rect menu-item "Erase" artist-select-op-erase-rectangle :help "Draw using the Erase style" :button<br/>
-	     (:radio eq artist-curr-go 'erase-rect))<br/>
- (vaporize-lines menu-item "Vaporize" artist-select-op-vaporize-lines :help "Draw using the Vaporize style" :button<br/>
-		 (:radio eq artist-curr-go 'vaporize-lines))<br/>
- (artist-separator menu-item "--")<br/>
- (set-fill menu-item "Character for Fill..." artist-select-fill-char :help "Choose the character to insert when filling in shapes")<br/>
- (set-line menu-item "Character for Line..." artist-select-line-char :help "Choose the character to insert when drawing lines")<br/>
- (set-erase menu-item "Character to Erase..." artist-select-erase-char :help "Choose a specific character to erase")<br/>
- (rubber-band menu-item "Rubber-banding" artist-toggle-rubber-banding :help "Toggle rubber-banding" :button<br/>
-	      (:toggle . artist-rubber-banding))<br/>
- (trimming menu-item "Trim Line Endings" artist-toggle-trim-line-endings :help "Toggle trimming of line-endings" :button<br/>
-	   (:toggle . artist-trim-line-endings))<br/>
- (borders menu-item "Draw Shape Borders" artist-toggle-borderless-shapes :help "Toggle whether shapes are drawn with borders" :button<br/>
-	  (:toggle not artist-borderless-shapes))<br/>
- (spray-chars menu-item "Characters for Spray" artist-select-spray-chars :help "Choose characters for sprayed by the spray-can"))<br/>
-<br/>
+<strong>artist-menu-map</strong> is a variable defined in `<code>artist.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (pen-line menu-item "Pen" artist-select-op-pen-line :help "Draw using the Pen style" :button
+	   (:radio eq artist-curr-go 'pen-line))
+ (s-line menu-item "Line" artist-select-op-straight-line :help "Draw using the Line style" :button
+	 (:radio eq artist-curr-go 's-line))
+ (rectangle menu-item "Rectangle" artist-select-op-rectangle :help "Draw using the Rectangle style" :button
+	    (:radio eq artist-curr-go 'rectangle))
+ (square menu-item "Square" artist-select-op-square :help "Draw using the Square style" :button
+	 (:radio eq artist-curr-go 'square))
+ (spolyline menu-item "Poly-line" artist-select-op-straight-poly-line :help "Draw using the Poly-line style" :button
+	    (:radio eq artist-curr-go 'spolyline))
+ (circle menu-item "Ellipse" artist-select-op-circle :help "Draw using the Ellipse style" :button
+	 (:radio eq artist-curr-go 'circle))
+ (text-ovwrt menu-item "Text" artist-select-op-text-overwrite :help "Draw using the Text style" :button
+	     (:radio eq artist-curr-go 'text-ovwrt))
+ (spray-get-size menu-item "Spray-can" artist-select-op-spray-set-size :help "Draw using the Spray-can style" :button
+		 (:radio eq artist-curr-go 'spray-get-size))
+ (erase-rect menu-item "Erase" artist-select-op-erase-rectangle :help "Draw using the Erase style" :button
+	     (:radio eq artist-curr-go 'erase-rect))
+ (vaporize-lines menu-item "Vaporize" artist-select-op-vaporize-lines :help "Draw using the Vaporize style" :button
+		 (:radio eq artist-curr-go 'vaporize-lines))
+ (artist-separator menu-item "--")
+ (set-fill menu-item "Character for Fill..." artist-select-fill-char :help "Choose the character to insert when filling in shapes")
+ (set-line menu-item "Character for Line..." artist-select-line-char :help "Choose the character to insert when drawing lines")
+ (set-erase menu-item "Character to Erase..." artist-select-erase-char :help "Choose a specific character to erase")
+ (rubber-band menu-item "Rubber-banding" artist-toggle-rubber-banding :help "Toggle rubber-banding" :button
+	      (:toggle . artist-rubber-banding))
+ (trimming menu-item "Trim Line Endings" artist-toggle-trim-line-endings :help "Toggle trimming of line-endings" :button
+	   (:toggle . artist-trim-line-endings))
+ (borders menu-item "Draw Shape Borders" artist-toggle-borderless-shapes :help "Toggle whether shapes are drawn with borders" :button
+	  (:toggle not artist-borderless-shapes))
+ (spray-chars menu-item "Characters for Spray" artist-select-spray-chars :help "Choose characters for sprayed by the spray-can"))
+</pre></br>

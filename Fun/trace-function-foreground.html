@@ -1,0 +1,21 @@
+<strong>trace-function-foreground</strong> is an interactive autoloaded compiled Lisp function in `<code>trace.el</code>'.</br>
+</br>
+</br>
+(trace-function-foreground <u>FUNCTION</u> &optional <u>BUFFER</u> <u>CONTEXT</u>)</br>
+</br>
+Trace calls to function <u>FUNCTION</u>.</br>
+With a prefix argument, also prompt for the trace buffer (default</br>
+`trace-buffer'), and a Lisp expression <u>CONTEXT</u>.</br>
+</br>
+Tracing a function causes every call to that function to insert</br>
+into <u>BUFFER</u> Lisp-style trace messages that display the function's</br>
+arguments and return values.  It also evaluates <u>CONTEXT</u>, if that is</br>
+non-nil, and inserts its value too.  For example, you can use this</br>
+to track the current buffer, or position of point.</br>
+</br>
+This function creates <u>BUFFER</u> if it does not exist.  This buffer will</br>
+popup whenever <u>FUNCTION</u> is called.  Do not use this function to trace</br>
+functions that switch buffers, or do any other display-oriented</br>
+stuff - use `trace-function-background' instead.</br>
+</br>
+To stop tracing a function, use `untrace-function' or `untrace-all'.

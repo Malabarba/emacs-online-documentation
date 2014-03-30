@@ -1,36 +1,36 @@
-<strong>compose-mail</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to C-x m, <menu-bar> <tools> <compose-mail>.<br/>
-<br/>
-(compose-mail &optional TO SUBJECT OTHER-HEADERS CONTINUE SWITCH-FUNCTION YANK-ACTION SEND-ACTIONS RETURN-ACTION)<br/>
-<br/>
-Start composing a mail message to send.<br/>
-This uses the user's chosen mail composition package<br/>
-as selected with the variable `mail-user-agent'.<br/>
-The optional arguments TO and SUBJECT specify recipients<br/>
-and the initial Subject field, respectively.<br/>
-<br/>
-OTHER-HEADERS is an alist specifying additional<br/>
-header fields.  Elements look like (HEADER . VALUE) where both<br/>
-HEADER and VALUE are strings.<br/>
-<br/>
-CONTINUE, if non-nil, says to continue editing a message already<br/>
-being composed.  Interactively, CONTINUE is the prefix argument.<br/>
-<br/>
-SWITCH-FUNCTION, if non-nil, is a function to use to<br/>
-switch to and display the buffer used for mail composition.<br/>
-<br/>
-YANK-ACTION, if non-nil, is an action to perform, if and when necessary,<br/>
-to insert the raw text of the message being replied to.<br/>
-It has the form (FUNCTION . ARGS).  The user agent will apply<br/>
-FUNCTION to ARGS, to insert the raw text of the original message.<br/>
-(The user agent will also run `mail-citation-hook', *after* the<br/>
-original text has been inserted in this way.)<br/>
-<br/>
-SEND-ACTIONS is a list of actions to call when the message is sent.<br/>
-Each action has the form (FUNCTION . ARGS).<br/>
-<br/>
-RETURN-ACTION, if non-nil, is an action for returning to the<br/>
-caller.  It has the form (FUNCTION . ARGS).  The function is<br/>
-called after the mail has been sent or put aside, and the mail<br/>
+<strong>compose-mail</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to C-x m, &lt;menu-bar> &lt;tools> &lt;compose-mail>.</br>
+</br>
+<code>(compose-mail <em>&optional</em> <u>TO</u> <u>SUBJECT</u> <u>OTHER-HEADERS</u> <u>CONTINUE</u> <u>SWITCH-FUNCTION</u> <u>YANK-ACTION</u> <u>SEND-ACTIONS</u> <u>RETURN-ACTION</u></code>)</br>
+</br>
+Start composing a mail message to send.</br>
+This uses the user's chosen mail composition package</br>
+as selected with the variable `mail-user-agent'.</br>
+The optional arguments <u>TO</u> and <u>SUBJECT</u> specify recipients</br>
+and the initial Subject field, respectively.</br>
+</br>
+<u>OTHER-HEADERS</u> is an alist specifying additional</br>
+header fields.  Elements look like (HEADER . VALUE) where both</br>
+HEADER and VALUE are strings.</br>
+</br>
+<u>CONTINUE</u>, if non-nil, says to continue editing a message already</br>
+being composed.  Interactively, <u>CONTINUE</u> is the prefix argument.</br>
+</br>
+<u>SWITCH-FUNCTION</u>, if non-nil, is a function to use to</br>
+switch to and display the buffer used for mail composition.</br>
+</br>
+<u>YANK-ACTION</u>, if non-nil, is an action to perform, if and when necessary,</br>
+to insert the raw text of the message being replied to.</br>
+It has the form (FUNCTION . ARGS).  The user agent will apply</br>
+FUNCTION to ARGS, to insert the raw text of the original message.</br>
+(The user agent will also run `mail-citation-hook', *after* the</br>
+original text has been inserted in this way.)</br>
+</br>
+<u>SEND-ACTIONS</u> is a list of actions to call when the message is sent.</br>
+Each action has the form (FUNCTION . ARGS).</br>
+</br>
+<u>RETURN-ACTION</u>, if non-nil, is an action for returning to the</br>
+caller.  It has the form (FUNCTION . ARGS).  The function is</br>
+called after the mail has been sent or put aside, and the mail</br>
 buffer buried.

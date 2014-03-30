@@ -1,17 +1,17 @@
-<strong>c-literal-limits-fast</strong> is an alias for `c-literal-limits' in `<code>cc-engine.el</code>'.<br/>
-<br/>
-(c-literal-limits-fast &optional LIM NEAR NOT-IN-DELIMITER)<br/>
-<br/>
-Return a cons of the beginning and end positions of the comment or<br/>
-string surrounding point (including both delimiters), or nil if point<br/>
-isn't in one.  If LIM is non-nil, it's used as the "safe" position<br/>
-to start parsing from.  If NEAR is non-nil, then the limits of any<br/>
-literal next to point is returned.  "Next to" means there's only<br/>
-spaces and tabs between point and the literal.  The search for such a<br/>
-literal is done first in forward direction.  If NOT-IN-DELIMITER is<br/>
-non-nil, the case when point is inside a starting delimiter won't be<br/>
-recognized.  This only has effect for comments which have starting<br/>
-delimiters with more than one character.<br/>
-<br/>
-Note that this function might do hidden buffer changes.  See the<br/>
+<strong>c-literal-limits-fast</strong> is an alias for `<strong><a href="c-literal-limits">c-literal-limits</a></strong>' in `<code>cc-engine.el</code>'.</br>
+</br>
+(c-literal-limits-fast &optional <u>LIM</u> <u>NEAR</u> <u>NOT-IN-DELIMITER</u>)</br>
+</br>
+Return a cons of the beginning and end positions of the comment or</br>
+string surrounding point (including both delimiters), or nil if point</br>
+isn't in one.  If <u>LIM</u> is non-nil, it's used as the "safe" position</br>
+to start parsing from.  If <u>NEAR</u> is non-nil, then the limits of any</br>
+literal next to point is returned.  "Next to" means there's only</br>
+spaces and tabs between point and the literal.  The search for such a</br>
+literal is done first in forward direction.  If <u>NOT-IN-DELIMITER</u> is</br>
+non-nil, the case when point is inside a starting delimiter won't be</br>
+recognized.  This only has effect for comments which have starting</br>
+delimiters with more than one character.</br>
+</br>
+Note that this function might do hidden buffer changes.  See the</br>
 comment at the start of cc-engine.el for more info.

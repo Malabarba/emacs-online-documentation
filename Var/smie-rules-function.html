@@ -1,34 +1,36 @@
-<strong>smie-rules-function</strong> is a variable defined in `<code>smie.el</code>'.<br/>
-Its value is ignore<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function providing the indentation rules.<br/>
-It takes two arguments METHOD and ARG where the meaning of ARG<br/>
-and the expected return value depends on METHOD.<br/>
-METHOD can be:<br/>
-- :after, in which case ARG is a token and the function should return the<br/>
-  OFFSET to use for indentation after ARG.<br/>
-- :before, in which case ARG is a token and the function should return the<br/>
-  OFFSET to use to indent ARG itself.<br/>
-- :elem, in which case the function should return either:<br/>
-  - the offset to use to indent function arguments (ARG = `arg')<br/>
-  - the basic indentation step (ARG = `basic').<br/>
-- :list-intro, in which case ARG is a token and the function should return<br/>
-  non-nil if TOKEN is followed by a list of expressions (not separated by any<br/>
-  token) rather than an expression.<br/>
-<br/>
-When ARG is a token, the function is called with point just before that token.<br/>
-A return value of nil always means to fallback on the default behavior, so the<br/>
-function should return nil for arguments it does not expect.<br/>
-<br/>
-OFFSET can be:<br/>
-nil				use the default indentation rule.<br/>
-(column . COLUMN)		indent to column COLUMN.<br/>
-NUMBER				offset by NUMBER, relative to a base token<br/>
-				which is the current token for :after and<br/>
-				its parent for :before.<br/>
-<br/>
-The functions whose name starts with "smie-rule-" are helper functions<br/>
+<strong>smie-rules-function</strong> is a variable defined in `<code>smie.el</code>'.</br>
+Its value is <pre>ignore</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function providing the indentation rules.</br>
+It takes two arguments METHOD and ARG where the meaning of ARG</br>
+and the expected return value depends on METHOD.</br>
+METHOD can be:</br>
+- :after, in which case ARG is a token and the function should return the</br>
+  OFFSET to use for indentation after ARG.</br>
+- :before, in which case ARG is a token and the function should return the</br>
+  OFFSET to use to indent ARG itself.</br>
+- :elem, in which case the function should return either:</br>
+  - the offset to use to indent function arguments (ARG = `arg')</br>
+  - the basic indentation step (ARG = `basic').</br>
+- :list-intro, in which case ARG is a token and the function should return</br>
+  non-nil if TOKEN is followed by a list of expressions (not separated by any</br>
+  token) rather than an expression.</br>
+- :close-all, in which case ARG is a close-paren token at indentation and</br>
+  the function should return non-nil if it should be aligned with the opener</br>
+  of the last close-paren token on the same line, if there are multiple.</br>
+  Otherwise, it will be aligned with its own opener.</br>
+</br>
+When ARG is a token, the function is called with point just before that token.</br>
+A return value of nil always means to fallback on the default behavior, so the</br>
+function should return nil for arguments it does not expect.</br>
+</br>
+OFFSET can be:</br>
+nil				use the default indentation rule.</br>
+(column . COLUMN)		indent to column COLUMN.</br>
+NUMBER				offset by NUMBER, relative to a base token</br>
+				which is the current token for :after and</br>
+				its parent for :before.</br>
+</br>
+The functions whose name starts with "smie-rule-" are helper functions</br>
 designed specifically for use in this function.

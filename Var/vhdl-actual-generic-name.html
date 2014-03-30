@@ -1,0 +1,26 @@
+<strong>vhdl-actual-generic-name</strong> is a variable defined in `<code>vhdl-mode.el</code>'.</br>
+Its value is <pre>(".*" . "\\&")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specifies how actual generic names are obtained from formal generic names.</br>
+In a component instantiation, an actual generic name can be</br>
+obtained by modifying the formal generic name (e.g. attaching or stripping</br>
+off a substring).</br>
+</br>
+FROM REGEXP is a regular expression matching the original name:</br>
+  ".*"       matches the entire string</br>
+  "\(...\)"  matches a substring</br>
+TO STRING specifies the string to be inserted as new name:</br>
+  "\&"  means substitute entire matched text</br>
+  "\N"  means substitute what matched the Nth "\(...\)"</br>
+Examples:</br>
+  ".*"           "\&"    inserts original string</br>
+  ".*"           "\&_i"  attaches "_i" to original string</br>
+  "\(.*\)_[io]$" "\1"    strips off "_i" or "_o" from original string</br>
+  ".*"           "foo"   inserts constant string "foo"</br>
+  ".*"           ""      inserts empty string</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

@@ -1,27 +1,27 @@
-<strong>epa-decrypt-region</strong> is an interactive autoloaded compiled Lisp function in `<code>epa.el</code>'.<br/>
-<br/>
-It is bound to <menu-bar> <tools> <encryption-decryption> <decrypt-region>.<br/>
-<br/>
-(epa-decrypt-region START END &optional MAKE-BUFFER-FUNCTION)<br/>
-<br/>
-Decrypt the current region between START and END.<br/>
-<br/>
-If MAKE-BUFFER-FUNCTION is non-nil, call it to prepare an output buffer.<br/>
-It should return that buffer.  If it copies the input, it should<br/>
-delete the text now being decrypted.  It should leave point at the<br/>
-proper place to insert the plaintext.<br/>
-<br/>
-Be careful about using this command in Lisp programs!<br/>
-Since this function operates on regions, it does some tricks such<br/>
-as coding-system detection and unibyte/multibyte conversion.  If<br/>
-you are sure how the data in the region should be treated, you<br/>
-should consider using the string based counterpart<br/>
-`epg-decrypt-string', or the file based counterpart<br/>
-`epg-decrypt-file' instead.<br/>
-<br/>
-For example:<br/>
-<br/>
-(let ((context (epg-make-context 'OpenPGP)))<br/>
-  (decode-coding-string<br/>
-    (epg-decrypt-string context (buffer-substring start end))<br/>
+<strong>epa-decrypt-region</strong> is an interactive autoloaded compiled Lisp function in `<code>epa.el</code>'.</br>
+</br>
+It is bound to &lt;menu-bar> &lt;tools> &lt;encryption-decryption> &lt;decrypt-region>.</br>
+</br>
+<code>(epa-decrypt-region <u>START</u> <u>END</u> <em>&optional</em> <u>MAKE-BUFFER-FUNCTION</u></code>)</br>
+</br>
+Decrypt the current region between <u>START</u> and <u>END</u>.</br>
+</br>
+If <u>MAKE-BUFFER-FUNCTION</u> is non-nil, call it to prepare an output buffer.</br>
+It should return that buffer.  If it copies the input, it should</br>
+delete the text now being decrypted.  It should leave point at the</br>
+proper place to insert the plaintext.</br>
+</br>
+Be careful about using this command in Lisp programs!</br>
+Since this function operates on regions, it does some tricks such</br>
+as coding-system detection and unibyte/multibyte conversion.  If</br>
+you are sure how the data in the region should be treated, you</br>
+should consider using the string based counterpart</br>
+`epg-decrypt-string', or the file based counterpart</br>
+`epg-decrypt-file' instead.</br>
+</br>
+For example:</br>
+</br>
+(let ((context (epg-make-context 'OpenPGP)))</br>
+  (decode-coding-string</br>
+    (epg-decrypt-string context (buffer-substring start end))</br>
     'utf-8))

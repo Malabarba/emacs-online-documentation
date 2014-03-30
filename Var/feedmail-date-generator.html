@@ -1,34 +1,34 @@
-<strong>feedmail-date-generator</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
-Its value is t<br/>
-<br/>
-Documentation:<br/>
-Specifies the creation of a Date: header field.<br/>
-<br/>
-If nil, nothing is done about Date:.<br/>
-<br/>
-If t, a Date: header of a predetermined format is produced, but only<br/>
-if there is not already a Date: in the message.  A value of t is<br/>
-equivalent to using the function `feedmail-default-date-generator'.<br/>
-<br/>
-If neither nil nor t, it may be a string, a fiddle-plex, or a function<br/>
-which returns either nil, t, a string, or a fiddle-plex (or, in fact,<br/>
-another function, but let's not be ridiculous).  If a string, it<br/>
-should be just the contents of the header, not the name of the header<br/>
-itself nor the trailing newline.  If a function, it will be called<br/>
-with one argument: the possibly-nil name of the file associated with<br/>
-the message buffer.  For an explanation of fiddle-plexes, see the<br/>
-documentation for the variable `feedmail-fiddle-plex-blurb'.  In all<br/>
-cases the name element of the fiddle-plex is ignored and is hardwired<br/>
-by feedmail to either "Date" or "Resent-Date".<br/>
-<br/>
-If you decide to format your own date field, do us all a favor and know<br/>
-what you're doing.  Study the relevant parts of RFC-822 and RFC-1123.<br/>
-Don't make me come up there!<br/>
-<br/>
-You should let feedmail generate a Date: for you unless you are sure<br/>
-that whatever you give your messages to will do it for you (e.g., most<br/>
-configurations of sendmail).  Even if the latter case is true, it<br/>
-probably won't hurt you to generate your own, and it will then show up<br/>
-in the saved message if you use Fcc:.<br/>
-<br/>
+<strong>feedmail-date-generator</strong> is a variable defined in `<code>feedmail.el</code>'.</br>
+Its value is <pre>t</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specifies the creation of a Date: header field.</br>
+</br>
+If nil, nothing is done about Date:.</br>
+</br>
+If t, a Date: header of a predetermined format is produced, but only</br>
+if there is not already a Date: in the message.  A value of t is</br>
+equivalent to using the function `feedmail-default-date-generator'.</br>
+</br>
+If neither nil nor t, it may be a string, a fiddle-plex, or a function</br>
+which returns either nil, t, a string, or a fiddle-plex (or, in fact,</br>
+another function, but let's not be ridiculous).  If a string, it</br>
+should be just the contents of the header, not the name of the header</br>
+itself nor the trailing newline.  If a function, it will be called</br>
+with one argument: the possibly-nil name of the file associated with</br>
+the message buffer.  For an explanation of fiddle-plexes, see the</br>
+documentation for the variable `feedmail-fiddle-plex-blurb'.  In all</br>
+cases the name element of the fiddle-plex is ignored and is hardwired</br>
+by feedmail to either "Date" or "Resent-Date".</br>
+</br>
+If you decide to format your own date field, do us all a favor and know</br>
+what you're doing.  Study the relevant parts of RFC-822 and RFC-1123.</br>
+Don't make me come up there!</br>
+</br>
+You should let feedmail generate a Date: for you unless you are sure</br>
+that whatever you give your messages to will do it for you (e.g., most</br>
+configurations of sendmail).  Even if the latter case is true, it</br>
+probably won't hurt you to generate your own, and it will then show up</br>
+in the saved message if you use Fcc:.</br>
+</br>
 You can customize this variable.

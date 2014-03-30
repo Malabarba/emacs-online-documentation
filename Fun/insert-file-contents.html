@@ -1,28 +1,28 @@
-<strong>insert-file-contents</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(insert-file-contents FILENAME &optional VISIT BEG END REPLACE)<br/>
-<br/>
-Insert contents of file FILENAME after point.<br/>
-Returns list of absolute file name and number of characters inserted.<br/>
-If second argument VISIT is non-nil, the buffer's visited filename and<br/>
-last save file modtime are set, and it is marked unmodified.  If<br/>
-visiting and the file does not exist, visiting is completed before the<br/>
-error is signaled.<br/>
-<br/>
-The optional third and fourth arguments BEG and END specify what portion<br/>
-of the file to insert.  These arguments count bytes in the file, not<br/>
-characters in the buffer.  If VISIT is non-nil, BEG and END must be nil.<br/>
-<br/>
-If optional fifth argument REPLACE is non-nil, replace the current<br/>
-buffer contents (in the accessible portion) with the file contents.<br/>
-This is better than simply deleting and inserting the whole thing<br/>
-because (1) it preserves some marker positions and (2) it puts less data<br/>
-in the undo list.  When REPLACE is non-nil, the second return value is<br/>
-the number of characters that replace previous buffer contents.<br/>
-<br/>
-This function does code conversion according to the value of<br/>
-`coding-system-for-read' or `file-coding-system-alist', and sets the<br/>
-variable `last-coding-system-used' to the coding system actually used.<br/>
-<br/>
-In addition, this function decodes the inserted text from known formats<br/>
+<strong>insert-file-contents</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(insert-file-contents <u>FILENAME</u> &optional <u>VISIT</u> <u>BEG</u> <u>END</u> <u>REPLACE</u>)</br>
+</br>
+Insert contents of file <u>FILENAME</u> after point.</br>
+Returns list of absolute file name and number of characters inserted.</br>
+If second argument <u>VISIT</u> is non-nil, the buffer's visited filename and</br>
+last save file modtime are set, and it is marked unmodified.  If</br>
+visiting and the file does not exist, visiting is completed before the</br>
+error is signaled.</br>
+</br>
+The optional third and fourth arguments <u>BEG</u> and <u>END</u> specify what portion</br>
+of the file to insert.  These arguments count bytes in the file, not</br>
+characters in the buffer.  If <u>VISIT</u> is non-nil, <u>BEG</u> and <u>END</u> must be nil.</br>
+</br>
+If optional fifth argument <u>REPLACE</u> is non-nil, replace the current</br>
+buffer contents (in the accessible portion) with the file contents.</br>
+This is better than simply deleting and inserting the whole thing</br>
+because (1) it preserves some marker positions and (2) it puts less data</br>
+in the undo list.  When <u>REPLACE</u> is non-nil, the second return value is</br>
+the number of characters that replace previous buffer contents.</br>
+</br>
+This function does code conversion according to the value of</br>
+`coding-system-for-read' or `file-coding-system-alist', and sets the</br>
+variable `last-coding-system-used' to the coding system actually used.</br>
+</br>
+In addition, this function decodes the inserted text from known formats</br>
 by calling `format-decode', which see.

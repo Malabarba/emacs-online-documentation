@@ -1,0 +1,48 @@
+<strong>profiler-report-menu</strong> is a variable defined in `<code>profiler.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for Profiler Report mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Profiler"
+	(Next\ Entry menu-item "Next Entry" profiler-report-next-entry :help "Move to next entry")
+	(Previous\ Entry menu-item "Previous Entry" profiler-report-previous-entry :help "Move to previous entry")
+	(nil menu-item "--")
+	(Toggle\ Entry menu-item "Toggle Entry" profiler-report-toggle-entry :enable
+		       (profiler-report-calltree-at-point)
+		       :help "Expand or collapse the current entry")
+	(Find\ Entry menu-item "Find Entry" profiler-report-find-entry :enable
+		     (profiler-report-calltree-at-point)
+		     :help "Find the definition of the current entry")
+	(Describe\ Entry menu-item "Describe Entry" profiler-report-describe-entry :enable
+			 (profiler-report-calltree-at-point)
+			 :help "Show the documentation of the current entry")
+	(nil-6 menu-item "--")
+	(Show\ Calltree menu-item "Show Calltree" profiler-report-render-calltree :enable profiler-report-reversed :help "Show calltree view")
+	(Show\ Reversed\ Calltree menu-item "Show Reversed Calltree" profiler-report-render-reversed-calltree :enable
+				  (not profiler-report-reversed)
+				  :help "Show reversed calltree view")
+	(Sort\ Ascending menu-item "Sort Ascending" profiler-report-ascending-sort :enable
+			 (not
+			  (eq profiler-report-order 'ascending))
+			 :help "Sort calltree view in ascending order")
+	(Sort\ Descending menu-item "Sort Descending" profiler-report-descending-sort :enable
+			  (not
+			   (eq profiler-report-order 'descending))
+			  :help "Sort calltree view in descending order")
+	(nil-11 menu-item "--")
+	(Compare\ Profile\.\.\. menu-item "Compare Profile..." profiler-report-compare-profile :help "Compare current profile with another")
+	(Write\ Profile\.\.\. menu-item "Write Profile..." profiler-report-write-profile :help "Write current profile to a file")
+	(nil-14 menu-item "--")
+	(Start\ Profiler menu-item "Start Profiler" profiler-start :enable
+			 (not
+			  (profiler-running-p))
+			 :help "Start profiling")
+	(Stop\ Profiler menu-item "Stop Profiler" profiler-stop :enable
+			(profiler-running-p)
+			:help "Stop profiling")
+	(New\ Report menu-item "New Report" profiler-report :enable
+		     (profiler-running-p)
+		     :help "Make a new report"))
+</pre></br>

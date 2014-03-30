@@ -1,19 +1,19 @@
-<strong>ada-contextual-menu</strong> is a variable defined in `<code>ada-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Menu to use when the user presses the right mouse button.<br/>
-The variable `ada-contextual-menu-on-identifier' will be set to t before<br/>
-displaying the menu if point was on an identifier.<br/>
-<br/>
-Value:<br/>
-(keymap "Ada"<br/>
-	(Goto\ Declaration/Body menu-item "Goto Declaration/Body" ada-point-and-xref :visible ada-contextual-menu-on-identifier)<br/>
-	(Goto\ Body menu-item "Goto Body" ada-point-and-xref-body :visible ada-contextual-menu-on-identifier)<br/>
-	(Goto\ Previous\ Reference menu-item "Goto Previous Reference" ada-xref-goto-previous-reference)<br/>
-	(List\ References menu-item "List References" ada-find-references :visible ada-contextual-menu-on-identifier)<br/>
-	(List\ Local\ References menu-item "List Local References" ada-find-local-references :visible ada-contextual-menu-on-identifier)<br/>
-	(- menu-item "-" nil :enable 'nil)<br/>
-	(Other\ File menu-item "Other File" ff-find-other-file)<br/>
-	(Goto\ Parent\ Unit menu-item "Goto Parent Unit" ada-goto-parent))<br/>
-<br/>
+<strong>ada-contextual-menu</strong> is a variable defined in `<code>ada-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu to use when the user presses the right mouse button.</br>
+The variable `ada-contextual-menu-on-identifier' will be set to t before</br>
+displaying the menu if point was on an identifier.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Ada"
+	(Goto\ Declaration/Body menu-item "Goto Declaration/Body" ada-point-and-xref :visible ada-contextual-menu-on-identifier)
+	(Goto\ Body menu-item "Goto Body" ada-point-and-xref-body :visible ada-contextual-menu-on-identifier)
+	(Goto\ Previous\ Reference menu-item "Goto Previous Reference" ada-xref-goto-previous-reference)
+	(List\ References menu-item "List References" ada-find-references :visible ada-contextual-menu-on-identifier)
+	(List\ Local\ References menu-item "List Local References" ada-find-local-references :visible ada-contextual-menu-on-identifier)
+	(- menu-item "-" nil :enable 'nil)
+	(Other\ File menu-item "Other File" ff-find-other-file)
+	(Goto\ Parent\ Unit menu-item "Goto Parent Unit" ada-goto-parent))
+</pre></br>

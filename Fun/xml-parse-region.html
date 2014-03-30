@@ -1,28 +1,28 @@
-<strong>xml-parse-region</strong> is an autoloaded compiled Lisp function in `<code>xml.el</code>'.<br/>
-<br/>
-(xml-parse-region &optional BEG END BUFFER PARSE-DTD PARSE-NS)<br/>
-<br/>
-Parse the region from BEG to END in BUFFER.<br/>
-Return the XML parse tree, or raise an error if the region does<br/>
-not contain well-formed XML.<br/>
-<br/>
-If BEG is nil, it defaults to `point-min'.<br/>
-If END is nil, it defaults to `point-max'.<br/>
-If BUFFER is nil, it defaults to the current buffer.<br/>
-If PARSE-DTD is non-nil, parse the DTD and return it as the first<br/>
-element of the list.<br/>
-If PARSE-NS is non-nil, then QNAMES are expanded.  By default,<br/>
-the variable `xml-default-ns' is the mapping from namespaces to<br/>
-URIs, and expanded names will be returned as a cons<br/>
-<br/>
-  ("namespace:" . "foo").<br/>
-<br/>
-If PARSE-NS is an alist, it will be used as the mapping from<br/>
-namespace to URIs instead.<br/>
-<br/>
-If it is the symbol 'symbol-qnames, expanded names will be<br/>
-returned as a plain symbol 'namespace:foo instead of a cons.<br/>
-<br/>
-Both features can be combined by providing a cons cell<br/>
-<br/>
+<strong>xml-parse-region</strong> is an autoloaded compiled Lisp function in `<code>xml.el</code>'.</br>
+</br>
+(xml-parse-region &optional <u>BEG</u> <u>END</u> <u>BUFFER</u> <u>PARSE-DTD</u> <u>PARSE-NS</u>)</br>
+</br>
+Parse the region from <u>BEG</u> to <u>END</u> in <u>BUFFER</u>.</br>
+Return the XML parse tree, or raise an error if the region does</br>
+not contain well-formed XML.</br>
+</br>
+If <u>BEG</u> is nil, it defaults to `point-min'.</br>
+If <u>END</u> is nil, it defaults to `point-max'.</br>
+If <u>BUFFER</u> is nil, it defaults to the current buffer.</br>
+If <u>PARSE-DTD</u> is non-nil, parse the DTD and return it as the first</br>
+element of the list.</br>
+If <u>PARSE-NS</u> is non-nil, then QNAMES are expanded.  By default,</br>
+the variable `xml-default-ns' is the mapping from namespaces to</br>
+URIs, and expanded names will be returned as a cons</br>
+</br>
+  ("namespace:" . "foo").</br>
+</br>
+If <u>PARSE-NS</u> is an alist, it will be used as the mapping from</br>
+namespace to URIs instead.</br>
+</br>
+If it is the symbol 'symbol-qnames, expanded names will be</br>
+returned as a plain symbol 'namespace:foo instead of a cons.</br>
+</br>
+Both features can be combined by providing a cons cell</br>
+</br>
   (symbol-qnames . ALIST).

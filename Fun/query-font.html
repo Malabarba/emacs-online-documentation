@@ -1,44 +1,44 @@
-<strong>query-font</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(query-font FONT-OBJECT)<br/>
-<br/>
-Return information about FONT-OBJECT.<br/>
-The value is a vector:<br/>
-  [ NAME FILENAME PIXEL-SIZE SIZE ASCENT DESCENT SPACE-WIDTH AVERAGE-WIDTH<br/>
-    CAPABILITY ]<br/>
-<br/>
-NAME is the font name, a string (or nil if the font backend doesn't<br/>
-provide a name).<br/>
-<br/>
-FILENAME is the font file name, a string (or nil if the font backend<br/>
-doesn't provide a file name).<br/>
-<br/>
-PIXEL-SIZE is a pixel size by which the font is opened.<br/>
-<br/>
-SIZE is a maximum advance width of the font in pixels.<br/>
-<br/>
-ASCENT, DESCENT, SPACE-WIDTH, AVERAGE-WIDTH are metrics of the font in<br/>
-pixels.<br/>
-<br/>
-CAPABILITY is a list whose first element is a symbol representing the<br/>
-font format (x, opentype, truetype, type1, pcf, or bdf) and the<br/>
-remaining elements describe the details of the font capability.<br/>
-<br/>
-If the font is OpenType font, the form of the list is<br/>
-  (opentype GSUB GPOS)<br/>
-where GSUB shows which "GSUB" features the font supports, and GPOS<br/>
-shows which "GPOS" features the font supports.  Both GSUB and GPOS are<br/>
-lists of the format:<br/>
-  ((SCRIPT (LANGSYS FEATURE ...) ...) ...)<br/>
-<br/>
-If the font is not OpenType font, currently the length of the form is<br/>
-one.<br/>
-<br/>
-SCRIPT is a symbol representing OpenType script tag.<br/>
-<br/>
-LANGSYS is a symbol representing OpenType langsys tag, or nil<br/>
-representing the default langsys.<br/>
-<br/>
-FEATURE is a symbol representing OpenType feature tag.<br/>
-<br/>
+<strong>query-font</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(query-font <u>FONT-OBJECT</u>)</br>
+</br>
+Return information about <u>FONT-OBJECT</u>.</br>
+The value is a vector:</br>
+  [ NAME FILENAME PIXEL-SIZE SIZE ASCENT DESCENT SPACE-WIDTH AVERAGE-WIDTH</br>
+    CAPABILITY ]</br>
+</br>
+NAME is the font name, a string (or nil if the font backend doesn't</br>
+provide a name).</br>
+</br>
+FILENAME is the font file name, a string (or nil if the font backend</br>
+doesn't provide a file name).</br>
+</br>
+PIXEL-SIZE is a pixel size by which the font is opened.</br>
+</br>
+SIZE is a maximum advance width of the font in pixels.</br>
+</br>
+ASCENT, DESCENT, SPACE-WIDTH, AVERAGE-WIDTH are metrics of the font in</br>
+pixels.</br>
+</br>
+CAPABILITY is a list whose first element is a symbol representing the</br>
+font format (x, opentype, truetype, type1, pcf, or bdf) and the</br>
+remaining elements describe the details of the font capability.</br>
+</br>
+If the font is OpenType font, the form of the list is</br>
+  (opentype GSUB GPOS)</br>
+where GSUB shows which "GSUB" features the font supports, and GPOS</br>
+shows which "GPOS" features the font supports.  Both GSUB and GPOS are</br>
+lists of the format:</br>
+  ((SCRIPT (LANGSYS FEATURE ...) ...) ...)</br>
+</br>
+If the font is not OpenType font, currently the length of the form is</br>
+one.</br>
+</br>
+SCRIPT is a symbol representing OpenType script tag.</br>
+</br>
+LANGSYS is a symbol representing OpenType langsys tag, or nil</br>
+representing the default langsys.</br>
+</br>
+FEATURE is a symbol representing OpenType feature tag.</br>
+</br>
 If the font is not OpenType font, CAPABILITY is nil.

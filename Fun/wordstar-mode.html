@@ -1,107 +1,153 @@
-<strong>wordstar-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>ws-mode.el</code>'.<br/>
-<br/>
-(wordstar-mode)<br/>
-<br/>
-Major mode with WordStar-like key bindings.<br/>
-<br/>
-BUGS:<br/>
- - Help menus with WordStar commands (C-j just calls help-for-help)<br/>
-   are not implemented<br/>
- - Options for search and replace<br/>
- - Show markers (C-k h) is somewhat strange<br/>
- - Search and replace (C-q a) is only available in forward direction<br/>
-<br/>
-No key bindings beginning with ESC are installed, they will work<br/>
-Emacs-like.<br/>
-<br/>
-The key bindings are:<br/>
-<br/>
-  C-a		backward-word<br/>
-  C-b		fill-paragraph<br/>
-  C-c		scroll-up-line<br/>
-  C-d		forward-char<br/>
-  C-e		previous-line<br/>
-  C-f		forward-word<br/>
-  C-g		delete-char<br/>
-  C-h		backward-char<br/>
-  C-i		indent-for-tab-command<br/>
-  C-j		help-for-help<br/>
-  C-k		ordstar-C-k-map<br/>
-  C-l		ws-repeat-search<br/>
-  C-n		open-line<br/>
-  C-p		quoted-insert<br/>
-  C-r		scroll-down-line<br/>
-  C-s		backward-char<br/>
-  C-t		kill-word<br/>
-  C-u		keyboard-quit<br/>
-  C-v		overwrite-mode<br/>
-  C-w		scroll-down<br/>
-  C-x		next-line<br/>
-  C-y		kill-complete-line<br/>
-  C-z		scroll-up<br/>
-<br/>
-  C-k 0		ws-set-marker-0<br/>
-  C-k 1		ws-set-marker-1<br/>
-  C-k 2		ws-set-marker-2<br/>
-  C-k 3		ws-set-marker-3<br/>
-  C-k 4		ws-set-marker-4<br/>
-  C-k 5		ws-set-marker-5<br/>
-  C-k 6		ws-set-marker-6<br/>
-  C-k 7		ws-set-marker-7<br/>
-  C-k 8		ws-set-marker-8<br/>
-  C-k 9		ws-set-marker-9<br/>
-  C-k b		ws-begin-block<br/>
-  C-k c		ws-copy-block<br/>
-  C-k d		save-buffers-kill-emacs<br/>
-  C-k f		find-file<br/>
-  C-k h		ws-show-markers<br/>
-  C-k i		ws-indent-block<br/>
-  C-k k		ws-end-block<br/>
-  C-k p		ws-print-block<br/>
-  C-k q		kill-emacs<br/>
-  C-k r		insert-file<br/>
-  C-k s		save-some-buffers<br/>
-  C-k t		ws-mark-word<br/>
-  C-k u		ws-exdent-block<br/>
-  C-k C-u	keyboard-quit<br/>
-  C-k v		ws-move-block<br/>
-  C-k w		ws-write-block<br/>
-  C-k x		kill-emacs<br/>
-  C-k y		ws-delete-block<br/>
-<br/>
-  C-o c		wordstar-center-line<br/>
-  C-o b		switch-to-buffer<br/>
-  C-o j		justify-current-line<br/>
-  C-o k		kill-buffer<br/>
-  C-o l		list-buffers<br/>
-  C-o m		auto-fill-mode<br/>
-  C-o r		set-fill-column<br/>
-  C-o C-u	keyboard-quit<br/>
-  C-o wd	delete-other-windows<br/>
-  C-o wh	split-window-right<br/>
-  C-o wo	other-window<br/>
-  C-o wv	split-window-below<br/>
-<br/>
-  C-q 0		ws-find-marker-0<br/>
-  C-q 1		ws-find-marker-1<br/>
-  C-q 2		ws-find-marker-2<br/>
-  C-q 3		ws-find-marker-3<br/>
-  C-q 4		ws-find-marker-4<br/>
-  C-q 5		ws-find-marker-5<br/>
-  C-q 6		ws-find-marker-6<br/>
-  C-q 7		ws-find-marker-7<br/>
-  C-q 8		ws-find-marker-8<br/>
-  C-q 9		ws-find-marker-9<br/>
-  C-q a		ws-query-replace<br/>
-  C-q b		ws-to-block-begin<br/>
-  C-q c		end-of-buffer<br/>
-  C-q d		end-of-line<br/>
-  C-q f		ws-search<br/>
-  C-q k		ws-to-block-end<br/>
-  C-q l		ws-undo<br/>
-  C-q p		ws-last-cursorp<br/>
-  C-q r		beginning-of-buffer<br/>
-  C-q C-u	keyboard-quit<br/>
-  C-q w		ws-last-error<br/>
-  C-q y		ws-kill-eol<br/>
-  C-q DEL	ws-kill-bol<br/>
+<strong>wordstar-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>ws-mode.el</code>'.</br>
+</br>
+</br>
+(wordstar-mode)</br>
+</br>
+Major mode with WordStar-like key bindings.</br>
+</br>
+BUGS:</br>
+ - Help menus with WordStar commands (C-j just calls help-for-help)</br>
+   are not implemented</br>
+ - Options for search and replace</br>
+ - Show markers (C-k h) is somewhat strange</br>
+ - Search and replace (C-q a) is only available in forward direction</br>
+</br>
+No key bindings beginning with ESC are installed, they will work</br>
+Emacs-like.</br>
+</br>
+This mode runs the hook `wordstar-mode-hook', as the final step</br>
+during initialization.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-a		backward-word</br>
+C-b		fill-paragraph</br>
+C-c		scroll-up-command</br>
+C-d		forward-char</br>
+C-e		previous-line</br>
+C-f		forward-word</br>
+C-g		delete-char</br>
+C-h		backward-char</br>
+TAB		indent-for-tab-command</br>
+C-j		help-for-help</br>
+C-k		Prefix Command</br>
+C-l		ws-repeat-search</br>
+C-n		open-line</br>
+C-o		Prefix Command</br>
+C-p		quoted-insert</br>
+C-q		Prefix Command</br>
+C-r		scroll-down-command</br>
+C-s		backward-char</br>
+C-t		kill-word</br>
+C-u		keyboard-quit</br>
+C-v		overwrite-mode</br>
+C-w		scroll-down-line</br>
+C-x		next-line</br>
+C-y		kill-complete-line</br>
+C-z		scroll-up-line</br>
+</br>
+C-k C-b		ws-begin-block</br>
+C-k C-c		ws-copy-block</br>
+C-k C-d		save-buffers-kill-emacs</br>
+C-k C-f		find-file</br>
+C-k C-h		ws-show-markers</br>
+C-k TAB		ws-indent-block</br>
+C-k C-k		ws-end-block</br>
+C-k C-p		ws-print-block</br>
+C-k C-q		kill-emacs</br>
+C-k C-r		insert-file</br>
+C-k C-s		save-some-buffers</br>
+C-k C-t		ws-mark-word</br>
+C-k C-u		keyboard-quit</br>
+C-k C-v		ws-move-block</br>
+C-k C-w		ws-write-block</br>
+C-k C-x		save-buffers-kill-emacs</br>
+C-k C-y		ws-delete-block</br>
+C-k 0		ws-set-marker-0</br>
+C-k 1		ws-set-marker-1</br>
+C-k 2		ws-set-marker-2</br>
+C-k 3		ws-set-marker-3</br>
+C-k 4		ws-set-marker-4</br>
+C-k 5		ws-set-marker-5</br>
+C-k 6		ws-set-marker-6</br>
+C-k 7		ws-set-marker-7</br>
+C-k 8		ws-set-marker-8</br>
+C-k 9		ws-set-marker-9</br>
+C-k b		ws-begin-block</br>
+C-k c		ws-copy-block</br>
+C-k d		save-buffers-kill-emacs</br>
+C-k f		find-file</br>
+C-k h		ws-show-markers</br>
+C-k i		ws-indent-block</br>
+C-k k		ws-end-block</br>
+C-k p		ws-print-block</br>
+C-k q		kill-emacs</br>
+C-k r		insert-file</br>
+C-k s		save-some-buffers</br>
+C-k t		ws-mark-word</br>
+C-k u		ws-exdent-block</br>
+C-k v		ws-move-block</br>
+C-k w		ws-write-block</br>
+C-k x		save-buffers-kill-emacs</br>
+C-k y		ws-delete-block</br>
+</br>
+C-o C-b		switch-to-buffer</br>
+C-o C-c		wordstar-center-line</br>
+C-o C-j		justify-current-line</br>
+C-o C-k		kill-buffer</br>
+C-o C-l		list-buffers</br>
+C-o RET		auto-fill-mode</br>
+C-o C-r		set-fill-column</br>
+C-o C-u		keyboard-quit</br>
+C-o b		switch-to-buffer</br>
+C-o c		wordstar-center-line</br>
+C-o j		justify-current-line</br>
+C-o k		kill-buffer</br>
+C-o l		list-buffers</br>
+C-o m		auto-fill-mode</br>
+C-o r		set-fill-column</br>
+C-o w		Prefix Command</br>
+</br>
+C-q C-a		ws-query-replace</br>
+C-q C-b		ws-goto-block-begin</br>
+C-q C-c		end-of-buffer</br>
+C-q C-d		end-of-line</br>
+C-q C-f		ws-search</br>
+C-q C-k		ws-goto-block-end</br>
+C-q C-l		ws-undo</br>
+C-q C-p		ws-last-cursorp</br>
+C-q C-r		beginning-of-buffer</br>
+C-q C-s		beginning-of-line</br>
+C-q C-u		keyboard-quit</br>
+C-q C-w		ws-last-error</br>
+C-q C-y		ws-kill-eol</br>
+C-q 0		ws-find-marker-0</br>
+C-q 1		ws-find-marker-1</br>
+C-q 2		ws-find-marker-2</br>
+C-q 3		ws-find-marker-3</br>
+C-q 4		ws-find-marker-4</br>
+C-q 5		ws-find-marker-5</br>
+C-q 6		ws-find-marker-6</br>
+C-q 7		ws-find-marker-7</br>
+C-q 8		ws-find-marker-8</br>
+C-q 9		ws-find-marker-9</br>
+C-q a		ws-query-replace</br>
+C-q b		ws-goto-block-begin</br>
+C-q c		end-of-buffer</br>
+C-q d		end-of-line</br>
+C-q f		ws-search</br>
+C-q k		ws-goto-block-end</br>
+C-q l		ws-undo</br>
+C-q p		ws-last-cursorp</br>
+C-q r		beginning-of-buffer</br>
+C-q s		beginning-of-line</br>
+C-q w		ws-last-error</br>
+C-q y		ws-kill-eol</br>
+C-q DEL		ws-kill-bol</br>
+</br>
+C-o w d		delete-other-windows</br>
+C-o w h		split-window-right</br>
+C-o w o		other-window</br>
+C-o w v		split-window-below</br>
+</br>

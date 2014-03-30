@@ -1,21 +1,21 @@
-<strong>texinfo-insert-menu</strong> is a compiled Lisp function in `<code>texnfo-upd.el</code>'.<br/>
-<br/>
-(texinfo-insert-menu MENU-LIST NODE-NAME)<br/>
-<br/>
-Insert formatted menu at point.<br/>
-Indents the first line of descriptions, if any, to the value of<br/>
-texinfo-column-for-description.  Indenting leaves trailing whitespace<br/>
-in a menu that lacks descriptions, so descriptions will format well.<br/>
-In general, a menu should contain descriptions, because node names and<br/>
-section titles are often too short to explain a node well.<br/>
-<br/>
-MENU-LIST has form:<br/>
-<br/>
-    (("node-name1" . "description")<br/>
-    ("node-name2" . "description") ... )<br/>
-<br/>
-However, the description field might be nil.<br/>
-<br/>
-Also, the node-name field might itself be a dotted pair (call it P) of<br/>
-strings instead of just a string.  In that case, the car of P<br/>
+<strong>texinfo-insert-menu</strong> is a compiled Lisp function in `<code>texnfo-upd.el</code>'.</br>
+</br>
+(texinfo-insert-menu <u>MENU-LIST</u> <u>NODE-NAME</u>)</br>
+</br>
+Insert formatted menu at point.</br>
+Indents the first line of descriptions, if any, to the value of</br>
+texinfo-column-for-description.  Indenting leaves trailing whitespace</br>
+in a menu that lacks descriptions, so descriptions will format well.</br>
+In general, a menu should contain descriptions, because node names and</br>
+section titles are often too short to explain a node well.</br>
+</br>
+<u>MENU-LIST</u> has form:</br>
+</br>
+    (("node-name1" . "description")</br>
+    ("node-name2" . "description") ... )</br>
+</br>
+However, the description field might be nil.</br>
+</br>
+Also, the node-name field might itself be a dotted pair (call it P) of</br>
+strings instead of just a string.  In that case, the car of P</br>
 is the menu entry name, and the cdr of P is the node name.

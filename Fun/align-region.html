@@ -1,39 +1,39 @@
-<strong>align-region</strong> is a compiled Lisp function in `<code>align.el</code>'.<br/>
-<br/>
-(align-region BEG END SEPARATE RULES EXCLUDE-RULES &optional FUNC)<br/>
-<br/>
-Align a region based on a given set of alignment rules.<br/>
-BEG and END specify the region to be aligned.  Either may be nil, in<br/>
-which case the range will stop at the nearest section division (see<br/>
-`align-region-separate', and `align-region-heuristic' for more<br/>
-information').<br/>
-<br/>
-The region will be divided into separate alignment sections based on<br/>
-the value of SEPARATE.<br/>
-<br/>
-RULES and EXCLUDE-RULES are a pair of lists describing how to align<br/>
-the region, and which text areas within it should be excluded from<br/>
-alignment.  See the `align-rules-list' for more information on the<br/>
-required format of these two lists.<br/>
-<br/>
-If FUNC is specified, no text will be modified.  What `align-region'<br/>
-will do with the rules is to search for the alignment areas, as it<br/>
-regularly would, taking account for exclusions, and then call FUNC,<br/>
-first with the beginning and ending of the region to be aligned<br/>
-according to that rule (this can be different for each rule, if BEG<br/>
-and END were nil), and then with the beginning and ending of each<br/>
-text region that the rule would have applied to.<br/>
-<br/>
-The signature of FUNC should thus be:<br/>
-<br/>
- (defun my-align-function (beg end mode)<br/>
-   "If MODE is a rule (a list), return t if BEG to END are to be searched.<br/>
-Otherwise BEG to END will be a region of text that matches the rule's<br/>
-definition, and MODE will be non-nil if any changes are necessary."<br/>
-   (unless (and mode (listp mode))<br/>
-     (message "Would have aligned from %d to %d..." beg end)))<br/>
-<br/>
-This feature (of passing a FUNC) is used internally to locate the<br/>
-position of exclusion areas, but could also be used for any other<br/>
-purpose where you might want to know where the regions that the<br/>
+<strong>align-region</strong> is a compiled Lisp function in `<code>align.el</code>'.</br>
+</br>
+(align-region <u>BEG</u> <u>END</u> <u>SEPARATE</u> <u>RULES</u> <u>EXCLUDE-RULES</u> &optional <u>FUNC</u>)</br>
+</br>
+Align a region based on a given set of alignment rules.</br>
+<u>BEG</u> and <u>END</u> specify the region to be aligned.  Either may be nil, in</br>
+which case the range will stop at the nearest section division (see</br>
+`align-region-separate', and `align-region-heuristic' for more</br>
+information').</br>
+</br>
+The region will be divided into separate alignment sections based on</br>
+the value of <u>SEPARATE</u>.</br>
+</br>
+<u>RULES</u> and <u>EXCLUDE-RULES</u> are a pair of lists describing how to align</br>
+the region, and which text areas within it should be excluded from</br>
+alignment.  See the `align-rules-list' for more information on the</br>
+required format of these two lists.</br>
+</br>
+If <u>FUNC</u> is specified, no text will be modified.  What `align-region'</br>
+will do with the rules is to search for the alignment areas, as it</br>
+regularly would, taking account for exclusions, and then call <u>FUNC</u>,</br>
+first with the beginning and ending of the region to be aligned</br>
+according to that rule (this can be different for each rule, if <u>BEG</u></br>
+and <u>END</u> were nil), and then with the beginning and ending of each</br>
+text region that the rule would have applied to.</br>
+</br>
+The signature of <u>FUNC</u> should thus be:</br>
+</br>
+ (defun my-align-function (beg end mode)</br>
+   "If MODE is a rule (a list), return t if <u>BEG</u> to <u>END</u> are to be searched.</br>
+Otherwise <u>BEG</u> to <u>END</u> will be a region of text that matches the rule's</br>
+definition, and MODE will be non-nil if any changes are necessary."</br>
+   (unless (and mode (listp mode))</br>
+     (message "Would have aligned from %d to %d..." beg end)))</br>
+</br>
+This feature (of passing a <u>FUNC</u>) is used internally to locate the</br>
+position of exclusion areas, but could also be used for any other</br>
+purpose where you might want to know where the regions that the</br>
 aligner would have dealt with are.

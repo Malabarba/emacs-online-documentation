@@ -1,346 +1,359 @@
-<strong>org-agenda-mode-map</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `org-agenda-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (mouse-3 . org-agenda-show-mouse)<br/>
- (mouse-2 . org-agenda-goto-mouse)<br/>
- (63 . org-agenda-show-the-flagging-note)<br/>
- (59 . org-timer-set-timer)<br/>
- (94 . org-agenda-filter-by-top-category)<br/>
- (60 . org-agenda-filter-by-category)<br/>
- (92 . org-agenda-filter-by-tag-refine)<br/>
- (47 . org-agenda-filter-by-tag)<br/>
- (125 . org-agenda-manipulate-query-subtract-re)<br/>
- (123 . org-agenda-manipulate-query-add-re)<br/>
- (93 . org-agenda-manipulate-query-subtract)<br/>
- (91 . org-agenda-manipulate-query-add)<br/>
- (98 . org-agenda-earlier)<br/>
- (102 . org-agenda-later)<br/>
- (S-down . org-agenda-priority-down)<br/>
- (S-up . org-agenda-priority-up)<br/>
- (45 . org-agenda-priority-down)<br/>
- (43 . org-agenda-priority-up)<br/>
- (74 . org-agenda-clock-goto)<br/>
- (88 . org-agenda-clock-cancel)<br/>
- (79 . org-agenda-clock-out)<br/>
- (73 . org-agenda-clock-in)<br/>
- (72 . org-agenda-holidays)<br/>
- (104 . org-agenda-holidays)<br/>
- (83 . org-agenda-sunrise-sunset)<br/>
- (77 . org-agenda-phases-of-moon)<br/>
- (67 . org-agenda-convert-date)<br/>
- (99 . org-agenda-goto-calendar)<br/>
- (105 . org-agenda-diary-entry)<br/>
- (44 . org-agenda-priority)<br/>
- (up . org-agenda-previous-line)<br/>
- (16 . org-agenda-previous-line)<br/>
- (down . org-agenda-next-line)<br/>
- (14 . org-agenda-next-line)<br/>
- (80 . org-agenda-previous-item)<br/>
- (78 . org-agenda-next-item)<br/>
- (112 . org-agenda-previous-line)<br/>
- (110 . org-agenda-next-line)<br/>
- (84 . org-agenda-show-tags)<br/>
- (115 . org-save-all-org-buffers)<br/>
- (120 . org-agenda-exit)<br/>
- (81 . org-agenda-Quit)<br/>
- (113 . org-agenda-quit)<br/>
- (101 . org-agenda-set-effort)<br/>
- (103 .<br/>
-      #[nil "\300\301!\207"<br/>
-	    [org-agenda-redo t]<br/>
-	    2 nil nil])<br/>
- (114 . org-agenda-redo)<br/>
- (71 . org-agenda-toggle-time-grid)<br/>
- (33 . org-agenda-toggle-deadlines)<br/>
- (68 . org-agenda-toggle-diary)<br/>
- (118 . org-agenda-view-mode-dispatch)<br/>
- (108 . org-agenda-log-mode)<br/>
- (69 . org-agenda-entry-text-mode)<br/>
- (82 . org-agenda-clockreport-mode)<br/>
- (70 . org-agenda-follow-mode)<br/>
- (48 . digit-argument)<br/>
- (57 . digit-argument)<br/>
- (56 . digit-argument)<br/>
- (55 . digit-argument)<br/>
- (54 . digit-argument)<br/>
- (53 . digit-argument)<br/>
- (52 . digit-argument)<br/>
- (51 . digit-argument)<br/>
- (50 . digit-argument)<br/>
- (49 . digit-argument)<br/>
- (62 . org-agenda-date-prompt)<br/>
- (S-left . org-agenda-do-date-earlier)<br/>
- (S-right . org-agenda-do-date-later)<br/>
- (122 . org-agenda-add-note)<br/>
- (121 . org-agenda-year-view)<br/>
- (119 . org-agenda-week-view)<br/>
- (100 . org-agenda-day-view)<br/>
- (106 . org-agenda-goto-date)<br/>
- (46 . org-agenda-goto-today)<br/>
- (58 . org-agenda-set-tags)<br/>
- (97 . org-agenda-archive-default-with-confirmation)<br/>
- (116 . org-agenda-todo)<br/>
- (76 . org-agenda-recenter)<br/>
- (111 . delete-other-windows)<br/>
- (C-S-left . org-agenda-todo-previousset)<br/>
- (C-S-right . org-agenda-todo-nextset)<br/>
- (127 . org-agenda-show-scroll-down)<br/>
- (backspace . org-agenda-show-scroll-down)<br/>
- (32 . org-agenda-show-and-scroll-up)<br/>
- (36 . org-agenda-archive)<br/>
- (65 . org-agenda-append-agenda)<br/>
- (107 . org-agenda-capture)<br/>
- (66 . org-agenda-bulk-action)<br/>
- (85 . org-agenda-bulk-unmark-all)<br/>
- (117 . org-agenda-bulk-unmark)<br/>
- (37 . org-agenda-bulk-mark-regexp)<br/>
- (35 . org-agenda-dim-blocked-tasks)<br/>
- (42 . org-agenda-bulk-mark-all)<br/>
- (109 . org-agenda-bulk-mark)<br/>
- (3 keymap<br/>
-    (44 . org-agenda-priority)<br/>
-    (16 . org-agenda-previous-date-line)<br/>
-    (14 . org-agenda-next-date-line)<br/>
-    (1 . org-attach)<br/>
-    (4 . org-agenda-deadline)<br/>
-    (19 . org-agenda-schedule)<br/>
-    (26 . org-agenda-add-note)<br/>
-    (17 . org-agenda-set-tags)<br/>
-    (20 . org-agenda-todo)<br/>
-    (15 . org-agenda-open-link)<br/>
-    (36 . org-agenda-archive)<br/>
-    (24 keymap<br/>
-	(13 keymap<br/>
-	    (112 . org-mobile-push)<br/>
-	    (103 . org-mobile-pull))<br/>
-	(62 . org-agenda-remove-restriction-lock)<br/>
-	(3 . org-agenda-columns)<br/>
-	(down . org-agenda-priority-down)<br/>
-	(up . org-agenda-priority-up)<br/>
-	(10 . org-clock-goto)<br/>
-	(24 . org-agenda-clock-cancel)<br/>
-	(15 . org-agenda-clock-out)<br/>
-	(9 . org-agenda-clock-in)<br/>
-	(112 . org-agenda-set-property)<br/>
-	(5 . org-clock-modify-effort-estimate)<br/>
-	(101 . org-agenda-set-effort)<br/>
-	(left . org-agenda-do-date-earlier)<br/>
-	(right . org-agenda-do-date-later)<br/>
-	(98 . org-agenda-tree-to-indirect-buffer)<br/>
-	(19 . org-agenda-archive)<br/>
-	(65 . org-agenda-archive-to-archive-sibling)<br/>
-	(97 . org-agenda-toggle-archive-tag)<br/>
-	(1 . org-agenda-archive-default)<br/>
-	(33 . org-reload))<br/>
-    (23 . org-agenda-refile))<br/>
- (11 . org-agenda-kill)<br/>
- (13 . org-agenda-switch-to)<br/>
- (tab . org-agenda-goto)<br/>
- (9 . org-agenda-goto)<br/>
- (67108911 . org-agenda-undo)<br/>
- (undo . org-agenda-undo)<br/>
- (menu-bar keymap<br/>
-	   (Agenda menu-item "Agenda"<br/>
-		   (keymap "Agenda"<br/>
-			   (Agenda\ Files menu-item "Agenda Files"<br/>
-					  (keymap "Agenda Files"))<br/>
-			   (nil-7 menu-item "--")<br/>
-			   (Agenda\ Dates menu-item "Agenda Dates"<br/>
-					  (keymap "Agenda Dates"<br/>
-						  (Goto\ Today menu-item "Goto Today" org-agenda-goto-today :enable<br/>
-							       (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						  (Next\ Dates menu-item "Next Dates" org-agenda-later :enable<br/>
-							       (org-agenda-check-type nil 'agenda))<br/>
-						  (Previous\ Dates menu-item "Previous Dates" org-agenda-earlier :enable<br/>
-								   (org-agenda-check-type nil 'agenda))<br/>
-						  (Jump\ to\ date menu-item "Jump to date" org-agenda-goto-date :enable<br/>
-								  (org-agenda-check-type nil 'agenda))))<br/>
-			   (nil-7-3 menu-item "--")<br/>
-			   (View menu-item "View"<br/>
-				 (keymap "View"<br/>
-					 (Day\ View menu-item "Day View" org-agenda-day-view :enable<br/>
-						    (org-agenda-check-type nil 'agenda)<br/>
-						    :keys "v d  (or just d)" :button<br/>
-						    (:radio eq org-agenda-current-span 'day))<br/>
-					 (Week\ View menu-item "Week View" org-agenda-week-view :enable<br/>
-						     (org-agenda-check-type nil 'agenda)<br/>
-						     :keys "v w  (or just w)" :button<br/>
-						     (:radio eq org-agenda-current-span 'week))<br/>
-					 (Month\ View menu-item "Month View" org-agenda-month-view :enable<br/>
-						      (org-agenda-check-type nil 'agenda)<br/>
-						      :keys "v m" :button<br/>
-						      (:radio eq org-agenda-current-span 'month))<br/>
-					 (Year\ View menu-item "Year View" org-agenda-year-view :enable<br/>
-						     (org-agenda-check-type nil 'agenda)<br/>
-						     :keys "v y" :button<br/>
-						     (:radio eq org-agenda-current-span 'year))<br/>
-					 (nil-7 menu-item "--")<br/>
-					 (Include\ Diary menu-item "Include Diary" org-agenda-toggle-diary :enable<br/>
-							 (org-agenda-check-type nil 'agenda)<br/>
-							 :button<br/>
-							 (:toggle . org-agenda-include-diary))<br/>
-					 (Include\ Deadlines menu-item "Include Deadlines" org-agenda-toggle-deadlines :enable<br/>
-							     (org-agenda-check-type nil 'agenda)<br/>
-							     :button<br/>
-							     (:toggle . org-agenda-include-deadlines))<br/>
-					 (Use\ Time\ Grid menu-item "Use Time Grid" org-agenda-toggle-time-grid :enable<br/>
-							  (org-agenda-check-type nil 'agenda)<br/>
-							  :button<br/>
-							  (:toggle . org-agenda-use-time-grid))<br/>
-					 (nil-7-8 menu-item "--")<br/>
-					 (Show\ clock\ report menu-item "Show clock report" org-agenda-clockreport-mode :enable<br/>
-							      (org-agenda-check-type nil 'agenda)<br/>
-							      :button<br/>
-							      (:toggle . org-agenda-clockreport-mode))<br/>
-					 (Show\ some\ entry\ text menu-item "Show some entry text" org-agenda-entry-text-mode :button<br/>
-								  (:toggle . org-agenda-entry-text-mode))<br/>
-					 (nil-7-11 menu-item "--")<br/>
-					 (Show\ Logbook\ entries menu-item "Show Logbook entries" org-agenda-log-mode :enable<br/>
-								 (org-agenda-check-type nil 'agenda 'timeline)<br/>
-								 :keys "v l (or just l)" :button<br/>
-								 (:toggle . org-agenda-show-log))<br/>
-					 (Include\ archived\ trees menu-item "Include archived trees" org-agenda-archives-mode :keys "v a" :button<br/>
-								   (:toggle . org-agenda-archives-mode))<br/>
-					 (Include\ archive\ files menu-item "Include archive files" menu-function-342 :keys "v A" :button<br/>
-								  (:toggle eq org-agenda-archives-mode t))<br/>
-					 (nil-7-15 menu-item "--")<br/>
-					 (Remove\ Restriction menu-item "Remove Restriction" org-agenda-remove-restriction-lock :enable org-agenda-restrict)))<br/>
-			   (Write\ view\ to\ file menu-item "Write view to file" org-agenda-write)<br/>
-			   (Rebuild\ buffer menu-item "Rebuild buffer" org-agenda-redo)<br/>
-			   (Save\ all\ Org-mode\ Buffers menu-item "Save all Org-mode Buffers" org-save-all-org-buffers)<br/>
-			   (nil-7-8 menu-item "--")<br/>
-			   (Show\ original\ entry menu-item "Show original entry" org-agenda-show)<br/>
-			   (Go\ To\ \(other\ window\) menu-item "Go To (other window)" org-agenda-goto)<br/>
-			   (Go\ To\ \(this\ window\) menu-item "Go To (this window)" org-agenda-switch-to)<br/>
-			   (Capture\ with\ cursor\ date menu-item "Capture with cursor date" org-agenda-capture)<br/>
-			   (Follow\ Mode menu-item "Follow Mode" org-agenda-follow-mode :button<br/>
-					 (:toggle . org-agenda-follow-mode))<br/>
-			   (nil-7-14 menu-item "--")<br/>
-			   (TODO menu-item "TODO"<br/>
-				 (keymap "TODO"<br/>
-					 (Cycle\ TODO menu-item "Cycle TODO" org-agenda-todo)<br/>
-					 (Next\ TODO\ set menu-item "Next TODO set" org-agenda-todo-nextset)<br/>
-					 (Previous\ TODO\ set menu-item "Previous TODO set" org-agenda-todo-previousset)<br/>
-					 (Add\ note menu-item "Add note" org-agenda-add-note)))<br/>
-			   (Archive/Refile/Delete menu-item "Archive/Refile/Delete"<br/>
-						  (keymap "Archive/Refile/Delete"<br/>
-							  (Archive\ default menu-item "Archive default" org-agenda-archive-default)<br/>
-							  (Archive\ default-1 menu-item "Archive default" org-agenda-archive-default-with-confirmation)<br/>
-							  (Toggle\ ARCHIVE\ tag menu-item "Toggle ARCHIVE tag" org-agenda-toggle-archive-tag)<br/>
-							  (Move\ to\ archive\ sibling menu-item "Move to archive sibling" org-agenda-archive-to-archive-sibling)<br/>
-							  (Archive\ subtree menu-item "Archive subtree" org-agenda-archive)<br/>
-							  (nil-7 menu-item "--")<br/>
-							  (Refile menu-item "Refile" org-agenda-refile)<br/>
-							  (nil-7-7 menu-item "--")<br/>
-							  (Delete\ subtree menu-item "Delete subtree" org-agenda-kill)))<br/>
-			   (Bulk\ action menu-item "Bulk action"<br/>
-					 (keymap "Bulk action"<br/>
-						 (Mark\ entry menu-item "Mark entry" org-agenda-bulk-mark)<br/>
-						 (Mark\ all menu-item "Mark all" org-agenda-bulk-mark-all)<br/>
-						 (Mark\ matching\ regexp menu-item "Mark matching regexp" org-agenda-bulk-mark-regexp)<br/>
-						 (Unmark\ entry menu-item "Unmark entry" org-agenda-bulk-unmark)<br/>
-						 (Unmark\ all\ entries menu-item "Unmark all entries" org-agenda-bulk-unmark-all :keys "U")))<br/>
-			   (Act\ on\ all\ marked menu-item "Act on all marked" org-agenda-bulk-action)<br/>
-			   (nil-7-19 menu-item "--")<br/>
-			   (Tags\ and\ Properties menu-item "Tags and Properties"<br/>
-						  (keymap "Tags and Properties"<br/>
-							  (Show\ all\ Tags menu-item "Show all Tags" org-agenda-show-tags)<br/>
-							  (Set\ Tags\ current\ line menu-item "Set Tags current line" org-agenda-set-tags :enable<br/>
-										    (not<br/>
-										     (org-region-active-p)))<br/>
-							  (Change\ tag\ in\ region menu-item "Change tag in region" org-agenda-set-tags :enable<br/>
-										   (org-region-active-p))<br/>
-							  (nil-7 menu-item "--")<br/>
-							  (Column\ View menu-item "Column View" org-columns)))<br/>
-			   (Deadline/Schedule menu-item "Deadline/Schedule"<br/>
-					      (keymap "Deadline/Schedule"<br/>
-						      (Schedule menu-item "Schedule" org-agenda-schedule)<br/>
-						      (Set\ Deadline menu-item "Set Deadline" org-agenda-deadline)<br/>
-						      (nil-7 menu-item "--")<br/>
-						      (Change\ Date\ +1\ day menu-item "Change Date +1 day" org-agenda-date-later :enable<br/>
-									     (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						      (Change\ Date\ -1\ day menu-item "Change Date -1 day" org-agenda-date-earlier :enable<br/>
-									     (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						      (Change\ Time\ +1\ hour menu-item "Change Time +1 hour" org-agenda-do-date-later :enable<br/>
-									      (org-agenda-check-type nil 'agenda 'timeline)<br/>
-									      :keys "C-u S-right")<br/>
-						      (Change\ Time\ -1\ hour menu-item "Change Time -1 hour" org-agenda-do-date-earlier :enable<br/>
-									      (org-agenda-check-type nil 'agenda 'timeline)<br/>
-									      :keys "C-u S-left")<br/>
-						      (Change\ Time\ +\ \ min menu-item "Change Time +  min" org-agenda-date-later :enable<br/>
-									      (org-agenda-check-type nil 'agenda 'timeline)<br/>
-									      :keys "C-u C-u S-right")<br/>
-						      (Change\ Time\ -\ \ min menu-item "Change Time -  min" org-agenda-date-earlier :enable<br/>
-									      (org-agenda-check-type nil 'agenda 'timeline)<br/>
-									      :keys "C-u C-u S-left")<br/>
-						      (Change\ Date\ to\ \.\.\. menu-item "Change Date to ..." org-agenda-date-prompt :enable<br/>
-										(org-agenda-check-type nil 'agenda 'timeline))))<br/>
-			   (Clock\ and\ Effort menu-item "Clock and Effort"<br/>
-					       (keymap "Clock and Effort"<br/>
-						       (Clock\ in menu-item "Clock in" org-agenda-clock-in)<br/>
-						       (Clock\ out menu-item "Clock out" org-agenda-clock-out)<br/>
-						       (Clock\ cancel menu-item "Clock cancel" org-agenda-clock-cancel)<br/>
-						       (Goto\ running\ clock menu-item "Goto running clock" org-clock-goto)<br/>
-						       (nil-7 menu-item "--")<br/>
-						       (Set\ Effort menu-item "Set Effort" org-agenda-set-effort)<br/>
-						       (Change\ clocked\ effort menu-item "Change clocked effort" org-clock-modify-effort-estimate :enable<br/>
-										(org-clock-is-active))))<br/>
-			   (Priority menu-item "Priority"<br/>
-				     (keymap "Priority"<br/>
-					     (Set\ Priority menu-item "Set Priority" org-agenda-priority)<br/>
-					     (Increase\ Priority menu-item "Increase Priority" org-agenda-priority-up)<br/>
-					     (Decrease\ Priority menu-item "Decrease Priority" org-agenda-priority-down)<br/>
-					     (Show\ Priority menu-item "Show Priority" org-show-priority)))<br/>
-			   (Calendar/Diary menu-item "Calendar/Diary"<br/>
-					   (keymap "Calendar/Diary"<br/>
-						   (New\ Diary\ Entry menu-item "New Diary Entry" org-agenda-diary-entry :enable<br/>
-								      (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						   (Goto\ Calendar menu-item "Goto Calendar" org-agenda-goto-calendar :enable<br/>
-								   (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						   (Phases\ of\ the\ Moon menu-item "Phases of the Moon" org-agenda-phases-of-moon :enable<br/>
-									  (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						   (Sunrise/Sunset menu-item "Sunrise/Sunset" org-agenda-sunrise-sunset :enable<br/>
-								   (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						   (Holidays menu-item "Holidays" org-agenda-holidays :enable<br/>
-							     (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						   (Convert menu-item "Convert" org-agenda-convert-date :enable<br/>
-							    (org-agenda-check-type nil 'agenda 'timeline))<br/>
-						   (nil-7 menu-item "--")<br/>
-						   (Create\ iCalendar\ File menu-item "Create iCalendar File" org-export-icalendar-combine-agenda-files)))<br/>
-			   (nil-7-25 menu-item "--")<br/>
-			   (Undo\ Remote\ Editing menu-item "Undo Remote Editing" org-agenda-undo :enable org-agenda-undo-list)<br/>
-			   (nil-7-27 menu-item "--")<br/>
-			   (MobileOrg menu-item "MobileOrg"<br/>
-				      (keymap "MobileOrg"<br/>
-					      (Push\ Files\ and\ Views menu-item "Push Files and Views" org-mobile-push)<br/>
-					      (Get\ Captured\ and\ Flagged menu-item "Get Captured and Flagged" org-mobile-pull)<br/>
-					      (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-324 :keys "C-c a ?")<br/>
-					      (Show\ note\ /\ unflag menu-item "Show note / unflag" org-agenda-show-the-flagging-note)<br/>
-					      (nil-7 menu-item "--")<br/>
-					      (Setup menu-item "Setup" menu-function-325 :key-sequence nil)))<br/>
-			   (nil-7-29 menu-item "--")<br/>
-			   (Quit menu-item "Quit" org-agenda-quit)<br/>
-			   (Exit\ and\ Release\ Buffers menu-item "Exit and Release Buffers" org-agenda-exit)))<br/>
-	   (edit keymap<br/>
-		 (undo menu-item "Undo" org-agenda-undo :enable<br/>
-		       (and<br/>
-			(not buffer-read-only)<br/>
-			(not<br/>
-			 (eq t buffer-undo-list))<br/>
-			(if<br/>
-			    (eq last-command 'undo)<br/>
-			    (listp pending-undo-list)<br/>
-			  (consp buffer-undo-list)))<br/>
-		       :help "Undo last operation")))<br/>
- (31 . org-agenda-undo)<br/>
- (24 keymap<br/>
-     (19 . org-save-all-org-buffers)<br/>
-     (23 . org-agenda-write)<br/>
-     (117 . org-agenda-undo)))<br/>
-<br/>
+<strong>org-agenda-mode-map</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `org-agenda-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (mouse-3 . org-agenda-show-mouse)
+ (mouse-2 . org-agenda-goto-mouse)
+ (63 . org-agenda-show-the-flagging-note)
+ (59 . org-timer-set-timer)
+ (94 . org-agenda-filter-by-top-headline)
+ (60 . org-agenda-filter-by-category)
+ (126 . org-agenda-limit-interactively)
+ (92 . org-agenda-filter-by-tag-refine)
+ (124 . org-agenda-filter-remove-all)
+ (61 . org-agenda-filter-by-regexp)
+ (47 . org-agenda-filter-by-tag)
+ (125 . org-agenda-manipulate-query-subtract-re)
+ (123 . org-agenda-manipulate-query-add-re)
+ (93 . org-agenda-manipulate-query-subtract)
+ (91 . org-agenda-manipulate-query-add)
+ (98 . org-agenda-earlier)
+ (102 . org-agenda-later)
+ (S-down . org-agenda-priority-down)
+ (S-up . org-agenda-priority-up)
+ (45 . org-agenda-priority-down)
+ (43 . org-agenda-priority-up)
+ (74 . org-agenda-clock-goto)
+ (88 . org-agenda-clock-cancel)
+ (79 . org-agenda-clock-out)
+ (73 . org-agenda-clock-in)
+ (72 . org-agenda-holidays)
+ (104 . org-agenda-holidays)
+ (83 . org-agenda-sunrise-sunset)
+ (77 . org-agenda-phases-of-moon)
+ (67 . org-agenda-convert-date)
+ (99 . org-agenda-goto-calendar)
+ (105 . org-agenda-diary-entry)
+ (44 . org-agenda-priority)
+ (up . org-agenda-previous-line)
+ (16 . org-agenda-previous-line)
+ (down . org-agenda-next-line)
+ (14 . org-agenda-next-line)
+ (80 . org-agenda-previous-item)
+ (78 . org-agenda-next-item)
+ (112 . org-agenda-previous-line)
+ (110 . org-agenda-next-line)
+ (84 . org-agenda-show-tags)
+ (115 . org-save-all-org-buffers)
+ (120 . org-agenda-exit)
+ (81 . org-agenda-Quit)
+ (113 . org-agenda-quit)
+ (101 . org-agenda-set-effort)
+ (103 .
+      #[nil "\300\301!\207"
+	    [org-agenda-redo t]
+	    2 nil nil])
+ (114 . org-agenda-redo)
+ (71 . org-agenda-toggle-time-grid)
+ (33 . org-agenda-toggle-deadlines)
+ (68 . org-agenda-toggle-diary)
+ (118 . org-agenda-view-mode-dispatch)
+ (108 . org-agenda-log-mode)
+ (69 . org-agenda-entry-text-mode)
+ (82 . org-agenda-clockreport-mode)
+ (70 . org-agenda-follow-mode)
+ (48 . digit-argument)
+ (57 . digit-argument)
+ (56 . digit-argument)
+ (55 . digit-argument)
+ (54 . digit-argument)
+ (53 . digit-argument)
+ (52 . digit-argument)
+ (51 . digit-argument)
+ (50 . digit-argument)
+ (49 . digit-argument)
+ (62 . org-agenda-date-prompt)
+ (S-left . org-agenda-do-date-earlier)
+ (S-right . org-agenda-do-date-later)
+ (122 . org-agenda-add-note)
+ (121 . org-agenda-year-view)
+ (119 . org-agenda-week-view)
+ (100 . org-agenda-day-view)
+ (106 . org-agenda-goto-date)
+ (46 . org-agenda-goto-today)
+ (58 . org-agenda-set-tags)
+ (97 . org-agenda-archive-default-with-confirmation)
+ (116 . org-agenda-todo)
+ (76 . org-agenda-recenter)
+ (111 . delete-other-windows)
+ (C-S-left . org-agenda-todo-previousset)
+ (C-S-right . org-agenda-todo-nextset)
+ (127 . org-agenda-show-scroll-down)
+ (backspace . org-agenda-show-scroll-down)
+ (32 . org-agenda-show-and-scroll-up)
+ (36 . org-agenda-archive)
+ (65 . org-agenda-append-agenda)
+ (107 . org-agenda-capture)
+ (66 . org-agenda-bulk-action)
+ (85 . org-agenda-bulk-unmark-all)
+ (117 . org-agenda-bulk-unmark)
+ (37 . org-agenda-bulk-mark-regexp)
+ (35 . org-agenda-dim-blocked-tasks)
+ (42 . org-agenda-bulk-mark-all)
+ (27 keymap
+     (42 . org-agenda-bulk-toggle-all)
+     (109 . org-agenda-bulk-toggle))
+ (109 . org-agenda-bulk-mark)
+ (M-up . org-agenda-drag-line-backward)
+ (M-down . org-agenda-drag-line-forward)
+ (3 keymap
+    (44 . org-agenda-priority)
+    (16 . org-agenda-previous-date-line)
+    (14 . org-agenda-next-date-line)
+    (1 . org-attach)
+    (4 . org-agenda-deadline)
+    (19 . org-agenda-schedule)
+    (26 . org-agenda-add-note)
+    (17 . org-agenda-set-tags)
+    (20 . org-agenda-todo)
+    (15 . org-agenda-open-link)
+    (36 . org-agenda-archive)
+    (24 keymap
+	(13 keymap
+	    (112 . org-mobile-push)
+	    (103 . org-mobile-pull))
+	(62 . org-agenda-remove-restriction-lock)
+	(3 . org-agenda-columns)
+	(down . org-agenda-priority-down)
+	(up . org-agenda-priority-up)
+	(10 . org-clock-goto)
+	(24 . org-agenda-clock-cancel)
+	(15 . org-agenda-clock-out)
+	(9 . org-agenda-clock-in)
+	(112 . org-agenda-set-property)
+	(5 . org-clock-modify-effort-estimate)
+	(101 . org-agenda-set-effort)
+	(left . org-agenda-do-date-earlier)
+	(right . org-agenda-do-date-later)
+	(98 . org-agenda-tree-to-indirect-buffer)
+	(19 . org-agenda-archive)
+	(65 . org-agenda-archive-to-archive-sibling)
+	(97 . org-agenda-toggle-archive-tag)
+	(1 . org-agenda-archive-default)
+	(33 . org-reload))
+    (23 . org-agenda-refile))
+ (11 . org-agenda-kill)
+ (13 . org-agenda-switch-to)
+ (tab . org-agenda-goto)
+ (9 . org-agenda-goto)
+ (67108911 . org-agenda-undo)
+ (undo . org-agenda-undo)
+ (menu-bar keymap
+	   (Agenda menu-item "Agenda"
+		   (keymap "Agenda"
+			   (Agenda\ Files menu-item "Agenda Files"
+					  (keymap "Agenda Files"))
+			   (nil menu-item "--")
+			   (Agenda\ Dates menu-item "Agenda Dates"
+					  (keymap "Agenda Dates"
+						  (Goto\ Today menu-item "Goto Today" org-agenda-goto-today :enable
+							       (org-agenda-check-type nil 'agenda 'timeline))
+						  (Next\ Dates menu-item "Next Dates" org-agenda-later :enable
+							       (org-agenda-check-type nil 'agenda))
+						  (Previous\ Dates menu-item "Previous Dates" org-agenda-earlier :enable
+								   (org-agenda-check-type nil 'agenda))
+						  (Jump\ to\ date menu-item "Jump to date" org-agenda-goto-date :enable
+								  (org-agenda-check-type nil 'agenda))))
+			   (nil-3 menu-item "--")
+			   (View menu-item "View"
+				 (keymap "View"
+					 (Day\ View menu-item "Day View" org-agenda-day-view :enable
+						    (org-agenda-check-type nil 'agenda)
+						    :keys "v d  (or just d)" :button
+						    (:radio eq org-agenda-current-span 'day))
+					 (Week\ View menu-item "Week View" org-agenda-week-view :enable
+						     (org-agenda-check-type nil 'agenda)
+						     :keys "v w" :button
+						     (:radio eq org-agenda-current-span 'week))
+					 (Fortnight\ View menu-item "Fortnight View" org-agenda-fortnight-view :enable
+							  (org-agenda-check-type nil 'agenda)
+							  :keys "v f" :button
+							  (:radio eq org-agenda-current-span 'fortnight))
+					 (Month\ View menu-item "Month View" org-agenda-month-view :enable
+						      (org-agenda-check-type nil 'agenda)
+						      :keys "v m" :button
+						      (:radio eq org-agenda-current-span 'month))
+					 (Year\ View menu-item "Year View" org-agenda-year-view :enable
+						     (org-agenda-check-type nil 'agenda)
+						     :keys "v y" :button
+						     (:radio eq org-agenda-current-span 'year))
+					 (nil menu-item "--")
+					 (Include\ Diary menu-item "Include Diary" org-agenda-toggle-diary :enable
+							 (org-agenda-check-type nil 'agenda)
+							 :button
+							 (:toggle . org-agenda-include-diary))
+					 (Include\ Deadlines menu-item "Include Deadlines" org-agenda-toggle-deadlines :enable
+							     (org-agenda-check-type nil 'agenda)
+							     :button
+							     (:toggle . org-agenda-include-deadlines))
+					 (Use\ Time\ Grid menu-item "Use Time Grid" org-agenda-toggle-time-grid :enable
+							  (org-agenda-check-type nil 'agenda)
+							  :button
+							  (:toggle . org-agenda-use-time-grid))
+					 (nil-9 menu-item "--")
+					 (Show\ clock\ report menu-item "Show clock report" org-agenda-clockreport-mode :enable
+							      (org-agenda-check-type nil 'agenda)
+							      :button
+							      (:toggle . org-agenda-clockreport-mode))
+					 (Show\ some\ entry\ text menu-item "Show some entry text" org-agenda-entry-text-mode :button
+								  (:toggle . org-agenda-entry-text-mode))
+					 (nil-12 menu-item "--")
+					 (Show\ Logbook\ entries menu-item "Show Logbook entries" org-agenda-log-mode :enable
+								 (org-agenda-check-type nil 'agenda 'timeline)
+								 :keys "v l (or just l)" :button
+								 (:toggle . org-agenda-show-log))
+					 (Include\ archived\ trees menu-item "Include archived trees" org-agenda-archives-mode :keys "v a" :button
+								   (:toggle . org-agenda-archives-mode))
+					 (Include\ archive\ files menu-item "Include archive files" menu-function-357 :keys "v A" :button
+								  (:toggle eq org-agenda-archives-mode t))
+					 (nil-16 menu-item "--")
+					 (Remove\ Restriction menu-item "Remove Restriction" org-agenda-remove-restriction-lock :enable org-agenda-restrict)))
+			   (Write\ view\ to\ file menu-item "Write view to file" org-agenda-write)
+			   (Rebuild\ buffer menu-item "Rebuild buffer" org-agenda-redo)
+			   (Save\ all\ Org-mode\ Buffers menu-item "Save all Org-mode Buffers" org-save-all-org-buffers)
+			   (nil-8 menu-item "--")
+			   (Show\ original\ entry menu-item "Show original entry" org-agenda-show)
+			   (Go\ To\ \(other\ window\) menu-item "Go To (other window)" org-agenda-goto)
+			   (Go\ To\ \(this\ window\) menu-item "Go To (this window)" org-agenda-switch-to)
+			   (Capture\ with\ cursor\ date menu-item "Capture with cursor date" org-agenda-capture)
+			   (Follow\ Mode menu-item "Follow Mode" org-agenda-follow-mode :button
+					 (:toggle . org-agenda-follow-mode))
+			   (nil-14 menu-item "--")
+			   (TODO menu-item "TODO"
+				 (keymap "TODO"
+					 (Cycle\ TODO menu-item "Cycle TODO" org-agenda-todo)
+					 (Next\ TODO\ set menu-item "Next TODO set" org-agenda-todo-nextset)
+					 (Previous\ TODO\ set menu-item "Previous TODO set" org-agenda-todo-previousset)
+					 (Add\ note menu-item "Add note" org-agenda-add-note)))
+			   (Archive/Refile/Delete menu-item "Archive/Refile/Delete"
+						  (keymap "Archive/Refile/Delete"
+							  (Archive\ default menu-item "Archive default" org-agenda-archive-default)
+							  (Archive\ default-1 menu-item "Archive default" org-agenda-archive-default-with-confirmation)
+							  (Toggle\ ARCHIVE\ tag menu-item "Toggle ARCHIVE tag" org-agenda-toggle-archive-tag)
+							  (Move\ to\ archive\ sibling menu-item "Move to archive sibling" org-agenda-archive-to-archive-sibling)
+							  (Archive\ subtree menu-item "Archive subtree" org-agenda-archive)
+							  (nil menu-item "--")
+							  (Refile menu-item "Refile" org-agenda-refile)
+							  (nil-7 menu-item "--")
+							  (Delete\ subtree menu-item "Delete subtree" org-agenda-kill)))
+			   (Bulk\ action menu-item "Bulk action"
+					 (keymap "Bulk action"
+						 (Mark\ entry menu-item "Mark entry" org-agenda-bulk-mark)
+						 (Mark\ all menu-item "Mark all" org-agenda-bulk-mark-all)
+						 (Unmark\ entry menu-item "Unmark entry" org-agenda-bulk-unmark)
+						 (Unmark\ all menu-item "Unmark all" org-agenda-bulk-unmark-all :keys "U")
+						 (Toggle\ mark menu-item "Toggle mark" org-agenda-bulk-toggle)
+						 (Toggle\ all menu-item "Toggle all" org-agenda-bulk-toggle-all)
+						 (Mark\ regexp menu-item "Mark regexp" org-agenda-bulk-mark-regexp)))
+			   (Act\ on\ all\ marked menu-item "Act on all marked" org-agenda-bulk-action)
+			   (nil-19 menu-item "--")
+			   (Tags\ and\ Properties menu-item "Tags and Properties"
+						  (keymap "Tags and Properties"
+							  (Show\ all\ Tags menu-item "Show all Tags" org-agenda-show-tags)
+							  (Set\ Tags\ current\ line menu-item "Set Tags current line" org-agenda-set-tags :enable
+										    (not
+										     (org-region-active-p)))
+							  (Change\ tag\ in\ region menu-item "Change tag in region" org-agenda-set-tags :enable
+										   (org-region-active-p))
+							  (nil menu-item "--")
+							  (Column\ View menu-item "Column View" org-columns)))
+			   (Deadline/Schedule menu-item "Deadline/Schedule"
+					      (keymap "Deadline/Schedule"
+						      (Schedule menu-item "Schedule" org-agenda-schedule)
+						      (Set\ Deadline menu-item "Set Deadline" org-agenda-deadline)
+						      (nil menu-item "--")
+						      (Change\ Date\ +1\ day menu-item "Change Date +1 day" org-agenda-date-later :enable
+									     (org-agenda-check-type nil 'agenda 'timeline))
+						      (Change\ Date\ -1\ day menu-item "Change Date -1 day" org-agenda-date-earlier :enable
+									     (org-agenda-check-type nil 'agenda 'timeline))
+						      (Change\ Time\ +1\ hour menu-item "Change Time +1 hour" org-agenda-do-date-later :enable
+									      (org-agenda-check-type nil 'agenda 'timeline)
+									      :keys "C-u S-right")
+						      (Change\ Time\ -1\ hour menu-item "Change Time -1 hour" org-agenda-do-date-earlier :enable
+									      (org-agenda-check-type nil 'agenda 'timeline)
+									      :keys "C-u S-left")
+						      (Change\ Time\ +\ \ min menu-item "Change Time +  min" org-agenda-date-later :enable
+									      (org-agenda-check-type nil 'agenda 'timeline)
+									      :keys "C-u C-u S-right")
+						      (Change\ Time\ -\ \ min menu-item "Change Time -  min" org-agenda-date-earlier :enable
+									      (org-agenda-check-type nil 'agenda 'timeline)
+									      :keys "C-u C-u S-left")
+						      (Change\ Date\ to\ \.\.\. menu-item "Change Date to ..." org-agenda-date-prompt :enable
+										(org-agenda-check-type nil 'agenda 'timeline))))
+			   (Clock\ and\ Effort menu-item "Clock and Effort"
+					       (keymap "Clock and Effort"
+						       (Clock\ in menu-item "Clock in" org-agenda-clock-in)
+						       (Clock\ out menu-item "Clock out" org-agenda-clock-out)
+						       (Clock\ cancel menu-item "Clock cancel" org-agenda-clock-cancel)
+						       (Goto\ running\ clock menu-item "Goto running clock" org-clock-goto)
+						       (nil menu-item "--")
+						       (Set\ Effort menu-item "Set Effort" org-agenda-set-effort)
+						       (Change\ clocked\ effort menu-item "Change clocked effort" org-clock-modify-effort-estimate :enable
+										(org-clock-is-active))))
+			   (Priority menu-item "Priority"
+				     (keymap "Priority"
+					     (Set\ Priority menu-item "Set Priority" org-agenda-priority)
+					     (Increase\ Priority menu-item "Increase Priority" org-agenda-priority-up)
+					     (Decrease\ Priority menu-item "Decrease Priority" org-agenda-priority-down)
+					     (Show\ Priority menu-item "Show Priority" org-show-priority)))
+			   (Calendar/Diary menu-item "Calendar/Diary"
+					   (keymap "Calendar/Diary"
+						   (New\ Diary\ Entry menu-item "New Diary Entry" org-agenda-diary-entry :enable
+								      (org-agenda-check-type nil 'agenda 'timeline))
+						   (Goto\ Calendar menu-item "Goto Calendar" org-agenda-goto-calendar :enable
+								   (org-agenda-check-type nil 'agenda 'timeline))
+						   (Phases\ of\ the\ Moon menu-item "Phases of the Moon" org-agenda-phases-of-moon :enable
+									  (org-agenda-check-type nil 'agenda 'timeline))
+						   (Sunrise/Sunset menu-item "Sunrise/Sunset" org-agenda-sunrise-sunset :enable
+								   (org-agenda-check-type nil 'agenda 'timeline))
+						   (Holidays menu-item "Holidays" org-agenda-holidays :enable
+							     (org-agenda-check-type nil 'agenda 'timeline))
+						   (Convert menu-item "Convert" org-agenda-convert-date :enable
+							    (org-agenda-check-type nil 'agenda 'timeline))
+						   (nil menu-item "--")
+						   (Create\ iCalendar\ File menu-item "Create iCalendar File" org-icalendar-combine-agenda-files)))
+			   (nil-25 menu-item "--")
+			   (Undo\ Remote\ Editing menu-item "Undo Remote Editing" org-agenda-undo :enable org-agenda-undo-list)
+			   (nil-27 menu-item "--")
+			   (MobileOrg menu-item "MobileOrg"
+				      (keymap "MobileOrg"
+					      (Push\ Files\ and\ Views menu-item "Push Files and Views" org-mobile-push)
+					      (Get\ Captured\ and\ Flagged menu-item "Get Captured and Flagged" org-mobile-pull)
+					      (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-350 :keys "C-c a ?")
+					      (Show\ note\ /\ unflag menu-item "Show note / unflag" org-agenda-show-the-flagging-note)
+					      (nil menu-item "--")
+					      (Setup menu-item "Setup" menu-function-351 :key-sequence nil)))
+			   (nil-29 menu-item "--")
+			   (Quit menu-item "Quit" org-agenda-quit)
+			   (Exit\ and\ Release\ Buffers menu-item "Exit and Release Buffers" org-agenda-exit)))
+	   (edit keymap
+		 (undo menu-item "Undo" org-agenda-undo :enable
+		       (and
+			(not buffer-read-only)
+			(not
+			 (eq t buffer-undo-list))
+			(if
+			    (eq last-command 'undo)
+			    (listp pending-undo-list)
+			  (consp buffer-undo-list)))
+		       :help "Undo last operation")))
+ (31 . org-agenda-undo)
+ (24 keymap
+     (19 . org-save-all-org-buffers)
+     (23 . org-agenda-write)
+     (117 . org-agenda-undo)))
+</pre></br>

@@ -1,7 +1,15 @@
-<strong>display-mm-width</strong> is a compiled Lisp function in `<code>frame.el</code>'.<br/>
-<br/>
-(display-mm-width &optional DISPLAY)<br/>
-<br/>
-Return the width of DISPLAY's screen in millimeters.<br/>
-System values can be overridden by `display-mm-dimensions-alist'.<br/>
-If the information is unavailable, value is nil.
+<strong>display-mm-width</strong> is a compiled Lisp function in `<code>frame.el</code>'.</br>
+</br>
+(display-mm-width &optional <u>DISPLAY</u>)</br>
+</br>
+Return the width of <u>DISPLAY</u>'s screen in millimeters.</br>
+If the information is unavailable, this function returns nil.</br>
+If <u>DISPLAY</u> is omitted or nil, it defaults to the selected frame's display.</br>
+</br>
+You can override what the system thinks the result should be by</br>
+adding an entry to `display-mm-dimensions-alist'.</br>
+</br>
+For graphical terminals, note that on "multi-monitor" setups this</br>
+refers to the width in millimeters for all physical monitors</br>
+associated with <u>DISPLAY</u>.  To get information for each physical</br>
+monitor, use `display-monitor-attributes-list'.

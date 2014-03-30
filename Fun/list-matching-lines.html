@@ -1,29 +1,30 @@
-<strong>list-matching-lines</strong> is an alias for `occur' in `<code>replace.el</code>'.<br/>
-<br/>
-(list-matching-lines REGEXP &optional NLINES)<br/>
-<br/>
-Show all lines in the current buffer containing a match for REGEXP.<br/>
-If a match spreads across multiple lines, all those lines are shown.<br/>
-<br/>
-Each line is displayed with NLINES lines before and after, or -NLINES<br/>
-before if NLINES is negative.<br/>
-NLINES defaults to `list-matching-lines-default-context-lines'.<br/>
-Interactively it is the prefix arg.<br/>
-<br/>
-The lines are shown in a buffer named `*Occur*'.<br/>
-It serves as a menu to find any of the occurrences in this buffer.<br/>
-C-h m in that buffer will explain how.<br/>
-<br/>
-If REGEXP contains upper case characters (excluding those preceded by `\')<br/>
-and `search-upper-case' is non-nil, the matching is case-sensitive.<br/>
-<br/>
-When NLINES is a string or when the function is called<br/>
-interactively with prefix argument without a number (`C-u' alone<br/>
-as prefix) the matching strings are collected into the `*Occur*'<br/>
-buffer by using NLINES as a replacement regexp.  NLINES may<br/>
-contain \& and \N which convention follows `replace-match'.<br/>
-For example, providing "defun\s +\(\S +\)" for REGEXP and<br/>
-"\1" for NLINES collects all the function names in a lisp<br/>
-program.  When there is no parenthesized subexpressions in REGEXP<br/>
-the entire match is collected.  In any case the searched buffer<br/>
+<strong>list-matching-lines</strong> is an alias for `<strong><a href="occur">occur</a></strong>' in `<code>replace.el</code>'.</br>
+</br>
+</br>
+(list-matching-lines <u>REGEXP</u> &optional <u>NLINES</u>)</br>
+</br>
+Show all lines in the current buffer containing a match for <u>REGEXP</u>.</br>
+If a match spreads across multiple lines, all those lines are shown.</br>
+</br>
+Each line is displayed with <u>NLINES</u> lines before and after, or -<u>NLINES</u></br>
+before if <u>NLINES</u> is negative.</br>
+<u>NLINES</u> defaults to `list-matching-lines-default-context-lines'.</br>
+Interactively it is the prefix arg.</br>
+</br>
+The lines are shown in a buffer named `*Occur*'.</br>
+It serves as a menu to find any of the occurrences in this buffer.</br>
+C-h m in that buffer will explain how.</br>
+</br>
+If <u>REGEXP</u> contains upper case characters (excluding those preceded by `\')</br>
+and `search-upper-case' is non-nil, the matching is case-sensitive.</br>
+</br>
+When <u>NLINES</u> is a string or when the function is called</br>
+interactively with prefix argument without a number (`C-u' alone</br>
+as prefix) the matching strings are collected into the `*Occur*'</br>
+buffer by using <u>NLINES</u> as a replacement regexp.  <u>NLINES</u> may</br>
+contain \& and \N which convention follows `replace-match'.</br>
+For example, providing "defun\s +\(\S +\)" for <u>REGEXP</u> and</br>
+"\1" for <u>NLINES</u> collects all the function names in a lisp</br>
+program.  When there is no parenthesized subexpressions in <u>REGEXP</u></br>
+the entire match is collected.  In any case the searched buffer</br>
 is not modified.

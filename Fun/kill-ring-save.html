@@ -1,16 +1,19 @@
-<strong>kill-ring-save</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to <C-insertchar>, <C-insert>, M-w, <menu-bar> <edit> <copy>.<br/>
-<br/>
-(kill-ring-save BEG END)<br/>
-<br/>
-Save the region as if killed, but don't kill it.<br/>
-In Transient Mark mode, deactivate the mark.<br/>
-If `interprogram-cut-function' is non-nil, also save the text for a window<br/>
-system cut and paste.<br/>
-<br/>
-If you want to append the killed line to the last killed text,<br/>
-use C-M-w before M-w.<br/>
-<br/>
-This command is similar to `copy-region-as-kill', except that it gives<br/>
+<strong>kill-ring-save</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to &lt;C-insertchar>, &lt;C-insert>, M-w, &lt;menu-bar> &lt;edit> &lt;copy>.</br>
+</br>
+<code>(kill-ring-save <u>BEG</u> <u>END</u> <em>&optional</em> <u>REGION</u></code>)</br>
+</br>
+Save the region as if killed, but don't kill it.</br>
+In Transient Mark mode, deactivate the mark.</br>
+If `interprogram-cut-function' is non-nil, also save the text for a window</br>
+system cut and paste.</br>
+</br>
+If you want to append the killed line to the last killed text,</br>
+use C-M-w before M-w.</br>
+</br>
+The optional argument <u>REGION</u> if non-nil, indicates that we're not just copying</br>
+some text between <u>BEG</u> and <u>END</u>, but we're copying the region.</br>
+</br>
+This command is similar to `copy-region-as-kill', except that it gives</br>
 visual feedback indicating the extent of the region being copied.

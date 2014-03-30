@@ -1,51 +1,52 @@
-<strong>smerge-mode-menu</strong> is a variable defined in `<code>smerge-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Menu for `smerge-mode'.<br/>
-<br/>
-Value: (keymap "SMerge"<br/>
-	(Next menu-item "Next" smerge-next :help "Go to next conflict")<br/>
-	(Previous menu-item "Previous" smerge-prev :help "Go to previous conflict")<br/>
-	(nil-7 menu-item "--")<br/>
-	(Keep\ All menu-item "Keep All" smerge-keep-all :enable<br/>
-		   (smerge-check 1)<br/>
-		   :help "Keep all three versions")<br/>
-	(Keep\ Current menu-item "Keep Current" smerge-keep-current :enable<br/>
-		       (and<br/>
-			(smerge-check 1)<br/>
-			(><br/>
-			 (smerge-get-current)<br/>
-			 0))<br/>
-		       :help "Use current (at point) version")<br/>
-	(nil-7-5 menu-item "--")<br/>
-	(Revert\ to\ Base menu-item "Revert to Base" smerge-keep-base :enable<br/>
-			  (smerge-check 2)<br/>
-			  :help "Revert to base version")<br/>
-	(Keep\ Other menu-item "Keep Other" smerge-keep-other :enable<br/>
-		     (smerge-check 3)<br/>
-		     :help "Keep `other' version")<br/>
-	(Keep\ Yours menu-item "Keep Yours" smerge-keep-mine :enable<br/>
-		     (smerge-check 1)<br/>
-		     :help "Keep your version")<br/>
-	(nil-7-9 menu-item "--")<br/>
-	(Diff\ Base/Mine menu-item "Diff Base/Mine" smerge-diff-base-mine :enable<br/>
-			 (smerge-check 2)<br/>
-			 :help "Diff `base' and `mine' for current conflict")<br/>
-	(Diff\ Base/Other menu-item "Diff Base/Other" smerge-diff-base-other :enable<br/>
-			  (smerge-check 2)<br/>
-			  :help "Diff `base' and `other' for current conflict")<br/>
-	(Diff\ Mine/Other menu-item "Diff Mine/Other" smerge-diff-mine-other :enable<br/>
-			  (smerge-check 1)<br/>
-			  :help "Diff `mine' and `other' for current conflict")<br/>
-	(nil-7-13 menu-item "--")<br/>
-	(Invoke\ Ediff menu-item "Invoke Ediff" smerge-ediff :enable<br/>
-		       (smerge-check 1)<br/>
-		       :help "Use Ediff to resolve the conflicts")<br/>
-	(Auto\ Resolve menu-item "Auto Resolve" smerge-resolve :enable<br/>
-		       (smerge-check 1)<br/>
-		       :help "Try auto-resolution heuristics")<br/>
-	(Combine menu-item "Combine" smerge-combine-with-next :enable<br/>
-		 (smerge-check 1)<br/>
-		 :help "Combine current conflict with next"))<br/>
-<br/>
+<strong>smerge-mode-menu</strong> is a variable defined in `<code>smerge-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for `smerge-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "SMerge"
+	(Next menu-item "Next" smerge-next :help "Go to next conflict")
+	(Previous menu-item "Previous" smerge-prev :help "Go to previous conflict")
+	(nil menu-item "--")
+	(Keep\ All menu-item "Keep All" smerge-keep-all :enable
+		   (smerge-check 1)
+		   :help "Keep all three versions")
+	(Keep\ Current menu-item "Keep Current" smerge-keep-current :enable
+		       (and
+			(smerge-check 1)
+			(>
+			 (smerge-get-current)
+			 0))
+		       :help "Use current (at point) version")
+	(nil-5 menu-item "--")
+	(Revert\ to\ Base menu-item "Revert to Base" smerge-keep-base :enable
+			  (smerge-check 2)
+			  :help "Revert to base version")
+	(Keep\ Other menu-item "Keep Other" smerge-keep-other :enable
+		     (smerge-check 3)
+		     :help "Keep `other' version")
+	(Keep\ Yours menu-item "Keep Yours" smerge-keep-mine :enable
+		     (smerge-check 1)
+		     :help "Keep your version")
+	(nil-9 menu-item "--")
+	(Diff\ Base/Mine menu-item "Diff Base/Mine" smerge-diff-base-mine :enable
+			 (smerge-check 2)
+			 :help "Diff `base' and `mine' for current conflict")
+	(Diff\ Base/Other menu-item "Diff Base/Other" smerge-diff-base-other :enable
+			  (smerge-check 2)
+			  :help "Diff `base' and `other' for current conflict")
+	(Diff\ Mine/Other menu-item "Diff Mine/Other" smerge-diff-mine-other :enable
+			  (smerge-check 1)
+			  :help "Diff `mine' and `other' for current conflict")
+	(nil-13 menu-item "--")
+	(Invoke\ Ediff menu-item "Invoke Ediff" smerge-ediff :enable
+		       (smerge-check 1)
+		       :help "Use Ediff to resolve the conflicts")
+	(Auto\ Resolve menu-item "Auto Resolve" smerge-resolve :enable
+		       (smerge-check 1)
+		       :help "Try auto-resolution heuristics")
+	(Combine menu-item "Combine" smerge-combine-with-next :enable
+		 (smerge-check 1)
+		 :help "Combine current conflict with next"))
+</pre></br>

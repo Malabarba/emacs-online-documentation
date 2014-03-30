@@ -1,0 +1,24 @@
+<strong>erc-autojoin-channels-alist</strong> is a variable defined in `<code>erc-join.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of channels to autojoin on IRC networks.</br>
+Every element in the alist has the form (SERVER . CHANNELS).</br>
+SERVER is a regexp matching the server, and channels is the</br>
+list of channels to join.</br>
+</br>
+If the channel(s) require channel keys for joining, the passwords</br>
+are found via auth-source.  For instance, if you use ~/.authinfo</br>
+as your auth-source backend, then put something like the</br>
+following in that file:</br>
+</br>
+machine irc.example.net login "#fsf" password sEcReT</br>
+</br>
+Customize this variable to set the value for your first connect.</br>
+Once you are connected and join and part channels, this alist</br>
+keeps track of what channels you are on, and will join them</br>
+again when you get disconnected.  When you restart Emacs, however,</br>
+those changes are lost, and the customization you saved the last</br>
+time is used again.</br>
+</br>
+You can customize this variable.

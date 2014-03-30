@@ -1,60 +1,60 @@
-<strong>completing-read</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(completing-read PROMPT COLLECTION &optional PREDICATE REQUIRE-MATCH INITIAL-INPUT HIST DEF INHERIT-INPUT-METHOD)<br/>
-<br/>
-Read a string in the minibuffer, with completion.<br/>
-PROMPT is a string to prompt with; normally it ends in a colon and a space.<br/>
-COLLECTION can be a list of strings, an alist, an obarray or a hash table.<br/>
-COLLECTION can also be a function to do the completion itself.<br/>
-PREDICATE limits completion to a subset of COLLECTION.<br/>
-See `try-completion' and `all-completions' for more details<br/>
- on completion, COLLECTION, and PREDICATE.<br/>
-<br/>
-REQUIRE-MATCH can take the following values:<br/>
-- t means that the user is not allowed to exit unless<br/>
-  the input is (or completes to) an element of COLLECTION or is null.<br/>
-- nil means that the user can exit with any input.<br/>
-- `confirm' means that the user can exit with any input, but she needs<br/>
-  to confirm her choice if the input is not an element of COLLECTION.<br/>
-- `confirm-after-completion' means that the user can exit with any<br/>
-  input, but she needs to confirm her choice if she called<br/>
-  `minibuffer-complete' right before `minibuffer-complete-and-exit'<br/>
-  and the input is not an element of COLLECTION.<br/>
-- anything else behaves like t except that typing RET does not exit if it<br/>
-  does non-null completion.<br/>
-<br/>
-If the input is null, `completing-read' returns DEF, or the first element<br/>
-of the list of default values, or an empty string if DEF is nil,<br/>
-regardless of the value of REQUIRE-MATCH.<br/>
-<br/>
-If INITIAL-INPUT is non-nil, insert it in the minibuffer initially,<br/>
-  with point positioned at the end.<br/>
-  If it is (STRING . POSITION), the initial input is STRING, but point<br/>
-  is placed at _zero-indexed_ position POSITION in STRING.  (*Note*<br/>
-  that this is different from `read-from-minibuffer' and related<br/>
-  functions, which use one-indexing for POSITION.)  This feature is<br/>
-  deprecated--it is best to pass nil for INITIAL-INPUT and supply the<br/>
-  default value DEF instead.  The user can yank the default value into<br/>
-  the minibuffer easily using M-n.<br/>
-<br/>
-HIST, if non-nil, specifies a history list and optionally the initial<br/>
-  position in the list.  It can be a symbol, which is the history list<br/>
-  variable to use, or it can be a cons cell (HISTVAR . HISTPOS).  In<br/>
-  that case, HISTVAR is the history list variable to use, and HISTPOS<br/>
-  is the initial position (the position in the list used by the<br/>
-  minibuffer history commands).  For consistency, you should also<br/>
-  specify that element of the history as the value of<br/>
-  INITIAL-INPUT.  (This is the only case in which you should use<br/>
-  INITIAL-INPUT instead of DEF.)  Positions are counted starting from<br/>
-  1 at the beginning of the list.  The variable `history-length'<br/>
-  controls the maximum length of a history list.<br/>
-<br/>
-DEF, if non-nil, is the default value or the list of default values.<br/>
-<br/>
-If INHERIT-INPUT-METHOD is non-nil, the minibuffer inherits<br/>
-  the current input method and the setting of `enable-multibyte-characters'.<br/>
-<br/>
-Completion ignores case if the ambient value of<br/>
-  `completion-ignore-case' is non-nil.<br/>
-<br/>
+<strong>completing-read</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(completing-read <u>PROMPT</u> <u>COLLECTION</u> &optional <u>PREDICATE</u> <u>REQUIRE-MATCH</u> <u>INITIAL-INPUT</u> <u>HIST</u> <u>DEF</u> <u>INHERIT-INPUT-METHOD</u>)</br>
+</br>
+Read a string in the minibuffer, with completion.</br>
+<u>PROMPT</u> is a string to prompt with; normally it ends in a colon and a space.</br>
+<u>COLLECTION</u> can be a list of strings, an alist, an obarray or a hash table.</br>
+<u>COLLECTION</u> can also be a function to do the completion itself.</br>
+<u>PREDICATE</u> limits completion to a subset of <u>COLLECTION</u>.</br>
+See `try-completion' and `all-completions' for more details</br>
+ on completion, <u>COLLECTION</u>, and <u>PREDICATE</u>.</br>
+</br>
+<u>REQUIRE-MATCH</u> can take the following values:</br>
+- t means that the user is not allowed to exit unless</br>
+  the input is (or completes to) an element of <u>COLLECTION</u> or is null.</br>
+- nil means that the user can exit with any input.</br>
+- `confirm' means that the user can exit with any input, but she needs</br>
+  to confirm her choice if the input is not an element of <u>COLLECTION</u>.</br>
+- `confirm-after-completion' means that the user can exit with any</br>
+  input, but she needs to confirm her choice if she called</br>
+  `minibuffer-complete' right before `minibuffer-complete-and-exit'</br>
+  and the input is not an element of <u>COLLECTION</u>.</br>
+- anything else behaves like t except that typing RET does not exit if it</br>
+  does non-null completion.</br>
+</br>
+If the input is null, `completing-read' returns <u>DEF</u>, or the first element</br>
+of the list of default values, or an empty string if <u>DEF</u> is nil,</br>
+regardless of the value of <u>REQUIRE-MATCH</u>.</br>
+</br>
+If <u>INITIAL-INPUT</u> is non-nil, insert it in the minibuffer initially,</br>
+  with point positioned at the end.</br>
+  If it is (STRING . POSITION), the initial input is STRING, but point</br>
+  is placed at _zero-indexed_ position POSITION in STRING.  (*Note*</br>
+  that this is different from `read-from-minibuffer' and related</br>
+  functions, which use one-indexing for POSITION.)  This feature is</br>
+  deprecated--it is best to pass nil for <u>INITIAL-INPUT</u> and supply the</br>
+  default value <u>DEF</u> instead.  The user can yank the default value into</br>
+  the minibuffer easily using M-n.</br>
+</br>
+<u>HIST</u>, if non-nil, specifies a history list and optionally the initial</br>
+  position in the list.  It can be a symbol, which is the history list</br>
+  variable to use, or it can be a cons cell (HISTVAR . HISTPOS).  In</br>
+  that case, HISTVAR is the history list variable to use, and HISTPOS</br>
+  is the initial position (the position in the list used by the</br>
+  minibuffer history commands).  For consistency, you should also</br>
+  specify that element of the history as the value of</br>
+  <u>INITIAL-INPUT</u>.  (This is the only case in which you should use</br>
+  <u>INITIAL-INPUT</u> instead of <u>DEF</u>.)  Positions are counted starting from</br>
+  1 at the beginning of the list.  The variable `history-length'</br>
+  controls the maximum length of a history list.</br>
+</br>
+<u>DEF</u>, if non-nil, is the default value or the list of default values.</br>
+</br>
+If <u>INHERIT-INPUT-METHOD</u> is non-nil, the minibuffer inherits</br>
+  the current input method and the setting of `enable-multibyte-characters'.</br>
+</br>
+Completion ignores case if the ambient value of</br>
+  `completion-ignore-case' is non-nil.</br>
+</br>
 See also `completing-read-function'.

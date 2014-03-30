@@ -1,22 +1,20 @@
-<strong>last-command</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is nil<br/>
-It is a terminal-local variable; global value is the same.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-The last command executed.<br/>
-Normally a symbol with a function definition, but can be whatever was found<br/>
-in the keymap, or whatever the variable `this-command' was set to by that<br/>
-command.<br/>
-<br/>
-The value `mode-exit' is special; it means that the previous command<br/>
-read an event that told it to exit, and it did so and unread that event.<br/>
-In other words, the present command is the event that made the previous<br/>
-command exit.<br/>
-<br/>
-The value `kill-region' is special; it means that the previous command<br/>
-was a kill command.<br/>
-<br/>
-`last-command' has a separate binding for each terminal device.<br/>
+<strong>last-command</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>nil</pre></br>
+It is a terminal-local variable; global value is the same.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+The last command executed.</br>
+Normally a symbol with a function definition, but can be whatever was found</br>
+in the keymap, or whatever the variable `this-command' was set to by that</br>
+command.</br>
+</br>
+The value `mode-exit' is special; it means that the previous command</br>
+read an event that told it to exit, and it did so and unread that event.</br>
+In other words, the present command is the event that made the previous</br>
+command exit.</br>
+</br>
+The value `kill-region' is special; it means that the previous command</br>
+was a kill command.</br>
+</br>
+`last-command' has a separate binding for each terminal device.</br>
 See Info node `(elisp)Multiple Terminals'.

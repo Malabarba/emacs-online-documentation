@@ -1,14 +1,16 @@
-<strong>erc-insert-modify-hook</strong> is a variable defined in `<code>erc.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Insertion hook for functions that will change the text's appearance.<br/>
-This hook is called just after `erc-insert-pre-hook' when the value<br/>
-of `erc-insert-this' is t.<br/>
-While this hook is run, narrowing is in effect and `current-buffer' is<br/>
-the buffer where the text got inserted.  One possible value to add here<br/>
-is `erc-fill'.<br/>
-<br/>
+<strong>erc-insert-modify-hook</strong> is a variable defined in `<code>erc.el</code>'.</br>
+Its value is <pre></br>
+(erc-controls-highlight erc-fill erc-button-add-buttons erc-match-message erc-add-timestamp)
+</pre></br>
+<strong>Original</strong> value was </br>
+<prenil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Insertion hook for functions that will change the text's appearance.</br>
+This hook is called just after `erc-insert-pre-hook' when the value</br>
+of `erc-insert-this' is t.</br>
+While this hook is run, narrowing is in effect and `current-buffer' is</br>
+the buffer where the text got inserted.  One possible value to add here</br>
+is `erc-fill'.</br>
+</br>
 You can customize this variable.

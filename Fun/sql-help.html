@@ -1,35 +1,55 @@
-<strong>sql-help</strong> is an interactive autoloaded compiled Lisp function in `<code>sql.el</code>'.<br/>
-<br/>
-(sql-help)<br/>
-<br/>
-Show short help for the SQL modes.<br/>
-<br/>
-Use an entry function to open an interactive SQL buffer.  This buffer is<br/>
-usually named `*SQL*'.  The name of the major mode is SQLi.<br/>
-<br/>
-Use the following commands to start a specific SQL interpreter:<br/>
-<br/>
-    \\FREE<br/>
-<br/>
-Other non-free SQL implementations are also supported:<br/>
-<br/>
-    \\NONFREE<br/>
-<br/>
-But we urge you to choose a free implementation instead of these.<br/>
-<br/>
-You can also use M-x sql-product-interactive to invoke the<br/>
-interpreter for the current `sql-product'.<br/>
-<br/>
-Once you have the SQLi buffer, you can enter SQL statements in the<br/>
-buffer.  The output generated is appended to the buffer and a new prompt<br/>
-is generated.  See the In/Out menu in the SQLi buffer for some functions<br/>
-that help you navigate through the buffer, the input history, etc.<br/>
-<br/>
-If you have a really complex SQL statement or if you are writing a<br/>
-procedure, you can do this in a separate buffer.  Put the new buffer in<br/>
-`sql-mode' by calling M-x sql-mode.  The name of this buffer can be<br/>
-anything.  The name of the major mode is SQL.<br/>
-<br/>
-In this SQL buffer (SQL mode), you can send the region or the entire<br/>
-buffer to the interactive SQL buffer (SQLi mode).  The results are<br/>
+<strong>sql-help</strong> is an interactive compiled Lisp function in `<code>sql.el</code>'.</br>
+</br>
+</br>
+(sql-help)</br>
+</br>
+Show short help for the SQL modes.</br>
+Use an entry function to open an interactive SQL buffer.  This buffer is</br>
+usually named `*SQL*'.  The name of the major mode is SQLi.</br>
+</br>
+Use the following commands to start a specific SQL interpreter:</br>
+</br>
+    MySQL:	M-x sql-mysql</br>
+</br>
+    Postgres:	M-x sql-postgres</br>
+</br>
+    SQLite:	M-x sql-sqlite</br>
+</br>
+Other non-free SQL implementations are also supported:</br>
+</br>
+    DB2:	M-x sql-db2</br>
+</br>
+    Informix:	M-x sql-informix</br>
+</br>
+    Ingres:	M-x sql-ingres</br>
+</br>
+    Interbase:	M-x sql-interbase</br>
+</br>
+    Linter:	M-x sql-linter</br>
+</br>
+    Microsoft:	M-x sql-ms</br>
+</br>
+    Oracle:	M-x sql-oracle</br>
+</br>
+    Solid:	M-x sql-solid</br>
+</br>
+    Sybase:	M-x sql-sybase</br>
+</br>
+But we urge you to choose a free implementation instead of these.</br>
+</br>
+You can also use M-x sql-product-interactive to invoke the</br>
+interpreter for the current `sql-product'.</br>
+</br>
+Once you have the SQLi buffer, you can enter SQL statements in the</br>
+buffer.  The output generated is appended to the buffer and a new prompt</br>
+is generated.  See the In/Out menu in the SQLi buffer for some functions</br>
+that help you navigate through the buffer, the input history, etc.</br>
+</br>
+If you have a really complex SQL statement or if you are writing a</br>
+procedure, you can do this in a separate buffer.  Put the new buffer in</br>
+`sql-mode' by calling M-x sql-mode.  The name of this buffer can be</br>
+anything.  The name of the major mode is SQL.</br>
+</br>
+In this SQL buffer (SQL mode), you can send the region or the entire</br>
+buffer to the interactive SQL buffer (SQLi mode).  The results are</br>
 appended to the SQLi buffer without disturbing your SQL buffer.

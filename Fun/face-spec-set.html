@@ -1,17 +1,27 @@
-<strong>face-spec-set</strong> is a compiled Lisp function in `<code>faces.el</code>'.<br/>
-<br/>
-(face-spec-set FACE SPEC &optional FOR-DEFFACE)<br/>
-<br/>
-Set and apply the face spec for FACE.<br/>
-If the optional argument FOR-DEFFACE is omitted or nil, set the<br/>
-overriding spec to SPEC, recording it in the `face-override-spec'<br/>
-property of FACE.  See `defface' for the format of SPEC.<br/>
-<br/>
-If FOR-DEFFACE is non-nil, set the base spec (the one set by<br/>
-`defface' and Custom).  In this case, SPEC is ignored; the caller<br/>
-is responsible for putting the face spec in the `saved-face',<br/>
-`customized-face', or `face-defface-spec', as appropriate.<br/>
-<br/>
-The appearance of FACE is controlled by the base spec, by any<br/>
-custom theme specs on top of that, and by the overriding spec on<br/>
-top of all the rest.
+<strong>face-spec-set</strong> is a compiled Lisp function in `<code>faces.el</code>'.</br>
+</br>
+(face-spec-set <u>FACE</u> <u>SPEC</u> &optional <u>SPEC-TYPE</u>)</br>
+</br>
+Set the face spec <u>SPEC</u> for <u>FACE</u>.</br>
+See `defface' for the format of <u>SPEC</u>.</br>
+</br>
+The appearance of each face is controlled by its specs (set via</br>
+this function), and by the internal frame-specific face</br>
+attributes (set via `set-face-attribute').</br>
+</br>
+This function also defines <u>FACE</u> as a valid face name if it is not</br>
+already one, and (re)calculates its attributes on existing</br>
+frames.</br>
+</br>
+The argument <u>SPEC-TYPE</u> determines which spec to set:</br>
+  nil or `face-override-spec' means the override spec (which is</br>
+    usually what you want if calling this function outside of</br>
+    Custom code);</br>
+  `customized-face' or `saved-face' means the customized spec or</br>
+    the saved custom spec;</br>
+  `face-defface-spec' means the default spec</br>
+    (usually set only via `defface');</br>
+  `reset' means to ignore <u>SPEC</u>, but clear the `customized-face'</br>
+    and `face-override-spec' specs;</br>
+Any other value means not to set any spec, but to run the</br>
+function for its other effects.

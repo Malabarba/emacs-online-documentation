@@ -1,29 +1,30 @@
-<strong>custom-guess-name-alist</strong> is a variable defined in `<code>cus-edit.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Alist of (MATCH TYPE).<br/>
-<br/>
-MATCH should be a regexp matching the name of a symbol, and TYPE should<br/>
-be a widget suitable for editing the value of that symbol.  The TYPE<br/>
-of the first entry where MATCH matches the name of the symbol will be<br/>
-used.<br/>
-<br/>
-This is used for guessing the type of variables not declared with<br/>
-customize.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (("-p\\'" boolean)<br/>
- ("-flag\\'" boolean)<br/>
- ("-hook\\'" hook)<br/>
- ("-face\\'" face)<br/>
- ("-file\\'" file)<br/>
- ("-function\\'" function)<br/>
- ("-functions\\'"<br/>
-  (repeat function))<br/>
- ("-list\\'"<br/>
-  (repeat sexp))<br/>
- ("-alist\\'"<br/>
-  (alist :key-type sexp :value-type sexp)))<br/>
-<br/>
+<strong>custom-guess-name-alist</strong> is a variable defined in `<code>cus-edit.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of (MATCH TYPE).</br>
+</br>
+MATCH should be a regexp matching the name of a symbol, and TYPE should</br>
+be a widget suitable for editing the value of that symbol.  The TYPE</br>
+of the first entry where MATCH matches the name of the symbol will be</br>
+used.</br>
+</br>
+This is used for guessing the type of variables not declared with</br>
+customize.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("-p\\'" boolean)
+ ("-flag\\'" boolean)
+ ("-hook\\'" hook)
+ ("-face\\'" face)
+ ("-file\\'" file)
+ ("-function\\'" function)
+ ("-functions\\'"
+  (repeat function))
+ ("-list\\'"
+  (repeat sexp))
+ ("-alist\\'"
+  (alist :key-type sexp :value-type sexp)))
+</pre></br>

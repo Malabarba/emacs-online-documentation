@@ -1,25 +1,25 @@
-<strong>call-process-region</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(call-process-region START END PROGRAM &optional DELETE BUFFER DISPLAY &rest ARGS)<br/>
-<br/>
-Send text from START to END to a synchronous process running PROGRAM.<br/>
-The remaining arguments are optional.<br/>
-Delete the text if fourth arg DELETE is non-nil.<br/>
-<br/>
-Insert output in BUFFER before point; t means current buffer; nil for<br/>
- BUFFER means discard it; 0 means discard and don't wait; and `(:file<br/>
- FILE)', where FILE is a file name string, means that it should be<br/>
- written to that file (if the file already exists it is overwritten).<br/>
-BUFFER can also have the form (REAL-BUFFER STDERR-FILE); in that case,<br/>
-REAL-BUFFER says what to do with standard output, as above,<br/>
-while STDERR-FILE says what to do with standard error in the child.<br/>
-STDERR-FILE may be nil (discard standard error output),<br/>
-t (mix it with ordinary output), or a file name string.<br/>
-<br/>
-Sixth arg DISPLAY non-nil means redisplay buffer as output is inserted.<br/>
-Remaining args are passed to PROGRAM at startup as command args.<br/>
-<br/>
-If BUFFER is 0, `call-process-region' returns immediately with value nil.<br/>
-Otherwise it waits for PROGRAM to terminate<br/>
-and returns a numeric exit status or a signal description string.<br/>
+<strong>call-process-region</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(call-process-region <u>START</u> <u>END</u> <u>PROGRAM</u> &optional <u>DELETE</u> <u>BUFFER</u> <u>DISPLAY</u> &rest <u>ARGS</u>)</br>
+</br>
+Send text from <u>START</u> to <u>END</u> to a synchronous process running <u>PROGRAM</u>.</br>
+The remaining arguments are optional.</br>
+Delete the text if fourth arg <u>DELETE</u> is non-nil.</br>
+</br>
+Insert output in <u>BUFFER</u> before point; t means current buffer; nil for</br>
+ <u>BUFFER</u> means discard it; 0 means discard and don't wait; and `(:file</br>
+ FILE)', where FILE is a file name string, means that it should be</br>
+ written to that file (if the file already exists it is overwritten).</br>
+<u>BUFFER</u> can also have the form (REAL-BUFFER STDERR-FILE); in that case,</br>
+REAL-BUFFER says what to do with standard output, as above,</br>
+while STDERR-FILE says what to do with standard error in the child.</br>
+STDERR-FILE may be nil (discard standard error output),</br>
+t (mix it with ordinary output), or a file name string.</br>
+</br>
+Sixth arg <u>DISPLAY</u> non-nil means redisplay buffer as output is inserted.</br>
+Remaining args are passed to <u>PROGRAM</u> at startup as command args.</br>
+</br>
+If <u>BUFFER</u> is 0, `call-process-region' returns immediately with value nil.</br>
+Otherwise it waits for <u>PROGRAM</u> to terminate</br>
+and returns a numeric exit status or a signal description string.</br>
 If you quit, the process is killed with SIGINT, or SIGKILL if you quit again.

@@ -1,9 +1,7 @@
-<strong>dbus-event-error-functions</strong> is a variable defined in `<code>dbus.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Functions to be called when a D-Bus error happens in the event handler.<br/>
-Every function must accept two arguments, the event and the error variable<br/>
+<strong>dbus-event-error-functions</strong> is a variable defined in `<code>dbus.el</code>'.</br>
+Its value is <pre>(dbus-notice-synchronous-call-errors)</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Functions to be called when a D-Bus error happens in the event handler.</br>
+Every function must accept two arguments, the event and the error variable</br>
 caught in `condition-case' by `dbus-error'.

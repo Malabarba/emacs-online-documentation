@@ -1,15 +1,15 @@
-<strong>vc-call-backend</strong> is a compiled Lisp function in `<code>vc-hooks.el</code>'.<br/>
-<br/>
-(vc-call-backend BACKEND FUNCTION-NAME &rest ARGS)<br/>
-<br/>
-Call for BACKEND the implementation of FUNCTION-NAME with the given ARGS.<br/>
-Calls<br/>
-<br/>
-    (apply 'vc-BACKEND-FUN ARGS)<br/>
-<br/>
-if vc-BACKEND-FUN exists (after trying to find it in vc-BACKEND.el)<br/>
-and else calls<br/>
-<br/>
-    (apply 'vc-default-FUN BACKEND ARGS)<br/>
-<br/>
+<strong>vc-call-backend</strong> is a compiled Lisp function in `<code>vc-hooks.el</code>'.</br>
+</br>
+(vc-call-backend <u>BACKEND</u> <u>FUNCTION-NAME</u> &rest <u>ARGS</u>)</br>
+</br>
+Call for <u>BACKEND</u> the implementation of <u>FUNCTION-NAME</u> with the given <u>ARGS</u>.</br>
+Calls</br>
+</br>
+    (apply 'vc-BACKEND-FUN <u>ARGS</u>)</br>
+</br>
+if vc-BACKEND-FUN exists (after trying to find it in vc-<u>BACKEND</u>.el)</br>
+and else calls</br>
+</br>
+    (apply 'vc-default-FUN <u>BACKEND</u> <u>ARGS</u>)</br>
+</br>
 It is usually called via the `vc-call' macro.

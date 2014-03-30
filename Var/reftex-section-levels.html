@@ -1,29 +1,30 @@
-<strong>reftex-section-levels</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Commands and levels used for defining sections in the document.<br/>
-This is an alist with each element like (COMMAND-NAME . LEVEL).<br/>
-The car of each cons cell is the name of the section macro (without<br/>
-the backslash).  The cdr is a number indicating its level.  A negative<br/>
-level means the same level as the positive value, but the section will<br/>
-never get a number.  The cdr may also be a function which will be called<br/>
-to after the section-re matched to determine the level.<br/>
-This list is also used for promotion and demotion of sectioning commands.<br/>
-If you are using a document class which has several sets of sectioning<br/>
-commands, promotion only works correctly if this list is sorted first<br/>
-by set, then within each set by level.  The promotion commands always<br/>
-select the nearest entry with the correct new level.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (("part" . 0)<br/>
- ("chapter" . 1)<br/>
- ("section" . 2)<br/>
- ("subsection" . 3)<br/>
- ("subsubsection" . 4)<br/>
- ("paragraph" . 5)<br/>
- ("subparagraph" . 6)<br/>
- ("addchap" . -1)<br/>
- ("addsec" . -2))<br/>
-<br/>
+<strong>reftex-section-levels</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Commands and levels used for defining sections in the document.</br>
+This is an alist with each element like (COMMAND-NAME . LEVEL).</br>
+The car of each cons cell is the name of the section macro (without</br>
+the backslash).  The cdr is a number indicating its level.  A negative</br>
+level means the same level as the positive value, but the section will</br>
+never get a number.  The cdr may also be a function which will be called</br>
+to after the section-re matched to determine the level.</br>
+This list is also used for promotion and demotion of sectioning commands.</br>
+If you are using a document class which has several sets of sectioning</br>
+commands, promotion only works correctly if this list is sorted first</br>
+by set, then within each set by level.  The promotion commands always</br>
+select the nearest entry with the correct new level.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("part" . 0)
+ ("chapter" . 1)
+ ("section" . 2)
+ ("subsection" . 3)
+ ("subsubsection" . 4)
+ ("paragraph" . 5)
+ ("subparagraph" . 6)
+ ("addchap" . -1)
+ ("addsec" . -2))
+</pre></br>

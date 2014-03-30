@@ -1,0 +1,16 @@
+<strong>tramp-remote-process-environment</strong> is a variable defined in `<code>tramp-sh.el</code>'.</br>
+Its value is <pre></br>
+("HISTFILE=$HOME/.tramp_history" "HISTSIZE=1" "TMOUT=0" "LC_CTYPE=''" "TERM=dumb" "EMACS=t" "INSIDE_EMACS='24.3.50.1,tramp:2.2.9-24.4'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=\"\"" "autocorrect=" "correct=")
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of environment variables to be set on the remote host.</br>
+</br>
+Each element should be a string of the form ENVVARNAME=VALUE.  An</br>
+entry ENVVARNAME= disables the corresponding environment variable,</br>
+which might have been set in the init files like ~/.profile.</br>
+</br>
+Special handling is applied to the PATH environment, which should</br>
+not be set here. Instead, it should be set via `tramp-remote-path'.</br>
+</br>
+You can customize this variable.

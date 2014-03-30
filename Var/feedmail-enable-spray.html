@@ -1,26 +1,26 @@
-<strong>feedmail-enable-spray</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-If non-nil, transmit message separately to each addressee.<br/>
-feedmail normally accumulates a list of addressees and passes the message<br/>
-along with that list to a buffer-eating function which expects any number<br/>
-of addressees.  If this variable is non-nil, however, feedmail will<br/>
-repeatedly call the same buffer-eating function.  Each time, the list of<br/>
-addressees will be just one item from the original list.  This only affects<br/>
-the message envelope addresses and doesn't affect what appears in the<br/>
-message headers except as noted.<br/>
-<br/>
-Spray mode is usually pointless, and if you can't think of a good reason for<br/>
-it, you should avoid it since it is inherently less efficient than normal<br/>
-multiple delivery.  One reason to use it is to overcome mis-featured mail<br/>
-transports which betray your trust by revealing Bcc: addressees in the<br/>
-headers of a message.  Another use is to do a crude form of mailmerge, for<br/>
-which see `feedmail-spray-address-fiddle-plex-list'.<br/>
-<br/>
-If one of the calls to the buffer-eating function results in an error,<br/>
-what happens next is carelessly defined, so beware.  This should get ironed<br/>
-out in some future release, and there could be other API changes for spraying<br/>
-as well.<br/>
-<br/>
+<strong>feedmail-enable-spray</strong> is a variable defined in `<code>feedmail.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, transmit message separately to each addressee.</br>
+feedmail normally accumulates a list of addressees and passes the message</br>
+along with that list to a buffer-eating function which expects any number</br>
+of addressees.  If this variable is non-nil, however, feedmail will</br>
+repeatedly call the same buffer-eating function.  Each time, the list of</br>
+addressees will be just one item from the original list.  This only affects</br>
+the message envelope addresses and doesn't affect what appears in the</br>
+message headers except as noted.</br>
+</br>
+Spray mode is usually pointless, and if you can't think of a good reason for</br>
+it, you should avoid it since it is inherently less efficient than normal</br>
+multiple delivery.  One reason to use it is to overcome mis-featured mail</br>
+transports which betray your trust by revealing Bcc: addressees in the</br>
+headers of a message.  Another use is to do a crude form of mailmerge, for</br>
+which see `feedmail-spray-address-fiddle-plex-list'.</br>
+</br>
+If one of the calls to the buffer-eating function results in an error,</br>
+what happens next is carelessly defined, so beware.  This should get ironed</br>
+out in some future release, and there could be other API changes for spraying</br>
+as well.</br>
+</br>
 You can customize this variable.

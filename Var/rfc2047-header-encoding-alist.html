@@ -1,22 +1,23 @@
-<strong>rfc2047-header-encoding-alist</strong> is a variable defined in `<code>rfc2047.el</code>'.<br/>
-Its value is (("Newsgroups")<br/>
- ("Followup-To")<br/>
- ("Message-ID")<br/>
- ("\\(Resent-\\)?\\(From\\|Cc\\|To\\|Bcc\\|\\(In-\\)?Reply-To\\|Sender\\|Mail-Followup-To\\|Mail-Copies-To\\|Approved\\)" . address-mime)<br/>
- (t . mime))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-*Header/encoding method alist.<br/>
-The list is traversed sequentially.  The keys can either be<br/>
-header regexps or t.<br/>
-<br/>
-The values can be:<br/>
-<br/>
-1) nil, in which case no encoding is done;<br/>
-2) `mime', in which case the header will be encoded according to RFC2047;<br/>
-3) `address-mime', like `mime', but takes account of the rules for address<br/>
-   fields (where quoted strings and comments must be treated separately);<br/>
-4) a charset, in which case it will be encoded as that charset;<br/>
-5) `default', in which case the field will be encoded as the rest<br/>
+<strong>rfc2047-header-encoding-alist</strong> is a variable defined in `<code>rfc2047.el</code>'.</br>
+Its value is <pre></br>
+(("Newsgroups")
+ ("Followup-To")
+ ("Message-ID")
+ ("\\(Resent-\\)?\\(From\\|Cc\\|To\\|Bcc\\|\\(In-\\)?Reply-To\\|Sender\\|Mail-Followup-To\\|Mail-Copies-To\\|Approved\\)" . address-mime)
+ (t . mime))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Header/encoding method alist.</br>
+The list is traversed sequentially.  The keys can either be</br>
+header regexps or t.</br>
+</br>
+The values can be:</br>
+</br>
+1) nil, in which case no encoding is done;</br>
+2) `mime', in which case the header will be encoded according to RFC2047;</br>
+3) `address-mime', like `mime', but takes account of the rules for address</br>
+   fields (where quoted strings and comments must be treated separately);</br>
+4) a charset, in which case it will be encoded as that charset;</br>
+5) `default', in which case the field will be encoded as the rest</br>
    of the article.

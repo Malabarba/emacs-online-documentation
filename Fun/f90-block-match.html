@@ -1,10 +1,13 @@
-<strong>f90-block-match</strong> is a compiled Lisp function in `<code>f90.el</code>'.<br/>
-<br/>
-(f90-block-match BEG-BLOCK BEG-NAME END-BLOCK END-NAME)<br/>
-<br/>
-Match end-struct with beg-struct and complete end-block if possible.<br/>
-BEG-BLOCK is the type of block as indicated at the start (e.g., do).<br/>
-BEG-NAME is the block start name (may be nil).<br/>
-END-BLOCK is the type of block as indicated at the end (may be nil).<br/>
-END-NAME is the block end name (may be nil).<br/>
+<strong>f90-block-match</strong> is a compiled Lisp function in `<code>f90.el</code>'.</br>
+</br>
+(f90-block-match <u>BEG-BLOCK</u> <u>BEG-NAME</u> <u>END-BLOCK</u> <u>END-NAME</u>)</br>
+</br>
+Match end-struct with beg-struct and complete end-block if possible.</br>
+<u>BEG-BLOCK</u> is the type of block as indicated at the start (e.g., do).</br>
+<u>BEG-NAME</u> is the block start name (may be nil).</br>
+<u>END-BLOCK</u> is the type of block as indicated at the end (may be nil).</br>
+<u>END-NAME</u> is the block end name (may be nil).</br>
+If the block type matches `f90-end-block-optional-name', do not add</br>
+an end name if `f90-smart-end-names' is nil, but always update an</br>
+incorrect end name if there already was one.</br>
 Leave point at the end of line.

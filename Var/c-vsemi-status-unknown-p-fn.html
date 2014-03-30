@@ -1,12 +1,10 @@
-<strong>c-vsemi-status-unknown-p-fn</strong> is a variable defined in `<code>cc-engine.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-Contains a function "are we unsure whether there is a virtual semicolon on this line?".<br/>
-The (admittedly kludgy) purpose of such a function is to prevent an infinite<br/>
-recursion in c-beginning-of-statement-1 when point starts at a `while' token.<br/>
-The function MUST NOT UNDER ANY CIRCUMSTANCES call c-beginning-of-statement-1,<br/>
-even indirectly.  This variable contains nil for languages which don't have<br/>
+<strong>c-vsemi-status-unknown-p-fn</strong> is a variable defined in `<code>cc-engine.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Contains a function "are we unsure whether there is a virtual semicolon on this line?".</br>
+The (admittedly kludgy) purpose of such a function is to prevent an infinite</br>
+recursion in c-beginning-of-statement-1 when point starts at a `while' token.</br>
+The function MUST NOT UNDER ANY CIRCUMSTANCES call c-beginning-of-statement-1,</br>
+even indirectly.  This variable contains nil for languages which don't have</br>
 EOL terminated statements.

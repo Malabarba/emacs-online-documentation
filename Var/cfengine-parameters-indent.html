@@ -1,0 +1,63 @@
+<strong>cfengine-parameters-indent</strong> is a variable defined in `<code>cfengine.el</code>'.</br>
+Its value is <pre>(promise pname 0)</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Indentation of CFEngine3 promise parameters (hanging indent).</br>
+</br>
+For example, say you have this code:</br>
+</br>
+bundle x y</br>
+{</br>
+  section:</br>
+    class::</br>
+      promise ...</br>
+      promiseparameter => ...</br>
+}</br>
+</br>
+You can choose to indent promiseparameter from the beginning of</br>
+the line (absolutely) or from the word "promise" (relatively).</br>
+</br>
+You can also choose to indent the start of the word</br>
+"promiseparameter" or the arrow that follows it.</br>
+</br>
+Finally, you can choose the amount of the indent.</br>
+</br>
+The default is to anchor at promise, indent parameter name, and offset 0:</br>
+</br>
+bundle agent rcfiles</br>
+{</br>
+  files:</br>
+    any::</br>
+      "/tmp/netrc"</br>
+      comment => "my netrc",</br>
+      perms => mog("600", "tzz", "tzz");</br>
+}</br>
+</br>
+Here we anchor at beginning of line, indent arrow, and offset 10:</br>
+</br>
+bundle agent rcfiles</br>
+{</br>
+  files:</br>
+    any::</br>
+      "/tmp/netrc"</br>
+  comment => "my netrc",</br>
+    perms => mog("600", "tzz", "tzz");</br>
+}</br>
+</br>
+Some, including cfengine_stdlib.cf, like to anchor at promise, indent</br>
+arrow, and offset 16 or so:</br>
+</br>
+bundle agent rcfiles</br>
+{</br>
+  files:</br>
+    any::</br>
+      "/tmp/netrc"</br>
+              comment => "my netrc",</br>
+                perms => mog("600", "tzz", "tzz");</br>
+}</br>
+</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

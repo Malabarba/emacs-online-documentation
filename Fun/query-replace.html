@@ -1,35 +1,41 @@
-<strong>query-replace</strong> is an interactive compiled Lisp function in `<code>replace.el</code>'.<br/>
-<br/>
-It is bound to M-%, <menu-bar> <edit> <replace> <query-replace>.<br/>
-<br/>
-(query-replace FROM-STRING TO-STRING &optional DELIMITED START END)<br/>
-<br/>
-Replace some occurrences of FROM-STRING with TO-STRING.<br/>
-As each match is found, the user must type a character saying<br/>
-what to do with it.  For directions, type C-h at that time.<br/>
-<br/>
-In Transient Mark mode, if the mark is active, operate on the contents<br/>
-of the region.  Otherwise, operate from point to the end of the buffer.<br/>
-<br/>
-Use M-n to pull the last incremental search string to the minibuffer<br/>
-that reads FROM-STRING, or invoke replacements from<br/>
-incremental search with a key sequence like `C-s C-s M-%'<br/>
-to use its current search string as the string to replace.<br/>
-<br/>
-Matching is independent of case if `case-fold-search' is non-nil and<br/>
-FROM-STRING has no uppercase letters.  Replacement transfers the case<br/>
-pattern of the old text to the new text, if `case-replace' and<br/>
-`case-fold-search' are non-nil and FROM-STRING has no uppercase<br/>
-letters.  (Transferring the case pattern means that if the old text<br/>
-matched is all caps, or capitalized, then its replacement is upcased<br/>
-or capitalized.)<br/>
-<br/>
-If `replace-lax-whitespace' is non-nil, a space or spaces in the string<br/>
-to be replaced will match a sequence of whitespace chars defined by the<br/>
-regexp in `search-whitespace-regexp'.<br/>
-<br/>
-Third arg DELIMITED (prefix arg if interactive), if non-nil, means replace<br/>
-only matches surrounded by word boundaries.<br/>
-Fourth and fifth arg START and END specify the region to operate on.<br/>
-<br/>
+<strong>query-replace</strong> is an interactive compiled Lisp function in `<code>replace.el</code>'.</br>
+</br>
+It is bound to M-%, &lt;menu-bar> &lt;edit> &lt;replace> &lt;query-replace>.</br>
+</br>
+<code>(query-replace <u>FROM-STRING</u> <u>TO-STRING</u> <em>&optional</em> <u>DELIMITED</u> <u>START</u> <u>END</u> <u>BACKWARD</u></code>)</br>
+</br>
+Replace some occurrences of <u>FROM-STRING</u> with <u>TO-STRING</u>.</br>
+As each match is found, the user must type a character saying</br>
+what to do with it.  For directions, type C-h at that time.</br>
+</br>
+In Transient Mark mode, if the mark is active, operate on the contents</br>
+of the region.  Otherwise, operate from point to the end of the buffer.</br>
+</br>
+Use M-n to pull the last incremental search string to the minibuffer</br>
+that reads <u>FROM-STRING</u>, or invoke replacements from</br>
+incremental search with a key sequence like `C-s C-s M-%'</br>
+to use its current search string as the string to replace.</br>
+</br>
+Matching is independent of case if `case-fold-search' is non-nil and</br>
+<u>FROM-STRING</u> has no uppercase letters.  Replacement transfers the case</br>
+pattern of the old text to the new text, if `case-replace' and</br>
+`case-fold-search' are non-nil and <u>FROM-STRING</u> has no uppercase</br>
+letters.  (Transferring the case pattern means that if the old text</br>
+matched is all caps, or capitalized, then its replacement is upcased</br>
+or capitalized.)</br>
+</br>
+Ignore read-only matches if `query-replace-skip-read-only' is non-nil,</br>
+ignore hidden matches if `search-invisible' is nil, and ignore more</br>
+matches using `isearch-filter-predicate'.</br>
+</br>
+If `replace-lax-whitespace' is non-nil, a space or spaces in the string</br>
+to be replaced will match a sequence of whitespace chars defined by the</br>
+regexp in `search-whitespace-regexp'.</br>
+</br>
+Third arg <u>DELIMITED</u> (prefix arg if interactive), if non-nil, means replace</br>
+only matches surrounded by word boundaries.  A negative prefix arg means</br>
+replace backward.</br>
+</br>
+Fourth and fifth arg <u>START</u> and <u>END</u> specify the region to operate on.</br>
+</br>
 To customize possible responses, change the "bindings" in `query-replace-map'.

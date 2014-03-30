@@ -1,30 +1,33 @@
-<strong>window-min-delta</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(window-min-delta &optional WINDOW HORIZONTAL IGNORE TRAIL NOUP NODOWN)<br/>
-<br/>
-Return number of lines by which WINDOW can be shrunk.<br/>
-WINDOW must be a valid window and defaults to the selected one.<br/>
-Return zero if WINDOW cannot be shrunk.<br/>
-<br/>
-Optional argument HORIZONTAL non-nil means return number of<br/>
-columns by which WINDOW can be shrunk.<br/>
-<br/>
-Optional argument IGNORE non-nil means ignore restrictions<br/>
-imposed by fixed size windows, `window-min-height' or<br/>
-`window-min-width' settings.  If IGNORE is a window, ignore<br/>
-restrictions for that window only.  If IGNORE equals `safe',<br/>
-live windows may get as small as `window-safe-min-height' lines<br/>
-and `window-safe-min-width' columns.  Any other non-nil value<br/>
-means ignore all of the above restrictions for all windows.<br/>
-<br/>
-Optional argument TRAIL restricts the windows that can be enlarged.<br/>
-If its value is `before', only windows to the left of or above WINDOW<br/>
-can be enlarged.  If it is `after', only windows to the right of or<br/>
-below WINDOW can be enlarged.<br/>
-<br/>
-Optional argument NOUP non-nil means don't go up in the window<br/>
-tree, but try to enlarge windows within WINDOW's combination only.<br/>
-<br/>
-Optional argument NODOWN non-nil means don't check whether WINDOW<br/>
-itself (and its child windows) can be shrunk; check only whether<br/>
-at least one other window can be enlarged appropriately.
+<strong>window-min-delta</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(window-min-delta &optional <u>WINDOW</u> <u>HORIZONTAL</u> <u>IGNORE</u> <u>TRAIL</u> <u>NOUP</u> <u>NODOWN</u> <u>PIXELWISE</u>)</br>
+</br>
+Return number of lines by which <u>WINDOW</u> can be shrunk.</br>
+<u>WINDOW</u> must be a valid window and defaults to the selected one.</br>
+Return zero if <u>WINDOW</u> cannot be shrunk.</br>
+</br>
+Optional argument <u>HORIZONTAL</u> non-nil means return number of</br>
+columns by which <u>WINDOW</u> can be shrunk.</br>
+</br>
+Optional argument <u>IGNORE</u> non-nil means ignore restrictions</br>
+imposed by fixed size windows, `window-min-height' or</br>
+`window-min-width' settings.  If <u>IGNORE</u> is a window, ignore</br>
+restrictions for that window only.  If <u>IGNORE</u> equals `safe',</br>
+live windows may get as small as `window-safe-min-height' lines</br>
+and `window-safe-min-width' columns.  Any other non-nil value</br>
+means ignore all of the above restrictions for all windows.</br>
+</br>
+Optional argument <u>TRAIL</u> restricts the windows that can be enlarged.</br>
+If its value is `before', only windows to the left of or above <u>WINDOW</u></br>
+can be enlarged.  If it is `after', only windows to the right of or</br>
+below <u>WINDOW</u> can be enlarged.</br>
+</br>
+Optional argument <u>NOUP</u> non-nil means don't go up in the window</br>
+tree, but try to enlarge windows within <u>WINDOW</u>'s combination only.</br>
+</br>
+Optional argument <u>NODOWN</u> non-nil means don't check whether <u>WINDOW</u></br>
+itself (and its child windows) can be shrunk; check only whether</br>
+at least one other window can be enlarged appropriately.</br>
+</br>
+Optional argument <u>PIXELWISE</u> non-nil means return number of pixels</br>
+by which <u>WINDOW</u> can be shrunk.

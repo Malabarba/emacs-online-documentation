@@ -1,70 +1,69 @@
-<strong>prolog-inferior-mode-map</strong> is a variable defined in `<code>prolog.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `prolog-inferior-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Prolog menu-item<br/>
-		   (cond<br/>
-		    ((eq prolog-system 'eclipse)<br/>
-		     "ECLiPSe")<br/>
-		    ((eq prolog-system 'mercury)<br/>
-		     "Mercury")<br/>
-		    (t "Prolog"))<br/>
-		   (keymap "Prolog"<br/>
-			   (----9 menu-item "---" nil :visible<br/>
-				  (not<br/>
-				   (eq prolog-system 'mercury)))<br/>
-			   (Debug menu-item "Debug" prolog-debug-on :visible<br/>
-				  (not<br/>
-				   (eq prolog-system 'mercury)))<br/>
-			   (Debug\ off menu-item "Debug off" prolog-debug-off :visible<br/>
-				       (not<br/>
-					(memq prolog-system<br/>
-					      '(mercury sicstus))))<br/>
-			   (Trace menu-item "Trace" prolog-trace-on :visible<br/>
-				  (not<br/>
-				   (eq prolog-system 'mercury)))<br/>
-			   (Trace\ off menu-item "Trace off" prolog-trace-off :visible<br/>
-				       (not<br/>
-					(memq prolog-system<br/>
-					      '(mercury sicstus))))<br/>
-			   (Zip menu-item "Zip" prolog-zip-on :visible<br/>
-				(and<br/>
-				 (eq prolog-system 'sicstus)<br/>
-				 (prolog-atleast-version<br/>
-				  '(3 . 7))))<br/>
-			   (All\ debug\ off menu-item "All debug off" prolog-debug-off :visible<br/>
-					    (eq prolog-system 'sicstus))<br/>
-			   (Source\ level\ debugging menu-item "Source level debugging" prolog-toggle-sicstus-sd :visible<br/>
-						     (and<br/>
-						      (eq prolog-system 'sicstus)<br/>
-						      (prolog-atleast-version<br/>
-						       '(3 . 7)))<br/>
-						     :button<br/>
-						     (:toggle . prolog-use-sicstus-sd))<br/>
-			   (nil-9 menu-item "---")<br/>
-			   (Interrupt\ Prolog menu-item "Interrupt Prolog" comint-interrupt-subjob)<br/>
-			   (Quit\ Prolog menu-item "Quit Prolog" comint-quit-subjob)<br/>
-			   (Kill\ Prolog menu-item "Kill Prolog" comint-kill-subjob)))<br/>
-	   (Prolog-help menu-item "Prolog-help"<br/>
-			(keymap "Prolog-help"<br/>
-				(On\ predicate menu-item "On predicate" prolog-help-on-predicate :enable prolog-help-function-i)<br/>
-				(Apropos menu-item "Apropos" prolog-help-apropos :enable<br/>
-					 (eq prolog-system 'swi))<br/>
-				(nil-9 menu-item "---")<br/>
-				(Describe\ mode menu-item "Describe mode" describe-mode))))<br/>
- (remap keymap<br/>
-	(self-insert-command . prolog-inferior-self-insert-command))<br/>
- (3 keymap<br/>
-    (13 . run-prolog)<br/>
-    (26 . prolog-zip-on)<br/>
-    (20 . prolog-trace-on)<br/>
-    (4 . prolog-debug-on)<br/>
-    (47 . prolog-help-apropos)<br/>
-    (63 . prolog-help-on-predicate)))<br/>
-<br/>
+<strong>prolog-inferior-mode-map</strong> is a variable defined in `<code>prolog.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `prolog-inferior-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Prolog menu-item
+		   (cond
+		    ((eq prolog-system 'eclipse)
+		     "ECLiPSe")
+		    ((eq prolog-system 'mercury)
+		     "Mercury")
+		    (t "Prolog"))
+		   (keymap "Prolog"
+			   (----9 menu-item "---" nil :visible
+				  (not
+				   (eq prolog-system 'mercury)))
+			   (Debug menu-item "Debug" prolog-debug-on :visible
+				  (not
+				   (eq prolog-system 'mercury)))
+			   (Debug\ off menu-item "Debug off" prolog-debug-off :visible
+				       (not
+					(memq prolog-system
+					      '(mercury sicstus))))
+			   (Trace menu-item "Trace" prolog-trace-on :visible
+				  (not
+				   (eq prolog-system 'mercury)))
+			   (Trace\ off menu-item "Trace off" prolog-trace-off :visible
+				       (not
+					(memq prolog-system
+					      '(mercury sicstus))))
+			   (Zip menu-item "Zip" prolog-zip-on :visible
+				(and
+				 (eq prolog-system 'sicstus)
+				 (prolog-atleast-version
+				  '(3 . 7))))
+			   (All\ debug\ off menu-item "All debug off" prolog-debug-off :visible
+					    (eq prolog-system 'sicstus))
+			   (Source\ level\ debugging menu-item "Source level debugging" prolog-toggle-sicstus-sd :visible
+						     (and
+						      (eq prolog-system 'sicstus)
+						      (prolog-atleast-version
+						       '(3 . 7)))
+						     :button
+						     (:toggle . prolog-use-sicstus-sd))
+			   (nil menu-item "---")
+			   (Interrupt\ Prolog menu-item "Interrupt Prolog" comint-interrupt-subjob)
+			   (Quit\ Prolog menu-item "Quit Prolog" comint-quit-subjob)
+			   (Kill\ Prolog menu-item "Kill Prolog" comint-kill-subjob)))
+	   (Prolog-help menu-item "Prolog-help"
+			(keymap "Prolog-help"
+				(On\ predicate menu-item "On predicate" prolog-help-on-predicate :enable prolog-help-function-i)
+				(Apropos menu-item "Apropos" prolog-help-apropos :enable
+					 (eq prolog-system 'swi))
+				(nil menu-item "---")
+				(Describe\ mode menu-item "Describe mode" describe-mode))))
+ (remap keymap
+	(self-insert-command . prolog-inferior-self-insert-command))
+ (3 keymap
+    (13 . run-prolog)
+    (26 . prolog-zip-on)
+    (20 . prolog-trace-on)
+    (4 . prolog-debug-on)
+    (47 . prolog-help-apropos)
+    (63 . prolog-help-on-predicate)))
+</pre></br>

@@ -1,0 +1,38 @@
+<strong>file-notify-add-watch</strong> is a compiled Lisp function in `<code>filenotify.el</code>'.</br>
+</br>
+(file-notify-add-watch <u>FILE</u> <u>FLAGS</u> <u>CALLBACK</u>)</br>
+</br>
+Add a watch for filesystem events pertaining to <u>FILE</u>.</br>
+This arranges for filesystem events pertaining to <u>FILE</u> to be reported</br>
+to Emacs.  Use `file-notify-rm-watch' to cancel the watch.</br>
+</br>
+The returned value is a descriptor for the added watch.  If the</br>
+file cannot be watched for some reason, this function signals a</br>
+`file-notify-error' error.</br>
+</br>
+<u>FLAGS</u> is a list of conditions to set what will be watched for.  It can</br>
+include the following symbols:</br>
+</br>
+  `change'           -- watch for file changes</br>
+  `attribute-change' -- watch for file attributes changes, like</br>
+                        permissions or modification time</br>
+</br>
+If <u>FILE</u> is a directory, 'change' watches for file creation or</br>
+deletion in that directory.  This does not work recursively.</br>
+</br>
+When any event happens, Emacs will call the <u>CALLBACK</u> function passing</br>
+it a single argument EVENT, which is of the form</br>
+</br>
+  (DESCRIPTOR ACTION <u>FILE</u> [FILE1])</br>
+</br>
+DESCRIPTOR is the same object as the one returned by this function.</br>
+ACTION is the description of the event.  It could be any one of the</br>
+following:</br>
+</br>
+  `created'           -- <u>FILE</u> was created</br>
+  `deleted'           -- <u>FILE</u> was deleted</br>
+  `changed'           -- <u>FILE</u> has changed</br>
+  `renamed'           -- <u>FILE</u> has been renamed to FILE1</br>
+  `attribute-changed' -- a <u>FILE</u> attribute was changed</br>
+</br>
+<u>FILE</u> is the name of the file whose event is being reported.

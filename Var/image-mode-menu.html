@@ -1,0 +1,51 @@
+<strong>image-mode-menu</strong> is a variable defined in `<code>image-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for Image mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Image"
+	(Show\ as\ Text menu-item "Show as Text" image-toggle-display :help "Show image as text")
+	(nil menu-item "--")
+	(Fit\ Frame\ to\ Image menu-item "Fit Frame to Image" image-mode-fit-frame :help "Resize frame to match image")
+	(Fit\ to\ Window\ Height menu-item "Fit to Window Height" image-transform-fit-to-height :visible
+				 (eq image-type 'imagemagick)
+				 :help "Resize image to match the window height")
+	(Fit\ to\ Window\ Width menu-item "Fit to Window Width" image-transform-fit-to-width :visible
+				(eq image-type 'imagemagick)
+				:help "Resize image to match the window width")
+	(Rotate\ Image\.\.\. menu-item "Rotate Image..." image-transform-set-rotation :visible
+			     (eq image-type 'imagemagick)
+			     :help "Rotate the image")
+	(nil-6 menu-item "--")
+	(Show\ Thumbnails menu-item "Show Thumbnails" menu-function-117 :key-sequence nil :enable default-directory :help "Show thumbnails for all images in this directory")
+	(Next\ Image menu-item "Next Image" image-next-file :enable buffer-file-name :help "Move to next image in this directory")
+	(Previous\ Image menu-item "Previous Image" image-previous-file :enable buffer-file-name :help "Move to previous image in this directory")
+	(nil-10 menu-item "--")
+	(Animate\ Image menu-item "Animate Image" image-toggle-animation :enable image-multi-frame :button
+			(:toggle let
+				 ((image
+				   (image-get-display-property)))
+				 (and image
+				      (image-animate-timer image)))
+			:help "Toggle image animation")
+	(Loop\ Animation menu-item "Loop Animation" menu-function-118 :key-sequence nil :enable image-multi-frame :button
+			 (:toggle . image-animate-loop)
+			 :help "Animate images once, or forever?")
+	(Reverse\ Animation menu-item "Reverse Animation" image-reverse-speed :enable image-multi-frame :button
+			    (:toggle let
+				     ((image
+				       (image-get-display-property)))
+				     (and image
+					  (<
+					   (image-animate-get-speed image)
+					   0)))
+			    :help "Reverse direction of this image's animation?")
+	(Speed\ Up\ Animation menu-item "Speed Up Animation" image-increase-speed :enable image-multi-frame :help "Speed up this image's animation")
+	(Slow\ Down\ Animation menu-item "Slow Down Animation" image-decrease-speed :enable image-multi-frame :help "Slow down this image's animation")
+	(Reset\ Animation\ Speed menu-item "Reset Animation Speed" image-reset-speed :enable image-multi-frame :help "Reset the speed of this image's animation")
+	(Next\ Frame menu-item "Next Frame" image-next-frame :enable image-multi-frame :help "Show the next frame of this image")
+	(Previous\ Frame menu-item "Previous Frame" image-previous-frame :enable image-multi-frame :help "Show the previous frame of this image")
+	(Goto\ Frame\.\.\. menu-item "Goto Frame..." image-goto-frame :enable image-multi-frame :help "Show a specific frame of this image"))
+</pre></br>

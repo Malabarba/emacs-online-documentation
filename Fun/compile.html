@@ -1,32 +1,33 @@
-<strong>compile</strong> is an interactive autoloaded compiled Lisp function in `<code>compile.el</code>'.<br/>
-<br/>
-It is bound to <menu-bar> <tools> <compile>.<br/>
-<br/>
-(compile COMMAND &optional COMINT)<br/>
-<br/>
-Compile the program including the current buffer.  Default: run `make'.<br/>
-Runs COMMAND, a shell command, in a separate process asynchronously<br/>
-with output going to the buffer `*compilation*'.<br/>
-<br/>
-You can then use the command C-x ` to find the next error message<br/>
-and move to the source code that caused it.<br/>
-<br/>
-If optional second arg COMINT is t the buffer will be in Comint mode with<br/>
-`compilation-shell-minor-mode'.<br/>
-<br/>
-Interactively, prompts for the command if `compilation-read-command' is<br/>
-non-nil; otherwise uses `compile-command'.  With prefix arg, always prompts.<br/>
-Additionally, with universal prefix arg, compilation buffer will be in<br/>
-comint mode, i.e. interactive.<br/>
-<br/>
-To run more than one compilation at once, start one then rename<br/>
-the `*compilation*' buffer to some other name with<br/>
-M-x rename-buffer.  Then _switch buffers_ and start the new compilation.<br/>
-It will create a new `*compilation*' buffer.<br/>
-<br/>
-On most systems, termination of the main compilation process<br/>
-kills its subprocesses.<br/>
-<br/>
-The name used for the buffer is actually whatever is returned by<br/>
-the function in `compilation-buffer-name-function', so you can set that<br/>
+<strong>compile</strong> is an interactive autoloaded compiled Lisp function in `<code>compile.el</code>'.</br>
+</br>
+It is bound to &lt;menu-bar> &lt;tools> &lt;compile>.</br>
+</br>
+<code>(compile <u>COMMAND</u> <em>&optional</em> <u>COMINT</u></code>)</br>
+</br>
+Compile the program including the current buffer.  Default: run `make'.</br>
+Runs <u>COMMAND</u>, a shell command, in a separate process asynchronously</br>
+with output going to the buffer `*compilation*'.</br>
+</br>
+You can then use the command C-x ` to find the next error message</br>
+and move to the source code that caused it.</br>
+</br>
+If optional second arg <u>COMINT</u> is t the buffer will be in Comint mode with</br>
+`compilation-shell-minor-mode'.</br>
+</br>
+Interactively, prompts for the command if the variable</br>
+`compilation-read-command' is non-nil; otherwise uses`compile-command'.</br>
+With prefix arg, always prompts.</br>
+Additionally, with universal prefix arg, compilation buffer will be in</br>
+comint mode, i.e. interactive.</br>
+</br>
+To run more than one compilation at once, start one then rename</br>
+the `*compilation*' buffer to some other name with</br>
+M-x rename-buffer.  Then _switch buffers_ and start the new compilation.</br>
+It will create a new `*compilation*' buffer.</br>
+</br>
+On most systems, termination of the main compilation process</br>
+kills its subprocesses.</br>
+</br>
+The name used for the buffer is actually whatever is returned by</br>
+the function in `compilation-buffer-name-function', so you can set that</br>
 to a function that generates a unique name.

@@ -1,12 +1,13 @@
-<strong>icomplete-simple-completing-p</strong> is a compiled Lisp function in `<code>icomplete.el</code>'.<br/>
-<br/>
-(icomplete-simple-completing-p)<br/>
-<br/>
-Non-nil if current window is minibuffer that's doing simple completion.<br/>
-<br/>
-Conditions are:<br/>
-   the selected window is a minibuffer,<br/>
-   and not in the middle of macro execution,<br/>
-   and `minibuffer-completion-table' is not a symbol (which would<br/>
-       indicate some non-standard, non-simple completion mechanism,<br/>
-       like file-name and other custom-func completions).
+<strong>icomplete-simple-completing-p</strong> is a compiled Lisp function in `<code>icomplete.el</code>'.</br>
+</br>
+(icomplete-simple-completing-p)</br>
+</br>
+Non-nil if current window is a minibuffer that's doing simple completion.</br>
+</br>
+Conditions are:</br>
+   the selected window is a minibuffer,</br>
+   and not in the middle of macro execution,</br>
+   and the completion table is not a function (which would</br>
+       indicate some non-standard, non-simple completion mechanism,</br>
+       like file-name and other custom-func completions),</br>
+   and `icomplete-with-completion-tables' doesn't restrict completion.

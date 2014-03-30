@@ -1,138 +1,138 @@
-<strong>mode-line-modes</strong> is a variable defined in `<code>bindings.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Mode line construct for displaying major and minor modes.<br/>
-<br/>
-Value: (#("%[" 0 2<br/>
-   (help-echo "Recursive edit, type C-M-c to get out"))<br/>
- "("<br/>
- (:propertize<br/>
-  ("" mode-name)<br/>
-  help-echo "Major mode\nmouse-1: Display major mode menu\nmouse-2: Show help for major mode\nmouse-3: Toggle minor modes" mouse-face mode-line-highlight local-map<br/>
-  (keymap<br/>
-   (mode-line keymap<br/>
-	      (down-mouse-3 keymap<br/>
-			    (orgtbl-mode menu-item "Org Table Mode" orgtbl-mode :button<br/>
-					 (:toggle . orgtbl-mode))<br/>
-			    (reftex-mode menu-item "RefTeX Mode" reftex-mode :button<br/>
-					 (:toggle . reftex-mode))<br/>
-			    (ruler-mode menu-item "Ruler" ruler-mode :button<br/>
-					(:toggle . ruler-mode))<br/>
-			    (abbrev-mode menu-item "Abbrev (Abbrev)" abbrev-mode :help "Automatically expand abbreviations" :button<br/>
-					 (:toggle . abbrev-mode))<br/>
-			    (auto-fill-mode menu-item "Auto fill (Fill)" auto-fill-mode :help "Automatically insert new lines" :button<br/>
-					    (:toggle . auto-fill-function))<br/>
-			    (auto-revert-mode menu-item "Auto revert (ARev)" auto-revert-mode :help "Revert the buffer when the file on disk changes" :button<br/>
-					      (:toggle bound-and-true-p auto-revert-mode))<br/>
-			    (auto-revert-tail-mode menu-item "Auto revert tail (Tail)" auto-revert-tail-mode :help "Revert the tail of the buffer when buffer grows" :enable<br/>
-						   (buffer-file-name)<br/>
-						   :button<br/>
-						   (:toggle bound-and-true-p auto-revert-tail-mode))<br/>
-			    (flyspell-mode menu-item "Flyspell (Fly)" flyspell-mode :help "Spell checking on the fly" :button<br/>
-					   (:toggle bound-and-true-p flyspell-mode))<br/>
-			    (font-lock-mode menu-item "Font Lock" font-lock-mode :help "Syntax coloring" :button<br/>
-					    (:toggle . font-lock-mode))<br/>
-			    (glasses-mode menu-item "Glasses (o^o)" glasses-mode :help "Insert virtual separators to make long identifiers easy to read" :button<br/>
-					  (:toggle bound-and-true-p glasses-mode))<br/>
-			    (hide-ifdef-mode menu-item "Hide ifdef (Ifdef)" hide-ifdef-mode :help "Show/Hide code within #ifdef constructs" :button<br/>
-					     (:toggle bound-and-true-p hide-ifdef-mode))<br/>
-			    (highlight-changes-mode menu-item "Highlight changes (Chg)" highlight-changes-mode :help "Show changes in the buffer in a distinctive color" :button<br/>
-						    (:toggle bound-and-true-p highlight-changes-mode))<br/>
-			    (outline-minor-mode menu-item "Outline (Outl)" outline-minor-mode :help "" :button<br/>
-						(:toggle bound-and-true-p outline-minor-mode))<br/>
-			    (overwrite-mode menu-item "Overwrite (Ovwrt)" overwrite-mode :help "Overwrite mode: typed characters replace existing text" :button<br/>
-					    (:toggle . overwrite-mode))<br/>
-			    "Minor Modes")<br/>
-	      (mouse-2 . describe-mode)<br/>
-	      (down-mouse-1 menu-item "Menu Bar" ignore :filter<br/>
-			    #[(_)<br/>
-			      "\300 \207"<br/>
-			      [mouse-menu-major-mode-map]<br/>
-			      1]))))<br/>
- ("" mode-line-process)<br/>
- (:propertize<br/>
-  ("" minor-mode-alist)<br/>
-  mouse-face mode-line-highlight help-echo "Minor mode\nmouse-1: Display minor mode menu\nmouse-2: Show help for minor mode\nmouse-3: Toggle minor modes" local-map<br/>
-  (keymap<br/>
-   (header-line keymap<br/>
-		(down-mouse-3 keymap<br/>
-			      (orgtbl-mode menu-item "Org Table Mode" orgtbl-mode :button<br/>
-					   (:toggle . orgtbl-mode))<br/>
-			      (reftex-mode menu-item "RefTeX Mode" reftex-mode :button<br/>
-					   (:toggle . reftex-mode))<br/>
-			      (ruler-mode menu-item "Ruler" ruler-mode :button<br/>
-					  (:toggle . ruler-mode))<br/>
-			      (abbrev-mode menu-item "Abbrev (Abbrev)" abbrev-mode :help "Automatically expand abbreviations" :button<br/>
-					   (:toggle . abbrev-mode))<br/>
-			      (auto-fill-mode menu-item "Auto fill (Fill)" auto-fill-mode :help "Automatically insert new lines" :button<br/>
-					      (:toggle . auto-fill-function))<br/>
-			      (auto-revert-mode menu-item "Auto revert (ARev)" auto-revert-mode :help "Revert the buffer when the file on disk changes" :button<br/>
-						(:toggle bound-and-true-p auto-revert-mode))<br/>
-			      (auto-revert-tail-mode menu-item "Auto revert tail (Tail)" auto-revert-tail-mode :help "Revert the tail of the buffer when buffer grows" :enable<br/>
-						     (buffer-file-name)<br/>
-						     :button<br/>
-						     (:toggle bound-and-true-p auto-revert-tail-mode))<br/>
-			      (flyspell-mode menu-item "Flyspell (Fly)" flyspell-mode :help "Spell checking on the fly" :button<br/>
-					     (:toggle bound-and-true-p flyspell-mode))<br/>
-			      (font-lock-mode menu-item "Font Lock" font-lock-mode :help "Syntax coloring" :button<br/>
-					      (:toggle . font-lock-mode))<br/>
-			      (glasses-mode menu-item "Glasses (o^o)" glasses-mode :help "Insert virtual separators to make long identifiers easy to read" :button<br/>
-					    (:toggle bound-and-true-p glasses-mode))<br/>
-			      (hide-ifdef-mode menu-item "Hide ifdef (Ifdef)" hide-ifdef-mode :help "Show/Hide code within #ifdef constructs" :button<br/>
-					       (:toggle bound-and-true-p hide-ifdef-mode))<br/>
-			      (highlight-changes-mode menu-item "Highlight changes (Chg)" highlight-changes-mode :help "Show changes in the buffer in a distinctive color" :button<br/>
-						      (:toggle bound-and-true-p highlight-changes-mode))<br/>
-			      (outline-minor-mode menu-item "Outline (Outl)" outline-minor-mode :help "" :button<br/>
-						  (:toggle bound-and-true-p outline-minor-mode))<br/>
-			      (overwrite-mode menu-item "Overwrite (Ovwrt)" overwrite-mode :help "Overwrite mode: typed characters replace existing text" :button<br/>
-					      (:toggle . overwrite-mode))<br/>
-			      "Minor Modes"))<br/>
-   (mode-line keymap<br/>
-	      (down-mouse-3 keymap<br/>
-			    (orgtbl-mode menu-item "Org Table Mode" orgtbl-mode :button<br/>
-					 (:toggle . orgtbl-mode))<br/>
-			    (reftex-mode menu-item "RefTeX Mode" reftex-mode :button<br/>
-					 (:toggle . reftex-mode))<br/>
-			    (ruler-mode menu-item "Ruler" ruler-mode :button<br/>
-					(:toggle . ruler-mode))<br/>
-			    (abbrev-mode menu-item "Abbrev (Abbrev)" abbrev-mode :help "Automatically expand abbreviations" :button<br/>
-					 (:toggle . abbrev-mode))<br/>
-			    (auto-fill-mode menu-item "Auto fill (Fill)" auto-fill-mode :help "Automatically insert new lines" :button<br/>
-					    (:toggle . auto-fill-function))<br/>
-			    (auto-revert-mode menu-item "Auto revert (ARev)" auto-revert-mode :help "Revert the buffer when the file on disk changes" :button<br/>
-					      (:toggle bound-and-true-p auto-revert-mode))<br/>
-			    (auto-revert-tail-mode menu-item "Auto revert tail (Tail)" auto-revert-tail-mode :help "Revert the tail of the buffer when buffer grows" :enable<br/>
-						   (buffer-file-name)<br/>
-						   :button<br/>
-						   (:toggle bound-and-true-p auto-revert-tail-mode))<br/>
-			    (flyspell-mode menu-item "Flyspell (Fly)" flyspell-mode :help "Spell checking on the fly" :button<br/>
-					   (:toggle bound-and-true-p flyspell-mode))<br/>
-			    (font-lock-mode menu-item "Font Lock" font-lock-mode :help "Syntax coloring" :button<br/>
-					    (:toggle . font-lock-mode))<br/>
-			    (glasses-mode menu-item "Glasses (o^o)" glasses-mode :help "Insert virtual separators to make long identifiers easy to read" :button<br/>
-					  (:toggle bound-and-true-p glasses-mode))<br/>
-			    (hide-ifdef-mode menu-item "Hide ifdef (Ifdef)" hide-ifdef-mode :help "Show/Hide code within #ifdef constructs" :button<br/>
-					     (:toggle bound-and-true-p hide-ifdef-mode))<br/>
-			    (highlight-changes-mode menu-item "Highlight changes (Chg)" highlight-changes-mode :help "Show changes in the buffer in a distinctive color" :button<br/>
-						    (:toggle bound-and-true-p highlight-changes-mode))<br/>
-			    (outline-minor-mode menu-item "Outline (Outl)" outline-minor-mode :help "" :button<br/>
-						(:toggle bound-and-true-p outline-minor-mode))<br/>
-			    (overwrite-mode menu-item "Overwrite (Ovwrt)" overwrite-mode :help "Overwrite mode: typed characters replace existing text" :button<br/>
-					    (:toggle . overwrite-mode))<br/>
-			    "Minor Modes")<br/>
-	      (mouse-2 . mode-line-minor-mode-help)<br/>
-	      (down-mouse-1 . mouse-minor-mode-menu))))<br/>
- #("%n" 0 2<br/>
-   (local-map<br/>
-    (keymap<br/>
-     (mode-line keymap<br/>
-		(mouse-2 . mode-line-widen)))<br/>
-    mouse-face mode-line-highlight help-echo "mouse-2: Remove narrowing from buffer"))<br/>
- ")"<br/>
- #("%]" 0 2<br/>
-   (help-echo "Recursive edit, type C-M-c to get out"))<br/>
- " ")<br/>
-<br/>
+<strong>mode-line-modes</strong> is a variable defined in `<code>bindings.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Mode line construct for displaying major and minor modes.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((t erc-modified-channels-object)
+ #("%[" 0 2
+   (help-echo "Recursive edit, type C-M-c to get out"))
+ "("
+ (:propertize
+  ("" mode-name)
+  help-echo "Major mode\nmouse-1: Display major mode menu\nmouse-2: Show help for major mode\nmouse-3: Toggle minor modes" mouse-face mode-line-highlight local-map
+  (keymap
+   (mode-line keymap
+	      (down-mouse-3 keymap
+			    (orgtbl-mode menu-item "Org Table Mode" orgtbl-mode :button
+					 (:toggle . orgtbl-mode))
+			    (reftex-mode menu-item "RefTeX Mode" reftex-mode :button
+					 (:toggle . reftex-mode))
+			    (ruler-mode menu-item "Ruler" ruler-mode :button
+					(:toggle . ruler-mode))
+			    (abbrev-mode menu-item "Abbrev (Abbrev)" abbrev-mode :help "Automatically expand abbreviations" :button
+					 (:toggle . abbrev-mode))
+			    (auto-fill-mode menu-item "Auto fill (Fill)" auto-fill-mode :help "Automatically insert new lines" :button
+					    (:toggle . auto-fill-function))
+			    (auto-revert-mode menu-item "Auto revert (ARev)" auto-revert-mode :help "Revert the buffer when the file on disk changes" :button
+					      (:toggle bound-and-true-p auto-revert-mode))
+			    (auto-revert-tail-mode menu-item "Auto revert tail (Tail)" auto-revert-tail-mode :help "Revert the tail of the buffer when buffer grows" :enable
+						   (buffer-file-name)
+						   :button
+						   (:toggle bound-and-true-p auto-revert-tail-mode))
+			    (flyspell-mode menu-item "Flyspell (Fly)" flyspell-mode :help "Spell checking on the fly" :button
+					   (:toggle bound-and-true-p flyspell-mode))
+			    (font-lock-mode menu-item "Font Lock" font-lock-mode :help "Syntax coloring" :button
+					    (:toggle . font-lock-mode))
+			    (glasses-mode menu-item "Glasses (o^o)" glasses-mode :help "Insert virtual separators to make long identifiers easy to read" :button
+					  (:toggle bound-and-true-p glasses-mode))
+			    (hide-ifdef-mode menu-item "Hide ifdef (Ifdef)" hide-ifdef-mode :help "Show/Hide code within #ifdef constructs" :button
+					     (:toggle bound-and-true-p hide-ifdef-mode))
+			    (highlight-changes-mode menu-item "Highlight changes (Chg)" highlight-changes-mode :help "Show changes in the buffer in a distinctive color" :button
+						    (:toggle bound-and-true-p highlight-changes-mode))
+			    (outline-minor-mode menu-item "Outline (Outl)" outline-minor-mode :help "" :button
+						(:toggle bound-and-true-p outline-minor-mode))
+			    (overwrite-mode menu-item "Overwrite (Ovwrt)" overwrite-mode :help "Overwrite mode: typed characters replace existing text" :button
+					    (:toggle . overwrite-mode))
+			    "Minor Modes")
+	      (mouse-2 . describe-mode)
+	      (down-mouse-1 menu-item "Menu Bar" ignore :filter
+			    #[(_)
+			      "\300 \207"
+			      [mouse-menu-major-mode-map]
+			      1]))))
+ ("" mode-line-process)
+ (:propertize
+  ("" minor-mode-alist)
+  mouse-face mode-line-highlight help-echo "Minor mode\nmouse-1: Display minor mode menu\nmouse-2: Show help for minor mode\nmouse-3: Toggle minor modes" local-map
+  (keymap
+   (header-line keymap
+		(down-mouse-3 keymap
+			      (orgtbl-mode menu-item "Org Table Mode" orgtbl-mode :button
+					   (:toggle . orgtbl-mode))
+			      (reftex-mode menu-item "RefTeX Mode" reftex-mode :button
+					   (:toggle . reftex-mode))
+			      (ruler-mode menu-item "Ruler" ruler-mode :button
+					  (:toggle . ruler-mode))
+			      (abbrev-mode menu-item "Abbrev (Abbrev)" abbrev-mode :help "Automatically expand abbreviations" :button
+					   (:toggle . abbrev-mode))
+			      (auto-fill-mode menu-item "Auto fill (Fill)" auto-fill-mode :help "Automatically insert new lines" :button
+					      (:toggle . auto-fill-function))
+			      (auto-revert-mode menu-item "Auto revert (ARev)" auto-revert-mode :help "Revert the buffer when the file on disk changes" :button
+						(:toggle bound-and-true-p auto-revert-mode))
+			      (auto-revert-tail-mode menu-item "Auto revert tail (Tail)" auto-revert-tail-mode :help "Revert the tail of the buffer when buffer grows" :enable
+						     (buffer-file-name)
+						     :button
+						     (:toggle bound-and-true-p auto-revert-tail-mode))
+			      (flyspell-mode menu-item "Flyspell (Fly)" flyspell-mode :help "Spell checking on the fly" :button
+					     (:toggle bound-and-true-p flyspell-mode))
+			      (font-lock-mode menu-item "Font Lock" font-lock-mode :help "Syntax coloring" :button
+					      (:toggle . font-lock-mode))
+			      (glasses-mode menu-item "Glasses (o^o)" glasses-mode :help "Insert virtual separators to make long identifiers easy to read" :button
+					    (:toggle bound-and-true-p glasses-mode))
+			      (hide-ifdef-mode menu-item "Hide ifdef (Ifdef)" hide-ifdef-mode :help "Show/Hide code within #ifdef constructs" :button
+					       (:toggle bound-and-true-p hide-ifdef-mode))
+			      (highlight-changes-mode menu-item "Highlight changes (Chg)" highlight-changes-mode :help "Show changes in the buffer in a distinctive color" :button
+						      (:toggle bound-and-true-p highlight-changes-mode))
+			      (outline-minor-mode menu-item "Outline (Outl)" outline-minor-mode :help "" :button
+						  (:toggle bound-and-true-p outline-minor-mode))
+			      (overwrite-mode menu-item "Overwrite (Ovwrt)" overwrite-mode :help "Overwrite mode: typed characters replace existing text" :button
+					      (:toggle . overwrite-mode))
+			      "Minor Modes"))
+   (mode-line keymap
+	      (down-mouse-3 keymap
+			    (orgtbl-mode menu-item "Org Table Mode" orgtbl-mode :button
+					 (:toggle . orgtbl-mode))
+			    (reftex-mode menu-item "RefTeX Mode" reftex-mode :button
+					 (:toggle . reftex-mode))
+			    (ruler-mode menu-item "Ruler" ruler-mode :button
+					(:toggle . ruler-mode))
+			    (abbrev-mode menu-item "Abbrev (Abbrev)" abbrev-mode :help "Automatically expand abbreviations" :button
+					 (:toggle . abbrev-mode))
+			    (auto-fill-mode menu-item "Auto fill (Fill)" auto-fill-mode :help "Automatically insert new lines" :button
+					    (:toggle . auto-fill-function))
+			    (auto-revert-mode menu-item "Auto revert (ARev)" auto-revert-mode :help "Revert the buffer when the file on disk changes" :button
+					      (:toggle bound-and-true-p auto-revert-mode))
+			    (auto-revert-tail-mode menu-item "Auto revert tail (Tail)" auto-revert-tail-mode :help "Revert the tail of the buffer when buffer grows" :enable
+						   (buffer-file-name)
+						   :button
+						   (:toggle bound-and-true-p auto-revert-tail-mode))
+			    (flyspell-mode menu-item "Flyspell (Fly)" flyspell-mode :help "Spell checking on the fly" :button
+					   (:toggle bound-and-true-p flyspell-mode))
+			    (font-lock-mode menu-item "Font Lock" font-lock-mode :help "Syntax coloring" :button
+					    (:toggle . font-lock-mode))
+			    (glasses-mode menu-item "Glasses (o^o)" glasses-mode :help "Insert virtual separators to make long identifiers easy to read" :button
+					  (:toggle bound-and-true-p glasses-mode))
+			    (hide-ifdef-mode menu-item "Hide ifdef (Ifdef)" hide-ifdef-mode :help "Show/Hide code within #ifdef constructs" :button
+					     (:toggle bound-and-true-p hide-ifdef-mode))
+			    (highlight-changes-mode menu-item "Highlight changes (Chg)" highlight-changes-mode :help "Show changes in the buffer in a distinctive color" :button
+						    (:toggle bound-and-true-p highlight-changes-mode))
+			    (outline-minor-mode menu-item "Outline (Outl)" outline-minor-mode :help "" :button
+						(:toggle bound-and-true-p outline-minor-mode))
+			    (overwrite-mode menu-item "Overwrite (Ovwrt)" overwrite-mode :help "Overwrite mode: typed characters replace existing text" :button
+					    (:toggle . overwrite-mode))
+			    "Minor Modes")
+	      (mouse-2 . mode-line-minor-mode-help)
+	      (down-mouse-1 . mouse-minor-mode-menu))))
+ #("%n" 0 2
+   (local-map
+    (keymap
+     (mode-line keymap
+		(mouse-2 . mode-line-widen)))
+    mouse-face mode-line-highlight help-echo "mouse-2: Remove narrowing from buffer"))
+ ")"
+ #("%]" 0 2
+   (help-echo "Recursive edit, type C-M-c to get out"))
+ " ")
+</pre></br>

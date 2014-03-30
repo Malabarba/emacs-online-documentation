@@ -1,66 +1,64 @@
-<strong>python-mode-map</strong> is a variable defined in `<code>python.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `python-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Python menu-item "Python"<br/>
-		   (keymap "Python"<br/>
-			   (Shift\ region\ left menu-item "Shift region left" python-indent-shift-left :enable mark-active :help "Shift region left by a single indentation step")<br/>
-			   (Shift\ region\ right menu-item "Shift region right" python-indent-shift-right :enable mark-active :help "Shift region right by a single indentation step")<br/>
-			   (nil menu-item "-")<br/>
-			   (Start\ of\ def/class menu-item "Start of def/class" beginning-of-defun :help "Go to start of outermost definition around point")<br/>
-			   (End\ of\ def/class menu-item "End of def/class" end-of-defun :help "Go to end of definition around point")<br/>
-			   (Mark\ def/class menu-item "Mark def/class" mark-defun :help "Mark outermost definition around point")<br/>
-			   (Jump\ to\ def/class menu-item "Jump to def/class" imenu :help "Jump to a class or function definition")<br/>
-			   (nil-7 menu-item "--")<br/>
-			   (Skeletons menu-item "Skeletons"<br/>
-				      (keymap "Skeletons"))<br/>
-			   (nil-9 menu-item "---")<br/>
-			   (Start\ interpreter menu-item "Start interpreter" run-python :help "Run inferior Python process in a separate buffer")<br/>
-			   (Switch\ to\ shell menu-item "Switch to shell" python-shell-switch-to-shell :help "Switch to running inferior Python process")<br/>
-			   (Eval\ string menu-item "Eval string" python-shell-send-string :help "Eval string in inferior Python session")<br/>
-			   (Eval\ buffer menu-item "Eval buffer" python-shell-send-buffer :help "Eval buffer in inferior Python session")<br/>
-			   (Eval\ region menu-item "Eval region" python-shell-send-region :help "Eval region in inferior Python session")<br/>
-			   (Eval\ defun menu-item "Eval defun" python-shell-send-defun :help "Eval defun in inferior Python session")<br/>
-			   (Eval\ file menu-item "Eval file" python-shell-send-file :help "Eval file in inferior Python session")<br/>
-			   (Debugger menu-item "Debugger" pdb :help "Run pdb under GUD")<br/>
-			   (nil-18 menu-item "----")<br/>
-			   (Check\ file menu-item "Check file" python-check :help "Check file for errors")<br/>
-			   (Help\ on\ symbol menu-item "Help on symbol" python-eldoc-at-point :help "Get help on symbol at point")<br/>
-			   (Complete\ symbol menu-item "Complete symbol" completion-at-point :help "Complete symbol before point"))<br/>
-		   :help "Python-specific Features"))<br/>
- (27 keymap<br/>
-     (9 . completion-at-point)<br/>
-     (24 . python-shell-send-defun))<br/>
- (58 . python-indent-electric-colon)<br/>
- (backtab . python-indent-dedent-line)<br/>
- (127 . python-indent-dedent-line-backspace)<br/>
- (3 keymap<br/>
-    (6 . python-eldoc-at-point)<br/>
-    (22 . python-check)<br/>
-    (26 . python-shell-switch-to-shell)<br/>
-    (12 . python-shell-send-file)<br/>
-    (3 . python-shell-send-buffer)<br/>
-    (18 . python-shell-send-region)<br/>
-    (19 . python-shell-send-string)<br/>
-    (16 . run-python)<br/>
-    (20 keymap<br/>
-	(119 . python-skeleton-while)<br/>
-	(116 . python-skeleton-try)<br/>
-	(105 . python-skeleton-if)<br/>
-	(102 . python-skeleton-for)<br/>
-	(100 . python-skeleton-def)<br/>
-	(99 . python-skeleton-class))<br/>
-    (62 . python-indent-shift-right)<br/>
-    (60 . python-indent-shift-left)<br/>
-    (10 . imenu))<br/>
- (remap keymap<br/>
-	(backward-up-list . python-nav-backward-up-list)<br/>
-	(forward-sentence . python-nav-forward-block)<br/>
-	(backward-sentence . python-nav-backward-block)))<br/>
-<br/>
+<strong>python-mode-map</strong> is a variable defined in `<code>python.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `python-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Python menu-item "Python"
+		   (keymap "Python"
+			   (Shift\ region\ left menu-item "Shift region left" python-indent-shift-left :enable mark-active :help "Shift region left by a single indentation step")
+			   (Shift\ region\ right menu-item "Shift region right" python-indent-shift-right :enable mark-active :help "Shift region right by a single indentation step")
+			   (nil menu-item "-")
+			   (Start\ of\ def/class menu-item "Start of def/class" beginning-of-defun :help "Go to start of outermost definition around point")
+			   (End\ of\ def/class menu-item "End of def/class" end-of-defun :help "Go to end of definition around point")
+			   (Mark\ def/class menu-item "Mark def/class" mark-defun :help "Mark outermost definition around point")
+			   (Jump\ to\ def/class menu-item "Jump to def/class" imenu :help "Jump to a class or function definition")
+			   (nil-7 menu-item "--")
+			   (Skeletons menu-item "Skeletons"
+				      (keymap "Skeletons"))
+			   (nil-9 menu-item "---")
+			   (Start\ interpreter menu-item "Start interpreter" run-python :help "Run inferior Python process in a separate buffer")
+			   (Switch\ to\ shell menu-item "Switch to shell" python-shell-switch-to-shell :help "Switch to running inferior Python process")
+			   (Eval\ string menu-item "Eval string" python-shell-send-string :help "Eval string in inferior Python session")
+			   (Eval\ buffer menu-item "Eval buffer" python-shell-send-buffer :help "Eval buffer in inferior Python session")
+			   (Eval\ region menu-item "Eval region" python-shell-send-region :help "Eval region in inferior Python session")
+			   (Eval\ defun menu-item "Eval defun" python-shell-send-defun :help "Eval defun in inferior Python session")
+			   (Eval\ file menu-item "Eval file" python-shell-send-file :help "Eval file in inferior Python session")
+			   (Debugger menu-item "Debugger" pdb :help "Run pdb under GUD")
+			   (nil-18 menu-item "----")
+			   (Check\ file menu-item "Check file" python-check :help "Check file for errors")
+			   (Help\ on\ symbol menu-item "Help on symbol" python-eldoc-at-point :help "Get help on symbol at point")
+			   (Complete\ symbol menu-item "Complete symbol" completion-at-point :help "Complete symbol before point"))
+		   :help "Python-specific Features"))
+ (27 keymap
+     (9 . completion-at-point)
+     (24 . python-shell-send-defun))
+ (backtab . python-indent-dedent-line)
+ (127 . python-indent-dedent-line-backspace)
+ (3 keymap
+    (6 . python-eldoc-at-point)
+    (22 . python-check)
+    (26 . python-shell-switch-to-shell)
+    (12 . python-shell-send-file)
+    (3 . python-shell-send-buffer)
+    (18 . python-shell-send-region)
+    (19 . python-shell-send-string)
+    (16 . run-python)
+    (20 keymap
+	(119 . python-skeleton-while)
+	(116 . python-skeleton-try)
+	(105 . python-skeleton-if)
+	(102 . python-skeleton-for)
+	(100 . python-skeleton-def)
+	(99 . python-skeleton-class))
+    (62 . python-indent-shift-right)
+    (60 . python-indent-shift-left)
+    (10 . imenu))
+ (remap keymap
+	(backward-up-list . python-nav-backward-up-list)
+	(forward-sentence . python-nav-forward-block)
+	(backward-sentence . python-nav-backward-block)))
+</pre></br>

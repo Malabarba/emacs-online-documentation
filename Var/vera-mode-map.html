@@ -1,66 +1,65 @@
-<strong>vera-mode-map</strong> is a variable defined in `<code>vera-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for Vera Mode.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Vera menu-item "Vera"<br/>
-		 (keymap "Vera"<br/>
-			 (\(Un\)Comment\ Out\ Region menu-item "(Un)Comment Out Region" vera-comment-uncomment-region :enable<br/>
-			  (mark))<br/>
-			 (nil-7 menu-item "--")<br/>
-			 (Move\ Forward\ Statement menu-item "Move Forward Statement" vera-forward-statement)<br/>
-			 (Move\ Backward\ Statement menu-item "Move Backward Statement" vera-backward-statement)<br/>
-			 (Move\ Forward\ Same\ Indent menu-item "Move Forward Same Indent" vera-forward-same-indent)<br/>
-			 (Move\ Backward\ Same\ Indent menu-item "Move Backward Same Indent" vera-backward-same-indent)<br/>
-			 (nil-7-6 menu-item "--")<br/>
-			 (Indent\ Line menu-item "Indent Line" indent-according-to-mode)<br/>
-			 (Indent\ Region menu-item "Indent Region" vera-indent-region :enable<br/>
-					 (mark))<br/>
-			 (Indent\ Buffer menu-item "Indent Buffer" vera-indent-buffer)<br/>
-			 (nil-7-10 menu-item "--")<br/>
-			 (Fontify\ Buffer menu-item "Fontify Buffer" vera-fontify-buffer)<br/>
-			 (nil-7-12 menu-item "--")<br/>
-			 (Documentation menu-item "Documentation" describe-mode)<br/>
-			 (Version menu-item "Version" vera-version)<br/>
-			 (Bug\ Report\.\.\. menu-item "Bug Report..." vera-submit-bug-report)<br/>
-			 (nil-7-16 menu-item "--")<br/>
-			 (Options menu-item "Options"<br/>
-				  (keymap "Options"<br/>
-					  (Indentation\ Offset\.\.\. menu-item "Indentation Offset..." menu-function-293 :key-sequence nil)<br/>
-					  (Underscore\ is\ Part\ of\ Word menu-item "Underscore is Part of Word" menu-function-294 :key-sequence nil :button<br/>
-									  (:toggle . vera-underscore-is-part-of-word))<br/>
-					  (Use\ Intelligent\ Tab menu-item "Use Intelligent Tab" menu-function-295 :key-sequence nil :button<br/>
-								 (:toggle . vera-intelligent-tab))<br/>
-					  (nil-7 menu-item "--")<br/>
-					  (Save\ Options menu-item "Save Options" customize-save-customized)<br/>
-					  (nil-7-5 menu-item "--")<br/>
-					  (Customize\.\.\. menu-item "Customize..." vera-customize))))))<br/>
- (47 . vera-electric-slash)<br/>
- (42 . vera-electric-star)<br/>
- (35 . vera-electric-pound)<br/>
- (125 . vera-electric-closing-brace)<br/>
- (123 . vera-electric-opening-brace)<br/>
- (32 . vera-electric-space)<br/>
- (13 . vera-electric-return)<br/>
- (9 . vera-electric-tab)<br/>
- (3 keymap<br/>
-    (22 . vera-version)<br/>
-    (6 . vera-fontify-buffer)<br/>
-    (3 . vera-comment-uncomment-region)<br/>
-    (9 . indent-according-to-mode))<br/>
- (27 keymap<br/>
-     (9 . tab-to-tab-stop)<br/>
-     (28 . vera-indent-region)<br/>
-     (1 . vera-backward-same-indent)<br/>
-     (5 . vera-forward-same-indent)<br/>
-     (97 . vera-backward-statement)<br/>
-     (101 . vera-forward-statement))<br/>
- (M-delete . kill-word)<br/>
- (delete . delete-char)<br/>
- (backspace . backward-delete-char-untabify))<br/>
-<br/>
+<strong>vera-mode-map</strong> is a variable defined in `<code>vera-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for Vera Mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Vera menu-item "Vera"
+		 (keymap "Vera"
+			 (\(Un\)Comment\ Out\ Region menu-item "(Un)Comment Out Region" vera-comment-uncomment-region :enable
+			  (mark))
+			 (nil menu-item "--")
+			 (Move\ Forward\ Statement menu-item "Move Forward Statement" vera-forward-statement)
+			 (Move\ Backward\ Statement menu-item "Move Backward Statement" vera-backward-statement)
+			 (Move\ Forward\ Same\ Indent menu-item "Move Forward Same Indent" vera-forward-same-indent)
+			 (Move\ Backward\ Same\ Indent menu-item "Move Backward Same Indent" vera-backward-same-indent)
+			 (nil-6 menu-item "--")
+			 (Indent\ Line menu-item "Indent Line" indent-according-to-mode)
+			 (Indent\ Region menu-item "Indent Region" vera-indent-region :enable
+					 (mark))
+			 (Indent\ Buffer menu-item "Indent Buffer" vera-indent-buffer)
+			 (nil-10 menu-item "--")
+			 (Fontify\ Buffer menu-item "Fontify Buffer" vera-fontify-buffer)
+			 (nil-12 menu-item "--")
+			 (Documentation menu-item "Documentation" describe-mode)
+			 (Version menu-item "Version" vera-version)
+			 (Bug\ Report\.\.\. menu-item "Bug Report..." vera-submit-bug-report)
+			 (nil-16 menu-item "--")
+			 (Options menu-item "Options"
+				  (keymap "Options"
+					  (Indentation\ Offset\.\.\. menu-item "Indentation Offset..." menu-function-337 :key-sequence nil)
+					  (Underscore\ is\ Part\ of\ Word menu-item "Underscore is Part of Word" menu-function-338 :key-sequence nil :button
+									  (:toggle . vera-underscore-is-part-of-word))
+					  (Use\ Intelligent\ Tab menu-item "Use Intelligent Tab" menu-function-339 :key-sequence nil :button
+								 (:toggle . vera-intelligent-tab))
+					  (nil menu-item "--")
+					  (Save\ Options menu-item "Save Options" customize-save-customized)
+					  (nil-5 menu-item "--")
+					  (Customize\.\.\. menu-item "Customize..." vera-customize))))))
+ (47 . vera-electric-slash)
+ (42 . vera-electric-star)
+ (35 . vera-electric-pound)
+ (125 . vera-electric-closing-brace)
+ (123 . vera-electric-opening-brace)
+ (32 . vera-electric-space)
+ (13 . vera-electric-return)
+ (9 . vera-electric-tab)
+ (3 keymap
+    (22 . vera-version)
+    (6 . vera-fontify-buffer)
+    (3 . vera-comment-uncomment-region)
+    (9 . indent-according-to-mode))
+ (27 keymap
+     (9 . tab-to-tab-stop)
+     (28 . vera-indent-region)
+     (1 . vera-backward-same-indent)
+     (5 . vera-forward-same-indent)
+     (97 . vera-backward-statement)
+     (101 . vera-forward-statement))
+ (M-delete . kill-word)
+ (delete . delete-char)
+ (backspace . backward-delete-char-untabify))
+</pre></br>

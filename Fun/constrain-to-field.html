@@ -1,31 +1,31 @@
-<strong>constrain-to-field</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(constrain-to-field NEW-POS OLD-POS &optional ESCAPE-FROM-EDGE ONLY-IN-LINE INHIBIT-CAPTURE-PROPERTY)<br/>
-<br/>
-Return the position closest to NEW-POS that is in the same field as OLD-POS.<br/>
-A field is a region of text with the same `field' property.<br/>
-<br/>
-If NEW-POS is nil, then use the current point instead, and move point<br/>
-to the resulting constrained position, in addition to returning that<br/>
-position.<br/>
-<br/>
-If OLD-POS is at the boundary of two fields, then the allowable<br/>
-positions for NEW-POS depends on the value of the optional argument<br/>
-ESCAPE-FROM-EDGE: If ESCAPE-FROM-EDGE is nil, then NEW-POS is<br/>
-constrained to the field that has the same `field' char-property<br/>
-as any new characters inserted at OLD-POS, whereas if ESCAPE-FROM-EDGE<br/>
-is non-nil, NEW-POS is constrained to the union of the two adjacent<br/>
-fields.  Additionally, if two fields are separated by another field with<br/>
-the special value `boundary', then any point within this special field is<br/>
-also considered to be `on the boundary'.<br/>
-<br/>
-If the optional argument ONLY-IN-LINE is non-nil and constraining<br/>
-NEW-POS would move it to a different line, NEW-POS is returned<br/>
-unconstrained.  This useful for commands that move by line, like<br/>
-C-n or M-x beginning-of-line, which should generally respect field boundaries<br/>
-only in the case where they can still move to the right line.<br/>
-<br/>
-If the optional argument INHIBIT-CAPTURE-PROPERTY is non-nil, and OLD-POS has<br/>
-a non-nil property of that name, then any field boundaries are ignored.<br/>
-<br/>
+<strong>constrain-to-field</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(constrain-to-field <u>NEW-POS</u> <u>OLD-POS</u> &optional <u>ESCAPE-FROM-EDGE</u> <u>ONLY-IN-LINE</u> <u>INHIBIT-CAPTURE-PROPERTY</u>)</br>
+</br>
+Return the position closest to <u>NEW-POS</u> that is in the same field as <u>OLD-POS</u>.</br>
+A field is a region of text with the same `field' property.</br>
+</br>
+If <u>NEW-POS</u> is nil, then use the current point instead, and move point</br>
+to the resulting constrained position, in addition to returning that</br>
+position.</br>
+</br>
+If <u>OLD-POS</u> is at the boundary of two fields, then the allowable</br>
+positions for <u>NEW-POS</u> depends on the value of the optional argument</br>
+<u>ESCAPE-FROM-EDGE</u>: If <u>ESCAPE-FROM-EDGE</u> is nil, then <u>NEW-POS</u> is</br>
+constrained to the field that has the same `field' char-property</br>
+as any new characters inserted at <u>OLD-POS</u>, whereas if <u>ESCAPE-FROM-EDGE</u></br>
+is non-nil, <u>NEW-POS</u> is constrained to the union of the two adjacent</br>
+fields.  Additionally, if two fields are separated by another field with</br>
+the special value `boundary', then any point within this special field is</br>
+also considered to be `on the boundary'.</br>
+</br>
+If the optional argument <u>ONLY-IN-LINE</u> is non-nil and constraining</br>
+<u>NEW-POS</u> would move it to a different line, <u>NEW-POS</u> is returned</br>
+unconstrained.  This is useful for commands that move by line, like</br>
+C-n or M-x beginning-of-line, which should generally respect field boundaries</br>
+only in the case where they can still move to the right line.</br>
+</br>
+If the optional argument <u>INHIBIT-CAPTURE-PROPERTY</u> is non-nil, and <u>OLD-POS</u> has</br>
+a non-nil property of that name, then any field boundaries are ignored.</br>
+</br>
 Field boundaries are not noticed if `inhibit-field-text-motion' is non-nil.

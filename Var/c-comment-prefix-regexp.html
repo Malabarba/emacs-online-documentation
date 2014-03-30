@@ -1,42 +1,42 @@
-<strong>c-comment-prefix-regexp</strong> is a variable defined in `<code>cc-vars.el</code>'.<br/>
-Its value is set-from-style<br/>
-<br/>
-Documentation:<br/>
-*Regexp to match the line prefix inside comments.<br/>
-This regexp is used to recognize the fill prefix inside comments for<br/>
-correct paragraph filling and other things.<br/>
-<br/>
-If this variable is a string, it will be used in all CC Mode major<br/>
-modes.  It can also be an association list, to associate specific<br/>
-regexps to specific major modes.  The symbol for the major mode is<br/>
-looked up in the association list, and its value is used as the line<br/>
-prefix regexp.  If it's not found, then the symbol `other' is looked<br/>
-up and its value is used instead.<br/>
-<br/>
-The regexp should match the prefix used in both C++ style line<br/>
-comments and C style block comments, but it does not need to match a<br/>
-block comment starter.  In other words, it should at least match<br/>
-"//" for line comments and the string in `c-block-comment-prefix',<br/>
-which is sometimes inserted by CC Mode inside block comments.  It<br/>
-should not match any surrounding whitespace.<br/>
-<br/>
-Note that CC Mode uses this variable to set many other variables that<br/>
-handle the paragraph filling.  That's done at mode initialization or<br/>
-when you switch to a style which sets this variable.  Thus, if you<br/>
-change it in some other way, e.g. interactively in a CC Mode buffer,<br/>
-you will need to do M-x c-setup-paragraph-variables afterwards so that<br/>
-the other variables are updated with the new value.<br/>
-<br/>
-Note also that when CC Mode starts up, all variables are initialized<br/>
-before the mode hooks are run.  It's therefore necessary to make a<br/>
-call to `c-setup-paragraph-variables' explicitly if you change this<br/>
-variable in a mode hook.<br/>
-<br/>
-This is a style variable.  Apart from the valid values described<br/>
-above, it can be set to the symbol `set-from-style'.  In that case,<br/>
-it takes its value from the style system (see `c-default-style' and<br/>
-`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,<br/>
-the value set here overrides the style system (there is a variable<br/>
-`c-old-style-variable-behavior' that changes this, though).<br/>
-<br/>
+<strong>c-comment-prefix-regexp</strong> is a variable defined in `<code>cc-vars.el</code>'.</br>
+Its value is <pre>set-from-style</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Regexp to match the line prefix inside comments.</br>
+This regexp is used to recognize the fill prefix inside comments for</br>
+correct paragraph filling and other things.</br>
+</br>
+If this variable is a string, it will be used in all CC Mode major</br>
+modes.  It can also be an association list, to associate specific</br>
+regexps to specific major modes.  The symbol for the major mode is</br>
+looked up in the association list, and its value is used as the line</br>
+prefix regexp.  If it's not found, then the symbol `other' is looked</br>
+up and its value is used instead.</br>
+</br>
+The regexp should match the prefix used in both C++ style line</br>
+comments and C style block comments, but it does not need to match a</br>
+block comment starter.  In other words, it should at least match</br>
+"//" for line comments and the string in `c-block-comment-prefix',</br>
+which is sometimes inserted by CC Mode inside block comments.  It</br>
+should not match any surrounding whitespace.</br>
+</br>
+Note that CC Mode uses this variable to set many other variables that</br>
+handle the paragraph filling.  That's done at mode initialization or</br>
+when you switch to a style which sets this variable.  Thus, if you</br>
+change it in some other way, e.g. interactively in a CC Mode buffer,</br>
+you will need to do M-x c-setup-paragraph-variables afterwards so that</br>
+the other variables are updated with the new value.</br>
+</br>
+Note also that when CC Mode starts up, all variables are initialized</br>
+before the mode hooks are run.  It's therefore necessary to make a</br>
+call to `c-setup-paragraph-variables' explicitly if you change this</br>
+variable in a mode hook.</br>
+</br>
+This is a style variable.  Apart from the valid values described</br>
+above, it can be set to the symbol `set-from-style'.  In that case,</br>
+it takes its value from the style system (see `c-default-style' and</br>
+`c-style-alist') when a CC Mode buffer is initialized.  Otherwise,</br>
+the value set here overrides the style system (there is a variable</br>
+`c-old-style-variable-behavior' that changes this, though).</br>
+</br>
 You can customize this variable.

@@ -1,0 +1,50 @@
+Face: <strong>org-column</strong> (sample)</br>
+</br>
+<strong>Documentation:</strong></br>
+Face for column display of entry properties.
+This is actually only part of the face definition for the text in column view.
+The following faces apply, with this priority.
+
+1. The color of the reference face.  This is normally the level fact that
+   is used in the outline.  In agenda-mode, it will be the face of the
+   first character in the line.  The color is explicitly retained to
+   make sure that the column line still looks a bit like the structure
+   line it is masking.
+
+2. The `org-column' face.
+
+3. The remaining properties of the reference face.
+
+Since column view works by putting overlays with a display property
+over individual characters in the buffer, the face of the underlining
+character (this might for example be the a TODO keyword) might still
+shine through in some properties.  So when your column view looks
+funny, with "random" colors, weight, strike-through, try to explicitly
+set the properties in the `org-column' face.  For example, set
+:underline to nil, or the :slant to `normal'.
+
+Under XEmacs, the rules are simpler, because the XEmacs version of
+column view defines special faces for each outline level.  See the file
+`org-colview-xemacs.el' in Org's contrib/ directory for details.</br>
+</br>
+Defined in `<code>org-faces.el</code>'.</br>
+</br>
+<table><tr><td align="right">Family</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Foundry</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Width</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Height</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Weight</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Slant</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Foreground</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">DistantForeground</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Background</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Underline</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Overline</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Strike-through</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Box</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Inverse</td><td>:</td><td></td><td>t</td></tr>
+<tr><td align="right">Stipple</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Font</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Fontset</td><td>:</td><td></td><td>unspecified</td></tr>
+<tr><td align="right">Inherit</td><td>:</td><td></td><td>unspecified</td></tr>
+<table></br>

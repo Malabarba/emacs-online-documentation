@@ -1,83 +1,83 @@
-<strong>gnus-summary-line-format</strong> is a variable defined in `<code>gnus.el</code>'.<br/>
-Its value is "%U%R%z%I%(%[%4L: %-23,23f%]%) %s<br/>
-"<br/>
-<br/>
-Documentation:<br/>
-*The format specification of the lines in the summary buffer.<br/>
-<br/>
-It works along the same lines as a normal formatting string,<br/>
-with some simple extensions.<br/>
-<br/>
-%N          Article number, left padded with spaces (string)<br/>
-%S          Subject (string)<br/>
-%s          Subject if it is at the root of a thread, and ""<br/>
-            otherwise (string)<br/>
-%n          Name of the poster (string)<br/>
-%a          Extracted name of the poster (string)<br/>
-%A          Extracted address of the poster (string)<br/>
-%F          Contents of the From: header (string)<br/>
-%f          Contents of the From: or To: headers (string)<br/>
-%x          Contents of the Xref: header (string)<br/>
-%D          Date of the article (string)<br/>
-%d          Date of the article (string) in DD-MMM format<br/>
-%o          Date of the article (string) in YYYYMMDD`T'HHMMSS<br/>
-            format<br/>
-%M          Message-id of the article (string)<br/>
-%r          References of the article (string)<br/>
-%c          Number of characters in the article (integer)<br/>
-%k          Pretty-printed version of the above (string)<br/>
-            For example, "1.2k" or "0.4M".<br/>
-%L          Number of lines in the article (integer)<br/>
-%I          Indentation based on thread level (a string of<br/>
-            spaces)<br/>
-%B          A complex trn-style thread tree (string)<br/>
-            The variables `gnus-sum-thread-*' can be used for<br/>
-            customization.<br/>
-%T          A string with two possible values: 80 spaces if the<br/>
-            article is on thread level two or larger and 0 spaces<br/>
-            on level one<br/>
-%R          "A" if this article has been replied to, " "<br/>
-            otherwise (character)<br/>
-%U          "Read" status of this article.<br/>
-            See Info node `(gnus)Marking Articles'<br/>
-%[          Opening bracket (character, "[" or "<")<br/>
-%]          Closing bracket (character, "]" or ">")<br/>
-%>          Spaces of length thread-level (string)<br/>
-%<          Spaces of length (- 20 thread-level) (string)<br/>
-%i          Article score (number)<br/>
-%z          Article zcore (character)<br/>
-%t          Number of articles under the current thread (number).<br/>
-%e          Whether the thread is empty or not (character).<br/>
-%V          Total thread score (number).<br/>
-%P          The line number (number).<br/>
-%O          Download mark (character).<br/>
-%*          If present, indicates desired cursor position<br/>
-            (instead of after first colon).<br/>
-%u          User defined specifier. The next character in the<br/>
-            format string should be a letter. Gnus will call the<br/>
-            function gnus-user-format-function-X, where X is the<br/>
-            letter following %u. The function will be passed the<br/>
-            current header as argument. The function should<br/>
-            return a string, which will be inserted into the<br/>
-            summary just like information from any other summary<br/>
-            specifier.<br/>
-&user-date; Age sensitive date format. Various date format is<br/>
-            defined in `gnus-summary-user-date-format-alist'.<br/>
-<br/>
-<br/>
-The %U (status), %R (replied) and %z (zcore) specs have to be handled<br/>
-with care.  For reasons of efficiency, Gnus will compute what column<br/>
-these characters will end up in, and "hard-code" that.  This means that<br/>
-it is invalid to have these specs after a variable-length spec.  Well,<br/>
-you might not be arrested, but your summary buffer will look strange,<br/>
-which is bad enough.<br/>
-<br/>
-The smart choice is to have these specs as far to the left as<br/>
-possible.<br/>
-<br/>
-This restriction may disappear in later versions of Gnus.<br/>
-<br/>
-General format specifiers can also be used.<br/>
-See Info node `(gnus)Formatting Variables'.<br/>
-<br/>
+<strong>gnus-summary-line-format</strong> is a variable defined in `<code>gnus.el</code>'.</br>
+Its value is <pre>"%U%R%z%I%(%[%4L: %-23,23f%]%) %s
+"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*The format specification of the lines in the summary buffer.</br>
+</br>
+It works along the same lines as a normal formatting string,</br>
+with some simple extensions.</br>
+</br>
+%N          Article number, left padded with spaces (string)</br>
+%S          Subject (string)</br>
+%s          Subject if it is at the root of a thread, and ""</br>
+            otherwise (string)</br>
+%n          Name of the poster (string)</br>
+%a          Extracted name of the poster (string)</br>
+%A          Extracted address of the poster (string)</br>
+%F          Contents of the From: header (string)</br>
+%f          Contents of the From: or To: headers (string)</br>
+%x          Contents of the Xref: header (string)</br>
+%D          Date of the article (string)</br>
+%d          Date of the article (string) in DD-MMM format</br>
+%o          Date of the article (string) in YYYYMMDD`T'HHMMSS</br>
+            format</br>
+%M          Message-id of the article (string)</br>
+%r          References of the article (string)</br>
+%c          Number of characters in the article (integer)</br>
+%k          Pretty-printed version of the above (string)</br>
+            For example, "1.2k" or "0.4M".</br>
+%L          Number of lines in the article (integer)</br>
+%I          Indentation based on thread level (a string of</br>
+            spaces)</br>
+%B          A complex trn-style thread tree (string)</br>
+            The variables `gnus-sum-thread-*' can be used for</br>
+            customization.</br>
+%T          A string with two possible values: 80 spaces if the</br>
+            article is on thread level two or larger and 0 spaces</br>
+            on level one</br>
+%R          "A" if this article has been replied to, " "</br>
+            otherwise (character)</br>
+%U          "Read" status of this article.</br>
+            See Info node `(gnus)Marking Articles'</br>
+%[          Opening bracket (character, "[" or "<")</br>
+%]          Closing bracket (character, "]" or ">")</br>
+%>          Spaces of length thread-level (string)</br>
+%<          Spaces of length (- 20 thread-level) (string)</br>
+%i          Article score (number)</br>
+%z          Article zcore (character)</br>
+%t          Number of articles under the current thread (number).</br>
+%e          Whether the thread is empty or not (character).</br>
+%V          Total thread score (number).</br>
+%P          The line number (number).</br>
+%O          Download mark (character).</br>
+%*          If present, indicates desired cursor position</br>
+            (instead of after first colon).</br>
+%u          User defined specifier. The next character in the</br>
+            format string should be a letter. Gnus will call the</br>
+            function gnus-user-format-function-X, where X is the</br>
+            letter following %u. The function will be passed the</br>
+            current header as argument. The function should</br>
+            return a string, which will be inserted into the</br>
+            summary just like information from any other summary</br>
+            specifier.</br>
+&user-date; Age sensitive date format. Various date format is</br>
+            defined in `gnus-user-date-format-alist'.</br>
+</br>
+</br>
+The %U (status), %R (replied) and %z (zcore) specs have to be handled</br>
+with care.  For reasons of efficiency, Gnus will compute what column</br>
+these characters will end up in, and "hard-code" that.  This means that</br>
+it is invalid to have these specs after a variable-length spec.  Well,</br>
+you might not be arrested, but your summary buffer will look strange,</br>
+which is bad enough.</br>
+</br>
+The smart choice is to have these specs as far to the left as</br>
+possible.</br>
+</br>
+This restriction may disappear in later versions of Gnus.</br>
+</br>
+General format specifiers can also be used.</br>
+See Info node `(gnus)Formatting Variables'.</br>
+</br>
 You can customize this variable.

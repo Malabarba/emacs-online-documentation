@@ -1,119 +1,120 @@
-<strong>ebnf-style-database</strong> is a variable defined in `<code>ebnf2ps.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Style database.<br/>
-<br/>
-Each element has the following form:<br/>
-<br/>
-   (NAME INHERITS (VAR . VALUE)...)<br/>
-<br/>
-Where:<br/>
-<br/>
-NAME		is a symbol name style.<br/>
-<br/>
-INHERITS	is a symbol name style from which the current style inherits<br/>
-		the context.  If INHERITS is nil, then there is no inheritance.<br/>
-<br/>
-		This is a simple inheritance of style: if you declare that<br/>
-		style A inherits from style B, all settings of B are applied<br/>
-		first, and then the settings of A are applied.  This is useful<br/>
-		when you wish to modify some aspects of an existing style, but<br/>
-		at the same time wish to keep it unmodified.<br/>
-<br/>
-VAR		is a valid ebnf2ps symbol custom variable.<br/>
-		See `ebnf-style-custom-list' for valid symbol variables.<br/>
-<br/>
-VALUE		is a sexp which will be evaluated to set the value of VAR.<br/>
-		Don't forget to quote symbols and constant lists.<br/>
-		See `default' style for an example.<br/>
-<br/>
-Don't use this variable directly.  Use functions `ebnf-insert-style',<br/>
-`ebnf-delete-style' and `ebnf-merge-style'.<br/>
-<br/>
-Value: ((default nil<br/>
-   (ebnf-special-show-delimiter . t)<br/>
-   (ebnf-special-font quote<br/>
-		      (7 Courier "Black" "Gray95" bold italic))<br/>
-   (ebnf-special-shape quote bevel)<br/>
-   (ebnf-special-shadow)<br/>
-   (ebnf-special-border-width . 0.5)<br/>
-   (ebnf-special-border-color . "Black")<br/>
-   (ebnf-except-font quote<br/>
-		     (7 Courier "Black" "Gray90" bold italic))<br/>
-   (ebnf-except-shape quote bevel)<br/>
-   (ebnf-except-shadow)<br/>
-   (ebnf-except-border-width . 0.25)<br/>
-   (ebnf-except-border-color . "Black")<br/>
-   (ebnf-repeat-font quote<br/>
-		     (7 Courier "Black" "Gray85" bold italic))<br/>
-   (ebnf-repeat-shape quote bevel)<br/>
-   (ebnf-repeat-shadow)<br/>
-   (ebnf-repeat-border-width . 0.0)<br/>
-   (ebnf-repeat-border-color . "Black")<br/>
-   (ebnf-terminal-regexp)<br/>
-   (ebnf-case-fold-search)<br/>
-   (ebnf-terminal-font quote<br/>
-		       (7 Courier "Black" "White"))<br/>
-   (ebnf-terminal-shape quote miter)<br/>
-   (ebnf-terminal-shadow)<br/>
-   (ebnf-terminal-border-width . 1.0)<br/>
-   (ebnf-terminal-border-color . "Black")<br/>
-   (ebnf-non-terminal-font quote<br/>
-			   (7 Helvetica "Black" "White"))<br/>
-   (ebnf-non-terminal-shape quote round)<br/>
-   (ebnf-non-terminal-shadow)<br/>
-   (ebnf-non-terminal-border-width . 1.0)<br/>
-   (ebnf-non-terminal-border-color . "Black")<br/>
-   (ebnf-production-name-p . t)<br/>
-   (ebnf-sort-production)<br/>
-   (ebnf-production-font quote<br/>
-			 (10 Helvetica "Black" "White" bold))<br/>
-   (ebnf-arrow-shape quote hollow)<br/>
-   (ebnf-chart-shape quote round)<br/>
-   (ebnf-user-arrow)<br/>
-   (ebnf-horizontal-orientation)<br/>
-   (ebnf-horizontal-max-height)<br/>
-   (ebnf-production-horizontal-space . 0.0)<br/>
-   (ebnf-production-vertical-space . 0.0)<br/>
-   (ebnf-justify-sequence quote center)<br/>
-   (ebnf-lex-comment-char . 59)<br/>
-   (ebnf-lex-eop-char . 46)<br/>
-   (ebnf-syntax quote ebnf)<br/>
-   (ebnf-iso-alternative-p)<br/>
-   (ebnf-iso-normalize-p)<br/>
-   (ebnf-file-suffix-regexp . ".[Bb][Nn][Ff]$")<br/>
-   (ebnf-eps-prefix . "ebnf--")<br/>
-   (ebnf-eps-header-font quote<br/>
-			 (11 Helvetica "Black" "White" bold))<br/>
-   (ebnf-eps-header)<br/>
-   (ebnf-eps-footer-font quote<br/>
-			 (7 Helvetica "Black" "White" bold))<br/>
-   (ebnf-eps-footer)<br/>
-   (ebnf-entry-percentage . 0.5)<br/>
-   (ebnf-color-p or<br/>
-		 (fboundp 'x-color-values)<br/>
-		 (fboundp 'color-instance-rgb-components))<br/>
-   (ebnf-line-width . 1.0)<br/>
-   (ebnf-line-color . "Black")<br/>
-   (ebnf-debug-ps)<br/>
-   (ebnf-use-float-format . t)<br/>
-   (ebnf-stop-on-error)<br/>
-   (ebnf-yac-ignore-error-recovery)<br/>
-   (ebnf-ignore-empty-rule)<br/>
-   (ebnf-optimize))<br/>
- (happy default<br/>
-	(ebnf-justify-sequence quote left)<br/>
-	(ebnf-lex-comment-char . 35)<br/>
-	(ebnf-lex-eop-char . 59))<br/>
- (abnf default<br/>
-       (ebnf-syntax quote abnf))<br/>
- (iso-ebnf default<br/>
-	   (ebnf-syntax quote iso-ebnf))<br/>
- (yacc default<br/>
-       (ebnf-syntax quote yacc))<br/>
- (ebnfx default<br/>
-	(ebnf-syntax quote ebnfx))<br/>
- (dtd default<br/>
-      (ebnf-syntax quote dtd)))<br/>
-<br/>
+<strong>ebnf-style-database</strong> is a variable defined in `<code>ebnf2ps.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Style database.</br>
+</br>
+Each element has the following form:</br>
+</br>
+   (NAME INHERITS (VAR . VALUE)...)</br>
+</br>
+Where:</br>
+</br>
+NAME		is a symbol name style.</br>
+</br>
+INHERITS	is a symbol name style from which the current style inherits</br>
+		the context.  If INHERITS is nil, then there is no inheritance.</br>
+</br>
+		This is a simple inheritance of style: if you declare that</br>
+		style A inherits from style B, all settings of B are applied</br>
+		first, and then the settings of A are applied.  This is useful</br>
+		when you wish to modify some aspects of an existing style, but</br>
+		at the same time wish to keep it unmodified.</br>
+</br>
+VAR		is a valid ebnf2ps symbol custom variable.</br>
+		See `ebnf-style-custom-list' for valid symbol variables.</br>
+</br>
+VALUE		is a sexp which will be evaluated to set the value of VAR.</br>
+		Don't forget to quote symbols and constant lists.</br>
+		See `default' style for an example.</br>
+</br>
+Don't use this variable directly.  Use functions `ebnf-insert-style',</br>
+`ebnf-delete-style' and `ebnf-merge-style'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((default nil
+   (ebnf-special-show-delimiter . t)
+   (ebnf-special-font quote
+		      (7 Courier "Black" "Gray95" bold italic))
+   (ebnf-special-shape quote bevel)
+   (ebnf-special-shadow)
+   (ebnf-special-border-width . 0.5)
+   (ebnf-special-border-color . "Black")
+   (ebnf-except-font quote
+		     (7 Courier "Black" "Gray90" bold italic))
+   (ebnf-except-shape quote bevel)
+   (ebnf-except-shadow)
+   (ebnf-except-border-width . 0.25)
+   (ebnf-except-border-color . "Black")
+   (ebnf-repeat-font quote
+		     (7 Courier "Black" "Gray85" bold italic))
+   (ebnf-repeat-shape quote bevel)
+   (ebnf-repeat-shadow)
+   (ebnf-repeat-border-width . 0.0)
+   (ebnf-repeat-border-color . "Black")
+   (ebnf-terminal-regexp)
+   (ebnf-case-fold-search)
+   (ebnf-terminal-font quote
+		       (7 Courier "Black" "White"))
+   (ebnf-terminal-shape quote miter)
+   (ebnf-terminal-shadow)
+   (ebnf-terminal-border-width . 1.0)
+   (ebnf-terminal-border-color . "Black")
+   (ebnf-non-terminal-font quote
+			   (7 Helvetica "Black" "White"))
+   (ebnf-non-terminal-shape quote round)
+   (ebnf-non-terminal-shadow)
+   (ebnf-non-terminal-border-width . 1.0)
+   (ebnf-non-terminal-border-color . "Black")
+   (ebnf-production-name-p . t)
+   (ebnf-sort-production)
+   (ebnf-production-font quote
+			 (10 Helvetica "Black" "White" bold))
+   (ebnf-arrow-shape quote hollow)
+   (ebnf-chart-shape quote round)
+   (ebnf-user-arrow)
+   (ebnf-horizontal-orientation)
+   (ebnf-horizontal-max-height)
+   (ebnf-production-horizontal-space . 0.0)
+   (ebnf-production-vertical-space . 0.0)
+   (ebnf-justify-sequence quote center)
+   (ebnf-lex-comment-char . 59)
+   (ebnf-lex-eop-char . 46)
+   (ebnf-syntax quote ebnf)
+   (ebnf-iso-alternative-p)
+   (ebnf-iso-normalize-p)
+   (ebnf-file-suffix-regexp . ".[Bb][Nn][Ff]$")
+   (ebnf-eps-prefix . "ebnf--")
+   (ebnf-eps-header-font quote
+			 (11 Helvetica "Black" "White" bold))
+   (ebnf-eps-header)
+   (ebnf-eps-footer-font quote
+			 (7 Helvetica "Black" "White" bold))
+   (ebnf-eps-footer)
+   (ebnf-entry-percentage . 0.5)
+   (ebnf-color-p or
+		 (fboundp 'x-color-values)
+		 (fboundp 'color-instance-rgb-components))
+   (ebnf-line-width . 1.0)
+   (ebnf-line-color . "Black")
+   (ebnf-debug-ps)
+   (ebnf-use-float-format . t)
+   (ebnf-stop-on-error)
+   (ebnf-yac-ignore-error-recovery)
+   (ebnf-ignore-empty-rule)
+   (ebnf-optimize))
+ (happy default
+	(ebnf-justify-sequence quote left)
+	(ebnf-lex-comment-char . 35)
+	(ebnf-lex-eop-char . 59))
+ (abnf default
+       (ebnf-syntax quote abnf))
+ (iso-ebnf default
+	   (ebnf-syntax quote iso-ebnf))
+ (yacc default
+       (ebnf-syntax quote yacc))
+ (ebnfx default
+	(ebnf-syntax quote ebnfx))
+ (dtd default
+      (ebnf-syntax quote dtd)))
+</pre></br>

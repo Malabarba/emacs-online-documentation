@@ -1,17 +1,17 @@
-<strong>tq-enqueue</strong> is a compiled Lisp function in `<code>tq.el</code>'.<br/>
-<br/>
-(tq-enqueue TQ QUESTION REGEXP CLOSURE FN &optional DELAY-QUESTION)<br/>
-<br/>
-Add a transaction to transaction queue TQ.<br/>
-This sends the string QUESTION to the process that TQ communicates with.<br/>
-<br/>
-When the corresponding answer comes back, we call FN with two<br/>
-arguments: CLOSURE, which may contain additional data that FN<br/>
-needs, and the answer to the question.<br/>
-<br/>
-REGEXP is a regular expression to match the entire answer;<br/>
-that's how we tell where the answer ends.<br/>
-<br/>
-If DELAY-QUESTION is non-nil, delay sending this question until<br/>
-the process has finished replying to any previous questions.<br/>
+<strong>tq-enqueue</strong> is a compiled Lisp function in `<code>tq.el</code>'.</br>
+</br>
+(tq-enqueue <u>TQ</u> <u>QUESTION</u> <u>REGEXP</u> <u>CLOSURE</u> <u>FN</u> &optional <u>DELAY-QUESTION</u>)</br>
+</br>
+Add a transaction to transaction queue <u>TQ</u>.</br>
+This sends the string <u>QUESTION</u> to the process that <u>TQ</u> communicates with.</br>
+</br>
+When the corresponding answer comes back, we call <u>FN</u> with two</br>
+arguments: <u>CLOSURE</u>, which may contain additional data that <u>FN</u></br>
+needs, and the answer to the question.</br>
+</br>
+<u>REGEXP</u> is a regular expression to match the entire answer;</br>
+that's how we tell where the answer ends.</br>
+</br>
+If <u>DELAY-QUESTION</u> is non-nil, delay sending this question until</br>
+the process has finished replying to any previous questions.</br>
 This produces more reliable results with some processes.

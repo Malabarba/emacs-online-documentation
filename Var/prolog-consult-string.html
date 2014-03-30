@@ -1,28 +1,29 @@
-<strong>prolog-consult-string</strong> is a variable defined in `<code>prolog.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Alist of strings defining predicate for reconsulting.<br/>
-<br/>
-Some parts of the string are replaced:<br/>
-`%f' by the name of the consulted file (can be a temporary file)<br/>
-`%b' by the file name of the buffer to consult<br/>
-`%m' by the module name and name of the consulted file separated by colon<br/>
-`%l' by the line offset into the file.  This is 0 unless consulting a<br/>
-     region of a buffer, in which case it is the number of lines before<br/>
-     the region.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: ((eclipse "[%f].")<br/>
- (mercury nil)<br/>
- (sicstus<br/>
-  (eval<br/>
-   (if<br/>
-       (prolog-atleast-version<br/>
-	'(3 . 7))<br/>
-       "prolog:zap_file(%m,%b,consult,%l)." "prolog:zap_file(%m,%b,consult).")))<br/>
- (swi "[%f].")<br/>
- (gnu "[%f].")<br/>
- (t "reconsult(%f)."))<br/>
-<br/>
+<strong>prolog-consult-string</strong> is a variable defined in `<code>prolog.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of strings defining predicate for reconsulting.</br>
+</br>
+Some parts of the string are replaced:</br>
+`%f' by the name of the consulted file (can be a temporary file)</br>
+`%b' by the file name of the buffer to consult</br>
+`%m' by the module name and name of the consulted file separated by colon</br>
+`%l' by the line offset into the file.  This is 0 unless consulting a</br>
+     region of a buffer, in which case it is the number of lines before</br>
+     the region.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((eclipse "[%f].")
+ (mercury nil)
+ (sicstus
+  (eval
+   (if
+       (prolog-atleast-version
+	'(3 . 7))
+       "prolog:zap_file(%m,%b,consult,%l)." "prolog:zap_file(%m,%b,consult).")))
+ (swi "[%f].")
+ (gnu "[%f].")
+ (t "reconsult(%f)."))
+</pre></br>

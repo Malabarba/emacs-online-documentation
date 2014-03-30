@@ -1,9 +1,25 @@
-<strong>clone</strong> is a Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(clone &rest LOCAL-ARGS)<br/>
-<br/>
-Make a copy of OBJ, and then supply PARAMS.<br/>
-PARAMS is a parameter list of the same form used by `initialize-instance'.<br/>
-<br/>
-When overloading `clone', be sure to call `call-next-method'<br/>
-first and modify the returned object.
+<strong>clone</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(clone &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Make a copy of OBJ, and then supply PARAMS.</br>
+PARAMS is a parameter list of the same form used by `initialize-instance'.</br>
+</br>
+When overloading `clone', be sure to call `call-next-method'</br>
+first and modify the returned object.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-default-superclass' :PRIMARY (obj &rest params)</br>
+Make a copy of OBJ, and then apply PARAMS.</br>
+</br>
+Defined in `eieio.el'</br>
+</br>
+`eieio-instance-inheritor' :PRIMARY (obj &rest params)</br>
+Clone OBJ, initializing `:parent' to OBJ.</br>
+All slots are unbound, except those initialized with PARAMS.</br>
+</br>
+Defined in `eieio-base.el'</br>
+</br>

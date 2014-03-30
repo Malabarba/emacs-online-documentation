@@ -1,17 +1,17 @@
-<strong>mm-string-as-multibyte</strong> is an alias for `string-as-multibyte' in `<code>mm-util.el</code>'.<br/>
-<br/>
-(mm-string-as-multibyte STRING)<br/>
-<br/>
-Return a multibyte string with the same individual bytes as STRING.<br/>
-If STRING is multibyte, the result is STRING itself.<br/>
-Otherwise it is a newly created string, with no text properties.<br/>
-<br/>
-If STRING is unibyte and contains an individual 8-bit byte (i.e. not<br/>
-part of a correct utf-8 sequence), it is converted to the corresponding<br/>
-multibyte character of charset `eight-bit'.<br/>
-See also `string-to-multibyte'.<br/>
-<br/>
-Beware, this often doesn't really do what you think it does.<br/>
-It is similar to (decode-coding-string STRING 'utf-8-emacs).<br/>
-If you're not sure, whether to use `string-as-multibyte' or<br/>
+<strong>mm-string-as-multibyte</strong> is an alias for `<strong><a href="string-as-multibyte">string-as-multibyte</a></strong>' in `<code>mm-util.el</code>'.</br>
+</br>
+(mm-string-as-multibyte <u>STRING</u>)</br>
+</br>
+Return a multibyte string with the same individual bytes as <u>STRING</u>.</br>
+If <u>STRING</u> is multibyte, the result is <u>STRING</u> itself.</br>
+Otherwise it is a newly created string, with no text properties.</br>
+</br>
+If <u>STRING</u> is unibyte and contains an individual 8-bit byte (i.e. not</br>
+part of a correct utf-8 sequence), it is converted to the corresponding</br>
+multibyte character of charset `eight-bit'.</br>
+See also `string-to-multibyte'.</br>
+</br>
+Beware, this often doesn't really do what you think it does.</br>
+It is similar to (decode-coding-string <u>STRING</u> 'utf-8-emacs).</br>
+If you're not sure, whether to use `string-as-multibyte' or</br>
 `string-to-multibyte', use `string-to-multibyte'.

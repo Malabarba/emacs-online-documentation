@@ -1,27 +1,67 @@
-<strong>profiler-report-mode-map</strong> is a variable defined in `<code>profiler.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `profiler-report-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (113 . quit-window)<br/>
- (24 keymap<br/>
-     (23 . profiler-report-write-profile))<br/>
- (61 . profiler-report-compare-profile)<br/>
- (68 . profiler-report-descending-sort)<br/>
- (65 . profiler-report-ascending-sort)<br/>
- (66 . profiler-report-render-reversed-calltree)<br/>
- (67 . profiler-report-render-calltree)<br/>
- (100 . profiler-report-describe-entry)<br/>
- (mouse-2 . profiler-report-find-entry)<br/>
- (106 . profiler-report-find-entry)<br/>
- (102 . profiler-report-find-entry)<br/>
- (105 . profiler-report-toggle-entry)<br/>
- (9 . profiler-report-toggle-entry)<br/>
- (13 . profiler-report-toggle-entry)<br/>
- (112 . profiler-report-previous-entry)<br/>
- (110 . profiler-report-next-entry))<br/>
-<br/>
+<strong>profiler-report-mode-map</strong> is a variable defined in `<code>profiler.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `profiler-report-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Profiler menu-item "Profiler"
+		     (keymap "Profiler"
+			     (Next\ Entry menu-item "Next Entry" profiler-report-next-entry :help "Move to next entry")
+			     (Previous\ Entry menu-item "Previous Entry" profiler-report-previous-entry :help "Move to previous entry")
+			     (nil menu-item "--")
+			     (Toggle\ Entry menu-item "Toggle Entry" profiler-report-toggle-entry :enable
+					    (profiler-report-calltree-at-point)
+					    :help "Expand or collapse the current entry")
+			     (Find\ Entry menu-item "Find Entry" profiler-report-find-entry :enable
+					  (profiler-report-calltree-at-point)
+					  :help "Find the definition of the current entry")
+			     (Describe\ Entry menu-item "Describe Entry" profiler-report-describe-entry :enable
+					      (profiler-report-calltree-at-point)
+					      :help "Show the documentation of the current entry")
+			     (nil-6 menu-item "--")
+			     (Show\ Calltree menu-item "Show Calltree" profiler-report-render-calltree :enable profiler-report-reversed :help "Show calltree view")
+			     (Show\ Reversed\ Calltree menu-item "Show Reversed Calltree" profiler-report-render-reversed-calltree :enable
+						       (not profiler-report-reversed)
+						       :help "Show reversed calltree view")
+			     (Sort\ Ascending menu-item "Sort Ascending" profiler-report-ascending-sort :enable
+					      (not
+					       (eq profiler-report-order 'ascending))
+					      :help "Sort calltree view in ascending order")
+			     (Sort\ Descending menu-item "Sort Descending" profiler-report-descending-sort :enable
+					       (not
+						(eq profiler-report-order 'descending))
+					       :help "Sort calltree view in descending order")
+			     (nil-11 menu-item "--")
+			     (Compare\ Profile\.\.\. menu-item "Compare Profile..." profiler-report-compare-profile :help "Compare current profile with another")
+			     (Write\ Profile\.\.\. menu-item "Write Profile..." profiler-report-write-profile :help "Write current profile to a file")
+			     (nil-14 menu-item "--")
+			     (Start\ Profiler menu-item "Start Profiler" profiler-start :enable
+					      (not
+					       (profiler-running-p))
+					      :help "Start profiling")
+			     (Stop\ Profiler menu-item "Stop Profiler" profiler-stop :enable
+					     (profiler-running-p)
+					     :help "Stop profiling")
+			     (New\ Report menu-item "New Report" profiler-report :enable
+					  (profiler-running-p)
+					  :help "Make a new report"))))
+ (24 keymap
+     (23 . profiler-report-write-profile))
+ (61 . profiler-report-compare-profile)
+ (68 . profiler-report-descending-sort)
+ (65 . profiler-report-ascending-sort)
+ (66 . profiler-report-render-reversed-calltree)
+ (67 . profiler-report-render-calltree)
+ (100 . profiler-report-describe-entry)
+ (mouse-2 . profiler-report-find-entry)
+ (106 . profiler-report-find-entry)
+ (102 . profiler-report-find-entry)
+ (105 . profiler-report-toggle-entry)
+ (9 . profiler-report-toggle-entry)
+ (13 . profiler-report-toggle-entry)
+ (112 . profiler-report-previous-entry)
+ (110 . profiler-report-next-entry))
+</pre></br>

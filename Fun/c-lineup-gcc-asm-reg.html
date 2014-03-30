@@ -1,24 +1,24 @@
-<strong>c-lineup-gcc-asm-reg</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
-<br/>
-(c-lineup-gcc-asm-reg ELEM)<br/>
-<br/>
-Line up a gcc asm register under one on a previous line.<br/>
-<br/>
-    asm ("foo %1, %0\n"<br/>
-         "bar %0, %1"<br/>
-         : "=r" (w),<br/>
-           "=r" (x)<br/>
-         :  "0" (y),<br/>
-            "1" (z));<br/>
-<br/>
-The "x" line is aligned to the text after the ":" on the "w" line, and<br/>
-similarly "z" under "y".<br/>
-<br/>
-This is done only in an "asm" or "__asm__" block, and only to<br/>
-those lines mentioned.  Anywhere else nil is returned.  The usual<br/>
-arrangement is to have this routine as an extra feature at the start<br/>
-of arglist line-ups, e.g.<br/>
-<br/>
-    (c-lineup-gcc-asm-reg c-lineup-arglist)<br/>
-<br/>
+<strong>c-lineup-gcc-asm-reg</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.</br>
+</br>
+(c-lineup-gcc-asm-reg <u>ELEM</u>)</br>
+</br>
+Line up a gcc asm register under one on a previous line.</br>
+</br>
+    asm ("foo %1, %0\n"</br>
+         "bar %0, %1"</br>
+         : "=r" (w),</br>
+           "=r" (x)</br>
+         :  "0" (y),</br>
+            "1" (z));</br>
+</br>
+The "x" line is aligned to the text after the ":" on the "w" line, and</br>
+similarly "z" under "y".</br>
+</br>
+This is done only in an "asm" or "__asm__" block, and only to</br>
+those lines mentioned.  Anywhere else nil is returned.  The usual</br>
+arrangement is to have this routine as an extra feature at the start</br>
+of arglist line-ups, e.g.</br>
+</br>
+    (c-lineup-gcc-asm-reg c-lineup-arglist)</br>
+</br>
 Works with: arglist-cont, arglist-cont-nonempty.

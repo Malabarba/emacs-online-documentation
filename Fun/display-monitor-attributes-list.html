@@ -1,0 +1,32 @@
+<strong>display-monitor-attributes-list</strong> is a compiled Lisp function in `<code>frame.el</code>'.</br>
+</br>
+(display-monitor-attributes-list &optional <u>DISPLAY</u>)</br>
+</br>
+Return a list of physical monitor attributes on <u>DISPLAY</u>.</br>
+Each element of the list represents the attributes of each</br>
+physical monitor.  The first element corresponds to the primary</br>
+monitor.</br>
+</br>
+Attributes for a physical monitor is represented as an alist of</br>
+attribute keys and values as follows:</br>
+</br>
+ geometry -- Position and size in pixels in the form of</br>
+	     (X Y WIDTH HEIGHT)</br>
+ workarea -- Position and size of the workarea in pixels in the</br>
+	     form of (X Y WIDTH HEIGHT)</br>
+ mm-size  -- Width and height in millimeters in the form of</br>
+ 	     (WIDTH HEIGHT)</br>
+ frames   -- List of frames dominated by the physical monitor</br>
+ name (*) -- Name of the physical monitor as a string</br>
+</br>
+where X, Y, WIDTH, and HEIGHT are integers.  Keys labeled</br>
+with (*) are optional.</br>
+</br>
+A frame is dominated by a physical monitor when either the</br>
+largest area of the frame resides in the monitor, or the monitor</br>
+is the closest to the frame if the frame does not intersect any</br>
+physical monitors.  Every non-tip frame (including invisible one)</br>
+in a graphical display is dominated by exactly one physical</br>
+monitor at a time, though it can span multiple (or no) physical</br>
+monitors.</br>
+If <u>DISPLAY</u> is omitted or nil, it defaults to the selected frame's display.

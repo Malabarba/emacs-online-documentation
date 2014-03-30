@@ -1,19 +1,19 @@
-<strong>format-decode</strong> is a compiled Lisp function in `<code>format.el</code>'.<br/>
-<br/>
-(format-decode FORMAT LENGTH &optional VISIT-FLAG)<br/>
-<br/>
-Decode text from any known FORMAT.<br/>
-FORMAT is a symbol appearing in `format-alist' or a list of such symbols,<br/>
-or nil, in which case this function tries to guess the format of the data by<br/>
-matching against the regular expressions in `format-alist'.  After a match is<br/>
-found and the region decoded, the alist is searched again from the beginning<br/>
-for another match.<br/>
-<br/>
-Second arg LENGTH is the number of characters following point to operate on.<br/>
-If optional third arg VISIT-FLAG is true, set `buffer-file-format'<br/>
-to the reverted list of formats used, and call any mode functions defined<br/>
-for those formats.<br/>
-<br/>
-Return the new length of the decoded region.<br/>
-<br/>
+<strong>format-decode</strong> is a compiled Lisp function in `<code>format.el</code>'.</br>
+</br>
+(format-decode <u>FORMAT</u> <u>LENGTH</u> &optional <u>VISIT-FLAG</u>)</br>
+</br>
+Decode text from any known <u>FORMAT</u>.</br>
+<u>FORMAT</u> is a symbol appearing in `format-alist' or a list of such symbols,</br>
+or nil, in which case this function tries to guess the format of the data by</br>
+matching against the regular expressions in `format-alist'.  After a match is</br>
+found and the region decoded, the alist is searched again from the beginning</br>
+for another match.</br>
+</br>
+Second arg <u>LENGTH</u> is the number of characters following point to operate on.</br>
+If optional third arg <u>VISIT-FLAG</u> is true, set `buffer-file-format'</br>
+to the reverted list of formats used, and call any mode functions defined</br>
+for those formats.</br>
+</br>
+Return the new length of the decoded region.</br>
+</br>
 For most purposes, consider using `format-decode-region' instead.

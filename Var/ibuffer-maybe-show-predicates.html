@@ -1,25 +1,24 @@
-<strong>ibuffer-maybe-show-predicates</strong> is a variable defined in `<code>ibuffer.el</code>'.<br/>
-Its value is ((lambda<br/>
-   (buf)<br/>
-   (and<br/>
-    (string-match "^ "<br/>
-		  (buffer-name buf))<br/>
-    (null buffer-file-name))))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A list of predicates for buffers to display conditionally.<br/>
-<br/>
-A predicate can be a regexp or a function.<br/>
-If a regexp, then it will be matched against the buffer's name.<br/>
-If a function, it will be called with the buffer as an argument, and<br/>
-should return non-nil if this buffer should be shown.<br/>
-<br/>
-Viewing of buffers hidden because of these predicates may be customized<br/>
-via `ibuffer-default-display-maybe-show-predicates' and is toggled by<br/>
-giving a non-nil prefix argument to `ibuffer-update'.<br/>
-Note that this specialized filtering occurs before real filtering.<br/>
-<br/>
+<strong>ibuffer-maybe-show-predicates</strong> is a variable defined in `<code>ibuffer.el</code>'.</br>
+Its value is <pre></br>
+((lambda
+   (buf)
+   (and
+    (string-match "^ "
+		  (buffer-name buf))
+    (null buffer-file-name))))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A list of predicates for buffers to display conditionally.</br>
+</br>
+A predicate can be a regexp or a function.</br>
+If a regexp, then it will be matched against the buffer's name.</br>
+If a function, it will be called with the buffer as an argument, and</br>
+should return non-nil if this buffer should be shown.</br>
+</br>
+Viewing of buffers hidden because of these predicates may be customized</br>
+via `ibuffer-default-display-maybe-show-predicates' and is toggled by</br>
+giving a non-nil prefix argument to `ibuffer-update'.</br>
+Note that this specialized filtering occurs before real filtering.</br>
+</br>
 You can customize this variable.

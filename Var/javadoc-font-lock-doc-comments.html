@@ -1,18 +1,17 @@
-<strong>javadoc-font-lock-doc-comments</strong> is a variable defined in `<code>cc-fonts.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (("{@[a-z]+[^}\n]*}" 0 font-lock-constant-face prepend nil)<br/>
- ("^\\(/\\*\\)?\\(\\s \\|\\*\\)*\\(@[a-z]+\\)" 3 font-lock-constant-face prepend nil)<br/>
- ("</?\\sw\\(\\sw\\|\\s \\|[=\n*.:]\\|\"[^\"]*\"\\|'[^']*'\\)*>" 0 font-lock-constant-face prepend nil)<br/>
- ("&\\(\\sw\\|[.:]\\)+;" 0 font-lock-constant-face prepend nil)<br/>
- (#[(limit)<br/>
-    "\301\302\"\207"<br/>
-    [limit c-find-invalid-doc-markup "[<>&]\\|{@"]<br/>
-    3]<br/>
-  0 'font-lock-warning-face prepend nil))<br/>
-<br/>
+<strong>javadoc-font-lock-doc-comments</strong> is a variable defined in `<code>cc-fonts.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("{@[a-z]+[^}\n]*}" 0 font-lock-constant-face prepend nil)
+ ("^\\(/\\*\\)?\\(\\s \\|\\*\\)*\\(@[a-z]+\\)" 3 font-lock-constant-face prepend nil)
+ ("</?\\sw\\(\\sw\\|\\s \\|[=\n*.:]\\|\"[^\"]*\"\\|'[^']*'\\)*>" 0 font-lock-constant-face prepend nil)
+ ("&\\(\\sw\\|[.:]\\)+;" 0 font-lock-constant-face prepend nil)
+ (#[(limit)
+    "\301\302\"\207"
+    [limit c-find-invalid-doc-markup "[<>&]\\|{@"]
+    3]
+  0 'font-lock-warning-face prepend nil))
+</pre></br>

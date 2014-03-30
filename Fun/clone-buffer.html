@@ -1,22 +1,23 @@
-<strong>clone-buffer</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-(clone-buffer &optional NEWNAME DISPLAY-FLAG)<br/>
-<br/>
-Create and return a twin copy of the current buffer.<br/>
-Unlike an indirect buffer, the new buffer can be edited<br/>
-independently of the old one (if it is not read-only).<br/>
-NEWNAME is the name of the new buffer.  It may be modified by<br/>
-adding or incrementing <N> at the end as necessary to create a<br/>
-unique buffer name.  If nil, it defaults to the name of the<br/>
-current buffer, with the proper suffix.  If DISPLAY-FLAG is<br/>
-non-nil, the new buffer is shown with `pop-to-buffer'.  Trying to<br/>
-clone a file-visiting buffer, or a buffer whose major mode symbol<br/>
-has a non-nil `no-clone' property, results in an error.<br/>
-<br/>
-Interactively, DISPLAY-FLAG is t and NEWNAME is the name of the<br/>
-current buffer with appropriate suffix.  However, if a prefix<br/>
-argument is given, then the command prompts for NEWNAME in the<br/>
-minibuffer.<br/>
-<br/>
-This runs the normal hook `clone-buffer-hook' in the new buffer<br/>
+<strong>clone-buffer</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+</br>
+(clone-buffer &optional <u>NEWNAME</u> <u>DISPLAY-FLAG</u>)</br>
+</br>
+Create and return a twin copy of the current buffer.</br>
+Unlike an indirect buffer, the new buffer can be edited</br>
+independently of the old one (if it is not read-only).</br>
+<u>NEWNAME</u> is the name of the new buffer.  It may be modified by</br>
+adding or incrementing &lt;N> at the end as necessary to create a</br>
+unique buffer name.  If nil, it defaults to the name of the</br>
+current buffer, with the proper suffix.  If <u>DISPLAY-FLAG</u> is</br>
+non-nil, the new buffer is shown with `pop-to-buffer'.  Trying to</br>
+clone a file-visiting buffer, or a buffer whose major mode symbol</br>
+has a non-nil `no-clone' property, results in an error.</br>
+</br>
+Interactively, <u>DISPLAY-FLAG</u> is t and <u>NEWNAME</u> is the name of the</br>
+current buffer with appropriate suffix.  However, if a prefix</br>
+argument is given, then the command prompts for <u>NEWNAME</u> in the</br>
+minibuffer.</br>
+</br>
+This runs the normal hook `clone-buffer-hook' in the new buffer</br>
 after it has been set up properly in other respects.

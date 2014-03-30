@@ -1,11 +1,14 @@
-<strong>org-agenda-deadline-leaders</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
-Its value is ("Deadline:  " "In %3d d.: ")<br/>
-<br/>
-Documentation:<br/>
-Text preceding deadline items in the agenda view.<br/>
-This is a list with two strings.  The first applies when the item has its<br/>
-deadline on the current day.  The second applies when it is in the past or<br/>
-in the future, it may contain %d to capture how many days away the deadline<br/>
-is (was).<br/>
-<br/>
-You can customize this variable.
+<strong>org-agenda-deadline-leaders</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+Its value is <pre>("Deadline:  " "In %3d d.: " "%2d d. ago: ")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Text preceding deadline items in the agenda view.</br>
+This is a list with three strings.  The first applies when the item has its</br>
+deadline on the current day.  The second applies when the deadline is in the</br>
+future, the third one when it is in the past.  The strings may contain %d</br>
+to capture the number of days.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

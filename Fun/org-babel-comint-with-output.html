@@ -1,15 +1,15 @@
-<strong>org-babel-comint-with-output</strong> is a Lisp macro in `<code>ob-comint.el</code>'.<br/>
-<br/>
-(org-babel-comint-with-output META &rest BODY)<br/>
-<br/>
-Evaluate BODY in BUFFER and return process output.<br/>
-Will wait until EOE-INDICATOR appears in the output, then return<br/>
-all process output.  If REMOVE-ECHO and FULL-BODY are present and<br/>
-non-nil, then strip echo'd body from the returned output.  META<br/>
-should be a list containing the following where the last two<br/>
-elements are optional.<br/>
-<br/>
- (BUFFER EOE-INDICATOR REMOVE-ECHO FULL-BODY)<br/>
-<br/>
-This macro ensures that the filter is removed in case of an error<br/>
+<strong>org-babel-comint-with-output</strong> is a Lisp macro in `<code>ob-comint.el</code>'.</br>
+</br>
+(org-babel-comint-with-output <u>META</u> &rest <u>BODY</u>)</br>
+</br>
+Evaluate <u>BODY</u> in BUFFER and return process output.</br>
+Will wait until EOE-INDICATOR appears in the output, then return</br>
+all process output.  If REMOVE-ECHO and FULL-BODY are present and</br>
+non-nil, then strip echo'd body from the returned output.  <u>META</u></br>
+should be a list containing the following where the last two</br>
+elements are optional.</br>
+</br>
+ (BUFFER EOE-INDICATOR REMOVE-ECHO FULL-BODY)</br>
+</br>
+This macro ensures that the filter is removed in case of an error</br>
 or user `keyboard-quit' during execution of body.

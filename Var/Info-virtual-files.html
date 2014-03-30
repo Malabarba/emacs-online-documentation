@@ -1,30 +1,31 @@
-<strong>Info-virtual-files</strong> is a variable defined in `<code>info.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-List of definitions of virtual Info files.<br/>
-Each element of the list has the format (FILENAME (OPERATION . HANDLER) ...)<br/>
-where FILENAME is a regexp that matches a class of virtual Info file names.<br/>
-It should be carefully chosen to not cause file name clashes with<br/>
-existing file names.  OPERATION is one of the following operation<br/>
-symbols `find-file', `find-node', `toc-nodes' that define what HANDLER<br/>
-function to call instead of calling the default corresponding function<br/>
-to override it.<br/>
-<br/>
-Value: (("\\`\\*Finder.*\\*\\'"<br/>
-  (find-file . Info-finder-find-file)<br/>
-  (find-node . Info-finder-find-node))<br/>
- ("\\`\\*Apropos\\*\\'"<br/>
-  (toc-nodes . Info-apropos-toc-nodes)<br/>
-  (find-file . Info-apropos-find-file)<br/>
-  (find-node . Info-apropos-find-node)<br/>
-  (slow . t))<br/>
- ("\\`\\*History\\*\\'"<br/>
-  (toc-nodes . Info-history-toc-nodes)<br/>
-  (find-file . Info-history-find-file)<br/>
-  (find-node . Info-history-find-node))<br/>
- ("\\`dir\\'"<br/>
-  (toc-nodes . Info-directory-toc-nodes)<br/>
-  (find-file . Info-directory-find-file)<br/>
-  (find-node . Info-directory-find-node)))<br/>
-<br/>
+<strong>Info-virtual-files</strong> is a variable defined in `<code>info.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of definitions of virtual Info files.</br>
+Each element of the list has the format (FILENAME (OPERATION . HANDLER) ...)</br>
+where FILENAME is a regexp that matches a class of virtual Info file names.</br>
+It should be carefully chosen to not cause file name clashes with</br>
+existing file names.  OPERATION is one of the following operation</br>
+symbols `find-file', `find-node', `toc-nodes' that define what HANDLER</br>
+function to call instead of calling the default corresponding function</br>
+to override it.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\`\\*Finder.*\\*\\'"
+  (find-file . Info-finder-find-file)
+  (find-node . Info-finder-find-node))
+ ("\\`\\*Apropos\\*\\'"
+  (toc-nodes . Info-apropos-toc-nodes)
+  (find-file . Info-apropos-find-file)
+  (find-node . Info-apropos-find-node)
+  (slow . t))
+ ("\\`\\*History\\*\\'"
+  (toc-nodes . Info-history-toc-nodes)
+  (find-file . Info-history-find-file)
+  (find-node . Info-history-find-node))
+ ("\\`dir\\'"
+  (toc-nodes . Info-directory-toc-nodes)
+  (find-file . Info-directory-find-file)
+  (find-node . Info-directory-find-node)))
+</pre></br>

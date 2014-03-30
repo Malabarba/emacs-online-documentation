@@ -1,35 +1,36 @@
-<strong>vhdl-special-syntax-alist</strong> is a variable defined in `<code>vhdl-mode.el</code>'.<br/>
-Its value is (("generic/constant" "\\<\\w+_[cg]\\>" "Gold3" "BurlyWood1" nil)<br/>
- ("type" "\\<\\w+_t\\>" "ForestGreen" "PaleGreen" nil)<br/>
- ("variable" "\\<\\w+_v\\>" "Grey50" "Grey80" nil))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-List of special syntax to be highlighted.<br/>
-If option `vhdl-highlight-special-words' is non-nil, words with the specified<br/>
-syntax (as regular expression) are highlighted in the corresponding color.<br/>
-<br/>
-  Name         : string of words and spaces<br/>
-  Regexp       : regular expression describing word syntax<br/>
-                 (e.g. "\<\w+_c\>" matches word with suffix "_c")<br/>
-                 expression must start with "\<" and end with "\>"<br/>
-                 if only whole words should be matched (no substrings)<br/>
-  Color (light): foreground color for light background<br/>
-                 (matching color examples: Gold3, Grey50, LimeGreen, Tomato,<br/>
-                 LightSeaGreen, DodgerBlue, Gold, PaleVioletRed)<br/>
-  Color (dark) : foreground color for dark background<br/>
-                 (matching color examples: BurlyWood1, Grey80, Green, Coral,<br/>
-                 AquaMarine2, LightSkyBlue1, Yellow, PaleVioletRed1)<br/>
-  In comments  : If non-nil, words are also highlighted inside comments<br/>
-<br/>
-Can be used for visual support of naming conventions, such as highlighting<br/>
-different kinds of signals (e.g. "Clk50", "Rst_n") or objects (e.g.<br/>
-"Signal_s", "Variable_v", "Constant_c") by distinguishing them using<br/>
-common substrings or name suffices.<br/>
-For each entry, a new face is generated with the specified colors and name<br/>
-"vhdl-font-lock-" + name + "-face".<br/>
-<br/>
-NOTE: Activate a changed regexp in a VHDL buffer by re-fontifying it (menu<br/>
-      entry "Fontify Buffer").  All other changes require restarting Emacs.<br/>
-<br/>
+<strong>vhdl-special-syntax-alist</strong> is a variable defined in `<code>vhdl-mode.el</code>'.</br>
+Its value is <pre></br>
+(("generic/constant" "\\<\\w+_[cg]\\>" "Gold3" "BurlyWood1" nil)
+ ("type" "\\<\\w+_t\\>" "ForestGreen" "PaleGreen" nil)
+ ("variable" "\\<\\w+_v\\>" "Grey50" "Grey80" nil))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of special syntax to be highlighted.</br>
+If option `vhdl-highlight-special-words' is non-nil, words with the specified</br>
+syntax (as regular expression) are highlighted in the corresponding color.</br>
+</br>
+  Name         : string of words and spaces</br>
+  Regexp       : regular expression describing word syntax</br>
+                 (e.g. "\<\w+_c\>" matches word with suffix "_c")</br>
+                 expression must start with "\<" and end with "\>"</br>
+                 if only whole words should be matched (no substrings)</br>
+  Color (light): foreground color for light background</br>
+                 (matching color examples: Gold3, Grey50, LimeGreen, Tomato,</br>
+                 LightSeaGreen, DodgerBlue, Gold, PaleVioletRed)</br>
+  Color (dark) : foreground color for dark background</br>
+                 (matching color examples: BurlyWood1, Grey80, Green, Coral,</br>
+                 AquaMarine2, LightSkyBlue1, Yellow, PaleVioletRed1)</br>
+  In comments  : If non-nil, words are also highlighted inside comments</br>
+</br>
+Can be used for visual support of naming conventions, such as highlighting</br>
+different kinds of signals (e.g. "Clk50", "Rst_n") or objects (e.g.</br>
+"Signal_s", "Variable_v", "Constant_c") by distinguishing them using</br>
+common substrings or name suffices.</br>
+For each entry, a new face is generated with the specified colors and name</br>
+"vhdl-font-lock-" + name + "-face".</br>
+</br>
+NOTE: Activate a changed regexp in a VHDL buffer by re-fontifying it (menu</br>
+      entry "Fontify Buffer").  All other changes require restarting Emacs.</br>
+</br>
 You can customize this variable.

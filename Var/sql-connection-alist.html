@@ -1,25 +1,26 @@
-<strong>sql-connection-alist</strong> is a variable defined in `<code>sql.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-An alist of connection parameters for interacting with a SQL product.<br/>
-Each element of the alist is as follows:<br/>
-<br/>
-  (CONNECTION (SQL-VARIABLE VALUE) ...)<br/>
-<br/>
-Where CONNECTION is a symbol identifying the connection, SQL-VARIABLE<br/>
-is the symbol name of a SQL mode variable, and VALUE is the value to<br/>
-be assigned to the variable.  The most common SQL-VARIABLE settings<br/>
-associated with a connection are: `sql-product', `sql-user',<br/>
-`sql-password', `sql-port', `sql-server', and `sql-database'.<br/>
-<br/>
-If a SQL-VARIABLE is part of the connection, it will not be<br/>
-prompted for during login.  The command `sql-connect' starts a<br/>
-predefined SQLi session using the parameters from this list.<br/>
-Connections defined here appear in the submenu SQL->Start...  for<br/>
-making new SQLi sessions.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>sql-connection-alist</strong> is a variable defined in `<code>sql.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+An alist of connection parameters for interacting with a SQL product.</br>
+Each element of the alist is as follows:</br>
+</br>
+  (CONNECTION (SQL-VARIABLE VALUE) ...)</br>
+</br>
+Where CONNECTION is a case-insensitive string identifying the</br>
+connection, SQL-VARIABLE is the symbol name of a SQL mode</br>
+variable, and VALUE is the value to be assigned to the variable.</br>
+The most common SQL-VARIABLE settings associated with a</br>
+connection are: `sql-product', `sql-user', `sql-password',</br>
+`sql-port', `sql-server', and `sql-database'.</br>
+</br>
+If a SQL-VARIABLE is part of the connection, it will not be</br>
+prompted for during login.  The command `sql-connect' starts a</br>
+predefined SQLi session using the parameters from this list.</br>
+Connections defined here appear in the submenu SQL->Start...  for</br>
+making new SQLi sessions.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

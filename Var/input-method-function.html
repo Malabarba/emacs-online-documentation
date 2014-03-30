@@ -1,25 +1,22 @@
-<strong>input-method-function</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable's value is permanent if it is given a local binding.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-If non-nil, the function that implements the current input method.<br/>
-It's called with one argument, a printing character that was just read.<br/>
-(That means a character with code 040...0176.)<br/>
-Typically this function uses `read-event' to read additional events.<br/>
-When it does so, it should first bind `input-method-function' to nil<br/>
-so it will not be called recursively.<br/>
-<br/>
-The function should return a list of zero or more events<br/>
-to be used as input.  If it wants to put back some events<br/>
-to be reconsidered, separately, by the input method,<br/>
-it can add them to the beginning of `unread-command-events'.<br/>
-<br/>
-The input method function can find in `input-method-previous-message'<br/>
-the previous echo area message.<br/>
-<br/>
-The input method function should refer to the variables<br/>
-`input-method-use-echo-area' and `input-method-exit-on-first-char'<br/>
+<strong>input-method-function</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>This variable's value is permanent if it is given a local binding.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, the function that implements the current input method.</br>
+It's called with one argument, a printing character that was just read.</br>
+(That means a character with code 040...0176.)</br>
+Typically this function uses `read-event' to read additional events.</br>
+When it does so, it should first bind `input-method-function' to nil</br>
+so it will not be called recursively.</br>
+</br>
+The function should return a list of zero or more events</br>
+to be used as input.  If it wants to put back some events</br>
+to be reconsidered, separately, by the input method,</br>
+it can add them to the beginning of `unread-command-events'.</br>
+</br>
+The input method function can find in `input-method-previous-message'</br>
+the previous echo area message.</br>
+</br>
+The input method function should refer to the variables</br>
+`input-method-use-echo-area' and `input-method-exit-on-first-char'</br>
 for guidance on what to do.

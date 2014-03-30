@@ -1,49 +1,49 @@
-<strong>diary-list-entries</strong> is an autoloaded compiled Lisp function in `<code>diary-lib.el</code>'.<br/>
-<br/>
-(diary-list-entries DATE NUMBER &optional LIST-ONLY)<br/>
-<br/>
-Create and display a buffer containing the relevant lines in `diary-file'.<br/>
-Selects entries for NUMBER days starting with date DATE.  Hides any<br/>
-other entries using overlays.  If NUMBER is less than 1, this function<br/>
-does nothing.<br/>
-<br/>
-Returns a list of all relevant diary entries found.<br/>
-The list entries have the form ((MONTH DAY YEAR) STRING SPECIFIER) where<br/>
-(MONTH DAY YEAR) is the date of the entry, STRING is the entry text, and<br/>
-SPECIFIER is the applicability.  If the variable `diary-list-include-blanks'<br/>
-is non-nil, this list includes a dummy diary entry consisting of the empty<br/>
-string for a date with no diary entries.<br/>
-<br/>
-If producing entries for multiple dates (i.e., NUMBER > 1), then<br/>
-this function normally returns the entries from any given diary<br/>
-file in date order.  The entries for any given day are in the<br/>
-order in which they were found in the file, not necessarily in<br/>
-time-of-day order.  Note that any functions present on the<br/>
-hooks (see below) may add entries, or change the order.  For<br/>
-example, `diary-include-other-diary-files' adds entries from any<br/>
-include files that it finds to the end of the original list.  The<br/>
-entries from each file will be in date order, but the overall<br/>
-list will not be.  If you want the entire list to be in time<br/>
-order, add `diary-sort-entries' to the end of `diary-list-entries-hook'.<br/>
-<br/>
-After preparing the initial list, hooks run in this order:<br/>
-<br/>
-  `diary-nongregorian-listing-hook' runs for the main diary file,<br/>
-      and each included file.  For example, this is the appropriate hook<br/>
-      to process Islamic entries in all diary files.<br/>
-<br/>
-  `diary-list-entries-hook' runs once only, for the main diary file.<br/>
-      For example, this is appropriate for sorting all the entries.<br/>
-      If not using include files, there is no difference from the previous<br/>
-      hook.<br/>
-<br/>
-  `diary-hook' runs last, after the diary is displayed.<br/>
-      This is used e.g. by `appt-check'.<br/>
-<br/>
-Functions called by these hooks may use the variables ORIGINAL-DATE<br/>
-and NUMBER, which are the arguments with which this function was called.<br/>
-Note that hook functions should _not_ use DATE, but ORIGINAL-DATE.<br/>
-(Sexp diary entries may use DATE - see `diary-list-sexp-entries'.)<br/>
-<br/>
-This function displays the list using `diary-display-function', unless<br/>
-LIST-ONLY is non-nil, in which case it just returns the list.
+<strong>diary-list-entries</strong> is an autoloaded compiled Lisp function in `<code>diary-lib.el</code>'.</br>
+</br>
+(diary-list-entries <u>DATE</u> <u>NUMBER</u> &optional <u>LIST-ONLY</u>)</br>
+</br>
+Create and display a buffer containing the relevant lines in `diary-file'.</br>
+Selects entries for <u>NUMBER</u> days starting with date <u>DATE</u>.  Hides any</br>
+other entries using overlays.  If <u>NUMBER</u> is less than 1, this function</br>
+does nothing.</br>
+</br>
+Returns a list of all relevant diary entries found.</br>
+The list entries have the form ((MONTH DAY YEAR) STRING SPECIFIER) where</br>
+(MONTH DAY YEAR) is the date of the entry, STRING is the entry text, and</br>
+SPECIFIER is the applicability.  If the variable `diary-list-include-blanks'</br>
+is non-nil, this list includes a dummy diary entry consisting of the empty</br>
+string for a date with no diary entries.</br>
+</br>
+If producing entries for multiple dates (i.e., <u>NUMBER</u> > 1), then</br>
+this function normally returns the entries from any given diary</br>
+file in date order.  The entries for any given day are in the</br>
+order in which they were found in the file, not necessarily in</br>
+time-of-day order.  Note that any functions present on the</br>
+hooks (see below) may add entries, or change the order.  For</br>
+example, `diary-include-other-diary-files' adds entries from any</br>
+include files that it finds to the end of the original list.  The</br>
+entries from each file will be in date order, but the overall</br>
+list will not be.  If you want the entire list to be in time</br>
+order, add `diary-sort-entries' to the end of `diary-list-entries-hook'.</br>
+</br>
+After preparing the initial list, hooks run in this order:</br>
+</br>
+  `diary-nongregorian-listing-hook' runs for the main diary file,</br>
+      and each included file.  For example, this is the appropriate hook</br>
+      to process Islamic entries in all diary files.</br>
+</br>
+  `diary-list-entries-hook' runs once only, for the main diary file.</br>
+      For example, this is appropriate for sorting all the entries.</br>
+      If not using include files, there is no difference from the previous</br>
+      hook.</br>
+</br>
+  `diary-hook' runs last, after the diary is displayed.</br>
+      This is used e.g. by `appt-check'.</br>
+</br>
+Functions called by these hooks may use the variables ORIGINAL-DATE</br>
+and <u>NUMBER</u>, which are the arguments with which this function was called.</br>
+Note that hook functions should _not_ use <u>DATE</u>, but ORIGINAL-DATE.</br>
+(Sexp diary entries may use <u>DATE</u> - see `diary-list-sexp-entries'.)</br>
+</br>
+This function displays the list using `diary-display-function', unless</br>
+<u>LIST-ONLY</u> is non-nil, in which case it just returns the list.

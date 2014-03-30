@@ -1,5 +1,9 @@
-<strong>tramp-drop-volume-letter</strong> is an alias for `identity' in `<code>tramp.el</code>'.<br/>
-<br/>
-(tramp-drop-volume-letter ARG)<br/>
-<br/>
-Return the argument unchanged.
+<strong>tramp-drop-volume-letter</strong> is a compiled Lisp function in `<code>tramp.el</code>'.</br>
+</br>
+(tramp-drop-volume-letter <u>NAME</u>)</br>
+</br>
+Cut off unnecessary drive letter from file <u>NAME</u>.</br>
+The functions `tramp-*-handle-expand-file-name' call `expand-file-name'</br>
+locally on a remote file name.  When the local system is a W32 system</br>
+but the remote system is Unix, this introduces a superfluous drive</br>
+letter into the file name.  This function removes it.

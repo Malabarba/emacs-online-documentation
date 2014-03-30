@@ -1,156 +1,175 @@
-<strong>define-coding-system</strong> is a compiled Lisp function in `<code>mule.el</code>'.<br/>
-<br/>
-(define-coding-system NAME DOCSTRING &rest PROPS)<br/>
-<br/>
-Define NAME (a symbol) as a coding system with DOCSTRING and attributes.<br/>
-The remaining arguments must come in pairs ATTRIBUTE VALUE.  ATTRIBUTE<br/>
-may be any symbol.<br/>
-<br/>
-The following attributes have special meanings.  Those labeled as<br/>
-"(required)" should not be omitted.<br/>
-<br/>
-`:mnemonic' (required)<br/>
-<br/>
-VALUE is a character to display on mode line for the coding system.<br/>
-<br/>
-`:coding-type' (required)<br/>
-<br/>
-VALUE must be one of `charset', `utf-8', `utf-16', `iso-2022',<br/>
-`emacs-mule', `shift-jis', `ccl', `raw-text', `undecided'.<br/>
-<br/>
-`:eol-type'<br/>
-<br/>
-VALUE is the EOL (end-of-line) format of the coding system.  It must be<br/>
-one of `unix', `dos', `mac'.  The symbol `unix' means Unix-like EOL<br/>
-(i.e. single LF), `dos' means DOS-like EOL (i.e. sequence of CR LF),<br/>
-and `mac' means Mac-like EOL (i.e. single CR).  If omitted, Emacs<br/>
-detects the EOL format automatically when decoding.<br/>
-<br/>
-`:charset-list'<br/>
-<br/>
-VALUE must be a list of charsets supported by the coding system.  On<br/>
-encoding by the coding system, if a character belongs to multiple<br/>
-charsets in the list, a charset that comes earlier in the list is<br/>
-selected.  If `:coding-type' is `iso-2022', VALUE may be `iso-2022',<br/>
-which indicates that the coding system supports all ISO-2022 based<br/>
-charsets.  If `:coding-type' is `emacs-mule', VALUE may be<br/>
-`emacs-mule', which indicates that the coding system supports all<br/>
-charsets that have the `:emacs-mule-id' property.<br/>
-<br/>
-`:ascii-compatible-p'<br/>
-<br/>
-If VALUE is non-nil, the coding system decodes all 7-bit bytes into<br/>
-the corresponding ASCII characters, and encodes all ASCII characters<br/>
-back to the corresponding 7-bit bytes.  VALUE defaults to nil.<br/>
-<br/>
-`:decode-translation-table'<br/>
-<br/>
-VALUE must be a translation table to use on decoding.<br/>
-<br/>
-`:encode-translation-table'<br/>
-<br/>
-VALUE must be a translation table to use on encoding.<br/>
-<br/>
-`:post-read-conversion'<br/>
-<br/>
-VALUE must be a function to call after some text is inserted and<br/>
-decoded by the coding system itself and before any functions in<br/>
-`after-insert-functions' are called.  This function is passed one<br/>
-argument; the number of characters in the text to convert, with<br/>
-point at the start of the text.  The function should leave point<br/>
-the same, and return the new character count.<br/>
-<br/>
-`:pre-write-conversion'<br/>
-<br/>
-VALUE must be a function to call after all functions in<br/>
-`write-region-annotate-functions' and `buffer-file-format' are<br/>
-called, and before the text is encoded by the coding system<br/>
-itself.  This function should convert the whole text in the<br/>
-current buffer.  For backward compatibility, this function is<br/>
-passed two arguments which can be ignored.<br/>
-<br/>
-`:default-char'<br/>
-<br/>
-VALUE must be a character.  On encoding, a character not supported by<br/>
-the coding system is replaced with VALUE.<br/>
-<br/>
-`:for-unibyte'<br/>
-<br/>
-VALUE non-nil means that visiting a file with the coding system<br/>
-results in a unibyte buffer.<br/>
-<br/>
-`:mime-charset'<br/>
-<br/>
-VALUE must be a symbol whose name is that of a MIME charset converted<br/>
-to lower case.<br/>
-<br/>
-`:mime-text-unsuitable'<br/>
-<br/>
-VALUE non-nil means the `:mime-charset' property names a charset which<br/>
-is unsuitable for the top-level media type "text".<br/>
-<br/>
-`:flags'<br/>
-<br/>
-VALUE must be a list of symbols that control the ISO-2022 converter.<br/>
-Each must be a member of the list `coding-system-iso-2022-flags'<br/>
-(which see).  This attribute has a meaning only when `:coding-type'<br/>
-is `iso-2022'.<br/>
-<br/>
-`:designation'<br/>
-<br/>
-VALUE must be a vector [G0-USAGE G1-USAGE G2-USAGE G3-USAGE].<br/>
-GN-USAGE specifies the usage of graphic register GN as follows.<br/>
-<br/>
-If it is nil, no charset can be designated to GN.<br/>
-<br/>
-If it is a charset, the charset is initially designated to GN, and<br/>
-never used by the other charsets.<br/>
-<br/>
-If it is a list, the elements must be charsets, nil, 94, or 96.  GN<br/>
-can be used by all the listed charsets.  If the list contains 94, any<br/>
-iso-2022 charset whose code-space ranges are 94 long can be designated<br/>
-to GN.  If the list contains 96, any charsets whose whose ranges are<br/>
-96 long can be designated to GN.  If the first element is a charset,<br/>
-that charset is initially designated to GN.<br/>
-<br/>
-This attribute has a meaning only when `:coding-type' is `iso-2022'.<br/>
-<br/>
-`:bom'<br/>
-<br/>
-This attributes specifies whether the coding system uses a `byte order<br/>
-mark'.  VALUE must be nil, t, or cons of coding systems whose<br/>
-`:coding-type' is `utf-16' or `utf-8'.<br/>
-<br/>
-If the value is nil, on decoding, don't treat the first two-byte as<br/>
-BOM, and on encoding, don't produce BOM bytes.<br/>
-<br/>
-If the value is t, on decoding, skip the first two-byte as BOM, and on<br/>
-encoding, produce BOM bytes according to the value of `:endian'.<br/>
-<br/>
-If the value is cons, on decoding, check the first two-byte.  If they<br/>
-are 0xFE 0xFF, use the car part coding system of the value.  If they<br/>
-are 0xFF 0xFE, use the cdr part coding system of the value.<br/>
-Otherwise, treat them as bytes for a normal character.  On encoding,<br/>
-produce BOM bytes according to the value of `:endian'.<br/>
-<br/>
-This attribute has a meaning only when `:coding-type' is `utf-16' or<br/>
-`utf-8'.<br/>
-<br/>
-`:endian'<br/>
-<br/>
-VALUE must be `big' or `little' specifying big-endian and<br/>
-little-endian respectively.  The default value is `big'.<br/>
-<br/>
-This attribute has a meaning only when `:coding-type' is `utf-16'.<br/>
-<br/>
-`:ccl-decoder'<br/>
-<br/>
-VALUE is a symbol representing the registered CCL program used for<br/>
-decoding.  This attribute has a meaning only when `:coding-type' is<br/>
-`ccl'.<br/>
-<br/>
-`:ccl-encoder'<br/>
-<br/>
-VALUE is a symbol representing the registered CCL program used for<br/>
-encoding.  This attribute has a meaning only when `:coding-type' is<br/>
-`ccl'.
+<strong>define-coding-system</strong> is a compiled Lisp function in `<code>mule.el</code>'.</br>
+</br>
+(define-coding-system <u>NAME</u> <u>DOCSTRING</u> &rest <u>PROPS</u>)</br>
+</br>
+Define <u>NAME</u> (a symbol) as a coding system with <u>DOCSTRING</u> and attributes.</br>
+The remaining arguments must come in pairs ATTRIBUTE VALUE.  ATTRIBUTE</br>
+may be any symbol.</br>
+</br>
+The following attributes have special meanings.  Those labeled as</br>
+"(required)" should not be omitted.</br>
+</br>
+`:mnemonic' (required)</br>
+</br>
+VALUE is a character to display on mode line for the coding system.</br>
+</br>
+`:coding-type' (required)</br>
+</br>
+VALUE must be one of `charset', `utf-8', `utf-16', `iso-2022',</br>
+`emacs-mule', `shift-jis', `ccl', `raw-text', `undecided'.</br>
+</br>
+`:eol-type'</br>
+</br>
+VALUE is the EOL (end-of-line) format of the coding system.  It must be</br>
+one of `unix', `dos', `mac'.  The symbol `unix' means Unix-like EOL</br>
+(i.e. single LF), `dos' means DOS-like EOL (i.e. sequence of CR LF),</br>
+and `mac' means Mac-like EOL (i.e. single CR).  If omitted, Emacs</br>
+detects the EOL format automatically when decoding.</br>
+</br>
+`:charset-list'</br>
+</br>
+VALUE must be a list of charsets supported by the coding system.  On</br>
+encoding by the coding system, if a character belongs to multiple</br>
+charsets in the list, a charset that comes earlier in the list is</br>
+selected.  If `:coding-type' is `iso-2022', VALUE may be `iso-2022',</br>
+which indicates that the coding system supports all ISO-2022 based</br>
+charsets.  If `:coding-type' is `emacs-mule', VALUE may be</br>
+`emacs-mule', which indicates that the coding system supports all</br>
+charsets that have the `:emacs-mule-id' property.</br>
+</br>
+`:ascii-compatible-p'</br>
+</br>
+If VALUE is non-nil, the coding system decodes all 7-bit bytes into</br>
+the corresponding ASCII characters, and encodes all ASCII characters</br>
+back to the corresponding 7-bit bytes.  VALUE defaults to nil.</br>
+</br>
+`:decode-translation-table'</br>
+</br>
+VALUE must be a translation table to use on decoding.</br>
+</br>
+`:encode-translation-table'</br>
+</br>
+VALUE must be a translation table to use on encoding.</br>
+</br>
+`:post-read-conversion'</br>
+</br>
+VALUE must be a function to call after some text is inserted and</br>
+decoded by the coding system itself and before any functions in</br>
+`after-insert-functions' are called.  This function is passed one</br>
+argument; the number of characters in the text to convert, with</br>
+point at the start of the text.  The function should leave point</br>
+the same, and return the new character count.</br>
+</br>
+`:pre-write-conversion'</br>
+</br>
+VALUE must be a function to call after all functions in</br>
+`write-region-annotate-functions' and `buffer-file-format' are</br>
+called, and before the text is encoded by the coding system</br>
+itself.  This function should convert the whole text in the</br>
+current buffer.  For backward compatibility, this function is</br>
+passed two arguments which can be ignored.</br>
+</br>
+`:default-char'</br>
+</br>
+VALUE must be a character.  On encoding, a character not supported by</br>
+the coding system is replaced with VALUE.</br>
+</br>
+`:for-unibyte'</br>
+</br>
+VALUE non-nil means that visiting a file with the coding system</br>
+results in a unibyte buffer.</br>
+</br>
+`:mime-charset'</br>
+</br>
+VALUE must be a symbol whose name is that of a MIME charset converted</br>
+to lower case.</br>
+</br>
+`:mime-text-unsuitable'</br>
+</br>
+VALUE non-nil means the `:mime-charset' property names a charset which</br>
+is unsuitable for the top-level media type "text".</br>
+</br>
+`:flags'</br>
+</br>
+VALUE must be a list of symbols that control the ISO-2022 converter.</br>
+Each must be a member of the list `coding-system-iso-2022-flags'</br>
+(which see).  This attribute is meaningful only when `:coding-type'</br>
+is `iso-2022'.</br>
+</br>
+`:designation'</br>
+</br>
+VALUE must be a vector [G0-USAGE G1-USAGE G2-USAGE G3-USAGE].</br>
+GN-USAGE specifies the usage of graphic register GN as follows.</br>
+</br>
+If it is nil, no charset can be designated to GN.</br>
+</br>
+If it is a charset, the charset is initially designated to GN, and</br>
+never used by the other charsets.</br>
+</br>
+If it is a list, the elements must be charsets, nil, 94, or 96.  GN</br>
+can be used by all the listed charsets.  If the list contains 94, any</br>
+iso-2022 charset whose code-space ranges are 94 long can be designated</br>
+to GN.  If the list contains 96, any charsets whose whose ranges are</br>
+96 long can be designated to GN.  If the first element is a charset,</br>
+that charset is initially designated to GN.</br>
+</br>
+This attribute is meaningful only when `:coding-type' is `iso-2022'.</br>
+</br>
+`:bom'</br>
+</br>
+This attributes specifies whether the coding system uses a `byte order</br>
+mark'.  VALUE must be nil, t, or cons of coding systems whose</br>
+`:coding-type' is `utf-16' or `utf-8'.</br>
+</br>
+If the value is nil, on decoding, don't treat the first two-byte as</br>
+BOM, and on encoding, don't produce BOM bytes.</br>
+</br>
+If the value is t, on decoding, skip the first two-byte as BOM, and on</br>
+encoding, produce BOM bytes according to the value of `:endian'.</br>
+</br>
+If the value is cons, on decoding, check the first two-byte.  If they</br>
+are 0xFE 0xFF, use the car part coding system of the value.  If they</br>
+are 0xFF 0xFE, use the cdr part coding system of the value.</br>
+Otherwise, treat them as bytes for a normal character.  On encoding,</br>
+produce BOM bytes according to the value of `:endian'.</br>
+</br>
+This attribute is meaningful only when `:coding-type' is `utf-16' or</br>
+`utf-8'.</br>
+</br>
+`:endian'</br>
+</br>
+VALUE must be `big' or `little' specifying big-endian and</br>
+little-endian respectively.  The default value is `big'.</br>
+</br>
+This attribute is meaningful only when `:coding-type' is `utf-16'.</br>
+</br>
+`:ccl-decoder'</br>
+</br>
+VALUE is a symbol representing the registered CCL program used for</br>
+decoding.  This attribute is meaningful only when `:coding-type' is</br>
+`ccl'.</br>
+</br>
+`:ccl-encoder'</br>
+</br>
+VALUE is a symbol representing the registered CCL program used for</br>
+encoding.  This attribute is meaningful only when `:coding-type' is</br>
+`ccl'.</br>
+</br>
+`:inhibit-null-byte-detection'</br>
+</br>
+VALUE non-nil means Emacs ignore null bytes on code detection.</br>
+See the variable `inhibit-null-byte-detection'.  This attribute</br>
+is meaningful only when `:coding-type' is `undecided'.</br>
+</br>
+`:inhibit-iso-escape-detection'</br>
+</br>
+VALUE non-nil means Emacs ignores ISO-2022 escape sequences on</br>
+code detection.  See the variable `inhibit-iso-escape-detection'.</br>
+This attribute is meaningful only when `:coding-type' is</br>
+`undecided'.</br>
+</br>
+`:prefer-utf-8'</br>
+</br>
+VALUE non-nil means Emacs prefers UTF-8 on code detection for</br>
+non-ASCII files.  This attribute is meaningful only when</br>
+`:coding-type' is `undecided'.

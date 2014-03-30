@@ -1,13 +1,24 @@
-<strong>window-total-width</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(window-total-width &optional WINDOW)<br/>
-<br/>
-Return the total width, in columns, of window WINDOW.<br/>
-WINDOW must be a valid window and defaults to the selected one.<br/>
-<br/>
-The return value includes any vertical dividers or scroll bars<br/>
-belonging to WINDOW.  If WINDOW is an internal window, the total width<br/>
-is the width of the screen areas spanned by its children.<br/>
-<br/>
-On a graphical display, this total width is reported as an<br/>
-integer multiple of the default character width.
+<strong>window-total-width</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(window-total-width &optional <u>WINDOW</u> <u>ROUND</u>)</br>
+</br>
+Return the total width of window <u>WINDOW</u> in columns.</br>
+<u>WINDOW</u> must be a valid window and defaults to the selected one.</br>
+</br>
+The return value includes the widths of <u>WINDOW</u>'s fringes, margins,</br>
+scroll bars and its right divider, if any.  If <u>WINDOW</u> is an internal</br>
+window, the total width is the width of the screen areas spanned by its</br>
+children.</br>
+</br>
+If <u>WINDOW</u>'s pixel width is not an integral multiple of its frame's</br>
+character width, the number of lines occupied by <u>WINDOW</u> is rounded</br>
+internally.  This is done in a way such that, if <u>WINDOW</u> is a parent</br>
+window, the sum of the total widths of all its children internally</br>
+equals the total width of <u>WINDOW</u>.</br>
+</br>
+If the optional argument <u>ROUND</u> is `ceiling', return the smallest integer</br>
+larger than <u>WINDOW</u>'s pixel width divided by the character width of</br>
+<u>WINDOW</u>'s frame.  <u>ROUND</u> `floor' means to return the largest integer</br>
+smaller than <u>WINDOW</u>'s pixel width divided by the character width of</br>
+<u>WINDOW</u>'s frame.  Any other value of <u>ROUND</u> means to return the internal</br>
+total width of <u>WINDOW</u>.

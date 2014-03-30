@@ -1,0 +1,14 @@
+<strong>frameset-save</strong> is an autoloaded compiled Lisp function in `<code>frameset.el</code>'.</br>
+</br>
+(frameset-save <u>FRAME-LIST</u> &key <u>APP</u> <u>NAME</u> <u>DESCRIPTION</u> <u>FILTERS</u> <u>PREDICATE</u> <u>PROPERTIES</u>)</br>
+</br>
+Return a frameset for <u>FRAME-LIST</u>, a list of frames.</br>
+Dead frames and non-frame objects are silently removed from the list.</br>
+If nil, <u>FRAME-LIST</u> defaults to the output of `frame-list' (all live frames).</br>
+<u>APP</u>, <u>NAME</u> and <u>DESCRIPTION</u> are optional data; see the docstring of the</br>
+`frameset' defstruct for details.</br>
+<u>FILTERS</u> is an alist of parameter filters; if nil, the value of the variable</br>
+`frameset-filter-alist' is used instead.</br>
+<u>PREDICATE</u> is a predicate function, which must return non-nil for frames that</br>
+should be saved; if <u>PREDICATE</u> is nil, all frames from <u>FRAME-LIST</u> are saved.</br>
+<u>PROPERTIES</u> is a user-defined property list to add to the frameset.

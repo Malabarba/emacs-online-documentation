@@ -1,19 +1,20 @@
-<strong>vc-deduce-fileset</strong> is a compiled Lisp function in `<code>vc.el</code>'.<br/>
-<br/>
-(vc-deduce-fileset &optional OBSERVER ALLOW-UNREGISTERED STATE-MODEL-ONLY-FILES)<br/>
-<br/>
-Deduce a set of files and a backend to which to apply an operation.<br/>
-Return (BACKEND FILESET FILESET-ONLY-FILES STATE CHECKOUT-MODEL).<br/>
-<br/>
-If we're in VC-dir mode, FILESET is the list of marked files.<br/>
-Otherwise, if in a buffer visiting a version-controlled file,<br/>
-FILESET is a single-file fileset containing that file.<br/>
-Otherwise, if ALLOW-UNREGISTERED is non-nil and the visited file<br/>
-is unregistered, FILESET is a single-file fileset containing it.<br/>
-Otherwise, throw an error.<br/>
-<br/>
-STATE-MODEL-ONLY-FILES if non-nil, means that the caller needs<br/>
-the FILESET-ONLY-FILES STATE and MODEL info.  Otherwise, that<br/>
-part may be skipped.<br/>
-BEWARE: this function may change the<br/>
+<strong>vc-deduce-fileset</strong> is a compiled Lisp function in `<code>vc.el</code>'.</br>
+</br>
+(vc-deduce-fileset &optional <u>OBSERVER</u> <u>ALLOW-UNREGISTERED</u> <u>STATE-MODEL-ONLY-FILES</u>)</br>
+</br>
+Deduce a set of files and a backend to which to apply an operation.</br>
+Return (BACKEND FILESET FILESET-ONLY-FILES STATE CHECKOUT-MODEL).</br>
+</br>
+If we're in VC-dir mode, FILESET is the list of marked files,</br>
+or the directory if no files are marked.</br>
+Otherwise, if in a buffer visiting a version-controlled file,</br>
+FILESET is a single-file fileset containing that file.</br>
+Otherwise, if <u>ALLOW-UNREGISTERED</u> is non-nil and the visited file</br>
+is unregistered, FILESET is a single-file fileset containing it.</br>
+Otherwise, throw an error.</br>
+</br>
+<u>STATE-MODEL-ONLY-FILES</u> if non-nil, means that the caller needs</br>
+the FILESET-ONLY-FILES STATE and MODEL info.  Otherwise, that</br>
+part may be skipped.</br>
+BEWARE: this function may change the</br>
 current buffer.

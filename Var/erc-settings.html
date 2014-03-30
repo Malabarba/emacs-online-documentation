@@ -1,0 +1,17 @@
+<strong>erc-settings</strong> is a variable defined in `<code>erc-networks.el</code>'.</br>
+Its value is <pre></br>
+((pals freenode
+       ("kensanata" "shapr" "anti\\(fuchs\\|gone\\)"))
+ (format-nick-function
+  (freenode "#emacs")
+  erc-format-@nick))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Experimental: Alist of configuration options.</br>
+The format is (VARNAME SCOPE VALUE) where</br>
+VARNAME is a symbol identifying the configuration option,</br>
+SCOPE is either a symbol which identifies an entry from</br>
+  `erc-networks-alist' or a list (NET TARGET) where NET is a network symbol and</br>
+  TARGET is a string identifying the channel/query target.</br>
+VALUE is the options value.

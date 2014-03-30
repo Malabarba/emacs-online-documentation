@@ -1,0 +1,20 @@
+<strong>htmlize-file</strong> is an interactive compiled Lisp function in `<code>htmlize.el</code>'.</br>
+</br>
+</br>
+(htmlize-file <u>FILE</u> &optional <u>TARGET</u>)</br>
+</br>
+Load <u>FILE</u>, fontify it, convert it to HTML, and save the result.</br>
+</br>
+Contents of <u>FILE</u> are inserted into a temporary buffer, whose major mode</br>
+is set with `normal-mode' as appropriate for the file type.  The buffer</br>
+is subsequently fontified with `font-lock' and converted to HTML.  Note</br>
+that, unlike `htmlize-buffer', this function explicitly turns on</br>
+font-lock.  If a form of highlighting other than font-lock is desired,</br>
+please use `htmlize-buffer' directly on buffers so highlighted.</br>
+</br>
+Buffers currently visiting <u>FILE</u> are unaffected by this function.  The</br>
+function does not change current buffer or move the point.</br>
+</br>
+If <u>TARGET</u> is specified and names a directory, the resulting file will be</br>
+saved there instead of to <u>FILE</u>'s directory.  If <u>TARGET</u> is specified and</br>
+does not name a directory, it will be used as output file name.

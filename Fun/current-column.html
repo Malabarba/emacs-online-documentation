@@ -1,15 +1,15 @@
-<strong>current-column</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(current-column)<br/>
-<br/>
-Return the horizontal position of point.  Beginning of line is column 0.<br/>
-This is calculated by adding together the widths of all the displayed<br/>
-representations of the character between the start of the previous line<br/>
-and point (e.g., control characters will have a width of 2 or 4, tabs<br/>
-will have a variable width).<br/>
-Ignores finite width of frame, which means that this function may return<br/>
-values greater than (frame-width).<br/>
-Whether the line is visible (if `selective-display' is t) has no effect;<br/>
-however, ^M is treated as end of line when `selective-display' is t.<br/>
-Text that has an invisible property is considered as having width 0, unless<br/>
+<strong>current-column</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(current-column)</br>
+</br>
+Return the horizontal position of point.  Beginning of line is column 0.</br>
+This is calculated by adding together the widths of all the displayed</br>
+representations of the character between the start of the previous line</br>
+and point (e.g., control characters will have a width of 2 or 4, tabs</br>
+will have a variable width).</br>
+Ignores finite width of frame, which means that this function may return</br>
+values greater than (frame-width).</br>
+Whether the line is visible (if `selective-display' is t) has no effect;</br>
+however, ^M is treated as end of line when `selective-display' is t.</br>
+Text that has an invisible property is considered as having width 0, unless</br>
 `buffer-invisibility-spec' specifies that it is replaced by an ellipsis.

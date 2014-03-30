@@ -1,12 +1,14 @@
-<strong>window-body-height</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(window-body-height &optional WINDOW)<br/>
-<br/>
-Return the height, in lines, of WINDOW's text area.<br/>
-WINDOW must be a live window and defaults to the selected one.<br/>
-<br/>
-The returned height does not include the mode line or header line.<br/>
-On a graphical display, the height is expressed as an integer multiple<br/>
-of the default character height.  If a line at the bottom of the text<br/>
-area is only partially visible, that counts as a whole line; to<br/>
-exclude partially-visible lines, use `window-text-height'.
+<strong>window-body-height</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(window-body-height &optional <u>WINDOW</u> <u>PIXELWISE</u>)</br>
+</br>
+Return the height of <u>WINDOW</u>'s text area.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.  Optional</br>
+argument <u>PIXELWISE</u> non-nil means return the height of <u>WINDOW</u>'s text area</br>
+in pixels.  The return value does not include the mode line or header</br>
+line or any horizontal divider.</br>
+</br>
+If <u>PIXELWISE</u> is nil, return the largest integer smaller than <u>WINDOW</u>'s</br>
+pixel height divided by the character height of <u>WINDOW</u>'s frame.  This</br>
+means that if a line at the bottom of the text area is only partially</br>
+visible, that line is not counted.

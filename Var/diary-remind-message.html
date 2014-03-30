@@ -1,27 +1,28 @@
-<strong>diary-remind-message</strong> is a variable defined in `<code>diary-lib.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Pseudo-pattern giving form of reminder messages in the fancy diary display.<br/>
-<br/>
-Used by the function `diary-remind', a pseudo-pattern is a list of<br/>
-expressions that can involve the keywords `days' (a number), `date'<br/>
-(a list of month, day, year), and `diary-entry' (a string).<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: ("Reminder: Only "<br/>
- (if<br/>
-     (zerop<br/>
-      (% days 7))<br/>
-     (format "%d week%s"<br/>
-	     (/ days 7)<br/>
-	     (if<br/>
-		 (= 7 days)<br/>
-		 "" "s"))<br/>
-   (format "%d day%s" days<br/>
-	   (if<br/>
-	       (= 1 days)<br/>
-	       "" "s")))<br/>
- " until " diary-entry)<br/>
-<br/>
+<strong>diary-remind-message</strong> is a variable defined in `<code>diary-lib.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Pseudo-pattern giving form of reminder messages in the fancy diary display.</br>
+</br>
+Used by the function `diary-remind', a pseudo-pattern is a list of</br>
+expressions that can involve the keywords `days' (a number), `date'</br>
+(a list of month, day, year), and `diary-entry' (a string).</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("Reminder: Only "
+ (if
+     (zerop
+      (% days 7))
+     (format "%d week%s"
+	     (/ days 7)
+	     (if
+		 (= 7 days)
+		 "" "s"))
+   (format "%d day%s" days
+	   (if
+	       (= 1 days)
+	       "" "s")))
+ " until " diary-entry)
+</pre></br>

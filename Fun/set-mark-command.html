@@ -1,33 +1,33 @@
-<strong>set-mark-command</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to C-@, C-SPC.<br/>
-<br/>
-(set-mark-command ARG)<br/>
-<br/>
-Set the mark where point is, or jump to the mark.<br/>
-Setting the mark also alters the region, which is the text<br/>
-between point and mark; this is the closest equivalent in<br/>
-Emacs to what some editors call the "selection".<br/>
-<br/>
-With no prefix argument, set the mark at point, and push the<br/>
-old mark position on local mark ring.  Also push the old mark on<br/>
-global mark ring, if the previous mark was set in another buffer.<br/>
-<br/>
-When Transient Mark Mode is off, immediately repeating this<br/>
-command activates `transient-mark-mode' temporarily.<br/>
-<br/>
-With prefix argument (e.g., C-u C-SPC), jump to the mark, and set the mark from<br/>
-position popped off the local mark ring (this does not affect the global<br/>
-mark ring).  Use C-x C-@ to jump to a mark popped off the global<br/>
-mark ring (see `pop-global-mark').<br/>
-<br/>
-If `set-mark-command-repeat-pop' is non-nil, repeating<br/>
-the C-SPC command with no prefix argument pops the next position<br/>
-off the local (or global) mark ring and jumps there.<br/>
-<br/>
-With C-u C-u as prefix<br/>
-argument, unconditionally set mark where point is, even if<br/>
-`set-mark-command-repeat-pop' is non-nil.<br/>
-<br/>
-Novice Emacs Lisp programmers often try to use the mark for the wrong<br/>
+<strong>set-mark-command</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to C-@, C-SPC.</br>
+</br>
+<code>(set-mark-command <u>ARG</u></code>)</br>
+</br>
+Set the mark where point is, or jump to the mark.</br>
+Setting the mark also alters the region, which is the text</br>
+between point and mark; this is the closest equivalent in</br>
+Emacs to what some editors call the "selection".</br>
+</br>
+With no prefix argument, set the mark at point, and push the</br>
+old mark position on local mark ring.  Also push the old mark on</br>
+global mark ring, if the previous mark was set in another buffer.</br>
+</br>
+When Transient Mark Mode is off, immediately repeating this</br>
+command activates `transient-mark-mode' temporarily.</br>
+</br>
+With prefix argument (e.g., C-u C-SPC), jump to the mark, and set the mark from</br>
+position popped off the local mark ring (this does not affect the global</br>
+mark ring).  Use C-x C-@ to jump to a mark popped off the global</br>
+mark ring (see `pop-global-mark').</br>
+</br>
+If `set-mark-command-repeat-pop' is non-nil, repeating</br>
+the C-SPC command with no prefix argument pops the next position</br>
+off the local (or global) mark ring and jumps there.</br>
+</br>
+With C-u C-u as prefix</br>
+argument, unconditionally set mark where point is, even if</br>
+`set-mark-command-repeat-pop' is non-nil.</br>
+</br>
+Novice Emacs Lisp programmers often try to use the mark for the wrong</br>
 purposes.  See the documentation of `set-mark' for more information.

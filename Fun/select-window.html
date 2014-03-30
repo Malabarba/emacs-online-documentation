@@ -1,16 +1,25 @@
-<strong>select-window</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(select-window WINDOW &optional NORECORD)<br/>
-<br/>
-Select WINDOW which must be a live window.<br/>
-Also make WINDOW's frame the selected frame and WINDOW that frame's<br/>
-selected window.  In addition, make WINDOW's buffer current and set that<br/>
-buffer's value of `point' to the value of WINDOW's `window-point'.<br/>
-Return WINDOW.<br/>
-<br/>
-Optional second arg NORECORD non-nil means do not put this buffer at the<br/>
-front of the buffer list and do not make this window the most recently<br/>
-selected one.<br/>
-<br/>
-Note that the main editor command loop sets the current buffer to the<br/>
-buffer of the selected window before each command.
+<strong>select-window</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(select-window <u>WINDOW</u> &optional <u>NORECORD</u>)</br>
+</br>
+Select <u>WINDOW</u> which must be a live window.</br>
+Also make <u>WINDOW</u>'s frame the selected frame and <u>WINDOW</u> that frame's</br>
+selected window.  In addition, make <u>WINDOW</u>'s buffer current and set its</br>
+buffer's value of `point' to the value of <u>WINDOW</u>'s `window-point'.</br>
+Return <u>WINDOW</u>.</br>
+</br>
+Optional second arg <u>NORECORD</u> non-nil means do not put this buffer at the</br>
+front of the buffer list and do not make this window the most recently</br>
+selected one.</br>
+</br>
+Run `buffer-list-update-hook' unless <u>NORECORD</u> is non-nil.  Note that</br>
+applications and internal routines often select a window temporarily for</br>
+various purposes; mostly, to simplify coding.  As a rule, such</br>
+selections should be not recorded and therefore will not pollute</br>
+`buffer-list-update-hook'.  Selections that "really count" are those</br>
+causing a visible change in the next redisplay of <u>WINDOW</u>'s frame and</br>
+should be always recorded.  So if you think of running a function each</br>
+time a window gets selected put it on `buffer-list-update-hook'.</br>
+</br>
+Also note that the main editor command loop sets the current buffer to</br>
+the buffer of the selected window before each command.

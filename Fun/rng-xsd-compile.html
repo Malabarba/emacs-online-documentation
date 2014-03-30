@@ -1,20 +1,20 @@
-<strong>rng-xsd-compile</strong> is an autoloaded Lisp function in `<code>rng-xsd.el</code>'.<br/>
-<br/>
-(rng-xsd-compile NAME PARAMS)<br/>
-<br/>
-Provides W3C XML Schema as a RELAX NG datatypes library.<br/>
-NAME is a symbol giving the local name of the datatype.  PARAMS is a<br/>
-list of pairs (PARAM-NAME . PARAM-VALUE) where PARAM-NAME is a symbol<br/>
-giving the name of the parameter and PARAM-VALUE is a string giving<br/>
-its value.  If NAME or PARAMS are invalid, it calls rng-dt-error<br/>
-passing it arguments in the same style as format; the value from<br/>
-rng-dt-error will be returned.  Otherwise, it returns a list.  The<br/>
-first member of the list is t if any string is a legal value for the<br/>
-datatype and nil otherwise.  The second argument is a symbol; this<br/>
-symbol will be called as a function passing it a string followed by<br/>
-the remaining members of the list.  The function must return an object<br/>
-representing the value of the datatype that was represented by the<br/>
-string, or nil if the string is not a representation of any value.<br/>
-The object returned can be any convenient non-nil value, provided<br/>
-that, if two strings represent the same value, the returned objects<br/>
+<strong>rng-xsd-compile</strong> is an autoloaded Lisp function in `<code>rng-xsd.el</code>'.</br>
+</br>
+(rng-xsd-compile <u>NAME</u> <u>PARAMS</u>)</br>
+</br>
+Provides W3C XML Schema as a RELAX NG datatypes library.</br>
+<u>NAME</u> is a symbol giving the local name of the datatype.  <u>PARAMS</u> is a</br>
+list of pairs (PARAM-NAME . PARAM-VALUE) where PARAM-NAME is a symbol</br>
+giving the name of the parameter and PARAM-VALUE is a string giving</br>
+its value.  If <u>NAME</u> or <u>PARAMS</u> are invalid, it calls rng-dt-error</br>
+passing it arguments in the same style as format; the value from</br>
+rng-dt-error will be returned.  Otherwise, it returns a list.  The</br>
+first member of the list is t if any string is a legal value for the</br>
+datatype and nil otherwise.  The second argument is a symbol; this</br>
+symbol will be called as a function passing it a string followed by</br>
+the remaining members of the list.  The function must return an object</br>
+representing the value of the datatype that was represented by the</br>
+string, or nil if the string is not a representation of any value.</br>
+The object returned can be any convenient non-nil value, provided</br>
+that, if two strings represent the same value, the returned objects</br>
 must be equal.

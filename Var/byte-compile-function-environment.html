@@ -1,11 +1,11 @@
-<strong>byte-compile-function-environment</strong> is a variable defined in `<code>bytecomp.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Alist of functions defined in the file being compiled.<br/>
-This is so we can inline them when necessary.<br/>
-Each element looks like (FUNCTIONNAME . DEFINITION).  It is<br/>
-(FUNCTIONNAME . nil) when a function is redefined as a macro.<br/>
-It is (FUNCTIONNAME . t) when all we know is that it was defined,<br/>
-and we don't know the definition.  For an autoloaded function, DEFINITION<br/>
+<strong>byte-compile-function-environment</strong> is a variable defined in `<code>bytecomp.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of functions defined in the file being compiled.</br>
+This is so we can inline them when necessary.</br>
+Each element looks like (FUNCTIONNAME . DEFINITION).  It is</br>
+(FUNCTIONNAME . nil) when a function is redefined as a macro.</br>
+It is (FUNCTIONNAME . t) when all we know is that it was defined,</br>
+and we don't know the definition.  For an autoloaded function, DEFINITION</br>
 has the form (autoload . FILENAME).

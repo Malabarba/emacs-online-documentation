@@ -1,22 +1,22 @@
-<strong>substitute-command-keys</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(substitute-command-keys STRING)<br/>
-<br/>
-Substitute key descriptions for command names in STRING.<br/>
-Each substring of the form \[COMMAND] is replaced by either a<br/>
-keystroke sequence that invokes COMMAND, or "M-x COMMAND" if COMMAND<br/>
-is not on any keys.<br/>
-<br/>
-Each substring of the form \{MAPVAR} is replaced by a summary of<br/>
-the value of MAPVAR as a keymap.  This summary is similar to the one<br/>
-produced by `describe-bindings'.  The summary ends in two newlines<br/>
-(used by the helper function `help-make-xrefs' to find the end of the<br/>
-summary).<br/>
-<br/>
-Each substring of the form \<MAPVAR> specifies the use of MAPVAR<br/>
-as the keymap for future \[COMMAND] substrings.<br/>
-\= quotes the following character and is discarded;<br/>
-thus, \=\= puts \= into the output, and \=\[ puts \[ into the output.<br/>
-<br/>
-Return the original STRING if no substitutions are made.<br/>
+<strong>substitute-command-keys</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(substitute-command-keys <u>STRING</u>)</br>
+</br>
+Substitute key descriptions for command names in <u>STRING</u>.</br>
+Each substring of the form \[COMMAND] is replaced by either a</br>
+keystroke sequence that invokes COMMAND, or "M-x COMMAND" if COMMAND</br>
+is not on any keys.</br>
+</br>
+Each substring of the form \{MAPVAR} is replaced by a summary of</br>
+the value of MAPVAR as a keymap.  This summary is similar to the one</br>
+produced by `describe-bindings'.  The summary ends in two newlines</br>
+(used by the helper function `help-make-xrefs' to find the end of the</br>
+summary).</br>
+</br>
+Each substring of the form \&lt;MAPVAR> specifies the use of MAPVAR</br>
+as the keymap for future \[COMMAND] substrings.</br>
+\= quotes the following character and is discarded;</br>
+thus, \=\= puts \= into the output, and \=\[ puts \[ into the output.</br>
+</br>
+Return the original <u>STRING</u> if no substitutions are made.</br>
 Otherwise, return a new string, without any text properties.

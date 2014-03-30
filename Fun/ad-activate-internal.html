@@ -1,19 +1,20 @@
-<strong>ad-activate-internal</strong> is an alias for `ad-activate' in `<code>advice.el</code>'.<br/>
-<br/>
-(ad-activate-internal FUNCTION &optional COMPILE)<br/>
-<br/>
-Activate all the advice information of an advised FUNCTION.<br/>
-If FUNCTION has a proper original definition then an advised<br/>
-definition will be generated from FUNCTION's advice info and the<br/>
-definition of FUNCTION will be replaced with it.  If a previously<br/>
-cached advised definition was available, it will be used.<br/>
-The optional COMPILE argument determines whether the resulting function<br/>
-or a compilable cached definition will be compiled.  If it is negative<br/>
-no compilation will be performed, if it is positive or otherwise non-nil<br/>
-the resulting function will be compiled, if it is nil the behavior depends<br/>
-on the value of `ad-default-compilation-action' (which see).<br/>
-Activation of an advised function that has an advice info but no actual<br/>
-pieces of advice is equivalent to a call to `ad-unadvise'.  Activation of<br/>
-an advised function that has actual pieces of advice but none of them are<br/>
-enabled is equivalent to a call to `ad-deactivate'.  The current advised<br/>
+<strong>ad-activate-internal</strong> is an alias for `<strong><a href="ad-activate">ad-activate</a></strong>' in `<code>advice.el</code>'.</br>
+</br>
+</br>
+(ad-activate-internal <u>FUNCTION</u> &optional <u>COMPILE</u>)</br>
+</br>
+Activate all the advice information of an advised <u>FUNCTION</u>.</br>
+If <u>FUNCTION</u> has a proper original definition then an advised</br>
+definition will be generated from <u>FUNCTION</u>'s advice info and the</br>
+definition of <u>FUNCTION</u> will be replaced with it.  If a previously</br>
+cached advised definition was available, it will be used.</br>
+The optional <u>COMPILE</u> argument determines whether the resulting function</br>
+or a compilable cached definition will be compiled.  If it is negative</br>
+no compilation will be performed, if it is positive or otherwise non-nil</br>
+the resulting function will be compiled, if it is nil the behavior depends</br>
+on the value of `ad-default-compilation-action' (which see).</br>
+Activation of an advised function that has an advice info but no actual</br>
+pieces of advice is equivalent to a call to `ad-unadvise'.  Activation of</br>
+an advised function that has actual pieces of advice but none of them are</br>
+enabled is equivalent to a call to `ad-deactivate'.  The current advised</br>
 definition will always be cached for later usage.

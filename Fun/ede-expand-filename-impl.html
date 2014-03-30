@@ -1,9 +1,23 @@
-<strong>ede-expand-filename-impl</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
-<br/>
-(ede-expand-filename-impl &rest LOCAL-ARGS)<br/>
-<br/>
-Return a fully qualified file name based on project THIS.<br/>
-FILENAME should be just a filename which occurs in a directory controlled<br/>
-by this project.<br/>
-Optional argument FORCE forces the default filename to be provided even if it<br/>
-doesn't exist.
+<strong>ede-expand-filename-impl</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(ede-expand-filename-impl &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+Optional argument FORCE forces the default filename to be provided even if it</br>
+doesn't exist.</br>
+</br>
+This is a generic function with only one primary method.</br>
+</br>
+Implementations:</br>
+</br>
+`ede-project' :PRIMARY (this filename &optional force)</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+Optional argument FORCE forces the default filename to be provided even if it</br>
+doesn't exist.</br>
+</br>
+Defined in `files.el'</br>
+</br>

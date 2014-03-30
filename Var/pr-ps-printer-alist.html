@@ -1,210 +1,210 @@
-<strong>pr-ps-printer-alist</strong> is a variable defined in `<code>printing.el</code>'.<br/>
-Its value is ((default "lpr" nil "-P" nil))<br/>
-<br/>
-Documentation:<br/>
-Specify an alist for all PostScript printers (PostScript printer database).<br/>
-<br/>
-The alist element has the form:<br/>
-<br/>
-   (SYMBOL COMMAND SWITCHES PRINTER-SWITCH NAME DEFAULT...)<br/>
-<br/>
-Where:<br/>
-<br/>
-SYMBOL		It's a symbol to identify a PostScript printer.  It's for<br/>
-		`pr-ps-name' variable setting and for menu selection.<br/>
-		Examples:<br/>
-			'prt_06a<br/>
-			'my_printer<br/>
-<br/>
-COMMAND		Name of the program for printing a PostScript file.  On MS-DOS<br/>
-		and MS-Windows systems, if the value is an empty string then<br/>
-		Emacs will write directly to the printer port given by NAME<br/>
-		(see text below), that is, the NAME should be something like<br/>
-		"PRN" or "LPT1:".<br/>
-		If NAME is something like "\\\\host\\share-name" then<br/>
-		COMMAND shouldn't be an empty string.<br/>
-		The programs `print' and `nprint' (the standard print programs<br/>
-		on Windows NT and Novell Netware respectively) are handled<br/>
-		specially, using NAME as the destination for output; any other<br/>
-		program is treated like `lpr' except that an explicit filename<br/>
-		is given as the last argument.<br/>
-		If COMMAND is nil, it's used the default printing program:<br/>
-		`print' for Windows system, `lp' for lp system and `lpr' for<br/>
-		all other systems.  See also `pr-path-alist'.<br/>
-		Examples:<br/>
-			"print"<br/>
-			"lpr"<br/>
-			"lp"<br/>
-			"cp"<br/>
-			"gsprint"<br/>
-<br/>
-SWITCHES	List of sexp's to pass as extra options for PostScript printer<br/>
-		program.  It is recommended to set NAME (see text below)<br/>
-		instead of including an explicit switch on this list.<br/>
-		Example:<br/>
-		   . for lpr<br/>
-			'("-#3" "-l")<br/>
-			nil<br/>
-<br/>
-		   . for gsprint.exe<br/>
-			'("-all" "-twoup")<br/>
-<br/>
-PRINTER-SWITCH	A string that specifies PostScript printer name switch.  If<br/>
-		it's necessary to have a space between PRINTER-SWITCH and NAME,<br/>
-		it should be inserted at the end of PRINTER-SWITCH string.<br/>
-		If PRINTER-SWITCH is nil, it's used the default printer name<br/>
-		switch: `/D:' for Windows system, `-d' for lp system and `-P'<br/>
-		for all other systems.<br/>
-		Examples:<br/>
-		   . for lpr<br/>
-			"-P "<br/>
-<br/>
-		   . for lp<br/>
-			"-d "<br/>
-<br/>
-		   . for print.exe<br/>
-			"/D:"<br/>
-<br/>
-		   . for gsprint.exe<br/>
-			"-printer "<br/>
-<br/>
-NAME		A string that specifies a PostScript printer name.<br/>
-		On Unix-like systems, a string value should be a name<br/>
-		understood by lpr's -P option (or lp's -d option).<br/>
-		On MS-DOS and MS-Windows systems, it is the name of a printer<br/>
-		device or port.  Typical non-default settings would be "LPT1:"<br/>
-		to "LPT3:" for parallel printers, or "COM1" to "COM4" or<br/>
-		"AUX" for serial printers, or "\\\\hostname\\printer"<br/>
-		(or "/D:\\\\hostname\\printer") for a shared network<br/>
-		printer.  You can also set it to a name of a file, in which<br/>
-		case the output gets appended to that file.  If you want to<br/>
-		discard the printed output, set this to "NUL".<br/>
-		Examples:<br/>
-		   . for cp.exe<br/>
-			"\\\\host\\share-name"<br/>
-<br/>
-		   . for print.exe or gsprint.exe<br/>
-			"/D:\\\\host\\share-name"<br/>
-			"\\\\host\\share-name"<br/>
-			"LPT1:"<br/>
-			"PRN"<br/>
-<br/>
-		   . for lpr or lp<br/>
-			"share-name"<br/>
-<br/>
-DEFAULT		It's a way to set default values when this entry is selected.<br/>
-		It's a cons like:<br/>
-<br/>
-		   (VARIABLE . VALUE)<br/>
-<br/>
-		Which associates VARIABLE with VALUE.  When this entry is<br/>
-		selected, it's executed the following command:<br/>
-<br/>
-		   (set VARIABLE (eval VALUE))<br/>
-<br/>
-		Note that VALUE can be any valid lisp expression.  So, don't<br/>
-		forget to quote symbols and constant lists.<br/>
-		If VARIABLE is the special keyword `inherits-from:', VALUE must<br/>
-		be a symbol name setting defined in `pr-setting-database' from<br/>
-		which the current setting inherits the context.  Take care with<br/>
-		circular inheritance.<br/>
-		Examples:<br/>
-			'(ps-landscape-mode . nil)<br/>
-			'(ps-spool-duplex . t)<br/>
-			'(pr-gs-device . (my-gs-device t))<br/>
-<br/>
-This variable should be modified by customization engine.  If this variable is<br/>
-modified by other means (for example, a lisp function), use `pr-update-menus'<br/>
-function (see it for documentation) to update PostScript printer menu.<br/>
-<br/>
-Examples:<br/>
-<br/>
-* On GNU or Unix system:<br/>
-<br/>
-   '((lps_06b "lpr" nil "-P" "lps_06b")<br/>
-     (lps_07c "lpr" nil nil  "lps_07c")<br/>
-     (lps_08c nil   nil nil  "lps_08c")<br/>
-     )<br/>
-<br/>
-* On Windows system:<br/>
-<br/>
-   '((lps_06a  "print"     nil "/D:" "\\\\printers\\lps_06a")<br/>
-     (lps_06b  "print"     nil nil   "\\\\printers\\lps_06b")<br/>
-     (lps_07c  "print"     nil ""    "/D:\\\\printers\\lps_07c")<br/>
-     (lps_08c  nil         nil nil   "\\\\printers\\lps_08c")<br/>
-     (b/w1 "gsprint" ("-all" "-twoup") "-printer " "b/w-pr-name")<br/>
-     (b/w2 "gsprint" ("-all" "-twoup") nil "-printer \\\\printers\\lps_06a")<br/>
-     (LPT1     ""          nil ""    "LPT1:")<br/>
-     (PRN      ""          nil ""    "PRN")<br/>
-     (standard "redpr.exe" nil ""    "")<br/>
-     )<br/>
-<br/>
-<br/>
-gsprint:<br/>
-<br/>
-You can use gsprint instead of ghostscript to print monochrome PostScript files<br/>
-in Windows.  The gsprint utility documentation says that it is more efficient<br/>
-than ghostscript to print monochrome PostScript.<br/>
-<br/>
-To print non-monochrome PostScript file, the efficiency of ghostscript is<br/>
-similar to gsprint.<br/>
-<br/>
-Also the gsprint utility comes together with gsview distribution.<br/>
-<br/>
-As an example of gsprint declaration:<br/>
-<br/>
-   (setq pr-ps-printer-alist<br/>
-	 '((A "gsprint" ("-all" "-twoup") "-printer " "lps_015")<br/>
-	   (B "gsprint" ("-all" "-twoup") nil "-printer lps_015")<br/>
-	   ;; some other printer declaration<br/>
-	   ))<br/>
-<br/>
-The example above declares that printer A prints all pages (-all) and two pages<br/>
-per sheet (-twoup).  The printer B declaration does the same as the printer A<br/>
-declaration, the only difference is the printer name selection.<br/>
-<br/>
-There are other command line options like:<br/>
-<br/>
-   -mono	Render in monochrome as 1bit/pixel (only black and white).<br/>
-   -grey	Render in greyscale as 8bits/pixel.<br/>
-   -color	Render in color as 24bits/pixel.<br/>
-<br/>
-The default is `-mono'.  So, printer A and B in the example above are using<br/>
-implicitly the `-mono' option.  Note that in `-mono' no gray tone or color is<br/>
-printed, this includes the zebra stripes, that is, in `-mono' the zebra stripes<br/>
-are not printed.<br/>
-<br/>
-<br/>
-Useful links:<br/>
-<br/>
-* GSPRINT - Ghostscript print to Windows printer<br/>
-  `http://www.cs.wisc.edu/~ghost/gsview/gsprint.htm'<br/>
-<br/>
-* Introduction to Ghostscript<br/>
-  `http://www.cs.wisc.edu/~ghost/doc/intro.htm'<br/>
-<br/>
-* How to use Ghostscript<br/>
-  `http://www.cs.wisc.edu/~ghost/doc/cvs/Use.htm'<br/>
-<br/>
-* Information about the print command (print.exe)<br/>
-  `http://www.computerhope.com/printhlp.htm'<br/>
-<br/>
-* RedMon - Redirection Port Monitor (redpr.exe)<br/>
-  `http://www.cs.wisc.edu/~ghost/redmon/index.htm'<br/>
-<br/>
-* Redirection Port Monitor (redpr.exe on-line help)<br/>
-  `http://www.cs.wisc.edu/~ghost/redmon/en/redmon.htm'<br/>
-<br/>
-* UNIX man pages: lpr (or type `man lpr')<br/>
-  `http://bama.ua.edu/cgi-bin/man-cgi?lpr'<br/>
-  `http://www.mediacollege.com/cgi-bin/man/page.cgi?section=all&topic=lpr'<br/>
-<br/>
-* UNIX man pages: lp (or type `man lp')<br/>
-  `http://bama.ua.edu/cgi-bin/man-cgi?lp'<br/>
-  `http://www.mediacollege.com/cgi-bin/man/page.cgi?section=all&topic=lp'<br/>
-<br/>
-* GNU utilities for w32 (cp.exe)<br/>
-  `http://unxutils.sourceforge.net/'<br/>
-<br/>
-<br/>
+<strong>pr-ps-printer-alist</strong> is a variable defined in `<code>printing.el</code>'.</br>
+Its value is <pre>((default "lpr" nil "-P" "Document"))</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specify an alist for all PostScript printers (PostScript printer database).</br>
+</br>
+The alist element has the form:</br>
+</br>
+   (SYMBOL COMMAND SWITCHES PRINTER-SWITCH NAME DEFAULT...)</br>
+</br>
+Where:</br>
+</br>
+SYMBOL		It's a symbol to identify a PostScript printer.  It's for</br>
+		setting option `pr-ps-name' and for menu selection.</br>
+		Examples:</br>
+			'prt_06a</br>
+			'my_printer</br>
+</br>
+COMMAND		Name of the program for printing a PostScript file.  On MS-DOS</br>
+		and MS-Windows systems, if the value is an empty string then</br>
+		Emacs will write directly to the printer port given by NAME</br>
+		(see text below), that is, the NAME should be something like</br>
+		"PRN" or "LPT1:".</br>
+		If NAME is something like "\\\\host\\share-name" then</br>
+		COMMAND shouldn't be an empty string.</br>
+		The programs `print' and `nprint' (the standard print programs</br>
+		on Windows NT and Novell Netware respectively) are handled</br>
+		specially, using NAME as the destination for output; any other</br>
+		program is treated like `lpr' except that an explicit filename</br>
+		is given as the last argument.</br>
+		If COMMAND is nil, it's used the default printing program:</br>
+		`print' for Windows system, `lp' for lp system and `lpr' for</br>
+		all other systems.  See also `pr-path-alist'.</br>
+		Examples:</br>
+			"print"</br>
+			"lpr"</br>
+			"lp"</br>
+			"cp"</br>
+			"gsprint"</br>
+</br>
+SWITCHES	List of sexp's to pass as extra options for PostScript printer</br>
+		program.  It is recommended to set NAME (see text below)</br>
+		instead of including an explicit switch on this list.</br>
+		Example:</br>
+		   . for lpr</br>
+			'("-#3" "-l")</br>
+			nil</br>
+</br>
+		   . for gsprint.exe</br>
+			'("-all" "-twoup")</br>
+</br>
+PRINTER-SWITCH	A string that specifies PostScript printer name switch.  If</br>
+		it's necessary to have a space between PRINTER-SWITCH and NAME,</br>
+		it should be inserted at the end of PRINTER-SWITCH string.</br>
+		If PRINTER-SWITCH is nil, it's used the default printer name</br>
+		switch: `/D:' for Windows system, `-d' for lp system and `-P'</br>
+		for all other systems.</br>
+		Examples:</br>
+		   . for lpr</br>
+			"-P "</br>
+</br>
+		   . for lp</br>
+			"-d "</br>
+</br>
+		   . for print.exe</br>
+			"/D:"</br>
+</br>
+		   . for gsprint.exe</br>
+			"-printer "</br>
+</br>
+NAME		A string that specifies a PostScript printer name.</br>
+		On Unix-like systems, a string value should be a name</br>
+		understood by lpr's -P option (or lp's -d option).</br>
+		On MS-DOS and MS-Windows systems, it is the name of a printer</br>
+		device or port.  Typical non-default settings would be "LPT1:"</br>
+		to "LPT3:" for parallel printers, or "COM1" to "COM4" or</br>
+		"AUX" for serial printers, or "\\\\hostname\\printer"</br>
+		(or "/D:\\\\hostname\\printer") for a shared network</br>
+		printer.  You can also set it to a name of a file, in which</br>
+		case the output gets appended to that file.  If you want to</br>
+		discard the printed output, set this to "NUL".</br>
+		Examples:</br>
+		   . for cp.exe</br>
+			"\\\\host\\share-name"</br>
+</br>
+		   . for print.exe or gsprint.exe</br>
+			"/D:\\\\host\\share-name"</br>
+			"\\\\host\\share-name"</br>
+			"LPT1:"</br>
+			"PRN"</br>
+</br>
+		   . for lpr or lp</br>
+			"share-name"</br>
+</br>
+DEFAULT		It's a way to set default values when this entry is selected.</br>
+		It's a cons like:</br>
+</br>
+		   (VARIABLE . VALUE)</br>
+</br>
+		Which associates VARIABLE with VALUE.  When this entry is</br>
+		selected, it's executed the following command:</br>
+</br>
+		   (set VARIABLE (eval VALUE))</br>
+</br>
+		Note that VALUE can be any valid lisp expression.  So, don't</br>
+		forget to quote symbols and constant lists.</br>
+		If VARIABLE is the special keyword `inherits-from:', VALUE must</br>
+		be a symbol name setting defined in `pr-setting-database' from</br>
+		which the current setting inherits the context.  Take care with</br>
+		circular inheritance.</br>
+		Examples:</br>
+			'(ps-landscape-mode . nil)</br>
+			'(ps-spool-duplex . t)</br>
+			'(pr-gs-device . (my-gs-device t))</br>
+</br>
+This variable should be modified by customization engine.  If this variable is</br>
+modified by other means (for example, a lisp function), use `pr-update-menus'</br>
+function (see it for documentation) to update PostScript printer menu.</br>
+</br>
+Examples:</br>
+</br>
+* On GNU or Unix system:</br>
+</br>
+   '((lps_06b "lpr" nil "-P" "lps_06b")</br>
+     (lps_07c "lpr" nil nil  "lps_07c")</br>
+     (lps_08c nil   nil nil  "lps_08c")</br>
+     )</br>
+</br>
+* On Windows system:</br>
+</br>
+   '((lps_06a  "print"     nil "/D:" "\\\\printers\\lps_06a")</br>
+     (lps_06b  "print"     nil nil   "\\\\printers\\lps_06b")</br>
+     (lps_07c  "print"     nil ""    "/D:\\\\printers\\lps_07c")</br>
+     (lps_08c  nil         nil nil   "\\\\printers\\lps_08c")</br>
+     (b/w1 "gsprint" ("-all" "-twoup") "-printer " "b/w-pr-name")</br>
+     (b/w2 "gsprint" ("-all" "-twoup") nil "-printer \\\\printers\\lps_06a")</br>
+     (LPT1     ""          nil ""    "LPT1:")</br>
+     (PRN      ""          nil ""    "PRN")</br>
+     (standard "redpr.exe" nil ""    "")</br>
+     )</br>
+</br>
+</br>
+gsprint:</br>
+</br>
+You can use gsprint instead of ghostscript to print monochrome PostScript files</br>
+in Windows.  The gsprint utility documentation says that it is more efficient</br>
+than ghostscript to print monochrome PostScript.</br>
+</br>
+To print non-monochrome PostScript file, the efficiency of ghostscript is</br>
+similar to gsprint.</br>
+</br>
+Also the gsprint utility comes together with gsview distribution.</br>
+</br>
+As an example of gsprint declaration:</br>
+</br>
+   (setq pr-ps-printer-alist</br>
+	 '((A "gsprint" ("-all" "-twoup") "-printer " "lps_015")</br>
+	   (B "gsprint" ("-all" "-twoup") nil "-printer lps_015")</br>
+	   ;; some other printer declaration</br>
+	   ))</br>
+</br>
+The example above declares that printer A prints all pages (-all) and two pages</br>
+per sheet (-twoup).  The printer B declaration does the same as the printer A</br>
+declaration, the only difference is the printer name selection.</br>
+</br>
+There are other command line options like:</br>
+</br>
+   -mono	Render in monochrome as 1bit/pixel (only black and white).</br>
+   -grey	Render in greyscale as 8bits/pixel.</br>
+   -color	Render in color as 24bits/pixel.</br>
+</br>
+The default is `-mono'.  So, printer A and B in the example above are using</br>
+implicitly the `-mono' option.  Note that in `-mono' no gray tone or color is</br>
+printed, this includes the zebra stripes, that is, in `-mono' the zebra stripes</br>
+are not printed.</br>
+</br>
+</br>
+Useful links:</br>
+</br>
+* GSPRINT - Ghostscript print to Windows printer</br>
+  `http://www.cs.wisc.edu/~ghost/gsview/gsprint.htm'</br>
+</br>
+* Introduction to Ghostscript</br>
+  `http://www.cs.wisc.edu/~ghost/doc/intro.htm'</br>
+</br>
+* How to use Ghostscript</br>
+  `http://www.cs.wisc.edu/~ghost/doc/cvs/Use.htm'</br>
+</br>
+* Information about the print command (print.exe)</br>
+  `http://www.computerhope.com/printhlp.htm'</br>
+</br>
+* RedMon - Redirection Port Monitor (redpr.exe)</br>
+  `http://www.cs.wisc.edu/~ghost/redmon/index.htm'</br>
+</br>
+* Redirection Port Monitor (redpr.exe on-line help)</br>
+  `http://www.cs.wisc.edu/~ghost/redmon/en/redmon.htm'</br>
+</br>
+* UNIX man pages: lpr (or type `man lpr')</br>
+  `http://bama.ua.edu/cgi-bin/man-cgi?lpr'</br>
+  `http://www.mediacollege.com/cgi-bin/man/page.cgi?section=all&topic=lpr'</br>
+</br>
+* UNIX man pages: lp (or type `man lp')</br>
+  `http://bama.ua.edu/cgi-bin/man-cgi?lp'</br>
+  `http://www.mediacollege.com/cgi-bin/man/page.cgi?section=all&topic=lp'</br>
+</br>
+* GNU utilities for w32 (cp.exe)</br>
+  `http://unxutils.sourceforge.net/'</br>
+</br>
+</br>
 You can customize this variable.

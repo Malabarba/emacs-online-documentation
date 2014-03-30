@@ -1,17 +1,17 @@
-<strong>define-key-after</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(define-key-after KEYMAP KEY DEFINITION &optional AFTER)<br/>
-<br/>
-Add binding in KEYMAP for KEY => DEFINITION, right after AFTER's binding.<br/>
-This is like `define-key' except that the binding for KEY is placed<br/>
-just after the binding for the event AFTER, instead of at the beginning<br/>
-of the map.  Note that AFTER must be an event type (like KEY), NOT a command<br/>
-(like DEFINITION).<br/>
-<br/>
-If AFTER is t or omitted, the new binding goes at the end of the keymap.<br/>
-AFTER should be a single event type--a symbol or a character, not a sequence.<br/>
-<br/>
-Bindings are always added before any inherited map.<br/>
-<br/>
-The order of bindings in a keymap only matters when it is used as<br/>
+<strong>define-key-after</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+</br>
+(define-key-after <u>KEYMAP</u> <u>KEY</u> <u>DEFINITION</u> &optional <u>AFTER</u>)</br>
+</br>
+Add binding in <u>KEYMAP</u> for <u>KEY</u> => <u>DEFINITION</u>, right after <u>AFTER</u>'s binding.</br>
+This is like `define-key' except that the binding for <u>KEY</u> is placed</br>
+just after the binding for the event <u>AFTER</u>, instead of at the beginning</br>
+of the map.  Note that <u>AFTER</u> must be an event type (like <u>KEY</u>), NOT a command</br>
+(like <u>DEFINITION</u>).</br>
+</br>
+If <u>AFTER</u> is t or omitted, the new binding goes at the end of the keymap.</br>
+<u>AFTER</u> should be a single event type--a symbol or a character, not a sequence.</br>
+</br>
+Bindings are always added before any inherited map.</br>
+</br>
+The order of bindings in a keymap only matters when it is used as</br>
 a menu, so this function is not useful for non-menu keymaps.

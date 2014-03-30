@@ -1,23 +1,24 @@
-<strong>fill-region-as-paragraph</strong> is an interactive compiled Lisp function in `<code>fill.el</code>'.<br/>
-<br/>
-(fill-region-as-paragraph FROM TO &optional JUSTIFY NOSQUEEZE SQUEEZE-AFTER)<br/>
-<br/>
-Fill the region as one paragraph.<br/>
-It removes any paragraph breaks in the region and extra newlines at the end,<br/>
-indents and fills lines between the margins given by the<br/>
-`current-left-margin' and `current-fill-column' functions.<br/>
-(In most cases, the variable `fill-column' controls the width.)<br/>
-It leaves point at the beginning of the line following the paragraph.<br/>
-<br/>
-Normally performs justification according to the `current-justification'<br/>
-function, but with a prefix arg, does full justification instead.<br/>
-<br/>
-From a program, optional third arg JUSTIFY can specify any type of<br/>
-justification.  Fourth arg NOSQUEEZE non-nil means not to make spaces<br/>
-between words canonical before filling.  Fifth arg SQUEEZE-AFTER, if non-nil,<br/>
-means don't canonicalize spaces before that position.<br/>
-<br/>
-Return the `fill-prefix' used for filling.<br/>
-<br/>
-If `sentence-end-double-space' is non-nil, then period followed by one<br/>
+<strong>fill-region-as-paragraph</strong> is an interactive compiled Lisp function in `<code>fill.el</code>'.</br>
+</br>
+</br>
+(fill-region-as-paragraph <u>FROM</u> <u>TO</u> &optional <u>JUSTIFY</u> <u>NOSQUEEZE</u> <u>SQUEEZE-AFTER</u>)</br>
+</br>
+Fill the region as one paragraph.</br>
+It removes any paragraph breaks in the region and extra newlines at the end,</br>
+indents and fills lines between the margins given by the</br>
+`current-left-margin' and `current-fill-column' functions.</br>
+(In most cases, the variable `fill-column' controls the width.)</br>
+It leaves point at the beginning of the line following the paragraph.</br>
+</br>
+Normally performs justification according to the `current-justification'</br>
+function, but with a prefix arg, does full justification instead.</br>
+</br>
+From a program, optional third arg <u>JUSTIFY</u> can specify any type of</br>
+justification.  Fourth arg <u>NOSQUEEZE</u> non-nil means not to make spaces</br>
+between words canonical before filling.  Fifth arg <u>SQUEEZE-AFTER</u>, if non-nil,</br>
+means don't canonicalize spaces before that position.</br>
+</br>
+Return the `fill-prefix' used for filling.</br>
+</br>
+If `sentence-end-double-space' is non-nil, then period followed by one</br>
 space does not end a sentence, so don't break a line there.

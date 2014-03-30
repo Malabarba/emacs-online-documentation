@@ -1,11 +1,21 @@
-<strong>epg-verify-string</strong> is a compiled Lisp function in `<code>epg.el</code>'.<br/>
-<br/>
-(epg-verify-string CONTEXT SIGNATURE &optional SIGNED-TEXT)<br/>
-<br/>
-Verify a string SIGNATURE.<br/>
-SIGNED-TEXT is a string if it is specified.<br/>
-<br/>
-For a detached signature, both SIGNATURE and SIGNED-TEXT should be<br/>
-string.  For a normal or a cleartext signature, SIGNED-TEXT should be<br/>
-nil.  In the latter case, this function returns the plaintext after<br/>
-successful verification.
+<strong>epg-verify-string</strong> is a compiled Lisp function in `<code>epg.el</code>'.</br>
+</br>
+(epg-verify-string <u>CONTEXT</u> <u>SIGNATURE</u> &optional <u>SIGNED-TEXT</u>)</br>
+</br>
+Verify a string <u>SIGNATURE</u>.</br>
+<u>SIGNED-TEXT</u> is a string if it is specified.</br>
+</br>
+For a detached signature, both <u>SIGNATURE</u> and <u>SIGNED-TEXT</u> should be</br>
+string.  For a normal or a cleartext signature, <u>SIGNED-TEXT</u> should be</br>
+nil.  In the latter case, this function returns the plaintext after</br>
+successful verification.</br>
+</br>
+Note that this function does not return verification result as t</br>
+or nil, nor signal error on failure.  That's a design decision to</br>
+handle the case where <u>SIGNATURE</u> has multiple signature.</br>
+</br>
+To check the verification results, use `epg-context-result-for' as follows:</br>
+</br>
+<code>(epg-context-result-for context 'verify</code>)</br>
+</br>
+which will return a list of `epg-signature' object.

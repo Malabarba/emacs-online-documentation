@@ -1,38 +1,39 @@
-<strong>tempo-template-snmpv2-table-type</strong>'s value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (><br/>
- (P "Table Name: " table)<br/>
- (P "Entry Name: " entry t)<br/>
- (let*<br/>
-     ((entry<br/>
-       (tempo-lookup-named 'entry))<br/>
-      (seq<br/>
-       (copy-sequence entry)))<br/>
-   (aset entry 0<br/>
-	 (downcase<br/>
-	  (aref entry 0)))<br/>
-   (aset seq 0<br/>
-	 (upcase<br/>
-	  (aref seq 0)))<br/>
-   (tempo-save-named 'obj-entry entry)<br/>
-   (tempo-save-named 'seq-entry seq)<br/>
-   nil)<br/>
- " OBJECT-TYPE" n> "SYNTAX      SEQUENCE OF "<br/>
- (s seq-entry)<br/>
- n> "MAX-ACCESS  not-accessible" n> "STATUS      current" n> "DESCRIPTION" n> "\"" p "\"" n> "::= { "<br/>
- (p "OID: ")<br/>
- " }" n n><br/>
- (s obj-entry)<br/>
- " OBJECT-TYPE" n> "SYNTAX      "<br/>
- (s seq-entry)<br/>
- n> "MAX-ACCESS  not-accessible" n> "STATUS      current" n> "DESCRIPTION" n> "\"" p "\"" n> "INDEX { "<br/>
- (p "Index List: ")<br/>
- " }" n> "::= { "<br/>
- (s table)<br/>
- " 1 }" n n><br/>
- (s seq-entry)<br/>
- " ::= SEQUENCE {" n> p n> "}" n)<br/>
-<br/>
+<strong>tempo-template-snmpv2-table-type</strong>'s value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(>
+ (P "Table Name: " table)
+ (P "Entry Name: " entry t)
+ (let*
+     ((entry
+       (tempo-lookup-named 'entry))
+      (seq
+       (copy-sequence entry)))
+   (aset entry 0
+	 (downcase
+	  (aref entry 0)))
+   (aset seq 0
+	 (upcase
+	  (aref seq 0)))
+   (tempo-save-named 'obj-entry entry)
+   (tempo-save-named 'seq-entry seq)
+   nil)
+ " OBJECT-TYPE" n> "SYNTAX      SEQUENCE OF "
+ (s seq-entry)
+ n> "MAX-ACCESS  not-accessible" n> "STATUS      current" n> "DESCRIPTION" n> "\"" p "\"" n> "::= { "
+ (p "OID: ")
+ " }" n n>
+ (s obj-entry)
+ " OBJECT-TYPE" n> "SYNTAX      "
+ (s seq-entry)
+ n> "MAX-ACCESS  not-accessible" n> "STATUS      current" n> "DESCRIPTION" n> "\"" p "\"" n> "INDEX { "
+ (p "Index List: ")
+ " }" n> "::= { "
+ (s table)
+ " 1 }" n n>
+ (s seq-entry)
+ " ::= SEQUENCE {" n> p n> "}" n)
+</pre></br>

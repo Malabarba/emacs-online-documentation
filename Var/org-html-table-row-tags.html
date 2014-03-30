@@ -1,0 +1,34 @@
+<strong>org-html-table-row-tags</strong> is a variable defined in `<code>ox-html.el</code>'.</br>
+Its value is <pre>("<tr>" . "</tr>")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The opening and ending tags for table rows.</br>
+This is customizable so that alignment options can be specified.</br>
+Instead of strings, these can be Lisp forms that will be</br>
+evaluated for each row in order to construct the table row tags.</br>
+</br>
+During evaluation, these variables will be dynamically bound so that</br>
+you can reuse them:</br>
+</br>
+       `row-number': row number (0 is the first row)</br>
+  `rowgroup-number': group number of current row</br>
+ `start-rowgroup-p': non-nil means the row starts a group</br>
+   `end-rowgroup-p': non-nil means the row ends a group</br>
+        `top-row-p': non-nil means this is the top row</br>
+     `bottom-row-p': non-nil means this is the bottom row</br>
+</br>
+For example:</br>
+</br>
+(setq org-html-table-row-tags</br>
+      (cons '(cond (top-row-p "<tr class=\"tr-top\">")</br>
+                   (bottom-row-p "<tr class=\"tr-bottom\">")</br>
+                   (t (if (= (mod row-number 2) 1)</br>
+			  "<tr class=\"tr-odd\">"</br>
+			"<tr class=\"tr-even\">")))</br>
+	    "</tr>"))</br>
+</br>
+will use the "tr-top" and "tr-bottom" classes for the top row</br>
+and the bottom row, and otherwise alternate between "tr-odd" and</br>
+"tr-even" for odd and even rows.</br>
+</br>
+You can customize this variable.

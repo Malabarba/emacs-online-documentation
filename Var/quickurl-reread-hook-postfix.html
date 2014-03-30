@@ -1,16 +1,14 @@
-<strong>quickurl-reread-hook-postfix</strong> is a variable defined in `<code>quickurl.el</code>'.<br/>
-Its value is<br/>
-"\n;; Local Variables:\n;; eval: (progn (require 'quickurl) (add-hook 'local-write-file-hooks (lambda () (quickurl-read) nil)))\n;; End:\n"<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Example `quickurl-postfix' text that adds a local variable to the<br/>
-`quickurl-url-file' so that if you edit it by hand it will ensure that<br/>
-`quickurl-urls' is updated with the new URL list.<br/>
-<br/>
-To make use of this do something like:<br/>
-<br/>
-  (setq quickurl-postfix quickurl-reread-hook-postfix)<br/>
-<br/>
+<strong>quickurl-reread-hook-postfix</strong> is a variable defined in `<code>quickurl.el</code>'.</br>
+Its value is <pre></br>
+"\n;; Local Variables:\n;; eval: (progn (require 'quickurl) (add-hook 'local-write-file-hooks (lambda () (quickurl-read) nil)))\n;; End:\n"</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Example `quickurl-postfix' text that adds a local variable to the</br>
+`quickurl-url-file' so that if you edit it by hand it will ensure that</br>
+`quickurl-urls' is updated with the new URL list.</br>
+</br>
+To make use of this do something like:</br>
+</br>
+  (setq quickurl-postfix quickurl-reread-hook-postfix)</br>
+</br>
 in your init file (after loading/requiring quickurl).

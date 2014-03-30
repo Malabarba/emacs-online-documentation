@@ -1,22 +1,19 @@
-<strong>write-contents-functions</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of functions to be called before writing out a buffer to a file.<br/>
-If one of them returns non-nil, the file is considered already written<br/>
-and the rest are not called and neither are the functions in<br/>
-`write-file-functions'.<br/>
-<br/>
-This variable is meant to be used for hooks that pertain to the<br/>
-buffer's contents, not to the particular visited file; thus,<br/>
-`set-visited-file-name' does not clear this variable; but changing the<br/>
-major mode does clear it.<br/>
-<br/>
-For hooks that _do_ pertain to the particular visited file, use<br/>
-`write-file-functions'.  Both this variable and<br/>
-`write-file-functions' relate to how a buffer is saved to file.<br/>
-To perform various checks or updates before the buffer is saved,<br/>
+<strong>write-contents-functions</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of functions to be called before writing out a buffer to a file.</br>
+If one of them returns non-nil, the file is considered already written</br>
+and the rest are not called and neither are the functions in</br>
+`write-file-functions'.</br>
+</br>
+This variable is meant to be used for hooks that pertain to the</br>
+buffer's contents, not to the particular visited file; thus,</br>
+`set-visited-file-name' does not clear this variable; but changing the</br>
+major mode does clear it.</br>
+</br>
+For hooks that _do_ pertain to the particular visited file, use</br>
+`write-file-functions'.  Both this variable and</br>
+`write-file-functions' relate to how a buffer is saved to file.</br>
+To perform various checks or updates before the buffer is saved,</br>
 use `before-save-hook'.

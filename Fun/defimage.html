@@ -1,22 +1,22 @@
-<strong>defimage</strong> is an autoloaded Lisp macro in `<code>image.el</code>'.<br/>
-<br/>
-(defimage SYMBOL SPECS &optional DOC)<br/>
-<br/>
-Define SYMBOL as an image.<br/>
-<br/>
-SPECS is a list of image specifications.  DOC is an optional<br/>
-documentation string.<br/>
-<br/>
-Each image specification in SPECS is a property list.  The contents of<br/>
-a specification are image type dependent.  All specifications must at<br/>
-least contain the properties `:type TYPE' and either `:file FILE' or<br/>
-`:data DATA', where TYPE is a symbol specifying the image type,<br/>
-e.g. `xbm', FILE is the file to load the image from, and DATA is a<br/>
-string containing the actual image data.  The first image<br/>
-specification whose TYPE is supported, and FILE exists, is used to<br/>
-define SYMBOL.<br/>
-<br/>
-Example:<br/>
-<br/>
-   (defimage test-image ((:type xpm :file "~/test1.xpm")<br/>
+<strong>defimage</strong> is an autoloaded Lisp macro in `<code>image.el</code>'.</br>
+</br>
+(defimage <u>SYMBOL</u> <u>SPECS</u> &optional <u>DOC</u>)</br>
+</br>
+Define <u>SYMBOL</u> as an image, and return <u>SYMBOL</u>.</br>
+</br>
+<u>SPECS</u> is a list of image specifications.  <u>DOC</u> is an optional</br>
+documentation string.</br>
+</br>
+Each image specification in <u>SPECS</u> is a property list.  The contents of</br>
+a specification are image type dependent.  All specifications must at</br>
+least contain the properties `:type TYPE' and either `:file FILE' or</br>
+`:data DATA', where TYPE is a symbol specifying the image type,</br>
+e.g. `xbm', FILE is the file to load the image from, and DATA is a</br>
+string containing the actual image data.  The first image</br>
+specification whose TYPE is supported, and FILE exists, is used to</br>
+define <u>SYMBOL</u>.</br>
+</br>
+Example:</br>
+</br>
+   (defimage test-image ((:type xpm :file "~/test1.xpm")</br>
                          (:type xbm :file "~/test1.xbm")))

@@ -1,29 +1,28 @@
-<strong>grep-mode-font-lock-keywords</strong> is a variable defined in `<code>grep.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Additional things to highlight in grep output.<br/>
-This gets tacked on the end of the generated expressions.<br/>
-<br/>
-Value: ((": \\(.+\\): \\(?:Permission denied\\|No such \\(?:file or directory\\|device or address\\)\\)$" 1 grep-error-face)<br/>
- ("^Grep[/a-zA-z]* started.*"<br/>
-  (0<br/>
-   '(face nil compilation-message nil help-echo nil mouse-face nil)<br/>
-   t))<br/>
- ("^Grep[/a-zA-z]* finished \\(?:(\\(matches found\\))\\|with \\(no matches found\\)\\).*"<br/>
-  (0<br/>
-   '(face nil compilation-message nil help-echo nil mouse-face nil)<br/>
-   t)<br/>
-  (1 compilation-info-face nil t)<br/>
-  (2 compilation-warning-face nil t))<br/>
- ("^Grep[/a-zA-z]* \\(exited abnormally\\|interrupt\\|killed\\|terminated\\)\\(?:.*with code \\([0-9]+\\)\\)?.*"<br/>
-  (0<br/>
-   '(face nil compilation-message nil help-echo nil mouse-face nil)<br/>
-   t)<br/>
-  (1 grep-error-face)<br/>
-  (2 grep-error-face nil t))<br/>
- ("^.+?-[0-9]+-.*\n"<br/>
-  (0 grep-context-face)))<br/>
-<br/>
+<strong>grep-mode-font-lock-keywords</strong> is a variable defined in `<code>grep.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Additional things to highlight in grep output.</br>
+This gets tacked on the end of the generated expressions.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((": \\(.+\\): \\(?:Permission denied\\|No such \\(?:file or directory\\|device or address\\)\\)$" 1 grep-error-face)
+ ("^Grep[/a-zA-z]* started.*"
+  (0
+   '(face nil compilation-message nil help-echo nil mouse-face nil)
+   t))
+ ("^Grep[/a-zA-z]* finished \\(?:(\\(matches found\\))\\|with \\(no matches found\\)\\).*"
+  (0
+   '(face nil compilation-message nil help-echo nil mouse-face nil)
+   t)
+  (1 compilation-info-face nil t)
+  (2 compilation-warning-face nil t))
+ ("^Grep[/a-zA-z]* \\(exited abnormally\\|interrupt\\|killed\\|terminated\\)\\(?:.*with code \\([0-9]+\\)\\)?.*"
+  (0
+   '(face nil compilation-message nil help-echo nil mouse-face nil)
+   t)
+  (1 grep-error-face)
+  (2 grep-error-face nil t))
+ ("^.+?[-=][0-9]+[-=].*\n"
+  (0 grep-context-face)))
+</pre></br>

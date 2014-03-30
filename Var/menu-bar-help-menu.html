@@ -1,104 +1,105 @@
-<strong>menu-bar-help-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (emacs-tutorial menu-item "Emacs Tutorial" help-with-tutorial :help "Learn how to use Emacs")<br/>
- (emacs-tutorial-language-specific menu-item "Emacs Tutorial (choose language)..." help-with-tutorial-spec-language :help "Learn how to use Emacs (choose a language)")<br/>
- (emacs-faq menu-item "Emacs FAQ" view-emacs-FAQ :help "Frequently asked (and answered) questions about Emacs")<br/>
- (emacs-news menu-item "Emacs News" view-emacs-news :help "New features of this version")<br/>
- (emacs-known-problems menu-item "Emacs Known Problems" view-emacs-problems :help "Read about known problems with Emacs")<br/>
- (emacs-manual-bug menu-item "How to Report a Bug" info-emacs-bug :help "Read about how to report an Emacs bug")<br/>
- (send-emacs-bug-report menu-item "Send Bug Report..." report-emacs-bug :help "Send e-mail to Emacs maintainers")<br/>
- (emacs-psychotherapist menu-item "Emacs Psychotherapist" doctor :help "Our doctor will help you feel better")<br/>
- (sep1 "--")<br/>
- (search-documentation menu-item "Search Documentation"<br/>
-		       (keymap<br/>
-			(emacs-terminology menu-item "Emacs Terminology" search-emacs-glossary :help "Display the Glossary section of the Emacs manual")<br/>
-			(lookup-subject-in-emacs-manual menu-item "Look Up Subject in User Manual..." emacs-index-search :help "Find description of a subject in Emacs User manual")<br/>
-			(lookup-subject-in-elisp-manual menu-item "Look Up Subject in ELisp Manual..." elisp-index-search :help "Find description of a subject in Emacs Lisp manual")<br/>
-			(lookup-key-in-manual menu-item "Look Up Key in User Manual..." Info-goto-emacs-key-command-node :help "Display manual section that describes a key")<br/>
-			(lookup-command-in-manual menu-item "Look Up Command in User Manual..." Info-goto-emacs-command-node :help "Display manual section that describes a command")<br/>
-			(sep1 "--")<br/>
-			(find-commands-by-name menu-item "Find Commands by Name..." apropos-command :help "Find commands whose names match a regexp")<br/>
-			(find-options-by-name menu-item "Find Options by Name..." apropos-variable :help "Find variables whose names match a regexp")<br/>
-			(find-option-by-value menu-item "Find Options by Value..." apropos-value :help "Find variables whose values match a regexp")<br/>
-			(find-any-object-by-name menu-item "Find Any Object by Name..." apropos :help "Find symbols of any kind whose names match a regexp")<br/>
-			(search-documentation-strings menu-item "Search Documentation Strings..." apropos-documentation :help "Find functions and variables whose doc strings match a regexp")<br/>
-			"Search Documentation"))<br/>
- (describe menu-item "Describe"<br/>
-	   (keymap<br/>
-	    (describe-mode menu-item "Describe Buffer Modes" describe-mode :help "Describe this buffer's major and minor mode")<br/>
-	    (describe-key-1 menu-item "Describe Key or Mouse Operation..." describe-key :help "Display documentation of command bound to a key, a click, or a menu-item")<br/>
-	    (describe-function menu-item "Describe Function..." describe-function :help "Display documentation of function/command")<br/>
-	    (describe-variable menu-item "Describe Variable..." describe-variable :help "Display documentation of variable/option")<br/>
-	    (describe-face menu-item "Describe Face..." describe-face :help "Display the properties of a face")<br/>
-	    (describe-package menu-item "Describe Package..." describe-package :help "Display documentation of a Lisp package")<br/>
-	    (describe-current-display-table menu-item "Describe Display Table" describe-current-display-table :help "Describe the current display table")<br/>
-	    (list-keybindings menu-item "List Key Bindings" describe-bindings :help "Display all current key bindings (keyboard shortcuts)")<br/>
-	    (separator-desc-mule "--")<br/>
-	    (describe-language-environment menu-item "Describe Language Environment"<br/>
-					   (keymap<br/>
-					    (Default menu-item "Default" describe-specified-language-support)<br/>
-					    "Describe Language Environment"<br/>
-					    (Chinese "Chinese" . describe-chinese-environment-map)<br/>
-					    (Cyrillic "Cyrillic" . describe-cyrillic-environment-map)<br/>
-					    (Indian "Indian" . describe-indian-environment-map)<br/>
-					    (Sinhala "Sinhala" . describe-specified-language-support)<br/>
-					    (English "English" . describe-specified-language-support)<br/>
-					    (ASCII "ASCII" . describe-specified-language-support)<br/>
-					    (Ethiopic "Ethiopic" . describe-specified-language-support)<br/>
-					    (European "European" . describe-european-environment-map)<br/>
-					    (Turkish "Turkish" . describe-specified-language-support)<br/>
-					    (Greek "Greek" . describe-specified-language-support)<br/>
-					    (Hebrew "Hebrew" . describe-specified-language-support)<br/>
-					    (Windows-1255 "Windows-1255" . describe-specified-language-support)<br/>
-					    (Japanese "Japanese" . describe-specified-language-support)<br/>
-					    (Korean "Korean" . describe-specified-language-support)<br/>
-					    (Lao "Lao" . describe-specified-language-support)<br/>
-					    (TaiViet "TaiViet" . describe-specified-language-support)<br/>
-					    (Thai "Thai" . describe-specified-language-support)<br/>
-					    (Tibetan "Tibetan" . describe-specified-language-support)<br/>
-					    (Vietnamese "Vietnamese" . describe-specified-language-support)<br/>
-					    (IPA "IPA" . describe-specified-language-support)<br/>
-					    (Arabic "Arabic" . describe-specified-language-support)<br/>
-					    (Persian "Persian" . describe-specified-language-support)<br/>
-					    (UTF-8 "UTF-8" . describe-specified-language-support)<br/>
-					    (Khmer "Khmer" . describe-specified-language-support)<br/>
-					    (Burmese "Burmese" . describe-specified-language-support)))<br/>
-	    (describe-input-method menu-item "Describe Input Method..." describe-input-method :visible<br/>
-				   (default-value 'enable-multibyte-characters)<br/>
-				   :help "Keyboard layout for specific input method")<br/>
-	    (describe-coding-system menu-item "Describe Coding System..." describe-coding-system :visible<br/>
-				    (default-value 'enable-multibyte-characters))<br/>
-	    (describe-coding-system-briefly menu-item "Describe Coding System (Briefly)" describe-current-coding-system-briefly :visible<br/>
-					    (default-value 'enable-multibyte-characters))<br/>
-	    (mule-diag menu-item "Show All of Mule Status" mule-diag :visible<br/>
-		       (default-value 'enable-multibyte-characters)<br/>
-		       :help "Display multilingual environment settings")<br/>
-	    "Describe"))<br/>
- (emacs-manual menu-item "Read the Emacs Manual" info-emacs-manual :help "Full documentation of Emacs features")<br/>
- (more-manuals menu-item "More Manuals"<br/>
-	       (keymap<br/>
-		(emacs-lisp-intro menu-item "Introduction to Emacs Lisp" menu-bar-read-lispintro :help "Read the Introduction to Emacs Lisp Programming")<br/>
-		(emacs-lisp-reference menu-item "Emacs Lisp Reference" menu-bar-read-lispref :help "Read the Emacs Lisp Reference manual")<br/>
-		(other-manuals menu-item "All Other Manuals (Info)" Info-directory :help "Read any of the installed manuals")<br/>
-		(lookup-subject-in-all-manuals menu-item "Lookup Subject in all Manuals..." info-apropos :help "Find description of a subject in all installed manuals")<br/>
-		(order-emacs-manuals menu-item "Ordering Manuals" view-order-manuals :help "How to order manuals from the Free Software Foundation")<br/>
-		(sep2 "--")<br/>
-		(man menu-item "Read Man Page..." manual-entry :help "Man-page docs for external commands and libraries")<br/>
-		"More Manuals"<br/>
-		(woman menu-item "Read Man Page (WoMan)..." woman :help "Man-page documentation Without Man")))<br/>
- (find-emacs-packages menu-item "Search Built-in Packages" finder-by-keyword :help "Find built-in packages and features by keyword")<br/>
- (external-packages menu-item "Finding Extra Packages" menu-bar-help-extra-packages :help "Lisp packages distributed separately for use in Emacs")<br/>
- (sep2 "--")<br/>
- (getting-new-versions menu-item "Getting New Versions" describe-distribution :help "How to get the latest version of Emacs")<br/>
- (describe-copying menu-item "Copying Conditions" describe-copying :help "Show the Emacs license (GPL)")<br/>
- (describe-no-warranty menu-item "(Non)Warranty" describe-no-warranty :help "Explain that Emacs has NO WARRANTY")<br/>
- (sep4 "--")<br/>
- (about-emacs menu-item "About Emacs" about-emacs :help "Display version number, copyright info, and basic help")<br/>
- (about-gnu-project menu-item "About GNU" describe-gnu-project :help "About the GNU System, GNU Project, and GNU/Linux")<br/>
- "Help")<br/>
-<br/>
+<strong>menu-bar-help-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (emacs-tutorial menu-item "Emacs Tutorial" help-with-tutorial :help "Learn how to use Emacs")
+ (emacs-tutorial-language-specific menu-item "Emacs Tutorial (choose language)..." help-with-tutorial-spec-language :help "Learn how to use Emacs (choose a language)")
+ (emacs-faq menu-item "Emacs FAQ" view-emacs-FAQ :help "Frequently asked (and answered) questions about Emacs")
+ (emacs-news menu-item "Emacs News" view-emacs-news :help "New features of this version")
+ (emacs-known-problems menu-item "Emacs Known Problems" view-emacs-problems :help "Read about known problems with Emacs")
+ (emacs-manual-bug menu-item "How to Report a Bug" info-emacs-bug :help "Read about how to report an Emacs bug")
+ (send-emacs-bug-report menu-item "Send Bug Report..." report-emacs-bug :help "Send e-mail to Emacs maintainers")
+ (emacs-psychotherapist menu-item "Emacs Psychotherapist" doctor :help "Our doctor will help you feel better")
+ (sep1 "--")
+ (search-documentation menu-item "Search Documentation"
+		       (keymap
+			(emacs-terminology menu-item "Emacs Terminology" search-emacs-glossary :help "Display the Glossary section of the Emacs manual")
+			(lookup-subject-in-emacs-manual menu-item "Look Up Subject in User Manual..." emacs-index-search :help "Find description of a subject in Emacs User manual")
+			(lookup-subject-in-elisp-manual menu-item "Look Up Subject in ELisp Manual..." elisp-index-search :help "Find description of a subject in Emacs Lisp manual")
+			(lookup-key-in-manual menu-item "Look Up Key in User Manual..." Info-goto-emacs-key-command-node :help "Display manual section that describes a key")
+			(lookup-command-in-manual menu-item "Look Up Command in User Manual..." Info-goto-emacs-command-node :help "Display manual section that describes a command")
+			(sep1 "--")
+			(find-commands-by-name menu-item "Find Commands by Name..." apropos-command :help "Find commands whose names match a regexp")
+			(find-options-by-name menu-item "Find Options by Name..." apropos-user-option :help "Find user options whose names match a regexp")
+			(find-option-by-value menu-item "Find Options by Value..." apropos-value :help "Find variables whose values match a regexp")
+			(find-any-object-by-name menu-item "Find Any Object by Name..." apropos :help "Find symbols of any kind whose names match a regexp")
+			(search-documentation-strings menu-item "Search Documentation Strings..." apropos-documentation :help "Find functions and variables whose doc strings match a regexp")
+			"Search Documentation"))
+ (describe menu-item "Describe"
+	   (keymap
+	    (describe-mode menu-item "Describe Buffer Modes" describe-mode :help "Describe this buffer's major and minor mode")
+	    (describe-key-1 menu-item "Describe Key or Mouse Operation..." describe-key :help "Display documentation of command bound to a key, a click, or a menu-item")
+	    (describe-function menu-item "Describe Function..." describe-function :help "Display documentation of function/command")
+	    (describe-variable menu-item "Describe Variable..." describe-variable :help "Display documentation of variable/option")
+	    (describe-face menu-item "Describe Face..." describe-face :help "Display the properties of a face")
+	    (describe-package menu-item "Describe Package..." describe-package :help "Display documentation of a Lisp package")
+	    (describe-current-display-table menu-item "Describe Display Table" describe-current-display-table :help "Describe the current display table")
+	    (list-keybindings menu-item "List Key Bindings" describe-bindings :help "Display all current key bindings (keyboard shortcuts)")
+	    (separator-desc-mule "--")
+	    (describe-language-environment menu-item "Describe Language Environment"
+					   (keymap
+					    (Default menu-item "Default" describe-specified-language-support)
+					    "Describe Language Environment"
+					    (Chinese "Chinese" . describe-chinese-environment-map)
+					    (Cyrillic "Cyrillic" . describe-cyrillic-environment-map)
+					    (Indian "Indian" . describe-indian-environment-map)
+					    (Sinhala "Sinhala" . describe-specified-language-support)
+					    (English "English" . describe-specified-language-support)
+					    (ASCII "ASCII" . describe-specified-language-support)
+					    (Ethiopic "Ethiopic" . describe-specified-language-support)
+					    (European "European" . describe-european-environment-map)
+					    (Turkish "Turkish" . describe-specified-language-support)
+					    (Greek "Greek" . describe-specified-language-support)
+					    (Hebrew "Hebrew" . describe-specified-language-support)
+					    (Windows-1255 "Windows-1255" . describe-specified-language-support)
+					    (Japanese "Japanese" . describe-specified-language-support)
+					    (Korean "Korean" . describe-specified-language-support)
+					    (Lao "Lao" . describe-specified-language-support)
+					    (TaiViet "TaiViet" . describe-specified-language-support)
+					    (Thai "Thai" . describe-specified-language-support)
+					    (Tibetan "Tibetan" . describe-specified-language-support)
+					    (Vietnamese "Vietnamese" . describe-specified-language-support)
+					    (IPA "IPA" . describe-specified-language-support)
+					    (Arabic "Arabic" . describe-specified-language-support)
+					    (Persian "Persian" . describe-specified-language-support)
+					    (UTF-8 "UTF-8" . describe-specified-language-support)
+					    (Khmer "Khmer" . describe-specified-language-support)
+					    (Burmese "Burmese" . describe-specified-language-support)))
+	    (describe-input-method menu-item "Describe Input Method..." describe-input-method :visible
+				   (default-value 'enable-multibyte-characters)
+				   :help "Keyboard layout for specific input method")
+	    (describe-coding-system menu-item "Describe Coding System..." describe-coding-system :visible
+				    (default-value 'enable-multibyte-characters))
+	    (describe-coding-system-briefly menu-item "Describe Coding System (Briefly)" describe-current-coding-system-briefly :visible
+					    (default-value 'enable-multibyte-characters))
+	    (mule-diag menu-item "Show All of Mule Status" mule-diag :visible
+		       (default-value 'enable-multibyte-characters)
+		       :help "Display multilingual environment settings")
+	    "Describe"))
+ (emacs-manual menu-item "Read the Emacs Manual" info-emacs-manual :help "Full documentation of Emacs features")
+ (more-manuals menu-item "More Manuals"
+	       (keymap
+		(emacs-lisp-intro menu-item "Introduction to Emacs Lisp" menu-bar-read-lispintro :help "Read the Introduction to Emacs Lisp Programming")
+		(emacs-lisp-reference menu-item "Emacs Lisp Reference" menu-bar-read-lispref :help "Read the Emacs Lisp Reference manual")
+		(other-manuals menu-item "All Other Manuals (Info)" Info-directory :help "Read any of the installed manuals")
+		(lookup-subject-in-all-manuals menu-item "Lookup Subject in all Manuals..." info-apropos :help "Find description of a subject in all installed manuals")
+		(order-emacs-manuals menu-item "Ordering Manuals" view-order-manuals :help "How to order manuals from the Free Software Foundation")
+		(sep2 "--")
+		(man menu-item "Read Man Page..." manual-entry :help "Man-page docs for external commands and libraries")
+		"More Manuals"
+		(woman menu-item "Read Man Page (WoMan)..." woman :help "Man-page documentation Without Man")))
+ (find-emacs-packages menu-item "Search Built-in Packages" finder-by-keyword :help "Find built-in packages and features by keyword")
+ (external-packages menu-item "Finding Extra Packages" view-external-packages :help "How to get more Lisp packages for use in Emacs")
+ (sep2 "--")
+ (getting-new-versions menu-item "Getting New Versions" describe-distribution :help "How to get the latest version of Emacs")
+ (describe-copying menu-item "Copying Conditions" describe-copying :help "Show the Emacs license (GPL)")
+ (describe-no-warranty menu-item "(Non)Warranty" describe-no-warranty :help "Explain that Emacs has NO WARRANTY")
+ (sep4 "--")
+ (about-emacs menu-item "About Emacs" about-emacs :help "Display version number, copyright info, and basic help")
+ (about-gnu-project menu-item "About GNU" describe-gnu-project :help "About the GNU System, GNU Project, and GNU/Linux")
+ "Help")
+</pre></br>

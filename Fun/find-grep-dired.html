@@ -1,12 +1,13 @@
-<strong>find-grep-dired</strong> is an interactive autoloaded compiled Lisp function in `<code>find-dired.el</code>'.<br/>
-<br/>
-(find-grep-dired DIR REGEXP)<br/>
-<br/>
-Find files in DIR containing a regexp REGEXP and start Dired on output.<br/>
-The command run (after changing into DIR) is<br/>
-<br/>
-  find . \( -type f -exec `grep-program' `find-grep-options' \<br/>
-    -e REGEXP {} \; \) -ls<br/>
-<br/>
-where the car of the variable `find-ls-option' specifies what to<br/>
+<strong>find-grep-dired</strong> is an interactive autoloaded compiled Lisp function in `<code>find-dired.el</code>'.</br>
+</br>
+</br>
+(find-grep-dired <u>DIR</u> <u>REGEXP</u>)</br>
+</br>
+Find files in <u>DIR</u> matching a regexp <u>REGEXP</u> and start Dired on output.</br>
+The command run (after changing into <u>DIR</u>) is</br>
+</br>
+  find . \( -type f -exec `grep-program' `find-grep-options' \</br>
+    -e <u>REGEXP</u> {} \; \) -ls</br>
+</br>
+where the car of the variable `find-ls-option' specifies what to</br>
 use in place of "-ls" as the final argument.

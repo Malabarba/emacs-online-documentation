@@ -1,20 +1,23 @@
-<strong>proced-format-alist</strong> is a variable defined in `<code>proced.el</code>'.<br/>
-Its value is ((short user pid tree pcpu pmem start time<br/>
-	(args comm))<br/>
- (medium user pid tree pcpu pmem vsize rss ttname state start time<br/>
-	 (args comm))<br/>
- (long user euid group pid tree pri nice pcpu pmem vsize rss ttname state start time<br/>
-       (args comm))<br/>
- (verbose user euid group egid pid ppid tree pgrp sess pri nice pcpu pmem state thcount vsize rss ttname tpgid minflt majflt cminflt cmajflt start time utime stime ctime cutime cstime etime<br/>
-	  (args comm)))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Alist of formats of listing.<br/>
-The car of each element is a symbol, the name of the format.<br/>
-The cdr is a list of attribute keys appearing in `proced-grammar-alist'.<br/>
-An element of this list may also be a list of attribute keys that specifies<br/>
-alternatives.  If the first attribute is absent for a process, use the second<br/>
-one, etc.<br/>
-<br/>
-You can customize this variable.
+<strong>proced-format-alist</strong> is a variable defined in `<code>proced.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of formats of listing.</br>
+The car of each element is a symbol, the name of the format.</br>
+The cdr is a list of attribute keys appearing in `proced-grammar-alist'.</br>
+An element of this list may also be a list of attribute keys that specifies</br>
+alternatives.  If the first attribute is absent for a process, use the second</br>
+one, etc.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((short user pid tree pcpu pmem start time
+	(args comm))
+ (medium user pid tree pcpu pmem vsize rss ttname state start time
+	 (args comm))
+ (long user euid group pid tree pri nice pcpu pmem vsize rss ttname state start time
+       (args comm))
+ (verbose user euid group egid pid ppid tree pgrp sess pri nice pcpu pmem state thcount vsize rss ttname tpgid minflt majflt cminflt cmajflt start time utime stime ctime cutime cstime etime
+	  (args comm)))
+</pre></br>

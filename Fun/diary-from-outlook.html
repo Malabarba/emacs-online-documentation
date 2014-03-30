@@ -1,9 +1,11 @@
-<strong>diary-from-outlook</strong> is an interactive compiled Lisp function in `<code>diary-lib.el</code>'.<br/>
-<br/>
-(diary-from-outlook &optional NOCONFIRM)<br/>
-<br/>
-Maybe snarf diary entry from current Outlook-generated message.<br/>
-Currently knows about Gnus and Rmail modes.  Unless the optional<br/>
-argument NOCONFIRM is non-nil (which is the case when this<br/>
-function is called interactively), then if an entry is found the<br/>
-user is asked to confirm its addition.
+<strong>diary-from-outlook</strong> is an interactive compiled Lisp function in `<code>diary-lib.el</code>'.</br>
+</br>
+</br>
+(diary-from-outlook &optional <u>NOCONFIRM</u>)</br>
+</br>
+Maybe snarf diary entry from current Outlook-generated message.</br>
+Uses `diary-from-outlook-function' if that is non-nil, else</br>
+`diary-from-outlook-rmail' for Rmail or `diary-from-outlook-gnus' for Gnus.</br>
+Unless the optional argument <u>NOCONFIRM</u> is non-nil (which is the</br>
+case when this function is called interactively), then if an</br>
+entry is found the user is asked to confirm its addition.

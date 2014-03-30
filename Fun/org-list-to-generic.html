@@ -1,42 +1,43 @@
-<strong>org-list-to-generic</strong> is an interactive compiled Lisp function in `<code>org-list.el</code>'.<br/>
-<br/>
-(org-list-to-generic LIST PARAMS)<br/>
-<br/>
-Convert a LIST parsed through `org-list-parse-list' to other formats.<br/>
-Valid parameters PARAMS are:<br/>
-<br/>
-:ustart	    String to start an unordered list<br/>
-:uend	    String to end an unordered list<br/>
-<br/>
-:ostart	    String to start an ordered list<br/>
-:oend	    String to end an ordered list<br/>
-<br/>
-:dstart	    String to start a descriptive list<br/>
-:dend	    String to end a descriptive list<br/>
-:dtstart    String to start a descriptive term<br/>
-:dtend	    String to end a descriptive term<br/>
-:ddstart    String to start a description<br/>
-:ddend	    String to end a description<br/>
-<br/>
-:splice	    When set to t, return only list body lines, don't wrap<br/>
-	    them into :[u/o]start and :[u/o]end.  Default is nil.<br/>
-<br/>
-:istart	    String to start a list item.<br/>
-:icount     String to start an item with a counter.<br/>
-:iend	    String to end a list item<br/>
-:isep	    String to separate items<br/>
-:lsep	    String to separate sublists<br/>
-:csep	    String to separate text from a sub-list<br/>
-<br/>
-:cboff      String to insert for an unchecked check-box<br/>
-:cbon       String to insert for a checked check-box<br/>
-:cbtrans    String to insert for a check-box in transitional state<br/>
-<br/>
-:nobr       Non-nil means remove line breaks in lists items.<br/>
-<br/>
-Alternatively, each parameter can also be a form returning<br/>
-a string.  These sexp can use keywords `counter' and `depth',<br/>
-representing respectively counter associated to the current<br/>
-item, and depth of the current sub-list, starting at 0.<br/>
-Obviously, `counter' is only available for parameters applying to<br/>
+<strong>org-list-to-generic</strong> is an interactive compiled Lisp function in `<code>org-list.el</code>'.</br>
+</br>
+</br>
+(org-list-to-generic <u>LIST</u> <u>PARAMS</u>)</br>
+</br>
+Convert a <u>LIST</u> parsed through `org-list-parse-list' to other formats.</br>
+Valid parameters <u>PARAMS</u> are:</br>
+</br>
+:ustart	    String to start an unordered list</br>
+:uend	    String to end an unordered list</br>
+</br>
+:ostart	    String to start an ordered list</br>
+:oend	    String to end an ordered list</br>
+</br>
+:dstart	    String to start a descriptive list</br>
+:dend	    String to end a descriptive list</br>
+:dtstart    String to start a descriptive term</br>
+:dtend	    String to end a descriptive term</br>
+:ddstart    String to start a description</br>
+:ddend	    String to end a description</br>
+</br>
+:splice	    When set to t, return only list body lines, don't wrap</br>
+	    them into :[u/o]start and :[u/o]end.  Default is nil.</br>
+</br>
+:istart	    String to start a list item.</br>
+:icount     String to start an item with a counter.</br>
+:iend	    String to end a list item</br>
+:isep	    String to separate items</br>
+:lsep	    String to separate sublists</br>
+:csep	    String to separate text from a sub-list</br>
+</br>
+:cboff      String to insert for an unchecked check-box</br>
+:cbon       String to insert for a checked check-box</br>
+:cbtrans    String to insert for a check-box in transitional state</br>
+</br>
+:nobr       Non-nil means remove line breaks in lists items.</br>
+</br>
+Alternatively, each parameter can also be a form returning</br>
+a string.  These sexp can use keywords `counter' and `depth',</br>
+representing respectively counter associated to the current</br>
+item, and depth of the current sub-list, starting at 0.</br>
+Obviously, `counter' is only available for parameters applying to</br>
 items.

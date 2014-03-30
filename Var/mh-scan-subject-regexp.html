@@ -1,24 +1,24 @@
-<strong>mh-scan-subject-regexp</strong> is a variable defined in `<code>mh-scan.el</code>'.<br/>
-Its value is<br/>
-"^ *[0-9]+........[ ]*...................\\([Rr][Ee]\\(\\[[0-9]+\\]\\)?:\\s-*\\)*\\([^<\n]*\\)"<br/>
-<br/>
-Documentation:<br/>
-This regular expression matches the subject.<br/>
-<br/>
-It must match from the beginning of the line.  Note that the<br/>
-default setting of `mh-folder-font-lock-keywords' expects this<br/>
-expression to contain at least three parenthesized expressions.<br/>
-The first is expected to match the "Re:" string, if any, and is<br/>
-highlighted with the face `mh-folder-followup'.  The second<br/>
-matches an optional bracketed number after "Re:", such as in<br/>
-"Re[2]:" (and is thus a sub-expression of the first expression)<br/>
-and the third is expected to match the subject line itself which<br/>
-is highlighted with the face `mh-folder-subject'.  For example,<br/>
-the default (broken on multiple lines for readability) is<br/>
-<br/>
-  ^ *[0-9]+........[ ]*...................<br/>
-  \\([Rr][Ee]\\(\\[[0-9]+\\]\\)?:\\s-*\\)*<br/>
-  \\([^<\n]*\\)<br/>
-<br/>
-This regular expression should be correct as it is needed by<br/>
+<strong>mh-scan-subject-regexp</strong> is a variable defined in `<code>mh-scan.el</code>'.</br>
+Its value is <pre></br>
+"^ *[0-9]+........[ ]*...................\\([Rr][Ee]\\(\\[[0-9]+\\]\\)?:\\s-*\\)*\\([^<\n]*\\)"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+This regular expression matches the subject.</br>
+</br>
+It must match from the beginning of the line.  Note that the</br>
+default setting of `mh-folder-font-lock-keywords' expects this</br>
+expression to contain at least three parenthesized expressions.</br>
+The first is expected to match the "Re:" string, if any, and is</br>
+highlighted with the face `mh-folder-followup'.  The second</br>
+matches an optional bracketed number after "Re:", such as in</br>
+"Re[2]:" (and is thus a sub-expression of the first expression)</br>
+and the third is expected to match the subject line itself which</br>
+is highlighted with the face `mh-folder-subject'.  For example,</br>
+the default (broken on multiple lines for readability) is</br>
+</br>
+  ^ *[0-9]+........[ ]*...................</br>
+  \\([Rr][Ee]\\(\\[[0-9]+\\]\\)?:\\s-*\\)*</br>
+  \\([^<\n]*\\)</br>
+</br>
+This regular expression should be correct as it is needed by</br>
 non-fontification functions.

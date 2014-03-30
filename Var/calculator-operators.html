@@ -1,32 +1,32 @@
-<strong>calculator-operators</strong> is a variable defined in `<code>calculator.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-The calculator operators, each a list with:<br/>
-<br/>
-1. The key that is bound to for this operation (usually a string);<br/>
-<br/>
-2. The displayed symbol for this function;<br/>
-<br/>
-3. The function symbol, or a form that uses the variables `X' and `Y',<br/>
-   (if it is a binary operator), `TX' and `TY' (truncated integer<br/>
-   versions), `DX' (converted to radians if degrees mode is on), `D'<br/>
-   (function for converting radians to degrees if deg mode is on), `L'<br/>
-   (list of saved values), `F' (function for recursive iteration calls)<br/>
-   and evaluates to the function value - these variables are capital;<br/>
-<br/>
-4. The function's arity, optional, one of: 2 => binary, -1 => prefix<br/>
-   unary, +1 => postfix unary, 0 => a 0-arg operator func, non-number =><br/>
-   postfix/prefix as determined by `calculator-unary-style' (the<br/>
-   default);<br/>
-<br/>
-5. The function's precedence - should be in the range of 1 (lowest) to<br/>
-   9 (highest) (optional, defaults to 1);<br/>
-<br/>
-It it possible have a unary prefix version of a binary operator if it<br/>
-comes later in this list.  If the list begins with the symbol 'nobind,<br/>
-then no key binding will take place - this is only useful for predefined<br/>
-keys.<br/>
-<br/>
-Use `calculator-user-operators' to add operators to this list, see its<br/>
+<strong>calculator-operators</strong> is a variable defined in `<code>calculator.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The calculator operators, each a list with:</br>
+</br>
+1. The key that is bound to for this operation (usually a string);</br>
+</br>
+2. The displayed symbol for this function;</br>
+</br>
+3. The function symbol, or a form that uses the variables `X' and `Y',</br>
+   (if it is a binary operator), `TX' and `TY' (truncated integer</br>
+   versions), `DX' (converted to radians if degrees mode is on), `D'</br>
+   (function for converting radians to degrees if deg mode is on), `L'</br>
+   (list of saved values), `F' (function for recursive iteration calls)</br>
+   and evaluates to the function value - these variables are capital;</br>
+</br>
+4. The function's arity, optional, one of: 2 => binary, -1 => prefix</br>
+   unary, +1 => postfix unary, 0 => a 0-arg operator func, non-number =></br>
+   postfix/prefix as determined by `calculator-unary-style' (the</br>
+   default);</br>
+</br>
+5. The function's precedence - should be in the range of 1 (lowest) to</br>
+   9 (highest) (optional, defaults to 1);</br>
+</br>
+It it possible have a unary prefix version of a binary operator if it</br>
+comes later in this list.  If the list begins with the symbol 'nobind,</br>
+then no key binding will take place - this is only useful for predefined</br>
+keys.</br>
+</br>
+Use `calculator-user-operators' to add operators to this list, see its</br>
 documentation for an example.

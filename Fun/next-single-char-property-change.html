@@ -1,19 +1,19 @@
-<strong>next-single-char-property-change</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(next-single-char-property-change POSITION PROP &optional OBJECT LIMIT)<br/>
-<br/>
-Return the position of next text property or overlay change for a specific property.<br/>
-Scans characters forward from POSITION till it finds<br/>
-a change in the PROP property, then returns the position of the change.<br/>
-If the optional third argument OBJECT is a buffer (or nil, which means<br/>
-the current buffer), POSITION is a buffer position (integer or marker).<br/>
-If OBJECT is a string, POSITION is a 0-based index into it.<br/>
-<br/>
-In a string, scan runs to the end of the string.<br/>
-In a buffer, it runs to (point-max), and the value cannot exceed that.<br/>
-<br/>
-The property values are compared with `eq'.<br/>
-If the property is constant all the way to the end of OBJECT, return the<br/>
-last valid position in OBJECT.<br/>
-If the optional fourth argument LIMIT is non-nil, don't search<br/>
-past position LIMIT; return LIMIT if nothing is found before LIMIT.
+<strong>next-single-char-property-change</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(next-single-char-property-change <u>POSITION</u> <u>PROP</u> &optional <u>OBJECT</u> <u>LIMIT</u>)</br>
+</br>
+Return the position of next text property or overlay change for a specific property.</br>
+Scans characters forward from <u>POSITION</u> till it finds</br>
+a change in the <u>PROP</u> property, then returns the position of the change.</br>
+If the optional third argument <u>OBJECT</u> is a buffer (or nil, which means</br>
+the current buffer), <u>POSITION</u> is a buffer position (integer or marker).</br>
+If <u>OBJECT</u> is a string, <u>POSITION</u> is a 0-based index into it.</br>
+</br>
+In a string, scan runs to the end of the string.</br>
+In a buffer, it runs to (point-max), and the value cannot exceed that.</br>
+</br>
+The property values are compared with `eq'.</br>
+If the property is constant all the way to the end of <u>OBJECT</u>, return the</br>
+last valid position in <u>OBJECT</u>.</br>
+If the optional fourth argument <u>LIMIT</u> is non-nil, don't search</br>
+past position <u>LIMIT</u>; return <u>LIMIT</u> if nothing is found before <u>LIMIT</u>.

@@ -1,16 +1,16 @@
-<strong>with-silent-modifications</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
-<br/>
-(with-silent-modifications &rest BODY)<br/>
-<br/>
-Execute BODY, pretending it does not modify the buffer.<br/>
-If BODY performs real modifications to the buffer's text, other<br/>
-than cosmetic ones, undo data may become corrupted.<br/>
-<br/>
-This macro will run BODY normally, but doesn't count its buffer<br/>
-modifications as being buffer modifications.  This affects things<br/>
-like buffer-modified-p, checking whether the file is locked by<br/>
-someone else, running buffer modification hooks, and other things<br/>
-of that nature.<br/>
-<br/>
-Typically used around modifications of text-properties which do<br/>
+<strong>with-silent-modifications</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(with-silent-modifications &rest <u>BODY</u>)</br>
+</br>
+Execute <u>BODY</u>, pretending it does not modify the buffer.</br>
+If <u>BODY</u> performs real modifications to the buffer's text, other</br>
+than cosmetic ones, undo data may become corrupted.</br>
+</br>
+This macro will run <u>BODY</u> normally, but doesn't count its buffer</br>
+modifications as being buffer modifications.  This affects things</br>
+like `buffer-modified-p', checking whether the file is locked by</br>
+someone else, running buffer modification hooks, and other things</br>
+of that nature.</br>
+</br>
+Typically used around modifications of text-properties which do</br>
 not really affect the buffer's content.

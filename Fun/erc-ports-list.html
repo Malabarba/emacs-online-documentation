@@ -1,0 +1,15 @@
+<strong>erc-ports-list</strong> is a compiled Lisp function in `<code>erc-networks.el</code>'.</br>
+</br>
+(erc-ports-list <u>PORTS</u>)</br>
+</br>
+Return a list of <u>PORTS</u>.</br>
+</br>
+<u>PORTS</u> should be a list of either:</br>
+  A number, in which case it is returned a list.</br>
+  Or a pair of the form (LOW HIGH), in which case, a list of all the</br>
+  numbers between LOW and HIGH (inclusive) is returned.</br>
+</br>
+As an example:</br>
+  (erc-ports-list '(1)) => (1)</br>
+  (erc-ports-list '((1 5))) => (1 2 3 4 5)</br>
+  (erc-ports-list '(1 (3 5))) => (1 3 4 5)

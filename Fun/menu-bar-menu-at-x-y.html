@@ -1,0 +1,22 @@
+<strong>menu-bar-menu-at-x-y</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(menu-bar-menu-at-x-y <u>X</u> <u>Y</u> &optional <u>FRAME</u>)</br>
+</br>
+Return the menu-bar menu on <u>FRAME</u> at pixel coordinates <u>X</u>, <u>Y</u>.</br>
+<u>X</u> and <u>Y</u> are frame-relative pixel coordinates, assumed to define</br>
+a location within the menu bar.</br>
+If <u>FRAME</u> is nil or omitted, it defaults to the selected frame.</br>
+</br>
+Value is the symbol of the menu at <u>X</u>/<u>Y</u>, or nil if the specified</br>
+coordinates are not within the <u>FRAME</u>'s menu bar.  The symbol can</br>
+be used to look up the menu like this:</br>
+</br>
+     (lookup-key MAP [menu-bar SYMBOL])</br>
+</br>
+where MAP is either the current global map or the current local map,</br>
+since menu-bar items come from both.</br>
+</br>
+This function can return non-nil only on a text-terminal frame</br>
+or on an <u>X</u> frame that doesn't use any GUI toolkit.  Otherwise,</br>
+Emacs does not manage the menu bar and cannot convert coordinates</br>
+into menu items.

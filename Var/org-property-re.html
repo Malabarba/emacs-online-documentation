@@ -1,8 +1,12 @@
-<strong>org-property-re</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is<br/>
-"^[ 	]*\\(:\\([-[:alnum:]_]+\\+?\\):\\)[ 	]*\\([^ 	\n].*\\)"<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Regular expression matching a property line.
+<strong>org-property-re</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre></br>
+"^\\(?4:[ 	]*\\)\\(?1::\\(?2:.*?\\):\\)[ 	]+\\(?3:[^ 	\n].*?\\)\\(?5:[ 	]*\\)$"</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Regular expression matching a property line.</br>
+There are four matching groups:</br>
+1: :PROPKEY: including the leading and trailing colon,</br>
+2: PROPKEY without the leading and trailing colon,</br>
+3: PROPVAL without leading or trailing spaces,</br>
+4: the indentation of the current line,</br>
+5: trailing whitespace.

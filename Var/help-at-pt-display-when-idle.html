@@ -1,31 +1,31 @@
-<strong>help-at-pt-display-when-idle</strong> is a variable defined in `<code>help-at-pt.el</code>'.<br/>
-Its value is never<br/>
-<br/>
-Documentation:<br/>
-Automatically show local help on point-over.<br/>
-If the value is t, the string obtained from any `kbd-help' or<br/>
-`help-echo' property at point is automatically printed in the<br/>
-echo area, if nothing else is already displayed there, or after a<br/>
-quit.  If both `kbd-help' and `help-echo' produce help strings,<br/>
-`kbd-help' is used.  If the value is a list, the help only gets<br/>
-printed if there is a text or overlay property at point that is<br/>
-included in this list.  Suggested properties are `keymap',<br/>
-`local-map', `button' and `kbd-help'.  Any value other than t or<br/>
-a non-empty list disables the feature.<br/>
-<br/>
-This variable only takes effect after a call to<br/>
-`help-at-pt-set-timer'.  The help gets printed after Emacs has<br/>
-been idle for `help-at-pt-timer-delay' seconds.  You can call<br/>
-`help-at-pt-cancel-timer' to cancel the timer set by, and the<br/>
-effect of, `help-at-pt-set-timer'.<br/>
-<br/>
-When this variable is set through Custom, `help-at-pt-set-timer'<br/>
-is called automatically, unless the value is `never', in which<br/>
-case `help-at-pt-cancel-timer' is called.  Specifying an empty<br/>
-list of properties through Custom will set the timer, thus<br/>
-enabling buffer local values.  It sets the actual value to nil.<br/>
-Thus, Custom distinguishes between a nil value and other values<br/>
-that disable the feature, which Custom identifies with `never'.<br/>
-The default is `never'.<br/>
-<br/>
+<strong>help-at-pt-display-when-idle</strong> is a variable defined in `<code>help-at-pt.el</code>'.</br>
+Its value is <pre>never</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Automatically show local help on point-over.</br>
+If the value is t, the string obtained from any `kbd-help' or</br>
+`help-echo' property at point is automatically printed in the</br>
+echo area, if nothing else is already displayed there, or after a</br>
+quit.  If both `kbd-help' and `help-echo' produce help strings,</br>
+`kbd-help' is used.  If the value is a list, the help only gets</br>
+printed if there is a text or overlay property at point that is</br>
+included in this list.  Suggested properties are `keymap',</br>
+`local-map', `button' and `kbd-help'.  Any value other than t or</br>
+a non-empty list disables the feature.</br>
+</br>
+This variable only takes effect after a call to</br>
+`help-at-pt-set-timer'.  The help gets printed after Emacs has</br>
+been idle for `help-at-pt-timer-delay' seconds.  You can call</br>
+`help-at-pt-cancel-timer' to cancel the timer set by, and the</br>
+effect of, `help-at-pt-set-timer'.</br>
+</br>
+When this variable is set through Custom, `help-at-pt-set-timer'</br>
+is called automatically, unless the value is `never', in which</br>
+case `help-at-pt-cancel-timer' is called.  Specifying an empty</br>
+list of properties through Custom will set the timer, thus</br>
+enabling buffer local values.  It sets the actual value to nil.</br>
+Thus, Custom distinguishes between a nil value and other values</br>
+that disable the feature, which Custom identifies with `never'.</br>
+The default is `never'.</br>
+</br>
 You can customize this variable.

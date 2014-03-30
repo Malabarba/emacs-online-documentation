@@ -1,34 +1,33 @@
-<strong>tex-font-lock-keywords-2</strong> is a variable defined in `<code>tex-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Gaudy expressions to highlight in TeX modes.<br/>
-<br/>
-Value: (("\\$\\$?\\(?:[^$\\{}]\\|\\\\.\\|{\\(?:[^{}\\]\\|\\\\.\\|{\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)*}\\)*}\\)+\\$?\\$"<br/>
-  (0 tex-math-face))<br/>
- ("\\\\\\(begin\\|chapter\\|end\\|new\\(?:command\\|environment\\|theorem\\)\\|p\\(?:ar\\(?:agraph\\|t\\)\\|rovidecommand\\)\\|renew\\(?:command\\|environment\\|theorem\\)\\|s\\(?:ection\\|ub\\(?:paragraph\\|s\\(?:ection\\|ub\\(?:paragraph\\|section\\)\\)\\)\\)\\|title\\)\\*? *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 3 font-lock-function-name-face keep)<br/>
- ("\\\\\\(?:provide\\|\\(?:re\\)?new\\)command\\** *\\(\\\\[A-Za-z@]+\\)" 1 font-lock-function-name-face keep)<br/>
- ("\\\\\\(addto\\(?:counter\\|length\\)\\|newcounter\\*?\\|set\\(?:counter\\|\\(?:leng\\|towid\\)th\\)\\) *{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 2 font-lock-variable-name-face)<br/>
- ("\\\\\\(bibliography\\|document\\(?:class\\|style\\)\\|epsf\\(?:ig\\)?\\|in\\(?:clude\\(?:graphics\\*?\\|only\\)?\\|put\\)\\|nofiles\\|psfig\\|usepackage\\|verbatiminput\\) *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 3 font-lock-builtin-face)<br/>
- ("\\\\\\(nolinkurl\\|path\\|url\\) *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 3 'tex-verbatim)<br/>
- ("^[ 	]*\\\\def *\\\\\\(\\(\\w\\|@\\)+\\)" 1 font-lock-function-name-face)<br/>
- ("\\\\\\(bibitem\\|cite[pt]?\\|eqref\\|glossary\\|index\\|label\\|nocite\\|\\(?:page\\|v\\)?ref\\) *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 3 font-lock-constant-face)<br/>
- ("\\(\"[<`]\\|<<\\|``\\|«\\)[^'\">{]+\\(\"['>]\\|''\\|>>\\|»\\)" . font-lock-string-face)<br/>
- ("\\\\\\(\\\\\\*?\\)" . font-lock-warning-face)<br/>
- ("\\(\\\\\\(allowdisplaybreaks\\|clear\\(?:\\(?:double\\)?page\\)\\|displaybreak\\|enlargethispage\\|linebreak\\|n\\(?:ew\\(?:\\(?:lin\\|pag\\)e\\)\\|o\\(?:\\(?:lin\\|pag\\)ebreak\\)\\)\\|pagebreak\\)\\)\\([^a-zA-Z@]\\|\\'\\)" 1 font-lock-warning-face)<br/>
- "\\\\\\([a-zA-Z@]+\\**\\|[^ 	\n]\\)"<br/>
- ("\\\\\\(boldsymbol\\|pmb\\|text\\(?:bf\\|sc\\|up\\)\\) *{\\(\\(?:[^{}\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 2<br/>
-  (tex-font-lock-append-prop 'bold)<br/>
-  append)<br/>
- ("\\\\\\(emph\\|text\\(?:it\\|sl\\)\\) *{\\(\\(?:[^{}\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 2<br/>
-  (tex-font-lock-append-prop 'italic)<br/>
-  append)<br/>
- ("\\\\\\(em\\|it\\|sl\\)\\>\\(\\(?:[^{}&\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 2<br/>
-  (tex-font-lock-append-prop 'italic)<br/>
-  append)<br/>
- ("\\\\\\(bf\\(series\\)?\\)\\>\\(\\(?:[^{}&\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 3<br/>
-  (tex-font-lock-append-prop 'bold)<br/>
-  append))<br/>
-<br/>
+<strong>tex-font-lock-keywords-2</strong> is a variable defined in `<code>tex-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Gaudy expressions to highlight in TeX modes.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\$\\$?\\(?:[^$\\{}]\\|\\\\.\\|{\\(?:[^{}\\]\\|\\\\.\\|{\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)*}\\)*}\\)+\\$?\\$"
+  (0 tex-math-face))
+ ("\\\\\\(begin\\|chapter\\|end\\|new\\(?:command\\|environment\\|theorem\\)\\|p\\(?:ar\\(?:agraph\\|t\\)\\|rovidecommand\\)\\|renew\\(?:command\\|environment\\|theorem\\)\\|s\\(?:ection\\|ub\\(?:paragraph\\|s\\(?:ection\\|ub\\(?:paragraph\\|section\\)\\)\\)\\)\\|title\\)\\*? *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 3 font-lock-function-name-face keep)
+ ("\\\\\\(?:provide\\|\\(?:re\\)?new\\)command\\** *\\(\\\\[A-Za-z@]+\\)" 1 font-lock-function-name-face keep)
+ ("\\\\\\(addto\\(?:counter\\|length\\)\\|newcounter\\*?\\|set\\(?:counter\\|\\(?:leng\\|towid\\)th\\)\\) *{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 2 font-lock-variable-name-face)
+ ("\\\\\\(bibliography\\|document\\(?:class\\|style\\)\\|epsf\\(?:ig\\)?\\|in\\(?:clude\\(?:graphics\\*?\\|only\\)?\\|put\\)\\|nofiles\\|psfig\\|usepackage\\|verbatiminput\\) *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 3 font-lock-builtin-face)
+ ("\\\\\\(nolinkurl\\|path\\|url\\) *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]\\|\\\\.\\|{[^}]*}\\)+\\)" 3 'tex-verbatim)
+ ("^[ 	]*\\\\def *\\\\\\(\\(\\w\\|@\\)+\\)" 1 font-lock-function-name-face)
+ ("\\\\\\(bibitem\\|cite[pt]?\\|eqref\\|glossary\\|index\\|label\\|nocite\\|\\(?:page\\|v\\)?ref\\) *\\(\\[[^]]*\\] *\\)*{\\(\\(?:[^{}\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 3 font-lock-constant-face)
+ ("\\(\"[<`]\\|<<\\|``\\|«\\)[^'\">{]+\\(\"['>]\\|''\\|>>\\|»\\)" . font-lock-string-face)
+ ("\\\\\\(\\\\\\*?\\)" . font-lock-warning-face)
+ ("\\(\\\\\\(allowdisplaybreaks\\|clear\\(?:\\(?:double\\)?page\\)\\|displaybreak\\|enlargethispage\\|linebreak\\|n\\(?:ew\\(?:\\(?:lin\\|pag\\)e\\)\\|o\\(?:\\(?:lin\\|pag\\)ebreak\\)\\)\\|pagebreak\\)\\)\\([^a-zA-Z@]\\|\\'\\)" 1 font-lock-warning-face)
+ "\\\\\\([a-zA-Z@]+\\**\\|[^ 	\n]\\)"
+ ("\\\\\\(boldsymbol\\|pmb\\|text\\(?:bf\\|sc\\|up\\)\\) *{\\(\\(?:[^{}\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 2
+  (tex-font-lock-append-prop 'bold)
+  append)
+ ("\\\\\\(emph\\|text\\(?:it\\|sl\\)\\) *{\\(\\(?:[^{}\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 2
+  (tex-font-lock-append-prop 'italic)
+  append)
+ ("\\\\\\(em\\|it\\|sl\\)\\>\\(\\(?:[^{}&\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 2
+  (tex-font-lock-append-prop 'italic)
+  append)
+ ("\\\\\\(bf\\(series\\)?\\)\\>\\(\\(?:[^{}&\\]+\\|\\\\.\\|{[^}]*}\\)+\\)" 3
+  (tex-font-lock-append-prop 'bold)
+  append))
+</pre></br>

@@ -1,33 +1,33 @@
-<strong>mh-image-load-path-for-library</strong> is an alias for `image-load-path-for-library' in `<code>mh-compat.el</code>'.<br/>
-<br/>
-(mh-image-load-path-for-library LIBRARY IMAGE &optional PATH NO-ERROR)<br/>
-<br/>
-Return a suitable search path for images used by LIBRARY.<br/>
-<br/>
-It searches for IMAGE in `image-load-path' (excluding<br/>
-"`data-directory'/images") and `load-path', followed by a path<br/>
-suitable for LIBRARY, which includes "../../etc/images" and<br/>
-"../etc/images" relative to the library file itself, and then<br/>
-in "`data-directory'/images".<br/>
-<br/>
-Then this function returns a list of directories which contains<br/>
-first the directory in which IMAGE was found, followed by the<br/>
-value of `load-path'.  If PATH is given, it is used instead of<br/>
-`load-path'.<br/>
-<br/>
-If NO-ERROR is non-nil and a suitable path can't be found, don't<br/>
-signal an error.  Instead, return a list of directories as before,<br/>
-except that nil appears in place of the image directory.<br/>
-<br/>
-Here is an example that uses a common idiom to provide<br/>
-compatibility with versions of Emacs that lack the variable<br/>
-`image-load-path':<br/>
-<br/>
-    ;; Shush compiler.<br/>
-    (defvar image-load-path)<br/>
-<br/>
-    (let* ((load-path (image-load-path-for-library "mh-e" "mh-logo.xpm"))<br/>
-           (image-load-path (cons (car load-path)<br/>
-                                  (when (boundp 'image-load-path)<br/>
-                                    image-load-path))))<br/>
+<strong>mh-image-load-path-for-library</strong> is an alias for `<strong><a href="image-load-path-for-library">image-load-path-for-library</a></strong>' in `<code>mh-compat.el</code>'.</br>
+</br>
+(mh-image-load-path-for-library <u>LIBRARY</u> <u>IMAGE</u> &optional <u>PATH</u> <u>NO-ERROR</u>)</br>
+</br>
+Return a suitable search path for images used by <u>LIBRARY</u>.</br>
+</br>
+It searches for <u>IMAGE</u> in `image-load-path' (excluding</br>
+"`data-directory'/images") and `load-path', followed by a path</br>
+suitable for <u>LIBRARY</u>, which includes "../../etc/images" and</br>
+"../etc/images" relative to the library file itself, and then</br>
+in "`data-directory'/images".</br>
+</br>
+Then this function returns a list of directories which contains</br>
+first the directory in which <u>IMAGE</u> was found, followed by the</br>
+value of `load-path'.  If <u>PATH</u> is given, it is used instead of</br>
+`load-path'.</br>
+</br>
+If <u>NO-ERROR</u> is non-nil and a suitable path can't be found, don't</br>
+signal an error.  Instead, return a list of directories as before,</br>
+except that nil appears in place of the image directory.</br>
+</br>
+Here is an example that uses a common idiom to provide</br>
+compatibility with versions of Emacs that lack the variable</br>
+`image-load-path':</br>
+</br>
+    ;; Shush compiler.</br>
+    (defvar image-load-path)</br>
+</br>
+    (let* ((load-path (image-load-path-for-library "mh-e" "mh-logo.xpm"))</br>
+           (image-load-path (cons (car load-path)</br>
+                                  (when (boundp 'image-load-path)</br>
+                                    image-load-path))))</br>
       (mh-tool-bar-folder-buttons-init))

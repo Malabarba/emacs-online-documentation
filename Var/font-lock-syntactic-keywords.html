@@ -1,39 +1,36 @@
-<strong>font-lock-syntactic-keywords</strong> is a variable defined in `<code>font-lock.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable is obsolete since 24.1;<br/>
-  use `syntax-propertize-function' instead.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A list of the syntactic keywords to put syntax properties on.<br/>
-The value can be the list itself, or the name of a function or variable<br/>
-whose value is the list.<br/>
-<br/>
-See `font-lock-keywords' for a description of the form of this list;<br/>
-only the differences are stated here.  MATCH-HIGHLIGHT should be of the form:<br/>
-<br/>
- (SUBEXP SYNTAX OVERRIDE LAXMATCH)<br/>
-<br/>
-where SYNTAX can be a string (as taken by `modify-syntax-entry'), a syntax<br/>
-table, a cons cell (as returned by `string-to-syntax') or an expression whose<br/>
-value is such a form.  OVERRIDE cannot be `prepend' or `append'.<br/>
-<br/>
-Here are two examples of elements of `font-lock-syntactic-keywords'<br/>
-and what they do:<br/>
-<br/>
- ("\\$\\(#\\)" 1 ".")<br/>
-<br/>
- gives a hash character punctuation syntax (".") when following a<br/>
- dollar-sign character.  Hash characters in other contexts will still<br/>
- follow whatever the syntax table says about the hash character.<br/>
-<br/>
- ("\\('\\).\\('\\)"<br/>
-  (1 "\"")<br/>
-  (2 "\""))<br/>
-<br/>
- gives a pair single-quotes, which surround a single character, a SYNTAX of<br/>
- "\"" (meaning string quote syntax).  Single-quote characters in other<br/>
- contexts will not be affected.<br/>
-<br/>
+<strong>font-lock-syntactic-keywords</strong> is a variable defined in `<code>font-lock.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  <strong>This variable is obsolete since 24.1;</br>
+  use `<a href="syntax-propertize-function">syntax-propertize-function</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A list of the syntactic keywords to put syntax properties on.</br>
+The value can be the list itself, or the name of a function or variable</br>
+whose value is the list.</br>
+</br>
+See `font-lock-keywords' for a description of the form of this list;</br>
+only the differences are stated here.  MATCH-HIGHLIGHT should be of the form:</br>
+</br>
+ (SUBEXP SYNTAX OVERRIDE LAXMATCH)</br>
+</br>
+where SYNTAX can be a string (as taken by `modify-syntax-entry'), a syntax</br>
+table, a cons cell (as returned by `string-to-syntax') or an expression whose</br>
+value is such a form.  OVERRIDE cannot be `prepend' or `append'.</br>
+</br>
+Here are two examples of elements of `font-lock-syntactic-keywords'</br>
+and what they do:</br>
+</br>
+ ("\\$\\(#\\)" 1 ".")</br>
+</br>
+ gives a hash character punctuation syntax (".") when following a</br>
+ dollar-sign character.  Hash characters in other contexts will still</br>
+ follow whatever the syntax table says about the hash character.</br>
+</br>
+ ("\\('\\).\\('\\)"</br>
+  (1 "\"")</br>
+  (2 "\""))</br>
+</br>
+ gives a pair single-quotes, which surround a single character, a SYNTAX of</br>
+ "\"" (meaning string quote syntax).  Single-quote characters in other</br>
+ contexts will not be affected.</br>
+</br>
 This is normally set via `font-lock-defaults'.

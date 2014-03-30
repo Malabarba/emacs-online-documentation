@@ -1,12 +1,12 @@
-<strong>cl-letf</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.<br/>
-<br/>
-(cl-letf ((PLACE VALUE) ...) BODY...)<br/>
-<br/>
-Temporarily bind to PLACEs.<br/>
-This is the analogue of `let', but with generalized variables (in the<br/>
-sense of `setf') for the PLACEs.  Each PLACE is set to the corresponding<br/>
-VALUE, then the BODY forms are executed.  On exit, either normally or<br/>
-because of a `throw' or error, the PLACEs are set back to their original<br/>
-values.  Note that this macro is *not* available in Common Lisp.<br/>
-As a special case, if `(PLACE)' is used instead of `(PLACE VALUE)',<br/>
-the PLACE is not modified before executing BODY.
+<strong>cl-letf</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.</br>
+</br>
+(cl-letf ((<u>PLACE</u> <u>VALUE</u>) ...) <u>BODY</u>...)</br>
+</br>
+Temporarily bind to <u>PLACE</u>s.</br>
+This is the analogue of `let', but with generalized variables (in the</br>
+sense of `setf') for the <u>PLACE</u>s.  Each <u>PLACE</u> is set to the corresponding</br>
+<u>VALUE</u>, then the <u>BODY</u> forms are executed.  On exit, either normally or</br>
+because of a `throw' or error, the <u>PLACE</u>s are set back to their original</br>
+values.  Note that this macro is *not* available in Common Lisp.</br>
+As a special case, if `(<u>PLACE</u>)' is used instead of `(<u>PLACE</u> <u>VALUE</u>)',</br>
+the <u>PLACE</u> is not modified before executing <u>BODY</u>.

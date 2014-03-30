@@ -1,0 +1,32 @@
+<strong>erc-nick-popup-alist</strong> is a variable defined in `<code>erc-button.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+An alist of possible actions to take on a nickname.</br>
+An entry looks like ("Action" . SEXP) where SEXP is evaluated with</br>
+the variable `nick' bound to the nick in question.</br>
+</br>
+Examples:</br>
+ ("DebianDB" .</br>
+  (shell-command</br>
+   (format</br>
+    "ldapsearch -x -P 2 -h db.debian.org -b dc=debian,dc=org ircnick=%s"</br>
+    nick)))</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("DeOp" erc-cmd-DEOP nick)
+ ("Kick" erc-cmd-KICK
+  (concat nick " "
+	  (read-from-minibuffer
+	   (concat "Kick " nick ", reason: "))))
+ ("Msg" erc-cmd-MSG
+  (concat nick " "
+	  (read-from-minibuffer
+	   (concat "Message to " nick ": "))))
+ ("Op" erc-cmd-OP nick)
+ ("Query" erc-cmd-QUERY nick)
+ ("Whois" erc-cmd-WHOIS nick)
+ ("Lastlog" erc-cmd-LASTLOG nick))
+</pre></br>

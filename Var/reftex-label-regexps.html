@@ -1,0 +1,20 @@
+<strong>reftex-label-regexps</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+Its value is <pre></br>
+("\\\\label{\\(?1:[^}]*\\)}" "\\[[^]]*\\<label[[:space:]]*=[[:space:]]*{?\\(?1:[^],}]+\\)}?")
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of regexps matching \label definitions.</br>
+The default value matches usual \label{...} definitions and</br>
+keyval style [..., label = {...}, ...] label definitions.  It is</br>
+assumed that the regexp group 1 matches the label text, so you</br>
+have to define it using \(?1:...\) when adding new regexps.</br>
+</br>
+When changed from Lisp, make sure to call</br>
+`reftex-compile-variables' afterwards to make the change</br>
+effective.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

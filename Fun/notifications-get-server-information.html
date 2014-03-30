@@ -1,0 +1,18 @@
+<strong>notifications-get-server-information</strong> is a compiled Lisp function in `<code>notifications.el</code>'.</br>
+</br>
+(notifications-get-server-information &optional <u>BUS</u>)</br>
+</br>
+Return information on the notification server, a list of strings.</br>
+<u>BUS</u> can be a string denoting a D-Bus connection, the default is `:session'.</br>
+The returned list is (NAME VENDOR VERSION SPEC-VERSION).</br>
+</br>
+  NAME         The product name of the server.</br>
+  VENDOR       The vendor name.  For example, "KDE", "GNOME".</br>
+  VERSION      The server's version number.</br>
+  SPEC-VERSION The specification version the server is compliant with.</br>
+</br>
+If SPEC_VERSION is missing, the server supports a specification</br>
+prior to "1.0".</br>
+</br>
+See `notifications-specification-version' for the specification</br>
+version this library is compliant with.

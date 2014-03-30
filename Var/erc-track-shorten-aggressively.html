@@ -1,0 +1,23 @@
+<strong>erc-track-shorten-aggressively</strong> is a variable defined in `<code>erc-track.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, channel names will be shortened more aggressively.</br>
+Usually, names are not shortened if this will save only one character.</br>
+Example: If there are two channels, #linux-de and #linux-fr, then</br>
+normally these will not be shortened.  When shortening aggressively,</br>
+however, these will be shortened to #linux-d and #linux-f.</br>
+</br>
+If this variable is set to `max', then channel names will be shortened</br>
+to the max.  Usually, shortened channel names will remain unique for a</br>
+given set of existing channels.  When shortening to the max, the shortened</br>
+channel names will be unique for the set of active channels only.</br>
+Example: If there are two active channels #emacs and #vi, and two inactive</br>
+channels #electronica and #folk, then usually the active channels are</br>
+shortened to #em and #v.  When shortening to the max, however, #emacs is</br>
+not compared to #electronica -- only to #vi, therefore it can be shortened</br>
+even more and the result is #e and #v.</br>
+</br>
+This setting is used by `erc-track-shorten-names'.</br>
+</br>
+You can customize this variable.

@@ -1,19 +1,16 @@
-<strong>font-lock-beginning-of-syntax-function</strong> is a variable defined in `<code>font-lock.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable is obsolete since 23.3;<br/>
-  use `syntax-begin-function' instead.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Non-nil means use this function to move back outside all constructs.<br/>
-When called with no args it should move point backward to a place which<br/>
-is not in a string or comment and not within any bracket-pairs (or else,<br/>
-a place such that any bracket-pairs outside it can be ignored for Emacs<br/>
-syntax analysis and fontification).<br/>
-<br/>
-If this is nil, Font Lock uses `syntax-begin-function' to move back<br/>
-outside of any comment, string, or sexp.  This variable is semi-obsolete;<br/>
-we recommend setting `syntax-begin-function' instead.<br/>
-<br/>
+<strong>font-lock-beginning-of-syntax-function</strong> is a variable defined in `<code>font-lock.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  <strong>This variable is obsolete since 23.3;</br>
+  use `<a href="syntax-begin-function">syntax-begin-function</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Non-nil means use this function to move back outside all constructs.</br>
+When called with no args it should move point backward to a place which</br>
+is not in a string or comment and not within any bracket-pairs (or else,</br>
+a place such that any bracket-pairs outside it can be ignored for Emacs</br>
+syntax analysis and fontification).</br>
+</br>
+If this is nil, Font Lock uses `syntax-begin-function' to move back</br>
+outside of any comment, string, or sexp.  This variable is semi-obsolete;</br>
+we recommend setting `syntax-begin-function' instead.</br>
+</br>
 This is normally set via `font-lock-defaults'.

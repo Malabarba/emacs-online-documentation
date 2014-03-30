@@ -1,20 +1,20 @@
-<strong>timer-activate-when-idle</strong> is a compiled Lisp function in `<code>timer.el</code>'.<br/>
-<br/>
-(timer-activate-when-idle TIMER &optional DONT-WAIT REUSE-CELL)<br/>
-<br/>
-Insert TIMER into `timer-idle-list'.<br/>
-This arranges to activate TIMER whenever Emacs is next idle.<br/>
-If optional argument DONT-WAIT is non-nil, set TIMER to activate<br/>
-immediately (see below), or at the right time, if Emacs is<br/>
-already idle.<br/>
-<br/>
-REUSE-CELL, if non-nil, is a cons cell to reuse when inserting<br/>
-TIMER into `timer-idle-list' (usually a cell removed from that<br/>
-list by `cancel-timer-internal'; using this reduces consing for<br/>
-repeat timers).  If nil, allocate a new cell.<br/>
-<br/>
-Using non-nil DONT-WAIT is not recommended when activating an<br/>
-idle timer from an idle timer handler, if the timer being<br/>
-activated has an idleness time that is smaller or equal to<br/>
-the time of the current timer.  That's because the activated<br/>
+<strong>timer-activate-when-idle</strong> is a compiled Lisp function in `<code>timer.el</code>'.</br>
+</br>
+(timer-activate-when-idle <u>TIMER</u> &optional <u>DONT-WAIT</u> <u>REUSE-CELL</u>)</br>
+</br>
+Insert <u>TIMER</u> into `timer-idle-list'.</br>
+This arranges to activate <u>TIMER</u> whenever Emacs is next idle.</br>
+If optional argument <u>DONT-WAIT</u> is non-nil, set <u>TIMER</u> to activate</br>
+immediately (see below), or at the right time, if Emacs is</br>
+already idle.</br>
+</br>
+<u>REUSE-CELL</u>, if non-nil, is a cons cell to reuse when inserting</br>
+<u>TIMER</u> into `timer-idle-list' (usually a cell removed from that</br>
+list by `cancel-timer-internal'; using this reduces consing for</br>
+repeat timers).  If nil, allocate a new cell.</br>
+</br>
+Using non-nil <u>DONT-WAIT</u> is not recommended when activating an</br>
+idle timer from an idle timer handler, if the timer being</br>
+activated has an idleness time that is smaller or equal to</br>
+the time of the current timer.  That's because the activated</br>
 timer will fire right away.

@@ -1,24 +1,24 @@
-<strong>srecode-menu-bar</strong> is a variable defined in `<code>mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Menu for srecode minor mode.<br/>
-<br/>
-Value:<br/>
-("SRecoder"<br/>
- ["Insert Template" srecode-insert :active t :help "Insert a template by name."]<br/>
- ["Insert Template Again" srecode-insert-again :active t :help "Run the same template as last time again."]<br/>
- ["Edit Template" srecode-edit :active t :help "Edit a template for this language by name."]<br/>
- "---"<br/>
- ("Insert ..." :filter srecode-minor-mode-templates-menu)<br/>
- ("Generate ..." :filter srecode-minor-mode-generate-menu)<br/>
- "---"<br/>
- ["Customize..."<br/>
-  (customize-group "srecode")<br/>
-  :active t :help "Customize SRecode options"]<br/>
- ("Debugging Tools..."<br/>
-  ["Dump Template MAP" srecode-get-maps :active t :help "Calculate (if needed) and display the current template file map."]<br/>
-  ["Dump Tables" srecode-dump-templates :active t :help "Dump the current template table."]<br/>
-  ["Dump Dictionary" srecode-dictionary-dump :active t :help "Calculate and dump a dictionary for point."]<br/>
-  ["Show Macro Help" srecode-macro-help :active t :help "Display the different types of macros available."]))<br/>
-<br/>
+<strong>srecode-menu-bar</strong> is a variable defined in `<code>mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for srecode minor mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("SRecoder"
+ ["Insert Template" srecode-insert :active t :help "Insert a template by name."]
+ ["Insert Template Again" srecode-insert-again :active t :help "Run the same template as last time again."]
+ ["Edit Template" srecode-edit :active t :help "Edit a template for this language by name."]
+ "---"
+ ("Insert ..." :filter srecode-minor-mode-templates-menu)
+ ("Generate ..." :filter srecode-minor-mode-generate-menu)
+ "---"
+ ["Customize..."
+  (customize-group "srecode")
+  :active t :help "Customize SRecode options"]
+ ("Debugging Tools..."
+  ["Dump Template MAP" srecode-get-maps :active t :help "Calculate (if needed) and display the current template file map."]
+  ["Dump Tables" srecode-dump-templates :active t :help "Dump the current template table."]
+  ["Dump Dictionary" srecode-dictionary-dump :active t :help "Calculate and dump a dictionary for point."]
+  ["Show Macro Help" srecode-macro-help :active t :help "Display the different types of macros available."]))
+</pre></br>

@@ -1,45 +1,45 @@
-<strong>sc-preferred-attribution-list</strong> is a variable defined in `<code>supercite.el</code>'.<br/>
-Its value is<br/>
-("sc-lastchoice" "x-attribution" "firstname" "initials" "lastname")<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Specifies what to use as the attribution string.<br/>
-Supercite creates a list of possible attributions when it scans the<br/>
-mail headers from the original message.  Each attribution choice is<br/>
-associated with a key in an attribution alist.  Supercite tries to<br/>
-pick a "preferred" attribution by matching the attribution alist<br/>
-keys against the elements in `sc-preferred-attribution-list' in order.<br/>
-The first non-empty string value found is used as the preferred<br/>
-attribution.<br/>
-<br/>
-Note that Supercite now honors the X-Attribution: mail field.  If<br/>
-present in the original message, the value of this field should always<br/>
-be used to select the most preferred attribution since it reflects how<br/>
-the original author would like to be distinguished.  It should be<br/>
-considered bad taste to put any attribution preference key before<br/>
-"x-attribution" in this list, except perhaps for "sc-lastchoice"<br/>
-(see below).<br/>
-<br/>
-Supercite remembers the last attribution used when reciting an already<br/>
-cited paragraph.  This attribution will always be saved with the<br/>
-"sc-lastchoice" key, which can be used in this list.  Note that the<br/>
-last choice is always reset after every call of `sc-cite-original'.<br/>
-<br/>
-Barring error conditions, the following preferences are always present<br/>
-in the attribution alist:<br/>
-<br/>
-"emailname"    -- email terminus name<br/>
-"initials"     -- initials of author<br/>
-"firstname"    -- first name of author<br/>
-"lastname"     -- last name of author<br/>
-"middlename-1" -- first middle name of author<br/>
-"middlename-2" -- second middle name of author<br/>
-...<br/>
-<br/>
-Middle name indexes can be any positive integer greater than 0,<br/>
-although it is unlikely that many authors will supply more than one<br/>
-middle name, if that many.  The string of all middle names is<br/>
-associated with the key "middlenames".<br/>
-<br/>
+<strong>sc-preferred-attribution-list</strong> is a variable defined in `<code>supercite.el</code>'.</br>
+Its value is <pre></br>
+("sc-lastchoice" "x-attribution" "firstname" "initials" "lastname")
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specifies what to use as the attribution string.</br>
+Supercite creates a list of possible attributions when it scans the</br>
+mail headers from the original message.  Each attribution choice is</br>
+associated with a key in an attribution alist.  Supercite tries to</br>
+pick a "preferred" attribution by matching the attribution alist</br>
+keys against the elements in `sc-preferred-attribution-list' in order.</br>
+The first non-empty string value found is used as the preferred</br>
+attribution.</br>
+</br>
+Note that Supercite now honors the X-Attribution: mail field.  If</br>
+present in the original message, the value of this field should always</br>
+be used to select the most preferred attribution since it reflects how</br>
+the original author would like to be distinguished.  It should be</br>
+considered bad taste to put any attribution preference key before</br>
+"x-attribution" in this list, except perhaps for "sc-lastchoice"</br>
+(see below).</br>
+</br>
+Supercite remembers the last attribution used when reciting an already</br>
+cited paragraph.  This attribution will always be saved with the</br>
+"sc-lastchoice" key, which can be used in this list.  Note that the</br>
+last choice is always reset after every call of `sc-cite-original'.</br>
+</br>
+Barring error conditions, the following preferences are always present</br>
+in the attribution alist:</br>
+</br>
+"emailname"    -- email terminus name</br>
+"initials"     -- initials of author</br>
+"firstname"    -- first name of author</br>
+"lastname"     -- last name of author</br>
+"middlename-1" -- first middle name of author</br>
+"middlename-2" -- second middle name of author</br>
+...</br>
+</br>
+Middle name indexes can be any positive integer greater than 0,</br>
+although it is unlikely that many authors will supply more than one</br>
+middle name, if that many.  The string of all middle names is</br>
+associated with the key "middlenames".</br>
+</br>
 You can customize this variable.

@@ -1,0 +1,18 @@
+<strong>org-icalendar-store-UID</strong> is a variable defined in `<code>ox-icalendar.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Non-nil means store any created UIDs in properties.</br>
+</br>
+The iCalendar standard requires that all entries have a unique identifier.</br>
+Org will create these identifiers as needed.  When this variable is non-nil,</br>
+the created UIDs will be stored in the ID property of the entry.  Then the</br>
+next time this entry is exported, it will be exported with the same UID,</br>
+superseding the previous form of it.  This is essential for</br>
+synchronization services.</br>
+</br>
+This variable is not turned on by default because we want to avoid creating</br>
+a property drawer in every entry if people are only playing with this feature,</br>
+or if they are only using it locally.</br>
+</br>
+You can customize this variable.

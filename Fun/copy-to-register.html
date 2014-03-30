@@ -1,10 +1,14 @@
-<strong>copy-to-register</strong> is an interactive compiled Lisp function in `<code>register.el</code>'.<br/>
-<br/>
-It is bound to C-x r x, C-x r s.<br/>
-<br/>
-(copy-to-register REGISTER START END &optional DELETE-FLAG)<br/>
-<br/>
-Copy region into register REGISTER.<br/>
-With prefix arg, delete as well.<br/>
-Called from program, takes four args: REGISTER, START, END and DELETE-FLAG.<br/>
-START and END are buffer positions indicating what to copy.
+<strong>copy-to-register</strong> is an interactive compiled Lisp function in `<code>register.el</code>'.</br>
+</br>
+It is bound to C-x r x, C-x r s.</br>
+</br>
+<code>(copy-to-register <u>REGISTER</u> <u>START</u> <u>END</u> <em>&optional</em> <u>DELETE-FLAG</u> <u>REGION</u></code>)</br>
+</br>
+Copy region into register <u>REGISTER</u>.</br>
+With prefix arg, delete as well.</br>
+Called from program, takes five args: <u>REGISTER</u>, <u>START</u>, <u>END</u>, <u>DELETE-FLAG</u>,</br>
+and <u>REGION</u>.  <u>START</u> and <u>END</u> are buffer positions indicating what to copy.</br>
+The optional argument <u>REGION</u> if non-nil, indicates that we're not just</br>
+copying some text between <u>START</u> and <u>END</u>, but we're copying the region.</br>
+</br>
+Interactively, reads the register using `register-read-with-preview'.

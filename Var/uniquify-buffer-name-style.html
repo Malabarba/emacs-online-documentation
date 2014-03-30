@@ -1,0 +1,21 @@
+<strong>uniquify-buffer-name-style</strong> is a variable defined in `<code>uniquify.el</code>'.</br>
+Its value is <pre>post-forward-angle-brackets</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, buffer names are uniquified with parts of directory name.</br>
+The value determines the buffer name style and is one of `forward',</br>
+`reverse', `post-forward', or `post-forward-angle-brackets'.</br>
+For example, files `/foo/bar/mumble/name' and `/baz/quux/mumble/name'</br>
+would have the following buffer names in the various styles:</br>
+  forward        bar/mumble/name  quux/mumble/name</br>
+  reverse        name\mumble\bar  name\mumble\quux</br>
+  post-forward   name|bar/mumble  name|quux/mumble</br>
+  post-forward-angle-brackets   name<bar/mumble>  name<quux/mumble></br>
+  nil            name  name<2></br>
+Of course, the "mumble" part may be stripped as well, depending on the setting</br>
+of `uniquify-strip-common-suffix'.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

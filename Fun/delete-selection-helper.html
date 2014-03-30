@@ -1,21 +1,21 @@
-<strong>delete-selection-helper</strong> is a compiled Lisp function in `<code>delsel.el</code>'.<br/>
-<br/>
-(delete-selection-helper TYPE)<br/>
-<br/>
-Delete selection according to TYPE:<br/>
- `yank'<br/>
-     For commands which do a yank; ensures the region about to be<br/>
-     deleted isn't yanked.<br/>
- `supersede'<br/>
-     Delete the active region and ignore the current command,<br/>
-     i.e. the command will just delete the region.<br/>
- `kill'<br/>
-     `kill-region' is used on the selection, rather than<br/>
-     `delete-region'.  (Text selected with the mouse will typically<br/>
-     be yankable anyhow.)<br/>
- t<br/>
-     The normal case: delete the active region prior to executing<br/>
-     the command which will insert replacement text.<br/>
- FUNCTION<br/>
-     For commands which need to dynamically determine this behaviour.<br/>
+<strong>delete-selection-helper</strong> is a compiled Lisp function in `<code>delsel.el</code>'.</br>
+</br>
+(delete-selection-helper <u>TYPE</u>)</br>
+</br>
+Delete selection according to <u>TYPE</u>:</br>
+ `yank'</br>
+     For commands which do a yank; ensures the region about to be</br>
+     deleted isn't yanked.</br>
+ `supersede'</br>
+     Delete the active region and ignore the current command,</br>
+     i.e. the command will just delete the region.</br>
+ `kill'</br>
+     `kill-region' is used on the selection, rather than</br>
+     `delete-region'.  (Text selected with the mouse will typically</br>
+     be yankable anyhow.)</br>
+ t</br>
+     The normal case: delete the active region prior to executing</br>
+     the command which will insert replacement text.</br>
+ FUNCTION</br>
+     For commands which need to dynamically determine this behavior.</br>
      FUNCTION should take no argument and return one of the above values or nil.

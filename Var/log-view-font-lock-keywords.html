@@ -1,19 +1,18 @@
-<strong>log-view-font-lock-keywords</strong> is a variable defined in `<code>log-view.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: ((eval \`<br/>
-       ((\, log-view-file-re)<br/>
-	(1<br/>
-	 (if<br/>
-	     (boundp 'cvs-filename-face)<br/>
-	     cvs-filename-face))<br/>
-	(0 log-view-file-face append)))<br/>
- (eval \`<br/>
-       ((\, log-view-message-re)<br/>
-	. log-view-message-face)))<br/>
-<br/>
+<strong>log-view-font-lock-keywords</strong> is a variable defined in `<code>log-view.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((eval \`
+       ((\, log-view-file-re)
+	(1
+	 (if
+	     (boundp 'cvs-filename-face)
+	     cvs-filename-face))
+	(0 log-view-file-face append)))
+ (eval \`
+       ((\, log-view-message-re)
+	. log-view-message-face)))
+</pre></br>

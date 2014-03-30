@@ -1,42 +1,42 @@
-<strong>mh-letter-menu</strong> is a variable defined in `<code>mh-letter.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Menu for MH-E letter mode.<br/>
-<br/>
-Value:<br/>
-(keymap "Letter"<br/>
-	(Send\ This\ Draft menu-item "Send This Draft" mh-send-letter)<br/>
-	(Split\ Current\ Line menu-item "Split Current Line" mh-open-line)<br/>
-	(Check\ Recipient menu-item "Check Recipient" mh-check-whom)<br/>
-	(Yank\ Current\ Message menu-item "Yank Current Message" mh-yank-cur-msg)<br/>
-	(Insert\ a\ Message\.\.\. menu-item "Insert a Message..." mh-insert-letter)<br/>
-	(Insert\ Signature menu-item "Insert Signature" mh-insert-signature)<br/>
-	(Encrypt/Sign\ Message menu-item "Encrypt/Sign Message"<br/>
-			       (keymap "Encrypt/Sign Message"<br/>
-				       (Sign\ Message menu-item "Sign Message" mh-mml-secure-message-sign :enable mh-pgp-support-flag)<br/>
-				       (Encrypt\ Message menu-item "Encrypt Message" mh-mml-secure-message-encrypt :enable mh-pgp-support-flag)<br/>
-				       (Sign+Encrypt\ Message menu-item "Sign+Encrypt Message" mh-mml-secure-message-signencrypt :enable mh-pgp-support-flag)<br/>
-				       (Disable\ Security menu-item "Disable Security" mh-mml-unsecure-message :enable mh-pgp-support-flag)<br/>
-				       (nil-7 menu-item "--")<br/>
-				       (nil menu-item "Security Method")<br/>
-				       (PGP\ \(MIME\) menu-item "PGP (MIME)" menu-function-344 :key-sequence nil :button<br/>
-						      (:radio equal mh-mml-method-default "pgpmime"))<br/>
-				       (PGP menu-item "PGP" menu-function-345 :key-sequence nil :button<br/>
-					    (:radio equal mh-mml-method-default "pgp"))<br/>
-				       (S/MIME menu-item "S/MIME" menu-function-346 :key-sequence nil :button<br/>
-					       (:radio equal mh-mml-method-default "smime"))<br/>
-				       (nil-7-9 menu-item "--")<br/>
-				       (Save\ Method\ as\ Default menu-item "Save Method as Default" menu-function-347 :key-sequence nil)))<br/>
-	(Compose\ Insertion\.\.\. menu-item "Compose Insertion..." mh-compose-insertion)<br/>
-	(Compose\ Compressed\ tar\ \(MH\)\.\.\. menu-item "Compose Compressed tar (MH)..." mh-mh-compose-external-compressed-tar)<br/>
-	(Compose\ Get\ File\ \(MH\)\.\.\. menu-item "Compose Get File (MH)..." mh-mh-compose-anon-ftp)<br/>
-	(Compose\ Forward\.\.\. menu-item "Compose Forward..." mh-compose-forward)<br/>
-	(Pull\ in\ All\ Compositions\ \(MH\) menu-item "Pull in All Compositions (MH)" mh-mh-to-mime :enable<br/>
-					     (mh-mh-directive-present-p))<br/>
-	(Pull\ in\ All\ Compositions\ \(MML\) menu-item "Pull in All Compositions (MML)" mh-mml-to-mime :enable<br/>
-					      (mh-mml-tag-present-p))<br/>
-	(Revert\ to\ Non-MIME\ Edit\ \(MH\) menu-item "Revert to Non-MIME Edit (MH)" mh-mh-to-mime-undo :enable<br/>
-					    (equal mh-compose-insertion 'mh))<br/>
-	(Kill\ This\ Draft menu-item "Kill This Draft" mh-fully-kill-draft))<br/>
-<br/>
+<strong>mh-letter-menu</strong> is a variable defined in `<code>mh-letter.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for MH-E letter mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Letter"
+	(Send\ This\ Draft menu-item "Send This Draft" mh-send-letter)
+	(Split\ Current\ Line menu-item "Split Current Line" mh-open-line)
+	(Check\ Recipient menu-item "Check Recipient" mh-check-whom)
+	(Yank\ Current\ Message menu-item "Yank Current Message" mh-yank-cur-msg)
+	(Insert\ a\ Message\.\.\. menu-item "Insert a Message..." mh-insert-letter)
+	(Insert\ Signature menu-item "Insert Signature" mh-insert-signature)
+	(Encrypt/Sign\ Message menu-item "Encrypt/Sign Message"
+			       (keymap "Encrypt/Sign Message"
+				       (Sign\ Message menu-item "Sign Message" mh-mml-secure-message-sign :enable mh-pgp-support-flag)
+				       (Encrypt\ Message menu-item "Encrypt Message" mh-mml-secure-message-encrypt :enable mh-pgp-support-flag)
+				       (Sign+Encrypt\ Message menu-item "Sign+Encrypt Message" mh-mml-secure-message-signencrypt :enable mh-pgp-support-flag)
+				       (Disable\ Security menu-item "Disable Security" mh-mml-unsecure-message :enable mh-pgp-support-flag)
+				       (nil menu-item "--")
+				       (nil-5 menu-item "Security Method")
+				       (PGP\ \(MIME\) menu-item "PGP (MIME)" menu-function-359 :key-sequence nil :button
+						      (:radio equal mh-mml-method-default "pgpmime"))
+				       (PGP menu-item "PGP" menu-function-360 :key-sequence nil :button
+					    (:radio equal mh-mml-method-default "pgp"))
+				       (S/MIME menu-item "S/MIME" menu-function-361 :key-sequence nil :button
+					       (:radio equal mh-mml-method-default "smime"))
+				       (nil-9 menu-item "--")
+				       (Save\ Method\ as\ Default menu-item "Save Method as Default" menu-function-362 :key-sequence nil)))
+	(Compose\ Insertion\.\.\. menu-item "Compose Insertion..." mh-compose-insertion)
+	(Compose\ Compressed\ tar\ \(MH\)\.\.\. menu-item "Compose Compressed tar (MH)..." mh-mh-compose-external-compressed-tar)
+	(Compose\ Get\ File\ \(MH\)\.\.\. menu-item "Compose Get File (MH)..." mh-mh-compose-anon-ftp)
+	(Compose\ Forward\.\.\. menu-item "Compose Forward..." mh-compose-forward)
+	(Pull\ in\ All\ Compositions\ \(MH\) menu-item "Pull in All Compositions (MH)" mh-mh-to-mime :enable
+					     (mh-mh-directive-present-p))
+	(Pull\ in\ All\ Compositions\ \(MML\) menu-item "Pull in All Compositions (MML)" mh-mml-to-mime :enable
+					      (mh-mml-tag-present-p))
+	(Revert\ to\ Non-MIME\ Edit\ \(MH\) menu-item "Revert to Non-MIME Edit (MH)" mh-mh-to-mime-undo :enable
+					    (equal mh-compose-insertion 'mh))
+	(Kill\ This\ Draft menu-item "Kill This Draft" mh-fully-kill-draft))
+</pre></br>

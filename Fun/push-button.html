@@ -1,15 +1,18 @@
-<strong>push-button</strong> is an interactive compiled Lisp function in `<code>button.el</code>'.<br/>
-<br/>
-(push-button &optional POS USE-MOUSE-ACTION)<br/>
-<br/>
-Perform the action specified by a button at location POS.<br/>
-POS may be either a buffer position or a mouse-event.  If<br/>
-USE-MOUSE-ACTION is non-nil, invoke the button's mouse-action<br/>
-instead of its normal action; if the button has no mouse-action,<br/>
-the normal action is used instead.  The action may be either a<br/>
-function to call or a marker to display.<br/>
-POS defaults to point, except when `push-button' is invoked<br/>
-interactively as the result of a mouse-event, in which case, the<br/>
-mouse event is used.<br/>
-If there's no button at POS, do nothing and return nil, otherwise<br/>
+<strong>push-button</strong> is an interactive compiled Lisp function in `<code>button.el</code>'.</br>
+</br>
+</br>
+(push-button &optional <u>POS</u> <u>USE-MOUSE-ACTION</u>)</br>
+</br>
+Perform the action specified by a button at location <u>POS</u>.</br>
+<u>POS</u> may be either a buffer position or a mouse-event.  If</br>
+<u>USE-MOUSE-ACTION</u> is non-nil, invoke the button's mouse-action</br>
+instead of its normal action; if the button has no mouse-action,</br>
+the normal action is used instead.  The action may be either a</br>
+function to call or a marker to display and is invoked using</br>
+`button-activate' (which see).</br>
+</br>
+<u>POS</u> defaults to point, except when `push-button' is invoked</br>
+interactively as the result of a mouse-event, in which case, the</br>
+mouse event is used.</br>
+If there's no button at <u>POS</u>, do nothing and return nil, otherwise</br>
 return t.

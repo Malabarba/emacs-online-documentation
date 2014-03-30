@@ -1,41 +1,41 @@
-<strong>reftex-insert-label-flags</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
-Its value is ("s" "sft")<br/>
-<br/>
-Documentation:<br/>
-Flags governing label insertion.  First flag DERIVE, second flag PROMPT.<br/>
-<br/>
-If DERIVE is t, RefTeX will try to derive a sensible label from context.<br/>
-A section label for example will be derived from the section heading.<br/>
-The conversion of the context to a valid label is governed by the<br/>
-specifications given in `reftex-derive-label-parameters'.<br/>
-If RefTeX fails to derive a label, it will prompt the user.<br/>
-If DERIVE is nil, the label generated will consist of the prefix and a<br/>
-unique number, like `eq:23'.<br/>
-<br/>
-If PROMPT is t, the user will be prompted for a label string.  The prompt will<br/>
-already contain the prefix, and (if DERIVE is t) a default label derived from<br/>
-context.  When PROMPT is nil, the default label will be inserted without<br/>
-query.<br/>
-<br/>
-So the combination of DERIVE and PROMPT controls label insertion.  Here is a<br/>
-table describing all four possibilities:<br/>
-<br/>
-DERIVE   PROMPT      ACTION<br/>
--------------------------------------------------------------------------<br/>
- nil     nil     Insert simple label, like eq:22 or sec:13.  No query.<br/>
- nil     t       Prompt for label.<br/>
- t       nil     Derive a label from context and insert without query.<br/>
- t       t       Derive a label from context and prompt for confirmation.<br/>
-<br/>
-Each flag may be set to t, nil, or a string of label type letters<br/>
-indicating the label types for which it should be true.  The strings work<br/>
-like character classes.<br/>
-Thus, the combination may be set differently for each label type.  The<br/>
-default settings "s" and "sft" mean: Derive section labels from headings<br/>
-(with confirmation).  Prompt for figure and table labels.  Use simple labels<br/>
-without confirmation for everything else.<br/>
-The available label types are: s (section), f (figure), t (table), i (item),<br/>
-e (equation), n (footnote), N (endnote), plus any definitions in<br/>
-`reftex-label-alist'.<br/>
-<br/>
+<strong>reftex-insert-label-flags</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+Its value is <pre>("s" "sft")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Flags governing label insertion.  First flag DERIVE, second flag PROMPT.</br>
+</br>
+If DERIVE is t, RefTeX will try to derive a sensible label from context.</br>
+A section label for example will be derived from the section heading.</br>
+The conversion of the context to a valid label is governed by the</br>
+specifications given in `reftex-derive-label-parameters'.</br>
+If RefTeX fails to derive a label, it will prompt the user.</br>
+If DERIVE is nil, the label generated will consist of the prefix and a</br>
+unique number, like `eq:23'.</br>
+</br>
+If PROMPT is t, the user will be prompted for a label string.  The prompt will</br>
+already contain the prefix, and (if DERIVE is t) a default label derived from</br>
+context.  When PROMPT is nil, the default label will be inserted without</br>
+query.</br>
+</br>
+So the combination of DERIVE and PROMPT controls label insertion.  Here is a</br>
+table describing all four possibilities:</br>
+</br>
+DERIVE   PROMPT      ACTION</br>
+-------------------------------------------------------------------------</br>
+ nil     nil     Insert simple label, like eq:22 or sec:13.  No query.</br>
+ nil     t       Prompt for label.</br>
+ t       nil     Derive a label from context and insert without query.</br>
+ t       t       Derive a label from context and prompt for confirmation.</br>
+</br>
+Each flag may be set to t, nil, or a string of label type letters</br>
+indicating the label types for which it should be true.  The strings work</br>
+like character classes.</br>
+Thus, the combination may be set differently for each label type.  The</br>
+default settings "s" and "sft" mean: Derive section labels from headings</br>
+(with confirmation).  Prompt for figure and table labels.  Use simple labels</br>
+without confirmation for everything else.</br>
+The available label types are: s (section), f (figure), t (table), i (item),</br>
+e (equation), n (footnote), N (endnote), plus any definitions in</br>
+`reftex-label-alist'.</br>
+</br>
 You can customize this variable.

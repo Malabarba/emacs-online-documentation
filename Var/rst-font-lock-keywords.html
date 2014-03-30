@@ -1,77 +1,76 @@
-<strong>rst-font-lock-keywords</strong> is a variable defined in `<code>rst.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keywords to highlight in rst mode.<br/>
-<br/>
-Value: (("^[	 ]*\\([-*+•‣⁃]\\(?:[	 ]+\\|$\\)\\)" 1 rst-block-face)<br/>
- ("^[	 ]*\\(\\(?:\\(?:[a-zA-Z]\\|[0-9]+\\|[IVXLCDMivxlcdm]+\\|#\\)\\.\\|(?\\(?:[a-zA-Z]\\|[0-9]+\\|[IVXLCDMivxlcdm]+\\|#\\))\\)\\(?:[	 ]+\\|$\\)\\)" 1 rst-block-face)<br/>
- ("^[	 ]*\\(:\\(?:[^:\n]\\|\\\\:\\)+:\\)\\(?:[	 ]+\\|$\\)" 1 rst-external-face)<br/>
- ("^[	 ]*\\(\\(?:\\(?:[-+/]\\|--\\)\\sw\\(?:-\\|\\sw\\)*\\(?:[ =]\\S +\\)?\\)\\(?:\\(?:,[	 ]\\)\\(?:\\(?:[-+/]\\|--\\)\\sw\\(?:-\\|\\sw\\)*\\(?:[ =]\\S +\\)?\\)\\)*\\)\\(?:$\\|[	 ]\\{2\\}\\)" 1 rst-block-face)<br/>
- ("^[	 ]*\\(|\\(?:[	 ]+\\|$\\)\\)[^|\n]*$" 1 rst-block-face)<br/>
- ("^[	 ]*\\(\\.\\.[	 ]+\\)\\(\\[[^]\n]+]\\)\\(?:[	 ]+\\|$\\)"<br/>
-  (1 rst-definition-face)<br/>
-  (2 rst-definition-face))<br/>
- ("^[	 ]*\\(\\.\\.[	 ]+\\)\\(\\(?:|\\(?:\\S \\|\\S \\(?:[^|\\\n]\\|\\\\.\\)\\{0,1000\\}[^	 |\\]\\)|[	 ]+\\)?\\)\\(\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\)::\\)\\(?:[	 ]+\\|$\\)"<br/>
-  (1 rst-directive-face)<br/>
-  (2 rst-definition-face)<br/>
-  (3 rst-directive-face))<br/>
- ("^[	 ]*\\(\\.\\.[	 ]+_\\(?:`\\(?:\\S \\|\\S \\(?:[^`\\\n]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\|\\(?:[^:\\\n]\\|\\\\.\\)+\\):\\)\\(?:[	 ]+\\|$\\)" 1 rst-definition-face)<br/>
- ("^[	 ]*\\(__\\)\\(?:[	 ]+\\|$\\)" 1 rst-definition-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\*\\*\\(?:\\S \\|\\S \\(?:[^*\\]\\|\\\\.\\)\\{0,1000\\}[^	 *\\]\\)\\*\\*\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-emphasis2-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\*\\(?:\\S \\|\\S \\(?:[^*\\]\\|\\\\.\\)\\{0,1000\\}[^	 *\\]\\)\\*\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-emphasis1-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(``\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)``\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-literal-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(_`\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-definition-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?:`\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\|\\sw\\(?:\\sw\\|-\\)+\\sw\\)__?\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-reference-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?::\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\):\\)?\\)\\(`\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\)\\(\\(?::\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\):\\)?\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)"<br/>
-  (1 rst-directive-face)<br/>
-  (2 rst-external-face)<br/>
-  (3 rst-directive-face))<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\[[^]\n]+]_\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-reference-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(|\\(?:\\S \\|\\S \\(?:[^|\\]\\|\\\\.\\)\\{0,1000\\}[^	 |\\]\\)|\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-reference-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?:acap\\|cid\\|data\\|dav\\|fax\\|file\\|ftp\\|gopher\\|http\\|https\\|imap\\|ldap\\|mailto\\|mid\\|modem\\|news\\|nfs\\|nntp\\|pop\\|prospero\\|rtsp\\|service\\|sip\\|tel\\|telnet\\|tip\\|urn\\|vemmi\\|wais\\):\\S +\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-definition-face)<br/>
- ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\)@\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\)\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-definition-face)<br/>
- ("^\\(\\([]!\"#$%&'()*+,./:;<=>?@[\\^_`{|}~-]\\)\\2\\{2,\\}\\)[	 ]*$"<br/>
-  (rst-font-lock-handle-adornment-matcher<br/>
-   (rst-font-lock-handle-adornment-pre-match-form<br/>
-    (match-string-no-properties 1)<br/>
-    (match-end 1))<br/>
-   nil<br/>
-   (1<br/>
-    (cdr<br/>
-     (assoc nil rst-adornment-faces-alist))<br/>
-    append t)<br/>
-   (2<br/>
-    (cdr<br/>
-     (assoc rst-font-lock-adornment-level rst-adornment-faces-alist))<br/>
-    append t)<br/>
-   (3<br/>
-    (cdr<br/>
-     (assoc nil rst-adornment-faces-alist))<br/>
-    append t)))<br/>
- ("^[	 ]*\\(\\.\\.[	 ]+\\)[^[|_\n]\\(?:[^:\n]\\|:\\(?:[^:\n]\\|$\\)\\)*$"<br/>
-  (1 rst-comment-face)<br/>
-  (rst-font-lock-find-unindented-line-match<br/>
-   (rst-font-lock-find-unindented-line-limit<br/>
-    (match-end 1))<br/>
-   nil<br/>
-   (0 rst-comment-face append)))<br/>
- ("^[	 ]*\\(\\.\\.\\)\\([	 ]*\\)$"<br/>
-  (1 rst-comment-face)<br/>
-  (2 rst-comment-face)<br/>
-  (rst-font-lock-find-unindented-line-match<br/>
-   (rst-font-lock-find-unindented-line-limit 'next)<br/>
-   nil<br/>
-   (0 rst-comment-face append)))<br/>
- ("^[	 ]*\\(\\(?:[^.\n]\\|\\.[^.\n]\\).*\\)?\\(::\\)$"<br/>
-  (2 rst-block-face)<br/>
-  (rst-font-lock-find-unindented-line-match<br/>
-   (rst-font-lock-find-unindented-line-limit t)<br/>
-   nil<br/>
-   (0 rst-literal-face append)))<br/>
- ("^[	 ]*\\(\\(?:>>>\\|\\.\\.\\.\\)\\)\\(.+\\)"<br/>
-  (1 rst-block-face)<br/>
-  (2 rst-literal-face)))<br/>
-<br/>
+<strong>rst-font-lock-keywords</strong> is a variable defined in `<code>rst.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keywords to highlight in rst mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^[	 ]*\\([-*+•‣⁃]\\(?:[	 ]+\\|$\\)\\)" 1 rst-block-face)
+ ("^[	 ]*\\(\\(?:\\(?:[a-zA-Z]\\|[0-9]+\\|[IVXLCDMivxlcdm]+\\|#\\)\\.\\|(?\\(?:[a-zA-Z]\\|[0-9]+\\|[IVXLCDMivxlcdm]+\\|#\\))\\)\\(?:[	 ]+\\|$\\)\\)" 1 rst-block-face)
+ ("^[	 ]*\\(:\\(?:[^:\n]\\|\\\\:\\)+:\\)\\(?:[	 ]+\\|$\\)" 1 rst-external-face)
+ ("^[	 ]*\\(\\(?:\\(?:[-+/]\\|--\\)\\sw\\(?:-\\|\\sw\\)*\\(?:[ =]\\S +\\)?\\)\\(?:\\(?:,[	 ]\\)\\(?:\\(?:[-+/]\\|--\\)\\sw\\(?:-\\|\\sw\\)*\\(?:[ =]\\S +\\)?\\)\\)*\\)\\(?:$\\|[	 ]\\{2\\}\\)" 1 rst-block-face)
+ ("^[	 ]*\\(|\\(?:[	 ]+\\|$\\)\\)[^|\n]*$" 1 rst-block-face)
+ ("^[	 ]*\\(\\.\\.[	 ]+\\)\\(\\[[^]\n]+]\\)\\(?:[	 ]+\\|$\\)"
+  (1 rst-definition-face)
+  (2 rst-definition-face))
+ ("^[	 ]*\\(\\.\\.[	 ]+\\)\\(\\(?:|\\(?:\\S \\|\\S \\(?:[^|\\\n]\\|\\\\.\\)\\{0,1000\\}[^	 |\\]\\)|[	 ]+\\)?\\)\\(\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\)::\\)\\(?:[	 ]+\\|$\\)"
+  (1 rst-directive-face)
+  (2 rst-definition-face)
+  (3 rst-directive-face))
+ ("^[	 ]*\\(\\.\\.[	 ]+_\\(?:`\\(?:\\S \\|\\S \\(?:[^`\\\n]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\|\\(?:[^:\\\n]\\|\\\\.\\)+\\):\\)\\(?:[	 ]+\\|$\\)" 1 rst-definition-face)
+ ("^[	 ]*\\(__\\)\\(?:[	 ]+\\|$\\)" 1 rst-definition-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\*\\*\\(?:\\S \\|\\S \\(?:[^*\\]\\|\\\\.\\)\\{0,1000\\}[^	 *\\]\\)\\*\\*\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-emphasis2-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\*\\(?:\\S \\|\\S \\(?:[^*\\]\\|\\\\.\\)\\{0,1000\\}[^	 *\\]\\)\\*\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-emphasis1-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(``\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)``\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-literal-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(_`\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-definition-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?:`\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\|\\sw\\(?:\\sw\\|-\\)+\\sw\\)__?\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-reference-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?::\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\):\\)?\\)\\(`\\(?:\\S \\|\\S \\(?:[^`\\]\\|\\\\.\\)\\{0,1000\\}[^	 `\\]\\)`\\)\\(\\(?::\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\):\\)?\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)"
+  (1 rst-directive-face)
+  (2 rst-external-face)
+  (3 rst-directive-face))
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\[[^]\n]+]_\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-reference-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(|\\(?:\\S \\|\\S \\(?:[^|\\]\\|\\\\.\\)\\{0,1000\\}[^	 |\\]\\)|\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-reference-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?:acap\\|cid\\|data\\|dav\\|fax\\|file\\|ftp\\|gopher\\|http\\|https\\|imap\\|ldap\\|mailto\\|mid\\|modem\\|news\\|nfs\\|nntp\\|pop\\|prospero\\|rtsp\\|service\\|sip\\|tel\\|telnet\\|tip\\|urn\\|vemmi\\|wais\\):\\S +\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-definition-face)
+ ("\\(?:^\\|[	 ]\\|[-'\"([{<‘“«’/:]\\)\\(\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\)@\\(?:\\sw+\\(?:[-+.:_]\\sw+\\)*\\)\\)\\(?:$\\|[	 ]\\|[]-'\")}>’”»/:.,;!?\\]\\)" 1 rst-definition-face)
+ ("^\\(\\([]!\"#$%&'()*+,./:;<=>?@[\\^_`{|}~-]\\)\\2\\{2,\\}\\)[	 ]*$"
+  (rst-font-lock-handle-adornment-matcher
+   (rst-font-lock-handle-adornment-pre-match-form
+    (match-string-no-properties 1)
+    (match-end 1))
+   nil
+   (1
+    (cdr
+     (assoc nil rst-adornment-faces-alist))
+    append t)
+   (2
+    (cdr
+     (assoc rst-font-lock-adornment-level rst-adornment-faces-alist))
+    append t)
+   (3
+    (cdr
+     (assoc nil rst-adornment-faces-alist))
+    append t)))
+ ("^[	 ]*\\(\\.\\.[	 ]+\\)[^[|_\n]\\(?:[^:\n]\\|:\\(?:[^:\n]\\|$\\)\\)*$"
+  (1 rst-comment-face)
+  (rst-font-lock-find-unindented-line-match
+   (rst-font-lock-find-unindented-line-limit
+    (match-end 1))
+   nil
+   (0 rst-comment-face append)))
+ ("^[	 ]*\\(\\.\\.\\)\\([	 ]*\\)$"
+  (1 rst-comment-face)
+  (2 rst-comment-face)
+  (rst-font-lock-find-unindented-line-match
+   (rst-font-lock-find-unindented-line-limit 'next)
+   nil
+   (0 rst-comment-face append)))
+ ("^[	 ]*\\(\\(?:[^.\n]\\|\\.[^.\n]\\).*\\)?\\(::\\)$"
+  (2 rst-block-face)
+  (rst-font-lock-find-unindented-line-match
+   (rst-font-lock-find-unindented-line-limit t)
+   nil
+   (0 rst-literal-face append)))
+ ("^[	 ]*\\(\\(?:>>>\\|\\.\\.\\.\\)\\)\\(.+\\)"
+  (1 rst-block-face)
+  (2 rst-literal-face)))
+</pre></br>

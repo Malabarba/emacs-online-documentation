@@ -1,17 +1,15 @@
-<strong>org-ctrl-c-ctrl-c-final-hook</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook for functions attaching themselves to `C-c C-c'.<br/>
-<br/>
-This can be used to add additional functionality to the C-c C-c<br/>
-key which executes context-dependent commands.  This hook is run<br/>
-after any other test, while `org-ctrl-c-ctrl-c-hook' is run<br/>
-before the first test.<br/>
-<br/>
-Each function will be called with no arguments.  The function<br/>
-must check if the context is appropriate for it to act.  If yes,<br/>
-it should do its thing and then return a non-nil value.  If the<br/>
+<strong>org-ctrl-c-ctrl-c-final-hook</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook for functions attaching themselves to `C-c C-c'.</br>
+</br>
+This can be used to add additional functionality to the C-c C-c</br>
+key which executes context-dependent commands.  This hook is run</br>
+after any other test, while `org-ctrl-c-ctrl-c-hook' is run</br>
+before the first test.</br>
+</br>
+Each function will be called with no arguments.  The function</br>
+must check if the context is appropriate for it to act.  If yes,</br>
+it should do its thing and then return a non-nil value.  If the</br>
 context is wrong, just do nothing and return nil.

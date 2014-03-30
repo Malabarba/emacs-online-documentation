@@ -1,0 +1,75 @@
+<strong>org-export-smart-quotes-alist</strong> is a variable defined in `<code>ox.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Smart quotes translations.</br>
+</br>
+Alist whose CAR is a language string and CDR is an alist with</br>
+quote type as key and a plist associating various encodings to</br>
+their translation as value.</br>
+</br>
+A quote type can be any symbol among `opening-double-quote',</br>
+`closing-double-quote', `opening-single-quote',</br>
+`closing-single-quote' and `apostrophe'.</br>
+</br>
+Valid encodings include `:utf-8', `:html', `:latex' and</br>
+`:texinfo'.</br>
+</br>
+If no translation is found, the quote character is left as-is.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("da"
+  (opening-double-quote :utf-8 "»" :html "&raquo;" :latex ">>" :texinfo "@guillemetright{}")
+  (closing-double-quote :utf-8 "«" :html "&laquo;" :latex "<<" :texinfo "@guillemetleft{}")
+  (opening-single-quote :utf-8 "›" :html "&rsaquo;" :latex "\\frq{}" :texinfo "@guilsinglright{}")
+  (closing-single-quote :utf-8 "‹" :html "&lsaquo;" :latex "\\flq{}" :texinfo "@guilsingleft{}")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("de"
+  (opening-double-quote :utf-8 "„" :html "&bdquo;" :latex "\"`" :texinfo "@quotedblbase{}")
+  (closing-double-quote :utf-8 "“" :html "&ldquo;" :latex "\"'" :texinfo "@quotedblleft{}")
+  (opening-single-quote :utf-8 "‚" :html "&sbquo;" :latex "\\glq{}" :texinfo "@quotesinglbase{}")
+  (closing-single-quote :utf-8 "‘" :html "&lsquo;" :latex "\\grq{}" :texinfo "@quoteleft{}")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("en"
+  (opening-double-quote :utf-8 "“" :html "&ldquo;" :latex "``" :texinfo "``")
+  (closing-double-quote :utf-8 "”" :html "&rdquo;" :latex "''" :texinfo "''")
+  (opening-single-quote :utf-8 "‘" :html "&lsquo;" :latex "`" :texinfo "`")
+  (closing-single-quote :utf-8 "’" :html "&rsquo;" :latex "'" :texinfo "'")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("es"
+  (opening-double-quote :utf-8 "«" :html "&laquo;" :latex "\\guillemotleft{}" :texinfo "@guillemetleft{}")
+  (closing-double-quote :utf-8 "»" :html "&raquo;" :latex "\\guillemotright{}" :texinfo "@guillemetright{}")
+  (opening-single-quote :utf-8 "“" :html "&ldquo;" :latex "``" :texinfo "``")
+  (closing-single-quote :utf-8 "”" :html "&rdquo;" :latex "''" :texinfo "''")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("fr"
+  (opening-double-quote :utf-8 "« " :html "&laquo;&nbsp;" :latex "\\og " :texinfo "@guillemetleft{}@tie{}")
+  (closing-double-quote :utf-8 " »" :html "&nbsp;&raquo;" :latex "\\fg{}" :texinfo "@tie{}@guillemetright{}")
+  (opening-single-quote :utf-8 "« " :html "&laquo;&nbsp;" :latex "\\og " :texinfo "@guillemetleft{}@tie{}")
+  (closing-single-quote :utf-8 " »" :html "&nbsp;&raquo;" :latex "\\fg{}" :texinfo "@tie{}@guillemetright{}")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("no"
+  (opening-double-quote :utf-8 "«" :html "&laquo;" :latex "\\guillemotleft{}" :texinfo "@guillemetleft{}")
+  (closing-double-quote :utf-8 "»" :html "&raquo;" :latex "\\guillemotright{}" :texinfo "@guillemetright{}")
+  (opening-single-quote :utf-8 "‘" :html "&lsquo;" :latex "`" :texinfo "`")
+  (closing-single-quote :utf-8 "’" :html "&rsquo;" :latex "'" :texinfo "'")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("nb"
+  (opening-double-quote :utf-8 "«" :html "&laquo;" :latex "\\guillemotleft{}" :texinfo "@guillemetleft{}")
+  (closing-double-quote :utf-8 "»" :html "&raquo;" :latex "\\guillemotright{}" :texinfo "@guillemetright{}")
+  (opening-single-quote :utf-8 "‘" :html "&lsquo;" :latex "`" :texinfo "`")
+  (closing-single-quote :utf-8 "’" :html "&rsquo;" :latex "'" :texinfo "'")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("nn"
+  (opening-double-quote :utf-8 "«" :html "&laquo;" :latex "\\guillemotleft{}" :texinfo "@guillemetleft{}")
+  (closing-double-quote :utf-8 "»" :html "&raquo;" :latex "\\guillemotright{}" :texinfo "@guillemetright{}")
+  (opening-single-quote :utf-8 "‘" :html "&lsquo;" :latex "`" :texinfo "`")
+  (closing-single-quote :utf-8 "’" :html "&rsquo;" :latex "'" :texinfo "'")
+  (apostrophe :utf-8 "’" :html "&rsquo;"))
+ ("sv"
+  (opening-double-quote :utf-8 "”" :html "&rdquo;" :latex "’’" :texinfo "’’")
+  (closing-double-quote :utf-8 "”" :html "&rdquo;" :latex "’’" :texinfo "’’")
+  (opening-single-quote :utf-8 "’" :html "&rsquo;" :latex "’" :texinfo "`")
+  (closing-single-quote :utf-8 "’" :html "&rsquo;" :latex "’" :texinfo "'")
+  (apostrophe :utf-8 "’" :html "&rsquo;")))
+</pre></br>

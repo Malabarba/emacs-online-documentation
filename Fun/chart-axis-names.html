@@ -1,5 +1,27 @@
-<strong>chart-axis-names</strong> is a Lisp function.<br/>
-<br/>
-(chart-axis-names NEWNAME &rest SLOTS)<br/>
-<br/>
-Create a new object with name NAME of class type chart-axis-names
+chart-axis-names is an  object constructor function in `chart.el'.</br>
+Creates an object of class chart-axis-names.</br>
+Create a new object with name NAME of class type chart-axis-names</br>
+</br>
+Class description:</br>
+chart-axis-names is a class in `chart.el'.</br>
+ Inherits from `chart-axis'.</br>
+</br>
+Class used to display an axis which represents different named items.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: name    default = "Generic Axis"</br>
+Slot: loweredge    default = t</br>
+Slot: name-face    default = (quote bold)</br>
+Slot: labels-face    default = (quote italic)</br>
+Slot: chart    default = nil</br>
+Slot: items    default = nil</br>
+Specialized Methods:</br>
+</br>
+`chart-axis-draw' :PRIMARY 1537</br>
+Draw axis information based upon A range to be spread along the edge.</br>
+Optional argument DIR is the direction of the chart.</br>
+Optional arguments MARGIN, ZONE, START and END specify boundaries of the drawing.</br>
+</br>
+<code>(fn A <em>&optional</em> DIR MARGIN ZONE START END</code>)</br>
+</br>

@@ -1,16 +1,17 @@
-<strong>semantic-lex-symbol-or-keyword</strong> is a variable defined in `<code>lex.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Detect and create symbol and keyword tokens.<br/>
-<br/>
-Value: ((looking-at "\\(\\sw\\|\\s_\\)+")<br/>
- (semantic-lex-push-token<br/>
-  (semantic-lex-token<br/>
-   (or<br/>
-    (semantic-lex-keyword-p<br/>
-     (match-string 0))<br/>
-    'symbol)<br/>
-   (match-beginning 0)<br/>
-   (match-end 0))))<br/>
-<br/>
+<strong>semantic-lex-symbol-or-keyword</strong> is a variable defined in `<code>lex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Detect and create symbol and keyword tokens.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((looking-at "\\(\\sw\\|\\s_\\)+")
+ (semantic-lex-push-token
+  (semantic-lex-token
+   (or
+    (semantic-lex-keyword-p
+     (match-string 0))
+    'symbol)
+   (match-beginning 0)
+   (match-end 0))))
+</pre></br>

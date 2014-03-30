@@ -1,12 +1,12 @@
-<strong>glyph-table</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Table defining how to output a glyph code to the frame.<br/>
-If not nil, this is a vector indexed by glyph code to define the glyph.<br/>
-Each element can be:<br/>
- integer: a glyph code which this glyph is an alias for.<br/>
- string: output this glyph using that string (not impl. in X windows).<br/>
- nil: this glyph mod 524288 is the code of a character to output,<br/>
-    and this glyph / 524288 is the face number (see `face-id') to use<br/>
+<strong>glyph-table</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Table defining how to output a glyph code to the frame.</br>
+If not nil, this is a vector indexed by glyph code to define the glyph.</br>
+Each element can be:</br>
+ integer: a glyph code which this glyph is an alias for.</br>
+ string: output this glyph using that string (not impl. in X windows).</br>
+ nil: this glyph mod 524288 is the code of a character to output,</br>
+    and this glyph / 524288 is the face number (see `face-id') to use</br>
     while outputting it.

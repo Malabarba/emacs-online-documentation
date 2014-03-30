@@ -1,22 +1,23 @@
-<strong>eshell-interpreter-alist</strong> is a variable defined in `<code>esh-ext.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-An alist defining interpreter substitutions.<br/>
-Each member is a cons cell of the form:<br/>
-<br/>
-  (MATCH . INTERPRETER)<br/>
-<br/>
-MATCH should be a regexp, which is matched against the command name,<br/>
-or a function.  If either returns a non-nil value, then INTERPRETER<br/>
-will be used for that command.<br/>
-<br/>
-If INTERPRETER is a string, it will be called as the command name,<br/>
-with the original command name passed as the first argument, with all<br/>
-subsequent arguments following.  If INTERPRETER is a function, it will<br/>
-be called with all of those arguments.  Note that interpreter<br/>
-functions should throw `eshell-replace-command' with the alternate<br/>
-command form, or they should return a value compatible with the<br/>
-possible return values of `eshell-external-command', which see.<br/>
-<br/>
+<strong>eshell-interpreter-alist</strong> is a variable defined in `<code>esh-ext.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+An alist defining interpreter substitutions.</br>
+Each member is a cons cell of the form:</br>
+</br>
+  (MATCH . INTERPRETER)</br>
+</br>
+MATCH should be a regexp, which is matched against the command</br>
+name, or a function of arity 2 receiving the COMMAND and its</br>
+ARGS (a list).  If either returns a non-nil value, then</br>
+INTERPRETER will be used for that command.</br>
+</br>
+If INTERPRETER is a string, it will be called as the command name,</br>
+with the original command name passed as the first argument, with all</br>
+subsequent arguments following.  If INTERPRETER is a function, it will</br>
+be called with all of those arguments.  Note that interpreter</br>
+functions should throw `eshell-replace-command' with the alternate</br>
+command form, or they should return a value compatible with the</br>
+possible return values of `eshell-external-command', which see.</br>
+</br>
 You can customize this variable.

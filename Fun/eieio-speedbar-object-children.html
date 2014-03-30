@@ -1,9 +1,33 @@
-<strong>eieio-speedbar-object-children</strong> is a Lisp function in `<code>eieio-speedbar.el</code>'.<br/>
-<br/>
-(eieio-speedbar-object-children &rest LOCAL-ARGS)<br/>
-<br/>
-Return a list of children to be displayed in speedbar.<br/>
-If the return value is a list of OBJECTs, then those objects are<br/>
-queried for details.  If the return list is made of strings,<br/>
-then this object will be queried for the details needed<br/>
-to create a speedbar button.
+<strong>eieio-speedbar-object-children</strong> is a Lisp function in `<code>eieio-speedbar.el</code>'.</br>
+</br>
+(eieio-speedbar-object-children &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Return a list of children to be displayed in speedbar.</br>
+If the return value is a list of OBJECTs, then those objects are</br>
+queried for details.  If the return list is made of strings,</br>
+then this object will be queried for the details needed</br>
+to create a speedbar button.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-speedbar' :PRIMARY (object)</br>
+Return a list of children to be displayed in speedbar.</br>
+If the return value is a list of OBJECTs, then those objects are</br>
+queried for details.  If the return list is made of strings,</br>
+then this object will be queried for the details needed</br>
+to create a speedbar button.</br>
+</br>
+Defined in `eieio-speedbar.el'</br>
+</br>
+`ede-project' :PRIMARY (this)</br>
+Return the list of speedbar display children for THIS.</br>
+</br>
+Defined in `speedbar.el'</br>
+</br>
+`ede-target' :PRIMARY (this)</br>
+Return the list of speedbar display children for THIS.</br>
+</br>
+Defined in `speedbar.el'</br>
+</br>

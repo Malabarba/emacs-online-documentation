@@ -1,34 +1,35 @@
-<strong>capitalized-words-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>cap-words.el</code>'.<br/>
-<br/>
-(capitalized-words-mode &optional ARG)<br/>
-<br/>
-Toggle Capitalized Words mode.<br/>
-With a prefix argument ARG, enable Capitalized Words mode if ARG<br/>
-is positive, and disable it otherwise.  If called from Lisp,<br/>
-enable the mode if ARG is omitted or nil.<br/>
-<br/>
-Capitalized Words mode is a buffer-local minor mode.  When<br/>
-enabled, a word boundary occurs immediately before an uppercase<br/>
-letter in a symbol.  This is in addition to all the normal<br/>
-boundaries given by the syntax and category tables.  There is no<br/>
-restriction to ASCII.<br/>
-<br/>
-E.g. the beginning of words in the following identifier are as marked:<br/>
-<br/>
-  capitalizedWorDD<br/>
-  ^          ^  ^^<br/>
-<br/>
-Note that these word boundaries only apply for word motion and<br/>
-marking commands such as M-f.  This mode does not affect word<br/>
-boundaries found by regexp matching (`\>', `\w' &c).<br/>
-<br/>
-This style of identifiers is common in environments like Java ones,<br/>
-where underscores aren't trendy enough.  Capitalization rules are<br/>
-sometimes part of the language, e.g. Haskell, which may thus encourage<br/>
-such a style.  It is appropriate to add `capitalized-words-mode' to<br/>
-the mode hook for programming language modes in which you encounter<br/>
-variables like this, e.g. `java-mode-hook'.  It's unlikely to cause<br/>
-trouble if such identifiers aren't used.<br/>
-<br/>
-See also `glasses-mode' and `studlify-word'.<br/>
+<strong>capitalized-words-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>cap-words.el</code>'.</br>
+</br>
+</br>
+(capitalized-words-mode &optional <u>ARG</u>)</br>
+</br>
+Toggle Capitalized Words mode.</br>
+With a prefix argument <u>ARG</u>, enable Capitalized Words mode if <u>ARG</u></br>
+is positive, and disable it otherwise.  If called from Lisp,</br>
+enable the mode if <u>ARG</u> is omitted or nil.</br>
+</br>
+Capitalized Words mode is a buffer-local minor mode.  When</br>
+enabled, a word boundary occurs immediately before an uppercase</br>
+letter in a symbol.  This is in addition to all the normal</br>
+boundaries given by the syntax and category tables.  There is no</br>
+restriction to ASCII.</br>
+</br>
+E.g. the beginning of words in the following identifier are as marked:</br>
+</br>
+  capitalizedWorDD</br>
+  ^          ^  ^^</br>
+</br>
+Note that these word boundaries only apply for word motion and</br>
+marking commands such as M-f.  This mode does not affect word</br>
+boundaries found by regexp matching (`\>', `\w' &c).</br>
+</br>
+This style of identifiers is common in environments like Java ones,</br>
+where underscores aren't trendy enough.  Capitalization rules are</br>
+sometimes part of the language, e.g. Haskell, which may thus encourage</br>
+such a style.  It is appropriate to add `capitalized-words-mode' to</br>
+the mode hook for programming language modes in which you encounter</br>
+variables like this, e.g. `java-mode-hook'.  It's unlikely to cause</br>
+trouble if such identifiers aren't used.</br>
+</br>
+See also `glasses-mode' and `studlify-word'.</br>
 Obsoletes `c-forward-into-nomenclature'.

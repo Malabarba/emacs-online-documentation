@@ -1,148 +1,149 @@
-<strong>ps-font-info-database</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Font info database.<br/>
-Each element comprises: font family (the key), name, bold, italic, bold-italic,<br/>
-reference size, line height, space width, average character width.<br/>
-To get the info for another specific font (say Helvetica), do the following:<br/>
-- create a new buffer<br/>
-- generate the PostScript image to a file (C-u M-x ps-print-buffer)<br/>
-- open this file and delete the leading `%' (which is the PostScript comment<br/>
-  character) from the line<br/>
-	   `% 3 cm 20 cm moveto  10/Courier ReportFontInfo  showpage'<br/>
-  to get the line<br/>
-	   `3 cm 20 cm moveto  10/Helvetica ReportFontInfo  showpage'<br/>
-- add the values to `ps-font-info-database'.<br/>
-You can get all the fonts of YOUR printer using `ReportAllFontInfo'.<br/>
-<br/>
-Note also that ps-print DOESN'T download any font to your printer, instead it<br/>
-uses the fonts resident in your printer.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 20 of Emacs.<br/>
-<br/>
-<br/>
-Value: ((Courier<br/>
-  (fonts<br/>
-   (normal . "Courier")<br/>
-   (bold . "Courier-Bold")<br/>
-   (italic . "Courier-Oblique")<br/>
-   (bold-italic . "Courier-BoldOblique"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 10.55)<br/>
-  (space-width . 6.0)<br/>
-  (avg-char-width . 6.0))<br/>
- (Helvetica<br/>
-  (fonts<br/>
-   (normal . "Helvetica")<br/>
-   (bold . "Helvetica-Bold")<br/>
-   (italic . "Helvetica-Oblique")<br/>
-   (bold-italic . "Helvetica-BoldOblique"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.56)<br/>
-  (space-width . 2.78)<br/>
-  (avg-char-width . 5.09243))<br/>
- (Times<br/>
-  (fonts<br/>
-   (normal . "Times-Roman")<br/>
-   (bold . "Times-Bold")<br/>
-   (italic . "Times-Italic")<br/>
-   (bold-italic . "Times-BoldItalic"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.0)<br/>
-  (space-width . 2.5)<br/>
-  (avg-char-width . 4.71432))<br/>
- (Palatino<br/>
-  (fonts<br/>
-   (normal . "Palatino-Roman")<br/>
-   (bold . "Palatino-Bold")<br/>
-   (italic . "Palatino-Italic")<br/>
-   (bold-italic . "Palatino-BoldItalic"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 12.1)<br/>
-  (space-width . 2.5)<br/>
-  (avg-char-width . 5.08676))<br/>
- (Helvetica-Narrow<br/>
-  (fonts<br/>
-   (normal . "Helvetica-Narrow")<br/>
-   (bold . "Helvetica-Narrow-Bold")<br/>
-   (italic . "Helvetica-Narrow-Oblique")<br/>
-   (bold-italic . "Helvetica-Narrow-BoldOblique"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.56)<br/>
-  (space-width . 2.2796)<br/>
-  (avg-char-width . 4.17579))<br/>
- (NewCenturySchlbk<br/>
-  (fonts<br/>
-   (normal . "NewCenturySchlbk-Roman")<br/>
-   (bold . "NewCenturySchlbk-Bold")<br/>
-   (italic . "NewCenturySchlbk-Italic")<br/>
-   (bold-italic . "NewCenturySchlbk-BoldItalic"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 12.15)<br/>
-  (space-width . 2.78)<br/>
-  (avg-char-width . 5.31162))<br/>
- (AvantGarde-Book<br/>
-  (fonts<br/>
-   (normal . "AvantGarde-Book")<br/>
-   (italic . "AvantGarde-BookOblique"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.77)<br/>
-  (space-width . 2.77)<br/>
-  (avg-char-width . 5.45189))<br/>
- (AvantGarde-Demi<br/>
-  (fonts<br/>
-   (normal . "AvantGarde-Demi")<br/>
-   (italic . "AvantGarde-DemiOblique"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 12.72)<br/>
-  (space-width . 2.8)<br/>
-  (avg-char-width . 5.51351))<br/>
- (Bookman-Demi<br/>
-  (fonts<br/>
-   (normal . "Bookman-Demi")<br/>
-   (italic . "Bookman-DemiItalic"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.77)<br/>
-  (space-width . 3.4)<br/>
-  (avg-char-width . 6.05946))<br/>
- (Bookman-Light<br/>
-  (fonts<br/>
-   (normal . "Bookman-Light")<br/>
-   (italic . "Bookman-LightItalic"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.79)<br/>
-  (space-width . 3.2)<br/>
-  (avg-char-width . 5.67027))<br/>
- (Symbol<br/>
-  (fonts<br/>
-   (normal . "Symbol"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 13.03)<br/>
-  (space-width . 2.5)<br/>
-  (avg-char-width . 3.24324))<br/>
- (Zapf-Dingbats<br/>
-  (fonts<br/>
-   (normal . "Zapf-Dingbats"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 9.63)<br/>
-  (space-width . 2.78)<br/>
-  (avg-char-width . 2.78))<br/>
- (ZapfChancery-MediumItalic<br/>
-  (fonts<br/>
-   (normal . "ZapfChancery-MediumItalic"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.45)<br/>
-  (space-width . 2.2)<br/>
-  (avg-char-width . 4.10811))<br/>
- (Zapf-Chancery-MediumItalic<br/>
-  (fonts<br/>
-   (normal . "ZapfChancery-MediumItalic"))<br/>
-  (size . 10.0)<br/>
-  (line-height . 11.45)<br/>
-  (space-width . 2.2)<br/>
-  (avg-char-width . 4.10811)))<br/>
-<br/>
+<strong>ps-font-info-database</strong> is a variable defined in `<code>ps-print.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Font info database.</br>
+Each element comprises: font family (the key), name, bold, italic, bold-italic,</br>
+reference size, line height, space width, average character width.</br>
+To get the info for another specific font (say Helvetica), do the following:</br>
+- create a new buffer</br>
+- generate the PostScript image to a file (C-u M-x ps-print-buffer)</br>
+- open this file and delete the leading `%' (which is the PostScript comment</br>
+  character) from the line</br>
+	   `% 3 cm 20 cm moveto  10/Courier ReportFontInfo  showpage'</br>
+  to get the line</br>
+	   `3 cm 20 cm moveto  10/Helvetica ReportFontInfo  showpage'</br>
+- add the values to `ps-font-info-database'.</br>
+You can get all the fonts of YOUR printer using `ReportAllFontInfo'.</br>
+</br>
+Note also that ps-print DOESN'T download any font to your printer, instead it</br>
+uses the fonts resident in your printer.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 20 of Emacs.
+</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((Courier
+  (fonts
+   (normal . "Courier")
+   (bold . "Courier-Bold")
+   (italic . "Courier-Oblique")
+   (bold-italic . "Courier-BoldOblique"))
+  (size . 10.0)
+  (line-height . 10.55)
+  (space-width . 6.0)
+  (avg-char-width . 6.0))
+ (Helvetica
+  (fonts
+   (normal . "Helvetica")
+   (bold . "Helvetica-Bold")
+   (italic . "Helvetica-Oblique")
+   (bold-italic . "Helvetica-BoldOblique"))
+  (size . 10.0)
+  (line-height . 11.56)
+  (space-width . 2.78)
+  (avg-char-width . 5.09243))
+ (Times
+  (fonts
+   (normal . "Times-Roman")
+   (bold . "Times-Bold")
+   (italic . "Times-Italic")
+   (bold-italic . "Times-BoldItalic"))
+  (size . 10.0)
+  (line-height . 11.0)
+  (space-width . 2.5)
+  (avg-char-width . 4.71432))
+ (Palatino
+  (fonts
+   (normal . "Palatino-Roman")
+   (bold . "Palatino-Bold")
+   (italic . "Palatino-Italic")
+   (bold-italic . "Palatino-BoldItalic"))
+  (size . 10.0)
+  (line-height . 12.1)
+  (space-width . 2.5)
+  (avg-char-width . 5.08676))
+ (Helvetica-Narrow
+  (fonts
+   (normal . "Helvetica-Narrow")
+   (bold . "Helvetica-Narrow-Bold")
+   (italic . "Helvetica-Narrow-Oblique")
+   (bold-italic . "Helvetica-Narrow-BoldOblique"))
+  (size . 10.0)
+  (line-height . 11.56)
+  (space-width . 2.2796)
+  (avg-char-width . 4.17579))
+ (NewCenturySchlbk
+  (fonts
+   (normal . "NewCenturySchlbk-Roman")
+   (bold . "NewCenturySchlbk-Bold")
+   (italic . "NewCenturySchlbk-Italic")
+   (bold-italic . "NewCenturySchlbk-BoldItalic"))
+  (size . 10.0)
+  (line-height . 12.15)
+  (space-width . 2.78)
+  (avg-char-width . 5.31162))
+ (AvantGarde-Book
+  (fonts
+   (normal . "AvantGarde-Book")
+   (italic . "AvantGarde-BookOblique"))
+  (size . 10.0)
+  (line-height . 11.77)
+  (space-width . 2.77)
+  (avg-char-width . 5.45189))
+ (AvantGarde-Demi
+  (fonts
+   (normal . "AvantGarde-Demi")
+   (italic . "AvantGarde-DemiOblique"))
+  (size . 10.0)
+  (line-height . 12.72)
+  (space-width . 2.8)
+  (avg-char-width . 5.51351))
+ (Bookman-Demi
+  (fonts
+   (normal . "Bookman-Demi")
+   (italic . "Bookman-DemiItalic"))
+  (size . 10.0)
+  (line-height . 11.77)
+  (space-width . 3.4)
+  (avg-char-width . 6.05946))
+ (Bookman-Light
+  (fonts
+   (normal . "Bookman-Light")
+   (italic . "Bookman-LightItalic"))
+  (size . 10.0)
+  (line-height . 11.79)
+  (space-width . 3.2)
+  (avg-char-width . 5.67027))
+ (Symbol
+  (fonts
+   (normal . "Symbol"))
+  (size . 10.0)
+  (line-height . 13.03)
+  (space-width . 2.5)
+  (avg-char-width . 3.24324))
+ (Zapf-Dingbats
+  (fonts
+   (normal . "Zapf-Dingbats"))
+  (size . 10.0)
+  (line-height . 9.63)
+  (space-width . 2.78)
+  (avg-char-width . 2.78))
+ (ZapfChancery-MediumItalic
+  (fonts
+   (normal . "ZapfChancery-MediumItalic"))
+  (size . 10.0)
+  (line-height . 11.45)
+  (space-width . 2.2)
+  (avg-char-width . 4.10811))
+ (Zapf-Chancery-MediumItalic
+  (fonts
+   (normal . "ZapfChancery-MediumItalic"))
+  (size . 10.0)
+  (line-height . 11.45)
+  (space-width . 2.2)
+  (avg-char-width . 4.10811)))
+</pre></br>

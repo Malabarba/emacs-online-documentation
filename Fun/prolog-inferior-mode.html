@@ -1,53 +1,54 @@
-<strong>prolog-inferior-mode</strong> is an interactive compiled Lisp function in `<code>prolog.el</code>'.<br/>
-<br/>
-(prolog-inferior-mode)<br/>
-<br/>
-Parent mode: `comint-mode'.<br/>
-<br/>
-Major mode for interacting with an inferior Prolog process.<br/>
-<br/>
-The following commands are available:<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-<remap>		Prefix Command<br/>
-<br/>
-<remap> <self-insert-command>	prolog-inferior-self-insert-command<br/>
-<br/>
-C-c C-d		prolog-debug-on<br/>
-C-c RET		run-prolog<br/>
-C-c C-t		prolog-trace-on<br/>
-C-c C-z		prolog-zip-on<br/>
-C-c /		prolog-help-apropos<br/>
-C-c ?		prolog-help-on-predicate<br/>
-<br/>
-<br/>
-<br/>
-Entry to this mode calls the value of `prolog-mode-hook' with no arguments,<br/>
-if that value is non-nil.  Likewise with the value of `comint-mode-hook'.<br/>
-`prolog-mode-hook' is called after `comint-mode-hook'.<br/>
-<br/>
-You can send text to the inferior Prolog from other buffers<br/>
-using the commands `send-region', `send-string' and M-x prolog-consult-region.<br/>
-<br/>
-Commands:<br/>
-Tab indents for Prolog; with argument, shifts rest<br/>
- of expression rigidly with the current line.<br/>
-Paragraphs are separated only by blank lines and '%%'. '%'s start comments.<br/>
-<br/>
-Return at end of buffer sends line as input.<br/>
-Return not at end copies rest of line to end and sends it.<br/>
-M-x comint-delchar-or-maybe-eof sends end-of-file as input.<br/>
-M-x comint-kill-input and M-DEL are kill commands,<br/>
-imitating normal Unix input editing.<br/>
-M-x comint-interrupt-subjob interrupts the shell or its current subjob if any.<br/>
-M-x comint-stop-subjob stops, likewise.<br/>
-M-x comint-quit-subjob sends quit signal, likewise.<br/>
-<br/>
-To find out what version of Prolog mode you are running, enter<br/>
-`M-x prolog-mode-version'.<br/>
-<br/>
-In addition to any hooks its parent mode `comint-mode' might have run,<br/>
-this mode runs the hook `prolog-inferior-mode-hook', as the final step<br/>
+<strong>prolog-inferior-mode</strong> is an interactive compiled Lisp function in `<code>prolog.el</code>'.</br>
+</br>
+</br>
+(prolog-inferior-mode)</br>
+</br>
+Parent mode: `comint-mode'.</br>
+</br>
+Major mode for interacting with an inferior Prolog process.</br>
+</br>
+The following commands are available:</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+&lt;remap>		Prefix Command</br>
+</br>
+&lt;remap> &lt;self-insert-command>	prolog-inferior-self-insert-command</br>
+</br>
+C-c C-d		prolog-debug-on</br>
+C-c RET		run-prolog</br>
+C-c C-t		prolog-trace-on</br>
+C-c C-z		prolog-zip-on</br>
+C-c /		prolog-help-apropos</br>
+C-c ?		prolog-help-on-predicate</br>
+</br>
+</br>
+</br>
+Entry to this mode calls the value of `prolog-mode-hook' with no arguments,</br>
+if that value is non-nil.  Likewise with the value of `comint-mode-hook'.</br>
+`prolog-mode-hook' is called after `comint-mode-hook'.</br>
+</br>
+You can send text to the inferior Prolog from other buffers</br>
+using the commands `send-region', `send-string' and M-x prolog-consult-region.</br>
+</br>
+Commands:</br>
+Tab indents for Prolog; with argument, shifts rest</br>
+ of expression rigidly with the current line.</br>
+Paragraphs are separated only by blank lines and '%%'. '%'s start comments.</br>
+</br>
+Return at end of buffer sends line as input.</br>
+Return not at end copies rest of line to end and sends it.</br>
+M-x comint-delchar-or-maybe-eof sends end-of-file as input.</br>
+M-x comint-kill-input and M-DEL are kill commands,</br>
+imitating normal Unix input editing.</br>
+M-x comint-interrupt-subjob interrupts the shell or its current subjob if any.</br>
+M-x comint-stop-subjob stops, likewise.</br>
+M-x comint-quit-subjob sends quit signal, likewise.</br>
+</br>
+To find out what version of Prolog mode you are running, enter</br>
+`M-x prolog-mode-version'.</br>
+</br>
+In addition to any hooks its parent mode `comint-mode' might have run,</br>
+this mode runs the hook `prolog-inferior-mode-hook', as the final step</br>
 during initialization.

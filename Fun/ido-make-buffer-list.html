@@ -1,5 +1,10 @@
-<strong>ido-make-buffer-list</strong> is a compiled Lisp function in `<code>ido.el</code>'.<br/>
-<br/>
-(ido-make-buffer-list DEFAULT)<br/>
-<br/>
-Not documented.
+<strong>ido-make-buffer-list</strong> is a compiled Lisp function in `<code>ido.el</code>'.</br>
+</br>
+(ido-make-buffer-list <u>DEFAULT</u>)</br>
+</br>
+Return the current list of buffers.</br>
+Currently visible buffers are put at the end of the list.</br>
+The hook `ido-make-buffer-list-hook' is run after the list has been</br>
+created to allow the user to further modify the order of the buffer names</br>
+in this list.  If <u>DEFAULT</u> is non-nil, and corresponds to an existing buffer,</br>
+it is put to the start of the list.

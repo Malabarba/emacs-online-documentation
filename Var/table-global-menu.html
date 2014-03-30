@@ -1,80 +1,79 @@
-<strong>table-global-menu</strong> is a variable defined in `<code>table.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: ("Table"<br/>
- ("Insert"<br/>
-  ["a Table..." table-insert :active<br/>
-   (and<br/>
-    (not buffer-read-only)<br/>
-    (not<br/>
-     (table--probe-cell)))<br/>
-   :help "Insert a text based table at point"]<br/>
-  ["Row" table-insert-row :active<br/>
-   (table--row-column-insertion-point-p)<br/>
-   :help "Insert row(s) of cells in table"]<br/>
-  ["Column" table-insert-column :active<br/>
-   (table--row-column-insertion-point-p 'column)<br/>
-   :help "Insert column(s) of cells in table"])<br/>
- "----"<br/>
- ("Recognize"<br/>
-  ["in Buffer" table-recognize :active t :help "Recognize all tables in the current buffer"]<br/>
-  ["in Region" table-recognize-region :active<br/>
-   (and mark-active<br/>
-	(not<br/>
-	 (eq<br/>
-	  (mark t)<br/>
-	  (point))))<br/>
-   :help "Recognize all tables in the current region"]<br/>
-  ["a Table" table-recognize-table :active<br/>
-   (table--probe-cell)<br/>
-   :help "Recognize a table at point"]<br/>
-  ["a Cell" table-recognize-cell :active<br/>
-   (let<br/>
-       ((cell<br/>
-	 (table--probe-cell)))<br/>
-     (and cell<br/>
-	  (null<br/>
-	   (table--at-cell-p<br/>
-	    (car cell)))))<br/>
-   :help "Recognize a cell at point"])<br/>
- ("Unrecognize"<br/>
-  ["in Buffer" table-unrecognize :active t :help "Unrecognize all tables in the current buffer"]<br/>
-  ["in Region" table-unrecognize-region :active<br/>
-   (and mark-active<br/>
-	(not<br/>
-	 (eq<br/>
-	  (mark t)<br/>
-	  (point))))<br/>
-   :help "Unrecognize all tables in the current region"]<br/>
-  ["a Table" table-unrecognize-table :active<br/>
-   (table--probe-cell)<br/>
-   :help "Unrecognize the current table"]<br/>
-  ["a Cell" table-unrecognize-cell :active<br/>
-   (let<br/>
-       ((cell<br/>
-	 (table--probe-cell)))<br/>
-     (and cell<br/>
-	  (table--at-cell-p<br/>
-	   (car cell))))<br/>
-   :help "Unrecognize the current cell"])<br/>
- "----"<br/>
- ["Capture Region" table-capture :active<br/>
-  (and<br/>
-   (not buffer-read-only)<br/>
-   mark-active<br/>
-   (not<br/>
-    (eq<br/>
-     (mark t)<br/>
-     (point)))<br/>
-   (not<br/>
-    (table--probe-cell)))<br/>
-  :help "Capture text in the current region as a table"]<br/>
- ["Release" table-release :active<br/>
-  (table--editable-cell-p)<br/>
-  :help "Release the current table as plain text"])<br/>
-<br/>
+<strong>table-global-menu</strong> is a variable defined in `<code>table.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("Table"
+ ("Insert"
+  ["a Table..." table-insert :active
+   (and
+    (not buffer-read-only)
+    (not
+     (table--probe-cell)))
+   :help "Insert a text based table at point"]
+  ["Row" table-insert-row :active
+   (table--row-column-insertion-point-p)
+   :help "Insert row(s) of cells in table"]
+  ["Column" table-insert-column :active
+   (table--row-column-insertion-point-p 'column)
+   :help "Insert column(s) of cells in table"])
+ "----"
+ ("Recognize"
+  ["in Buffer" table-recognize :active t :help "Recognize all tables in the current buffer"]
+  ["in Region" table-recognize-region :active
+   (and mark-active
+	(not
+	 (eq
+	  (mark t)
+	  (point))))
+   :help "Recognize all tables in the current region"]
+  ["a Table" table-recognize-table :active
+   (table--probe-cell)
+   :help "Recognize a table at point"]
+  ["a Cell" table-recognize-cell :active
+   (let
+       ((cell
+	 (table--probe-cell)))
+     (and cell
+	  (null
+	   (table--at-cell-p
+	    (car cell)))))
+   :help "Recognize a cell at point"])
+ ("Unrecognize"
+  ["in Buffer" table-unrecognize :active t :help "Unrecognize all tables in the current buffer"]
+  ["in Region" table-unrecognize-region :active
+   (and mark-active
+	(not
+	 (eq
+	  (mark t)
+	  (point))))
+   :help "Unrecognize all tables in the current region"]
+  ["a Table" table-unrecognize-table :active
+   (table--probe-cell)
+   :help "Unrecognize the current table"]
+  ["a Cell" table-unrecognize-cell :active
+   (let
+       ((cell
+	 (table--probe-cell)))
+     (and cell
+	  (table--at-cell-p
+	   (car cell))))
+   :help "Unrecognize the current cell"])
+ "----"
+ ["Capture Region" table-capture :active
+  (and
+   (not buffer-read-only)
+   mark-active
+   (not
+    (eq
+     (mark t)
+     (point)))
+   (not
+    (table--probe-cell)))
+  :help "Capture text in the current region as a table"]
+ ["Release" table-release :active
+  (table--editable-cell-p)
+  :help "Release the current table as plain text"])
+</pre></br>

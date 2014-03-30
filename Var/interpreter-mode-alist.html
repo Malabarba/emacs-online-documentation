@@ -1,62 +1,50 @@
-<strong>interpreter-mode-alist</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist mapping interpreter names to major modes.<br/>
-This is used for files whose first lines match `auto-mode-interpreter-regexp'.<br/>
-Each element looks like (INTERPRETER . MODE).<br/>
-If INTERPRETER matches the name of the interpreter specified in the first line<br/>
-of a script, mode MODE is enabled.<br/>
-<br/>
-See also `auto-mode-alist'.<br/>
-<br/>
-Value: (("ruby1.8" . ruby-mode)<br/>
- ("ruby1.9" . ruby-mode)<br/>
- ("jruby" . ruby-mode)<br/>
- ("rbx" . ruby-mode)<br/>
- ("ruby" . ruby-mode)<br/>
- ("python" . python-mode)<br/>
- ("gawk" . awk-mode)<br/>
- ("nawk" . awk-mode)<br/>
- ("mawk" . awk-mode)<br/>
- ("awk" . awk-mode)<br/>
- ("pike" . pike-mode)<br/>
- ("perl" . perl-mode)<br/>
- ("perl5" . perl-mode)<br/>
- ("miniperl" . perl-mode)<br/>
- ("wish" . tcl-mode)<br/>
- ("wishx" . tcl-mode)<br/>
- ("tcl" . tcl-mode)<br/>
- ("tclsh" . tcl-mode)<br/>
- ("scm" . scheme-mode)<br/>
- ("ash" . sh-mode)<br/>
- ("bash" . sh-mode)<br/>
- ("bash2" . sh-mode)<br/>
- ("csh" . sh-mode)<br/>
- ("dtksh" . sh-mode)<br/>
- ("es" . sh-mode)<br/>
- ("itcsh" . sh-mode)<br/>
- ("jsh" . sh-mode)<br/>
- ("ksh" . sh-mode)<br/>
- ("oash" . sh-mode)<br/>
- ("pdksh" . sh-mode)<br/>
- ("rbash" . sh-mode)<br/>
- ("rc" . sh-mode)<br/>
- ("rpm" . sh-mode)<br/>
- ("sh" . sh-mode)<br/>
- ("sh5" . sh-mode)<br/>
- ("tcsh" . sh-mode)<br/>
- ("wksh" . sh-mode)<br/>
- ("wsh" . sh-mode)<br/>
- ("zsh" . sh-mode)<br/>
- ("tail" . text-mode)<br/>
- ("more" . text-mode)<br/>
- ("less" . text-mode)<br/>
- ("pg" . text-mode)<br/>
- ("make" . makefile-gmake-mode)<br/>
- ("guile" . scheme-mode)<br/>
- ("clisp" . lisp-mode)<br/>
- ("emacs" . emacs-lisp-mode))<br/>
-<br/>
+<strong>interpreter-mode-alist</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist mapping interpreter names to major modes.</br>
+This is used for files whose first lines match `auto-mode-interpreter-regexp'.</br>
+Each element looks like (REGEXP . MODE).</br>
+If \\`REGEXP\\' matches the name (minus any directory part) of</br>
+the interpreter specified in the first line of a script, enable</br>
+major mode MODE.</br>
+</br>
+See also `auto-mode-alist'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("ruby1.8" . ruby-mode)
+ ("ruby1.9" . ruby-mode)
+ ("jruby" . ruby-mode)
+ ("rbx" . ruby-mode)
+ ("ruby" . ruby-mode)
+ ("python[0-9.]*" . python-mode)
+ ("gawk" . awk-mode)
+ ("nawk" . awk-mode)
+ ("mawk" . awk-mode)
+ ("awk" . awk-mode)
+ ("pike" . pike-mode)
+ ("\\(mini\\)?perl5?" . perl-mode)
+ ("wishx?" . tcl-mode)
+ ("tcl\\(sh\\)?" . tcl-mode)
+ ("expect" . tcl-mode)
+ ("octave" . octave-mode)
+ ("scm" . scheme-mode)
+ ("[acjkwz]sh" . sh-mode)
+ ("r?bash2?" . sh-mode)
+ ("dash" . sh-mode)
+ ("\\(dt\\|pd\\|w\\)ksh" . sh-mode)
+ ("es" . sh-mode)
+ ("i?tcsh" . sh-mode)
+ ("oash" . sh-mode)
+ ("rc" . sh-mode)
+ ("rpm" . sh-mode)
+ ("sh5?" . sh-mode)
+ ("tail" . text-mode)
+ ("more" . text-mode)
+ ("less" . text-mode)
+ ("pg" . text-mode)
+ ("make" . makefile-gmake-mode)
+ ("guile" . scheme-mode)
+ ("clisp" . lisp-mode)
+ ("emacs" . emacs-lisp-mode))
+</pre></br>

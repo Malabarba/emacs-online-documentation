@@ -1,0 +1,33 @@
+<strong>todo-show-categories-table</strong> is an interactive compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+</br>
+(todo-show-categories-table)</br>
+</br>
+Display a table of the current file's categories and item counts.</br>
+</br>
+In the initial display the lines of the table are numbered,</br>
+indicating the current order of the categories when sequentially</br>
+navigating through the todo file with `M-x todo-forward-category'</br>
+and `M-x todo-backward-category'.  You can reorder the lines, and</br>
+hence the category sequence, by typing `M-x todo-raise-category'</br>
+or `M-x todo-lower-category' to raise or lower the category at</br>
+point, or by typing `M-x todo-set-category-number' and entering a</br>
+number at the prompt or by typing `M-x todo-set-category-number'</br>
+with a numeric prefix.  If you save the todo file after</br>
+reordering the categories, the new order persists in subsequent</br>
+Emacs sessions.</br>
+</br>
+The labels above the category names and item counts are buttons,</br>
+and clicking these changes the display: sorted by category name</br>
+or by the respective item counts (alternately descending or</br>
+ascending).  In these displays the categories are not numbered</br>
+and `M-x todo-set-category-number', `M-x todo-raise-category' and</br>
+`M-x todo-lower-category' are disabled.  (Programmatically, the</br>
+sorting is triggered by passing a non-nil SORTKEY argument.)</br>
+</br>
+In addition, the lines with the category names and item counts</br>
+are buttonized, and pressing one of these button jumps to the</br>
+category in Todo mode (or Todo Archive mode, for categories</br>
+containing only archived items, provided user option</br>
+`todo-skip-archived-categories' is non-nil.  These categories</br>
+are shown in `todo-archived-only' face.

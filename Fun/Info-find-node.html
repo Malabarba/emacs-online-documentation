@@ -1,7 +1,11 @@
-<strong>Info-find-node</strong> is a compiled Lisp function in `<code>info.el</code>'.<br/>
-<br/>
-(Info-find-node FILENAME NODENAME &optional NO-GOING-BACK)<br/>
-<br/>
-Go to an Info node specified as separate FILENAME and NODENAME.<br/>
-NO-GOING-BACK is non-nil if recovering from an error in this function;<br/>
-it says do not attempt further (recursive) error recovery.
+<strong>Info-find-node</strong> is a compiled Lisp function in `<code>info.el</code>'.</br>
+</br>
+(Info-find-node <u>FILENAME</u> <u>NODENAME</u> &optional <u>NO-GOING-BACK</u> <u>STRICT-CASE</u>)</br>
+</br>
+Go to an Info node specified as separate <u>FILENAME</u> and <u>NODENAME</u>.</br>
+<u>NO-GOING-BACK</u> is non-nil if recovering from an error in this function;</br>
+it says do not attempt further (recursive) error recovery.</br>
+</br>
+This function first looks for a case-sensitive match for <u>NODENAME</u>;</br>
+if none is found it then tries a case-insensitive match (unless</br>
+<u>STRICT-CASE</u> is non-nil).

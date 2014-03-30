@@ -1,20 +1,20 @@
-<strong>table-with-cache-buffer</strong> is a Lisp macro in `<code>table.el</code>'.<br/>
-<br/>
-(table-with-cache-buffer &rest BODY)<br/>
-<br/>
-Execute the forms in BODY with table cache buffer as the current buffer.<br/>
-This macro simplifies the rest of the work greatly by condensing the<br/>
-common idiom used in many of the cell manipulation functions.  It does<br/>
-not return any meaningful value.<br/>
-<br/>
-Save the current buffer and set the cache buffer as the current<br/>
-buffer.  Move the point to the cache buffer coordinate<br/>
-`table-cell-cache-point-coordinate'.  After BODY forms are executed,<br/>
-the paragraph is filled as long as `table-inhibit-auto-fill-paragraph'<br/>
-remains nil.  BODY can set it to t when it does not want to fill the<br/>
-paragraph.  If necessary the cell width and height are extended as the<br/>
-consequence of cell content modification by the BODY.  Then the<br/>
-current buffer is restored to the original one.  The last cache point<br/>
-coordinate is stored in `table-cell-cache-point-coordinate'.  The<br/>
-original buffer's point is moved to the location that corresponds to<br/>
+<strong>table-with-cache-buffer</strong> is a Lisp macro in `<code>table.el</code>'.</br>
+</br>
+(table-with-cache-buffer &rest <u>BODY</u>)</br>
+</br>
+Execute the forms in <u>BODY</u> with table cache buffer as the current buffer.</br>
+This macro simplifies the rest of the work greatly by condensing the</br>
+common idiom used in many of the cell manipulation functions.  It does</br>
+not return any meaningful value.</br>
+</br>
+Save the current buffer and set the cache buffer as the current</br>
+buffer.  Move the point to the cache buffer coordinate</br>
+`table-cell-cache-point-coordinate'.  After <u>BODY</u> forms are executed,</br>
+the paragraph is filled as long as `table-inhibit-auto-fill-paragraph'</br>
+remains nil.  <u>BODY</u> can set it to t when it does not want to fill the</br>
+paragraph.  If necessary the cell width and height are extended as the</br>
+consequence of cell content modification by the <u>BODY</u>.  Then the</br>
+current buffer is restored to the original one.  The last cache point</br>
+coordinate is stored in `table-cell-cache-point-coordinate'.  The</br>
+original buffer's point is moved to the location that corresponds to</br>
 the last cache point coordinate.

@@ -1,16 +1,16 @@
-<strong>tramp-set-completion-function</strong> is an autoloaded compiled Lisp function in `<code>tramp.el</code>'.<br/>
-<br/>
-(tramp-set-completion-function METHOD FUNCTION-LIST)<br/>
-<br/>
-Sets the list of completion functions for METHOD.<br/>
-FUNCTION-LIST is a list of entries of the form (FUNCTION FILE).<br/>
-The FUNCTION is intended to parse FILE according its syntax.<br/>
-It might be a predefined FUNCTION, or a user defined FUNCTION.<br/>
-For the list of predefined FUNCTIONs see `tramp-completion-function-alist'.<br/>
-<br/>
-Example:<br/>
-<br/>
-    (tramp-set-completion-function<br/>
-     "ssh"<br/>
-     '((tramp-parse-sconfig "/etc/ssh_config")<br/>
+<strong>tramp-set-completion-function</strong> is an autoloaded compiled Lisp function in `<code>tramp.el</code>'.</br>
+</br>
+(tramp-set-completion-function <u>METHOD</u> <u>FUNCTION-LIST</u>)</br>
+</br>
+Sets the list of completion functions for <u>METHOD</u>.</br>
+<u>FUNCTION-LIST</u> is a list of entries of the form (FUNCTION FILE).</br>
+The FUNCTION is intended to parse FILE according its syntax.</br>
+It might be a predefined FUNCTION, or a user defined FUNCTION.</br>
+For the list of predefined FUNCTIONs see `tramp-completion-function-alist'.</br>
+</br>
+Example:</br>
+</br>
+    (tramp-set-completion-function</br>
+     "ssh"</br>
+     '((tramp-parse-sconfig "/etc/ssh_config")</br>
        (tramp-parse-sconfig "~/.ssh/config")))

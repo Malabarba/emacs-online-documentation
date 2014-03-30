@@ -1,48 +1,48 @@
-<strong>reftex-index-macros</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Macros which define index entries.<br/>
-<br/>
-The structure is<br/>
-<br/>
-(MACRO INDEX-TAG KEY PREFIX EXCLUDE REPEAT)<br/>
-<br/>
-MACRO is the macro.  Arguments should be denoted by empty braces like<br/>
-\index[]{*}.  Use square brackets to denote optional arguments.  The star<br/>
-marks where the index key is.<br/>
-<br/>
-INDEX-TAG is a short name of the index.  "idx" and "glo" are<br/>
-reserved for the default index and the glossary.  Other indices can be<br/>
-defined as well.  If this is an integer, the Nth argument of the macro<br/>
-holds the index tag.<br/>
-<br/>
-KEY is a character which is used to identify the macro for input with<br/>
-M-x reftex-index.  ?i, ?I, and ?g are reserved for default index and glossary.<br/>
-<br/>
-PREFIX can be a prefix which is added to the KEY part of the index entry.<br/>
-If you have a macro \newcommand{\molec}[1]{#1\index{Molecules!#1}}, this<br/>
-prefix should be "Molecules!".  See the manual for details.<br/>
-<br/>
-EXCLUDE can be a function.  If this function exists and returns a non-nil<br/>
-value, the index entry at point is ignored.  This was implemented to support<br/>
-the (deprecated) `^' and `_' shortcuts in the LaTeX2e `index' package.<br/>
-<br/>
-REPEAT, if non-nil, means the index macro does not typeset the entry in<br/>
-the text, so that the text has to be repeated outside the index macro.<br/>
-Needed for `reftex-index-selection-or-word' and for indexing from the<br/>
-phrase buffer.<br/>
-<br/>
-The final entry may also be a symbol if this entry has a association<br/>
-in the variable `reftex-index-macros-builtin' to specify the main<br/>
-indexing package you are using.  Valid values are currently<br/>
-default         The LaTeX default - unnecessary to specify this one<br/>
-multind         The multind.sty package<br/>
-index           The index.sty package<br/>
-index-shortcut  The index.sty packages with the ^ and _ shortcuts.<br/>
-                Should not be used - only for old documents.<br/>
-Note that AUCTeX sets these things internally for RefTeX as well, so<br/>
-with a sufficiently new version of AUCTeX, you should not set the<br/>
-package here.<br/>
-<br/>
+<strong>reftex-index-macros</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Macros which define index entries.</br>
+</br>
+The structure is</br>
+</br>
+(MACRO INDEX-TAG KEY PREFIX EXCLUDE REPEAT)</br>
+</br>
+MACRO is the macro.  Arguments should be denoted by empty braces like</br>
+\index[]{*}.  Use square brackets to denote optional arguments.  The star</br>
+marks where the index key is.</br>
+</br>
+INDEX-TAG is a short name of the index.  "idx" and "glo" are</br>
+reserved for the default index and the glossary.  Other indices can be</br>
+defined as well.  If this is an integer, the Nth argument of the macro</br>
+holds the index tag.</br>
+</br>
+KEY is a character which is used to identify the macro for input with</br>
+M-x reftex-index.  ?i, ?I, and ?g are reserved for default index and glossary.</br>
+</br>
+PREFIX can be a prefix which is added to the KEY part of the index entry.</br>
+If you have a macro \newcommand{\molec}[1]{#1\index{Molecules!#1}}, this</br>
+prefix should be "Molecules!".  See the manual for details.</br>
+</br>
+EXCLUDE can be a function.  If this function exists and returns a non-nil</br>
+value, the index entry at point is ignored.  This was implemented to support</br>
+the (deprecated) `^' and `_' shortcuts in the LaTeX2e `index' package.</br>
+</br>
+REPEAT, if non-nil, means the index macro does not typeset the entry in</br>
+the text, so that the text has to be repeated outside the index macro.</br>
+Needed for `reftex-index-selection-or-word' and for indexing from the</br>
+phrase buffer.</br>
+</br>
+The final entry may also be a symbol if this entry has a association</br>
+in the variable `reftex-index-macros-builtin' to specify the main</br>
+indexing package you are using.  Valid values are currently</br>
+default         The LaTeX default - unnecessary to specify this one</br>
+multind         The multind.sty package</br>
+index           The index.sty package</br>
+index-shortcut  The index.sty packages with the ^ and _ shortcuts.</br>
+                Should not be used - only for old documents.</br>
+Note that AUCTeX sets these things internally for RefTeX as well, so</br>
+with a sufficiently new version of AUCTeX, you should not set the</br>
+package here.</br>
+</br>
 You can customize this variable.

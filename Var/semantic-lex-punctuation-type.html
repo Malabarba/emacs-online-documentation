@@ -1,47 +1,48 @@
-<strong>semantic-lex-punctuation-type</strong> is a variable defined in `<code>lex.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Detect and create a punctuation type token.<br/>
-Recognized punctuation is defined in the current table of lexical<br/>
-types, as the value of the `punctuation' token type.<br/>
-<br/>
-Value: ((and<br/>
-  (looking-at "\\(\\s.\\|\\s$\\|\\s'\\)+")<br/>
-  (let*<br/>
-      ((key<br/>
-	(match-string 0))<br/>
-       (pos<br/>
-	(match-beginning 0))<br/>
-       (end<br/>
-	(match-end 0))<br/>
-       (len<br/>
-	(- end pos))<br/>
-       (lst<br/>
-	(semantic-lex-type-value "punctuation" t))<br/>
-       (def<br/>
-	(car lst))<br/>
-       (lst<br/>
-	(cdr lst))<br/>
-       (elt nil))<br/>
-    (if lst<br/>
-	(while<br/>
-	    (and<br/>
-	     (> len 0)<br/>
-	     (not<br/>
-	      (setq elt<br/>
-		    (rassoc key lst))))<br/>
-	  (setq len<br/>
-		(1- len)<br/>
-		key<br/>
-		(substring key 0 len))))<br/>
-    (if elt<br/>
-	(semantic-lex-push-token<br/>
-	 (semantic-lex-token<br/>
-	  (car elt)<br/>
-	  pos<br/>
-	  (+ pos len)))<br/>
-      (if def<br/>
-	  (semantic-lex-push-token<br/>
-	   (semantic-lex-token def pos end)))))))<br/>
-<br/>
+<strong>semantic-lex-punctuation-type</strong> is a variable defined in `<code>lex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Detect and create a punctuation type token.</br>
+Recognized punctuation is defined in the current table of lexical</br>
+types, as the value of the `punctuation' token type.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((and
+  (looking-at "\\(\\s.\\|\\s$\\|\\s'\\)+")
+  (let*
+      ((key
+	(match-string 0))
+       (pos
+	(match-beginning 0))
+       (end
+	(match-end 0))
+       (len
+	(- end pos))
+       (lst
+	(semantic-lex-type-value "punctuation" t))
+       (def
+	(car lst))
+       (lst
+	(cdr lst))
+       (elt nil))
+    (if lst
+	(while
+	    (and
+	     (> len 0)
+	     (not
+	      (setq elt
+		    (rassoc key lst))))
+	  (setq len
+		(1- len)
+		key
+		(substring key 0 len))))
+    (if elt
+	(semantic-lex-push-token
+	 (semantic-lex-token
+	  (car elt)
+	  pos
+	  (+ pos len)))
+      (if def
+	  (semantic-lex-push-token
+	   (semantic-lex-token def pos end)))))))
+</pre></br>

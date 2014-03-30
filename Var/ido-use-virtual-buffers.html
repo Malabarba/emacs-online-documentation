@@ -1,22 +1,27 @@
-<strong>ido-use-virtual-buffers</strong> is a variable defined in `<code>ido.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-If non-nil, refer to past buffers as well as existing ones.<br/>
-Essentially it works as follows: Say you are visiting a file and<br/>
-the buffer gets cleaned up by midnight.el.  Later, you want to<br/>
-switch to that buffer, but find it's no longer open.  With<br/>
-virtual buffers enabled, the buffer name stays in the buffer<br/>
-list (using the `ido-virtual' face, and always at the end), and if<br/>
-you select it, it opens the file back up again.  This allows you<br/>
-to think less about whether recently opened files are still open<br/>
-or not.  Most of the time you can quit Emacs, restart, and then<br/>
-switch to a file buffer that was previously open as if it still<br/>
-were.<br/>
-    This feature relies upon the `recentf' package, which will be<br/>
-enabled if this variable is configured to a non-nil value.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>ido-use-virtual-buffers</strong> is a variable defined in `<code>ido.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+If non-nil, refer to past ("virtual") buffers as well as existing ones.</br>
+The options are:</br>
+  nil:  Do not use virtual buffers.</br>
+  t:    Always use virtual buffers.</br>
+  auto: Use virtual buffers if the current input matches no existing buffer.</br>
+</br>
+Essentially it works as follows: Say you are visiting a file and</br>
+the buffer gets cleaned up by midnight.el.  Later, you want to</br>
+switch to that buffer, but find it's no longer open.  With virtual</br>
+buffers enabled, the buffer name stays in the buffer list (using</br>
+the `ido-virtual' face, and always at the end), and if you select</br>
+it, it opens the file back up again.  This allows you to think</br>
+less about whether recently opened files are still open or not.</br>
+Most of the time you can quit Emacs, restart, and then switch to</br>
+a file buffer that was previously open as if it still were.</br>
+</br>
+This feature relies upon the `recentf' package, which will be</br>
+enabled if this variable is configured to a non-nil value.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

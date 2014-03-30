@@ -1,18 +1,16 @@
-<strong>compilation-save-buffers-predicate</strong> is a variable defined in `<code>compile.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-The second argument (PRED) passed to `save-some-buffers' before compiling.<br/>
-E.g., one can set this to<br/>
-  (lambda ()<br/>
-    (string-prefix-p my-compilation-root (file-truename (buffer-file-name))))<br/>
-to limit saving to files located under `my-compilation-root'.<br/>
-Note, that, in general, `compilation-directory' cannot be used instead<br/>
-of `my-compilation-root' here.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>compilation-save-buffers-predicate</strong> is a variable defined in `<code>compile.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+The second argument (PRED) passed to `save-some-buffers' before compiling.</br>
+E.g., one can set this to</br>
+  (lambda ()</br>
+    (string-prefix-p my-compilation-root (file-truename (buffer-file-name))))</br>
+to limit saving to files located under `my-compilation-root'.</br>
+Note, that, in general, `compilation-directory' cannot be used instead</br>
+of `my-compilation-root' here.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

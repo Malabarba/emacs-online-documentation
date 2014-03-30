@@ -1,77 +1,46 @@
-<strong>verilog-auto-inout-param</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
-<br/>
-(verilog-auto-inout-param)<br/>
-<br/>
-Expand AUTOINOUTPARAM statements, as part of M-x verilog-auto.<br/>
-Take input/output/inout statements from the specified module and insert<br/>
-into the current module.  This is useful for making null templates and<br/>
-shell modules which need to have identical I/O with another module.<br/>
-Any I/O which are already defined in this module will not be redefined.<br/>
-For the complement of this function, see `verilog-auto-inout-comp',<br/>
-and to make monitors with all inputs, see `verilog-auto-inout-in'.<br/>
-<br/>
-Limitations:<br/>
-  If placed inside the parenthesis of a module declaration, it creates<br/>
-  Verilog 2001 style, else uses Verilog 1995 style.<br/>
-<br/>
-  Concatenation and outputting partial buses is not supported.<br/>
-<br/>
-  Module names must be resolvable to filenames.  See `verilog-auto-inst'.<br/>
-<br/>
-  Signals are not inserted in the same order as in the original module,<br/>
-  though they will appear to be in the same order to an AUTOINST<br/>
-  instantiating either module.<br/>
-<br/>
-  Signals declared as "output reg" or "output wire" etc will<br/>
-  lose the wire/reg declaration so that shell modules may<br/>
-  generate those outputs differently.  However, "output logic"<br/>
-  is propagated.<br/>
-<br/>
-An example:<br/>
-<br/>
-	module ExampShell (/*AUTOARG*/);<br/>
-	   /*AUTOINOUTMODULE("ExampMain")*/<br/>
-	endmodule<br/>
-<br/>
-	module ExampMain (i,o,io);<br/>
-          input i;<br/>
-          output o;<br/>
-          inout io;<br/>
-        endmodule<br/>
-<br/>
-Typing M-x verilog-auto will make this into:<br/>
-<br/>
-	module ExampShell (/*AUTOARG*/i,o,io);<br/>
-	   /*AUTOINOUTMODULE("ExampMain")*/<br/>
-           // Beginning of automatic in/out/inouts (from specific module)<br/>
-           output o;<br/>
-           inout io;<br/>
-           input i;<br/>
-	   // End of automatics<br/>
-	endmodule<br/>
-<br/>
-You may also provide an optional regular expression, in which case only<br/>
-signals matching the regular expression will be included.  For example the<br/>
-same expansion will result from only extracting signals starting with i:<br/>
-<br/>
-	   /*AUTOINOUTMODULE("ExampMain","^i")*/<br/>
-<br/>
-You may also provide an optional second regular expression, in<br/>
-which case only signals which have that pin direction and data<br/>
-type will be included.  This matches against everything before<br/>
-the signal name in the declaration, for example against<br/>
-"input" (single bit), "output logic" (direction and type) or<br/>
-"output [1:0]" (direction and implicit type).  You also<br/>
-probably want to skip spaces in your regexp.<br/>
-<br/>
-For example, the below will result in matching the output "o"<br/>
-against the previous example's module:<br/>
-<br/>
-	   /*AUTOINOUTMODULE("ExampMain","","^output.*")*/<br/>
-<br/>
-You may also provide an optional third regular expression, in<br/>
-which case any parameter names that match the given regexp will<br/>
-be included.  Including parameters is off by default.  To include<br/>
-all signals and parameters, use:<br/>
-<br/>
-	   /*AUTOINOUTMODULE("ExampMain",".*",".*",".*")*/
+<strong>verilog-auto-inout-param</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+</br>
+(verilog-auto-inout-param)</br>
+</br>
+Expand AUTOINOUTPARAM statements, as part of M-x verilog-auto.</br>
+Take input/output/inout statements from the specified module and insert</br>
+into the current module.  This is useful for making null templates and</br>
+shell modules which need to have identical I/O with another module.</br>
+Any I/O which are already defined in this module will not be redefined.</br>
+For the complement of this function, see `verilog-auto-inout-comp',</br>
+and to make monitors with all inputs, see `verilog-auto-inout-in'.</br>
+</br>
+Limitations:</br>
+  If placed inside the parenthesis of a module declaration, it creates</br>
+  Verilog 2001 style, else uses Verilog 1995 style.</br>
+</br>
+  Module names must be resolvable to filenames.  See `verilog-auto-inst'.</br>
+</br>
+  Parameters are inserted in the same order as in the original module.</br>
+</br>
+  Parameters do not have values, which is SystemVerilog 2009 syntax.</br>
+</br>
+An example:</br>
+</br>
+	module ExampShell ();</br>
+	   /*AUTOINOUTPARAM("ExampMain")*/</br>
+	endmodule</br>
+</br>
+	module ExampMain ();</br>
+          parameter PARAM = 22;</br>
+        endmodule</br>
+</br>
+Typing M-x verilog-auto will make this into:</br>
+</br>
+	module ExampShell (/*AUTOARG*/i,o,io);</br>
+	   /*AUTOINOUTPARAM("ExampMain")*/</br>
+           // Beginning of automatic parameters (from specific module)</br>
+           parameter PARAM;</br>
+	   // End of automatics</br>
+	endmodule</br>
+</br>
+You may also provide an optional regular expression, in which case only</br>
+parameters matching the regular expression will be included.  For example the</br>
+same expansion will result from only extracting parameters starting with i:</br>
+</br>
+	   /*AUTOINOUTPARAM("ExampMain","^i")*/

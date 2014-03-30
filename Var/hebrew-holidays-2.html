@@ -1,28 +1,27 @@
-<strong>hebrew-holidays-2</strong> is a variable defined in `<code>holidays.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Component of the old default value of `holiday-hebrew-holidays'.<br/>
-<br/>
-Value: ((holiday-hebrew-hanukkah)<br/>
- (if calendar-hebrew-all-holidays-flag<br/>
-     (holiday-hebrew 10<br/>
-		     (let<br/>
-			 ((h-year<br/>
-			   (calendar-extract-year<br/>
-			    (calendar-hebrew-from-absolute<br/>
-			     (calendar-absolute-from-gregorian<br/>
-			      (list displayed-month 28 displayed-year))))))<br/>
-		       (if<br/>
-			   (= 6<br/>
-			      (%<br/>
-			       (calendar-hebrew-to-absolute<br/>
-				(list 10 10 h-year))<br/>
-			       7))<br/>
-			   11 10))<br/>
-		     "Tzom Teveth"))<br/>
- (if calendar-hebrew-all-holidays-flag<br/>
-     (holiday-hebrew 11 15 "Tu B'Shevat")))<br/>
-<br/>
+<strong>hebrew-holidays-2</strong> is a variable defined in `<code>holidays.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Component of the old default value of `holiday-hebrew-holidays'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((holiday-hebrew-hanukkah)
+ (if calendar-hebrew-all-holidays-flag
+     (holiday-hebrew 10
+		     (let
+			 ((h-year
+			   (calendar-extract-year
+			    (calendar-hebrew-from-absolute
+			     (calendar-absolute-from-gregorian
+			      (list displayed-month 28 displayed-year))))))
+		       (if
+			   (= 6
+			      (%
+			       (calendar-hebrew-to-absolute
+				(list 10 10 h-year))
+			       7))
+			   11 10))
+		     "Tzom Teveth"))
+ (if calendar-hebrew-all-holidays-flag
+     (holiday-hebrew 11 15 "Tu B'Shevat")))
+</pre></br>

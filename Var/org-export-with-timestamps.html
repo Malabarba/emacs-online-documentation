@@ -1,7 +1,20 @@
-<strong>org-export-with-timestamps</strong> is a variable defined in `<code>org-exp.el</code>'.<br/>
-Its value is t<br/>
-<br/>
-Documentation:<br/>
-If nil, do not export time stamps and associated keywords.<br/>
-<br/>
+<strong>org-export-with-timestamps</strong> is a variable defined in `<code>ox.el</code>'.</br>
+Its value is <pre>t</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Non nil means allow timestamps in export.</br>
+</br>
+It can be set to any of the following values:</br>
+  t          export all timestamps.</br>
+  `active'   export active timestamps only.</br>
+  `inactive' export inactive timestamps only.</br>
+  nil        do not export timestamps</br>
+</br>
+This only applies to timestamps isolated in a paragraph</br>
+containing only timestamps.  Other timestamps are always</br>
+exported.</br>
+</br>
+This option can also be set with the OPTIONS keyword, e.g.</br>
+"<:nil".</br>
+</br>
 You can customize this variable.

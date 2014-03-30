@@ -1,13 +1,12 @@
-<strong>find-function-regexp-alist</strong> is a variable defined in `<code>find-func.el</code>'.<br/>
-Its value is ((ert-deftest . ert--find-test-regexp)<br/>
- (nil . find-function-regexp)<br/>
- (defvar . find-variable-regexp)<br/>
- (defface . find-face-regexp))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist mapping definition types into regexp variables.<br/>
-Each regexp variable's value should actually be a format string<br/>
+<strong>find-function-regexp-alist</strong> is a variable defined in `<code>find-func.el</code>'.</br>
+Its value is <pre></br>
+((ert-deftest . ert--find-test-regexp)
+ (nil . find-function-regexp)
+ (defvar . find-variable-regexp)
+ (defface . find-face-regexp))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist mapping definition types into regexp variables.</br>
+Each regexp variable's value should actually be a format string</br>
 to be used to substitute the desired symbol name into the regexp.

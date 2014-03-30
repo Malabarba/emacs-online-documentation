@@ -1,18 +1,17 @@
-<strong>cvs-minor-mode-map</strong> is a variable defined in `<code>pcvs-defs.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `cvs-minor-mode', used in buffers related to PCL-CVS.<br/>
-<br/>
-Value: (keymap<br/>
- (101 menu-item nil cvs-mode-edit-log :filter<br/>
-      (lambda<br/>
-	(x)<br/>
-	(if<br/>
-	    (derived-mode-p 'log-view-mode)<br/>
-	    x)))<br/>
- (24 keymap<br/>
-     (99 . cvs-mode-map)))<br/>
-<br/>
+<strong>cvs-minor-mode-map</strong> is a variable defined in `<code>pcvs-defs.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `cvs-minor-mode', used in buffers related to PCL-CVS.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (101 menu-item nil cvs-mode-edit-log :filter
+      (lambda
+	(x)
+	(if
+	    (derived-mode-p 'log-view-mode)
+	    x)))
+ (24 keymap
+     (99 . cvs-mode-map)))
+</pre></br>

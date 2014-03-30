@@ -1,5 +1,89 @@
-<strong>view-mode-enable</strong> is a compiled Lisp function in `<code>view.el</code>'.<br/>
-<br/>
-(view-mode-enable)<br/>
-<br/>
-Turn on View mode.
+<strong>view-mode-enable</strong> is an alias for `<strong><a href="view-mode">view-mode</a></strong>' in `<code>view.el</code>'.</br>
+</br>
+</br>
+(view-mode-enable &optional <u>ARG</u>)</br>
+</br>
+This function is obsolete since 24.4;</br>
+use `view-mode' instead.</br>
+</br>
+Toggle View mode, a minor mode for viewing text but not editing it.</br>
+With a prefix argument <u>ARG</u>, enable View mode if <u>ARG</u> is positive,</br>
+and disable it otherwise.  If called from Lisp, enable View mode</br>
+if <u>ARG</u> is omitted or nil.</br>
+</br>
+When View mode is enabled, commands that do not change the buffer</br>
+contents are available as usual.  Kill commands insert text in</br>
+kill buffers but do not delete.  Most other commands beep and</br>
+tell the user that the buffer is read-only.</br>
+</br>
+</br>
+</br>
+The following additional commands are provided.  Most commands</br>
+take prefix arguments.  Page commands default to "page size"</br>
+lines which is almost a whole window, or number of lines set by</br>
+z or w.</br>
+Half page commands default to and set "half page size" lines</br>
+which initially is half a window full.  Search commands default</br>
+to a repeat count of one.</br>
+</br>
+H, h, ?	 This message.</br>
+Digits	provide prefix arguments.</br>
+-	negative prefix argument.</br>
+&lt;	move to the beginning of buffer.</br>
+>	move to the end of buffer.</br>
+o	scroll so that buffer end is at last line of window.</br>
+SPC	scroll forward "page size" lines.</br>
+	  With prefix scroll forward prefix lines.</br>
+DEL, S-SPC  scroll backward "page size" lines.</br>
+	      With prefix scroll backward prefix lines.</br>
+z	like  SPC  but with prefix sets "page size" to prefix.</br>
+w	like  DEL  but with prefix sets "page size" to prefix.</br>
+d	scroll forward "half page size" lines.  With prefix, sets</br>
+	  "half page size" to prefix lines and scrolls forward that much.</br>
+u	scroll backward "half page size" lines.  With prefix, sets</br>
+	  "half page size" to prefix lines and scrolls backward that much.</br>
+RET, LFD  scroll forward one line.  With prefix scroll forward prefix line(s).</br>
+y	scroll backward one line.  With prefix scroll backward prefix line(s).</br>
+F	revert-buffer if necessary and scroll forward.</br>
+	  Use this to view a changing file.</br>
+=	prints the current line number.</br>
+%	goes prefix argument (default 100) percent into buffer.</br>
+g	goes to line given by prefix argument (default first line).</br>
+.	set the mark.</br>
+x	exchanges point and mark.</br>
+@	return to mark and pops mark ring.</br>
+	  Mark ring is pushed at start of every successful search and when</br>
+	  jump to line occurs.  The mark is set on jump to buffer start or end.</br>
+m	save current position in character register.</br>
+'	go to position saved in character register.</br>
+s	do forward incremental search.</br>
+r	do reverse incremental search.</br>
+/	searches forward for regular expression, starting after current page.</br>
+	  ! and @ have a special meaning at the beginning of the regexp.</br>
+	  ! means search for a line with no match for regexp.  @ means start</br>
+	  search at beginning (end for backward search) of buffer.</br>
+\	searches backward for regular expression, starting before current page.</br>
+n	searches forward for last regular expression.</br>
+p	searches backward for last regular expression.</br>
+q	quit View mode, restoring this window and buffer to previous state.</br>
+	  q is the normal way to leave view mode.</br>
+e	exit View mode but stay in current buffer.  Use this if you started</br>
+	  viewing a buffer (file) and find out you want to edit it.</br>
+	  This command restores the previous read-only status of the buffer.</br>
+E	exit View mode, and make the current buffer editable</br>
+	  even if it was not editable before entry to View mode.</br>
+Q	quit View mode, restoring all windows to previous state.</br>
+c	quit View mode and maybe switch buffers, but don't kill this buffer.</br>
+C	quit View mode, kill current buffer and go back to other buffer.</br>
+</br>
+The effect of c, q and C depends on how view-mode was entered.  If it was</br>
+entered by view-file, view-file-other-window, view-file-other-frame, or</br>
+M-x dired-view-file (M-x view-file, M-x view-file-other-window,</br>
+M-x view-file-other-frame, or the Dired mode v command),</br>
+then q will try to kill the current buffer.</br>
+If view-mode was entered from another buffer, by M-x view-buffer,</br>
+M-x view-buffer-other-window, M-x view-buffer-other frame, M-x view-file,</br>
+M-x view-file-other-window, or M-x view-file-other-frame,</br>
+then c, q and C will return to that buffer.</br>
+</br>
+Entry to view-mode runs the normal hook `view-mode-hook'.

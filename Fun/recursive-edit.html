@@ -1,9 +1,14 @@
-<strong>recursive-edit</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(recursive-edit)<br/>
-<br/>
-Invoke the editor command loop recursively.<br/>
-To get out of the recursive edit, a command can do `(throw 'exit nil)';<br/>
-that tells this function to return.<br/>
-Alternatively, `(throw 'exit t)' makes this function signal an error.<br/>
+<strong>recursive-edit</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+</br>
+</br>
+(recursive-edit)</br>
+</br>
+Invoke the editor command loop recursively.</br>
+To get out of the recursive edit, a command can throw to `exit' -- for</br>
+instance `(throw 'exit nil)'.</br>
+If you throw a value other than t, `recursive-edit' returns normally</br>
+to the function that called it.  Throwing a t value causes</br>
+`recursive-edit' to quit, so that control returns to the command loop</br>
+one level up.</br>
+</br>
 This function is called by the editor initialization to begin editing.

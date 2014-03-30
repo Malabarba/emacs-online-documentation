@@ -1,21 +1,21 @@
-<strong>set-window-dedicated-p</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(set-window-dedicated-p WINDOW FLAG)<br/>
-<br/>
-Mark WINDOW as dedicated according to FLAG.<br/>
-WINDOW must be a live window and defaults to the selected one.  FLAG<br/>
-non-nil means mark WINDOW as dedicated to its buffer.  FLAG nil means<br/>
-mark WINDOW as non-dedicated.  Return FLAG.<br/>
-<br/>
-When a window is dedicated to its buffer, `display-buffer' will refrain<br/>
-from displaying another buffer in it.  `get-lru-window' and<br/>
-`get-largest-window' treat dedicated windows specially.<br/>
-`delete-windows-on', `replace-buffer-in-windows', `quit-window',<br/>
-`quit-restore-window' and `kill-buffer' can delete a dedicated window<br/>
-and the containing frame.<br/>
-<br/>
-As a special case, if FLAG is t, mark WINDOW as "strongly" dedicated to<br/>
-its buffer.  Functions like `set-window-buffer' may change the buffer<br/>
-displayed by a window, unless that window is strongly dedicated to its<br/>
-buffer.  If and when `set-window-buffer' displays another buffer in a<br/>
+<strong>set-window-dedicated-p</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(set-window-dedicated-p <u>WINDOW</u> <u>FLAG</u>)</br>
+</br>
+Mark <u>WINDOW</u> as dedicated according to <u>FLAG</u>.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.  <u>FLAG</u></br>
+non-nil means mark <u>WINDOW</u> as dedicated to its buffer.  <u>FLAG</u> nil means</br>
+mark <u>WINDOW</u> as non-dedicated.  Return <u>FLAG</u>.</br>
+</br>
+When a window is dedicated to its buffer, `display-buffer' will refrain</br>
+from displaying another buffer in it.  `get-lru-window' and</br>
+`get-largest-window' treat dedicated windows specially.</br>
+`delete-windows-on', `replace-buffer-in-windows', `quit-window',</br>
+`quit-restore-window' and `kill-buffer' can delete a dedicated window</br>
+and the containing frame.</br>
+</br>
+As a special case, if <u>FLAG</u> is t, mark <u>WINDOW</u> as "strongly" dedicated to</br>
+its buffer.  Functions like `set-window-buffer' may change the buffer</br>
+displayed by a window, unless that window is strongly dedicated to its</br>
+buffer.  If and when `set-window-buffer' displays another buffer in a</br>
 window, it also makes sure that the window is no more dedicated.

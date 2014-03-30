@@ -1,0 +1,9 @@
+<strong>gmm-labels</strong> is a Lisp macro in `<code>gmm-utils.el</code>'.</br>
+</br>
+(gmm-labels ((<u>FUNC</u> <u>ARGLIST</u> <u>BODY</u>...) ...) <u>FORM</u>...)</br>
+</br>
+Make temporary function bindings.</br>
+The bindings can be recursive and the scoping is lexical, but capturing</br>
+them in closures will only work if `lexical-binding' is in use.  But in</br>
+Emacs 24.2 and older, the lexical scoping is handled via `lexical-let'</br>
+rather than relying on `lexical-binding'.

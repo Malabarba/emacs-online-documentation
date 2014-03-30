@@ -1,22 +1,22 @@
-<strong>locale-info</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(locale-info ITEM)<br/>
-<br/>
-Access locale data ITEM for the current C locale, if available.<br/>
-ITEM should be one of the following:<br/>
-<br/>
-`codeset', returning the character set as a string (locale item CODESET);<br/>
-<br/>
-`days', returning a 7-element vector of day names (locale items DAY_n);<br/>
-<br/>
-`months', returning a 12-element vector of month names (locale items MON_n);<br/>
-<br/>
-`paper', returning a list (WIDTH HEIGHT) for the default paper size,<br/>
-  both measured in millimeters (locale items PAPER_WIDTH, PAPER_HEIGHT).<br/>
-<br/>
-If the system can't provide such information through a call to<br/>
-`nl_langinfo', or if ITEM isn't from the list above, return nil.<br/>
-<br/>
-See also Info node `(libc)Locales'.<br/>
-<br/>
+<strong>locale-info</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(locale-info <u>ITEM</u>)</br>
+</br>
+Access locale data <u>ITEM</u> for the current C locale, if available.</br>
+<u>ITEM</u> should be one of the following:</br>
+</br>
+`codeset', returning the character set as a string (locale item CODESET);</br>
+</br>
+`days', returning a 7-element vector of day names (locale items DAY_n);</br>
+</br>
+`months', returning a 12-element vector of month names (locale items MON_n);</br>
+</br>
+`paper', returning a list (WIDTH HEIGHT) for the default paper size,</br>
+  both measured in millimeters (locale items PAPER_WIDTH, PAPER_HEIGHT).</br>
+</br>
+If the system can't provide such information through a call to</br>
+`nl_langinfo', or if <u>ITEM</u> isn't from the list above, return nil.</br>
+</br>
+See also Info node `(libc)Locales'.</br>
+</br>
 The data read from the system are decoded using `locale-coding-system'.

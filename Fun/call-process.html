@@ -1,28 +1,28 @@
-<strong>call-process</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(call-process PROGRAM &optional INFILE BUFFER DISPLAY &rest ARGS)<br/>
-<br/>
-Call PROGRAM synchronously in separate process.<br/>
-The remaining arguments are optional.<br/>
-The program's input comes from file INFILE (nil means `/dev/null').<br/>
-Insert output in BUFFER before point; t means current buffer; nil for BUFFER<br/>
- means discard it; 0 means discard and don't wait; and `(:file FILE)', where<br/>
- FILE is a file name string, means that it should be written to that file<br/>
- (if the file already exists it is overwritten).<br/>
-BUFFER can also have the form (REAL-BUFFER STDERR-FILE); in that case,<br/>
-REAL-BUFFER says what to do with standard output, as above,<br/>
-while STDERR-FILE says what to do with standard error in the child.<br/>
-STDERR-FILE may be nil (discard standard error output),<br/>
-t (mix it with ordinary output), or a file name string.<br/>
-<br/>
-Fourth arg DISPLAY non-nil means redisplay buffer as output is inserted.<br/>
-Remaining arguments are strings passed as command arguments to PROGRAM.<br/>
-<br/>
-If executable PROGRAM can't be found as an executable, `call-process'<br/>
-signals a Lisp error.  `call-process' reports errors in execution of<br/>
-the program only through its return and output.<br/>
-<br/>
-If BUFFER is 0, `call-process' returns immediately with value nil.<br/>
-Otherwise it waits for PROGRAM to terminate<br/>
-and returns a numeric exit status or a signal description string.<br/>
+<strong>call-process</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(call-process <u>PROGRAM</u> &optional <u>INFILE</u> <u>DESTINATION</u> <u>DISPLAY</u> &rest <u>ARGS</u>)</br>
+</br>
+Call <u>PROGRAM</u> synchronously in separate process.</br>
+The remaining arguments are optional.</br>
+The program's input comes from file <u>INFILE</u> (nil means `/dev/null').</br>
+Insert output in <u>DESTINATION</u> before point; t means current buffer; nil for <u>DESTINATION</u></br>
+ means discard it; 0 means discard and don't wait; and `(:file FILE)', where</br>
+ FILE is a file name string, means that it should be written to that file</br>
+ (if the file already exists it is overwritten).</br>
+<u>DESTINATION</u> can also have the form (REAL-BUFFER STDERR-FILE); in that case,</br>
+REAL-BUFFER says what to do with standard output, as above,</br>
+while STDERR-FILE says what to do with standard error in the child.</br>
+STDERR-FILE may be nil (discard standard error output),</br>
+t (mix it with ordinary output), or a file name string.</br>
+</br>
+Fourth arg <u>DISPLAY</u> non-nil means redisplay buffer as output is inserted.</br>
+Remaining arguments are strings passed as command arguments to <u>PROGRAM</u>.</br>
+</br>
+If executable <u>PROGRAM</u> can't be found as an executable, `call-process'</br>
+signals a Lisp error.  `call-process' reports errors in execution of</br>
+the program only through its return and output.</br>
+</br>
+If <u>DESTINATION</u> is 0, `call-process' returns immediately with value nil.</br>
+Otherwise it waits for <u>PROGRAM</u> to terminate</br>
+and returns a numeric exit status or a signal description string.</br>
 If you quit, the process is killed with SIGINT, or SIGKILL if you quit again.

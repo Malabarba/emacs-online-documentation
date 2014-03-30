@@ -1,32 +1,29 @@
-<strong>simula-mode-map</strong> is a variable defined in `<code>simula.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap used in `simula-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (simula "SIMULA" keymap<br/>
-		   (forward-down "Forward Down Statement" . simula-forward-down-level)<br/>
-		   (backward-up "Backward Up Level" . simula-backward-up-level)<br/>
-		   (forward-stmt "Next Statement" . simula-next-statement)<br/>
-		   (backward-stmt "Previous Statement" . simula-previous-statement)<br/>
-		   (separator-navigate "--")<br/>
-		   (indent-line "Indent Line" . simula-indent-command)<br/>
-		   (indent-exp "Indent Expression" . simula-indent-exp)<br/>
-		   (separator-indent "--")<br/>
-		   (bug-report "Submit Bug Report" . simula-submit-bug-report)<br/>
-		   "SIMULA"))<br/>
- (9 . simula-indent-command)<br/>
- (27 keymap<br/>
-     (17 . simula-indent-exp))<br/>
- (58 . simula-electric-label)<br/>
- (127 . backward-delete-char-untabify)<br/>
- (3 keymap<br/>
-    (14 . simula-next-statement)<br/>
-    (4 . simula-forward-down-level)<br/>
-    (16 . simula-previous-statement)<br/>
-    (21 . simula-backward-up-level)))<br/>
-<br/>
+<strong>simula-mode-map</strong> is a variable defined in `<code>simula.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used in `simula-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (simula "SIMULA" keymap
+		   (forward-down "Forward Down Statement" . simula-forward-down-level)
+		   (backward-up "Backward Up Level" . simula-backward-up-level)
+		   (forward-stmt "Next Statement" . simula-next-statement)
+		   (backward-stmt "Previous Statement" . simula-previous-statement)
+		   (separator-navigate "--")
+		   (indent-line "Indent Line" . simula-indent-command)
+		   (indent-exp "Indent Expression" . simula-indent-exp)
+		   "SIMULA"))
+ (9 . simula-indent-command)
+ (27 keymap
+     (17 . simula-indent-exp))
+ (58 . simula-electric-label)
+ (127 . backward-delete-char-untabify)
+ (3 keymap
+    (14 . simula-next-statement)
+    (4 . simula-forward-down-level)
+    (16 . simula-previous-statement)
+    (21 . simula-backward-up-level)))
+</pre></br>

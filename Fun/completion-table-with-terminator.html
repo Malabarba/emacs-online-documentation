@@ -1,17 +1,17 @@
-<strong>completion-table-with-terminator</strong> is a compiled Lisp function in `<code>minibuffer.el</code>'.<br/>
-<br/>
-(completion-table-with-terminator TERMINATOR TABLE STRING PRED ACTION)<br/>
-<br/>
-Construct a completion table like TABLE but with an extra TERMINATOR.<br/>
-This is meant to be called in a curried way by first passing TERMINATOR<br/>
-and TABLE only (via `apply-partially').<br/>
-TABLE is a completion table, and TERMINATOR is a string appended to TABLE's<br/>
-completion if it is complete.  TERMINATOR is also used to determine the<br/>
-completion suffix's boundary.<br/>
-TERMINATOR can also be a cons cell (TERMINATOR . TERMINATOR-REGEXP)<br/>
-in which case TERMINATOR-REGEXP is a regular expression whose submatch<br/>
-number 1 should match TERMINATOR.  This is used when there is a need to<br/>
-distinguish occurrences of the TERMINATOR strings which are really terminators<br/>
-from others (e.g. escaped).  In this form, the car of TERMINATOR can also be,<br/>
-instead of a string, a function that takes the completion and returns the<br/>
+<strong>completion-table-with-terminator</strong> is a compiled Lisp function in `<code>minibuffer.el</code>'.</br>
+</br>
+(completion-table-with-terminator <u>TERMINATOR</u> <u>TABLE</u> <u>STRING</u> <u>PRED</u> <u>ACTION</u>)</br>
+</br>
+Construct a completion table like <u>TABLE</u> but with an extra <u>TERMINATOR</u>.</br>
+This is meant to be called in a curried way by first passing <u>TERMINATOR</u></br>
+and <u>TABLE</u> only (via `apply-partially').</br>
+<u>TABLE</u> is a completion table, and <u>TERMINATOR</u> is a string appended to <u>TABLE</u>'s</br>
+completion if it is complete.  <u>TERMINATOR</u> is also used to determine the</br>
+completion suffix's boundary.</br>
+<u>TERMINATOR</u> can also be a cons cell (<u>TERMINATOR</u> . TERMINATOR-REGEXP)</br>
+in which case TERMINATOR-REGEXP is a regular expression whose submatch</br>
+number 1 should match <u>TERMINATOR</u>.  This is used when there is a need to</br>
+distinguish occurrences of the <u>TERMINATOR</u> strings which are really terminators</br>
+from others (e.g. escaped).  In this form, the car of <u>TERMINATOR</u> can also be,</br>
+instead of a string, a function that takes the completion and returns the</br>
 "terminated" string.

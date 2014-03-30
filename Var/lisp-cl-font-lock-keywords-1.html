@@ -1,0 +1,24 @@
+<strong>lisp-cl-font-lock-keywords-1</strong> is a variable defined in `<code>lisp-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Subdued level highlighting for Lisp modes.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("(\\(def\\(?:c\\(?:lass\\|onstant\\)\\|generic\\|ine-\\(?:co\\(?:mpiler-macro\\|ndition\\)\\|m\\(?:ethod-combination\\|odify-macro\\)\\|s\\(?:etf-expander\\|ymbol-macro\\)\\)\\|m\\(?:acro\\|ethod\\)\\|pa\\(?:ckage\\|rameter\\)\\|s\\(?:etf\\|\\(?:truc\\|ubs\\)t\\)\\|type\\|un\\|var\\)\\)\\_>[ 	'(]*\\(setf[ 	]+\\(?:\\sw\\|\\s_\\)+\\|\\(?:\\sw\\|\\s_\\)+\\)?"
+  (1 font-lock-keyword-face)
+  (2
+   (let
+       ((type
+	 (get
+	  (intern-soft
+	   (match-string 1))
+	  'lisp-define-type)))
+     (cond
+      ((eq type 'var)
+       font-lock-variable-name-face)
+      ((eq type 'type)
+       font-lock-type-face)
+      (t font-lock-function-name-face)))
+   nil t)))
+</pre></br>

@@ -1,26 +1,26 @@
-<strong>feedmail-deduce-bcc-where</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Where Bcc:/Resent-Bcc: addresses should appear in the envelope list.<br/>
-Addresses for the message envelope are deduced by examining<br/>
-appropriate address headers in the message.  Generally, they will show<br/>
-up in the list of deduced addresses in the order that the headers<br/>
-happen to appear (duplicate addresses are eliminated in any case).<br/>
-This variable can be set to the symbol 'first, in which case the<br/>
-Bcc:/Resent-Bcc: addresses will appear at the beginning in the list;<br/>
-or, it can be set to the symbol 'last, in which case they will appear<br/>
-at the end of the list.<br/>
-<br/>
-Why should you care?  Well, maybe you don't, and certainly the same<br/>
-things could be accomplished by affecting the order of message headers<br/>
-in the outgoing message.  Some people use Bcc: as a way of getting<br/>
-their own "come back" copy of each message they send.  If Bcc:<br/>
-addresses are not handled first, there can be substantial delays in<br/>
-seeing the message again.  Some configurations of sendmail, for example,<br/>
-seem to try to deliver to each addressee at least once, immediately<br/>
-and serially, so slow SMTP conversations can add up to a delay.  There<br/>
-is an option for either 'first or 'last because you might have a<br/>
-delivery agent that processes the addresses backwards.<br/>
-<br/>
+<strong>feedmail-deduce-bcc-where</strong> is a variable defined in `<code>feedmail.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Where Bcc:/Resent-Bcc: addresses should appear in the envelope list.</br>
+Addresses for the message envelope are deduced by examining</br>
+appropriate address headers in the message.  Generally, they will show</br>
+up in the list of deduced addresses in the order that the headers</br>
+happen to appear (duplicate addresses are eliminated in any case).</br>
+This variable can be set to the symbol 'first, in which case the</br>
+Bcc:/Resent-Bcc: addresses will appear at the beginning in the list;</br>
+or, it can be set to the symbol 'last, in which case they will appear</br>
+at the end of the list.</br>
+</br>
+Why should you care?  Well, maybe you don't, and certainly the same</br>
+things could be accomplished by affecting the order of message headers</br>
+in the outgoing message.  Some people use Bcc: as a way of getting</br>
+their own "come back" copy of each message they send.  If Bcc:</br>
+addresses are not handled first, there can be substantial delays in</br>
+seeing the message again.  Some configurations of sendmail, for example,</br>
+seem to try to deliver to each addressee at least once, immediately</br>
+and serially, so slow SMTP conversations can add up to a delay.  There</br>
+is an option for either 'first or 'last because you might have a</br>
+delivery agent that processes the addresses backwards.</br>
+</br>
 You can customize this variable.

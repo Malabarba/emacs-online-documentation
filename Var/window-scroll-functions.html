@@ -1,15 +1,13 @@
-<strong>window-scroll-functions</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is (follow-avoid-tail-recenter)<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of functions to call before redisplaying a window with scrolling.<br/>
-Each function is called with two arguments, the window and its new<br/>
-display-start position.  Note that these functions are also called by<br/>
-`set-window-buffer'.  Also note that the value of `window-end' is not<br/>
-valid when these functions are called.<br/>
-<br/>
-Warning: Do not use this feature to alter the way the window<br/>
-is scrolled.  It is not designed for that, and such use probably won't<br/>
+<strong>window-scroll-functions</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>(follow-avoid-tail-recenter)</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of functions to call before redisplaying a window with scrolling.</br>
+Each function is called with two arguments, the window and its new</br>
+display-start position.  Note that these functions are also called by</br>
+`set-window-buffer'.  Also note that the value of `window-end' is not</br>
+valid when these functions are called.</br>
+</br>
+Warning: Do not use this feature to alter the way the window</br>
+is scrolled.  It is not designed for that, and such use probably won't</br>
 work.

@@ -1,85 +1,92 @@
-<strong>display-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-It is bound to C-x 4 C-o.<br/>
-<br/>
-(display-buffer BUFFER-OR-NAME &optional ACTION FRAME)<br/>
-<br/>
-Display BUFFER-OR-NAME in some window, without selecting it.<br/>
-BUFFER-OR-NAME must be a buffer or the name of an existing<br/>
-buffer.  Return the window chosen for displaying BUFFER-OR-NAME,<br/>
-or nil if no such window is found.<br/>
-<br/>
-Optional argument ACTION, if non-nil, should specify a display<br/>
-action.  Its form is described below.<br/>
-<br/>
-Optional argument FRAME, if non-nil, acts like an additional<br/>
-ALIST entry (reusable-frames . FRAME) to the action list of ACTION,<br/>
-specifying the frame(s) to search for a window that is already<br/>
-displaying the buffer.  See `display-buffer-reuse-window'<br/>
-<br/>
-If ACTION is non-nil, it should have the form (FUNCTION . ALIST),<br/>
-where FUNCTION is either a function or a list of functions, and<br/>
-ALIST is an arbitrary association list (alist).<br/>
-<br/>
-Each such FUNCTION should accept two arguments: the buffer to<br/>
-display and an alist.  Based on those arguments, it should either<br/>
-display the buffer and return the window, or return nil if unable<br/>
-to display the buffer.<br/>
-<br/>
-The `display-buffer' function builds a function list and an alist<br/>
-by combining the functions and alists specified in<br/>
-`display-buffer-overriding-action', `display-buffer-alist', the<br/>
-ACTION argument, `display-buffer-base-action', and<br/>
-`display-buffer-fallback-action' (in order).  Then it calls each<br/>
-function in the combined function list in turn, passing the<br/>
-buffer as the first argument and the combined alist as the second<br/>
-argument, until one of the functions returns non-nil.<br/>
-<br/>
-If ACTION is nil, the function list and the alist are built using<br/>
-only the other variables mentioned above.<br/>
-<br/>
-Available action functions include:<br/>
- `display-buffer-same-window'<br/>
- `display-buffer-reuse-window'<br/>
- `display-buffer-pop-up-frame'<br/>
- `display-buffer-pop-up-window'<br/>
- `display-buffer-use-some-window'<br/>
-<br/>
-Recognized alist entries include:<br/>
-<br/>
- `inhibit-same-window' -- A non-nil value prevents the same<br/>
-                          window from being used for display.<br/>
-<br/>
- `inhibit-switch-frame' -- A non-nil value prevents any other<br/>
-                           frame from being raised or selected,<br/>
-                           even if the window is displayed there.<br/>
-<br/>
- `reusable-frames' -- Value specifies frame(s) to search for a<br/>
-                      window that already displays the buffer.<br/>
-                      See `display-buffer-reuse-window'.<br/>
-<br/>
- `pop-up-frame-parameters' -- Value specifies an alist of frame<br/>
-                              parameters to give a new frame, if<br/>
-                              one is created.<br/>
-<br/>
- `window-height' -- Value specifies either an integer (the number<br/>
-    of lines of a new window), a floating point number (the<br/>
-    fraction of a new window with respect to the height of the<br/>
-    frame's root window) or a function to be called with one<br/>
-    argument - a new window.  The function is supposed to adjust<br/>
-    the height of the window; its return value is ignored.<br/>
-    Suitable functions are `shrink-window-if-larger-than-buffer'<br/>
-    and `fit-window-to-buffer'.<br/>
-<br/>
- `window-width' -- Value specifies either an integer (the number<br/>
-    of columns of a new window), a floating point number (the<br/>
-    fraction of a new window with respect to the width of the<br/>
-    frame's root window) or a function to be called with one<br/>
-    argument - a new window.  The function is supposed to adjust<br/>
-    the width of the window; its return value is ignored.<br/>
-<br/>
-The ACTION argument to `display-buffer' can also have a non-nil<br/>
-and non-list value.  This means to display the buffer in a window<br/>
-other than the selected one, even if it is already displayed in<br/>
-the selected window.  If called interactively with a prefix<br/>
-argument, ACTION is t.
+<strong>display-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+It is bound to C-x 4 C-o.</br>
+</br>
+<code>(display-buffer <u>BUFFER-OR-NAME</u> <em>&optional</em> <u>ACTION</u> <u>FRAME</u></code>)</br>
+</br>
+Display <u>BUFFER-OR-NAME</u> in some window, without selecting it.</br>
+<u>BUFFER-OR-NAME</u> must be a buffer or the name of an existing</br>
+buffer.  Return the window chosen for displaying <u>BUFFER-OR-NAME</u>,</br>
+or nil if no such window is found.</br>
+</br>
+Optional argument <u>ACTION</u>, if non-nil, should specify a display</br>
+action.  Its form is described below.</br>
+</br>
+Optional argument <u>FRAME</u>, if non-nil, acts like an additional</br>
+ALIST entry (reusable-frames . <u>FRAME</u>) to the action list of <u>ACTION</u>,</br>
+specifying the frame(s) to search for a window that is already</br>
+displaying the buffer.  See `display-buffer-reuse-window'</br>
+</br>
+If <u>ACTION</u> is non-nil, it should have the form (FUNCTION . ALIST),</br>
+where FUNCTION is either a function or a list of functions, and</br>
+ALIST is an arbitrary association list (alist).</br>
+</br>
+Each such FUNCTION should accept two arguments: the buffer to</br>
+display and an alist.  Based on those arguments, it should</br>
+display the buffer and return the window.  If the caller is</br>
+prepared to handle the case of not displaying the buffer</br>
+and returning nil from `display-buffer' it should pass</br>
+(allow-no-window . t) as an element of the ALIST.</br>
+</br>
+The `display-buffer' function builds a function list and an alist</br>
+by combining the functions and alists specified in</br>
+`display-buffer-overriding-action', `display-buffer-alist', the</br>
+<u>ACTION</u> argument, `display-buffer-base-action', and</br>
+`display-buffer-fallback-action' (in order).  Then it calls each</br>
+function in the combined function list in turn, passing the</br>
+buffer as the first argument and the combined alist as the second</br>
+argument, until one of the functions returns non-nil.</br>
+</br>
+If <u>ACTION</u> is nil, the function list and the alist are built using</br>
+only the other variables mentioned above.</br>
+</br>
+Available action functions include:</br>
+ `display-buffer-same-window'</br>
+ `display-buffer-reuse-window'</br>
+ `display-buffer-pop-up-frame'</br>
+ `display-buffer-pop-up-window'</br>
+ `display-buffer-in-previous-window'</br>
+ `display-buffer-use-some-window'</br>
+</br>
+Recognized alist entries include:</br>
+</br>
+ `inhibit-same-window' -- A non-nil value prevents the same</br>
+                          window from being used for display.</br>
+</br>
+ `inhibit-switch-frame' -- A non-nil value prevents any other</br>
+                           frame from being raised or selected,</br>
+                           even if the window is displayed there.</br>
+</br>
+ `reusable-frames' -- Value specifies frame(s) to search for a</br>
+                      window that already displays the buffer.</br>
+                      See `display-buffer-reuse-window'.</br>
+</br>
+ `pop-up-frame-parameters' -- Value specifies an alist of frame</br>
+                              parameters to give a new frame, if</br>
+                              one is created.</br>
+</br>
+ `window-height' -- Value specifies either an integer (the number</br>
+    of lines of a new window), a floating point number (the</br>
+    fraction of a new window with respect to the height of the</br>
+    frame's root window) or a function to be called with one</br>
+    argument - a new window.  The function is supposed to adjust</br>
+    the height of the window; its return value is ignored.</br>
+    Suitable functions are `shrink-window-if-larger-than-buffer'</br>
+    and `fit-window-to-buffer'.</br>
+</br>
+ `window-width' -- Value specifies either an integer (the number</br>
+    of columns of a new window), a floating point number (the</br>
+    fraction of a new window with respect to the width of the</br>
+    frame's root window) or a function to be called with one</br>
+    argument - a new window.  The function is supposed to adjust</br>
+    the width of the window; its return value is ignored.</br>
+</br>
+ `allow-no-window' -- A non-nil value indicates readiness for the case</br>
+    of not displaying the buffer and FUNCTION can safely return</br>
+    a non-window value to suppress displaying.</br>
+</br>
+The <u>ACTION</u> argument to `display-buffer' can also have a non-nil</br>
+and non-list value.  This means to display the buffer in a window</br>
+other than the selected one, even if it is already displayed in</br>
+the selected window.  If called interactively with a prefix</br>
+argument, <u>ACTION</u> is t.

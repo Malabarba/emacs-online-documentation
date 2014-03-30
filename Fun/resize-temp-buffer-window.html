@@ -1,11 +1,17 @@
-<strong>resize-temp-buffer-window</strong> is a compiled Lisp function in `<code>help.el</code>'.<br/>
-<br/>
-(resize-temp-buffer-window &optional WINDOW)<br/>
-<br/>
-Resize WINDOW to fit its contents.<br/>
-WINDOW can be any live window and defaults to the selected one.<br/>
-<br/>
-Do not make WINDOW higher than `temp-buffer-max-height' nor<br/>
-smaller than `window-min-height'.  Do nothing if WINDOW is not<br/>
-vertically combined, some of its contents are scrolled out of<br/>
-view, or WINDOW was not created by `display-buffer'.
+<strong>resize-temp-buffer-window</strong> is a compiled Lisp function in `<code>help.el</code>'.</br>
+</br>
+(resize-temp-buffer-window &optional <u>WINDOW</u>)</br>
+</br>
+Resize <u>WINDOW</u> to fit its contents.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.</br>
+Do not resize if <u>WINDOW</u> was not created by `display-buffer'.</br>
+</br>
+If <u>WINDOW</u> is part of a vertical combination, restrain its new</br>
+size by `temp-buffer-max-height' and do not resize if its minimum</br>
+accessible position is scrolled out of view.  If <u>WINDOW</u> is part</br>
+of a horizontal combination, restrain its new size by</br>
+`temp-buffer-max-width'.  In both cases, the value of the option</br>
+`fit-window-to-buffer-horizontally' can inhibit resizing.</br>
+</br>
+If <u>WINDOW</u> is the root window of its frame, resize the frame</br>
+provided `fit-frame-to-buffer' is non-nil.

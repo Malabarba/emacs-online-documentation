@@ -1,11 +1,11 @@
-<strong>smie-blink-matching-triggers</strong> is a variable defined in `<code>smie.el</code>'.<br/>
-Its value is (32 10)<br/>
-<br/>
-Documentation:<br/>
-Chars which might trigger `blink-matching-open'.<br/>
-These can include the final chars of end-tokens, or chars that are<br/>
-typically inserted right after an end token.<br/>
-I.e. a good choice can be:<br/>
-    (delete-dups<br/>
-     (mapcar (lambda (kw) (aref (cdr kw) (1- (length (cdr kw)))))<br/>
+<strong>smie-blink-matching-triggers</strong> is a variable defined in `<code>smie.el</code>'.</br>
+Its value is <pre>(32 10)</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Chars which might trigger `blink-matching-open'.</br>
+These can include the final chars of end-tokens, or chars that are</br>
+typically inserted right after an end token.</br>
+I.e. a good choice can be:</br>
+    (delete-dups</br>
+     (mapcar (lambda (kw) (aref (cdr kw) (1- (length (cdr kw)))))</br>
              smie-closer-alist))

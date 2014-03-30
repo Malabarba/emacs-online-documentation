@@ -1,38 +1,38 @@
-<strong>allout-open-topic</strong> is a compiled Lisp function in `<code>allout.el</code>'.<br/>
-<br/>
-(allout-open-topic RELATIVE-DEPTH &optional BEFORE OFFER-RECENT-BULLET)<br/>
-<br/>
-Open a new topic at depth DEPTH.<br/>
-<br/>
-New topic is situated after current one, unless optional flag BEFORE<br/>
-is non-nil, or unless current line is completely empty -- lacking even<br/>
-whitespace -- in which case open is done on the current line.<br/>
-<br/>
-When adding an offspring, it will be added immediately after the parent if<br/>
-the other offspring are exposed, or after the last child if the offspring<br/>
-are hidden.  (The intervening offspring will be exposed in the latter<br/>
-case.)<br/>
-<br/>
-If OFFER-RECENT-BULLET is true, offer to use the bullet of the prior sibling.<br/>
-<br/>
-Nuances:<br/>
-<br/>
-- Creation of new topics is with respect to the visible topic<br/>
-  containing the cursor, regardless of intervening concealed ones.<br/>
-<br/>
-- New headers are generally created after/before the body of a<br/>
-  topic.  However, they are created right at cursor location if the<br/>
-  cursor is on a blank line, even if that breaks the current topic<br/>
-  body.  This is intentional, to provide a simple means for<br/>
-  deliberately dividing topic bodies.<br/>
-<br/>
-- Double spacing of topic lists is preserved.  Also, the first<br/>
-  level two topic is created double-spaced (and so would be<br/>
-  subsequent siblings, if that's left intact).  Otherwise,<br/>
-  single-spacing is used.<br/>
-<br/>
-- Creation of sibling or nested topics is with respect to the topic<br/>
-  you're starting from, even when creating backwards.  This way you<br/>
-  can easily create a sibling in front of the current topic without<br/>
-  having to go to its preceding sibling, and then open forward<br/>
+<strong>allout-open-topic</strong> is a compiled Lisp function in `<code>allout.el</code>'.</br>
+</br>
+(allout-open-topic <u>RELATIVE-DEPTH</u> &optional <u>BEFORE</u> <u>OFFER-RECENT-BULLET</u>)</br>
+</br>
+Open a new topic at depth DEPTH.</br>
+</br>
+New topic is situated after current one, unless optional flag <u>BEFORE</u></br>
+is non-nil, or unless current line is completely empty -- lacking even</br>
+whitespace -- in which case open is done on the current line.</br>
+</br>
+When adding an offspring, it will be added immediately after the parent if</br>
+the other offspring are exposed, or after the last child if the offspring</br>
+are hidden.  (The intervening offspring will be exposed in the latter</br>
+case.)</br>
+</br>
+If <u>OFFER-RECENT-BULLET</u> is true, offer to use the bullet of the prior sibling.</br>
+</br>
+Nuances:</br>
+</br>
+- Creation of new topics is with respect to the visible topic</br>
+  containing the cursor, regardless of intervening concealed ones.</br>
+</br>
+- New headers are generally created after/before the body of a</br>
+  topic.  However, they are created right at cursor location if the</br>
+  cursor is on a blank line, even if that breaks the current topic</br>
+  body.  This is intentional, to provide a simple means for</br>
+  deliberately dividing topic bodies.</br>
+</br>
+- Double spacing of topic lists is preserved.  Also, the first</br>
+  level two topic is created double-spaced (and so would be</br>
+  subsequent siblings, if that's left intact).  Otherwise,</br>
+  single-spacing is used.</br>
+</br>
+- Creation of sibling or nested topics is with respect to the topic</br>
+  you're starting from, even when creating backwards.  This way you</br>
+  can easily create a sibling in front of the current topic without</br>
+  having to go to its preceding sibling, and then open forward</br>
   from there.

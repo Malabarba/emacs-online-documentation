@@ -1,26 +1,27 @@
-<strong>unload-feature</strong> is an interactive autoloaded compiled Lisp function in `<code>loadhist.el</code>'.<br/>
-<br/>
-(unload-feature FEATURE &optional FORCE)<br/>
-<br/>
-Unload the library that provided FEATURE.<br/>
-If the feature is required by any other loaded code, and prefix arg FORCE<br/>
-is nil, raise an error.<br/>
-<br/>
-Standard unloading activities include restoring old autoloads for<br/>
-functions defined by the library, undoing any additions that the<br/>
-library has made to hook variables or to `auto-mode-alist', undoing<br/>
-ELP profiling of functions in that library, unproviding any features<br/>
-provided by the library, and canceling timers held in variables<br/>
-defined by the library.<br/>
-<br/>
-If a function `FEATURE-unload-function' is defined, this function<br/>
-calls it with no arguments, before doing anything else.  That function<br/>
-can do whatever is appropriate to undo the loading of the library.  If<br/>
-`FEATURE-unload-function' returns non-nil, that suppresses the<br/>
-standard unloading of the library.  Otherwise the standard unloading<br/>
-proceeds.<br/>
-<br/>
-`FEATURE-unload-function' has access to the package's list of<br/>
-definitions in the variable `unload-function-defs-list' and could<br/>
-remove symbols from it in the event that the package has done<br/>
+<strong>unload-feature</strong> is an interactive autoloaded compiled Lisp function in `<code>loadhist.el</code>'.</br>
+</br>
+</br>
+(unload-feature <u>FEATURE</u> &optional <u>FORCE</u>)</br>
+</br>
+Unload the library that provided <u>FEATURE</u>.</br>
+If the feature is required by any other loaded code, and prefix arg <u>FORCE</u></br>
+is nil, raise an error.</br>
+</br>
+Standard unloading activities include restoring old autoloads for</br>
+functions defined by the library, undoing any additions that the</br>
+library has made to hook variables or to `auto-mode-alist', undoing</br>
+ELP profiling of functions in that library, unproviding any features</br>
+provided by the library, and canceling timers held in variables</br>
+defined by the library.</br>
+</br>
+If a function `<u>FEATURE</u>-unload-function' is defined, this function</br>
+calls it with no arguments, before doing anything else.  That function</br>
+can do whatever is appropriate to undo the loading of the library.  If</br>
+`<u>FEATURE</u>-unload-function' returns non-nil, that suppresses the</br>
+standard unloading of the library.  Otherwise the standard unloading</br>
+proceeds.</br>
+</br>
+`<u>FEATURE</u>-unload-function' has access to the package's list of</br>
+definitions in the variable `unload-function-defs-list' and could</br>
+remove symbols from it in the event that the package has done</br>
 something strange, such as redefining an Emacs function.

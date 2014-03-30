@@ -1,22 +1,21 @@
-<strong>dsssl-font-lock-keywords</strong> is a variable defined in `<code>scheme.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Default expressions to highlight in DSSSL mode.<br/>
-<br/>
-Value: (("(\\(define\\(-\\w+\\)?\\)\\>[ 	]*\\((?\\)\\(\\sw+\\)\\>"<br/>
-  (1 font-lock-keyword-face)<br/>
-  (4 font-lock-function-name-face))<br/>
- ("(\\(and\\|c\\(ase\\|ond\\)\\|else\\|if\\|l\\(ambda\\|et\\(\\|*\\|rec\\)\\)\\|map\\|or\\|with-mode\\)\\>" . 1)<br/>
- ("(\\(element\\|mode\\|declare-\\w+\\)\\>[ 	]*\\(\\sw+\\)"<br/>
-  (1 font-lock-keyword-face)<br/>
-  (2 font-lock-type-face))<br/>
- ("(\\(element\\)\\>[ 	]*(\\(\\S)+\\))"<br/>
-  (1 font-lock-keyword-face)<br/>
-  (2 font-lock-type-face))<br/>
- ("\\<\\sw+:\\>" . font-lock-constant-face)<br/>
- ("<\\([!?][-a-z0-9]+\\)" 1 font-lock-keyword-face)<br/>
- ("<\\(/?[-a-z0-9]+\\)" 1 font-lock-function-name-face))<br/>
-<br/>
+<strong>dsssl-font-lock-keywords</strong> is a variable defined in `<code>scheme.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Default expressions to highlight in DSSSL mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("(\\(define\\(-\\w+\\)?\\)\\>[ 	]*\\((?\\)\\(\\sw+\\)\\>"
+  (1 font-lock-keyword-face)
+  (4 font-lock-function-name-face))
+ ("(\\(and\\|c\\(ase\\|ond\\)\\|else\\|if\\|l\\(ambda\\|et\\(\\|*\\|rec\\)\\)\\|map\\|or\\|with-mode\\)\\>" . 1)
+ ("(\\(element\\|mode\\|declare-\\w+\\)\\>[ 	]*\\(\\sw+\\)"
+  (1 font-lock-keyword-face)
+  (2 font-lock-type-face))
+ ("(\\(element\\)\\>[ 	]*(\\(\\S)+\\))"
+  (1 font-lock-keyword-face)
+  (2 font-lock-type-face))
+ ("\\<\\sw+:\\>" . font-lock-constant-face)
+ ("<\\([!?][-a-z0-9]+\\)" 1 font-lock-keyword-face)
+ ("<\\(/?[-a-z0-9]+\\)" 1 font-lock-function-name-face))
+</pre></br>

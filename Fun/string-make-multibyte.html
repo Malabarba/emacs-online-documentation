@@ -1,13 +1,13 @@
-<strong>string-make-multibyte</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(string-make-multibyte STRING)<br/>
-<br/>
-Return the multibyte equivalent of STRING.<br/>
-If STRING is unibyte and contains non-ASCII characters, the function<br/>
-`unibyte-char-to-multibyte' is used to convert each unibyte character<br/>
-to a multibyte character.  In this case, the returned string is a<br/>
-newly created string with no text properties.  If STRING is multibyte<br/>
-or entirely ASCII, it is returned unchanged.  In particular, when<br/>
-STRING is unibyte and entirely ASCII, the returned string is unibyte.<br/>
-(When the characters are all ASCII, Emacs primitives will treat the<br/>
+<strong>string-make-multibyte</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(string-make-multibyte <u>STRING</u>)</br>
+</br>
+Return the multibyte equivalent of <u>STRING</u>.</br>
+If <u>STRING</u> is unibyte and contains non-ASCII characters, the function</br>
+`unibyte-char-to-multibyte' is used to convert each unibyte character</br>
+to a multibyte character.  In this case, the returned string is a</br>
+newly created string with no text properties.  If <u>STRING</u> is multibyte</br>
+or entirely ASCII, it is returned unchanged.  In particular, when</br>
+<u>STRING</u> is unibyte and entirely ASCII, the returned string is unibyte.</br>
+(When the characters are all ASCII, Emacs primitives will treat the</br>
 string the same way whether it is unibyte or multibyte.)

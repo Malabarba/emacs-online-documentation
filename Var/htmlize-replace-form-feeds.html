@@ -1,0 +1,18 @@
+<strong>htmlize-replace-form-feeds</strong> is a variable defined in `<code>htmlize.el</code>'.</br>
+Its value is <pre>t</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Non-nil means replace form feeds in source code with HTML separators.</br>
+Form feeds are the ^L characters at line beginnings that are sometimes</br>
+used to separate sections of source code.  If this variable is set to</br>
+`t', form feed characters are replaced with the <hr> separator.  If this</br>
+is a string, it specifies the replacement to use.  Note that <pre> is</br>
+temporarily closed before the separator is inserted, so the default</br>
+replacement is effectively "</pre><hr /><pre>".  If you specify</br>
+another replacement, don't forget to close and reopen the <pre> if you</br>
+want the output to remain valid HTML.</br>
+</br>
+If you need more elaborate processing, set this to nil and use</br>
+htmlize-after-hook.</br>
+</br>
+You can customize this variable.

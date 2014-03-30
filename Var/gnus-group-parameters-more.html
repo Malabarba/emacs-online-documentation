@@ -1,195 +1,195 @@
-<strong>gnus-group-parameters-more</strong> is a variable defined in `<code>gnus.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value:<br/>
-((posting-charset-alist<br/>
-  (choice :tag "Permitted unencoded charsets" :value nil<br/>
-	  (repeat<br/>
-	   (symbol)))<br/>
-  "List of charsets that are permitted to be unencoded.")<br/>
- (list-identifier<br/>
-  (choice :tag "Identifier" :value nil<br/>
-	  (symbol :tag "Item in `gnus-list-identifiers'" none)<br/>
-	  regexp<br/>
-	  (const :tag "None" nil))<br/>
-  "If non-nil, specify how to remove `identifiers' from articles' subject.\n\nAny symbol is used to look up a regular expression to match the\nbanner in `gnus-list-identifiers'.  A string is used as a regular\nexpression to match the identifier directly.")<br/>
- (banner<br/>
-  (choice :tag "Banner" :value nil<br/>
-	  (const :tag "Remove signature" signature)<br/>
-	  (symbol :tag "Item in `gnus-article-banner-alist'" none)<br/>
-	  regexp<br/>
-	  (const :tag "None" nil))<br/>
-  "If non-nil, specify how to remove `banners' from articles.\n\nSymbol `signature' means to remove signatures delimited by\n`gnus-signature-separator'.  Any other symbol is used to look up a\nregular expression to match the banner in `gnus-article-banner-alist'.\nA string is used as a regular expression to match the banner\ndirectly.")<br/>
- (ignored-charsets<br/>
-  (choice :tag "Ignored charsets" :value nil<br/>
-	  (repeat<br/>
-	   (symbol)))<br/>
-  "List of charsets that should be ignored.\n\nWhen these charsets are used in the \"charset\" parameter, the\ndefault charset will be used instead.")<br/>
- (spam-marks<br/>
-  (list :tag "Spam mark choices"<br/>
-	(set<br/>
-	 (variable-item gnus-spam-mark)<br/>
-	 (variable-item gnus-killed-mark)<br/>
-	 (variable-item gnus-kill-file-mark)<br/>
-	 (variable-item gnus-low-score-mark)))<br/>
-  "Marks considered spam.\nSuch articles will be processed as spam on group exit.  When nil, the global\nspam-spam-marks variable takes precedence.")<br/>
- (ham-marks<br/>
-  (list :tag "Ham mark choices"<br/>
-	(set<br/>
-	 (variable-item gnus-del-mark)<br/>
-	 (variable-item gnus-read-mark)<br/>
-	 (variable-item gnus-ticked-mark)<br/>
-	 (variable-item gnus-killed-mark)<br/>
-	 (variable-item gnus-kill-file-mark)<br/>
-	 (variable-item gnus-low-score-mark)))<br/>
-  "Marks considered ham (positively not spam).  Such articles will be\nprocessed as ham (non-spam) on group exit.  When nil, the global\nspam-ham-marks variable takes precedence.")<br/>
- (ham-process-destination<br/>
-  (choice :tag "Destination for ham articles at summary exit from a spam group"<br/>
-	  (string :tag "Move to a group")<br/>
-	  (repeat :tag "Move to multiple groups"<br/>
-		  (string :tag "Destination group"))<br/>
-	  (const :tag "Respool" respool)<br/>
-	  (const :tag "Do nothing" nil))<br/>
-  "Where ham articles will go at summary exit from a spam group.")<br/>
- (spam-process-destination<br/>
-  (choice :tag "Destination for spam-processed articles at summary exit"<br/>
-	  (string :tag "Move to a group")<br/>
-	  (repeat :tag "Move to multiple groups"<br/>
-		  (string :tag "Destination group"))<br/>
-	  (const :tag "Expire" nil))<br/>
-  "Where spam-processed articles will go at summary exit.")<br/>
- (spam-autodetect-methods<br/>
-  (choice :tag "Spam autodetection-specific methods"<br/>
-	  (const none)<br/>
-	  (const default)<br/>
-	  (set :tag "Use specific methods"<br/>
-	       (variable-item spam-use-blacklist)<br/>
-	       (variable-item spam-use-gmane-xref)<br/>
-	       (variable-item spam-use-regex-headers)<br/>
-	       (variable-item spam-use-regex-body)<br/>
-	       (variable-item spam-use-whitelist)<br/>
-	       (variable-item spam-use-BBDB)<br/>
-	       (variable-item spam-use-ifile)<br/>
-	       (variable-item spam-use-spamoracle)<br/>
-	       (variable-item spam-use-crm114)<br/>
-	       (variable-item spam-use-spamassassin)<br/>
-	       (variable-item spam-use-spamassassin-headers)<br/>
-	       (variable-item spam-use-bsfilter)<br/>
-	       (variable-item spam-use-bsfilter-headers)<br/>
-	       (variable-item spam-use-stat)<br/>
-	       (variable-item spam-use-blackholes)<br/>
-	       (variable-item spam-use-hashcash)<br/>
-	       (variable-item spam-use-bogofilter-headers)<br/>
-	       (variable-item spam-use-bogofilter)))<br/>
-  "Spam autodetection methods.\nRequires the spam-autodetect parameter.  Only unseen articles\nwill be examined, unless spam-autodetect-recheck-messages is\nset.")<br/>
- (spam-autodetect<br/>
-  (boolean :tag "Spam autodetection")<br/>
-  "Spam autodetection.\nOnly unseen articles will be examined, unless\nspam-autodetect-recheck-messages is set.")<br/>
- (spam-process<br/>
-  (choice :tag "Spam Summary Exit Processor" :value nil<br/>
-	  (list :tag "Spam Summary Exit Processor Choices"<br/>
-		(set<br/>
-		 (const :tag "Spam: Bogofilter"<br/>
-			(spam spam-use-bogofilter))<br/>
-		 (const :tag "Spam: Blacklist"<br/>
-			(spam spam-use-blacklist))<br/>
-		 (const :tag "Spam: Bsfilter"<br/>
-			(spam spam-use-bsfilter))<br/>
-		 (const :tag "Spam: Gmane Report"<br/>
-			(spam spam-use-gmane))<br/>
-		 (const :tag "Spam: Resend Message"<br/>
-			(spam spam-use-resend))<br/>
-		 (const :tag "Spam: ifile"<br/>
-			(spam spam-use-ifile))<br/>
-		 (const :tag "Spam: Spam Oracle"<br/>
-			(spam spam-use-spamoracle))<br/>
-		 (const :tag "Spam: Spam-stat"<br/>
-			(spam spam-use-stat))<br/>
-		 (const :tag "Spam: SpamAssassin"<br/>
-			(spam spam-use-spamassassin))<br/>
-		 (const :tag "Spam: CRM114"<br/>
-			(spam spam-use-crm114))<br/>
-		 (const :tag "Ham: BBDB"<br/>
-			(ham spam-use-BBDB))<br/>
-		 (const :tag "Ham: Bogofilter"<br/>
-			(ham spam-use-bogofilter))<br/>
-		 (const :tag "Ham: Bsfilter"<br/>
-			(ham spam-use-bsfilter))<br/>
-		 (const :tag "Ham: Copy"<br/>
-			(ham spam-use-ham-copy))<br/>
-		 (const :tag "Ham: Resend Message"<br/>
-			(ham spam-use-resend))<br/>
-		 (const :tag "Ham: ifile"<br/>
-			(ham spam-use-ifile))<br/>
-		 (const :tag "Ham: Spam Oracle"<br/>
-			(ham spam-use-spamoracle))<br/>
-		 (const :tag "Ham: Spam-stat"<br/>
-			(ham spam-use-stat))<br/>
-		 (const :tag "Ham: SpamAssassin"<br/>
-			(ham spam-use-spamassassin))<br/>
-		 (const :tag "Ham: CRM114"<br/>
-			(ham spam-use-crm114))<br/>
-		 (const :tag "Ham: Whitelist"<br/>
-			(ham spam-use-whitelist))<br/>
-		 (variable-item gnus-group-spam-exit-processor-ifile)<br/>
-		 (variable-item gnus-group-spam-exit-processor-stat)<br/>
-		 (variable-item gnus-group-spam-exit-processor-bogofilter)<br/>
-		 (variable-item gnus-group-spam-exit-processor-blacklist)<br/>
-		 (variable-item gnus-group-spam-exit-processor-spamoracle)<br/>
-		 (variable-item gnus-group-spam-exit-processor-report-gmane)<br/>
-		 (variable-item gnus-group-ham-exit-processor-bogofilter)<br/>
-		 (variable-item gnus-group-ham-exit-processor-ifile)<br/>
-		 (variable-item gnus-group-ham-exit-processor-stat)<br/>
-		 (variable-item gnus-group-ham-exit-processor-whitelist)<br/>
-		 (variable-item gnus-group-ham-exit-processor-BBDB)<br/>
-		 (variable-item gnus-group-ham-exit-processor-spamoracle)<br/>
-		 (variable-item gnus-group-ham-exit-processor-copy))))<br/>
-  "Which spam or ham processors will be applied when the summary is exited.")<br/>
- (ham-resend-to string "The address to get ham resent (through spam-report-resend).")<br/>
- (spam-resend-to string "The address to get spam resent (through spam-report-resend).")<br/>
- (spam-contents<br/>
-  (list :tag "Group contents spam/ham classification"<br/>
-	(choice :tag "Group contents classification for spam sorting"<br/>
-		(variable-item gnus-group-spam-classification-spam)<br/>
-		(variable-item gnus-group-spam-classification-ham)<br/>
-		(const :tag "Unclassified" nil)))<br/>
-  "The spam classification (spam, ham, or neither) of this group.\nWhen a spam group is entered, all unread articles are marked as\nspam.  There is other behavior associated with ham and no\nclassification when spam.el is loaded - see the manual.")<br/>
- (registry-ignore<br/>
-  (boolean :tag "Group Ignored by the Registry")<br/>
-  "Whether the Gnus Registry should ignore this group.")<br/>
- (large-newsgroup-initial<br/>
-  (choice :tag "Initial Input for Large Newsgroup"<br/>
-	  (const :tag "All" nil)<br/>
-	  (integer))<br/>
-  "\nThis number will be prompted as the initial value of the number of\narticles to list when the group is a large newsgroup (see\n`gnus-large-newsgroup').  If it is nil, the default value is the\ntotal number of articles in the group.")<br/>
- (post-method<br/>
-  (choice :tag "Posting Method"<br/>
-	  (const :tag "Use native server" native)<br/>
-	  (const :tag "Use current server" current)<br/>
-	  (list :convert-widget<br/>
-		(lambda<br/>
-		  (widget)<br/>
-		  (list 'sexp :tag "Methods" :value gnus-select-method))))<br/>
-  "Posting method for this group.")<br/>
- (charset<br/>
-  (symbol :tag "Charset")<br/>
-  "The default charset to use in the group.")<br/>
- (total-expire<br/>
-  (const :tag "Total Expire" t)<br/>
-  "All read articles will be put through the expiry process\n\nThis happens even if they are not marked as expirable.\nUse with caution.")<br/>
- (auto-expire<br/>
-  (const :tag "Automatic Expire" t)<br/>
-  "All articles that are read will be marked as expirable.")<br/>
- (subscribed<br/>
-  (const :tag "Subscribed" t)<br/>
-  "Gnus assumed that you are subscribed to the To/List address.\n\nWhen constructing a list of subscribed groups using\n`gnus-find-subscribed-addresses', Gnus includes the To address given\nabove, or the list address (if the To address has not been set).")<br/>
- (to-list<br/>
-  (gnus-email-address :tag "To List")<br/>
-  "This address will be used when doing a `a' in the group.\n\nIt is totally ignored when doing a followup--except that if it is\npresent in a news group, you'll get mail group semantics when doing\n`f'.\n\nThe gnus-group-split mail splitting mechanism will behave as if this\naddress was listed in gnus-group-split Addresses (see below).")<br/>
- (to-address<br/>
-  (gnus-email-address :tag "To Address")<br/>
-  "This will be used when doing followups and posts.\n\nThis is primarily useful in mail groups that represent closed\nmailing lists--mailing lists where it's expected that everybody that\nwrites to the mailing list is subscribed to it.  Since using this\nparameter ensures that the mail only goes to the mailing list itself,\nit means that members won't receive two copies of your followups.\n\nUsing `to-address' will actually work whether the group is foreign or\nnot.  Let's say there's a group on the server that is called\n`fa.4ad-l'.  This is a real newsgroup, but the server has gotten the\narticles from a mail-to-news gateway.  Posting directly to this group\nis therefore impossible--you have to send mail to the mailing list\naddress instead.\n\nThe gnus-group-split mail splitting mechanism will behave as if this\naddress was listed in gnus-group-split Addresses (see below)."))<br/>
-<br/>
+<strong>gnus-group-parameters-more</strong> is a variable defined in `<code>gnus.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((posting-charset-alist
+  (choice :tag "Permitted unencoded charsets" :value nil
+	  (repeat
+	   (symbol)))
+  "List of charsets that are permitted to be unencoded.")
+ (list-identifier
+  (choice :tag "Identifier" :value nil
+	  (symbol :tag "Item in `gnus-list-identifiers'" none)
+	  regexp
+	  (const :tag "None" nil))
+  "If non-nil, specify how to remove `identifiers' from articles' subject.\n\nAny symbol is used to look up a regular expression to match the\nbanner in `gnus-list-identifiers'.  A string is used as a regular\nexpression to match the identifier directly.")
+ (banner
+  (choice :tag "Banner" :value nil
+	  (const :tag "Remove signature" signature)
+	  (symbol :tag "Item in `gnus-article-banner-alist'" none)
+	  regexp
+	  (const :tag "None" nil))
+  "If non-nil, specify how to remove `banners' from articles.\n\nSymbol `signature' means to remove signatures delimited by\n`gnus-signature-separator'.  Any other symbol is used to look up a\nregular expression to match the banner in `gnus-article-banner-alist'.\nA string is used as a regular expression to match the banner\ndirectly.")
+ (ignored-charsets
+  (choice :tag "Ignored charsets" :value nil
+	  (repeat
+	   (symbol)))
+  "List of charsets that should be ignored.\n\nWhen these charsets are used in the \"charset\" parameter, the\ndefault charset will be used instead.")
+ (spam-marks
+  (list :tag "Spam mark choices"
+	(set
+	 (variable-item gnus-spam-mark)
+	 (variable-item gnus-killed-mark)
+	 (variable-item gnus-kill-file-mark)
+	 (variable-item gnus-low-score-mark)))
+  "Marks considered spam.\nSuch articles will be processed as spam on group exit.  When nil, the global\nspam-spam-marks variable takes precedence.")
+ (ham-marks
+  (list :tag "Ham mark choices"
+	(set
+	 (variable-item gnus-del-mark)
+	 (variable-item gnus-read-mark)
+	 (variable-item gnus-ticked-mark)
+	 (variable-item gnus-killed-mark)
+	 (variable-item gnus-kill-file-mark)
+	 (variable-item gnus-low-score-mark)))
+  "Marks considered ham (positively not spam).  Such articles will be\nprocessed as ham (non-spam) on group exit.  When nil, the global\nspam-ham-marks variable takes precedence.")
+ (ham-process-destination
+  (choice :tag "Destination for ham articles at summary exit from a spam group"
+	  (string :tag "Move to a group")
+	  (repeat :tag "Move to multiple groups"
+		  (string :tag "Destination group"))
+	  (const :tag "Respool" respool)
+	  (const :tag "Do nothing" nil))
+  "Where ham articles will go at summary exit from a spam group.")
+ (spam-process-destination
+  (choice :tag "Destination for spam-processed articles at summary exit"
+	  (string :tag "Move to a group")
+	  (repeat :tag "Move to multiple groups"
+		  (string :tag "Destination group"))
+	  (const :tag "Expire" nil))
+  "Where spam-processed articles will go at summary exit.")
+ (spam-autodetect-methods
+  (choice :tag "Spam autodetection-specific methods"
+	  (const none)
+	  (const default)
+	  (set :tag "Use specific methods"
+	       (variable-item spam-use-blacklist)
+	       (variable-item spam-use-gmane-xref)
+	       (variable-item spam-use-regex-headers)
+	       (variable-item spam-use-regex-body)
+	       (variable-item spam-use-whitelist)
+	       (variable-item spam-use-BBDB)
+	       (variable-item spam-use-ifile)
+	       (variable-item spam-use-spamoracle)
+	       (variable-item spam-use-crm114)
+	       (variable-item spam-use-spamassassin)
+	       (variable-item spam-use-spamassassin-headers)
+	       (variable-item spam-use-bsfilter)
+	       (variable-item spam-use-bsfilter-headers)
+	       (variable-item spam-use-stat)
+	       (variable-item spam-use-blackholes)
+	       (variable-item spam-use-hashcash)
+	       (variable-item spam-use-bogofilter-headers)
+	       (variable-item spam-use-bogofilter)))
+  "Spam autodetection methods.\nRequires the spam-autodetect parameter.  Only unseen articles\nwill be examined, unless spam-autodetect-recheck-messages is\nset.")
+ (spam-autodetect
+  (boolean :tag "Spam autodetection")
+  "Spam autodetection.\nOnly unseen articles will be examined, unless\nspam-autodetect-recheck-messages is set.")
+ (spam-process
+  (choice :tag "Spam Summary Exit Processor" :value nil
+	  (list :tag "Spam Summary Exit Processor Choices"
+		(set
+		 (const :tag "Spam: Bogofilter"
+			(spam spam-use-bogofilter))
+		 (const :tag "Spam: Blacklist"
+			(spam spam-use-blacklist))
+		 (const :tag "Spam: Bsfilter"
+			(spam spam-use-bsfilter))
+		 (const :tag "Spam: Gmane Report"
+			(spam spam-use-gmane))
+		 (const :tag "Spam: Resend Message"
+			(spam spam-use-resend))
+		 (const :tag "Spam: ifile"
+			(spam spam-use-ifile))
+		 (const :tag "Spam: Spam Oracle"
+			(spam spam-use-spamoracle))
+		 (const :tag "Spam: Spam-stat"
+			(spam spam-use-stat))
+		 (const :tag "Spam: SpamAssassin"
+			(spam spam-use-spamassassin))
+		 (const :tag "Spam: CRM114"
+			(spam spam-use-crm114))
+		 (const :tag "Ham: BBDB"
+			(ham spam-use-BBDB))
+		 (const :tag "Ham: Bogofilter"
+			(ham spam-use-bogofilter))
+		 (const :tag "Ham: Bsfilter"
+			(ham spam-use-bsfilter))
+		 (const :tag "Ham: Copy"
+			(ham spam-use-ham-copy))
+		 (const :tag "Ham: Resend Message"
+			(ham spam-use-resend))
+		 (const :tag "Ham: ifile"
+			(ham spam-use-ifile))
+		 (const :tag "Ham: Spam Oracle"
+			(ham spam-use-spamoracle))
+		 (const :tag "Ham: Spam-stat"
+			(ham spam-use-stat))
+		 (const :tag "Ham: SpamAssassin"
+			(ham spam-use-spamassassin))
+		 (const :tag "Ham: CRM114"
+			(ham spam-use-crm114))
+		 (const :tag "Ham: Whitelist"
+			(ham spam-use-whitelist))
+		 (variable-item gnus-group-spam-exit-processor-ifile)
+		 (variable-item gnus-group-spam-exit-processor-stat)
+		 (variable-item gnus-group-spam-exit-processor-bogofilter)
+		 (variable-item gnus-group-spam-exit-processor-blacklist)
+		 (variable-item gnus-group-spam-exit-processor-spamoracle)
+		 (variable-item gnus-group-spam-exit-processor-report-gmane)
+		 (variable-item gnus-group-ham-exit-processor-bogofilter)
+		 (variable-item gnus-group-ham-exit-processor-ifile)
+		 (variable-item gnus-group-ham-exit-processor-stat)
+		 (variable-item gnus-group-ham-exit-processor-whitelist)
+		 (variable-item gnus-group-ham-exit-processor-BBDB)
+		 (variable-item gnus-group-ham-exit-processor-spamoracle)
+		 (variable-item gnus-group-ham-exit-processor-copy))))
+  "Which spam or ham processors will be applied when the summary is exited.")
+ (ham-resend-to string "The address to get ham resent (through spam-report-resend).")
+ (spam-resend-to string "The address to get spam resent (through spam-report-resend).")
+ (spam-contents
+  (list :tag "Group contents spam/ham classification"
+	(choice :tag "Group contents classification for spam sorting"
+		(variable-item gnus-group-spam-classification-spam)
+		(variable-item gnus-group-spam-classification-ham)
+		(const :tag "Unclassified" nil)))
+  "The spam classification (spam, ham, or neither) of this group.\nWhen a spam group is entered, all unread articles are marked as\nspam.  There is other behavior associated with ham and no\nclassification when spam.el is loaded - see the manual.")
+ (registry-ignore
+  (boolean :tag "Group Ignored by the Registry")
+  "Whether the Gnus Registry should ignore this group.")
+ (large-newsgroup-initial
+  (choice :tag "Initial Input for Large Newsgroup"
+	  (const :tag "All" nil)
+	  (integer))
+  "\nThis number will be prompted as the initial value of the number of\narticles to list when the group is a large newsgroup (see\n`gnus-large-newsgroup').  If it is nil, the default value is the\ntotal number of articles in the group.")
+ (post-method
+  (choice :tag "Posting Method"
+	  (const :tag "Use native server" native)
+	  (const :tag "Use current server" current)
+	  (list :convert-widget
+		(lambda
+		  (widget)
+		  (list 'sexp :tag "Methods" :value gnus-select-method))))
+  "Posting method for this group.")
+ (charset
+  (symbol :tag "Charset")
+  "The default charset to use in the group.")
+ (total-expire
+  (const :tag "Total Expire" t)
+  "All read articles will be put through the expiry process\n\nThis happens even if they are not marked as expirable.\nUse with caution.")
+ (auto-expire
+  (const :tag "Automatic Expire" t)
+  "All articles that are read will be marked as expirable.")
+ (subscribed
+  (const :tag "Subscribed" t)
+  "Gnus assumed that you are subscribed to the To/List address.\n\nWhen constructing a list of subscribed groups using\n`gnus-find-subscribed-addresses', Gnus includes the To address given\nabove, or the list address (if the To address has not been set).")
+ (to-list
+  (gnus-email-address :tag "To List")
+  "This address will be used when doing a `a' in the group.\n\nIt is totally ignored when doing a followup--except that if it is\npresent in a news group, you'll get mail group semantics when doing\n`f'.\n\nThe gnus-group-split mail splitting mechanism will behave as if this\naddress was listed in gnus-group-split Addresses (see below).")
+ (to-address
+  (gnus-email-address :tag "To Address")
+  "This will be used when doing followups and posts.\n\nThis is primarily useful in mail groups that represent closed\nmailing lists--mailing lists where it's expected that everybody that\nwrites to the mailing list is subscribed to it.  Since using this\nparameter ensures that the mail only goes to the mailing list itself,\nit means that members won't receive two copies of your followups.\n\nUsing `to-address' will actually work whether the group is foreign or\nnot.  Let's say there's a group on the server that is called\n`fa.4ad-l'.  This is a real newsgroup, but the server has gotten the\narticles from a mail-to-news gateway.  Posting directly to this group\nis therefore impossible--you have to send mail to the mailing list\naddress instead.\n\nThe gnus-group-split mail splitting mechanism will behave as if this\naddress was listed in gnus-group-split Addresses (see below)."))
+</pre></br>

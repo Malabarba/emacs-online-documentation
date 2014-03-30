@@ -1,19 +1,18 @@
-<strong>scheme-font-lock-keywords-1</strong> is a variable defined in `<code>scheme.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Subdued expressions to highlight in Scheme modes.<br/>
-<br/>
-Value: (("(\\(define\\*?\\(\\(\\|-public\\|-method\\|-generic\\(-procedure\\)?\\)\\|\\(-syntax\\|-macro\\)\\|-class\\|-module\\)\\)\\>[ 	]*(?\\(\\sw+\\)?"<br/>
-  (1 font-lock-keyword-face)<br/>
-  (6<br/>
-   (cond<br/>
-    ((match-beginning 3)<br/>
-     font-lock-function-name-face)<br/>
-    ((match-beginning 5)<br/>
-     font-lock-variable-name-face)<br/>
-    (t font-lock-type-face))<br/>
-   nil t)))<br/>
-<br/>
+<strong>scheme-font-lock-keywords-1</strong> is a variable defined in `<code>scheme.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Subdued expressions to highlight in Scheme modes.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("(\\(define\\*?\\(\\(\\|-public\\|-method\\|-generic\\(-procedure\\)?\\)\\|\\(-syntax\\|-macro\\)\\|-class\\|-module\\)\\)\\>[ 	]*(?\\(\\sw+\\)?"
+  (1 font-lock-keyword-face)
+  (6
+   (cond
+    ((match-beginning 3)
+     font-lock-function-name-face)
+    ((match-beginning 5)
+     font-lock-variable-name-face)
+    (t font-lock-type-face))
+   nil t)))
+</pre></br>

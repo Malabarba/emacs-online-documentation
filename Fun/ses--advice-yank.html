@@ -1,0 +1,21 @@
+<strong>ses--advice-yank</strong> is a compiled Lisp function in `<code>ses.el</code>'.</br>
+</br>
+(ses--advice-yank <u>YANK-FUN</u> &optional <u>ARG</u> &rest <u>ARGS</u>)</br>
+</br>
+In SES mode, the yanked text is inserted as cells.</br>
+</br>
+If the text contains 'ses attributes (meaning it went to the kill-ring from a</br>
+SES buffer), the formulas and print functions are restored for the cells.  If</br>
+the text contains tabs, this is an insertion of tab-separated formulas.</br>
+Otherwise the text is inserted as the formula for the current cell.</br>
+</br>
+When inserting cells, the formulas are usually relocated to keep the same</br>
+relative references to neighboring cells.  This is best if the formulas</br>
+generally refer to other cells within the yanked text.  You can use the C-u</br>
+prefix to specify insertion without relocation, which is best when the</br>
+formulas refer to cells outside the yanked text.</br>
+</br>
+When inserting formulas, the text is treated as a string constant if it doesn't</br>
+make sense as a sexp or would otherwise be considered a symbol.  Use 'sym to</br>
+explicitly insert a symbol, or use the C-u prefix to treat all unmarked words</br>
+as symbols.

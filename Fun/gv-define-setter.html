@@ -1,14 +1,14 @@
-<strong>gv-define-setter</strong> is an autoloaded Lisp macro in `<code>gv.el</code>'.<br/>
-<br/>
-(gv-define-setter NAME ARGLIST &rest BODY)<br/>
-<br/>
-Define a setter method for generalized variable NAME.<br/>
-This macro is an easy-to-use substitute for `gv-define-expander' that works<br/>
-well for simple place forms.<br/>
-Assignments of VAL to (NAME ARGS...) are expanded by binding the argument<br/>
-forms (VAL ARGS...) according to ARGLIST, then executing BODY, which must<br/>
-return a Lisp form that does the assignment.<br/>
-The first arg in ARGLIST (the one that receives VAL) receives an expression<br/>
-which can do arbitrary things, whereas the other arguments are all guaranteed<br/>
-to be pure and copyable.  Example use:<br/>
+<strong>gv-define-setter</strong> is an autoloaded Lisp macro in `<code>gv.el</code>'.</br>
+</br>
+(gv-define-setter <u>NAME</u> <u>ARGLIST</u> &rest <u>BODY</u>)</br>
+</br>
+Define a setter method for generalized variable <u>NAME</u>.</br>
+This macro is an easy-to-use substitute for `gv-define-expander' that works</br>
+well for simple place forms.</br>
+Assignments of VAL to (<u>NAME</u> ARGS...) are expanded by binding the argument</br>
+forms (VAL ARGS...) according to <u>ARGLIST</u>, then executing <u>BODY</u>, which must</br>
+return a Lisp form that does the assignment.</br>
+The first arg in <u>ARGLIST</u> (the one that receives VAL) receives an expression</br>
+which can do arbitrary things, whereas the other arguments are all guaranteed</br>
+to be pure and copyable.  Example use:</br>
   (gv-define-setter aref (v a i) `(aset ,a ,i ,v))

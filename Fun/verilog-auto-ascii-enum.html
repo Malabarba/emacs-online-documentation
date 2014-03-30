@@ -1,69 +1,69 @@
-<strong>verilog-auto-ascii-enum</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
-<br/>
-(verilog-auto-ascii-enum)<br/>
-<br/>
-Expand AUTOASCIIENUM statements, as part of M-x verilog-auto.<br/>
-Create a register to contain the ASCII decode of an enumerated signal type.<br/>
-This will allow trace viewers to show the ASCII name of states.<br/>
-<br/>
-First, parameters are built into an enumeration using the synopsys enum<br/>
-comment.  The comment must be between the keyword and the symbol.<br/>
-(Annoying, but that's what Synopsys's dc_shell FSM reader requires.)<br/>
-<br/>
-Next, registers which that enum applies to are also tagged with the same<br/>
-enum.<br/>
-<br/>
-Finally, an AUTOASCIIENUM command is used.<br/>
-<br/>
-  The first parameter is the name of the signal to be decoded.<br/>
-<br/>
-  The second parameter is the name to store the ASCII code into.  For the<br/>
-  signal foo, I suggest the name _foo__ascii, where the leading _ indicates<br/>
-  a signal that is just for simulation, and the magic characters _ascii<br/>
-  tell viewers like Dinotrace to display in ASCII format.<br/>
-<br/>
-  The third optional parameter is a string which will be removed<br/>
-  from the state names.  It defaults to "" which removes nothing.<br/>
-<br/>
-  The fourth optional parameter is "onehot" to force one-hot<br/>
-  decoding.  If unspecified, if and only if the first parameter<br/>
-  width is 2^(number of states in enum) and does NOT match the<br/>
-  width of the enum, the signal is assumed to be a one-hot<br/>
-  decode.  Otherwise, it's a normal encoded state vector.<br/>
-<br/>
-  `verilog-auto-wire-type' may be used to change the datatype of<br/>
-  the declarations.<br/>
-<br/>
-  "auto enum" may be used in place of "synopsys enum".<br/>
-<br/>
-An example:<br/>
-<br/>
-	//== State enumeration<br/>
-	parameter [2:0] // synopsys enum state_info<br/>
-			   SM_IDLE =  3'b000,<br/>
-			   SM_SEND =  3'b001,<br/>
-			   SM_WAIT1 = 3'b010;<br/>
-	//== State variables<br/>
-	reg [2:0]  /* synopsys enum state_info */<br/>
-		   state_r;  /* synopsys state_vector state_r */<br/>
-	reg [2:0]  /* synopsys enum state_info */<br/>
-		   state_e1;<br/>
-<br/>
-	/*AUTOASCIIENUM("state_r", "state_ascii_r", "SM_")*/<br/>
-<br/>
-Typing M-x verilog-auto will make this into:<br/>
-<br/>
-	... same front matter ...<br/>
-<br/>
-	/*AUTOASCIIENUM("state_r", "state_ascii_r", "SM_")*/<br/>
-	// Beginning of automatic ASCII enum decoding<br/>
-	reg [39:0]		state_ascii_r;		// Decode of state_r<br/>
-	always @(state_r) begin<br/>
-	   case ({state_r})<br/>
-		SM_IDLE:  state_ascii_r = "idle ";<br/>
-		SM_SEND:  state_ascii_r = "send ";<br/>
-		SM_WAIT1: state_ascii_r = "wait1";<br/>
-		default:  state_ascii_r = "%Erro";<br/>
-	   endcase<br/>
-	end<br/>
+<strong>verilog-auto-ascii-enum</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+</br>
+(verilog-auto-ascii-enum)</br>
+</br>
+Expand AUTOASCIIENUM statements, as part of M-x verilog-auto.</br>
+Create a register to contain the ASCII decode of an enumerated signal type.</br>
+This will allow trace viewers to show the ASCII name of states.</br>
+</br>
+First, parameters are built into an enumeration using the synopsys enum</br>
+comment.  The comment must be between the keyword and the symbol.</br>
+(Annoying, but that's what Synopsys's dc_shell FSM reader requires.)</br>
+</br>
+Next, registers which that enum applies to are also tagged with the same</br>
+enum.</br>
+</br>
+Finally, an AUTOASCIIENUM command is used.</br>
+</br>
+  The first parameter is the name of the signal to be decoded.</br>
+</br>
+  The second parameter is the name to store the ASCII code into.  For the</br>
+  signal foo, I suggest the name _foo__ascii, where the leading _ indicates</br>
+  a signal that is just for simulation, and the magic characters _ascii</br>
+  tell viewers like Dinotrace to display in ASCII format.</br>
+</br>
+  The third optional parameter is a string which will be removed</br>
+  from the state names.  It defaults to "" which removes nothing.</br>
+</br>
+  The fourth optional parameter is "onehot" to force one-hot</br>
+  decoding.  If unspecified, if and only if the first parameter</br>
+  width is 2^(number of states in enum) and does NOT match the</br>
+  width of the enum, the signal is assumed to be a one-hot</br>
+  decode.  Otherwise, it's a normal encoded state vector.</br>
+</br>
+  `verilog-auto-wire-type' may be used to change the datatype of</br>
+  the declarations.</br>
+</br>
+  "auto enum" may be used in place of "synopsys enum".</br>
+</br>
+An example:</br>
+</br>
+	//== State enumeration</br>
+	parameter [2:0] // synopsys enum state_info</br>
+			   SM_IDLE =  3'b000,</br>
+			   SM_SEND =  3'b001,</br>
+			   SM_WAIT1 = 3'b010;</br>
+	//== State variables</br>
+	reg [2:0]  /* synopsys enum state_info */</br>
+		   state_r;  /* synopsys state_vector state_r */</br>
+	reg [2:0]  /* synopsys enum state_info */</br>
+		   state_e1;</br>
+</br>
+	/*AUTOASCIIENUM("state_r", "state_ascii_r", "SM_")*/</br>
+</br>
+Typing M-x verilog-auto will make this into:</br>
+</br>
+	... same front matter ...</br>
+</br>
+	/*AUTOASCIIENUM("state_r", "state_ascii_r", "SM_")*/</br>
+	// Beginning of automatic ASCII enum decoding</br>
+	reg [39:0]		state_ascii_r;		// Decode of state_r</br>
+	always @(state_r) begin</br>
+	   case ({state_r})</br>
+		SM_IDLE:  state_ascii_r = "idle ";</br>
+		SM_SEND:  state_ascii_r = "send ";</br>
+		SM_WAIT1: state_ascii_r = "wait1";</br>
+		default:  state_ascii_r = "%Erro";</br>
+	   endcase</br>
+	end</br>
 	// End of automatics

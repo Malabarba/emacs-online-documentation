@@ -1,0 +1,16 @@
+<strong>vc-cvs-parse-root</strong> is a compiled Lisp function in `<code>vc-cvs.el</code>'.</br>
+</br>
+(vc-cvs-parse-root <u>ROOT</u>)</br>
+</br>
+Split CVS <u>ROOT</u> specification string into a list of fields.</br>
+A CVS root specification of the form</br>
+  [:METHOD:][[USER@]HOSTNAME]:?/path/to/repository</br>
+is converted to a normalized record with the following structure:</br>
+  (METHOD USER HOSTNAME CVS-ROOT).</br>
+The default METHOD for a CVS root of the form</br>
+  /path/to/repository</br>
+is `local'.</br>
+The default METHOD for a CVS root of the form</br>
+  [USER@]HOSTNAME:/path/to/repository</br>
+is `ext'.</br>
+For an empty string, nil is returned (invalid CVS root).

@@ -1,8 +1,6 @@
-<strong>hfy-e2x-etags-cmd</strong> is a variable defined in `<code>htmlfontify.el</code>'.<br/>
-Its value is<br/>
-"for src in `find . -type f`;\ndo\n  ETAGS=%s;\n  case ${src} in\n    *.ad[absm]|*.[CFHMSacfhlmpsty]|*.def|*.in[cs]|*.s[as]|*.src|*.cc|\\\n    *.hh|*.[chy]++|*.[ch]pp|*.[chy]xx|*.pdb|*.[ch]s|*.[Cc][Oo][Bb]|\\\n    *.[eh]rl|*.f90|*.for|*.java|*.[cem]l|*.clisp|*.lisp|*.[Ll][Ss][Pp]|\\\n    [Mm]akefile*|*.pas|*.[Pp][LlMm]|*.psw|*.lm|*.pc|*.prolog|*.oak|\\\n    *.p[sy]|*.sch|*.scheme|*.[Ss][Cc][Mm]|*.[Ss][Mm]|*.bib|*.cl[os]|\\\n    *.ltx|*.sty|*.TeX|*.tex|*.texi|*.texinfo|*.txi|*.x[bp]m|*.yy|\\\n    *.[Ss][Qq][Ll])\n          ${ETAGS} -o- ${src};\n          ;;\n      *)\n          FTYPE=`file ${src}`;\n          case ${FTYPE} in\n              *script*text*)\n                  ${ETAGS} -o- ${src};\n                  ;;\n              *text*)\n                  SHEBANG=`head -n1 ${src} | grep '#!' -c`;\n                  if [ ${SHEBANG} -eq 1 ];\n                  then\n                      ${ETAGS} -o- ${src};\n                  fi;\n                  ;;\n          esac;\n          ;;\n  esac;\ndone;"<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
+<strong>hfy-e2x-etags-cmd</strong> is a variable defined in `<code>htmlfontify.el</code>'.</br>
+Its value is <pre></br>
+"for src in `find . -type f`;\ndo\n  ETAGS=%s;\n  case ${src} in\n    *.ad[absm]|*.[CFHMSacfhlmpsty]|*.def|*.in[cs]|*.s[as]|*.src|*.cc|\\\n    *.hh|*.[chy]++|*.[ch]pp|*.[chy]xx|*.pdb|*.[ch]s|*.[Cc][Oo][Bb]|\\\n    *.[eh]rl|*.f90|*.for|*.java|*.[cem]l|*.clisp|*.lisp|*.[Ll][Ss][Pp]|\\\n    [Mm]akefile*|*.pas|*.[Pp][LlMm]|*.psw|*.lm|*.pc|*.prolog|*.oak|\\\n    *.p[sy]|*.sch|*.scheme|*.[Ss][Cc][Mm]|*.[Ss][Mm]|*.bib|*.cl[os]|\\\n    *.ltx|*.sty|*.TeX|*.tex|*.texi|*.texinfo|*.txi|*.x[bp]m|*.yy|\\\n    *.[Ss][Qq][Ll])\n          ${ETAGS} -o- ${src};\n          ;;\n      *)\n          FTYPE=`file ${src}`;\n          case ${FTYPE} in\n              *script*text*)\n                  ${ETAGS} -o- ${src};\n                  ;;\n              *text*)\n                  SHEBANG=`head -n1 ${src} | grep '#!' -c`;\n                  if [ ${SHEBANG} -eq 1 ];\n                  then\n                      ${ETAGS} -o- ${src};\n                  fi;\n                  ;;\n          esac;\n          ;;\n  esac;\ndone;"</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
 Not documented as a variable.

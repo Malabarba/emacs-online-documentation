@@ -1,47 +1,47 @@
-<strong>custom-field-keymap</strong> is a variable defined in `<code>cus-edit.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Keymap used inside editable fields in customization buffers.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Custom menu-item "Custom"<br/>
-		   (keymap "Custom"<br/>
-			   (Customize menu-item "Customize" nil :filter<br/>
-				      (lambda<br/>
-					(menu)<br/>
-					(easy-menu-filter-return<br/>
-					 ((lambda<br/>
-					    (&rest junk)<br/>
-					    (let<br/>
-						((menu<br/>
-						  (custom-menu-create 'customize)))<br/>
-					      (if<br/>
-						  (consp menu)<br/>
-						  (cdr menu)<br/>
-						menu)))<br/>
-					  menu)<br/>
-					 "Customize")))<br/>
-			   (\ Apply\  menu-item " Apply " Custom-set :help "Apply settings (for the current session only)")<br/>
-			   (\ Apply\ and\ Save\  menu-item " Apply and Save " Custom-save :enable 'nil :help "Apply settings and save for future sessions.")<br/>
-			   (\ Undo\ Edits\  menu-item " Undo Edits " Custom-reset-current :help "Restore customization buffer to reflect existing settings.")<br/>
-			   (\ Reset\ Customizations\  menu-item " Reset Customizations " Custom-reset-saved :help "Undo any settings applied only for the current session.")<br/>
-			   (\ Erase\ Customizations\  menu-item " Erase Customizations " Custom-reset-standard :enable 'nil :help "Un-customize settings in this and future sessions.")<br/>
-			   (\ Help\ for\ Customize\  menu-item " Help for Customize " Custom-help :help "Get help for using Customize.")<br/>
-			   (\ Exit\  menu-item " Exit " Custom-buffer-done :help "Exit Customize."))))<br/>
- (24 keymap<br/>
-     (19 . Custom-save))<br/>
- (3 keymap<br/>
-    (3 . Custom-set))<br/>
- (5 . widget-end-of-line)<br/>
- (11 . widget-kill-line)<br/>
- (13 . widget-field-activate)<br/>
- (down-mouse-1 . widget-button-click)<br/>
- (down-mouse-2 . widget-button-click)<br/>
- (backtab . widget-backward)<br/>
- (S-tab . widget-backward)<br/>
- (27 keymap<br/>
-     (9 . widget-complete))<br/>
- (9 . widget-forward))<br/>
-<br/>
+<strong>custom-field-keymap</strong> is a variable defined in `<code>cus-edit.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used inside editable fields in customization buffers.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Custom menu-item "Custom"
+		   (keymap "Custom"
+			   (Customize menu-item "Customize" nil :filter
+				      #[257 "\302\301!\300\"\207"
+					    ["Customize"
+					     (lambda
+					       (&rest junk)
+					       (let
+						   ((menu
+						     (custom-menu-create 'customize)))
+						 (if
+						     (consp menu)
+						     (cdr menu)
+						   menu)))
+					     easy-menu-filter-return]
+					    4 "\n\n(fn MENU)"])
+			   (\ Apply\  menu-item " Apply " Custom-set :help "Apply settings (for the current session only).")
+			   (\ Apply\ and\ Save\  menu-item " Apply and Save " Custom-save :enable 'nil :help "Apply settings and save for future sessions.")
+			   (\ Undo\ Edits\  menu-item " Undo Edits " Custom-reset-current :help "Restore customization buffer to reflect existing settings.")
+			   (\ Reset\ Customizations\  menu-item " Reset Customizations " Custom-reset-saved :help "Undo any settings applied only for the current session.")
+			   (\ Erase\ Customizations\  menu-item " Erase Customizations " Custom-reset-standard :enable 'nil :help "Un-customize settings in this and future sessions.")
+			   (\ Help\ for\ Customize\  menu-item " Help for Customize " Custom-help :help "Get help for using Customize.")
+			   (\ Exit\  menu-item " Exit " Custom-buffer-done :help "Exit Customize."))))
+ (24 keymap
+     (19 . Custom-save))
+ (3 keymap
+    (3 . Custom-set))
+ (5 . widget-end-of-line)
+ (11 . widget-kill-line)
+ (13 . widget-field-activate)
+ (down-mouse-1 . widget-button-click)
+ (down-mouse-2 . widget-button-click)
+ (backtab . widget-backward)
+ (S-tab . widget-backward)
+ (27 keymap
+     (9 . widget-complete))
+ (9 . widget-forward))
+</pre></br>

@@ -1,8 +1,18 @@
-<strong>append-next-kill</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to C-M-w.<br/>
-<br/>
-(append-next-kill &optional INTERACTIVE)<br/>
-<br/>
-Cause following command, if it kills, to append to previous kill.<br/>
+<strong>append-next-kill</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to C-M-w.</br>
+</br>
+<code>(append-next-kill <em>&optional</em> <u>INTERACTIVE</u></code>)</br>
+</br>
+Cause following command, if it kills, to add to previous kill.</br>
+If the next command kills forward from point, the kill is</br>
+appended to the previous killed text.  If the command kills</br>
+backward, the kill is prepended.  Kill commands that act on the</br>
+region, such as `kill-region', are regarded as killing forward if</br>
+point is after mark, and killing backward if point is before</br>
+mark.</br>
+</br>
+If the next command is not a kill command, `append-next-kill' has</br>
+no effect.</br>
+</br>
 The argument is used for internal purposes; do not supply one.

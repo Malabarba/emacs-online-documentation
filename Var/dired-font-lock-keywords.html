@@ -1,65 +1,64 @@
-<strong>dired-font-lock-keywords</strong> is a variable defined in `<code>dired.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Additional expressions to highlight in Dired mode.<br/>
-<br/>
-Value: (("^[^ \n]"<br/>
-  (0 dired-mark-face))<br/>
- ("^[*]"<br/>
-  (".+"<br/>
-   (dired-move-to-filename)<br/>
-   nil<br/>
-   (0 dired-marked-face)))<br/>
- ("^[D]"<br/>
-  (".+"<br/>
-   (dired-move-to-filename)<br/>
-   nil<br/>
-   (0 dired-flagged-face)))<br/>
- ("^. [0-9 	]*[-d]....\\(w\\)...."<br/>
-  (1 dired-perm-write-face))<br/>
- ("^. [0-9 	]*[-d].......\\(w\\)."<br/>
-  (1 dired-perm-write-face))<br/>
- ("^. [0-9 	]*d[^:]"<br/>
-  (".+"<br/>
-   (dired-move-to-filename)<br/>
-   nil<br/>
-   (0 dired-directory-face)))<br/>
- ("^. [0-9 	]*l[^:]"<br/>
-  (".+"<br/>
-   (dired-move-to-filename)<br/>
-   nil<br/>
-   (0 dired-symlink-face)))<br/>
- (eval list<br/>
-       (concat "\\("<br/>
-	       (regexp-opt completion-ignored-extensions)<br/>
-	       "\\|#\\)$")<br/>
-       '(".+"<br/>
-	 (dired-move-to-filename)<br/>
-	 nil<br/>
-	 (0 dired-ignored-face)))<br/>
- (eval list<br/>
-       (concat "\\("<br/>
-	       (regexp-opt completion-ignored-extensions)<br/>
-	       "\\|#\\)[*=|]$")<br/>
-       '(".+"<br/>
-	 (progn<br/>
-	   (end-of-line)<br/>
-	   (unless<br/>
-	       (get-text-property<br/>
-		(1-<br/>
-		 (point))<br/>
-		'mouse-face)<br/>
-	     (dired-move-to-filename)))<br/>
-	 nil<br/>
-	 (0 dired-ignored-face)))<br/>
- ("^. [0-9 	]*[-bcdlps][-r][-w].[-r][-w].[-r][-w]..*:$"<br/>
-  (".+"<br/>
-   (dired-move-to-filename)<br/>
-   nil<br/>
-   (0 'default)))<br/>
- ("^. \\([^\n]+\\)\\(:\\)[\n]"<br/>
-  (1 dired-header-face)))<br/>
-<br/>
+<strong>dired-font-lock-keywords</strong> is a variable defined in `<code>dired.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Additional expressions to highlight in Dired mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^[^ \n]"
+  (0 dired-mark-face))
+ ("^[*]"
+  (".+"
+   (dired-move-to-filename)
+   nil
+   (0 dired-marked-face)))
+ ("^[D]"
+  (".+"
+   (dired-move-to-filename)
+   nil
+   (0 dired-flagged-face)))
+ ("^. [0-9 	]*[-d]....\\(w\\)...."
+  (1 dired-perm-write-face))
+ ("^. [0-9 	]*[-d].......\\(w\\)."
+  (1 dired-perm-write-face))
+ ("^. [0-9 	]*d[^:]"
+  (".+"
+   (dired-move-to-filename)
+   nil
+   (0 dired-directory-face)))
+ ("^. [0-9 	]*l[^:]"
+  (".+"
+   (dired-move-to-filename)
+   nil
+   (0 dired-symlink-face)))
+ (eval list
+       (concat "\\("
+	       (regexp-opt completion-ignored-extensions)
+	       "\\|#\\)$")
+       '(".+"
+	 (dired-move-to-filename)
+	 nil
+	 (0 dired-ignored-face)))
+ (eval list
+       (concat "\\("
+	       (regexp-opt completion-ignored-extensions)
+	       "\\|#\\)[*=|]$")
+       '(".+"
+	 (progn
+	   (end-of-line)
+	   (unless
+	       (get-text-property
+		(1-
+		 (point))
+		'mouse-face)
+	     (dired-move-to-filename)))
+	 nil
+	 (0 dired-ignored-face)))
+ ("^. [0-9 	]*[-bcdlps][-r][-w].[-r][-w].[-r][-w]..*:$"
+  (".+"
+   (dired-move-to-filename)
+   nil
+   (0 'default)))
+ ("^. \\([^\n]+\\)\\(:\\)[\n]"
+  (1 dired-header-face)))
+</pre></br>

@@ -1,19 +1,19 @@
-<strong>erc-lurker-update-status</strong> is a compiled Lisp function in `<code>erc.el</code>'.<br/>
-<br/>
-(erc-lurker-update-status MESSAGE)<br/>
-<br/>
-Update `erc-lurker-state' if necessary.<br/>
-<br/>
-This function is called from `erc-insert-pre-hook'.  If the<br/>
-current message is a PRIVMSG, update `erc-lurker-state' to<br/>
-reflect the fact that its sender has issued a PRIVMSG at the<br/>
-current time.  Otherwise, take no action.<br/>
-<br/>
-This function depends on the fact that `erc-display-message'<br/>
-dynamically binds `parsed', which is used to check if the current<br/>
-message is a PRIVMSG and to determine its sender.  See also<br/>
-`erc-lurker-trim-nicks' and `erc-lurker-ignore-chars'.<br/>
-<br/>
-In order to limit memory consumption, this function also calls<br/>
-`erc-lurker-cleanup' once every `erc-lurker-cleanup-interval'<br/>
+<strong>erc-lurker-update-status</strong> is a compiled Lisp function in `<code>erc.el</code>'.</br>
+</br>
+(erc-lurker-update-status <u>MESSAGE</u>)</br>
+</br>
+Update `erc-lurker-state' if necessary.</br>
+</br>
+This function is called from `erc-insert-pre-hook'.  If the</br>
+current message is a PRIVMSG, update `erc-lurker-state' to</br>
+reflect the fact that its sender has issued a PRIVMSG at the</br>
+current time.  Otherwise, take no action.</br>
+</br>
+This function depends on the fact that `erc-display-message'</br>
+dynamically binds `parsed', which is used to check if the current</br>
+message is a PRIVMSG and to determine its sender.  See also</br>
+`erc-lurker-trim-nicks' and `erc-lurker-ignore-chars'.</br>
+</br>
+In order to limit memory consumption, this function also calls</br>
+`erc-lurker-cleanup' once every `erc-lurker-cleanup-interval'</br>
 updates of `erc-lurker-state'.

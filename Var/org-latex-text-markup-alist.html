@@ -1,0 +1,27 @@
+<strong>org-latex-text-markup-alist</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+Its value is <pre></br>
+((bold . "\\textbf{%s}")
+ (code . verb)
+ (italic . "\\emph{%s}")
+ (strike-through . "\\sout{%s}")
+ (underline . "\\uline{%s}")
+ (verbatim . protectedtexttt))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of LaTeX expressions to convert text markup.</br>
+</br>
+The key must be a symbol among `bold', `code', `italic',</br>
+`strike-through', `underline' and `verbatim'.  The value is</br>
+a formatting string to wrap fontified text with.</br>
+</br>
+Value can also be set to the following symbols: `verb' and</br>
+`protectedtexttt'.  For the former, Org will use "\verb" to</br>
+create a format string and select a delimiter character that</br>
+isn't in the string.  For the latter, Org will use "\texttt"</br>
+to typeset and try to protect special characters.</br>
+</br>
+If no association can be found for a given markup, text will be</br>
+returned as-is.</br>
+</br>
+You can customize this variable.

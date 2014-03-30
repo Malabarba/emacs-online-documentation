@@ -1,54 +1,65 @@
-<strong>org-agenda-sorting-strategy</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
-Its value is ((agenda habit-down time-up priority-down category-keep)<br/>
- (todo priority-down category-keep)<br/>
- (tags priority-down category-keep)<br/>
- (search category-keep))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Sorting structure for the agenda items of a single day.<br/>
-This is a list of symbols which will be used in sequence to determine<br/>
-if an entry should be listed before another entry.  The following<br/>
-symbols are recognized:<br/>
-<br/>
-time-up            Put entries with time-of-day indications first, early first<br/>
-time-down          Put entries with time-of-day indications first, late first<br/>
-category-keep      Keep the default order of categories, corresponding to the<br/>
-		   sequence in `org-agenda-files'.<br/>
-category-up        Sort alphabetically by category, A-Z.<br/>
-category-down      Sort alphabetically by category, Z-A.<br/>
-tag-up             Sort alphabetically by last tag, A-Z.<br/>
-tag-down           Sort alphabetically by last tag, Z-A.<br/>
-priority-up        Sort numerically by priority, high priority last.<br/>
-priority-down      Sort numerically by priority, high priority first.<br/>
-todo-state-up      Sort by todo state, tasks that are done last.<br/>
-todo-state-down    Sort by todo state, tasks that are done first.<br/>
-effort-up          Sort numerically by estimated effort, high effort last.<br/>
-effort-down        Sort numerically by estimated effort, high effort first.<br/>
-user-defined-up    Sort according to `org-agenda-cmp-user-defined', high last.<br/>
-user-defined-down  Sort according to `org-agenda-cmp-user-defined', high first.<br/>
-habit-up           Put entries that are habits first<br/>
-habit-down         Put entries that are habits last<br/>
-alpha-up           Sort headlines alphabetically<br/>
-alpha-down         Sort headlines alphabetically, reversed<br/>
-<br/>
-The different possibilities will be tried in sequence, and testing stops<br/>
-if one comparison returns a "not-equal".  For example, the default<br/>
-    '(time-up category-keep priority-down)<br/>
-means: Pull out all entries having a specified time of day and sort them,<br/>
-in order to make a time schedule for the current day the first thing in the<br/>
-agenda listing for the day.  Of the entries without a time indication, keep<br/>
-the grouped in categories, don't sort the categories, but keep them in<br/>
-the sequence given in `org-agenda-files'.  Within each category sort by<br/>
-priority.<br/>
-<br/>
-Leaving out `category-keep' would mean that items will be sorted across<br/>
-categories by priority.<br/>
-<br/>
-Instead of a single list, this can also be a set of list for specific<br/>
-contents, with a context symbol in the car of the list, any of<br/>
-`agenda', `todo', `tags', `search' for the corresponding agenda views.<br/>
-<br/>
-Custom commands can bind this variable in the options section.<br/>
-<br/>
+<strong>org-agenda-sorting-strategy</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+Its value is <pre></br>
+((agenda habit-down time-up priority-down category-keep)
+ (todo priority-down category-keep)
+ (tags priority-down category-keep)
+ (search category-keep))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Sorting structure for the agenda items of a single day.</br>
+This is a list of symbols which will be used in sequence to determine</br>
+if an entry should be listed before another entry.  The following</br>
+symbols are recognized:</br>
+</br>
+time-up            Put entries with time-of-day indications first, early first</br>
+time-down          Put entries with time-of-day indications first, late first</br>
+timestamp-up       Sort by any timestamp, early first</br>
+timestamp-down     Sort by any timestamp, late first</br>
+scheduled-up       Sort by scheduled timestamp, early first</br>
+scheduled-down     Sort by scheduled timestamp, late first</br>
+deadline-up        Sort by deadline timestamp, early first</br>
+deadline-down      Sort by deadline timestamp, late first</br>
+ts-up              Sort by active timestamp, early first</br>
+ts-down            Sort by active timestamp, late first</br>
+tsia-up            Sort by inactive timestamp, early first</br>
+tsia-down          Sort by inactive timestamp, late first</br>
+category-keep      Keep the default order of categories, corresponding to the</br>
+		   sequence in `org-agenda-files'.</br>
+category-up        Sort alphabetically by category, A-Z.</br>
+category-down      Sort alphabetically by category, Z-A.</br>
+tag-up             Sort alphabetically by last tag, A-Z.</br>
+tag-down           Sort alphabetically by last tag, Z-A.</br>
+priority-up        Sort numerically by priority, high priority last.</br>
+priority-down      Sort numerically by priority, high priority first.</br>
+todo-state-up      Sort by todo state, tasks that are done last.</br>
+todo-state-down    Sort by todo state, tasks that are done first.</br>
+effort-up          Sort numerically by estimated effort, high effort last.</br>
+effort-down        Sort numerically by estimated effort, high effort first.</br>
+user-defined-up    Sort according to `org-agenda-cmp-user-defined', high last.</br>
+user-defined-down  Sort according to `org-agenda-cmp-user-defined', high first.</br>
+habit-up           Put entries that are habits first</br>
+habit-down         Put entries that are habits last</br>
+alpha-up           Sort headlines alphabetically</br>
+alpha-down         Sort headlines alphabetically, reversed</br>
+</br>
+The different possibilities will be tried in sequence, and testing stops</br>
+if one comparison returns a "not-equal".  For example, the default</br>
+    '(time-up category-keep priority-down)</br>
+means: Pull out all entries having a specified time of day and sort them,</br>
+in order to make a time schedule for the current day the first thing in the</br>
+agenda listing for the day.  Of the entries without a time indication, keep</br>
+the grouped in categories, don't sort the categories, but keep them in</br>
+the sequence given in `org-agenda-files'.  Within each category sort by</br>
+priority.</br>
+</br>
+Leaving out `category-keep' would mean that items will be sorted across</br>
+categories by priority.</br>
+</br>
+Instead of a single list, this can also be a set of list for specific</br>
+contents, with a context symbol in the car of the list, any of</br>
+`agenda', `todo', `tags', `search' for the corresponding agenda views.</br>
+</br>
+Custom commands can bind this variable in the options section.</br>
+</br>
 You can customize this variable.

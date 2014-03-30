@@ -1,19 +1,19 @@
-<strong>with-parsed-tramp-file-name</strong> is a Lisp macro in `<code>tramp.el</code>'.<br/>
-<br/>
-(with-parsed-tramp-file-name FILENAME VAR &rest BODY)<br/>
-<br/>
-Parse a Tramp filename and make components available in the body.<br/>
-<br/>
-First arg FILENAME is evaluated and dissected into its components.<br/>
-Second arg VAR is a symbol.  It is used as a variable name to hold<br/>
-the filename structure.  It is also used as a prefix for the variables<br/>
-holding the components.  For example, if VAR is the symbol `foo', then<br/>
-`foo' will be bound to the whole structure, `foo-method' will be bound to<br/>
-the method component, and so on for `foo-user', `foo-host', `foo-localname',<br/>
-`foo-hop'.<br/>
-<br/>
-Remaining args are Lisp expressions to be evaluated (inside an implicit<br/>
-`progn').<br/>
-<br/>
-If VAR is nil, then we bind `v' to the structure and `method', `user',<br/>
+<strong>with-parsed-tramp-file-name</strong> is a Lisp macro in `<code>tramp.el</code>'.</br>
+</br>
+(with-parsed-tramp-file-name <u>FILENAME</u> <u>VAR</u> &rest <u>BODY</u>)</br>
+</br>
+Parse a Tramp filename and make components available in the body.</br>
+</br>
+First arg <u>FILENAME</u> is evaluated and dissected into its components.</br>
+Second arg <u>VAR</u> is a symbol.  It is used as a variable name to hold</br>
+the filename structure.  It is also used as a prefix for the variables</br>
+holding the components.  For example, if <u>VAR</u> is the symbol `foo', then</br>
+`foo' will be bound to the whole structure, `foo-method' will be bound to</br>
+the method component, and so on for `foo-user', `foo-host', `foo-localname',</br>
+`foo-hop'.</br>
+</br>
+Remaining args are Lisp expressions to be evaluated (inside an implicit</br>
+`progn').</br>
+</br>
+If <u>VAR</u> is nil, then we bind `v' to the structure and `method', `user',</br>
 `host', `localname', `hop' to the components.

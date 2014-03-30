@@ -1,20 +1,20 @@
-<strong>dir-locals-find-file</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
-<br/>
-(dir-locals-find-file FILE)<br/>
-<br/>
-Find the directory-local variables for FILE.<br/>
-This searches upward in the directory tree from FILE.<br/>
-It stops at the first directory that has been registered in<br/>
-`dir-locals-directory-cache' or contains a `dir-locals-file'.<br/>
-If it finds an entry in the cache, it checks that it is valid.<br/>
-A cache entry with no modification time element (normally, one that<br/>
-has been assigned directly using `dir-locals-set-directory-class', not<br/>
-set from a file) is always valid.<br/>
-A cache entry based on a `dir-locals-file' is valid if the modification<br/>
-time stored in the cache matches the current file modification time.<br/>
-If not, the cache entry is cleared so that the file will be re-read.<br/>
-<br/>
-This function returns either nil (no directory local variables found),<br/>
-or the matching entry from `dir-locals-directory-cache' (a list),<br/>
-or the full path to the `dir-locals-file' (a string) in the case<br/>
+<strong>dir-locals-find-file</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(dir-locals-find-file <u>FILE</u>)</br>
+</br>
+Find the directory-local variables for <u>FILE</u>.</br>
+This searches upward in the directory tree from <u>FILE</u>.</br>
+It stops at the first directory that has been registered in</br>
+`dir-locals-directory-cache' or contains a `dir-locals-file'.</br>
+If it finds an entry in the cache, it checks that it is valid.</br>
+A cache entry with no modification time element (normally, one that</br>
+has been assigned directly using `dir-locals-set-directory-class', not</br>
+set from a file) is always valid.</br>
+A cache entry based on a `dir-locals-file' is valid if the modification</br>
+time stored in the cache matches the current file modification time.</br>
+If not, the cache entry is cleared so that the file will be re-read.</br>
+</br>
+This function returns either nil (no directory local variables found),</br>
+or the matching entry from `dir-locals-directory-cache' (a list),</br>
+or the full path to the `dir-locals-file' (a string) in the case</br>
 of no valid cache entry.

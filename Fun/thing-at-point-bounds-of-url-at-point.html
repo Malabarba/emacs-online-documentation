@@ -1,5 +1,9 @@
-<strong>thing-at-point-bounds-of-url-at-point</strong> is a compiled Lisp function in `<code>thingatpt.el</code>'.<br/>
-<br/>
-(thing-at-point-bounds-of-url-at-point)<br/>
-<br/>
-Not documented.
+<strong>thing-at-point-bounds-of-url-at-point</strong> is a compiled Lisp function in `<code>thingatpt.el</code>'.</br>
+</br>
+(thing-at-point-bounds-of-url-at-point &optional <u>LAX</u>)</br>
+</br>
+Return a cons cell containing the start and end of the URI at point.</br>
+Try to find a URI using `thing-at-point-markedup-url-regexp'.</br>
+If that fails, try with `thing-at-point-beginning-of-url-regexp'.</br>
+If that also fails, and optional argument <u>LAX</u> is non-nil, return</br>
+the bounds of a possible ill-formed URI (one lacking a scheme).

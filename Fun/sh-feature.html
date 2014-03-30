@@ -1,22 +1,22 @@
-<strong>sh-feature</strong> is a compiled Lisp function in `<code>sh-script.el</code>'.<br/>
-<br/>
-(sh-feature ALIST &optional FUNCTION)<br/>
-<br/>
-Index ALIST by the current shell.<br/>
-If ALIST isn't a list where every element is a cons, it is returned as is.<br/>
-Else indexing follows an inheritance logic which works in two ways:<br/>
-<br/>
-  - Fall back on successive ancestors (see `sh-ancestor-alist') as long as<br/>
-    the alist contains no value for the current shell.<br/>
-    The ultimate default is always `sh'.<br/>
-<br/>
-  - If the value thus looked up is a list starting with `sh-append',<br/>
-    we call the function `sh-append' with the rest of the list as<br/>
-    arguments, and use the value.  However, the next element of the<br/>
-    list is not used as-is; instead, we look it up recursively<br/>
-    in ALIST to allow the function called to define the value for<br/>
-    one shell to be derived from another shell.<br/>
-    The value thus determined is physically replaced into the alist.<br/>
-<br/>
-If FUNCTION is non-nil, it is called with one argument,<br/>
+<strong>sh-feature</strong> is a compiled Lisp function in `<code>sh-script.el</code>'.</br>
+</br>
+(sh-feature <u>ALIST</u> &optional <u>FUNCTION</u>)</br>
+</br>
+Index <u>ALIST</u> by the current shell.</br>
+If <u>ALIST</u> isn't a list where every element is a cons, it is returned as is.</br>
+Else indexing follows an inheritance logic which works in two ways:</br>
+</br>
+  - Fall back on successive ancestors (see `sh-ancestor-alist') as long as</br>
+    the alist contains no value for the current shell.</br>
+    The ultimate default is always `sh'.</br>
+</br>
+  - If the value thus looked up is a list starting with `sh-append',</br>
+    we call the function `sh-append' with the rest of the list as</br>
+    arguments, and use the value.  However, the next element of the</br>
+    list is not used as-is; instead, we look it up recursively</br>
+    in <u>ALIST</u> to allow the function called to define the value for</br>
+    one shell to be derived from another shell.</br>
+    The value thus determined is physically replaced into the alist.</br>
+</br>
+If <u>FUNCTION</u> is non-nil, it is called with one argument,</br>
 the value thus obtained, and the result is used instead.

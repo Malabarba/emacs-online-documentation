@@ -1,16 +1,13 @@
-<strong>checkdoc-style-hooks</strong> is a variable defined in `<code>checkdoc.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable is an alias for `checkdoc-style-functions'.<br/>
-  This variable is obsolete since 24.3;<br/>
-  use `checkdoc-style-functions' instead.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook run after the standard style check is completed.<br/>
-All functions must return nil or a string representing the error found.<br/>
-Useful for adding new user implemented commands.<br/>
-<br/>
-Each hook is called with two parameters, (DEFUNINFO ENDPOINT).<br/>
-DEFUNINFO is the return value of `checkdoc-defun-info'.  ENDPOINT is the<br/>
+<strong>checkdoc-style-hooks</strong> is a variable defined in `<code>checkdoc.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>This variable is an alias for `<strong><a href="checkdoc-style-functions">checkdoc-style-functions</a></strong>'.</li>
+<li>  <strong>This variable is obsolete since 24.3;</br>
+  use `<a href="checkdoc-style-functions">checkdoc-style-functions</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook run after the standard style check is completed.</br>
+All functions must return nil or a string representing the error found.</br>
+Useful for adding new user implemented commands.</br>
+</br>
+Each hook is called with two parameters, (DEFUNINFO ENDPOINT).</br>
+DEFUNINFO is the return value of `checkdoc-defun-info'.  ENDPOINT is the</br>
 location of end of the documentation string.

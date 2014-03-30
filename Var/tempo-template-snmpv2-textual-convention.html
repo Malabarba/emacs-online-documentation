@@ -1,17 +1,18 @@
-<strong>tempo-template-snmpv2-textual-convention</strong>'s value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (><br/>
- (P "Textual Convention Type: ")<br/>
- " ::= TEXTUAL-CONVENTION" n> "STATUS  "<br/>
- (if tempo-interactive<br/>
-     (snmp-completing-read "Status: " snmp-mode-status-list nil t)<br/>
-   p)<br/>
- n> "DESCRIPTION" n> "\"" p "\"" n> "SYNTAX  "<br/>
- (if tempo-interactive<br/>
-     (snmp-completing-read "Syntax: " snmp-mode-syntax-list nil nil)<br/>
-   p)<br/>
- n>)<br/>
-<br/>
+<strong>tempo-template-snmpv2-textual-convention</strong>'s value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(>
+ (P "Textual Convention Type: ")
+ " ::= TEXTUAL-CONVENTION" n> "STATUS  "
+ (if tempo-interactive
+     (snmp-completing-read "Status: " snmp-mode-status-list nil t)
+   p)
+ n> "DESCRIPTION" n> "\"" p "\"" n> "SYNTAX  "
+ (if tempo-interactive
+     (snmp-completing-read "Syntax: " snmp-mode-syntax-list nil nil)
+   p)
+ n>)
+</pre></br>

@@ -1,43 +1,42 @@
-<strong>conf-mode-map</strong> is a variable defined in `<code>conf-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Local keymap for `conf-mode' buffers.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (sh-script "Conf" keymap<br/>
-		      (conf-align-assignments menu-item "Align assignments" conf-align-assignments :help "Align assignments")<br/>
-		      (conf-quote-normal menu-item "Set quote syntax normal" conf-quote-normal :help "Set the syntax of ' and \" to punctuation")<br/>
-		      (c-s0 "--")<br/>
-		      (conf-xdefaults-mode menu-item "Xdefaults mode" conf-xdefaults-mode :help "Conf Mode starter for Xdefaults files" :button<br/>
-					   (:radio eq major-mode 'conf-xdefaults-mode))<br/>
-		      (conf-unix-mode menu-item "Unix mode" conf-unix-mode :help "Conf Mode starter for Unix style Conf files" :button<br/>
-				      (:radio eq major-mode 'conf-unix-mode))<br/>
-		      (conf-colon-mode menu-item "Colon mode" conf-colon-mode :help "Conf Mode starter for Colon files" :button<br/>
-				       (:radio eq major-mode 'conf-colon-mode))<br/>
-		      (conf-ppd-mode menu-item "PPD mode" conf-ppd-mode :help "Conf Mode starter for Adobe/CUPS PPD files" :button<br/>
-				     (:radio eq major-mode 'conf-ppd-mode))<br/>
-		      (conf-space-keywords menu-item "Space keywords mode..." conf-space-keywords :help "Enter Conf Space mode using regexp KEYWORDS to match the keywords" :button<br/>
-					   (:radio eq major-mode 'conf-space-keywords))<br/>
-		      (conf-javaprop-mode menu-item "Java properties mode" conf-javaprop-mode :help "Conf Mode starter for Java properties files" :button<br/>
-					  (:radio eq major-mode 'conf-javaprop-mode))<br/>
-		      (conf-windows-mode menu-item "Windows mode" conf-windows-mode :help "Conf Mode starter for Windows style Conf files" :button<br/>
-					 (:radio eq major-mode 'conf-windows-mode))))<br/>
- (3 keymap<br/>
-    (1 . conf-align-assignments)<br/>
-    (39 . conf-quote-normal)<br/>
-    (34 . conf-quote-normal)<br/>
-    (17 . conf-quote-normal)<br/>
-    (16 . conf-ppd-mode)<br/>
-    (24 . conf-xdefaults-mode)<br/>
-    (58 . conf-colon-mode)<br/>
-    (3 . conf-colon-mode)<br/>
-    (32 . conf-space-keywords)<br/>
-    (19 . conf-space-keywords)<br/>
-    (10 . conf-javaprop-mode)<br/>
-    (23 . conf-windows-mode)<br/>
-    (21 . conf-unix-mode)))<br/>
-<br/>
+<strong>conf-mode-map</strong> is a variable defined in `<code>conf-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Local keymap for `conf-mode' buffers.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (sh-script "Conf" keymap
+		      (conf-align-assignments menu-item "Align assignments" conf-align-assignments :help "Align assignments")
+		      (conf-quote-normal menu-item "Set quote syntax normal" conf-quote-normal :help "Set the syntax of ' and \" to punctuation")
+		      (c-s0 "--")
+		      (conf-xdefaults-mode menu-item "Xdefaults mode" conf-xdefaults-mode :help "Conf Mode starter for Xdefaults files" :button
+					   (:radio eq major-mode 'conf-xdefaults-mode))
+		      (conf-unix-mode menu-item "Unix mode" conf-unix-mode :help "Conf Mode starter for Unix style Conf files" :button
+				      (:radio eq major-mode 'conf-unix-mode))
+		      (conf-colon-mode menu-item "Colon mode" conf-colon-mode :help "Conf Mode starter for Colon files" :button
+				       (:radio eq major-mode 'conf-colon-mode))
+		      (conf-ppd-mode menu-item "PPD mode" conf-ppd-mode :help "Conf Mode starter for Adobe/CUPS PPD files" :button
+				     (:radio eq major-mode 'conf-ppd-mode))
+		      (conf-space-keywords menu-item "Space keywords mode..." conf-space-keywords :help "Enter Conf Space mode using regexp KEYWORDS to match the keywords" :button
+					   (:radio eq major-mode 'conf-space-keywords))
+		      (conf-javaprop-mode menu-item "Java properties mode" conf-javaprop-mode :help "Conf Mode starter for Java properties files" :button
+					  (:radio eq major-mode 'conf-javaprop-mode))
+		      (conf-windows-mode menu-item "Windows mode" conf-windows-mode :help "Conf Mode starter for Windows style Conf files" :button
+					 (:radio eq major-mode 'conf-windows-mode))))
+ (3 keymap
+    (1 . conf-align-assignments)
+    (39 . conf-quote-normal)
+    (34 . conf-quote-normal)
+    (17 . conf-quote-normal)
+    (16 . conf-ppd-mode)
+    (24 . conf-xdefaults-mode)
+    (58 . conf-colon-mode)
+    (3 . conf-colon-mode)
+    (32 . conf-space-keywords)
+    (19 . conf-space-keywords)
+    (10 . conf-javaprop-mode)
+    (23 . conf-windows-mode)
+    (21 . conf-unix-mode)))
+</pre></br>

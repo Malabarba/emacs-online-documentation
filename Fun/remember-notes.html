@@ -1,0 +1,24 @@
+<strong>remember-notes</strong> is an interactive autoloaded compiled Lisp function in `<code>remember.el</code>'.</br>
+</br>
+</br>
+(remember-notes &optional <u>SWITCH-TO</u>)</br>
+</br>
+Return the notes buffer, creating it if needed, and maybe switch to it.</br>
+This buffer is for notes that you want to preserve across Emacs sessions.</br>
+The notes are saved in `remember-data-file'.</br>
+</br>
+If a buffer is already visiting that file, just return it.</br>
+</br>
+Otherwise, create the buffer, and rename it to `remember-notes-buffer-name',</br>
+unless a buffer of that name already exists.  Set the major mode according</br>
+to `remember-notes-initial-major-mode', and enable `remember-notes-mode'</br>
+minor mode.</br>
+</br>
+Use C-c C-c to save and bury the notes buffer.</br>
+</br>
+Interactively, or if <u>SWITCH-TO</u> is non-nil, switch to the buffer.</br>
+Return the buffer.</br>
+</br>
+Set `initial-buffer-choice' to `remember-notes' to visit your notes buffer</br>
+when Emacs starts.  Set `remember-notes-buffer-name' to "*scratch*"</br>
+to turn the *scratch* buffer into your notes buffer.

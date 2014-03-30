@@ -1,15 +1,15 @@
-<strong>tags-loop-continue</strong> is an interactive autoloaded compiled Lisp function in `<code>etags.el</code>'.<br/>
-<br/>
-It is bound to M-,, <menu-bar> <edit> <search> <tags-continue>, <menu-bar> <edit> <replace> <tags-repl-continue>.<br/>
-<br/>
-(tags-loop-continue &optional FIRST-TIME)<br/>
-<br/>
-Continue last M-x tags-search or M-x tags-query-replace command.<br/>
-Used noninteractively with non-nil argument to begin such a command (the<br/>
-argument is passed to `next-file', which see).<br/>
-<br/>
-Two variables control the processing we do on each file: the value of<br/>
-`tags-loop-scan' is a form to be executed on each file to see if it is<br/>
-interesting (it returns non-nil if so) and `tags-loop-operate' is a form to<br/>
-evaluate to operate on an interesting file.  If the latter evaluates to<br/>
+<strong>tags-loop-continue</strong> is an interactive autoloaded compiled Lisp function in `<code>etags.el</code>'.</br>
+</br>
+It is bound to M-,, &lt;menu-bar> &lt;edit> &lt;search> &lt;tags-continue>, &lt;menu-bar> &lt;edit> &lt;replace> &lt;tags-repl-continue>.</br>
+</br>
+<code>(tags-loop-continue <em>&optional</em> <u>FIRST-TIME</u></code>)</br>
+</br>
+Continue last M-x tags-search or M-x tags-query-replace command.</br>
+Used noninteractively with non-nil argument to begin such a command (the</br>
+argument is passed to `next-file', which see).</br>
+</br>
+Two variables control the processing we do on each file: the value of</br>
+`tags-loop-scan' is a form to be executed on each file to see if it is</br>
+interesting (it returns non-nil if so) and `tags-loop-operate' is a form to</br>
+evaluate to operate on an interesting file.  If the latter evaluates to</br>
 nil, we exit; otherwise we scan the next file.

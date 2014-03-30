@@ -1,16 +1,17 @@
-<strong>compilation-directory-matcher</strong> is a variable defined in `<code>compile.el</code>'.<br/>
-Its value is ("\\(?:Entering\\|Leavin\\(g\\)\\) directory `\\(.+\\)'$"<br/>
- (2 . 1))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-A list for tracking when directories are entered or left.<br/>
-If nil, do not track directories, e.g. if all file names are absolute.  The<br/>
-first element is the REGEXP matching these messages.  It can match any number<br/>
-of variants, e.g. different languages.  The remaining elements are all of the<br/>
-form (DIR .  LEAVE).  If for any one of these the DIR'th subexpression<br/>
-matches, that is a directory name.  If LEAVE is nil or the corresponding<br/>
-LEAVE'th subexpression doesn't match, this message is about going into another<br/>
-directory.  If it does match anything, this message is about going back to the<br/>
-directory we were in before the last entering message.  If you change this,<br/>
+<strong>compilation-directory-matcher</strong> is a variable defined in `<code>compile.el</code>'.</br>
+Its value is <pre></br>
+("\\(?:Entering\\|Leavin\\(g\\)\\) directory [`']\\(.+\\)'$"
+ (2 . 1))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A list for tracking when directories are entered or left.</br>
+If nil, do not track directories, e.g. if all file names are absolute.  The</br>
+first element is the REGEXP matching these messages.  It can match any number</br>
+of variants, e.g. different languages.  The remaining elements are all of the</br>
+form (DIR .  LEAVE).  If for any one of these the DIR'th subexpression</br>
+matches, that is a directory name.  If LEAVE is nil or the corresponding</br>
+LEAVE'th subexpression doesn't match, this message is about going into another</br>
+directory.  If it does match anything, this message is about going back to the</br>
+directory we were in before the last entering message.  If you change this,</br>
 you may also want to change `compilation-page-delimiter'.

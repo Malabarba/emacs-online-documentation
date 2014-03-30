@@ -1,35 +1,35 @@
-<strong>define-abbrev</strong> is a compiled Lisp function in `<code>abbrev.el</code>'.<br/>
-<br/>
-(define-abbrev TABLE NAME EXPANSION &optional HOOK &rest PROPS)<br/>
-<br/>
-Define an abbrev in TABLE named NAME, to expand to EXPANSION and call HOOK.<br/>
-NAME must be a string, and should be lower-case.<br/>
-EXPANSION should usually be a string.<br/>
-To undefine an abbrev, define it with EXPANSION = nil.<br/>
-If HOOK is non-nil, it should be a function of no arguments;<br/>
-it is called after EXPANSION is inserted.<br/>
-If EXPANSION is not a string (and not nil), the abbrev is a<br/>
- special one, which does not expand in the usual way but only<br/>
- runs HOOK.<br/>
-<br/>
-If HOOK is a non-nil symbol with a non-nil `no-self-insert' property,<br/>
-it can control whether the character that triggered abbrev expansion<br/>
-is inserted.  If such a HOOK returns non-nil, the character is not<br/>
-inserted.  If such a HOOK returns nil, then so does `abbrev-insert'<br/>
-(and `expand-abbrev'), as if no abbrev expansion had taken place.<br/>
-<br/>
-PROPS is a property list.  The following properties are special:<br/>
-- `:count': the value for the abbrev's usage-count, which is incremented each<br/>
-  time the abbrev is used (the default is zero).<br/>
-- `:system': if non-nil, says that this is a "system" abbreviation<br/>
-  which should not be saved in the user's abbreviation file.<br/>
-  Unless `:system' is `force', a system abbreviation will not<br/>
-  overwrite a non-system abbreviation of the same name.<br/>
-- `:case-fixed': non-nil means that abbreviations are looked up without<br/>
-  case-folding, and the expansion is not capitalized/upcased.<br/>
-- `:enable-function': a function of no argument which returns non-nil if the<br/>
-  abbrev should be used for a particular call of `expand-abbrev'.<br/>
-<br/>
-An obsolete but still supported calling form is:<br/>
-<br/>
-(define-abbrev TABLE NAME EXPANSION &optional HOOK COUNT SYSTEM).
+<strong>define-abbrev</strong> is a compiled Lisp function in `<code>abbrev.el</code>'.</br>
+</br>
+(define-abbrev <u>TABLE</u> <u>NAME</u> <u>EXPANSION</u> &optional <u>HOOK</u> &rest <u>PROPS</u>)</br>
+</br>
+Define an abbrev in <u>TABLE</u> named <u>NAME</u>, to expand to <u>EXPANSION</u> and call <u>HOOK</u>.</br>
+<u>NAME</u> must be a string, and should be lower-case.</br>
+<u>EXPANSION</u> should usually be a string.</br>
+To undefine an abbrev, define it with <u>EXPANSION</u> = nil.</br>
+If <u>HOOK</u> is non-nil, it should be a function of no arguments;</br>
+it is called after <u>EXPANSION</u> is inserted.</br>
+If <u>EXPANSION</u> is not a string (and not nil), the abbrev is a</br>
+ special one, which does not expand in the usual way but only</br>
+ runs <u>HOOK</u>.</br>
+</br>
+If <u>HOOK</u> is a non-nil symbol with a non-nil `no-self-insert' property,</br>
+it can control whether the character that triggered abbrev expansion</br>
+is inserted.  If such a <u>HOOK</u> returns non-nil, the character is not</br>
+inserted.  If such a <u>HOOK</u> returns nil, then so does `abbrev-insert'</br>
+(and `expand-abbrev'), as if no abbrev expansion had taken place.</br>
+</br>
+<u>PROPS</u> is a property list.  The following properties are special:</br>
+- `:count': the value for the abbrev's usage-count, which is incremented each</br>
+  time the abbrev is used (the default is zero).</br>
+- `:system': if non-nil, says that this is a "system" abbreviation</br>
+  which should not be saved in the user's abbreviation file.</br>
+  Unless `:system' is `force', a system abbreviation will not</br>
+  overwrite a non-system abbreviation of the same name.</br>
+- `:case-fixed': non-nil means that abbreviations are looked up without</br>
+  case-folding, and the expansion is not capitalized/upcased.</br>
+- `:enable-function': a function of no argument which returns non-nil if the</br>
+  abbrev should be used for a particular call of `expand-abbrev'.</br>
+</br>
+An obsolete but still supported calling form is:</br>
+</br>
+<code>(define-abbrev <u>TABLE</u> <u>NAME</u> <u>EXPANSION</u> <em>&optional</em> <u>HOOK</u> COUNT SYSTEM)</code>.

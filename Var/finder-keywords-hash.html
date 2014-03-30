@@ -1,771 +1,784 @@
-<strong>finder-keywords-hash</strong> is a variable defined in `<code>finder.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Hash table mapping keywords to lists of package names.<br/>
-Keywords and package names both should be symbols.<br/>
-<br/>
-Value: #s(hash-table size 487 test eq rehash-size 1.5 rehash-threshold 0.8 data<br/>
-	      (abbrev<br/>
-	       (skeleton pcomplete emacs icomplete hippie-exp expand edmacro dabbrev completion autoarg)<br/>
-	       convenience<br/>
-	       (erc table picture emacs makeinfo flyspell calc keypad cua-base diff-mode compare-w winner windmove vcursor tmm ruler-mode repeat minibuf-eldef mb-depth longlines linum kmacro json iswitchb imenu ido ibuffer hippie-exp follow filesets filecache ffap ebuff-menu desktop delsel dabbrev completion chistory calculator bs autorevert autoinsert align)<br/>
-	       languages<br/>
-	       (erc sgml-mode smie emacs xscheme vhdl-mode verilog-mode vera-mode tcl sql simula sh-script scheme ruby-mode python ps-mode perl-mode pascal octave-mod modula2 mixal-mode meta-mode m4-mode ld-script js idlwave icon fortran flymake f90 executable delphi dcl-mode cwarn cperl-mode cfengine cc-mode cc-guess cap-words autoconf asm-mode antlr-mode ada-mode tempo skeleton paren info-look allout align)<br/>
-	       lisp<br/>
-	       (inversion cedet unsafep trace testcover tabulated-list smie shadow re-builder pp emacs macroexp ewoc ert elp elint eieio edebug debug checkdoc check-declare benchmark xscheme scheme inf-lisp hideshow strokes profiler isearchb ielm color cmuscheme align)<br/>
-	       outlines<br/>
-	       (org hideshow hideif reveal outline foldout elide-head allout allout-widgets)<br/>
-	       wp<br/>
-	       (handwrite underline two-column tildify emacs table sgml-mode refill picture page-ext nroff-mode ispell enriched org ebnf2ps whitespace ps-print printing longlines allout)<br/>
-	       pgp<br/>
-	       (gnus epg epa emacs allout)<br/>
-	       gnupg<br/>
-	       (gnus epg epa emacs allout)<br/>
-	       comm<br/>
-	       (url zeroconf webjump tramp tls telnet socks soap-client secrets rlogin rcirc net-utils ldap gnutls eudc dns dig dbus ange-ftp erc sgml-mode dns-mode bindat sql terminal talk shadowfile notifications master kermit ansi-color)<br/>
-	       processes<br/>
-	       (url eshell tramp rcompile erc bindat sql inf-lisp idlwave grep compile term shell server proced pcomplete emacs emacs-lock dirtrack cmuscheme ansi-color)<br/>
-	       terminals<br/>
-	       (tramp xt-mouse vt-control terminal ansi-color)<br/>
-	       services<br/>
-	       (ansi-color)<br/>
-	       help<br/>
-	       (emacs woman novice man makesum informat info info-look icomplete help-at-pt finder ehelp)<br/>
-	       files<br/>
-	       (url po compare-w wdired view emacs shadowfile recentf locate ffap doc-view arc-mode)<br/>
-	       archives<br/>
-	       (arc-mode)<br/>
-	       msdog<br/>
-	       (arc-mode)<br/>
-	       editing<br/>
-	       (hideshow dcl-mode arc-mode)<br/>
-	       major-mode<br/>
-	       (dcl-mode arc-mode)<br/>
-	       extensions<br/>
-	       (gnus cookie1 calc tq tabulated-list rx ring regi regexp-opt emacs ewoc eldoc cl cl-lib benchmark avl-tree type-break tree-widget thingatpt tempo strokes skeleton ido emacs-lock electric ehelp array)<br/>
-	       emulations<br/>
-	       (ws-mode viper vip vi tpu-edt edt cua-base crisp emacs hl-line delsel autoarg)<br/>
-	       mouse<br/>
-	       (goto-addr browse-url artist xt-mouse emacs thingatpt t-mouse strokes msb mouse-drag mouse-copy ffap avoid)<br/>
-	       hardware<br/>
-	       (zeroconf dbus vt100-led emacs flow-ctrl battery)<br/>
-	       internal<br/>
-	       (warnings syntax smie emacs disass select novice loadhist gs delim-col)<br/>
-	       bookmarks<br/>
-	       (saveplace bookmark)<br/>
-	       placeholders<br/>
-	       (saveplace bookmark)<br/>
-	       annotations<br/>
-	       (bookmark)<br/>
-	       tools<br/>
-	       (semantic xesam rcompile trace re-builder package ert elp eieio edebug debug copyright emacs check-declare vc smerge-mode log-view emerge ediff diff cvs-status add-log reporter mail-utils which-func make-mode hideshow gud grep glasses gdb-mi flymake etags ebrowse cpp compile bug-reference asm-mode time-stamp tempo speedbar skeleton sb-image imenu format-spec find-file ezimage elide-head dframe calculator)<br/>
-	       i18n<br/>
-	       (gnus emacs po double descr-text)<br/>
-	       data<br/>
-	       (gnus url snmp-mode timeclock remember page-ext bindat org xml whitespace jka-compr emacs hexl hex-util cdl)<br/>
-	       faces<br/>
-	       (gnus erc enriched m4-mode ld-script cwarn cpp emacs paren hl-line hilit-chg hi-lock face-remap descr-text color)<br/>
-	       color<br/>
-	       (color)<br/>
-	       hex<br/>
-	       (color)<br/>
-	       rgb<br/>
-	       (htmlfontify color)<br/>
-	       hsv<br/>
-	       (color)<br/>
-	       hsl<br/>
-	       (color)<br/>
-	       cie-lab<br/>
-	       (color)<br/>
-	       background<br/>
-	       (color)<br/>
-	       mule<br/>
-	       (emacs ps-print)<br/>
-	       multilingual<br/>
-	       (emacs descr-text)<br/>
-	       character\ composition<br/>
-	       (emacs)<br/>
-	       expand<br/>
-	       (dabbrev)<br/>
-	       completion<br/>
-	       (crm iswitchb dabbrev)<br/>
-	       unicode<br/>
-	       (emacs descr-text)<br/>
-	       file<br/>
-	       (dns-mode speedbar sb-image ezimage dframe)<br/>
-	       tags<br/>
-	       (semantic ebrowse speedbar sb-image ezimage dframe)<br/>
-	       dired<br/>
-	       (wdired emacs)<br/>
-	       window<br/>
-	       (emacs windmove follow)<br/>
-	       drag<br/>
-	       (emacs)<br/>
-	       drop<br/>
-	       (emacs)<br/>
-	       pdf<br/>
-	       (doc-view)<br/>
-	       ps<br/>
-	       (doc-view)<br/>
-	       dvi<br/>
-	       (doc-view)<br/>
-	       font<br/>
-	       (ps-print emacs)<br/>
-	       system-font<br/>
-	       (emacs)<br/>
-	       tool-bar-style<br/>
-	       (emacs)<br/>
-	       unix<br/>
-	       (telnet rlogin ispell emerge ediff diff sh-script make-mode gud gdb-mi executable cc-mode woman tar-mode sort proced emacs lpr locate find-lisp find-dired)<br/>
-	       mail<br/>
-	       (gnus fortune mairix imap goto-addr time-date mh-e unrmail undigest uce supercite smtpmail sendmail rmail rfc822 rfc2368 reporter mspools metamail mail-utils mailclient mailalias mailabbrev hashcash footnote feedmail emacs epa)<br/>
-	       message<br/>
-	       (gnus feedmail epa)<br/>
-	       face\ remapping<br/>
-	       (face-remap)<br/>
-	       display<br/>
-	       (hi-lock follow face-remap)<br/>
-	       user\ commands<br/>
-	       (face-remap)<br/>
-	       hypermedia<br/>
-	       (url xesam soap-client quickurl browse-url sgml-mode css-mode org emacs htmlfontify ffap)<br/>
-	       matching<br/>
-	       (regi re-builder thingatpt soundex misearch emacs hi-lock find-file ffap)<br/>
-	       filesets<br/>
-	       (filesets)<br/>
-	       c<br/>
-	       (hideshow hideif flymake cwarn cpp cmacexp cc-mode cc-guess emacs find-file)<br/>
-	       folding<br/>
-	       (foldout)<br/>
-	       minor-mode<br/>
-	       (hi-lock follow)<br/>
-	       frames<br/>
-	       (winner emacs talk hl-line)<br/>
-	       generic<br/>
-	       (emacs)<br/>
-	       comment<br/>
-	       (emacs)<br/>
-	       font-lock<br/>
-	       (emacs)<br/>
-	       colour<br/>
-	       (htmlfontify)<br/>
-	       html<br/>
-	       (gnus htmlfontify)<br/>
-	       markup<br/>
-	       (htmlfontify)<br/>
-	       etags<br/>
-	       (htmlfontify)<br/>
-	       buffer<br/>
-	       (msb ibuffer)<br/>
-	       multimedia<br/>
-	       (gnus metamail thumbs mpc emacs image-file image-dired iimage)<br/>
-	       docs<br/>
-	       (texnfo-upd texinfo texinfmt makeinfo lisp-mnt checkdoc info-xref)<br/>
-	       keyboard<br/>
-	       (keypad cua-base kmacro)<br/>
-	       md4<br/>
-	       (md4)<br/>
-	       utilities<br/>
-	       (midnight)<br/>
-	       menu<br/>
-	       (erc msb)<br/>
-	       uncomment<br/>
-	       (emacs)<br/>
-	       desktop<br/>
-	       (notifications)<br/>
-	       notifications<br/>
-	       (notifications)<br/>
-	       password<br/>
-	       (secrets password-cache)<br/>
-	       cache<br/>
-	       (password-cache)<br/>
-	       passphrase<br/>
-	       (secrets password-cache)<br/>
-	       key<br/>
-	       (password-cache)<br/>
-	       print<br/>
-	       (handwrite ps-print printing)<br/>
-	       postscript<br/>
-	       (gnus handwrite ps-mode ebnf2ps ps-print printing)<br/>
-	       bdf<br/>
-	       (ps-print)<br/>
-	       multibyte<br/>
-	       (ps-print)<br/>
-	       vi<br/>
-	       (repeat)<br/>
-	       repeat<br/>
-	       (repeat)<br/>
-	       minibuffer<br/>
-	       (crm savehist emacs)<br/>
-	       scroll<br/>
-	       (scroll-all)<br/>
-	       crisp<br/>
-	       (crisp scroll-all)<br/>
-	       brief<br/>
-	       (crisp scroll-all)<br/>
-	       lock<br/>
-	       (scroll-all)<br/>
-	       spreadsheet<br/>
-	       (testcover ses)<br/>
-	       dijkstra<br/>
-	       (ses)<br/>
-	       gpm<br/>
-	       (t-mouse)<br/>
-	       linux<br/>
-	       (t-mouse)<br/>
-	       news<br/>
-	       (gnus newsticker netrc time-date uudecode supercite metamail mail-utils footnote binhex timezone)<br/>
-	       timers<br/>
-	       (type-break)<br/>
-	       virtual\ cursor<br/>
-	       (vcursor)<br/>
-	       environment<br/>
-	       (wdired)<br/>
-	       renaming<br/>
-	       (wdired)<br/>
-	       movement<br/>
-	       (windmove)<br/>
-	       xml<br/>
-	       (nxml xml)<br/>
-	       ada<br/>
-	       (ada-mode)<br/>
-	       project\ file<br/>
-	       (ada-mode)<br/>
-	       xref<br/>
-	       (ada-mode)<br/>
-	       antlr<br/>
-	       (antlr-mode)<br/>
-	       code\ generator<br/>
-	       (antlr-mode)<br/>
-	       awk<br/>
-	       (cc-mode)<br/>
-	       cc-mode<br/>
-	       (cc-mode)<br/>
-	       oop<br/>
-	       (cc-guess)<br/>
-	       perl<br/>
-	       (cperl-mode)<br/>
-	       dcl<br/>
-	       (dcl-mode)<br/>
-	       ebnf<br/>
-	       (ebnf2ps)<br/>
-	       c++<br/>
-	       (hideshow ebrowse)<br/>
-	       fortran<br/>
-	       (org fortran f90)<br/>
-	       f90<br/>
-	       (f90)<br/>
-	       java<br/>
-	       (conf-mode hideshow)<br/>
-	       comments<br/>
-	       (hideshow)<br/>
-	       blocks<br/>
-	       (hideshow)<br/>
-	       hiding<br/>
-	       (hideshow)<br/>
-	       javascript<br/>
-	       (js)<br/>
-	       g++<br/>
-	       (mantemp)<br/>
-	       templates<br/>
-	       (mantemp)<br/>
-	       metafont<br/>
-	       (meta-mode)<br/>
-	       metapost<br/>
-	       (meta-mode)<br/>
-	       tex<br/>
-	       (tildify texnfo-upd texinfo texinfmt tex-mode reftex refbib bibtex bibtex-style org emacs meta-mode)<br/>
-	       knuth<br/>
-	       (mixal-mode)<br/>
-	       mix<br/>
-	       (mixal-mode)<br/>
-	       mixal<br/>
-	       (mixal-mode)<br/>
-	       asm<br/>
-	       (mixal-mode)<br/>
-	       mixvm<br/>
-	       (mixal-mode)<br/>
-	       the\ art\ of\ computer\ programming<br/>
-	       (mixal-mode)<br/>
-	       prolog<br/>
-	       (prolog)<br/>
-	       major<br/>
-	       (prolog)<br/>
-	       mode<br/>
-	       (prolog)<br/>
-	       sicstus<br/>
-	       (prolog)<br/>
-	       swi<br/>
-	       (prolog)<br/>
-	       mercury<br/>
-	       (prolog)<br/>
-	       ruby<br/>
-	       (ruby-mode)<br/>
-	       tcl<br/>
-	       (tcl)<br/>
-	       modes<br/>
-	       (tcl)<br/>
-	       vera<br/>
-	       (vera-mode)<br/>
-	       vhdl<br/>
-	       (vhdl-mode)<br/>
-	       mode-line<br/>
-	       (which-func)<br/>
-	       imenu<br/>
-	       (which-func)<br/>
-	       ccl<br/>
-	       (emacs)<br/>
-	       character\ set<br/>
-	       (emacs)<br/>
-	       coding-system<br/>
-	       (emacs)<br/>
-	       multibyte\ character<br/>
-	       (emacs)<br/>
-	       syntax<br/>
-	       (semantic mode-local emacs)<br/>
-	       category<br/>
-	       (emacs)<br/>
-	       fontset<br/>
-	       (emacs)<br/>
-	       isearch<br/>
-	       (emacs)<br/>
-	       iso<br/>
-	       (emacs)<br/>
-	       latin<br/>
-	       (emacs)<br/>
-	       japanese<br/>
-	       (emacs)<br/>
-	       kinsoku<br/>
-	       (emacs)<br/>
-	       coding\ system<br/>
-	       (emacs)<br/>
-	       latex<br/>
-	       (bibtex emacs)<br/>
-	       charset<br/>
-	       (emacs)<br/>
-	       diagnosis<br/>
-	       (emacs)<br/>
-	       input\ method<br/>
-	       (emacs)<br/>
-	       quail<br/>
-	       (emacs)<br/>
-	       tit<br/>
-	       (emacs)<br/>
-	       cxterm<br/>
-	       (emacs)<br/>
-	       normalization<br/>
-	       (emacs)<br/>
-	       binhex<br/>
-	       (gnus binhex)<br/>
-	       maint<br/>
-	       (texnfo-upd texinfo texinfmt gulp edebug debug copyright checkdoc check-declare emacs reporter)<br/>
-	       email<br/>
-	       (rmail feedmail)<br/>
-	       queue<br/>
-	       (feedmail)<br/>
-	       sendmail<br/>
-	       (feedmail)<br/>
-	       spray<br/>
-	       (feedmail)<br/>
-	       smtp<br/>
-	       (feedmail)<br/>
-	       draft<br/>
-	       (feedmail)<br/>
-	       hashcash<br/>
-	       (gnus hashcash)<br/>
-	       history<br/>
-	       (mail-utils)<br/>
-	       mime<br/>
-	       (gnus metamail)<br/>
-	       spam<br/>
-	       (gnus mh-e rmail)<br/>
-	       filter<br/>
-	       (rmail)<br/>
-	       rmail<br/>
-	       (rmail)<br/>
-	       uce<br/>
-	       (uce)<br/>
-	       unsolicited\ commercial\ email<br/>
-	       (uce)<br/>
-	       uudecode<br/>
-	       (gnus uudecode)<br/>
-	       literate\ programming<br/>
-	       (org)<br/>
-	       reproducible\ research<br/>
-	       (org)<br/>
-	       r<br/>
-	       (org)<br/>
-	       statistics<br/>
-	       (org)<br/>
-	       comint<br/>
-	       (org)<br/>
-	       js<br/>
-	       (org)<br/>
-	       accounting<br/>
-	       (org)<br/>
-	       babel\ language<br/>
-	       (org)<br/>
-	       maxima<br/>
-	       (org)<br/>
-	       scheme<br/>
-	       (ede org)<br/>
-	       interactive\ shell<br/>
-	       (org)<br/>
-	       shen<br/>
-	       (org)<br/>
-	       calendar<br/>
-	       (gnus todo-mode timeclock calendar icalendar diary-lib org)<br/>
-	       org<br/>
-	       (org)<br/>
-	       task<br/>
-	       (org)<br/>
-	       remember<br/>
-	       (org)<br/>
-	       org-mode<br/>
-	       (org)<br/>
-	       docbook<br/>
-	       (org)<br/>
-	       erc<br/>
-	       (org)<br/>
-	       irc<br/>
-	       (erc org)<br/>
-	       link<br/>
-	       (org)<br/>
-	       tables<br/>
-	       (org)<br/>
-	       plotting<br/>
-	       (org)<br/>
-	       emacsclient<br/>
-	       (org)<br/>
-	       taskjuggler<br/>
-	       (org)<br/>
-	       project\ planning<br/>
-	       (org)<br/>
-	       vc<br/>
-	       (ede url vc smerge-mode pcvs log-view log-edit emerge ediff diff diff-mode cvs-status compare-w add-log)<br/>
-	       pcl-cvs<br/>
-	       (pcvs log-edit cvs-status)<br/>
-	       cvs<br/>
-	       (smerge-mode pcvs log-view log-edit cvs-status)<br/>
-	       status<br/>
-	       (cvs-status)<br/>
-	       tree<br/>
-	       (avl-tree cvs-status)<br/>
-	       patch<br/>
-	       (diff-mode)<br/>
-	       diff<br/>
-	       (diff-mode)<br/>
-	       comparing<br/>
-	       (ediff)<br/>
-	       merging<br/>
-	       (ediff)<br/>
-	       patching<br/>
-	       (ediff)<br/>
-	       commit<br/>
-	       (log-edit)<br/>
-	       log<br/>
-	       (log-view log-edit)<br/>
-	       rcs<br/>
-	       (log-view)<br/>
-	       sccs<br/>
-	       (log-view)<br/>
-	       release\ management<br/>
-	       (pcvs)<br/>
-	       revision\ control<br/>
-	       (smerge-mode)<br/>
-	       merge<br/>
-	       (smerge-mode)<br/>
-	       diff3<br/>
-	       (smerge-mode)<br/>
-	       conflict<br/>
-	       (smerge-mode)<br/>
-	       url<br/>
-	       (url erc vc)<br/>
-	       data\ structures<br/>
-	       (avl-tree)<br/>
-	       avl<br/>
-	       (avl-tree)<br/>
-	       oo<br/>
-	       (inversion cedet eieio chart)<br/>
-	       chart<br/>
-	       (chart)<br/>
-	       graph<br/>
-	       (chart)<br/>
-	       multiple\ elements<br/>
-	       (crm)<br/>
-	       debugging<br/>
-	       (elp)<br/>
-	       emacs-lisp<br/>
-	       (find-func)<br/>
-	       functions<br/>
-	       (find-func)<br/>
-	       variables<br/>
-	       (find-func)<br/>
-	       compiler<br/>
-	       (macroexp)<br/>
-	       macros<br/>
-	       (macroexp)<br/>
-	       strings<br/>
-	       (rx regexp-opt)<br/>
-	       regexps<br/>
-	       (rx regexp-opt)<br/>
-	       parsing<br/>
-	       (smie)<br/>
-	       indentation<br/>
-	       (smie)<br/>
-	       utility<br/>
-	       (unsafep testcover)<br/>
-	       safety<br/>
-	       (unsafep testcover)<br/>
-	       cua<br/>
-	       (cua-base)<br/>
-	       mark<br/>
-	       (cua-base)<br/>
-	       bib<br/>
-	       (refer refbib bib-mode)<br/>
-	       bibtex<br/>
-	       (bibtex)<br/>
-	       conf<br/>
-	       (conf-mode)<br/>
-	       ini<br/>
-	       (conf-mode)<br/>
-	       windows<br/>
-	       (conf-mode)<br/>
-	       dns<br/>
-	       (dig dns-mode)<br/>
-	       master<br/>
-	       (dns-mode)<br/>
-	       zone<br/>
-	       (dns-mode)<br/>
-	       soa<br/>
-	       (dns-mode)<br/>
-	       memory<br/>
-	       (remember)<br/>
-	       todo<br/>
-	       (todo-mode remember)<br/>
-	       pim<br/>
-	       (remember)<br/>
-	       text<br/>
-	       (tildify)<br/>
-	       sgml<br/>
-	       (tildify)<br/>
-	       burma<br/>
-	       (emacs)<br/>
-	       cham<br/>
-	       (emacs)<br/>
-	       chinese<br/>
-	       (emacs)<br/>
-	       cyrillic<br/>
-	       (emacs)<br/>
-	       czech<br/>
-	       (emacs)<br/>
-	       ethiopic<br/>
-	       (emacs)<br/>
-	       european<br/>
-	       (emacs)<br/>
-	       greek<br/>
-	       (emacs)<br/>
-	       korean<br/>
-	       (emacs)<br/>
-	       hanja<br/>
-	       (emacs)<br/>
-	       hebrew<br/>
-	       (emacs)<br/>
-	       indian<br/>
-	       (emacs)<br/>
-	       devanagari<br/>
-	       (emacs)<br/>
-	       khmer<br/>
-	       (emacs)<br/>
-	       lao<br/>
-	       (emacs)<br/>
-	       romanian<br/>
-	       (emacs)<br/>
-	       sinhala<br/>
-	       (emacs)<br/>
-	       slovak<br/>
-	       (emacs)<br/>
-	       tai\ viet<br/>
-	       (emacs)<br/>
-	       thai<br/>
-	       (emacs)<br/>
-	       word\ break<br/>
-	       (emacs)<br/>
-	       emacs<br/>
-	       (emacs)<br/>
-	       tibetan<br/>
-	       (emacs)<br/>
-	       vietnamese<br/>
-	       (emacs)<br/>
-	       holidays<br/>
-	       (calendar)<br/>
-	       util<br/>
-	       (time-date parse-time)<br/>
-	       chat<br/>
-	       (erc)<br/>
-	       client<br/>
-	       (erc)<br/>
-	       internet<br/>
-	       (erc)<br/>
-	       button<br/>
-	       (erc)<br/>
-	       regexp<br/>
-	       (nxml erc)<br/>
-	       logging<br/>
-	       (erc)<br/>
-	       timestamp<br/>
-	       (erc)<br/>
-	       hypertext<br/>
-	       (browse-url)<br/>
-	       bind<br/>
-	       (dig)<br/>
-	       dig<br/>
-	       (gnus dig)<br/>
-	       network<br/>
-	       (gnus network-stream net-utils dns)<br/>
-	       tls<br/>
-	       (gnus tls gnutls)<br/>
-	       ssl<br/>
-	       (gnus tls gnutls)<br/>
-	       encryption<br/>
-	       (gnutls)<br/>
-	       mh-e<br/>
-	       (goto-addr)<br/>
-	       www<br/>
-	       (webjump goto-addr)<br/>
-	       hmac<br/>
-	       (gnus hmac-md5 hmac-def)<br/>
-	       rfc2104<br/>
-	       (gnus hmac-md5 hmac-def)<br/>
-	       hmac-md5<br/>
-	       (hmac-md5)<br/>
-	       md5<br/>
-	       (hmac-md5)<br/>
-	       keyed-md5<br/>
-	       (hmac-md5)<br/>
-	       cram-md5<br/>
-	       (sasl hmac-md5)<br/>
-	       searching<br/>
-	       (gnus mairix)<br/>
-	       rss<br/>
-	       (gnus newsticker)<br/>
-	       atom<br/>
-	       (newsticker)<br/>
-	       ntlm<br/>
-	       (sasl ntlm)<br/>
-	       sasl<br/>
-	       (sasl ntlm)<br/>
-	       digest-md5<br/>
-	       (sasl)<br/>
-	       soap<br/>
-	       (soap-client)<br/>
-	       web-services<br/>
-	       (soap-client)<br/>
-	       firewalls<br/>
-	       (socks)<br/>
-	       gnutls<br/>
-	       (gnus tls)<br/>
-	       relaxng<br/>
-	       (nxml)<br/>
-	       games<br/>
-	       (zone yow tetris studly spook solitaire snake pong mpuz morse meese life landmark hanoi gomoku gametree gamegrid fortune dunnet doctor dissociate decipher cookie1 bubbles blackbox animate 5x5)<br/>
-	       puzzles<br/>
-	       (5x5)<br/>
-	       utils<br/>
-	       (fortune)<br/>
-	       cursive\ writing<br/>
-	       (handwrite)<br/>
-	       gomoku<br/>
-	       (landmark)<br/>
-	       neural\ network<br/>
-	       (landmark)<br/>
-	       adaptive\ search<br/>
-	       (landmark)<br/>
-	       chemotaxis<br/>
-	       (landmark)<br/>
-	       cancel-lock<br/>
-	       (gnus)<br/>
-	       sha1<br/>
-	       (gnus)<br/>
-	       web<br/>
-	       (gnus)<br/>
-	       xpm<br/>
-	       (gnus)<br/>
-	       annotation<br/>
-	       (gnus)<br/>
-	       glyph<br/>
-	       (gnus)<br/>
-	       registry<br/>
-	       (gnus)<br/>
-	       synchronization<br/>
-	       (gnus)<br/>
-	       nntp<br/>
-	       (gnus)<br/>
-	       nnrss<br/>
-	       (gnus)<br/>
-	       external-body<br/>
-	       (gnus)<br/>
-	       partial<br/>
-	       (gnus)<br/>
-	       shar<br/>
-	       (gnus)<br/>
-	       forward<br/>
-	       (gnus)<br/>
-	       gnatsweb<br/>
-	       (gnus)<br/>
-	       gnus<br/>
-	       (gnus)<br/>
-	       s/mime<br/>
-	       (gnus)<br/>
-	       mml<br/>
-	       (gnus)<br/>
-	       ir<br/>
-	       (gnus)<br/>
-	       hz<br/>
-	       (gnus)<br/>
-	       hz+<br/>
-	       (gnus)<br/>
-	       smime<br/>
-	       (gnus)<br/>
-	       x\.509<br/>
-	       (gnus)<br/>
-	       pem<br/>
-	       (gnus)<br/>
-	       openssl<br/>
-	       (gnus)<br/>
-	       gmane<br/>
-	       (gnus)<br/>
-	       report<br/>
-	       (gnus)<br/>
-	       bogofilter<br/>
-	       (gnus)<br/>
-	       bbdb<br/>
-	       (gnus)<br/>
-	       dspam<br/>
-	       (gnus)<br/>
-	       whitelist<br/>
-	       (gnus)<br/>
-	       blacklist<br/>
-	       (gnus)<br/>
-	       spamassassin<br/>
-	       (gnus)<br/>
-	       bsfilter<br/>
-	       (gnus)<br/>
-	       ifile<br/>
-	       (gnus)<br/>
-	       stat<br/>
-	       (gnus)<br/>
-	       crm114<br/>
-	       (gnus)<br/>
-	       spamoracle<br/>
-	       (gnus)<br/>
-	       yenc<br/>
-	       (gnus)<br/>
-	       project<br/>
-	       (ede semantic)<br/>
-	       make<br/>
-	       (ede semantic)<br/>
-	       codegeneration<br/>
-	       (srecode)))<br/>
-<br/>
+<strong>finder-keywords-hash</strong> is a variable defined in `<code>finder.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Hash table mapping keywords to lists of package names.</br>
+Keywords and package names both should be symbols.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+#s(hash-table size 487 test eq rehash-size 1.5 rehash-threshold 0.8 data
+	      (abbrev
+	       (skeleton pcomplete emacs icomplete hippie-exp expand edmacro dabbrev completion autoarg)
+	       convenience
+	       (calc emacs table picture makeinfo flyspell keypad cua-base diff-mode compare-w erc winner windmove vcursor tmm ruler-mode repeat pcomplete minibuf-eldef mb-depth linum kmacro json imenu ido ibuffer hippie-exp frameset follow filesets filecache ffap ebuff-menu desktop delsel dabbrev completion chistory calculator bs autorevert autoinsert align)
+	       languages
+	       (xscheme vhdl-mode verilog-mode vera-mode tcl sql simula sh-script scheme ruby-mode ps-mode perl-mode pascal opascal octave modula2 mixal-mode meta-mode m4-mode ld-script js idlwave icon fortran flymake f90 executable dcl-mode cwarn cperl-mode cfengine cc-mode cc-guess cap-words bat-mode autoconf asm-mode antlr-mode ada-mode smie emacs sgml-mode erc tempo skeleton paren info-look allout align)
+	       lisp
+	       (xscheme scheme inf-lisp hideshow inversion cedet unsafep trace testcover tabulated-list smie shadow re-builder pp emacs macroexp ewoc ert elp elint eieio eieio-core edebug debug checkdoc check-declare benchmark strokes profiler isearchb color cmuscheme align)
+	       outlines
+	       (org hideshow hideif reveal outline foldout elide-head allout allout-widgets)
+	       wp
+	       (org ebnf2ps underline two-column tildify emacs table sgml-mode refill picture page-ext nroff-mode ispell enriched handwrite whitespace ps-print printing allout)
+	       pgp
+	       (gnus epg epa emacs allout)
+	       gnupg
+	       (gnus epg epa emacs allout)
+	       comm
+	       (url sql zeroconf webjump tramp tls telnet socks soap-client secrets rlogin rcirc net-utils ldap gnutls eudc dns dig dbus ange-ftp bindat sgml-mode dns-mode erc talk shadowfile notifications master kermit ansi-color)
+	       processes
+	       (url sql inf-lisp idlwave tramp bindat eshell erc term shell server proced pcomplete emacs emacs-lock dirtrack cmuscheme ansi-color)
+	       terminals
+	       (tramp xt-mouse vt-control ansi-color)
+	       services
+	       (ansi-color)
+	       help
+	       (emacs woman novice man makesum informat info info-look icomplete help-at-pt finder ehelp)
+	       files
+	       (url po compare-w wdired view emacs shadowfile recentf locate ffap doc-view arc-mode)
+	       archives
+	       (arc-mode)
+	       msdog
+	       (arc-mode)
+	       editing
+	       (hideshow dcl-mode arc-mode)
+	       major-mode
+	       (dcl-mode arc-mode)
+	       extensions
+	       (calc gnus tq tabulated-list rx ring regi regexp-opt emacs ewoc eldoc cl cl-lib benchmark avl-tree cookie1 type-break tree-widget thingatpt tempo strokes skeleton ido emacs-lock electric ehelp array)
+	       emulations
+	       (emacs ws-mode viper vip vi tpu-edt edt cua-base crisp hl-line delsel autoarg)
+	       mouse
+	       (goto-addr browse-url artist xt-mouse emacs thingatpt t-mouse strokes msb mouse-drag mouse-copy ffap avoid)
+	       hardware
+	       (zeroconf dbus vt100-led emacs flow-ctrl battery)
+	       internal
+	       (emacs warnings syntax smie disass select novice loadhist gs delim-col)
+	       bookmarks
+	       (saveplace bookmark)
+	       placeholders
+	       (saveplace bookmark)
+	       annotations
+	       (bookmark)
+	       tools
+	       (which-func make-mode hideshow gud glasses gdb-mi flymake etags ebrowse bug-reference asm-mode semantic reporter mail-utils trace re-builder package emacs ert elp eieio edebug debug copyright check-declare vc smerge-mode log-view emerge ediff diff cvs-status add-log time-stamp tempo speedbar skeleton sb-image pcomplete imenu format-spec find-file ezimage elide-head dframe calculator)
+	       i18n
+	       (emacs gnus po welsh uni-input slovak sgml-input rfc1345 latin-post latin-ltx georgian czech cyrillic croatian double descr-text)
+	       data
+	       (url org timeclock gnus snmp-mode bindat remember page-ext xml whitespace jka-compr emacs hexl hex-util cdl)
+	       faces
+	       (m4-mode ld-script cwarn gnus enriched erc emacs paren hl-line hilit-chg hi-lock face-remap descr-text color)
+	       color
+	       (color)
+	       hex
+	       (color)
+	       rgb
+	       (htmlfontify color)
+	       hsv
+	       (color)
+	       hsl
+	       (color)
+	       cie-lab
+	       (color)
+	       background
+	       (color)
+	       mule
+	       (emacs latin-pre hanja3 arabic ps-print)
+	       multilingual
+	       (emacs vnvni vntelex viqr tibetan thai symbol-ksc slovak sisheng pypunct-b5 py-punct persian lrt latin-pre latin-post latin-ltx latin-alt lao japanese ipa ipa-praat indian hebrew hanja3 hanja hanja-jis hangul greek ethiopic czech cyrillic cyril-jis descr-text)
+	       character\ composition
+	       (emacs)
+	       expand
+	       (dabbrev)
+	       completion
+	       (crm dabbrev)
+	       unicode
+	       (emacs descr-text)
+	       file
+	       (dns-mode speedbar sb-image ezimage dframe)
+	       tags
+	       (ebrowse semantic speedbar sb-image ezimage dframe)
+	       dired
+	       (wdired emacs)
+	       window
+	       (emacs windmove follow)
+	       drag
+	       (emacs)
+	       drop
+	       (emacs)
+	       pdf
+	       (doc-view)
+	       ps
+	       (doc-view)
+	       dvi
+	       (doc-view)
+	       font
+	       (ps-print emacs)
+	       system-font
+	       (emacs)
+	       tool-bar-style
+	       (emacs)
+	       unix
+	       (sh-script make-mode gud gdb-mi executable cc-mode telnet rlogin ispell emerge ediff diff woman tar-mode sort proced emacs lpr locate find-lisp find-dired)
+	       mail
+	       (time-date gnus unrmail undigest uce supercite smtpmail sendmail rmail rfc822 rfc2368 reporter mspools metamail mail-utils mailclient mailalias mailabbrev hashcash footnote feedmail emacs mh-e mairix imap goto-addr fortune epa)
+	       message
+	       (gnus feedmail epa)
+	       face\ remapping
+	       (face-remap)
+	       display
+	       (hi-lock follow face-remap)
+	       user\ commands
+	       (face-remap)
+	       hypermedia
+	       (url org soap-client quickurl browse-url sgml-mode css-mode emacs htmlfontify ffap)
+	       matching
+	       (regi re-builder thingatpt soundex misearch emacs hi-lock find-file ffap)
+	       filesets
+	       (filesets)
+	       c
+	       (hideshow hideif flymake cwarn cmacexp cc-mode cc-guess emacs find-file)
+	       folding
+	       (foldout)
+	       minor-mode
+	       (hi-lock follow)
+	       frames
+	       (winner emacs talk hl-line)
+	       generic
+	       (emacs)
+	       comment
+	       (emacs)
+	       font-lock
+	       (emacs)
+	       colour
+	       (htmlfontify)
+	       html
+	       (gnus shr shr-color eww htmlfontify)
+	       markup
+	       (htmlfontify)
+	       etags
+	       (htmlfontify)
+	       buffer
+	       (msb ibuffer)
+	       multimedia
+	       (gnus metamail thumbs mpc emacs image-file image-dired iimage)
+	       docs
+	       (lisp-mnt checkdoc texnfo-upd texinfo texinfmt makeinfo info-xref)
+	       keyboard
+	       (keypad cua-base persian kmacro)
+	       md4
+	       (md4)
+	       utilities
+	       (midnight)
+	       menu
+	       (erc msb)
+	       uncomment
+	       (emacs)
+	       desktop
+	       (notifications)
+	       notifications
+	       (notifications)
+	       password
+	       (secrets password-cache)
+	       cache
+	       (password-cache)
+	       passphrase
+	       (secrets password-cache)
+	       key
+	       (password-cache)
+	       print
+	       (handwrite ps-print printing)
+	       postscript
+	       (ps-mode ebnf2ps gnus handwrite ps-print printing)
+	       bdf
+	       (ps-print)
+	       multibyte
+	       (ps-print)
+	       vi
+	       (repeat)
+	       repeat
+	       (repeat)
+	       minibuffer
+	       (crm savehist emacs)
+	       scroll
+	       (scroll-all)
+	       crisp
+	       (crisp scroll-all)
+	       brief
+	       (crisp scroll-all)
+	       lock
+	       (scroll-all)
+	       spreadsheet
+	       (testcover ses)
+	       dijkstra
+	       (ses)
+	       gpm
+	       (t-mouse)
+	       linux
+	       (t-mouse)
+	       news
+	       (time-date gnus uudecode supercite metamail mail-utils footnote binhex newsticker netrc timezone)
+	       timers
+	       (type-break)
+	       virtual\ cursor
+	       (vcursor)
+	       environment
+	       (wdired)
+	       renaming
+	       (wdired)
+	       movement
+	       (windmove)
+	       xml
+	       (nxml xml)
+	       irc
+	       (org erc)
+	       chat
+	       (erc)
+	       client
+	       (erc)
+	       internet
+	       (erc)
+	       button
+	       (erc)
+	       url
+	       (url vc erc)
+	       regexp
+	       (nxml erc)
+	       logging
+	       (erc)
+	       timestamp
+	       (erc)
+	       vc
+	       (url ede vc smerge-mode pcvs log-view log-edit emerge ediff diff diff-mode cvs-status compare-w add-log)
+	       pcl-cvs
+	       (pcvs log-edit cvs-status)
+	       cvs
+	       (smerge-mode pcvs log-edit cvs-status)
+	       status
+	       (cvs-status)
+	       tree
+	       (avl-tree cvs-status)
+	       patch
+	       (diff-mode)
+	       diff
+	       (diff-mode)
+	       comparing
+	       (ediff)
+	       merging
+	       (ediff)
+	       patching
+	       (ediff)
+	       commit
+	       (log-edit)
+	       log
+	       (log-edit)
+	       release\ management
+	       (pcvs)
+	       revision\ control
+	       (smerge-mode)
+	       merge
+	       (smerge-mode)
+	       diff3
+	       (smerge-mode)
+	       conflict
+	       (smerge-mode)
+	       japanese
+	       (emacs japanese ja-dic)
+	       input\ method
+	       (emacs vnvni vntelex viqr tibetan thai symbol-ksc slovak sisheng pypunct-b5 py-punct persian lrt latin-pre latin-post latin-alt lao japanese ipa ipa-praat indian hebrew hanja3 hanja hanja-jis hangul greek ethiopic czech cyrillic cyril-jis arabic)
+	       arabic
+	       (arabic)
+	       cyrillic
+	       (emacs cyrillic cyril-jis)
+	       czech
+	       (czech)
+	       ethiopic
+	       (emacs ethiopic)
+	       greek
+	       (latin-ltx greek)
+	       korean
+	       (emacs symbol-ksc hanja3 hanja hanja-jis hangul)
+	       hangul
+	       (symbol-ksc hanja-jis hangul)
+	       hanja
+	       (emacs hanja3 hanja)
+	       quail
+	       (emacs hanja3)
+	       hebrew
+	       (hebrew)
+	       indian
+	       (emacs indian)
+	       devanagari
+	       (emacs indian)
+	       ipa
+	       (ipa ipa-praat)
+	       lao
+	       (emacs lrt lao)
+	       latin
+	       (emacs viqr latin-pre latin-post latin-alt)
+	       input
+	       (latin-ltx)
+	       lrt\.
+	       (lrt)
+	       farsi
+	       (persian)
+	       persian
+	       (persian)
+	       chinese
+	       (emacs sisheng pypunct-b5 py-punct)
+	       pinyin
+	       (sisheng)
+	       sisheng
+	       (sisheng)
+	       slovak
+	       (slovak)
+	       thai
+	       (emacs thai)
+	       tibetan
+	       (emacs tibetan)
+	       vietnamese
+	       (emacs vnvni vntelex)
+	       games
+	       (zone tetris studly spook solitaire snake pong mpuz morse life landmark hanoi gomoku gametree gamegrid fortune dunnet doctor dissociate decipher cookie1 bubbles blackbox animate 5x5)
+	       puzzles
+	       (5x5)
+	       utils
+	       (fortune)
+	       cursive\ writing
+	       (handwrite)
+	       gomoku
+	       (landmark)
+	       neural\ network
+	       (landmark)
+	       adaptive\ search
+	       (landmark)
+	       chemotaxis
+	       (landmark)
+	       cua
+	       (cua-base)
+	       mark
+	       (cua-base)
+	       bib
+	       (refer refbib bib-mode)
+	       tex
+	       (org meta-mode emacs tildify texnfo-upd texinfo texinfmt tex-mode reftex refbib bibtex bibtex-style)
+	       bibtex
+	       (bibtex)
+	       latex
+	       (emacs bibtex)
+	       conf
+	       (conf-mode)
+	       ini
+	       (conf-mode)
+	       windows
+	       (conf-mode)
+	       java
+	       (hideshow conf-mode)
+	       dns
+	       (dig dns-mode)
+	       master
+	       (dns-mode)
+	       zone
+	       (dns-mode)
+	       soa
+	       (dns-mode)
+	       memory
+	       (remember)
+	       todo
+	       (todo-mode remember)
+	       pim
+	       (remember)
+	       maint
+	       (reporter emacs gulp edebug debug copyright checkdoc check-declare texnfo-upd texinfo texinfmt)
+	       text
+	       (tildify)
+	       sgml
+	       (tildify)
+	       data\ structures
+	       (avl-tree)
+	       avl
+	       (avl-tree)
+	       oo
+	       (inversion cedet eieio eieio-core chart)
+	       chart
+	       (chart)
+	       graph
+	       (chart)
+	       multiple\ elements
+	       (crm)
+	       debugging
+	       (elp)
+	       emacs-lisp
+	       (find-func)
+	       functions
+	       (find-func)
+	       variables
+	       (find-func)
+	       compiler
+	       (macroexp)
+	       macros
+	       (macroexp)
+	       strings
+	       (rx regexp-opt)
+	       regexps
+	       (rx regexp-opt)
+	       parsing
+	       (smie)
+	       indentation
+	       (smie)
+	       utility
+	       (unsafep testcover)
+	       safety
+	       (unsafep testcover)
+	       hypertext
+	       (browse-url)
+	       bind
+	       (dig)
+	       dig
+	       (gnus dig)
+	       network
+	       (gnus network-stream net-utils dns)
+	       tls
+	       (gnus tls gnutls)
+	       ssl
+	       (gnus tls gnutls)
+	       encryption
+	       (gnutls)
+	       mh-e
+	       (goto-addr)
+	       www
+	       (webjump goto-addr)
+	       hmac
+	       (gnus hmac-md5 hmac-def)
+	       rfc2104
+	       (gnus hmac-md5 hmac-def)
+	       hmac-md5
+	       (hmac-md5)
+	       md5
+	       (hmac-md5)
+	       keyed-md5
+	       (hmac-md5)
+	       cram-md5
+	       (sasl hmac-md5)
+	       searching
+	       (gnus mairix)
+	       rss
+	       (gnus newsticker)
+	       atom
+	       (newsticker)
+	       ntlm
+	       (sasl ntlm)
+	       sasl
+	       (sasl ntlm)
+	       digest-md5
+	       (sasl)
+	       soap
+	       (soap-client)
+	       web-services
+	       (soap-client)
+	       firewalls
+	       (socks)
+	       gnutls
+	       (gnus tls)
+	       spam
+	       (gnus rmail mh-e)
+	       ccl
+	       (emacs)
+	       character\ set
+	       (emacs)
+	       coding-system
+	       (emacs)
+	       multibyte\ character
+	       (emacs)
+	       syntax
+	       (semantic mode-local emacs)
+	       category
+	       (emacs)
+	       fontset
+	       (emacs)
+	       isearch
+	       (emacs)
+	       iso
+	       (emacs)
+	       kinsoku
+	       (emacs)
+	       coding\ system
+	       (emacs)
+	       charset
+	       (emacs)
+	       diagnosis
+	       (emacs)
+	       tit
+	       (emacs)
+	       cxterm
+	       (emacs)
+	       normalization
+	       (emacs)
+	       binhex
+	       (gnus binhex)
+	       email
+	       (rmail feedmail)
+	       queue
+	       (feedmail)
+	       sendmail
+	       (feedmail)
+	       spray
+	       (feedmail)
+	       smtp
+	       (feedmail)
+	       draft
+	       (feedmail)
+	       hashcash
+	       (gnus hashcash)
+	       history
+	       (mail-utils)
+	       mime
+	       (gnus metamail)
+	       filter
+	       (rmail)
+	       rmail
+	       (rmail)
+	       uce
+	       (uce)
+	       unsolicited\ commercial\ email
+	       (uce)
+	       uudecode
+	       (gnus uudecode)
+	       cancel-lock
+	       (gnus)
+	       sha1
+	       (gnus)
+	       calendar
+	       (org todo-mode timeclock calendar icalendar diary-lib gnus)
+	       web
+	       (gnus)
+	       icalendar
+	       (gnus)
+	       org
+	       (org gnus)
+	       xpm
+	       (gnus)
+	       annotation
+	       (gnus)
+	       glyph
+	       (gnus)
+	       registry
+	       (gnus)
+	       synchronization
+	       (gnus)
+	       nntp
+	       (gnus)
+	       nnrss
+	       (gnus)
+	       external-body
+	       (gnus)
+	       partial
+	       (gnus)
+	       shar
+	       (gnus)
+	       forward
+	       (gnus)
+	       gnatsweb
+	       (gnus)
+	       gnus
+	       (gnus)
+	       s/mime
+	       (gnus)
+	       mml
+	       (gnus)
+	       ir
+	       (gnus)
+	       hz
+	       (gnus)
+	       hz+
+	       (gnus)
+	       smime
+	       (gnus)
+	       x\.509
+	       (gnus)
+	       pem
+	       (gnus)
+	       openssl
+	       (gnus)
+	       gmane
+	       (gnus)
+	       report
+	       (gnus)
+	       bogofilter
+	       (gnus)
+	       bbdb
+	       (gnus)
+	       dspam
+	       (gnus)
+	       whitelist
+	       (gnus)
+	       blacklist
+	       (gnus)
+	       spamassassin
+	       (gnus)
+	       bsfilter
+	       (gnus)
+	       ifile
+	       (gnus)
+	       stat
+	       (gnus)
+	       crm114
+	       (gnus)
+	       spamoracle
+	       (gnus)
+	       yenc
+	       (gnus)
+	       burma
+	       (emacs)
+	       cham
+	       (emacs)
+	       european
+	       (emacs)
+	       khmer
+	       (emacs)
+	       romanian
+	       (emacs)
+	       sinhala
+	       (emacs)
+	       tai\ viet
+	       (emacs)
+	       word\ break
+	       (emacs)
+	       emacs
+	       (emacs)
+	       holidays
+	       (calendar)
+	       util
+	       (time-date parse-time)
+	       project
+	       (ede semantic)
+	       make
+	       (ede semantic)
+	       codegeneration
+	       (srecode)
+	       scheme
+	       (org ede)
+	       relaxng
+	       (nxml)
+	       ada
+	       (ada-mode)
+	       project\ file
+	       (ada-mode)
+	       xref
+	       (ada-mode)
+	       antlr
+	       (antlr-mode)
+	       code\ generator
+	       (antlr-mode)
+	       awk
+	       (cc-mode)
+	       cc-mode
+	       (cc-mode)
+	       oop
+	       (cc-guess)
+	       perl
+	       (cperl-mode)
+	       dcl
+	       (dcl-mode)
+	       ebnf
+	       (ebnf2ps)
+	       c++
+	       (hideshow ebrowse)
+	       fortran
+	       (org fortran f90)
+	       f90
+	       (f90)
+	       comments
+	       (hideshow)
+	       blocks
+	       (hideshow)
+	       hiding
+	       (hideshow)
+	       javascript
+	       (js)
+	       g++
+	       (mantemp)
+	       templates
+	       (mantemp)
+	       metafont
+	       (meta-mode)
+	       metapost
+	       (meta-mode)
+	       knuth
+	       (mixal-mode)
+	       mix
+	       (mixal-mode)
+	       mixal
+	       (mixal-mode)
+	       asm
+	       (mixal-mode)
+	       mixvm
+	       (mixal-mode)
+	       the\ art\ of\ computer\ programming
+	       (mixal-mode)
+	       prolog
+	       (prolog)
+	       major
+	       (prolog)
+	       mode
+	       (prolog)
+	       sicstus
+	       (prolog)
+	       swi
+	       (prolog)
+	       mercury
+	       (prolog)
+	       ruby
+	       (ruby-mode)
+	       tcl
+	       (tcl)
+	       modes
+	       (tcl)
+	       vera
+	       (vera-mode)
+	       vhdl
+	       (vhdl-mode)
+	       mode-line
+	       (which-func)
+	       imenu
+	       (which-func)
+	       literate\ programming
+	       (org)
+	       reproducible\ research
+	       (org)
+	       r
+	       (org)
+	       statistics
+	       (org)
+	       comint
+	       (org)
+	       js
+	       (org)
+	       accounting
+	       (org)
+	       babel\ language
+	       (org)
+	       maxima
+	       (org)
+	       interactive\ shell
+	       (org)
+	       shen
+	       (org)
+	       task
+	       (org)
+	       capture
+	       (org)
+	       org-mode
+	       (org)
+	       erc
+	       (org)
+	       link
+	       (org)
+	       tables
+	       (org)
+	       plotting
+	       (org)
+	       emacsclient
+	       (org)
+	       markdown
+	       (org)))
+</pre></br>

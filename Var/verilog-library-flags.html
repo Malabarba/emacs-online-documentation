@@ -1,35 +1,33 @@
-<strong>verilog-library-flags</strong> is a variable defined in `<code>verilog-mode.el</code>'.<br/>
-Its value is ("")<br/>
-<br/>
-  This variable is safe as a file local variable if its value<br/>
-  satisfies the predicate `listp'.<br/>
-<br/>
-Documentation:<br/>
-List of standard Verilog arguments to use for /*AUTOINST*/.<br/>
-These arguments are used to find files for `verilog-auto', and match<br/>
-the flags accepted by a standard Verilog-XL simulator.<br/>
-<br/>
-    -f filename     Reads more `verilog-library-flags' from the filename.<br/>
-    +incdir+dir     Adds the directory to `verilog-library-directories'.<br/>
-    -Idir           Adds the directory to `verilog-library-directories'.<br/>
-    -y dir          Adds the directory to `verilog-library-directories'.<br/>
-    +libext+.v      Adds the extensions to `verilog-library-extensions'.<br/>
-    -v filename     Adds the filename to `verilog-library-files'.<br/>
-<br/>
-    filename        Adds the filename to `verilog-library-files'.<br/>
-                    This is not recommended, -v is a better choice.<br/>
-<br/>
-You might want these defined in each file; put at the *END* of your file<br/>
-something like:<br/>
-<br/>
-    // Local Variables:<br/>
-    // verilog-library-flags:("-y dir -y otherdir")<br/>
-    // End:<br/>
-<br/>
-Verilog-mode attempts to detect changes to this local variable, but they<br/>
-are only insured to be correct when the file is first visited.  Thus if you<br/>
-have problems, use C-x C-v RET to have these take effect.<br/>
-<br/>
-See also the variables mentioned above.<br/>
-<br/>
+<strong>verilog-library-flags</strong> is a variable defined in `<code>verilog-mode.el</code>'.</br>
+Its value is <pre>("")</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate `listp'.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of standard Verilog arguments to use for /*AUTOINST*/.</br>
+These arguments are used to find files for `verilog-auto', and match</br>
+the flags accepted by a standard Verilog-XL simulator.</br>
+</br>
+    -f filename     Reads more `verilog-library-flags' from the filename.</br>
+    +incdir+dir     Adds the directory to `verilog-library-directories'.</br>
+    -Idir           Adds the directory to `verilog-library-directories'.</br>
+    -y dir          Adds the directory to `verilog-library-directories'.</br>
+    +libext+.v      Adds the extensions to `verilog-library-extensions'.</br>
+    -v filename     Adds the filename to `verilog-library-files'.</br>
+</br>
+    filename        Adds the filename to `verilog-library-files'.</br>
+                    This is not recommended, -v is a better choice.</br>
+</br>
+You might want these defined in each file; put at the *END* of your file</br>
+something like:</br>
+</br>
+    // Local Variables:</br>
+    // verilog-library-flags:("-y dir -y otherdir")</br>
+    // End:</br>
+</br>
+Verilog-mode attempts to detect changes to this local variable, but they</br>
+are only insured to be correct when the file is first visited.  Thus if you</br>
+have problems, use C-x C-v RET to have these take effect.</br>
+</br>
+See also the variables mentioned above.</br>
+</br>
 You can customize this variable.

@@ -1,12 +1,16 @@
-<strong>list-processes</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-(list-processes &optional QUERY-ONLY BUFFER)<br/>
-<br/>
-Display a list of all processes.<br/>
-If optional argument QUERY-ONLY is non-nil, only processes with<br/>
-the query-on-exit flag set are listed.<br/>
-Any process listed as exited or signaled is actually eliminated<br/>
-after the listing is made.<br/>
-Optional argument BUFFER specifies a buffer to use, instead of<br/>
-"*Process List*".<br/>
-The return value is always nil.
+<strong>list-processes</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+</br>
+(list-processes &optional <u>QUERY-ONLY</u> <u>BUFFER</u>)</br>
+</br>
+Display a list of all processes that are Emacs sub-processes.</br>
+If optional argument <u>QUERY-ONLY</u> is non-nil, only processes with</br>
+the query-on-exit flag set are listed.</br>
+Any process listed as exited or signaled is actually eliminated</br>
+after the listing is made.</br>
+Optional argument <u>BUFFER</u> specifies a buffer to use, instead of</br>
+"*Process List*".</br>
+The return value is always nil.</br>
+</br>
+This function lists only processes that were launched by Emacs.  To</br>
+see other processes running on the system, use `list-system-processes'.

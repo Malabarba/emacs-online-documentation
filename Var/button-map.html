@@ -1,7 +1,13 @@
-<strong>button-map</strong> is a variable defined in `<code>button.el</code>'.<br/>
-Its value is (keymap (mouse-2 . push-button) (13 . push-button))<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
+<strong>button-map</strong> is a variable defined in `<code>button.el</code>'.</br>
+Its value is <pre></br>
+(keymap
+ (header-line keymap
+	      (mouse-2 . push-button))
+ (mode-line keymap
+	    (mouse-2 . push-button))
+ (mouse-2 . push-button)
+ (13 . push-button))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
 Keymap used by buttons.

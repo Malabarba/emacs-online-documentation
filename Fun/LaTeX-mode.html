@@ -1,78 +1,79 @@
-<strong>LaTeX-mode</strong> is an alias for `latex-mode' in `<code>tex-mode.el</code>'.<br/>
-<br/>
-(LaTeX-mode)<br/>
-<br/>
-Major mode for editing files of input for LaTeX.<br/>
-Makes $ and } display the characters they match.<br/>
-Makes " insert `` when it seems to be the beginning of a quotation,<br/>
-and '' when it appears to be the end; it inserts " only after a \.<br/>
-<br/>
-Use M-x tex-region to run LaTeX on the current region, plus the preamble<br/>
-copied from the top of the file (containing \documentstyle, etc.),<br/>
-running LaTeX under a special subshell.  M-x tex-buffer does the whole buffer.<br/>
-M-x tex-file saves the buffer and then processes the file.<br/>
-M-x tex-print prints the .dvi file made by any of these.<br/>
-M-x tex-view previews the .dvi file made by any of these.<br/>
-M-x tex-bibtex-file runs bibtex on the file of the current buffer.<br/>
-<br/>
-Use M-x tex-validate-buffer to check buffer for paragraphs containing<br/>
-mismatched $'s or braces.<br/>
-<br/>
-Special commands:<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-C-j		tex-terminate-paragraph<br/>
-ESC		Prefix Command<br/>
-"		tex-insert-quote<br/>
-<C-return>	tex-feed-input<br/>
-<br/>
-C-c C-s		latex-split-block<br/>
-<br/>
-M-RET		latex-insert-item<br/>
-<br/>
-C-c C-b		tex-buffer<br/>
-C-c C-c		tex-compile<br/>
-C-c C-e		latex-close-block<br/>
-C-c C-f		tex-file<br/>
-C-c TAB		tex-bibtex-file<br/>
-C-c C-k		tex-kill-job<br/>
-C-c C-l		tex-recenter-output-buffer<br/>
-C-c RET		tex-feed-input<br/>
-C-c C-o		latex-insert-block<br/>
-C-c C-p		tex-print<br/>
-C-c C-q		tex-show-print-queue<br/>
-C-c C-r		tex-region<br/>
-C-c C-t		latex-insert-block<br/>
-C-c C-u		tex-goto-last-unclosed-latex-block<br/>
-C-c C-v		tex-view<br/>
-C-c /		latex-close-block<br/>
-C-c ]		latex-close-block<br/>
-C-c {		tex-insert-braces<br/>
-C-c }		up-list<br/>
-<br/>
-C-M-i		ispell-complete-word<br/>
-<br/>
-<br/>
-<br/>
-Mode variables:<br/>
-latex-run-command<br/>
-	Command string used by M-x tex-region or M-x tex-buffer.<br/>
-tex-directory<br/>
-	Directory in which to create temporary files for LaTeX jobs<br/>
-	run by M-x tex-region or M-x tex-buffer.<br/>
-tex-dvi-print-command<br/>
-	Command string used by M-x tex-print to print a .dvi file.<br/>
-tex-alt-dvi-print-command<br/>
-	Alternative command string used by M-x tex-print (when given a prefix<br/>
-	argument) to print a .dvi file.<br/>
-tex-dvi-view-command<br/>
-	Command string used by M-x tex-view to preview a .dvi file.<br/>
-tex-show-queue-command<br/>
-	Command string used by M-x tex-show-print-queue to show the print<br/>
-	queue that M-x tex-print put your job on.<br/>
-<br/>
-Entering Latex mode runs the hook `text-mode-hook', then<br/>
-`tex-mode-hook', and finally `latex-mode-hook'.  When the special<br/>
+<strong>LaTeX-mode</strong> is an alias for `<strong><a href="latex-mode">latex-mode</a></strong>' in `<code>tex-mode.el</code>'.</br>
+</br>
+</br>
+(LaTeX-mode)</br>
+</br>
+Major mode for editing files of input for LaTeX.</br>
+Makes $ and } display the characters they match.</br>
+Makes " insert `` when it seems to be the beginning of a quotation,</br>
+and '' when it appears to be the end; it inserts " only after a \.</br>
+</br>
+Use M-x tex-region to run LaTeX on the current region, plus the preamble</br>
+copied from the top of the file (containing \documentstyle, etc.),</br>
+running LaTeX under a special subshell.  M-x tex-buffer does the whole buffer.</br>
+M-x tex-file saves the buffer and then processes the file.</br>
+M-x tex-print prints the .dvi file made by any of these.</br>
+M-x tex-view previews the .dvi file made by any of these.</br>
+M-x tex-bibtex-file runs bibtex on the file of the current buffer.</br>
+</br>
+Use M-x tex-validate-buffer to check buffer for paragraphs containing</br>
+mismatched $'s or braces.</br>
+</br>
+Special commands:</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+C-j		tex-terminate-paragraph</br>
+ESC		Prefix Command</br>
+"		tex-insert-quote</br>
+&lt;C-return>	tex-feed-input</br>
+</br>
+C-c C-s		latex-split-block</br>
+</br>
+M-RET		latex-insert-item</br>
+</br>
+C-c C-b		tex-buffer</br>
+C-c C-c		tex-compile</br>
+C-c C-e		latex-close-block</br>
+C-c C-f		tex-file</br>
+C-c TAB		tex-bibtex-file</br>
+C-c C-k		tex-kill-job</br>
+C-c C-l		tex-recenter-output-buffer</br>
+C-c RET		tex-feed-input</br>
+C-c C-o		latex-insert-block</br>
+C-c C-p		tex-print</br>
+C-c C-q		tex-show-print-queue</br>
+C-c C-r		tex-region</br>
+C-c C-t		latex-insert-block</br>
+C-c C-u		tex-goto-last-unclosed-latex-block</br>
+C-c C-v		tex-view</br>
+C-c /		latex-close-block</br>
+C-c ]		latex-close-block</br>
+C-c {		tex-insert-braces</br>
+C-c }		up-list</br>
+</br>
+C-M-i		ispell-complete-word</br>
+</br>
+</br>
+</br>
+Mode variables:</br>
+latex-run-command</br>
+	Command string used by M-x tex-region or M-x tex-buffer.</br>
+tex-directory</br>
+	Directory in which to create temporary files for LaTeX jobs</br>
+	run by M-x tex-region or M-x tex-buffer.</br>
+tex-dvi-print-command</br>
+	Command string used by M-x tex-print to print a .dvi file.</br>
+tex-alt-dvi-print-command</br>
+	Alternative command string used by M-x tex-print (when given a prefix</br>
+	argument) to print a .dvi file.</br>
+tex-dvi-view-command</br>
+	Command string used by M-x tex-view to preview a .dvi file.</br>
+tex-show-queue-command</br>
+	Command string used by M-x tex-show-print-queue to show the print</br>
+	queue that M-x tex-print put your job on.</br>
+</br>
+Entering Latex mode runs the hook `text-mode-hook', then</br>
+`tex-mode-hook', and finally `latex-mode-hook'.  When the special</br>
 subshell is initiated, `tex-shell-hook' is run.

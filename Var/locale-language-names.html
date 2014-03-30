@@ -1,151 +1,150 @@
-<strong>locale-language-names</strong> is a variable defined in `<code>mule-cmds.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Alist of locale regexps vs the corresponding languages and coding systems.<br/>
-Each element has this form:<br/>
-  (LOCALE-REGEXP LANG-ENV CODING-SYSTEM)<br/>
-The first element whose LOCALE-REGEXP matches the start of a<br/>
-downcased locale specifies the LANG-ENV (language environment)<br/>
-and CODING-SYSTEM corresponding to that locale.  If there is no<br/>
-appropriate language environment, the element may have this form:<br/>
-  (LOCALE-REGEXP . LANG-ENV)<br/>
-In this case, LANG-ENV is one of generic language environments for an<br/>
-specific encoding such as "Latin-1" and "UTF-8".<br/>
-<br/>
-Value: (("aa_DJ" . "Latin-1")<br/>
- ("aa" . "UTF-8")<br/>
- ("af" . "Latin-1")<br/>
- ("am" "Ethiopic" utf-8)<br/>
- ("an" . "Latin-9")<br/>
- ("ar" . "Arabic")<br/>
- ("az" . "UTF-8")<br/>
- ("be" "Belarusian" cp1251)<br/>
- ("bg" "Bulgarian" cp1251)<br/>
- ("bn" . "UTF-8")<br/>
- ("bo" . "Tibetan")<br/>
- ("br" . "Latin-1")<br/>
- ("bs" . "Latin-2")<br/>
- ("byn" . "UTF-8")<br/>
- ("ca" . "Latin-1")<br/>
- ("cs" "Czech" iso-8859-2)<br/>
- ("cy" "Welsh" iso-8859-14)<br/>
- ("da" . "Latin-1")<br/>
- ("de" "German" iso-8859-1)<br/>
- ("el" "Greek" iso-8859-7)<br/>
- ("en_IN" "English" utf-8)<br/>
- ("en" "English" iso-8859-1)<br/>
- ("eo" . "Esperanto")<br/>
- ("es" "Spanish" iso-8859-1)<br/>
- ("et" . "Latin-1")<br/>
- ("eu" . "Latin-1")<br/>
- ("fa" . "UTF-8")<br/>
- ("fi" . "Latin-1")<br/>
- ("fj" . "Latin-1")<br/>
- ("fo" . "Latin-1")<br/>
- ("fr" "French" iso-8859-1)<br/>
- ("fy" . "Latin-1")<br/>
- ("ga" . "Latin-1")<br/>
- ("gd" . "Latin-9")<br/>
- ("gez" "Ethiopic" utf-8)<br/>
- ("gl" . "Latin-1")<br/>
- ("gu" . "UTF-8")<br/>
- ("gv" . "Latin-1")<br/>
- ("he" "Hebrew" iso-8859-8)<br/>
- ("hi" "Devanagari" utf-8)<br/>
- ("hr" "Croatian" iso-8859-2)<br/>
- ("hu" . "Latin-2")<br/>
- ("id" . "Latin-1")<br/>
- ("is" . "Latin-1")<br/>
- ("it" "Italian" iso-8859-1)<br/>
- ("iw" "Hebrew" iso-8859-8)<br/>
- ("ja" "Japanese" euc-jp)<br/>
- ("ka" "Georgian" georgian-ps)<br/>
- ("kl" . "Latin-1")<br/>
- ("kn" "Kannada" utf-8)<br/>
- ("ko" "Korean" euc-kr)<br/>
- ("kw" . "Latin-1")<br/>
- ("la" . "Latin-1")<br/>
- ("lb" . "Latin-1")<br/>
- ("lg" . "Laint-6")<br/>
- ("lo" "Lao" utf-8)<br/>
- ("lt" "Lithuanian" iso-8859-13)<br/>
- ("lv" . "Latvian")<br/>
- ("mi" . "Latin-7")<br/>
- ("mk" "Cyrillic-ISO" iso-8859-5)<br/>
- ("ml" "Malayalam" utf-8)<br/>
- ("mn" . "UTF-8")<br/>
- ("mr" "Devanagari" utf-8)<br/>
- ("ms" . "Latin-1")<br/>
- ("mt" . "Latin-3")<br/>
- ("nb" . "Latin-1")<br/>
- ("ne" "Devanagari" utf-8)<br/>
- ("nl" "Dutch" iso-8859-1)<br/>
- ("no" . "Latin-1")<br/>
- ("oc" . "Latin-1")<br/>
- ("om_ET" . "UTF-8")<br/>
- ("om" . "Latin-1")<br/>
- ("pa" . "UTF-8")<br/>
- ("pl" . "Latin-2")<br/>
- ("pt" . "Latin-1")<br/>
- ("rm" . "Latin-1")<br/>
- ("ro" "Romanian" iso-8859-2)<br/>
- ("ru_RU" "Russian" iso-8859-5)<br/>
- ("ru_UA" "Russian" koi8-u)<br/>
- ("sa" . "Devanagari")<br/>
- ("se" . "UTF-8")<br/>
- ("sh" . "Latin-2")<br/>
- ("sid" . "UTF-8")<br/>
- ("sk" "Slovak" iso-8859-2)<br/>
- ("sl" "Slovenian" iso-8859-2)<br/>
- ("so_ET" "UTF-8")<br/>
- ("so" "Latin-1")<br/>
- ("sq" . "Latin-1")<br/>
- ("sr" . "Latin-2")<br/>
- ("st" . "Latin-1")<br/>
- ("sv" "Swedish" iso-8859-1)<br/>
- ("sw" . "Latin-1")<br/>
- ("ta" "Tamil" utf-8)<br/>
- ("te" . "UTF-8")<br/>
- ("tg" "Tajik" koi8-t)<br/>
- ("th" "Thai" tis-620)<br/>
- ("ti" "Ethiopic" utf-8)<br/>
- ("tig_ER" . "UTF-8")<br/>
- ("tl" . "Latin-1")<br/>
- ("tr" "Turkish" iso-8859-9)<br/>
- ("tt" . "UTF-8")<br/>
- ("uk" "Ukrainian" koi8-u)<br/>
- ("ur" . "UTF-8")<br/>
- ("uz_UZ@cyrillic" . "UTF-8")<br/>
- ("uz" . "Latin-1")<br/>
- ("vi" "Vietnamese" utf-8)<br/>
- ("wa" . "Latin-1")<br/>
- ("xh" . "Latin-1")<br/>
- ("yi" . "Windows-1255")<br/>
- ("zh_HK" . "Chinese-Big5")<br/>
- ("zh_TW" . "Chinese-Big5")<br/>
- ("zh_CN.GB2312" "Chinese-GB")<br/>
- ("zh_CN.GBK" "Chinese-GBK")<br/>
- ("zh_CN.GB18030" "Chinese-GB18030")<br/>
- ("zh_CN.UTF-8" . "Chinese-GBK")<br/>
- ("zh_CN" . "Chinese-GB")<br/>
- ("zh" . "Chinese-GB")<br/>
- ("zu" . "Latin-1")<br/>
- ("c$" . "ASCII")<br/>
- ("posix$" . "ASCII")<br/>
- ("ipa$" . "IPA")<br/>
- ("cz" . "Czech")<br/>
- ("ee" . "Latin-4")<br/>
- ("iw" . "Hebrew")<br/>
- ("sp" . "Cyrillic-ISO")<br/>
- ("su" . "Latin-1")<br/>
- ("jp" . "Japanese")<br/>
- ("chs" . "Chinese-GBK")<br/>
- ("cht" . "Chinese-BIG5")<br/>
- ("gbz" . "UTF-8")<br/>
- ("div" . "UTF-8")<br/>
- ("wee" . "Latin-2")<br/>
- ("wen" . "Latin-2"))<br/>
-<br/>
+<strong>locale-language-names</strong> is a variable defined in `<code>mule-cmds.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of locale regexps vs the corresponding languages and coding systems.</br>
+Each element has this form:</br>
+  (LOCALE-REGEXP LANG-ENV CODING-SYSTEM)</br>
+The first element whose LOCALE-REGEXP matches the start of a</br>
+downcased locale specifies the LANG-ENV (language environment)</br>
+and CODING-SYSTEM corresponding to that locale.  If there is no</br>
+appropriate language environment, the element may have this form:</br>
+  (LOCALE-REGEXP . LANG-ENV)</br>
+In this case, LANG-ENV is one of generic language environments for an</br>
+specific encoding such as "Latin-1" and "UTF-8".</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("aa_DJ" . "Latin-1")
+ ("aa" . "UTF-8")
+ ("af" . "Latin-1")
+ ("am" "Ethiopic" utf-8)
+ ("an" . "Latin-9")
+ ("ar" . "Arabic")
+ ("az" . "UTF-8")
+ ("be" "Belarusian" cp1251)
+ ("bg" "Bulgarian" cp1251)
+ ("bn" . "UTF-8")
+ ("bo" . "Tibetan")
+ ("br" . "Latin-1")
+ ("bs" . "Latin-2")
+ ("byn" . "UTF-8")
+ ("ca" . "Latin-1")
+ ("cs" "Czech" iso-8859-2)
+ ("cy" "Welsh" iso-8859-14)
+ ("da" . "Latin-1")
+ ("de" "German" iso-8859-1)
+ ("el" "Greek" iso-8859-7)
+ ("en_IN" "English" utf-8)
+ ("en" "English" iso-8859-1)
+ ("eo" . "Esperanto")
+ ("es" "Spanish" iso-8859-1)
+ ("et" . "Latin-1")
+ ("eu" . "Latin-1")
+ ("fa" . "UTF-8")
+ ("fi" . "Latin-1")
+ ("fj" . "Latin-1")
+ ("fo" . "Latin-1")
+ ("fr" "French" iso-8859-1)
+ ("fy" . "Latin-1")
+ ("ga" . "Latin-1")
+ ("gd" . "Latin-9")
+ ("gez" "Ethiopic" utf-8)
+ ("gl" . "Latin-1")
+ ("gu" . "UTF-8")
+ ("gv" . "Latin-1")
+ ("he" "Hebrew" iso-8859-8)
+ ("hi" "Devanagari" utf-8)
+ ("hr" "Croatian" iso-8859-2)
+ ("hu" . "Latin-2")
+ ("id" . "Latin-1")
+ ("is" . "Latin-1")
+ ("it" "Italian" iso-8859-1)
+ ("iw" "Hebrew" iso-8859-8)
+ ("ja" "Japanese" euc-jp)
+ ("ka" "Georgian" georgian-ps)
+ ("kl" . "Latin-1")
+ ("kn" "Kannada" utf-8)
+ ("ko" "Korean" euc-kr)
+ ("kw" . "Latin-1")
+ ("la" . "Latin-1")
+ ("lb" . "Latin-1")
+ ("lg" . "Laint-6")
+ ("lo" "Lao" utf-8)
+ ("lt" "Lithuanian" iso-8859-13)
+ ("lv" . "Latvian")
+ ("mi" . "Latin-7")
+ ("mk" "Cyrillic-ISO" iso-8859-5)
+ ("ml" "Malayalam" utf-8)
+ ("mn" . "UTF-8")
+ ("mr" "Devanagari" utf-8)
+ ("ms" . "Latin-1")
+ ("mt" . "Latin-3")
+ ("nb" . "Latin-1")
+ ("ne" "Devanagari" utf-8)
+ ("nl" "Dutch" iso-8859-1)
+ ("no" . "Latin-1")
+ ("oc" . "Latin-1")
+ ("om_ET" . "UTF-8")
+ ("om" . "Latin-1")
+ ("pa" . "UTF-8")
+ ("pl" . "Latin-2")
+ ("pt" . "Latin-1")
+ ("rm" . "Latin-1")
+ ("ro" "Romanian" iso-8859-2)
+ ("ru_RU" "Russian" iso-8859-5)
+ ("ru_UA" "Russian" koi8-u)
+ ("sa" . "Devanagari")
+ ("se" . "UTF-8")
+ ("sh" . "Latin-2")
+ ("sid" . "UTF-8")
+ ("sk" "Slovak" iso-8859-2)
+ ("sl" "Slovenian" iso-8859-2)
+ ("so_ET" "UTF-8")
+ ("so" "Latin-1")
+ ("sq" . "Latin-1")
+ ("sr" . "Latin-2")
+ ("st" . "Latin-1")
+ ("sv" "Swedish" iso-8859-1)
+ ("sw" . "Latin-1")
+ ("ta" "Tamil" utf-8)
+ ("te" . "UTF-8")
+ ("tg" "Tajik" koi8-t)
+ ("th" "Thai" tis-620)
+ ("ti" "Ethiopic" utf-8)
+ ("tig_ER" . "UTF-8")
+ ("tl" . "Latin-1")
+ ("tr" "Turkish" iso-8859-9)
+ ("tt" . "UTF-8")
+ ("uk" "Ukrainian" koi8-u)
+ ("ur" . "UTF-8")
+ ("uz_UZ@cyrillic" . "UTF-8")
+ ("uz" . "Latin-1")
+ ("vi" "Vietnamese" utf-8)
+ ("wa" . "Latin-1")
+ ("xh" . "Latin-1")
+ ("yi" . "Windows-1255")
+ ("zh_HK" . "Chinese-Big5")
+ ("zh_TW" . "Chinese-Big5")
+ ("zh_CN.GB2312" "Chinese-GB")
+ ("zh_CN.GBK" "Chinese-GBK")
+ ("zh_CN.GB18030" "Chinese-GB18030")
+ ("zh_CN.UTF-8" . "Chinese-GBK")
+ ("zh_CN" . "Chinese-GB")
+ ("zh" . "Chinese-GB")
+ ("zu" . "Latin-1")
+ ("c$" . "ASCII")
+ ("posix$" . "ASCII")
+ ("ipa$" . "IPA")
+ ("cz" . "Czech")
+ ("ee" . "Latin-4")
+ ("iw" . "Hebrew")
+ ("sp" . "Cyrillic-ISO")
+ ("su" . "Latin-1")
+ ("jp" . "Japanese")
+ ("chs" . "Chinese-GBK")
+ ("cht" . "Chinese-BIG5")
+ ("gbz" . "UTF-8")
+ ("div" . "UTF-8")
+ ("wee" . "Latin-2")
+ ("wen" . "Latin-2"))
+</pre></br>

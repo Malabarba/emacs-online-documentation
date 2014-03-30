@@ -1,19 +1,17 @@
-<strong>before-change-functions</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of functions to call before each text change.<br/>
-Two arguments are passed to each function: the positions of<br/>
-the beginning and end of the range of old text to be changed.<br/>
-(For an insertion, the beginning and end are at the same place.)<br/>
-No information is given about the length of the text after the change.<br/>
-<br/>
-Buffer changes made while executing the `before-change-functions'<br/>
-don't call any before-change or after-change functions.<br/>
-That's because `inhibit-modification-hooks' is temporarily set non-nil.<br/>
-<br/>
-If an unhandled error happens in running these functions,<br/>
-the variable's value remains nil.  That prevents the error<br/>
+<strong>before-change-functions</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of functions to call before each text change.</br>
+Two arguments are passed to each function: the positions of</br>
+the beginning and end of the range of old text to be changed.</br>
+(For an insertion, the beginning and end are at the same place.)</br>
+No information is given about the length of the text after the change.</br>
+</br>
+Buffer changes made while executing the `before-change-functions'</br>
+don't call any before-change or after-change functions.</br>
+That's because `inhibit-modification-hooks' is temporarily set non-nil.</br>
+</br>
+If an unhandled error happens in running these functions,</br>
+the variable's value remains nil.  That prevents the error</br>
 from happening repeatedly and making Emacs nonfunctional.

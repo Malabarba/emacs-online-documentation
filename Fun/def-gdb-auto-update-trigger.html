@@ -1,23 +1,23 @@
-<strong>def-gdb-auto-update-trigger</strong> is a Lisp macro in `<code>gdb-mi.el</code>'.<br/>
-<br/>
-(def-gdb-auto-update-trigger TRIGGER-NAME GDB-COMMAND HANDLER-NAME &optional SIGNAL-LIST)<br/>
-<br/>
-Define a trigger TRIGGER-NAME which sends GDB-COMMAND and sets<br/>
-HANDLER-NAME as its handler. HANDLER-NAME is bound to current<br/>
-buffer with `gdb-bind-function-to-buffer'.<br/>
-<br/>
-If SIGNAL-LIST is non-nil, GDB-COMMAND is sent only when the<br/>
-defined trigger is called with an argument from SIGNAL-LIST. It's<br/>
-not recommended to define triggers with empty SIGNAL-LIST.<br/>
-Normally triggers should respond at least to 'update signal.<br/>
-<br/>
-Normally the trigger defined by this command must be called from<br/>
-the buffer where HANDLER-NAME must work. This should be done so<br/>
-that buffer-local thread number may be used in GDB-COMMAND (by<br/>
-calling `gdb-current-context-command').<br/>
-`gdb-bind-function-to-buffer' is used to achieve this, see<br/>
-`gdb-get-buffer-create'.<br/>
-<br/>
-Triggers defined by this command are meant to be used as a<br/>
-trigger argument when describing buffer types with<br/>
+<strong>def-gdb-auto-update-trigger</strong> is a Lisp macro in `<code>gdb-mi.el</code>'.</br>
+</br>
+(def-gdb-auto-update-trigger <u>TRIGGER-NAME</u> <u>GDB-COMMAND</u> <u>HANDLER-NAME</u> &optional <u>SIGNAL-LIST</u>)</br>
+</br>
+Define a trigger <u>TRIGGER-NAME</u> which sends <u>GDB-COMMAND</u> and sets</br>
+<u>HANDLER-NAME</u> as its handler.  <u>HANDLER-NAME</u> is bound to current</br>
+buffer with `gdb-bind-function-to-buffer'.</br>
+</br>
+If <u>SIGNAL-LIST</u> is non-nil, <u>GDB-COMMAND</u> is sent only when the</br>
+defined trigger is called with an argument from <u>SIGNAL-LIST</u>.  It's</br>
+not recommended to define triggers with empty <u>SIGNAL-LIST</u>.</br>
+Normally triggers should respond at least to 'update signal.</br>
+</br>
+Normally the trigger defined by this command must be called from</br>
+the buffer where <u>HANDLER-NAME</u> must work.  This should be done so</br>
+that buffer-local thread number may be used in <u>GDB-COMMAND</u> (by</br>
+calling `gdb-current-context-command').</br>
+`gdb-bind-function-to-buffer' is used to achieve this, see</br>
+`gdb-get-buffer-create'.</br>
+</br>
+Triggers defined by this command are meant to be used as a</br>
+trigger argument when describing buffer types with</br>
 `gdb-set-buffer-rules'.

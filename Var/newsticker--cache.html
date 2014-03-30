@@ -1,27 +1,27 @@
-<strong>newsticker--cache</strong> is a variable defined in `<code>newst-backend.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Cached newsticker data.<br/>
-This is a list of the form<br/>
-<br/>
- ((label1<br/>
-   (title description link time age index preformatted-contents<br/>
-    preformatted-title extra-elements)<br/>
-   ...)<br/>
-  (label2<br/>
-   (title description link time age index preformatted-contents<br/>
-    preformatted-title extra-elements)<br/>
-   ...)<br/>
-  ...)<br/>
-<br/>
-where LABEL is a symbol.  TITLE, DESCRIPTION, and LINK are<br/>
-strings.  TIME is a time value as returned by `current-time'.<br/>
-AGE is a symbol: 'new, 'old, 'immortal, and 'obsolete denote<br/>
-ordinary news items, whereas 'feed denotes an item which is not a<br/>
-headline but describes the feed itself.  INDEX denotes the<br/>
-original position of the item -- used for restoring the original<br/>
-order.  PREFORMATTED-CONTENTS and PREFORMATTED-TITLE hold the<br/>
-formatted contents of the item's description and title.  This<br/>
-speeds things up if HTML rendering is used, which is rather<br/>
+<strong>newsticker--cache</strong> is a variable defined in `<code>newst-backend.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Cached newsticker data.</br>
+This is a list of the form</br>
+</br>
+ ((label1</br>
+   (title description link time age index preformatted-contents</br>
+    preformatted-title extra-elements)</br>
+   ...)</br>
+  (label2</br>
+   (title description link time age index preformatted-contents</br>
+    preformatted-title extra-elements)</br>
+   ...)</br>
+  ...)</br>
+</br>
+where LABEL is a symbol.  TITLE, DESCRIPTION, and LINK are</br>
+strings.  TIME is a time value as returned by `current-time'.</br>
+AGE is a symbol: 'new, 'old, 'immortal, and 'obsolete denote</br>
+ordinary news items, whereas 'feed denotes an item which is not a</br>
+headline but describes the feed itself.  INDEX denotes the</br>
+original position of the item -- used for restoring the original</br>
+order.  PREFORMATTED-CONTENTS and PREFORMATTED-TITLE hold the</br>
+formatted contents of the item's description and title.  This</br>
+speeds things up if HTML rendering is used, which is rather</br>
 slow.  EXTRA-ELEMENTS is an alist containing additional elements.

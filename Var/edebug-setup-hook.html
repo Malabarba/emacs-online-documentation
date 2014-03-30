@@ -1,78 +1,78 @@
-<strong>edebug-setup-hook</strong> is a variable defined in `<code>edebug.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Functions to call before edebug is used.<br/>
-Each time it is set to a new value, Edebug will call those functions<br/>
-once and then reset `edebug-setup-hook' to nil.  You could use this<br/>
-to load up Edebug specifications associated with a package you are<br/>
-using, but only when you also use Edebug.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (#[nil "\300\301\302\303#\207"<br/>
-       [put define-wisent-lexer edebug-form-spec<br/>
-	    (&define name stringp def-body)]<br/>
-       4]<br/>
- #[nil "\300\301\302\303#\207"<br/>
-       [put semantic-with-buffer-narrowed-to-command edebug-form-spec<br/>
-	    (def-body)]<br/>
-       4]<br/>
- #[nil "\300\301\302\303#\207"<br/>
-       [put semantic-with-buffer-narrowed-to-context edebug-form-spec<br/>
-	    (def-body)]<br/>
-       4]<br/>
- #[nil "\300\301\302\303#\207"<br/>
-       [put semantic-with-buffer-narrowed-to-tag edebug-form-spec<br/>
-	    (def-body)]<br/>
-       4]<br/>
- #[nil "\300\301\302\303#\207"<br/>
-       [put semantic-with-buffer-narrowed-to-current-tag edebug-form-spec<br/>
-	    (def-body)]<br/>
-       4]<br/>
- #[nil "\300\301\302\303#\210\300\304\302\305#\210\300\306\302\307#\210\300\310\302\311#\210\300\312\302\313#\210\300\314\302\315#\207"<br/>
-       [put define-lex edebug-form-spec<br/>
-	    (&define name stringp<br/>
-		     (&rest symbolp))<br/>
-	    define-lex-analyzer<br/>
-	    (&define name stringp form def-body)<br/>
-	    define-lex-regex-analyzer<br/>
-	    (&define name stringp form def-body)<br/>
-	    define-lex-simple-regex-analyzer<br/>
-	    (&define name stringp form symbolp<br/>
-		     [&optional form]<br/>
-		     def-body)<br/>
-	    define-lex-block-analyzer<br/>
-	    (&define name stringp form<br/>
-		     (&rest form))<br/>
-	    semantic-lex-catch-errors<br/>
-	    (symbolp def-body)]<br/>
-       4]<br/>
- semantic-fw-add-edebug-spec mode-local-setup-edebug-specs<br/>
- #[nil "\300\301\302\303#\207"<br/>
-       [put speedbar-with-writable edebug-form-spec def-body]<br/>
-       4]<br/>
- #[nil "\300\301\302\303#\210\300\304\302\305#\210\300\306\302\307#\210\300\310\302\311#\210\300\312\302\313#\210\300\314\302\315#\210\300\316\302\315#\210\300\317\302\315#\210\300\320\302\315#\210\300\321\302\315#\210\300\322\302\323#\207"<br/>
-       [put defmethod edebug-form-spec<br/>
-	    (&define<br/>
-	     [&or name<br/>
-		  ("setf" :name setf name)]<br/>
-	     [&optional symbolp]<br/>
-	     list<br/>
-	     [&optional stringp]<br/>
-	     def-body)<br/>
-	    oref<br/>
-	    (form quote)<br/>
-	    oref-default<br/>
-	    (form quote)<br/>
-	    oset<br/>
-	    (form quote form)<br/>
-	    oset-default<br/>
-	    (form quote form)<br/>
-	    class-v form class-p eieio-object-p class-constructor generic-p with-slots<br/>
-	    (list list def-body)]<br/>
-       4])<br/>
-<br/>
-Original value was nil<br/>
+<strong>edebug-setup-hook</strong> is a variable defined in `<code>edebug.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Functions to call before edebug is used.</br>
+Each time it is set to a new value, Edebug will call those functions</br>
+once and then reset `edebug-setup-hook' to nil.  You could use this</br>
+to load up Edebug specifications associated with a package you are</br>
+using, but only when you also use Edebug.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(#[nil "\300\301\302\303#\207"
+       [put define-wisent-lexer edebug-form-spec
+	    (&define name stringp def-body)]
+       4]
+ #[nil "\300\301\302\303#\207"
+       [put semantic-with-buffer-narrowed-to-command edebug-form-spec
+	    (def-body)]
+       4]
+ #[nil "\300\301\302\303#\207"
+       [put semantic-with-buffer-narrowed-to-context edebug-form-spec
+	    (def-body)]
+       4]
+ #[nil "\300\301\302\303#\207"
+       [put semantic-with-buffer-narrowed-to-tag edebug-form-spec
+	    (def-body)]
+       4]
+ #[nil "\300\301\302\303#\207"
+       [put semantic-with-buffer-narrowed-to-current-tag edebug-form-spec
+	    (def-body)]
+       4]
+ #[nil "\300\301\302\303#\210\300\304\302\305#\210\300\306\302\307#\210\300\310\302\311#\210\300\312\302\313#\210\300\314\302\315#\207"
+       [put define-lex edebug-form-spec
+	    (&define name stringp
+		     (&rest symbolp))
+	    define-lex-analyzer
+	    (&define name stringp form def-body)
+	    define-lex-regex-analyzer
+	    (&define name stringp form def-body)
+	    define-lex-simple-regex-analyzer
+	    (&define name stringp form symbolp
+		     [&optional form]
+		     def-body)
+	    define-lex-block-analyzer
+	    (&define name stringp form
+		     (&rest form))
+	    semantic-lex-catch-errors
+	    (symbolp def-body)]
+       4]
+ semantic-fw-add-edebug-spec mode-local-setup-edebug-specs
+ #[nil "\300\301\302\303#\207"
+       [put speedbar-with-writable edebug-form-spec def-body]
+       4]
+ #[nil "\300\301\302\303#\210\300\304\302\305#\210\300\306\302\307#\210\300\310\302\311#\210\300\312\302\313#\210\300\314\302\315#\210\300\316\302\315#\210\300\317\302\315#\210\300\320\302\315#\210\300\321\302\315#\210\300\322\302\323#\207"
+       [put defmethod edebug-form-spec
+	    (&define
+	     [&or name
+		  ("setf" :name setf name)]
+	     [&optional symbolp]
+	     list
+	     [&optional stringp]
+	     def-body)
+	    oref
+	    (form quote)
+	    oref-default
+	    (form quote)
+	    oset
+	    (form quote form)
+	    oset-default
+	    (form quote form)
+	    class-v form class-p eieio-object-p class-constructor generic-p with-slots
+	    (list list def-body)]
+       4])
+</pre></br>
+<strong>Original</strong> value was </br>
+<prenil</pre></br>

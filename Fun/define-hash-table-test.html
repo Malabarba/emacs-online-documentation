@@ -1,14 +1,14 @@
-<strong>define-hash-table-test</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(define-hash-table-test NAME TEST HASH)<br/>
-<br/>
-Define a new hash table test with name NAME, a symbol.<br/>
-<br/>
-In hash tables created with NAME specified as test, use TEST to<br/>
-compare keys, and HASH for computing hash codes of keys.<br/>
-<br/>
-TEST must be a function taking two arguments and returning non-nil if<br/>
-both arguments are the same.  HASH must be a function taking one<br/>
-argument and return an integer that is the hash code of the argument.<br/>
-Hash code computation should use the whole value range of integers,<br/>
-including negative integers.
+<strong>define-hash-table-test</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(define-hash-table-test <u>NAME</u> <u>TEST</u> <u>HASH</u>)</br>
+</br>
+Define a new hash table test with name <u>NAME</u>, a symbol.</br>
+</br>
+In hash tables created with <u>NAME</u> specified as test, use <u>TEST</u> to</br>
+compare keys, and <u>HASH</u> for computing hash codes of keys.</br>
+</br>
+<u>TEST</u> must be a function taking two arguments and returning non-nil if</br>
+both arguments are the same.  <u>HASH</u> must be a function taking one</br>
+argument and returning an object that is the hash code of the argument.</br>
+It should be the case that if (eq (funcall <u>HASH</u> x1) (funcall <u>HASH</u> x2))</br>
+returns nil, then (funcall <u>TEST</u> x1 x2) also returns nil.

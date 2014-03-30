@@ -1,10 +1,14 @@
-<strong>window-body-width</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(window-body-width &optional WINDOW)<br/>
-<br/>
-Return the width, in columns, of WINDOW's text area.<br/>
-WINDOW must be a live window and defaults to the selected one.<br/>
-<br/>
-The return value does not include any vertical dividers, fringe or<br/>
-marginal areas, or scroll bars.  On a graphical display, the width is<br/>
-expressed as an integer multiple of the default character width.
+<strong>window-body-width</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(window-body-width &optional <u>WINDOW</u> <u>PIXELWISE</u>)</br>
+</br>
+Return the width of <u>WINDOW</u>'s text area.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.  Optional</br>
+argument <u>PIXELWISE</u> non-nil means return the width in pixels.  The return</br>
+value does not include any vertical dividers, fringes or marginal areas,</br>
+or scroll bars.</br>
+</br>
+If <u>PIXELWISE</u> is nil, return the largest integer smaller than <u>WINDOW</u>'s</br>
+pixel width divided by the character width of <u>WINDOW</u>'s frame.  This</br>
+means that if a column at the right of the text area is only partially</br>
+visible, that column is not counted.

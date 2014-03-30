@@ -1,41 +1,34 @@
-<strong>global-buffers-menu-map</strong> is a variable defined in `<code>menu-bar.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value:<br/>
-(keymap "Select Buffer"<br/>
-	[("*scratch*  "<br/>
-	  (nil)<br/>
-	  lambda nil<br/>
-	  (interactive)<br/>
-	  (funcall menu-bar-select-buffer-function #<buffer *scratch*>))<br/>
-	 ("*Messages*  *"<br/>
-	  (nil)<br/>
-	  lambda nil<br/>
-	  (interactive)<br/>
-	  (funcall menu-bar-select-buffer-function #<buffer *Messages*>))<br/>
-	 ("*Help*  *"<br/>
-	  (nil)<br/>
-	  lambda nil<br/>
-	  (interactive)<br/>
-	  (funcall menu-bar-select-buffer-function #<buffer *Help*>))<br/>
-	 ("loaddefs.el  %  --  .../emacs/24.3/lisp/"<br/>
-	  (nil)<br/>
-	  lambda nil<br/>
-	  (interactive)<br/>
-	  (funcall menu-bar-select-buffer-function #<buffer loaddefs.el>))<br/>
-	 ("tramp-loaddefs.el  %  --  ...cs/24.3/lisp/net/"<br/>
-	  (nil)<br/>
-	  lambda nil<br/>
-	  (interactive)<br/>
-	  (funcall menu-bar-select-buffer-function #<buffer tramp-loaddefs.el>))]<br/>
-	(command-separator "--")<br/>
-	(next-buffer menu-item "Next Buffer" next-buffer :help "Switch to the \"next\" buffer in a cyclic order")<br/>
-	(previous-buffer menu-item "Previous Buffer" previous-buffer :help "Switch to the \"previous\" buffer in a cyclic order")<br/>
-	(select-named-buffer menu-item "Select Named Buffer..." switch-to-buffer :help "Prompt for a buffer name, and select that buffer in the current window")<br/>
-	(list-all-buffers menu-item "List All Buffers" list-buffers :help "Pop up a window listing all Emacs buffers"))<br/>
-<br/>
+<strong>global-buffers-menu-map</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Buffers"
+	[("*scratch*  "
+	  (nil)
+	  lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer *scratch*>))
+	 ("*Messages*  *%"
+	  (nil)
+	  lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer *Messages*>))
+	 ("loaddefs.el<lisp>  %"
+	  (nil)
+	  lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer loaddefs.el<lisp>>))
+	 ("tramp-loaddefs.el  %"
+	  (nil)
+	  lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer tramp-loaddefs.el>))]
+	(command-separator "--")
+	(next-buffer menu-item "Next Buffer" next-buffer :help "Switch to the \"next\" buffer in a cyclic order")
+	(previous-buffer menu-item "Previous Buffer" previous-buffer :help "Switch to the \"previous\" buffer in a cyclic order")
+	(select-named-buffer menu-item "Select Named Buffer..." switch-to-buffer :help "Prompt for a buffer name, and select that buffer in the current window")
+	(list-all-buffers menu-item "List All Buffers" list-buffers :help "Pop up a window listing all Emacs buffers"))
+</pre></br>

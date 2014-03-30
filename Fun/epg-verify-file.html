@@ -1,11 +1,21 @@
-<strong>epg-verify-file</strong> is a compiled Lisp function in `<code>epg.el</code>'.<br/>
-<br/>
-(epg-verify-file CONTEXT SIGNATURE &optional SIGNED-TEXT PLAIN)<br/>
-<br/>
-Verify a file SIGNATURE.<br/>
-SIGNED-TEXT and PLAIN are also a file if they are specified.<br/>
-<br/>
-For a detached signature, both SIGNATURE and SIGNED-TEXT should be<br/>
-string.  For a normal or a cleartext signature, SIGNED-TEXT should be<br/>
-nil.  In the latter case, if PLAIN is specified, the plaintext is<br/>
-stored into the file after successful verification.
+<strong>epg-verify-file</strong> is a compiled Lisp function in `<code>epg.el</code>'.</br>
+</br>
+(epg-verify-file <u>CONTEXT</u> <u>SIGNATURE</u> &optional <u>SIGNED-TEXT</u> <u>PLAIN</u>)</br>
+</br>
+Verify a file <u>SIGNATURE</u>.</br>
+<u>SIGNED-TEXT</u> and <u>PLAIN</u> are also a file if they are specified.</br>
+</br>
+For a detached signature, both <u>SIGNATURE</u> and <u>SIGNED-TEXT</u> should be</br>
+string.  For a normal or a cleartext signature, <u>SIGNED-TEXT</u> should be</br>
+nil.  In the latter case, if <u>PLAIN</u> is specified, the plaintext is</br>
+stored into the file after successful verification.</br>
+</br>
+Note that this function does not return verification result as t</br>
+or nil, nor signal error on failure.  That's a design decision to</br>
+handle the case where <u>SIGNATURE</u> has multiple signature.</br>
+</br>
+To check the verification results, use `epg-context-result-for' as follows:</br>
+</br>
+<code>(epg-context-result-for context 'verify</code>)</br>
+</br>
+which will return a list of `epg-signature' object.

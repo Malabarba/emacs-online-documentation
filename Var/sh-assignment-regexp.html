@@ -1,14 +1,15 @@
-<strong>sh-assignment-regexp</strong> is a variable defined in `<code>sh-script.el</code>'.<br/>
-Its value is ((csh . "\\<\\([[:alnum:]_]+\\)\\(\\[.+\\]\\)?[ 	]*[-+*/%^]?=")<br/>
- (ksh88 . "\\<\\([[:alnum:]_]+\\)\\(\\[.+\\]\\)?[ 	]*\\(?:[-+*/%&|~^]\\|<<\\|>>\\)?=")<br/>
- (bash . "\\<\\([[:alnum:]_]+\\)\\(\\[.+\\]\\)?\\+?=")<br/>
- (rc . "\\<\\([[:alnum:]_*]+\\)[ 	]*=")<br/>
- (sh . "\\<\\([[:alnum:]_]+\\)="))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Regexp for the variable name and what may follow in an assignment.<br/>
-First grouping matches the variable name.  This is upto and including the `='<br/>
-sign.  See `sh-feature'.<br/>
-<br/>
+<strong>sh-assignment-regexp</strong> is a variable defined in `<code>sh-script.el</code>'.</br>
+Its value is <pre></br>
+((csh . "\\<\\([[:alnum:]_]+\\)\\(\\[.+\\]\\)?[ 	]*[-+*/%^]?=")
+ (ksh88 . "\\<\\([[:alnum:]_]+\\)\\(\\[.+\\]\\)?[ 	]*\\(?:[-+*/%&|~^]\\|<<\\|>>\\)?=")
+ (bash . "\\<\\([[:alnum:]_]+\\)\\(\\[.+\\]\\)?\\+?=")
+ (rc . "\\<\\([[:alnum:]_*]+\\)[ 	]*=")
+ (sh . "\\<\\([[:alnum:]_]+\\)="))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Regexp for the variable name and what may follow in an assignment.</br>
+First grouping matches the variable name.  This is upto and including the `='</br>
+sign.  See `sh-feature'.</br>
+</br>
 You can customize this variable.

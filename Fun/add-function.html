@@ -1,0 +1,38 @@
+<strong>add-function</strong> is a Lisp macro in `<code>nadvice.el</code>'.</br>
+</br>
+(add-function <u>WHERE</u> <u>PLACE</u> <u>FUNCTION</u> &optional <u>PROPS</u>)</br>
+</br>
+Add a piece of advice on the function stored at <u>PLACE</u>.</br>
+<u>FUNCTION</u> describes the code to add.  <u>WHERE</u> describes where to add it.</br>
+<u>WHERE</u> can be explained by showing the resulting new function, as the</br>
+result of combining <u>FUNCTION</u> and the previous value of <u>PLACE</u>, which we</br>
+call OLDFUN here:</br>
+`:before'	(lambda (&rest r) (apply <u>FUNCTION</u> r) (apply OLDFUN r))</br>
+`:after'	(lambda (&rest r) (prog1 (apply OLDFUN r) (apply <u>FUNCTION</u> r)))</br>
+`:around'	(lambda (&rest r) (apply <u>FUNCTION</u> OLDFUN r))</br>
+`:override'	(lambda (&rest r) (apply <u>FUNCTION</u> r))</br>
+`:before-while'	(lambda (&rest r) (and (apply <u>FUNCTION</u> r) (apply OLDFUN r)))</br>
+`:before-until'	(lambda (&rest r) (or  (apply <u>FUNCTION</u> r) (apply OLDFUN r)))</br>
+`:after-while'	(lambda (&rest r) (and (apply OLDFUN r) (apply <u>FUNCTION</u> r)))</br>
+`:after-until'	(lambda (&rest r) (or  (apply OLDFUN r) (apply <u>FUNCTION</u> r)))</br>
+`:filter-args'	(lambda (&rest r) (apply OLDFUN (funcall <u>FUNCTION</u> r)))</br>
+`:filter-return'(lambda (&rest r) (funcall <u>FUNCTION</u> (apply OLDFUN r)))</br>
+If <u>FUNCTION</u> was already added, do nothing.</br>
+<u>PROPS</u> is an alist of additional properties, among which the following have</br>
+a special meaning:</br>
+- `name': a string or symbol.  It can be used to refer to this piece of advice.</br>
+- `depth': a number indicating a preference w.r.t ordering.</br>
+  The default depth is 0.  By convention, a depth of 100 means that</br>
+  the advice  should be innermost (i.e. at the end of the list),</br>
+  whereas a depth of -100 means that the advice should be outermost.</br>
+</br>
+If <u>PLACE</u> is a simple variable, only its global value will be affected.</br>
+Use (local 'VAR) if you want to apply <u>FUNCTION</u> to VAR buffer-locally.</br>
+</br>
+If one of <u>FUNCTION</u> or OLDFUN is interactive, then the resulting function</br>
+is also interactive.  There are 3 cases:</br>
+- <u>FUNCTION</u> is not interactive: the interactive spec of OLDFUN is used.</br>
+- The interactive spec of <u>FUNCTION</u> is itself a function: it should take one</br>
+  argument (the interactive spec of OLDFUN, which it can pass to</br>
+  `advice-eval-interactive-spec') and return the list of arguments to use.</br>
+- Else, use the interactive spec of <u>FUNCTION</u> and ignore the one of OLDFUN.

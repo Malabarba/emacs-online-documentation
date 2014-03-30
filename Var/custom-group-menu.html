@@ -1,30 +1,31 @@
-<strong>custom-group-menu</strong> is a variable defined in `<code>cus-edit.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Alist of actions for the `custom-group' widget.<br/>
-Each entry has the form (NAME ACTION FILTER) where NAME is the name of<br/>
-the menu entry, ACTION is the function to call on the widget when the<br/>
-menu is selected, and FILTER is a predicate which takes a `custom-group'<br/>
-widget as an argument, and returns non-nil if ACTION is valid on that<br/>
-widget.  If FILTER is nil, ACTION is always valid.<br/>
-<br/>
-Value: (("Set for Current Session" custom-group-set<br/>
-  (lambda<br/>
-    (widget)<br/>
-    (eq<br/>
-     (widget-get widget :custom-state)<br/>
-     'modified)))<br/>
- ("Undo Edits" custom-group-reset-current<br/>
-  (lambda<br/>
-    (widget)<br/>
-    (memq<br/>
-     (widget-get widget :custom-state)<br/>
-     '(modified))))<br/>
- ("Revert This Session's Customizations" custom-group-reset-saved<br/>
-  (lambda<br/>
-    (widget)<br/>
-    (memq<br/>
-     (widget-get widget :custom-state)<br/>
-     '(modified set)))))<br/>
-<br/>
+<strong>custom-group-menu</strong> is a variable defined in `<code>cus-edit.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of actions for the `custom-group' widget.</br>
+Each entry has the form (NAME ACTION FILTER) where NAME is the name of</br>
+the menu entry, ACTION is the function to call on the widget when the</br>
+menu is selected, and FILTER is a predicate which takes a `custom-group'</br>
+widget as an argument, and returns non-nil if ACTION is valid on that</br>
+widget.  If FILTER is nil, ACTION is always valid.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("Set for Current Session" custom-group-set
+  (lambda
+    (widget)
+    (eq
+     (widget-get widget :custom-state)
+     'modified)))
+ ("Undo Edits" custom-group-reset-current
+  (lambda
+    (widget)
+    (memq
+     (widget-get widget :custom-state)
+     '(modified))))
+ ("Revert This Session's Customizations" custom-group-reset-saved
+  (lambda
+    (widget)
+    (memq
+     (widget-get widget :custom-state)
+     '(modified set)))))
+</pre></br>

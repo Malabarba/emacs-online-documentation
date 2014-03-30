@@ -1,10 +1,11 @@
-<strong>comment-use-global-state</strong> is a variable defined in `<code>newcomment.el</code>'.<br/>
-Its value is t<br/>
-Local in buffer *scratch*; global value is nil<br/>
-<br/>
-Documentation:<br/>
-Non-nil means that the global syntactic context is used.<br/>
-More specifically, it means that `syntax-ppss' is used to find out whether<br/>
-point is within a string or not.  Major modes whose syntax is faithfully<br/>
-described by the syntax-tables can set this to non-nil so comment markers<br/>
-in strings will not confuse Emacs.
+<strong>comment-use-global-state</strong> is a variable defined in `<code>newcomment.el</code>'.</br>
+Its value is <pre>t</pre></br>
+<ul><li>  <strong>This variable is obsolete since 24.4;</br>
+  use `<a href="comment-use-syntax">comment-use-syntax</a>' instead.</strong></li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Non-nil means that the global syntactic context is used.</br>
+More specifically, it means that `syntax-ppss' is used to find out whether</br>
+point is within a string or not.  Major modes whose syntax is not faithfully</br>
+described by the syntax-tables (or where `font-lock-syntax-table' is radically</br>
+different from the main syntax table) can set this to nil,</br>
+then `syntax-ppss' cache won't be used in comment-related routines.

@@ -1,20 +1,21 @@
-<strong>mh-quit</strong> is an interactive autoloaded compiled Lisp function in `<code>mh-folder.el</code>'.<br/>
-<br/>
-(mh-quit)<br/>
-<br/>
-Quit the current MH-E folder.<br/>
-<br/>
-When you want to quit using MH-E and go back to editing, you can use<br/>
-this command. This buries the buffers of the current MH-E folder and<br/>
-restores the buffers that were present when you first ran<br/>
-M-x mh-rmail. It also removes any MH-E working buffers whose name<br/>
-begins with " *mh-" or "*MH-E ". You can later restore your MH-E<br/>
-session by selecting the "+inbox" buffer or by running M-x mh-rmail<br/>
-again.<br/>
-<br/>
-The two hooks `mh-before-quit-hook' and `mh-quit-hook' are called by<br/>
-this function. The former one is called before the quit occurs, so you<br/>
-might use it to perform any MH-E operations; you could perform some<br/>
-query and abort the quit or call `mh-execute-commands', for example.<br/>
-The latter is not run in an MH-E context, so you might use it to<br/>
+<strong>mh-quit</strong> is an interactive autoloaded compiled Lisp function in `<code>mh-folder.el</code>'.</br>
+</br>
+</br>
+(mh-quit)</br>
+</br>
+Quit the current MH-E folder.</br>
+</br>
+When you want to quit using MH-E and go back to editing, you can use</br>
+this command. This buries the buffers of the current MH-E folder and</br>
+restores the buffers that were present when you first ran</br>
+M-x mh-rmail. It also removes any MH-E working buffers whose name</br>
+begins with " *mh-" or "*MH-E ". You can later restore your MH-E</br>
+session by selecting the "+inbox" buffer or by running M-x mh-rmail</br>
+again.</br>
+</br>
+The two hooks `mh-before-quit-hook' and `mh-quit-hook' are called by</br>
+this function. The former one is called before the quit occurs, so you</br>
+might use it to perform any MH-E operations; you could perform some</br>
+query and abort the quit or call `mh-execute-commands', for example.</br>
+The latter is not run in an MH-E context, so you might use it to</br>
 modify the window setup.

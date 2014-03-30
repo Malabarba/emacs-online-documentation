@@ -1,14 +1,14 @@
-<strong>cl-define-compiler-macro</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.<br/>
-<br/>
-(cl-define-compiler-macro FUNC ARGS &rest BODY)<br/>
-<br/>
-Define a compiler-only macro.<br/>
-This is like `defmacro', but macro expansion occurs only if the call to<br/>
-FUNC is compiled (i.e., not interpreted).  Compiler macros should be used<br/>
-for optimizing the way calls to FUNC are compiled; the form returned by<br/>
-BODY should do the same thing as a call to the normal function called<br/>
-FUNC, though possibly more efficiently.  Note that, like regular macros,<br/>
-compiler macros are expanded repeatedly until no further expansions are<br/>
-possible.  Unlike regular macros, BODY can decide to "punt" and leave the<br/>
-original function call alone by declaring an initial `&whole foo' parameter<br/>
+<strong>cl-define-compiler-macro</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.</br>
+</br>
+(cl-define-compiler-macro <u>FUNC</u> <u>ARGS</u> &rest <u>BODY</u>)</br>
+</br>
+Define a compiler-only macro.</br>
+This is like `defmacro', but macro expansion occurs only if the call to</br>
+<u>FUNC</u> is compiled (i.e., not interpreted).  Compiler macros should be used</br>
+for optimizing the way calls to <u>FUNC</u> are compiled; the form returned by</br>
+<u>BODY</u> should do the same thing as a call to the normal function called</br>
+<u>FUNC</u>, though possibly more efficiently.  Note that, like regular macros,</br>
+compiler macros are expanded repeatedly until no further expansions are</br>
+possible.  Unlike regular macros, <u>BODY</u> can decide to "punt" and leave the</br>
+original function call alone by declaring an initial `&whole foo' parameter</br>
 and then returning foo.

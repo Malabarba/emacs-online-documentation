@@ -1,24 +1,25 @@
-<strong>dired-compress-file-suffixes</strong> is a variable defined in `<code>dired-aux.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Control changes in file name suffixes for compression and uncompression.<br/>
-Each element specifies one transformation rule, and has the form:<br/>
-  (REGEXP NEW-SUFFIX PROGRAM)<br/>
-The rule applies when the old file name matches REGEXP.<br/>
-The new file name is computed by deleting the part that matches REGEXP<br/>
- (as well as anything after that), then adding NEW-SUFFIX in its place.<br/>
-If PROGRAM is non-nil, the rule is an uncompression rule,<br/>
-and uncompression is done by running PROGRAM.<br/>
-Otherwise, the rule is a compression rule, and compression is done with gzip.<br/>
-<br/>
-Value: (("\\.gz\\'" "" "gunzip")<br/>
- ("\\.tgz\\'" ".tar" "gunzip")<br/>
- ("\\.Z\\'" "" "uncompress")<br/>
- ("\\.z\\'" "" "gunzip")<br/>
- ("\\.dz\\'" "" "dictunzip")<br/>
- ("\\.tbz\\'" ".tar" "bunzip2")<br/>
- ("\\.bz2\\'" "" "bunzip2")<br/>
- ("\\.xz\\'" "" "unxz")<br/>
- ("\\.tar\\'" ".tgz" nil))<br/>
-<br/>
+<strong>dired-compress-file-suffixes</strong> is a variable defined in `<code>dired-aux.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Control changes in file name suffixes for compression and uncompression.</br>
+Each element specifies one transformation rule, and has the form:</br>
+  (REGEXP NEW-SUFFIX PROGRAM)</br>
+The rule applies when the old file name matches REGEXP.</br>
+The new file name is computed by deleting the part that matches REGEXP</br>
+ (as well as anything after that), then adding NEW-SUFFIX in its place.</br>
+If PROGRAM is non-nil, the rule is an uncompression rule,</br>
+and uncompression is done by running PROGRAM.</br>
+Otherwise, the rule is a compression rule, and compression is done with gzip.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\.gz\\'" "" "gunzip")
+ ("\\.tgz\\'" ".tar" "gunzip")
+ ("\\.Z\\'" "" "uncompress")
+ ("\\.z\\'" "" "gunzip")
+ ("\\.dz\\'" "" "dictunzip")
+ ("\\.tbz\\'" ".tar" "bunzip2")
+ ("\\.bz2\\'" "" "bunzip2")
+ ("\\.xz\\'" "" "unxz")
+ ("\\.tar\\'" ".tgz" nil))
+</pre></br>

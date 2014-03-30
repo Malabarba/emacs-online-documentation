@@ -1,10 +1,14 @@
-<strong>defalias</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(defalias SYMBOL DEFINITION &optional DOCSTRING)<br/>
-<br/>
-Set SYMBOL's function definition to DEFINITION.<br/>
-Associates the function with the current load file, if any.<br/>
-The optional third argument DOCSTRING specifies the documentation string<br/>
-for SYMBOL; if it is omitted or nil, SYMBOL uses the documentation string<br/>
-determined by DEFINITION.<br/>
+<strong>defalias</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(defalias <u>SYMBOL</u> <u>DEFINITION</u> &optional <u>DOCSTRING</u>)</br>
+</br>
+Set <u>SYMBOL</u>'s function definition to <u>DEFINITION</u>.</br>
+Associates the function with the current load file, if any.</br>
+The optional third argument <u>DOCSTRING</u> specifies the documentation string</br>
+for <u>SYMBOL</u>; if it is omitted or nil, <u>SYMBOL</u> uses the documentation string</br>
+determined by <u>DEFINITION</u>.</br>
+</br>
+Internally, this normally uses `fset', but if <u>SYMBOL</u> has a</br>
+`defalias-fset-function' property, the associated value is used instead.</br>
+</br>
 The return value is undefined.

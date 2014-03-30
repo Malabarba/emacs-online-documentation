@@ -1,5 +1,42 @@
-<strong>todo-show</strong> is an interactive autoloaded compiled Lisp function in `<code>todo-mode.el</code>'.<br/>
-<br/>
-(todo-show)<br/>
-<br/>
-Show TODO list.
+<strong>todo-show</strong> is an interactive autoloaded compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+</br>
+(todo-show &optional <u>SOLICIT-FILE</u> <u>INTERACTIVE</u>)</br>
+</br>
+Visit a todo file and display one of its categories.</br>
+</br>
+When invoked in Todo mode, prompt for which todo file to visit.</br>
+When invoked outside of Todo mode with non-nil prefix argument</br>
+<u>SOLICIT-FILE</u> prompt for which todo file to visit; otherwise visit</br>
+`todo-default-todo-file'.  Subsequent invocations from outside</br>
+of Todo mode revisit this file or, with option</br>
+`todo-show-current-file' non-nil (the default), whichever todo</br>
+file was last visited.</br>
+</br>
+If you call this command before you have created any todo file in</br>
+the current format, and you have an todo file in old format, it</br>
+will ask you whether to convert that file and show it.</br>
+Otherwise, calling this command before any todo file exists</br>
+prompts for a file name and an initial category (defaulting to</br>
+`todo-initial-file' and `todo-initial-category'), creates both of</br>
+these, visits the file and displays the category, and if option</br>
+`todo-add-item-if-new-category' is non-nil (the default), prompts</br>
+for the first item.</br>
+</br>
+The first invocation of this command on an existing todo file</br>
+interacts with the option `todo-show-first': if its value is</br>
+`first' (the default), show the first category in the file; if</br>
+its value is `table', show the table of categories in the file;</br>
+if its value is one of `top', `diary' or `regexp', show the</br>
+corresponding saved top priorities, diary items, or regexp items</br>
+file, if any.  Subsequent invocations always show the file's</br>
+current (i.e., last displayed) category.</br>
+</br>
+In Todo mode just the category's unfinished todo items are shown</br>
+by default.  The done items are hidden, but typing</br>
+`M-x todo-toggle-view-done-items' displays them below the todo</br>
+items.  With non-nil user option `todo-show-with-done' both todo</br>
+and done items are always shown on visiting a category.</br>
+</br>
+Invoking this command in Todo Archive mode visits the</br>
+corresponding todo file, displaying the corresponding category.

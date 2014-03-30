@@ -1,22 +1,22 @@
-<strong>ldap-host-parameters-alist</strong> is a variable defined in `<code>ldap.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Alist of host-specific options for LDAP transactions.<br/>
-The format of each list element is (HOST PROP1 VAL1 PROP2 VAL2 ...).<br/>
-HOST is the hostname of an LDAP server (with an optional TCP port number<br/>
-appended to it using a colon as a separator).<br/>
-PROPn and VALn are property/value pairs describing parameters for the server.<br/>
-Valid properties include:<br/>
-  `binddn' is the distinguished name of the user to bind as<br/>
-    (in RFC 1779 syntax).<br/>
-  `passwd' is the password to use for simple authentication.<br/>
-  `auth' is the authentication method to use.<br/>
-    Possible values are: `simple', `krbv41' and `krbv42'.<br/>
-  `base' is the base for the search as described in RFC 1779.<br/>
-  `scope' is one of the three symbols `subtree', `base' or `onelevel'.<br/>
-  `deref' is one of the symbols `never', `always', `search' or `find'.<br/>
-  `timelimit' is the timeout limit for the connection in seconds.<br/>
-  `sizelimit' is the maximum number of matches to return.<br/>
-<br/>
+<strong>ldap-host-parameters-alist</strong> is a variable defined in `<code>ldap.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of host-specific options for LDAP transactions.</br>
+The format of each list element is (HOST PROP1 VAL1 PROP2 VAL2 ...).</br>
+HOST is the hostname of an LDAP server (with an optional TCP port number</br>
+appended to it using a colon as a separator).</br>
+PROPn and VALn are property/value pairs describing parameters for the server.</br>
+Valid properties include:</br>
+  `binddn' is the distinguished name of the user to bind as</br>
+    (in RFC 1779 syntax).</br>
+  `passwd' is the password to use for simple authentication.</br>
+  `auth' is the authentication method to use.</br>
+    Possible values are: `simple', `krbv41' and `krbv42'.</br>
+  `base' is the base for the search as described in RFC 1779.</br>
+  `scope' is one of the three symbols `subtree', `base' or `onelevel'.</br>
+  `deref' is one of the symbols `never', `always', `search' or `find'.</br>
+  `timelimit' is the timeout limit for the connection in seconds.</br>
+  `sizelimit' is the maximum number of matches to return.</br>
+</br>
 You can customize this variable.

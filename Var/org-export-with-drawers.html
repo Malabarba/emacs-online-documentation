@@ -1,9 +1,19 @@
-<strong>org-export-with-drawers</strong> is a variable defined in `<code>org-exp.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Non-nil means export with drawers like the property drawer.<br/>
-When t, all drawers are exported.  This may also be a list of<br/>
-drawer names to export.<br/>
-<br/>
-You can customize this variable.
+<strong>org-export-with-drawers</strong> is a variable defined in `<code>ox.el</code>'.</br>
+Its value is <pre>(not "LOGBOOK")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Non-nil means export contents of standard drawers.</br>
+</br>
+When t, all drawers are exported.  This may also be a list of</br>
+drawer names to export.  If that list starts with `not', only</br>
+drawers with such names will be ignored.</br>
+</br>
+This variable doesn't apply to properties drawers.</br>
+</br>
+This option can also be set with the OPTIONS keyword,</br>
+e.g. "d:nil".</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

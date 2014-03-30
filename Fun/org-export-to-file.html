@@ -1,0 +1,34 @@
+<strong>org-export-to-file</strong> is an autoloaded Lisp function in `<code>ox.el</code>'.</br>
+</br>
+(org-export-to-file <u>BACKEND</u> <u>FILE</u> &optional <u>ASYNC</u> <u>SUBTREEP</u> <u>VISIBLE-ONLY</u> <u>BODY-ONLY</u> <u>EXT-PLIST</u> <u>POST-PROCESS</u>)</br>
+</br>
+Call `org-export-as' with output to a specified file.</br>
+</br>
+<u>BACKEND</u> is either an export back-end, as returned by, e.g.,</br>
+`org-export-create-backend', or a symbol referring to</br>
+a registered back-end.  <u>FILE</u> is the name of the output file, as</br>
+a string.</br>
+</br>
+A non-nil optional argument <u>ASYNC</u> means the process should happen</br>
+asynchronously.  The resulting buffer will then be accessible</br>
+through the `org-export-stack' interface.</br>
+</br>
+Optional arguments <u>SUBTREEP</u>, <u>VISIBLE-ONLY</u>, <u>BODY-ONLY</u> and</br>
+<u>EXT-PLIST</u> are similar to those used in `org-export-as', which</br>
+see.</br>
+</br>
+Optional argument <u>POST-PROCESS</u> is called with <u>FILE</u> as its</br>
+argument and happens asynchronously when <u>ASYNC</u> is non-nil.  It</br>
+has to return a file name, or nil.  Export back-ends can use this</br>
+to send the output file through additional processing, e.g,</br>
+</br>
+  (defun org-latex-export-to-latex</br>
+    (&optional async subtreep visible-only body-only ext-plist)</br>
+    (interactive)</br>
+    (let ((outfile (org-export-output-file-name ".tex" subtreep)))</br>
+      (org-export-to-file 'latex outfile</br>
+        async subtreep visible-only body-only ext-plist</br>
+        (lambda (file) (org-latex-compile file)))</br>
+</br>
+The function returns either a file name returned by <u>POST-PROCESS</u>,</br>
+or <u>FILE</u>.

@@ -1,6 +1,28 @@
-<strong>ede-buffer-header-file</strong> is a Lisp function in `<code>source.el</code>'.<br/>
-<br/>
-(ede-buffer-header-file &rest LOCAL-ARGS)<br/>
-<br/>
-Return a list of file names of header files for THIS with FILENAME.<br/>
-Used to guess header files, but uses the auxsource regular expression.
+<strong>ede-buffer-header-file</strong> is a Lisp function in `<code>source.el</code>'.</br>
+</br>
+(ede-buffer-header-file &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Return a list of file names of header files for THIS with FILENAME.</br>
+Used to guess header files, but uses the auxsource regular expression.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`ede-sourcecode' :PRIMARY (this filename)</br>
+Return a list of file names of header files for THIS with FILENAME.</br>
+Used to guess header files, but uses the auxsource regular expression.</br>
+</br>
+Defined in `source.el'</br>
+</br>
+`ede-project' :PRIMARY (this buffer)</br>
+Return nil, projects don't have header files.</br>
+</br>
+Defined in `base.el'</br>
+</br>
+`ede-target' :PRIMARY (this buffer)</br>
+There are no default header files in EDE.</br>
+Do a quick check to see if there is a Header tag in this buffer.</br>
+</br>
+Defined in `base.el'</br>
+</br>

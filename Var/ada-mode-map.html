@@ -1,243 +1,242 @@
-<strong>ada-mode-map</strong> is a variable defined in `<code>ada-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Local keymap used for Ada mode.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Ada menu-item "Ada"<br/>
-		(keymap "Ada"<br/>
-			(Help menu-item "Help"<br/>
-			      (keymap "Help"<br/>
-				      (Ada\ Mode menu-item "Ada Mode" menu-function-178 :key-sequence nil)<br/>
-				      (GNAT\ User\'s\ Guide menu-item "GNAT User's Guide" menu-function-179 :key-sequence nil :enable<br/>
-							    (eq ada-which-compiler 'gnat))<br/>
-				      (GNAT\ Reference\ Manual menu-item "GNAT Reference Manual" menu-function-180 :key-sequence nil :enable<br/>
-							       (eq ada-which-compiler 'gnat))<br/>
-				      (Gcc\ Documentation menu-item "Gcc Documentation" menu-function-181 :key-sequence nil :enable<br/>
-							  (eq ada-which-compiler 'gnat))<br/>
-				      (Gdb\ Documentation menu-item "Gdb Documentation" menu-function-182 :key-sequence nil :enable<br/>
-							  (eq ada-which-compiler 'gnat))<br/>
-				      (Ada95\ Reference\ Manual menu-item "Ada95 Reference Manual" menu-function-183 :key-sequence nil)))<br/>
-			(Options menu-item "Options"<br/>
-				 (keymap "Options"<br/>
-					 (Auto\ Casing menu-item "Auto Casing" menu-function-184 :key-sequence nil :button<br/>
-						       (:toggle . ada-auto-case))<br/>
-					 (Auto\ Indent\ After\ Return menu-item "Auto Indent After Return" menu-function-185 :key-sequence nil :button<br/>
-								      (:toggle . ada-indent-after-return))<br/>
-					 (Automatically\ Recompile\ For\ Cross-references menu-item "Automatically Recompile For Cross-references" menu-function-186 :key-sequence nil :visible<br/>
-											  (eq ada-which-compiler 'gnat)<br/>
-											  :button<br/>
-											  (:toggle . ada-xref-create-ali))<br/>
-					 (Confirm\ Commands menu-item "Confirm Commands" menu-function-187 :key-sequence nil :visible<br/>
-							    (eq ada-which-compiler 'gnat)<br/>
-							    :button<br/>
-							    (:toggle . ada-xref-confirm-compile))<br/>
-					 (Show\ Cross-references\ In\ Other\ Buffer menu-item "Show Cross-references In Other Buffer" menu-function-188 :key-sequence nil :visible<br/>
-										    (eq ada-which-compiler 'gnat)<br/>
-										    :button<br/>
-										    (:toggle . ada-xref-other-buffer))<br/>
-					 (Tight\ Integration\ With\ GNU\ Visual\ Debugger menu-item "Tight Integration With GNU Visual Debugger" menu-function-189 :key-sequence nil :visible<br/>
-											  (string-match "gvd" ada-prj-default-debugger)<br/>
-											  :button<br/>
-											  (:toggle . ada-tight-gvd-integration)))<br/>
-				 :visible<br/>
-				 (derived-mode-p 'ada-mode))<br/>
-			(Customize menu-item "Customize" menu-function-191 :key-sequence nil :visible<br/>
-				   (fboundp 'customize-group))<br/>
-			(Check\ file menu-item "Check file" ada-check-current)<br/>
-			(Compile\ file menu-item "Compile file" ada-compile-current)<br/>
-			(Set\ main\ and\ Build menu-item "Set main and Build" ada-set-main-compile-application)<br/>
-			(Show\ main menu-item "Show main" ada-show-current-main)<br/>
-			(Build menu-item "Build" ada-compile-application)<br/>
-			(Run menu-item "Run" ada-run-application)<br/>
-			(Debug menu-item "Debug" ada-gdb-application :enable<br/>
-			       (eq ada-which-compiler 'gnat))<br/>
-			(------ menu-item "------" nil :enable 'nil)<br/>
-			(Project menu-item "Project"<br/>
-				 (keymap "Project"<br/>
-					 (Show\ project menu-item "Show project" ada-show-current-project)<br/>
-					 (Load\.\.\. menu-item "Load..." ada-set-default-project-file)<br/>
-					 (New\.\.\. menu-item "New..." ada-prj-new)<br/>
-					 (Edit\.\.\. menu-item "Edit..." ada-prj-edit)))<br/>
-			(Goto menu-item "Goto"<br/>
-			      (keymap "Goto"<br/>
-				      (Goto\ Declaration/Body menu-item "Goto Declaration/Body" ada-goto-declaration :enable<br/>
-							      (eq ada-which-compiler 'gnat))<br/>
-				      (Goto\ Body menu-item "Goto Body" ada-goto-body :enable<br/>
-						  (eq ada-which-compiler 'gnat))<br/>
-				      (Goto\ Declaration\ Other\ Frame menu-item "Goto Declaration Other Frame" ada-goto-declaration-other-frame :enable<br/>
-								       (eq ada-which-compiler 'gnat))<br/>
-				      (Goto\ Previous\ Reference menu-item "Goto Previous Reference" ada-xref-goto-previous-reference :enable<br/>
-								 (eq ada-which-compiler 'gnat))<br/>
-				      (List\ Local\ References menu-item "List Local References" ada-find-local-references :enable<br/>
-							       (eq ada-which-compiler 'gnat))<br/>
-				      (List\ References menu-item "List References" ada-find-references :enable<br/>
-							(eq ada-which-compiler 'gnat))<br/>
-				      (Goto\ Reference\ To\ Any\ Entity menu-item "Goto Reference To Any Entity" ada-find-any-references :enable<br/>
-									(eq ada-which-compiler 'gnat))<br/>
-				      (Goto\ Parent\ Unit menu-item "Goto Parent Unit" ada-goto-parent :enable<br/>
-							  (eq ada-which-compiler 'gnat))<br/>
-				      (---14 menu-item "--" nil :enable 'nil)<br/>
-				      (Next\ compilation\ error menu-item "Next compilation error" next-error)<br/>
-				      (Previous\ Package menu-item "Previous Package" ada-previous-package)<br/>
-				      (Next\ Package menu-item "Next Package" ada-next-package)<br/>
-				      (Previous\ Procedure menu-item "Previous Procedure" ada-previous-procedure)<br/>
-				      (Next\ Procedure menu-item "Next Procedure" ada-next-procedure)<br/>
-				      (Goto\ Start\ Of\ Statement menu-item "Goto Start Of Statement" ada-move-to-start)<br/>
-				      (Goto\ End\ Of\ Statement menu-item "Goto End Of Statement" ada-move-to-end)<br/>
-				      (- menu-item "-" nil :enable 'nil)<br/>
-				      (Other\ File menu-item "Other File" ff-find-other-file)<br/>
-				      (Other\ File\ Other\ Window menu-item "Other File Other Window" ada-ff-other-window))<br/>
-			      :visible<br/>
-			      (derived-mode-p 'ada-mode))<br/>
-			(Edit menu-item "Edit"<br/>
-			      (keymap "Edit"<br/>
-				      (Search\ File\ On\ Source\ Path menu-item "Search File On Source Path" ada-find-file)<br/>
-				      (------ menu-item "------" nil :enable 'nil)<br/>
-				      (Complete\ Identifier menu-item "Complete Identifier" ada-complete-identifier)<br/>
-				      (----- menu-item "-----" nil :enable 'nil)<br/>
-				      (Indent\ Line menu-item "Indent Line" ada-indent-current-function)<br/>
-				      (Justify\ Current\ Indentation menu-item "Justify Current Indentation" ada-justified-indent-current)<br/>
-				      (Indent\ Lines\ in\ Selection menu-item "Indent Lines in Selection" ada-indent-region)<br/>
-				      (Indent\ Lines\ in\ File menu-item "Indent Lines in File" menu-function-193 :key-sequence nil)<br/>
-				      (Format\ Parameter\ List menu-item "Format Parameter List" ada-format-paramlist)<br/>
-				      (- menu-item "-" nil :enable 'nil)<br/>
-				      (Comment\ Selection menu-item "Comment Selection" comment-region)<br/>
-				      (Uncomment\ Selection menu-item "Uncomment Selection" ada-uncomment-region)<br/>
-				      (---14 menu-item "--" nil :enable 'nil)<br/>
-				      (Fill\ Comment\ Paragraph menu-item "Fill Comment Paragraph" fill-paragraph)<br/>
-				      (Fill\ Comment\ Paragraph\ Justify menu-item "Fill Comment Paragraph Justify" ada-fill-comment-paragraph-justify)<br/>
-				      (Fill\ Comment\ Paragraph\ Postfix menu-item "Fill Comment Paragraph Postfix" ada-fill-comment-paragraph-postfix)<br/>
-				      (--- menu-item "---" nil :enable 'nil)<br/>
-				      (Adjust\ Case\ Selection menu-item "Adjust Case Selection" ada-adjust-case-region)<br/>
-				      (Adjust\ Case\ in\ File menu-item "Adjust Case in File" ada-adjust-case-buffer)<br/>
-				      (Create\ Case\ Exception menu-item "Create Case Exception" ada-create-case-exception)<br/>
-				      (Create\ Case\ Exception\ Substring menu-item "Create Case Exception Substring" ada-create-case-exception-substring)<br/>
-				      (Reload\ Case\ Exceptions menu-item "Reload Case Exceptions" ada-case-read-exceptions)<br/>
-				      (---- menu-item "----" nil :enable 'nil)<br/>
-				      (Make\ body\ for\ subprogram menu-item "Make body for subprogram" ada-make-subprogram-body)<br/>
-				      (------24 menu-item "-----" nil :enable 'nil)<br/>
-				      (Narrow\ to\ subprogram menu-item "Narrow to subprogram" ada-narrow-to-defun))<br/>
-			      :visible<br/>
-			      (derived-mode-p 'ada-mode))<br/>
-			(Templates menu-item "Templates"<br/>
-				   (keymap "Templates"<br/>
-					   (Header menu-item "Header" ada-header)<br/>
-					   (- menu-item "-" nil :enable 'nil)<br/>
-					   (Package\ Body menu-item "Package Body" ada-package-body)<br/>
-					   (Package\ Spec menu-item "Package Spec" ada-package-spec)<br/>
-					   (Function\ Spec menu-item "Function Spec" ada-function-spec)<br/>
-					   (Procedure\ Spec menu-item "Procedure Spec" ada-procedure-spec)<br/>
-					   (Proc/func\ Body menu-item "Proc/func Body" ada-subprogram-body)<br/>
-					   (Task\ Body menu-item "Task Body" ada-task-body)<br/>
-					   (Task\ Spec menu-item "Task Spec" ada-task-spec)<br/>
-					   (Declare\ Block menu-item "Declare Block" ada-declare-block)<br/>
-					   (Exception\ Block menu-item "Exception Block" ada-exception-block)<br/>
-					   (---14 menu-item "--" nil :enable 'nil)<br/>
-					   (Entry menu-item "Entry" ada-entry)<br/>
-					   (Entry\ family menu-item "Entry family" ada-entry-family)<br/>
-					   (Select menu-item "Select" ada-select)<br/>
-					   (Accept menu-item "Accept" ada-accept)<br/>
-					   (Or\ accept menu-item "Or accept" ada-or-accept)<br/>
-					   (Or\ delay menu-item "Or delay" ada-or-delay)<br/>
-					   (Or\ terminate menu-item "Or terminate" ada-or-terminate)<br/>
-					   (--- menu-item "---" nil :enable 'nil)<br/>
-					   (Type menu-item "Type" ada-type)<br/>
-					   (Private menu-item "Private" ada-private)<br/>
-					   (Subtype menu-item "Subtype" ada-subtype)<br/>
-					   (Record menu-item "Record" ada-record)<br/>
-					   (Array menu-item "Array" ada-array)<br/>
-					   (---- menu-item "----" nil :enable 'nil)<br/>
-					   (If menu-item "If" ada-if)<br/>
-					   (Else menu-item "Else" ada-else)<br/>
-					   (Elsif menu-item "Elsif" ada-elsif)<br/>
-					   (Case menu-item "Case" ada-case)<br/>
-					   (----- menu-item "-----" nil :enable 'nil)<br/>
-					   (While\ Loop menu-item "While Loop" ada-while-loop)<br/>
-					   (For\ Loop menu-item "For Loop" ada-for-loop)<br/>
-					   (Loop menu-item "Loop" ada-loop)<br/>
-					   (------ menu-item "------" nil :enable 'nil)<br/>
-					   (Exception menu-item "Exception" ada-exception)<br/>
-					   (Exit menu-item "Exit" ada-exit)<br/>
-					   (When menu-item "When" ada-when))<br/>
-				   :visible<br/>
-				   (derived-mode-p 'ada-mode)))))<br/>
- (24 keymap<br/>
-     (110 keymap<br/>
-	  (100 . ada-narrow-to-defun)))<br/>
- (C-tab . ada-complete-identifier)<br/>
- (S-mouse-3 . ada-point-and-xref)<br/>
- (127 . backward-delete-char-untabify)<br/>
- (27 keymap<br/>
-     (1 . ada-previous-procedure)<br/>
-     (5 . ada-next-procedure))<br/>
- (S-tab . ada-untab)<br/>
- (9 . ada-tab)<br/>
- (13 . ada-indent-newline-indent-conditional)<br/>
- (10 . ada-indent-newline-indent-conditional)<br/>
- (3 keymap<br/>
-    (22 . ada-check-current)<br/>
-    (18 . ada-find-references)<br/>
-    (15 . ada-goto-parent)<br/>
-    (13 . ada-set-main-compile-application)<br/>
-    (19 . ada-xref-goto-previous-reference)<br/>
-    (4 . ada-goto-declaration)<br/>
-    (53 keymap<br/>
-	(4 . ada-goto-declaration-other-frame))<br/>
-    (58 . ada-uncomment-region)<br/>
-    (59 . comment-region)<br/>
-    (14 . ada-make-subprogram-body)<br/>
-    (27 keymap<br/>
-	(25 . ada-create-case-exception-substring))<br/>
-    (25 . ada-create-case-exception)<br/>
-    (20 . ada-case-read-exceptions)<br/>
-    (2 . ada-adjust-case-buffer)<br/>
-    (3 . ada-compile-application)<br/>
-    (5 . ada-move-to-end)<br/>
-    (1 . ada-move-to-start)<br/>
-    (6 . ada-format-paramlist)<br/>
-    (12 . ada-indent-region)<br/>
-    (9 . ada-justified-indent-current)<br/>
-    (17 keymap<br/>
-	(116 keymap<br/>
-	     (120 . ada-exit)<br/>
-	     (24 . ada-exception)<br/>
-	     (119 . ada-while-loop)<br/>
-	     (23 . ada-when)<br/>
-	     (21 . ada-with)<br/>
-	     (117 . ada-use)<br/>
-	     (22 . ada-private)<br/>
-	     (25 . ada-type)<br/>
-	     (116 . ada-task-body)<br/>
-	     (20 . ada-task-spec)<br/>
-	     (83 . ada-tabsize)<br/>
-	     (19 . ada-subtype)<br/>
-	     (18 . ada-record)<br/>
-	     (108 . ada-loop)<br/>
-	     (105 . ada-if)<br/>
-	     (102 . ada-for-loop)<br/>
-	     (6 . ada-function-spec)<br/>
-	     (112 . ada-subprogram-body)<br/>
-	     (16 . ada-procedure-spec)<br/>
-	     (107 . ada-package-body)<br/>
-	     (11 . ada-package-spec)<br/>
-	     (101 . ada-else)<br/>
-	     (5 . ada-elsif)<br/>
-	     (99 . ada-case)<br/>
-	     (100 . ada-declare-block)<br/>
-	     (98 . ada-exception-block)<br/>
-	     (1 . ada-array)<br/>
-	     (104 . ada-header))<br/>
-	(117 . ada-prj-edit)<br/>
-	(102 . ada-find-file)<br/>
-	(108 . ada-find-local-references)<br/>
-	(114 . ada-run-application)<br/>
-	(103 . ada-gdb-application)<br/>
-	(100 . ada-set-default-project-file)<br/>
-	(99 . ada-change-prj)<br/>
-	(111 . ff-find-other-file))))<br/>
-<br/>
+<strong>ada-mode-map</strong> is a variable defined in `<code>ada-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Local keymap used for Ada mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Ada menu-item "Ada"
+		(keymap "Ada"
+			(Help menu-item "Help"
+			      (keymap "Help"
+				      (Ada\ Mode menu-item "Ada Mode" menu-function-250 :key-sequence nil)
+				      (GNAT\ User\'s\ Guide menu-item "GNAT User's Guide" menu-function-251 :key-sequence nil :enable
+							    (eq ada-which-compiler 'gnat))
+				      (GNAT\ Reference\ Manual menu-item "GNAT Reference Manual" menu-function-252 :key-sequence nil :enable
+							       (eq ada-which-compiler 'gnat))
+				      (Gcc\ Documentation menu-item "Gcc Documentation" menu-function-253 :key-sequence nil :enable
+							  (eq ada-which-compiler 'gnat))
+				      (Gdb\ Documentation menu-item "Gdb Documentation" menu-function-254 :key-sequence nil :enable
+							  (eq ada-which-compiler 'gnat))
+				      (Ada95\ Reference\ Manual menu-item "Ada95 Reference Manual" menu-function-255 :key-sequence nil)))
+			(Options menu-item "Options"
+				 (keymap "Options"
+					 (Auto\ Casing menu-item "Auto Casing" menu-function-256 :key-sequence nil :button
+						       (:toggle . ada-auto-case))
+					 (Auto\ Indent\ After\ Return menu-item "Auto Indent After Return" menu-function-257 :key-sequence nil :button
+								      (:toggle . ada-indent-after-return))
+					 (Automatically\ Recompile\ For\ Cross-references menu-item "Automatically Recompile For Cross-references" menu-function-258 :key-sequence nil :visible
+											  (eq ada-which-compiler 'gnat)
+											  :button
+											  (:toggle . ada-xref-create-ali))
+					 (Confirm\ Commands menu-item "Confirm Commands" menu-function-259 :key-sequence nil :visible
+							    (eq ada-which-compiler 'gnat)
+							    :button
+							    (:toggle . ada-xref-confirm-compile))
+					 (Show\ Cross-references\ In\ Other\ Buffer menu-item "Show Cross-references In Other Buffer" menu-function-260 :key-sequence nil :visible
+										    (eq ada-which-compiler 'gnat)
+										    :button
+										    (:toggle . ada-xref-other-buffer))
+					 (Tight\ Integration\ With\ GNU\ Visual\ Debugger menu-item "Tight Integration With GNU Visual Debugger" menu-function-261 :key-sequence nil :visible
+											  (string-match "gvd" ada-prj-default-debugger)
+											  :button
+											  (:toggle . ada-tight-gvd-integration)))
+				 :visible
+				 (derived-mode-p 'ada-mode))
+			(Customize menu-item "Customize" menu-function-263 :key-sequence nil :visible
+				   (fboundp 'customize-group))
+			(Check\ file menu-item "Check file" ada-check-current)
+			(Compile\ file menu-item "Compile file" ada-compile-current)
+			(Set\ main\ and\ Build menu-item "Set main and Build" ada-set-main-compile-application)
+			(Show\ main menu-item "Show main" ada-show-current-main)
+			(Build menu-item "Build" ada-compile-application)
+			(Run menu-item "Run" ada-run-application)
+			(Debug menu-item "Debug" ada-gdb-application :enable
+			       (eq ada-which-compiler 'gnat))
+			(------ menu-item "------" nil :enable 'nil)
+			(Project menu-item "Project"
+				 (keymap "Project"
+					 (Show\ project menu-item "Show project" ada-show-current-project)
+					 (Load\.\.\. menu-item "Load..." ada-set-default-project-file)
+					 (New\.\.\. menu-item "New..." ada-prj-new)
+					 (Edit\.\.\. menu-item "Edit..." ada-prj-edit)))
+			(Goto menu-item "Goto"
+			      (keymap "Goto"
+				      (Goto\ Declaration/Body menu-item "Goto Declaration/Body" ada-goto-declaration :enable
+							      (eq ada-which-compiler 'gnat))
+				      (Goto\ Body menu-item "Goto Body" ada-goto-body :enable
+						  (eq ada-which-compiler 'gnat))
+				      (Goto\ Declaration\ Other\ Frame menu-item "Goto Declaration Other Frame" ada-goto-declaration-other-frame :enable
+								       (eq ada-which-compiler 'gnat))
+				      (Goto\ Previous\ Reference menu-item "Goto Previous Reference" ada-xref-goto-previous-reference :enable
+								 (eq ada-which-compiler 'gnat))
+				      (List\ Local\ References menu-item "List Local References" ada-find-local-references :enable
+							       (eq ada-which-compiler 'gnat))
+				      (List\ References menu-item "List References" ada-find-references :enable
+							(eq ada-which-compiler 'gnat))
+				      (Goto\ Reference\ To\ Any\ Entity menu-item "Goto Reference To Any Entity" ada-find-any-references :enable
+									(eq ada-which-compiler 'gnat))
+				      (Goto\ Parent\ Unit menu-item "Goto Parent Unit" ada-goto-parent :enable
+							  (eq ada-which-compiler 'gnat))
+				      (---14 menu-item "--" nil :enable 'nil)
+				      (Next\ compilation\ error menu-item "Next compilation error" next-error)
+				      (Previous\ Package menu-item "Previous Package" ada-previous-package)
+				      (Next\ Package menu-item "Next Package" ada-next-package)
+				      (Previous\ Procedure menu-item "Previous Procedure" ada-previous-procedure)
+				      (Next\ Procedure menu-item "Next Procedure" ada-next-procedure)
+				      (Goto\ Start\ Of\ Statement menu-item "Goto Start Of Statement" ada-move-to-start)
+				      (Goto\ End\ Of\ Statement menu-item "Goto End Of Statement" ada-move-to-end)
+				      (- menu-item "-" nil :enable 'nil)
+				      (Other\ File menu-item "Other File" ff-find-other-file)
+				      (Other\ File\ Other\ Window menu-item "Other File Other Window" ada-ff-other-window))
+			      :visible
+			      (derived-mode-p 'ada-mode))
+			(Edit menu-item "Edit"
+			      (keymap "Edit"
+				      (Search\ File\ On\ Source\ Path menu-item "Search File On Source Path" ada-find-file)
+				      (------ menu-item "------" nil :enable 'nil)
+				      (Complete\ Identifier menu-item "Complete Identifier" ada-complete-identifier)
+				      (----- menu-item "-----" nil :enable 'nil)
+				      (Indent\ Line menu-item "Indent Line" ada-indent-current-function)
+				      (Justify\ Current\ Indentation menu-item "Justify Current Indentation" ada-justified-indent-current)
+				      (Indent\ Lines\ in\ Selection menu-item "Indent Lines in Selection" ada-indent-region)
+				      (Indent\ Lines\ in\ File menu-item "Indent Lines in File" menu-function-265 :key-sequence nil)
+				      (Format\ Parameter\ List menu-item "Format Parameter List" ada-format-paramlist)
+				      (- menu-item "-" nil :enable 'nil)
+				      (Comment\ Selection menu-item "Comment Selection" comment-region)
+				      (Uncomment\ Selection menu-item "Uncomment Selection" ada-uncomment-region)
+				      (---14 menu-item "--" nil :enable 'nil)
+				      (Fill\ Comment\ Paragraph menu-item "Fill Comment Paragraph" fill-paragraph)
+				      (Fill\ Comment\ Paragraph\ Justify menu-item "Fill Comment Paragraph Justify" ada-fill-comment-paragraph-justify)
+				      (Fill\ Comment\ Paragraph\ Postfix menu-item "Fill Comment Paragraph Postfix" ada-fill-comment-paragraph-postfix)
+				      (--- menu-item "---" nil :enable 'nil)
+				      (Adjust\ Case\ Selection menu-item "Adjust Case Selection" ada-adjust-case-region)
+				      (Adjust\ Case\ in\ File menu-item "Adjust Case in File" ada-adjust-case-buffer)
+				      (Create\ Case\ Exception menu-item "Create Case Exception" ada-create-case-exception)
+				      (Create\ Case\ Exception\ Substring menu-item "Create Case Exception Substring" ada-create-case-exception-substring)
+				      (Reload\ Case\ Exceptions menu-item "Reload Case Exceptions" ada-case-read-exceptions)
+				      (---- menu-item "----" nil :enable 'nil)
+				      (Make\ body\ for\ subprogram menu-item "Make body for subprogram" ada-make-subprogram-body)
+				      (------24 menu-item "-----" nil :enable 'nil)
+				      (Narrow\ to\ subprogram menu-item "Narrow to subprogram" ada-narrow-to-defun))
+			      :visible
+			      (derived-mode-p 'ada-mode))
+			(Templates menu-item "Templates"
+				   (keymap "Templates"
+					   (Header menu-item "Header" ada-header)
+					   (- menu-item "-" nil :enable 'nil)
+					   (Package\ Body menu-item "Package Body" ada-package-body)
+					   (Package\ Spec menu-item "Package Spec" ada-package-spec)
+					   (Function\ Spec menu-item "Function Spec" ada-function-spec)
+					   (Procedure\ Spec menu-item "Procedure Spec" ada-procedure-spec)
+					   (Proc/func\ Body menu-item "Proc/func Body" ada-subprogram-body)
+					   (Task\ Body menu-item "Task Body" ada-task-body)
+					   (Task\ Spec menu-item "Task Spec" ada-task-spec)
+					   (Declare\ Block menu-item "Declare Block" ada-declare-block)
+					   (Exception\ Block menu-item "Exception Block" ada-exception-block)
+					   (---14 menu-item "--" nil :enable 'nil)
+					   (Entry menu-item "Entry" ada-entry)
+					   (Entry\ family menu-item "Entry family" ada-entry-family)
+					   (Select menu-item "Select" ada-select)
+					   (Accept menu-item "Accept" ada-accept)
+					   (Or\ accept menu-item "Or accept" ada-or-accept)
+					   (Or\ delay menu-item "Or delay" ada-or-delay)
+					   (Or\ terminate menu-item "Or terminate" ada-or-terminate)
+					   (--- menu-item "---" nil :enable 'nil)
+					   (Type menu-item "Type" ada-type)
+					   (Private menu-item "Private" ada-private)
+					   (Subtype menu-item "Subtype" ada-subtype)
+					   (Record menu-item "Record" ada-record)
+					   (Array menu-item "Array" ada-array)
+					   (---- menu-item "----" nil :enable 'nil)
+					   (If menu-item "If" ada-if)
+					   (Else menu-item "Else" ada-else)
+					   (Elsif menu-item "Elsif" ada-elsif)
+					   (Case menu-item "Case" ada-case)
+					   (----- menu-item "-----" nil :enable 'nil)
+					   (While\ Loop menu-item "While Loop" ada-while-loop)
+					   (For\ Loop menu-item "For Loop" ada-for-loop)
+					   (Loop menu-item "Loop" ada-loop)
+					   (------ menu-item "------" nil :enable 'nil)
+					   (Exception menu-item "Exception" ada-exception)
+					   (Exit menu-item "Exit" ada-exit)
+					   (When menu-item "When" ada-when))
+				   :visible
+				   (derived-mode-p 'ada-mode)))))
+ (24 keymap
+     (110 keymap
+	  (100 . ada-narrow-to-defun)))
+ (C-tab . ada-complete-identifier)
+ (S-mouse-3 . ada-point-and-xref)
+ (127 . backward-delete-char-untabify)
+ (27 keymap
+     (1 . ada-previous-procedure)
+     (5 . ada-next-procedure))
+ (S-tab . ada-untab)
+ (9 . ada-tab)
+ (13 . ada-indent-newline-indent-conditional)
+ (10 . ada-indent-newline-indent-conditional)
+ (3 keymap
+    (22 . ada-check-current)
+    (18 . ada-find-references)
+    (15 . ada-goto-parent)
+    (13 . ada-set-main-compile-application)
+    (19 . ada-xref-goto-previous-reference)
+    (4 . ada-goto-declaration)
+    (53 keymap
+	(4 . ada-goto-declaration-other-frame))
+    (58 . ada-uncomment-region)
+    (59 . comment-region)
+    (14 . ada-make-subprogram-body)
+    (27 keymap
+	(25 . ada-create-case-exception-substring))
+    (25 . ada-create-case-exception)
+    (20 . ada-case-read-exceptions)
+    (2 . ada-adjust-case-buffer)
+    (3 . ada-compile-application)
+    (5 . ada-move-to-end)
+    (1 . ada-move-to-start)
+    (6 . ada-format-paramlist)
+    (12 . ada-indent-region)
+    (9 . ada-justified-indent-current)
+    (17 keymap
+	(116 keymap
+	     (120 . ada-exit)
+	     (24 . ada-exception)
+	     (119 . ada-while-loop)
+	     (23 . ada-when)
+	     (21 . ada-with)
+	     (117 . ada-use)
+	     (22 . ada-private)
+	     (25 . ada-type)
+	     (116 . ada-task-body)
+	     (20 . ada-task-spec)
+	     (83 . ada-tabsize)
+	     (19 . ada-subtype)
+	     (18 . ada-record)
+	     (108 . ada-loop)
+	     (105 . ada-if)
+	     (102 . ada-for-loop)
+	     (6 . ada-function-spec)
+	     (112 . ada-subprogram-body)
+	     (16 . ada-procedure-spec)
+	     (107 . ada-package-body)
+	     (11 . ada-package-spec)
+	     (101 . ada-else)
+	     (5 . ada-elsif)
+	     (99 . ada-case)
+	     (100 . ada-declare-block)
+	     (98 . ada-exception-block)
+	     (1 . ada-array)
+	     (104 . ada-header))
+	(117 . ada-prj-edit)
+	(102 . ada-find-file)
+	(108 . ada-find-local-references)
+	(114 . ada-run-application)
+	(103 . ada-gdb-application)
+	(100 . ada-set-default-project-file)
+	(99 . ada-change-prj)
+	(111 . ff-find-other-file))))
+</pre></br>

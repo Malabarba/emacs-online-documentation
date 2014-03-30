@@ -1,22 +1,20 @@
-<strong>rmail-font-lock-keywords</strong> is a variable defined in `<code>rmail.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Additional expressions to highlight in Rmail mode.<br/>
-<br/>
-Value:<br/>
-(("^\\(From\\|Sender\\|Resent-From\\):" quote rmail-header-name)<br/>
- ("^\\(Mail-\\)?Reply-To:.*$" quote rmail-header-name)<br/>
- ("^Subject:" quote rmail-header-name)<br/>
- ("^X-Spam-Status:" quote rmail-header-name)<br/>
- ("^\\(To\\|Apparently-To\\|Cc\\|Newsgroups\\):" quote rmail-header-name)<br/>
- ("[>|}]"<br/>
-  ("\\=[ 	]*\\(\\(\\([[:alpha:]]+[[:alpha:]0-9_.@-`'\"]*\\)?\\([>|}][ 	]*\\)\\)+\\)\\(.*\\)"<br/>
-   (beginning-of-line)<br/>
-   (end-of-line)<br/>
-   (1 font-lock-comment-delimiter-face nil t)<br/>
-   (5 font-lock-comment-face nil t)))<br/>
- ("^\\(X-[a-z0-9-]+\\|In-reply-to\\|Date\\):.*\\(\n[ 	]+.*\\)*$" quote rmail-header-name))<br/>
-<br/>
+<strong>rmail-font-lock-keywords</strong> is a variable defined in `<code>rmail.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Additional expressions to highlight in Rmail mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^\\(From\\|Sender\\|Resent-From\\):" quote rmail-header-name)
+ ("^\\(Mail-\\)?Reply-To:.*$" quote rmail-header-name)
+ ("^Subject:" quote rmail-header-name)
+ ("^X-Spam-Status:" quote rmail-header-name)
+ ("^\\(To\\|Apparently-To\\|Cc\\|Newsgroups\\):" quote rmail-header-name)
+ ("[>|}]"
+  ("\\=[ 	]*\\(\\(\\([[:alpha:]]+[[:alpha:]0-9_.@-`'\"]*\\)?\\([>|}][ 	]*\\)\\)+\\)\\(.*\\)"
+   (beginning-of-line)
+   (end-of-line)
+   (1 font-lock-comment-delimiter-face nil t)
+   (5 font-lock-comment-face nil t)))
+ ("^\\(X-[a-z0-9-]+\\|In-reply-to\\|Date\\):.*\\(\n[ 	]+.*\\)*$" quote rmail-header-name))
+</pre></br>

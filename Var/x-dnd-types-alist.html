@@ -1,32 +1,33 @@
-<strong>x-dnd-types-alist</strong> is a variable defined in `<code>x-dnd.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Which function to call to handle a drop of that type.<br/>
-If the type for the drop is not present, or the function is nil,<br/>
-the drop is rejected.  The function takes three arguments, WINDOW, ACTION<br/>
-and DATA.  WINDOW is where the drop occurred, ACTION is the action for<br/>
-this drop (copy, move, link, private or ask) as determined by a previous<br/>
-call to `x-dnd-test-function'.  DATA is the drop data.<br/>
-The function shall return the action used (copy, move, link or private)<br/>
-if drop is successful, nil if not.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 22.1 of Emacs.<br/>
-<br/>
-<br/>
-Value: (("text/uri-list" . x-dnd-handle-uri-list)<br/>
- ("text/x-moz-url" . x-dnd-handle-moz-url)<br/>
- ("_NETSCAPE_URL" . x-dnd-handle-uri-list)<br/>
- ("FILE_NAME" . x-dnd-handle-file-name)<br/>
- ("UTF8_STRING" . x-dnd-insert-utf8-text)<br/>
- ("text/plain;charset=UTF-8" . x-dnd-insert-utf8-text)<br/>
- ("text/plain;charset=utf-8" . x-dnd-insert-utf8-text)<br/>
- ("text/unicode" . x-dnd-insert-utf16-text)<br/>
- ("text/plain" . dnd-insert-text)<br/>
- ("COMPOUND_TEXT" . x-dnd-insert-ctext)<br/>
- ("STRING" . dnd-insert-text)<br/>
- ("TEXT" . dnd-insert-text))<br/>
-<br/>
+<strong>x-dnd-types-alist</strong> is a variable defined in `<code>x-dnd.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Which function to call to handle a drop of that type.</br>
+If the type for the drop is not present, or the function is nil,</br>
+the drop is rejected.  The function takes three arguments, WINDOW, ACTION</br>
+and DATA.  WINDOW is where the drop occurred, ACTION is the action for</br>
+this drop (copy, move, link, private or ask) as determined by a previous</br>
+call to `x-dnd-test-function'.  DATA is the drop data.</br>
+The function shall return the action used (copy, move, link or private)</br>
+if drop is successful, nil if not.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 22.1 of Emacs.
+</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("text/uri-list" . x-dnd-handle-uri-list)
+ ("text/x-moz-url" . x-dnd-handle-moz-url)
+ ("_NETSCAPE_URL" . x-dnd-handle-uri-list)
+ ("FILE_NAME" . x-dnd-handle-file-name)
+ ("UTF8_STRING" . x-dnd-insert-utf8-text)
+ ("text/plain;charset=UTF-8" . x-dnd-insert-utf8-text)
+ ("text/plain;charset=utf-8" . x-dnd-insert-utf8-text)
+ ("text/unicode" . x-dnd-insert-utf16-text)
+ ("text/plain" . dnd-insert-text)
+ ("COMPOUND_TEXT" . x-dnd-insert-ctext)
+ ("STRING" . dnd-insert-text)
+ ("TEXT" . dnd-insert-text))
+</pre></br>

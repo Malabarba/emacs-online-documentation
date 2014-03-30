@@ -1,22 +1,22 @@
-<strong>sql-imenu-generic-expression</strong> is a variable defined in `<code>sql.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Define interesting points in the SQL buffer for `imenu'.<br/>
-<br/>
-This is used to set `imenu-generic-expression' when SQL mode is<br/>
-entered.  Subsequent changes to `sql-imenu-generic-expression' will<br/>
-not affect existing SQL buffers because imenu-generic-expression is<br/>
-a local variable.<br/>
-<br/>
-Value:<br/>
-(("Rules/Defaults" "^\\s-*create\\s-+\\(\\w+\\s-+\\)*\\(rule\\|default\\)\\s-+\\(\\w+\\)" 3)<br/>
- ("Sequences" "^\\s-*create\\s-+\\(\\w+\\s-+\\)*sequence\\s-+\\(\\w+\\)" 2)<br/>
- ("Triggers" "^\\s-*create\\s-+\\(\\w+\\s-+\\)*trigger\\s-+\\(\\w+\\)" 2)<br/>
- ("Functions" "^\\s-*\\(create\\s-+\\(\\w+\\s-+\\)*\\)?function\\s-+\\(\\w+\\)" 3)<br/>
- ("Procedures" "^\\s-*\\(create\\s-+\\(\\w+\\s-+\\)*\\)?proc\\(edure\\)?\\s-+\\(\\w+\\)" 4)<br/>
- ("Packages" "^\\s-*create\\s-+\\(\\w+\\s-+\\)*package\\s-+\\(body\\s-+\\)?\\(\\w+\\)" 3)<br/>
- ("Types" "^\\s-*create\\s-+\\(\\w+\\s-+\\)*type\\s-+\\(body\\s-+\\)?\\(\\w+\\)" 3)<br/>
- ("Indexes" "^\\s-*create\\s-+\\(\\w+\\s-+\\)*index\\s-+\\(\\w+\\)" 2)<br/>
- ("Tables/Views" "^\\s-*create\\s-+\\(\\w+\\s-+\\)*\\(table\\|view\\)\\s-+\\(\\w+\\)" 3))<br/>
-<br/>
+<strong>sql-imenu-generic-expression</strong> is a variable defined in `<code>sql.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Define interesting points in the SQL buffer for `imenu'.</br>
+</br>
+This is used to set `imenu-generic-expression' when SQL mode is</br>
+entered.  Subsequent changes to `sql-imenu-generic-expression' will</br>
+not affect existing SQL buffers because imenu-generic-expression is</br>
+a local variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("Rules/Defaults" "^\\s-*create\\s-+\\(?:\\w+\\s-+\\)*\\(?:rule\\|default\\)\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\s-+\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Sequences" "^\\s-*create\\s-+\\(?:\\w+\\s-+\\)*sequence\\s-+\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Triggers" "^\\s-*create\\s-+\\(?:\\w+\\s-+\\)*trigger\\s-+\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Functions" "^\\s-*\\(?:create\\s-+\\(?:\\w+\\s-+\\)*\\)?function\\s-+\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Procedures" "^\\s-*\\(?:create\\s-+\\(?:\\w+\\s-+\\)*\\)?proc\\(?:edure\\)?\\s-+\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Packages" "^\\s-*create\\s-+\\(?:\\w+\\s-+\\)*package\\s-+\\(?:body\\s-+\\)?\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Types" "^\\s-*create\\s-+\\(?:\\w+\\s-+\\)*type\\s-+\\(?:body\\s-+\\)?\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Indexes" "^\\s-*create\\s-+\\(?:\\w+\\s-+\\)*index\\s-+\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1)
+ ("Tables/Views" "^\\s-*create\\s-+\\(?:\\w+\\s-+\\)*\\(?:table\\|view\\)\\s-+\\(?:if\\s-+not\\s-+exists\\s-+\\)?\\(\\(?:\\w+\\s-*[.]\\s-*\\)*\\w+\\)" 1))
+</pre></br>

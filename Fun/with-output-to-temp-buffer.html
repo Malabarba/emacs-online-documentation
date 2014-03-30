@@ -1,31 +1,31 @@
-<strong>with-output-to-temp-buffer</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
-<br/>
-(with-output-to-temp-buffer BUFNAME &rest BODY)<br/>
-<br/>
-Bind `standard-output' to buffer BUFNAME, eval BODY, then show that buffer.<br/>
-<br/>
-This construct makes buffer BUFNAME empty before running BODY.<br/>
-It does not make the buffer current for BODY.<br/>
-Instead it binds `standard-output' to that buffer, so that output<br/>
-generated with `prin1' and similar functions in BODY goes into<br/>
-the buffer.<br/>
-<br/>
-At the end of BODY, this marks buffer BUFNAME unmodified and displays<br/>
-it in a window, but does not select it.  The normal way to do this is<br/>
-by calling `display-buffer', then running `temp-buffer-show-hook'.<br/>
-However, if `temp-buffer-show-function' is non-nil, it calls that<br/>
-function instead (and does not run `temp-buffer-show-hook').  The<br/>
-function gets one argument, the buffer to display.<br/>
-<br/>
-The return value of `with-output-to-temp-buffer' is the value of the<br/>
-last form in BODY.  If BODY does not finish normally, the buffer<br/>
-BUFNAME is not displayed.<br/>
-<br/>
-This runs the hook `temp-buffer-setup-hook' before BODY,<br/>
-with the buffer BUFNAME temporarily current.  It runs the hook<br/>
-`temp-buffer-show-hook' after displaying buffer BUFNAME, with that<br/>
-buffer temporarily current, and the window that was used to display it<br/>
-temporarily selected.  But it doesn't run `temp-buffer-show-hook'<br/>
-if it uses `temp-buffer-show-function'.<br/>
-<br/>
+<strong>with-output-to-temp-buffer</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(with-output-to-temp-buffer <u>BUFNAME</u> &rest <u>BODY</u>)</br>
+</br>
+Bind `standard-output' to buffer <u>BUFNAME</u>, eval <u>BODY</u>, then show that buffer.</br>
+</br>
+This construct makes buffer <u>BUFNAME</u> empty before running <u>BODY</u>.</br>
+It does not make the buffer current for <u>BODY</u>.</br>
+Instead it binds `standard-output' to that buffer, so that output</br>
+generated with `prin1' and similar functions in <u>BODY</u> goes into</br>
+the buffer.</br>
+</br>
+At the end of <u>BODY</u>, this marks buffer <u>BUFNAME</u> unmodified and displays</br>
+it in a window, but does not select it.  The normal way to do this is</br>
+by calling `display-buffer', then running `temp-buffer-show-hook'.</br>
+However, if `temp-buffer-show-function' is non-nil, it calls that</br>
+function instead (and does not run `temp-buffer-show-hook').  The</br>
+function gets one argument, the buffer to display.</br>
+</br>
+The return value of `with-output-to-temp-buffer' is the value of the</br>
+last form in <u>BODY</u>.  If <u>BODY</u> does not finish normally, the buffer</br>
+<u>BUFNAME</u> is not displayed.</br>
+</br>
+This runs the hook `temp-buffer-setup-hook' before <u>BODY</u>,</br>
+with the buffer <u>BUFNAME</u> temporarily current.  It runs the hook</br>
+`temp-buffer-show-hook' after displaying buffer <u>BUFNAME</u>, with that</br>
+buffer temporarily current, and the window that was used to display it</br>
+temporarily selected.  But it doesn't run `temp-buffer-show-hook'</br>
+if it uses `temp-buffer-show-function'.</br>
+</br>
 See the related form `with-temp-buffer-window'.

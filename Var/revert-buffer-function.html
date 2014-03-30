@@ -1,10 +1,9 @@
-<strong>revert-buffer-function</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable's value is permanent if it is given a local binding.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function to use to revert this buffer, or nil to do the default.<br/>
-The function receives two arguments IGNORE-AUTO and NOCONFIRM,<br/>
-which are the arguments that `revert-buffer' received.
+<strong>revert-buffer-function</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre>revert-buffer--default</pre></br>
+<ul>  <li>This variable's value is permanent if it is given a local binding.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to use to revert this buffer, or nil to do the default.</br>
+The function receives two arguments IGNORE-AUTO and NOCONFIRM,</br>
+which are the arguments that `revert-buffer' received.</br>
+It also has access to the `preserve-modes' argument of `revert-buffer'</br>
+via the `revert-buffer-preserve-modes' dynamic variable.

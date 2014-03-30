@@ -1,19 +1,19 @@
-<strong>mh-face-data</strong> is a compiled Lisp function in `<code>mh-e.el</code>'.<br/>
-<br/>
-(mh-face-data FACE &optional INHERIT)<br/>
-<br/>
-Return spec for FACE.<br/>
-See `defface' for the spec definition.<br/>
-<br/>
-If INHERIT is non-nil and `defface' supports the :inherit<br/>
-keyword, return INHERIT literally; otherwise, return spec for<br/>
-FACE from the variable `mh-face-data'. This isn't a perfect<br/>
-implementation. In the case that the :inherit keyword is not<br/>
-supported, any additional attributes in the inherit parameter are<br/>
-not added to the returned spec.<br/>
-<br/>
-Furthermore, when `mh-min-colors-defined-flag' is nil, this<br/>
-function finds display entries with "min-colors" requirements<br/>
-and either removes the "min-colors" requirement or strips the<br/>
-display entirely if the display does not support the number of<br/>
+<strong>mh-face-data</strong> is a compiled Lisp function in `<code>mh-e.el</code>'.</br>
+</br>
+(mh-face-data <u>FACE</u> &optional <u>INHERIT</u>)</br>
+</br>
+Return spec for <u>FACE</u>.</br>
+See `defface' for the spec definition.</br>
+</br>
+If <u>INHERIT</u> is non-nil and `defface' supports the :inherit</br>
+keyword, return <u>INHERIT</u> literally; otherwise, return spec for</br>
+<u>FACE</u> from the variable `mh-face-data'. This isn't a perfect</br>
+implementation. In the case that the :inherit keyword is not</br>
+supported, any additional attributes in the inherit parameter are</br>
+not added to the returned spec.</br>
+</br>
+Furthermore, when `mh-min-colors-defined-flag' is nil, this</br>
+function finds display entries with "min-colors" requirements</br>
+and either removes the "min-colors" requirement or strips the</br>
+display entirely if the display does not support the number of</br>
 specified colors.

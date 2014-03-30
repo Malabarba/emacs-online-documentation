@@ -1,23 +1,21 @@
-<strong>auth-sources</strong> is a variable defined in `<code>auth-source.el</code>'.<br/>
-Its value is ("~/.authinfo" "~/.authinfo.gpg" "~/.netrc")<br/>
-<br/>
-Documentation:<br/>
-List of authentication sources.<br/>
-<br/>
-The default will get login and password information from<br/>
-"~/.authinfo.gpg", which you should set up with the EPA/EPG<br/>
-packages to be encrypted.  If that file doesn't exist, it will<br/>
-try the unencrypted version "~/.authinfo" and the famous<br/>
-"~/.netrc" file.<br/>
-<br/>
-See the auth.info manual for details.<br/>
-<br/>
-Each entry is the authentication type with optional properties.<br/>
-<br/>
-It's best to customize this with `M-x customize-variable' because the choices<br/>
-can get pretty complex.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>auth-sources</strong> is a variable defined in `<code>auth-source.el</code>'.</br>
+Its value is <pre>("~/.authinfo" "~/.authinfo.gpg" "~/.netrc")</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of authentication sources.</br>
+Each entry is the authentication type with optional properties.</br>
+Entries are tried in the order in which they appear.</br>
+See Info node `(auth)Help for users' for details.</br>
+</br>
+If an entry names a file with the ".gpg" extension and you have</br>
+EPA/EPG set up, the file will be encrypted and decrypted</br>
+automatically.  See Info node `(epa)Encrypting/decrypting gpg files'</br>
+for details.</br>
+</br>
+It's best to customize this with `M-x customize-variable' because the choices</br>
+can get pretty complex.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

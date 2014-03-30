@@ -1,131 +1,132 @@
-<strong>makefile-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>make-mode.el</code>'.<br/>
-<br/>
-(makefile-mode)<br/>
-<br/>
-Parent mode: `prog-mode'.<br/>
-<br/>
-Major mode for editing standard Makefiles.<br/>
-<br/>
-If you are editing a file for a different make, try one of the<br/>
-variants `makefile-automake-mode', `makefile-gmake-mode',<br/>
-`makefile-makepp-mode', `makefile-bsdmake-mode' or,<br/>
-`makefile-imake-mode'.  All but the last should be correctly<br/>
-chosen based on the file name, except if it is *.mk.  This<br/>
-function ends by invoking the function(s) `makefile-mode-hook'.<br/>
-<br/>
-It is strongly recommended to use `font-lock-mode', because that<br/>
-provides additional parsing information.  This is used for<br/>
-example to see that a rule action `echo foo: bar' is a not rule<br/>
-dependency, despite the colon.<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-ESC		Prefix Command<br/>
-<br/>
-C-M-i		completion-at-point<br/>
-M-n		makefile-next-dependency<br/>
-M-p		makefile-previous-dependency<br/>
-<br/>
-C-c C-b		makefile-switch-to-browser<br/>
-C-c C-c		comment-region<br/>
-C-c C-f		makefile-pickup-filenames-as-targets<br/>
-C-c TAB		makefile-insert-gmake-function<br/>
-C-c RET		Prefix Command<br/>
-C-c C-p		makefile-pickup-everything<br/>
-C-c C-u		makefile-create-up-to-date-overview<br/>
-C-c C-\		makefile-backslash-region<br/>
-C-c :		makefile-insert-target-ref<br/>
-<br/>
-C-c RET C-a	makefile-automake-mode<br/>
-C-c RET C-b	makefile-bsdmake-mode<br/>
-C-c RET C-g	makefile-gmake-mode<br/>
-C-c RET TAB	makefile-imake-mode<br/>
-C-c RET RET	makefile-mode<br/>
-C-c RET C-p	makefile-makepp-mode<br/>
-<br/>
-<br/>
-<br/>
-In the browser, use the following keys:<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-C-n		makefile-browser-next-line<br/>
-C-p		makefile-browser-previous-line<br/>
-SPC		makefile-browser-toggle<br/>
-I		makefile-browser-insert-selection-and-quit<br/>
-i		makefile-browser-insert-selection<br/>
-n		makefile-browser-next-line<br/>
-p		makefile-browser-previous-line<br/>
-q		makefile-browser-quit<br/>
-<br/>
-C-c RET		makefile-browser-insert-continuation<br/>
-<br/>
-<br/>
-<br/>
-Makefile mode can be configured by modifying the following variables:<br/>
-<br/>
-`makefile-browser-buffer-name':<br/>
-    Name of the macro- and target browser buffer.<br/>
-<br/>
-`makefile-target-colon':<br/>
-    The string that gets appended to all target names<br/>
-    inserted by `makefile-insert-target'.<br/>
-    ":" or "::" are quite common values.<br/>
-<br/>
-`makefile-macro-assign':<br/>
-   The string that gets appended to all macro names<br/>
-   inserted by `makefile-insert-macro'.<br/>
-   The normal value should be " = ", since this is what<br/>
-   standard make expects.  However, newer makes such as dmake<br/>
-   allow a larger variety of different macro assignments, so you<br/>
-   might prefer to use " += " or " := " .<br/>
-<br/>
-`makefile-tab-after-target-colon':<br/>
-   If you want a TAB (instead of a space) to be appended after the<br/>
-   target colon, then set this to a non-nil value.<br/>
-<br/>
-`makefile-browser-leftmost-column':<br/>
-   Number of blanks to the left of the browser selection mark.<br/>
-<br/>
-`makefile-browser-cursor-column':<br/>
-   Column in which the cursor is positioned when it moves<br/>
-   up or down in the browser.<br/>
-<br/>
-`makefile-browser-selected-mark':<br/>
-   String used to mark selected entries in the browser.<br/>
-<br/>
-`makefile-browser-unselected-mark':<br/>
-   String used to mark unselected entries in the browser.<br/>
-<br/>
-`makefile-browser-auto-advance-after-selection-p':<br/>
-   If this variable is set to a non-nil value the cursor<br/>
-   will automagically advance to the next line after an item<br/>
-   has been selected in the browser.<br/>
-<br/>
-`makefile-pickup-everything-picks-up-filenames-p':<br/>
-   If this variable is set to a non-nil value then<br/>
-   `makefile-pickup-everything' also picks up filenames as targets<br/>
-   (i.e. it calls `makefile-pickup-filenames-as-targets'), otherwise<br/>
-   filenames are omitted.<br/>
-<br/>
-`makefile-cleanup-continuations':<br/>
-   If this variable is set to a non-nil value then Makefile mode<br/>
-   will assure that no line in the file ends with a backslash<br/>
-   (the continuation character) followed by any whitespace.<br/>
-   This is done by silently removing the trailing whitespace, leaving<br/>
-   the backslash itself intact.<br/>
-   IMPORTANT: Please note that enabling this option causes Makefile mode<br/>
-   to MODIFY A FILE WITHOUT YOUR CONFIRMATION when "it seems necessary".<br/>
-<br/>
-`makefile-browser-hook':<br/>
-   A function or list of functions to be called just before the<br/>
-   browser is entered. This is executed in the makefile buffer.<br/>
-<br/>
-`makefile-special-targets-list':<br/>
-   List of special targets. You will be offered to complete<br/>
-   on one of those in the minibuffer whenever you enter a `.'.<br/>
+<strong>makefile-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>make-mode.el</code>'.</br>
+</br>
+</br>
+(makefile-mode)</br>
+</br>
+Parent mode: `prog-mode'.</br>
+</br>
+Major mode for editing standard Makefiles.</br>
+</br>
+If you are editing a file for a different make, try one of the</br>
+variants `makefile-automake-mode', `makefile-gmake-mode',</br>
+`makefile-makepp-mode', `makefile-bsdmake-mode' or,</br>
+`makefile-imake-mode'.  All but the last should be correctly</br>
+chosen based on the file name, except if it is *.mk.  This</br>
+function ends by invoking the function(s) `makefile-mode-hook'.</br>
+</br>
+It is strongly recommended to use `font-lock-mode', because that</br>
+provides additional parsing information.  This is used for</br>
+example to see that a rule action `echo foo: bar' is a not rule</br>
+dependency, despite the colon.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+ESC		Prefix Command</br>
+</br>
+C-M-i		completion-at-point</br>
+M-n		makefile-next-dependency</br>
+M-p		makefile-previous-dependency</br>
+</br>
+C-c C-b		makefile-switch-to-browser</br>
+C-c C-c		comment-region</br>
+C-c C-f		makefile-pickup-filenames-as-targets</br>
+C-c TAB		makefile-insert-gmake-function</br>
+C-c RET		Prefix Command</br>
+C-c C-p		makefile-pickup-everything</br>
+C-c C-u		makefile-create-up-to-date-overview</br>
+C-c C-\		makefile-backslash-region</br>
+C-c :		makefile-insert-target-ref</br>
+</br>
+C-c RET C-a	makefile-automake-mode</br>
+C-c RET C-b	makefile-bsdmake-mode</br>
+C-c RET C-g	makefile-gmake-mode</br>
+C-c RET TAB	makefile-imake-mode</br>
+C-c RET RET	makefile-mode</br>
+C-c RET C-p	makefile-makepp-mode</br>
+</br>
+</br>
+</br>
+In the browser, use the following keys:</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+C-n		makefile-browser-next-line</br>
+C-p		makefile-browser-previous-line</br>
+SPC		makefile-browser-toggle</br>
+I		makefile-browser-insert-selection-and-quit</br>
+i		makefile-browser-insert-selection</br>
+n		makefile-browser-next-line</br>
+p		makefile-browser-previous-line</br>
+q		makefile-browser-quit</br>
+</br>
+C-c RET		makefile-browser-insert-continuation</br>
+</br>
+</br>
+</br>
+Makefile mode can be configured by modifying the following variables:</br>
+</br>
+`makefile-browser-buffer-name':</br>
+    Name of the macro- and target browser buffer.</br>
+</br>
+`makefile-target-colon':</br>
+    The string that gets appended to all target names</br>
+    inserted by `makefile-insert-target'.</br>
+    ":" or "::" are quite common values.</br>
+</br>
+`makefile-macro-assign':</br>
+   The string that gets appended to all macro names</br>
+   inserted by `makefile-insert-macro'.</br>
+   The normal value should be " = ", since this is what</br>
+   standard make expects.  However, newer makes such as dmake</br>
+   allow a larger variety of different macro assignments, so you</br>
+   might prefer to use " += " or " := " .</br>
+</br>
+`makefile-tab-after-target-colon':</br>
+   If you want a TAB (instead of a space) to be appended after the</br>
+   target colon, then set this to a non-nil value.</br>
+</br>
+`makefile-browser-leftmost-column':</br>
+   Number of blanks to the left of the browser selection mark.</br>
+</br>
+`makefile-browser-cursor-column':</br>
+   Column in which the cursor is positioned when it moves</br>
+   up or down in the browser.</br>
+</br>
+`makefile-browser-selected-mark':</br>
+   String used to mark selected entries in the browser.</br>
+</br>
+`makefile-browser-unselected-mark':</br>
+   String used to mark unselected entries in the browser.</br>
+</br>
+`makefile-browser-auto-advance-after-selection-p':</br>
+   If this variable is set to a non-nil value the cursor</br>
+   will automagically advance to the next line after an item</br>
+   has been selected in the browser.</br>
+</br>
+`makefile-pickup-everything-picks-up-filenames-p':</br>
+   If this variable is set to a non-nil value then</br>
+   `makefile-pickup-everything' also picks up filenames as targets</br>
+   (i.e. it calls `makefile-pickup-filenames-as-targets'), otherwise</br>
+   filenames are omitted.</br>
+</br>
+`makefile-cleanup-continuations':</br>
+   If this variable is set to a non-nil value then Makefile mode</br>
+   will assure that no line in the file ends with a backslash</br>
+   (the continuation character) followed by any whitespace.</br>
+   This is done by silently removing the trailing whitespace, leaving</br>
+   the backslash itself intact.</br>
+   IMPORTANT: Please note that enabling this option causes Makefile mode</br>
+   to MODIFY A FILE WITHOUT YOUR CONFIRMATION when "it seems necessary".</br>
+</br>
+`makefile-browser-hook':</br>
+   A function or list of functions to be called just before the</br>
+   browser is entered. This is executed in the makefile buffer.</br>
+</br>
+`makefile-special-targets-list':</br>
+   List of special targets. You will be offered to complete</br>
+   on one of those in the minibuffer whenever you enter a `.'.</br>
    at the beginning of a line in Makefile mode.

@@ -1,14 +1,14 @@
-<strong>run-hook-with-args-until-success</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(run-hook-with-args-until-success HOOK &rest ARGS)<br/>
-<br/>
-Run HOOK with the specified arguments ARGS.<br/>
-HOOK should be a symbol, a hook variable.  The value of HOOK<br/>
-may be nil, a function, or a list of functions.  Call each<br/>
-function in order with arguments ARGS, stopping at the first<br/>
-one that returns non-nil, and return that value.  Otherwise (if<br/>
-all functions return nil, or if there are no functions to call),<br/>
-return nil.<br/>
-<br/>
-Do not use `make-local-variable' to make a hook variable buffer-local.<br/>
+<strong>run-hook-with-args-until-success</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(run-hook-with-args-until-success <u>HOOK</u> &rest <u>ARGS</u>)</br>
+</br>
+Run <u>HOOK</u> with the specified arguments <u>ARGS</u>.</br>
+<u>HOOK</u> should be a symbol, a hook variable.  The value of <u>HOOK</u></br>
+may be nil, a function, or a list of functions.  Call each</br>
+function in order with arguments <u>ARGS</u>, stopping at the first</br>
+one that returns non-nil, and return that value.  Otherwise (if</br>
+all functions return nil, or if there are no functions to call),</br>
+return nil.</br>
+</br>
+Do not use `make-local-variable' to make a hook variable buffer-local.</br>
 Instead, use `add-hook' and specify t for the LOCAL argument.

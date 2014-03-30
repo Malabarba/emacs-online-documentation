@@ -1,29 +1,28 @@
-<strong>cvs-status-font-lock-keywords</strong> is a variable defined in `<code>cvs-status.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (("^File:\\s-+\\(?:no file \\)?\\(.*\\S-\\)\\s-+Status: \\(.+\\)$"<br/>
-  (1 'cvs-filename)<br/>
-  (2 'cvs-need-action))<br/>
- ("^   Existing Tags:$"<br/>
-  ("[0-9][.0-9]*\\.[.0-9]*[0-9]"<br/>
-   (save-excursion<br/>
-     (re-search-forward "^\n" nil 'move)<br/>
-     (point))<br/>
-   (progn<br/>
-     (re-search-backward cvs-status-tags-leader-re nil t)<br/>
-     (forward-line 1))<br/>
-   (0 font-lock-comment-face))<br/>
-  ("[ 	]\\([a-zA-Z][^ 	\n.]*\\)"<br/>
-   (save-excursion<br/>
-     (re-search-forward "^\n" nil 'move)<br/>
-     (point))<br/>
-   (progn<br/>
-     (re-search-backward cvs-status-tags-leader-re nil t)<br/>
-     (forward-line 1))<br/>
-   (1 font-lock-function-name-face))))<br/>
-<br/>
+<strong>cvs-status-font-lock-keywords</strong> is a variable defined in `<code>cvs-status.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^File:\\s-+\\(?:no file \\)?\\(.*\\S-\\)\\s-+Status: \\(.+\\)$"
+  (1 'cvs-filename)
+  (2 'cvs-need-action))
+ ("^   Existing Tags:$"
+  ("[0-9][.0-9]*\\.[.0-9]*[0-9]"
+   (save-excursion
+     (re-search-forward "^\n" nil 'move)
+     (point))
+   (progn
+     (re-search-backward cvs-status-tags-leader-re nil t)
+     (forward-line 1))
+   (0 font-lock-comment-face))
+  ("[ 	]\\([a-zA-Z][^ 	\n.]*\\)"
+   (save-excursion
+     (re-search-forward "^\n" nil 'move)
+     (point))
+   (progn
+     (re-search-backward cvs-status-tags-leader-re nil t)
+     (forward-line 1))
+   (1 font-lock-function-name-face))))
+</pre></br>

@@ -1,31 +1,31 @@
-<strong>picture-tab-chars</strong> is a variable defined in `<code>picture.el</code>'.<br/>
-Its value is "!-~"<br/>
-<br/>
-Documentation:<br/>
-A character set which controls behavior of commands.<br/>
-M-x picture-set-tab-stops and M-x picture-tab-search.<br/>
-The syntax for this variable is like the syntax used inside of `[...]'<br/>
-in a regular expression--but without the `[' and the `]'.<br/>
-It is NOT a regular expression, any regexp special characters will be quoted.<br/>
-It defines a set of "interesting characters" to look for when setting<br/>
-(or searching for) tab stops, initially "!-~" (all printing characters).<br/>
-For example, suppose that you are editing a table which is formatted thus:<br/>
-| foo		| bar + baz | 23  *<br/>
-| bubbles	| and + etc | 97  *<br/>
-and that `picture-tab-chars' is "|+*".  Then invoking<br/>
-M-x picture-set-tab-stops on either of the previous lines would result<br/>
-in the following tab stops<br/>
-		:     :     :     :<br/>
-Another example - "A-Za-z0-9" would produce the tab stops<br/>
-  :		  :	:     :<br/>
-<br/>
-Note that if you want the character `-' to be in the set, it must be<br/>
-included in a range or else appear in a context where it cannot be<br/>
-taken for indicating a range (e.g. "-A-Z" declares the set to be the<br/>
-letters `A' through `Z' and the character `-').  If you want the<br/>
-character `\' in the set it must be preceded by itself: "\\".<br/>
-<br/>
-The command M-x picture-tab-search is defined to move beneath (or to) a<br/>
-character belonging to this set independent of the tab stops list.<br/>
-<br/>
+<strong>picture-tab-chars</strong> is a variable defined in `<code>picture.el</code>'.</br>
+Its value is <pre>"!-~"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A character set which controls behavior of commands.</br>
+M-x picture-set-tab-stops and M-x picture-tab-search.</br>
+The syntax for this variable is like the syntax used inside of `[...]'</br>
+in a regular expression--but without the `[' and the `]'.</br>
+It is NOT a regular expression, any regexp special characters will be quoted.</br>
+It defines a set of "interesting characters" to look for when setting</br>
+(or searching for) tab stops, initially "!-~" (all printing characters).</br>
+For example, suppose that you are editing a table which is formatted thus:</br>
+| foo		| bar + baz | 23  *</br>
+| bubbles	| and + etc | 97  *</br>
+and that `picture-tab-chars' is "|+*".  Then invoking</br>
+M-x picture-set-tab-stops on either of the previous lines would result</br>
+in the following tab stops</br>
+		:     :     :     :</br>
+Another example - "A-Za-z0-9" would produce the tab stops</br>
+  :		  :	:     :</br>
+</br>
+Note that if you want the character `-' to be in the set, it must be</br>
+included in a range or else appear in a context where it cannot be</br>
+taken for indicating a range (e.g. "-A-Z" declares the set to be the</br>
+letters `A' through `Z' and the character `-').  If you want the</br>
+character `\' in the set it must be preceded by itself: "\\".</br>
+</br>
+The command M-x picture-tab-search is defined to move beneath (or to) a</br>
+character belonging to this set independent of the tab stops list.</br>
+</br>
 You can customize this variable.

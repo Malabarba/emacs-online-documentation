@@ -1,14 +1,14 @@
-<strong>print-number-table</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-A vector used internally to produce `#N=' labels and `#N#' references.<br/>
-The Lisp printer uses this vector to detect Lisp objects referenced more<br/>
-than once.<br/>
-<br/>
-When you bind `print-continuous-numbering' to t, you should probably<br/>
-also bind `print-number-table' to nil.  This ensures that the value of<br/>
-`print-number-table' can be garbage-collected once the printing is<br/>
-done.  If all elements of `print-number-table' are nil, it means that<br/>
-the printing done so far has not found any shared structure or objects<br/>
+<strong>print-number-table</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A vector used internally to produce `#N=' labels and `#N#' references.</br>
+The Lisp printer uses this vector to detect Lisp objects referenced more</br>
+than once.</br>
+</br>
+When you bind `print-continuous-numbering' to t, you should probably</br>
+also bind `print-number-table' to nil.  This ensures that the value of</br>
+`print-number-table' can be garbage-collected once the printing is</br>
+done.  If all elements of `print-number-table' are nil, it means that</br>
+the printing done so far has not found any shared structure or objects</br>
 that need to be recorded in the table.

@@ -1,21 +1,20 @@
-<strong>bug-reference-url-format</strong> is a variable defined in `<code>bug-reference.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable is safe as a file local variable if its value<br/>
-  satisfies the predicate which is a byte-compiled expression.<br/>
-<br/>
-Documentation:<br/>
-Format used to turn a bug number into a URL.<br/>
-The bug number is supplied as a string, so this should have a single %s.<br/>
-This can also be a function designator; it is called without arguments<br/>
- and should return a string.<br/>
-It can use `match-string' to get parts matched against<br/>
-`bug-reference-bug-regexp', specifically:<br/>
- 1. issue kind (bug, patch, rfe &c)<br/>
- 2. issue number.<br/>
-<br/>
-There is no default setting for this, it must be set per file.<br/>
-If you set it to a symbol in the file Local Variables section,<br/>
-you need to add a `bug-reference-url-format' property to it:<br/>
-(put 'my-bug-reference-url-format 'bug-reference-url-format t)<br/>
+<strong>bug-reference-url-format</strong> is a variable defined in `<code>bug-reference.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate which is a byte-compiled expression.</br>
+</ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Format used to turn a bug number into a URL.</br>
+The bug number is supplied as a string, so this should have a single %s.</br>
+This can also be a function designator; it is called without arguments</br>
+ and should return a string.</br>
+It can use `match-string' to get parts matched against</br>
+`bug-reference-bug-regexp', specifically:</br>
+ 1. issue kind (bug, patch, rfe &c)</br>
+ 2. issue number.</br>
+</br>
+There is no default setting for this, it must be set per file.</br>
+If you set it to a symbol in the file Local Variables section,</br>
+you need to add a `bug-reference-url-format' property to it:</br>
+(put 'my-bug-reference-url-format 'bug-reference-url-format t)</br>
 so that it is considered safe, see `enable-local-variables'.

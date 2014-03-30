@@ -1,32 +1,31 @@
-<strong>mh-show-font-lock-keywords</strong> is a variable defined in `<code>mh-show.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Additional expressions to highlight in MH-Show buffers.<br/>
-<br/>
-Value: (("^\\(From:\\|Sender:\\)\\(.*\\)"<br/>
-  (1 'default)<br/>
-  (2 'mh-show-from))<br/>
- (mh-header-to-font-lock<br/>
-  (0 'default)<br/>
-  (1 'mh-show-to))<br/>
- (mh-header-cc-font-lock<br/>
-  (0 'default)<br/>
-  (1 'mh-show-cc))<br/>
- ("^\\(Reply-To:\\|Return-Path:\\)\\(.*\\)$"<br/>
-  (1 'default)<br/>
-  (2 'mh-show-from))<br/>
- (mh-header-subject-font-lock<br/>
-  (0 'default)<br/>
-  (1 'mh-show-subject))<br/>
- ("^\\(Apparently-To:\\|Newsgroups:\\)\\(.*\\)"<br/>
-  (1 'default)<br/>
-  (2 'mh-show-cc))<br/>
- ("^\\(In-reply-to\\|Date\\):\\(.*\\)$"<br/>
-  (1 'default)<br/>
-  (2 'mh-show-date))<br/>
- (mh-letter-header-font-lock<br/>
-  (0 'mh-show-header append t)))<br/>
-<br/>
+<strong>mh-show-font-lock-keywords</strong> is a variable defined in `<code>mh-show.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Additional expressions to highlight in MH-Show buffers.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^\\(From:\\|Sender:\\)\\(.*\\)"
+  (1 'default)
+  (2 'mh-show-from))
+ (mh-header-to-font-lock
+  (0 'default)
+  (1 'mh-show-to))
+ (mh-header-cc-font-lock
+  (0 'default)
+  (1 'mh-show-cc))
+ ("^\\(Reply-To:\\|Return-Path:\\)\\(.*\\)$"
+  (1 'default)
+  (2 'mh-show-from))
+ (mh-header-subject-font-lock
+  (0 'default)
+  (1 'mh-show-subject))
+ ("^\\(Apparently-To:\\|Newsgroups:\\)\\(.*\\)"
+  (1 'default)
+  (2 'mh-show-cc))
+ ("^\\(In-reply-to\\|Date\\):\\(.*\\)$"
+  (1 'default)
+  (2 'mh-show-date))
+ (mh-letter-header-font-lock
+  (0 'mh-show-header append t)))
+</pre></br>

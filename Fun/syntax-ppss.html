@@ -1,9 +1,14 @@
-<strong>syntax-ppss</strong> is a compiled Lisp function in `<code>syntax.el</code>'.<br/>
-<br/>
-(syntax-ppss &optional POS)<br/>
-<br/>
-Parse-Partial-Sexp State at POS, defaulting to point.<br/>
-The returned value is the same as that of `parse-partial-sexp'<br/>
-run from point-min to POS except that values at positions 2 and 6<br/>
-in the returned list (counting from 0) cannot be relied upon.<br/>
-Point is at POS when this function returns.
+<strong>syntax-ppss</strong> is a compiled Lisp function in `<code>syntax.el</code>'.</br>
+</br>
+(syntax-ppss &optional <u>POS</u>)</br>
+</br>
+Parse-Partial-Sexp State at <u>POS</u>, defaulting to point.</br>
+The returned value is the same as that of `parse-partial-sexp'</br>
+run from `point-min' to <u>POS</u> except that values at positions 2 and 6</br>
+in the returned list (counting from 0) cannot be relied upon.</br>
+Point is at <u>POS</u> when this function returns.</br>
+</br>
+It is necessary to call `syntax-ppss-flush-cache' explicitly if</br>
+this function is called while `before-change-functions' is</br>
+temporarily let-bound, or if the buffer is modified without</br>
+running the hook.

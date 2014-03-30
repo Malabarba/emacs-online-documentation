@@ -1,100 +1,99 @@
-<strong>picture-mode-map</strong> is a variable defined in `<code>picture.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap used in `picture-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- #^[nil nil keymap<br/>
-	#^^[3 0 nil nil nil<br/>
-	      (keymap<br/>
-	       (next . picture-movement-se)<br/>
-	       (end . picture-movement-sw)<br/>
-	       (prior . picture-movement-ne)<br/>
-	       (home . picture-movement-nw)<br/>
-	       (down . picture-movement-down)<br/>
-	       (up . picture-movement-up)<br/>
-	       (right . picture-movement-right)<br/>
-	       (left . picture-movement-left)<br/>
-	       (92 . picture-movement-se)<br/>
-	       (47 . picture-movement-sw)<br/>
-	       (39 . picture-movement-ne)<br/>
-	       (96 . picture-movement-nw)<br/>
-	       (46 . picture-movement-down)<br/>
-	       (94 . picture-movement-up)<br/>
-	       (62 . picture-movement-right)<br/>
-	       (60 . picture-movement-left)<br/>
-	       (2 . picture-motion-reverse)<br/>
-	       (6 . picture-motion)<br/>
-	       (3 . picture-mode-exit)<br/>
-	       (18 . picture-draw-rectangle)<br/>
-	       (24 . picture-yank-rectangle-from-register)<br/>
-	       (25 . picture-yank-rectangle)<br/>
-	       (23 . picture-clear-rectangle-to-register)<br/>
-	       (11 . picture-clear-rectangle)<br/>
-	       (9 . picture-set-tab-stops)<br/>
-	       (4 . picture-delete-char))<br/>
-	      nil nil nil nil nil picture-tab nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>
-	      (keymap<br/>
-	       (9 . picture-tab-search))<br/>
-	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	#^^[1 0<br/>
-	      #^^[2 0<br/>
-		    #^^[3 0 nil nil nil<br/>
-			  (keymap<br/>
-			   (next . picture-movement-se)<br/>
-			   (end . picture-movement-sw)<br/>
-			   (prior . picture-movement-ne)<br/>
-			   (home . picture-movement-nw)<br/>
-			   (down . picture-movement-down)<br/>
-			   (up . picture-movement-up)<br/>
-			   (right . picture-movement-right)<br/>
-			   (left . picture-movement-left)<br/>
-			   (92 . picture-movement-se)<br/>
-			   (47 . picture-movement-sw)<br/>
-			   (39 . picture-movement-ne)<br/>
-			   (96 . picture-movement-nw)<br/>
-			   (46 . picture-movement-down)<br/>
-			   (94 . picture-movement-up)<br/>
-			   (62 . picture-movement-right)<br/>
-			   (60 . picture-movement-left)<br/>
-			   (2 . picture-motion-reverse)<br/>
-			   (6 . picture-motion)<br/>
-			   (3 . picture-mode-exit)<br/>
-			   (18 . picture-draw-rectangle)<br/>
-			   (24 . picture-yank-rectangle-from-register)<br/>
-			   (25 . picture-yank-rectangle)<br/>
-			   (23 . picture-clear-rectangle-to-register)<br/>
-			   (11 . picture-clear-rectangle)<br/>
-			   (9 . picture-set-tab-stops)<br/>
-			   (4 . picture-delete-char))<br/>
-			  nil nil nil nil nil picture-tab nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil<br/>
-			  (keymap<br/>
-			   (9 . picture-tab-search))<br/>
-			  nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
- (remap keymap<br/>
-	(mouse-set-point . picture-mouse-set-point)<br/>
-	(move-end-of-line . picture-end-of-line)<br/>
-	(move-beginning-of-line . picture-beginning-of-line)<br/>
-	(previous-line . picture-move-up)<br/>
-	(next-line . picture-move-down)<br/>
-	(newline-and-indent . picture-duplicate-line)<br/>
-	(newline . picture-newline)<br/>
-	(open-line . picture-open-line)<br/>
-	(kill-line . picture-clear-line)<br/>
-	(delete-backward-char . picture-backward-clear-column)<br/>
-	(backward-delete-char-untabify . picture-backward-clear-column)<br/>
-	(delete-char . picture-clear-column)<br/>
-	(left-char . picture-backward-column)<br/>
-	(backward-char . picture-backward-column)<br/>
-	(right-char . picture-forward-column)<br/>
-	(forward-char . picture-forward-column)<br/>
-	(completion-separator-self-insert-autofilling . picture-self-insert)<br/>
-	(completion-separator-self-insert-command . picture-self-insert)<br/>
-	(self-insert-command . picture-self-insert)))<br/>
-<br/>
+<strong>picture-mode-map</strong> is a variable defined in `<code>picture.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used in `picture-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ #^[nil nil keymap
+	#^^[3 0 nil nil nil
+	      (keymap
+	       (next . picture-movement-se)
+	       (end . picture-movement-sw)
+	       (prior . picture-movement-ne)
+	       (home . picture-movement-nw)
+	       (down . picture-movement-down)
+	       (up . picture-movement-up)
+	       (right . picture-movement-right)
+	       (left . picture-movement-left)
+	       (92 . picture-movement-se)
+	       (47 . picture-movement-sw)
+	       (39 . picture-movement-ne)
+	       (96 . picture-movement-nw)
+	       (46 . picture-movement-down)
+	       (94 . picture-movement-up)
+	       (62 . picture-movement-right)
+	       (60 . picture-movement-left)
+	       (2 . picture-motion-reverse)
+	       (6 . picture-motion)
+	       (3 . picture-mode-exit)
+	       (18 . picture-draw-rectangle)
+	       (24 . picture-yank-rectangle-from-register)
+	       (25 . picture-yank-rectangle)
+	       (23 . picture-clear-rectangle-to-register)
+	       (11 . picture-clear-rectangle)
+	       (9 . picture-set-tab-stops)
+	       (4 . picture-delete-char))
+	      nil nil nil nil nil picture-tab nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil
+	      (keymap
+	       (9 . picture-tab-search))
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	#^^[1 0
+	      #^^[2 0
+		    #^^[3 0 nil nil nil
+			  (keymap
+			   (next . picture-movement-se)
+			   (end . picture-movement-sw)
+			   (prior . picture-movement-ne)
+			   (home . picture-movement-nw)
+			   (down . picture-movement-down)
+			   (up . picture-movement-up)
+			   (right . picture-movement-right)
+			   (left . picture-movement-left)
+			   (92 . picture-movement-se)
+			   (47 . picture-movement-sw)
+			   (39 . picture-movement-ne)
+			   (96 . picture-movement-nw)
+			   (46 . picture-movement-down)
+			   (94 . picture-movement-up)
+			   (62 . picture-movement-right)
+			   (60 . picture-movement-left)
+			   (2 . picture-motion-reverse)
+			   (6 . picture-motion)
+			   (3 . picture-mode-exit)
+			   (18 . picture-draw-rectangle)
+			   (24 . picture-yank-rectangle-from-register)
+			   (25 . picture-yank-rectangle)
+			   (23 . picture-clear-rectangle-to-register)
+			   (11 . picture-clear-rectangle)
+			   (9 . picture-set-tab-stops)
+			   (4 . picture-delete-char))
+			  nil nil nil nil nil picture-tab nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil
+			  (keymap
+			   (9 . picture-tab-search))
+			  nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+ (remap keymap
+	(mouse-set-point . picture-mouse-set-point)
+	(move-end-of-line . picture-end-of-line)
+	(move-beginning-of-line . picture-beginning-of-line)
+	(previous-line . picture-move-up)
+	(next-line . picture-move-down)
+	(newline-and-indent . picture-duplicate-line)
+	(newline . picture-newline)
+	(open-line . picture-open-line)
+	(kill-line . picture-clear-line)
+	(delete-backward-char . picture-backward-clear-column)
+	(backward-delete-char-untabify . picture-backward-clear-column)
+	(delete-char . picture-clear-column)
+	(left-char . picture-backward-column)
+	(backward-char . picture-backward-column)
+	(right-char . picture-forward-column)
+	(forward-char . picture-forward-column)
+	(completion-separator-self-insert-autofilling . picture-self-insert)
+	(completion-separator-self-insert-command . picture-self-insert)
+	(self-insert-command . picture-self-insert)))
+</pre></br>

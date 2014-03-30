@@ -1,24 +1,24 @@
-<strong>tramp-remote-path</strong> is a variable defined in `<code>tramp-sh.el</code>'.<br/>
-Its value is<br/>
-(tramp-default-remote-path "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin" "/opt/bin" "/opt/sbin" "/opt/local/bin")<br/>
-<br/>
-<br/>
-Documentation:<br/>
-List of directories to search for executables on remote host.<br/>
-For every remote host, this variable will be set buffer local,<br/>
-keeping the list of existing directories on that host.<br/>
-<br/>
-You can use `~' in this list, but when searching for a shell which groks<br/>
-tilde expansion, all directory names starting with `~' will be ignored.<br/>
-<br/>
-`Default Directories' represent the list of directories given by<br/>
-the command "getconf PATH".  It is recommended to use this<br/>
-entry on top of this list, because these are the default<br/>
-directories for POSIX compatible commands.  On remote hosts which<br/>
-do not offer the getconf command (like cygwin), the value<br/>
-"/bin:/usr/bin" is used instead of.<br/>
-<br/>
-`Private Directories' are the settings of the $PATH environment,<br/>
-as given in your `~/.profile'.<br/>
-<br/>
+<strong>tramp-remote-path</strong> is a variable defined in `<code>tramp-sh.el</code>'.</br>
+Its value is <pre></br>
+(tramp-default-remote-path "/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin" "/opt/bin" "/opt/sbin" "/opt/local/bin")
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of directories to search for executables on remote host.</br>
+For every remote host, this variable will be set buffer local,</br>
+keeping the list of existing directories on that host.</br>
+</br>
+You can use `~' in this list, but when searching for a shell which groks</br>
+tilde expansion, all directory names starting with `~' will be ignored.</br>
+</br>
+`Default Directories' represent the list of directories given by</br>
+the command "getconf PATH".  It is recommended to use this</br>
+entry on top of this list, because these are the default</br>
+directories for POSIX compatible commands.  On remote hosts which</br>
+do not offer the getconf command (like cygwin), the value</br>
+"/bin:/usr/bin" is used instead of.</br>
+</br>
+`Private Directories' are the settings of the $PATH environment,</br>
+as given in your `~/.profile'.</br>
+</br>
 You can customize this variable.

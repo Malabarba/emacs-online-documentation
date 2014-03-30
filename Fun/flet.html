@@ -1,14 +1,14 @@
-<strong>flet</strong> is a Lisp macro in `<code>cl.el</code>'.<br/>
-<br/>
-(flet ((FUNC ARGLIST BODY...) ...) FORM...)<br/>
-<br/>
-This macro is obsolete since 24.3;<br/>
-use either `cl-flet' or `cl-letf'.<br/>
-<br/>
-Make temporary overriding function definitions.<br/>
-This is an analogue of a dynamically scoped `let' that operates on the function<br/>
-cell of FUNCs rather than their value cell.<br/>
-If you want the Common-Lisp style of `flet', you should use `cl-flet'.<br/>
-The FORMs are evaluated with the specified function definitions in place,<br/>
-then the definitions are undone (the FUNCs go back to their previous<br/>
+<strong>flet</strong> is a Lisp macro in `<code>cl.el</code>'.</br>
+</br>
+(flet ((<u>FUNC</u> <u>ARGLIST</u> <u>BODY</u>...) ...) <u>FORM</u>...)</br>
+</br>
+This macro is obsolete since 24.3;</br>
+use either `cl-flet' or `cl-letf'.</br>
+</br>
+Make temporary overriding function definitions.</br>
+This is an analogue of a dynamically scoped `let' that operates on the function</br>
+cell of <u>FUNC</u>s rather than their value cell.</br>
+If you want the Common-Lisp style of `flet', you should use `cl-flet'.</br>
+The <u>FORM</u>s are evaluated with the specified function definitions in place,</br>
+then the definitions are undone (the <u>FUNC</u>s go back to their previous</br>
 definitions, or lack thereof).

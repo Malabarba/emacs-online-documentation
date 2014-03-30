@@ -1,38 +1,39 @@
-<strong>mh-identity-handlers</strong> is a variable defined in `<code>mh-e.el</code>'.<br/>
-Its value is (("From" . mh-identity-handler-top)<br/>
- (":default" . mh-identity-handler-bottom)<br/>
- (":attribution-verb" . mh-identity-handler-attribution-verb)<br/>
- (":signature" . mh-identity-handler-signature)<br/>
- (":pgg-default-user-id" . mh-identity-handler-gpg-identity))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Handler functions for fields in `mh-identity-list'.<br/>
-<br/>
-This option is used to change the way that fields, signatures,<br/>
-and attributions in `mh-identity-list' are added. To customize<br/>
-`mh-identity-handlers', replace the name of an existing handler<br/>
-function associated with the field you want to change with the<br/>
-name of a function you have written. You can also click on an<br/>
-"INS" button and insert a field of your choice and the name of<br/>
-the function you have written to handle it.<br/>
-<br/>
-The "Field" field can be any field that you've used in your<br/>
-`mh-identity-list'. The special fields ":attribution-verb",<br/>
-":signature", or ":pgg-default-user-id" are used for the<br/>
-`mh-identity-list' choices "Attribution Verb", "Signature", and<br/>
-"GPG Key ID" respectively.<br/>
-<br/>
-The handler associated with the ":default" field is used when no<br/>
-other field matches.<br/>
-<br/>
-The handler functions are passed two or three arguments: the<br/>
-FIELD itself (for example, "From"), or one of the special<br/>
-fields (for example, ":signature"), and the ACTION 'remove or<br/>
-'add. If the action is 'add, an additional argument<br/>
-containing the VALUE for the field is given.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 8.0 of the MH-E package that is part of Emacs 22.1.<br/>
+<strong>mh-identity-handlers</strong> is a variable defined in `<code>mh-e.el</code>'.</br>
+Its value is <pre></br>
+(("From" . mh-identity-handler-top)
+ (":default" . mh-identity-handler-bottom)
+ (":attribution-verb" . mh-identity-handler-attribution-verb)
+ (":signature" . mh-identity-handler-signature)
+ (":pgg-default-user-id" . mh-identity-handler-gpg-identity))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Handler functions for fields in `mh-identity-list'.</br>
+</br>
+This option is used to change the way that fields, signatures,</br>
+and attributions in `mh-identity-list' are added. To customize</br>
+`mh-identity-handlers', replace the name of an existing handler</br>
+function associated with the field you want to change with the</br>
+name of a function you have written. You can also click on an</br>
+"INS" button and insert a field of your choice and the name of</br>
+the function you have written to handle it.</br>
+</br>
+The "Field" field can be any field that you've used in your</br>
+`mh-identity-list'. The special fields ":attribution-verb",</br>
+":signature", or ":pgg-default-user-id" are used for the</br>
+`mh-identity-list' choices "Attribution Verb", "Signature", and</br>
+"GPG Key ID" respectively.</br>
+</br>
+The handler associated with the ":default" field is used when no</br>
+other field matches.</br>
+</br>
+The handler functions are passed two or three arguments: the</br>
+FIELD itself (for example, "From"), or one of the special</br>
+fields (for example, ":signature"), and the ACTION 'remove or</br>
+'add. If the action is 'add, an additional argument</br>
+containing the VALUE for the field is given.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 8.0 of the MH-E package that is part of Emacs 22.1.

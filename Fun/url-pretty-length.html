@@ -1,5 +1,17 @@
-<strong>url-pretty-length</strong> is an autoloaded compiled Lisp function in `<code>url-util.el</code>'.<br/>
-<br/>
-(url-pretty-length N)<br/>
-<br/>
-Not documented.
+<strong>url-pretty-length</strong> is an alias for `<strong><a href="file-size-human-readable">file-size-human-readable</a></strong>' in `<code>url-util.el</code>'.</br>
+</br>
+(url-pretty-length <u>FILE-SIZE</u> &optional <u>FLAVOR</u>)</br>
+</br>
+This function is obsolete since 24.4;</br>
+use `file-size-human-readable' instead.</br>
+</br>
+Produce a string showing <u>FILE-SIZE</u> in human-readable form.</br>
+</br>
+Optional second argument <u>FLAVOR</u> controls the units and the display format:</br>
+</br>
+ If <u>FLAVOR</u> is nil or omitted, each kilobyte is 1024 bytes and the produced</br>
+    suffixes are "k", "M", "G", "T", etc.</br>
+ If <u>FLAVOR</u> is `si', each kilobyte is 1000 bytes and the produced suffixes</br>
+    are "k", "M", "G", "T", etc.</br>
+ If <u>FLAVOR</u> is `iec', each kilobyte is 1024 bytes and the produced suffixes</br>
+    are "KiB", "MiB", "GiB", "TiB", etc.

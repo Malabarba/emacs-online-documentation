@@ -1,19 +1,18 @@
-<strong>safe-local-eval-forms</strong> is a variable defined in `<code>files.el</code>'.<br/>
-Its value is ((add-hook 'write-file-hooks 'time-stamp)<br/>
- (add-hook 'write-file-functions 'time-stamp)<br/>
- (add-hook 'before-save-hook 'time-stamp nil t)<br/>
- (add-hook 'before-save-hook 'delete-trailing-whitespace nil t))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Expressions that are considered safe in an `eval:' local variable.<br/>
-Add expressions to this list if you want Emacs to evaluate them, when<br/>
-they appear in an `eval' local variable specification, without first<br/>
-asking you for confirmation.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>safe-local-eval-forms</strong> is a variable defined in `<code>files.el</code>'.</br>
+Its value is <pre></br>
+((add-hook 'write-file-hooks 'time-stamp)
+ (add-hook 'write-file-functions 'time-stamp)
+ (add-hook 'before-save-hook 'time-stamp nil t)
+ (add-hook 'before-save-hook 'delete-trailing-whitespace nil t))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Expressions that are considered safe in an `eval:' local variable.</br>
+Add expressions to this list if you want Emacs to evaluate them, when</br>
+they appear in an `eval' local variable specification, without first</br>
+asking you for confirmation.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

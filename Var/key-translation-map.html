@@ -1,9 +1,13 @@
-<strong>key-translation-map</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is (keymap (24 keymap (56 . iso-transl-ctl-x-8-map)))<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap of key translations that can override keymaps.<br/>
-This keymap works like `function-key-map', but comes after that,<br/>
-and its non-prefix bindings override ordinary bindings.
+<strong>key-translation-map</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre></br>
+(keymap
+ (double-down-mouse-1 . mouse--down-1-maybe-follows-link)
+ (down-mouse-1 . mouse--down-1-maybe-follows-link)
+ (24 keymap
+     (56 . iso-transl-ctl-x-8-map)))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap of key translations that can override keymaps.</br>
+This keymap works like `input-decode-map', but comes after `function-key-map'.</br>
+Another difference is that it is global rather than terminal-local.

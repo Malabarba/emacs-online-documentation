@@ -1,13 +1,13 @@
-<strong>gv-letplace</strong> is an autoloaded Lisp macro in `<code>gv.el</code>'.<br/>
-<br/>
-(gv-letplace (GETTER SETTER) PLACE &rest BODY)<br/>
-<br/>
-Build the code manipulating the generalized variable PLACE.<br/>
-GETTER will be bound to a copyable expression that returns the value<br/>
-of PLACE.<br/>
-SETTER will be bound to a function that takes an expression V and returns<br/>
-a new expression that sets PLACE to V.<br/>
-BODY should return some Elisp expression E manipulating PLACE via GETTER<br/>
-and SETTER.<br/>
-The returned value will then be an Elisp expression that first evaluates<br/>
-all the parts of PLACE that can be evaluated and then runs E.
+<strong>gv-letplace</strong> is an autoloaded Lisp macro in `<code>gv.el</code>'.</br>
+</br>
+(gv-letplace (<u>GETTER</u> <u>SETTER</u>) <u>PLACE</u> &rest <u>BODY</u>)</br>
+</br>
+Build the code manipulating the generalized variable <u>PLACE</u>.</br>
+<u>GETTER</u> will be bound to a copyable expression that returns the value</br>
+of <u>PLACE</u>.</br>
+<u>SETTER</u> will be bound to a function that takes an expression V and returns</br>
+a new expression that sets <u>PLACE</u> to V.</br>
+<u>BODY</u> should return some Elisp expression E manipulating <u>PLACE</u> via <u>GETTER</u></br>
+and <u>SETTER</u>.</br>
+The returned value will then be an Elisp expression that first evaluates</br>
+all the parts of <u>PLACE</u> that can be evaluated and then runs E.

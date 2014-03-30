@@ -1,38 +1,38 @@
-<strong>selection-coding-system</strong> is a variable defined in `<code>select.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Coding system for communicating with other programs.<br/>
-<br/>
-For MS-Windows and MS-DOS:<br/>
-When sending or receiving text via selection and clipboard, the text<br/>
-is encoded or decoded by this coding system.  The default value is<br/>
-the current system default encoding on 9x/Me, `utf-16le-dos'<br/>
-(Unicode) on NT/W2K/XP, and `iso-latin-1-dos' on MS-DOS.<br/>
-<br/>
-For X Windows:<br/>
-When sending text via selection and clipboard, if the target<br/>
-data-type matches with the type of this coding system, it is used<br/>
-for encoding the text.  Otherwise (including the case that this<br/>
-variable is nil), a proper coding system is used as below:<br/>
-<br/>
-data-type	coding system<br/>
----------	-------------<br/>
-UTF8_STRING	utf-8<br/>
-COMPOUND_TEXT	compound-text-with-extensions<br/>
-STRING		iso-latin-1<br/>
-C_STRING	no-conversion<br/>
-<br/>
-When receiving text, if this coding system is non-nil, it is used<br/>
-for decoding regardless of the data-type.  If this is nil, a<br/>
-proper coding system is used according to the data-type as above.<br/>
-<br/>
-See also the documentation of the variable `x-select-request-type' how<br/>
-to control which data-type to request for receiving text.<br/>
-<br/>
-The default value is nil.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 23.1 of Emacs.<br/>
+<strong>selection-coding-system</strong> is a variable defined in `<code>select.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Coding system for communicating with other programs.</br>
+</br>
+For MS-Windows and MS-DOS:</br>
+When sending or receiving text via selection and clipboard, the text</br>
+is encoded or decoded by this coding system.  The default value is</br>
+the current system default encoding on 9x/Me, `utf-16le-dos'</br>
+(Unicode) on NT/W2K/XP, and `iso-latin-1-dos' on MS-DOS.</br>
+</br>
+For X Windows:</br>
+When sending text via selection and clipboard, if the target</br>
+data-type matches with the type of this coding system, it is used</br>
+for encoding the text.  Otherwise (including the case that this</br>
+variable is nil), a proper coding system is used as below:</br>
+</br>
+data-type	coding system</br>
+---------	-------------</br>
+UTF8_STRING	utf-8</br>
+COMPOUND_TEXT	compound-text-with-extensions</br>
+STRING		iso-latin-1</br>
+C_STRING	no-conversion</br>
+</br>
+When receiving text, if this coding system is non-nil, it is used</br>
+for decoding regardless of the data-type.  If this is nil, a</br>
+proper coding system is used according to the data-type as above.</br>
+</br>
+See also the documentation of the variable `x-select-request-type' how</br>
+to control which data-type to request for receiving text.</br>
+</br>
+The default value is nil.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 23.1 of Emacs.

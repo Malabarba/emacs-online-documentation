@@ -1,157 +1,157 @@
-<strong>set-face-attribute</strong> is a compiled Lisp function in `<code>faces.el</code>'.<br/>
-<br/>
-(set-face-attribute FACE FRAME &rest ARGS)<br/>
-<br/>
-Set attributes of FACE on FRAME from ARGS.<br/>
-This function overrides the face attributes specified by FACE's<br/>
-face spec.  It is mostly intended for internal use only.<br/>
-<br/>
-If FRAME is nil, set the attributes for all existing frames, as<br/>
-well as the default for new frames.  If FRAME is t, change the<br/>
-default for new frames only.<br/>
-<br/>
-ARGS must come in pairs ATTRIBUTE VALUE.  ATTRIBUTE must be a<br/>
-valid face attribute name.  All attributes can be set to<br/>
-`unspecified'; this fact is not further mentioned below.<br/>
-<br/>
-The following attributes are recognized:<br/>
-<br/>
-`:family'<br/>
-<br/>
-VALUE must be a string specifying the font family<br/>
-(e.g. "Monospace") or a fontset.<br/>
-<br/>
-`:foundry'<br/>
-<br/>
-VALUE must be a string specifying the font foundry,<br/>
-e.g. ``adobe''.  If a font foundry is specified, wild-cards `*'<br/>
-and `?' are allowed.<br/>
-<br/>
-`:width'<br/>
-<br/>
-VALUE specifies the relative proportionate width of the font to use.<br/>
-It must be one of the symbols `ultra-condensed', `extra-condensed',<br/>
-`condensed', `semi-condensed', `normal', `semi-expanded', `expanded',<br/>
-`extra-expanded', or `ultra-expanded'.<br/>
-<br/>
-`:height'<br/>
-<br/>
-VALUE specifies the relative or absolute height of the font.  An<br/>
-absolute height is an integer, and specifies font height in units<br/>
-of 1/10 pt.  A relative height is either a floating point number,<br/>
-which specifies a scaling factor for the underlying face height;<br/>
-or a function that takes a single argument (the underlying face<br/>
-height) and returns the new height.  Note that for the `default'<br/>
-face, you must specify an absolute height (since there is nothing<br/>
-for it to be relative to).<br/>
-<br/>
-`:weight'<br/>
-<br/>
-VALUE specifies the weight of the font to use.  It must be one of the<br/>
-symbols `ultra-bold', `extra-bold', `bold', `semi-bold', `normal',<br/>
-`semi-light', `light', `extra-light', `ultra-light'.<br/>
-<br/>
-`:slant'<br/>
-<br/>
-VALUE specifies the slant of the font to use.  It must be one of the<br/>
-symbols `italic', `oblique', `normal', `reverse-italic', or<br/>
-`reverse-oblique'.<br/>
-<br/>
-`:foreground', `:background'<br/>
-<br/>
-VALUE must be a color name, a string.<br/>
-<br/>
-`:underline'<br/>
-<br/>
-VALUE specifies whether characters in FACE should be underlined.<br/>
-If VALUE is t, underline with foreground color of the face.<br/>
-If VALUE is a string, underline with that color.<br/>
-If VALUE is nil, explicitly don't underline.<br/>
-<br/>
-Otherwise, VALUE must be a property list of the form:<br/>
-<br/>
-`(:color COLOR :style STYLE)'.<br/>
-<br/>
-COLOR can be a either a color name string or `foreground-color'.<br/>
-STYLE can be either `line' or `wave'.<br/>
-If a keyword/value pair is missing from the property list, a<br/>
-default value will be used for the value.<br/>
-The default value of COLOR is the foreground color of the face.<br/>
-The default value of STYLE is `line'.<br/>
-<br/>
-`:overline'<br/>
-<br/>
-VALUE specifies whether characters in FACE should be overlined.  If<br/>
-VALUE is t, overline with foreground color of the face.  If VALUE is a<br/>
-string, overline with that color.  If VALUE is nil, explicitly don't<br/>
-overline.<br/>
-<br/>
-`:strike-through'<br/>
-<br/>
-VALUE specifies whether characters in FACE should be drawn with a line<br/>
-striking through them.  If VALUE is t, use the foreground color of the<br/>
-face.  If VALUE is a string, strike-through with that color.  If VALUE<br/>
-is nil, explicitly don't strike through.<br/>
-<br/>
-`:box'<br/>
-<br/>
-VALUE specifies whether characters in FACE should have a box drawn<br/>
-around them.  If VALUE is nil, explicitly don't draw boxes.  If<br/>
-VALUE is t, draw a box with lines of width 1 in the foreground color<br/>
-of the face.  If VALUE is a string, the string must be a color name,<br/>
-and the box is drawn in that color with a line width of 1.  Otherwise,<br/>
-VALUE must be a property list of the form `(:line-width WIDTH<br/>
-:color COLOR :style STYLE)'.  If a keyword/value pair is missing from<br/>
-the property list, a default value will be used for the value, as<br/>
-specified below.  WIDTH specifies the width of the lines to draw; it<br/>
-defaults to 1.  If WIDTH is negative, the absolute value is the width<br/>
-of the lines, and draw top/bottom lines inside the characters area,<br/>
-not around it.  COLOR is the name of the color to draw in, default is<br/>
-the foreground color of the face for simple boxes, and the background<br/>
-color of the face for 3D boxes.  STYLE specifies whether a 3D box<br/>
-should be draw.  If STYLE is `released-button', draw a box looking<br/>
-like a released 3D button.  If STYLE is `pressed-button' draw a box<br/>
-that appears like a pressed button.  If STYLE is nil, the default if<br/>
-the property list doesn't contain a style specification, draw a 2D<br/>
-box.<br/>
-<br/>
-`:inverse-video'<br/>
-<br/>
-VALUE specifies whether characters in FACE should be displayed in<br/>
-inverse video.  VALUE must be one of t or nil.<br/>
-<br/>
-`:stipple'<br/>
-<br/>
-If VALUE is a string, it must be the name of a file of pixmap data.<br/>
-The directories listed in the `x-bitmap-file-path' variable are<br/>
-searched.  Alternatively, VALUE may be a list of the form (WIDTH<br/>
-HEIGHT DATA) where WIDTH and HEIGHT are the size in pixels, and DATA<br/>
-is a string containing the raw bits of the bitmap.  VALUE nil means<br/>
-explicitly don't use a stipple pattern.<br/>
-<br/>
-For convenience, attributes `:family', `:foundry', `:width',<br/>
-`:height', `:weight', and `:slant' may also be set in one step<br/>
-from an X font name:<br/>
-<br/>
-`:font'<br/>
-<br/>
-Set font-related face attributes from VALUE.  VALUE must be a<br/>
-valid font name or font object.  Setting this attribute will also<br/>
-set the `:family', `:foundry', `:width', `:height', `:weight',<br/>
-and `:slant' attributes.<br/>
-<br/>
-`:inherit'<br/>
-<br/>
-VALUE is the name of a face from which to inherit attributes, or<br/>
-a list of face names.  Attributes from inherited faces are merged<br/>
-into the face like an underlying face would be, with higher<br/>
-priority than underlying faces.<br/>
-<br/>
-For backward compatibility, the keywords `:bold' and `:italic'<br/>
-can be used to specify weight and slant respectively.  This usage<br/>
-is considered obsolete.  For these two keywords, the VALUE must<br/>
-be either t or nil.  A value of t for `:bold' is equivalent to<br/>
-setting `:weight' to `bold', and a value of t for `:italic' is<br/>
-equivalent to setting `:slant' to `italic'.  But if `:weight' is<br/>
-specified in the face spec, `:bold' is ignored, and if `:slant'<br/>
+<strong>set-face-attribute</strong> is a compiled Lisp function in `<code>faces.el</code>'.</br>
+</br>
+(set-face-attribute <u>FACE</u> <u>FRAME</u> &rest <u>ARGS</u>)</br>
+</br>
+Set attributes of <u>FACE</u> on <u>FRAME</u> from <u>ARGS</u>.</br>
+This function overrides the face attributes specified by <u>FACE</u>'s</br>
+face spec.  It is mostly intended for internal use only.</br>
+</br>
+If <u>FRAME</u> is nil, set the attributes for all existing frames, as</br>
+well as the default for new frames.  If <u>FRAME</u> is t, change the</br>
+default for new frames only.</br>
+</br>
+<u>ARGS</u> must come in pairs ATTRIBUTE VALUE.  ATTRIBUTE must be a</br>
+valid face attribute name.  All attributes can be set to</br>
+`unspecified'; this fact is not further mentioned below.</br>
+</br>
+The following attributes are recognized:</br>
+</br>
+`:family'</br>
+</br>
+VALUE must be a string specifying the font family</br>
+(e.g. "Monospace") or a fontset.</br>
+</br>
+`:foundry'</br>
+</br>
+VALUE must be a string specifying the font foundry,</br>
+e.g. ``adobe''.  If a font foundry is specified, wild-cards `*'</br>
+and `?' are allowed.</br>
+</br>
+`:width'</br>
+</br>
+VALUE specifies the relative proportionate width of the font to use.</br>
+It must be one of the symbols `ultra-condensed', `extra-condensed',</br>
+`condensed', `semi-condensed', `normal', `semi-expanded', `expanded',</br>
+`extra-expanded', or `ultra-expanded'.</br>
+</br>
+`:height'</br>
+</br>
+VALUE specifies the relative or absolute height of the font.  An</br>
+absolute height is an integer, and specifies font height in units</br>
+of 1/10 pt.  A relative height is either a floating point number,</br>
+which specifies a scaling factor for the underlying face height;</br>
+or a function that takes a single argument (the underlying face</br>
+height) and returns the new height.  Note that for the `default'</br>
+face, you must specify an absolute height (since there is nothing</br>
+for it to be relative to).</br>
+</br>
+`:weight'</br>
+</br>
+VALUE specifies the weight of the font to use.  It must be one of the</br>
+symbols `ultra-bold', `extra-bold', `bold', `semi-bold', `normal',</br>
+`semi-light', `light', `extra-light', `ultra-light'.</br>
+</br>
+`:slant'</br>
+</br>
+VALUE specifies the slant of the font to use.  It must be one of the</br>
+symbols `italic', `oblique', `normal', `reverse-italic', or</br>
+`reverse-oblique'.</br>
+</br>
+`:foreground', `:background'</br>
+</br>
+VALUE must be a color name, a string.</br>
+</br>
+`:underline'</br>
+</br>
+VALUE specifies whether characters in <u>FACE</u> should be underlined.</br>
+If VALUE is t, underline with foreground color of the face.</br>
+If VALUE is a string, underline with that color.</br>
+If VALUE is nil, explicitly don't underline.</br>
+</br>
+Otherwise, VALUE must be a property list of the form:</br>
+</br>
+`(:color COLOR :style STYLE)'.</br>
+</br>
+COLOR can be a either a color name string or `foreground-color'.</br>
+STYLE can be either `line' or `wave'.</br>
+If a keyword/value pair is missing from the property list, a</br>
+default value will be used for the value.</br>
+The default value of COLOR is the foreground color of the face.</br>
+The default value of STYLE is `line'.</br>
+</br>
+`:overline'</br>
+</br>
+VALUE specifies whether characters in <u>FACE</u> should be overlined.  If</br>
+VALUE is t, overline with foreground color of the face.  If VALUE is a</br>
+string, overline with that color.  If VALUE is nil, explicitly don't</br>
+overline.</br>
+</br>
+`:strike-through'</br>
+</br>
+VALUE specifies whether characters in <u>FACE</u> should be drawn with a line</br>
+striking through them.  If VALUE is t, use the foreground color of the</br>
+face.  If VALUE is a string, strike-through with that color.  If VALUE</br>
+is nil, explicitly don't strike through.</br>
+</br>
+`:box'</br>
+</br>
+VALUE specifies whether characters in <u>FACE</u> should have a box drawn</br>
+around them.  If VALUE is nil, explicitly don't draw boxes.  If</br>
+VALUE is t, draw a box with lines of width 1 in the foreground color</br>
+of the face.  If VALUE is a string, the string must be a color name,</br>
+and the box is drawn in that color with a line width of 1.  Otherwise,</br>
+VALUE must be a property list of the form `(:line-width WIDTH</br>
+:color COLOR :style STYLE)'.  If a keyword/value pair is missing from</br>
+the property list, a default value will be used for the value, as</br>
+specified below.  WIDTH specifies the width of the lines to draw; it</br>
+defaults to 1.  If WIDTH is negative, the absolute value is the width</br>
+of the lines, and draw top/bottom lines inside the characters area,</br>
+not around it.  COLOR is the name of the color to draw in, default is</br>
+the foreground color of the face for simple boxes, and the background</br>
+color of the face for 3D boxes.  STYLE specifies whether a 3D box</br>
+should be draw.  If STYLE is `released-button', draw a box looking</br>
+like a released 3D button.  If STYLE is `pressed-button' draw a box</br>
+that appears like a pressed button.  If STYLE is nil, the default if</br>
+the property list doesn't contain a style specification, draw a 2D</br>
+box.</br>
+</br>
+`:inverse-video'</br>
+</br>
+VALUE specifies whether characters in <u>FACE</u> should be displayed in</br>
+inverse video.  VALUE must be one of t or nil.</br>
+</br>
+`:stipple'</br>
+</br>
+If VALUE is a string, it must be the name of a file of pixmap data.</br>
+The directories listed in the `x-bitmap-file-path' variable are</br>
+searched.  Alternatively, VALUE may be a list of the form (WIDTH</br>
+HEIGHT DATA) where WIDTH and HEIGHT are the size in pixels, and DATA</br>
+is a string containing the raw bits of the bitmap.  VALUE nil means</br>
+explicitly don't use a stipple pattern.</br>
+</br>
+For convenience, attributes `:family', `:foundry', `:width',</br>
+`:height', `:weight', and `:slant' may also be set in one step</br>
+from an X font name:</br>
+</br>
+`:font'</br>
+</br>
+Set font-related face attributes from VALUE.  VALUE must be a</br>
+valid font name or font object.  Setting this attribute will also</br>
+set the `:family', `:foundry', `:width', `:height', `:weight',</br>
+and `:slant' attributes.</br>
+</br>
+`:inherit'</br>
+</br>
+VALUE is the name of a face from which to inherit attributes, or</br>
+a list of face names.  Attributes from inherited faces are merged</br>
+into the face like an underlying face would be, with higher</br>
+priority than underlying faces.</br>
+</br>
+For backward compatibility, the keywords `:bold' and `:italic'</br>
+can be used to specify weight and slant respectively.  This usage</br>
+is considered obsolete.  For these two keywords, the VALUE must</br>
+be either t or nil.  A value of t for `:bold' is equivalent to</br>
+setting `:weight' to `bold', and a value of t for `:italic' is</br>
+equivalent to setting `:slant' to `italic'.  But if `:weight' is</br>
+specified in the face spec, `:bold' is ignored, and if `:slant'</br>
 is specified, `:italic' is ignored.

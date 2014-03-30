@@ -1,74 +1,72 @@
-<strong>filesets-data</strong> is a variable defined in `<code>filesets.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Fileset definitions.<br/>
-<br/>
-A fileset is either a list of files, a file pattern, a base directory<br/>
-and a search pattern (for files), or a base file.  Changes to this<br/>
-variable will take effect after rebuilding the menu.<br/>
-<br/>
-Caveat: Fileset names have to be unique.<br/>
-<br/>
-Example definition:<br/>
-      '(("My Wiki"<br/>
-	 (:ingroup "~/Etc/My-Wiki/WikiContents"))<br/>
-	("My Homepage"<br/>
-	 (:pattern "~/public_html/" "^.+\\.html$")<br/>
-	 (:open filesets-find-file))<br/>
-	("User Configuration"<br/>
-	 (:files "~/.xinitrc"<br/>
-		 "~/.bashrc"<br/>
-		 "~/.bash_profile"))<br/>
-	("HOME"<br/>
-	 (:tree "~" "^[^.].*[^~]$")<br/>
-	 (:filter-dirs-flag t)))<br/>
-<br/>
-`filesets-data' is a list of (NAME-AS-STRING . DEFINITION), DEFINITION<br/>
-being an association list with the fields:<br/>
-<br/>
-:files FILE-1 .. FILE-N ... a list of files belonging to a fileset<br/>
-<br/>
-:ingroup FILE-NAME ... an inclusion group's base file.<br/>
-<br/>
-:tree ROOT-DIR PATTERN ... a base directory and a file pattern<br/>
-<br/>
-:pattern DIR PATTERN ... a base directory and a regexp matching<br/>
-                         files in that directory.  Usually,<br/>
-                         PATTERN has the form '^REGEXP$'.  Unlike<br/>
-                         :tree, this form does not descend<br/>
-                         recursively into subdirectories.<br/>
-<br/>
-:filter-dirs-flag BOOLEAN ... is only used in conjunction with :tree.<br/>
-<br/>
-:tree-max-level INTEGER ... recurse into directories this many levels<br/>
-(see `filesets-tree-max-level' for a full explanation)<br/>
-<br/>
-:dormant-flag BOOLEAN ... non-nil means don't show this item in the<br/>
-menu; dormant filesets can still be manipulated via commands available<br/>
-from the minibuffer -- e.g. `filesets-open', `filesets-close', or<br/>
-`filesets-run-cmd'<br/>
-<br/>
-:dormant-p FUNCTION ... a function returning :dormant-flag<br/>
-<br/>
-:open FUNCTION ... the function used to open file belonging to this<br/>
-fileset.  The function takes a file name as argument<br/>
-<br/>
-:save FUNCTION ... the function used to save file belonging to this<br/>
-fileset; it takes no arguments, but works on the current buffer.<br/>
-<br/>
-Either :files, :pattern, :tree, or :ingroup must be supplied.  :files<br/>
-overrules :tree, :tree overrules :pattern, :pattern overrules :ingroup,<br/>
-i.e. these tags are mutually exclusive.  The fields :open and :save are<br/>
-optional.<br/>
-<br/>
-In conjunction with the :tree tag, :save is void.  :open refers to the<br/>
-function used for opening files in a directory, not for opening the<br/>
-directory.  For browsing directories, `filesets-browse-dir-function' is used.<br/>
-<br/>
-Before using :ingroup, make sure that the file type is already<br/>
-defined in `filesets-ingroup-patterns'.<br/>
-<br/>
+<strong>filesets-data</strong> is a variable defined in `<code>filesets.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Fileset definitions.</br>
+</br>
+A fileset is either a list of files, a file pattern, a base directory</br>
+and a search pattern (for files), or a base file.  Changes to this</br>
+variable will take effect after rebuilding the menu.</br>
+</br>
+Caveat: Fileset names have to be unique.</br>
+</br>
+Example definition:</br>
+      '(("My Wiki"</br>
+	 (:ingroup "~/Etc/My-Wiki/WikiContents"))</br>
+	("My Homepage"</br>
+	 (:pattern "~/public_html/" "^.+\\.html$")</br>
+	 (:open filesets-find-file))</br>
+	("User Configuration"</br>
+	 (:files "~/.xinitrc"</br>
+		 "~/.bashrc"</br>
+		 "~/.bash_profile"))</br>
+	("HOME"</br>
+	 (:tree "~" "^[^.].*[^~]$")</br>
+	 (:filter-dirs-flag t)))</br>
+</br>
+`filesets-data' is a list of (NAME-AS-STRING . DEFINITION), DEFINITION</br>
+being an association list with the fields:</br>
+</br>
+:files FILE-1 .. FILE-N ... a list of files belonging to a fileset</br>
+</br>
+:ingroup FILE-NAME ... an inclusion group's base file.</br>
+</br>
+:tree ROOT-DIR PATTERN ... a base directory and a file pattern</br>
+</br>
+:pattern DIR PATTERN ... a base directory and a regexp matching</br>
+                         files in that directory.  Usually,</br>
+                         PATTERN has the form '^REGEXP$'.  Unlike</br>
+                         :tree, this form does not descend</br>
+                         recursively into subdirectories.</br>
+</br>
+:filter-dirs-flag BOOLEAN ... is only used in conjunction with :tree.</br>
+</br>
+:tree-max-level INTEGER ... recurse into directories this many levels</br>
+(see `filesets-tree-max-level' for a full explanation)</br>
+</br>
+:dormant-flag BOOLEAN ... non-nil means don't show this item in the</br>
+menu; dormant filesets can still be manipulated via commands available</br>
+from the minibuffer -- e.g. `filesets-open', `filesets-close', or</br>
+`filesets-run-cmd'</br>
+</br>
+:dormant-p FUNCTION ... a function returning :dormant-flag</br>
+</br>
+:open FUNCTION ... the function used to open file belonging to this</br>
+fileset.  The function takes a file name as argument</br>
+</br>
+:save FUNCTION ... the function used to save file belonging to this</br>
+fileset; it takes no arguments, but works on the current buffer.</br>
+</br>
+Either :files, :pattern, :tree, or :ingroup must be supplied.  :files</br>
+overrules :tree, :tree overrules :pattern, :pattern overrules :ingroup,</br>
+i.e. these tags are mutually exclusive.  The fields :open and :save are</br>
+optional.</br>
+</br>
+In conjunction with the :tree tag, :save is void.  :open refers to the</br>
+function used for opening files in a directory, not for opening the</br>
+directory.  For browsing directories, `filesets-browse-dir-function' is used.</br>
+</br>
+Before using :ingroup, make sure that the file type is already</br>
+defined in `filesets-ingroup-patterns'.</br>
+</br>
 You can customize this variable.

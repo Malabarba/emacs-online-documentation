@@ -1,21 +1,21 @@
-<strong>dired-mark-pop-up</strong> is a compiled Lisp function in `<code>dired.el</code>'.<br/>
-<br/>
-(dired-mark-pop-up BUFFER-OR-NAME OP-SYMBOL FILES FUNCTION &rest ARGS)<br/>
-<br/>
-Return FUNCTION's result on ARGS after showing which files are marked.<br/>
-Displays the file names in a window showing a buffer named<br/>
-BUFFER-OR-NAME; the default name being " *Marked Files*".  The<br/>
-window is not shown if there is just one file, `dired-no-confirm'<br/>
-is t, or OP-SYMBOL is a member of the list in `dired-no-confirm'.<br/>
-<br/>
-By default, Dired shrinks the display buffer to fit the marked files.<br/>
-To disable this, use the Customization interface to add a new rule<br/>
-to `display-buffer-alist' where condition regexp is "^ \*Marked Files\*$",<br/>
-action argument symbol is `window-height' and its value is nil.<br/>
-<br/>
-FILES is the list of marked files.  It can also be (t FILENAME)<br/>
-in the case of one marked file, to distinguish that from using<br/>
-just the current file.<br/>
-<br/>
-FUNCTION should not manipulate files, just read input (an<br/>
+<strong>dired-mark-pop-up</strong> is a compiled Lisp function in `<code>dired.el</code>'.</br>
+</br>
+(dired-mark-pop-up <u>BUFFER-OR-NAME</u> <u>OP-SYMBOL</u> <u>FILES</u> <u>FUNCTION</u> &rest <u>ARGS</u>)</br>
+</br>
+Return <u>FUNCTION</u>'s result on <u>ARGS</u> after showing which files are marked.</br>
+Displays the file names in a window showing a buffer named</br>
+<u>BUFFER-OR-NAME</u>; the default name being " *Marked Files*".  The</br>
+window is not shown if there is just one file, `dired-no-confirm'</br>
+is t, or <u>OP-SYMBOL</u> is a member of the list in `dired-no-confirm'.</br>
+</br>
+By default, Dired shrinks the display buffer to fit the marked files.</br>
+To disable this, use the Customization interface to add a new rule</br>
+to `display-buffer-alist' where condition regexp is "^ \*Marked Files\*$",</br>
+action argument symbol is `window-height' and its value is nil.</br>
+</br>
+<u>FILES</u> is the list of marked files.  It can also be (t FILENAME)</br>
+in the case of one marked file, to distinguish that from using</br>
+just the current file.</br>
+</br>
+<u>FUNCTION</u> should not manipulate files, just read input (an</br>
 argument or confirmation).

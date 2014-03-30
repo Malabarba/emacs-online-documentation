@@ -1,17 +1,17 @@
-<strong>completion-pcm--merge-completions</strong> is a compiled Lisp function in `<code>minibuffer.el</code>'.<br/>
-<br/>
-(completion-pcm--merge-completions STRS PATTERN)<br/>
-<br/>
-Extract the commonality in STRS, with the help of PATTERN.<br/>
-PATTERN can contain strings and symbols chosen among `star', `any', `point',<br/>
-and `prefix'.  They all match anything (aka ".*") but are merged differently:<br/>
-`any' only grows from the left (when matching "a1b" and "a2b" it gets<br/>
-  completed to just "a").<br/>
-`prefix' only grows from the right (when matching "a1b" and "a2b" it gets<br/>
-  completed to just "b").<br/>
-`star' grows from both ends and is reified into a "*"  (when matching "a1b"<br/>
-  and "a2b" it gets completed to "a*b").<br/>
-`point' is like `star' except that it gets reified as the position of point<br/>
-  instead of being reified as a "*" character.<br/>
-The underlying idea is that we should return a string which still matches<br/>
+<strong>completion-pcm--merge-completions</strong> is a compiled Lisp function in `<code>minibuffer.el</code>'.</br>
+</br>
+(completion-pcm--merge-completions <u>STRS</u> <u>PATTERN</u>)</br>
+</br>
+Extract the commonality in <u>STRS</u>, with the help of <u>PATTERN</u>.</br>
+<u>PATTERN</u> can contain strings and symbols chosen among `star', `any', `point',</br>
+and `prefix'.  They all match anything (aka ".*") but are merged differently:</br>
+`any' only grows from the left (when matching "a1b" and "a2b" it gets</br>
+  completed to just "a").</br>
+`prefix' only grows from the right (when matching "a1b" and "a2b" it gets</br>
+  completed to just "b").</br>
+`star' grows from both ends and is reified into a "*"  (when matching "a1b"</br>
+  and "a2b" it gets completed to "a*b").</br>
+`point' is like `star' except that it gets reified as the position of point</br>
+  instead of being reified as a "*" character.</br>
+The underlying idea is that we should return a string which still matches</br>
 the same set of elements.

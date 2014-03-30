@@ -1,16 +1,17 @@
-<strong>Info-virtual-nodes</strong> is a variable defined in `<code>info.el</code>'.<br/>
-Its value is (("\\`\\*Index.*\\*\\'"<br/>
-  (find-node . Info-virtual-index-find-node)<br/>
-  (slow . t))<br/>
- ("\\`\\*TOC\\*\\'"<br/>
-  (find-node . Info-toc-find-node)))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-List of definitions of virtual Info nodes.<br/>
-Each element of the list has the format (NODENAME (OPERATION . HANDLER) ...)<br/>
-where NODENAME is a regexp that matches a class of virtual Info node names.<br/>
-It should be carefully chosen to not cause node name clashes with<br/>
-existing node names.  OPERATION is one of the following operation<br/>
-symbols `find-node' that define what HANDLER function to call instead<br/>
+<strong>Info-virtual-nodes</strong> is a variable defined in `<code>info.el</code>'.</br>
+Its value is <pre></br>
+(("\\`\\*Index.*\\*\\'"
+  (find-node . Info-virtual-index-find-node)
+  (slow . t))
+ ("\\`\\*TOC\\*\\'"
+  (find-node . Info-toc-find-node)))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of definitions of virtual Info nodes.</br>
+Each element of the list has the format (NODENAME (OPERATION . HANDLER) ...)</br>
+where NODENAME is a regexp that matches a class of virtual Info node names.</br>
+It should be carefully chosen to not cause node name clashes with</br>
+existing node names.  OPERATION is one of the following operation</br>
+symbols `find-node' that define what HANDLER function to call instead</br>
 of calling the default corresponding function to override it.

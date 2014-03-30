@@ -1,25 +1,26 @@
-<strong>fringe-mode</strong> is an interactive compiled Lisp function in `<code>fringe.el</code>'.<br/>
-<br/>
-(fringe-mode &optional MODE)<br/>
-<br/>
-Set the default appearance of fringes on all frames.<br/>
-When called interactively, query the user for MODE; valid values<br/>
-are `no-fringes', `default', `left-only', `right-only', `minimal'<br/>
-and `half-width'.  See `fringe-styles'.<br/>
-<br/>
-When used in a Lisp program, MODE should be one of these:<br/>
-- nil, which means the default width (8 pixels).<br/>
-- a cons cell (LEFT . RIGHT), where LEFT and RIGHT are<br/>
-  respectively the left and right fringe widths in pixels, or<br/>
-  nil (meaning to disable that fringe).<br/>
-- a single integer, which specifies the pixel widths of both<br/>
-  fringes.<br/>
-This command may round up the left and right width specifications<br/>
-to ensure that their sum is a multiple of the character width of<br/>
-a frame.  It never rounds up a fringe width of 0.<br/>
-<br/>
-Fringe widths set by `set-window-fringes' override the default<br/>
-fringe widths set by this command.  This command applies to all<br/>
-frames that exist and frames to be created in the future.  If you<br/>
-want to set the default appearance of fringes on the selected<br/>
+<strong>fringe-mode</strong> is an interactive compiled Lisp function in `<code>fringe.el</code>'.</br>
+</br>
+</br>
+(fringe-mode &optional <u>MODE</u>)</br>
+</br>
+Set the default appearance of fringes on all frames.</br>
+When called interactively, query the user for <u>MODE</u>; valid values</br>
+are `no-fringes', `default', `left-only', `right-only', `minimal'</br>
+and `half-width'.  See `fringe-styles'.</br>
+</br>
+When used in a Lisp program, <u>MODE</u> should be one of these:</br>
+- nil, which means the default width (8 pixels).</br>
+- a cons cell (LEFT . RIGHT), where LEFT and RIGHT are</br>
+  respectively the left and right fringe widths in pixels, or</br>
+  nil (meaning the default width).</br>
+- a single integer, which specifies the pixel widths of both</br>
+  fringes.</br>
+This command may round up the left and right width specifications</br>
+to ensure that their sum is a multiple of the character width of</br>
+a frame.  It never rounds up a fringe width of 0.</br>
+</br>
+Fringe widths set by `set-window-fringes' override the default</br>
+fringe widths set by this command.  This command applies to all</br>
+frames that exist and frames to be created in the future.  If you</br>
+want to set the default appearance of fringes on the selected</br>
 frame only, see the command `set-fringe-style'.

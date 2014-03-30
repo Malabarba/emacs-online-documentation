@@ -1,20 +1,19 @@
-<strong>asm-mode-map</strong> is a variable defined in `<code>asm-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for Asm mode.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (asm-mode "Asm" keymap<br/>
-		     (asm-colon menu-item "Insert Colon" asm-colon :help "Insert a colon; if it follows a label, delete the label's indentation")<br/>
-		     (newline-and-indent menu-item "Insert Newline and Indent" newline-and-indent :help "Insert a newline, then indent according to major mode")<br/>
-		     (comment-region menu-item "Comment Region" comment-region :help "Comment or uncomment each line in the region")))<br/>
- (13 . newline-and-indent)<br/>
- (10 . newline-and-indent)<br/>
- (3 keymap<br/>
-    (59 . comment-region))<br/>
- (58 . asm-colon))<br/>
-<br/>
+<strong>asm-mode-map</strong> is a variable defined in `<code>asm-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for Asm mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (asm-mode "Asm" keymap
+		     (asm-colon menu-item "Insert Colon" asm-colon :help "Insert a colon; if it follows a label, delete the label's indentation")
+		     (newline-and-indent menu-item "Insert Newline and Indent" newline-and-indent :help "Insert a newline, then indent according to major mode")
+		     (comment-region menu-item "Comment Region" comment-region :help "Comment or uncomment each line in the region")))
+ (13 . newline-and-indent)
+ (10 . newline-and-indent)
+ (3 keymap
+    (59 . comment-region))
+ (58 . asm-colon))
+</pre></br>

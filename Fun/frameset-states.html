@@ -1,0 +1,16 @@
+<strong>frameset-states</strong> is a compiled Lisp function in `<code>frameset.el</code>'.</br>
+</br>
+(frameset-states <u>FRAMESET</u>)</br>
+</br>
+This function has a compiler macro `frameset-states--cmacro'.</br>
+</br>
+Return the list of frame states of <u>FRAMESET</u>.</br>
+</br>
+A frame state is a pair (FRAME-PARAMETERS . WINDOW-STATE), where</br>
+FRAME-PARAMETERS is a frame's parameter alist, extracted with</br>
+(frame-parameters FRAME) and filtered through `frameset-filter-params',</br>
+and WINDOW-STATE is the output of `window-state-get' applied to the</br>
+root window of the frame.</br>
+</br>
+IMPORTANT: Modifying this slot may cause frameset functions to fail,</br>
+unless the type constraints defined above are respected.

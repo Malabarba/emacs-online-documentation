@@ -1,112 +1,172 @@
-<strong>doc-view-mode-map</strong> is a variable defined in `<code>doc-view.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap used by `doc-view-mode' when displaying a doc as a set of images.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (DocView menu-item "DocView"<br/>
-		    (keymap "DocView"<br/>
-			    (Toggle\ display menu-item "Toggle display" doc-view-toggle-display)<br/>
-			    (Continuous menu-item "Continuous"<br/>
-					(keymap "Continuous"<br/>
-						(Off menu-item "Off" menu-function-115 :key-sequence nil :button<br/>
-						     (:radio eq doc-view-continuous nil))<br/>
-						(On menu-item "On" menu-function-116 :key-sequence nil :button<br/>
-						    (:radio eq doc-view-continuous t))<br/>
-						(nil-9 menu-item "---")<br/>
-						(Save\ as\ Default menu-item "Save as Default" menu-function-117 :key-sequence nil)))<br/>
-			    (nil-9 menu-item "---")<br/>
-			    (Set\ Slice menu-item "Set Slice" doc-view-set-slice-using-mouse)<br/>
-			    (Set\ Slice\ \(BoundingBox\) menu-item "Set Slice (BoundingBox)" doc-view-set-slice-from-bounding-box)<br/>
-			    (Set\ Slice\ \(manual\) menu-item "Set Slice (manual)" doc-view-set-slice)<br/>
-			    (Reset\ Slice menu-item "Reset Slice" doc-view-reset-slice)<br/>
-			    (nil-9-7 menu-item "---")<br/>
-			    (Search menu-item "Search" doc-view-search)<br/>
-			    (Search\ Backwards menu-item "Search Backwards" doc-view-search-backward))))<br/>
- (114 . doc-view-revert-buffer)<br/>
- (103 . doc-view-revert-buffer)<br/>
- (3 keymap<br/>
-    (20 . doc-view-open-text)<br/>
-    (3 . doc-view-toggle-display))<br/>
- (20 . doc-view-show-tooltip)<br/>
- (18 . doc-view-search-backward)<br/>
- (find . doc-view-search)<br/>
- (19 . doc-view-search)<br/>
- (115 keymap<br/>
-      (114 . doc-view-reset-slice)<br/>
-      (98 . doc-view-set-slice-from-bounding-box)<br/>
-      (109 . doc-view-set-slice-using-mouse)<br/>
-      (115 . doc-view-set-slice))<br/>
- (75 . doc-view-kill-proc)<br/>
- (107 . doc-view-kill-proc-and-buffer)<br/>
- (80 . doc-view-fit-page-to-window)<br/>
- (72 . doc-view-fit-height-to-window)<br/>
- (87 . doc-view-fit-width-to-window)<br/>
- (45 . doc-view-shrink)<br/>
- (43 . doc-view-enlarge)<br/>
- (13 . image-next-line)<br/>
- (27 keymap<br/>
-     (62 . doc-view-last-page)<br/>
-     (60 . doc-view-first-page))<br/>
- (up . doc-view-previous-line-or-previous-page)<br/>
- (16 . doc-view-previous-line-or-previous-page)<br/>
- (down . doc-view-next-line-or-next-page)<br/>
- (14 . doc-view-next-line-or-next-page)<br/>
- (127 . doc-view-scroll-down-or-previous-page)<br/>
- (32 . doc-view-scroll-up-or-next-page)<br/>
- (remap keymap<br/>
-	(goto-line . doc-view-goto-page)<br/>
-	(backward-page . doc-view-previous-page)<br/>
-	(forward-page . doc-view-next-page))<br/>
- (prior . backward-page)<br/>
- (next . forward-page)<br/>
- (112 . doc-view-previous-page)<br/>
- (110 . doc-view-next-page)<br/>
- keymap<br/>
- (remap keymap<br/>
-	(end-of-buffer . image-eob)<br/>
-	(beginning-of-buffer . image-bob)<br/>
-	(move-end-of-line . image-eol)<br/>
-	(move-beginning-of-line . image-bol)<br/>
-	(scroll-down-command . image-scroll-down)<br/>
-	(scroll-up-command . image-scroll-up)<br/>
-	(scroll-down . image-scroll-down)<br/>
-	(scroll-up . image-scroll-up)<br/>
-	(next-line . image-next-line)<br/>
-	(previous-line . image-previous-line)<br/>
-	(left-char . image-backward-hscroll)<br/>
-	(right-char . image-forward-hscroll)<br/>
-	(backward-char . image-backward-hscroll)<br/>
-	(forward-char . image-forward-hscroll))<br/>
- (13 . image-toggle-animation)<br/>
- (127 . image-scroll-down)<br/>
- (32 . image-scroll-up)<br/>
- (3 keymap<br/>
-    (3 . image-toggle-display))<br/>
- keymap<br/>
- (103 . revert-buffer)<br/>
- (60 . beginning-of-buffer)<br/>
- (62 . end-of-buffer)<br/>
- (104 . describe-mode)<br/>
- (63 . describe-mode)<br/>
- (127 . scroll-down-command)<br/>
- (32 . scroll-up-command)<br/>
- (113 . quit-window)<br/>
- (57 . digit-argument)<br/>
- (56 . digit-argument)<br/>
- (55 . digit-argument)<br/>
- (54 . digit-argument)<br/>
- (53 . digit-argument)<br/>
- (52 . digit-argument)<br/>
- (51 . digit-argument)<br/>
- (50 . digit-argument)<br/>
- (49 . digit-argument)<br/>
- (48 . digit-argument)<br/>
- (45 . negative-argument)<br/>
- (remap keymap<br/>
-	(self-insert-command . undefined)))<br/>
-<br/>
+<strong>doc-view-mode-map</strong> is a variable defined in `<code>doc-view.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap used by `doc-view-mode' when displaying a doc as a set of images.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (DocView menu-item "DocView"
+		    (keymap "DocView"
+			    (Toggle\ display menu-item "Toggle display" doc-view-toggle-display)
+			    (Continuous menu-item "Continuous"
+					(keymap "Continuous"
+						(Off menu-item "Off" menu-function-119 :key-sequence nil :button
+						     (:radio eq doc-view-continuous nil))
+						(On menu-item "On" menu-function-120 :key-sequence nil :button
+						    (:radio eq doc-view-continuous t))
+						(nil menu-item "---")
+						(Save\ as\ Default menu-item "Save as Default" menu-function-121 :key-sequence nil)))
+			    (nil menu-item "---")
+			    (Set\ Slice menu-item "Set Slice" doc-view-set-slice-using-mouse)
+			    (Set\ Slice\ \(BoundingBox\) menu-item "Set Slice (BoundingBox)" doc-view-set-slice-from-bounding-box)
+			    (Set\ Slice\ \(manual\) menu-item "Set Slice (manual)" doc-view-set-slice)
+			    (Reset\ Slice menu-item "Reset Slice" doc-view-reset-slice)
+			    (nil-7 menu-item "---")
+			    (Search menu-item "Search" doc-view-search)
+			    (Search\ Backwards menu-item "Search Backwards" doc-view-search-backward))))
+ (114 . doc-view-revert-buffer)
+ (103 . doc-view-revert-buffer)
+ (3 keymap
+    (20 . doc-view-open-text)
+    (3 . doc-view-toggle-display))
+ (20 . doc-view-show-tooltip)
+ (18 . doc-view-search-backward)
+ (find . doc-view-search)
+ (19 . doc-view-search)
+ (115 keymap
+      (114 . doc-view-reset-slice)
+      (98 . doc-view-set-slice-from-bounding-box)
+      (109 . doc-view-set-slice-using-mouse)
+      (115 . doc-view-set-slice))
+ (75 . doc-view-kill-proc)
+ (107 . doc-view-kill-proc-and-buffer)
+ (80 . doc-view-fit-page-to-window)
+ (72 . doc-view-fit-height-to-window)
+ (87 . doc-view-fit-width-to-window)
+ (48 . doc-view-scale-reset)
+ (45 . doc-view-shrink)
+ (61 . doc-view-enlarge)
+ (43 . doc-view-enlarge)
+ (13 . image-next-line)
+ (27 keymap
+     (62 . doc-view-last-page)
+     (60 . doc-view-first-page))
+ (up . doc-view-previous-line-or-previous-page)
+ (16 . doc-view-previous-line-or-previous-page)
+ (down . doc-view-next-line-or-next-page)
+ (14 . doc-view-next-line-or-next-page)
+ (127 . doc-view-scroll-down-or-previous-page)
+ (33554464 . doc-view-scroll-down-or-previous-page)
+ (32 . doc-view-scroll-up-or-next-page)
+ (remap keymap
+	(text-scale-adjust . doc-view-scale-adjust)
+	(goto-line . doc-view-goto-page)
+	(backward-page . doc-view-previous-page)
+	(forward-page . doc-view-next-page))
+ (prior . backward-page)
+ (next . forward-page)
+ (112 . doc-view-previous-page)
+ (110 . doc-view-next-page)
+ keymap
+ (menu-bar keymap
+	   (Image menu-item "Image"
+		  (keymap "Image"
+			  (Show\ as\ Text menu-item "Show as Text" image-toggle-display :help "Show image as text")
+			  (nil menu-item "--")
+			  (Fit\ Frame\ to\ Image menu-item "Fit Frame to Image" image-mode-fit-frame :help "Resize frame to match image")
+			  (Fit\ to\ Window\ Height menu-item "Fit to Window Height" image-transform-fit-to-height :visible
+						   (eq image-type 'imagemagick)
+						   :help "Resize image to match the window height")
+			  (Fit\ to\ Window\ Width menu-item "Fit to Window Width" image-transform-fit-to-width :visible
+						  (eq image-type 'imagemagick)
+						  :help "Resize image to match the window width")
+			  (Rotate\ Image\.\.\. menu-item "Rotate Image..." image-transform-set-rotation :visible
+					       (eq image-type 'imagemagick)
+					       :help "Rotate the image")
+			  (nil-6 menu-item "--")
+			  (Show\ Thumbnails menu-item "Show Thumbnails" menu-function-117 :key-sequence nil :enable default-directory :help "Show thumbnails for all images in this directory")
+			  (Next\ Image menu-item "Next Image" image-next-file :enable buffer-file-name :help "Move to next image in this directory")
+			  (Previous\ Image menu-item "Previous Image" image-previous-file :enable buffer-file-name :help "Move to previous image in this directory")
+			  (nil-10 menu-item "--")
+			  (Animate\ Image menu-item "Animate Image" image-toggle-animation :enable image-multi-frame :button
+					  (:toggle let
+						   ((image
+						     (image-get-display-property)))
+						   (and image
+							(image-animate-timer image)))
+					  :help "Toggle image animation")
+			  (Loop\ Animation menu-item "Loop Animation" menu-function-118 :key-sequence nil :enable image-multi-frame :button
+					   (:toggle . image-animate-loop)
+					   :help "Animate images once, or forever?")
+			  (Reverse\ Animation menu-item "Reverse Animation" image-reverse-speed :enable image-multi-frame :button
+					      (:toggle let
+						       ((image
+							 (image-get-display-property)))
+						       (and image
+							    (<
+							     (image-animate-get-speed image)
+							     0)))
+					      :help "Reverse direction of this image's animation?")
+			  (Speed\ Up\ Animation menu-item "Speed Up Animation" image-increase-speed :enable image-multi-frame :help "Speed up this image's animation")
+			  (Slow\ Down\ Animation menu-item "Slow Down Animation" image-decrease-speed :enable image-multi-frame :help "Slow down this image's animation")
+			  (Reset\ Animation\ Speed menu-item "Reset Animation Speed" image-reset-speed :enable image-multi-frame :help "Reset the speed of this image's animation")
+			  (Next\ Frame menu-item "Next Frame" image-next-frame :enable image-multi-frame :help "Show the next frame of this image")
+			  (Previous\ Frame menu-item "Previous Frame" image-previous-frame :enable image-multi-frame :help "Show the previous frame of this image")
+			  (Goto\ Frame\.\.\. menu-item "Goto Frame..." image-goto-frame :enable image-multi-frame :help "Show a specific frame of this image"))))
+ (remap keymap
+	(end-of-buffer . image-eob)
+	(beginning-of-buffer . image-bob)
+	(move-end-of-line . image-eol)
+	(move-beginning-of-line . image-bol)
+	(scroll-down-command . image-scroll-down)
+	(scroll-up-command . image-scroll-up)
+	(scroll-down . image-scroll-down)
+	(scroll-up . image-scroll-up)
+	(next-line . image-next-line)
+	(previous-line . image-previous-line)
+	(left-char . image-backward-hscroll)
+	(right-char . image-forward-hscroll)
+	(backward-char . image-backward-hscroll)
+	(forward-char . image-forward-hscroll))
+ (97 keymap
+     (114 . image-reverse-speed)
+     (48 . image-reset-speed)
+     (45 . image-decrease-speed)
+     (43 . image-increase-speed))
+ (112 . image-previous-file)
+ (110 . image-next-file)
+ (98 . image-previous-frame)
+ (102 . image-next-frame)
+ (70 . image-goto-frame)
+ (13 . image-toggle-animation)
+ (127 . image-scroll-down)
+ (33554464 . image-scroll-down)
+ (32 . image-scroll-up)
+ (3 keymap
+    (3 . image-toggle-display))
+ keymap
+ (103 . revert-buffer)
+ (60 . beginning-of-buffer)
+ (62 . end-of-buffer)
+ (104 . describe-mode)
+ (63 . describe-mode)
+ (127 . scroll-down-command)
+ (33554464 . scroll-down-command)
+ (32 . scroll-up-command)
+ (113 . quit-window)
+ (57 . digit-argument)
+ (56 . digit-argument)
+ (55 . digit-argument)
+ (54 . digit-argument)
+ (53 . digit-argument)
+ (52 . digit-argument)
+ (51 . digit-argument)
+ (50 . digit-argument)
+ (49 . digit-argument)
+ (48 . digit-argument)
+ (45 . negative-argument)
+ (remap keymap
+	(self-insert-command . undefined)))
+</pre></br>

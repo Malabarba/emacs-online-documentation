@@ -1,45 +1,45 @@
-<strong>compute-motion</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(compute-motion FROM FROMPOS TO TOPOS WIDTH OFFSETS WINDOW)<br/>
-<br/>
-Scan through the current buffer, calculating screen position.<br/>
-Scan the current buffer forward from offset FROM,<br/>
-assuming it is at position FROMPOS--a cons of the form (HPOS . VPOS)--<br/>
-to position TO or position TOPOS--another cons of the form (HPOS . VPOS)--<br/>
-and return the ending buffer position and screen location.<br/>
-<br/>
-If TOPOS is nil, the actual width and height of the window's<br/>
-text area are used.<br/>
-<br/>
-There are three additional arguments:<br/>
-<br/>
-WIDTH is the number of columns available to display text;<br/>
-this affects handling of continuation lines.  A value of nil<br/>
-corresponds to the actual number of available text columns.<br/>
-<br/>
-OFFSETS is either nil or a cons cell (HSCROLL . TAB-OFFSET).<br/>
-HSCROLL is the number of columns not being displayed at the left<br/>
-margin; this is usually taken from a window's hscroll member.<br/>
-TAB-OFFSET is the number of columns of the first tab that aren't<br/>
-being displayed, perhaps because the line was continued within it.<br/>
-If OFFSETS is nil, HSCROLL and TAB-OFFSET are assumed to be zero.<br/>
-<br/>
-WINDOW is the window to operate on.  It is used to choose the display table;<br/>
-if it is showing the current buffer, it is used also for<br/>
-deciding which overlay properties apply.<br/>
-Note that `compute-motion' always operates on the current buffer.<br/>
-<br/>
-The value is a list of five elements:<br/>
-  (POS HPOS VPOS PREVHPOS CONTIN)<br/>
-POS is the buffer position where the scan stopped.<br/>
-VPOS is the vertical position where the scan stopped.<br/>
-HPOS is the horizontal position where the scan stopped.<br/>
-<br/>
-PREVHPOS is the horizontal position one character back from POS.<br/>
-CONTIN is t if a line was continued after (or within) the previous character.<br/>
-<br/>
-For example, to find the buffer position of column COL of line LINE<br/>
-of a certain window, pass the window's starting location as FROM<br/>
-and the window's upper-left coordinates as FROMPOS.<br/>
-Pass the buffer's (point-max) as TO, to limit the scan to the end of the<br/>
-visible section of the buffer, and pass LINE and COL as TOPOS.
+<strong>compute-motion</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(compute-motion <u>FROM</u> <u>FROMPOS</u> <u>TO</u> <u>TOPOS</u> <u>WIDTH</u> <u>OFFSETS</u> <u>WINDOW</u>)</br>
+</br>
+Scan through the current buffer, calculating screen position.</br>
+Scan the current buffer forward from offset <u>FROM</u>,</br>
+assuming it is at position <u>FROMPOS</u>--a cons of the form (HPOS . VPOS)--</br>
+to position <u>TO</u> or position <u>TOPOS</u>--another cons of the form (HPOS . VPOS)--</br>
+and return the ending buffer position and screen location.</br>
+</br>
+If <u>TOPOS</u> is nil, the actual width and height of the window's</br>
+text area are used.</br>
+</br>
+There are three additional arguments:</br>
+</br>
+<u>WIDTH</u> is the number of columns available to display text;</br>
+this affects handling of continuation lines.  A value of nil</br>
+corresponds to the actual number of available text columns.</br>
+</br>
+<u>OFFSETS</u> is either nil or a cons cell (HSCROLL . TAB-OFFSET).</br>
+HSCROLL is the number of columns not being displayed at the left</br>
+margin; this is usually taken from a window's hscroll member.</br>
+TAB-OFFSET is the number of columns of the first tab that aren't</br>
+being displayed, perhaps because the line was continued within it.</br>
+If <u>OFFSETS</u> is nil, HSCROLL and TAB-OFFSET are assumed to be zero.</br>
+</br>
+<u>WINDOW</u> is the window to operate on.  It is used to choose the display table;</br>
+if it is showing the current buffer, it is used also for</br>
+deciding which overlay properties apply.</br>
+Note that `compute-motion' always operates on the current buffer.</br>
+</br>
+The value is a list of five elements:</br>
+  (POS HPOS VPOS PREVHPOS CONTIN)</br>
+POS is the buffer position where the scan stopped.</br>
+VPOS is the vertical position where the scan stopped.</br>
+HPOS is the horizontal position where the scan stopped.</br>
+</br>
+PREVHPOS is the horizontal position one character back from POS.</br>
+CONTIN is t if a line was continued after (or within) the previous character.</br>
+</br>
+For example, to find the buffer position of column COL of line LINE</br>
+of a certain window, pass the window's starting location as <u>FROM</u></br>
+and the window's upper-left coordinates as <u>FROMPOS</u>.</br>
+Pass the buffer's (point-max) as <u>TO</u>, to limit the scan to the end of the</br>
+visible section of the buffer, and pass LINE and COL as <u>TOPOS</u>.

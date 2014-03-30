@@ -1,34 +1,32 @@
-<strong>semantic-lex-number-expression</strong> is a variable defined in `<code>lex.el</code>'.<br/>
-Its value is<br/>
-"\\(\\<[0-9]+[.][0-9]+\\([eE][-+]?[0-9]+\\)?[fFdD]?\\>\\|\\<[0-9]+[.][eE][-+]?[0-9]+[fFdD]?\\>\\|\\<[0-9]+[.][fFdD]\\>\\|\\<[0-9]+[.]\\|[.][0-9]+\\([eE][-+]?[0-9]+\\)?[fFdD]?\\>\\|\\<[0-9]+[eE][-+]?[0-9]+[fFdD]?\\>\\|\\<0[xX][0-9a-fA-F]+[lL]?\\>\\|\\<[0-9]+[lLfFdD]?\\>\\)"<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-Regular expression for matching a number.<br/>
-If this value is nil, no number extraction is done during lex.<br/>
-This expression tries to match C and Java like numbers.<br/>
-<br/>
-DECIMAL_LITERAL:<br/>
-    [1-9][0-9]*<br/>
-  ;<br/>
-HEX_LITERAL:<br/>
-    0[xX][0-9a-fA-F]+<br/>
-  ;<br/>
-OCTAL_LITERAL:<br/>
-    0[0-7]*<br/>
-  ;<br/>
-INTEGER_LITERAL:<br/>
-    <DECIMAL_LITERAL>[lL]?<br/>
-  | <HEX_LITERAL>[lL]?<br/>
-  | <OCTAL_LITERAL>[lL]?<br/>
-  ;<br/>
-EXPONENT:<br/>
-    [eE][+-]?[09]+<br/>
-  ;<br/>
-FLOATING_POINT_LITERAL:<br/>
-    [0-9]+[.][0-9]*<EXPONENT>?[fFdD]?<br/>
-  | [.][0-9]+<EXPONENT>?[fFdD]?<br/>
-  | [0-9]+<EXPONENT>[fFdD]?<br/>
-  | [0-9]+<EXPONENT>?[fFdD]<br/>
+<strong>semantic-lex-number-expression</strong> is a variable defined in `<code>lex.el</code>'.</br>
+Its value is <pre></br>
+"\\(\\<[0-9]+[.][0-9]+\\([eE][-+]?[0-9]+\\)?[fFdD]?\\>\\|\\<[0-9]+[.][eE][-+]?[0-9]+[fFdD]?\\>\\|\\<[0-9]+[.][fFdD]\\>\\|\\<[0-9]+[.]\\|[.][0-9]+\\([eE][-+]?[0-9]+\\)?[fFdD]?\\>\\|\\<[0-9]+[eE][-+]?[0-9]+[fFdD]?\\>\\|\\<0[xX][0-9a-fA-F]+[lL]?\\>\\|\\<[0-9]+[lLfFdD]?\\>\\)"</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Regular expression for matching a number.</br>
+If this value is nil, no number extraction is done during lex.</br>
+This expression tries to match C and Java like numbers.</br>
+</br>
+DECIMAL_LITERAL:</br>
+    [1-9][0-9]*</br>
+  ;</br>
+HEX_LITERAL:</br>
+    0[xX][0-9a-fA-F]+</br>
+  ;</br>
+OCTAL_LITERAL:</br>
+    0[0-7]*</br>
+  ;</br>
+INTEGER_LITERAL:</br>
+    <DECIMAL_LITERAL>[lL]?</br>
+  | <HEX_LITERAL>[lL]?</br>
+  | <OCTAL_LITERAL>[lL]?</br>
+  ;</br>
+EXPONENT:</br>
+    [eE][+-]?[09]+</br>
+  ;</br>
+FLOATING_POINT_LITERAL:</br>
+    [0-9]+[.][0-9]*<EXPONENT>?[fFdD]?</br>
+  | [.][0-9]+<EXPONENT>?[fFdD]?</br>
+  | [0-9]+<EXPONENT>[fFdD]?</br>
+  | [0-9]+<EXPONENT>?[fFdD]</br>
   ;

@@ -1,85 +1,85 @@
-<strong>ebrowse-member-buffer-object-menu</strong> is a variable defined in `<code>ebrowse.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Object menu for the member buffer itself.<br/>
-<br/>
-Value:<br/>
-(keymap "Members"<br/>
-	(Members\ List menu-item "Members List"<br/>
-		       (keymap "Members List"<br/>
-			       (Functions menu-item "Functions" ebrowse-display-function-member-list :button<br/>
-					  (:radio eq ebrowse--accessor 'ebrowse-ts-member-functions)<br/>
-					  :help "Show the list of member functions")<br/>
-			       (Variables menu-item "Variables" ebrowse-display-variables-member-list :button<br/>
-					  (:radio eq ebrowse--accessor 'ebrowse-ts-member-variables)<br/>
-					  :help "Show the list of member variables")<br/>
-			       (Static\ Functions menu-item "Static Functions" ebrowse-display-static-functions-member-list :button<br/>
-						  (:radio eq ebrowse--accessor 'ebrowse-ts-static-functions)<br/>
-						  :help "Show the list of static member functions")<br/>
-			       (Static\ Variables menu-item "Static Variables" ebrowse-display-static-variables-member-list :button<br/>
-						  (:radio eq ebrowse--accessor 'ebrowse-ts-static-variables)<br/>
-						  :help "Show the list of static member variables")<br/>
-			       (Types menu-item "Types" ebrowse-display-types-member-list :button<br/>
-				      (:radio eq ebrowse--accessor 'ebrowse-ts-types)<br/>
-				      :help "Show the list of nested types")<br/>
-			       (Friends/Defines menu-item "Friends/Defines" ebrowse-display-friends-member-list :button<br/>
-						(:radio eq ebrowse--accessor 'ebrowse-ts-friends)<br/>
-						:help "Show the list of friends or defines")))<br/>
-	(Class menu-item "Class"<br/>
-	       (keymap "Class"<br/>
-		       (Up menu-item "Up" ebrowse-switch-member-buffer-to-base-class :help "Show the base class of this class")<br/>
-		       (Down menu-item "Down" ebrowse-switch-member-buffer-to-derived-class :help "Show a derived class class of this class")<br/>
-		       (Next\ Sibling menu-item "Next Sibling" ebrowse-switch-member-buffer-to-next-sibling-class :help "Show the next sibling class")<br/>
-		       (Previous\ Sibling menu-item "Previous Sibling" ebrowse-switch-member-buffer-to-previous-sibling-class :help "Show the previous sibling class")))<br/>
-	(Member menu-item "Member"<br/>
-		(keymap "Member"<br/>
-			(Show\ in\ Tree menu-item "Show in Tree" ebrowse-show-displayed-class-in-tree :help "Show this class in the class tree")<br/>
-			(Find\ in\ this\ Class menu-item "Find in this Class" ebrowse-goto-visible-member :help "Search for a member of this class")<br/>
-			(Find\ in\ Tree menu-item "Find in Tree" ebrowse-goto-visible-member/all-member-lists :help "Search for a member in any class")))<br/>
-	(Display menu-item "Display"<br/>
-		 (keymap "Display"<br/>
-			 (Inherited menu-item "Inherited" ebrowse-toggle-base-class-display :button<br/>
-				    (:toggle . ebrowse--show-inherited-flag)<br/>
-				    :help "Toggle display of inherited members")<br/>
-			 (Attributes menu-item "Attributes" ebrowse-toggle-member-attributes-display :button<br/>
-				     (:toggle . ebrowse--attributes-flag)<br/>
-				     :help "Show member attributes")<br/>
-			 (Long\ Display menu-item "Long Display" ebrowse-toggle-long-short-display :button<br/>
-					(:toggle . ebrowse--long-display-flag)<br/>
-					:help "Toggle the member display format")<br/>
-			 (Column\ Width menu-item "Column Width" ebrowse-set-member-buffer-column-width :help "Set the display's column width")))<br/>
-	(Filter menu-item "Filter"<br/>
-		(keymap "Filter"<br/>
-			(Public menu-item "Public" ebrowse-toggle-public-member-filter :button<br/>
-				(:toggle not<br/>
-					 (aref ebrowse--filters 0))<br/>
-				:help "Toggle the visibility of public members")<br/>
-			(Protected menu-item "Protected" ebrowse-toggle-protected-member-filter :button<br/>
-				   (:toggle not<br/>
-					    (aref ebrowse--filters 1))<br/>
-				   :help "Toggle the visibility of protected members")<br/>
-			(Private menu-item "Private" ebrowse-toggle-private-member-filter :button<br/>
-				 (:toggle not<br/>
-					  (aref ebrowse--filters 2))<br/>
-				 :help "Toggle the visibility of private members")<br/>
-			(Virtual menu-item "Virtual" ebrowse-toggle-virtual-member-filter :button<br/>
-				 (:toggle . ebrowse--virtual-display-flag)<br/>
-				 :help "Toggle the visibility of virtual members")<br/>
-			(Inline menu-item "Inline" ebrowse-toggle-inline-member-filter :button<br/>
-				(:toggle . ebrowse--inline-display-flag)<br/>
-				:help "Toggle the visibility of inline members")<br/>
-			(Const menu-item "Const" ebrowse-toggle-const-member-filter :button<br/>
-			       (:toggle . ebrowse--const-display-flag)<br/>
-			       :help "Toggle the visibility of const members")<br/>
-			(Pure menu-item "Pure" ebrowse-toggle-pure-member-filter :button<br/>
-			      (:toggle . ebrowse--pure-display-flag)<br/>
-			      :help "Toggle the visibility of pure virtual members")<br/>
-			(nil menu-item "-----------------")<br/>
-			(Show\ all menu-item "Show all" ebrowse-remove-all-member-filters :help "Remove any display filters")))<br/>
-	(Buffer menu-item "Buffer"<br/>
-		(keymap "Buffer"<br/>
-			(Tree menu-item "Tree" ebrowse-pop-from-member-to-tree-buffer :help "Pop to the class tree buffer")<br/>
-			(Next\ Member\ Buffer menu-item "Next Member Buffer" ebrowse-switch-to-next-member-buffer :help "Switch to the next member buffer of this class tree")<br/>
-			(Freeze menu-item "Freeze" ebrowse-freeze-member-buffer :help "Freeze (do not reuse) this member buffer"))))<br/>
-<br/>
+<strong>ebrowse-member-buffer-object-menu</strong> is a variable defined in `<code>ebrowse.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Object menu for the member buffer itself.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Members"
+	(Members\ List menu-item "Members List"
+		       (keymap "Members List"
+			       (Functions menu-item "Functions" ebrowse-display-function-member-list :button
+					  (:radio eq ebrowse--accessor 'ebrowse-ts-member-functions)
+					  :help "Show the list of member functions")
+			       (Variables menu-item "Variables" ebrowse-display-variables-member-list :button
+					  (:radio eq ebrowse--accessor 'ebrowse-ts-member-variables)
+					  :help "Show the list of member variables")
+			       (Static\ Functions menu-item "Static Functions" ebrowse-display-static-functions-member-list :button
+						  (:radio eq ebrowse--accessor 'ebrowse-ts-static-functions)
+						  :help "Show the list of static member functions")
+			       (Static\ Variables menu-item "Static Variables" ebrowse-display-static-variables-member-list :button
+						  (:radio eq ebrowse--accessor 'ebrowse-ts-static-variables)
+						  :help "Show the list of static member variables")
+			       (Types menu-item "Types" ebrowse-display-types-member-list :button
+				      (:radio eq ebrowse--accessor 'ebrowse-ts-types)
+				      :help "Show the list of nested types")
+			       (Friends/Defines menu-item "Friends/Defines" ebrowse-display-friends-member-list :button
+						(:radio eq ebrowse--accessor 'ebrowse-ts-friends)
+						:help "Show the list of friends or defines")))
+	(Class menu-item "Class"
+	       (keymap "Class"
+		       (Up menu-item "Up" ebrowse-switch-member-buffer-to-base-class :help "Show the base class of this class")
+		       (Down menu-item "Down" ebrowse-switch-member-buffer-to-derived-class :help "Show a derived class class of this class")
+		       (Next\ Sibling menu-item "Next Sibling" ebrowse-switch-member-buffer-to-next-sibling-class :help "Show the next sibling class")
+		       (Previous\ Sibling menu-item "Previous Sibling" ebrowse-switch-member-buffer-to-previous-sibling-class :help "Show the previous sibling class")))
+	(Member menu-item "Member"
+		(keymap "Member"
+			(Show\ in\ Tree menu-item "Show in Tree" ebrowse-show-displayed-class-in-tree :help "Show this class in the class tree")
+			(Find\ in\ this\ Class menu-item "Find in this Class" ebrowse-goto-visible-member :help "Search for a member of this class")
+			(Find\ in\ Tree menu-item "Find in Tree" ebrowse-goto-visible-member/all-member-lists :help "Search for a member in any class")))
+	(Display menu-item "Display"
+		 (keymap "Display"
+			 (Inherited menu-item "Inherited" ebrowse-toggle-base-class-display :button
+				    (:toggle . ebrowse--show-inherited-flag)
+				    :help "Toggle display of inherited members")
+			 (Attributes menu-item "Attributes" ebrowse-toggle-member-attributes-display :button
+				     (:toggle . ebrowse--attributes-flag)
+				     :help "Show member attributes")
+			 (Long\ Display menu-item "Long Display" ebrowse-toggle-long-short-display :button
+					(:toggle . ebrowse--long-display-flag)
+					:help "Toggle the member display format")
+			 (Column\ Width menu-item "Column Width" ebrowse-set-member-buffer-column-width :help "Set the display's column width")))
+	(Filter menu-item "Filter"
+		(keymap "Filter"
+			(Public menu-item "Public" ebrowse-toggle-public-member-filter :button
+				(:toggle not
+					 (aref ebrowse--filters 0))
+				:help "Toggle the visibility of public members")
+			(Protected menu-item "Protected" ebrowse-toggle-protected-member-filter :button
+				   (:toggle not
+					    (aref ebrowse--filters 1))
+				   :help "Toggle the visibility of protected members")
+			(Private menu-item "Private" ebrowse-toggle-private-member-filter :button
+				 (:toggle not
+					  (aref ebrowse--filters 2))
+				 :help "Toggle the visibility of private members")
+			(Virtual menu-item "Virtual" ebrowse-toggle-virtual-member-filter :button
+				 (:toggle . ebrowse--virtual-display-flag)
+				 :help "Toggle the visibility of virtual members")
+			(Inline menu-item "Inline" ebrowse-toggle-inline-member-filter :button
+				(:toggle . ebrowse--inline-display-flag)
+				:help "Toggle the visibility of inline members")
+			(Const menu-item "Const" ebrowse-toggle-const-member-filter :button
+			       (:toggle . ebrowse--const-display-flag)
+			       :help "Toggle the visibility of const members")
+			(Pure menu-item "Pure" ebrowse-toggle-pure-member-filter :button
+			      (:toggle . ebrowse--pure-display-flag)
+			      :help "Toggle the visibility of pure virtual members")
+			(nil menu-item "-----------------")
+			(Show\ all menu-item "Show all" ebrowse-remove-all-member-filters :help "Remove any display filters")))
+	(Buffer menu-item "Buffer"
+		(keymap "Buffer"
+			(Tree menu-item "Tree" ebrowse-pop-from-member-to-tree-buffer :help "Pop to the class tree buffer")
+			(Next\ Member\ Buffer menu-item "Next Member Buffer" ebrowse-switch-to-next-member-buffer :help "Switch to the next member buffer of this class tree")
+			(Freeze menu-item "Freeze" ebrowse-freeze-member-buffer :help "Freeze (do not reuse) this member buffer"))))
+</pre></br>

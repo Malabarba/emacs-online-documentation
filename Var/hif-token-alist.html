@@ -1,26 +1,34 @@
-<strong>hif-token-alist</strong> is a variable defined in `<code>hideif.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (("||" . or)<br/>
- ("&&" . and)<br/>
- ("|" . hif-logior)<br/>
- ("&" . hif-logand)<br/>
- ("==" . equal)<br/>
- ("!=" . hif-notequal)<br/>
- ("!" . not)<br/>
- ("(" . lparen)<br/>
- (")" . rparen)<br/>
- (">" . hif-greater)<br/>
- ("<" . hif-less)<br/>
- (">=" . hif-greater-equal)<br/>
- ("<=" . hif-less-equal)<br/>
- ("+" . hif-plus)<br/>
- ("-" . hif-minus)<br/>
- ("?" . hif-conditional)<br/>
- (":" . hif-colon))<br/>
-<br/>
+<strong>hif-token-alist</strong> is a variable defined in `<code>hideif.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("||" . hif-or)
+ ("&&" . hif-and)
+ ("|" . hif-logior)
+ ("^" . hif-logxor)
+ ("&" . hif-logand)
+ ("<<" . hif-shiftleft)
+ (">>" . hif-shiftright)
+ ("==" . hif-equal)
+ ("=" . hif-assign)
+ ("!=" . hif-notequal)
+ ("##" . hif-token-concat)
+ ("!" . hif-not)
+ ("~" . hif-lognot)
+ ("(" . hif-lparen)
+ (")" . hif-rparen)
+ (">" . hif-greater)
+ ("<" . hif-less)
+ (">=" . hif-greater-equal)
+ ("<=" . hif-less-equal)
+ ("+" . hif-plus)
+ ("-" . hif-minus)
+ ("*" . hif-multiply)
+ ("/" . hif-divide)
+ ("%" . hif-modulo)
+ ("?" . hif-conditional)
+ (":" . hif-colon))
+</pre></br>

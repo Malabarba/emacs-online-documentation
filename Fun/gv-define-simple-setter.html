@@ -1,15 +1,15 @@
-<strong>gv-define-simple-setter</strong> is an autoloaded Lisp macro in `<code>gv.el</code>'.<br/>
-<br/>
-(gv-define-simple-setter NAME SETTER &optional FIX-RETURN)<br/>
-<br/>
-Define a simple setter method for generalized variable NAME.<br/>
-This macro is an easy-to-use substitute for `gv-define-expander' that works<br/>
-well for simple place forms.  Assignments of VAL to (NAME ARGS...) are<br/>
-turned into calls of the form (SETTER ARGS... VAL).<br/>
-<br/>
-If FIX-RETURN is non-nil, then SETTER is not assumed to return VAL and<br/>
-instead the assignment is turned into something equivalent to<br/>
-  (let ((temp VAL))<br/>
-    (SETTER ARGS... temp)<br/>
-    temp)<br/>
+<strong>gv-define-simple-setter</strong> is an autoloaded Lisp macro in `<code>gv.el</code>'.</br>
+</br>
+(gv-define-simple-setter <u>NAME</u> <u>SETTER</u> &optional <u>FIX-RETURN</u>)</br>
+</br>
+Define a simple setter method for generalized variable <u>NAME</u>.</br>
+This macro is an easy-to-use substitute for `gv-define-expander' that works</br>
+well for simple place forms.  Assignments of VAL to (<u>NAME</u> ARGS...) are</br>
+turned into calls of the form (<u>SETTER</u> ARGS... VAL).</br>
+</br>
+If <u>FIX-RETURN</u> is non-nil, then <u>SETTER</u> is not assumed to return VAL and</br>
+instead the assignment is turned into something equivalent to</br>
+  (let ((temp VAL))</br>
+    (<u>SETTER</u> ARGS... temp)</br>
+    temp)</br>
 so as to preserve the semantics of `setf'.

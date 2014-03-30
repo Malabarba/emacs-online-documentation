@@ -1,14 +1,14 @@
-<strong>max-specpdl-size</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is 1300<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Limit on number of Lisp variable bindings and `unwind-protect's.<br/>
-If Lisp code tries to increase the total number past this amount,<br/>
-an error is signaled.<br/>
-You can safely use a value considerably larger than the default value,<br/>
-if that proves inconveniently small.  However, if you increase it too far,<br/>
-Emacs could run out of memory trying to make the stack bigger.<br/>
-<br/>
+<strong>max-specpdl-size</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>1300</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Limit on number of Lisp variable bindings and `unwind-protect's.</br>
+If Lisp code tries to increase the total number past this amount,</br>
+an error is signaled.</br>
+You can safely use a value considerably larger than the default value,</br>
+if that proves inconveniently small.  However, if you increase it too far,</br>
+Emacs could run out of memory trying to make the stack bigger.</br>
+Note that this limit may be silently increased by the debugger</br>
+if `debug-on-error' or `debug-on-quit' is set.</br>
+</br>
 You can customize this variable.

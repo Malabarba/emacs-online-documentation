@@ -1,47 +1,48 @@
-<strong>org-ctrl-c-ctrl-c</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.<br/>
-<br/>
-(org-ctrl-c-ctrl-c &optional ARG)<br/>
-<br/>
-Set tags in headline, or update according to changed information at point.<br/>
-<br/>
-This command does many different things, depending on context:<br/>
-<br/>
-- If a function in `org-ctrl-c-ctrl-c-hook' recognizes this location,<br/>
-  this is what we do.<br/>
-<br/>
-- If the cursor is on a statistics cookie, update it.<br/>
-<br/>
-- If the cursor is in a headline, prompt for tags and insert them<br/>
-  into the current line, aligned to `org-tags-column'.  When called<br/>
-  with prefix arg, realign all tags in the current buffer.<br/>
-<br/>
-- If the cursor is in one of the special #+KEYWORD lines, this<br/>
-  triggers scanning the buffer for these lines and updating the<br/>
-  information.<br/>
-<br/>
-- If the cursor is inside a table, realign the table.  This command<br/>
-  works even if the automatic table editor has been turned off.<br/>
-<br/>
-- If the cursor is on a #+TBLFM line, re-apply the formulas to<br/>
-  the entire table.<br/>
-<br/>
-- If the cursor is at a footnote reference or definition, jump to<br/>
-  the corresponding definition or references, respectively.<br/>
-<br/>
-- If the cursor is a the beginning of a dynamic block, update it.<br/>
-<br/>
-- If the current buffer is a capture buffer, close note and file it.<br/>
-<br/>
-- If the cursor is on a <<<target>>>, update radio targets and<br/>
-  corresponding links in this buffer.<br/>
-<br/>
-- If the cursor is on a numbered item in a plain list, renumber the<br/>
-  ordered list.<br/>
-<br/>
-- If the cursor is on a checkbox, toggle it.<br/>
-<br/>
-- If the cursor is on a code block, evaluate it.  The variable<br/>
-  `org-confirm-babel-evaluate' can be used to control prompting<br/>
-  before code block evaluation, by default every code block<br/>
-  evaluation requires confirmation.  Code block evaluation can be<br/>
+<strong>org-ctrl-c-ctrl-c</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+</br>
+(org-ctrl-c-ctrl-c &optional <u>ARG</u>)</br>
+</br>
+Set tags in headline, or update according to changed information at point.</br>
+</br>
+This command does many different things, depending on context:</br>
+</br>
+- If a function in `org-ctrl-c-ctrl-c-hook' recognizes this location,</br>
+  this is what we do.</br>
+</br>
+- If the cursor is on a statistics cookie, update it.</br>
+</br>
+- If the cursor is in a headline, prompt for tags and insert them</br>
+  into the current line, aligned to `org-tags-column'.  When called</br>
+  with prefix arg, realign all tags in the current buffer.</br>
+</br>
+- If the cursor is in one of the special #+KEYWORD lines, this</br>
+  triggers scanning the buffer for these lines and updating the</br>
+  information.</br>
+</br>
+- If the cursor is inside a table, realign the table.  This command</br>
+  works even if the automatic table editor has been turned off.</br>
+</br>
+- If the cursor is on a #+TBLFM line, re-apply the formulas to</br>
+  the entire table.</br>
+</br>
+- If the cursor is at a footnote reference or definition, jump to</br>
+  the corresponding definition or references, respectively.</br>
+</br>
+- If the cursor is a the beginning of a dynamic block, update it.</br>
+</br>
+- If the current buffer is a capture buffer, close note and file it.</br>
+</br>
+- If the cursor is on a &lt;&lt;&lt;target>>>, update radio targets and</br>
+  corresponding links in this buffer.</br>
+</br>
+- If the cursor is on a numbered item in a plain list, renumber the</br>
+  ordered list.</br>
+</br>
+- If the cursor is on a checkbox, toggle it.</br>
+</br>
+- If the cursor is on a code block, evaluate it.  The variable</br>
+  `org-confirm-babel-evaluate' can be used to control prompting</br>
+  before code block evaluation, by default every code block</br>
+  evaluation requires confirmation.  Code block evaluation can be</br>
   inhibited by setting `org-babel-no-eval-on-ctrl-c-ctrl-c'.

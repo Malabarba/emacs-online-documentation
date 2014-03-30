@@ -1,0 +1,60 @@
+<strong>frameset-restore</strong> is an autoloaded compiled Lisp function in `<code>frameset.el</code>'.</br>
+</br>
+(frameset-restore <u>FRAMESET</u> &key <u>PREDICATE</u> <u>FILTERS</u> <u>REUSE-FRAMES</u> <u>FORCE-DISPLAY</u> <u>FORCE-ONSCREEN</u> <u>CLEANUP-FRAMES</u>)</br>
+</br>
+Restore a <u>FRAMESET</u> into the current display(s).</br>
+</br>
+<u>PREDICATE</u> is a function called with two arguments, the parameter alist</br>
+and the window-state of the frame being restored, in that order (see</br>
+the docstring of the `frameset' defstruct for additional details).</br>
+If <u>PREDICATE</u> returns nil, the frame described by that parameter alist</br>
+and window-state is not restored.</br>
+</br>
+<u>FILTERS</u> is an alist of parameter filters; if nil, the value of</br>
+`frameset-filter-alist' is used instead.</br>
+</br>
+<u>REUSE-FRAMES</u> selects the policy to reuse frames when restoring:</br>
+  t        All existing frames can be reused.</br>
+  nil      No existing frame can be reused.</br>
+  match    Only frames with matching frame ids can be reused.</br>
+  PRED     A predicate function; it receives as argument a live frame,</br>
+             and must return non-nil to allow reusing it, nil otherwise.</br>
+</br>
+<u>FORCE-DISPLAY</u> can be:</br>
+  t        Frames are restored in the current display.</br>
+  nil      Frames are restored, if possible, in their original displays.</br>
+  delete   Frames in other displays are deleted instead of restored.</br>
+  PRED     A function called with two arguments, the parameter alist and</br>
+	     the window state (in that order).  It must return t, nil or</br>
+	     `delete', as above but affecting only the frame that will</br>
+	     be created from that parameter alist.</br>
+</br>
+<u>FORCE-ONSCREEN</u> can be:</br>
+  t        Force onscreen only those frames that are fully offscreen.</br>
+  nil      Do not force any frame back onscreen.</br>
+  all      Force onscreen any frame fully or partially offscreen.</br>
+  PRED     A function called with three arguments,</br>
+	   - the live frame just restored,</br>
+	   - a list (LEFT TOP WIDTH HEIGHT), describing the frame,</br>
+	   - a list (LEFT TOP WIDTH HEIGHT), describing the workarea.</br>
+	   It must return non-nil to force the frame onscreen, nil otherwise.</br>
+</br>
+<u>CLEANUP-FRAMES</u> allows to "clean up" the frame list after restoring a frameset:</br>
+  t        Delete all frames that were not created or restored upon.</br>
+  nil      Keep all frames.</br>
+  FUNC     A function called with two arguments:</br>
+           - FRAME, a live frame.</br>
+           - ACTION, which can be one of</br>
+             :rejected  Frame existed, but was not a candidate for reuse.</br>
+             :ignored   Frame existed, was a candidate, but wasn't reused.</br>
+             :reused    Frame existed, was a candidate, and restored upon.</br>
+             :created   Frame didn't exist, was created and restored upon.</br>
+           Return value is ignored.</br>
+</br>
+Note the timing and scope of the operations described above: <u>REUSE-FRAMES</u></br>
+affects existing frames; <u>PREDICATE</u>, <u>FILTERS</u> and <u>FORCE-DISPLAY</u> affect the frame</br>
+being restored before that happens; <u>FORCE-ONSCREEN</u> affects the frame once</br>
+it has been restored; and <u>CLEANUP-FRAMES</u> affects all frames alive after the</br>
+restoration, including those that have been reused or created anew.</br>
+</br>
+All keyword parameters default to nil.

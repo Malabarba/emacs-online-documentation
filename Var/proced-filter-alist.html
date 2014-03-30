@@ -1,35 +1,36 @@
-<strong>proced-filter-alist</strong> is a variable defined in `<code>proced.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Alist of process filters.<br/>
-The car of each element is a symbol, the name of the filter.<br/>
-The cdr is a list of elementary filters that are applied to every process.<br/>
-A process is displayed if it passes all elementary filters of a selected<br/>
-filter.<br/>
-<br/>
-An elementary filter can be one of the following:<br/>
-(KEY . REGEXP)   If value of attribute KEY matches REGEXP,<br/>
-                 accept this process.<br/>
-(KEY . FUN)      Apply function FUN to attribute KEY.  Accept this process,<br/>
-                 if FUN returns non-nil.<br/>
-(function . FUN) For each process, apply function FUN to list of attributes<br/>
-                 of each.  Accept the process if FUN returns non-nil.<br/>
-(fun-all . FUN)  Apply function FUN to entire process list.<br/>
-                 FUN must return the filtered list.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: ((user<br/>
-  (user . "\\`tester\\'"))<br/>
- (user-running<br/>
-  (user . "\\`tester\\'")<br/>
-  (state . "\\`[Rr]\\'"))<br/>
- (all)<br/>
- (all-running<br/>
-  (state . "\\`[Rr]\\'"))<br/>
- (emacs<br/>
-  (fun-all lambda<br/>
-	   (list)<br/>
-	   (proced-filter-children list 20502))))<br/>
-<br/>
+<strong>proced-filter-alist</strong> is a variable defined in `<code>proced.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of process filters.</br>
+The car of each element is a symbol, the name of the filter.</br>
+The cdr is a list of elementary filters that are applied to every process.</br>
+A process is displayed if it passes all elementary filters of a selected</br>
+filter.</br>
+</br>
+An elementary filter can be one of the following:</br>
+(KEY . REGEXP)   If value of attribute KEY matches REGEXP,</br>
+                 accept this process.</br>
+(KEY . FUN)      Apply function FUN to attribute KEY.  Accept this process,</br>
+                 if FUN returns non-nil.</br>
+(function . FUN) For each process, apply function FUN to list of attributes</br>
+                 of each.  Accept the process if FUN returns non-nil.</br>
+(fun-all . FUN)  Apply function FUN to entire process list.</br>
+                 FUN must return the filtered list.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((user
+  (user . "\\`artur\\'"))
+ (user-running
+  (user . "\\`artur\\'")
+  (state . "\\`[Rr]\\'"))
+ (all)
+ (all-running
+  (state . "\\`[Rr]\\'"))
+ (emacs
+  (fun-all lambda
+	   (list)
+	   (proced-filter-children list 27791))))
+</pre></br>

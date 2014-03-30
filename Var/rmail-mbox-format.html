@@ -1,0 +1,22 @@
+<strong>rmail-mbox-format</strong> is a variable defined in `<code>rmail.el</code>'.</br>
+Its value is <pre>mboxrd</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The mbox format that your system uses.</br>
+There is no way to determine this, so you should set the appropriate value.</br>
+The formats quote lines containing "From " differently.</br>
+The choices are:</br>
+  `mboxo' : lines that start with "From " quoted as ">From "</br>
+  `mboxrd': lines that start with ">*From " quoted with another ">"</br>
+The `mboxo' format is ambiguous, in that one cannot know whether</br>
+a line starting with ">From " originally had a ">" or not.</br>
+</br>
+It is not critical to set this to the correct value; it only affects</br>
+how Rmail displays lines starting with ">*From " in non-MIME messages.</br>
+</br>
+See also `unrmail-mbox-format'.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

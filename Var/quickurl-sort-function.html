@@ -1,21 +1,20 @@
-<strong>quickurl-sort-function</strong> is a variable defined in `<code>quickurl.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function to sort the URL list.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (lambda<br/>
-  (list)<br/>
-  (sort list<br/>
-	(lambda<br/>
-	  (x y)<br/>
-	  (string<<br/>
-	   (downcase<br/>
-	    (quickurl-url-description x))<br/>
-	   (downcase<br/>
-	    (quickurl-url-description y))))))<br/>
-<br/>
+<strong>quickurl-sort-function</strong> is a variable defined in `<code>quickurl.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to sort the URL list.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(lambda
+  (list)
+  (sort list
+	(lambda
+	  (x y)
+	  (string<
+	   (downcase
+	    (quickurl-url-description x))
+	   (downcase
+	    (quickurl-url-description y))))))
+</pre></br>

@@ -1,24 +1,24 @@
-<strong>custom-theme-set-variables</strong> is a compiled Lisp function in `<code>custom.el</code>'.<br/>
-<br/>
-(custom-theme-set-variables THEME &rest ARGS)<br/>
-<br/>
-Initialize variables for theme THEME according to settings in ARGS.<br/>
-Each of the arguments in ARGS should be a list of this form:<br/>
-<br/>
-  (SYMBOL EXP [NOW [REQUEST [COMMENT]]])<br/>
-<br/>
-SYMBOL is the variable name, and EXP is an expression which<br/>
-evaluates to the customized value.  EXP will also be stored,<br/>
-without evaluating it, in SYMBOL's `saved-value' property, so<br/>
-that it can be restored via the Customize interface.  It is also<br/>
-added to the alist in SYMBOL's `theme-value' property (by<br/>
-calling `custom-push-theme').<br/>
-<br/>
-NOW, if present and non-nil, means to install the variable's<br/>
-value directly now, even if its `defcustom' declaration has not<br/>
-been executed.  This is for internal use only.<br/>
-<br/>
-REQUEST is a list of features to `require' (which are loaded<br/>
-prior to evaluating EXP).<br/>
-<br/>
+<strong>custom-theme-set-variables</strong> is a compiled Lisp function in `<code>custom.el</code>'.</br>
+</br>
+(custom-theme-set-variables <u>THEME</u> &rest <u>ARGS</u>)</br>
+</br>
+Initialize variables for theme <u>THEME</u> according to settings in <u>ARGS</u>.</br>
+Each of the arguments in <u>ARGS</u> should be a list of this form:</br>
+</br>
+  (SYMBOL EXP [NOW [REQUEST [COMMENT]]])</br>
+</br>
+SYMBOL is the variable name, and EXP is an expression which</br>
+evaluates to the customized value.  EXP will also be stored,</br>
+without evaluating it, in SYMBOL's `saved-value' property, so</br>
+that it can be restored via the Customize interface.  It is also</br>
+added to the alist in SYMBOL's `theme-value' property (by</br>
+calling `custom-push-theme').</br>
+</br>
+NOW, if present and non-nil, means to install the variable's</br>
+value directly now, even if its `defcustom' declaration has not</br>
+been executed.  This is for internal use only.</br>
+</br>
+REQUEST is a list of features to `require' (which are loaded</br>
+prior to evaluating EXP).</br>
+</br>
 COMMENT is a comment string about SYMBOL.

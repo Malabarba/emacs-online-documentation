@@ -1,22 +1,23 @@
-<strong>yank-handled-properties</strong> is a variable defined in `<code>simple.el</code>'.<br/>
-Its value is ((font-lock-face . yank-handle-font-lock-face-property)<br/>
- (category . yank-handle-category-property))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-List of special text property handling conditions for yanking.<br/>
-Each element should have the form (PROP . FUN), where PROP is a<br/>
-property symbol and FUN is a function.  When the `yank' command<br/>
-inserts text into the buffer, it scans the inserted text for<br/>
-stretches of text that have `eq' values of the text property<br/>
-PROP; for each such stretch of text, FUN is called with three<br/>
-arguments: the property's value in that text, and the start and<br/>
-end positions of the text.<br/>
-<br/>
-This is done prior to removing the properties specified by<br/>
-`yank-excluded-properties'.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.3 of Emacs.<br/>
+<strong>yank-handled-properties</strong> is a variable defined in `<code>simple.el</code>'.</br>
+Its value is <pre></br>
+((font-lock-face . yank-handle-font-lock-face-property)
+ (category . yank-handle-category-property))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of special text property handling conditions for yanking.</br>
+Each element should have the form (PROP . FUN), where PROP is a</br>
+property symbol and FUN is a function.  When the `yank' command</br>
+inserts text into the buffer, it scans the inserted text for</br>
+stretches of text that have `eq' values of the text property</br>
+PROP; for each such stretch of text, FUN is called with three</br>
+arguments: the property's value in that text, and the start and</br>
+end positions of the text.</br>
+</br>
+This is done prior to removing the properties specified by</br>
+`yank-excluded-properties'.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.3 of Emacs.

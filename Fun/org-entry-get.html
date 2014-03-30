@@ -1,15 +1,17 @@
-<strong>org-entry-get</strong> is a compiled Lisp function in `<code>org.el</code>'.<br/>
-<br/>
-(org-entry-get POM PROPERTY &optional INHERIT LITERAL-NIL)<br/>
-<br/>
-Get value of PROPERTY for entry or content at point-or-marker POM.<br/>
-If INHERIT is non-nil and the entry does not have the property,<br/>
-then also check higher levels of the hierarchy.<br/>
-If INHERIT is the symbol `selective', use inheritance only if the setting<br/>
-in `org-use-property-inheritance' selects PROPERTY for inheritance.<br/>
-If the property is present but empty, the return value is the empty string.<br/>
-If the property is not present at all, nil is returned.<br/>
-<br/>
-If LITERAL-NIL is set, return the string value "nil" as a string,<br/>
-do not interpret it as the list atom nil.  This is used for inheritance<br/>
+<strong>org-entry-get</strong> is a compiled Lisp function in `<code>org.el</code>'.</br>
+</br>
+(org-entry-get <u>POM</u> <u>PROPERTY</u> &optional <u>INHERIT</u> <u>LITERAL-NIL</u>)</br>
+</br>
+Get value of <u>PROPERTY</u> for entry or content at point-or-marker <u>POM</u>.</br>
+If <u>INHERIT</u> is non-nil and the entry does not have the property,</br>
+then also check higher levels of the hierarchy.</br>
+If <u>INHERIT</u> is the symbol `selective', use inheritance only if the setting</br>
+in `org-use-property-inheritance' selects <u>PROPERTY</u> for inheritance.</br>
+If the property is present but empty, the return value is the empty string.</br>
+If the property is not present at all, nil is returned.</br>
+</br>
+Return the value as a string.</br>
+</br>
+If <u>LITERAL-NIL</u> is set, return the string value "nil" as a string,</br>
+do not interpret it as the list atom nil.  This is used for inheritance</br>
 when a "nil" value can supersede a non-nil value higher up the hierarchy.

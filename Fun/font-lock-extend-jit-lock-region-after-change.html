@@ -1,11 +1,11 @@
-<strong>font-lock-extend-jit-lock-region-after-change</strong> is a compiled Lisp function in `<code>font-lock.el</code>'.<br/>
-<br/>
-(font-lock-extend-jit-lock-region-after-change BEG END OLD-LEN)<br/>
-<br/>
-Function meant for `jit-lock-after-change-extend-region-functions'.<br/>
-This function does 2 things:<br/>
-- extend the region so that it not only includes the part that was modified<br/>
-  but also the surrounding text whose highlighting may change as a consequence.<br/>
-- anticipate (part of) the region extension that will happen later in<br/>
-  `font-lock-default-fontify-region', in order to avoid the need for<br/>
+<strong>font-lock-extend-jit-lock-region-after-change</strong> is a compiled Lisp function in `<code>font-lock.el</code>'.</br>
+</br>
+(font-lock-extend-jit-lock-region-after-change <u>BEG</u> <u>END</u> <u>OLD-LEN</u>)</br>
+</br>
+Function meant for `jit-lock-after-change-extend-region-functions'.</br>
+This function does 2 things:</br>
+- extend the region so that it not only includes the part that was modified</br>
+  but also the surrounding text whose highlighting may change as a consequence.</br>
+- anticipate (part of) the region extension that will happen later in</br>
+  `font-lock-default-fontify-region', in order to avoid the need for</br>
   double-redisplay in `jit-lock-fontify-now'.

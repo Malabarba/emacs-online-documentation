@@ -1,17 +1,17 @@
-<strong>erc-server-flood-margin</strong> is a variable defined in `<code>erc-backend.el</code>'.<br/>
-Its value is 10<br/>
-<br/>
-Documentation:<br/>
-A margin on how much excess data we send.<br/>
-The flood protection algorithm of ERC works like the one<br/>
-detailed in RFC 2813, section 5.8 "Flood control of clients".<br/>
-<br/>
-  * If `erc-server-flood-last-message' is less than the current<br/>
-    time, set it equal.<br/>
-  * While `erc-server-flood-last-message' is less than<br/>
-    `erc-server-flood-margin' seconds ahead of the current<br/>
-    time, send a message, and increase<br/>
-    `erc-server-flood-last-message' by<br/>
-    `erc-server-flood-penalty' for each message.<br/>
-<br/>
+<strong>erc-server-flood-margin</strong> is a variable defined in `<code>erc-backend.el</code>'.</br>
+Its value is <pre>10</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A margin on how much excess data we send.</br>
+The flood protection algorithm of ERC works like the one</br>
+detailed in RFC 2813, section 5.8 "Flood control of clients".</br>
+</br>
+  * If `erc-server-flood-last-message' is less than the current</br>
+    time, set it equal.</br>
+  * While `erc-server-flood-last-message' is less than</br>
+    `erc-server-flood-margin' seconds ahead of the current</br>
+    time, send a message, and increase</br>
+    `erc-server-flood-last-message' by</br>
+    `erc-server-flood-penalty' for each message.</br>
+</br>
 You can customize this variable.

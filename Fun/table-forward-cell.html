@@ -1,39 +1,40 @@
-<strong>table-forward-cell</strong> is an interactive autoloaded compiled Lisp function in `<code>table.el</code>'.<br/>
-<br/>
-(table-forward-cell &optional ARG NO-RECOGNIZE UNRECOGNIZE)<br/>
-<br/>
-Move point forward to the beginning of the next cell.<br/>
-With argument ARG, do it ARG times;<br/>
-a negative argument ARG = -N means move backward N cells.<br/>
-Do not specify NO-RECOGNIZE and UNRECOGNIZE. They are for internal use only.<br/>
-<br/>
-Sample Cell Traveling Order (In Irregular Table Cases)<br/>
-<br/>
-You can actually try how it works in this buffer.  Press<br/>
-M-x table-recognize and go to cells in the following tables and press<br/>
-M-x table-forward-cell or TAB key.<br/>
-<br/>
-+-----+--+  +--+-----+  +--+--+--+  +--+--+--+  +---------+  +--+---+--+<br/>
-|0    |1 |  |0 |1    |  |0 |1 |2 |  |0 |1 |2 |  |0        |  |0 |1  |2 |<br/>
-+--+--+  |  |  +--+--+  +--+  |  |  |  |  +--+  +----+----+  +--+-+-+--+<br/>
-|2 |3 |  |  |  |2 |3 |  |3 +--+  |  |  +--+3 |  |1   |2   |  |3   |4   |<br/>
-|  +--+--+  +--+--+  |  +--+4 |  |  |  |4 +--+  +--+-+-+--+  +----+----+<br/>
-|  |4    |  |4    |  |  |5 |  |  |  |  |  |5 |  |3 |4  |5 |  |5        |<br/>
-+--+-----+  +-----+--+  +--+--+--+  +--+--+--+  +--+---+--+  +---------+<br/>
-<br/>
-+--+--+--+  +--+--+--+  +--+--+--+  +--+--+--+<br/>
-|0 |1 |2 |  |0 |1 |2 |  |0 |1 |2 |  |0 |1 |2 |<br/>
-|  |  |  |  |  +--+  |  |  |  |  |  +--+  +--+<br/>
-+--+  +--+  +--+3 +--+  |  +--+  |  |3 +--+4 |<br/>
-|3 |  |4 |  |4 +--+5 |  |  |3 |  |  +--+5 +--+<br/>
-|  |  |  |  |  |6 |  |  |  |  |  |  |6 |  |7 |<br/>
-+--+--+--+  +--+--+--+  +--+--+--+  +--+--+--+<br/>
-<br/>
-+--+--+--+  +--+--+--+  +--+--+--+--+  +--+-----+--+  +--+--+--+--+<br/>
-|0 |1 |2 |  |0 |1 |2 |	|0 |1 |2 |3 |  |0 |1    |2 |  |0 |1 |2 |3 |<br/>
-|  +--+  |  |  +--+  |	|  +--+--+  |  |  |     |  |  |  +--+--+  |<br/>
-|  |3 +--+  +--+3 |  |	+--+4    +--+  +--+     +--+  +--+4    +--+<br/>
-+--+  |4 |  |4 |  +--+	|5 +--+--+6 |  |3 +--+--+4 |  |5 |     |6 |<br/>
-|5 +--+  |  |  +--+5 |	|  |7 |8 |  |  |  |5 |6 |  |  |  |     |  |<br/>
-|  |6 |  |  |  |6 |  |	+--+--+--+--+  +--+--+--+--+  +--+-----+--+<br/>
+<strong>table-forward-cell</strong> is an interactive autoloaded compiled Lisp function in `<code>table.el</code>'.</br>
+</br>
+</br>
+(table-forward-cell &optional <u>ARG</u> <u>NO-RECOGNIZE</u> <u>UNRECOGNIZE</u>)</br>
+</br>
+Move point forward to the beginning of the next cell.</br>
+With argument <u>ARG</u>, do it <u>ARG</u> times;</br>
+a negative argument <u>ARG</u> = -N means move backward N cells.</br>
+Do not specify <u>NO-RECOGNIZE</u> and <u>UNRECOGNIZE</u>. They are for internal use only.</br>
+</br>
+Sample Cell Traveling Order (In Irregular Table Cases)</br>
+</br>
+You can actually try how it works in this buffer.  Press</br>
+M-x table-recognize and go to cells in the following tables and press</br>
+M-x table-forward-cell or TAB key.</br>
+</br>
++-----+--+  +--+-----+  +--+--+--+  +--+--+--+  +---------+  +--+---+--+</br>
+|0    |1 |  |0 |1    |  |0 |1 |2 |  |0 |1 |2 |  |0        |  |0 |1  |2 |</br>
++--+--+  |  |  +--+--+  +--+  |  |  |  |  +--+  +----+----+  +--+-+-+--+</br>
+|2 |3 |  |  |  |2 |3 |  |3 +--+  |  |  +--+3 |  |1   |2   |  |3   |4   |</br>
+|  +--+--+  +--+--+  |  +--+4 |  |  |  |4 +--+  +--+-+-+--+  +----+----+</br>
+|  |4    |  |4    |  |  |5 |  |  |  |  |  |5 |  |3 |4  |5 |  |5        |</br>
++--+-----+  +-----+--+  +--+--+--+  +--+--+--+  +--+---+--+  +---------+</br>
+</br>
++--+--+--+  +--+--+--+  +--+--+--+  +--+--+--+</br>
+|0 |1 |2 |  |0 |1 |2 |  |0 |1 |2 |  |0 |1 |2 |</br>
+|  |  |  |  |  +--+  |  |  |  |  |  +--+  +--+</br>
++--+  +--+  +--+3 +--+  |  +--+  |  |3 +--+4 |</br>
+|3 |  |4 |  |4 +--+5 |  |  |3 |  |  +--+5 +--+</br>
+|  |  |  |  |  |6 |  |  |  |  |  |  |6 |  |7 |</br>
++--+--+--+  +--+--+--+  +--+--+--+  +--+--+--+</br>
+</br>
++--+--+--+  +--+--+--+  +--+--+--+--+  +--+-----+--+  +--+--+--+--+</br>
+|0 |1 |2 |  |0 |1 |2 |	|0 |1 |2 |3 |  |0 |1    |2 |  |0 |1 |2 |3 |</br>
+|  +--+  |  |  +--+  |	|  +--+--+  |  |  |     |  |  |  +--+--+  |</br>
+|  |3 +--+  +--+3 |  |	+--+4    +--+  +--+     +--+  +--+4    +--+</br>
++--+  |4 |  |4 |  +--+	|5 +--+--+6 |  |3 +--+--+4 |  |5 |     |6 |</br>
+|5 +--+  |  |  +--+5 |	|  |7 |8 |  |  |  |5 |6 |  |  |  |     |  |</br>
+|  |6 |  |  |  |6 |  |	+--+--+--+--+  +--+--+--+--+  +--+-----+--+</br>
 +--+--+--+  +--+--+--+

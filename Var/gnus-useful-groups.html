@@ -1,25 +1,26 @@
-<strong>gnus-useful-groups</strong> is a variable defined in `<code>gnus-group.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-*Alist of useful group-server pairs.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (("(ding) mailing list mirrored at gmane.org" "gmane.emacs.gnus.general"<br/>
-  (nntp "Gmane"<br/>
-	(nntp-address "news.gmane.org")))<br/>
- ("Gnus bug archive" "gnus.gnus-bug"<br/>
-  (nntp "news.gnus.org"<br/>
-	(nntp-address "news.gnus.org")))<br/>
- ("Local Gnus help group" "gnus-help"<br/>
-  (nndoc "gnus-help"<br/>
-	 (nndoc-article-type mbox)<br/>
-	 (eval<br/>
-	  `(nndoc-address ,(let<br/>
-			       ((file<br/>
-				 (nnheader-find-etc-directory "gnus-tut.txt" t)))<br/>
-			     (unless file<br/>
-			       (error "Couldn't find doc group"))<br/>
-			     file))))))<br/>
-<br/>
+<strong>gnus-useful-groups</strong> is a variable defined in `<code>gnus-group.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Alist of useful group-server pairs.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("(ding) mailing list mirrored at gmane.org" "gmane.emacs.gnus.general"
+  (nntp "Gmane"
+	(nntp-address "news.gmane.org")))
+ ("Gnus bug archive" "gnus.gnus-bug"
+  (nntp "news.gnus.org"
+	(nntp-address "news.gnus.org")))
+ ("Local Gnus help group" "gnus-help"
+  (nndoc "gnus-help"
+	 (nndoc-article-type mbox)
+	 (eval
+	  `(nndoc-address ,(let
+			       ((file
+				 (nnheader-find-etc-directory "gnus-tut.txt" t)))
+			     (unless file
+			       (error "Couldn't find doc group"))
+			     file))))))
+</pre></br>

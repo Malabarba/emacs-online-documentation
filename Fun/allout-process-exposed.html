@@ -1,27 +1,27 @@
-<strong>allout-process-exposed</strong> is a compiled Lisp function in `<code>allout.el</code>'.<br/>
-<br/>
-(allout-process-exposed &optional FUNC FROM TO FROMBUF TOBUF FORMAT START-NUM)<br/>
-<br/>
-Map function on exposed parts of current topic; results to another buffer.<br/>
-<br/>
-All args are options; default values itemized below.<br/>
-<br/>
-Apply FUNCTION to exposed portions FROM position TO position in buffer<br/>
-FROMBUF to buffer TOBUF.  Sixth optional arg, FORMAT, designates an<br/>
-alternate presentation form:<br/>
-<br/>
- `flat' -- Present prefix as numeric section.subsection..., starting with<br/>
-	 section indicated by the START-NUM, innermost nesting first.<br/>
- X`flat-indented' -- Prefix is like `flat' for first topic at each<br/>
- X		   level, but subsequent topics have only leaf topic<br/>
- X		   number, padded with blanks to line up with first.<br/>
- `indent' (symbol) --  Convert header prefixes to all white space,<br/>
-		       except for distinctive bullets.<br/>
-<br/>
-Defaults:<br/>
-  FUNCTION:	`allout-insert-listified'<br/>
-  FROM:		region start, if region active, else start of buffer<br/>
-  TO:		region end, if region active, else end of buffer<br/>
-  FROMBUF:	current buffer<br/>
-  TOBUF:	buffer name derived: "*current-buffer-name exposed*"<br/>
-  FORMAT:	nil
+<strong>allout-process-exposed</strong> is a compiled Lisp function in `<code>allout.el</code>'.</br>
+</br>
+(allout-process-exposed &optional <u>FUNC</u> <u>FROM</u> <u>TO</u> <u>FROMBUF</u> <u>TOBUF</u> <u>FORMAT</u> <u>START-NUM</u>)</br>
+</br>
+Map function on exposed parts of current topic; results to another buffer.</br>
+</br>
+All args are options; default values itemized below.</br>
+</br>
+Apply FUNCTION to exposed portions <u>FROM</u> position <u>TO</u> position in buffer</br>
+<u>FROMBUF</u> to buffer <u>TOBUF</u>.  Sixth optional arg, <u>FORMAT</u>, designates an</br>
+alternate presentation form:</br>
+</br>
+ `flat' -- Present prefix as numeric section.subsection..., starting with</br>
+	 section indicated by the <u>START-NUM</u>, innermost nesting first.</br>
+ X`flat-indented' -- Prefix is like `flat' for first topic at each</br>
+ X		   level, but subsequent topics have only leaf topic</br>
+ X		   number, padded with blanks to line up with first.</br>
+ `indent' (symbol) --  Convert header prefixes to all white space,</br>
+		       except for distinctive bullets.</br>
+</br>
+Defaults:</br>
+  FUNCTION:	`allout-insert-listified'</br>
+  <u>FROM</u>:		region start, if region active, else start of buffer</br>
+  <u>TO</u>:		region end, if region active, else end of buffer</br>
+  <u>FROMBUF</u>:	current buffer</br>
+  <u>TOBUF</u>:	buffer name derived: "*current-buffer-name exposed*"</br>
+  <u>FORMAT</u>:	nil

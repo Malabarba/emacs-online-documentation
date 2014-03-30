@@ -1,54 +1,53 @@
-<strong>query-replace-map</strong> is a variable defined in `<code>replace.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap of responses to questions posed by commands like `query-replace'.<br/>
-The "bindings" in this map are not commands; they are answers.<br/>
-The valid answers include `act', `skip', `act-and-show',<br/>
-`act-and-exit', `exit', `exit-prefix', `recenter', `scroll-up',<br/>
-`scroll-down', `scroll-other-window', `scroll-other-window-down',<br/>
-`edit', `edit-replacement', `delete-and-edit', `automatic',<br/>
-`backup', `quit', and `help'.<br/>
-<br/>
-This keymap is used by `y-or-n-p' as well as `query-replace'.<br/>
-<br/>
-Value: (keymap<br/>
- (escape . exit-prefix)<br/>
- (M-prior . scroll-other-window-down)<br/>
- (M-next . scroll-other-window)<br/>
- (prior . scroll-down)<br/>
- (next . scroll-up)<br/>
- (27 keymap<br/>
-     (33554454 . scroll-other-window-down)<br/>
-     (22 . scroll-other-window)<br/>
-     (118 . scroll-down))<br/>
- (22 . scroll-up)<br/>
- (29 . quit)<br/>
- (7 . quit)<br/>
- (63 . help)<br/>
- (help . help)<br/>
- (f1 . help)<br/>
- (8 . help)<br/>
- (94 . backup)<br/>
- (33 . automatic)<br/>
- (12 . recenter)<br/>
- (23 . delete-and-edit)<br/>
- (18 . edit)<br/>
- (46 . act-and-exit)<br/>
- (return . exit)<br/>
- (13 . exit)<br/>
- (113 . exit)<br/>
- (44 . act-and-show)<br/>
- (69 . edit-replacement)<br/>
- (101 . edit-replacement)<br/>
- (78 . skip)<br/>
- (89 . act)<br/>
- (110 . skip)<br/>
- (121 . act)<br/>
- (backspace . skip)<br/>
- (delete . skip)<br/>
- (127 . skip)<br/>
- (32 . act))<br/>
-<br/>
+<strong>query-replace-map</strong> is a variable defined in `<code>replace.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap of responses to questions posed by commands like `query-replace'.</br>
+The "bindings" in this map are not commands; they are answers.</br>
+The valid answers include `act', `skip', `act-and-show',</br>
+`act-and-exit', `exit', `exit-prefix', `recenter', `scroll-up',</br>
+`scroll-down', `scroll-other-window', `scroll-other-window-down',</br>
+`edit', `edit-replacement', `delete-and-edit', `automatic',</br>
+`backup', `quit', and `help'.</br>
+</br>
+This keymap is used by `y-or-n-p' as well as `query-replace'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (escape . exit-prefix)
+ (M-prior . scroll-other-window-down)
+ (M-next . scroll-other-window)
+ (prior . scroll-down)
+ (next . scroll-up)
+ (27 keymap
+     (33554454 . scroll-other-window-down)
+     (22 . scroll-other-window)
+     (118 . scroll-down))
+ (22 . scroll-up)
+ (29 . quit)
+ (7 . quit)
+ (63 . help)
+ (help . help)
+ (f1 . help)
+ (8 . help)
+ (94 . backup)
+ (33 . automatic)
+ (12 . recenter)
+ (23 . delete-and-edit)
+ (18 . edit)
+ (46 . act-and-exit)
+ (return . exit)
+ (13 . exit)
+ (113 . exit)
+ (44 . act-and-show)
+ (69 . edit-replacement)
+ (101 . edit-replacement)
+ (78 . skip)
+ (89 . act)
+ (110 . skip)
+ (121 . act)
+ (backspace . skip)
+ (delete . skip)
+ (127 . skip)
+ (32 . act))
+</pre></br>

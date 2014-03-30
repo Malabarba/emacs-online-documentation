@@ -1,44 +1,45 @@
-<strong>Info-suffix-list</strong> is a variable defined in `<code>info.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-List of file name suffixes and associated decoding commands.<br/>
-Each entry should be (SUFFIX . STRING); the file is given to<br/>
-the command as standard input.<br/>
-<br/>
-STRING may be a list of strings.  In that case, the first element is<br/>
-the command name, and the rest are arguments to that command.<br/>
-<br/>
-If STRING is nil, no decoding is done.<br/>
-Because the SUFFIXes are tried in order, the empty string should<br/>
-be last in the list.<br/>
-<br/>
-Value: ((".info.Z" . "uncompress")<br/>
- (".info.Y" . "unyabba")<br/>
- (".info.gz" . "gunzip")<br/>
- (".info.z" . "gunzip")<br/>
- (".info.bz2" "bzip2" "-dc")<br/>
- (".info.xz" . "unxz")<br/>
- (".info")<br/>
- ("-info.Z" . "uncompress")<br/>
- ("-info.Y" . "unyabba")<br/>
- ("-info.gz" . "gunzip")<br/>
- ("-info.bz2" "bzip2" "-dc")<br/>
- ("-info.z" . "gunzip")<br/>
- ("-info.xz" . "unxz")<br/>
- ("-info")<br/>
- ("/index.Z" . "uncompress")<br/>
- ("/index.Y" . "unyabba")<br/>
- ("/index.gz" . "gunzip")<br/>
- ("/index.z" . "gunzip")<br/>
- ("/index.bz2" "bzip2" "-dc")<br/>
- ("/index.xz" . "unxz")<br/>
- ("/index")<br/>
- (".Z" . "uncompress")<br/>
- (".Y" . "unyabba")<br/>
- (".gz" . "gunzip")<br/>
- (".z" . "gunzip")<br/>
- (".bz2" "bzip2" "-dc")<br/>
- (".xz" . "unxz")<br/>
- (""))<br/>
-<br/>
+<strong>Info-suffix-list</strong> is a variable defined in `<code>info.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of file name suffixes and associated decoding commands.</br>
+Each entry should be (SUFFIX . STRING); the file is given to</br>
+the command as standard input.</br>
+</br>
+STRING may be a list of strings.  In that case, the first element is</br>
+the command name, and the rest are arguments to that command.</br>
+</br>
+If STRING is nil, no decoding is done.</br>
+Because the SUFFIXes are tried in order, the empty string should</br>
+be last in the list.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((".info.Z" . "uncompress")
+ (".info.Y" . "unyabba")
+ (".info.gz" . "gunzip")
+ (".info.z" . "gunzip")
+ (".info.bz2" "bzip2" "-dc")
+ (".info.xz" . "unxz")
+ (".info")
+ ("-info.Z" . "uncompress")
+ ("-info.Y" . "unyabba")
+ ("-info.gz" . "gunzip")
+ ("-info.bz2" "bzip2" "-dc")
+ ("-info.z" . "gunzip")
+ ("-info.xz" . "unxz")
+ ("-info")
+ ("/index.Z" . "uncompress")
+ ("/index.Y" . "unyabba")
+ ("/index.gz" . "gunzip")
+ ("/index.z" . "gunzip")
+ ("/index.bz2" "bzip2" "-dc")
+ ("/index.xz" . "unxz")
+ ("/index")
+ (".Z" . "uncompress")
+ (".Y" . "unyabba")
+ (".gz" . "gunzip")
+ (".z" . "gunzip")
+ (".bz2" "bzip2" "-dc")
+ (".xz" . "unxz")
+ (""))
+</pre></br>

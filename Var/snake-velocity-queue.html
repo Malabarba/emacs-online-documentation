@@ -1,15 +1,13 @@
-<strong>snake-velocity-queue</strong> is a variable defined in `<code>snake.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-<br/>
-Documentation:<br/>
-This queue stores the velocities requested too quickly by user.<br/>
-They will take effect one at a time at each clock-interval.<br/>
-This is necessary for proper behavior.<br/>
-<br/>
-For instance, if you are moving right, you press up and then left, you<br/>
-want the snake to move up just once before starting to move left.  If<br/>
-we implemented all your keystrokes immediately, the snake would<br/>
-effectively never move up.  Thus, we need to move it up for one turn<br/>
+<strong>snake-velocity-queue</strong> is a variable defined in `<code>snake.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+This queue stores the velocities requested too quickly by user.</br>
+They will take effect one at a time at each clock-interval.</br>
+This is necessary for proper behavior.</br>
+</br>
+For instance, if you are moving right, you press up and then left, you</br>
+want the snake to move up just once before starting to move left.  If</br>
+we implemented all your keystrokes immediately, the snake would</br>
+effectively never move up.  Thus, we need to move it up for one turn</br>
 and then start moving it leftwards.

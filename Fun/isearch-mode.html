@@ -1,6 +1,22 @@
-<strong>isearch-mode</strong> is a compiled Lisp function in `<code>isearch.el</code>'.<br/>
-<br/>
-(isearch-mode FORWARD &optional REGEXP OP-FUN RECURSIVE-EDIT WORD)<br/>
-<br/>
-Start Isearch minor mode.<br/>
-It is called by the function `isearch-forward' and other related functions.
+<strong>isearch-mode</strong> is a compiled Lisp function in `<code>isearch.el</code>'.</br>
+</br>
+(isearch-mode <u>FORWARD</u> &optional <u>REGEXP</u> <u>OP-FUN</u> <u>RECURSIVE-EDIT</u> <u>WORD</u>)</br>
+</br>
+Start Isearch minor mode.</br>
+It is called by the function `isearch-forward' and other related functions.</br>
+</br>
+The non-nil arg <u>FORWARD</u> means searching in the forward direction.</br>
+</br>
+The non-nil arg <u>REGEXP</u> does an incremental regular expression search.</br>
+</br>
+The arg <u>OP-FUN</u> is a function to be called after each input character</br>
+is processed.  (It is not called after characters that exit the search.)</br>
+</br>
+When the arg <u>RECURSIVE-EDIT</u> is non-nil, this function behaves modally and</br>
+does not return to the calling function until the search is completed.</br>
+To behave this way it enters a recursive-edit and exits it when done</br>
+isearching.</br>
+</br>
+The arg <u>WORD</u>, if t, does incremental search for a sequence of words,</br>
+ignoring punctuation.  If the value is a function, it is called to</br>
+convert the search string to a regexp used by regexp search functions.

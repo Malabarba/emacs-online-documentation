@@ -1,54 +1,55 @@
-<strong>verilog-auto-tieoff</strong> is an interactive compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
-<br/>
-(verilog-auto-tieoff)<br/>
-<br/>
-Expand AUTOTIEOFF statements, as part of M-x verilog-auto.<br/>
-Replace the /*AUTOTIEOFF*/ comment with code to wire-tie all unused output<br/>
-signals to deasserted.<br/>
-<br/>
-/*AUTOTIEOFF*/ is used to make stub modules; modules that have the same<br/>
-input/output list as another module, but no internals.  Specifically, it<br/>
-finds all outputs in the module, and if that input is not otherwise declared<br/>
-as a register or wire, creates a tieoff.<br/>
-<br/>
-AUTORESET ties signals to deasserted, which is presumed to be zero.<br/>
-Signals that match `verilog-active-low-regexp' will be deasserted by tying<br/>
-them to a one.<br/>
-<br/>
-You can add signals you do not want included in AUTOTIEOFF with<br/>
-`verilog-auto-tieoff-ignore-regexp'.<br/>
-<br/>
-`verilog-auto-wire-type' may be used to change the datatype of<br/>
-the declarations.<br/>
-<br/>
-`verilog-auto-reset-widths' may be used to change how the tieoff<br/>
-value's width is generated.<br/>
-<br/>
-An example of making a stub for another module:<br/>
-<br/>
-    module ExampStub (/*AUTOINST*/);<br/>
-	/*AUTOINOUTPARAM("Foo")*/<br/>
-	/*AUTOINOUTMODULE("Foo")*/<br/>
-        /*AUTOTIEOFF*/<br/>
-        // verilator lint_off UNUSED<br/>
-        wire _unused_ok = &{1'b0,<br/>
-                            /*AUTOUNUSED*/<br/>
-                            1'b0};<br/>
-        // verilator lint_on  UNUSED<br/>
-    endmodule<br/>
-<br/>
-Typing M-x verilog-auto will make this into:<br/>
-<br/>
-    module ExampStub (/*AUTOINST*/...);<br/>
-	/*AUTOINOUTPARAM("Foo")*/<br/>
-	/*AUTOINOUTMODULE("Foo")*/<br/>
-        // Beginning of autotieoff<br/>
-        output [2:0] foo;<br/>
-        // End of automatics<br/>
-<br/>
-        /*AUTOTIEOFF*/<br/>
-        // Beginning of autotieoff<br/>
-        wire [2:0] foo = 3'b0;<br/>
-        // End of automatics<br/>
-        ...<br/>
+<strong>verilog-auto-tieoff</strong> is an interactive compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+</br>
+</br>
+(verilog-auto-tieoff)</br>
+</br>
+Expand AUTOTIEOFF statements, as part of M-x verilog-auto.</br>
+Replace the /*AUTOTIEOFF*/ comment with code to wire-tie all unused output</br>
+signals to deasserted.</br>
+</br>
+/*AUTOTIEOFF*/ is used to make stub modules; modules that have the same</br>
+input/output list as another module, but no internals.  Specifically, it</br>
+finds all outputs in the module, and if that input is not otherwise declared</br>
+as a register or wire, creates a tieoff.</br>
+</br>
+AUTORESET ties signals to deasserted, which is presumed to be zero.</br>
+Signals that match `verilog-active-low-regexp' will be deasserted by tying</br>
+them to a one.</br>
+</br>
+You can add signals you do not want included in AUTOTIEOFF with</br>
+`verilog-auto-tieoff-ignore-regexp'.</br>
+</br>
+`verilog-auto-wire-type' may be used to change the datatype of</br>
+the declarations.</br>
+</br>
+`verilog-auto-reset-widths' may be used to change how the tieoff</br>
+value's width is generated.</br>
+</br>
+An example of making a stub for another module:</br>
+</br>
+    module ExampStub (/*AUTOINST*/);</br>
+	/*AUTOINOUTPARAM("Foo")*/</br>
+	/*AUTOINOUTMODULE("Foo")*/</br>
+        /*AUTOTIEOFF*/</br>
+        // verilator lint_off UNUSED</br>
+        wire _unused_ok = &{1'b0,</br>
+                            /*AUTOUNUSED*/</br>
+                            1'b0};</br>
+        // verilator lint_on  UNUSED</br>
+    endmodule</br>
+</br>
+Typing M-x verilog-auto will make this into:</br>
+</br>
+    module ExampStub (/*AUTOINST*/...);</br>
+	/*AUTOINOUTPARAM("Foo")*/</br>
+	/*AUTOINOUTMODULE("Foo")*/</br>
+        // Beginning of autotieoff</br>
+        output [2:0] foo;</br>
+        // End of automatics</br>
+</br>
+        /*AUTOTIEOFF*/</br>
+        // Beginning of autotieoff</br>
+        wire [2:0] foo = 3'b0;</br>
+        // End of automatics</br>
+        ...</br>
     endmodule

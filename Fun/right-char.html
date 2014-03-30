@@ -1,12 +1,15 @@
-<strong>right-char</strong> is an interactive compiled Lisp function in `<code>bindings.el</code>'.<br/>
-<br/>
-It is bound to <right>.<br/>
-<br/>
-(right-char &optional N)<br/>
-<br/>
-Move point N characters to the right (to the left if N is negative).<br/>
-On reaching beginning or end of buffer, stop and signal error.<br/>
-<br/>
-Depending on the bidirectional context, this may move either forward<br/>
-or backward in the buffer.  This is in contrast with C-f<br/>
-and C-b, which see.
+<strong>right-char</strong> is an interactive compiled Lisp function in `<code>bindings.el</code>'.</br>
+</br>
+It is bound to &lt;right>.</br>
+</br>
+<code>(right-char <em>&optional</em> <u>N</u></code>)</br>
+</br>
+Move point <u>N</u> characters to the right (to the left if <u>N</u> is negative).</br>
+On reaching beginning or end of buffer, stop and signal error.</br>
+</br>
+If `visual-order-cursor-movement' is non-nil, this always moves</br>
+to the right on display, wherever that is in the buffer.</br>
+Otherwise, depending on the bidirectional context, this may move</br>
+one position either forward or backward in the buffer.  This is</br>
+in contrast with C-f and C-b, which</br>
+see.

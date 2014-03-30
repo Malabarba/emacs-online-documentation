@@ -1,0 +1,196 @@
+<strong>org-publish-project-alist</strong> is a variable defined in `<code>ox-publish.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Association list to control publishing behavior.</br>
+Each element of the alist is a publishing 'project.'  The CAR of</br>
+each element is a string, uniquely identifying the project.  The</br>
+CDR of each element is in one of the following forms:</br>
+</br>
+1. A well-formed property list with an even number of elements,</br>
+   alternating keys and values, specifying parameters for the</br>
+   publishing process.</br>
+</br>
+     (:property value :property value ... )</br>
+</br>
+2. A meta-project definition, specifying of a list of</br>
+   sub-projects:</br>
+</br>
+     (:components ("project-1" "project-2" ...))</br>
+</br>
+When the CDR of an element of org-publish-project-alist is in</br>
+this second form, the elements of the list after `:components'</br>
+are taken to be components of the project, which group together</br>
+files requiring different publishing options.  When you publish</br>
+such a project with M-x org-publish, the components all publish.</br>
+</br>
+When a property is given a value in `org-publish-project-alist',</br>
+its setting overrides the value of the corresponding user</br>
+variable (if any) during publishing.  However, options set within</br>
+a file override everything.</br>
+</br>
+Most properties are optional, but some should always be set:</br>
+</br>
+  `:base-directory'</br>
+</br>
+    Directory containing publishing source files.</br>
+</br>
+  `:base-extension'</br>
+</br>
+    Extension (without the dot!) of source files.  This can be</br>
+    a regular expression.  If not given, "org" will be used as</br>
+    default extension.</br>
+</br>
+  `:publishing-directory'</br>
+</br>
+    Directory (possibly remote) where output files will be</br>
+    published.</br>
+</br>
+The `:exclude' property may be used to prevent certain files from</br>
+being published.  Its value may be a string or regexp matching</br>
+file names you don't want to be published.</br>
+</br>
+The `:include' property may be used to include extra files.  Its</br>
+value may be a list of filenames to include.  The filenames are</br>
+considered relative to the base directory.</br>
+</br>
+When both `:include' and `:exclude' properties are given values,</br>
+the exclusion step happens first.</br>
+</br>
+One special property controls which back-end function to use for</br>
+publishing files in the project.  This can be used to extend the</br>
+set of file types publishable by `org-publish', as well as the</br>
+set of output formats.</br>
+</br>
+  `:publishing-function'</br>
+</br>
+    Function to publish file.  Each back-end may define its</br>
+    own (i.e. `org-latex-publish-to-pdf',</br>
+    `org-html-publish-to-html').  May be a list of functions, in</br>
+    which case each function in the list is invoked in turn.</br>
+</br>
+Another property allows you to insert code that prepares</br>
+a project for publishing.  For example, you could call GNU Make</br>
+on a certain makefile, to ensure published files are built up to</br>
+date.</br>
+</br>
+  `:preparation-function'</br>
+</br>
+    Function to be called before publishing this project.  This</br>
+    may also be a list of functions.</br>
+</br>
+  `:completion-function'</br>
+</br>
+    Function to be called after publishing this project.  This</br>
+    may also be a list of functions.</br>
+</br>
+Some properties control details of the Org publishing process,</br>
+and are equivalent to the corresponding user variables listed in</br>
+the right column.  Back-end specific properties may also be</br>
+included.  See the back-end documentation for more information.</br>
+</br>
+  :author                   `user-full-name'</br>
+  :creator                  `org-export-creator-string'</br>
+  :email                    `user-mail-address'</br>
+  :exclude-tags             `org-export-exclude-tags'</br>
+  :headline-levels          `org-export-headline-levels'</br>
+  :language                 `org-export-default-language'</br>
+  :preserve-breaks          `org-export-preserve-breaks'</br>
+  :section-numbers          `org-export-with-section-numbers'</br>
+  :select-tags              `org-export-select-tags'</br>
+  :time-stamp-file          `org-export-time-stamp-file'</br>
+  :with-archived-trees      `org-export-with-archived-trees'</br>
+  :with-author              `org-export-with-author'</br>
+  :with-creator             `org-export-with-creator'</br>
+  :with-date                `org-export-with-date'</br>
+  :with-drawers             `org-export-with-drawers'</br>
+  :with-email               `org-export-with-email'</br>
+  :with-emphasize           `org-export-with-emphasize'</br>
+  :with-entities            `org-export-with-entities'</br>
+  :with-fixed-width         `org-export-with-fixed-width'</br>
+  :with-footnotes           `org-export-with-footnotes'</br>
+  :with-inlinetasks         `org-export-with-inlinetasks'</br>
+  :with-latex               `org-export-with-latex'</br>
+  :with-priority            `org-export-with-priority'</br>
+  :with-smart-quotes        `org-export-with-smart-quotes'</br>
+  :with-special-strings     `org-export-with-special-strings'</br>
+  :with-statistics-cookies' `org-export-with-statistics-cookies'</br>
+  :with-sub-superscript     `org-export-with-sub-superscripts'</br>
+  :with-toc                 `org-export-with-toc'</br>
+  :with-tables              `org-export-with-tables'</br>
+  :with-tags                `org-export-with-tags'</br>
+  :with-tasks               `org-export-with-tasks'</br>
+  :with-timestamps          `org-export-with-timestamps'</br>
+  :with-planning            `org-export-with-planning'</br>
+  :with-todo-keywords       `org-export-with-todo-keywords'</br>
+</br>
+The following properties may be used to control publishing of</br>
+a site-map of files or summary page for a given project.</br>
+</br>
+  `:auto-sitemap'</br>
+</br>
+    Whether to publish a site-map during</br>
+    `org-publish-current-project' or `org-publish-all'.</br>
+</br>
+  `:sitemap-filename'</br>
+</br>
+    Filename for output of sitemap.  Defaults to "sitemap.org".</br>
+</br>
+  `:sitemap-title'</br>
+</br>
+    Title of site-map page.  Defaults to name of file.</br>
+</br>
+  `:sitemap-function'</br>
+</br>
+    Plugin function to use for generation of site-map.  Defaults</br>
+    to `org-publish-org-sitemap', which generates a plain list of</br>
+    links to all files in the project.</br>
+</br>
+  `:sitemap-style'</br>
+</br>
+    Can be `list' (site-map is just an itemized list of the</br>
+    titles of the files involved) or `tree' (the directory</br>
+    structure of the source files is reflected in the site-map).</br>
+    Defaults to `tree'.</br>
+</br>
+  `:sitemap-sans-extension'</br>
+</br>
+    Remove extension from site-map's file-names.  Useful to have</br>
+    cool URIs (see http://www.w3.org/Provider/Style/URI).</br>
+    Defaults to nil.</br>
+</br>
+If you create a site-map file, adjust the sorting like this:</br>
+</br>
+  `:sitemap-sort-folders'</br>
+</br>
+    Where folders should appear in the site-map.  Set this to</br>
+    `first' (default) or `last' to display folders first or last,</br>
+    respectively.  Any other value will mix files and folders.</br>
+</br>
+  `:sitemap-sort-files'</br>
+</br>
+    The site map is normally sorted alphabetically.  You can</br>
+    change this behaviour setting this to `anti-chronologically',</br>
+    `chronologically', or nil.</br>
+</br>
+  `:sitemap-ignore-case'</br>
+</br>
+    Should sorting be case-sensitive?  Default nil.</br>
+</br>
+The following property control the creation of a concept index.</br>
+</br>
+  `:makeindex'</br>
+</br>
+    Create a concept index.  The file containing the index has to</br>
+    be called "theindex.org".  If it doesn't exist in the</br>
+    project, it will be generated.  Contents of the index are</br>
+    stored in the file "theindex.inc", which can be included in</br>
+    "theindex.org".</br>
+</br>
+Other properties affecting publication.</br>
+</br>
+  `:body-only'</br>
+</br>
+    Set this to t to publish only the body of the documents.</br>
+</br>
+You can customize this variable.

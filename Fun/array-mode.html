@@ -1,66 +1,67 @@
-<strong>array-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>array.el</code>'.<br/>
-<br/>
-(array-mode)<br/>
-<br/>
-Major mode for editing arrays.<br/>
-<br/>
-  Array mode is a specialized mode for editing arrays.  An array is<br/>
-considered to be a two-dimensional set of strings.  The strings are<br/>
-NOT recognized as integers or real numbers.<br/>
-<br/>
-  The array MUST reside at the top of the buffer.<br/>
-<br/>
-  TABs are not respected, and may be converted into spaces at any time.<br/>
-Setting the variable `array-respect-tabs' to non-nil will prevent TAB conversion,<br/>
-but will cause many functions to give errors if they encounter one.<br/>
-<br/>
-  Upon entering array mode, you will be prompted for the values of<br/>
-several variables.  Others will be calculated based on the values you<br/>
-supply.  These variables are all local to the buffer.  Other buffer<br/>
-in array mode may have different values assigned to the variables.<br/>
-The variables are:<br/>
-<br/>
-Variables you assign:<br/>
-     array-max-row:          The number of rows in the array.<br/>
-     array-max-column:       The number of columns in the array.<br/>
-     array-columns-per-line: The number of columns in the array per line of buffer.<br/>
-     array-field-width:      The width of each field, in characters.<br/>
-     array-rows-numbered:    A logical variable describing whether to ignore<br/>
-                       row numbers in the buffer.<br/>
-<br/>
-Variables which are calculated:<br/>
-     array-line-length:      The number of characters in a buffer line.<br/>
-     array-lines-per-row:    The number of buffer lines used to display each row.<br/>
-<br/>
-  The following commands are available (an asterisk indicates it may<br/>
-take a numeric prefix argument):<br/>
-<br/>
-    *  	C-f	  Move forward one column.<br/>
-    *  	C-b	  Move backward one column.<br/>
-    *  	C-n	  Move down one row.<br/>
-    *  	C-p	  Move up one row.<br/>
-<br/>
-    *   M-f	  Copy the current field into the column to the right.<br/>
-    *   M-b	  Copy the current field into the column to the left.<br/>
-    *   M-n	  Copy the current field into the row below.<br/>
-    *   M-p	  Copy the current field into the row above.<br/>
-<br/>
-    *   C-M-f   Copy the current column into the column to the right.<br/>
-    *   C-M-b   Copy the current column into the column to the left.<br/>
-    *   C-M-n   Copy the current row into the row below.<br/>
-    *   C-M-p   Copy the current row into the row above.<br/>
-<br/>
-        M-a f   Copy the field at mark into every cell with row and column<br/>
-                  between that of point and mark.<br/>
-<br/>
-	M-a =	  Display the current array row and column.<br/>
-	M-a g	  Go to a particular array cell.<br/>
-<br/>
-	M-a m	  Make a template for a new array.<br/>
-	M-a r	  Reconfigure the array.<br/>
-        M-a e   Expand the array (remove row numbers and<br/>
-                  newlines inside rows)<br/>
-<br/>
-        M-a d   Display the current values of local variables.<br/>
-<br/>
+<strong>array-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>array.el</code>'.</br>
+</br>
+</br>
+(array-mode)</br>
+</br>
+Major mode for editing arrays.</br>
+</br>
+  Array mode is a specialized mode for editing arrays.  An array is</br>
+considered to be a two-dimensional set of strings.  The strings are</br>
+NOT recognized as integers or real numbers.</br>
+</br>
+  The array MUST reside at the top of the buffer.</br>
+</br>
+  TABs are not respected, and may be converted into spaces at any time.</br>
+Setting the variable `array-respect-tabs' to non-nil will prevent TAB conversion,</br>
+but will cause many functions to give errors if they encounter one.</br>
+</br>
+  Upon entering array mode, you will be prompted for the values of</br>
+several variables.  Others will be calculated based on the values you</br>
+supply.  These variables are all local to the buffer.  Other buffer</br>
+in array mode may have different values assigned to the variables.</br>
+The variables are:</br>
+</br>
+Variables you assign:</br>
+     array-max-row:          The number of rows in the array.</br>
+     array-max-column:       The number of columns in the array.</br>
+     array-columns-per-line: The number of columns in the array per line of buffer.</br>
+     array-field-width:      The width of each field, in characters.</br>
+     array-rows-numbered:    A logical variable describing whether to ignore</br>
+                       row numbers in the buffer.</br>
+</br>
+Variables which are calculated:</br>
+     array-line-length:      The number of characters in a buffer line.</br>
+     array-lines-per-row:    The number of buffer lines used to display each row.</br>
+</br>
+  The following commands are available (an asterisk indicates it may</br>
+take a numeric prefix argument):</br>
+</br>
+    *  	C-f	  Move forward one column.</br>
+    *  	C-b	  Move backward one column.</br>
+    *  	C-n	  Move down one row.</br>
+    *  	C-p	  Move up one row.</br>
+</br>
+    *   M-f	  Copy the current field into the column to the right.</br>
+    *   M-b	  Copy the current field into the column to the left.</br>
+    *   M-n	  Copy the current field into the row below.</br>
+    *   M-p	  Copy the current field into the row above.</br>
+</br>
+    *   C-M-f   Copy the current column into the column to the right.</br>
+    *   C-M-b   Copy the current column into the column to the left.</br>
+    *   C-M-n   Copy the current row into the row below.</br>
+    *   C-M-p   Copy the current row into the row above.</br>
+</br>
+        M-a f   Copy the field at mark into every cell with row and column</br>
+                  between that of point and mark.</br>
+</br>
+	M-a =	  Display the current array row and column.</br>
+	M-a g	  Go to a particular array cell.</br>
+</br>
+	M-a m	  Make a template for a new array.</br>
+	M-a r	  Reconfigure the array.</br>
+        M-a e   Expand the array (remove row numbers and</br>
+                  newlines inside rows)</br>
+</br>
+        M-a d   Display the current values of local variables.</br>
+</br>
 Entering array mode calls the function `array-mode-hook'.

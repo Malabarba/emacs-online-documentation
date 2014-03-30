@@ -1,103 +1,102 @@
-<strong>menu-bar-files-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable is an alias for `menu-bar-file-menu'.<br/>
-  This variable is obsolete since 22.1;<br/>
-  use `menu-bar-file-menu' instead.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (new-file menu-item "Visit New File..." find-file :enable<br/>
-	   (menu-bar-non-minibuffer-window-p)<br/>
-	   :help "Specify a new file's name, to edit the file")<br/>
- (open-file menu-item "Open File..." menu-find-file-existing :enable<br/>
-	    (menu-bar-non-minibuffer-window-p)<br/>
-	    :help "Read an existing file into an Emacs buffer")<br/>
- (dired menu-item "Open Directory..." dired :enable<br/>
-	(menu-bar-non-minibuffer-window-p)<br/>
-	:help "Read a directory, to operate on its files")<br/>
- (insert-file menu-item "Insert File..." insert-file :enable<br/>
-	      (menu-bar-non-minibuffer-window-p)<br/>
-	      :help "Insert another file into current buffer")<br/>
- (kill-buffer menu-item "Close" kill-this-buffer :enable<br/>
-	      (kill-this-buffer-enabled-p)<br/>
-	      :help "Discard (kill) current buffer")<br/>
- (separator-save "--")<br/>
- (save-buffer menu-item "Save" save-buffer :enable<br/>
-	      (and<br/>
-	       (buffer-modified-p)<br/>
-	       (buffer-file-name)<br/>
-	       (menu-bar-non-minibuffer-window-p))<br/>
-	      :help "Save current buffer to its file")<br/>
- (write-file menu-item "Save As..." write-file :enable<br/>
-	     (and<br/>
-	      (menu-bar-menu-frame-live-and-visible-p)<br/>
-	      (menu-bar-non-minibuffer-window-p))<br/>
-	     :help "Write current buffer to another file")<br/>
- (revert-buffer menu-item "Revert Buffer" revert-buffer :enable<br/>
-		(or revert-buffer-function revert-buffer-insert-file-contents-function<br/>
-		    (and buffer-file-number<br/>
-			 (or<br/>
-			  (buffer-modified-p)<br/>
-			  (not<br/>
-			   (verify-visited-file-modtime<br/>
-			    (current-buffer))))))<br/>
-		:help "Re-read current buffer from its file")<br/>
- (recover-session menu-item "Recover Crashed Session" recover-session :enable<br/>
-		  (and auto-save-list-file-prefix<br/>
-		       (file-directory-p<br/>
-			(file-name-directory auto-save-list-file-prefix))<br/>
-		       (directory-files<br/>
-			(file-name-directory auto-save-list-file-prefix)<br/>
-			nil<br/>
-			(concat "\\`"<br/>
-				(regexp-quote<br/>
-				 (file-name-nondirectory auto-save-list-file-prefix)))<br/>
-			t))<br/>
-		  :help "Recover edits from a crashed session")<br/>
- (separator-print "--")<br/>
- (print-buffer menu-item "Print Buffer" print-buffer :enable<br/>
-	       (menu-bar-menu-frame-live-and-visible-p)<br/>
-	       :help "Print current buffer with page headings")<br/>
- (print-region menu-item "Print Region" print-region :enable mark-active :help "Print region between mark and current position")<br/>
- (ps-print-buffer-faces menu-item "PostScript Print Buffer" ps-print-buffer-with-faces :enable<br/>
-			(menu-bar-menu-frame-live-and-visible-p)<br/>
-			:help "Pretty-print current buffer to PostScript printer")<br/>
- (ps-print-region-faces menu-item "PostScript Print Region" ps-print-region-with-faces :enable mark-active :help "Pretty-print marked region to PostScript printer")<br/>
- (ps-print-buffer menu-item "PostScript Print Buffer (B+W)" ps-print-buffer :enable<br/>
-		  (menu-bar-menu-frame-live-and-visible-p)<br/>
-		  :help "Pretty-print current buffer in black and white to PostScript printer")<br/>
- (ps-print-region menu-item "PostScript Print Region (B+W)" ps-print-region :enable mark-active :help "Pretty-print marked region in black and white to PostScript printer")<br/>
- (separator-window "--")<br/>
- (new-window-below menu-item "New Window Below" split-window-below :enable<br/>
-		   (and<br/>
-		    (menu-bar-menu-frame-live-and-visible-p)<br/>
-		    (menu-bar-non-minibuffer-window-p))<br/>
-		   :help "Make new window below selected one")<br/>
- (new-window-on-right menu-item "New Window on Right" split-window-right :enable<br/>
-		      (and<br/>
-		       (menu-bar-menu-frame-live-and-visible-p)<br/>
-		       (menu-bar-non-minibuffer-window-p))<br/>
-		      :help "Make new window on right of selected one")<br/>
- (one-window menu-item "Remove Other Windows" delete-other-windows :enable<br/>
-	     (not<br/>
-	      (one-window-p t nil))<br/>
-	     :help "Make selected window fill whole frame")<br/>
- (separator-frame "--")<br/>
- (make-frame menu-item "New Frame" make-frame-command :visible<br/>
-	     (fboundp 'make-frame-command)<br/>
-	     :help "Open a new frame")<br/>
- (make-frame-on-display menu-item "New Frame on Display..." make-frame-on-display :visible<br/>
-			(fboundp 'make-frame-on-display)<br/>
-			:help "Open a new frame on another display")<br/>
- (delete-this-frame menu-item "Delete Frame" delete-frame :visible<br/>
-		    (fboundp 'delete-frame)<br/>
-		    :enable<br/>
-		    (delete-frame-enabled-p)<br/>
-		    :help "Delete currently selected frame")<br/>
- (separator-exit "--")<br/>
- (exit-emacs menu-item "Quit" save-buffers-kill-terminal :help "Save unsaved buffers, then exit")<br/>
- "File")<br/>
-<br/>
+<strong>menu-bar-files-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul>  <li>This variable is an alias for `<strong><a href="menu-bar-file-menu">menu-bar-file-menu</a></strong>'.</li>
+<li>  <strong>This variable is obsolete since 22.1;</br>
+  use `<a href="menu-bar-file-menu">menu-bar-file-menu</a>' instead.</strong></li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (new-file menu-item "Visit New File..." find-file :enable
+	   (menu-bar-non-minibuffer-window-p)
+	   :help "Specify a new file's name, to edit the file")
+ (open-file menu-item "Open File..." menu-find-file-existing :enable
+	    (menu-bar-non-minibuffer-window-p)
+	    :help "Read an existing file into an Emacs buffer")
+ (dired menu-item "Open Directory..." dired :enable
+	(menu-bar-non-minibuffer-window-p)
+	:help "Read a directory, to operate on its files")
+ (insert-file menu-item "Insert File..." insert-file :enable
+	      (menu-bar-non-minibuffer-window-p)
+	      :help "Insert another file into current buffer")
+ (kill-buffer menu-item "Close" kill-this-buffer :enable
+	      (kill-this-buffer-enabled-p)
+	      :help "Discard (kill) current buffer")
+ (separator-save "--")
+ (save-buffer menu-item "Save" save-buffer :enable
+	      (and
+	       (buffer-modified-p)
+	       (buffer-file-name)
+	       (menu-bar-non-minibuffer-window-p))
+	      :help "Save current buffer to its file")
+ (write-file menu-item "Save As..." write-file :enable
+	     (and
+	      (menu-bar-menu-frame-live-and-visible-p)
+	      (menu-bar-non-minibuffer-window-p))
+	     :help "Write current buffer to another file")
+ (revert-buffer menu-item "Revert Buffer" revert-buffer :enable
+		(or revert-buffer-function revert-buffer-insert-file-contents-function
+		    (and buffer-file-number
+			 (or
+			  (buffer-modified-p)
+			  (not
+			   (verify-visited-file-modtime
+			    (current-buffer))))))
+		:help "Re-read current buffer from its file")
+ (recover-session menu-item "Recover Crashed Session" recover-session :enable
+		  (and auto-save-list-file-prefix
+		       (file-directory-p
+			(file-name-directory auto-save-list-file-prefix))
+		       (directory-files
+			(file-name-directory auto-save-list-file-prefix)
+			nil
+			(concat "\\`"
+				(regexp-quote
+				 (file-name-nondirectory auto-save-list-file-prefix)))
+			t))
+		  :help "Recover edits from a crashed session")
+ (separator-print "--")
+ (print-buffer menu-item "Print Buffer" print-buffer :enable
+	       (menu-bar-menu-frame-live-and-visible-p)
+	       :help "Print current buffer with page headings")
+ (print-region menu-item "Print Region" print-region :enable mark-active :help "Print region between mark and current position")
+ (ps-print-buffer-faces menu-item "PostScript Print Buffer" ps-print-buffer-with-faces :enable
+			(menu-bar-menu-frame-live-and-visible-p)
+			:help "Pretty-print current buffer to PostScript printer")
+ (ps-print-region-faces menu-item "PostScript Print Region" ps-print-region-with-faces :enable mark-active :help "Pretty-print marked region to PostScript printer")
+ (ps-print-buffer menu-item "PostScript Print Buffer (B+W)" ps-print-buffer :enable
+		  (menu-bar-menu-frame-live-and-visible-p)
+		  :help "Pretty-print current buffer in black and white to PostScript printer")
+ (ps-print-region menu-item "PostScript Print Region (B+W)" ps-print-region :enable mark-active :help "Pretty-print marked region in black and white to PostScript printer")
+ (separator-window "--")
+ (new-window-below menu-item "New Window Below" split-window-below :enable
+		   (and
+		    (menu-bar-menu-frame-live-and-visible-p)
+		    (menu-bar-non-minibuffer-window-p))
+		   :help "Make new window below selected one")
+ (new-window-on-right menu-item "New Window on Right" split-window-right :enable
+		      (and
+		       (menu-bar-menu-frame-live-and-visible-p)
+		       (menu-bar-non-minibuffer-window-p))
+		      :help "Make new window on right of selected one")
+ (one-window menu-item "Remove Other Windows" delete-other-windows :enable
+	     (not
+	      (one-window-p t nil))
+	     :help "Make selected window fill whole frame")
+ (separator-frame "--")
+ (make-frame menu-item "New Frame" make-frame-command :visible
+	     (fboundp 'make-frame-command)
+	     :help "Open a new frame")
+ (make-frame-on-display menu-item "New Frame on Display..." make-frame-on-display :visible
+			(fboundp 'make-frame-on-display)
+			:help "Open a new frame on another display")
+ (delete-this-frame menu-item "Delete Frame" delete-frame :visible
+		    (fboundp 'delete-frame)
+		    :enable
+		    (delete-frame-enabled-p)
+		    :help "Delete currently selected frame")
+ (separator-exit "--")
+ (exit-emacs menu-item "Quit" save-buffers-kill-terminal :help "Save unsaved buffers, then exit")
+ "File")
+</pre></br>

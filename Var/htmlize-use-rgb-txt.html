@@ -1,0 +1,20 @@
+<strong>htmlize-use-rgb-txt</strong> is a variable defined in `<code>htmlize.el</code>'.</br>
+Its value is <pre>t</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Whether `rgb.txt' should be used to convert color names to RGB.</br>
+</br>
+This conversion means determining, for instance, that the color</br>
+"IndianRed" corresponds to the (205, 92, 92) RGB triple.  `rgb.txt'</br>
+is the X color database that maps hundreds of color names to such RGB</br>
+triples.  When this variable is non-nil, `htmlize' uses `rgb.txt' to</br>
+look up color names.</br>
+</br>
+If this variable is nil, htmlize queries Emacs for RGB components of</br>
+colors using `color-instance-rgb-components' and `x-color-values'.</br>
+This can yield incorrect results on non-true-color displays.</br>
+</br>
+If the `rgb.txt' file is not found (which will be the case if you're</br>
+running Emacs on non-X11 systems), this option is ignored.</br>
+</br>
+You can customize this variable.

@@ -1,19 +1,12 @@
-<strong>custom-set-faces</strong> is a compiled Lisp function in `<code>cus-face.el</code>'.<br/>
-<br/>
-(custom-set-faces &rest ARGS)<br/>
-<br/>
-Initialize faces according to user preferences.<br/>
-This associates the settings with the `user' theme.<br/>
-The arguments should be a list where each entry has the form:<br/>
-<br/>
-  (FACE SPEC [NOW [COMMENT]])<br/>
-<br/>
-SPEC is stored as the saved value for FACE, as well as the value for the<br/>
-`user' theme.  The `user' theme is one of the default themes known to Emacs.<br/>
-See `custom-known-themes' for more information on the known themes.<br/>
-See `custom-theme-set-faces' for more information on the interplay<br/>
-between themes and faces.<br/>
-See `defface' for the format of SPEC.<br/>
-<br/>
-If NOW is present and non-nil, FACE is created now, according to SPEC.<br/>
-COMMENT is a string comment about FACE.
+<strong>custom-set-faces</strong> is a compiled Lisp function in `<code>cus-face.el</code>'.</br>
+</br>
+(custom-set-faces &rest <u>ARGS</u>)</br>
+</br>
+Apply a list of face specs for user customizations.</br>
+This works by calling `custom-theme-set-faces' for the `user'</br>
+theme, a special theme referring to settings made via Customize.</br>
+The arguments should be a list where each entry has the form:</br>
+</br>
+  (FACE SPEC [NOW [COMMENT]])</br>
+</br>
+See the documentation of `custom-theme-set-faces' for details.

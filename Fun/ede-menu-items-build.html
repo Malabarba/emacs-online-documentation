@@ -1,6 +1,23 @@
-<strong>ede-menu-items-build</strong> is a Lisp function in `<code>ede.el</code>'.<br/>
-<br/>
-(ede-menu-items-build &rest LOCAL-ARGS)<br/>
-<br/>
-Return a list of menu items for building project OBJ.<br/>
-If optional argument CURRENT is non-nil, return sub-menu code.
+<strong>ede-menu-items-build</strong> is a Lisp function in `<code>ede.el</code>'.</br>
+</br>
+(ede-menu-items-build &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Return a list of menu items for building project OBJ.</br>
+If optional argument CURRENT is non-nil, return sub-menu code.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`ede-project' :PRIMARY (obj &optional current)</br>
+Return a list of menu items for building project OBJ.</br>
+If optional argument CURRENT is non-nil, return sub-menu code.</br>
+</br>
+Defined in `ede.el'</br>
+</br>
+`ede-target' :PRIMARY (obj &optional current)</br>
+Return a list of menu items for building target OBJ.</br>
+If optional argument CURRENT is non-nil, return sub-menu code.</br>
+</br>
+Defined in `ede.el'</br>
+</br>

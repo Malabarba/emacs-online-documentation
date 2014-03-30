@@ -1,34 +1,34 @@
-<strong>reftex-trust-label-prefix</strong> is a variable defined in `<code>reftex-vars.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Non-nil means, trust the label prefix when determining label type.<br/>
-It is customary to use special label prefixes to distinguish different label<br/>
-types.  The label prefixes have no syntactic meaning in LaTeX (unless<br/>
-special packages like fancyref are being used).  RefTeX can and by<br/>
-default does parse around each label to detect the correct label type,<br/>
-but this process can be slow when a document contains thousands of<br/>
-labels.  If you use label prefixes consistently, you may speed up<br/>
-document parsing by setting this variable to a non-nil value.  RefTeX<br/>
-will then compare the label prefix with the prefixes found in<br/>
-`reftex-label-alist' and derive the correct label type in this way.<br/>
-Possible values for this option are:<br/>
-<br/>
-t          This means to trust any label prefixes found.<br/>
-regexp     If a regexp, only prefixes matched by the regexp are trusted.<br/>
-list       List of accepted prefixes, as strings.  The colon is part of<br/>
-           the prefix, e.g. ("fn:" "eqn:" "item:").<br/>
-nil        Never trust a label prefix.<br/>
-<br/>
-The only disadvantage of using this feature is that the label context<br/>
-displayed in the label selection buffer along with each label is<br/>
-simply some text after the label definition.  This is no problem if you<br/>
-place labels keeping this in mind (e.g. *before* the equation, *at<br/>
-the beginning* of a fig/tab caption ...).  Anyway, it is probably best<br/>
-to use the regexp or the list value types to fine-tune this feature.<br/>
-For example, if your document contains thousands of footnotes with<br/>
-labels fn:xxx, you may want to set this variable to the value "^fn:$" or<br/>
-("fn:").  Then RefTeX will still do extensive parsing for any<br/>
-non-footnote labels.<br/>
-<br/>
+<strong>reftex-trust-label-prefix</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Non-nil means, trust the label prefix when determining label type.</br>
+It is customary to use special label prefixes to distinguish different label</br>
+types.  The label prefixes have no syntactic meaning in LaTeX (unless</br>
+special packages like fancyref are being used).  RefTeX can and by</br>
+default does parse around each label to detect the correct label type,</br>
+but this process can be slow when a document contains thousands of</br>
+labels.  If you use label prefixes consistently, you may speed up</br>
+document parsing by setting this variable to a non-nil value.  RefTeX</br>
+will then compare the label prefix with the prefixes found in</br>
+`reftex-label-alist' and derive the correct label type in this way.</br>
+Possible values for this option are:</br>
+</br>
+t          This means to trust any label prefixes found.</br>
+regexp     If a regexp, only prefixes matched by the regexp are trusted.</br>
+list       List of accepted prefixes, as strings.  The colon is part of</br>
+           the prefix, e.g. ("fn:" "eqn:" "item:").</br>
+nil        Never trust a label prefix.</br>
+</br>
+The only disadvantage of using this feature is that the label context</br>
+displayed in the label selection buffer along with each label is</br>
+simply some text after the label definition.  This is no problem if you</br>
+place labels keeping this in mind (e.g. *before* the equation, *at</br>
+the beginning* of a fig/tab caption ...).  Anyway, it is probably best</br>
+to use the regexp or the list value types to fine-tune this feature.</br>
+For example, if your document contains thousands of footnotes with</br>
+labels fn:xxx, you may want to set this variable to the value "^fn:$" or</br>
+("fn:").  Then RefTeX will still do extensive parsing for any</br>
+non-footnote labels.</br>
+</br>
 You can customize this variable.

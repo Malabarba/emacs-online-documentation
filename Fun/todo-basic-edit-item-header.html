@@ -1,0 +1,28 @@
+<strong>todo-basic-edit-item-header</strong> is a compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+(todo-basic-edit-item-header <u>WHAT</u> &optional <u>INC</u>)</br>
+</br>
+Function underlying commands to edit item date/time header.</br>
+</br>
+The argument <u>WHAT</u> (passed by invoking commands) specifies what</br>
+part of the header to edit; possible values are these symbols:</br>
+`date', to edit the year, month, and day of the date string;</br>
+`time', to edit just the time string; `calendar', to select the</br>
+date from the Calendar; `today', to set the date to today's date;</br>
+`dayname', to set the date string to the name of a day or to</br>
+change the day name; and `year', `month' or `day', to edit only</br>
+these respective parts of the date string (`day' is the number of</br>
+the given day of the month, and `month' is either the name of the</br>
+given month or its number, depending on the value of</br>
+`calendar-date-display-form').</br>
+</br>
+The optional argument <u>INC</u> is a positive or negative integer</br>
+(passed by invoking commands as a numerical prefix argument)</br>
+that in conjunction with the <u>WHAT</u> values `year', `month' or</br>
+`day', increments or decrements the specified date string</br>
+component by the specified number of suitable units, i.e., years,</br>
+months, or days, with automatic adjustment of the other date</br>
+string components as necessary.</br>
+</br>
+If there are marked items, apply the same edit to all of these;</br>
+otherwise, edit just the item at point.

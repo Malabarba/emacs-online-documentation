@@ -1,43 +1,43 @@
-<strong>find-composition</strong> is a compiled Lisp function in `<code>composite.el</code>'.<br/>
-<br/>
-(find-composition POS &optional LIMIT STRING DETAIL-P)<br/>
-<br/>
-Return information about a composition at or near buffer position POS.<br/>
-<br/>
-If the character at POS has `composition' property, the value is a list<br/>
-(FROM TO VALID-P).<br/>
-<br/>
-FROM and TO specify the range of text that has the same `composition'<br/>
-property, VALID-P is t if this composition is valid, and nil if not.<br/>
-<br/>
-If there's no composition at POS, and the optional 2nd argument LIMIT<br/>
-is non-nil, search for a composition toward the position given by LIMIT.<br/>
-<br/>
-If no composition is found, return nil.<br/>
-<br/>
-Optional 3rd argument STRING, if non-nil, is a string to look for a<br/>
-composition in; nil means the current buffer.<br/>
-<br/>
-If a valid composition is found and the optional 4th argument DETAIL-P<br/>
-is non-nil, the return value is a list of the form<br/>
-<br/>
-   (FROM TO COMPONENTS RELATIVE-P MOD-FUNC WIDTH)<br/>
-<br/>
-COMPONENTS is a vector of integers, the meaning depends on RELATIVE-P.<br/>
-<br/>
-RELATIVE-P is t if the composition method is relative, else nil.<br/>
-<br/>
-If RELATIVE-P is t, COMPONENTS is a vector of characters to be<br/>
-composed.  If RELATIVE-P is nil, COMPONENTS is a vector of characters<br/>
-and composition rules as described in `compose-region'.<br/>
-<br/>
-MOD-FUNC is a modification function of the composition.<br/>
-<br/>
-WIDTH is a number of columns the composition occupies on the screen.<br/>
-<br/>
-When Automatic Composition mode is on, this function also finds a<br/>
-chunk of text that is automatically composed.  If such a chunk is<br/>
-found closer to POS than the position that has `composition'<br/>
-property, the value is a list of FROM, TO, and a glyph-string<br/>
-that specifies how the chunk is to be composed.  See the function<br/>
+<strong>find-composition</strong> is a compiled Lisp function in `<code>composite.el</code>'.</br>
+</br>
+(find-composition <u>POS</u> &optional <u>LIMIT</u> <u>STRING</u> <u>DETAIL-P</u>)</br>
+</br>
+Return information about a composition at or near buffer position <u>POS</u>.</br>
+</br>
+If the character at <u>POS</u> has `composition' property, the value is a list</br>
+(FROM TO VALID-P).</br>
+</br>
+FROM and TO specify the range of text that has the same `composition'</br>
+property, VALID-P is t if this composition is valid, and nil if not.</br>
+</br>
+If there's no composition at <u>POS</u>, and the optional 2nd argument <u>LIMIT</u></br>
+is non-nil, search for a composition toward the position given by <u>LIMIT</u>.</br>
+</br>
+If no composition is found, return nil.</br>
+</br>
+Optional 3rd argument <u>STRING</u>, if non-nil, is a string to look for a</br>
+composition in; nil means the current buffer.</br>
+</br>
+If a valid composition is found and the optional 4th argument <u>DETAIL-P</u></br>
+is non-nil, the return value is a list of the form</br>
+</br>
+   (FROM TO COMPONENTS RELATIVE-P MOD-FUNC WIDTH)</br>
+</br>
+COMPONENTS is a vector of integers, the meaning depends on RELATIVE-P.</br>
+</br>
+RELATIVE-P is t if the composition method is relative, else nil.</br>
+</br>
+If RELATIVE-P is t, COMPONENTS is a vector of characters to be</br>
+composed.  If RELATIVE-P is nil, COMPONENTS is a vector of characters</br>
+and composition rules as described in `compose-region'.</br>
+</br>
+MOD-FUNC is a modification function of the composition.</br>
+</br>
+WIDTH is a number of columns the composition occupies on the screen.</br>
+</br>
+When Automatic Composition mode is on, this function also finds a</br>
+chunk of text that is automatically composed.  If such a chunk is</br>
+found closer to <u>POS</u> than the position that has `composition'</br>
+property, the value is a list of FROM, TO, and a glyph-string</br>
+that specifies how the chunk is to be composed.  See the function</br>
 `composition-get-gstring' for the format of the glyph-string.

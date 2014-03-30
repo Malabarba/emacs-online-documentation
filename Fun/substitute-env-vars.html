@@ -1,12 +1,19 @@
-<strong>substitute-env-vars</strong> is a compiled Lisp function in `<code>env.el</code>'.<br/>
-<br/>
-(substitute-env-vars STRING)<br/>
-<br/>
-Substitute environment variables referred to in STRING.<br/>
-`$FOO' where FOO is an environment variable name means to substitute<br/>
-the value of that variable.  The variable name should be terminated<br/>
-with a character not a letter, digit or underscore; otherwise, enclose<br/>
-the entire variable name in braces.  For instance, in `ab$cd-x',<br/>
-`$cd' is treated as an environment variable.<br/>
-<br/>
+<strong>substitute-env-vars</strong> is a compiled Lisp function in `<code>env.el</code>'.</br>
+</br>
+(substitute-env-vars <u>STRING</u> &optional <u>WHEN-UNDEFINED</u>)</br>
+</br>
+Substitute environment variables referred to in <u>STRING</u>.</br>
+`$FOO' where FOO is an environment variable name means to substitute</br>
+the value of that variable.  The variable name should be terminated</br>
+with a character not a letter, digit or underscore; otherwise, enclose</br>
+the entire variable name in braces.  For instance, in `ab$cd-x',</br>
+`$cd' is treated as an environment variable.</br>
+</br>
+If WHEN-DEFINED is nil, references to undefined environment variables</br>
+are replaced by the empty string; if it is a function, the function is called</br>
+with the variable name as argument and should return the text with which</br>
+to replace it or nil to leave it unchanged.</br>
+If it is non-nil and not a function, references to undefined variables are</br>
+left unchanged.</br>
+</br>
 Use `$$' to insert a single dollar sign.

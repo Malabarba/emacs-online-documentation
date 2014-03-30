@@ -1,22 +1,22 @@
-<strong>yank-pop</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-It is bound to M-y.<br/>
-<br/>
-(yank-pop &optional ARG)<br/>
-<br/>
-Replace just-yanked stretch of killed text with a different stretch.<br/>
-This command is allowed only immediately after a `yank' or a `yank-pop'.<br/>
-At such a time, the region contains a stretch of reinserted<br/>
-previously-killed text.  `yank-pop' deletes that text and inserts in its<br/>
-place a different stretch of killed text.<br/>
-<br/>
-With no argument, the previous kill is inserted.<br/>
-With argument N, insert the Nth previous kill.<br/>
-If N is negative, this is a more recent kill.<br/>
-<br/>
-The sequence of kills wraps around, so that after the oldest one<br/>
-comes the newest one.<br/>
-<br/>
-When this command inserts killed text into the buffer, it honors<br/>
-`yank-excluded-properties' and `yank-handler' as described in the<br/>
+<strong>yank-pop</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+It is bound to M-y.</br>
+</br>
+<code>(yank-pop <em>&optional</em> <u>ARG</u></code>)</br>
+</br>
+Replace just-yanked stretch of killed text with a different stretch.</br>
+This command is allowed only immediately after a `yank' or a `yank-pop'.</br>
+At such a time, the region contains a stretch of reinserted</br>
+previously-killed text.  `yank-pop' deletes that text and inserts in its</br>
+place a different stretch of killed text.</br>
+</br>
+With no argument, the previous kill is inserted.</br>
+With argument N, insert the Nth previous kill.</br>
+If N is negative, this is a more recent kill.</br>
+</br>
+The sequence of kills wraps around, so that after the oldest one</br>
+comes the newest one.</br>
+</br>
+When this command inserts killed text into the buffer, it honors</br>
+`yank-excluded-properties' and `yank-handler' as described in the</br>
 doc string for `insert-for-yank-1', which see.

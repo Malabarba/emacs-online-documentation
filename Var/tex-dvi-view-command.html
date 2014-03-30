@@ -1,20 +1,19 @@
-<strong>tex-dvi-view-command</strong> is a variable defined in `<code>tex-mode.el</code>'.<br/>
-Its value is (cond<br/>
- ((eq window-system 'x)<br/>
-  "xdvi")<br/>
- ((eq window-system 'w32)<br/>
-  "yap")<br/>
- (t "dvi2tty * | cat -s"))<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Command used by M-x tex-view to display a `.dvi' file.<br/>
-If it is a string, that specifies the command directly.<br/>
-If this string contains an asterisk (`*'), that is replaced by the file name;<br/>
-otherwise, the file name, preceded by a space, is added at the end.<br/>
-<br/>
-If the value is a form, it is evaluated to get the command to use.<br/>
-<br/>
+<strong>tex-dvi-view-command</strong> is a variable defined in `<code>tex-mode.el</code>'.</br>
+Its value is <pre></br>
+(cond
+ ((eq window-system 'x)
+  "xdvi")
+ ((eq window-system 'w32)
+  "yap")
+ (t "dvi2tty * | cat -s"))
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Command used by M-x tex-view to display a `.dvi' file.</br>
+If it is a string, that specifies the command directly.</br>
+If this string contains an asterisk (`*'), that is replaced by the file name;</br>
+otherwise, the file name, preceded by a space, is added at the end.</br>
+</br>
+If the value is a form, it is evaluated to get the command to use.</br>
+</br>
 You can customize this variable.

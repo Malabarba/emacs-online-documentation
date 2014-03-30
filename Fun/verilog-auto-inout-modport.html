@@ -1,66 +1,66 @@
-<strong>verilog-auto-inout-modport</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.<br/>
-<br/>
-(verilog-auto-inout-modport)<br/>
-<br/>
-Expand AUTOINOUTMODPORT statements, as part of M-x verilog-auto.<br/>
-Take input/output/inout statements from the specified interface<br/>
-and modport and insert into the current module.  This is useful<br/>
-for making verification modules that connect to UVM interfaces.<br/>
-<br/>
-  The first parameter is the name of an interface.<br/>
-<br/>
-  The second parameter is a regexp of modports to read from in<br/>
-  that interface.<br/>
-<br/>
-  The optional third parameter is a regular expression, and only<br/>
-  signals matching the regular expression will be included.<br/>
-<br/>
-Limitations:<br/>
-  If placed inside the parenthesis of a module declaration, it creates<br/>
-  Verilog 2001 style, else uses Verilog 1995 style.<br/>
-<br/>
-  Interface names must be resolvable to filenames.  See `verilog-auto-inst'.<br/>
-<br/>
-As with other autos, any inputs/outputs declared in the module<br/>
-will suppress the AUTO from redeclaring an input/output by<br/>
-the same name.<br/>
-<br/>
-An example:<br/>
-<br/>
-	interface ExampIf<br/>
-	  ( input logic clk );<br/>
-	   logic        req_val;<br/>
-	   logic [7:0]  req_dat;<br/>
-	   clocking mon_clkblk @(posedge clk);<br/>
-	      input     req_val;<br/>
-	      input     req_dat;<br/>
-	   endclocking<br/>
-	   modport mp(clocking mon_clkblk);<br/>
-	endinterface<br/>
-<br/>
-	module ExampMain<br/>
-	( input clk,<br/>
-	  /*AUTOINOUTMODPORT("ExampIf" "mp")*/<br/>
-	  // Beginning of automatic in/out/inouts (from modport)<br/>
-	  input	[7:0] req_dat,<br/>
-	  input       req_val<br/>
-	  // End of automatics<br/>
-	);<br/>
-	/*AUTOASSIGNMODPORT("ExampIf" "mp")*/<br/>
-	endmodule<br/>
-<br/>
-Typing M-x verilog-auto will make this into:<br/>
-<br/>
-	...<br/>
-	module ExampMain<br/>
-	( input clk,<br/>
-	  /*AUTOINOUTMODPORT("ExampIf" "mp")*/<br/>
-	  // Beginning of automatic in/out/inouts (from modport)<br/>
-	  input			req_dat,<br/>
-	  input			req_val<br/>
-	  // End of automatics<br/>
-	);<br/>
-<br/>
-If the modport is part of a UVM monitor/driver class, this<br/>
-creates a wrapper module that may be used to instantiate the<br/>
+<strong>verilog-auto-inout-modport</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+</br>
+(verilog-auto-inout-modport)</br>
+</br>
+Expand AUTOINOUTMODPORT statements, as part of M-x verilog-auto.</br>
+Take input/output/inout statements from the specified interface</br>
+and modport and insert into the current module.  This is useful</br>
+for making verification modules that connect to UVM interfaces.</br>
+</br>
+  The first parameter is the name of an interface.</br>
+</br>
+  The second parameter is a regexp of modports to read from in</br>
+  that interface.</br>
+</br>
+  The optional third parameter is a regular expression, and only</br>
+  signals matching the regular expression will be included.</br>
+</br>
+Limitations:</br>
+  If placed inside the parenthesis of a module declaration, it creates</br>
+  Verilog 2001 style, else uses Verilog 1995 style.</br>
+</br>
+  Interface names must be resolvable to filenames.  See `verilog-auto-inst'.</br>
+</br>
+As with other autos, any inputs/outputs declared in the module</br>
+will suppress the AUTO from redeclaring an inputs/outputs by</br>
+the same name.</br>
+</br>
+An example:</br>
+</br>
+	interface ExampIf</br>
+	  ( input logic clk );</br>
+	   logic        req_val;</br>
+	   logic [7:0]  req_dat;</br>
+	   clocking mon_clkblk @(posedge clk);</br>
+	      input     req_val;</br>
+	      input     req_dat;</br>
+	   endclocking</br>
+	   modport mp(clocking mon_clkblk);</br>
+	endinterface</br>
+</br>
+	module ExampMain</br>
+	( input clk,</br>
+	  /*AUTOINOUTMODPORT("ExampIf" "mp")*/</br>
+	  // Beginning of automatic in/out/inouts (from modport)</br>
+	  input	[7:0] req_dat,</br>
+	  input       req_val</br>
+	  // End of automatics</br>
+	);</br>
+	/*AUTOASSIGNMODPORT("ExampIf" "mp")*/</br>
+	endmodule</br>
+</br>
+Typing M-x verilog-auto will make this into:</br>
+</br>
+	...</br>
+	module ExampMain</br>
+	( input clk,</br>
+	  /*AUTOINOUTMODPORT("ExampIf" "mp")*/</br>
+	  // Beginning of automatic in/out/inouts (from modport)</br>
+	  input			req_dat,</br>
+	  input			req_val</br>
+	  // End of automatics</br>
+	);</br>
+</br>
+If the modport is part of a UVM monitor/driver class, this</br>
+creates a wrapper module that may be used to instantiate the</br>
 driver/monitor using AUTOINST in the testbench.

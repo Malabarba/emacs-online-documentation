@@ -1,28 +1,28 @@
-<strong>beginning-of-defun</strong> is an interactive compiled Lisp function in `<code>lisp.el</code>'.<br/>
-<br/>
-It is bound to <C-M-home>, C-M-a, ESC <C-home>.<br/>
-<br/>
-(beginning-of-defun &optional ARG)<br/>
-<br/>
-Move backward to the beginning of a defun.<br/>
-With ARG, do it that many times.  Negative ARG means move forward<br/>
-to the ARGth following beginning of defun.<br/>
-<br/>
-If search is successful, return t; point ends up at the beginning<br/>
-of the line where the search succeeded.  Otherwise, return nil.<br/>
-<br/>
-When `open-paren-in-column-0-is-defun-start' is non-nil, a defun<br/>
-is assumed to start where there is a char with open-parenthesis<br/>
-syntax at the beginning of a line.  If `defun-prompt-regexp' is<br/>
-non-nil, then a string which matches that regexp may also precede<br/>
-the open-parenthesis.  If `defun-prompt-regexp' and<br/>
-`open-paren-in-column-0-is-defun-start' are both nil, this<br/>
-function instead finds an open-paren at the outermost level.<br/>
-<br/>
-If the variable `beginning-of-defun-function' is non-nil, its<br/>
-value is called as a function, with argument ARG, to find the<br/>
-defun's beginning.<br/>
-<br/>
-Regardless of the values of `defun-prompt-regexp' and<br/>
-`beginning-of-defun-function', point always moves to the<br/>
+<strong>beginning-of-defun</strong> is an interactive compiled Lisp function in `<code>lisp.el</code>'.</br>
+</br>
+It is bound to &lt;C-M-home>, C-M-a, ESC &lt;C-home>.</br>
+</br>
+<code>(beginning-of-defun <em>&optional</em> <u>ARG</u></code>)</br>
+</br>
+Move backward to the beginning of a defun.</br>
+With <u>ARG</u>, do it that many times.  Negative <u>ARG</u> means move forward</br>
+to the <u>ARG</u>th following beginning of defun.</br>
+</br>
+If search is successful, return t; point ends up at the beginning</br>
+of the line where the search succeeded.  Otherwise, return nil.</br>
+</br>
+When `open-paren-in-column-0-is-defun-start' is non-nil, a defun</br>
+is assumed to start where there is a char with open-parenthesis</br>
+syntax at the beginning of a line.  If `defun-prompt-regexp' is</br>
+non-nil, then a string which matches that regexp may also precede</br>
+the open-parenthesis.  If `defun-prompt-regexp' and</br>
+`open-paren-in-column-0-is-defun-start' are both nil, this</br>
+function instead finds an open-paren at the outermost level.</br>
+</br>
+If the variable `beginning-of-defun-function' is non-nil, its</br>
+value is called as a function, with argument <u>ARG</u>, to find the</br>
+defun's beginning.</br>
+</br>
+Regardless of the values of `defun-prompt-regexp' and</br>
+`beginning-of-defun-function', point always moves to the</br>
 beginning of the line whenever the search is successful.

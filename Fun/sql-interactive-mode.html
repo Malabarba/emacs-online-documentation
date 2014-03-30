@@ -1,124 +1,124 @@
-<strong>sql-interactive-mode</strong> is a compiled Lisp function in `<code>sql.el</code>'.<br/>
-<br/>
-(sql-interactive-mode)<br/>
-<br/>
-Major mode to use a SQL interpreter interactively.<br/>
-<br/>
-Do not call this function by yourself.  The environment must be<br/>
-initialized by an entry function specific for the SQL interpreter.<br/>
-See `sql-help' for a list of available entry functions.<br/>
-<br/>
-M-x comint-send-input after the end of the process' output sends the<br/>
-text from the end of process to the end of the current line.<br/>
-M-x comint-send-input before end of process output copies the current<br/>
-line minus the prompt to the end of the buffer and sends it.<br/>
-M-x comint-copy-old-input just copies the current line.<br/>
-Use M-x sql-accumulate-and-indent to enter multi-line statements.<br/>
-<br/>
-If you want to make multiple SQL buffers, rename the `*SQL*' buffer<br/>
-using M-x rename-buffer or M-x rename-uniquely and start a new process.<br/>
-See `sql-help' for a list of available entry functions.  The last buffer<br/>
-created by such an entry function is the current SQLi buffer.  SQL<br/>
-buffers will send strings to the SQLi buffer current at the time of<br/>
-their creation.  See `sql-mode' for details.<br/>
-<br/>
-Sample session using two connections:<br/>
-<br/>
-1. Create first SQLi buffer by calling an entry function.<br/>
-2. Rename buffer "*SQL*" to "*Connection 1*".<br/>
-3. Create a SQL buffer "test1.sql".<br/>
-4. Create second SQLi buffer by calling an entry function.<br/>
-5. Rename buffer "*SQL*" to "*Connection 2*".<br/>
-6. Create a SQL buffer "test2.sql".<br/>
-<br/>
-Now M-x sql-send-region in buffer "test1.sql" will send the region to<br/>
-buffer "*Connection 1*", M-x sql-send-region in buffer "test2.sql"<br/>
-will send the region to buffer "*Connection 2*".<br/>
-<br/>
-If you accidentally suspend your process, use M-x comint-continue-subjob<br/>
-to continue it.  On some operating systems, this will not work because<br/>
-the signals are not supported.<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-C-d		comint-delchar-or-maybe-eof<br/>
-C-j		sql-accumulate-and-indent<br/>
-RET		comint-send-input<br/>
-ESC		Prefix Command<br/>
-;		sql-magic-semicolon<br/>
-O		sql-magic-go<br/>
-o		sql-magic-go<br/>
-<C-down>	comint-next-input<br/>
-<C-up>		comint-previous-input<br/>
-<delete>	delete-char<br/>
-<kp-delete>	delete-char<br/>
-<mouse-2>	comint-insert-input<br/>
-<br/>
-C-c C-l		Prefix Command<br/>
-C-c C-w		sql-copy-column<br/>
-<br/>
-C-c C-a		comint-bol-or-process-mark<br/>
-C-c C-c		comint-interrupt-subjob<br/>
-C-c C-d		comint-send-eof<br/>
-C-c C-e		comint-show-maximum-output<br/>
-C-c C-l		comint-dynamic-list-input-ring<br/>
-  (that binding is currently shadowed by another mode)<br/>
-C-c RET		comint-copy-old-input<br/>
-C-c C-n		comint-next-prompt<br/>
-C-c C-o		comint-delete-output<br/>
-C-c C-p		comint-previous-prompt<br/>
-C-c C-r		comint-show-output<br/>
-C-c C-s		comint-write-output<br/>
-C-c C-u		comint-kill-input<br/>
-C-c C-w		backward-kill-word<br/>
-  (that binding is currently shadowed by another mode)<br/>
-C-c C-x		comint-get-next-from-history<br/>
-C-c C-z		comint-stop-subjob<br/>
-C-c ESC		Prefix Command<br/>
-C-c C-\		comint-quit-subjob<br/>
-C-c SPC		comint-accumulate<br/>
-C-c .		comint-insert-previous-argument<br/>
-<br/>
-C-M-l		comint-show-output<br/>
-M-n		comint-next-input<br/>
-M-p		comint-previous-input<br/>
-M-r		comint-history-isearch-backward-regexp<br/>
-<br/>
-C-c C-l a	sql-list-all<br/>
-C-c C-l t	sql-list-table<br/>
-<br/>
-C-c M-r		comint-previous-matching-input-from-input<br/>
-C-c M-s		comint-next-matching-input-from-input<br/>
-<br/>
-<br/>
-Customization: Entry to this mode runs the hooks on `comint-mode-hook'<br/>
-and `sql-interactive-mode-hook' (in that order).  Before each input, the<br/>
-hooks on `comint-input-filter-functions' are run.  After each SQL<br/>
-interpreter output, the hooks on `comint-output-filter-functions' are<br/>
-run.<br/>
-<br/>
-Variable `sql-input-ring-file-name' controls the initialization of the<br/>
-input ring history.<br/>
-<br/>
-Variables `comint-output-filter-functions', a hook, and<br/>
-`comint-scroll-to-bottom-on-input' and<br/>
-`comint-scroll-to-bottom-on-output' control whether input and output<br/>
-cause the window to scroll to the end of the buffer.<br/>
-<br/>
-If you want to make SQL buffers limited in length, add the function<br/>
-`comint-truncate-buffer' to `comint-output-filter-functions'.<br/>
-<br/>
-Here is an example for your init file.  It keeps the SQLi buffer a<br/>
-certain length.<br/>
-<br/>
-(add-hook 'sql-interactive-mode-hook<br/>
-    (function (lambda ()<br/>
-        (setq comint-output-filter-functions 'comint-truncate-buffer))))<br/>
-<br/>
-Here is another example.  It will always put point back to the statement<br/>
-you entered, right above the output it created.<br/>
-<br/>
-(setq comint-output-filter-functions<br/>
+<strong>sql-interactive-mode</strong> is a compiled Lisp function in `<code>sql.el</code>'.</br>
+</br>
+(sql-interactive-mode)</br>
+</br>
+Major mode to use a SQL interpreter interactively.</br>
+</br>
+Do not call this function by yourself.  The environment must be</br>
+initialized by an entry function specific for the SQL interpreter.</br>
+See `sql-help' for a list of available entry functions.</br>
+</br>
+M-x comint-send-input after the end of the process' output sends the</br>
+text from the end of process to the end of the current line.</br>
+M-x comint-send-input before end of process output copies the current</br>
+line minus the prompt to the end of the buffer and sends it.</br>
+M-x comint-copy-old-input just copies the current line.</br>
+Use M-x sql-accumulate-and-indent to enter multi-line statements.</br>
+</br>
+If you want to make multiple SQL buffers, rename the `*SQL*' buffer</br>
+using M-x rename-buffer or M-x rename-uniquely and start a new process.</br>
+See `sql-help' for a list of available entry functions.  The last buffer</br>
+created by such an entry function is the current SQLi buffer.  SQL</br>
+buffers will send strings to the SQLi buffer current at the time of</br>
+their creation.  See `sql-mode' for details.</br>
+</br>
+Sample session using two connections:</br>
+</br>
+1. Create first SQLi buffer by calling an entry function.</br>
+2. Rename buffer "*SQL*" to "*Connection 1*".</br>
+3. Create a SQL buffer "test1.sql".</br>
+4. Create second SQLi buffer by calling an entry function.</br>
+5. Rename buffer "*SQL*" to "*Connection 2*".</br>
+6. Create a SQL buffer "test2.sql".</br>
+</br>
+Now M-x sql-send-region in buffer "test1.sql" will send the region to</br>
+buffer "*Connection 1*", M-x sql-send-region in buffer "test2.sql"</br>
+will send the region to buffer "*Connection 2*".</br>
+</br>
+If you accidentally suspend your process, use M-x comint-continue-subjob</br>
+to continue it.  On some operating systems, this will not work because</br>
+the signals are not supported.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+C-d		comint-delchar-or-maybe-eof</br>
+C-j		sql-accumulate-and-indent</br>
+RET		comint-send-input</br>
+ESC		Prefix Command</br>
+;		sql-magic-semicolon</br>
+O		sql-magic-go</br>
+o		sql-magic-go</br>
+&lt;C-down>	comint-next-input</br>
+&lt;C-up>		comint-previous-input</br>
+&lt;delete>	delete-forward-char</br>
+&lt;kp-delete>	delete-forward-char</br>
+&lt;mouse-2>	comint-insert-input</br>
+</br>
+C-c C-l		Prefix Command</br>
+C-c C-w		sql-copy-column</br>
+</br>
+C-c C-a		comint-bol-or-process-mark</br>
+C-c C-c		comint-interrupt-subjob</br>
+C-c C-d		comint-send-eof</br>
+C-c C-e		comint-show-maximum-output</br>
+C-c C-l		comint-dynamic-list-input-ring</br>
+  (that binding is currently shadowed by another mode)</br>
+C-c RET		comint-copy-old-input</br>
+C-c C-n		comint-next-prompt</br>
+C-c C-o		comint-delete-output</br>
+C-c C-p		comint-previous-prompt</br>
+C-c C-r		comint-show-output</br>
+C-c C-s		comint-write-output</br>
+C-c C-u		comint-kill-input</br>
+C-c C-w		backward-kill-word</br>
+  (that binding is currently shadowed by another mode)</br>
+C-c C-x		comint-get-next-from-history</br>
+C-c C-z		comint-stop-subjob</br>
+C-c ESC		Prefix Command</br>
+C-c C-\		comint-quit-subjob</br>
+C-c SPC		comint-accumulate</br>
+C-c .		comint-insert-previous-argument</br>
+</br>
+C-M-l		comint-show-output</br>
+M-n		comint-next-input</br>
+M-p		comint-previous-input</br>
+M-r		comint-history-isearch-backward-regexp</br>
+</br>
+C-c C-l a	sql-list-all</br>
+C-c C-l t	sql-list-table</br>
+</br>
+C-c M-r		comint-previous-matching-input-from-input</br>
+C-c M-s		comint-next-matching-input-from-input</br>
+</br>
+</br>
+Customization: Entry to this mode runs the hooks on `comint-mode-hook'</br>
+and `sql-interactive-mode-hook' (in that order).  Before each input, the</br>
+hooks on `comint-input-filter-functions' are run.  After each SQL</br>
+interpreter output, the hooks on `comint-output-filter-functions' are</br>
+run.</br>
+</br>
+Variable `sql-input-ring-file-name' controls the initialization of the</br>
+input ring history.</br>
+</br>
+Variables `comint-output-filter-functions', a hook, and</br>
+`comint-scroll-to-bottom-on-input' and</br>
+`comint-scroll-to-bottom-on-output' control whether input and output</br>
+cause the window to scroll to the end of the buffer.</br>
+</br>
+If you want to make SQL buffers limited in length, add the function</br>
+`comint-truncate-buffer' to `comint-output-filter-functions'.</br>
+</br>
+Here is an example for your init file.  It keeps the SQLi buffer a</br>
+certain length.</br>
+</br>
+<code>(add-hook 'sql-interactive-mode-hoo</code>k</br>
+    (function (lambda ()</br>
+        (setq comint-output-filter-functions 'comint-truncate-buffer))))</br>
+</br>
+Here is another example.  It will always put point back to the statement</br>
+you entered, right above the output it created.</br>
+</br>
+(setq comint-output-filter-functions</br>
        (function (lambda (STR) (comint-show-output))))

@@ -1,115 +1,116 @@
-<strong>rx-constituents</strong> is a variable defined in `<code>rx.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Alist of sexp form regexp constituents.<br/>
-Each element of the alist has the form (SYMBOL . DEFN).<br/>
-SYMBOL is a valid constituent of sexp regular expressions.<br/>
-If DEFN is a string, SYMBOL is translated into DEFN.<br/>
-If DEFN is a symbol, use the definition of DEFN, recursively.<br/>
-Otherwise, DEFN must be a list (FUNCTION MIN-ARGS MAX-ARGS PREDICATE).<br/>
-FUNCTION is used to produce code for SYMBOL.  MIN-ARGS and MAX-ARGS<br/>
-are the minimum and maximum number of arguments the function-form<br/>
-sexp constituent SYMBOL may have in sexp regular expressions.<br/>
-MAX-ARGS nil means no limit.  PREDICATE, if specified, means that<br/>
-all arguments must satisfy PREDICATE.<br/>
-<br/>
-Value: ((and rx-and 1 nil)<br/>
- (seq . and)<br/>
- (: . and)<br/>
- (sequence . and)<br/>
- (or rx-or 1 nil)<br/>
- (| . or)<br/>
- (not-newline . ".")<br/>
- (nonl . not-newline)<br/>
- (anything rx-anything 0 nil)<br/>
- (any rx-any 1 nil rx-check-any)<br/>
- (any . ".")<br/>
- (in . any)<br/>
- (char . any)<br/>
- (not-char rx-not-char 1 nil rx-check-any)<br/>
- (not rx-not 1 1 rx-check-not)<br/>
- (repeat rx-repeat 2 nil)<br/>
- (= rx-= 2 nil)<br/>
- (>= rx->= 2 nil)<br/>
- (** rx-** 2 nil)<br/>
- (submatch rx-submatch 1 nil)<br/>
- (group . submatch)<br/>
- (submatch-n rx-submatch-n 2 nil)<br/>
- (group-n . submatch-n)<br/>
- (zero-or-more rx-kleene 1 nil)<br/>
- (one-or-more rx-kleene 1 nil)<br/>
- (zero-or-one rx-kleene 1 nil)<br/>
- (\? . zero-or-one)<br/>
- (\?\? . zero-or-one)<br/>
- (* . zero-or-more)<br/>
- (*\? . zero-or-more)<br/>
- (0+ . zero-or-more)<br/>
- (+ . one-or-more)<br/>
- (+\? . one-or-more)<br/>
- (1+ . one-or-more)<br/>
- (optional . zero-or-one)<br/>
- (opt . zero-or-one)<br/>
- (minimal-match rx-greedy 1 1)<br/>
- (maximal-match rx-greedy 1 1)<br/>
- (backref rx-backref 1 1 rx-check-backref)<br/>
- (line-start . "^")<br/>
- (bol . line-start)<br/>
- (line-end . "$")<br/>
- (eol . line-end)<br/>
- (string-start . "\\`")<br/>
- (bos . string-start)<br/>
- (bot . string-start)<br/>
- (string-end . "\\'")<br/>
- (eos . string-end)<br/>
- (eot . string-end)<br/>
- (buffer-start . "\\`")<br/>
- (buffer-end . "\\'")<br/>
- (point . "\\=")<br/>
- (word-start . "\\<")<br/>
- (bow . word-start)<br/>
- (word-end . "\\>")<br/>
- (eow . word-end)<br/>
- (word-boundary . "\\b")<br/>
- (not-word-boundary . "\\B")<br/>
- (symbol-start . "\\_<")<br/>
- (symbol-end . "\\_>")<br/>
- (syntax rx-syntax 1 1)<br/>
- (not-syntax rx-not-syntax 1 1)<br/>
- (category rx-category 1 1 rx-check-category)<br/>
- (eval rx-eval 1 1)<br/>
- (regexp rx-regexp 1 1 stringp)<br/>
- (regex . regexp)<br/>
- (digit . "[[:digit:]]")<br/>
- (numeric . digit)<br/>
- (num . digit)<br/>
- (control . "[[:cntrl:]]")<br/>
- (cntrl . control)<br/>
- (hex-digit . "[[:xdigit:]]")<br/>
- (hex . hex-digit)<br/>
- (xdigit . hex-digit)<br/>
- (blank . "[[:blank:]]")<br/>
- (graphic . "[[:graph:]]")<br/>
- (graph . graphic)<br/>
- (printing . "[[:print:]]")<br/>
- (print . printing)<br/>
- (alphanumeric . "[[:alnum:]]")<br/>
- (alnum . alphanumeric)<br/>
- (letter . "[[:alpha:]]")<br/>
- (alphabetic . letter)<br/>
- (alpha . letter)<br/>
- (ascii . "[[:ascii:]]")<br/>
- (nonascii . "[[:nonascii:]]")<br/>
- (lower . "[[:lower:]]")<br/>
- (lower-case . lower)<br/>
- (punctuation . "[[:punct:]]")<br/>
- (punct . punctuation)<br/>
- (space . "[[:space:]]")<br/>
- (whitespace . space)<br/>
- (white . space)<br/>
- (upper . "[[:upper:]]")<br/>
- (upper-case . upper)<br/>
- (word . "[[:word:]]")<br/>
- (wordchar . word)<br/>
- (not-wordchar . "\\W"))<br/>
-<br/>
+<strong>rx-constituents</strong> is a variable defined in `<code>rx.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of sexp form regexp constituents.</br>
+Each element of the alist has the form (SYMBOL . DEFN).</br>
+SYMBOL is a valid constituent of sexp regular expressions.</br>
+If DEFN is a string, SYMBOL is translated into DEFN.</br>
+If DEFN is a symbol, use the definition of DEFN, recursively.</br>
+Otherwise, DEFN must be a list (FUNCTION MIN-ARGS MAX-ARGS PREDICATE).</br>
+FUNCTION is used to produce code for SYMBOL.  MIN-ARGS and MAX-ARGS</br>
+are the minimum and maximum number of arguments the function-form</br>
+sexp constituent SYMBOL may have in sexp regular expressions.</br>
+MAX-ARGS nil means no limit.  PREDICATE, if specified, means that</br>
+all arguments must satisfy PREDICATE.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((and rx-and 1 nil)
+ (seq . and)
+ (: . and)
+ (sequence . and)
+ (or rx-or 1 nil)
+ (| . or)
+ (not-newline . ".")
+ (nonl . not-newline)
+ (anything rx-anything 0 nil)
+ (any rx-any 1 nil rx-check-any)
+ (any . ".")
+ (in . any)
+ (char . any)
+ (not-char rx-not-char 1 nil rx-check-any)
+ (not rx-not 1 1 rx-check-not)
+ (repeat rx-repeat 2 nil)
+ (= rx-= 2 nil)
+ (>= rx->= 2 nil)
+ (** rx-** 2 nil)
+ (submatch rx-submatch 1 nil)
+ (group . submatch)
+ (submatch-n rx-submatch-n 2 nil)
+ (group-n . submatch-n)
+ (zero-or-more rx-kleene 1 nil)
+ (one-or-more rx-kleene 1 nil)
+ (zero-or-one rx-kleene 1 nil)
+ (\? . zero-or-one)
+ (\?\? . zero-or-one)
+ (* . zero-or-more)
+ (*\? . zero-or-more)
+ (0+ . zero-or-more)
+ (+ . one-or-more)
+ (+\? . one-or-more)
+ (1+ . one-or-more)
+ (optional . zero-or-one)
+ (opt . zero-or-one)
+ (minimal-match rx-greedy 1 1)
+ (maximal-match rx-greedy 1 1)
+ (backref rx-backref 1 1 rx-check-backref)
+ (line-start . "^")
+ (bol . line-start)
+ (line-end . "$")
+ (eol . line-end)
+ (string-start . "\\`")
+ (bos . string-start)
+ (bot . string-start)
+ (string-end . "\\'")
+ (eos . string-end)
+ (eot . string-end)
+ (buffer-start . "\\`")
+ (buffer-end . "\\'")
+ (point . "\\=")
+ (word-start . "\\<")
+ (bow . word-start)
+ (word-end . "\\>")
+ (eow . word-end)
+ (word-boundary . "\\b")
+ (not-word-boundary . "\\B")
+ (symbol-start . "\\_<")
+ (symbol-end . "\\_>")
+ (syntax rx-syntax 1 1)
+ (not-syntax rx-not-syntax 1 1)
+ (category rx-category 1 1 rx-check-category)
+ (eval rx-eval 1 1)
+ (regexp rx-regexp 1 1 stringp)
+ (regex . regexp)
+ (digit . "[[:digit:]]")
+ (numeric . digit)
+ (num . digit)
+ (control . "[[:cntrl:]]")
+ (cntrl . control)
+ (hex-digit . "[[:xdigit:]]")
+ (hex . hex-digit)
+ (xdigit . hex-digit)
+ (blank . "[[:blank:]]")
+ (graphic . "[[:graph:]]")
+ (graph . graphic)
+ (printing . "[[:print:]]")
+ (print . printing)
+ (alphanumeric . "[[:alnum:]]")
+ (alnum . alphanumeric)
+ (letter . "[[:alpha:]]")
+ (alphabetic . letter)
+ (alpha . letter)
+ (ascii . "[[:ascii:]]")
+ (nonascii . "[[:nonascii:]]")
+ (lower . "[[:lower:]]")
+ (lower-case . lower)
+ (punctuation . "[[:punct:]]")
+ (punct . punctuation)
+ (space . "[[:space:]]")
+ (whitespace . space)
+ (white . space)
+ (upper . "[[:upper:]]")
+ (upper-case . upper)
+ (word . "[[:word:]]")
+ (wordchar . word)
+ (not-wordchar . "\\W"))
+</pre></br>

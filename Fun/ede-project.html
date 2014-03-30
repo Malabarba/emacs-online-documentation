@@ -1,5 +1,270 @@
-<strong>ede-project</strong> is a Lisp function.<br/>
-<br/>
-(ede-project NEWNAME &rest SLOTS)<br/>
-<br/>
-Create a new object with name NAME of class type ede-project
+ede-project is an  object constructor function in `base.el'.</br>
+Creates an object of class ede-project.</br>
+Create a new object with name NAME of class type ede-project</br>
+</br>
+Class description:</br>
+ede-project is a class in `base.el'.</br>
+ Inherits from `ede-project-placeholder'.</br>
+ Children `ede-cpp-root-project'.</br>
+</br>
+Top level EDE project specification.</br>
+All specific project types must derive from this project.</br>
+</br>
+Instance Allocated Slots:</br>
+</br>
+Slot: expanded    type = boolean    default = nil</br>
+  State of an object being expanded in speedbar.</br>
+</br>
+Slot: name    type = string    default = "Untitled"</br>
+  The name used when generating distribution files.</br>
+</br>
+Slot: version    type = string    default = "1.0"</br>
+  The version number used when distributing files.</br>
+</br>
+Slot: directory    type = string</br>
+  Directory this project is associated with.</br>
+</br>
+Slot: dirinode</br>
+  The inode id for :directory.</br>
+</br>
+Slot: file    type = string</br>
+  The File uniquely tagging this project instance.</br>
+For some project types, this will be the file that stores the project configuration.</br>
+In other projects types, this file is merely a unique identifier to this type of project.</br>
+</br>
+Slot: rootproject    type = (or null ede-project-placeholder-child)    default = nil</br>
+  Pointer to our root project.</br>
+</br>
+Slot: subproj    type = list    default = nil</br>
+  Sub projects controlled by this project.</br>
+For Automake based projects, each directory is treated as a project.</br>
+</br>
+Slot: targets    type = ede-target-list</br>
+  List of top level targets in this project.</br>
+</br>
+Slot: locate-obj    type = (or null ede-locate-base-child)</br>
+  A locate object to use as a backup to `ede-expand-filename'.</br>
+</br>
+Slot: tool-cache    type = list</br>
+  List of tool cache configurations in this project.</br>
+This allows any tool to create, manage, and persist project-specific settings.</br>
+</br>
+Slot: mailinglist    type = string    default = ""</br>
+  An email address where users might send email for help.</br>
+</br>
+Slot: web-site-url    type = string    default = ""</br>
+  URL to this projects web site.</br>
+This is a URL to be sent to a web site for documentation.</br>
+</br>
+Slot: web-site-directory    default = ""</br>
+  A directory where web pages can be found by Emacs.</br>
+For remote locations use a path compatible with ange-ftp or EFS.</br>
+You can also use TRAMP for use with rcp & scp.</br>
+</br>
+Slot: web-site-file    default = ""</br>
+  A file which contains the home page for this project.</br>
+This file can be relative to slot `web-site-directory'.</br>
+This can be a local file, use ange-ftp, EFS, or TRAMP.</br>
+</br>
+Slot: ftp-site    type = string    default = ""</br>
+  FTP site where this project's distribution can be found.</br>
+This FTP site should be in Emacs form, as needed by `ange-ftp', but can</br>
+also be of a form used by TRAMP for use with scp, or rcp.</br>
+</br>
+Slot: ftp-upload-site    type = string    default = ""</br>
+  FTP Site to upload new distributions to.</br>
+This FTP site should be in Emacs form as needed by `ange-ftp'.</br>
+If this slot is nil, then use `ftp-site' instead.</br>
+</br>
+Slot: configurations    type = list    default = ("debug" "release")</br>
+  List of available configuration types.</br>
+Individual target/project types can form associations between a configuration,</br>
+and target specific elements such as build variables.</br>
+</br>
+Slot: configuration-default    default = "debug"</br>
+  The default configuration.</br>
+</br>
+Slot: local-variables    default = nil</br>
+  Project local variables</br>
+</br>
+</br>
+Class Allocated Slots:</br>
+</br>
+Slot: menu   value = (["Update Version" ede-update-version ede-object] ["Version Control Status" ede-vc-project-directory ede-object] ["Edit Project Homepage" ede-edit-web-page (and ede-object (oref (ede-toplevel) web-site-file))] ["Browse Project URL" ede-web-browse-home (and ede-object (not (string= "" (oref (ede-toplevel) web-site-url))))] "--" ["Rescan Project Files" ede-rescan-toplevel t] ["Edit Projectfile" ede-edit-file-target (ede-buffer-belongs-to-project-p)])</br>
+</br>
+ Menu specialized to this type of target.</br>
+</br>
+Slot: keybindings   value = (("D" . ede-debug-target) ("R" . ede-run-target))</br>
+</br>
+ Keybindings specialized to this type of target.</br>
+</br>
+Slot: buttontype    type = symbol   value = angle</br>
+</br>
+ The type of expansion button used for objects of this class.</br>
+Possible values are those symbols supported by the `exp-button-type' argument</br>
+to `speedbar-make-tag-line'.</br>
+</br>
+Slot: buttonface    type = (or symbol face)   value = speedbar-directory-face</br>
+</br>
+ The face used on the textual part of the button for this class.</br>
+See `speedbar-make-tag-line' for details.</br>
+</br>
+Specialized Methods:</br>
+</br>
+`ede-expand-filename-impl' :PRIMARY (this filename &optional force)</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+Optional argument FORCE forces the default filename to be provided even if it</br>
+doesn't exist.</br>
+</br>
+`project-dist-files' :PRIMARY (this)</br>
+Return a list of files that constitute a distribution of THIS project.</br>
+</br>
+`project-rescan' :PRIMARY (this)</br>
+Rescan the EDE project THIS.</br>
+</br>
+`ede-object-menu' :STATIC (this)</br>
+Retrieves the slot `menu' from an object of class `ede-project'</br>
+</br>
+`project-make-dist' :PRIMARY (this)</br>
+Build a distribution for the project based on THIS project.</br>
+</br>
+`ede-system-include-path' :PRIMARY (this)</br>
+Get the system include path used by project THIS.</br>
+</br>
+`ede-buffer-documentation-files' :PRIMARY (this buffer)</br>
+Return all documentation in project THIS based on BUFFER.</br>
+</br>
+`ede-name' :PRIMARY (this)</br>
+Return a short-name for THIS project file.</br>
+Do this by extracting the lowest directory name.</br>
+</br>
+`ede-map-any-target-p' :PRIMARY (this proc)</br>
+For project THIS, map PROC to all targets and return if any non-nil.</br>
+Return the first non-nil value returned by PROC.</br>
+</br>
+`ede-commit-local-variables' :PRIMARY (proj)</br>
+Commit change to local variables in PROJ.</br>
+</br>
+`ede-add-subproject' :PRIMARY (proj-a proj-b)</br>
+Add into PROJ-A, the subproject PROJ-B.</br>
+</br>
+`ede-map-project-buffers' :PRIMARY (this proc)</br>
+For THIS, execute PROC on all buffers belonging to THIS.</br>
+</br>
+`ede-expand-filename-local' :PRIMARY (this filename)</br>
+Expand filename locally to project THIS with filesystem tests.</br>
+</br>
+`ede-html-documentation' :PRIMARY (this)</br>
+Return a list of HTML files provided by project THIS.</br>
+</br>
+`ede-target-in-project-p' :PRIMARY (proj target)</br>
+Is PROJ the parent of TARGET?</br>
+If TARGET belongs to a subproject, return that project file.</br>
+</br>
+`eieio-speedbar-description' :PRIMARY (obj)</br>
+Provide a speedbar description for OBJ.</br>
+</br>
+`ede-map-all-subprojects' :PRIMARY (this allproc)</br>
+For object THIS, execute PROC on THIS and all subprojects.</br>
+This function also applies PROC to sub-sub projects.</br>
+See also `ede-map-subprojects'.</br>
+</br>
+`project-new-target' :PRIMARY (proj &rest args)</br>
+Create a new target.  It is up to the project PROJ to get the name.</br>
+</br>
+`ede-buffer-header-file' :PRIMARY (this buffer)</br>
+Return nil, projects don't have header files.</br>
+</br>
+`ede-subproject-relative-path' :PRIMARY (proj &optional parent-in)</br>
+Get a path name for PROJ which is relative to the parent project.</br>
+If PARENT is specified, then be relative to the PARENT project.</br>
+Specifying PARENT is useful for sub-sub projects relative to the root project.</br>
+</br>
+`ede-convert-path' :PRIMARY (this path)</br>
+Convert path in a standard way for a given project.</br>
+Default to making it project relative.</br>
+Argument THIS is the project to convert PATH to.</br>
+</br>
+`ede-preprocessor-map' :PRIMARY (this)</br>
+Get the pre-processor map for project THIS.</br>
+</br>
+`ede-menu-items-build' :PRIMARY (obj &optional current)</br>
+Return a list of menu items for building project OBJ.</br>
+If optional argument CURRENT is non-nil, return sub-menu code.</br>
+</br>
+`ede-subproject-p' :PRIMARY (proj)</br>
+Return non-nil if PROJ is a sub project.</br>
+</br>
+`ede-find-target' :PRIMARY (proj buffer)</br>
+Fetch the target in PROJ belonging to BUFFER or nil.</br>
+</br>
+`ede-expand-filename' :PRIMARY (this filename &optional force)</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+Optional argument FORCE forces the default filename to be provided even if it</br>
+doesn't exist.</br>
+If FORCE equals 'newfile, then the cache is ignored and a new file in THIS</br>
+is returned.</br>
+</br>
+`project-interactive-select-target' :PRIMARY (this prompt)</br>
+Interactively query for a target that exists in project THIS.</br>
+Argument PROMPT is the prompt to use when querying the user for a target.</br>
+</br>
+`ede-map-subprojects' :PRIMARY (this proc)</br>
+For object THIS, execute PROC on all direct subprojects.</br>
+This function does not apply PROC to sub-sub projects.</br>
+See also `ede-map-all-subprojects'.</br>
+</br>
+`project-compile-project' :PRIMARY (obj &optional command)</br>
+Compile the entire current project OBJ.</br>
+Argument COMMAND is the command to use when compiling.</br>
+</br>
+`eieio-speedbar-object-buttonname' :PRIMARY (object)</br>
+Return a string to use as a speedbar button for OBJECT.</br>
+</br>
+`ede-source-paths' :PRIMARY (this mode)</br>
+Get the base to all source trees in the current project for MODE.</br>
+For example, &lt;root>/src for sources of c/c++, Java, etc,</br>
+and &lt;root>/doc for doc sources.</br>
+</br>
+`ede-description' :PRIMARY (this)</br>
+Return a description suitable for the minibuffer about THIS.</br>
+</br>
+`ede-set-project-variables' :PRIMARY (project &optional buffer)</br>
+Set variables local to PROJECT in BUFFER.</br>
+</br>
+`ede-buffer-mine' :PRIMARY (this buffer)</br>
+Return non-nil if object THIS lays claim to the file in BUFFER.</br>
+</br>
+`eieio-speedbar-object-children' :PRIMARY (this)</br>
+Return the list of speedbar display children for THIS.</br>
+</br>
+`ede-java-classpath' :PRIMARY (this)</br>
+Return the classpath for this project.</br>
+</br>
+`project-new-target-custom' :PRIMARY (proj)</br>
+Create a new target.  It is up to the project PROJ to get the name.</br>
+</br>
+`ede-expand-filename-impl-via-subproj' :PRIMARY (this filename)</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+</br>
+`eieio-speedbar-derive-line-path' :PRIMARY (obj &optional depth)</br>
+Return the path to OBJ.</br>
+Optional DEPTH is the depth we start at.</br>
+</br>
+`ede-map-targets' :PRIMARY (this proc)</br>
+For object THIS, execute PROC on all targets.</br>
+</br>
+`ede-documentation' :PRIMARY (this)</br>
+Return a list of files that provide documentation.</br>
+Documentation is not for object THIS, but is provided by THIS for other</br>
+files in the project.</br>
+</br>
+`ede-object-keybindings' :STATIC (this)</br>
+Retrieves the slot `keybindings' from an object of class `ede-project'</br>
+</br>

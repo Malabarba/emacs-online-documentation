@@ -1,27 +1,27 @@
-<strong>tildify-pattern-alist</strong> is a variable defined in `<code>tildify.el</code>'.<br/>
-Its value is<br/>
-((t "\\([,:;(][ 	]*[a]\\|\\<[AIKOSUVZikosuvz]\\)\\([ 	]+\\|[ 	]*\n[ 	]*\\)\\(\\w\\|[([{\\]\\|<[a-zA-Z]\\)" 2))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Alist specifying where to insert hard spaces.<br/>
-<br/>
-Each alist item is of the form (MAJOR-MODE REGEXP NUMBER) or<br/>
-(MAJOR-MODE . SYMBOL).<br/>
-<br/>
-MAJOR-MODE defines major mode, for which the item applies.  It can be either:<br/>
-- a symbol equal to the major mode of the buffer to be fixed<br/>
-- t for default item, this applies to all major modes not defined in another<br/>
-  alist item<br/>
-<br/>
-REGEXP is a regular expression matching the part of a text, where a hard space<br/>
-is missing.  The regexp is always case sensitive, regardless of the current<br/>
-`case-fold-search' setting.<br/>
-<br/>
-NUMBER defines the number of the REGEXP subexpression which should be replaced<br/>
-by the hard space character.<br/>
-<br/>
-The form (MAJOR-MODE . SYMBOL) defines alias item for MAJOR-MODE.  For this<br/>
-mode, the item for the mode SYMBOL is looked up in the alist instead.<br/>
-<br/>
+<strong>tildify-pattern-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
+Its value is <pre></br>
+((t "\\([,:;(][ 	]*[a]\\|\\<[AIKOSUVZikosuvz]\\)\\([ 	]+\\|[ 	]*\n[ 	]*\\)\\(\\w\\|[([{\\]\\|<[a-zA-Z]\\)" 2))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist specifying where to insert hard spaces.</br>
+</br>
+Each alist item is of the form (MAJOR-MODE REGEXP NUMBER) or</br>
+(MAJOR-MODE . SYMBOL).</br>
+</br>
+MAJOR-MODE defines major mode, for which the item applies.  It can be either:</br>
+- a symbol equal to the major mode of the buffer to be fixed</br>
+- t for default item, this applies to all major modes not defined in another</br>
+  alist item</br>
+</br>
+REGEXP is a regular expression matching the part of a text, where a hard space</br>
+is missing.  The regexp is always case sensitive, regardless of the current</br>
+`case-fold-search' setting.</br>
+</br>
+NUMBER defines the number of the REGEXP subexpression which should be replaced</br>
+by the hard space character.</br>
+</br>
+The form (MAJOR-MODE . SYMBOL) defines alias item for MAJOR-MODE.  For this</br>
+mode, the item for the mode SYMBOL is looked up in the alist instead.</br>
+</br>
 You can customize this variable.

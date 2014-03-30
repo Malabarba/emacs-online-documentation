@@ -1,22 +1,22 @@
-<strong>dbus-check-event</strong> is a compiled Lisp function in `<code>dbus.el</code>'.<br/>
-<br/>
-(dbus-check-event EVENT)<br/>
-<br/>
-Checks whether EVENT is a well formed D-Bus event.<br/>
-EVENT is a list which starts with symbol `dbus-event':<br/>
-<br/>
-  (dbus-event BUS TYPE SERIAL SERVICE PATH INTERFACE MEMBER HANDLER &rest ARGS)<br/>
-<br/>
-BUS identifies the D-Bus the message is coming from.  It is<br/>
-either a Lisp symbol, `:system' or `:session', or a string<br/>
-denoting the bus address.  TYPE is the D-Bus message type which<br/>
-has caused the event, SERIAL is the serial number of the received<br/>
-D-Bus message.  SERVICE and PATH are the unique name and the<br/>
-object path of the D-Bus object emitting the message.  INTERFACE<br/>
-and MEMBER denote the message which has been sent.  HANDLER is<br/>
-the function which has been registered for this message.  ARGS<br/>
-are the arguments passed to HANDLER, when it is called during<br/>
-event handling in `dbus-handle-event'.<br/>
-<br/>
-This function raises a `dbus-error' signal in case the event is<br/>
+<strong>dbus-check-event</strong> is a compiled Lisp function in `<code>dbus.el</code>'.</br>
+</br>
+(dbus-check-event <u>EVENT</u>)</br>
+</br>
+Checks whether <u>EVENT</u> is a well formed D-Bus event.</br>
+<u>EVENT</u> is a list which starts with symbol `dbus-event':</br>
+</br>
+  (dbus-event BUS TYPE SERIAL SERVICE PATH INTERFACE MEMBER HANDLER &rest ARGS)</br>
+</br>
+BUS identifies the D-Bus the message is coming from.  It is</br>
+either a Lisp symbol, `:system' or `:session', or a string</br>
+denoting the bus address.  TYPE is the D-Bus message type which</br>
+has caused the event, SERIAL is the serial number of the received</br>
+D-Bus message.  SERVICE and PATH are the unique name and the</br>
+object path of the D-Bus object emitting the message.  INTERFACE</br>
+and MEMBER denote the message which has been sent.  HANDLER is</br>
+the function which has been registered for this message.  ARGS</br>
+are the arguments passed to HANDLER, when it is called during</br>
+event handling in `dbus-handle-event'.</br>
+</br>
+This function raises a `dbus-error' signal in case the event is</br>
 not well formed.

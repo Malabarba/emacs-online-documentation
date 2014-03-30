@@ -1,13 +1,16 @@
-<strong>srecode-template-wy--<string>-sexp-analyzer</strong> is a variable defined in `<code>srt-wy.el</code>'.<br/>
-Its value is ((looking-at "\\s\"")<br/>
- (semantic-lex-push-token<br/>
-  (semantic-lex-token 'string<br/>
-		      (point)<br/>
-		      (save-excursion<br/>
-			(semantic-lex-unterminated-syntax-protection 'string<br/>
-			  (forward-sexp 1)<br/>
-			  (point))))))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-sexp analyzer for <string> tokens.
+<strong>srecode-template-wy--<string>-sexp-analyzer</strong> is a variable defined in `<code>srt-wy.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+sexp analyzer for <string> tokens.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((looking-at "\\s\"")
+ (semantic-lex-push-token
+  (semantic-lex-token 'string
+		      (point)
+		      (save-excursion
+			(semantic-lex-unterminated-syntax-protection 'string
+			  (forward-sexp 1)
+			  (point))))))
+</pre></br>

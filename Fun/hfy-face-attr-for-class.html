@@ -1,22 +1,22 @@
-<strong>hfy-face-attr-for-class</strong> is a compiled Lisp function in `<code>htmlfontify.el</code>'.<br/>
-<br/>
-(hfy-face-attr-for-class FACE &optional CLASS)<br/>
-<br/>
-Return the face attributes for FACE.<br/>
-If CLASS is set, it must be a `defface' alist key [see below],<br/>
-in which case the first face specification returned by `hfy-combined-face-spec'<br/>
-which *doesn't* clash with CLASS is returned.<br/>
-<br/>
-(A specification with a class of t is considered to match any class you<br/>
-specify - this matches Emacs's behavior when deciding on which face attributes<br/>
-to use, to the best of my understanding).<br/>
-<br/>
-If CLASS is nil, then you just get whatever `face-attr-construct' returns,<br/>
-ie the current specification in effect for FACE.<br/>
-<br/>
-*NOTE*: This function forces any face that is not 'default and which has<br/>
-no :inherit property to inherit from 'default (this is because 'default<br/>
-is magical in that Emacs's fonts behave as if they inherit implicitly from<br/>
-'default, but no such behavior exists in HTML/CSS).<br/>
-<br/>
-See also `hfy-display-class' for details of valid values for CLASS.
+<strong>hfy-face-attr-for-class</strong> is a compiled Lisp function in `<code>htmlfontify.el</code>'.</br>
+</br>
+(hfy-face-attr-for-class <u>FACE</u> &optional <u>CLASS</u>)</br>
+</br>
+Return the face attributes for <u>FACE</u>.</br>
+If <u>CLASS</u> is set, it must be a `defface' alist key [see below],</br>
+in which case the first face specification returned by `hfy-combined-face-spec'</br>
+which *doesn't* clash with <u>CLASS</u> is returned.</br>
+</br>
+<code>(A specification with a class of t is considered to match any class yo</code>u</br>
+specify - this matches Emacs's behavior when deciding on which face attributes</br>
+to use, to the best of my understanding).</br>
+</br>
+If <u>CLASS</u> is nil, then you just get whatever `face-attr-construct' returns,</br>
+ie the current specification in effect for <u>FACE</u>.</br>
+</br>
+*NOTE*: This function forces any face that is not 'default and which has</br>
+no :inherit property to inherit from 'default (this is because 'default</br>
+is magical in that Emacs's fonts behave as if they inherit implicitly from</br>
+'default, but no such behavior exists in HTML/CSS).</br>
+</br>
+See also `hfy-display-class' for details of valid values for <u>CLASS</u>.

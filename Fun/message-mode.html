@@ -1,118 +1,119 @@
-<strong>message-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>message.el</code>'.<br/>
-<br/>
-(message-mode)<br/>
-<br/>
-Parent mode: `text-mode'.<br/>
-<br/>
-Major mode for editing mail and news to be sent.<br/>
-Like Text Mode but with these additional commands:<br/>
-C-c C-s  `message-send' (send the message)  C-c C-c  `message-send-and-exit'<br/>
-C-c C-d  Postpone sending the message       C-c C-k  Kill the message<br/>
-C-c C-f  move to a header field (and create it if there isn't):<br/>
-	 C-c C-f C-t  move to To	C-c C-f C-s  move to Subject<br/>
-	 C-c C-f C-c  move to Cc	C-c C-f C-b  move to Bcc<br/>
-	 C-c C-f C-w  move to Fcc	C-c C-f C-r  move to Reply-To<br/>
-	 C-c C-f C-u  move to Summary	C-c C-f C-n  move to Newsgroups<br/>
-	 C-c C-f C-k  move to Keywords	C-c C-f C-d  move to Distribution<br/>
-	 C-c C-f C-o  move to From ("Originator")<br/>
-	 C-c C-f C-f  move to Followup-To<br/>
-	 C-c C-f C-m  move to Mail-Followup-To<br/>
-	 C-c C-f C-e  move to Expires<br/>
-	 C-c C-f C-i  cycle through Importance values<br/>
-	 C-c C-f s    change subject and append "(was: <Old Subject>)"<br/>
-	 C-c C-f x    crossposting with FollowUp-To header and note in body<br/>
-	 C-c C-f t    replace To: header with contents of Cc: or Bcc:<br/>
-	 C-c C-f a    Insert X-No-Archive: header and a note in the body<br/>
-C-c C-t  `message-insert-to' (add a To header to a news followup)<br/>
-C-c C-l  `message-to-list-only' (removes all but list address in to/cc)<br/>
-C-c C-n  `message-insert-newsgroups' (add a Newsgroup header to a news reply)<br/>
-C-c C-b  `message-goto-body' (move to beginning of message text).<br/>
-C-c C-i  `message-goto-signature' (move to the beginning of the signature).<br/>
-C-c C-w  `message-insert-signature' (insert `message-signature-file' file).<br/>
-C-c C-y  `message-yank-original' (insert current message, if any).<br/>
-C-c C-q  `message-fill-yanked-message' (fill what was yanked).<br/>
-C-c C-e  `message-elide-region' (elide the text between point and mark).<br/>
-C-c C-v  `message-delete-not-region' (remove the text outside the region).<br/>
-C-c C-z  `message-kill-to-signature' (kill the text up to the signature).<br/>
-C-c C-r  `message-caesar-buffer-body' (rot13 the message body).<br/>
-C-c C-a  `mml-attach-file' (attach a file as MIME).<br/>
-C-c C-u  `message-insert-or-toggle-importance'  (insert or cycle importance).<br/>
-C-c M-n  `message-insert-disposition-notification-to'  (request receipt).<br/>
-C-c M-m  `message-mark-inserted-region' (mark region with enclosing tags).<br/>
-C-c M-f  `message-mark-insert-file' (insert file marked with enclosing tags).<br/>
-M-RET    `message-newline-and-reformat' (break the line and reformat).<br/>
-<br/>
-In addition to any hooks its parent mode `text-mode' might have run,<br/>
-this mode runs the hook `message-mode-hook', as the final step<br/>
-during initialization.<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-a		message-beginning-of-line<br/>
-C-c		Prefix Command<br/>
-TAB		message-tab<br/>
-ESC		Prefix Command<br/>
-<remap>		Prefix Command<br/>
-<br/>
-C-c C-a		mml-attach-file<br/>
-C-c C-b		message-goto-body<br/>
-C-c C-c		message-send-and-exit<br/>
-C-c C-d		message-dont-send<br/>
-C-c C-e		message-elide-region<br/>
-C-c C-f		Prefix Command<br/>
-C-c TAB		message-goto-signature<br/>
-C-c C-j		gnus-delay-article<br/>
-C-c C-k		message-kill-buffer<br/>
-C-c C-l		message-to-list-only<br/>
-C-c C-n		message-insert-newsgroups<br/>
-C-c C-o		message-sort-headers<br/>
-C-c C-q		message-fill-yanked-message<br/>
-C-c C-r		message-caesar-buffer-body<br/>
-C-c C-s		message-send<br/>
-C-c C-t		message-insert-to<br/>
-C-c C-u		message-insert-or-toggle-importance<br/>
-C-c C-v		message-delete-not-region<br/>
-C-c C-w		message-insert-signature<br/>
-C-c C-y		message-yank-original<br/>
-C-c C-z		message-kill-to-signature<br/>
-C-c ESC		Prefix Command<br/>
-C-c ?		describe-mode<br/>
-<br/>
-M-RET		message-newline-and-reformat<br/>
-M-n		message-display-abbrev<br/>
-<br/>
-<remap> <split-line>		message-split-line<br/>
-<br/>
-C-M-i		ispell-complete-word<br/>
-<br/>
-C-c C-M-y	message-yank-buffer<br/>
-C-c M-f		message-mark-insert-file<br/>
-C-c M-h		message-insert-headers<br/>
-C-c M-k		message-kill-address<br/>
-C-c M-m		message-mark-inserted-region<br/>
-C-c M-n		message-insert-disposition-notification-to<br/>
-C-c M-r		message-rename-buffer<br/>
-<br/>
-C-c C-f C-a	message-generate-unsubscribed-mail-followup-to<br/>
-C-c C-f C-b	message-goto-bcc<br/>
-C-c C-f C-c	message-goto-cc<br/>
-C-c C-f C-d	message-goto-distribution<br/>
-C-c C-f C-e	message-insert-expires<br/>
-C-c C-f C-f	message-goto-followup-to<br/>
-C-c C-f TAB	message-insert-or-toggle-importance<br/>
-C-c C-f C-k	message-goto-keywords<br/>
-C-c C-f RET	message-goto-mail-followup-to<br/>
-C-c C-f C-n	message-goto-newsgroups<br/>
-C-c C-f C-o	message-goto-from<br/>
-C-c C-f C-r	message-goto-reply-to<br/>
-C-c C-f C-s	message-goto-subject<br/>
-C-c C-f C-t	message-goto-to<br/>
-C-c C-f C-u	message-goto-summary<br/>
-C-c C-f C-w	message-goto-fcc<br/>
-C-c C-f a	message-add-archive-header<br/>
-C-c C-f s	message-change-subject<br/>
-C-c C-f t	message-reduce-to-to-cc<br/>
-C-c C-f w	message-insert-wide-reply<br/>
-C-c C-f x	message-cross-post-followup-to<br/>
-<br/>
+<strong>message-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>message.el</code>'.</br>
+</br>
+</br>
+(message-mode)</br>
+</br>
+Parent mode: `text-mode'.</br>
+</br>
+Major mode for editing mail and news to be sent.</br>
+Like Text Mode but with these additional commands:</br>
+C-c C-s  `message-send' (send the message)  C-c C-c  `message-send-and-exit'</br>
+C-c C-d  Postpone sending the message       C-c C-k  Kill the message</br>
+C-c C-f  move to a header field (and create it if there isn't):</br>
+	 C-c C-f C-t  move to To	C-c C-f C-s  move to Subject</br>
+	 C-c C-f C-c  move to Cc	C-c C-f C-b  move to Bcc</br>
+	 C-c C-f C-w  move to Fcc	C-c C-f C-r  move to Reply-To</br>
+	 C-c C-f C-u  move to Summary	C-c C-f C-n  move to Newsgroups</br>
+	 C-c C-f C-k  move to Keywords	C-c C-f C-d  move to Distribution</br>
+	 C-c C-f C-o  move to From ("Originator")</br>
+	 C-c C-f C-f  move to Followup-To</br>
+	 C-c C-f C-m  move to Mail-Followup-To</br>
+	 C-c C-f C-e  move to Expires</br>
+	 C-c C-f C-i  cycle through Importance values</br>
+	 C-c C-f s    change subject and append "(was: &lt;Old Subject>)"</br>
+	 C-c C-f x    crossposting with FollowUp-To header and note in body</br>
+	 C-c C-f t    replace To: header with contents of Cc: or Bcc:</br>
+	 C-c C-f a    Insert X-No-Archive: header and a note in the body</br>
+C-c C-t  `message-insert-to' (add a To header to a news followup)</br>
+C-c C-l  `message-to-list-only' (removes all but list address in to/cc)</br>
+C-c C-n  `message-insert-newsgroups' (add a Newsgroup header to a news reply)</br>
+C-c C-b  `message-goto-body' (move to beginning of message text).</br>
+C-c C-i  `message-goto-signature' (move to the beginning of the signature).</br>
+C-c C-w  `message-insert-signature' (insert `message-signature-file' file).</br>
+C-c C-y  `message-yank-original' (insert current message, if any).</br>
+C-c C-q  `message-fill-yanked-message' (fill what was yanked).</br>
+C-c C-e  `message-elide-region' (elide the text between point and mark).</br>
+C-c C-v  `message-delete-not-region' (remove the text outside the region).</br>
+C-c C-z  `message-kill-to-signature' (kill the text up to the signature).</br>
+C-c C-r  `message-caesar-buffer-body' (rot13 the message body).</br>
+C-c C-a  `mml-attach-file' (attach a file as MIME).</br>
+C-c C-u  `message-insert-or-toggle-importance'  (insert or cycle importance).</br>
+C-c M-n  `message-insert-disposition-notification-to'  (request receipt).</br>
+C-c M-m  `message-mark-inserted-region' (mark region with enclosing tags).</br>
+C-c M-f  `message-mark-insert-file' (insert file marked with enclosing tags).</br>
+M-RET    `message-newline-and-reformat' (break the line and reformat).</br>
+</br>
+In addition to any hooks its parent mode `text-mode' might have run,</br>
+this mode runs the hook `message-mode-hook', as the final step</br>
+during initialization.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-a		message-beginning-of-line</br>
+C-c		Prefix Command</br>
+TAB		message-tab</br>
+ESC		Prefix Command</br>
+&lt;remap>		Prefix Command</br>
+</br>
+C-c C-a		mml-attach-file</br>
+C-c C-b		message-goto-body</br>
+C-c C-c		message-send-and-exit</br>
+C-c C-d		message-dont-send</br>
+C-c C-e		message-elide-region</br>
+C-c C-f		Prefix Command</br>
+C-c TAB		message-goto-signature</br>
+C-c C-j		gnus-delay-article</br>
+C-c C-k		message-kill-buffer</br>
+C-c C-l		message-to-list-only</br>
+C-c C-n		message-insert-newsgroups</br>
+C-c C-o		message-sort-headers</br>
+C-c C-q		message-fill-yanked-message</br>
+C-c C-r		message-caesar-buffer-body</br>
+C-c C-s		message-send</br>
+C-c C-t		message-insert-to</br>
+C-c C-u		message-insert-or-toggle-importance</br>
+C-c C-v		message-delete-not-region</br>
+C-c C-w		message-insert-signature</br>
+C-c C-y		message-yank-original</br>
+C-c C-z		message-kill-to-signature</br>
+C-c ESC		Prefix Command</br>
+C-c ?		describe-mode</br>
+</br>
+M-RET		message-newline-and-reformat</br>
+M-n		message-display-abbrev</br>
+</br>
+&lt;remap> &lt;split-line>		message-split-line</br>
+</br>
+C-M-i		ispell-complete-word</br>
+</br>
+C-c C-M-y	message-yank-buffer</br>
+C-c M-f		message-mark-insert-file</br>
+C-c M-h		message-insert-headers</br>
+C-c M-k		message-kill-address</br>
+C-c M-m		message-mark-inserted-region</br>
+C-c M-n		message-insert-disposition-notification-to</br>
+C-c M-r		message-rename-buffer</br>
+</br>
+C-c C-f C-a	message-generate-unsubscribed-mail-followup-to</br>
+C-c C-f C-b	message-goto-bcc</br>
+C-c C-f C-c	message-goto-cc</br>
+C-c C-f C-d	message-goto-distribution</br>
+C-c C-f C-e	message-insert-expires</br>
+C-c C-f C-f	message-goto-followup-to</br>
+C-c C-f TAB	message-insert-or-toggle-importance</br>
+C-c C-f C-k	message-goto-keywords</br>
+C-c C-f RET	message-goto-mail-followup-to</br>
+C-c C-f C-n	message-goto-newsgroups</br>
+C-c C-f C-o	message-goto-from</br>
+C-c C-f C-r	message-goto-reply-to</br>
+C-c C-f C-s	message-goto-subject</br>
+C-c C-f C-t	message-goto-to</br>
+C-c C-f C-u	message-goto-summary</br>
+C-c C-f C-w	message-goto-fcc</br>
+C-c C-f a	message-add-archive-header</br>
+C-c C-f s	message-change-subject</br>
+C-c C-f t	message-reduce-to-to-cc</br>
+C-c C-f w	message-insert-wide-reply</br>
+C-c C-f x	message-cross-post-followup-to</br>
+</br>

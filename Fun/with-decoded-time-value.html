@@ -1,18 +1,18 @@
-<strong>with-decoded-time-value</strong> is a Lisp macro in `<code>time-date.el</code>'.<br/>
-<br/>
-(with-decoded-time-value VARLIST &rest BODY)<br/>
-<br/>
-Decode a time value and bind it according to VARLIST, then eval BODY.<br/>
-<br/>
-The value of the last form in BODY is returned.<br/>
-<br/>
-Each element of the list VARLIST is a list of the form<br/>
-(HIGH-SYMBOL LOW-SYMBOL MICRO-SYMBOL [PICO-SYMBOL [TYPE-SYMBOL]] TIME-VALUE).<br/>
-The time value TIME-VALUE is decoded and the result it bound to<br/>
-the symbols HIGH-SYMBOL, LOW-SYMBOL and MICRO-SYMBOL.<br/>
-The optional PICO-SYMBOL is bound to the picoseconds part.<br/>
-<br/>
-The optional TYPE-SYMBOL is bound to the type of the time value.<br/>
-Type 0 is the cons cell (HIGH . LOW), type 1 is the list (HIGH<br/>
-LOW), type 2 is the list (HIGH LOW MICRO), and type 3 is the<br/>
+<strong>with-decoded-time-value</strong> is a Lisp macro in `<code>time-date.el</code>'.</br>
+</br>
+(with-decoded-time-value <u>VARLIST</u> &rest <u>BODY</u>)</br>
+</br>
+Decode a time value and bind it according to <u>VARLIST</u>, then eval <u>BODY</u>.</br>
+</br>
+The value of the last form in <u>BODY</u> is returned.</br>
+</br>
+Each element of the list <u>VARLIST</u> is a list of the form</br>
+(HIGH-SYMBOL LOW-SYMBOL MICRO-SYMBOL [PICO-SYMBOL [TYPE-SYMBOL]] TIME-VALUE).</br>
+The time value TIME-VALUE is decoded and the result it bound to</br>
+the symbols HIGH-SYMBOL, LOW-SYMBOL and MICRO-SYMBOL.</br>
+The optional PICO-SYMBOL is bound to the picoseconds part.</br>
+</br>
+The optional TYPE-SYMBOL is bound to the type of the time value.</br>
+Type 0 is the cons cell (HIGH . LOW), type 1 is the list (HIGH</br>
+LOW), type 2 is the list (HIGH LOW MICRO), and type 3 is the</br>
 list (HIGH LOW MICRO PICO).

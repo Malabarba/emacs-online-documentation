@@ -1,39 +1,38 @@
-<strong>semantic-highlight-func-mode-map</strong> is a variable defined in `<code>util-modes.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for highlight-func minor mode.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Highlight-Func\ Mode menu-item "Highlight-Func Mode"<br/>
-				 (keymap "Highlight-Func Mode"<br/>
-					 (Copy\ Tag menu-item "Copy Tag" senator-copy-tag :enable<br/>
-						    (semantic-current-tag)<br/>
-						    :help "Copy the current tag to the tag ring")<br/>
-					 (Kill\ Tag menu-item "Kill Tag" senator-kill-tag :enable<br/>
-						    (semantic-current-tag)<br/>
-						    :help "Kill tag text to the kill ring, and copy the tag to the tag ring")<br/>
-					 (Copy\ Tag\ to\ Register menu-item "Copy Tag to Register" senator-copy-tag-to-register :enable<br/>
-								  (semantic-current-tag)<br/>
-								  :help "Copy the current tag to a register")<br/>
-					 (Narrow\ To\ Tag menu-item "Narrow To Tag" senator-narrow-to-defun :enable<br/>
-							  (semantic-current-tag)<br/>
-							  :help "Narrow to the bounds of the current tag")<br/>
-					 (Fold\ Tag menu-item "Fold Tag" senator-fold-tag-toggle :enable<br/>
-						    (semantic-current-tag)<br/>
-						    :button<br/>
-						    (:toggle let<br/>
-							     ((tag<br/>
-							       (semantic-stickyfunc-tag-to-stick)))<br/>
-							     (and tag<br/>
-								  (semantic-tag-folded-p tag)))<br/>
-						    :help "Fold the current tag to one line")<br/>
-					 (nil-9 menu-item "---")<br/>
-					 (About\ This\ Tag menu-item "About This Tag" semantic-describe-tag))<br/>
-				 :visible<br/>
-				 (progn nil)))<br/>
- (mouse-3 . semantic-highlight-func-menu))<br/>
-<br/>
+<strong>semantic-highlight-func-mode-map</strong> is a variable defined in `<code>util-modes.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for highlight-func minor mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Highlight-Func\ Mode menu-item "Highlight-Func Mode"
+				 (keymap "Highlight-Func Mode"
+					 (Copy\ Tag menu-item "Copy Tag" senator-copy-tag :enable
+						    (semantic-current-tag)
+						    :help "Copy the current tag to the tag ring")
+					 (Kill\ Tag menu-item "Kill Tag" senator-kill-tag :enable
+						    (semantic-current-tag)
+						    :help "Kill tag text to the kill ring, and copy the tag to the tag ring")
+					 (Copy\ Tag\ to\ Register menu-item "Copy Tag to Register" senator-copy-tag-to-register :enable
+								  (semantic-current-tag)
+								  :help "Copy the current tag to a register")
+					 (Narrow\ To\ Tag menu-item "Narrow To Tag" senator-narrow-to-defun :enable
+							  (semantic-current-tag)
+							  :help "Narrow to the bounds of the current tag")
+					 (Fold\ Tag menu-item "Fold Tag" senator-fold-tag-toggle :enable
+						    (semantic-current-tag)
+						    :button
+						    (:toggle let
+							     ((tag
+							       (semantic-stickyfunc-tag-to-stick)))
+							     (and tag
+								  (semantic-tag-folded-p tag)))
+						    :help "Fold the current tag to one line")
+					 (nil menu-item "---")
+					 (About\ This\ Tag menu-item "About This Tag" semantic-describe-tag))
+				 :visible
+				 (progn nil)))
+ (mouse-3 . semantic-highlight-func-menu))
+</pre></br>

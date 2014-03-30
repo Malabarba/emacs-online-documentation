@@ -1,17 +1,15 @@
-<strong>org-agenda-skip-function</strong> is a variable defined in `<code>org-agenda.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function to be called at each match during agenda construction.<br/>
-If this function returns nil, the current match should not be skipped.<br/>
-Otherwise, the function must return a position from where the search<br/>
-should be continued.<br/>
-This may also be a Lisp form, it will be evaluated.<br/>
-Never set this variable using `setq' or so, because then it will apply<br/>
-to all future agenda commands.  If you do want a global skipping condition,<br/>
-use the option `org-agenda-skip-function-global' instead.<br/>
-The correct usage for `org-agenda-skip-function' is to bind it with<br/>
-`let' to scope it dynamically into the agenda-constructing command.<br/>
+<strong>org-agenda-skip-function</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to be called at each match during agenda construction.</br>
+If this function returns nil, the current match should not be skipped.</br>
+Otherwise, the function must return a position from where the search</br>
+should be continued.</br>
+This may also be a Lisp form, it will be evaluated.</br>
+Never set this variable using `setq' or so, because then it will apply</br>
+to all future agenda commands.  If you do want a global skipping condition,</br>
+use the option `org-agenda-skip-function-global' instead.</br>
+The correct usage for `org-agenda-skip-function' is to bind it with</br>
+`let' to scope it dynamically into the agenda-constructing command.</br>
 A good way to set it is through options in `org-agenda-custom-commands'.

@@ -1,0 +1,36 @@
+<strong>socks-split-string</strong> is an alias for `<strong><a href="split-string">split-string</a></strong>' in `<code>socks.el</code>'.</br>
+</br>
+(socks-split-string <u>STRING</u> &optional <u>SEPARATORS</u> <u>OMIT-NULLS</u> <u>TRIM</u>)</br>
+</br>
+Split <u>STRING</u> into substrings bounded by matches for <u>SEPARATORS</u>.</br>
+</br>
+The beginning and end of <u>STRING</u>, and each match for <u>SEPARATORS</u>, are</br>
+splitting points.  The substrings matching <u>SEPARATORS</u> are removed, and</br>
+the substrings between the splitting points are collected as a list,</br>
+which is returned.</br>
+</br>
+If <u>SEPARATORS</u> is non-nil, it should be a regular expression matching text</br>
+which separates, but is not part of, the substrings.  If nil it defaults to</br>
+`split-string-default-separators', normally "[ \f\t\n\r\v]+", and</br>
+<u>OMIT-NULLS</u> is forced to t.</br>
+</br>
+If <u>OMIT-NULLS</u> is t, zero-length substrings are omitted from the list (so</br>
+that for the default value of <u>SEPARATORS</u> leading and trailing whitespace</br>
+are effectively trimmed).  If nil, all zero-length substrings are retained,</br>
+which correctly parses CSV format, for example.</br>
+</br>
+If <u>TRIM</u> is non-nil, it should be a regular expression to match</br>
+text to trim from the beginning and end of each substring.  If trimming</br>
+makes the substring empty, it is treated as null.</br>
+</br>
+If you want to trim whitespace from the substrings, the reliably correct</br>
+way is using <u>TRIM</u>.  Making <u>SEPARATORS</u> match that whitespace gives incorrect</br>
+results when there is whitespace at the start or end of <u>STRING</u>.  If you</br>
+see such calls to `split-string', please fix them.</br>
+</br>
+Note that the effect of `(split-string <u>STRING</u>)' is the same as</br>
+`(split-string <u>STRING</u> split-string-default-separators t)'.  In the rare</br>
+case that you wish to retain zero-length substrings when splitting on</br>
+whitespace, use `(split-string <u>STRING</u> split-string-default-separators)'.</br>
+</br>
+Modifies the match data; use `save-match-data' if necessary.

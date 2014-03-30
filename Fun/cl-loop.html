@@ -1,16 +1,34 @@
-<strong>cl-loop</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.<br/>
-<br/>
-(cl-loop CLAUSE...)<br/>
-<br/>
-The Common Lisp `loop' macro.<br/>
-Valid clauses are:<br/>
-  for VAR from/upfrom/downfrom NUM to/upto/downto/above/below NUM by NUM,<br/>
-  for VAR in LIST by FUNC, for VAR on LIST by FUNC, for VAR = INIT then EXPR,<br/>
-  for VAR across ARRAY, repeat NUM, with VAR = INIT, while COND, until COND,<br/>
-  always COND, never COND, thereis COND, collect EXPR into VAR,<br/>
-  append EXPR into VAR, nconc EXPR into VAR, sum EXPR into VAR,<br/>
-  count EXPR into VAR, maximize EXPR into VAR, minimize EXPR into VAR,<br/>
-  if COND CLAUSE [and CLAUSE]... else CLAUSE [and CLAUSE...],<br/>
-  unless COND CLAUSE [and CLAUSE]... else CLAUSE [and CLAUSE...],<br/>
-  do EXPRS..., initially EXPRS..., finally EXPRS..., return EXPR,<br/>
-  finally return EXPR, named NAME.
+<strong>cl-loop</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.</br>
+</br>
+(cl-loop <u>CLAUSE</u>...)</br>
+</br>
+The Common Lisp `loop' macro.</br>
+Valid clauses include:</br>
+  For clauses:</br>
+    for VAR from/upfrom/downfrom EXPR1 to/upto/downto/above/below EXPR2 by EXPR3</br>
+    for VAR = EXPR1 then EXPR2</br>
+    for VAR in/on/in-ref LIST by FUNC</br>
+    for VAR across/across-ref ARRAY</br>
+    for VAR being:</br>
+      the elements of/of-ref SEQUENCE [using (index VAR2)]</br>
+      the symbols [of OBARRAY]</br>
+      the hash-keys/hash-values of HASH-TABLE [using (hash-values/hash-keys V2)]</br>
+      the key-codes/key-bindings/key-seqs of KEYMAP [using (key-bindings VAR2)]</br>
+      the overlays/intervals [of BUFFER] [from POS1] [to POS2]</br>
+      the frames/buffers</br>
+      the windows [of FRAME]</br>
+  Iteration clauses:</br>
+    repeat INTEGER</br>
+    while/until/always/never/thereis CONDITION</br>
+  Accumulation clauses:</br>
+    collect/append/nconc/concat/vconcat/count/sum/maximize/minimize FORM</br>
+      [into VAR]</br>
+  Miscellaneous clauses:</br>
+    with VAR = INIT</br>
+    if/when/unless COND <u>CLAUSE</u> [and <u>CLAUSE</u>]... else <u>CLAUSE</u> [and <u>CLAUSE</u>...]</br>
+    named NAME</br>
+    initially/finally [do] EXPRS...</br>
+    do EXPRS...</br>
+    [finally] return EXPR</br>
+</br>
+For more details, see Info node `(cl)Loop Facility'.

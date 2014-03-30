@@ -1,15 +1,15 @@
-<strong>shell-quote-wildcard-pattern</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
-<br/>
-(shell-quote-wildcard-pattern PATTERN)<br/>
-<br/>
-Quote characters special to the shell in PATTERN, leave wildcards alone.<br/>
-<br/>
-PATTERN is assumed to represent a file-name wildcard suitable for the<br/>
-underlying filesystem.  For Unix and GNU/Linux, each character from the<br/>
-set [ \t\n;<>&|()'"#$] is quoted with a backslash; for DOS/Windows, all<br/>
-the parts of the pattern which don't include wildcard characters are<br/>
-quoted with double quotes.<br/>
-<br/>
-This function leaves alone existing quote characters (\ on Unix and "<br/>
-on Windows), so PATTERN can use them to quote wildcard characters that<br/>
+<strong>shell-quote-wildcard-pattern</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(shell-quote-wildcard-pattern <u>PATTERN</u>)</br>
+</br>
+Quote characters special to the shell in <u>PATTERN</u>, leave wildcards alone.</br>
+</br>
+<u>PATTERN</u> is assumed to represent a file-name wildcard suitable for the</br>
+underlying filesystem.  For Unix and GNU/Linux, each character from the</br>
+set [ \t\n;&lt;>&|()'"#$] is quoted with a backslash; for DOS/Windows, all</br>
+the parts of the pattern which don't include wildcard characters are</br>
+quoted with double quotes.</br>
+</br>
+This function leaves alone existing quote characters (\ on Unix and "</br>
+on Windows), so <u>PATTERN</u> can use them to quote wildcard characters that</br>
 need to be passed verbatim to shell commands.

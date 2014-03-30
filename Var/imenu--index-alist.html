@@ -1,23 +1,22 @@
-<strong>imenu--index-alist</strong> is a variable defined in `<code>imenu.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  Automatically becomes buffer-local when set.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-The buffer index alist computed for this buffer in Imenu.<br/>
-<br/>
-Simple elements in the alist look like (INDEX-NAME . POSITION).<br/>
-POSITION is the buffer position of the item; to go to the item<br/>
-is simply to move point to that position.<br/>
-<br/>
-Special elements look like (INDEX-NAME POSITION FUNCTION ARGUMENTS...).<br/>
-To "go to" a special element means applying FUNCTION<br/>
-to INDEX-NAME, POSITION, and the ARGUMENTS.<br/>
-<br/>
-A nested sub-alist element looks like (INDEX-NAME SUB-ALIST).<br/>
-The function `imenu--subalist-p' tests an element and returns t<br/>
-if it is a sub-alist.<br/>
-<br/>
-There is one simple element with negative POSITION; selecting that<br/>
+<strong>imenu--index-alist</strong> is a variable defined in `<code>imenu.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>Automatically becomes buffer-local when set.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+The buffer index alist computed for this buffer in Imenu.</br>
+</br>
+Simple elements in the alist look like (INDEX-NAME . POSITION).</br>
+POSITION is the buffer position of the item; to go to the item</br>
+is simply to move point to that position.</br>
+POSITION is passed to `imenu-default-goto-function', so it can be a non-number</br>
+if that variable has been changed (e.g. Semantic uses overlays for POSITIONs).</br>
+</br>
+Special elements look like (INDEX-NAME POSITION FUNCTION ARGUMENTS...).</br>
+To "go to" a special element means applying FUNCTION</br>
+to INDEX-NAME, POSITION, and the ARGUMENTS.</br>
+</br>
+A nested sub-alist element looks like (INDEX-NAME . SUB-ALIST).</br>
+The function `imenu--subalist-p' tests an element and returns t</br>
+if it is a sub-alist.</br>
+</br>
+There is one simple element with negative POSITION; selecting that</br>
 element recalculates the buffer's index alist.

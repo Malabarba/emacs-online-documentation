@@ -1,22 +1,17 @@
-<strong>icomplete-minibuffer-setup-hook</strong> is a variable defined in `<code>icomplete.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Icomplete-specific customization of minibuffer setup.<br/>
-<br/>
-This hook is run during minibuffer setup if icomplete is active.<br/>
-It is intended for use in customizing icomplete for interoperation<br/>
-with other features and packages.  For instance:<br/>
-<br/>
-  (add-hook 'icomplete-minibuffer-setup-hook<br/>
-	    (function<br/>
-	     (lambda ()<br/>
-	       (make-local-variable 'max-mini-window-height)<br/>
-	       (setq max-mini-window-height 3))))<br/>
-<br/>
-will constrain Emacs to a maximum minibuffer height of 3 lines when<br/>
-icompletion is occurring.<br/>
-<br/>
+<strong>icomplete-minibuffer-setup-hook</strong> is a variable defined in `<code>icomplete.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Icomplete-specific customization of minibuffer setup.</br>
+</br>
+This hook is run during minibuffer setup if Icomplete is active.</br>
+It is intended for use in customizing Icomplete for interoperation</br>
+with other features and packages.  For instance:</br>
+</br>
+  (add-hook 'icomplete-minibuffer-setup-hook</br>
+	     (lambda () (setq-local max-mini-window-height 3)))</br>
+</br>
+will constrain Emacs to a maximum minibuffer height of 3 lines when</br>
+icompletion is occurring.</br>
+</br>
 You can customize this variable.

@@ -1,21 +1,21 @@
-<strong>sql-add-product-keywords</strong> is an autoloaded compiled Lisp function in `<code>sql.el</code>'.<br/>
-<br/>
-(sql-add-product-keywords PRODUCT KEYWORDS &optional APPEND)<br/>
-<br/>
-Add highlighting KEYWORDS for SQL PRODUCT.<br/>
-<br/>
-PRODUCT should be a symbol, the name of a SQL product, such as<br/>
-`oracle'.  KEYWORDS should be a list; see the variable<br/>
-`font-lock-keywords'.  By default they are added at the beginning<br/>
-of the current highlighting list.  If optional argument APPEND is<br/>
-`set', they are used to replace the current highlighting list.<br/>
-If APPEND is any other non-nil value, they are added at the end<br/>
-of the current highlighting list.<br/>
-<br/>
-For example:<br/>
-<br/>
- (sql-add-product-keywords 'ms<br/>
-  '(("\\b\\w+_t\\b" . font-lock-type-face)))<br/>
-<br/>
-adds a fontification pattern to fontify identifiers ending in<br/>
+<strong>sql-add-product-keywords</strong> is an autoloaded compiled Lisp function in `<code>sql.el</code>'.</br>
+</br>
+(sql-add-product-keywords <u>PRODUCT</u> <u>KEYWORDS</u> &optional <u>APPEND</u>)</br>
+</br>
+Add highlighting <u>KEYWORDS</u> for SQL <u>PRODUCT</u>.</br>
+</br>
+<u>PRODUCT</u> should be a symbol, the name of a SQL product, such as</br>
+`oracle'.  <u>KEYWORDS</u> should be a list; see the variable</br>
+`font-lock-keywords'.  By default they are added at the beginning</br>
+of the current highlighting list.  If optional argument <u>APPEND</u> is</br>
+`set', they are used to replace the current highlighting list.</br>
+If <u>APPEND</u> is any other non-nil value, they are added at the end</br>
+of the current highlighting list.</br>
+</br>
+For example:</br>
+</br>
+ (sql-add-product-keywords 'ms</br>
+  '(("\\b\\w+_t\\b" . font-lock-type-face)))</br>
+</br>
+adds a fontification pattern to fontify identifiers ending in</br>
 `_t' as data types.

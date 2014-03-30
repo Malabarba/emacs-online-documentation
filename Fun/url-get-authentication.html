@@ -1,22 +1,22 @@
-<strong>url-get-authentication</strong> is an autoloaded compiled Lisp function in `<code>url-auth.el</code>'.<br/>
-<br/>
-(url-get-authentication URL REALM TYPE PROMPT &optional ARGS)<br/>
-<br/>
-Return an authorization string suitable for use in the WWW-Authenticate<br/>
-header in an HTTP/1.0 request.<br/>
-<br/>
-URL    is the url you are requesting authorization to.  This can be either a<br/>
-       string representing the URL, or the parsed representation returned by<br/>
-       `url-generic-parse-url'<br/>
-REALM  is the realm at a specific site we are looking for.  This should be a<br/>
-       string specifying the exact realm, or nil or the symbol 'any' to<br/>
-       specify that the filename portion of the URL should be used as the<br/>
-       realm<br/>
-TYPE   is the type of authentication to be returned.  This is either a string<br/>
-       representing the type (basic, digest, etc), or nil or the symbol 'any'<br/>
-       to specify that any authentication is acceptable.  If requesting 'any'<br/>
-       the strongest matching authentication will be returned.  If this is<br/>
-       wrong, it's no big deal, the error from the server will specify exactly<br/>
-       what type of auth to use<br/>
-PROMPT is boolean - specifies whether to ask the user for a username/password<br/>
+<strong>url-get-authentication</strong> is an autoloaded compiled Lisp function in `<code>url-auth.el</code>'.</br>
+</br>
+(url-get-authentication <u>URL</u> <u>REALM</u> <u>TYPE</u> <u>PROMPT</u> &optional <u>ARGS</u>)</br>
+</br>
+Return an authorization string suitable for use in the WWW-Authenticate</br>
+header in an HTTP/1.0 request.</br>
+</br>
+<u>URL</u>    is the url you are requesting authorization to.  This can be either a</br>
+       string representing the <u>URL</u>, or the parsed representation returned by</br>
+       `url-generic-parse-url'</br>
+<u>REALM</u>  is the realm at a specific site we are looking for.  This should be a</br>
+       string specifying the exact realm, or nil or the symbol 'any' to</br>
+       specify that the filename portion of the <u>URL</u> should be used as the</br>
+       realm</br>
+<u>TYPE</u>   is the type of authentication to be returned.  This is either a string</br>
+       representing the type (basic, digest, etc), or nil or the symbol 'any'</br>
+       to specify that any authentication is acceptable.  If requesting 'any'</br>
+       the strongest matching authentication will be returned.  If this is</br>
+       wrong, it's no big deal, the error from the server will specify exactly</br>
+       what type of auth to use</br>
+<u>PROMPT</u> is boolean - specifies whether to ask the user for a username/password</br>
        if one cannot be found in the cache

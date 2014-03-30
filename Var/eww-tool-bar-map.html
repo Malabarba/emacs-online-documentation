@@ -1,0 +1,156 @@
+<strong>eww-tool-bar-map</strong> is a variable defined in `<code>eww.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Tool bar for `eww-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (Exit menu-item "Exit" eww-quit :image
+       (find-image
+	(cond
+	 ((not
+	   (display-color-p))
+	  '((:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")
+	    (:type xpm :file "low-color/close.xpm")
+	    (:type xpm :file "close.xpm")))
+	 ((<
+	   (display-color-cells)
+	   256)
+	  '((:type xpm :file "low-color/close.xpm")
+	    (:type xpm :file "close.xpm")
+	    (:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")))
+	 (t
+	  '((:type xpm :file "close.xpm")
+	    (:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black"))))))
+ (Reload menu-item "Reload" eww-reload :image
+	 (find-image
+	  (cond
+	   ((not
+	     (display-color-p))
+	    '((:type pbm :file "refresh.pbm" :foreground "black")
+	      (:type xbm :file "refresh.xbm" :foreground "black")
+	      (:type xpm :file "low-color/refresh.xpm")
+	      (:type xpm :file "refresh.xpm")))
+	   ((<
+	     (display-color-cells)
+	     256)
+	    '((:type xpm :file "low-color/refresh.xpm")
+	      (:type xpm :file "refresh.xpm")
+	      (:type pbm :file "refresh.pbm" :foreground "black")
+	      (:type xbm :file "refresh.xbm" :foreground "black")))
+	   (t
+	    '((:type xpm :file "refresh.xpm")
+	      (:type pbm :file "refresh.pbm" :foreground "black")
+	      (:type xbm :file "refresh.xbm" :foreground "black"))))))
+ (Back\ to\ previous\ page menu-item "Back to previous page" eww-back-url :enable
+			   (not
+			    (zerop
+			     (length eww-history)))
+			   :image
+			   (find-image
+			    (cond
+			     ((not
+			       (display-color-p))
+			      '((:type pbm :file "left-arrow.pbm" :foreground "black")
+				(:type xbm :file "left-arrow.xbm" :foreground "black")
+				(:type xpm :file "low-color/left-arrow.xpm")
+				(:type xpm :file "left-arrow.xpm")))
+			     ((<
+			       (display-color-cells)
+			       256)
+			      '((:type xpm :file "low-color/left-arrow.xpm")
+				(:type xpm :file "left-arrow.xpm")
+				(:type pbm :file "left-arrow.pbm" :foreground "black")
+				(:type xbm :file "left-arrow.xbm" :foreground "black")))
+			     (t
+			      '((:type xpm :file "left-arrow.xpm")
+				(:type pbm :file "left-arrow.pbm" :foreground "black")
+				(:type xbm :file "left-arrow.xbm" :foreground "black"))))))
+ (Forward\ to\ next\ page menu-item "Forward to next page" eww-forward-url :enable
+			  (not
+			   (zerop eww-history-position))
+			  :image
+			  (find-image
+			   (cond
+			    ((not
+			      (display-color-p))
+			     '((:type pbm :file "right-arrow.pbm" :foreground "black")
+			       (:type xbm :file "right-arrow.xbm" :foreground "black")
+			       (:type xpm :file "low-color/right-arrow.xpm")
+			       (:type xpm :file "right-arrow.xpm")))
+			    ((<
+			      (display-color-cells)
+			      256)
+			     '((:type xpm :file "low-color/right-arrow.xpm")
+			       (:type xpm :file "right-arrow.xpm")
+			       (:type pbm :file "right-arrow.pbm" :foreground "black")
+			       (:type xbm :file "right-arrow.xbm" :foreground "black")))
+			    (t
+			     '((:type xpm :file "right-arrow.xpm")
+			       (:type pbm :file "right-arrow.pbm" :foreground "black")
+			       (:type xbm :file "right-arrow.xbm" :foreground "black"))))))
+ (View\ page\ source menu-item "View page source" eww-view-source :image
+		     (find-image
+		      (cond
+		       ((not
+			 (display-color-p))
+			'((:type pbm :file "show.pbm" :foreground "black")
+			  (:type xbm :file "show.xbm" :foreground "black")
+			  (:type xpm :file "low-color/show.xpm")
+			  (:type xpm :file "show.xpm")))
+		       ((<
+			 (display-color-cells)
+			 256)
+			'((:type xpm :file "low-color/show.xpm")
+			  (:type xpm :file "show.xpm")
+			  (:type pbm :file "show.pbm" :foreground "black")
+			  (:type xbm :file "show.xbm" :foreground "black")))
+		       (t
+			'((:type xpm :file "show.xpm")
+			  (:type pbm :file "show.pbm" :foreground "black")
+			  (:type xbm :file "show.xbm" :foreground "black"))))))
+ (Copy\ page\ URL menu-item "Copy page URL" eww-copy-page-url :image
+		  (find-image
+		   (cond
+		    ((not
+		      (display-color-p))
+		     '((:type pbm :file "copy.pbm" :foreground "black")
+		       (:type xbm :file "copy.xbm" :foreground "black")
+		       (:type xpm :file "low-color/copy.xpm")
+		       (:type xpm :file "copy.xpm")))
+		    ((<
+		      (display-color-cells)
+		      256)
+		     '((:type xpm :file "low-color/copy.xpm")
+		       (:type xpm :file "copy.xpm")
+		       (:type pbm :file "copy.pbm" :foreground "black")
+		       (:type xbm :file "copy.xbm" :foreground "black")))
+		    (t
+		     '((:type xpm :file "copy.xpm")
+		       (:type pbm :file "copy.pbm" :foreground "black")
+		       (:type xbm :file "copy.xbm" :foreground "black"))))))
+ (Add\ bookmark menu-item "Add bookmark" eww-add-bookmark :image
+		(find-image
+		 (cond
+		  ((not
+		    (display-color-p))
+		   '((:type pbm :file "bookmark_add.pbm" :foreground "black")
+		     (:type xbm :file "bookmark_add.xbm" :foreground "black")
+		     (:type xpm :file "low-color/bookmark_add.xpm")
+		     (:type xpm :file "bookmark_add.xpm")))
+		  ((<
+		    (display-color-cells)
+		    256)
+		   '((:type xpm :file "low-color/bookmark_add.xpm")
+		     (:type xpm :file "bookmark_add.xpm")
+		     (:type pbm :file "bookmark_add.pbm" :foreground "black")
+		     (:type xbm :file "bookmark_add.xbm" :foreground "black")))
+		  (t
+		   '((:type xpm :file "bookmark_add.xpm")
+		     (:type pbm :file "bookmark_add.pbm" :foreground "black")
+		     (:type xbm :file "bookmark_add.xbm" :foreground "black")))))))
+</pre></br>

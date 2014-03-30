@@ -1,15 +1,15 @@
-<strong>easy-mmode-define-navigation</strong> is a Lisp macro in `<code>easy-mmode.el</code>'.<br/>
-<br/>
-(easy-mmode-define-navigation BASE RE &optional NAME ENDFUN NARROWFUN &rest BODY)<br/>
-<br/>
-Define BASE-next and BASE-prev to navigate in the buffer.<br/>
-RE determines the places the commands should move point to.<br/>
-NAME should describe the entities matched by RE.  It is used to build<br/>
-  the docstrings of the two functions.<br/>
-BASE-next also tries to make sure that the whole entry is visible by<br/>
-  searching for its end (by calling ENDFUN if provided or by looking for<br/>
-  the next entry) and recentering if necessary.<br/>
-ENDFUN should return the end position (with or without moving point).<br/>
-NARROWFUN non-nil means to check for narrowing before moving, and if<br/>
-found, do `widen' first and then call NARROWFUN with no args after moving.<br/>
-BODY is executed after moving to the destination location.
+<strong>easy-mmode-define-navigation</strong> is a Lisp macro in `<code>easy-mmode.el</code>'.</br>
+</br>
+(easy-mmode-define-navigation <u>BASE</u> <u>RE</u> &optional <u>NAME</u> <u>ENDFUN</u> <u>NARROWFUN</u> &rest <u>BODY</u>)</br>
+</br>
+Define <u>BASE</u>-next and <u>BASE</u>-prev to navigate in the buffer.</br>
+<u>RE</u> determines the places the commands should move point to.</br>
+<u>NAME</u> should describe the entities matched by <u>RE</u>.  It is used to build</br>
+  the docstrings of the two functions.</br>
+<u>BASE</u>-next also tries to make sure that the whole entry is visible by</br>
+  searching for its end (by calling <u>ENDFUN</u> if provided or by looking for</br>
+  the next entry) and recentering if necessary.</br>
+<u>ENDFUN</u> should return the end position (with or without moving point).</br>
+<u>NARROWFUN</u> non-nil means to check for narrowing before moving, and if</br>
+found, do `widen' first and then call <u>NARROWFUN</u> with no args after moving.</br>
+<u>BODY</u> is executed after moving to the destination location.

@@ -1,58 +1,59 @@
-<strong>inferior-scheme-mode</strong> is an interactive compiled Lisp function in `<code>cmuscheme.el</code>'.<br/>
-<br/>
-(inferior-scheme-mode)<br/>
-<br/>
-Parent mode: `comint-mode'.<br/>
-<br/>
-Major mode for interacting with an inferior Scheme process.<br/>
-<br/>
-The following commands are available:<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-C-x		Prefix Command<br/>
-ESC		Prefix Command<br/>
-DEL		backward-delete-char-untabify<br/>
-<br/>
-C-c C-k		scheme-compile-file<br/>
-C-c C-l		scheme-load-file<br/>
-<br/>
-C-x C-e		scheme-send-last-sexp<br/>
-<br/>
-C-M-q		indent-sexp<br/>
-C-M-x		scheme-send-definition<br/>
-<br/>
-<br/>
-<br/>
-A Scheme process can be fired up with M-x run-scheme.<br/>
-<br/>
-Customization: Entry to this mode runs the hooks on comint-mode-hook and<br/>
-inferior-scheme-mode-hook (in that order).<br/>
-<br/>
-You can send text to the inferior Scheme process from other buffers containing<br/>
-Scheme source.<br/>
-    switch-to-scheme switches the current buffer to the Scheme process buffer.<br/>
-    scheme-send-definition sends the current definition to the Scheme process.<br/>
-    scheme-compile-definition compiles the current definition.<br/>
-    scheme-send-region sends the current region to the Scheme process.<br/>
-    scheme-compile-region compiles the current region.<br/>
-<br/>
-    scheme-send-definition-and-go, scheme-compile-definition-and-go,<br/>
-        scheme-send-region-and-go, and scheme-compile-region-and-go<br/>
-        switch to the Scheme process buffer after sending their text.<br/>
-For information on running multiple processes in multiple buffers, see<br/>
-documentation for variable scheme-buffer.<br/>
-<br/>
-Commands:<br/>
-Return after the end of the process' output sends the text from the<br/>
-    end of process to point.<br/>
-Return before the end of the process' output copies the sexp ending at point<br/>
-    to the end of the process' output, and sends it.<br/>
-Delete converts tabs to spaces as it moves back.<br/>
-Tab indents for Scheme; with argument, shifts rest<br/>
-    of expression rigidly with the current line.<br/>
-C-M-q does Tab on each line starting within following expression.<br/>
-Paragraphs are separated only by blank lines.  Semicolons start comments.<br/>
-If you accidentally suspend your process, use M-x comint-continue-subjob<br/>
+<strong>inferior-scheme-mode</strong> is an interactive compiled Lisp function in `<code>cmuscheme.el</code>'.</br>
+</br>
+</br>
+(inferior-scheme-mode)</br>
+</br>
+Parent mode: `comint-mode'.</br>
+</br>
+Major mode for interacting with an inferior Scheme process.</br>
+</br>
+The following commands are available:</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+C-x		Prefix Command</br>
+ESC		Prefix Command</br>
+DEL		backward-delete-char-untabify</br>
+</br>
+C-c C-k		scheme-compile-file</br>
+C-c C-l		scheme-load-file</br>
+</br>
+C-x C-e		scheme-send-last-sexp</br>
+</br>
+C-M-q		indent-sexp</br>
+C-M-x		scheme-send-definition</br>
+</br>
+</br>
+</br>
+A Scheme process can be fired up with M-x run-scheme.</br>
+</br>
+Customization: Entry to this mode runs the hooks on `comint-mode-hook' and</br>
+`inferior-scheme-mode-hook' (in that order).</br>
+</br>
+You can send text to the inferior Scheme process from other buffers containing</br>
+Scheme source.</br>
+    `switch-to-scheme' switches the current buffer to the Scheme process buffer.</br>
+    `scheme-send-definition' sends the current definition to the Scheme process.</br>
+    `scheme-compile-definition' compiles the current definition.</br>
+    `scheme-send-region' sends the current region to the Scheme process.</br>
+    `scheme-compile-region' compiles the current region.</br>
+</br>
+    `scheme-send-definition-and-go', `scheme-compile-definition-and-go',</br>
+        `scheme-send-region-and-go', and `scheme-compile-region-and-go'</br>
+        switch to the Scheme process buffer after sending their text.</br>
+For information on running multiple processes in multiple buffers, see</br>
+documentation for variable `scheme-buffer'.</br>
+</br>
+Commands:</br>
+Return after the end of the process' output sends the text from the</br>
+    end of process to point.</br>
+Return before the end of the process' output copies the sexp ending at point</br>
+    to the end of the process' output, and sends it.</br>
+Delete converts tabs to spaces as it moves back.</br>
+Tab indents for Scheme; with argument, shifts rest</br>
+    of expression rigidly with the current line.</br>
+C-M-q does Tab on each line starting within following expression.</br>
+Paragraphs are separated only by blank lines.  Semicolons start comments.</br>
+If you accidentally suspend your process, use M-x comint-continue-subjob</br>
 to continue it.

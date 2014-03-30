@@ -1,67 +1,71 @@
-<strong>vc-dir</strong> is an interactive autoloaded Lisp function in `<code>vc-dir.el</code>'.<br/>
-<br/>
-It is bound to C-x v d, <menu-bar> <tools> <vc> <vc-dir>.<br/>
-<br/>
-(vc-dir DIR &optional BACKEND)<br/>
-<br/>
-Show the VC status for "interesting" files in and below DIR.<br/>
-This allows you to mark files and perform VC operations on them.<br/>
-The list omits files which are up to date, with no changes in your copy<br/>
-or the repository, if there is nothing in particular to say about them.<br/>
-<br/>
-Preparing the list of file status takes time; when the buffer<br/>
-first appears, it has only the first few lines of summary information.<br/>
-The file lines appear later.<br/>
-<br/>
-Optional second argument BACKEND specifies the VC backend to use.<br/>
-Interactively, a prefix argument means to ask for the backend.<br/>
-<br/>
-These are the commands available for use in the file status buffer:<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-TAB		vc-dir-next-directory<br/>
-C-k		vc-dir-kill-line<br/>
-RET		vc-dir-find-file<br/>
-ESC		Prefix Command<br/>
-SPC		vc-dir-next-line<br/>
-+		vc-update<br/>
-=		vc-diff<br/>
-M		vc-dir-mark-all-files<br/>
-Q		vc-dir-query-replace-regexp<br/>
-S		vc-dir-search<br/>
-U		vc-dir-unmark-all-files<br/>
-e .. f		vc-dir-find-file<br/>
-i		vc-register<br/>
-l		vc-print-log<br/>
-m		vc-dir-mark<br/>
-n		vc-dir-next-line<br/>
-o		vc-dir-find-file-other-window<br/>
-p		vc-dir-previous-line<br/>
-u		vc-dir-unmark<br/>
-v		vc-next-action<br/>
-x		vc-dir-hide-up-to-date<br/>
-DEL		vc-dir-unmark-file-up<br/>
-<C-down>	vc-dir-next-directory<br/>
-<C-up>		vc-dir-previous-directory<br/>
-<backtab>	vc-dir-previous-directory<br/>
-<down-mouse-3>	vc-dir-menu<br/>
-<follow-link>	mouse-face<br/>
-<mouse-2>	vc-dir-toggle-mark<br/>
-<br/>
-C-c C-c		vc-dir-kill-dir-status-process<br/>
-<br/>
-M-s		Prefix Command<br/>
-M-{		vc-dir-previous-directory<br/>
-M-}		vc-dir-next-directory<br/>
-M-DEL		vc-dir-unmark-all-files<br/>
-<br/>
-M-s a		Prefix Command<br/>
-<br/>
-M-s a C-s	vc-dir-isearch<br/>
-M-s a ESC	Prefix Command<br/>
-<br/>
-M-s a C-M-s	vc-dir-isearch-regexp<br/>
-<br/>
+<strong>vc-dir</strong> is an interactive autoloaded Lisp function in `<code>vc-dir.el</code>'.</br>
+</br>
+It is bound to C-x v d, &lt;menu-bar> &lt;tools> &lt;vc> &lt;vc-dir>.</br>
+</br>
+<code>(vc-dir <u>DIR</u> <em>&optional</em> <u>BACKEND</u></code>)</br>
+</br>
+Show the VC status for "interesting" files in and below <u>DIR</u>.</br>
+This allows you to mark files and perform VC operations on them.</br>
+The list omits files which are up to date, with no changes in your copy</br>
+or the repository, if there is nothing in particular to say about them.</br>
+</br>
+Preparing the list of file status takes time; when the buffer</br>
+first appears, it has only the first few lines of summary information.</br>
+The file lines appear later.</br>
+</br>
+Optional second argument <u>BACKEND</u> specifies the VC backend to use.</br>
+Interactively, a prefix argument means to ask for the backend.</br>
+</br>
+These are the commands available for use in the file status buffer:</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+TAB		vc-dir-next-directory</br>
+C-k		vc-dir-kill-line</br>
+RET		vc-dir-find-file</br>
+ESC		Prefix Command</br>
+SPC		vc-dir-next-line</br>
++		vc-update</br>
+=		vc-diff</br>
+D		vc-root-diff</br>
+G		vc-dir-ignore</br>
+I		vc-log-incoming</br>
+L		vc-print-root-log</br>
+M		vc-dir-mark-all-files</br>
+Q		vc-dir-query-replace-regexp</br>
+S		vc-dir-search</br>
+U		vc-dir-unmark-all-files</br>
+e .. f		vc-dir-find-file</br>
+i		vc-register</br>
+l		vc-print-log</br>
+m		vc-dir-mark</br>
+n		vc-dir-next-line</br>
+o		vc-dir-find-file-other-window</br>
+p		vc-dir-previous-line</br>
+u		vc-dir-unmark</br>
+v		vc-next-action</br>
+x		vc-dir-hide-up-to-date</br>
+DEL		vc-dir-unmark-file-up</br>
+&lt;C-down>	vc-dir-next-directory</br>
+&lt;C-up>		vc-dir-previous-directory</br>
+&lt;backtab>	vc-dir-previous-directory</br>
+&lt;down-mouse-3>	vc-dir-menu</br>
+&lt;follow-link>	mouse-face</br>
+&lt;mouse-2>	vc-dir-toggle-mark</br>
+</br>
+C-c C-c		vc-dir-kill-dir-status-process</br>
+</br>
+M-s		Prefix Command</br>
+M-{		vc-dir-previous-directory</br>
+M-}		vc-dir-next-directory</br>
+M-DEL		vc-dir-unmark-all-files</br>
+</br>
+M-s a		Prefix Command</br>
+</br>
+M-s a C-s	vc-dir-isearch</br>
+M-s a ESC	Prefix Command</br>
+</br>
+M-s a C-M-s	vc-dir-isearch-regexp</br>
+</br>

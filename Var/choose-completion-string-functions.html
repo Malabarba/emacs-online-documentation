@@ -1,20 +1,16 @@
-<strong>choose-completion-string-functions</strong> is a variable defined in `<code>simple.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Functions that may override the normal insertion of a completion choice.<br/>
-These functions are called in order with four arguments:<br/>
-CHOICE - the string to insert in the buffer,<br/>
-BUFFER - the buffer in which the choice should be inserted,<br/>
-MINI-P - non-nil if BUFFER is a minibuffer, and<br/>
-BASE-SIZE - the number of characters in BUFFER before<br/>
-the string being completed.<br/>
-<br/>
-If a function in the list returns non-nil, that function is supposed<br/>
-to have inserted the CHOICE in the BUFFER, and possibly exited<br/>
-the minibuffer; no further functions will be called.<br/>
-<br/>
-If all functions in the list return nil, that means to use<br/>
+<strong>choose-completion-string-functions</strong> is a variable defined in `<code>simple.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Functions that may override the normal insertion of a completion choice.</br>
+These functions are called in order with three arguments:</br>
+CHOICE - the string to insert in the buffer,</br>
+BUFFER - the buffer in which the choice should be inserted,</br>
+BASE-POSITION - where to insert the completion.</br>
+</br>
+If a function in the list returns non-nil, that function is supposed</br>
+to have inserted the CHOICE in the BUFFER, and possibly exited</br>
+the minibuffer; no further functions will be called.</br>
+</br>
+If all functions in the list return nil, that means to use</br>
 the default method of inserting the completion in BUFFER.

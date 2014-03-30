@@ -1,24 +1,25 @@
-<strong>make-variable-frame-local</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(make-variable-frame-local VARIABLE)<br/>
-<br/>
-This function is obsolete since 22.2;<br/>
-explicitly check for a frame-parameter instead.<br/>
-<br/>
-Enable VARIABLE to have frame-local bindings.<br/>
-This does not create any frame-local bindings for VARIABLE,<br/>
-it just makes them possible.<br/>
-<br/>
-A frame-local binding is actually a frame parameter value.<br/>
-If a frame F has a value for the frame parameter named VARIABLE,<br/>
-that also acts as a frame-local binding for VARIABLE in F--<br/>
-provided this function has been called to enable VARIABLE<br/>
-to have frame-local bindings at all.<br/>
-<br/>
-The only way to create a frame-local binding for VARIABLE in a frame<br/>
-is to set the VARIABLE frame parameter of that frame.  See<br/>
-`modify-frame-parameters' for how to set frame parameters.<br/>
-<br/>
-Note that since Emacs 23.1, variables cannot be both buffer-local and<br/>
-frame-local any more (buffer-local bindings used to take precedence over<br/>
+<strong>make-variable-frame-local</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+</br>
+</br>
+(make-variable-frame-local <u>VARIABLE</u>)</br>
+</br>
+This function is obsolete since 22.2;</br>
+explicitly check for a frame-parameter instead.</br>
+</br>
+Enable <u>VARIABLE</u> to have frame-local bindings.</br>
+This does not create any frame-local bindings for <u>VARIABLE</u>,</br>
+it just makes them possible.</br>
+</br>
+A frame-local binding is actually a frame parameter value.</br>
+If a frame F has a value for the frame parameter named <u>VARIABLE</u>,</br>
+that also acts as a frame-local binding for <u>VARIABLE</u> in F--</br>
+provided this function has been called to enable <u>VARIABLE</u></br>
+to have frame-local bindings at all.</br>
+</br>
+The only way to create a frame-local binding for <u>VARIABLE</u> in a frame</br>
+is to set the <u>VARIABLE</u> frame parameter of that frame.  See</br>
+`modify-frame-parameters' for how to set frame parameters.</br>
+</br>
+Note that since Emacs 23.1, variables cannot be both buffer-local and</br>
+frame-local any more (buffer-local bindings used to take precedence over</br>
 frame-local bindings).

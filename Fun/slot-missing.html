@@ -1,5 +1,32 @@
-<strong>slot-missing</strong> is a Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(slot-missing &rest LOCAL-ARGS)<br/>
-<br/>
-Method invoked when an attempt to access a slot in OBJECT fails.
+<strong>slot-missing</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(slot-missing &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Method invoked when an attempt to access a slot in OBJECT fails.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-default-superclass' :PRIMARY (object slot-name operation &optional new-value)</br>
+Method invoked when an attempt to access a slot in OBJECT fails.</br>
+SLOT-NAME is the name of the failed slot, OPERATION is the type of access</br>
+that was requested, and optional NEW-VALUE is the value that was desired</br>
+to be set.</br>
+</br>
+This method is called from `oref', `oset', and other functions which</br>
+directly reference slots in EIEIO objects.</br>
+</br>
+Defined in `eieio.el'</br>
+</br>
+`eieio-named' :PRIMARY (obj slot-name operation &optional new-value)</br>
+Called when a non-existent slot is accessed.</br>
+For variable `eieio-named', provide an imaginary `object-name' slot.</br>
+Argument OBJ is the named object.</br>
+Argument SLOT-NAME is the slot that was attempted to be accessed.</br>
+OPERATION is the type of access, such as `oref' or `oset'.</br>
+NEW-VALUE is the value that was being set into SLOT if OPERATION were</br>
+a set type.</br>
+</br>
+Defined in `eieio-base.el'</br>
+</br>

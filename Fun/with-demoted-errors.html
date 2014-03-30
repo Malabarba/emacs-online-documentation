@@ -1,8 +1,15 @@
-<strong>with-demoted-errors</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
-<br/>
-(with-demoted-errors &rest BODY)<br/>
-<br/>
-Run BODY and demote any errors to simple messages.<br/>
-If `debug-on-error' is non-nil, run BODY without catching its errors.<br/>
-This is to be used around code which is not expected to signal an error<br/>
-but which should be robust in the unexpected case that an error is signaled.
+<strong>with-demoted-errors</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(with-demoted-errors <u>FORMAT</u> &rest <u>BODY</u>)</br>
+</br>
+Run <u>BODY</u> and demote any errors to simple messages.</br>
+<u>FORMAT</u> is a string passed to `message' to format any error message.</br>
+It should contain a single %-sequence; e.g., "Error: %S".</br>
+</br>
+If `debug-on-error' is non-nil, run <u>BODY</u> without catching its errors.</br>
+This is to be used around code which is not expected to signal an error</br>
+but which should be robust in the unexpected case that an error is signaled.</br>
+</br>
+For backward compatibility, if <u>FORMAT</u> is not a constant string, it</br>
+is assumed to be part of <u>BODY</u>, in which case the message format</br>
+used is "Error: %S".

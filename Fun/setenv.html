@@ -1,25 +1,26 @@
-<strong>setenv</strong> is an interactive compiled Lisp function in `<code>env.el</code>'.<br/>
-<br/>
-(setenv VARIABLE &optional VALUE SUBSTITUTE-ENV-VARS)<br/>
-<br/>
-Set the value of the environment variable named VARIABLE to VALUE.<br/>
-VARIABLE should be a string.  VALUE is optional; if not provided or<br/>
-nil, the environment variable VARIABLE will be removed.<br/>
-<br/>
-Interactively, a prefix argument means to unset the variable, and<br/>
-otherwise the current value (if any) of the variable appears at<br/>
-the front of the history list when you type in the new value.<br/>
-This function always replaces environment variables in the new<br/>
-value when called interactively.<br/>
-<br/>
-SUBSTITUTE-ENV-VARS, if non-nil, means to substitute environment<br/>
-variables in VALUE with `substitute-env-vars', which see.<br/>
-This is normally used only for interactive calls.<br/>
-<br/>
-The return value is the new value of VARIABLE, or nil if<br/>
-it was removed from the environment.<br/>
-<br/>
-This function works by modifying `process-environment'.<br/>
-<br/>
-As a special case, setting variable `TZ' calls `set-time-zone-rule' as<br/>
+<strong>setenv</strong> is an interactive compiled Lisp function in `<code>env.el</code>'.</br>
+</br>
+</br>
+(setenv <u>VARIABLE</u> &optional <u>VALUE</u> <u>SUBSTITUTE-ENV-VARS</u>)</br>
+</br>
+Set the value of the environment variable named <u>VARIABLE</u> to <u>VALUE</u>.</br>
+<u>VARIABLE</u> should be a string.  <u>VALUE</u> is optional; if not provided or</br>
+nil, the environment variable <u>VARIABLE</u> will be removed.</br>
+</br>
+Interactively, a prefix argument means to unset the variable, and</br>
+otherwise the current value (if any) of the variable appears at</br>
+the front of the history list when you type in the new value.</br>
+This function always replaces environment variables in the new</br>
+value when called interactively.</br>
+</br>
+<u>SUBSTITUTE-ENV-VARS</u>, if non-nil, means to substitute environment</br>
+variables in <u>VALUE</u> with `substitute-env-vars', which see.</br>
+This is normally used only for interactive calls.</br>
+</br>
+The return value is the new value of <u>VARIABLE</u>, or nil if</br>
+it was removed from the environment.</br>
+</br>
+This function works by modifying `process-environment'.</br>
+</br>
+As a special case, setting variable `TZ' calls `set-time-zone-rule' as</br>
 a side-effect.

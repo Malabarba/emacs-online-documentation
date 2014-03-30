@@ -1,56 +1,56 @@
-<strong>cperl-tips-faces</strong> is a variable defined in `<code>cperl-mode.el</code>'.<br/>
-Its value is please-ignore-this-line<br/>
-<br/>
-Documentation:<br/>
-CPerl mode uses following faces for highlighting:<br/>
-<br/>
-  `cperl-array-face'			Array names<br/>
-  `cperl-hash-face'			Hash names<br/>
-  `font-lock-comment-face'	Comments, PODs and whatever is considered<br/>
-				syntactically to be not code<br/>
-  `font-lock-constant-face'	HERE-doc delimiters, labels, delimiters of<br/>
-				2-arg operators s/y/tr/ or of RExen,<br/>
-  `font-lock-warning-face'	Special-cased m// and s//foo/,<br/>
-  `font-lock-function-name-face' _ as a target of a file tests, file tests,<br/>
-				subroutine names at the moment of definition<br/>
-				(except those conflicting with Perl operators),<br/>
-				package names (when recognized), format names<br/>
-  `font-lock-keyword-face'	Control flow switch constructs, declarators<br/>
-  `cperl-nonoverridable-face'	Non-overridable keywords, modifiers of RExen<br/>
-  `font-lock-string-face'	Strings, qw() constructs, RExen, POD sections,<br/>
-				literal parts and the terminator of formats<br/>
-				and whatever is syntactically considered<br/>
-				as string literals<br/>
-  `font-lock-type-face'		Overridable keywords<br/>
-  `font-lock-variable-name-face' Variable declarations, indirect array and<br/>
-				hash names, POD headers/item names<br/>
-  `cperl-invalid-face'		Trailing whitespace<br/>
-<br/>
-Note that in several situations the highlighting tries to inform about<br/>
-possible confusion, such as different colors for function names in<br/>
-declarations depending on what they (do not) override, or special cases<br/>
-m// and s/// which do not do what one would expect them to do.<br/>
-<br/>
-Help with best setup of these faces for printout requested (for each of<br/>
-the faces: please specify bold, italic, underline, shadow and box.)<br/>
-<br/>
-In regular expressions (including character classes):<br/>
-  `font-lock-string-face'	"Normal" stuff and non-0-length constructs<br/>
-  `font-lock-constant-face':	Delimiters<br/>
-  `font-lock-warning-face'	Special-cased m// and s//foo/,<br/>
-				Mismatched closing delimiters, parens<br/>
-				we couldn't match, misplaced quantifiers,<br/>
-				unrecognized escape sequences<br/>
-  `cperl-nonoverridable-face'	Modifiers, as gism in m/REx/gism<br/>
-  `font-lock-type-face'		escape sequences with arguments (\x \23 \p \N)<br/>
-				and others match-a-char escape sequences<br/>
-  `font-lock-keyword-face'	Capturing parens, and |<br/>
-  `font-lock-function-name-face' Special symbols: $ ^ . [ ] [^ ] (?{ }) (??{ })<br/>
-				"Range -" in character classes<br/>
-  `font-lock-builtin-face'	"Remaining" 0-length constructs, multipliers<br/>
-				?+*{}, not-capturing parens, leading<br/>
-				backslashes of escape sequences<br/>
-  `font-lock-variable-name-face' Interpolated constructs, embedded code,<br/>
-				POSIX classes (inside charclasses)<br/>
-  `font-lock-comment-face'	Embedded comments<br/>
-<br/>
+<strong>cperl-tips-faces</strong> is a variable defined in `<code>cperl-mode.el</code>'.</br>
+Its value is <pre>please-ignore-this-line</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+CPerl mode uses following faces for highlighting:</br>
+</br>
+  `cperl-array-face'			Array names</br>
+  `cperl-hash-face'			Hash names</br>
+  `font-lock-comment-face'	Comments, PODs and whatever is considered</br>
+				syntactically to be not code</br>
+  `font-lock-constant-face'	HERE-doc delimiters, labels, delimiters of</br>
+				2-arg operators s/y/tr/ or of RExen,</br>
+  `font-lock-warning-face'	Special-cased m// and s//foo/,</br>
+  `font-lock-function-name-face' _ as a target of a file tests, file tests,</br>
+				subroutine names at the moment of definition</br>
+				(except those conflicting with Perl operators),</br>
+				package names (when recognized), format names</br>
+  `font-lock-keyword-face'	Control flow switch constructs, declarators</br>
+  `cperl-nonoverridable-face'	Non-overridable keywords, modifiers of RExen</br>
+  `font-lock-string-face'	Strings, qw() constructs, RExen, POD sections,</br>
+				literal parts and the terminator of formats</br>
+				and whatever is syntactically considered</br>
+				as string literals</br>
+  `font-lock-type-face'		Overridable keywords</br>
+  `font-lock-variable-name-face' Variable declarations, indirect array and</br>
+				hash names, POD headers/item names</br>
+  `cperl-invalid-face'		Trailing whitespace</br>
+</br>
+Note that in several situations the highlighting tries to inform about</br>
+possible confusion, such as different colors for function names in</br>
+declarations depending on what they (do not) override, or special cases</br>
+m// and s/// which do not do what one would expect them to do.</br>
+</br>
+Help with best setup of these faces for printout requested (for each of</br>
+the faces: please specify bold, italic, underline, shadow and box.)</br>
+</br>
+In regular expressions (including character classes):</br>
+  `font-lock-string-face'	"Normal" stuff and non-0-length constructs</br>
+  `font-lock-constant-face':	Delimiters</br>
+  `font-lock-warning-face'	Special-cased m// and s//foo/,</br>
+				Mismatched closing delimiters, parens</br>
+				we couldn't match, misplaced quantifiers,</br>
+				unrecognized escape sequences</br>
+  `cperl-nonoverridable-face'	Modifiers, as gism in m/REx/gism</br>
+  `font-lock-type-face'		escape sequences with arguments (\x \23 \p \N)</br>
+				and others match-a-char escape sequences</br>
+  `font-lock-keyword-face'	Capturing parens, and |</br>
+  `font-lock-function-name-face' Special symbols: $ ^ . [ ] [^ ] (?{ }) (??{ })</br>
+				"Range -" in character classes</br>
+  `font-lock-builtin-face'	"Remaining" 0-length constructs, multipliers</br>
+				?+*{}, not-capturing parens, leading</br>
+				backslashes of escape sequences</br>
+  `font-lock-variable-name-face' Interpolated constructs, embedded code,</br>
+				POSIX classes (inside charclasses)</br>
+  `font-lock-comment-face'	Embedded comments</br>
+</br>

@@ -1,20 +1,20 @@
-<strong>c-lineup-gnu-DEFUN-intro-cont</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
-<br/>
-(c-lineup-gnu-DEFUN-intro-cont LANGELEM)<br/>
-<br/>
-Line up the continuation lines of a DEFUN macro in the Emacs C source.<br/>
-These lines are indented as though they were `knr-argdecl-intro' lines.<br/>
-Return nil when we're not in such a construct.<br/>
-<br/>
-This function is for historical compatibility with how previous CC Modes (5.28<br/>
-and earlier) indented such lines.<br/>
-<br/>
-Here is an example:<br/>
-<br/>
-DEFUN ("forward-char", Fforward_char, Sforward_char, 0, 1, "p",<br/>
-       doc: /* Move point right N characters (left if N is negative).<br/>
-On reaching end of buffer, stop and signal error.  */)<br/>
-     (n)                      <- c-lineup-gnu-DEFUN-into-cont<br/>
-     Lisp_Object n;           <- c-lineup-gnu-DEFUN-into-cont<br/>
-<br/>
+<strong>c-lineup-gnu-DEFUN-intro-cont</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.</br>
+</br>
+(c-lineup-gnu-DEFUN-intro-cont <u>LANGELEM</u>)</br>
+</br>
+Line up the continuation lines of a DEFUN macro in the Emacs C source.</br>
+These lines are indented as though they were `knr-argdecl-intro' lines.</br>
+Return nil when we're not in such a construct.</br>
+</br>
+This function is for historical compatibility with how previous CC Modes (5.28</br>
+and earlier) indented such lines.</br>
+</br>
+Here is an example:</br>
+</br>
+DEFUN ("forward-char", Fforward_char, Sforward_char, 0, 1, "p",</br>
+       doc: /* Move point right N characters (left if N is negative).</br>
+On reaching end of buffer, stop and signal error.  */)</br>
+     (n)                      &lt;- c-lineup-gnu-DEFUN-into-cont</br>
+     Lisp_Object n;           &lt;- c-lineup-gnu-DEFUN-into-cont</br>
+</br>
 Works with: topmost-intro-cont.

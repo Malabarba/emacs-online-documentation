@@ -1,38 +1,38 @@
-<strong>bookmark-alist</strong> is a variable defined in `<code>bookmark.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Association list of bookmarks and their records.<br/>
-Bookmark functions update the value automatically.<br/>
-You probably do NOT want to change the value yourself.<br/>
-<br/>
-The value is an alist with entries of the form<br/>
-<br/>
- (BOOKMARK-NAME . PARAM-ALIST)<br/>
-<br/>
-or the deprecated form (BOOKMARK-NAME PARAM-ALIST).<br/>
-<br/>
- BOOKMARK-NAME is the name you gave to the bookmark when creating it.<br/>
-<br/>
- PARAM-ALIST is an alist of bookmark information.  The order of the<br/>
- entries in PARAM-ALIST is not important.  The possible entries are<br/>
- described below.  An entry with a key but null value means the entry<br/>
- is not used.<br/>
-<br/>
-  (filename . FILENAME)<br/>
-  (position . POS)<br/>
-  (front-context-string . STR-AFTER-POS)<br/>
-  (rear-context-string  . STR-BEFORE-POS)<br/>
-  (handler . HANDLER)<br/>
-  (annotation . ANNOTATION)<br/>
-<br/>
- FILENAME names the bookmarked file.<br/>
- POS is the bookmarked buffer position (position in the file).<br/>
- STR-AFTER-POS is buffer text that immediately follows POS.<br/>
- STR-BEFORE-POS is buffer text that immediately precedes POS.<br/>
- ANNOTATION is a string that describes the bookmark.<br/>
-   See options `bookmark-use-annotations' and<br/>
-   `bookmark-automatically-show-annotations'.<br/>
- HANDLER is a function that provides the bookmark-jump behavior for a<br/>
- specific kind of bookmark.  This is the case for Info bookmarks,<br/>
+<strong>bookmark-alist</strong> is a variable defined in `<code>bookmark.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Association list of bookmarks and their records.</br>
+Bookmark functions update the value automatically.</br>
+You probably do NOT want to change the value yourself.</br>
+</br>
+The value is an alist with entries of the form</br>
+</br>
+ (BOOKMARK-NAME . PARAM-ALIST)</br>
+</br>
+or the deprecated form (BOOKMARK-NAME PARAM-ALIST).</br>
+</br>
+ BOOKMARK-NAME is the name you gave to the bookmark when creating it.</br>
+</br>
+ PARAM-ALIST is an alist of bookmark information.  The order of the</br>
+ entries in PARAM-ALIST is not important.  The possible entries are</br>
+ described below.  An entry with a key but null value means the entry</br>
+ is not used.</br>
+</br>
+  (filename . FILENAME)</br>
+  (position . POS)</br>
+  (front-context-string . STR-AFTER-POS)</br>
+  (rear-context-string  . STR-BEFORE-POS)</br>
+  (handler . HANDLER)</br>
+  (annotation . ANNOTATION)</br>
+</br>
+ FILENAME names the bookmarked file.</br>
+ POS is the bookmarked buffer position (position in the file).</br>
+ STR-AFTER-POS is buffer text that immediately follows POS.</br>
+ STR-BEFORE-POS is buffer text that immediately precedes POS.</br>
+ ANNOTATION is a string that describes the bookmark.</br>
+   See options `bookmark-use-annotations' and</br>
+   `bookmark-automatically-show-annotations'.</br>
+ HANDLER is a function that provides the bookmark-jump behavior for a</br>
+ specific kind of bookmark.  This is the case for Info bookmarks,</br>
  for instance.  HANDLER must accept a bookmark as argument.

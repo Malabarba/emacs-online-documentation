@@ -1,20 +1,61 @@
-<strong>ruby-font-lock-keywords</strong> is a variable defined in `<code>ruby-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Additional expressions to highlight in Ruby mode.<br/>
-<br/>
-Value:<br/>
-(("^\\s *def\\s +\\([^( 	\n]+\\)" 1 font-lock-function-name-face)<br/>
- ("\\(^\\|[^_:.@$]\\|\\.\\.\\)\\b\\(defined\\?\\|\\(a\\(?:lias\\(?:_method\\)?\\|nd\\)\\|b\\(?:egin\\|reak\\)\\|c\\(?:a\\(?:se\\|tch\\)\\|lass\\)\\|d\\(?:ef\\|o\\)\\|e\\(?:ls\\(?:e\\|if\\)\\|n\\(?:d\\|sure\\)\\)\\|f\\(?:ail\\|or\\)\\|i[fn]\\|module\\(?:_function\\)?\\|n\\(?:\\(?:ex\\|o\\)t\\)\\|or\\|p\\(?:r\\(?:ivate\\|otected\\)\\|ublic\\)\\|r\\(?:aise\\|e\\(?:do\\|scue\\|t\\(?:ry\\|urn\\)\\)\\)\\|super\\|th\\(?:en\\|row\\)\\|un\\(?:def\\|less\\|til\\)\\|wh\\(?:en\\|ile\\)\\|yield\\)\\)\\_>" . 2)<br/>
- ("\\(<\\)<\\(-\\)?\\(\\([a-zA-Z0-9_]+\\)\\|[\"]\\([^\"]+\\)[\"]\\|[']\\([^']+\\)[']\\)" 0 font-lock-string-face)<br/>
- ("\\(^\\|[^_:.@$]\\|\\.\\.\\)\\b\\(nil\\|self\\|true\\|false\\)\\>" 2 font-lock-variable-name-face)<br/>
- ("\\(^\\|[^:]\\)\\(:\\([-+~]@?\\|[/%&|^`]\\|\\*\\*?\\|<\\(<\\|=>?\\)?\\|>[>=]?\\|===?\\|=~\\|![~=]?\\|\\[\\]=?\\|@?\\(\\w\\|_\\)+\\([!?=]\\|\\b_*\\)\\|#{[^}\n\\\\]*\\(\\\\.[^}\n\\\\]*\\)*}\\)\\)" 2 font-lock-constant-face)<br/>
- ("\\(\\$\\([^a-zA-Z0-9 \n]\\|[0-9]\\)\\)\\W" 1 font-lock-variable-name-face)<br/>
- ("\\(\\$\\|@\\|@@\\)\\(\\w\\|_\\)+" 0 font-lock-variable-name-face)<br/>
- ("\\(^\\|[^_]\\)\\b\\([A-Z]+\\(\\w\\|_\\)*\\)" 2 font-lock-type-face)<br/>
- ("\\(^\\s *\\|[[{(,]\\s *\\|\\sw\\s +\\)\\(\\(\\sw\\|_\\)+\\):[^:]" 2 font-lock-constant-face)<br/>
- (ruby-match-expression-expansion 0 font-lock-variable-name-face t))<br/>
-<br/>
+<strong>ruby-font-lock-keywords</strong> is a variable defined in `<code>ruby-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Additional expressions to highlight in Ruby mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^\\s *def\\s +\\(?:[^( 	\n.]*\\.\\)?\\([^( 	\n]+\\)" 1 font-lock-function-name-face)
+ ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(a\\(?:lias\\|nd\\)\\|b\\(?:egin\\|reak\\)\\|c\\(?:ase\\|lass\\)\\|d\\(?:ef\\(?:ined\\?\\)?\\|o\\)\\|e\\(?:ls\\(?:e\\|if\\)\\|n\\(?:d\\|sure\\)\\)\\|f\\(?:ail\\|or\\)\\|i[fn]\\|module\\|n\\(?:\\(?:ex\\|o\\)t\\)\\|or\\|re\\(?:do\\|scue\\|t\\(?:ry\\|urn\\)\\)\\|super\\|then\\|un\\(?:def\\|less\\|til\\)\\|wh\\(?:en\\|ile\\)\\|yield\\)\\_>"
+  (1 font-lock-keyword-face))
+ ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(a\\(?:lias_method\\|t\\(?:_exit\\|tr\\(?:_\\(?:\\(?:accesso\\|\\(?:read\\|writ\\)e\\)r\\)\\)?\\)\\|utoload\\??\\)\\|catch\\|define_method\\|e\\(?:val\\|x\\(?:ec\\|tend\\)\\)\\|for\\(?:k\\|mat\\)\\|include\\|l\\(?:ambda\\|o\\(?:ad\\|op\\)\\)\\|module_function\\|open\\|p\\(?:r\\(?:epend\\|intf?\\|oc\\)\\|ut[cs]\\)?\\|re\\(?:\\(?:fin\\|quir\\(?:e_relativ\\)?\\)e\\)\\|s\\(?:p\\(?:awn\\|rintf\\)\\|ys\\(?:call\\|tem\\)\\)\\|trap\\|using\\|warn\\)\\_>"
+  (1
+   (unless
+       (looking-at " *\\(?:[]|,.)}=]\\|$\\)")
+     font-lock-builtin-face)))
+ ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(__\\(?:\\(?:callee\\|dir\\|method\\)__\\)\\|a\\(?:\\(?:bor\\|t_exi\\)t\\)\\|b\\(?:inding\\|lock_given\\?\\)\\|caller\\|exit!?\\|fail\\|p\\(?:r\\(?:ivate\\|otected\\)\\|ublic\\)\\|r\\(?:a\\(?:ise\\|nd\\)\\|eadlines?\\)\\|s\\(?:leep\\|rand\\)\\|throw\\)\\_>"
+  (1 font-lock-builtin-face))
+ ("\\(<\\)<\\(-\\)?\\(\\([a-zA-Z0-9_]+\\)\\|[\"]\\([^\"]+\\)[\"]\\|[']\\([^']+\\)[']\\)"
+  (0
+   (unless
+       (ruby-singleton-class-p
+	(match-beginning 0))
+     'font-lock-string-face)))
+ "\\_<\\(?:BEGIN\\|END\\)\\_>\\|^__END__$"
+ ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(nil\\|self\\|true\\|false\\)\\_>" 1 font-lock-variable-name-face)
+ ("\\_<__\\(?:LINE\\|ENCODING\\|FILE\\)__\\_>"
+  (0 font-lock-variable-name-face))
+ ("\\(^\\|[^:]\\)\\(:\\([-+~]@?\\|[/%&|^`]\\|\\*\\*?\\|<\\(<\\|=>?\\)?\\|>[>=]?\\|===?\\|=~\\|![~=]?\\|\\[\\]=?\\|@?\\(\\w\\|_\\)+\\([!?=]\\|\\b_*\\)\\|#{[^}\n\\\\]*\\(\\\\.[^}\n\\\\]*\\)*}\\)\\)" 2 font-lock-constant-face)
+ ("\\(\\$\\([^a-zA-Z0-9 \n]\\|[0-9]\\)\\)\\W" 1 font-lock-variable-name-face)
+ ("\\(\\$\\|@\\|@@\\)\\(\\w\\|_\\)+" 0 font-lock-variable-name-face)
+ ("\\(?:\\_<\\|::\\)\\([A-Z]+\\(\\w\\|_\\)*\\)" 1
+  (unless
+      (eq 40
+	  (char-after))
+    font-lock-type-face))
+ ("\\(^\\s *\\|[[{(,]\\s *\\|\\sw\\s +\\)\\(\\(\\sw\\|_\\)+\\):[^:]"
+  (2 font-lock-constant-face))
+ ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(Array\\|Complex\\|Float\\|Hash\\|Integer\\|Rational\\|String\\)\\_>"
+  (1 font-lock-builtin-face))
+ (ruby-match-expression-expansion 2 font-lock-variable-name-face t)
+ ("\\(?:^\\|[^[:alnum:]_]\\)\\(!+\\)[^=]" 1 font-lock-negation-char-face)
+ ("\\_<\\?\\\\?\\S " 0 font-lock-string-face)
+ ("\\(?:\\s|\\|/\\)\\([imxo]+\\)" 1
+  (when
+      (save-excursion
+	(let
+	    ((state
+	      (syntax-ppss
+	       (match-beginning 0))))
+	  (and
+	   (nth 3 state)
+	   (or
+	    (eq
+	     (char-after)
+	     47)
+	    (progn
+	      (goto-char
+	       (nth 8 state))
+	      (looking-at "%r"))))))
+    font-lock-preprocessor-face)))
+</pre></br>

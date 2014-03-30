@@ -1,18 +1,18 @@
-<strong>c-lineup-cascaded-calls</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.<br/>
-<br/>
-(c-lineup-cascaded-calls LANGELEM)<br/>
-<br/>
-Line up "cascaded calls" under each other.<br/>
-If the line begins with "->" or "." and the preceding line ends<br/>
-with one or more function calls preceded by the same token, then the<br/>
-arrow is lined up with the first of those tokens.  E.g.:<br/>
-<br/>
-result = proc->add(17)->add(18)<br/>
-             ->add(19) +           <- c-lineup-cascaded-calls<br/>
-  offset;                          <- c-lineup-cascaded-calls (inactive)<br/>
-<br/>
-In any other situation nil is returned to allow use in list<br/>
-expressions.<br/>
-<br/>
-Works with: topmost-intro-cont, statement-cont, arglist-cont,<br/>
+<strong>c-lineup-cascaded-calls</strong> is a compiled Lisp function in `<code>cc-align.el</code>'.</br>
+</br>
+(c-lineup-cascaded-calls <u>LANGELEM</u>)</br>
+</br>
+Line up "cascaded calls" under each other.</br>
+If the line begins with "->" or "." and the preceding line ends</br>
+with one or more function calls preceded by the same token, then the</br>
+arrow is lined up with the first of those tokens.  E.g.:</br>
+</br>
+result = proc->add(17)->add(18)</br>
+             ->add(19) +           &lt;- c-lineup-cascaded-calls</br>
+  offset;                          &lt;- c-lineup-cascaded-calls (inactive)</br>
+</br>
+In any other situation nil is returned to allow use in list</br>
+expressions.</br>
+</br>
+Works with: topmost-intro-cont, statement-cont, arglist-cont,</br>
 arglist-cont-nonempty.

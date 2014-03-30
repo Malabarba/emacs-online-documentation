@@ -1,115 +1,115 @@
-<strong>table-capture</strong> is an interactive autoloaded compiled Lisp function in `<code>table.el</code>'.<br/>
-<br/>
-It is bound to <menu-bar> <tools> <Table> <Capture Region>.<br/>
-<br/>
-(table-capture BEG END &optional COL-DELIM-REGEXP ROW-DELIM-REGEXP JUSTIFY MIN-CELL-WIDTH COLUMNS)<br/>
-<br/>
-Convert plain text into a table by capturing the text in the region.<br/>
-Create a table with the text in region as cell contents.  BEG and END<br/>
-specify the region.  The text in the region is replaced with a table.<br/>
-The removed text is inserted in the table.  When optional<br/>
-COL-DELIM-REGEXP and ROW-DELIM-REGEXP are provided the region contents<br/>
-is parsed and separated into individual cell contents by using the<br/>
-delimiter regular expressions.  This parsing determines the number of<br/>
-columns and rows of the table automatically.  If COL-DELIM-REGEXP and<br/>
-ROW-DELIM-REGEXP are omitted the result table has only one cell and<br/>
-the entire region contents is placed in that cell.  Optional JUSTIFY<br/>
-is one of 'left, 'center or 'right, which specifies the cell<br/>
-justification.  Optional MIN-CELL-WIDTH specifies the minimum cell<br/>
-width.  Optional COLUMNS specify the number of columns when<br/>
-ROW-DELIM-REGEXP is not specified.<br/>
-<br/>
-<br/>
-Example 1:<br/>
-<br/>
-1, 2, 3, 4<br/>
-5, 6, 7, 8<br/>
-, 9, 10<br/>
-<br/>
-Running `table-capture' on above 3 line region with COL-DELIM-REGEXP<br/>
-"," and ROW-DELIM-REGEXP "\n" creates the following table.  In<br/>
-this example the cells are centered and minimum cell width is<br/>
-specified as 5.<br/>
-<br/>
-+-----+-----+-----+-----+<br/>
-|  1  |  2  |  3  |  4  |<br/>
-+-----+-----+-----+-----+<br/>
-|  5  |  6  |  7  |  8  |<br/>
-+-----+-----+-----+-----+<br/>
-|     |  9  | 10  |     |<br/>
-+-----+-----+-----+-----+<br/>
-<br/>
-Note:<br/>
-<br/>
-In case the function is called interactively user must use C-q `quoted-insert'<br/>
-in order to enter "\n" successfully.  COL-DELIM-REGEXP at the end<br/>
-of each row is optional.<br/>
-<br/>
-<br/>
-Example 2:<br/>
-<br/>
-This example shows how a table can be used for text layout editing.<br/>
-Let `table-capture' capture the following region starting from<br/>
--!- and ending at -*-, that contains three paragraphs and two item<br/>
-name headers.  This time specify empty string for both<br/>
-COL-DELIM-REGEXP and ROW-DELIM-REGEXP.<br/>
-<br/>
--!-`table-capture' is a powerful command however mastering its power<br/>
-requires some practice.  Here is a list of items what it can do.<br/>
-<br/>
-Parse Cell Items      By using column delimiter regular<br/>
-		      expression and raw delimiter regular<br/>
-		      expression, it parses the specified text<br/>
-		      area and extracts cell items from<br/>
-		      non-table text and then forms a table out<br/>
-		      of them.<br/>
-<br/>
-Capture Text Area     When no delimiters are specified it<br/>
-		      creates a single cell table.  The text in<br/>
-		      the specified region is placed in that<br/>
-		      cell.-*-<br/>
-<br/>
-Now the entire content is captured in a cell which is itself a table<br/>
-like this.<br/>
-<br/>
-+-----------------------------------------------------------------+<br/>
-|`table-capture' is a powerful command however mastering its power|<br/>
-|requires some practice.  Here is a list of items what it can do. |<br/>
-|                                                                 |<br/>
-|Parse Cell Items      By using column delimiter regular          |<br/>
-|                      expression and raw delimiter regular       |<br/>
-|                      expression, it parses the specified text   |<br/>
-|                      area and extracts cell items from          |<br/>
-|                      non-table text and then forms a table out  |<br/>
-|                      of them.                                   |<br/>
-|                                                                 |<br/>
-|Capture Text Area     When no delimiters are specified it        |<br/>
-|                      creates a single cell table.  The text in  |<br/>
-|                      the specified region is placed in that     |<br/>
-|                      cell.                                      |<br/>
-+-----------------------------------------------------------------+<br/>
-<br/>
-By splitting the cell appropriately we now have a table consisting of<br/>
-paragraphs occupying its own cell.  Each cell can now be edited<br/>
-independently.<br/>
-<br/>
-+-----------------------------------------------------------------+<br/>
-|`table-capture' is a powerful command however mastering its power|<br/>
-|requires some practice.  Here is a list of items what it can do. |<br/>
-+---------------------+-------------------------------------------+<br/>
-|Parse Cell Items     |By using column delimiter regular          |<br/>
-|                     |expression and raw delimiter regular       |<br/>
-|                     |expression, it parses the specified text   |<br/>
-|                     |area and extracts cell items from          |<br/>
-|                     |non-table text and then forms a table out  |<br/>
-|                     |of them.                                   |<br/>
-+---------------------+-------------------------------------------+<br/>
-|Capture Text Area    |When no delimiters are specified it        |<br/>
-|                     |creates a single cell table.  The text in  |<br/>
-|                     |the specified region is placed in that     |<br/>
-|                     |cell.                                      |<br/>
-+---------------------+-------------------------------------------+<br/>
-<br/>
-By applying `table-release', which does the opposite process, the<br/>
-contents become once again plain text.  `table-release' works as<br/>
+<strong>table-capture</strong> is an interactive autoloaded compiled Lisp function in `<code>table.el</code>'.</br>
+</br>
+It is bound to &lt;menu-bar> &lt;tools> &lt;Table> &lt;Capture Region>.</br>
+</br>
+<code>(table-capture <u>BEG</u> <u>END</u> <em>&optional</em> <u>COL-DELIM-REGEXP</u> <u>ROW-DELIM-REGEXP</u> <u>JUSTIFY</u> <u>MIN-CELL-WIDTH</u> <u>COLUMNS</u></code>)</br>
+</br>
+Convert plain text into a table by capturing the text in the region.</br>
+Create a table with the text in region as cell contents.  <u>BEG</u> and <u>END</u></br>
+specify the region.  The text in the region is replaced with a table.</br>
+The removed text is inserted in the table.  When optional</br>
+<u>COL-DELIM-REGEXP</u> and <u>ROW-DELIM-REGEXP</u> are provided the region contents</br>
+is parsed and separated into individual cell contents by using the</br>
+delimiter regular expressions.  This parsing determines the number of</br>
+columns and rows of the table automatically.  If <u>COL-DELIM-REGEXP</u> and</br>
+<u>ROW-DELIM-REGEXP</u> are omitted the result table has only one cell and</br>
+the entire region contents is placed in that cell.  Optional <u>JUSTIFY</u></br>
+is one of 'left, 'center or 'right, which specifies the cell</br>
+justification.  Optional <u>MIN-CELL-WIDTH</u> specifies the minimum cell</br>
+width.  Optional <u>COLUMNS</u> specify the number of columns when</br>
+<u>ROW-DELIM-REGEXP</u> is not specified.</br>
+</br>
+</br>
+Example 1:</br>
+</br>
+1, 2, 3, 4</br>
+5, 6, 7, 8</br>
+, 9, 10</br>
+</br>
+Running `table-capture' on above 3 line region with <u>COL-DELIM-REGEXP</u></br>
+"," and <u>ROW-DELIM-REGEXP</u> "\n" creates the following table.  In</br>
+this example the cells are centered and minimum cell width is</br>
+specified as 5.</br>
+</br>
++-----+-----+-----+-----+</br>
+|  1  |  2  |  3  |  4  |</br>
++-----+-----+-----+-----+</br>
+|  5  |  6  |  7  |  8  |</br>
++-----+-----+-----+-----+</br>
+|     |  9  | 10  |     |</br>
++-----+-----+-----+-----+</br>
+</br>
+Note:</br>
+</br>
+In case the function is called interactively user must use C-q `quoted-insert'</br>
+in order to enter "\n" successfully.  <u>COL-DELIM-REGEXP</u> at the end</br>
+of each row is optional.</br>
+</br>
+</br>
+Example 2:</br>
+</br>
+This example shows how a table can be used for text layout editing.</br>
+Let `table-capture' capture the following region starting from</br>
+-!- and ending at -*-, that contains three paragraphs and two item</br>
+name headers.  This time specify empty string for both</br>
+<u>COL-DELIM-REGEXP</u> and <u>ROW-DELIM-REGEXP</u>.</br>
+</br>
+-!-`table-capture' is a powerful command however mastering its power</br>
+requires some practice.  Here is a list of items what it can do.</br>
+</br>
+Parse Cell Items      By using column delimiter regular</br>
+		      expression and raw delimiter regular</br>
+		      expression, it parses the specified text</br>
+		      area and extracts cell items from</br>
+		      non-table text and then forms a table out</br>
+		      of them.</br>
+</br>
+Capture Text Area     When no delimiters are specified it</br>
+		      creates a single cell table.  The text in</br>
+		      the specified region is placed in that</br>
+		      cell.-*-</br>
+</br>
+Now the entire content is captured in a cell which is itself a table</br>
+like this.</br>
+</br>
++-----------------------------------------------------------------+</br>
+|`table-capture' is a powerful command however mastering its power|</br>
+|requires some practice.  Here is a list of items what it can do. |</br>
+|                                                                 |</br>
+|Parse Cell Items      By using column delimiter regular          |</br>
+|                      expression and raw delimiter regular       |</br>
+|                      expression, it parses the specified text   |</br>
+|                      area and extracts cell items from          |</br>
+|                      non-table text and then forms a table out  |</br>
+|                      of them.                                   |</br>
+|                                                                 |</br>
+|Capture Text Area     When no delimiters are specified it        |</br>
+|                      creates a single cell table.  The text in  |</br>
+|                      the specified region is placed in that     |</br>
+|                      cell.                                      |</br>
++-----------------------------------------------------------------+</br>
+</br>
+By splitting the cell appropriately we now have a table consisting of</br>
+paragraphs occupying its own cell.  Each cell can now be edited</br>
+independently.</br>
+</br>
++-----------------------------------------------------------------+</br>
+|`table-capture' is a powerful command however mastering its power|</br>
+|requires some practice.  Here is a list of items what it can do. |</br>
++---------------------+-------------------------------------------+</br>
+|Parse Cell Items     |By using column delimiter regular          |</br>
+|                     |expression and raw delimiter regular       |</br>
+|                     |expression, it parses the specified text   |</br>
+|                     |area and extracts cell items from          |</br>
+|                     |non-table text and then forms a table out  |</br>
+|                     |of them.                                   |</br>
++---------------------+-------------------------------------------+</br>
+|Capture Text Area    |When no delimiters are specified it        |</br>
+|                     |creates a single cell table.  The text in  |</br>
+|                     |the specified region is placed in that     |</br>
+|                     |cell.                                      |</br>
++---------------------+-------------------------------------------+</br>
+</br>
+By applying `table-release', which does the opposite process, the</br>
+contents become once again plain text.  `table-release' works as</br>
 companion command to `table-capture' this way.

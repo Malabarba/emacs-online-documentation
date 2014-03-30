@@ -1,21 +1,19 @@
-<strong>after-change-functions</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is (viper-undo-sentinel)<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of functions to call after each text change.<br/>
-Three arguments are passed to each function: the positions of<br/>
-the beginning and end of the range of changed text,<br/>
-and the length in bytes of the pre-change text replaced by that range.<br/>
-(For an insertion, the pre-change length is zero;<br/>
-for a deletion, that length is the number of bytes deleted,<br/>
-and the post-change beginning and end are at the same place.)<br/>
-<br/>
-Buffer changes made while executing the `after-change-functions'<br/>
-don't call any before-change or after-change functions.<br/>
-That's because `inhibit-modification-hooks' is temporarily set non-nil.<br/>
-<br/>
-If an unhandled error happens in running these functions,<br/>
-the variable's value remains nil.  That prevents the error<br/>
+<strong>after-change-functions</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>(viper-undo-sentinel)</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of functions to call after each text change.</br>
+Three arguments are passed to each function: the positions of</br>
+the beginning and end of the range of changed text,</br>
+and the length in bytes of the pre-change text replaced by that range.</br>
+(For an insertion, the pre-change length is zero;</br>
+for a deletion, that length is the number of bytes deleted,</br>
+and the post-change beginning and end are at the same place.)</br>
+</br>
+Buffer changes made while executing the `after-change-functions'</br>
+don't call any before-change or after-change functions.</br>
+That's because `inhibit-modification-hooks' is temporarily set non-nil.</br>
+</br>
+If an unhandled error happens in running these functions,</br>
+the variable's value remains nil.  That prevents the error</br>
 from happening repeatedly and making Emacs nonfunctional.

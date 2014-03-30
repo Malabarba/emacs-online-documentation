@@ -1,24 +1,24 @@
-<strong>ispell-tex-skip-alists</strong> is a variable defined in `<code>ispell.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Lists of regions to be skipped in TeX mode.<br/>
-First list is used raw.<br/>
-Second list has key placed inside \begin{}.<br/>
-<br/>
-Delete or add any regions you want to be automatically selected<br/>
-for skipping in latex mode.<br/>
-<br/>
-Value:<br/>
-((("\\\\addcontentsline" ispell-tex-arg-end 2)<br/>
-  ("\\\\add\\(tocontents\\|vspace\\)" ispell-tex-arg-end)<br/>
-  ("\\\\\\([aA]lph\\|arabic\\)" ispell-tex-arg-end)<br/>
-  ("\\\\bibliographystyle" ispell-tex-arg-end)<br/>
-  ("\\\\makebox" ispell-tex-arg-end 0)<br/>
-  ("\\\\e?psfig" ispell-tex-arg-end)<br/>
-  ("\\\\document\\(class\\|style\\)" . "\\\\begin[ 	\n]*{[ 	\n]*document[ 	\n]*}"))<br/>
- (("\\(figure\\|table\\)\\*?" ispell-tex-arg-end 0)<br/>
-  ("list" ispell-tex-arg-end 2)<br/>
-  ("program" . "\\\\end[ 	\n]*{[ 	\n]*program[ 	\n]*}")<br/>
-  ("verbatim\\*?" . "\\\\end[ 	\n]*{[ 	\n]*verbatim\\*?[ 	\n]*}")))<br/>
-<br/>
+<strong>ispell-tex-skip-alists</strong> is a variable defined in `<code>ispell.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Lists of regions to be skipped in TeX mode.</br>
+First list is used raw.</br>
+Second list has key placed inside \begin{}.</br>
+</br>
+Delete or add any regions you want to be automatically selected</br>
+for skipping in latex mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((("\\\\addcontentsline" ispell-tex-arg-end 2)
+  ("\\\\add\\(tocontents\\|vspace\\)" ispell-tex-arg-end)
+  ("\\\\\\([aA]lph\\|arabic\\)" ispell-tex-arg-end)
+  ("\\\\bibliographystyle" ispell-tex-arg-end)
+  ("\\\\makebox" ispell-tex-arg-end 0)
+  ("\\\\e?psfig" ispell-tex-arg-end)
+  ("\\\\document\\(class\\|style\\)" . "\\\\begin[ 	\n]*{[ 	\n]*document[ 	\n]*}"))
+ (("\\(figure\\|table\\)\\*?" ispell-tex-arg-end 0)
+  ("list" ispell-tex-arg-end 2)
+  ("program" . "\\\\end[ 	\n]*{[ 	\n]*program[ 	\n]*}")
+  ("verbatim\\*?" . "\\\\end[ 	\n]*{[ 	\n]*verbatim\\*?[ 	\n]*}")))
+</pre></br>

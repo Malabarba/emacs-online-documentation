@@ -1,32 +1,32 @@
-<strong>ps-print-prologue-header</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-PostScript prologue header comments besides that ps-print generates.<br/>
-<br/>
-`ps-print-prologue-header' may be a string or a symbol function which returns a<br/>
-string.  Note that this string is inserted on PostScript prologue header<br/>
-section which is used to define some document characteristic through PostScript<br/>
-special comments, like "%%Requirements: jog\n".<br/>
-<br/>
-ps-print always inserts the %%Requirements: comment, so if you need to insert<br/>
-more requirements put them first in `ps-print-prologue-header' using the<br/>
-"%%+" comment.  For example, if you need to set numcopies to 3 and jog on<br/>
-requirements and set %%LanguageLevel: to 2, do:<br/>
-<br/>
- (setq ps-print-prologue-header<br/>
-       "%%+ numcopies(3) jog\n%%LanguageLevel: 2\n")<br/>
-<br/>
-The duplex requirement is inserted by ps-print (see `ps-spool-duplex').<br/>
-<br/>
-Do not forget to terminate the string with "\n".<br/>
-<br/>
-For more information about PostScript document comments, see:<br/>
-   PostScript Language Reference Manual (2nd edition)<br/>
-   Adobe Systems Incorporated<br/>
-   Appendix G: Document Structuring Conventions -- Version 3.0<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 20 of Emacs.<br/>
+<strong>ps-print-prologue-header</strong> is a variable defined in `<code>ps-print.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+PostScript prologue header comments besides that ps-print generates.</br>
+</br>
+`ps-print-prologue-header' may be a string or a symbol function which returns a</br>
+string.  Note that this string is inserted on PostScript prologue header</br>
+section which is used to define some document characteristic through PostScript</br>
+special comments, like "%%Requirements: jog\n".</br>
+</br>
+ps-print always inserts the %%Requirements: comment, so if you need to insert</br>
+more requirements put them first in `ps-print-prologue-header' using the</br>
+"%%+" comment.  For example, if you need to set numcopies to 3 and jog on</br>
+requirements and set %%LanguageLevel: to 2, do:</br>
+</br>
+ (setq ps-print-prologue-header</br>
+       "%%+ numcopies(3) jog\n%%LanguageLevel: 2\n")</br>
+</br>
+The duplex requirement is inserted by ps-print (see `ps-spool-duplex').</br>
+</br>
+Do not forget to terminate the string with "\n".</br>
+</br>
+For more information about PostScript document comments, see:</br>
+   PostScript Language Reference Manual (2nd edition)</br>
+   Adobe Systems Incorporated</br>
+   Appendix G: Document Structuring Conventions -- Version 3.0</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 20 of Emacs.

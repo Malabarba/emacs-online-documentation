@@ -1,5 +1,17 @@
-<strong>todo-add-category</strong> is an interactive autoloaded compiled Lisp function in `<code>todo-mode.el</code>'.<br/>
-<br/>
-(todo-add-category &optional CAT)<br/>
-<br/>
-Add new category CAT to the TODO list.
+<strong>todo-add-category</strong> is an interactive compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+</br>
+(todo-add-category &optional <u>FILE</u> <u>CAT</u>)</br>
+</br>
+Add a new category to a todo file.</br>
+</br>
+Called interactively with prefix argument <u>FILE</u>, prompt for a file</br>
+and then for a new category to add to that file, otherwise prompt</br>
+just for a category to add to the current todo file.  After</br>
+adding the category, visit it in Todo mode and if option</br>
+`todo-add-item-if-new-category' is non-nil (the default), prompt</br>
+for the first item.</br>
+</br>
+Non-interactively, add category <u>CAT</u> to file <u>FILE</u>; if <u>FILE</u> is nil,</br>
+add <u>CAT</u> to the current todo file.  After adding the category,</br>
+return the new category number.

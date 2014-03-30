@@ -1,0 +1,11 @@
+<strong>mail-header-merge</strong> is a compiled Lisp function in `<code>mailheader.el</code>'.</br>
+</br>
+(mail-header-merge <u>MERGE-RULES</u> <u>HEADERS</u>)</br>
+</br>
+Return a new header alist with <u>MERGE-RULES</u> applied to <u>HEADERS</u>.</br>
+<u>MERGE-RULES</u> is an alist whose keys are header names (symbols) and whose</br>
+values are forms to evaluate, the results of which are the new headers.  It</br>
+should be a string or a list of string.  The first element may be nil to</br>
+denote that the formatting functions must use the remaining elements, or</br>
+skip the header altogether if there are no other elements.</br>
+  The macro `mail-header' can be used to access headers in <u>HEADERS</u>.

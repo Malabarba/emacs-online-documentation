@@ -1,15 +1,15 @@
-<strong>combine-after-change-calls</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
-<br/>
-(combine-after-change-calls &rest BODY)<br/>
-<br/>
-Execute BODY, but don't call the after-change functions till the end.<br/>
-If BODY makes changes in the buffer, they are recorded<br/>
-and the functions on `after-change-functions' are called several times<br/>
-when BODY is finished.<br/>
-The return value is the value of the last form in BODY.<br/>
-<br/>
-If `before-change-functions' is non-nil, then calls to the after-change<br/>
-functions can't be deferred, so in that case this macro has no effect.<br/>
-<br/>
-Do not alter `after-change-functions' or `before-change-functions'<br/>
-in BODY.
+<strong>combine-after-change-calls</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(combine-after-change-calls &rest <u>BODY</u>)</br>
+</br>
+Execute <u>BODY</u>, but don't call the after-change functions till the end.</br>
+If <u>BODY</u> makes changes in the buffer, they are recorded</br>
+and the functions on `after-change-functions' are called several times</br>
+when <u>BODY</u> is finished.</br>
+The return value is the value of the last form in <u>BODY</u>.</br>
+</br>
+If `before-change-functions' is non-nil, then calls to the after-change</br>
+functions can't be deferred, so in that case this macro has no effect.</br>
+</br>
+Do not alter `after-change-functions' or `before-change-functions'</br>
+in <u>BODY</u>.

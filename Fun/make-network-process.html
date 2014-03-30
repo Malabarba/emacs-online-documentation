@@ -1,152 +1,152 @@
-<strong>make-network-process</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(make-network-process &rest ARGS)<br/>
-<br/>
-Create and return a network server or client process.<br/>
-<br/>
-In Emacs, network connections are represented by process objects, so<br/>
-input and output work as for subprocesses and `delete-process' closes<br/>
-a network connection.  However, a network process has no process id,<br/>
-it cannot be signaled, and the status codes are different from normal<br/>
-processes.<br/>
-<br/>
-Arguments are specified as keyword/argument pairs.  The following<br/>
-arguments are defined:<br/>
-<br/>
-:name NAME -- NAME is name for process.  It is modified if necessary<br/>
-to make it unique.<br/>
-<br/>
-:buffer BUFFER -- BUFFER is the buffer (or buffer-name) to associate<br/>
-with the process.  Process output goes at end of that buffer, unless<br/>
-you specify an output stream or filter function to handle the output.<br/>
-BUFFER may be also nil, meaning that this process is not associated<br/>
-with any buffer.<br/>
-<br/>
-:host HOST -- HOST is name of the host to connect to, or its IP<br/>
-address.  The symbol `local' specifies the local host.  If specified<br/>
-for a server process, it must be a valid name or address for the local<br/>
-host, and only clients connecting to that address will be accepted.<br/>
-<br/>
-:service SERVICE -- SERVICE is name of the service desired, or an<br/>
-integer specifying a port number to connect to.  If SERVICE is t,<br/>
-a random port number is selected for the server.  (If Emacs was<br/>
-compiled with getaddrinfo, a port number can also be specified as a<br/>
-string, e.g. "80", as well as an integer.  This is not portable.)<br/>
-<br/>
-:type TYPE -- TYPE is the type of connection.  The default (nil) is a<br/>
-stream type connection, `datagram' creates a datagram type connection,<br/>
-`seqpacket' creates a reliable datagram connection.<br/>
-<br/>
-:family FAMILY -- FAMILY is the address (and protocol) family for the<br/>
-service specified by HOST and SERVICE.  The default (nil) is to use<br/>
-whatever address family (IPv4 or IPv6) that is defined for the host<br/>
-and port number specified by HOST and SERVICE.  Other address families<br/>
-supported are:<br/>
-  local -- for a local (i.e. UNIX) address specified by SERVICE.<br/>
-  ipv4  -- use IPv4 address family only.<br/>
-  ipv6  -- use IPv6 address family only.<br/>
-<br/>
-:local ADDRESS -- ADDRESS is the local address used for the connection.<br/>
-This parameter is ignored when opening a client process. When specified<br/>
-for a server process, the FAMILY, HOST and SERVICE args are ignored.<br/>
-<br/>
-:remote ADDRESS -- ADDRESS is the remote partner's address for the<br/>
-connection.  This parameter is ignored when opening a stream server<br/>
-process.  For a datagram server process, it specifies the initial<br/>
-setting of the remote datagram address.  When specified for a client<br/>
-process, the FAMILY, HOST, and SERVICE args are ignored.<br/>
-<br/>
-The format of ADDRESS depends on the address family:<br/>
-- An IPv4 address is represented as an vector of integers [A B C D P]<br/>
-corresponding to numeric IP address A.B.C.D and port number P.<br/>
-- A local address is represented as a string with the address in the<br/>
-local address space.<br/>
-- An "unsupported family" address is represented by a cons (F . AV)<br/>
-where F is the family number and AV is a vector containing the socket<br/>
-address data with one element per address data byte.  Do not rely on<br/>
-this format in portable code, as it may depend on implementation<br/>
-defined constants, data sizes, and data structure alignment.<br/>
-<br/>
-:coding CODING -- If CODING is a symbol, it specifies the coding<br/>
-system used for both reading and writing for this process.  If CODING<br/>
-is a cons (DECODING . ENCODING), DECODING is used for reading, and<br/>
-ENCODING is used for writing.<br/>
-<br/>
-:nowait BOOL -- If BOOL is non-nil for a stream type client process,<br/>
-return without waiting for the connection to complete; instead, the<br/>
-sentinel function will be called with second arg matching "open" (if<br/>
-successful) or "failed" when the connect completes.  Default is to use<br/>
-a blocking connect (i.e. wait) for stream type connections.<br/>
-<br/>
-:noquery BOOL -- Query the user unless BOOL is non-nil, and process is<br/>
-running when Emacs is exited.<br/>
-<br/>
-:stop BOOL -- Start process in the `stopped' state if BOOL non-nil.<br/>
-In the stopped state, a server process does not accept new<br/>
-connections, and a client process does not handle incoming traffic.<br/>
-The stopped state is cleared by `continue-process' and set by<br/>
-`stop-process'.<br/>
-<br/>
-:filter FILTER -- Install FILTER as the process filter.<br/>
-<br/>
-:filter-multibyte BOOL -- If BOOL is non-nil, strings given to the<br/>
-process filter are multibyte, otherwise they are unibyte.<br/>
-If this keyword is not specified, the strings are multibyte if<br/>
-the default value of `enable-multibyte-characters' is non-nil.<br/>
-<br/>
-:sentinel SENTINEL -- Install SENTINEL as the process sentinel.<br/>
-<br/>
-:log LOG -- Install LOG as the server process log function.  This<br/>
-function is called when the server accepts a network connection from a<br/>
-client.  The arguments are SERVER, CLIENT, and MESSAGE, where SERVER<br/>
-is the server process, CLIENT is the new process for the connection,<br/>
-and MESSAGE is a string.<br/>
-<br/>
-:plist PLIST -- Install PLIST as the new process' initial plist.<br/>
-<br/>
-:server QLEN -- if QLEN is non-nil, create a server process for the<br/>
-specified FAMILY, SERVICE, and connection type (stream or datagram).<br/>
-If QLEN is an integer, it is used as the max. length of the server's<br/>
-pending connection queue (also known as the backlog); the default<br/>
-queue length is 5.  Default is to create a client process.<br/>
-<br/>
-The following network options can be specified for this connection:<br/>
-<br/>
-:broadcast BOOL    -- Allow send and receive of datagram broadcasts.<br/>
-:dontroute BOOL    -- Only send to directly connected hosts.<br/>
-:keepalive BOOL    -- Send keep-alive messages on network stream.<br/>
-:linger BOOL or TIMEOUT -- Send queued messages before closing.<br/>
-:oobinline BOOL    -- Place out-of-band data in receive data stream.<br/>
-:priority INT      -- Set protocol defined priority for sent packets.<br/>
-:reuseaddr BOOL    -- Allow reusing a recently used local address<br/>
-                      (this is allowed by default for a server process).<br/>
-:bindtodevice NAME -- bind to interface NAME.  Using this may require<br/>
-                      special privileges on some systems.<br/>
-<br/>
-Consult the relevant system programmer's manual pages for more<br/>
-information on using these options.<br/>
-<br/>
-<br/>
-A server process will listen for and accept connections from clients.<br/>
-When a client connection is accepted, a new network process is created<br/>
-for the connection with the following parameters:<br/>
-<br/>
-- The client's process name is constructed by concatenating the server<br/>
-process' NAME and a client identification string.<br/>
-- If the FILTER argument is non-nil, the client process will not get a<br/>
-separate process buffer; otherwise, the client's process buffer is a newly<br/>
-created buffer named after the server process' BUFFER name or process<br/>
-NAME concatenated with the client identification string.<br/>
-- The connection type and the process filter and sentinel parameters are<br/>
-inherited from the server process' TYPE, FILTER and SENTINEL.<br/>
-- The client process' contact info is set according to the client's<br/>
-addressing information (typically an IP address and a port number).<br/>
-- The client process' plist is initialized from the server's plist.<br/>
-<br/>
-Notice that the FILTER and SENTINEL args are never used directly by<br/>
-the server process.  Also, the BUFFER argument is not used directly by<br/>
-the server process, but via the optional :log function, accepted (and<br/>
-failed) connections may be logged in the server process' buffer.<br/>
-<br/>
-The original argument list, modified with the actual connection<br/>
+<strong>make-network-process</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(make-network-process &rest <u>ARGS</u>)</br>
+</br>
+Create and return a network server or client process.</br>
+</br>
+In Emacs, network connections are represented by process objects, so</br>
+input and output work as for subprocesses and `delete-process' closes</br>
+a network connection.  However, a network process has no process id,</br>
+it cannot be signaled, and the status codes are different from normal</br>
+processes.</br>
+</br>
+Arguments are specified as keyword/argument pairs.  The following</br>
+arguments are defined:</br>
+</br>
+:name NAME -- NAME is name for process.  It is modified if necessary</br>
+to make it unique.</br>
+</br>
+:buffer BUFFER -- BUFFER is the buffer (or buffer-name) to associate</br>
+with the process.  Process output goes at end of that buffer, unless</br>
+you specify an output stream or filter function to handle the output.</br>
+BUFFER may be also nil, meaning that this process is not associated</br>
+with any buffer.</br>
+</br>
+:host HOST -- HOST is name of the host to connect to, or its IP</br>
+address.  The symbol `local' specifies the local host.  If specified</br>
+for a server process, it must be a valid name or address for the local</br>
+host, and only clients connecting to that address will be accepted.</br>
+</br>
+:service SERVICE -- SERVICE is name of the service desired, or an</br>
+integer specifying a port number to connect to.  If SERVICE is t,</br>
+a random port number is selected for the server.  (If Emacs was</br>
+compiled with getaddrinfo, a port number can also be specified as a</br>
+string, e.g. "80", as well as an integer.  This is not portable.)</br>
+</br>
+:type TYPE -- TYPE is the type of connection.  The default (nil) is a</br>
+stream type connection, `datagram' creates a datagram type connection,</br>
+`seqpacket' creates a reliable datagram connection.</br>
+</br>
+:family FAMILY -- FAMILY is the address (and protocol) family for the</br>
+service specified by HOST and SERVICE.  The default (nil) is to use</br>
+whatever address family (IPv4 or IPv6) that is defined for the host</br>
+and port number specified by HOST and SERVICE.  Other address families</br>
+supported are:</br>
+  local -- for a local (i.e. UNIX) address specified by SERVICE.</br>
+  ipv4  -- use IPv4 address family only.</br>
+  ipv6  -- use IPv6 address family only.</br>
+</br>
+:local ADDRESS -- ADDRESS is the local address used for the connection.</br>
+This parameter is ignored when opening a client process. When specified</br>
+for a server process, the FAMILY, HOST and SERVICE args are ignored.</br>
+</br>
+:remote ADDRESS -- ADDRESS is the remote partner's address for the</br>
+connection.  This parameter is ignored when opening a stream server</br>
+process.  For a datagram server process, it specifies the initial</br>
+setting of the remote datagram address.  When specified for a client</br>
+process, the FAMILY, HOST, and SERVICE args are ignored.</br>
+</br>
+The format of ADDRESS depends on the address family:</br>
+- An IPv4 address is represented as an vector of integers [A B C D P]</br>
+corresponding to numeric IP address A.B.C.D and port number P.</br>
+- A local address is represented as a string with the address in the</br>
+local address space.</br>
+- An "unsupported family" address is represented by a cons (F . AV)</br>
+where F is the family number and AV is a vector containing the socket</br>
+address data with one element per address data byte.  Do not rely on</br>
+this format in portable code, as it may depend on implementation</br>
+defined constants, data sizes, and data structure alignment.</br>
+</br>
+:coding CODING -- If CODING is a symbol, it specifies the coding</br>
+system used for both reading and writing for this process.  If CODING</br>
+is a cons (DECODING . ENCODING), DECODING is used for reading, and</br>
+ENCODING is used for writing.</br>
+</br>
+:nowait BOOL -- If BOOL is non-nil for a stream type client process,</br>
+return without waiting for the connection to complete; instead, the</br>
+sentinel function will be called with second arg matching "open" (if</br>
+successful) or "failed" when the connect completes.  Default is to use</br>
+a blocking connect (i.e. wait) for stream type connections.</br>
+</br>
+:noquery BOOL -- Query the user unless BOOL is non-nil, and process is</br>
+running when Emacs is exited.</br>
+</br>
+:stop BOOL -- Start process in the `stopped' state if BOOL non-nil.</br>
+In the stopped state, a server process does not accept new</br>
+connections, and a client process does not handle incoming traffic.</br>
+The stopped state is cleared by `continue-process' and set by</br>
+`stop-process'.</br>
+</br>
+:filter FILTER -- Install FILTER as the process filter.</br>
+</br>
+:filter-multibyte BOOL -- If BOOL is non-nil, strings given to the</br>
+process filter are multibyte, otherwise they are unibyte.</br>
+If this keyword is not specified, the strings are multibyte if</br>
+the default value of `enable-multibyte-characters' is non-nil.</br>
+</br>
+:sentinel SENTINEL -- Install SENTINEL as the process sentinel.</br>
+</br>
+:log LOG -- Install LOG as the server process log function.  This</br>
+function is called when the server accepts a network connection from a</br>
+client.  The arguments are SERVER, CLIENT, and MESSAGE, where SERVER</br>
+is the server process, CLIENT is the new process for the connection,</br>
+and MESSAGE is a string.</br>
+</br>
+:plist PLIST -- Install PLIST as the new process's initial plist.</br>
+</br>
+:server QLEN -- if QLEN is non-nil, create a server process for the</br>
+specified FAMILY, SERVICE, and connection type (stream or datagram).</br>
+If QLEN is an integer, it is used as the max. length of the server's</br>
+pending connection queue (also known as the backlog); the default</br>
+queue length is 5.  Default is to create a client process.</br>
+</br>
+The following network options can be specified for this connection:</br>
+</br>
+:broadcast BOOL    -- Allow send and receive of datagram broadcasts.</br>
+:dontroute BOOL    -- Only send to directly connected hosts.</br>
+:keepalive BOOL    -- Send keep-alive messages on network stream.</br>
+:linger BOOL or TIMEOUT -- Send queued messages before closing.</br>
+:oobinline BOOL    -- Place out-of-band data in receive data stream.</br>
+:priority INT      -- Set protocol defined priority for sent packets.</br>
+:reuseaddr BOOL    -- Allow reusing a recently used local address</br>
+                      (this is allowed by default for a server process).</br>
+:bindtodevice NAME -- bind to interface NAME.  Using this may require</br>
+                      special privileges on some systems.</br>
+</br>
+Consult the relevant system programmer's manual pages for more</br>
+information on using these options.</br>
+</br>
+</br>
+A server process will listen for and accept connections from clients.</br>
+When a client connection is accepted, a new network process is created</br>
+for the connection with the following parameters:</br>
+</br>
+- The client's process name is constructed by concatenating the server</br>
+process's NAME and a client identification string.</br>
+- If the FILTER argument is non-nil, the client process will not get a</br>
+separate process buffer; otherwise, the client's process buffer is a newly</br>
+created buffer named after the server process's BUFFER name or process</br>
+NAME concatenated with the client identification string.</br>
+- The connection type and the process filter and sentinel parameters are</br>
+inherited from the server process's TYPE, FILTER and SENTINEL.</br>
+- The client process's contact info is set according to the client's</br>
+addressing information (typically an IP address and a port number).</br>
+- The client process's plist is initialized from the server's plist.</br>
+</br>
+Notice that the FILTER and SENTINEL args are never used directly by</br>
+the server process.  Also, the BUFFER argument is not used directly by</br>
+the server process, but via the optional :log function, accepted (and</br>
+failed) connections may be logged in the server process's buffer.</br>
+</br>
+The original argument list, modified with the actual connection</br>
 information, is available via the `process-contact' function.

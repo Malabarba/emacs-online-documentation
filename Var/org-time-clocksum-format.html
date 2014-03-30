@@ -1,8 +1,49 @@
-<strong>org-time-clocksum-format</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is "%d:%02d"<br/>
-<br/>
-Documentation:<br/>
-The format string used when creating CLOCKSUM lines.<br/>
-This is also used when org-mode generates a time duration.<br/>
-<br/>
-You can customize this variable.
+<strong>org-time-clocksum-format</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre></br>
+(:days "%dd " :hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The format string used when creating CLOCKSUM lines.</br>
+This is also used when Org mode generates a time duration.</br>
+</br>
+The value can be a single format string containing two</br>
+%-sequences, which will be filled with the number of hours and</br>
+minutes in that order.</br>
+</br>
+Alternatively, the value can be a plist associating any of the</br>
+keys :years, :months, :weeks, :days, :hours or :minutes with</br>
+format strings.  The time duration is formatted using only the</br>
+time components that are needed and concatenating the results.</br>
+If a time unit in absent, it falls back to the next smallest</br>
+unit.</br>
+</br>
+The keys :require-years, :require-months, :require-days,</br>
+:require-weeks, :require-hours, :require-minutes are also</br>
+meaningful.  A non-nil value for these keys indicates that the</br>
+corresponding time component should always be included, even if</br>
+its value is 0.</br>
+</br>
+</br>
+For example,</br>
+</br>
+  (:days "%dd" :hours "%d" :require-hours t :minutes ":%02d"</br>
+    :require-minutes t)</br>
+</br>
+means durations longer than a day will be expressed in days,</br>
+hours and minutes, and durations less than a day will always be</br>
+expressed in hours and minutes (even for durations less than an</br>
+hour).</br>
+</br>
+The value</br>
+</br>
+  (:days "%dd" :minutes "%dm")</br>
+</br>
+means durations longer than a day will be expressed in days and</br>
+minutes, and durations less than a day will be expressed entirely</br>
+in minutes (even for durations longer than an hour).</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.

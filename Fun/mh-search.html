@@ -1,129 +1,130 @@
-<strong>mh-search</strong> is an interactive autoloaded Lisp function in `<code>mh-search.el</code>'.<br/>
-<br/>
-(mh-search FOLDER SEARCH-REGEXP &optional REDO-SEARCH-FLAG WINDOW-CONFIG)<br/>
-<br/>
-Search your MH mail.<br/>
-<br/>
-This command helps you find messages in your entire corpus of<br/>
-mail. You can search for messages to or from a particular person<br/>
-or about a particular subject. In fact, you can also search for<br/>
-messages containing selected strings in any arbitrary header<br/>
-field or any string found within the messages.<br/>
-<br/>
-Out of the box, MH-E uses "pick" to find messages. With a<br/>
-little extra effort, you can set an indexing program which<br/>
-rewards you with extremely quick results. The drawback is that<br/>
-sometimes the index does not contain the words you're looking<br/>
-for. You can still use "pick" in these situations.<br/>
-<br/>
-You are prompted for the FOLDER to search. This can be "all" to<br/>
-search all folders. Note that the search works recursively on the<br/>
-listed folder.<br/>
-<br/>
-Next, an MH-Search buffer appears where you can enter search<br/>
-criteria SEARCH-REGEXP.<br/>
-<br/>
-     From:<br/>
-     To:<br/>
-     Cc:<br/>
-     Date:<br/>
-     Subject:<br/>
-     --------<br/>
-<br/>
-Edit this template by entering your search criteria in an<br/>
-appropriate header field that is already there, or create a new<br/>
-field yourself. If the string you're looking for could be<br/>
-anywhere in a message, then place the string underneath the row<br/>
-of dashes.<br/>
-<br/>
-As an example, let's say that we want to find messages from<br/>
-Ginnean about horseback riding in the Kosciusko National<br/>
-Park (Australia) during January, 1994. Normally we would start<br/>
-with a broad search and narrow it down if necessary to produce a<br/>
-manageable amount of data, but we'll cut to the chase and create<br/>
-a fairly restrictive set of criteria as follows:<br/>
-<br/>
-     From: ginnean<br/>
-     To:<br/>
-     Cc:<br/>
-     Date: Jan 1994<br/>
-     Subject:<br/>
-     --------<br/>
-     horse<br/>
-     kosciusko<br/>
-<br/>
-As with MH-Letter mode, MH-Search provides commands like<br/>
-C-c C-f t to help you fill in the blanks.<br/>
-<br/>
-If you find that you do the same thing over and over when editing<br/>
-the search template, you may wish to bind some shortcuts to keys.<br/>
-This can be done with the variable `mh-search-mode-hook', which is<br/>
-called when F s is run on a new pattern.<br/>
-<br/>
-To perform the search, type C-c C-c.<br/>
-<br/>
-Sometimes you're searching for text that is either not indexed,<br/>
-or hasn't been indexed yet. In this case you can override the<br/>
-default method with the pick method by running the command<br/>
-C-c C-p.<br/>
-<br/>
-The messages that are found are put in a temporary sub-folder of<br/>
-"+mhe-index" and are displayed in an MH-Folder buffer. This<br/>
-buffer is special because it displays messages from multiple<br/>
-folders; each set of messages from a given folder has a heading<br/>
-with the folder name.<br/>
-<br/>
-The appearance of the heading can be modified by customizing the<br/>
-face `mh-search-folder'. You can jump back and forth between the<br/>
-headings using the commands TAB and<br/>
-C-M-i.<br/>
-<br/>
-In addition, the command v can be used to<br/>
-visit the folder of the message at point. Initially, only the<br/>
-messages that matched the search criteria are displayed in the<br/>
-folder. While the temporary buffer has its own set of message<br/>
-numbers, the actual messages numbers are shown in the visited<br/>
-folder. Thus, the command v is useful to<br/>
-find the actual message number of an interesting message, or to<br/>
-view surrounding messages with the command F r.<br/>
-<br/>
-Because this folder is temporary, you'll probably get in the<br/>
-habit of killing it when you're done with F k.<br/>
-<br/>
-You can regenerate the results by running this command with a<br/>
-prefix argument REDO-SEARCH-FLAG.<br/>
-<br/>
-Note: This command uses an "X-MHE-Checksum:" header field to<br/>
-cache the MD5 checksum of a message. This means that if an<br/>
-incoming message already contains an "X-MHE-Checksum:" field,<br/>
-that message might not be found by this command. The following<br/>
-"procmail" recipe avoids this problem by renaming the existing<br/>
-header field:<br/>
-<br/>
-     :0 wf<br/>
-     | formail -R "X-MHE-Checksum" "X-Old-MHE-Checksum"<br/>
-<br/>
-Configuring Indexed Searches<br/>
-<br/>
-The command F s runs the command defined by the option<br/>
-`mh-search-program'. The default value is "Auto-detect" which<br/>
-means that MH-E will automatically choose one of "swish++",<br/>
-"swish-e", "mairix", "namazu", "pick" and "grep" in<br/>
-that order. If, for example, you have both "swish++" and<br/>
-"mairix" installed and you want to use "mairix", then you can<br/>
-set this option to "mairix".<br/>
-<br/>
-The documentation for the following commands describe how to set<br/>
-up the various indexing programs to use with MH-E.<br/>
-<br/>
-    - `mh-swish++-execute-search'<br/>
-    - `mh-swish-execute-search'<br/>
-    - `mh-mairix-execute-search'<br/>
-    - `mh-namazu-execute-search'<br/>
-    - `mh-pick-execute-search'<br/>
-    - `mh-grep-execute-search'<br/>
-<br/>
-In a program, if FOLDER is "+" or nil, then mail in all folders<br/>
-are searched. Optional argument WINDOW-CONFIG stores the window<br/>
-configuration that will be restored after the user quits the<br/>
+<strong>mh-search</strong> is an interactive autoloaded Lisp function in `<code>mh-search.el</code>'.</br>
+</br>
+</br>
+(mh-search <u>FOLDER</u> <u>SEARCH-REGEXP</u> &optional <u>REDO-SEARCH-FLAG</u> <u>WINDOW-CONFIG</u>)</br>
+</br>
+Search your MH mail.</br>
+</br>
+This command helps you find messages in your entire corpus of</br>
+mail. You can search for messages to or from a particular person</br>
+or about a particular subject. In fact, you can also search for</br>
+messages containing selected strings in any arbitrary header</br>
+field or any string found within the messages.</br>
+</br>
+Out of the box, MH-E uses "pick" to find messages. With a</br>
+little extra effort, you can set an indexing program which</br>
+rewards you with extremely quick results. The drawback is that</br>
+sometimes the index does not contain the words you're looking</br>
+for. You can still use "pick" in these situations.</br>
+</br>
+You are prompted for the <u>FOLDER</u> to search. This can be "all" to</br>
+search all folders. Note that the search works recursively on the</br>
+listed folder.</br>
+</br>
+Next, an MH-Search buffer appears where you can enter search</br>
+criteria <u>SEARCH-REGEXP</u>.</br>
+</br>
+     From:</br>
+     To:</br>
+     Cc:</br>
+     Date:</br>
+     Subject:</br>
+     --------</br>
+</br>
+Edit this template by entering your search criteria in an</br>
+appropriate header field that is already there, or create a new</br>
+field yourself. If the string you're looking for could be</br>
+anywhere in a message, then place the string underneath the row</br>
+of dashes.</br>
+</br>
+As an example, let's say that we want to find messages from</br>
+Ginnean about horseback riding in the Kosciusko National</br>
+Park (Australia) during January, 1994. Normally we would start</br>
+with a broad search and narrow it down if necessary to produce a</br>
+manageable amount of data, but we'll cut to the chase and create</br>
+a fairly restrictive set of criteria as follows:</br>
+</br>
+     From: ginnean</br>
+     To:</br>
+     Cc:</br>
+     Date: Jan 1994</br>
+     Subject:</br>
+     --------</br>
+     horse</br>
+     kosciusko</br>
+</br>
+As with MH-Letter mode, MH-Search provides commands like</br>
+C-c C-f t to help you fill in the blanks.</br>
+</br>
+If you find that you do the same thing over and over when editing</br>
+the search template, you may wish to bind some shortcuts to keys.</br>
+This can be done with the variable `mh-search-mode-hook', which is</br>
+called when F s is run on a new pattern.</br>
+</br>
+To perform the search, type C-c C-c.</br>
+</br>
+Sometimes you're searching for text that is either not indexed,</br>
+or hasn't been indexed yet. In this case you can override the</br>
+default method with the pick method by running the command</br>
+C-c C-p.</br>
+</br>
+The messages that are found are put in a temporary sub-folder of</br>
+"+mhe-index" and are displayed in an MH-Folder buffer. This</br>
+buffer is special because it displays messages from multiple</br>
+folders; each set of messages from a given folder has a heading</br>
+with the folder name.</br>
+</br>
+The appearance of the heading can be modified by customizing the</br>
+face `mh-search-folder'. You can jump back and forth between the</br>
+headings using the commands TAB and</br>
+C-M-i.</br>
+</br>
+In addition, the command v can be used to</br>
+visit the folder of the message at point. Initially, only the</br>
+messages that matched the search criteria are displayed in the</br>
+folder. While the temporary buffer has its own set of message</br>
+numbers, the actual messages numbers are shown in the visited</br>
+folder. Thus, the command v is useful to</br>
+find the actual message number of an interesting message, or to</br>
+view surrounding messages with the command F r.</br>
+</br>
+Because this folder is temporary, you'll probably get in the</br>
+habit of killing it when you're done with F k.</br>
+</br>
+You can regenerate the results by running this command with a</br>
+prefix argument <u>REDO-SEARCH-FLAG</u>.</br>
+</br>
+Note: This command uses an "X-MHE-Checksum:" header field to</br>
+cache the MD5 checksum of a message. This means that if an</br>
+incoming message already contains an "X-MHE-Checksum:" field,</br>
+that message might not be found by this command. The following</br>
+"procmail" recipe avoids this problem by renaming the existing</br>
+header field:</br>
+</br>
+     :0 wf</br>
+     | formail -R "X-MHE-Checksum" "X-Old-MHE-Checksum"</br>
+</br>
+Configuring Indexed Searches</br>
+</br>
+The command F s runs the command defined by the option</br>
+`mh-search-program'. The default value is "Auto-detect" which</br>
+means that MH-E will automatically choose one of "swish++",</br>
+"swish-e", "mairix", "namazu", "pick" and "grep" in</br>
+that order. If, for example, you have both "swish++" and</br>
+"mairix" installed and you want to use "mairix", then you can</br>
+set this option to "mairix".</br>
+</br>
+The documentation for the following commands describe how to set</br>
+up the various indexing programs to use with MH-E.</br>
+</br>
+    - `mh-swish++-execute-search'</br>
+    - `mh-swish-execute-search'</br>
+    - `mh-mairix-execute-search'</br>
+    - `mh-namazu-execute-search'</br>
+    - `mh-pick-execute-search'</br>
+    - `mh-grep-execute-search'</br>
+</br>
+In a program, if <u>FOLDER</u> is "+" or nil, then mail in all folders</br>
+are searched. Optional argument <u>WINDOW-CONFIG</u> stores the window</br>
+configuration that will be restored after the user quits the</br>
 folder containing the index search results.

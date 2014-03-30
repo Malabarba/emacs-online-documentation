@@ -1,26 +1,41 @@
-<strong>align-regexp</strong> is an interactive autoloaded compiled Lisp function in `<code>align.el</code>'.<br/>
-<br/>
-(align-regexp BEG END REGEXP &optional GROUP SPACING REPEAT)<br/>
-<br/>
-Align the current region using an ad-hoc rule read from the minibuffer.<br/>
-BEG and END mark the limits of the region.  This function will prompt<br/>
-for the REGEXP to align with.  If no prefix arg was specified, you<br/>
-only need to supply the characters to be lined up and any preceding<br/>
-whitespace is replaced.  If a prefix arg was specified, the full<br/>
-regexp with parenthesized whitespace should be supplied; it will also<br/>
-prompt for which parenthesis GROUP within REGEXP to modify, the amount<br/>
-of SPACING to use, and whether or not to REPEAT the rule throughout<br/>
-the line.  See `align-rules-list' for more information about these<br/>
-options.<br/>
-<br/>
-For example, let's say you had a list of phone numbers, and wanted to<br/>
-align them so that the opening parentheses would line up:<br/>
-<br/>
-    Fred (123) 456-7890<br/>
-    Alice (123) 456-7890<br/>
-    Mary-Anne (123) 456-7890<br/>
-    Joe (123) 456-7890<br/>
-<br/>
-There is no predefined rule to handle this, but you could easily do it<br/>
-using a REGEXP like "(".  All you would have to do is to mark the<br/>
-region, call `align-regexp' and type in that regular expression.
+<strong>align-regexp</strong> is an interactive autoloaded compiled Lisp function in `<code>align.el</code>'.</br>
+</br>
+</br>
+(align-regexp <u>BEG</u> <u>END</u> <u>REGEXP</u> &optional <u>GROUP</u> <u>SPACING</u> <u>REPEAT</u>)</br>
+</br>
+Align the current region using an ad-hoc rule read from the minibuffer.</br>
+<u>BEG</u> and <u>END</u> mark the limits of the region.  Interactively, this function</br>
+prompts for the regular expression <u>REGEXP</u> to align with.</br>
+</br>
+For example, let's say you had a list of phone numbers, and wanted to</br>
+align them so that the opening parentheses would line up:</br>
+</br>
+    Fred (123) 456-7890</br>
+    Alice (123) 456-7890</br>
+    Mary-Anne (123) 456-7890</br>
+    Joe (123) 456-7890</br>
+</br>
+There is no predefined rule to handle this, but you could easily do it</br>
+using a <u>REGEXP</u> like "(".  Interactively, all you would have to do is</br>
+to mark the region, call `align-regexp' and enter that regular expression.</br>
+</br>
+<u>REGEXP</u> must contain at least one parenthesized subexpression, typically</br>
+whitespace of the form "\\(\\s-*\\)".  In normal interactive use,</br>
+this is automatically added to the start of your regular expression after</br>
+you enter it.  You only need to supply the characters to be lined up, and</br>
+any preceding whitespace is replaced.</br>
+</br>
+If you specify a prefix argument (or use this function non-interactively),</br>
+you must enter the full regular expression, including the subexpression.</br>
+The function also then prompts for which subexpression parenthesis <u>GROUP</u></br>
+(default 1) within <u>REGEXP</u> to modify, the amount of <u>SPACING</u> (default</br>
+`align-default-spacing') to use, and whether or not to <u>REPEAT</u> the rule</br>
+throughout the line.</br>
+</br>
+See `align-rules-list' for more information about these options.</br>
+</br>
+The non-interactive form of the previous example would look something like:</br>
+  (align-regexp (point-min) (point-max) "\\(\\s-*\\)(")</br>
+</br>
+This function is a nothing more than a small wrapper that helps you</br>
+construct a rule to pass to `align-region', which does the real work.

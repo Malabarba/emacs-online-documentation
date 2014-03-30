@@ -1,70 +1,71 @@
-<strong>diff-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>diff-mode.el</code>'.<br/>
-<br/>
-(diff-mode)<br/>
-<br/>
-Major mode for viewing/editing context diffs.<br/>
-Supports unified and context diffs as well as (to a lesser extent)<br/>
-normal diffs.<br/>
-<br/>
-When the buffer is read-only, the ESC prefix is not necessary.<br/>
-If you edit the buffer manually, diff-mode will try to update the hunk<br/>
-headers for you on-the-fly.<br/>
-<br/>
-You can also switch between context diff and unified diff with M-x diff-context->unified,<br/>
-or vice versa with M-x diff-unified->context and you can also reverse the direction of<br/>
-a diff with M-x diff-reverse-direction.<br/>
-<br/>
-   key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-C-x		Prefix Command<br/>
-ESC		Prefix Command<br/>
-<br/>
-C-x 4		Prefix Command<br/>
-<br/>
-C-c C-a		diff-apply-hunk<br/>
-C-c C-b		diff-refine-hunk<br/>
-C-c C-c		diff-goto-source<br/>
-C-c C-d		diff-unified->context<br/>
-C-c C-e		diff-ediff-patch<br/>
-C-c C-f		next-error-follow-minor-mode<br/>
-C-c C-n		diff-restrict-view<br/>
-C-c C-r		diff-reverse-direction<br/>
-C-c C-s		diff-split-hunk<br/>
-C-c C-t		diff-test-hunk<br/>
-C-c C-u		diff-context->unified<br/>
-C-c C-w		diff-ignore-whitespace-hunk<br/>
-<br/>
-C-M-i		diff-hunk-next<br/>
-M-RET		diff-goto-source<br/>
-M-SPC		scroll-up-command<br/>
-M--		negative-argument<br/>
-M-/		diff-undo<br/>
-M-0 .. M-9	digit-argument<br/>
-M-<		beginning-of-buffer<br/>
-M->		end-of-buffer<br/>
-M-?		describe-mode<br/>
-M-K		diff-file-kill<br/>
-M-N		diff-file-next<br/>
-M-P		diff-file-prev<br/>
-M-h		describe-mode<br/>
-M-k		diff-hunk-kill<br/>
-M-n		diff-hunk-next<br/>
-M-o		diff-goto-source<br/>
-M-p		diff-hunk-prev<br/>
-M-{		diff-file-prev<br/>
-M-}		diff-file-next<br/>
-M-DEL		scroll-down-command<br/>
-ESC <backtab>	diff-hunk-prev<br/>
-ESC <mouse-2>	diff-goto-source<br/>
-ESC <remap>	Prefix Command<br/>
-<br/>
-C-x 4 A		diff-add-change-log-entries-other-window<br/>
-<br/>
-ESC <remap> <undo>		diff-undo<br/>
-<br/>
-<br/>
-<br/>
-This mode runs the hook `diff-mode-hook', as the final step<br/>
+<strong>diff-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>diff-mode.el</code>'.</br>
+</br>
+</br>
+(diff-mode)</br>
+</br>
+Major mode for viewing/editing context diffs.</br>
+Supports unified and context diffs as well as (to a lesser extent)</br>
+normal diffs.</br>
+</br>
+When the buffer is read-only, the ESC prefix is not necessary.</br>
+If you edit the buffer manually, diff-mode will try to update the hunk</br>
+headers for you on-the-fly.</br>
+</br>
+You can also switch between context diff and unified diff with M-x diff-context->unified,</br>
+or vice versa with M-x diff-unified->context and you can also reverse the direction of</br>
+a diff with M-x diff-reverse-direction.</br>
+</br>
+   key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+C-x		Prefix Command</br>
+ESC		Prefix Command</br>
+</br>
+C-x 4		Prefix Command</br>
+</br>
+C-c C-a		diff-apply-hunk</br>
+C-c C-b		diff-refine-hunk</br>
+C-c C-c		diff-goto-source</br>
+C-c C-d		diff-unified->context</br>
+C-c C-e		diff-ediff-patch</br>
+C-c C-f		next-error-follow-minor-mode</br>
+C-c C-n		diff-restrict-view</br>
+C-c C-r		diff-reverse-direction</br>
+C-c C-s		diff-split-hunk</br>
+C-c C-t		diff-test-hunk</br>
+C-c C-u		diff-context->unified</br>
+C-c C-w		diff-ignore-whitespace-hunk</br>
+</br>
+C-M-i		diff-hunk-next</br>
+M-RET		diff-goto-source</br>
+M-SPC		scroll-up-command</br>
+M--		negative-argument</br>
+M-0 .. M-9	digit-argument</br>
+M-&lt;		beginning-of-buffer</br>
+M->		end-of-buffer</br>
+M-?		describe-mode</br>
+M-K		diff-file-kill</br>
+M-N		diff-file-next</br>
+M-P		diff-file-prev</br>
+M-h		describe-mode</br>
+M-k		diff-hunk-kill</br>
+M-n		diff-hunk-next</br>
+M-o		diff-goto-source</br>
+M-p		diff-hunk-prev</br>
+M-{		diff-file-prev</br>
+M-}		diff-file-next</br>
+M-DEL		scroll-down-command</br>
+M-S-SPC		scroll-down-command</br>
+ESC &lt;backtab>	diff-hunk-prev</br>
+ESC &lt;mouse-2>	diff-goto-source</br>
+ESC &lt;remap>	Prefix Command</br>
+</br>
+C-x 4 A		diff-add-change-log-entries-other-window</br>
+</br>
+ESC &lt;remap> &lt;undo>		diff-undo</br>
+</br>
+</br>
+</br>
+This mode runs the hook `diff-mode-hook', as the final step</br>
 during initialization.

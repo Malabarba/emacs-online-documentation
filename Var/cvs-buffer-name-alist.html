@@ -1,24 +1,25 @@
-<strong>cvs-buffer-name-alist</strong> is a variable defined in `<code>pcvs-defs.el</code>'.<br/>
-Its value is (("diff" "*cvs-diff*" diff-mode)<br/>
- ("status" "*cvs-info*" cvs-status-mode)<br/>
- ("tree" "*cvs-info*" cvs-status-mode)<br/>
- ("message" "*cvs-commit*" nil log-edit)<br/>
- ("log" "*cvs-info*" log-view-mode))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Buffer name and mode to be used for each command.<br/>
-This is a list of elements of the form<br/>
-<br/>
-	(CMD BUFNAME MODE &optional POSTPROC)<br/>
-<br/>
-CMD is the name of the command.<br/>
-BUFNAME is an expression that should evaluate to a string used as<br/>
-  a buffer name.  It can use the variable CMD if it wants to.<br/>
-MODE is the command to use to setup the buffer.<br/>
-POSTPROC is a function that should be executed when the command terminates<br/>
-<br/>
-The CMD used for `cvs-mode-commit' is "message".  For that special<br/>
-  case, POSTPROC is called just after MODE with special arguments.<br/>
-<br/>
+<strong>cvs-buffer-name-alist</strong> is a variable defined in `<code>pcvs-defs.el</code>'.</br>
+Its value is <pre></br>
+(("diff" "*cvs-diff*" diff-mode)
+ ("status" "*cvs-info*" cvs-status-mode)
+ ("tree" "*cvs-info*" cvs-status-mode)
+ ("message" "*cvs-commit*" nil log-edit)
+ ("log" "*cvs-info*" log-view-mode))
+</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Buffer name and mode to be used for each command.</br>
+This is a list of elements of the form</br>
+</br>
+	(CMD BUFNAME MODE &optional POSTPROC)</br>
+</br>
+CMD is the name of the command.</br>
+BUFNAME is an expression that should evaluate to a string used as</br>
+  a buffer name.  It can use the variable CMD if it wants to.</br>
+MODE is the command to use to setup the buffer.</br>
+POSTPROC is a function that should be executed when the command terminates</br>
+</br>
+The CMD used for `cvs-mode-commit' is "message".  For that special</br>
+  case, POSTPROC is called just after MODE with special arguments.</br>
+</br>
 You can customize this variable.

@@ -1,5 +1,48 @@
-<strong>initialize-instance</strong> is a Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(initialize-instance &rest LOCAL-ARGS)<br/>
-<br/>
-Construct the new object THIS based on SLOTS.
+<strong>initialize-instance</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(initialize-instance &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Construct the new object THIS based on SLOTS.</br>
+</br>
+This is a generic function.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-default-superclass' :PRIMARY (this &optional slots)</br>
+Construct the new object THIS based on SLOTS.</br>
+SLOTS is a tagged list where odd numbered elements are tags, and</br>
+even numbered elements are the values to store in the tagged slot.</br>
+If you overload the `initialize-instance', there you will need to</br>
+call `shared-initialize' yourself, or you can call `call-next-method'</br>
+to have this constructor called automatically.  If these steps are</br>
+not taken, then new objects of your class will not have their values</br>
+dynamically set from SLOTS.</br>
+</br>
+Defined in `eieio.el'</br>
+</br>
+`srecode-dictionary-compound-variable' :PRIMARY (this &optional fields)</br>
+Initialize the compound variable THIS.</br>
+Makes sure that :value is compiled.</br>
+</br>
+Defined in `dictionary.el'</br>
+</br>
+`chart' :AFTER 385</br>
+Initialize the chart OBJ being created with FIELDS.</br>
+Make sure the width/height is correct.</br>
+</br>
+<code>(fn OBJ <em>&rest</em> FIELDS</code>)</br>
+</br>
+Defined in `chart.el'</br>
+</br>
+`eieio-instance-tracker' :AFTER (this &rest slots)</br>
+Make sure THIS is in our master list of this class.</br>
+Optional argument SLOTS are the initialization arguments.</br>
+</br>
+Defined in `eieio-base.el'</br>
+</br>
+`ede-sourcecode' :AFTER (this &rest fields)</br>
+Make sure that all ede compiler objects are cached in</br>
+`ede-compiler-list'.</br>
+</br>
+Defined in `source.el'</br>
+</br>

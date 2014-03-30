@@ -1,31 +1,29 @@
-<strong>mail-font-lock-keywords</strong> is a variable defined in `<code>sendmail.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Additional expressions to highlight in Mail mode.<br/>
-<br/>
-Value:<br/>
-(("^\\(To\\|Newsgroups\\):" . font-lock-function-name-face)<br/>
- ("^\\(B?CC\\|Reply-to\\|Mail-\\(reply\\|followup\\)-to\\):" . font-lock-keyword-face)<br/>
- ("^\\(Subject:\\)[ 	]*\\(.+\\)?"<br/>
-  (1 font-lock-comment-face))<br/>
- (eval let<br/>
-       ((separator<br/>
-	 (if<br/>
-	     (zerop<br/>
-	      (length mail-header-separator))<br/>
-	     " \\`\\' "<br/>
-	   (regexp-quote mail-header-separator))))<br/>
-       (cons<br/>
-	(concat "^" separator "$")<br/>
-	'font-lock-warning-face))<br/>
- ("[>|}]"<br/>
-  ("\\=[ 	]*\\(\\(\\([[:alpha:]]+[[:alpha:]0-9_.@-`'\"]*\\)?\\([>|}][ 	]*\\)\\)+\\)\\(.*\\)"<br/>
-   (beginning-of-line)<br/>
-   (end-of-line)<br/>
-   (1 font-lock-comment-delimiter-face nil t)<br/>
-   (5 font-lock-comment-face nil t)))<br/>
- ("^\\(X-[A-Za-z0-9-]+\\|In-reply-to\\):.*\\(\n[ 	]+.*\\)*$" . font-lock-string-face))<br/>
-<br/>
+<strong>mail-font-lock-keywords</strong> is a variable defined in `<code>sendmail.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Additional expressions to highlight in Mail mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^\\(To\\|Newsgroups\\):" . font-lock-function-name-face)
+ ("^\\(B?CC\\|Reply-to\\|Mail-\\(reply\\|followup\\)-to\\):" . font-lock-keyword-face)
+ ("^\\(Subject:\\)[ 	]*\\(.+\\)?"
+  (1 font-lock-comment-face))
+ (eval let
+       ((separator
+	 (if
+	     (zerop
+	      (length mail-header-separator))
+	     " \\`\\' "
+	   (regexp-quote mail-header-separator))))
+       (cons
+	(concat "^" separator "$")
+	'font-lock-warning-face))
+ ("[>|}]"
+  ("\\=[ 	]*\\(\\(\\([[:alpha:]]+[[:alpha:]0-9_.@-`'\"]*\\)?\\([>|}][ 	]*\\)\\)+\\)\\(.*\\)"
+   (beginning-of-line)
+   (end-of-line)
+   (1 font-lock-comment-delimiter-face nil t)
+   (5 font-lock-comment-face nil t)))
+ ("^\\(X-[A-Za-z0-9-]+\\|In-reply-to\\):.*\\(\n[ 	]+.*\\)*$" . font-lock-string-face))
+</pre></br>

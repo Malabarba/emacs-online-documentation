@@ -1,28 +1,28 @@
-<strong>vc-next-action</strong> is an interactive autoloaded compiled Lisp function in `<code>vc.el</code>'.<br/>
-<br/>
-It is bound to C-x v v, <menu-bar> <tools> <vc> <vc-next-action>.<br/>
-<br/>
-(vc-next-action VERBOSE)<br/>
-<br/>
-Do the next logical version control operation on the current fileset.<br/>
-This requires that all files in the current VC fileset be in the<br/>
-same state.  If not, signal an error.<br/>
-<br/>
-For merging-based version control systems:<br/>
-  If every file in the VC fileset is not registered for version<br/>
-   control, register the fileset (but don't commit).<br/>
-  If every work file in the VC fileset is added or changed, pop<br/>
-   up a *vc-log* buffer to commit the fileset.<br/>
-  For a centralized version control system, if any work file in<br/>
-   the VC fileset is out of date, offer to update the fileset.<br/>
-<br/>
-For old-style locking-based version control systems, like RCS:<br/>
-  If every file is not registered, register the file(s).<br/>
-  If every file is registered and unlocked, check out (lock)<br/>
-   the file(s) for editing.<br/>
-  If every file is locked by you and has changes, pop up a<br/>
-   *vc-log* buffer to check in the changes.  If the variable<br/>
-   `vc-keep-workfiles' is non-nil (the default), leave a<br/>
-   read-only copy of each changed file after checking in.<br/>
-  If every file is locked by you and unchanged, unlock them.<br/>
+<strong>vc-next-action</strong> is an interactive autoloaded compiled Lisp function in `<code>vc.el</code>'.</br>
+</br>
+It is bound to C-x v v, &lt;menu-bar> &lt;tools> &lt;vc> &lt;vc-next-action>.</br>
+</br>
+<code>(vc-next-action <u>VERBOSE</u></code>)</br>
+</br>
+Do the next logical version control operation on the current fileset.</br>
+This requires that all files in the current VC fileset be in the</br>
+same state.  If not, signal an error.</br>
+</br>
+For merging-based version control systems:</br>
+  If every file in the VC fileset is not registered for version</br>
+   control, register the fileset (but don't commit).</br>
+  If every work file in the VC fileset is added or changed, pop</br>
+   up a *vc-log* buffer to commit the fileset.</br>
+  For a centralized version control system, if any work file in</br>
+   the VC fileset is out of date, offer to update the fileset.</br>
+</br>
+For old-style locking-based version control systems, like RCS:</br>
+  If every file is not registered, register the file(s).</br>
+  If every file is registered and unlocked, check out (lock)</br>
+   the file(s) for editing.</br>
+  If every file is locked by you and has changes, pop up a</br>
+   *vc-log* buffer to check in the changes.  If the variable</br>
+   `vc-keep-workfiles' is non-nil (the default), leave a</br>
+   read-only copy of each changed file after checking in.</br>
+  If every file is locked by you and unchanged, unlock them.</br>
   If every file is locked by someone else, offer to steal the lock.

@@ -1,34 +1,34 @@
-<strong>nnmail-fancy-expiry-targets</strong> is a variable defined in `<code>nnmail.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Determine expiry target based on articles using fancy techniques.<br/>
-<br/>
-This is a list of ("HEADER" "REGEXP" "TARGET") entries.  If<br/>
-`nnmail-expiry-target' is set to the function<br/>
-`nnmail-fancy-expiry-target' and HEADER of the article matches REGEXP,<br/>
-the message will be expired to a group determined by invoking<br/>
-`format-time-string' with TARGET used as the format string and the<br/>
-time extracted from the articles' Date header (if missing the current<br/>
-time is used).<br/>
-<br/>
-In the special cases that HEADER is the symbol `to-from', the regexp<br/>
-will try to match against both the From and the To header.<br/>
-<br/>
-Example:<br/>
-<br/>
-(setq nnmail-fancy-expiry-targets<br/>
-      '((to-from "boss" "nnfolder:Work")<br/>
-	("Subject" "IMPORTANT" "nnfolder:IMPORTANT.%Y.%b")<br/>
-	("from" ".*" "nnfolder:Archive-%Y")))<br/>
-<br/>
-In this case, articles containing the string "boss" in the To or the<br/>
-From header will be expired to the group "nnfolder:Work";<br/>
-articles containing the string "IMPORTANT" in the Subject header will<br/>
-be expired to the group "nnfolder:IMPORTANT.YYYY.MMM"; and<br/>
-everything else will be expired to "nnfolder:Archive-YYYY".<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 22.1 of Emacs.<br/>
+<strong>nnmail-fancy-expiry-targets</strong> is a variable defined in `<code>nnmail.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Determine expiry target based on articles using fancy techniques.</br>
+</br>
+This is a list of ("HEADER" "REGEXP" "TARGET") entries.  If</br>
+`nnmail-expiry-target' is set to the function</br>
+`nnmail-fancy-expiry-target' and HEADER of the article matches REGEXP,</br>
+the message will be expired to a group determined by invoking</br>
+`format-time-string' with TARGET used as the format string and the</br>
+time extracted from the articles' Date header (if missing the current</br>
+time is used).</br>
+</br>
+In the special cases that HEADER is the symbol `to-from', the regexp</br>
+will try to match against both the From and the To header.</br>
+</br>
+Example:</br>
+</br>
+(setq nnmail-fancy-expiry-targets</br>
+      '((to-from "boss" "nnfolder:Work")</br>
+	("Subject" "IMPORTANT" "nnfolder:IMPORTANT.%Y.%b")</br>
+	("from" ".*" "nnfolder:Archive-%Y")))</br>
+</br>
+In this case, articles containing the string "boss" in the To or the</br>
+From header will be expired to the group "nnfolder:Work";</br>
+articles containing the string "IMPORTANT" in the Subject header will</br>
+be expired to the group "nnfolder:IMPORTANT.YYYY.MMM"; and</br>
+everything else will be expired to "nnfolder:Archive-YYYY".</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 22.1 of Emacs.

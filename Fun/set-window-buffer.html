@@ -1,19 +1,19 @@
-<strong>set-window-buffer</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(set-window-buffer WINDOW BUFFER-OR-NAME &optional KEEP-MARGINS)<br/>
-<br/>
-Make WINDOW display BUFFER-OR-NAME as its contents.<br/>
-WINDOW must be a live window and defaults to the selected one.<br/>
-BUFFER-OR-NAME must be a buffer or the name of an existing buffer.<br/>
-<br/>
-Optional third argument KEEP-MARGINS non-nil means that WINDOW's current<br/>
-display margins, fringe widths, and scroll bar settings are preserved;<br/>
-the default is to reset these from the local settings for BUFFER-OR-NAME<br/>
-or the frame defaults.  Return nil.<br/>
-<br/>
-This function throws an error when WINDOW is strongly dedicated to its<br/>
-buffer (that is `window-dedicated-p' returns t for WINDOW) and does not<br/>
-already display BUFFER-OR-NAME.<br/>
-<br/>
-This function runs `window-scroll-functions' before running<br/>
+<strong>set-window-buffer</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(set-window-buffer <u>WINDOW</u> <u>BUFFER-OR-NAME</u> &optional <u>KEEP-MARGINS</u>)</br>
+</br>
+Make <u>WINDOW</u> display <u>BUFFER-OR-NAME</u>.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.</br>
+<u>BUFFER-OR-NAME</u> must be a buffer or the name of an existing buffer.</br>
+</br>
+Optional third argument <u>KEEP-MARGINS</u> non-nil means that <u>WINDOW</u>'s current</br>
+display margins, fringe widths, and scroll bar settings are preserved;</br>
+the default is to reset these from the local settings for <u>BUFFER-OR-NAME</u></br>
+or the frame defaults.  Return nil.</br>
+</br>
+This function throws an error when <u>WINDOW</u> is strongly dedicated to its</br>
+buffer (that is `window-dedicated-p' returns t for <u>WINDOW</u>) and does not</br>
+already display <u>BUFFER-OR-NAME</u>.</br>
+</br>
+This function runs `window-scroll-functions' before running</br>
 `window-configuration-change-hook'.

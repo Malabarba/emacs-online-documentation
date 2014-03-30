@@ -1,0 +1,13 @@
+<strong>cl-tagbody</strong> is an autoloaded Lisp macro in `<code>cl-macs.el</code>'.</br>
+</br>
+(cl-tagbody &rest <u>LABELS-OR-STMTS</u>)</br>
+</br>
+Execute statements while providing for control transfers to labels.</br>
+Each element of <u>LABELS-OR-STMTS</u> can be either a label (integer or symbol)</br>
+or a `cons' cell, in which case it's taken to be a statement.</br>
+This distinction is made before performing macroexpansion.</br>
+Statements are executed in sequence left to right, discarding any return value,</br>
+stopping only when reaching the end of <u>LABELS-OR-STMTS</u>.</br>
+Any statement can transfer control at any time to the statements that follow</br>
+one of the labels with the special form (go LABEL).</br>
+Labels have lexical scope and dynamic extent.

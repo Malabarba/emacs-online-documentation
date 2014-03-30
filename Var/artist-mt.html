@@ -1,251 +1,252 @@
-<strong>artist-mt</strong> is a variable defined in `<code>artist.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Master Table for `artist-mode'.<br/>
-This table is primarily a table over the different graphics operations<br/>
-available in Artist mode, but it also holds layout information for the<br/>
-popup menu.<br/>
-<br/>
-The master table is a list of table elements.  The elements of this table<br/>
-have the layout<br/>
-<br/>
-  (TAG INFO-PART)<br/>
-<br/>
-There are three kinds of TAG:<br/>
-<br/>
-  `menu'                -- a sub-menu<br/>
-  `separator'           -- produce a separator in the popup menu<br/>
-  `function-call'       -- call a function<br/>
-  `graphics-operation'  -- a graphics operation<br/>
-<br/>
-The layout of the INFO-PART for `menu' is<br/>
-<br/>
-  (TITLE ((TAG-1 INFO-PART-1) (TAG-2 INFO-PART-2) ...))<br/>
-<br/>
-TITLE is the title of the submenu; this is followed by a list of<br/>
-menu items, each on the general form (TAG INFO-PART).<br/>
-<br/>
-<br/>
-The layout of the INFO-PART for `separator' is empty and not used.<br/>
-<br/>
-<br/>
-This is the layout of the INFO-PART for `function-call':<br/>
-<br/>
-  (KEYWORD SYMBOL FN)<br/>
-<br/>
-KEYWORD is a string naming the operation, and appears in the popup menu.<br/>
-SYMBOL is the symbol for the operations.<br/>
-FN is the function performing the operation.  This function<br/>
-  is called with no arguments.  Its return value is ignored.<br/>
-<br/>
-<br/>
-The layout of the INFO-PART for `graphics-operation' is<br/>
-<br/>
-  (TITLE (UNSHIFTED SHIFTED))<br/>
-<br/>
-TITLE is the title that appears in the popup menu.  UNSHIFTED<br/>
-and SHIFTED specify for unshifted and shifted operation.  Both<br/>
-have the form<br/>
-<br/>
-  (KEYWORD KEY-SYMBOL MODE-LINE ARROW-PRED ARROW-SET-FN<br/>
-   INIT-FN PREP-FILL-FN EXIT-FN DRAW-HOW DRAW-FN EXTRA-DRAW-INFO)<br/>
-<br/>
-KEYWORD is a string specifying the name of the shape to draw.<br/>
-  This is used when selecting drawing operation.<br/>
-KEY-SYMBOL is the key which is used when looking up members<br/>
-  through the functions `artist-go-get-MEMBER-from-symbol'<br/>
-  and `artist-fc-get-MEMBER-from-symbol'.<br/>
-MODE-LINE is a string that appears in the mode-line when drawing<br/>
-  the shape.<br/>
-ARROW-PRED is a function that is called to find out if the shape<br/>
-  can have arrows.  The function is called with no arguments and<br/>
-  must return nil or t.<br/>
-ARROW-SET-FN is a function that is called to set arrow end-points.<br/>
-  Arguments and return values for this function are described below.<br/>
-INIT-FN is, if non-nil, a function that is called when the first<br/>
-  point of the shape is set.  Arguments and return values for<br/>
-  this function are described below.<br/>
-PREP-FILL-FN is, if non-nil, a function that is called after<br/>
-  the last point is set, but before the filling is done.<br/>
-  Arguments and return values for this function are described below.<br/>
-EXIT-FN is, if non-nil, a function that is called after filling<br/>
-  is done.  Arguments and return values for this function are<br/>
-  described below.<br/>
-DRAW-HOW defines the kind of shape.  The kinds of shapes are:<br/>
-  `artist-do-continously'  -- Do drawing operation continuously,<br/>
-                              as long as the mouse button is held down.<br/>
-  `artist-do-poly'         -- Do drawing operation many times.<br/>
-  1                        -- Do drawing operation only once.<br/>
-  2                        -- The drawing operation requires two points.<br/>
-DRAW-FN is the function to call for drawing.  Arguments and<br/>
-  return values for this function are described below.<br/>
-EXTRA-DRAW-INFO the layout of this depends on the value of DRAW-HOW:<br/>
-  If DRAW-HOW is `artist-do-continously':<br/>
-<br/>
-    (INTERVAL-FN)<br/>
-<br/>
-    INTERVAL-FN is, if non-nil, a function to call for getting<br/>
-      an interval between repeated calls to the DRAW-FN.<br/>
-      This function is called with no arguments and must<br/>
-      return a number, the interval in seconds.<br/>
-      If nil, calls to DRAW-FN are done only when the mouse<br/>
-      or cursor is moved.<br/>
-<br/>
-  If DRAW-HOW is either `artist-do-poly' or 2:<br/>
-<br/>
-    (UNDRAW-FN FILL-PRED FILL-FN)<br/>
-<br/>
-    UNDRAW-FN is a function to call for undrawing the shape.<br/>
-      Arguments and return values for this function are<br/>
-      described below.<br/>
-    FILL-PRED is a function that is called to find out if the shape<br/>
-      can have arrows.  The function must take no arguments and<br/>
-      return nil or t.<br/>
-    FILL-FN  is a function to call for filling the shape.<br/>
-      Arguments and return values for this function are<br/>
-      described below.<br/>
-<br/>
-  If DRAW-HOW is 1:<br/>
-<br/>
-    ()<br/>
-<br/>
-Note! All symbols and keywords (both in the `function-call' INFO-PART<br/>
-      as well as in the `graphics-operation' INFO-PART) must be unique.<br/>
-<br/>
-The following table describe function arguments and return value<br/>
-for different functions and DRAW-HOWs.<br/>
-<br/>
-If DRAW-HOW is either `artist-do-continously' or 1:<br/>
-<br/>
-  INIT-FN       X Y ==> ignored<br/>
-  PREP-FILL-FN  X Y ==> ignored<br/>
-  EXIT-FN       X Y ==> ignored<br/>
-  ARROW-SET-FN  X Y ==> ignored<br/>
-  DRAW-FN       X Y ==> ignored<br/>
-<br/>
-If DRAW-HOW is 2:<br/>
-<br/>
-  INIT-FN       X1 Y1  ==> ignored<br/>
-  PREP-FILL-FN  X1 Y1 X2 Y2 ==> ignored<br/>
-  EXIT-FN       X1 Y1 X2 Y2 ==> ignored<br/>
-  ARROW-SET-FN  X1 Y1 X2 Y2 ==> ignored<br/>
-  DRAW-FN       X1 Y1 X2 Y2 ==> (ENDPOINT-1 ENDPOINT-2 SHAPE)<br/>
-  UNDRAW-FN     (ENDPOINT-1 ENDPOINT-2 SHAPE) ==> ignored<br/>
-  FILL-FN	 (ENDPOINT-1 ENDPOINT-2 SHAPE) X1 Y1 X2 Y2 ==> ignored<br/>
-<br/>
-  ENDPOINT-1 and ENDPOINT-2 are endpoints which are created with<br/>
-  `artist-make-endpoint'<br/>
-  SHAPE is an opaque structure, created by the DRAW-FN and intended<br/>
-  to be used only by the UNDRAW-FN.<br/>
-<br/>
-If DRAW-HOW is `artist-do-poly':<br/>
-<br/>
-  INIT-FN       X1 Y1<br/>
-  PREP-FILL-FN  POINT-LIST<br/>
-  ARROW-SET-FN  POINT-LIST<br/>
-  EXIT-FN       POINT-LIST<br/>
-  DRAW-FN       X-LAST Y-LAST X-NEW Y-NEW ==> (ENDPOINT-1 ENDPOINT-2 SHAPE)<br/>
-  UNDRAW-FN     (ENDPOINT-1 ENDPOINT-2 SHAPE)<br/>
-  FILL-FN       POINT-LIST<br/>
-<br/>
-  ENDPOINT-1 and ENDPOINT-2 are endpoints which are created with<br/>
-  `artist-make-endpoint'.<br/>
-  SHAPE is an opaque structure, created by the DRAW-FN and intended<br/>
-  to be used only by the UNDRAW-FN.<br/>
-  POINT-LIST is a list of vectors [X Y].<br/>
-<br/>
-Value: ((menu<br/>
-  ("Drawing"<br/>
-   ((function-call<br/>
-     ("Undo" do-undo undo))<br/>
-    (separator)<br/>
-    (graphics-operation<br/>
-     ("Pen"<br/>
-      (("Pen" pen-char "pen-c" artist-no-arrows nil nil nil nil artist-do-continously artist-pen<br/>
-	(nil))<br/>
-       ("Pen Line" pen-line "pen-l" artist-arrows artist-pen-set-arrow-points artist-pen-reset-last-xy nil nil artist-do-continously artist-pen-line<br/>
-	(nil)))))<br/>
-    (graphics-operation<br/>
-     ("Line"<br/>
-      (("line" line "line" artist-arrows artist-set-arrow-points-for-2points nil nil nil 2 artist-draw-line<br/>
-	(artist-undraw-line artist-nil nil))<br/>
-       ("straight line" s-line "sline" artist-arrows artist-set-arrow-points-for-2points nil nil nil 2 artist-draw-sline<br/>
-	(artist-undraw-sline artist-nil nil)))))<br/>
-    (graphics-operation<br/>
-     ("Rectangle"<br/>
-      (("rectangle" rect "rect" artist-no-arrows nil nil nil nil 2 artist-draw-rect<br/>
-	(artist-undraw-rect artist-t-if-fill-char-set artist-fill-rect))<br/>
-       ("square" square "square" artist-no-arrows nil nil nil nil 2 artist-draw-square<br/>
-	(artist-undraw-square artist-t-if-fill-char-set artist-fill-square)))))<br/>
-    (graphics-operation<br/>
-     ("Poly-line"<br/>
-      (("poly-line" polyline "poly" artist-arrows artist-set-arrow-points-for-poly nil nil nil artist-do-poly artist-draw-line<br/>
-	(artist-undraw-line artist-nil nil))<br/>
-       ("straight poly-line" spolyline "s-poly" artist-arrows artist-set-arrow-points-for-poly nil nil nil artist-do-poly artist-draw-sline<br/>
-	(artist-undraw-sline artist-nil nil)))))<br/>
-    (graphics-operation<br/>
-     ("Ellipse"<br/>
-      (("ellipse" ellipse "ellipse" artist-no-arrows nil nil nil nil 2 artist-draw-ellipse<br/>
-	(artist-undraw-ellipse artist-t-if-fill-char-set artist-fill-ellipse))<br/>
-       ("circle" circle "circle" artist-no-arrows nil nil nil nil 2 artist-draw-circle<br/>
-	(artist-undraw-circle artist-t-if-fill-char-set artist-fill-circle)))))<br/>
-    (graphics-operation<br/>
-     ("Text"<br/>
-      (("text see-thru" text-thru "text-thru" artist-no-arrows nil nil nil nil 1 artist-text-see-thru nil)<br/>
-       ("text overwrite" text-ovwrt "text-ovwrt" artist-no-arrows nil nil nil nil 1 artist-text-overwrite nil))))<br/>
-    (graphics-operation<br/>
-     ("Spray-can"<br/>
-      (("spray-can" spray-can "spray-can" artist-no-arrows nil nil nil nil artist-do-continously artist-spray<br/>
-	(artist-spray-get-interval))<br/>
-       ("spray set size" spray-get-size "spray-size" artist-no-arrows nil nil artist-spray-clear-circle artist-spray-set-radius 2 artist-draw-circle<br/>
-	(artist-undraw-circle artist-nil nil)))))<br/>
-    (graphics-operation<br/>
-     ("Erase"<br/>
-      (("erase char" erase-char "erase-c" artist-no-arrows nil nil nil nil artist-do-continously artist-erase-char<br/>
-	(nil))<br/>
-       ("erase rectangle" erase-rect "erase-r" artist-no-arrows nil nil nil nil 2 artist-draw-rect<br/>
-	(artist-undraw-rect artist-t artist-erase-rect)))))<br/>
-    (graphics-operation<br/>
-     ("Vaporize"<br/>
-      (("vaporize line" vaporize-line "vaporize-1" artist-no-arrows nil nil nil nil 1 artist-vaporize-line nil)<br/>
-       ("vaporize lines" vaporize-lines "vaporize-n" artist-no-arrows nil nil nil nil 1 artist-vaporize-lines nil)))))))<br/>
- (menu<br/>
-  ("Edit"<br/>
-   ((graphics-operation<br/>
-     ("Cut"<br/>
-      (("cut rectangle" cut-r "cut-r" artist-no-arrows nil nil nil nil 2 artist-draw-rect<br/>
-	(artist-undraw-rect artist-t artist-cut-rect))<br/>
-       ("cut square" cut-s "cut-s" artist-no-arrows nil nil nil nil 2 artist-draw-square<br/>
-	(artist-undraw-square artist-t artist-cut-square)))))<br/>
-    (graphics-operation<br/>
-     ("Copy"<br/>
-      (("copy rectangle" copy-r "copy-r" artist-no-arrows nil nil nil nil 2 artist-draw-rect<br/>
-	(artist-undraw-rect artist-t artist-copy-rect))<br/>
-       ("copy square" copy-s "copy-s" artist-no-arrows nil nil nil nil 2 artist-draw-square<br/>
-	(artist-undraw-square artist-t artist-copy-square)))))<br/>
-    (graphics-operation<br/>
-     ("Paste"<br/>
-      (("paste" paste "paste" artist-no-arrows nil nil nil nil 1 artist-paste nil)<br/>
-       ("paste" paste "paste" artist-no-arrows nil nil nil nil 1 artist-paste nil))))<br/>
-    (graphics-operation<br/>
-     ("Flood-fill"<br/>
-      (("flood-fill" flood-fill "flood" artist-no-arrows nil nil nil nil 1 artist-flood-fill nil)<br/>
-       ("flood-fill" flood-fill "flood" artist-no-arrows nil nil nil nil 1 artist-flood-fill nil)))))))<br/>
- (menu<br/>
-  ("Settings"<br/>
-   ((function-call<br/>
-     ("Set Fill" set-fill artist-select-fill-char))<br/>
-    (function-call<br/>
-     ("Set Line" set-line artist-select-line-char))<br/>
-    (function-call<br/>
-     ("Set Erase" set-erase artist-select-erase-char))<br/>
-    (function-call<br/>
-     ("Rubber-banding" rubber-band artist-toggle-rubber-banding))<br/>
-    (function-call<br/>
-     ("Trimming" trimming artist-toggle-trim-line-endings))<br/>
-    (function-call<br/>
-     ("Borders" borders artist-toggle-borderless-shapes))<br/>
-    (function-call<br/>
-     ("Spray-chars" spray-chars artist-select-spray-chars))))))<br/>
-<br/>
+<strong>artist-mt</strong> is a variable defined in `<code>artist.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Master Table for `artist-mode'.</br>
+This table is primarily a table over the different graphics operations</br>
+available in Artist mode, but it also holds layout information for the</br>
+popup menu.</br>
+</br>
+The master table is a list of table elements.  The elements of this table</br>
+have the layout</br>
+</br>
+  (TAG INFO-PART)</br>
+</br>
+There are three kinds of TAG:</br>
+</br>
+  `menu'                -- a sub-menu</br>
+  `separator'           -- produce a separator in the popup menu</br>
+  `function-call'       -- call a function</br>
+  `graphics-operation'  -- a graphics operation</br>
+</br>
+The layout of the INFO-PART for `menu' is</br>
+</br>
+  (TITLE ((TAG-1 INFO-PART-1) (TAG-2 INFO-PART-2) ...))</br>
+</br>
+TITLE is the title of the submenu; this is followed by a list of</br>
+menu items, each on the general form (TAG INFO-PART).</br>
+</br>
+</br>
+The layout of the INFO-PART for `separator' is empty and not used.</br>
+</br>
+</br>
+This is the layout of the INFO-PART for `function-call':</br>
+</br>
+  (KEYWORD SYMBOL FN)</br>
+</br>
+KEYWORD is a string naming the operation, and appears in the popup menu.</br>
+SYMBOL is the symbol for the operations.</br>
+FN is the function performing the operation.  This function</br>
+  is called with no arguments.  Its return value is ignored.</br>
+</br>
+</br>
+The layout of the INFO-PART for `graphics-operation' is</br>
+</br>
+  (TITLE (UNSHIFTED SHIFTED))</br>
+</br>
+TITLE is the title that appears in the popup menu.  UNSHIFTED</br>
+and SHIFTED specify for unshifted and shifted operation.  Both</br>
+have the form</br>
+</br>
+  (KEYWORD KEY-SYMBOL MODE-LINE ARROW-PRED ARROW-SET-FN</br>
+   INIT-FN PREP-FILL-FN EXIT-FN DRAW-HOW DRAW-FN EXTRA-DRAW-INFO)</br>
+</br>
+KEYWORD is a string specifying the name of the shape to draw.</br>
+  This is used when selecting drawing operation.</br>
+KEY-SYMBOL is the key which is used when looking up members</br>
+  through the functions `artist-go-get-MEMBER-from-symbol'</br>
+  and `artist-fc-get-MEMBER-from-symbol'.</br>
+MODE-LINE is a string that appears in the mode-line when drawing</br>
+  the shape.</br>
+ARROW-PRED is a function that is called to find out if the shape</br>
+  can have arrows.  The function is called with no arguments and</br>
+  must return nil or t.</br>
+ARROW-SET-FN is a function that is called to set arrow end-points.</br>
+  Arguments and return values for this function are described below.</br>
+INIT-FN is, if non-nil, a function that is called when the first</br>
+  point of the shape is set.  Arguments and return values for</br>
+  this function are described below.</br>
+PREP-FILL-FN is, if non-nil, a function that is called after</br>
+  the last point is set, but before the filling is done.</br>
+  Arguments and return values for this function are described below.</br>
+EXIT-FN is, if non-nil, a function that is called after filling</br>
+  is done.  Arguments and return values for this function are</br>
+  described below.</br>
+DRAW-HOW defines the kind of shape.  The kinds of shapes are:</br>
+  `artist-do-continously'  -- Do drawing operation continuously,</br>
+                              as long as the mouse button is held down.</br>
+  `artist-do-poly'         -- Do drawing operation many times.</br>
+  1                        -- Do drawing operation only once.</br>
+  2                        -- The drawing operation requires two points.</br>
+DRAW-FN is the function to call for drawing.  Arguments and</br>
+  return values for this function are described below.</br>
+EXTRA-DRAW-INFO the layout of this depends on the value of DRAW-HOW:</br>
+  If DRAW-HOW is `artist-do-continously':</br>
+</br>
+    (INTERVAL-FN)</br>
+</br>
+    INTERVAL-FN is, if non-nil, a function to call for getting</br>
+      an interval between repeated calls to the DRAW-FN.</br>
+      This function is called with no arguments and must</br>
+      return a number, the interval in seconds.</br>
+      If nil, calls to DRAW-FN are done only when the mouse</br>
+      or cursor is moved.</br>
+</br>
+  If DRAW-HOW is either `artist-do-poly' or 2:</br>
+</br>
+    (UNDRAW-FN FILL-PRED FILL-FN)</br>
+</br>
+    UNDRAW-FN is a function to call for undrawing the shape.</br>
+      Arguments and return values for this function are</br>
+      described below.</br>
+    FILL-PRED is a function that is called to find out if the shape</br>
+      can have arrows.  The function must take no arguments and</br>
+      return nil or t.</br>
+    FILL-FN  is a function to call for filling the shape.</br>
+      Arguments and return values for this function are</br>
+      described below.</br>
+</br>
+  If DRAW-HOW is 1:</br>
+</br>
+    ()</br>
+</br>
+Note! All symbols and keywords (both in the `function-call' INFO-PART</br>
+      as well as in the `graphics-operation' INFO-PART) must be unique.</br>
+</br>
+The following table describe function arguments and return value</br>
+for different functions and DRAW-HOWs.</br>
+</br>
+If DRAW-HOW is either `artist-do-continously' or 1:</br>
+</br>
+  INIT-FN       X Y ==> ignored</br>
+  PREP-FILL-FN  X Y ==> ignored</br>
+  EXIT-FN       X Y ==> ignored</br>
+  ARROW-SET-FN  X Y ==> ignored</br>
+  DRAW-FN       X Y ==> ignored</br>
+</br>
+If DRAW-HOW is 2:</br>
+</br>
+  INIT-FN       X1 Y1  ==> ignored</br>
+  PREP-FILL-FN  X1 Y1 X2 Y2 ==> ignored</br>
+  EXIT-FN       X1 Y1 X2 Y2 ==> ignored</br>
+  ARROW-SET-FN  X1 Y1 X2 Y2 ==> ignored</br>
+  DRAW-FN       X1 Y1 X2 Y2 ==> (ENDPOINT-1 ENDPOINT-2 SHAPE)</br>
+  UNDRAW-FN     (ENDPOINT-1 ENDPOINT-2 SHAPE) ==> ignored</br>
+  FILL-FN	 (ENDPOINT-1 ENDPOINT-2 SHAPE) X1 Y1 X2 Y2 ==> ignored</br>
+</br>
+  ENDPOINT-1 and ENDPOINT-2 are endpoints which are created with</br>
+  `artist-make-endpoint'</br>
+  SHAPE is an opaque structure, created by the DRAW-FN and intended</br>
+  to be used only by the UNDRAW-FN.</br>
+</br>
+If DRAW-HOW is `artist-do-poly':</br>
+</br>
+  INIT-FN       X1 Y1</br>
+  PREP-FILL-FN  POINT-LIST</br>
+  ARROW-SET-FN  POINT-LIST</br>
+  EXIT-FN       POINT-LIST</br>
+  DRAW-FN       X-LAST Y-LAST X-NEW Y-NEW ==> (ENDPOINT-1 ENDPOINT-2 SHAPE)</br>
+  UNDRAW-FN     (ENDPOINT-1 ENDPOINT-2 SHAPE)</br>
+  FILL-FN       POINT-LIST</br>
+</br>
+  ENDPOINT-1 and ENDPOINT-2 are endpoints which are created with</br>
+  `artist-make-endpoint'.</br>
+  SHAPE is an opaque structure, created by the DRAW-FN and intended</br>
+  to be used only by the UNDRAW-FN.</br>
+  POINT-LIST is a list of vectors [X Y].</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((menu
+  ("Drawing"
+   ((function-call
+     ("Undo" do-undo undo))
+    (separator)
+    (graphics-operation
+     ("Pen"
+      (("Pen" pen-char "pen-c" artist-no-arrows nil nil nil nil artist-do-continously artist-pen
+	(nil))
+       ("Pen Line" pen-line "pen-l" artist-arrows artist-pen-set-arrow-points artist-pen-reset-last-xy nil nil artist-do-continously artist-pen-line
+	(nil)))))
+    (graphics-operation
+     ("Line"
+      (("line" line "line" artist-arrows artist-set-arrow-points-for-2points nil nil nil 2 artist-draw-line
+	(artist-undraw-line artist-nil nil))
+       ("straight line" s-line "sline" artist-arrows artist-set-arrow-points-for-2points nil nil nil 2 artist-draw-sline
+	(artist-undraw-sline artist-nil nil)))))
+    (graphics-operation
+     ("Rectangle"
+      (("rectangle" rect "rect" artist-no-arrows nil nil nil nil 2 artist-draw-rect
+	(artist-undraw-rect artist-t-if-fill-char-set artist-fill-rect))
+       ("square" square "square" artist-no-arrows nil nil nil nil 2 artist-draw-square
+	(artist-undraw-square artist-t-if-fill-char-set artist-fill-square)))))
+    (graphics-operation
+     ("Poly-line"
+      (("poly-line" polyline "poly" artist-arrows artist-set-arrow-points-for-poly nil nil nil artist-do-poly artist-draw-line
+	(artist-undraw-line artist-nil nil))
+       ("straight poly-line" spolyline "s-poly" artist-arrows artist-set-arrow-points-for-poly nil nil nil artist-do-poly artist-draw-sline
+	(artist-undraw-sline artist-nil nil)))))
+    (graphics-operation
+     ("Ellipse"
+      (("ellipse" ellipse "ellipse" artist-no-arrows nil nil nil nil 2 artist-draw-ellipse
+	(artist-undraw-ellipse artist-t-if-fill-char-set artist-fill-ellipse))
+       ("circle" circle "circle" artist-no-arrows nil nil nil nil 2 artist-draw-circle
+	(artist-undraw-circle artist-t-if-fill-char-set artist-fill-circle)))))
+    (graphics-operation
+     ("Text"
+      (("text see-thru" text-thru "text-thru" artist-no-arrows nil nil nil nil 1 artist-text-see-thru nil)
+       ("text overwrite" text-ovwrt "text-ovwrt" artist-no-arrows nil nil nil nil 1 artist-text-overwrite nil))))
+    (graphics-operation
+     ("Spray-can"
+      (("spray-can" spray-can "spray-can" artist-no-arrows nil nil nil nil artist-do-continously artist-spray
+	(artist-spray-get-interval))
+       ("spray set size" spray-get-size "spray-size" artist-no-arrows nil nil artist-spray-clear-circle artist-spray-set-radius 2 artist-draw-circle
+	(artist-undraw-circle artist-nil nil)))))
+    (graphics-operation
+     ("Erase"
+      (("erase char" erase-char "erase-c" artist-no-arrows nil nil nil nil artist-do-continously artist-erase-char
+	(nil))
+       ("erase rectangle" erase-rect "erase-r" artist-no-arrows nil nil nil nil 2 artist-draw-rect
+	(artist-undraw-rect artist-t artist-erase-rect)))))
+    (graphics-operation
+     ("Vaporize"
+      (("vaporize line" vaporize-line "vaporize-1" artist-no-arrows nil nil nil nil 1 artist-vaporize-line nil)
+       ("vaporize lines" vaporize-lines "vaporize-n" artist-no-arrows nil nil nil nil 1 artist-vaporize-lines nil)))))))
+ (menu
+  ("Edit"
+   ((graphics-operation
+     ("Cut"
+      (("cut rectangle" cut-r "cut-r" artist-no-arrows nil nil nil nil 2 artist-draw-rect
+	(artist-undraw-rect artist-t artist-cut-rect))
+       ("cut square" cut-s "cut-s" artist-no-arrows nil nil nil nil 2 artist-draw-square
+	(artist-undraw-square artist-t artist-cut-square)))))
+    (graphics-operation
+     ("Copy"
+      (("copy rectangle" copy-r "copy-r" artist-no-arrows nil nil nil nil 2 artist-draw-rect
+	(artist-undraw-rect artist-t artist-copy-rect))
+       ("copy square" copy-s "copy-s" artist-no-arrows nil nil nil nil 2 artist-draw-square
+	(artist-undraw-square artist-t artist-copy-square)))))
+    (graphics-operation
+     ("Paste"
+      (("paste" paste "paste" artist-no-arrows nil nil nil nil 1 artist-paste nil)
+       ("paste" paste "paste" artist-no-arrows nil nil nil nil 1 artist-paste nil))))
+    (graphics-operation
+     ("Flood-fill"
+      (("flood-fill" flood-fill "flood" artist-no-arrows nil nil nil nil 1 artist-flood-fill nil)
+       ("flood-fill" flood-fill "flood" artist-no-arrows nil nil nil nil 1 artist-flood-fill nil)))))))
+ (menu
+  ("Settings"
+   ((function-call
+     ("Set Fill" set-fill artist-select-fill-char))
+    (function-call
+     ("Set Line" set-line artist-select-line-char))
+    (function-call
+     ("Set Erase" set-erase artist-select-erase-char))
+    (function-call
+     ("Rubber-banding" rubber-band artist-toggle-rubber-banding))
+    (function-call
+     ("Trimming" trimming artist-toggle-trim-line-endings))
+    (function-call
+     ("Borders" borders artist-toggle-borderless-shapes))
+    (function-call
+     ("Spray-chars" spray-chars artist-select-spray-chars))))))
+</pre></br>

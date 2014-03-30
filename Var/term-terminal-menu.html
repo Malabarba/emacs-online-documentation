@@ -1,17 +1,18 @@
-<strong>term-terminal-menu</strong> is a variable defined in `<code>term.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Terminal menu for Term mode.<br/>
-<br/>
-Value: (keymap "Terminal"<br/>
-	(Line\ mode menu-item "Line mode" term-line-mode :enable<br/>
-		    (term-in-char-mode)<br/>
-		    :help "Switch to line (cooked) sub-mode of term mode")<br/>
-	(Character\ mode menu-item "Character mode" term-char-mode :enable<br/>
-			 (term-in-line-mode)<br/>
-			 :help "Switch to char (raw) sub-mode of term mode")<br/>
-	(Paging menu-item "Paging" term-pager-toggle :button<br/>
-		(:toggle . term-pager-count)<br/>
-		:help "Toggle paging feature"))<br/>
-<br/>
+<strong>term-terminal-menu</strong> is a variable defined in `<code>term.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Terminal menu for Term mode.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Terminal"
+	(Line\ mode menu-item "Line mode" term-line-mode :enable
+		    (term-in-char-mode)
+		    :help "Switch to line (cooked) sub-mode of term mode")
+	(Character\ mode menu-item "Character mode" term-char-mode :enable
+			 (term-in-line-mode)
+			 :help "Switch to char (raw) sub-mode of term mode")
+	(Paging menu-item "Paging" term-pager-toggle :button
+		(:toggle . term-pager-count)
+		:help "Toggle paging feature"))
+</pre></br>

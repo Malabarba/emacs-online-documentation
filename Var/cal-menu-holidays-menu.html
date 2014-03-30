@@ -1,117 +1,116 @@
-<strong>cal-menu-holidays-menu</strong> is a variable defined in `<code>cal-menu.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Key map for "Holidays" menu in the calendar.<br/>
-<br/>
-Value: ("Holidays"<br/>
- ["For Cursor Date -" calendar-cursor-holidays :suffix<br/>
-  (calendar-date-string<br/>
-   (calendar-cursor-to-date)<br/>
-   t t)<br/>
-  :visible<br/>
-  (calendar-cursor-to-date)]<br/>
- ["For Window -" calendar-list-holidays :suffix<br/>
-  (cal-menu-holiday-window-suffix)]<br/>
- ["For Today -"<br/>
-  (calendar-cursor-holidays<br/>
-   (calendar-current-date))<br/>
-  :suffix<br/>
-  (calendar-date-string<br/>
-   (calendar-current-date)<br/>
-   t t)]<br/>
- "--"<br/>
- ["hol-year-0"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year -5)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year -5))]<br/>
- ["hol-year-1"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year -4)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year -4))]<br/>
- ["hol-year-2"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year -3)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year -3))]<br/>
- ["hol-year-3"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year -2)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year -2))]<br/>
- ["hol-year-4"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year -1)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year -1))]<br/>
- ["hol-year-5"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year 0)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year 0))]<br/>
- ["hol-year-6"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year 1)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year 1))]<br/>
- ["hol-year-7"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year 2)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year 2))]<br/>
- ["hol-year-8"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year 3)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year 3))]<br/>
- ["hol-year-9"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year 4)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year 4))]<br/>
- ["hol-year-10"<br/>
-  (lambda nil<br/>
-    (interactive)<br/>
-    (holiday-list<br/>
-     (+ displayed-year 5)))<br/>
-  :label<br/>
-  (format "For Year %d"<br/>
-	  (+ displayed-year 5))]<br/>
- "--"<br/>
- ["Unmark Calendar" calendar-unmark]<br/>
- ["Mark Holidays" calendar-mark-holidays])<br/>
-<br/>
+<strong>cal-menu-holidays-menu</strong> is a variable defined in `<code>cal-menu.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Key map for "Holidays" menu in the calendar.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("Holidays"
+ ["For Cursor Date -" calendar-cursor-holidays :suffix
+  (calendar-date-string
+   (calendar-cursor-to-date)
+   t t)
+  :visible
+  (calendar-cursor-to-date)]
+ ["For Window -" calendar-list-holidays :suffix
+  (cal-menu-holiday-window-suffix)]
+ ["For Today -"
+  (calendar-cursor-holidays
+   (calendar-current-date))
+  :suffix
+  (calendar-date-string
+   (calendar-current-date)
+   t t)]
+ "--"
+ ["hol-year-0"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year -5)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year -5))]
+ ["hol-year-1"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year -4)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year -4))]
+ ["hol-year-2"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year -3)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year -3))]
+ ["hol-year-3"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year -2)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year -2))]
+ ["hol-year-4"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year -1)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year -1))]
+ ["hol-year-5"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year 0)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year 0))]
+ ["hol-year-6"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year 1)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year 1))]
+ ["hol-year-7"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year 2)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year 2))]
+ ["hol-year-8"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year 3)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year 3))]
+ ["hol-year-9"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year 4)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year 4))]
+ ["hol-year-10"
+  (lambda nil
+    (interactive)
+    (holiday-list
+     (+ displayed-year 5)))
+  :label
+  (format "For Year %d"
+	  (+ displayed-year 5))]
+ "--"
+ ["Unmark Calendar" calendar-unmark]
+ ["Mark Holidays" calendar-mark-holidays])
+</pre></br>

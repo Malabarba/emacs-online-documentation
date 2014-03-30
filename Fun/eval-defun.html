@@ -1,26 +1,25 @@
-<strong>eval-defun</strong> is an alias for `edebug-eval-defun' in `<code>edebug.el</code>'.<br/>
-<br/>
-It is bound to C-M-x, <menu-bar> <lisp-interaction> <eval-defun>.<br/>
-<br/>
-(eval-defun EDEBUG-IT)<br/>
-<br/>
-Evaluate the top-level form containing point, or after point.<br/>
-<br/>
-If the current defun is actually a call to `defvar', then reset the<br/>
-variable using its initial value expression even if the variable<br/>
-already has some other value.  (Normally `defvar' does not change the<br/>
-variable's value if it already has a value.)  Treat `defcustom'<br/>
-similarly.  Reinitialize the face according to `defface' specification.<br/>
-<br/>
-With a prefix argument, instrument the code for Edebug.<br/>
-<br/>
-Setting `edebug-all-defs' to a non-nil value reverses the meaning of<br/>
-the prefix argument.  Code is then instrumented when this function is<br/>
-invoked without a prefix argument<br/>
-<br/>
-If acting on a `defun' for FUNCTION, and the function was instrumented,<br/>
-`Edebug: FUNCTION' is printed in the minibuffer.  If not instrumented,<br/>
-just FUNCTION is printed.<br/>
-<br/>
-If not acting on a `defun', the result of evaluation is displayed in<br/>
+<strong>eval-defun</strong> is an alias for `<strong><a href="edebug-eval-defun">edebug-eval-defun</a></strong>' in `<code>edebug.el</code>'.</br>
+</br>
+</br>
+(eval-defun <u>EDEBUG-IT</u>)</br>
+</br>
+Evaluate the top-level form containing point, or after point.</br>
+</br>
+If the current defun is actually a call to `defvar', then reset the</br>
+variable using its initial value expression even if the variable</br>
+already has some other value.  (Normally `defvar' does not change the</br>
+variable's value if it already has a value.)  Treat `defcustom'</br>
+similarly.  Reinitialize the face according to `defface' specification.</br>
+</br>
+With a prefix argument, instrument the code for Edebug.</br>
+</br>
+Setting option `edebug-all-defs' to a non-nil value reverses the meaning</br>
+of the prefix argument.  Code is then instrumented when this function is</br>
+invoked without a prefix argument.</br>
+</br>
+If acting on a `defun' for FUNCTION, and the function was instrumented,</br>
+`Edebug: FUNCTION' is printed in the minibuffer.  If not instrumented,</br>
+just FUNCTION is printed.</br>
+</br>
+If not acting on a `defun', the result of evaluation is displayed in</br>
 the minibuffer.

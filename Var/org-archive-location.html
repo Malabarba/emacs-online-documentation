@@ -1,61 +1,61 @@
-<strong>org-archive-location</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is "%s_archive::"<br/>
-<br/>
-Documentation:<br/>
-The location where subtrees should be archived.<br/>
-<br/>
-The value of this variable is a string, consisting of two parts,<br/>
-separated by a double-colon.  The first part is a filename and<br/>
-the second part is a headline.<br/>
-<br/>
-When the filename is omitted, archiving happens in the same file.<br/>
-%s in the filename will be replaced by the current file<br/>
-name (without the directory part).  Archiving to a different file<br/>
-is useful to keep archived entries from contributing to the<br/>
-Org-mode Agenda.<br/>
-<br/>
-The archived entries will be filed as subtrees of the specified<br/>
-headline.  When the headline is omitted, the subtrees are simply<br/>
-filed away at the end of the file, as top-level entries.  Also in<br/>
-the heading you can use %s to represent the file name, this can be<br/>
-useful when using the same archive for a number of different files.<br/>
-<br/>
-Here are a few examples:<br/>
-"%s_archive::"<br/>
-	If the current file is Projects.org, archive in file<br/>
-	Projects.org_archive, as top-level trees.  This is the default.<br/>
-<br/>
-"::* Archived Tasks"<br/>
-	Archive in the current file, under the top-level headline<br/>
-	"* Archived Tasks".<br/>
-<br/>
-"~/org/archive.org::"<br/>
-	Archive in file ~/org/archive.org (absolute path), as top-level trees.<br/>
-<br/>
-"~/org/archive.org::* From %s"<br/>
-	Archive in file ~/org/archive.org (absolute path), under headlines<br/>
-        "From FILENAME" where file name is the current file name.<br/>
-<br/>
-"~/org/datetree.org::datetree/* Finished Tasks"<br/>
-        The "datetree/" string is special, signifying to archive<br/>
-        items to the datetree.  Items are placed in either the CLOSED<br/>
-        date of the item, or the current date if there is no CLOSED date.<br/>
-        The heading will be a subentry to the current date.  There doesn't<br/>
-        need to be a heading, but there always needs to be a slash after<br/>
-        datetree.  For example, to store archived items directly in the<br/>
-        datetree, use "~/org/datetree.org::datetree/".<br/>
-<br/>
-"basement::** Finished Tasks"<br/>
-	Archive in file ./basement (relative path), as level 3 trees<br/>
-	below the level 2 heading "** Finished Tasks".<br/>
-<br/>
-You may set this option on a per-file basis by adding to the buffer a<br/>
-line like<br/>
-<br/>
-#+ARCHIVE: basement::** Finished Tasks<br/>
-<br/>
-You may also define it locally for a subtree by setting an ARCHIVE property<br/>
-in the entry.  If such a property is found in an entry, or anywhere up<br/>
-the hierarchy, it will be used.<br/>
-<br/>
+<strong>org-archive-location</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre>"%s_archive::"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The location where subtrees should be archived.</br>
+</br>
+The value of this variable is a string, consisting of two parts,</br>
+separated by a double-colon.  The first part is a filename and</br>
+the second part is a headline.</br>
+</br>
+When the filename is omitted, archiving happens in the same file.</br>
+%s in the filename will be replaced by the current file</br>
+name (without the directory part).  Archiving to a different file</br>
+is useful to keep archived entries from contributing to the</br>
+Org-mode Agenda.</br>
+</br>
+The archived entries will be filed as subtrees of the specified</br>
+headline.  When the headline is omitted, the subtrees are simply</br>
+filed away at the end of the file, as top-level entries.  Also in</br>
+the heading you can use %s to represent the file name, this can be</br>
+useful when using the same archive for a number of different files.</br>
+</br>
+Here are a few examples:</br>
+"%s_archive::"</br>
+	If the current file is Projects.org, archive in file</br>
+	Projects.org_archive, as top-level trees.  This is the default.</br>
+</br>
+"::* Archived Tasks"</br>
+	Archive in the current file, under the top-level headline</br>
+	"* Archived Tasks".</br>
+</br>
+"~/org/archive.org::"</br>
+	Archive in file ~/org/archive.org (absolute path), as top-level trees.</br>
+</br>
+"~/org/archive.org::* From %s"</br>
+	Archive in file ~/org/archive.org (absolute path), under headlines</br>
+        "From FILENAME" where file name is the current file name.</br>
+</br>
+"~/org/datetree.org::datetree/* Finished Tasks"</br>
+        The "datetree/" string is special, signifying to archive</br>
+        items to the datetree.  Items are placed in either the CLOSED</br>
+        date of the item, or the current date if there is no CLOSED date.</br>
+        The heading will be a subentry to the current date.  There doesn't</br>
+        need to be a heading, but there always needs to be a slash after</br>
+        datetree.  For example, to store archived items directly in the</br>
+        datetree, use "~/org/datetree.org::datetree/".</br>
+</br>
+"basement::** Finished Tasks"</br>
+	Archive in file ./basement (relative path), as level 3 trees</br>
+	below the level 2 heading "** Finished Tasks".</br>
+</br>
+You may set this option on a per-file basis by adding to the buffer a</br>
+line like</br>
+</br>
+#+ARCHIVE: basement::** Finished Tasks</br>
+</br>
+You may also define it locally for a subtree by setting an ARCHIVE property</br>
+in the entry.  If such a property is found in an entry, or anywhere up</br>
+the hierarchy, it will be used.</br>
+</br>
 You can customize this variable.

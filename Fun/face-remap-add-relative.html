@@ -1,24 +1,24 @@
-<strong>face-remap-add-relative</strong> is an autoloaded compiled Lisp function in `<code>face-remap.el</code>'.<br/>
-<br/>
-(face-remap-add-relative FACE &rest SPECS)<br/>
-<br/>
-Add a face remapping entry of FACE to SPECS in the current buffer.<br/>
-Return a cookie which can be used to delete this remapping with<br/>
-`face-remap-remove-relative'.<br/>
-<br/>
-The remaining arguments, SPECS, should form a list of faces.<br/>
-Each list element should be either a face name or a property list<br/>
-of face attribute/value pairs.  If more than one face is listed,<br/>
-that specifies an aggregate face, in the same way as in a `face'<br/>
-text property, except for possible priority changes noted below.<br/>
-<br/>
-The face remapping specified by SPECS takes effect alongside the<br/>
-remappings from other calls to `face-remap-add-relative' for the<br/>
-same FACE, as well as the normal definition of FACE (at lowest<br/>
-priority).  This function tries to sort multiple remappings for<br/>
-the same face, so that remappings specifying relative face<br/>
-attributes are applied after remappings specifying absolute face<br/>
-attributes.<br/>
-<br/>
-The base (lowest priority) remapping may be set to something<br/>
-other than the normal definition of FACE via `face-remap-set-base'.
+<strong>face-remap-add-relative</strong> is an autoloaded compiled Lisp function in `<code>face-remap.el</code>'.</br>
+</br>
+(face-remap-add-relative <u>FACE</u> &rest <u>SPECS</u>)</br>
+</br>
+Add a face remapping entry of <u>FACE</u> to <u>SPECS</u> in the current buffer.</br>
+Return a cookie which can be used to delete this remapping with</br>
+`face-remap-remove-relative'.</br>
+</br>
+The remaining arguments, <u>SPECS</u>, should form a list of faces.</br>
+Each list element should be either a face name or a property list</br>
+of face attribute/value pairs.  If more than one face is listed,</br>
+that specifies an aggregate face, in the same way as in a `face'</br>
+text property, except for possible priority changes noted below.</br>
+</br>
+The face remapping specified by <u>SPECS</u> takes effect alongside the</br>
+remappings from other calls to `face-remap-add-relative' for the</br>
+same <u>FACE</u>, as well as the normal definition of <u>FACE</u> (at lowest</br>
+priority).  This function tries to sort multiple remappings for</br>
+the same face, so that remappings specifying relative face</br>
+attributes are applied after remappings specifying absolute face</br>
+attributes.</br>
+</br>
+The base (lowest priority) remapping may be set to something</br>
+other than the normal definition of <u>FACE</u> via `face-remap-set-base'.

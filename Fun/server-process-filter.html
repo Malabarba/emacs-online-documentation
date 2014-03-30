@@ -1,102 +1,102 @@
-<strong>server-process-filter</strong> is a compiled Lisp function in `<code>server.el</code>'.<br/>
-<br/>
-(server-process-filter PROC STRING)<br/>
-<br/>
-Process a request from the server to edit some files.<br/>
-PROC is the server process.  STRING consists of a sequence of<br/>
-commands prefixed by a dash.  Some commands have arguments;<br/>
-these are &-quoted and need to be decoded by `server-unquote-arg'.<br/>
-The filter parses and executes these commands.<br/>
-<br/>
-To illustrate the protocol, here is an example command that<br/>
-emacsclient sends to create a new X frame (note that the whole<br/>
-sequence is sent on a single line):<br/>
-<br/>
-	-env HOME=/home/lorentey<br/>
-	-env DISPLAY=:0.0<br/>
-	... lots of other -env commands<br/>
-	-display :0.0<br/>
-	-window-system<br/>
-<br/>
-The following commands are accepted by the server:<br/>
-<br/>
-`-auth AUTH-STRING'<br/>
-  Authenticate the client using the secret authentication string<br/>
-  AUTH-STRING.<br/>
-<br/>
-`-env NAME=VALUE'<br/>
-  An environment variable on the client side.<br/>
-<br/>
-`-dir DIRNAME'<br/>
-  The current working directory of the client process.<br/>
-<br/>
-`-current-frame'<br/>
-  Forbid the creation of new frames.<br/>
-<br/>
-`-frame-parameters ALIST'<br/>
-  Set the parameters of the created frame.<br/>
-<br/>
-`-nowait'<br/>
-  Request that the next frame created should not be<br/>
-  associated with this client.<br/>
-<br/>
-`-display DISPLAY'<br/>
-  Set the display name to open X frames on.<br/>
-<br/>
-`-position LINE[:COLUMN]'<br/>
-  Go to the given line and column number<br/>
-  in the next file opened.<br/>
-<br/>
-`-file FILENAME'<br/>
-  Load the given file in the current frame.<br/>
-<br/>
-`-eval EXPR'<br/>
-  Evaluate EXPR as a Lisp expression and return the<br/>
-  result in -print commands.<br/>
-<br/>
-`-window-system'<br/>
-  Open a new X frame.<br/>
-<br/>
-`-tty DEVICENAME TYPE'<br/>
-  Open a new tty frame at the client.<br/>
-<br/>
-`-suspend'<br/>
-  Suspend this tty frame.  The client sends this string in<br/>
-  response to SIGTSTP and SIGTTOU.  The server must cease all I/O<br/>
-  on this tty until it gets a -resume command.<br/>
-<br/>
-`-resume'<br/>
-  Resume this tty frame.  The client sends this string when it<br/>
-  gets the SIGCONT signal and it is the foreground process on its<br/>
-  controlling tty.<br/>
-<br/>
-`-ignore COMMENT'<br/>
-  Do nothing, but put the comment in the server log.<br/>
-  Useful for debugging.<br/>
-<br/>
-<br/>
-The following commands are accepted by the client:<br/>
-<br/>
-`-emacs-pid PID'<br/>
-  Describes the process id of the Emacs process;<br/>
-  used to forward window change signals to it.<br/>
-<br/>
-`-window-system-unsupported'<br/>
-  Signals that the server does not support creating X frames;<br/>
-  the client must try again with a tty frame.<br/>
-<br/>
-`-print STRING'<br/>
-  Print STRING on stdout.  Used to send values<br/>
-  returned by -eval.<br/>
-<br/>
-`-print-nonl STRING'<br/>
-  Print STRING on stdout.  Used to continue a<br/>
-  preceding -print command that would be too big to send<br/>
-  in a single message.<br/>
-<br/>
-`-error DESCRIPTION'<br/>
-  Signal an error and delete process PROC.<br/>
-<br/>
-`-suspend'<br/>
-  Suspend this terminal, i.e., stop the client process.<br/>
+<strong>server-process-filter</strong> is a compiled Lisp function in `<code>server.el</code>'.</br>
+</br>
+(server-process-filter <u>PROC</u> <u>STRING</u>)</br>
+</br>
+Process a request from the server to edit some files.</br>
+<u>PROC</u> is the server process.  <u>STRING</u> consists of a sequence of</br>
+commands prefixed by a dash.  Some commands have arguments;</br>
+these are &-quoted and need to be decoded by `server-unquote-arg'.</br>
+The filter parses and executes these commands.</br>
+</br>
+To illustrate the protocol, here is an example command that</br>
+emacsclient sends to create a new X frame (note that the whole</br>
+sequence is sent on a single line):</br>
+</br>
+	-env HOME=/home/lorentey</br>
+	-env DISPLAY=:0.0</br>
+	... lots of other -env commands</br>
+	-display :0.0</br>
+	-window-system</br>
+</br>
+The following commands are accepted by the server:</br>
+</br>
+`-auth AUTH-STRING'</br>
+  Authenticate the client using the secret authentication string</br>
+  AUTH-STRING.</br>
+</br>
+`-env NAME=VALUE'</br>
+  An environment variable on the client side.</br>
+</br>
+`-dir DIRNAME'</br>
+  The current working directory of the client process.</br>
+</br>
+`-current-frame'</br>
+  Forbid the creation of new frames.</br>
+</br>
+`-frame-parameters ALIST'</br>
+  Set the parameters of the created frame.</br>
+</br>
+`-nowait'</br>
+  Request that the next frame created should not be</br>
+  associated with this client.</br>
+</br>
+`-display DISPLAY'</br>
+  Set the display name to open X frames on.</br>
+</br>
+`-position LINE[:COLUMN]'</br>
+  Go to the given line and column number</br>
+  in the next file opened.</br>
+</br>
+`-file FILENAME'</br>
+  Load the given file in the current frame.</br>
+</br>
+`-eval EXPR'</br>
+  Evaluate EXPR as a Lisp expression and return the</br>
+  result in -print commands.</br>
+</br>
+`-window-system'</br>
+  Open a new X frame.</br>
+</br>
+`-tty DEVICENAME TYPE'</br>
+  Open a new tty frame at the client.</br>
+</br>
+`-suspend'</br>
+  Suspend this tty frame.  The client sends this string in</br>
+  response to SIGTSTP and SIGTTOU.  The server must cease all I/O</br>
+  on this tty until it gets a -resume command.</br>
+</br>
+`-resume'</br>
+  Resume this tty frame.  The client sends this string when it</br>
+  gets the SIGCONT signal and it is the foreground process on its</br>
+  controlling tty.</br>
+</br>
+`-ignore COMMENT'</br>
+  Do nothing, but put the comment in the server log.</br>
+  Useful for debugging.</br>
+</br>
+</br>
+The following commands are accepted by the client:</br>
+</br>
+`-emacs-pid PID'</br>
+  Describes the process id of the Emacs process;</br>
+  used to forward window change signals to it.</br>
+</br>
+`-window-system-unsupported'</br>
+  Signals that the server does not support creating X frames;</br>
+  the client must try again with a tty frame.</br>
+</br>
+`-print <u>STRING</u>'</br>
+  Print <u>STRING</u> on stdout.  Used to send values</br>
+  returned by -eval.</br>
+</br>
+`-print-nonl <u>STRING</u>'</br>
+  Print <u>STRING</u> on stdout.  Used to continue a</br>
+  preceding -print command that would be too big to send</br>
+  in a single message.</br>
+</br>
+`-error DESCRIPTION'</br>
+  Signal an error and delete process <u>PROC</u>.</br>
+</br>
+`-suspend'</br>
+  Suspend this terminal, i.e., stop the client process.</br>
   Sent when the user presses C-z.

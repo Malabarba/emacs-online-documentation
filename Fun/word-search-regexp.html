@@ -1,12 +1,14 @@
-<strong>word-search-regexp</strong> is a compiled Lisp function in `<code>isearch.el</code>'.<br/>
-<br/>
-(word-search-regexp STRING &optional LAX)<br/>
-<br/>
-Return a regexp which matches words, ignoring punctuation.<br/>
-Given STRING, a string of words separated by word delimiters,<br/>
-compute a regexp that matches those exact words separated by<br/>
-arbitrary punctuation.  If LAX is non-nil, the end of the string<br/>
-need not match a word boundary unless it ends in whitespace.<br/>
-<br/>
-Used in `word-search-forward', `word-search-backward',<br/>
+<strong>word-search-regexp</strong> is a compiled Lisp function in `<code>isearch.el</code>'.</br>
+</br>
+(word-search-regexp <u>STRING</u> &optional <u>LAX</u>)</br>
+</br>
+Return a regexp which matches words, ignoring punctuation.</br>
+Given <u>STRING</u>, a string of words separated by word delimiters,</br>
+compute a regexp that matches those exact words separated by</br>
+arbitrary punctuation.  If the string begins or ends in whitespace,</br>
+the beginning or the end of the string matches arbitrary whitespace.</br>
+Otherwise if <u>LAX</u> is non-nil, the beginning or the end of the string</br>
+need not match a word boundary.</br>
+</br>
+Used in `word-search-forward', `word-search-backward',</br>
 `word-search-forward-lax', `word-search-backward-lax'.

@@ -1,18 +1,19 @@
-<strong>srecode-template-separator-block</strong> is a variable defined in `<code>srt-wy.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Detect and create a template quote block.<br/>
-<br/>
-Value: ((looking-at "^----\n")<br/>
- (semantic-lex-push-token<br/>
-  (semantic-lex-token 'TEMPLATE_BLOCK<br/>
-		      (match-end 0)<br/>
-		      (semantic-lex-unterminated-syntax-protection 'TEMPLATE_BLOCK<br/>
-			(goto-char<br/>
-			 (match-end 0))<br/>
-			(re-search-forward "^----$")<br/>
-			(match-beginning 0))))<br/>
- (setq semantic-lex-end-point<br/>
-       (point)))<br/>
-<br/>
+<strong>srecode-template-separator-block</strong> is a variable defined in `<code>srt-wy.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Detect and create a template quote block.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((looking-at "^----\n")
+ (semantic-lex-push-token
+  (semantic-lex-token 'TEMPLATE_BLOCK
+		      (match-end 0)
+		      (semantic-lex-unterminated-syntax-protection 'TEMPLATE_BLOCK
+			(goto-char
+			 (match-end 0))
+			(re-search-forward "^----$")
+			(match-beginning 0))))
+ (setq semantic-lex-end-point
+       (point)))
+</pre></br>

@@ -1,15 +1,17 @@
-<strong>window-resize-apply</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(window-resize-apply FRAME &optional HORIZONTAL)<br/>
-<br/>
-Apply requested size values for window-tree of FRAME.<br/>
-Optional argument HORIZONTAL omitted or nil means apply requested height<br/>
-values.  HORIZONTAL non-nil means apply requested width values.<br/>
-<br/>
-This function checks whether the requested values sum up to a valid<br/>
-window layout, recursively assigns the new sizes of all child windows<br/>
-and calculates and assigns the new start positions of these windows.<br/>
-<br/>
-Note: This function does not check any of `window-fixed-size-p',<br/>
-`window-min-height' or `window-min-width'.  All these checks have to<br/>
+<strong>window-resize-apply</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(window-resize-apply &optional <u>FRAME</u> <u>HORIZONTAL</u>)</br>
+</br>
+Apply requested size values for window-tree of <u>FRAME</u>.</br>
+If <u>FRAME</u> is omitted or nil, it defaults to the selected frame.</br>
+</br>
+Optional argument <u>HORIZONTAL</u> omitted or nil means apply requested</br>
+height values.  <u>HORIZONTAL</u> non-nil means apply requested width values.</br>
+</br>
+This function checks whether the requested values sum up to a valid</br>
+window layout, recursively assigns the new sizes of all child windows</br>
+and calculates and assigns the new start positions of these windows.</br>
+</br>
+Note: This function does not check any of `window-fixed-size-p',</br>
+`window-min-height' or `window-min-width'.  All these checks have to</br>
 be applied on the Elisp level.

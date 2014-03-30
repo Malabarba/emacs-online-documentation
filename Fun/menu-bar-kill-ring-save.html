@@ -1,17 +1,21 @@
-<strong>menu-bar-kill-ring-save</strong> is an alias for `kill-ring-save' in `<code>menu-bar.el</code>'.<br/>
-<br/>
-(menu-bar-kill-ring-save BEG END)<br/>
-<br/>
-This function is obsolete since 24.1;<br/>
-use `kill-ring-save' instead.<br/>
-<br/>
-Save the region as if killed, but don't kill it.<br/>
-In Transient Mark mode, deactivate the mark.<br/>
-If `interprogram-cut-function' is non-nil, also save the text for a window<br/>
-system cut and paste.<br/>
-<br/>
-If you want to append the killed line to the last killed text,<br/>
-use C-M-w before M-w.<br/>
-<br/>
-This command is similar to `copy-region-as-kill', except that it gives<br/>
+<strong>menu-bar-kill-ring-save</strong> is an alias for `<strong><a href="kill-ring-save">kill-ring-save</a></strong>' in `<code>menu-bar.el</code>'.</br>
+</br>
+</br>
+(menu-bar-kill-ring-save <u>BEG</u> <u>END</u> &optional <u>REGION</u>)</br>
+</br>
+This function is obsolete since 24.1;</br>
+use `kill-ring-save' instead.</br>
+</br>
+Save the region as if killed, but don't kill it.</br>
+In Transient Mark mode, deactivate the mark.</br>
+If `interprogram-cut-function' is non-nil, also save the text for a window</br>
+system cut and paste.</br>
+</br>
+If you want to append the killed line to the last killed text,</br>
+use C-M-w before M-w.</br>
+</br>
+The optional argument <u>REGION</u> if non-nil, indicates that we're not just copying</br>
+some text between <u>BEG</u> and <u>END</u>, but we're copying the region.</br>
+</br>
+This command is similar to `copy-region-as-kill', except that it gives</br>
 visual feedback indicating the extent of the region being copied.

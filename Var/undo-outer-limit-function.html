@@ -1,14 +1,12 @@
-<strong>undo-outer-limit-function</strong> is a variable defined in `<code>C source code</code>'.<br/>
-Its value is undo-outer-limit-truncate<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function to call when an undo list exceeds `undo-outer-limit'.<br/>
-This function is called with one argument, the current undo list size<br/>
-for the most recent command (since the last undo boundary).<br/>
-If the function returns t, that means truncation has been fully handled.<br/>
-If it returns nil, the other forms of truncation are done.<br/>
-<br/>
-Garbage collection is inhibited around the call to this function,<br/>
+<strong>undo-outer-limit-function</strong> is a variable defined in `<code>C source code</code>'.</br>
+Its value is <pre>undo-outer-limit-truncate</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to call when an undo list exceeds `undo-outer-limit'.</br>
+This function is called with one argument, the current undo list size</br>
+for the most recent command (since the last undo boundary).</br>
+If the function returns t, that means truncation has been fully handled.</br>
+If it returns nil, the other forms of truncation are done.</br>
+</br>
+Garbage collection is inhibited around the call to this function,</br>
 so it must make sure not to do a lot of consing.

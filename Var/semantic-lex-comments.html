@@ -1,28 +1,29 @@
-<strong>semantic-lex-comments</strong> is a variable defined in `<code>lex.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Detect and create a comment token.<br/>
-<br/>
-Value: ((looking-at semantic-lex-comment-regex)<br/>
- (save-excursion<br/>
-   (forward-comment 1)<br/>
-   (if<br/>
-       (bolp)<br/>
-       (backward-char 1))<br/>
-   (setq semantic-lex-end-point<br/>
-	 (point))<br/>
-   (if<br/>
-       (eq<br/>
-	(semantic-lex-token-class<br/>
-	 (car semantic-lex-token-stream))<br/>
-	'comment)<br/>
-       (setcdr<br/>
-	(semantic-lex-token-bounds<br/>
-	 (car semantic-lex-token-stream))<br/>
-	semantic-lex-end-point)<br/>
-     (semantic-lex-push-token<br/>
-      (semantic-lex-token 'comment<br/>
-			  (match-beginning 0)<br/>
-			  semantic-lex-end-point)))))<br/>
-<br/>
+<strong>semantic-lex-comments</strong> is a variable defined in `<code>lex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Detect and create a comment token.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((looking-at semantic-lex-comment-regex)
+ (save-excursion
+   (forward-comment 1)
+   (if
+       (bolp)
+       (backward-char 1))
+   (setq semantic-lex-end-point
+	 (point))
+   (if
+       (eq
+	(semantic-lex-token-class
+	 (car semantic-lex-token-stream))
+	'comment)
+       (setcdr
+	(semantic-lex-token-bounds
+	 (car semantic-lex-token-stream))
+	semantic-lex-end-point)
+     (semantic-lex-push-token
+      (semantic-lex-token 'comment
+			  (match-beginning 0)
+			  semantic-lex-end-point)))))
+</pre></br>

@@ -1,99 +1,98 @@
-<strong>cvs-mode-map</strong> is a variable defined in `<code>pcvs.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `cvs-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- #^[nil nil keymap<br/>
-	#^^[3 0 nil nil nil<br/>
-	      (keymap<br/>
-	       (3 . cvs-mode-kill-process))<br/>
-	      nil nil nil nil nil cvs-mode-next-line nil cvs-mode-acknowledge nil cvs-mode-find-file nil cvs-mode-display-file nil nil nil nil nil nil nil nil nil nil nil<br/>
-	      (keymap<br/>
-	       (115 . cvs-status)<br/>
-	       (117 . cvs-update)<br/>
-	       (101 . cvs-examine)<br/>
-	       (99 . cvs-checkout)<br/>
-	       (127 . cvs-mode-unmark-all-files))<br/>
-	      nil nil nil nil cvs-mode-next-line cvs-mode-force-command nil nil nil cvs-mode-mark-matching-files nil nil nil nil nil cvs-mode-tree nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil cvs-mode-diff nil cvs-help nil cvs-mode-add-change-log-entry-other-window cvs-set-secondary-branch-prefix cvs-mode-commit-setup nil nil cvs-mode-set-flags nil nil cvs-mode-insert nil nil nil cvs-mode-mark-all-files nil cvs-mode-update nil nil nil cvs-mode-mark-on-state cvs-mode-toggle-marks cvs-mode-undo nil nil nil nil nil nil nil nil nil nil nil cvs-mode-add cvs-set-branch-prefix cvs-mode-commit cvs-mode-diff-map cvs-mode-examine cvs-mode-find-file cvs-mode-revert-buffer cvs-help cvs-mode-ignore nil nil cvs-mode-log cvs-mode-mark cvs-mode-next-line cvs-mode-find-file-other-window cvs-mode-previous-line cvs-bury-buffer cvs-mode-remove cvs-mode-status cvs-mode-tag cvs-mode-unmark cvs-mode-view-file nil cvs-mode-remove-handled nil kill-this-buffer nil nil nil nil cvs-mode-unmark-up]<br/>
-	#^^[1 0<br/>
-	      #^^[2 0<br/>
-		    #^^[3 0 nil nil nil<br/>
-			  (keymap<br/>
-			   (3 . cvs-mode-kill-process))<br/>
-			  nil nil nil nil nil cvs-mode-next-line nil cvs-mode-acknowledge nil cvs-mode-find-file nil cvs-mode-display-file nil nil nil nil nil nil nil nil nil nil nil<br/>
-			  (keymap<br/>
-			   (115 . cvs-status)<br/>
-			   (117 . cvs-update)<br/>
-			   (101 . cvs-examine)<br/>
-			   (99 . cvs-checkout)<br/>
-			   (127 . cvs-mode-unmark-all-files))<br/>
-			  nil nil nil nil cvs-mode-next-line cvs-mode-force-command nil nil nil cvs-mode-mark-matching-files nil nil nil nil nil cvs-mode-tree nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil cvs-mode-diff nil cvs-help nil cvs-mode-add-change-log-entry-other-window cvs-set-secondary-branch-prefix cvs-mode-commit-setup nil nil cvs-mode-set-flags nil nil cvs-mode-insert nil nil nil cvs-mode-mark-all-files nil cvs-mode-update nil nil nil cvs-mode-mark-on-state cvs-mode-toggle-marks cvs-mode-undo nil nil nil nil nil nil nil nil nil nil nil cvs-mode-add cvs-set-branch-prefix cvs-mode-commit cvs-mode-diff-map cvs-mode-examine cvs-mode-find-file cvs-mode-revert-buffer cvs-help cvs-mode-ignore nil nil cvs-mode-log cvs-mode-mark cvs-mode-next-line cvs-mode-find-file-other-window cvs-mode-previous-line cvs-bury-buffer cvs-mode-remove cvs-mode-status cvs-mode-tag cvs-mode-unmark cvs-mode-view-file nil cvs-mode-remove-handled nil kill-this-buffer nil nil nil nil cvs-mode-unmark-up]<br/>
-		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
-	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]<br/>
- (menu-bar keymap<br/>
-	   (CVS menu-item "CVS"<br/>
-		(keymap "CVS"<br/>
-			(Open\ file menu-item "Open file" cvs-mode-find-file)<br/>
-			(Open\ in\ other\ window menu-item "Open in other window" cvs-mode-find-file-other-window)<br/>
-			(Display\ in\ other\ window menu-item "Display in other window" cvs-mode-display-file)<br/>
-			(Interactive\ merge menu-item "Interactive merge" cvs-mode-imerge)<br/>
-			(View\ diff menu-item "View diff"<br/>
-				    (keymap "View diff"<br/>
-					    (Interactive\ diff menu-item "Interactive diff" cvs-mode-idiff)<br/>
-					    (Current\ diff menu-item "Current diff" cvs-mode-diff)<br/>
-					    (Diff\ with\ head menu-item "Diff with head" cvs-mode-diff-head)<br/>
-					    (Diff\ with\ vendor menu-item "Diff with vendor" cvs-mode-diff-vendor)<br/>
-					    (Diff\ against\ yesterday menu-item "Diff against yesterday" cvs-mode-diff-yesterday)<br/>
-					    (Diff\ with\ backup menu-item "Diff with backup" cvs-mode-diff-backup)))<br/>
-			(View\ log menu-item "View log" cvs-mode-log)<br/>
-			(View\ status menu-item "View status" cvs-mode-status)<br/>
-			(View\ tag\ tree menu-item "View tag tree" cvs-mode-tree)<br/>
-			(nil menu-item "----")<br/>
-			(Insert menu-item "Insert" cvs-mode-insert)<br/>
-			(Update menu-item "Update" cvs-mode-update :enable<br/>
-				(cvs-enabledp 'update))<br/>
-			(Re-examine menu-item "Re-examine" cvs-mode-examine)<br/>
-			(Commit menu-item "Commit" cvs-mode-commit-setup :enable<br/>
-				(cvs-enabledp 'commit))<br/>
-			(Tag menu-item "Tag" cvs-mode-tag :enable<br/>
-			     (cvs-enabledp<br/>
-			      (when cvs-force-dir-tag 'tag)))<br/>
-			(Undo\ changes menu-item "Undo changes" cvs-mode-undo :enable<br/>
-				       (cvs-enabledp 'undo))<br/>
-			(Add menu-item "Add" cvs-mode-add :enable<br/>
-			     (cvs-enabledp 'add))<br/>
-			(Remove menu-item "Remove" cvs-mode-remove :enable<br/>
-				(cvs-enabledp 'remove))<br/>
-			(Ignore menu-item "Ignore" cvs-mode-ignore :enable<br/>
-				(cvs-enabledp 'ignore))<br/>
-			(Add\ ChangeLog menu-item "Add ChangeLog" cvs-mode-add-change-log-entry-other-window)<br/>
-			(nil-19 menu-item "----")<br/>
-			(Mark menu-item "Mark" cvs-mode-mark)<br/>
-			(Mark\ all menu-item "Mark all" cvs-mode-mark-all-files)<br/>
-			(Mark\ by\ regexp\.\.\. menu-item "Mark by regexp..." cvs-mode-mark-matching-files)<br/>
-			(Mark\ by\ state\.\.\. menu-item "Mark by state..." cvs-mode-mark-on-state)<br/>
-			(Unmark menu-item "Unmark" cvs-mode-unmark)<br/>
-			(Unmark\ all menu-item "Unmark all" cvs-mode-unmark-all-files)<br/>
-			(Hide\ handled menu-item "Hide handled" cvs-mode-remove-handled)<br/>
-			(nil-27 menu-item "----")<br/>
-			(PCL-CVS\ Manual menu-item "PCL-CVS Manual" menu-function-327 :key-sequence nil)<br/>
-			(nil-29 menu-item "----")<br/>
-			(Quit menu-item "Quit" cvs-mode-quit))))<br/>
- (down-mouse-3 . cvs-menu)<br/>
- (follow-link lambda<br/>
-	      (pos)<br/>
-	      (if<br/>
-		  (eq<br/>
-		   (get-char-property pos 'face)<br/>
-		   'cvs-filename)<br/>
-		  t))<br/>
- (mouse-2 . cvs-mode-find-file)<br/>
- (backtab . cvs-mode-previous-line)<br/>
- (remap keymap<br/>
-	(self-insert-command . undefined)))<br/>
-<br/>
+<strong>cvs-mode-map</strong> is a variable defined in `<code>pcvs.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `cvs-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ #^[nil nil keymap
+	#^^[3 0 nil nil nil
+	      (keymap
+	       (3 . cvs-mode-kill-process))
+	      nil nil nil nil nil cvs-mode-next-line nil cvs-mode-acknowledge nil cvs-mode-find-file nil cvs-mode-display-file nil nil nil nil nil nil nil nil nil nil nil
+	      (keymap
+	       (115 . cvs-status)
+	       (117 . cvs-update)
+	       (101 . cvs-examine)
+	       (99 . cvs-checkout)
+	       (127 . cvs-mode-unmark-all-files))
+	      nil nil nil nil cvs-mode-next-line cvs-mode-force-command nil nil nil cvs-mode-mark-matching-files nil nil nil nil nil cvs-mode-tree nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil cvs-mode-diff nil cvs-help nil cvs-mode-add-change-log-entry-other-window cvs-set-secondary-branch-prefix cvs-mode-commit-setup nil nil cvs-mode-set-flags nil nil cvs-mode-insert nil nil nil cvs-mode-mark-all-files nil cvs-mode-update nil nil nil cvs-mode-mark-on-state cvs-mode-toggle-marks cvs-mode-undo nil nil nil nil nil nil nil nil nil nil nil cvs-mode-add cvs-set-branch-prefix cvs-mode-commit cvs-mode-diff-map cvs-mode-examine cvs-mode-find-file cvs-mode-revert-buffer cvs-help cvs-mode-ignore nil nil cvs-mode-log cvs-mode-mark cvs-mode-next-line cvs-mode-find-file-other-window cvs-mode-previous-line cvs-bury-buffer cvs-mode-remove cvs-mode-status cvs-mode-tag cvs-mode-unmark cvs-mode-view-file nil cvs-mode-remove-handled nil kill-this-buffer nil nil nil nil cvs-mode-unmark-up]
+	#^^[1 0
+	      #^^[2 0
+		    #^^[3 0 nil nil nil
+			  (keymap
+			   (3 . cvs-mode-kill-process))
+			  nil nil nil nil nil cvs-mode-next-line nil cvs-mode-acknowledge nil cvs-mode-find-file nil cvs-mode-display-file nil nil nil nil nil nil nil nil nil nil nil
+			  (keymap
+			   (115 . cvs-status)
+			   (117 . cvs-update)
+			   (101 . cvs-examine)
+			   (99 . cvs-checkout)
+			   (127 . cvs-mode-unmark-all-files))
+			  nil nil nil nil cvs-mode-next-line cvs-mode-force-command nil nil nil cvs-mode-mark-matching-files nil nil nil nil nil cvs-mode-tree nil negative-argument nil nil digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil cvs-mode-diff nil cvs-help nil cvs-mode-add-change-log-entry-other-window cvs-set-secondary-branch-prefix cvs-mode-commit-setup nil nil cvs-mode-set-flags nil nil cvs-mode-insert nil nil nil cvs-mode-mark-all-files nil cvs-mode-update nil nil nil cvs-mode-mark-on-state cvs-mode-toggle-marks cvs-mode-undo nil nil nil nil nil nil nil nil nil nil nil cvs-mode-add cvs-set-branch-prefix cvs-mode-commit cvs-mode-diff-map cvs-mode-examine cvs-mode-find-file cvs-mode-revert-buffer cvs-help cvs-mode-ignore nil nil cvs-mode-log cvs-mode-mark cvs-mode-next-line cvs-mode-find-file-other-window cvs-mode-previous-line cvs-bury-buffer cvs-mode-remove cvs-mode-status cvs-mode-tag cvs-mode-unmark cvs-mode-view-file nil cvs-mode-remove-handled nil kill-this-buffer nil nil nil nil cvs-mode-unmark-up]
+		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
+ (menu-bar keymap
+	   (CVS menu-item "CVS"
+		(keymap "CVS"
+			(Open\ file menu-item "Open file" cvs-mode-find-file)
+			(Open\ in\ other\ window menu-item "Open in other window" cvs-mode-find-file-other-window)
+			(Display\ in\ other\ window menu-item "Display in other window" cvs-mode-display-file)
+			(Interactive\ merge menu-item "Interactive merge" cvs-mode-imerge)
+			(View\ diff menu-item "View diff"
+				    (keymap "View diff"
+					    (Interactive\ diff menu-item "Interactive diff" cvs-mode-idiff)
+					    (Current\ diff menu-item "Current diff" cvs-mode-diff)
+					    (Diff\ with\ head menu-item "Diff with head" cvs-mode-diff-head)
+					    (Diff\ with\ vendor menu-item "Diff with vendor" cvs-mode-diff-vendor)
+					    (Diff\ against\ yesterday menu-item "Diff against yesterday" cvs-mode-diff-yesterday)
+					    (Diff\ with\ backup menu-item "Diff with backup" cvs-mode-diff-backup)))
+			(View\ log menu-item "View log" cvs-mode-log)
+			(View\ status menu-item "View status" cvs-mode-status)
+			(View\ tag\ tree menu-item "View tag tree" cvs-mode-tree)
+			(nil menu-item "----")
+			(Insert menu-item "Insert" cvs-mode-insert)
+			(Update menu-item "Update" cvs-mode-update :enable
+				(cvs-enabledp 'update))
+			(Re-examine menu-item "Re-examine" cvs-mode-examine)
+			(Commit menu-item "Commit" cvs-mode-commit-setup :enable
+				(cvs-enabledp 'commit))
+			(Tag menu-item "Tag" cvs-mode-tag :enable
+			     (cvs-enabledp
+			      (when cvs-force-dir-tag 'tag)))
+			(Undo\ changes menu-item "Undo changes" cvs-mode-undo :enable
+				       (cvs-enabledp 'undo))
+			(Add menu-item "Add" cvs-mode-add :enable
+			     (cvs-enabledp 'add))
+			(Remove menu-item "Remove" cvs-mode-remove :enable
+				(cvs-enabledp 'remove))
+			(Ignore menu-item "Ignore" cvs-mode-ignore :enable
+				(cvs-enabledp 'ignore))
+			(Add\ ChangeLog menu-item "Add ChangeLog" cvs-mode-add-change-log-entry-other-window)
+			(nil-19 menu-item "----")
+			(Mark menu-item "Mark" cvs-mode-mark)
+			(Mark\ all menu-item "Mark all" cvs-mode-mark-all-files)
+			(Mark\ by\ regexp\.\.\. menu-item "Mark by regexp..." cvs-mode-mark-matching-files)
+			(Mark\ by\ state\.\.\. menu-item "Mark by state..." cvs-mode-mark-on-state)
+			(Unmark menu-item "Unmark" cvs-mode-unmark)
+			(Unmark\ all menu-item "Unmark all" cvs-mode-unmark-all-files)
+			(Hide\ handled menu-item "Hide handled" cvs-mode-remove-handled)
+			(nil-27 menu-item "----")
+			(PCL-CVS\ Manual menu-item "PCL-CVS Manual" menu-function-197 :key-sequence nil)
+			(nil-29 menu-item "----")
+			(Quit menu-item "Quit" cvs-mode-quit))))
+ (down-mouse-3 . cvs-menu)
+ (follow-link lambda
+	      (pos)
+	      (if
+		  (eq
+		   (get-char-property pos 'face)
+		   'cvs-filename)
+		  t))
+ (mouse-2 . cvs-mode-find-file)
+ (backtab . cvs-mode-previous-line)
+ (remap keymap
+	(self-insert-command . undefined)))
+</pre></br>

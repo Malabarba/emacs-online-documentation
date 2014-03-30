@@ -1,30 +1,66 @@
-<strong>tramp-completion-function-alist</strong> is a variable defined in `<code>tramp.el</code>'.<br/>
-Its value is (("ksu"<br/>
-  (tramp-parse-passwd "/etc/passwd"))<br/>
- ("sudo"<br/>
-  (tramp-parse-passwd "/etc/passwd"))<br/>
- ("su"<br/>
-  (tramp-parse-passwd "/etc/passwd"))<br/>
- ("telnet"<br/>
-  (tramp-parse-hosts "/etc/hosts")))<br/>
-<br/>
-<br/>
-Documentation:<br/>
-Alist of methods for remote files.<br/>
-This is a list of entries of the form (NAME PAIR1 PAIR2 ...).<br/>
-Each NAME stands for a remote access method.  Each PAIR is of the form<br/>
-(FUNCTION FILE).  FUNCTION is responsible to extract user names and host<br/>
-names from FILE for completion.  The following predefined FUNCTIONs exists:<br/>
-<br/>
- * `tramp-parse-rhosts'      for "~/.rhosts" like files,<br/>
- * `tramp-parse-shosts'      for "~/.ssh/known_hosts" like files,<br/>
- * `tramp-parse-sconfig'     for "~/.ssh/config" like files,<br/>
- * `tramp-parse-shostkeys'   for "~/.ssh2/hostkeys/*" like files,<br/>
- * `tramp-parse-sknownhosts' for "~/.ssh2/knownhosts/*" like files,<br/>
- * `tramp-parse-hosts'       for "/etc/hosts" like files,<br/>
- * `tramp-parse-passwd'      for "/etc/passwd" like files.<br/>
- * `tramp-parse-netrc'       for "~/.netrc" like files.<br/>
- * `tramp-parse-putty'       for PuTTY registered sessions.<br/>
-<br/>
-FUNCTION can also be a customer defined function.  For more details see<br/>
-the info pages.
+<strong>tramp-completion-function-alist</strong> is a variable defined in `<code>tramp.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of methods for remote files.</br>
+This is a list of entries of the form (NAME PAIR1 PAIR2 ...).</br>
+Each NAME stands for a remote access method.  Each PAIR is of the form</br>
+(FUNCTION FILE).  FUNCTION is responsible to extract user names and host</br>
+names from FILE for completion.  The following predefined FUNCTIONs exists:</br>
+</br>
+ * `tramp-parse-rhosts'      for "~/.rhosts" like files,</br>
+ * `tramp-parse-shosts'      for "~/.ssh/known_hosts" like files,</br>
+ * `tramp-parse-sconfig'     for "~/.ssh/config" like files,</br>
+ * `tramp-parse-shostkeys'   for "~/.ssh2/hostkeys/*" like files,</br>
+ * `tramp-parse-sknownhosts' for "~/.ssh2/knownhosts/*" like files,</br>
+ * `tramp-parse-hosts'       for "/etc/hosts" like files,</br>
+ * `tramp-parse-passwd'      for "/etc/passwd" like files.</br>
+ * `tramp-parse-netrc'       for "~/.netrc" like files.</br>
+ * `tramp-parse-putty'       for PuTTY registered sessions.</br>
+</br>
+FUNCTION can also be a customer defined function.  For more details see</br>
+the info pages.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("smb"
+  (tramp-parse-netrc "~/.netrc"))
+ ("fcp"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("pscp"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("plink"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("ksu"
+  (tramp-parse-passwd "/etc/passwd"))
+ ("sudo"
+  (tramp-parse-passwd "/etc/passwd"))
+ ("su"
+  (tramp-parse-passwd "/etc/passwd"))
+ ("telnet"
+  (tramp-parse-hosts "/etc/hosts"))
+ ("sshx"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("ssh"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("rsync"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("sftp"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("scpx"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("scp"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
+ ("ftp"
+  (tramp-parse-netrc "~/.netrc"))
+ ("adb"
+  (tramp-adb-parse-device-names "")))
+</pre></br>

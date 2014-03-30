@@ -1,10 +1,21 @@
-<strong>thing-at-point-url-at-point</strong> is a compiled Lisp function in `<code>thingatpt.el</code>'.<br/>
-<br/>
-(thing-at-point-url-at-point)<br/>
-<br/>
-Return the URL around or before point.<br/>
-<br/>
-Search backwards for the start of a URL ending at or after point.  If<br/>
-no URL found, return nil.  The access scheme will be prepended if<br/>
-absent: "mailto:" if the string contains "@", "ftp://" if it<br/>
-starts with "ftp" and not "ftp:/", or "http://" by default.
+<strong>thing-at-point-url-at-point</strong> is a compiled Lisp function in `<code>thingatpt.el</code>'.</br>
+</br>
+(thing-at-point-url-at-point &optional <u>LAX</u> <u>BOUNDS</u>)</br>
+</br>
+Return the URL around or before point.</br>
+If no URL is found, return nil.</br>
+</br>
+If optional argument <u>LAX</u> is non-nil, look for URLs that are not</br>
+well-formed, such as foo@bar or &lt;nobody>.</br>
+</br>
+If optional arguments <u>BOUNDS</u> are non-nil, it should be a cons</br>
+cell of the form (START . END), containing the beginning and end</br>
+positions of the URI.  Otherwise, these positions are detected</br>
+automatically from the text around point.</br>
+</br>
+If the scheme component is absent, either because a URI delimited</br>
+with &lt;url:...> lacks one, or because an ill-formed URI was found</br>
+with <u>LAX</u> or BEG and END, try to add a scheme in the returned URI.</br>
+The scheme is chosen heuristically: "mailto:" if the address</br>
+looks like an email address, "ftp://" if it starts with</br>
+"ftp", etc.

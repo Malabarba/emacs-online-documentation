@@ -1,57 +1,57 @@
-<strong>ps-even-or-odd-pages</strong> is a variable defined in `<code>ps-print.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Specify if it prints even/odd pages.<br/>
-<br/>
-Valid values are:<br/>
-<br/>
-   nil		print all pages.<br/>
-<br/>
-   `even-page'	print only even pages.<br/>
-<br/>
-   `odd-page'	print only odd pages.<br/>
-<br/>
-   `even-sheet'	print only even sheets.<br/>
-		That is, if `ps-n-up-printing' is 1, it behaves as `even-page';<br/>
-		but for values greater than 1, it'll print only the even sheet<br/>
-		of paper.<br/>
-<br/>
-   `odd-sheet'	print only odd sheets.<br/>
-		That is, if `ps-n-up-printing' is 1, it behaves as `odd-page';<br/>
-		but for values greater than 1, it'll print only the odd sheet<br/>
-		of paper.<br/>
-<br/>
-Any other value is treated as nil.<br/>
-<br/>
-If you set `ps-selected-pages' (see it for documentation), first the pages are<br/>
-filtered by `ps-selected-pages' and then by `ps-even-or-odd-pages'.  For<br/>
-example, if we have:<br/>
-<br/>
-   (setq ps-selected-pages '(1 4 (6 . 10) (12 . 16) 20))<br/>
-<br/>
-Combining with `ps-even-or-odd-pages' and `ps-n-up-printing', we have:<br/>
-<br/>
-`ps-n-up-printing' = 1:<br/>
-   `ps-even-or-odd-pages'	PAGES PRINTED<br/>
-	nil			1, 4, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 20<br/>
-	even-page		4, 6, 8, 10, 12, 14, 16, 20<br/>
-	odd-page		1, 7, 9, 13, 15<br/>
-	even-sheet		4, 6, 8, 10, 12, 14, 16, 20<br/>
-	odd-sheet		1, 7, 9, 13, 15<br/>
-<br/>
-`ps-n-up-printing' = 2:<br/>
-   `ps-even-or-odd-pages'	PAGES PRINTED<br/>
-	nil			1/4, 6/7, 8/9, 10/12, 13/14, 15/16, 20<br/>
-	even-page		4/6, 8/10, 12/14, 16/20<br/>
-	odd-page		1/7, 9/13, 15<br/>
-	even-sheet		6/7, 10/12, 15/16<br/>
-	odd-sheet		1/4, 8/9, 13/14, 20<br/>
-<br/>
-So even-page/odd-page are about page parity and even-sheet/odd-sheet are about<br/>
-sheet parity.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 20 of Emacs.<br/>
+<strong>ps-even-or-odd-pages</strong> is a variable defined in `<code>ps-print.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Specify if it prints even/odd pages.</br>
+</br>
+Valid values are:</br>
+</br>
+   nil		print all pages.</br>
+</br>
+   `even-page'	print only even pages.</br>
+</br>
+   `odd-page'	print only odd pages.</br>
+</br>
+   `even-sheet'	print only even sheets.</br>
+		That is, if `ps-n-up-printing' is 1, it behaves as `even-page';</br>
+		but for values greater than 1, it'll print only the even sheet</br>
+		of paper.</br>
+</br>
+   `odd-sheet'	print only odd sheets.</br>
+		That is, if `ps-n-up-printing' is 1, it behaves as `odd-page';</br>
+		but for values greater than 1, it'll print only the odd sheet</br>
+		of paper.</br>
+</br>
+Any other value is treated as nil.</br>
+</br>
+If you set option `ps-selected-pages', first the pages are</br>
+filtered by option `ps-selected-pages' and then by `ps-even-or-odd-pages'.</br>
+For example, if we have:</br>
+</br>
+   (setq ps-selected-pages '(1 4 (6 . 10) (12 . 16) 20))</br>
+</br>
+Combining with `ps-even-or-odd-pages' and option `ps-n-up-printing', we have:</br>
+</br>
+`ps-n-up-printing' = 1:</br>
+   `ps-even-or-odd-pages'	PAGES PRINTED</br>
+	nil			1, 4, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 20</br>
+	even-page		4, 6, 8, 10, 12, 14, 16, 20</br>
+	odd-page		1, 7, 9, 13, 15</br>
+	even-sheet		4, 6, 8, 10, 12, 14, 16, 20</br>
+	odd-sheet		1, 7, 9, 13, 15</br>
+</br>
+`ps-n-up-printing' = 2:</br>
+   `ps-even-or-odd-pages'	PAGES PRINTED</br>
+	nil			1/4, 6/7, 8/9, 10/12, 13/14, 15/16, 20</br>
+	even-page		4/6, 8/10, 12/14, 16/20</br>
+	odd-page		1/7, 9/13, 15</br>
+	even-sheet		6/7, 10/12, 15/16</br>
+	odd-sheet		1/4, 8/9, 13/14, 20</br>
+</br>
+So even-page/odd-page are about page parity and even-sheet/odd-sheet are about</br>
+sheet parity.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 20 of Emacs.

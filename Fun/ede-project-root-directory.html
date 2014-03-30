@@ -1,8 +1,29 @@
-<strong>ede-project-root-directory</strong> is a Lisp function in `<code>auto.el</code>'.<br/>
-<br/>
-(ede-project-root-directory &rest LOCAL-ARGS)<br/>
-<br/>
-If a project knows its root, return it here.<br/>
-Allows for one-project-object-for-a-tree type systems.<br/>
-Optional FILE is the file to test.  If there is no FILE, use<br/>
-the current buffer.
+<strong>ede-project-root-directory</strong> is a Lisp function in `<code>auto.el</code>'.</br>
+</br>
+(ede-project-root-directory &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+Optional FILE is the file to test.  If there is no FILE, use</br>
+the current buffer.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`ede-project-autoload' :PRIMARY (this &optional file)</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+Optional FILE is the file to test.  If there is no FILE, use</br>
+the current buffer.</br>
+</br>
+Defined in `auto.el'</br>
+</br>
+`ede-project-placeholder' :PRIMARY (this &optional file)</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+Optional FILE is the file to test.  It is ignored in preference</br>
+of the anchor file for the project.</br>
+</br>
+Defined in `files.el'</br>
+</br>

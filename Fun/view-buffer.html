@@ -1,25 +1,26 @@
-<strong>view-buffer</strong> is an interactive autoloaded compiled Lisp function in `<code>view.el</code>'.<br/>
-<br/>
-(view-buffer BUFFER &optional EXIT-ACTION)<br/>
-<br/>
-View BUFFER in View mode, returning to previous buffer when done.<br/>
-Emacs commands editing the buffer contents are not available; instead, a<br/>
-special set of commands (mostly letters and punctuation) are defined for<br/>
-moving around in the buffer.<br/>
-Space scrolls forward, Delete scrolls backward.<br/>
-For a list of all View commands, type H or h while viewing.<br/>
-<br/>
-This command runs the normal hook `view-mode-hook'.<br/>
-<br/>
-Optional argument EXIT-ACTION is either nil or a function with buffer as<br/>
-argument.  This function is called when finished viewing buffer.  Use<br/>
-this argument instead of explicitly setting `view-exit-action'.<br/>
-<br/>
-Do not set EXIT-ACTION to `kill-buffer' when BUFFER visits a<br/>
-file: Users may suspend viewing in order to modify the buffer.<br/>
-Exiting View mode will then discard the user's edits.  Setting<br/>
-EXIT-ACTION to `kill-buffer-if-not-modified' avoids this.<br/>
-<br/>
-This function does not enable View mode if the buffer's major-mode<br/>
-has a `special' mode-class, because such modes usually have their<br/>
+<strong>view-buffer</strong> is an interactive autoloaded compiled Lisp function in `<code>view.el</code>'.</br>
+</br>
+</br>
+(view-buffer <u>BUFFER</u> &optional <u>EXIT-ACTION</u>)</br>
+</br>
+View <u>BUFFER</u> in View mode, returning to previous buffer when done.</br>
+Emacs commands editing the buffer contents are not available; instead, a</br>
+special set of commands (mostly letters and punctuation) are defined for</br>
+moving around in the buffer.</br>
+Space scrolls forward, Delete scrolls backward.</br>
+For a list of all View commands, type H or h while viewing.</br>
+</br>
+This command runs the normal hook `view-mode-hook'.</br>
+</br>
+Optional argument <u>EXIT-ACTION</u> is either nil or a function with buffer as</br>
+argument.  This function is called when finished viewing buffer.  Use</br>
+this argument instead of explicitly setting `view-exit-action'.</br>
+</br>
+Do not set <u>EXIT-ACTION</u> to `kill-buffer' when <u>BUFFER</u> visits a</br>
+file: Users may suspend viewing in order to modify the buffer.</br>
+Exiting View mode will then discard the user's edits.  Setting</br>
+<u>EXIT-ACTION</u> to `kill-buffer-if-not-modified' avoids this.</br>
+</br>
+This function does not enable View mode if the buffer's major-mode</br>
+has a `special' mode-class, because such modes usually have their</br>
 own View-like bindings.

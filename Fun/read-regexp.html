@@ -1,15 +1,34 @@
-<strong>read-regexp</strong> is a compiled Lisp function in `<code>replace.el</code>'.<br/>
-<br/>
-(read-regexp PROMPT &optional DEFAULTS HISTORY)<br/>
-<br/>
-Read and return a regular expression as a string.<br/>
-When PROMPT doesn't end with a colon and space, it adds a final ": ".<br/>
-If DEFAULTS is non-nil, it displays the first default in the prompt.<br/>
-<br/>
-Non-nil optional arg DEFAULTS is a string or a list of strings that<br/>
-are prepended to a list of standard default values, which include the<br/>
-string at point, the last isearch regexp, the last isearch string, and<br/>
-the last replacement regexp.<br/>
-<br/>
-Non-nil HISTORY is a symbol to use for the history list.<br/>
-If HISTORY is nil, `regexp-history' is used.
+<strong>read-regexp</strong> is a compiled Lisp function in `<code>replace.el</code>'.</br>
+</br>
+(read-regexp <u>PROMPT</u> &optional <u>DEFAULTS</u> <u>HISTORY</u>)</br>
+</br>
+Read and return a regular expression as a string.</br>
+Prompt with the string <u>PROMPT</u>.  If <u>PROMPT</u> ends in ":" (followed by</br>
+optional whitespace), use it as-is.  Otherwise, add ": " to the end,</br>
+possibly preceded by the default result (see below).</br>
+</br>
+The optional argument <u>DEFAULTS</u> can be either: nil, a string, a list</br>
+of strings, or a symbol.  We use <u>DEFAULTS</u> to construct the default</br>
+return value in case of empty input.</br>
+</br>
+If <u>DEFAULTS</u> is a string, we use it as-is.</br>
+</br>
+If <u>DEFAULTS</u> is a list of strings, the first element is the</br>
+default return value, but all the elements are accessible</br>
+using the history command M-n.</br>
+</br>
+If <u>DEFAULTS</u> is a non-nil symbol, then if `read-regexp-defaults-function'</br>
+is non-nil, we use that in place of <u>DEFAULTS</u> in the following:</br>
+  If <u>DEFAULTS</u> is the symbol `regexp-history-last', we use the first</br>
+  element of <u>HISTORY</u> (if specified) or `regexp-history'.</br>
+  If <u>DEFAULTS</u> is a function, we call it with no arguments and use</br>
+  what it returns, which should be either nil, a string, or a list of strings.</br>
+</br>
+We append the standard values from `read-regexp-suggestions' to <u>DEFAULTS</u></br>
+before using it.</br>
+</br>
+If the first element of <u>DEFAULTS</u> is non-nil (and if <u>PROMPT</u> does not end</br>
+in ":", followed by optional whitespace), we add it to the prompt.</br>
+</br>
+The optional argument <u>HISTORY</u> is a symbol to use for the history list.</br>
+If nil, uses `regexp-history'.

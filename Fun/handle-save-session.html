@@ -1,14 +1,15 @@
-<strong>handle-save-session</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(handle-save-session EVENT)<br/>
-<br/>
-Handle the save_yourself event from a session manager.<br/>
-A session manager can tell Emacs that the window system is shutting down<br/>
-by sending Emacs a save_yourself message.  Emacs executes this function when<br/>
-such an event occurs.  This function then executes `emacs-session-save'.<br/>
-After that, this function informs the session manager that it can continue<br/>
-or abort shutting down the window system depending on the return value<br/>
-from `emacs-session-save'  If the return value is non-nil the session manager<br/>
-is told to abort the window system shutdown.<br/>
-<br/>
+<strong>handle-save-session</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+</br>
+</br>
+(handle-save-session <u>EVENT</u>)</br>
+</br>
+Handle the save_yourself event from a session manager.</br>
+A session manager can tell Emacs that the window system is shutting down</br>
+by sending Emacs a save_yourself message.  Emacs executes this function when</br>
+such an event occurs.  This function then executes `emacs-session-save'.</br>
+After that, this function informs the session manager that it can continue</br>
+or abort shutting down the window system depending on the return value</br>
+from `emacs-session-save'  If the return value is non-nil the session manager</br>
+is told to abort the window system shutdown.</br>
+</br>
 Do not call this function yourself.

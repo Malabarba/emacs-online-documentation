@@ -1,0 +1,19 @@
+<strong>erc-track-find-face</strong> is a compiled Lisp function in `<code>erc-track.el</code>'.</br>
+</br>
+(erc-track-find-face <u>FACES</u>)</br>
+</br>
+Return the face to use in the mode line from the faces in <u>FACES</u>.</br>
+If `erc-track-faces-priority-list' is set, the one from <u>FACES</u> who</br>
+is first in that list will be used.  If nothing matches or if</br>
+`erc-track-faces-priority-list' is not set, the default mode-line</br>
+faces will be used.</br>
+</br>
+If `erc-track-faces-normal-list' is non-nil, use it to produce a</br>
+blinking effect that indicates channel activity when the first</br>
+element in <u>FACES</u> and the highest-ranking face among the rest of</br>
+<u>FACES</u> are both members of `erc-track-faces-normal-list'.</br>
+</br>
+If one of the faces is a list, then it will be ranked according</br>
+to its highest-tanking face member.  A list of faces including</br>
+that member will take priority over just the single member</br>
+element.

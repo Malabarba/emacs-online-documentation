@@ -1,13 +1,13 @@
-<strong>quote</strong> is a special form in `<code>C source code</code>'.<br/>
-<br/>
-(quote ARG)<br/>
-<br/>
-Return the argument, without evaluating it.  `(quote x)' yields `x'.<br/>
-Warning: `quote' does not construct its return value, but just returns<br/>
-the value that was pre-constructed by the Lisp reader (see info node<br/>
-`(elisp)Printed Representation').<br/>
-This means that '(a . b) is not identical to (cons 'a 'b): the former<br/>
-does not cons.  Quoting should be reserved for constants that will<br/>
-never be modified by side-effects, unless you like self-modifying code.<br/>
-See the common pitfall in info node `(elisp)Rearrangement' for an example<br/>
+<strong>quote</strong> is a special form in `<code>C source code</code>'.</br>
+</br>
+(quote <u>ARG</u>)</br>
+</br>
+Return the argument, without evaluating it.  `(quote x)' yields `x'.</br>
+Warning: `quote' does not construct its return value, but just returns</br>
+the value that was pre-constructed by the Lisp reader (see info node</br>
+`(elisp)Printed Representation').</br>
+This means that '(a . b) is not identical to (cons 'a 'b): the former</br>
+does not cons.  Quoting should be reserved for constants that will</br>
+never be modified by side-effects, unless you like self-modifying code.</br>
+See the common pitfall in info node `(elisp)Rearrangement' for an example</br>
 of unexpected results when a quoted object is modified.

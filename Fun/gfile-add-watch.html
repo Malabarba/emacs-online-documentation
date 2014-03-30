@@ -1,0 +1,40 @@
+<strong>gfile-add-watch</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(gfile-add-watch <u>FILE</u> <u>FLAGS</u> <u>CALLBACK</u>)</br>
+</br>
+Add a watch for filesystem events pertaining to <u>FILE</u>.</br>
+</br>
+This arranges for filesystem events pertaining to <u>FILE</u> to be reported</br>
+to Emacs.  Use `gfile-rm-watch' to cancel the watch.</br>
+</br>
+Value is a descriptor for the added watch.  If the file cannot be</br>
+watched for some reason, this function signals a `file-notify-error' error.</br>
+</br>
+<u>FLAGS</u> is a list of conditions to set what will be watched for.  It can</br>
+include the following symbols:</br>
+</br>
+  'watch-mounts' -- watch for mount events</br>
+  'send-moved'   -- pair 'deleted' and 'created' events caused by file</br>
+                    renames and send a single 'renamed' event instead</br>
+</br>
+When any event happens, Emacs will call the <u>CALLBACK</u> function passing</br>
+it a single argument EVENT, which is of the form</br>
+</br>
+  (DESCRIPTOR ACTION <u>FILE</u> [FILE1])</br>
+</br>
+DESCRIPTOR is the same object as the one returned by this function.</br>
+ACTION is the description of the event.  It could be any one of the</br>
+following:</br>
+</br>
+  'changed'           -- <u>FILE</u> has changed</br>
+  'changes-done-hint' -- a hint that this was probably the last change</br>
+                         in a set of changes</br>
+  'deleted'           -- <u>FILE</u> was deleted</br>
+  'created'           -- <u>FILE</u> was created</br>
+  'attribute-changed' -- a <u>FILE</u> attribute was changed</br>
+  'pre-unmount'       -- the <u>FILE</u> location will soon be unmounted</br>
+  'unmounted'         -- the <u>FILE</u> location was unmounted</br>
+  'moved'             -- <u>FILE</u> was moved to FILE1</br>
+</br>
+<u>FILE</u> is the name of the file whose event is being reported.  FILE1</br>
+will be reported only in case of the 'moved' event.

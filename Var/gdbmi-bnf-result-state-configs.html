@@ -1,0 +1,34 @@
+<strong>gdbmi-bnf-result-state-configs</strong> is a variable defined in `<code>gdb-mi.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of alists, mapping the type and class of message to a handler function.</br>
+Handler functions are all flagged as either `progressive' or `atomic'.</br>
+`progressive' handlers are capable of parsing incomplete messages.</br>
+They can be called several time with new data chunk as they arrive from GDB.</br>
+`progressive' handlers must have an extra argument that is set to a non-nil</br>
+value when the message is complete.</br>
+</br>
+Implement the following GDB/MI output grammar rule:</br>
+  result-class ==></br>
+       'done' | 'running' | 'connected' | 'error' | 'exit'</br>
+</br>
+  async-class ==></br>
+       'stopped' | others (where others will be added depending on the needs</br>
+                           --this is still in development).</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("^"
+  ("done" gdb-done . progressive)
+  ("error" gdb-error . progressive)
+  ("running" gdb-starting . atomic))
+ ("*"
+  ("stopped" gdb-stopped . atomic)
+  ("running" gdb-running . atomic))
+ ("+")
+ ("="
+  ("thread-created" gdb-thread-created . atomic)
+  ("thread-selected" gdb-thread-selected . atomic)
+  ("thread-existed" gdb-ignored-notification . atomic)
+  ('default gdb-ignored-notification . atomic)))
+</pre></br>

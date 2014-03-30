@@ -1,27 +1,27 @@
-<strong>define-overloadable-function</strong> is a Lisp macro in `<code>mode-local.el</code>'.<br/>
-<br/>
-(define-overloadable-function NAME ARGS DOCSTRING &rest BODY)<br/>
-<br/>
-Define a new function, as with `defun', which can be overloaded.<br/>
-NAME is the name of the function to create.<br/>
-ARGS are the arguments to the function.<br/>
-DOCSTRING is a documentation string to describe the function.  The<br/>
-docstring will automatically have details about its overload symbol<br/>
-appended to the end.<br/>
-BODY is code that would be run when there is no override defined.  The<br/>
-default is to call the function `NAME-default' with the appropriate<br/>
-arguments.<br/>
-<br/>
-BODY can also include an override form that specifies which part of<br/>
-BODY is specifically overridden.  This permits to specify common code<br/>
-run for both default and overridden implementations.<br/>
-An override form is one of:<br/>
-<br/>
-  1. (:override [OVERBODY])<br/>
-  2. (:override-with-args OVERARGS [OVERBODY])<br/>
-<br/>
-OVERBODY is the code that would be run when there is no override<br/>
-defined.  The default is to call the function `NAME-default' with the<br/>
-appropriate arguments deduced from ARGS.<br/>
-OVERARGS is a list of arguments passed to the override and<br/>
-`NAME-default' function, in place of those deduced from ARGS.
+<strong>define-overloadable-function</strong> is a Lisp macro in `<code>mode-local.el</code>'.</br>
+</br>
+(define-overloadable-function <u>NAME</u> <u>ARGS</u> <u>DOCSTRING</u> &rest <u>BODY</u>)</br>
+</br>
+Define a new function, as with `defun', which can be overloaded.</br>
+<u>NAME</u> is the name of the function to create.</br>
+<u>ARGS</u> are the arguments to the function.</br>
+<u>DOCSTRING</u> is a documentation string to describe the function.  The</br>
+docstring will automatically have details about its overload symbol</br>
+appended to the end.</br>
+<u>BODY</u> is code that would be run when there is no override defined.  The</br>
+default is to call the function `<u>NAME</u>-default' with the appropriate</br>
+arguments.</br>
+</br>
+<u>BODY</u> can also include an override form that specifies which part of</br>
+<u>BODY</u> is specifically overridden.  This permits to specify common code</br>
+run for both default and overridden implementations.</br>
+An override form is one of:</br>
+</br>
+  1. (:override [OVERBODY])</br>
+  2. (:override-with-args OVERARGS [OVERBODY])</br>
+</br>
+OVERBODY is the code that would be run when there is no override</br>
+defined.  The default is to call the function `<u>NAME</u>-default' with the</br>
+appropriate arguments deduced from <u>ARGS</u>.</br>
+OVERARGS is a list of arguments passed to the override and</br>
+`<u>NAME</u>-default' function, in place of those deduced from <u>ARGS</u>.

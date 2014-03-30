@@ -1,23 +1,23 @@
-<strong>compare-strings</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(compare-strings STR1 START1 END1 STR2 START2 END2 &optional IGNORE-CASE)<br/>
-<br/>
-Compare the contents of two strings, converting to multibyte if needed.<br/>
-The arguments START1, END1, START2, and END2, if non-nil, are<br/>
-positions specifying which parts of STR1 or STR2 to compare.  In<br/>
-string STR1, compare the part between START1 (inclusive) and END1<br/>
-(exclusive).  If START1 is nil, it defaults to 0, the beginning of<br/>
-the string; if END1 is nil, it defaults to the length of the string.<br/>
-Likewise, in string STR2, compare the part between START2 and END2.<br/>
-<br/>
-The strings are compared by the numeric values of their characters.<br/>
-For instance, STR1 is "less than" STR2 if its first differing<br/>
-character has a smaller numeric value.  If IGNORE-CASE is non-nil,<br/>
-characters are converted to lower-case before comparing them.  Unibyte<br/>
-strings are converted to multibyte for comparison.<br/>
-<br/>
-The value is t if the strings (or specified portions) match.<br/>
-If string STR1 is less, the value is a negative number N;<br/>
-  - 1 - N is the number of characters that match at the beginning.<br/>
-If string STR1 is greater, the value is a positive number N;<br/>
+<strong>compare-strings</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(compare-strings <u>STR1</u> <u>START1</u> <u>END1</u> <u>STR2</u> <u>START2</u> <u>END2</u> &optional <u>IGNORE-CASE</u>)</br>
+</br>
+Compare the contents of two strings, converting to multibyte if needed.</br>
+The arguments <u>START1</u>, <u>END1</u>, <u>START2</u>, and <u>END2</u>, if non-nil, are</br>
+positions specifying which parts of <u>STR1</u> or <u>STR2</u> to compare.  In</br>
+string <u>STR1</u>, compare the part between <u>START1</u> (inclusive) and <u>END1</u></br>
+(exclusive).  If <u>START1</u> is nil, it defaults to 0, the beginning of</br>
+the string; if <u>END1</u> is nil, it defaults to the length of the string.</br>
+Likewise, in string <u>STR2</u>, compare the part between <u>START2</u> and <u>END2</u>.</br>
+</br>
+The strings are compared by the numeric values of their characters.</br>
+For instance, <u>STR1</u> is "less than" <u>STR2</u> if its first differing</br>
+character has a smaller numeric value.  If <u>IGNORE-CASE</u> is non-nil,</br>
+characters are converted to lower-case before comparing them.  Unibyte</br>
+strings are converted to multibyte for comparison.</br>
+</br>
+The value is t if the strings (or specified portions) match.</br>
+If string <u>STR1</u> is less, the value is a negative number N;</br>
+  - 1 - N is the number of characters that match at the beginning.</br>
+If string <u>STR1</u> is greater, the value is a positive number N;</br>
   N - 1 is the number of characters that match at the beginning.

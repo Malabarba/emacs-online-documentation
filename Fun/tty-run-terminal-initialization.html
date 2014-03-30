@@ -1,7 +1,12 @@
-<strong>tty-run-terminal-initialization</strong> is a compiled Lisp function in `<code>faces.el</code>'.<br/>
-<br/>
-(tty-run-terminal-initialization FRAME &optional TYPE)<br/>
-<br/>
-Run the special initialization code for the terminal type of FRAME.<br/>
-The optional TYPE parameter may be used to override the autodetected<br/>
-terminal type to a different value.
+<strong>tty-run-terminal-initialization</strong> is a compiled Lisp function in `<code>faces.el</code>'.</br>
+</br>
+(tty-run-terminal-initialization <u>FRAME</u> &optional <u>TYPE</u> <u>RUN-HOOK</u>)</br>
+</br>
+Run the special initialization code for the terminal type of <u>FRAME</u>.</br>
+The optional <u>TYPE</u> parameter may be used to override the autodetected</br>
+terminal type to a different value.</br>
+</br>
+If optional argument <u>RUN-HOOK</u> is non-nil, then as a final step,</br>
+this runs the hook `tty-setup-hook'.</br>
+</br>
+If you set `term-file-prefix' to nil, this function does nothing.

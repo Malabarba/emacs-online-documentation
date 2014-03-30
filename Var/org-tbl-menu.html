@@ -1,109 +1,109 @@
-<strong>org-tbl-menu</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Tbl menu<br/>
-<br/>
-Value:<br/>
-(keymap "Tbl"<br/>
-	(Align menu-item "Align" org-ctrl-c-ctrl-c :enable<br/>
-	       (org-at-table-p))<br/>
-	(Next\ Field menu-item "Next Field" org-cycle :enable<br/>
-		     (org-at-table-p))<br/>
-	(Previous\ Field menu-item "Previous Field" org-shifttab :enable<br/>
-			 (org-at-table-p))<br/>
-	(Next\ Row menu-item "Next Row" org-return :enable<br/>
-		   (org-at-table-p))<br/>
-	(nil-7 menu-item "--")<br/>
-	(Blank\ Field menu-item "Blank Field" org-table-blank-field :enable<br/>
-		      (org-at-table-p))<br/>
-	(Edit\ Field menu-item "Edit Field" org-table-edit-field :enable<br/>
-		     (org-at-table-p))<br/>
-	(Copy\ Field\ from\ Above menu-item "Copy Field from Above" org-table-copy-down :enable<br/>
-				  (org-at-table-p))<br/>
-	(nil-7-8 menu-item "--")<br/>
-	(Column menu-item "Column"<br/>
-		(keymap "Column"<br/>
-			(Move\ Column\ Left menu-item "Move Column Left" org-metaleft :enable<br/>
-					    (org-at-table-p))<br/>
-			(Move\ Column\ Right menu-item "Move Column Right" org-metaright :enable<br/>
-					     (org-at-table-p))<br/>
-			(Delete\ Column menu-item "Delete Column" org-shiftmetaleft :enable<br/>
-					(org-at-table-p))<br/>
-			(Insert\ Column menu-item "Insert Column" org-shiftmetaright :enable<br/>
-					(org-at-table-p))))<br/>
-	(Row menu-item "Row"<br/>
-	     (keymap "Row"<br/>
-		     (Move\ Row\ Up menu-item "Move Row Up" org-metaup :enable<br/>
-				    (org-at-table-p))<br/>
-		     (Move\ Row\ Down menu-item "Move Row Down" org-metadown :enable<br/>
-				      (org-at-table-p))<br/>
-		     (Delete\ Row menu-item "Delete Row" org-shiftmetaup :enable<br/>
-				  (org-at-table-p))<br/>
-		     (Insert\ Row menu-item "Insert Row" org-shiftmetadown :enable<br/>
-				  (org-at-table-p))<br/>
-		     (Sort\ lines\ in\ region menu-item "Sort lines in region" org-table-sort-lines :enable<br/>
-					      (org-at-table-p))<br/>
-		     (nil-7 menu-item "--")<br/>
-		     (Insert\ Hline menu-item "Insert Hline" org-ctrl-c-minus :enable<br/>
-				    (org-at-table-p))))<br/>
-	(Rectangle menu-item "Rectangle"<br/>
-		   (keymap "Rectangle"<br/>
-			   (Copy\ Rectangle menu-item "Copy Rectangle" org-copy-special :enable<br/>
-					    (org-at-table-p))<br/>
-			   (Cut\ Rectangle menu-item "Cut Rectangle" org-cut-special :enable<br/>
-					   (org-at-table-p))<br/>
-			   (Paste\ Rectangle menu-item "Paste Rectangle" org-paste-special :enable<br/>
-					     (org-at-table-p))<br/>
-			   (Fill\ Rectangle menu-item "Fill Rectangle" org-table-wrap-region :enable<br/>
-					    (org-at-table-p))))<br/>
-	(nil-7-12 menu-item "--")<br/>
-	(Calculate menu-item "Calculate"<br/>
-		   (keymap "Calculate"<br/>
-			   (Set\ Column\ Formula menu-item "Set Column Formula" org-table-eval-formula :enable<br/>
-						 (org-at-table-p))<br/>
-			   (Set\ Field\ Formula menu-item "Set Field Formula" menu-function-314 :enable<br/>
-						(org-at-table-p)<br/>
-						:keys "C-u C-c =")<br/>
-			   (Edit\ Formulas menu-item "Edit Formulas" org-edit-special :enable<br/>
-					   (org-at-table-p))<br/>
-			   (nil-7 menu-item "--")<br/>
-			   (Recalculate\ line menu-item "Recalculate line" org-table-recalculate :enable<br/>
-					      (org-at-table-p))<br/>
-			   (Recalculate\ all menu-item "Recalculate all" menu-function-315 :enable<br/>
-					     (org-at-table-p)<br/>
-					     :keys "C-u C-c *")<br/>
-			   (Iterate\ all menu-item "Iterate all" menu-function-316 :enable<br/>
-					 (org-at-table-p)<br/>
-					 :keys "C-u C-u C-c *")<br/>
-			   (nil-7-7 menu-item "--")<br/>
-			   (Toggle\ Recalculate\ Mark menu-item "Toggle Recalculate Mark" org-table-rotate-recalc-marks :enable<br/>
-						      (org-at-table-p))<br/>
-			   (nil-7-9 menu-item "--")<br/>
-			   (Sum\ Column/Rectangle menu-item "Sum Column/Rectangle" org-table-sum :enable<br/>
-						  (or<br/>
-						   (org-at-table-p)<br/>
-						   (org-region-active-p)))<br/>
-			   (Which\ Column\? menu-item "Which Column?" org-table-current-column :enable<br/>
-					    (org-at-table-p))))<br/>
-	(Debug\ Formulas menu-item "Debug Formulas" org-table-toggle-formula-debugger :button<br/>
-			 (:toggle org-bound-and-true-p org-table-formula-debug))<br/>
-	(Show\ Col/Row\ Numbers menu-item "Show Col/Row Numbers" org-table-toggle-coordinate-overlays :button<br/>
-				(:toggle org-bound-and-true-p org-table-overlay-coordinates))<br/>
-	(nil-7-16 menu-item "--")<br/>
-	(Create menu-item "Create" org-table-create :enable<br/>
-		(and<br/>
-		 (not<br/>
-		  (org-at-table-p))<br/>
-		 org-enable-table-editor))<br/>
-	(Convert\ Region menu-item "Convert Region" org-table-convert-region :enable<br/>
-			 (not<br/>
-			  (org-at-table-p 'any)))<br/>
-	(Import\ from\ File menu-item "Import from File" org-table-import :enable<br/>
-			    (not<br/>
-			     (org-at-table-p)))<br/>
-	(Export\ to\ File menu-item "Export to File" org-table-export :enable<br/>
-			  (org-at-table-p))<br/>
-	(nil-7-21 menu-item "--")<br/>
-	(Create/Convert\ from/to\ table\.el menu-item "Create/Convert from/to table.el" org-table-create-with-table\.el))<br/>
-<br/>
+<strong>org-tbl-menu</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Tbl menu</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Tbl"
+	(Align menu-item "Align" org-ctrl-c-ctrl-c :enable
+	       (org-at-table-p))
+	(Next\ Field menu-item "Next Field" org-cycle :enable
+		     (org-at-table-p))
+	(Previous\ Field menu-item "Previous Field" org-shifttab :enable
+			 (org-at-table-p))
+	(Next\ Row menu-item "Next Row" org-return :enable
+		   (org-at-table-p))
+	(nil menu-item "--")
+	(Blank\ Field menu-item "Blank Field" org-table-blank-field :enable
+		      (org-at-table-p))
+	(Edit\ Field menu-item "Edit Field" org-table-edit-field :enable
+		     (org-at-table-p))
+	(Copy\ Field\ from\ Above menu-item "Copy Field from Above" org-table-copy-down :enable
+				  (org-at-table-p))
+	(nil-8 menu-item "--")
+	(Column menu-item "Column"
+		(keymap "Column"
+			(Move\ Column\ Left menu-item "Move Column Left" org-metaleft :enable
+					    (org-at-table-p))
+			(Move\ Column\ Right menu-item "Move Column Right" org-metaright :enable
+					     (org-at-table-p))
+			(Delete\ Column menu-item "Delete Column" org-shiftmetaleft :enable
+					(org-at-table-p))
+			(Insert\ Column menu-item "Insert Column" org-shiftmetaright :enable
+					(org-at-table-p))))
+	(Row menu-item "Row"
+	     (keymap "Row"
+		     (Move\ Row\ Up menu-item "Move Row Up" org-metaup :enable
+				    (org-at-table-p))
+		     (Move\ Row\ Down menu-item "Move Row Down" org-metadown :enable
+				      (org-at-table-p))
+		     (Delete\ Row menu-item "Delete Row" org-shiftmetaup :enable
+				  (org-at-table-p))
+		     (Insert\ Row menu-item "Insert Row" org-shiftmetadown :enable
+				  (org-at-table-p))
+		     (Sort\ lines\ in\ region menu-item "Sort lines in region" org-table-sort-lines :enable
+					      (org-at-table-p))
+		     (nil menu-item "--")
+		     (Insert\ Hline menu-item "Insert Hline" org-ctrl-c-minus :enable
+				    (org-at-table-p))))
+	(Rectangle menu-item "Rectangle"
+		   (keymap "Rectangle"
+			   (Copy\ Rectangle menu-item "Copy Rectangle" org-copy-special :enable
+					    (org-at-table-p))
+			   (Cut\ Rectangle menu-item "Cut Rectangle" org-cut-special :enable
+					   (org-at-table-p))
+			   (Paste\ Rectangle menu-item "Paste Rectangle" org-paste-special :enable
+					     (org-at-table-p))
+			   (Fill\ Rectangle menu-item "Fill Rectangle" org-table-wrap-region :enable
+					    (org-at-table-p))))
+	(nil-12 menu-item "--")
+	(Calculate menu-item "Calculate"
+		   (keymap "Calculate"
+			   (Set\ Column\ Formula menu-item "Set Column Formula" org-table-eval-formula :enable
+						 (org-at-table-p))
+			   (Set\ Field\ Formula menu-item "Set Field Formula" menu-function-340 :enable
+						(org-at-table-p)
+						:keys "C-u C-c =")
+			   (Edit\ Formulas menu-item "Edit Formulas" org-edit-special :enable
+					   (org-at-table-p))
+			   (nil menu-item "--")
+			   (Recalculate\ line menu-item "Recalculate line" org-table-recalculate :enable
+					      (org-at-table-p))
+			   (Recalculate\ all menu-item "Recalculate all" menu-function-341 :enable
+					     (org-at-table-p)
+					     :keys "C-u C-c *")
+			   (Iterate\ all menu-item "Iterate all" menu-function-342 :enable
+					 (org-at-table-p)
+					 :keys "C-u C-u C-c *")
+			   (nil-7 menu-item "--")
+			   (Toggle\ Recalculate\ Mark menu-item "Toggle Recalculate Mark" org-table-rotate-recalc-marks :enable
+						      (org-at-table-p))
+			   (nil-9 menu-item "--")
+			   (Sum\ Column/Rectangle menu-item "Sum Column/Rectangle" org-table-sum :enable
+						  (or
+						   (org-at-table-p)
+						   (org-region-active-p)))
+			   (Which\ Column\? menu-item "Which Column?" org-table-current-column :enable
+					    (org-at-table-p))))
+	(Debug\ Formulas menu-item "Debug Formulas" org-table-toggle-formula-debugger :button
+			 (:toggle org-bound-and-true-p org-table-formula-debug))
+	(Show\ Col/Row\ Numbers menu-item "Show Col/Row Numbers" org-table-toggle-coordinate-overlays :button
+				(:toggle org-bound-and-true-p org-table-overlay-coordinates))
+	(nil-16 menu-item "--")
+	(Create menu-item "Create" org-table-create :enable
+		(and
+		 (not
+		  (org-at-table-p))
+		 org-enable-table-editor))
+	(Convert\ Region menu-item "Convert Region" org-table-convert-region :enable
+			 (not
+			  (org-at-table-p 'any)))
+	(Import\ from\ File menu-item "Import from File" org-table-import :enable
+			    (not
+			     (org-at-table-p)))
+	(Export\ to\ File menu-item "Export to File" org-table-export :enable
+			  (org-at-table-p))
+	(nil-21 menu-item "--")
+	(Create/Convert\ from/to\ table\.el menu-item "Create/Convert from/to table.el" org-table-create-with-table\.el))
+</pre></br>

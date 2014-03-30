@@ -1,47 +1,46 @@
-<strong>compilation-shell-minor-mode-map</strong> is a variable defined in `<code>compile.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `compilation-shell-minor-mode'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (compilation "Errors" keymap<br/>
-			(compilation-next-error menu-item "Next Error" next-error :help "Visit next `next-error' message and corresponding source code")<br/>
-			(compilation-previous-error menu-item "Previous Error" previous-error :help "Visit previous `next-error' message and corresponding source code")<br/>
-			(compilation-first-error menu-item "First Error" first-error :help "Restart at the first error, visit corresponding source code")<br/>
-			(compilation-mode-separator2 "----")<br/>
-			(compilation-skip "Skip Less Important Messages" keymap<br/>
-					  (compilation-skip-warning-and-info menu-item "Skip Warnings and Info"<br/>
-									     (lambda nil<br/>
-									       (interactive)<br/>
-									       (customize-set-variable 'compilation-skip-threshold 2))<br/>
-									     :help "Skip over Warnings and Info, stop for errors" :button<br/>
-									     (:radio eq compilation-skip-threshold 2))<br/>
-					  (compilation-skip-info menu-item "Skip Info"<br/>
-								 (lambda nil<br/>
-								   (interactive)<br/>
-								   (customize-set-variable 'compilation-skip-threshold 1))<br/>
-								 :help "Skip anything less than warning" :button<br/>
-								 (:radio eq compilation-skip-threshold 1))<br/>
-					  (compilation-skip-none menu-item "Don't Skip Any Messages"<br/>
-								 (lambda nil<br/>
-								   (interactive)<br/>
-								   (customize-set-variable 'compilation-skip-threshold 0))<br/>
-								 :help "Do not skip any type of messages" :button<br/>
-								 (:radio eq compilation-skip-threshold 0))<br/>
-					  "Skip")<br/>
-			(compilation-next-error-follow-minor-mode menu-item "Auto Error Display" next-error-follow-minor-mode :help "Display the error under cursor when moving the cursor" :button<br/>
-								  (:toggle . next-error-follow-minor-mode))<br/>
-			(compilation-mode-separator3 "----")<br/>
-			(stop-subjob menu-item "Stop Compilation" kill-compilation :help "Kill the process made by the M-x compile or M-x grep commands")<br/>
-			"Errors"))<br/>
- (27 keymap<br/>
-     (125 . compilation-next-file)<br/>
-     (123 . compilation-previous-file)<br/>
-     (16 . compilation-previous-error)<br/>
-     (14 . compilation-next-error)<br/>
-     (13 . compile-goto-error)))<br/>
-<br/>
+<strong>compilation-shell-minor-mode-map</strong> is a variable defined in `<code>compile.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `compilation-shell-minor-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (compilation "Errors" keymap
+			(compilation-next-error menu-item "Next Error" next-error :help "Visit next `next-error' message and corresponding source code")
+			(compilation-previous-error menu-item "Previous Error" previous-error :help "Visit previous `next-error' message and corresponding source code")
+			(compilation-first-error menu-item "First Error" first-error :help "Restart at the first error, visit corresponding source code")
+			(compilation-mode-separator2 "----")
+			(compilation-skip "Skip Less Important Messages" keymap
+					  (compilation-skip-warning-and-info menu-item "Skip Warnings and Info"
+									     (lambda nil
+									       (interactive)
+									       (customize-set-variable 'compilation-skip-threshold 2))
+									     :help "Skip over Warnings and Info, stop for errors" :button
+									     (:radio eq compilation-skip-threshold 2))
+					  (compilation-skip-info menu-item "Skip Info"
+								 (lambda nil
+								   (interactive)
+								   (customize-set-variable 'compilation-skip-threshold 1))
+								 :help "Skip anything less than warning" :button
+								 (:radio eq compilation-skip-threshold 1))
+					  (compilation-skip-none menu-item "Don't Skip Any Messages"
+								 (lambda nil
+								   (interactive)
+								   (customize-set-variable 'compilation-skip-threshold 0))
+								 :help "Do not skip any type of messages" :button
+								 (:radio eq compilation-skip-threshold 0))
+					  "Skip")
+			(compilation-next-error-follow-minor-mode menu-item "Auto Error Display" next-error-follow-minor-mode :help "Display the error under cursor when moving the cursor" :button
+								  (:toggle . next-error-follow-minor-mode))
+			(compilation-mode-separator3 "----")
+			(stop-subjob menu-item "Stop Compilation" kill-compilation :help "Kill the process made by the M-x compile or M-x grep commands")
+			"Errors"))
+ (27 keymap
+     (125 . compilation-next-file)
+     (123 . compilation-previous-file)
+     (16 . compilation-previous-error)
+     (14 . compilation-next-error)
+     (13 . compile-goto-error)))
+</pre></br>

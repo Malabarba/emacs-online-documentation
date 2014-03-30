@@ -1,130 +1,129 @@
-<strong>eudc-tail-menu</strong> is a variable defined in `<code>eudc.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (["---" nil nil]<br/>
- ["Query with Form" eudc-query-form :help "Display a form to query the directory server"]<br/>
- ["Expand Inline Query" eudc-expand-inline :help "Query the directory server, and expand the query string before point"]<br/>
- ["Insert Record into BBDB" eudc-insert-record-at-point-into-bbdb<br/>
-  (and<br/>
-   (or<br/>
-    (featurep 'bbdb)<br/>
-    (prog1<br/>
-	(locate-library "bbdb")<br/>
-      (message "")))<br/>
-   (overlays-at<br/>
-    (point))<br/>
-   (overlay-get<br/>
-    (car<br/>
-     (overlays-at<br/>
-      (point)))<br/>
-    'eudc-record))<br/>
-  :help "Insert record at point into the BBDB database"]<br/>
- ["Insert All Records into BBDB" eudc-batch-export-records-to-bbdb<br/>
-  (and<br/>
-   (eq major-mode 'eudc-mode)<br/>
-   (or<br/>
-    (featurep 'bbdb)<br/>
-    (prog1<br/>
-	(locate-library "bbdb")<br/>
-      (message ""))))<br/>
-  :help "Insert all the records returned by a directory query into BBDB"]<br/>
- ["---" nil nil]<br/>
- ["Get Email" eudc-get-email :help "Get the email field of NAME from the directory server"]<br/>
- ["Get Phone" eudc-get-phone :help "Get the phone field of name from the directory server"]<br/>
- ["List Valid Attribute Names" eudc-get-attribute-list :help "Return a list of valid attributes for the current server"]<br/>
- ["---" nil nil]<br/>
- ("Customize"<br/>
-  ["Eudc..."<br/>
-   (customize-group 'eudc)<br/>
-   t]<br/>
-  "--"<br/>
-  ("Eudc Ph" :filter<br/>
-   (lambda<br/>
-     (&rest junk)<br/>
-     (let*<br/>
-	 ((menu<br/>
-	   (custom-menu-create 'eudc-ph)))<br/>
-       (if<br/>
-	   (consp menu)<br/>
-	   (cdr menu)<br/>
-	 menu))))<br/>
-  ("Eudc Ldap" :filter<br/>
-   (lambda<br/>
-     (&rest junk)<br/>
-     (let*<br/>
-	 ((menu<br/>
-	   (custom-menu-create 'eudc-ldap)))<br/>
-       (if<br/>
-	   (consp menu)<br/>
-	   (cdr menu)<br/>
-	 menu))))<br/>
-  ("Eudc Bbdb" :filter<br/>
-   (lambda<br/>
-     (&rest junk)<br/>
-     (let*<br/>
-	 ((menu<br/>
-	   (custom-menu-create 'eudc-bbdb)))<br/>
-       (if<br/>
-	   (consp menu)<br/>
-	   (cdr menu)<br/>
-	 menu))))<br/>
-  ["Eudc Server..."<br/>
-   (customize-variable 'eudc-server)<br/>
-   t]<br/>
-  ["Eudc Protocol..."<br/>
-   (customize-variable 'eudc-protocol)<br/>
-   t]<br/>
-  ["Eudc Strict Return Matches..."<br/>
-   (customize-variable 'eudc-strict-return-matches)<br/>
-   :style toggle :selected eudc-strict-return-matches]<br/>
-  ["Eudc Default Return Attributes..."<br/>
-   (customize-variable 'eudc-default-return-attributes)<br/>
-   t]<br/>
-  ["Eudc Multiple Match Handling Method..."<br/>
-   (customize-variable 'eudc-multiple-match-handling-method)<br/>
-   t]<br/>
-  ["Eudc Duplicate Attribute Handling Method..."<br/>
-   (customize-variable 'eudc-duplicate-attribute-handling-method)<br/>
-   t]<br/>
-  ["Format of Inline Expansion Queries..."<br/>
-   (customize-variable 'eudc-inline-query-format)<br/>
-   t]<br/>
-  ["Eudc Expansion Overwrites Query..."<br/>
-   (customize-variable 'eudc-expansion-overwrites-query)<br/>
-   :style toggle :selected eudc-expansion-overwrites-query]<br/>
-  ["Eudc Inline Expansion Format..."<br/>
-   (customize-variable 'eudc-inline-expansion-format)<br/>
-   t]<br/>
-  ["Eudc Inline Expansion Servers..."<br/>
-   (customize-variable 'eudc-inline-expansion-servers)<br/>
-   t]<br/>
-  ["Max Number of Servers to Query..."<br/>
-   (customize-variable 'eudc-max-servers-to-query)<br/>
-   t]<br/>
-  ["Attributes in Query Forms..."<br/>
-   (customize-variable 'eudc-query-form-attributes)<br/>
-   t]<br/>
-  ["User-defined Names of Directory Attributes..."<br/>
-   (customize-variable 'eudc-user-attribute-names-alist)<br/>
-   t]<br/>
-  ["Eudc Use Raw Directory Names..."<br/>
-   (customize-variable 'eudc-use-raw-directory-names)<br/>
-   :style toggle :selected eudc-use-raw-directory-names]<br/>
-  ["Attribute Decoding Functions..."<br/>
-   (customize-variable 'eudc-attribute-display-method-alist)<br/>
-   t]<br/>
-  ["External Viewer Programs..."<br/>
-   (customize-variable 'eudc-external-viewers)<br/>
-   t]<br/>
-  ["Eudc Options File..."<br/>
-   (customize-variable 'eudc-options-file)<br/>
-   t]<br/>
-  ["Eudc Mode Hook..."<br/>
-   (customize-variable 'eudc-mode-hook)<br/>
-   t]))<br/>
-<br/>
+<strong>eudc-tail-menu</strong> is a variable defined in `<code>eudc.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(["---" nil nil]
+ ["Query with Form" eudc-query-form :help "Display a form to query the directory server"]
+ ["Expand Inline Query" eudc-expand-inline :help "Query the directory server, and expand the query string before point"]
+ ["Insert Record into BBDB" eudc-insert-record-at-point-into-bbdb
+  (and
+   (or
+    (featurep 'bbdb)
+    (prog1
+	(locate-library "bbdb")
+      (message "")))
+   (overlays-at
+    (point))
+   (overlay-get
+    (car
+     (overlays-at
+      (point)))
+    'eudc-record))
+  :help "Insert record at point into the BBDB database"]
+ ["Insert All Records into BBDB" eudc-batch-export-records-to-bbdb
+  (and
+   (derived-mode-p 'eudc-mode)
+   (or
+    (featurep 'bbdb)
+    (prog1
+	(locate-library "bbdb")
+      (message ""))))
+  :help "Insert all the records returned by a directory query into BBDB"]
+ ["---" nil nil]
+ ["Get Email" eudc-get-email :help "Get the email field of NAME from the directory server"]
+ ["Get Phone" eudc-get-phone :help "Get the phone field of name from the directory server"]
+ ["List Valid Attribute Names" eudc-get-attribute-list :help "Return a list of valid attributes for the current server"]
+ ["---" nil nil]
+ ("Customize"
+  ["Eudc..."
+   (customize-group 'eudc)
+   t]
+  "--"
+  ("Eudc Ph" :filter
+   (lambda
+     (&rest junk)
+     (let*
+	 ((menu
+	   (custom-menu-create 'eudc-ph)))
+       (if
+	   (consp menu)
+	   (cdr menu)
+	 menu))))
+  ("Eudc Ldap" :filter
+   (lambda
+     (&rest junk)
+     (let*
+	 ((menu
+	   (custom-menu-create 'eudc-ldap)))
+       (if
+	   (consp menu)
+	   (cdr menu)
+	 menu))))
+  ("Eudc Bbdb" :filter
+   (lambda
+     (&rest junk)
+     (let*
+	 ((menu
+	   (custom-menu-create 'eudc-bbdb)))
+       (if
+	   (consp menu)
+	   (cdr menu)
+	 menu))))
+  ["Eudc Server..."
+   (customize-variable 'eudc-server)
+   t]
+  ["Eudc Protocol..."
+   (customize-variable 'eudc-protocol)
+   t]
+  ["Eudc Strict Return Matches..."
+   (customize-variable 'eudc-strict-return-matches)
+   :style toggle :selected eudc-strict-return-matches]
+  ["Eudc Default Return Attributes..."
+   (customize-variable 'eudc-default-return-attributes)
+   t]
+  ["Eudc Multiple Match Handling Method..."
+   (customize-variable 'eudc-multiple-match-handling-method)
+   t]
+  ["Eudc Duplicate Attribute Handling Method..."
+   (customize-variable 'eudc-duplicate-attribute-handling-method)
+   t]
+  ["Format of Inline Expansion Queries..."
+   (customize-variable 'eudc-inline-query-format)
+   t]
+  ["Eudc Expansion Overwrites Query..."
+   (customize-variable 'eudc-expansion-overwrites-query)
+   :style toggle :selected eudc-expansion-overwrites-query]
+  ["Eudc Inline Expansion Format..."
+   (customize-variable 'eudc-inline-expansion-format)
+   t]
+  ["Eudc Inline Expansion Servers..."
+   (customize-variable 'eudc-inline-expansion-servers)
+   t]
+  ["Max Number of Servers to Query..."
+   (customize-variable 'eudc-max-servers-to-query)
+   t]
+  ["Attributes in Query Forms..."
+   (customize-variable 'eudc-query-form-attributes)
+   t]
+  ["User-defined Names of Directory Attributes..."
+   (customize-variable 'eudc-user-attribute-names-alist)
+   t]
+  ["Eudc Use Raw Directory Names..."
+   (customize-variable 'eudc-use-raw-directory-names)
+   :style toggle :selected eudc-use-raw-directory-names]
+  ["Attribute Decoding Functions..."
+   (customize-variable 'eudc-attribute-display-method-alist)
+   t]
+  ["External Viewer Programs..."
+   (customize-variable 'eudc-external-viewers)
+   t]
+  ["Eudc Options File..."
+   (customize-variable 'eudc-options-file)
+   t]
+  ["Eudc Mode Hook..."
+   (customize-variable 'eudc-mode-hook)
+   t]))
+</pre></br>

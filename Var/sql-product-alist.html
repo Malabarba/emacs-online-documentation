@@ -1,152 +1,153 @@
-<strong>sql-product-alist</strong> is a variable defined in `<code>sql.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-An alist of product specific configuration settings.<br/>
-<br/>
-Without an entry in this list a product will not be properly<br/>
-highlighted and will not support `sql-interactive-mode'.<br/>
-<br/>
-Each element in the list is in the following format:<br/>
-<br/>
- (PRODUCT FEATURE VALUE ...)<br/>
-<br/>
-where PRODUCT is the appropriate value of `sql-product'.  The<br/>
-product name is then followed by FEATURE-VALUE pairs.  If a<br/>
-FEATURE is not specified, its VALUE is treated as nil.  FEATURE<br/>
-may be any one of the following:<br/>
-<br/>
- :name                  string containing the displayable name of<br/>
-                        the product.<br/>
-<br/>
- :free-software         is the product Free (as in Freedom) software?<br/>
-<br/>
- :font-lock             name of the variable containing the product<br/>
-                        specific font lock highlighting patterns.<br/>
-<br/>
- :sqli-program          name of the variable containing the product<br/>
-                        specific interactive program name.<br/>
-<br/>
- :sqli-options          name of the variable containing the list<br/>
-                        of product specific options.<br/>
-<br/>
- :sqli-login            name of the variable containing the list of<br/>
-                        login parameters (i.e., user, password,<br/>
-                        database and server) needed to connect to<br/>
-                        the database.<br/>
-<br/>
- :sqli-comint-func      name of a function which accepts no<br/>
-                        parameters that will use the values of<br/>
-                        `sql-user', `sql-password',<br/>
-                        `sql-database', `sql-server' and<br/>
-                        `sql-port' to open a comint buffer and<br/>
-                        connect to the database.  Do product<br/>
-                        specific configuration of comint in this<br/>
-                        function.<br/>
-<br/>
- :list-all              Command string or function which produces<br/>
-                        a listing of all objects in the database.<br/>
-                        If it's a cons cell, then the car<br/>
-                        produces the standard list of objects and<br/>
-                        the cdr produces an enhanced list of<br/>
-                        objects.  What "enhanced" means is<br/>
-                        dependent on the SQL product and may not<br/>
-                        exist.  In general though, the<br/>
-                        "enhanced" list should include visible<br/>
-                        objects from other schemas.<br/>
-<br/>
- :list-table            Command string or function which produces<br/>
-                        a detailed listing of a specific database<br/>
-                        table.  If its a cons cell, then the car<br/>
-                        produces the standard list and the cdr<br/>
-                        produces an enhanced list.<br/>
-<br/>
- :completion-object     A function that returns a list of<br/>
-                        objects.  Called with a single<br/>
-                        parameter--if nil then list objects<br/>
-                        accessible in the current schema, if<br/>
-                        not-nil it is the name of a schema whose<br/>
-                        objects should be listed.<br/>
-<br/>
- :completion-column     A function that returns a list of<br/>
-                        columns.  Called with a single<br/>
-                        parameter--if nil then list objects<br/>
-                        accessible in the current schema, if<br/>
-                        not-nil it is the name of a schema whose<br/>
-                        objects should be listed.<br/>
-<br/>
- :prompt-regexp         regular expression string that matches<br/>
-                        the prompt issued by the product<br/>
-                        interpreter.<br/>
-<br/>
- :prompt-length         length of the prompt on the line.<br/>
-<br/>
- :prompt-cont-regexp    regular expression string that matches<br/>
-                        the continuation prompt issued by the<br/>
-                        product interpreter.<br/>
-<br/>
- :input-filter          function which can filter strings sent to<br/>
-                        the command interpreter.  It is also used<br/>
-                        by the `sql-send-string',<br/>
-                        `sql-send-region', `sql-send-paragraph'<br/>
-                        and `sql-send-buffer' functions.  The<br/>
-                        function is passed the string sent to the<br/>
-                        command interpreter and must return the<br/>
-                        filtered string.  May also be a list of<br/>
-                        such functions.<br/>
-<br/>
- :statement             name of a variable containing a regexp that<br/>
-                        matches the beginning of SQL statements.<br/>
-<br/>
- :terminator            the terminator to be sent after a<br/>
-                        `sql-send-string', `sql-send-region',<br/>
-                        `sql-send-paragraph' and<br/>
-                        `sql-send-buffer' command.  May be the<br/>
-                        literal string or a cons of a regexp to<br/>
-                        match an existing terminator in the<br/>
-                        string and the terminator to be used if<br/>
-                        its absent.  By default ";".<br/>
-<br/>
- :syntax-alist          alist of syntax table entries to enable<br/>
-                        special character treatment by font-lock<br/>
-                        and imenu.<br/>
-<br/>
-Other features can be stored but they will be ignored.  However,<br/>
-you can develop new functionality which is product independent by<br/>
-using `sql-get-product-feature' to lookup the product specific<br/>
-settings.<br/>
-<br/>
-Value: ((ansi :name "ANSI" :font-lock sql-mode-ansi-font-lock-keywords :statement sql-ansi-statement-starters)<br/>
- (db2 :name "DB2" :font-lock sql-mode-db2-font-lock-keywords :sqli-program sql-db2-program :sqli-options sql-db2-options :sqli-login sql-db2-login-params :sqli-comint-func sql-comint-db2 :prompt-regexp "^db2 => " :prompt-length 7 :prompt-cont-regexp "^db2 (cont.) => " :input-filter sql-escape-newlines-filter)<br/>
- (informix :name "Informix" :font-lock sql-mode-informix-font-lock-keywords :sqli-program sql-informix-program :sqli-options sql-informix-options :sqli-login sql-informix-login-params :sqli-comint-func sql-comint-informix :prompt-regexp "^> " :prompt-length 2 :syntax-alist<br/>
-	   ((123 . "<")<br/>
-	    (125 . ">")))<br/>
- (ingres :name "Ingres" :font-lock sql-mode-ingres-font-lock-keywords :sqli-program sql-ingres-program :sqli-options sql-ingres-options :sqli-login sql-ingres-login-params :sqli-comint-func sql-comint-ingres :prompt-regexp "^* " :prompt-length 2 :prompt-cont-regexp "^* ")<br/>
- (interbase :name "Interbase" :font-lock sql-mode-interbase-font-lock-keywords :sqli-program sql-interbase-program :sqli-options sql-interbase-options :sqli-login sql-interbase-login-params :sqli-comint-func sql-comint-interbase :prompt-regexp "^SQL> " :prompt-length 5)<br/>
- (linter :name "Linter" :font-lock sql-mode-linter-font-lock-keywords :sqli-program sql-linter-program :sqli-options sql-linter-options :sqli-login sql-linter-login-params :sqli-comint-func sql-comint-linter :prompt-regexp "^SQL>" :prompt-length 4)<br/>
- (ms :name "Microsoft" :font-lock sql-mode-ms-font-lock-keywords :sqli-program sql-ms-program :sqli-options sql-ms-options :sqli-login sql-ms-login-params :sqli-comint-func sql-comint-ms :prompt-regexp "^[0-9]*>" :prompt-length 5 :syntax-alist<br/>
-     ((64 . "_"))<br/>
-     :terminator<br/>
-     ("^go" . "go"))<br/>
- (mysql :name "MySQL" :free-software t :font-lock sql-mode-mysql-font-lock-keywords :sqli-program sql-mysql-program :sqli-options sql-mysql-options :sqli-login sql-mysql-login-params :sqli-comint-func sql-comint-mysql :list-all "SHOW TABLES;" :list-table "DESCRIBE %s;" :prompt-regexp "^mysql> " :prompt-length 6 :prompt-cont-regexp "^    -> " :syntax-alist<br/>
-	((35 . "< b"))<br/>
-	:input-filter sql-remove-tabs-filter)<br/>
- (oracle :name "Oracle" :font-lock sql-mode-oracle-font-lock-keywords :sqli-program sql-oracle-program :sqli-options sql-oracle-options :sqli-login sql-oracle-login-params :sqli-comint-func sql-comint-oracle :list-all sql-oracle-list-all :list-table sql-oracle-list-table :completion-object sql-oracle-completion-object :prompt-regexp "^SQL> " :prompt-length 5 :prompt-cont-regexp "^\\s-*[[:digit:]]+  " :statement sql-oracle-statement-starters :syntax-alist<br/>
-	 ((36 . "_")<br/>
-	  (35 . "_"))<br/>
-	 :terminator<br/>
-	 ("\\(^/\\|;\\)$" . "/")<br/>
-	 :input-filter sql-placeholders-filter)<br/>
- (postgres :name "Postgres" :free-software t :font-lock sql-mode-postgres-font-lock-keywords :sqli-program sql-postgres-program :sqli-options sql-postgres-options :sqli-login sql-postgres-login-params :sqli-comint-func sql-comint-postgres :list-all<br/>
-	   ("\\d+" . "\\dS+")<br/>
-	   :list-table<br/>
-	   ("\\d+ %s" . "\\dS+ %s")<br/>
-	   :completion-object sql-postgres-completion-object :prompt-regexp "^\\w*=[#>] " :prompt-length 5 :prompt-cont-regexp "^\\w*[-(][#>] " :input-filter sql-remove-tabs-filter :terminator<br/>
-	   ("\\(^\\s-*\\\\g$\\|;\\)" . "\\g"))<br/>
- (solid :name "Solid" :font-lock sql-mode-solid-font-lock-keywords :sqli-program sql-solid-program :sqli-options sql-solid-options :sqli-login sql-solid-login-params :sqli-comint-func sql-comint-solid :prompt-regexp "^" :prompt-length 0)<br/>
- (sqlite :name "SQLite" :free-software t :font-lock sql-mode-sqlite-font-lock-keywords :sqli-program sql-sqlite-program :sqli-options sql-sqlite-options :sqli-login sql-sqlite-login-params :sqli-comint-func sql-comint-sqlite :list-all ".tables" :list-table ".schema %s" :completion-object sql-sqlite-completion-object :prompt-regexp "^sqlite> " :prompt-length 8 :prompt-cont-regexp "^   ...> " :terminator ";")<br/>
- (sybase :name "Sybase" :font-lock sql-mode-sybase-font-lock-keywords :sqli-program sql-sybase-program :sqli-options sql-sybase-options :sqli-login sql-sybase-login-params :sqli-comint-func sql-comint-sybase :prompt-regexp "^SQL> " :prompt-length 5 :syntax-alist<br/>
-	 ((64 . "_"))<br/>
-	 :terminator<br/>
-	 ("^go" . "go")))<br/>
-<br/>
+<strong>sql-product-alist</strong> is a variable defined in `<code>sql.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+An alist of product specific configuration settings.</br>
+</br>
+Without an entry in this list a product will not be properly</br>
+highlighted and will not support `sql-interactive-mode'.</br>
+</br>
+Each element in the list is in the following format:</br>
+</br>
+ (PRODUCT FEATURE VALUE ...)</br>
+</br>
+where PRODUCT is the appropriate value of `sql-product'.  The</br>
+product name is then followed by FEATURE-VALUE pairs.  If a</br>
+FEATURE is not specified, its VALUE is treated as nil.  FEATURE</br>
+may be any one of the following:</br>
+</br>
+ :name                  string containing the displayable name of</br>
+                        the product.</br>
+</br>
+ :free-software         is the product Free (as in Freedom) software?</br>
+</br>
+ :font-lock             name of the variable containing the product</br>
+                        specific font lock highlighting patterns.</br>
+</br>
+ :sqli-program          name of the variable containing the product</br>
+                        specific interactive program name.</br>
+</br>
+ :sqli-options          name of the variable containing the list</br>
+                        of product specific options.</br>
+</br>
+ :sqli-login            name of the variable containing the list of</br>
+                        login parameters (i.e., user, password,</br>
+                        database and server) needed to connect to</br>
+                        the database.</br>
+</br>
+ :sqli-comint-func      name of a function which accepts no</br>
+                        parameters that will use the values of</br>
+                        `sql-user', `sql-password',</br>
+                        `sql-database', `sql-server' and</br>
+                        `sql-port' to open a comint buffer and</br>
+                        connect to the database.  Do product</br>
+                        specific configuration of comint in this</br>
+                        function.</br>
+</br>
+ :list-all              Command string or function which produces</br>
+                        a listing of all objects in the database.</br>
+                        If it's a cons cell, then the car</br>
+                        produces the standard list of objects and</br>
+                        the cdr produces an enhanced list of</br>
+                        objects.  What "enhanced" means is</br>
+                        dependent on the SQL product and may not</br>
+                        exist.  In general though, the</br>
+                        "enhanced" list should include visible</br>
+                        objects from other schemas.</br>
+</br>
+ :list-table            Command string or function which produces</br>
+                        a detailed listing of a specific database</br>
+                        table.  If its a cons cell, then the car</br>
+                        produces the standard list and the cdr</br>
+                        produces an enhanced list.</br>
+</br>
+ :completion-object     A function that returns a list of</br>
+                        objects.  Called with a single</br>
+                        parameter--if nil then list objects</br>
+                        accessible in the current schema, if</br>
+                        not-nil it is the name of a schema whose</br>
+                        objects should be listed.</br>
+</br>
+ :completion-column     A function that returns a list of</br>
+                        columns.  Called with a single</br>
+                        parameter--if nil then list objects</br>
+                        accessible in the current schema, if</br>
+                        not-nil it is the name of a schema whose</br>
+                        objects should be listed.</br>
+</br>
+ :prompt-regexp         regular expression string that matches</br>
+                        the prompt issued by the product</br>
+                        interpreter.</br>
+</br>
+ :prompt-length         length of the prompt on the line.</br>
+</br>
+ :prompt-cont-regexp    regular expression string that matches</br>
+                        the continuation prompt issued by the</br>
+                        product interpreter.</br>
+</br>
+ :input-filter          function which can filter strings sent to</br>
+                        the command interpreter.  It is also used</br>
+                        by the `sql-send-string',</br>
+                        `sql-send-region', `sql-send-paragraph'</br>
+                        and `sql-send-buffer' functions.  The</br>
+                        function is passed the string sent to the</br>
+                        command interpreter and must return the</br>
+                        filtered string.  May also be a list of</br>
+                        such functions.</br>
+</br>
+ :statement             name of a variable containing a regexp that</br>
+                        matches the beginning of SQL statements.</br>
+</br>
+ :terminator            the terminator to be sent after a</br>
+                        `sql-send-string', `sql-send-region',</br>
+                        `sql-send-paragraph' and</br>
+                        `sql-send-buffer' command.  May be the</br>
+                        literal string or a cons of a regexp to</br>
+                        match an existing terminator in the</br>
+                        string and the terminator to be used if</br>
+                        its absent.  By default ";".</br>
+</br>
+ :syntax-alist          alist of syntax table entries to enable</br>
+                        special character treatment by font-lock</br>
+                        and imenu.</br>
+</br>
+Other features can be stored but they will be ignored.  However,</br>
+you can develop new functionality which is product independent by</br>
+using `sql-get-product-feature' to lookup the product specific</br>
+settings.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((ansi :name "ANSI" :font-lock sql-mode-ansi-font-lock-keywords :statement sql-ansi-statement-starters)
+ (db2 :name "DB2" :font-lock sql-mode-db2-font-lock-keywords :sqli-program sql-db2-program :sqli-options sql-db2-options :sqli-login sql-db2-login-params :sqli-comint-func sql-comint-db2 :prompt-regexp "^db2 => " :prompt-length 7 :prompt-cont-regexp "^db2 (cont.) => " :input-filter sql-escape-newlines-filter)
+ (informix :name "Informix" :font-lock sql-mode-informix-font-lock-keywords :sqli-program sql-informix-program :sqli-options sql-informix-options :sqli-login sql-informix-login-params :sqli-comint-func sql-comint-informix :prompt-regexp "^> " :prompt-length 2 :syntax-alist
+	   ((123 . "<")
+	    (125 . ">")))
+ (ingres :name "Ingres" :font-lock sql-mode-ingres-font-lock-keywords :sqli-program sql-ingres-program :sqli-options sql-ingres-options :sqli-login sql-ingres-login-params :sqli-comint-func sql-comint-ingres :prompt-regexp "^* " :prompt-length 2 :prompt-cont-regexp "^* ")
+ (interbase :name "Interbase" :font-lock sql-mode-interbase-font-lock-keywords :sqli-program sql-interbase-program :sqli-options sql-interbase-options :sqli-login sql-interbase-login-params :sqli-comint-func sql-comint-interbase :prompt-regexp "^SQL> " :prompt-length 5)
+ (linter :name "Linter" :font-lock sql-mode-linter-font-lock-keywords :sqli-program sql-linter-program :sqli-options sql-linter-options :sqli-login sql-linter-login-params :sqli-comint-func sql-comint-linter :prompt-regexp "^SQL>" :prompt-length 4)
+ (ms :name "Microsoft" :font-lock sql-mode-ms-font-lock-keywords :sqli-program sql-ms-program :sqli-options sql-ms-options :sqli-login sql-ms-login-params :sqli-comint-func sql-comint-ms :prompt-regexp "^[0-9]*>" :prompt-length 5 :syntax-alist
+     ((64 . "_"))
+     :terminator
+     ("^go" . "go"))
+ (mysql :name "MySQL" :free-software t :font-lock sql-mode-mysql-font-lock-keywords :sqli-program sql-mysql-program :sqli-options sql-mysql-options :sqli-login sql-mysql-login-params :sqli-comint-func sql-comint-mysql :list-all "SHOW TABLES;" :list-table "DESCRIBE %s;" :prompt-regexp "^mysql> " :prompt-length 6 :prompt-cont-regexp "^    -> " :syntax-alist
+	((35 . "< b"))
+	:input-filter sql-remove-tabs-filter)
+ (oracle :name "Oracle" :font-lock sql-mode-oracle-font-lock-keywords :sqli-program sql-oracle-program :sqli-options sql-oracle-options :sqli-login sql-oracle-login-params :sqli-comint-func sql-comint-oracle :list-all sql-oracle-list-all :list-table sql-oracle-list-table :completion-object sql-oracle-completion-object :prompt-regexp "^SQL> " :prompt-length 5 :prompt-cont-regexp "^\\(?:[ ][ ][1-9]\\|[ ][1-9][0-9]\\|[1-9][0-9]\\{2\\}\\)[ ]\\{2\\}" :statement sql-oracle-statement-starters :syntax-alist
+	 ((36 . "_")
+	  (35 . "_"))
+	 :terminator
+	 ("\\(^/\\|;\\)$" . "/")
+	 :input-filter sql-placeholders-filter)
+ (postgres :name "Postgres" :free-software t :font-lock sql-mode-postgres-font-lock-keywords :sqli-program sql-postgres-program :sqli-options sql-postgres-options :sqli-login sql-postgres-login-params :sqli-comint-func sql-comint-postgres :list-all
+	   ("\\d+" . "\\dS+")
+	   :list-table
+	   ("\\d+ %s" . "\\dS+ %s")
+	   :completion-object sql-postgres-completion-object :prompt-regexp "^\\w*=[#>] " :prompt-length 5 :prompt-cont-regexp "^\\w*[-(][#>] " :input-filter sql-remove-tabs-filter :terminator
+	   ("\\(^\\s-*\\\\g$\\|;\\)" . "\\g"))
+ (solid :name "Solid" :font-lock sql-mode-solid-font-lock-keywords :sqli-program sql-solid-program :sqli-options sql-solid-options :sqli-login sql-solid-login-params :sqli-comint-func sql-comint-solid :prompt-regexp "^" :prompt-length 0)
+ (sqlite :name "SQLite" :free-software t :font-lock sql-mode-sqlite-font-lock-keywords :sqli-program sql-sqlite-program :sqli-options sql-sqlite-options :sqli-login sql-sqlite-login-params :sqli-comint-func sql-comint-sqlite :list-all ".tables" :list-table ".schema %s" :completion-object sql-sqlite-completion-object :prompt-regexp "^sqlite> " :prompt-length 8 :prompt-cont-regexp "^   ...> " :terminator ";")
+ (sybase :name "Sybase" :font-lock sql-mode-sybase-font-lock-keywords :sqli-program sql-sybase-program :sqli-options sql-sybase-options :sqli-login sql-sybase-login-params :sqli-comint-func sql-comint-sybase :prompt-regexp "^SQL> " :prompt-length 5 :syntax-alist
+	 ((64 . "_"))
+	 :terminator
+	 ("^go" . "go")))
+</pre></br>

@@ -1,11 +1,14 @@
-<strong>frame-background-mode</strong> is a variable defined in `<code>frame.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-The brightness of the background.<br/>
-Set this to the symbol `dark' if your background color is dark,<br/>
-`light' if your background is light, or nil (automatic by default)<br/>
-if you want Emacs to examine the brightness for you.  Don't set this<br/>
-variable with `setq'; this won't have the expected effect.<br/>
-<br/>
+<strong>frame-background-mode</strong> is a variable defined in `<code>frame.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+The brightness of the background.</br>
+Set this to the symbol `dark' if your background color is dark,</br>
+`light' if your background is light, or nil (automatic by default)</br>
+if you want Emacs to examine the brightness for you.</br>
+</br>
+If you change this without using customize, you should use</br>
+`frame-set-background-mode' to update existing frames;</br>
+e.g. (mapc 'frame-set-background-mode (frame-list)).</br>
+</br>
 You can customize this variable.

@@ -1,14 +1,20 @@
-<strong>set-temporary-overlay-map</strong> is a compiled Lisp function in `<code>subr.el</code>'.<br/>
-<br/>
-(set-temporary-overlay-map MAP &optional KEEP-PRED)<br/>
-<br/>
-Set MAP as a temporary keymap taking precedence over most other keymaps.<br/>
-Note that this does NOT take precedence over the "overriding" maps<br/>
-`overriding-terminal-local-map' and `overriding-local-map' (or the<br/>
-`keymap' text property).  Unlike those maps, if no match for a key is<br/>
-found in MAP, the normal key lookup sequence then continues.<br/>
-<br/>
-Normally, MAP is used only once.  If the optional argument<br/>
-KEEP-PRED is t, MAP stays active if a key from MAP is used.<br/>
-KEEP-PRED can also be a function of no arguments: if it returns<br/>
-non-nil then MAP stays active.
+<strong>set-temporary-overlay-map</strong> is an alias for `<strong><a href="set-transient-map">set-transient-map</a></strong>' in `<code>subr.el</code>'.</br>
+</br>
+(set-temporary-overlay-map <u>MAP</u> &optional <u>KEEP-PRED</u> <u>ON-EXIT</u>)</br>
+</br>
+This function is obsolete since 24.4;</br>
+use `set-transient-map' instead.</br>
+</br>
+Set <u>MAP</u> as a temporary keymap taking precedence over other keymaps.</br>
+Normally, <u>MAP</u> is used only once, to look up the very next key.</br>
+However, if the optional argument <u>KEEP-PRED</u> is t, <u>MAP</u> stays</br>
+active if a key from <u>MAP</u> is used.  <u>KEEP-PRED</u> can also be a</br>
+function of no arguments: if it returns non-nil, then <u>MAP</u> stays</br>
+active.</br>
+</br>
+Optional arg <u>ON-EXIT</u>, if non-nil, specifies a function that is</br>
+called, with no arguments, after <u>MAP</u> is deactivated.</br>
+</br>
+This uses `overriding-terminal-local-map' which takes precedence over all other</br>
+keymaps.  As usual, if no match for a key is found in <u>MAP</u>, the normal key</br>
+lookup sequence then continues.

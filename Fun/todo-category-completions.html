@@ -1,0 +1,14 @@
+<strong>todo-category-completions</strong> is a compiled Lisp function in `<code>todo-mode.el</code>'.</br>
+</br>
+(todo-category-completions &optional <u>ARCHIVE</u>)</br>
+</br>
+Return a list of completions for `todo-read-category'.</br>
+Each element of the list is a cons of a category name and the</br>
+file or list of files (as short file names) it is in.  The files</br>
+are either the current (or if there is none, the default) todo</br>
+file plus the files listed in `todo-category-completions-files',</br>
+or, with non-nil <u>ARCHIVE</u>, the current archive file.</br>
+</br>
+Before calculating the completions, update the value of</br>
+`todo-category-completions-files' in case any files named in it</br>
+have been removed.

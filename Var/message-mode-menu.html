@@ -1,37 +1,37 @@
-<strong>message-mode-menu</strong> is a variable defined in `<code>message.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Message Menu.<br/>
-<br/>
-Value:<br/>
-(keymap "Message"<br/>
-	(Yank\ Original menu-item "Yank Original" message-yank-original :enable message-reply-buffer)<br/>
-	(Fill\ Yanked\ Message menu-item "Fill Yanked Message" message-fill-yanked-message)<br/>
-	(Insert\ Signature menu-item "Insert Signature" message-insert-signature)<br/>
-	(Caesar\ \(rot13\)\ Message menu-item "Caesar (rot13) Message" message-caesar-buffer-body)<br/>
-	(Caesar\ \(rot13\)\ Region menu-item "Caesar (rot13) Region" message-caesar-region :enable<br/>
-				   (message-mark-active-p))<br/>
-	(Elide\ Region menu-item "Elide Region" message-elide-region :enable<br/>
-		       (message-mark-active-p)<br/>
-		       :help "Replace text in region with an ellipsis")<br/>
-	(Delete\ Outside\ Region menu-item "Delete Outside Region" message-delete-not-region :enable<br/>
-				 (message-mark-active-p)<br/>
-				 :help "Delete all quoted text outside region")<br/>
-	(Kill\ To\ Signature menu-item "Kill To Signature" message-kill-to-signature)<br/>
-	(Newline\ and\ Reformat menu-item "Newline and Reformat" message-newline-and-reformat)<br/>
-	(Rename\ buffer menu-item "Rename buffer" message-rename-buffer)<br/>
-	(Spellcheck menu-item "Spellcheck" ispell-message :help "Spellcheck this message")<br/>
-	(nil menu-item "----")<br/>
-	(Insert\ Region\ Marked menu-item "Insert Region Marked" message-mark-inserted-region :enable<br/>
-				(message-mark-active-p)<br/>
-				:help "Mark region with enclosing tags")<br/>
-	(Insert\ File\ Marked\.\.\. menu-item "Insert File Marked..." message-mark-insert-file :help "Insert file at point marked with enclosing tags")<br/>
-	(nil-14 menu-item "----")<br/>
-	(Send\ Message menu-item "Send Message" message-send-and-exit :help "Send this message")<br/>
-	(Postpone\ Message menu-item "Postpone Message" message-dont-send :help "File this draft message and exit")<br/>
-	(Send\ at\ Specific\ Time\.\.\. menu-item "Send at Specific Time..." gnus-delay-article :help "Ask, then arrange to send message at that time")<br/>
-	(Kill\ Message menu-item "Kill Message" message-kill-buffer :help "Delete this message without sending")<br/>
-	(nil-19 menu-item "----")<br/>
-	(Message\ manual menu-item "Message manual" message-info :help "Display the Message manual"))<br/>
-<br/>
+<strong>message-mode-menu</strong> is a variable defined in `<code>message.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Message Menu.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Message"
+	(Yank\ Original menu-item "Yank Original" message-yank-original :enable message-reply-buffer)
+	(Fill\ Yanked\ Message menu-item "Fill Yanked Message" message-fill-yanked-message)
+	(Insert\ Signature menu-item "Insert Signature" message-insert-signature)
+	(Caesar\ \(rot13\)\ Message menu-item "Caesar (rot13) Message" message-caesar-buffer-body)
+	(Caesar\ \(rot13\)\ Region menu-item "Caesar (rot13) Region" message-caesar-region :enable
+				   (message-mark-active-p))
+	(Elide\ Region menu-item "Elide Region" message-elide-region :enable
+		       (message-mark-active-p)
+		       :help "Replace text in region with an ellipsis")
+	(Delete\ Outside\ Region menu-item "Delete Outside Region" message-delete-not-region :enable
+				 (message-mark-active-p)
+				 :help "Delete all quoted text outside region")
+	(Kill\ To\ Signature menu-item "Kill To Signature" message-kill-to-signature)
+	(Newline\ and\ Reformat menu-item "Newline and Reformat" message-newline-and-reformat)
+	(Rename\ buffer menu-item "Rename buffer" message-rename-buffer)
+	(Spellcheck menu-item "Spellcheck" ispell-message :help "Spellcheck this message")
+	(nil menu-item "----")
+	(Insert\ Region\ Marked menu-item "Insert Region Marked" message-mark-inserted-region :enable
+				(message-mark-active-p)
+				:help "Mark region with enclosing tags")
+	(Insert\ File\ Marked\.\.\. menu-item "Insert File Marked..." message-mark-insert-file :help "Insert file at point marked with enclosing tags")
+	(nil-14 menu-item "----")
+	(Send\ Message menu-item "Send Message" message-send-and-exit :help "Send this message")
+	(Postpone\ Message menu-item "Postpone Message" message-dont-send :help "File this draft message and exit")
+	(Send\ at\ Specific\ Time\.\.\. menu-item "Send at Specific Time..." gnus-delay-article :help "Ask, then arrange to send message at that time")
+	(Kill\ Message menu-item "Kill Message" message-kill-buffer :help "Delete this message without sending")
+	(nil-19 menu-item "----")
+	(Message\ manual menu-item "Message manual" message-info :help "Display the Message manual"))
+</pre></br>

@@ -1,34 +1,35 @@
-<strong>normal-erase-is-backspace-mode</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.<br/>
-<br/>
-(normal-erase-is-backspace-mode &optional ARG)<br/>
-<br/>
-Toggle the Erase and Delete mode of the Backspace and Delete keys.<br/>
-With a prefix argument ARG, enable this feature if ARG is<br/>
-positive, and disable it otherwise.  If called from Lisp, enable<br/>
-the mode if ARG is omitted or nil.<br/>
-<br/>
-On window systems, when this mode is on, Delete is mapped to C-d<br/>
-and Backspace is mapped to DEL; when this mode is off, both<br/>
-Delete and Backspace are mapped to DEL.  (The remapping goes via<br/>
-`local-function-key-map', so binding Delete or Backspace in the<br/>
-global or local keymap will override that.)<br/>
-<br/>
-In addition, on window systems, the bindings of C-Delete, M-Delete,<br/>
-C-M-Delete, C-Backspace, M-Backspace, and C-M-Backspace are changed in<br/>
-the global keymap in accordance with the functionality of Delete and<br/>
-Backspace.  For example, if Delete is remapped to C-d, which deletes<br/>
-forward, C-Delete is bound to `kill-word', but if Delete is remapped<br/>
-to DEL, which deletes backward, C-Delete is bound to<br/>
-`backward-kill-word'.<br/>
-<br/>
-If not running on a window system, a similar effect is accomplished by<br/>
-remapping C-h (normally produced by the Backspace key) and DEL via<br/>
-`keyboard-translate': if this mode is on, C-h is mapped to DEL and DEL<br/>
-to C-d; if it's off, the keys are not remapped.<br/>
-<br/>
-When not running on a window system, and this mode is turned on, the<br/>
-former functionality of C-h is available on the F1 key.  You should<br/>
-probably not turn on this mode on a text-only terminal if you don't<br/>
-have both Backspace, Delete and F1 keys.<br/>
-<br/>
+<strong>normal-erase-is-backspace-mode</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+</br>
+(normal-erase-is-backspace-mode &optional <u>ARG</u>)</br>
+</br>
+Toggle the Erase and Delete mode of the Backspace and Delete keys.</br>
+With a prefix argument <u>ARG</u>, enable this feature if <u>ARG</u> is</br>
+positive, and disable it otherwise.  If called from Lisp, enable</br>
+the mode if <u>ARG</u> is omitted or nil.</br>
+</br>
+On window systems, when this mode is on, Delete is mapped to C-d</br>
+and Backspace is mapped to DEL; when this mode is off, both</br>
+Delete and Backspace are mapped to DEL.  (The remapping goes via</br>
+`local-function-key-map', so binding Delete or Backspace in the</br>
+global or local keymap will override that.)</br>
+</br>
+In addition, on window systems, the bindings of C-Delete, M-Delete,</br>
+C-M-Delete, C-Backspace, M-Backspace, and C-M-Backspace are changed in</br>
+the global keymap in accordance with the functionality of Delete and</br>
+Backspace.  For example, if Delete is remapped to C-d, which deletes</br>
+forward, C-Delete is bound to `kill-word', but if Delete is remapped</br>
+to DEL, which deletes backward, C-Delete is bound to</br>
+`backward-kill-word'.</br>
+</br>
+If not running on a window system, a similar effect is accomplished by</br>
+remapping C-h (normally produced by the Backspace key) and DEL via</br>
+`keyboard-translate': if this mode is on, C-h is mapped to DEL and DEL</br>
+to C-d; if it's off, the keys are not remapped.</br>
+</br>
+When not running on a window system, and this mode is turned on, the</br>
+former functionality of C-h is available on the F1 key.  You should</br>
+probably not turn on this mode on a text-only terminal if you don't</br>
+have both Backspace, Delete and F1 keys.</br>
+</br>
 See also `normal-erase-is-backspace'.

@@ -1,12 +1,11 @@
-<strong>ad-assemble-advised-definition</strong> is a compiled Lisp function in `<code>advice.el</code>'.<br/>
-<br/>
-(ad-assemble-advised-definition TYPE ARGS DOCSTRING INTERACTIVE ORIG &optional BEFORES AROUNDS AFTERS)<br/>
-<br/>
-Assembles an original and its advices into an advised function.<br/>
-It constructs a function or macro definition according to TYPE which has to<br/>
-be either `macro', `function' or `special-form'.  ARGS is the argument list<br/>
-that has to be used, DOCSTRING if non-nil defines the documentation of the<br/>
-definition, INTERACTIVE if non-nil is the interactive form to be used,<br/>
-ORIG is a form that calls the body of the original unadvised function,<br/>
-and BEFORES, AROUNDS and AFTERS are the lists of advices with which ORIG<br/>
+<strong>ad-assemble-advised-definition</strong> is a compiled Lisp function in `<code>advice.el</code>'.</br>
+</br>
+(ad-assemble-advised-definition <u>ARGS</u> <u>DOCSTRING</u> <u>INTERACTIVE</u> <u>ORIG</u> &optional <u>BEFORES</u> <u>AROUNDS</u> <u>AFTERS</u>)</br>
+</br>
+Assemble the advices into an overall advice function.</br>
+<u>ARGS</u> is the argument list that has to be used,</br>
+<u>DOCSTRING</u> if non-nil defines the documentation of the definition,</br>
+<u>INTERACTIVE</u> if non-nil is the interactive form to be used,</br>
+<u>ORIG</u> is a form that calls the body of the original unadvised function,</br>
+and <u>BEFORES</u>, <u>AROUNDS</u> and <u>AFTERS</u> are the lists of advices with which <u>ORIG</u></br>
 should be modified.  The assembled function will be returned.

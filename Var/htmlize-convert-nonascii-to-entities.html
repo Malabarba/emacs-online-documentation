@@ -1,0 +1,37 @@
+<strong>htmlize-convert-nonascii-to-entities</strong> is a variable defined in `<code>htmlize.el</code>'.</br>
+Its value is <pre>t</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Whether non-ASCII characters should be converted to HTML entities.</br>
+</br>
+When this is non-nil, characters with codes in the 128-255 range will be</br>
+considered Latin 1 and rewritten as "&#CODE;".  Characters with codes</br>
+above 255 will be converted to "&#UCS;", where UCS denotes the Unicode</br>
+code point of the character.  If the code point cannot be determined,</br>
+the character will be copied unchanged, as would be the case if the</br>
+option were nil.</br>
+</br>
+When the option is nil, the non-ASCII characters are copied to HTML</br>
+without modification.  In that case, the web server and/or the browser</br>
+must be set to understand the encoding that was used when saving the</br>
+buffer.  (You might also want to specify it by setting</br>
+`htmlize-html-charset'.)</br>
+</br>
+Note that in an HTML entity "&#CODE;", CODE is always a UCS code point,</br>
+which has nothing to do with the charset the page is in.  For example,</br>
+"&#169;" *always* refers to the copyright symbol, regardless of charset</br>
+specified by the META tag or the charset sent by the HTTP server.  In</br>
+other words, "&#169;" is exactly equivalent to "&copy;".</br>
+</br>
+By default, entity conversion is turned on for Mule-enabled Emacsen and</br>
+turned off otherwise.  This is because Mule knows the charset of</br>
+non-ASCII characters in the buffer.  A non-Mule Emacs cannot tell</br>
+whether a character with code 0xA9 represents Latin 1 copyright symbol,</br>
+Latin 2 "S with caron", or something else altogether.  Setting this to</br>
+t without Mule means asserting that 128-255 characters always mean Latin</br>
+1.</br>
+</br>
+For most people htmlize will work fine with this option left at the</br>
+default setting; don't change it unless you know what you're doing.</br>
+</br>
+You can customize this variable.

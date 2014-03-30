@@ -1,32 +1,33 @@
-<strong>rmail-get-new-mail</strong> is an interactive compiled Lisp function in `<code>rmail.el</code>'.<br/>
-<br/>
-(rmail-get-new-mail &optional FILE-NAME)<br/>
-<br/>
-Move any new mail from this Rmail file's inbox files.<br/>
-The buffer-local variable `rmail-inbox-list' specifies the list<br/>
-of inbox files.  By default, this is nil, except for your primary<br/>
-Rmail file `rmail-file-name'.  In this case, when you first visit<br/>
-the Rmail file it is initialized using either<br/>
-`rmail-primary-inbox-list', or the "MAIL" environment variable,<br/>
-or the function `user-login-name' and the directory<br/>
-`rmail-spool-directory' (whose value depends on the operating system).<br/>
-<br/>
-The command `set-rmail-inbox-list' sets `rmail-inbox-list' to the<br/>
-value you specify.<br/>
-<br/>
-You can also specify the file to get new mail from just for one<br/>
-instance of this command.  In this case, the file of new mail is<br/>
-not changed or deleted.  Noninteractively, you can pass the inbox<br/>
-file name as an argument.  Interactively, a prefix argument<br/>
-causes us to read a file name and use that file as the inbox.<br/>
-<br/>
-If the variable `rmail-preserve-inbox' is non-nil, new mail will<br/>
-always be left in inbox files rather than deleted.<br/>
-<br/>
-Before doing anything, this runs `rmail-before-get-new-mail-hook'.<br/>
-Just before returning, it runs `rmail-after-get-new-mail-hook',<br/>
-whether or not there is new mail.<br/>
-<br/>
-If there is new mail, it runs `rmail-get-new-mail-hook', saves<br/>
-the updated file, and shows the first unseen message (which might<br/>
+<strong>rmail-get-new-mail</strong> is an interactive compiled Lisp function in `<code>rmail.el</code>'.</br>
+</br>
+</br>
+(rmail-get-new-mail &optional <u>FILE-NAME</u>)</br>
+</br>
+Move any new mail from this Rmail file's inbox files.</br>
+The buffer-local variable `rmail-inbox-list' specifies the list</br>
+of inbox files.  By default, this is nil, except for your primary</br>
+Rmail file `rmail-file-name'.  In this case, when you first visit</br>
+the Rmail file it is initialized using either</br>
+`rmail-primary-inbox-list', or the "MAIL" environment variable,</br>
+or the function `user-login-name' and the directory</br>
+`rmail-spool-directory' (whose value depends on the operating system).</br>
+</br>
+The command `set-rmail-inbox-list' sets `rmail-inbox-list' to the</br>
+value you specify.</br>
+</br>
+You can also specify the file to get new mail from just for one</br>
+instance of this command.  In this case, the file of new mail is</br>
+not changed or deleted.  Noninteractively, you can pass the inbox</br>
+file name as an argument.  Interactively, a prefix argument</br>
+causes us to read a file name and use that file as the inbox.</br>
+</br>
+If the variable `rmail-preserve-inbox' is non-nil, new mail will</br>
+always be left in inbox files rather than deleted.</br>
+</br>
+Before doing anything, this runs `rmail-before-get-new-mail-hook'.</br>
+Just before returning, it runs `rmail-after-get-new-mail-hook',</br>
+whether or not there is new mail.</br>
+</br>
+If there is new mail, it runs `rmail-get-new-mail-hook', saves</br>
+the updated file, and shows the first unseen message (which might</br>
 not be a new one).  It returns non-nil if it got any new messages.

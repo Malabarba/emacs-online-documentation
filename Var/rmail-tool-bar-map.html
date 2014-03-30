@@ -1,210 +1,209 @@
-<strong>rmail-tool-bar-map</strong> is a variable defined in `<code>rmail.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (keymap<br/>
- (rmail-get-new-mail menu-item "Get New Mail" rmail-get-new-mail :image<br/>
-		     (find-image<br/>
-		      (cond<br/>
-		       ((not<br/>
-			 (display-color-p))<br/>
-			'((:type pbm :file "mail/inbox.pbm" :foreground "black")<br/>
-			  (:type xbm :file "mail/inbox.xbm" :foreground "black")<br/>
-			  (:type xpm :file "low-color/mail/inbox.xpm")<br/>
-			  (:type xpm :file "mail/inbox.xpm")))<br/>
-		       ((<<br/>
-			 (display-color-cells)<br/>
-			 256)<br/>
-			'((:type xpm :file "low-color/mail/inbox.xpm")<br/>
-			  (:type xpm :file "mail/inbox.xpm")<br/>
-			  (:type pbm :file "mail/inbox.pbm" :foreground "black")<br/>
-			  (:type xbm :file "mail/inbox.xbm" :foreground "black")))<br/>
-		       (t<br/>
-			'((:type xpm :file "mail/inbox.xpm")<br/>
-			  (:type pbm :file "mail/inbox.pbm" :foreground "black")<br/>
-			  (:type xbm :file "mail/inbox.xbm" :foreground "black"))))))<br/>
- (search menu-item "Search..." rmail-search :image<br/>
-	 (find-image<br/>
-	  (cond<br/>
-	   ((not<br/>
-	     (display-color-p))<br/>
-	    '((:type pbm :file "search.pbm" :foreground "black")<br/>
-	      (:type xbm :file "search.xbm" :foreground "black")<br/>
-	      (:type xpm :file "low-color/search.xpm")<br/>
-	      (:type xpm :file "search.xpm")))<br/>
-	   ((<<br/>
-	     (display-color-cells)<br/>
-	     256)<br/>
-	    '((:type xpm :file "low-color/search.xpm")<br/>
-	      (:type xpm :file "search.xpm")<br/>
-	      (:type pbm :file "search.pbm" :foreground "black")<br/>
-	      (:type xbm :file "search.xbm" :foreground "black")))<br/>
-	   (t<br/>
-	    '((:type xpm :file "search.xpm")<br/>
-	      (:type pbm :file "search.pbm" :foreground "black")<br/>
-	      (:type xbm :file "search.xbm" :foreground "black"))))))<br/>
- (nil menu-item nil nil :image<br/>
-      (find-image<br/>
-       (cond<br/>
-	((not<br/>
-	  (display-color-p))<br/>
-	 '((:type pbm :file "open.pbm" :foreground "black")<br/>
-	   (:type xbm :file "open.xbm" :foreground "black")<br/>
-	   (:type xpm :file "low-color/open.xpm")<br/>
-	   (:type xpm :file "open.xpm")))<br/>
-	((<<br/>
-	  (display-color-cells)<br/>
-	  256)<br/>
-	 '((:type xpm :file "low-color/open.xpm")<br/>
-	   (:type xpm :file "open.xpm")<br/>
-	   (:type pbm :file "open.pbm" :foreground "black")<br/>
-	   (:type xbm :file "open.xbm" :foreground "black")))<br/>
-	(t<br/>
-	 '((:type xpm :file "open.xpm")<br/>
-	   (:type pbm :file "open.pbm" :foreground "black")<br/>
-	   (:type xbm :file "open.xbm" :foreground "black"))))))<br/>
- (mail menu-item "Mail" rmail-mail :image<br/>
-       (find-image<br/>
-	(cond<br/>
-	 ((not<br/>
-	   (display-color-p))<br/>
-	  '((:type pbm :file "mail/compose.pbm" :foreground "black")<br/>
-	    (:type xbm :file "mail/compose.xbm" :foreground "black")<br/>
-	    (:type xpm :file "low-color/mail/compose.xpm")<br/>
-	    (:type xpm :file "mail/compose.xpm")))<br/>
-	 ((<<br/>
-	   (display-color-cells)<br/>
-	   256)<br/>
-	  '((:type xpm :file "low-color/mail/compose.xpm")<br/>
-	    (:type xpm :file "mail/compose.xpm")<br/>
-	    (:type pbm :file "mail/compose.pbm" :foreground "black")<br/>
-	    (:type xbm :file "mail/compose.xbm" :foreground "black")))<br/>
-	 (t<br/>
-	  '((:type xpm :file "mail/compose.xpm")<br/>
-	    (:type pbm :file "mail/compose.pbm" :foreground "black")<br/>
-	    (:type xbm :file "mail/compose.xbm" :foreground "black"))))))<br/>
- (reply menu-item "Reply" rmail-reply :image<br/>
-	(find-image<br/>
-	 (cond<br/>
-	  ((not<br/>
-	    (display-color-p))<br/>
-	   '((:type pbm :file "mail/reply-all.pbm" :foreground "black")<br/>
-	     (:type xbm :file "mail/reply-all.xbm" :foreground "black")<br/>
-	     (:type xpm :file "low-color/mail/reply-all.xpm")<br/>
-	     (:type xpm :file "mail/reply-all.xpm")))<br/>
-	  ((<<br/>
-	    (display-color-cells)<br/>
-	    256)<br/>
-	   '((:type xpm :file "low-color/mail/reply-all.xpm")<br/>
-	     (:type xpm :file "mail/reply-all.xpm")<br/>
-	     (:type pbm :file "mail/reply-all.pbm" :foreground "black")<br/>
-	     (:type xbm :file "mail/reply-all.xbm" :foreground "black")))<br/>
-	  (t<br/>
-	   '((:type xpm :file "mail/reply-all.xpm")<br/>
-	     (:type pbm :file "mail/reply-all.pbm" :foreground "black")<br/>
-	     (:type xbm :file "mail/reply-all.xbm" :foreground "black"))))))<br/>
- (forward menu-item "Forward" rmail-forward :image<br/>
-	  (find-image<br/>
-	   (cond<br/>
-	    ((not<br/>
-	      (display-color-p))<br/>
-	     '((:type pbm :file "mail/forward.pbm" :foreground "black")<br/>
-	       (:type xbm :file "mail/forward.xbm" :foreground "black")<br/>
-	       (:type xpm :file "low-color/mail/forward.xpm")<br/>
-	       (:type xpm :file "mail/forward.xpm")))<br/>
-	    ((<<br/>
-	      (display-color-cells)<br/>
-	      256)<br/>
-	     '((:type xpm :file "low-color/mail/forward.xpm")<br/>
-	       (:type xpm :file "mail/forward.xpm")<br/>
-	       (:type pbm :file "mail/forward.pbm" :foreground "black")<br/>
-	       (:type xbm :file "mail/forward.xbm" :foreground "black")))<br/>
-	    (t<br/>
-	     '((:type xpm :file "mail/forward.xpm")<br/>
-	       (:type pbm :file "mail/forward.pbm" :foreground "black")<br/>
-	       (:type xbm :file "mail/forward.xbm" :foreground "black"))))))<br/>
- (delete menu-item "Delete" rmail-delete-forward :image<br/>
-	 (find-image<br/>
-	  (cond<br/>
-	   ((not<br/>
-	     (display-color-p))<br/>
-	    '((:type pbm :file "close.pbm" :foreground "black")<br/>
-	      (:type xbm :file "close.xbm" :foreground "black")<br/>
-	      (:type xpm :file "low-color/close.xpm")<br/>
-	      (:type xpm :file "close.xpm")))<br/>
-	   ((<<br/>
-	     (display-color-cells)<br/>
-	     256)<br/>
-	    '((:type xpm :file "low-color/close.xpm")<br/>
-	      (:type xpm :file "close.xpm")<br/>
-	      (:type pbm :file "close.pbm" :foreground "black")<br/>
-	      (:type xbm :file "close.xbm" :foreground "black")))<br/>
-	   (t<br/>
-	    '((:type xpm :file "close.xpm")<br/>
-	      (:type pbm :file "close.pbm" :foreground "black")<br/>
-	      (:type xbm :file "close.xbm" :foreground "black"))))))<br/>
- (output-inbox menu-item "Output..." rmail-output :image<br/>
-	       (find-image<br/>
-		(cond<br/>
-		 ((not<br/>
-		   (display-color-p))<br/>
-		  '((:type pbm :file "mail/move.pbm" :foreground "black")<br/>
-		    (:type xbm :file "mail/move.xbm" :foreground "black")<br/>
-		    (:type xpm :file "low-color/mail/move.xpm")<br/>
-		    (:type xpm :file "mail/move.xpm")))<br/>
-		 ((<<br/>
-		   (display-color-cells)<br/>
-		   256)<br/>
-		  '((:type xpm :file "low-color/mail/move.xpm")<br/>
-		    (:type xpm :file "mail/move.xpm")<br/>
-		    (:type pbm :file "mail/move.pbm" :foreground "black")<br/>
-		    (:type xbm :file "mail/move.xbm" :foreground "black")))<br/>
-		 (t<br/>
-		  '((:type xpm :file "mail/move.xpm")<br/>
-		    (:type pbm :file "mail/move.pbm" :foreground "black")<br/>
-		    (:type xbm :file "mail/move.xbm" :foreground "black"))))))<br/>
- (output-body menu-item "Output body to file..." rmail-output-body-to-file :image<br/>
-	      (find-image<br/>
-	       (cond<br/>
-		((not<br/>
-		  (display-color-p))<br/>
-		 '((:type pbm :file "mail/save.pbm" :foreground "black")<br/>
-		   (:type xbm :file "mail/save.xbm" :foreground "black")<br/>
-		   (:type xpm :file "low-color/mail/save.xpm")<br/>
-		   (:type xpm :file "mail/save.xpm")))<br/>
-		((<<br/>
-		  (display-color-cells)<br/>
-		  256)<br/>
-		 '((:type xpm :file "low-color/mail/save.xpm")<br/>
-		   (:type xpm :file "mail/save.xpm")<br/>
-		   (:type pbm :file "mail/save.pbm" :foreground "black")<br/>
-		   (:type xbm :file "mail/save.xbm" :foreground "black")))<br/>
-		(t<br/>
-		 '((:type xpm :file "mail/save.xpm")<br/>
-		   (:type pbm :file "mail/save.pbm" :foreground "black")<br/>
-		   (:type xbm :file "mail/save.xbm" :foreground "black"))))))<br/>
- (expunge menu-item "Expunge" rmail-expunge :image<br/>
-	  (find-image<br/>
-	   (cond<br/>
-	    ((not<br/>
-	      (display-color-p))<br/>
-	     '((:type pbm :file "delete.pbm" :foreground "black")<br/>
-	       (:type xbm :file "delete.xbm" :foreground "black")<br/>
-	       (:type xpm :file "low-color/delete.xpm")<br/>
-	       (:type xpm :file "delete.xpm")))<br/>
-	    ((<<br/>
-	      (display-color-cells)<br/>
-	      256)<br/>
-	     '((:type xpm :file "low-color/delete.xpm")<br/>
-	       (:type xpm :file "delete.xpm")<br/>
-	       (:type pbm :file "delete.pbm" :foreground "black")<br/>
-	       (:type xbm :file "delete.xbm" :foreground "black")))<br/>
-	    (t<br/>
-	     '((:type xpm :file "delete.xpm")<br/>
-	       (:type pbm :file "delete.pbm" :foreground "black")<br/>
-	       (:type xbm :file "delete.xbm" :foreground "black")))))))<br/>
-<br/>
+<strong>rmail-tool-bar-map</strong> is a variable defined in `<code>rmail.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (rmail-get-new-mail menu-item "Get New Mail" rmail-get-new-mail :image
+		     (find-image
+		      (cond
+		       ((not
+			 (display-color-p))
+			'((:type pbm :file "mail/inbox.pbm" :foreground "black")
+			  (:type xbm :file "mail/inbox.xbm" :foreground "black")
+			  (:type xpm :file "low-color/mail/inbox.xpm")
+			  (:type xpm :file "mail/inbox.xpm")))
+		       ((<
+			 (display-color-cells)
+			 256)
+			'((:type xpm :file "low-color/mail/inbox.xpm")
+			  (:type xpm :file "mail/inbox.xpm")
+			  (:type pbm :file "mail/inbox.pbm" :foreground "black")
+			  (:type xbm :file "mail/inbox.xbm" :foreground "black")))
+		       (t
+			'((:type xpm :file "mail/inbox.xpm")
+			  (:type pbm :file "mail/inbox.pbm" :foreground "black")
+			  (:type xbm :file "mail/inbox.xbm" :foreground "black"))))))
+ (search menu-item "Search..." rmail-search :image
+	 (find-image
+	  (cond
+	   ((not
+	     (display-color-p))
+	    '((:type pbm :file "search.pbm" :foreground "black")
+	      (:type xbm :file "search.xbm" :foreground "black")
+	      (:type xpm :file "low-color/search.xpm")
+	      (:type xpm :file "search.xpm")))
+	   ((<
+	     (display-color-cells)
+	     256)
+	    '((:type xpm :file "low-color/search.xpm")
+	      (:type xpm :file "search.xpm")
+	      (:type pbm :file "search.pbm" :foreground "black")
+	      (:type xbm :file "search.xbm" :foreground "black")))
+	   (t
+	    '((:type xpm :file "search.xpm")
+	      (:type pbm :file "search.pbm" :foreground "black")
+	      (:type xbm :file "search.xbm" :foreground "black"))))))
+ (nil menu-item nil nil :image
+      (find-image
+       (cond
+	((not
+	  (display-color-p))
+	 '((:type pbm :file "open.pbm" :foreground "black")
+	   (:type xbm :file "open.xbm" :foreground "black")
+	   (:type xpm :file "low-color/open.xpm")
+	   (:type xpm :file "open.xpm")))
+	((<
+	  (display-color-cells)
+	  256)
+	 '((:type xpm :file "low-color/open.xpm")
+	   (:type xpm :file "open.xpm")
+	   (:type pbm :file "open.pbm" :foreground "black")
+	   (:type xbm :file "open.xbm" :foreground "black")))
+	(t
+	 '((:type xpm :file "open.xpm")
+	   (:type pbm :file "open.pbm" :foreground "black")
+	   (:type xbm :file "open.xbm" :foreground "black"))))))
+ (mail menu-item "Mail" rmail-mail :image
+       (find-image
+	(cond
+	 ((not
+	   (display-color-p))
+	  '((:type pbm :file "mail/compose.pbm" :foreground "black")
+	    (:type xbm :file "mail/compose.xbm" :foreground "black")
+	    (:type xpm :file "low-color/mail/compose.xpm")
+	    (:type xpm :file "mail/compose.xpm")))
+	 ((<
+	   (display-color-cells)
+	   256)
+	  '((:type xpm :file "low-color/mail/compose.xpm")
+	    (:type xpm :file "mail/compose.xpm")
+	    (:type pbm :file "mail/compose.pbm" :foreground "black")
+	    (:type xbm :file "mail/compose.xbm" :foreground "black")))
+	 (t
+	  '((:type xpm :file "mail/compose.xpm")
+	    (:type pbm :file "mail/compose.pbm" :foreground "black")
+	    (:type xbm :file "mail/compose.xbm" :foreground "black"))))))
+ (reply menu-item "Reply" rmail-reply :image
+	(find-image
+	 (cond
+	  ((not
+	    (display-color-p))
+	   '((:type pbm :file "mail/reply-all.pbm" :foreground "black")
+	     (:type xbm :file "mail/reply-all.xbm" :foreground "black")
+	     (:type xpm :file "low-color/mail/reply-all.xpm")
+	     (:type xpm :file "mail/reply-all.xpm")))
+	  ((<
+	    (display-color-cells)
+	    256)
+	   '((:type xpm :file "low-color/mail/reply-all.xpm")
+	     (:type xpm :file "mail/reply-all.xpm")
+	     (:type pbm :file "mail/reply-all.pbm" :foreground "black")
+	     (:type xbm :file "mail/reply-all.xbm" :foreground "black")))
+	  (t
+	   '((:type xpm :file "mail/reply-all.xpm")
+	     (:type pbm :file "mail/reply-all.pbm" :foreground "black")
+	     (:type xbm :file "mail/reply-all.xbm" :foreground "black"))))))
+ (forward menu-item "Forward" rmail-forward :image
+	  (find-image
+	   (cond
+	    ((not
+	      (display-color-p))
+	     '((:type pbm :file "mail/forward.pbm" :foreground "black")
+	       (:type xbm :file "mail/forward.xbm" :foreground "black")
+	       (:type xpm :file "low-color/mail/forward.xpm")
+	       (:type xpm :file "mail/forward.xpm")))
+	    ((<
+	      (display-color-cells)
+	      256)
+	     '((:type xpm :file "low-color/mail/forward.xpm")
+	       (:type xpm :file "mail/forward.xpm")
+	       (:type pbm :file "mail/forward.pbm" :foreground "black")
+	       (:type xbm :file "mail/forward.xbm" :foreground "black")))
+	    (t
+	     '((:type xpm :file "mail/forward.xpm")
+	       (:type pbm :file "mail/forward.pbm" :foreground "black")
+	       (:type xbm :file "mail/forward.xbm" :foreground "black"))))))
+ (delete menu-item "Delete" rmail-delete-forward :image
+	 (find-image
+	  (cond
+	   ((not
+	     (display-color-p))
+	    '((:type pbm :file "close.pbm" :foreground "black")
+	      (:type xbm :file "close.xbm" :foreground "black")
+	      (:type xpm :file "low-color/close.xpm")
+	      (:type xpm :file "close.xpm")))
+	   ((<
+	     (display-color-cells)
+	     256)
+	    '((:type xpm :file "low-color/close.xpm")
+	      (:type xpm :file "close.xpm")
+	      (:type pbm :file "close.pbm" :foreground "black")
+	      (:type xbm :file "close.xbm" :foreground "black")))
+	   (t
+	    '((:type xpm :file "close.xpm")
+	      (:type pbm :file "close.pbm" :foreground "black")
+	      (:type xbm :file "close.xbm" :foreground "black"))))))
+ (output-inbox menu-item "Output..." rmail-output :image
+	       (find-image
+		(cond
+		 ((not
+		   (display-color-p))
+		  '((:type pbm :file "mail/move.pbm" :foreground "black")
+		    (:type xbm :file "mail/move.xbm" :foreground "black")
+		    (:type xpm :file "low-color/mail/move.xpm")
+		    (:type xpm :file "mail/move.xpm")))
+		 ((<
+		   (display-color-cells)
+		   256)
+		  '((:type xpm :file "low-color/mail/move.xpm")
+		    (:type xpm :file "mail/move.xpm")
+		    (:type pbm :file "mail/move.pbm" :foreground "black")
+		    (:type xbm :file "mail/move.xbm" :foreground "black")))
+		 (t
+		  '((:type xpm :file "mail/move.xpm")
+		    (:type pbm :file "mail/move.pbm" :foreground "black")
+		    (:type xbm :file "mail/move.xbm" :foreground "black"))))))
+ (output-body menu-item "Output body to file..." rmail-output-body-to-file :image
+	      (find-image
+	       (cond
+		((not
+		  (display-color-p))
+		 '((:type pbm :file "mail/save.pbm" :foreground "black")
+		   (:type xbm :file "mail/save.xbm" :foreground "black")
+		   (:type xpm :file "low-color/mail/save.xpm")
+		   (:type xpm :file "mail/save.xpm")))
+		((<
+		  (display-color-cells)
+		  256)
+		 '((:type xpm :file "low-color/mail/save.xpm")
+		   (:type xpm :file "mail/save.xpm")
+		   (:type pbm :file "mail/save.pbm" :foreground "black")
+		   (:type xbm :file "mail/save.xbm" :foreground "black")))
+		(t
+		 '((:type xpm :file "mail/save.xpm")
+		   (:type pbm :file "mail/save.pbm" :foreground "black")
+		   (:type xbm :file "mail/save.xbm" :foreground "black"))))))
+ (expunge menu-item "Expunge" rmail-expunge :image
+	  (find-image
+	   (cond
+	    ((not
+	      (display-color-p))
+	     '((:type pbm :file "delete.pbm" :foreground "black")
+	       (:type xbm :file "delete.xbm" :foreground "black")
+	       (:type xpm :file "low-color/delete.xpm")
+	       (:type xpm :file "delete.xpm")))
+	    ((<
+	      (display-color-cells)
+	      256)
+	     '((:type xpm :file "low-color/delete.xpm")
+	       (:type xpm :file "delete.xpm")
+	       (:type pbm :file "delete.pbm" :foreground "black")
+	       (:type xbm :file "delete.xbm" :foreground "black")))
+	    (t
+	     '((:type xpm :file "delete.xpm")
+	       (:type pbm :file "delete.pbm" :foreground "black")
+	       (:type xbm :file "delete.xbm" :foreground "black")))))))
+</pre></br>

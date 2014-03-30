@@ -1,0 +1,84 @@
+<strong>frameset-filter-alist</strong> is a variable defined in `<code>frameset.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of frame parameters and filtering functions.</br>
+</br>
+This alist is the default value of the FILTERS argument of</br>
+`frameset-save' and `frameset-restore' (which see).</br>
+</br>
+Initially, `frameset-filter-alist' is set to, and shares the value of,</br>
+`frameset-persistent-filter-alist'.  You can override any item in</br>
+this alist by `push'ing a new item onto it.  If, for some reason, you</br>
+intend to modify existing values, do</br>
+</br>
+  (setq frameset-filter-alist (copy-tree frameset-filter-alist))</br>
+</br>
+before changing anything.</br>
+</br>
+On saving, PARAMETERS is the parameter alist of each frame processed,</br>
+and FILTERED is the parameter alist that gets saved to the frameset.</br>
+</br>
+On restoring, PARAMETERS is the parameter alist extracted from the</br>
+frameset, and FILTERED is the resulting frame parameter alist used</br>
+to restore the frame.</br>
+</br>
+Elements of `frameset-filter-alist' are conses (PARAM . ACTION),</br>
+where PARAM is a parameter name (a symbol identifying a frame</br>
+parameter), and ACTION can be:</br>
+</br>
+ nil       The parameter is copied to FILTERED.</br>
+ :never    The parameter is never copied to FILTERED.</br>
+ :save     The parameter is copied only when saving the frame.</br>
+ :restore  The parameter is copied only when restoring the frame.</br>
+ FILTER    A filter function.</br>
+</br>
+FILTER can be a symbol FILTER-FUN, or a list (FILTER-FUN ARGS...).</br>
+FILTER-FUN is invoked with</br>
+</br>
+  (apply FILTER-FUN CURRENT FILTERED PARAMETERS SAVING ARGS)</br>
+</br>
+where</br>
+</br>
+ CURRENT     A cons (PARAM . VALUE), where PARAM is the one being</br>
+	     filtered and VALUE is its current value.</br>
+ FILTERED    The resulting alist (so far).</br>
+ PARAMETERS  The complete alist of parameters being filtered,</br>
+ SAVING      Non-nil if filtering before saving state, nil if filtering</br>
+	       before restoring it.</br>
+ ARGS        Any additional arguments specified in the ACTION.</br>
+</br>
+FILTER-FUN is allowed to modify items in FILTERED, but no other arguments.</br>
+It must return:</br>
+ nil                      Skip CURRENT (do not add it to FILTERED).</br>
+ t                        Add CURRENT to FILTERED as is.</br>
+ (NEW-PARAM . NEW-VALUE)  Add this to FILTERED instead of CURRENT.</br>
+</br>
+Frame parameters not on this alist are passed intact, as if they were</br>
+defined with ACTION = nil.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((background-color . frameset-filter-sanitize-color)
+ (buffer-list . :never)
+ (buffer-predicate . :never)
+ (buried-buffer-list . :never)
+ (font . frameset-filter-shelve-param)
+ (foreground-color . frameset-filter-sanitize-color)
+ (fullscreen . frameset-filter-shelve-param)
+ (GUI:font . frameset-filter-unshelve-param)
+ (GUI:fullscreen . frameset-filter-unshelve-param)
+ (GUI:height . frameset-filter-unshelve-param)
+ (GUI:width . frameset-filter-unshelve-param)
+ (height . frameset-filter-shelve-param)
+ (outer-window-id . :never)
+ (parent-id . :never)
+ (tty . frameset-filter-tty-to-GUI)
+ (tty-type . frameset-filter-tty-to-GUI)
+ (width . frameset-filter-shelve-param)
+ (window-id . :never)
+ (window-system . :never)
+ (name . :never)
+ (left . frameset-filter-iconified)
+ (minibuffer . frameset-filter-minibuffer)
+ (top . frameset-filter-iconified))
+</pre></br>

@@ -1,20 +1,17 @@
-<strong>x-sent-selection-hooks</strong> is a variable defined in `<code>subr.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable is an alias for `x-sent-selection-functions'.<br/>
-  This variable is obsolete since 22.1;<br/>
-  use `x-sent-selection-functions' instead.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A list of functions to be called when Emacs answers a selection request.<br/>
-The functions are called with three arguments:<br/>
-  - the selection name (typically `PRIMARY', `SECONDARY', or `CLIPBOARD');<br/>
-  - the selection-type which Emacs was asked to convert the<br/>
-    selection into before sending (for example, `STRING' or `LENGTH');<br/>
-  - a flag indicating success or failure for responding to the request.<br/>
-We might have failed (and declined the request) for any number of reasons,<br/>
-including being asked for a selection that we no longer own, or being asked<br/>
-to convert into a type that we don't know about or that is inappropriate.<br/>
-This hook doesn't let you change the behavior of Emacs's selection replies,<br/>
+<strong>x-sent-selection-hooks</strong> is a variable defined in `<code>subr.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul>  <li>This variable is an alias for `<strong><a href="x-sent-selection-functions">x-sent-selection-functions</a></strong>'.</li>
+<li>  <strong>This variable is obsolete since 22.1;</br>
+  use `<a href="x-sent-selection-functions">x-sent-selection-functions</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A list of functions to be called when Emacs answers a selection request.</br>
+The functions are called with three arguments:</br>
+  - the selection name (typically `PRIMARY', `SECONDARY', or `CLIPBOARD');</br>
+  - the selection-type which Emacs was asked to convert the</br>
+    selection into before sending (for example, `STRING' or `LENGTH');</br>
+  - a flag indicating success or failure for responding to the request.</br>
+We might have failed (and declined the request) for any number of reasons,</br>
+including being asked for a selection that we no longer own, or being asked</br>
+to convert into a type that we don't know about or that is inappropriate.</br>
+This hook doesn't let you change the behavior of Emacs's selection replies,</br>
 it merely informs you that they have happened.

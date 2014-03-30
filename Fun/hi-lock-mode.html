@@ -1,61 +1,66 @@
-<strong>hi-lock-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>hi-lock.el</code>'.<br/>
-<br/>
-(hi-lock-mode &optional ARG)<br/>
-<br/>
-Toggle selective highlighting of patterns (Hi Lock mode).<br/>
-With a prefix argument ARG, enable Hi Lock mode if ARG is<br/>
-positive, and disable it otherwise.  If called from Lisp, enable<br/>
-the mode if ARG is omitted or nil.<br/>
-<br/>
-Hi Lock mode is automatically enabled when you invoke any of the<br/>
-highlighting commands listed below, such as M-s h r.<br/>
-To enable Hi Lock mode in all buffers, use `global-hi-lock-mode'<br/>
-or add (global-hi-lock-mode 1) to your init file.<br/>
-<br/>
-In buffers where Font Lock mode is enabled, patterns are<br/>
-highlighted using font lock.  In buffers where Font Lock mode is<br/>
-disabled, patterns are applied using overlays; in this case, the<br/>
-highlighting will not be updated as you type.<br/>
-<br/>
-When Hi Lock mode is enabled, a "Regexp Highlighting" submenu<br/>
-is added to the "Edit" menu.  The commands in the submenu,<br/>
-which can be called interactively, are:<br/>
-<br/>
-M-s h r REGEXP FACE<br/>
-  Highlight matches of pattern REGEXP in current buffer with FACE.<br/>
-<br/>
-M-s h p PHRASE FACE<br/>
-  Highlight matches of phrase PHRASE in current buffer with FACE.<br/>
-  (PHRASE can be any REGEXP, but spaces will be replaced by matches<br/>
-  to whitespace and initial lower-case letters will become case insensitive.)<br/>
-<br/>
-M-s h l REGEXP FACE<br/>
-  Highlight lines containing matches of REGEXP in current buffer with FACE.<br/>
-<br/>
-M-s h u REGEXP<br/>
-  Remove highlighting on matches of REGEXP in current buffer.<br/>
-<br/>
-M-s h w<br/>
-  Write active REGEXPs into buffer as comments (if possible).  They may<br/>
-  be read the next time file is loaded or when the M-s h f command<br/>
-  is issued.  The inserted regexps are in the form of font lock keywords.<br/>
-  (See `font-lock-keywords'.)  They may be edited and re-loaded with M-s h f,<br/>
-  any valid `font-lock-keywords' form is acceptable.  When a file is<br/>
-  loaded the patterns are read if `hi-lock-file-patterns-policy' is<br/>
-  'ask and the user responds y to the prompt, or if<br/>
-  `hi-lock-file-patterns-policy' is bound to a function and that<br/>
-  function returns t.<br/>
-<br/>
-M-s h f<br/>
-  Re-read patterns stored in buffer (in the format produced by M-s h w).<br/>
-<br/>
-When hi-lock is started and if the mode is not excluded or patterns<br/>
-rejected, the beginning of the buffer is searched for lines of the<br/>
-form:<br/>
-  Hi-lock: FOO<br/>
-<br/>
-where FOO is a list of patterns.  The patterns must start before<br/>
-position (number of characters into buffer)<br/>
-`hi-lock-file-patterns-range'.  Patterns will be read until<br/>
-Hi-lock: end is found.  A mode is excluded if it's in the list<br/>
+<strong>hi-lock-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>hi-lock.el</code>'.</br>
+</br>
+</br>
+(hi-lock-mode &optional <u>ARG</u>)</br>
+</br>
+Toggle selective highlighting of patterns (Hi Lock mode).</br>
+With a prefix argument <u>ARG</u>, enable Hi Lock mode if <u>ARG</u> is</br>
+positive, and disable it otherwise.  If called from Lisp, enable</br>
+the mode if <u>ARG</u> is omitted or nil.</br>
+</br>
+Hi Lock mode is automatically enabled when you invoke any of the</br>
+highlighting commands listed below, such as M-s h r.</br>
+To enable Hi Lock mode in all buffers, use `global-hi-lock-mode'</br>
+or add (global-hi-lock-mode 1) to your init file.</br>
+</br>
+In buffers where Font Lock mode is enabled, patterns are</br>
+highlighted using font lock.  In buffers where Font Lock mode is</br>
+disabled, patterns are applied using overlays; in this case, the</br>
+highlighting will not be updated as you type.</br>
+</br>
+When Hi Lock mode is enabled, a "Regexp Highlighting" submenu</br>
+is added to the "Edit" menu.  The commands in the submenu,</br>
+which can be called interactively, are:</br>
+</br>
+M-s h r REGEXP FACE</br>
+  Highlight matches of pattern REGEXP in current buffer with FACE.</br>
+</br>
+M-s h p PHRASE FACE</br>
+  Highlight matches of phrase PHRASE in current buffer with FACE.</br>
+  (PHRASE can be any REGEXP, but spaces will be replaced by matches</br>
+  to whitespace and initial lower-case letters will become case insensitive.)</br>
+</br>
+M-s h l REGEXP FACE</br>
+  Highlight lines containing matches of REGEXP in current buffer with FACE.</br>
+</br>
+M-s h .</br>
+  Highlight the symbol found near point without prompting, using the next</br>
+  available face automatically.</br>
+</br>
+M-s h u REGEXP</br>
+  Remove highlighting on matches of REGEXP in current buffer.</br>
+</br>
+M-s h w</br>
+  Write active REGEXPs into buffer as comments (if possible).  They may</br>
+  be read the next time file is loaded or when the M-s h f command</br>
+  is issued.  The inserted regexps are in the form of font lock keywords.</br>
+  (See `font-lock-keywords'.)  They may be edited and re-loaded with M-s h f,</br>
+  any valid `font-lock-keywords' form is acceptable.  When a file is</br>
+  loaded the patterns are read if `hi-lock-file-patterns-policy' is</br>
+  'ask and the user responds y to the prompt, or if</br>
+  `hi-lock-file-patterns-policy' is bound to a function and that</br>
+  function returns t.</br>
+</br>
+M-s h f</br>
+  Re-read patterns stored in buffer (in the format produced by M-s h w).</br>
+</br>
+When hi-lock is started and if the mode is not excluded or patterns</br>
+rejected, the beginning of the buffer is searched for lines of the</br>
+form:</br>
+  Hi-lock: FOO</br>
+</br>
+where FOO is a list of patterns.  The patterns must start before</br>
+position (number of characters into buffer)</br>
+`hi-lock-file-patterns-range'.  Patterns will be read until</br>
+Hi-lock: end is found.  A mode is excluded if it's in the list</br>
 `hi-lock-exclude-modes'.

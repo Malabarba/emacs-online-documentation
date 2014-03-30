@@ -1,31 +1,34 @@
-<strong>window-sizable</strong> is a compiled Lisp function in `<code>window.el</code>'.<br/>
-<br/>
-(window-sizable WINDOW DELTA &optional HORIZONTAL IGNORE)<br/>
-<br/>
-Return DELTA if DELTA lines can be added to WINDOW.<br/>
-WINDOW must be a valid window and defaults to the selected one.<br/>
-Optional argument HORIZONTAL non-nil means return DELTA if DELTA<br/>
-columns can be added to WINDOW.  A return value of zero means<br/>
-that no lines (or columns) can be added to WINDOW.<br/>
-<br/>
-This function looks only at WINDOW and, recursively, its child<br/>
-windows.  The function `window-resizable' looks at other windows<br/>
-as well.<br/>
-<br/>
-DELTA positive means WINDOW shall be enlarged by DELTA lines or<br/>
-columns.  If WINDOW cannot be enlarged by DELTA lines or columns<br/>
-return the maximum value in the range 0..DELTA by which WINDOW<br/>
-can be enlarged.<br/>
-<br/>
-DELTA negative means WINDOW shall be shrunk by -DELTA lines or<br/>
-columns.  If WINDOW cannot be shrunk by -DELTA lines or columns,<br/>
-return the minimum value in the range DELTA..0 by which WINDOW<br/>
-can be shrunk.<br/>
-<br/>
-Optional argument IGNORE non-nil means ignore restrictions<br/>
-imposed by fixed size windows, `window-min-height' or<br/>
-`window-min-width' settings.  If IGNORE equals `safe', live<br/>
-windows may get as small as `window-safe-min-height' lines and<br/>
-`window-safe-min-width' columns.  If IGNORE is a window, ignore<br/>
-restrictions for that window only.  Any other non-nil value means<br/>
-ignore all of the above restrictions for all windows.
+<strong>window-sizable</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(window-sizable <u>WINDOW</u> <u>DELTA</u> &optional <u>HORIZONTAL</u> <u>IGNORE</u> <u>PIXELWISE</u>)</br>
+</br>
+Return <u>DELTA</u> if <u>DELTA</u> lines can be added to <u>WINDOW</u>.</br>
+<u>WINDOW</u> must be a valid window and defaults to the selected one.</br>
+Optional argument <u>HORIZONTAL</u> non-nil means return <u>DELTA</u> if <u>DELTA</u></br>
+columns can be added to <u>WINDOW</u>.  A return value of zero means</br>
+that no lines (or columns) can be added to <u>WINDOW</u>.</br>
+</br>
+This function looks only at <u>WINDOW</u> and, recursively, its child</br>
+windows.  The function `window-resizable' looks at other windows</br>
+as well.</br>
+</br>
+<u>DELTA</u> positive means <u>WINDOW</u> shall be enlarged by <u>DELTA</u> lines or</br>
+columns.  If <u>WINDOW</u> cannot be enlarged by <u>DELTA</u> lines or columns</br>
+return the maximum value in the range 0..<u>DELTA</u> by which <u>WINDOW</u></br>
+can be enlarged.</br>
+</br>
+<u>DELTA</u> negative means <u>WINDOW</u> shall be shrunk by -<u>DELTA</u> lines or</br>
+columns.  If <u>WINDOW</u> cannot be shrunk by -<u>DELTA</u> lines or columns,</br>
+return the minimum value in the range <u>DELTA</u>..0 by which <u>WINDOW</u></br>
+can be shrunk.</br>
+</br>
+Optional argument <u>IGNORE</u> non-nil means ignore restrictions</br>
+imposed by fixed size windows, `window-min-height' or</br>
+`window-min-width' settings.  If <u>IGNORE</u> equals `safe', live</br>
+windows may get as small as `window-safe-min-height' lines and</br>
+`window-safe-min-width' columns.  If <u>IGNORE</u> is a window, ignore</br>
+restrictions for that window only.  Any other non-nil value means</br>
+ignore all of the above restrictions for all windows.</br>
+</br>
+Optional argument <u>PIXELWISE</u> non-nil means interpret <u>DELTA</u> as</br>
+pixels.

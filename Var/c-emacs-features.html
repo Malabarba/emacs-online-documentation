@@ -1,36 +1,34 @@
-<strong>c-emacs-features</strong> is a variable defined in `<code>cc-defs.el</code>'.<br/>
-Its value is<br/>
-(pps-extended-state col-0-paren posix-char-classes gen-string-delim gen-comment-delim syntax-properties 1-bit)<br/>
-<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A list of certain features in the (X)Emacs you are using.<br/>
-There are many flavors of Emacs out there, each with different<br/>
-features supporting those needed by CC Mode.  The following values<br/>
-might be present:<br/>
-<br/>
-'8-bit              8 bit syntax entry flags (XEmacs style).<br/>
-'1-bit              1 bit syntax entry flags (Emacs style).<br/>
-'argumentative-bod-function         beginning-of-defun passes ARG through<br/>
-                    to a non-null beginning-of-defun-function.  It is assumed<br/>
-		    the end-of-defun does the same thing.<br/>
-'syntax-properties  It works to override the syntax for specific characters<br/>
-		    in the buffer with the 'syntax-table property.  It's<br/>
-		    always set - CC Mode no longer works in emacsen without<br/>
-		    this feature.<br/>
-'gen-comment-delim  Generic comment delimiters work<br/>
-		    (i.e. the syntax class `!').<br/>
-'gen-string-delim   Generic string delimiters work<br/>
-		    (i.e. the syntax class `|').<br/>
-'pps-extended-state `parse-partial-sexp' returns a list with at least 10<br/>
-		    elements, i.e. it contains the position of the start of<br/>
-		    the last comment or string.  It's always set - CC Mode<br/>
-                    no longer works in emacsen without this feature.<br/>
-'posix-char-classes The regexp engine understands POSIX character classes.<br/>
-'col-0-paren        It's possible to turn off the ad-hoc rule that a paren<br/>
-		    in column zero is the start of a defun.<br/>
-'infodock           This is Infodock (based on XEmacs).<br/>
-<br/>
+<strong>c-emacs-features</strong> is a variable defined in `<code>cc-defs.el</code>'.</br>
+Its value is <pre></br>
+(pps-extended-state col-0-paren posix-char-classes gen-string-delim gen-comment-delim syntax-properties 1-bit)
+</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A list of certain features in the (X)Emacs you are using.</br>
+There are many flavors of Emacs out there, each with different</br>
+features supporting those needed by CC Mode.  The following values</br>
+might be present:</br>
+</br>
+'8-bit              8 bit syntax entry flags (XEmacs style).</br>
+'1-bit              1 bit syntax entry flags (Emacs style).</br>
+'argumentative-bod-function         beginning-of-defun passes ARG through</br>
+                    to a non-null beginning-of-defun-function.  It is assumed</br>
+		    the end-of-defun does the same thing.</br>
+'syntax-properties  It works to override the syntax for specific characters</br>
+		    in the buffer with the 'syntax-table property.  It's</br>
+		    always set - CC Mode no longer works in emacsen without</br>
+		    this feature.</br>
+'gen-comment-delim  Generic comment delimiters work</br>
+		    (i.e. the syntax class `!').</br>
+'gen-string-delim   Generic string delimiters work</br>
+		    (i.e. the syntax class `|').</br>
+'pps-extended-state `parse-partial-sexp' returns a list with at least 10</br>
+		    elements, i.e. it contains the position of the start of</br>
+		    the last comment or string.  It's always set - CC Mode</br>
+                    no longer works in emacsen without this feature.</br>
+'posix-char-classes The regexp engine understands POSIX character classes.</br>
+'col-0-paren        It's possible to turn off the ad-hoc rule that a paren</br>
+		    in column zero is the start of a defun.</br>
+'infodock           This is Infodock (based on XEmacs).</br>
+</br>
 '8-bit and '1-bit are mutually exclusive.

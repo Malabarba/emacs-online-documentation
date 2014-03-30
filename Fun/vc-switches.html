@@ -1,16 +1,16 @@
-<strong>vc-switches</strong> is a compiled Lisp function in `<code>vc.el</code>'.<br/>
-<br/>
-(vc-switches BACKEND OP)<br/>
-<br/>
-Return a list of vc-BACKEND switches for operation OP.<br/>
-BACKEND is a symbol such as `CVS', which will be downcased.<br/>
-OP is a symbol such as `diff'.<br/>
-<br/>
-In decreasing order of preference, return the value of:<br/>
-vc-BACKEND-OP-switches (e.g. `vc-cvs-diff-switches');<br/>
-vc-OP-switches (e.g. `vc-diff-switches'); or, in the case of<br/>
-diff only, `diff-switches'.<br/>
-<br/>
-If the chosen value is not a string or a list, return nil.<br/>
-This is so that you may set, e.g. `vc-svn-diff-switches' to t in order<br/>
+<strong>vc-switches</strong> is a compiled Lisp function in `<code>vc.el</code>'.</br>
+</br>
+(vc-switches <u>BACKEND</u> <u>OP</u>)</br>
+</br>
+Return a list of vc-<u>BACKEND</u> switches for operation <u>OP</u>.</br>
+<u>BACKEND</u> is a symbol such as `CVS', which will be downcased.</br>
+<u>OP</u> is a symbol such as `diff'.</br>
+</br>
+In decreasing order of preference, return the value of:</br>
+vc-BACKEND-OP-switches (e.g. `vc-cvs-diff-switches');</br>
+vc-<u>OP</u>-switches (e.g. `vc-diff-switches'); or, in the case of</br>
+diff only, `diff-switches'.</br>
+</br>
+If the chosen value is not a string or a list, return nil.</br>
+This is so that you may set, e.g. `vc-svn-diff-switches' to t in order</br>
 to override the value of `vc-diff-switches' and `diff-switches'.

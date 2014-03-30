@@ -1,6 +1,26 @@
-<strong>object-write</strong> is a Lisp function in `<code>eieio.el</code>'.<br/>
-<br/>
-(object-write &rest LOCAL-ARGS)<br/>
-<br/>
-Write out object THIS to the current stream.<br/>
-Optional COMMENT will add comments to the beginning of the output.
+<strong>object-write</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+</br>
+(object-write &rest <u>LOCAL-ARGS</u>)</br>
+</br>
+Write out object THIS to the current stream.</br>
+Optional COMMENT will add comments to the beginning of the output.</br>
+</br>
+This is a generic function with only primary methods.</br>
+</br>
+Implementations:</br>
+</br>
+`eieio-default-superclass' :PRIMARY (this &optional comment)</br>
+Write object THIS out to the current stream.</br>
+This writes out the vector version of this object.  Complex and recursive</br>
+object are discouraged from being written.</br>
+  If optional COMMENT is non-nil, include comments when outputting</br>
+this object.</br>
+</br>
+Defined in `eieio.el'</br>
+</br>
+`eieio-persistent' :PRIMARY (this &optional comment)</br>
+Write persistent object THIS out to the current stream.</br>
+Optional argument COMMENT is a header line comment.</br>
+</br>
+Defined in `eieio-base.el'</br>
+</br>

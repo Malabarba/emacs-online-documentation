@@ -1,11 +1,14 @@
-<strong>declare</strong> is an alias for `cl-declare' in `<code>cl.el</code>'.<br/>
-<br/>
-(declare &rest SPECS)<br/>
-<br/>
-Declare SPECS about the current function while compiling.<br/>
-For instance<br/>
-<br/>
-  (cl-declare (warn 0))<br/>
-<br/>
-will turn off byte-compile warnings in the function.<br/>
-See Info node `(cl)Declarations' for details.
+<strong>declare</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(declare &rest <u>SPECS</u>)</br>
+</br>
+:after advice: `cl--pass-args-to-cl-declare'</br>
+</br>
+Do not evaluate any arguments, and return nil.</br>
+If a `declare' form appears as the first form in the body of a</br>
+`defun' or `defmacro' form, <u>SPECS</u> specifies various additional</br>
+information about the function or macro; these go into effect</br>
+during the evaluation of the `defun' or `defmacro' form.</br>
+</br>
+The possible values of <u>SPECS</u> are specified by</br>
+`defun-declarations-alist' and `macro-declarations-alist'.

@@ -1,26 +1,29 @@
-<strong>with-wrapper-hook</strong> is a Lisp macro in `<code>subr.el</code>'.<br/>
-<br/>
-(with-wrapper-hook HOOK ARGS &rest BODY)<br/>
-<br/>
-Run BODY, using wrapper functions from HOOK with additional ARGS.<br/>
-HOOK is an abnormal hook.  Each hook function in HOOK "wraps"<br/>
-around the preceding ones, like a set of nested `around' advices.<br/>
-<br/>
-Each hook function should accept an argument list consisting of a<br/>
-function FUN, followed by the additional arguments in ARGS.<br/>
-<br/>
-The first hook function in HOOK is passed a FUN that, if it is called<br/>
-with arguments ARGS, performs BODY (i.e., the default operation).<br/>
-The FUN passed to each successive hook function is defined based<br/>
-on the preceding hook functions; if called with arguments ARGS,<br/>
-it does what the `with-wrapper-hook' call would do if the<br/>
-preceding hook functions were the only ones present in HOOK.<br/>
-<br/>
-Each hook function may call its FUN argument as many times as it wishes,<br/>
-including never.  In that case, such a hook function acts to replace<br/>
-the default definition altogether, and any preceding hook functions.<br/>
-Of course, a subsequent hook function may do the same thing.<br/>
-<br/>
-Each hook function definition is used to construct the FUN passed<br/>
-to the next hook function, if any.  The last (or "outermost")<br/>
+<strong>with-wrapper-hook</strong> is a Lisp macro in `<code>subr.el</code>'.</br>
+</br>
+(with-wrapper-hook <u>HOOK</u> <u>ARGS</u> &rest <u>BODY</u>)</br>
+</br>
+This macro is obsolete since 24.4;</br>
+use a &lt;foo>-function variable modified by `add-function'.</br>
+</br>
+Run <u>BODY</u>, using wrapper functions from <u>HOOK</u> with additional <u>ARGS</u>.</br>
+<u>HOOK</u> is an abnormal hook.  Each hook function in <u>HOOK</u> "wraps"</br>
+around the preceding ones, like a set of nested `around' advices.</br>
+</br>
+Each hook function should accept an argument list consisting of a</br>
+function FUN, followed by the additional arguments in <u>ARGS</u>.</br>
+</br>
+The first hook function in <u>HOOK</u> is passed a FUN that, if it is called</br>
+with arguments <u>ARGS</u>, performs <u>BODY</u> (i.e., the default operation).</br>
+The FUN passed to each successive hook function is defined based</br>
+on the preceding hook functions; if called with arguments <u>ARGS</u>,</br>
+it does what the `with-wrapper-hook' call would do if the</br>
+preceding hook functions were the only ones present in <u>HOOK</u>.</br>
+</br>
+Each hook function may call its FUN argument as many times as it wishes,</br>
+including never.  In that case, such a hook function acts to replace</br>
+the default definition altogether, and any preceding hook functions.</br>
+Of course, a subsequent hook function may do the same thing.</br>
+</br>
+Each hook function definition is used to construct the FUN passed</br>
+to the next hook function, if any.  The last (or "outermost")</br>
 FUN is then called once.

@@ -1,44 +1,44 @@
-<strong>mh-show-use-xface-flag</strong> is a variable defined in `<code>mh-e.el</code>'.<br/>
-Its value is t<br/>
-<br/>
-Documentation:<br/>
-*Non-nil means display face images in MH-show buffers.<br/>
-<br/>
-MH-E can display the content of "Face:", "X-Face:", and<br/>
-"X-Image-URL:" header fields. If any of these fields occur in the<br/>
-header of your message, the sender's face will appear in the "From:"<br/>
-header field. If more than one of these fields appear, then the first<br/>
-field found in the order "Face:", "X-Face:", and "X-Image-URL:"<br/>
-will be used.<br/>
-<br/>
-The option `mh-show-use-xface-flag' is used to turn this feature on<br/>
-and off. This feature will be turned on by default if your system<br/>
-supports it.<br/>
-<br/>
-The first header field used, if present, is the Gnus-specific<br/>
-"Face:" field. The "Face:" field appeared in GNU Emacs 21 and<br/>
-XEmacs. For more information, see URL<br/>
-`http://quimby.gnus.org/circus/face/'. Next is the traditional<br/>
-"X-Face:" header field. The display of this field requires the<br/>
-"uncompface" program (see URL<br/>
-`ftp://ftp.cs.indiana.edu/pub/faces/compface/compface.tar.z'). Recent<br/>
-versions of XEmacs have internal support for "X-Face:" images. If<br/>
-your version of XEmacs does not, then you'll need both "uncompface"<br/>
-and the x-face package (see URL `ftp://ftp.jpl.org/pub/elisp/').<br/>
-<br/>
-Finally, MH-E will display images referenced by the "X-Image-URL:"<br/>
-header field if neither the "Face:" nor the "X-Face:" fields are<br/>
-present. The display of the images requires "wget" (see URL<br/>
-`http://www.gnu.org/software/wget/wget.html'), "fetch", or "curl"<br/>
-to fetch the image and the "convert" program from the ImageMagick<br/>
-suite (see URL `http://www.imagemagick.org/'). Of the three header<br/>
-fields this is the most efficient in terms of network usage since the<br/>
-image doesn't need to be transmitted with every single mail.<br/>
-<br/>
-The option `mh-fetch-x-image-url' controls the fetching of the<br/>
-"X-Image-URL:" header field image.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 7.0 of the MH-E package that is part of Emacs 22.1.<br/>
+<strong>mh-show-use-xface-flag</strong> is a variable defined in `<code>mh-e.el</code>'.</br>
+Its value is <pre>t</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+*Non-nil means display face images in MH-show buffers.</br>
+</br>
+MH-E can display the content of "Face:", "X-Face:", and</br>
+"X-Image-URL:" header fields. If any of these fields occur in the</br>
+header of your message, the sender's face will appear in the "From:"</br>
+header field. If more than one of these fields appear, then the first</br>
+field found in the order "Face:", "X-Face:", and "X-Image-URL:"</br>
+will be used.</br>
+</br>
+The option `mh-show-use-xface-flag' is used to turn this feature on</br>
+and off. This feature will be turned on by default if your system</br>
+supports it.</br>
+</br>
+The first header field used, if present, is the Gnus-specific</br>
+"Face:" field. The "Face:" field appeared in GNU Emacs 21 and</br>
+XEmacs. For more information, see URL</br>
+`http://quimby.gnus.org/circus/face/'. Next is the traditional</br>
+"X-Face:" header field. The display of this field requires the</br>
+"uncompface" program (see URL</br>
+`ftp://ftp.cs.indiana.edu/pub/faces/compface/compface.tar.z'). Recent</br>
+versions of XEmacs have internal support for "X-Face:" images. If</br>
+your version of XEmacs does not, then you'll need both "uncompface"</br>
+and the x-face package (see URL `ftp://ftp.jpl.org/pub/elisp/').</br>
+</br>
+Finally, MH-E will display images referenced by the "X-Image-URL:"</br>
+header field if neither the "Face:" nor the "X-Face:" fields are</br>
+present. The display of the images requires "wget" (see URL</br>
+`http://www.gnu.org/software/wget/wget.html'), "fetch", or "curl"</br>
+to fetch the image and the "convert" program from the ImageMagick</br>
+suite (see URL `http://www.imagemagick.org/'). Of the three header</br>
+fields this is the most efficient in terms of network usage since the</br>
+image doesn't need to be transmitted with every single mail.</br>
+</br>
+The option `mh-fetch-x-image-url' controls the fetching of the</br>
+"X-Image-URL:" header field image.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 7.0 of the MH-E package that is part of Emacs 22.1.

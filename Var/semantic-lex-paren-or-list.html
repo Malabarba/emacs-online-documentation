@@ -1,28 +1,29 @@
-<strong>semantic-lex-paren-or-list</strong> is a variable defined in `<code>lex.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Detect open parenthesis.<br/>
-Return either a paren token or a semantic list token depending on<br/>
-`semantic-lex-current-depth'.<br/>
-<br/>
-Value: ((looking-at "\\s(")<br/>
- (if<br/>
-     (or<br/>
-      (not semantic-lex-maximum-depth)<br/>
-      (< semantic-lex-current-depth semantic-lex-maximum-depth))<br/>
-     (progn<br/>
-       (setq semantic-lex-current-depth<br/>
-	     (1+ semantic-lex-current-depth))<br/>
-       (semantic-lex-push-token<br/>
-	(semantic-lex-token 'open-paren<br/>
-			    (match-beginning 0)<br/>
-			    (match-end 0))))<br/>
-   (semantic-lex-push-token<br/>
-    (semantic-lex-token 'semantic-list<br/>
-			(match-beginning 0)<br/>
-			(save-excursion<br/>
-			  (semantic-lex-unterminated-syntax-protection 'semantic-list<br/>
-			    (forward-list 1)<br/>
-			    (point)))))))<br/>
-<br/>
+<strong>semantic-lex-paren-or-list</strong> is a variable defined in `<code>lex.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Detect open parenthesis.</br>
+Return either a paren token or a semantic list token depending on</br>
+`semantic-lex-current-depth'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((looking-at "\\s(")
+ (if
+     (or
+      (not semantic-lex-maximum-depth)
+      (< semantic-lex-current-depth semantic-lex-maximum-depth))
+     (progn
+       (setq semantic-lex-current-depth
+	     (1+ semantic-lex-current-depth))
+       (semantic-lex-push-token
+	(semantic-lex-token 'open-paren
+			    (match-beginning 0)
+			    (match-end 0))))
+   (semantic-lex-push-token
+    (semantic-lex-token 'semantic-list
+			(match-beginning 0)
+			(save-excursion
+			  (semantic-lex-unterminated-syntax-protection 'semantic-list
+			    (forward-list 1)
+			    (point)))))))
+</pre></br>

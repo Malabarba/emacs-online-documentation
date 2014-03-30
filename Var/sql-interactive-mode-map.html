@@ -1,104 +1,103 @@
-<strong>sql-interactive-mode-map</strong> is a variable defined in `<code>sql.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Mode map used for `sql-interactive-mode'.<br/>
-Based on `comint-mode-map'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (SQL menu-item "SQL"<br/>
-		(keymap "SQL"<br/>
-			(Rename\ Buffer menu-item "Rename Buffer" sql-rename-buffer)<br/>
-			(Save\ Connection menu-item "Save Connection" sql-save-connection :enable<br/>
-					  (not sql-connection))<br/>
-			(nil-7 menu-item "--")<br/>
-			(List\ all\ objects menu-item "List all objects" sql-list-all :enable<br/>
-					    (sql-get-product-feature sql-product :list-all))<br/>
-			(List\ table\ details menu-item "List table details" sql-list-table :enable<br/>
-					      (sql-get-product-feature sql-product :list-table)))))<br/>
- (59 . sql-magic-semicolon)<br/>
- (111 . sql-magic-go)<br/>
- (79 . sql-magic-go)<br/>
- (3 keymap<br/>
-    (12 keymap<br/>
-	(116 . sql-list-table)<br/>
-	(97 . sql-list-all))<br/>
-    (23 . sql-copy-column))<br/>
- (10 . sql-accumulate-and-indent)<br/>
- keymap<br/>
- (menu-bar keymap<br/>
-	   (signals "Signals" keymap<br/>
-		    (break "BREAK" . comint-interrupt-subjob)<br/>
-		    (stop "STOP" . comint-stop-subjob)<br/>
-		    (cont "CONT" . comint-continue-subjob)<br/>
-		    (quit "QUIT" . comint-quit-subjob)<br/>
-		    (kill "KILL" . comint-kill-subjob)<br/>
-		    (eof "EOF" . comint-send-eof)<br/>
-		    "Signals")<br/>
-	   (inout "In/Out" keymap<br/>
-		  (expand-history "Expand History Before Point" . comint-replace-by-expanded-history)<br/>
-		  (list-history "List Input History" . comint-dynamic-list-input-ring)<br/>
-		  (previous-history "Previous Input" . comint-previous-input)<br/>
-		  (next-history "Next Input" . comint-next-input)<br/>
-		  (previous-matching-history-from-input "Previous Matching Current Input" . comint-previous-matching-input-from-input)<br/>
-		  (next-matching-history-from-input "Next Matching Current Input" . comint-next-matching-input-from-input)<br/>
-		  (previous-matching-history "Previous Matching Input..." . comint-previous-matching-input)<br/>
-		  (next-matching-history "Next Matching Input..." . comint-next-matching-input)<br/>
-		  (backward-matching-history "Backward Matching Input..." . comint-backward-matching-input)<br/>
-		  (forward-matching-history "Forward Matching Input..." . comint-forward-matching-input)<br/>
-		  (history-isearch-backward "Isearch Input String Backward..." . comint-history-isearch-backward)<br/>
-		  (history-isearch-backward-regexp "Isearch Input Regexp Backward..." . comint-history-isearch-backward-regexp)<br/>
-		  (copy-input "Copy Old Input" . comint-copy-old-input)<br/>
-		  (kill-input "Kill Current Input" . comint-kill-input)<br/>
-		  (show-output "Show Current Output Group" . comint-show-output)<br/>
-		  (show-maximum-output "Show Maximum Output" . comint-show-maximum-output)<br/>
-		  (previous-prompt "Backward Output Group" . comint-previous-prompt)<br/>
-		  (next-prompt "Forward Output Group" . comint-next-prompt)<br/>
-		  (write-output "Write Current Output Group to File" . comint-write-output)<br/>
-		  (append-output-to-file "Append Current Output Group to File" . comint-append-output-to-file)<br/>
-		  (delete-output "Delete Current Output Group" . comint-delete-output)<br/>
-		  "In/Out")<br/>
-	   (completion "Complete" keymap<br/>
-		       (complete "Complete at Point" . completion-at-point)<br/>
-		       (complete-file "Complete File Name" . comint-dynamic-complete-filename)<br/>
-		       (complete-listing "File Completion Listing" . comint-dynamic-list-filename-completions)<br/>
-		       (complete-expand "Expand File Name" . comint-replace-by-expanded-filename)<br/>
-		       "Complete"))<br/>
- (mouse-2 . comint-insert-input)<br/>
- (kp-delete . delete-char)<br/>
- (delete . delete-char)<br/>
- (4 . comint-delchar-or-maybe-eof)<br/>
- (13 . comint-send-input)<br/>
- (3 keymap<br/>
-    (46 . comint-insert-previous-argument)<br/>
-    (19 . comint-write-output)<br/>
-    (4 . comint-send-eof)<br/>
-    (16 . comint-previous-prompt)<br/>
-    (14 . comint-next-prompt)<br/>
-    (12 . comint-dynamic-list-input-ring)<br/>
-    (5 . comint-show-maximum-output)<br/>
-    (18 . comint-show-output)<br/>
-    (15 . comint-delete-output)<br/>
-    (13 . comint-copy-old-input)<br/>
-    (28 . comint-quit-subjob)<br/>
-    (26 . comint-stop-subjob)<br/>
-    (3 . comint-interrupt-subjob)<br/>
-    (23 . backward-kill-word)<br/>
-    (21 . comint-kill-input)<br/>
-    (1 . comint-bol-or-process-mark)<br/>
-    (24 . comint-get-next-from-history)<br/>
-    (32 . comint-accumulate)<br/>
-    (27 keymap<br/>
-	(115 . comint-next-matching-input-from-input)<br/>
-	(114 . comint-previous-matching-input-from-input)))<br/>
- (C-down . comint-next-input)<br/>
- (C-up . comint-previous-input)<br/>
- (27 keymap<br/>
-     (12 . comint-show-output)<br/>
-     (114 . comint-history-isearch-backward-regexp)<br/>
-     (110 . comint-next-input)<br/>
-     (112 . comint-previous-input)))<br/>
-<br/>
+<strong>sql-interactive-mode-map</strong> is a variable defined in `<code>sql.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Mode map used for `sql-interactive-mode'.</br>
+Based on `comint-mode-map'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (SQL menu-item "SQL"
+		(keymap "SQL"
+			(Rename\ Buffer menu-item "Rename Buffer" sql-rename-buffer)
+			(Save\ Connection menu-item "Save Connection" sql-save-connection :enable
+					  (not sql-connection))
+			(nil menu-item "--")
+			(List\ all\ objects menu-item "List all objects" sql-list-all :enable
+					    (sql-get-product-feature sql-product :list-all))
+			(List\ table\ details menu-item "List table details" sql-list-table :enable
+					      (sql-get-product-feature sql-product :list-table)))))
+ (59 . sql-magic-semicolon)
+ (111 . sql-magic-go)
+ (79 . sql-magic-go)
+ (3 keymap
+    (12 keymap
+	(116 . sql-list-table)
+	(97 . sql-list-all))
+    (23 . sql-copy-column))
+ (10 . sql-accumulate-and-indent)
+ keymap
+ (menu-bar keymap
+	   (signals "Signals" keymap
+		    (break "BREAK" . comint-interrupt-subjob)
+		    (stop "STOP" . comint-stop-subjob)
+		    (cont "CONT" . comint-continue-subjob)
+		    (quit "QUIT" . comint-quit-subjob)
+		    (kill "KILL" . comint-kill-subjob)
+		    (eof "EOF" . comint-send-eof)
+		    "Signals")
+	   (inout "In/Out" keymap
+		  (expand-history "Expand History Before Point" . comint-replace-by-expanded-history)
+		  (list-history "List Input History" . comint-dynamic-list-input-ring)
+		  (previous-history "Previous Input" . comint-previous-input)
+		  (next-history "Next Input" . comint-next-input)
+		  (previous-matching-history-from-input "Previous Matching Current Input" . comint-previous-matching-input-from-input)
+		  (next-matching-history-from-input "Next Matching Current Input" . comint-next-matching-input-from-input)
+		  (previous-matching-history "Previous Matching Input..." . comint-previous-matching-input)
+		  (next-matching-history "Next Matching Input..." . comint-next-matching-input)
+		  (backward-matching-history "Backward Matching Input..." . comint-backward-matching-input)
+		  (forward-matching-history "Forward Matching Input..." . comint-forward-matching-input)
+		  (history-isearch-backward "Isearch Input String Backward..." . comint-history-isearch-backward)
+		  (history-isearch-backward-regexp "Isearch Input Regexp Backward..." . comint-history-isearch-backward-regexp)
+		  (copy-input "Copy Old Input" . comint-copy-old-input)
+		  (kill-input "Kill Current Input" . comint-kill-input)
+		  (show-output "Show Current Output Group" . comint-show-output)
+		  (show-maximum-output "Show Maximum Output" . comint-show-maximum-output)
+		  (previous-prompt "Backward Output Group" . comint-previous-prompt)
+		  (next-prompt "Forward Output Group" . comint-next-prompt)
+		  (write-output "Write Current Output Group to File" . comint-write-output)
+		  (append-output-to-file "Append Current Output Group to File" . comint-append-output-to-file)
+		  (delete-output "Delete Current Output Group" . comint-delete-output)
+		  "In/Out")
+	   (completion "Complete" keymap
+		       (complete "Complete at Point" . completion-at-point)
+		       (complete-file "Complete File Name" . comint-dynamic-complete-filename)
+		       (complete-listing "File Completion Listing" . comint-dynamic-list-filename-completions)
+		       (complete-expand "Expand File Name" . comint-replace-by-expanded-filename)
+		       "Complete"))
+ (mouse-2 . comint-insert-input)
+ (kp-delete . delete-forward-char)
+ (delete . delete-forward-char)
+ (4 . comint-delchar-or-maybe-eof)
+ (13 . comint-send-input)
+ (3 keymap
+    (46 . comint-insert-previous-argument)
+    (19 . comint-write-output)
+    (4 . comint-send-eof)
+    (16 . comint-previous-prompt)
+    (14 . comint-next-prompt)
+    (12 . comint-dynamic-list-input-ring)
+    (5 . comint-show-maximum-output)
+    (18 . comint-show-output)
+    (15 . comint-delete-output)
+    (13 . comint-copy-old-input)
+    (28 . comint-quit-subjob)
+    (26 . comint-stop-subjob)
+    (3 . comint-interrupt-subjob)
+    (23 . backward-kill-word)
+    (21 . comint-kill-input)
+    (1 . comint-bol-or-process-mark)
+    (24 . comint-get-next-from-history)
+    (32 . comint-accumulate)
+    (27 keymap
+	(115 . comint-next-matching-input-from-input)
+	(114 . comint-previous-matching-input-from-input)))
+ (C-down . comint-next-input)
+ (C-up . comint-previous-input)
+ (27 keymap
+     (12 . comint-show-output)
+     (114 . comint-history-isearch-backward-regexp)
+     (110 . comint-next-input)
+     (112 . comint-previous-input)))
+</pre></br>

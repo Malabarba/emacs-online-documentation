@@ -1,5 +1,19 @@
-<strong>ruby-forward-string</strong> is a compiled Lisp function in `<code>ruby-mode.el</code>'.<br/>
-<br/>
-(ruby-forward-string TERM &optional END NO-ERROR EXPAND)<br/>
-<br/>
-TODO: document.
+<strong>ruby-forward-string</strong> is a compiled Lisp function in `<code>ruby-mode.el</code>'.</br>
+</br>
+(ruby-forward-string <u>TERM</u> &optional <u>END</u> <u>NO-ERROR</u> <u>EXPAND</u>)</br>
+</br>
+Move forward across one balanced pair of string delimiters.</br>
+Skips escaped delimiters. If <u>EXPAND</u> is non-nil, also ignores</br>
+delimiters in interpolated strings.</br>
+</br>
+<u>TERM</u> should be a string containing either a single, self-matching</br>
+delimiter (e.g. "/"), or a pair of matching delimiters with the</br>
+close delimiter first (e.g. "][").</br>
+</br>
+When non-nil, search is bounded by position <u>END</u>.</br>
+</br>
+Throws an error if a balanced match is not found, unless <u>NO-ERROR</u></br>
+is non-nil, in which case nil will be returned.</br>
+</br>
+This command assumes the character after point is an opening</br>
+delimiter.

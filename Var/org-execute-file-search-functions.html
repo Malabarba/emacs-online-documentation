@@ -1,26 +1,24 @@
-<strong>org-execute-file-search-functions</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-List of functions to execute a file search triggered by a link.<br/>
-<br/>
-Functions added to this hook must accept a single argument, the<br/>
-search string that was part of the file link, the part after the<br/>
-double colon.  The function must first check if it would like to<br/>
-handle this search, for example by checking the `major-mode' or<br/>
-the file extension.  If it decides not to handle this search, it<br/>
-should just return nil to give other functions a chance.  If it<br/>
-does handle the search, it must return a non-nil value to keep<br/>
-other functions from trying.<br/>
-<br/>
-Each function can access the current prefix argument through the<br/>
-variable `current-prefix-argument'.  Note that a single prefix is<br/>
-used to force opening a link in Emacs, so it may be good to only<br/>
-use a numeric or double prefix to guide the search function.<br/>
-<br/>
-In case this is needed, a function in this hook can also restore<br/>
-the window configuration before `org-open-at-point' was called using:<br/>
-<br/>
+<strong>org-execute-file-search-functions</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of functions to execute a file search triggered by a link.</br>
+</br>
+Functions added to this hook must accept a single argument, the</br>
+search string that was part of the file link, the part after the</br>
+double colon.  The function must first check if it would like to</br>
+handle this search, for example by checking the `major-mode' or</br>
+the file extension.  If it decides not to handle this search, it</br>
+should just return nil to give other functions a chance.  If it</br>
+does handle the search, it must return a non-nil value to keep</br>
+other functions from trying.</br>
+</br>
+Each function can access the current prefix argument through the</br>
+variable `current-prefix-arg'.  Note that a single prefix is used</br>
+to force opening a link in Emacs, so it may be good to only use a</br>
+numeric or double prefix to guide the search function.</br>
+</br>
+In case this is needed, a function in this hook can also restore</br>
+the window configuration before `org-open-at-point' was called using:</br>
+</br>
     (set-window-configuration org-window-config-before-follow-link)

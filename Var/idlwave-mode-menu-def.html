@@ -1,128 +1,129 @@
-<strong>idlwave-mode-menu-def</strong> is a variable defined in `<code>idlwave.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: ("IDLWAVE"<br/>
- ["PRO/FUNC menu" idlwave-function-menu t]<br/>
- ("Motion"<br/>
-  ["Subprogram Start" idlwave-beginning-of-subprogram t]<br/>
-  ["Subprogram End" idlwave-end-of-subprogram t]<br/>
-  ["Block Start" idlwave-beginning-of-block t]<br/>
-  ["Block End" idlwave-end-of-block t]<br/>
-  ["Up Block" idlwave-backward-up-block t]<br/>
-  ["Down Block" idlwave-down-block t]<br/>
-  ["Skip Block Backward" idlwave-backward-block t]<br/>
-  ["Skip Block Forward" idlwave-forward-block t])<br/>
- ("Mark"<br/>
-  ["Subprogram" idlwave-mark-subprogram t]<br/>
-  ["Block" idlwave-mark-block t]<br/>
-  ["Header" idlwave-mark-doclib t])<br/>
- ("Format"<br/>
-  ["Indent Entire Statement" idlwave-indent-statement :active t :keys "C-u \\[indent-for-tab-command]"]<br/>
-  ["Indent Subprogram" idlwave-indent-subprogram t]<br/>
-  ["(Un)Comment Region" idlwave-toggle-comment-region t]<br/>
-  ["Continue/Split line" idlwave-split-line t]<br/>
-  "--"<br/>
-  ["Toggle Auto Fill" idlwave-auto-fill-mode :style toggle :selected<br/>
-   (symbol-value idlwave-fill-function)])<br/>
- ("Templates"<br/>
-  ["Procedure" idlwave-procedure t]<br/>
-  ["Function" idlwave-function t]<br/>
-  ["Doc Header" idlwave-doc-header t]<br/>
-  ["Log" idlwave-doc-modification t]<br/>
-  "--"<br/>
-  ["Case" idlwave-case t]<br/>
-  ["For" idlwave-for t]<br/>
-  ["Repeat" idlwave-repeat t]<br/>
-  ["While" idlwave-while t]<br/>
-  "--"<br/>
-  ["Close Block" idlwave-close-block t])<br/>
- ("Completion"<br/>
-  ["Complete" idlwave-complete t]<br/>
-  ("Complete Specific"<br/>
-   ["1 Procedure Name"<br/>
-    (idlwave-complete 'procedure)<br/>
-    t]<br/>
-   ["2 Procedure Keyword"<br/>
-    (idlwave-complete 'procedure-keyword)<br/>
-    t]<br/>
-   "--"<br/>
-   ["3 Function Name"<br/>
-    (idlwave-complete 'function)<br/>
-    t]<br/>
-   ["4 Function Keyword"<br/>
-    (idlwave-complete 'function-keyword)<br/>
-    t]<br/>
-   "--"<br/>
-   ["5 Procedure Method Name"<br/>
-    (idlwave-complete 'procedure-method)<br/>
-    t]<br/>
-   ["6 Procedure Method Keyword"<br/>
-    (idlwave-complete 'procedure-method-keyword)<br/>
-    t]<br/>
-   "--"<br/>
-   ["7 Function Method Name"<br/>
-    (idlwave-complete 'function-method)<br/>
-    t]<br/>
-   ["8 Function Method Keyword"<br/>
-    (idlwave-complete 'function-method-keyword)<br/>
-    t]<br/>
-   "--"<br/>
-   ["9 Class Name" idlwave-complete-class t]))<br/>
- ("Routine Info"<br/>
-  ["Show Routine Info" idlwave-routine-info t]<br/>
-  ["Online Context Help" idlwave-context-help t]<br/>
-  "--"<br/>
-  ["Find Routine Source" idlwave-find-module t]<br/>
-  ["Resolve Routine" idlwave-resolve<br/>
-   (featurep 'idlw-shell)]<br/>
-  "--"<br/>
-  ["Update Routine Info" idlwave-update-routine-info t]<br/>
-  ["Rescan XML Help Catalog" idlwave-convert-xml-system-routine-info t]<br/>
-  "--" "IDL User Catalog"<br/>
-  ["Select Catalog Directories"<br/>
-   (idlwave-create-user-catalog-file nil)<br/>
-   t]<br/>
-  ["Scan Directories"<br/>
-   (idlwave-update-routine-info<br/>
-    '(16))<br/>
-   (and idlwave-path-alist<br/>
-	(not idlwave-catalog-process))]<br/>
-  ["Scan Directories &"<br/>
-   (idlwave-update-routine-info<br/>
-    '(64))<br/>
-   (and idlwave-path-alist<br/>
-	(not idlwave-catalog-process))]<br/>
-  "--" "Routine Shadows"<br/>
-  ["Check Current Buffer" idlwave-list-buffer-load-path-shadows t]<br/>
-  ["Check Compiled Routines" idlwave-list-shell-load-path-shadows t]<br/>
-  ["Check Everything" idlwave-list-all-load-path-shadows t])<br/>
- ("Misc"<br/>
-  ["Kill auto-created buffers" idlwave-kill-autoloaded-buffers t]<br/>
-  "--"<br/>
-  ["Insert TAB character" idlwave-hard-tab t])<br/>
- "--"<br/>
- ("External"<br/>
-  ["Start IDL shell" idlwave-shell t]<br/>
-  ["Edit file in IDLDE" idlwave-edit-in-idlde t]<br/>
-  ["Launch IDL Help" idlwave-launch-idlhelp t])<br/>
- "--"<br/>
- ("Customize"<br/>
-  ["Browse IDLWAVE Group" idlwave-customize t]<br/>
-  "--"<br/>
-  ["Build Full Customize Menu" idlwave-create-customize-menu<br/>
-   (fboundp 'customize-menu-create)])<br/>
- ("Documentation"<br/>
-  ["Describe Mode" describe-mode t]<br/>
-  ["Abbreviation List" idlwave-list-abbrevs t]<br/>
-  "--"<br/>
-  ["Commentary in idlwave.el" idlwave-show-commentary t]<br/>
-  ["Commentary in idlw-shell.el" idlwave-shell-show-commentary t]<br/>
-  "--"<br/>
-  ["Info" idlwave-info t]<br/>
-  "--"<br/>
-  ["Help with Topic" idlwave-help-assistant-help-with-topic idlwave-help-use-assistant]<br/>
-  ["Launch IDL Help" idlwave-launch-idlhelp t]))<br/>
-<br/>
+<strong>idlwave-mode-menu-def</strong> is a variable defined in `<code>idlwave.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("IDLWAVE"
+ ["PRO/FUNC menu" idlwave-function-menu t]
+ ("Motion"
+  ["Subprogram Start" idlwave-beginning-of-subprogram t]
+  ["Subprogram End" idlwave-end-of-subprogram t]
+  ["Block Start" idlwave-beginning-of-block t]
+  ["Block End" idlwave-end-of-block t]
+  ["Up Block" idlwave-backward-up-block t]
+  ["Down Block" idlwave-down-block t]
+  ["Skip Block Backward" idlwave-backward-block t]
+  ["Skip Block Forward" idlwave-forward-block t])
+ ("Mark"
+  ["Subprogram" idlwave-mark-subprogram t]
+  ["Block" idlwave-mark-block t]
+  ["Header" idlwave-mark-doclib t])
+ ("Format"
+  ["Indent Entire Statement" idlwave-indent-statement :active t :keys "C-u \\[indent-for-tab-command]"]
+  ["Indent Subprogram" idlwave-indent-subprogram t]
+  ["(Un)Comment Region" idlwave-toggle-comment-region t]
+  ["Continue/Split line" idlwave-split-line t]
+  "--"
+  ["Toggle Auto Fill" idlwave-auto-fill-mode :style toggle :selected
+   (symbol-value idlwave-fill-function)])
+ ("Templates"
+  ["Procedure" idlwave-procedure t]
+  ["Function" idlwave-function t]
+  ["Doc Header" idlwave-doc-header t]
+  ["Log" idlwave-doc-modification t]
+  "--"
+  ["Case" idlwave-case t]
+  ["For" idlwave-for t]
+  ["Repeat" idlwave-repeat t]
+  ["While" idlwave-while t]
+  "--"
+  ["Close Block" idlwave-close-block t])
+ ("Completion"
+  ["Complete" idlwave-complete t]
+  ("Complete Specific"
+   ["1 Procedure Name"
+    (idlwave-complete 'procedure)
+    t]
+   ["2 Procedure Keyword"
+    (idlwave-complete 'procedure-keyword)
+    t]
+   "--"
+   ["3 Function Name"
+    (idlwave-complete 'function)
+    t]
+   ["4 Function Keyword"
+    (idlwave-complete 'function-keyword)
+    t]
+   "--"
+   ["5 Procedure Method Name"
+    (idlwave-complete 'procedure-method)
+    t]
+   ["6 Procedure Method Keyword"
+    (idlwave-complete 'procedure-method-keyword)
+    t]
+   "--"
+   ["7 Function Method Name"
+    (idlwave-complete 'function-method)
+    t]
+   ["8 Function Method Keyword"
+    (idlwave-complete 'function-method-keyword)
+    t]
+   "--"
+   ["9 Class Name" idlwave-complete-class t]))
+ ("Routine Info"
+  ["Show Routine Info" idlwave-routine-info t]
+  ["Online Context Help" idlwave-context-help t]
+  "--"
+  ["Find Routine Source" idlwave-find-module t]
+  ["Resolve Routine" idlwave-resolve
+   (featurep 'idlw-shell)]
+  "--"
+  ["Update Routine Info" idlwave-update-routine-info t]
+  ["Rescan XML Help Catalog" idlwave-convert-xml-system-routine-info t]
+  "--" "IDL User Catalog"
+  ["Select Catalog Directories"
+   (idlwave-create-user-catalog-file nil)
+   t]
+  ["Scan Directories"
+   (idlwave-update-routine-info
+    '(16))
+   (and idlwave-path-alist
+	(not idlwave-catalog-process))]
+  ["Scan Directories &"
+   (idlwave-update-routine-info
+    '(64))
+   (and idlwave-path-alist
+	(not idlwave-catalog-process))]
+  "--" "Routine Shadows"
+  ["Check Current Buffer" idlwave-list-buffer-load-path-shadows t]
+  ["Check Compiled Routines" idlwave-list-shell-load-path-shadows t]
+  ["Check Everything" idlwave-list-all-load-path-shadows t])
+ ("Misc"
+  ["Kill auto-created buffers" idlwave-kill-autoloaded-buffers t]
+  "--"
+  ["Insert TAB character" idlwave-hard-tab t])
+ "--"
+ ("External"
+  ["Start IDL shell" idlwave-shell t]
+  ["Edit file in IDLDE" idlwave-edit-in-idlde t]
+  ["Launch IDL Help" idlwave-launch-idlhelp t])
+ "--"
+ ("Customize"
+  ["Browse IDLWAVE Group" idlwave-customize t]
+  "--"
+  ["Build Full Customize Menu" idlwave-create-customize-menu
+   (fboundp 'customize-menu-create)])
+ ("Documentation"
+  ["Describe Mode" describe-mode t]
+  ["Abbreviation List" idlwave-list-abbrevs t]
+  "--"
+  ["Commentary in idlwave.el" idlwave-show-commentary t]
+  ["Commentary in idlw-shell.el" idlwave-shell-show-commentary t]
+  "--"
+  ["Info" idlwave-info t]
+  "--"
+  ["Help with Topic" idlwave-help-assistant-help-with-topic idlwave-help-use-assistant]
+  ["Launch IDL Help" idlwave-launch-idlhelp t]))
+</pre></br>

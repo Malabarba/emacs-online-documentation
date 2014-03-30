@@ -1,278 +1,277 @@
-<strong>pr-menu-spec</strong> is a variable defined in `<code>printing.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Not documented as a variable.<br/>
-<br/>
-Value: (["Printing Interface" pr-interface :help "Use buffer interface instead of menu interface"]<br/>
- "--"<br/>
- ("PostScript Preview" :included<br/>
-  (pr-visible-p 'postscript)<br/>
-  :help "Preview PostScript instead of sending to printer"<br/>
-  ("Directory" :active<br/>
-   (not pr-spool-p)<br/>
-   ["1-up"<br/>
-    (pr-ps-directory-preview 1 nil nil t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-directory-preview 2 nil nil t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-directory-preview 4 nil nil t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-directory-preview nil nil nil t)<br/>
-    :keys "\\[pr-ps-buffer-preview]"])<br/>
-  ("Buffer" :active<br/>
-   (not pr-spool-p)<br/>
-   ["1-up"<br/>
-    (pr-ps-buffer-preview 1 t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-buffer-preview 2 t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-buffer-preview 4 t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-buffer-preview nil t)<br/>
-    :keys "\\[pr-ps-buffer-preview]"])<br/>
-  ("Region" :active<br/>
-   (and<br/>
-    (not pr-spool-p)<br/>
-    (ps-mark-active-p))<br/>
-   ["1-up"<br/>
-    (pr-ps-region-preview 1 t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-region-preview 2 t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-region-preview 4 t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-region-preview nil t)<br/>
-    :keys "\\[pr-ps-region-preview]"])<br/>
-  ("Mode" :active<br/>
-   (and<br/>
-    (not pr-spool-p)<br/>
-    (pr-mode-alist-p))<br/>
-   ["1-up"<br/>
-    (pr-ps-mode-preview 1 t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-mode-preview 2 t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-mode-preview 4 t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-mode-preview nil t)<br/>
-    :keys "\\[pr-ps-mode-preview]"])<br/>
-  ("File"<br/>
-   ["No Preprocessing..."<br/>
-    (call-interactively 'pr-ps-file-preview)<br/>
-    :keys "\\[pr-ps-file-preview]" :help "Preview PostScript file"]<br/>
-   "--"<br/>
-   ["PostScript Utility" pr-update-menus :active pr-ps-utility-alist :help "Select PostScript utility"]<br/>
-   "--"<br/>
-   ["1-up..."<br/>
-    (pr-ps-file-up-preview 1 t t)<br/>
-    pr-ps-utility-alist]<br/>
-   ["2-up..."<br/>
-    (pr-ps-file-up-preview 2 t t)<br/>
-    pr-ps-utility-alist]<br/>
-   ["4-up..."<br/>
-    (pr-ps-file-up-preview 4 t t)<br/>
-    pr-ps-utility-alist]<br/>
-   ["Other..."<br/>
-    (pr-ps-file-up-preview nil t t)<br/>
-    :keys "\\[pr-ps-file-up-preview]" :active pr-ps-utility-alist]<br/>
-   "--"<br/>
-   ["Landscape" pr-toggle-file-landscape-menu :style toggle :selected pr-file-landscape :help "Toggle landscape for PostScript file" :active pr-ps-utility-alist]<br/>
-   ["Duplex" pr-toggle-file-duplex-menu :style toggle :selected pr-file-duplex :help "Toggle duplex for PostScript file" :active pr-ps-utility-alist]<br/>
-   ["Tumble" pr-toggle-file-tumble-menu :style toggle :selected pr-file-tumble :help "Toggle tumble for PostScript file" :active<br/>
-    (and pr-file-duplex pr-ps-utility-alist)])<br/>
-  ["Despool..."<br/>
-   (call-interactively 'pr-despool-preview)<br/>
-   :active pr-spool-p :keys "\\[pr-despool-preview]" :help "Despool PostScript buffer to printer or file (C-u)"])<br/>
- ("PostScript Print" :included<br/>
-  (pr-visible-p 'postscript)<br/>
-  :help "Send PostScript to printer or file (C-u)"<br/>
-  ("Directory"<br/>
-   ["1-up"<br/>
-    (pr-ps-directory-ps-print 1 nil nil t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-directory-ps-print 2 nil nil t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-directory-ps-print 4 nil nil t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-directory-ps-print nil nil nil t)<br/>
-    :keys "\\[pr-ps-buffer-ps-print]"])<br/>
-  ("Buffer"<br/>
-   ["1-up"<br/>
-    (pr-ps-buffer-ps-print 1 t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-buffer-ps-print 2 t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-buffer-ps-print 4 t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-buffer-ps-print nil t)<br/>
-    :keys "\\[pr-ps-buffer-ps-print]"])<br/>
-  ("Region" :active<br/>
-   (ps-mark-active-p)<br/>
-   ["1-up"<br/>
-    (pr-ps-region-ps-print 1 t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-region-ps-print 2 t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-region-ps-print 4 t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-region-ps-print nil t)<br/>
-    :keys "\\[pr-ps-region-ps-print]"])<br/>
-  ("Mode" :active<br/>
-   (pr-mode-alist-p)<br/>
-   ["1-up"<br/>
-    (pr-ps-mode-ps-print 1 t)<br/>
-    t]<br/>
-   ["2-up"<br/>
-    (pr-ps-mode-ps-print 2 t)<br/>
-    t]<br/>
-   ["4-up"<br/>
-    (pr-ps-mode-ps-print 4 t)<br/>
-    t]<br/>
-   ["Other..."<br/>
-    (pr-ps-mode-ps-print nil t)<br/>
-    :keys "\\[pr-ps-mode-ps-print]"])<br/>
-  ("File"<br/>
-   ["No Preprocessing..."<br/>
-    (call-interactively 'pr-ps-file-ps-print)<br/>
-    :keys "\\[pr-ps-file-ps-print]" :help "Send PostScript file to printer"]<br/>
-   "--"<br/>
-   ["PostScript Utility" pr-update-menus :active pr-ps-utility-alist :help "Select PostScript utility"]<br/>
-   "--"<br/>
-   ["1-up..."<br/>
-    (pr-ps-file-up-ps-print 1 t t)<br/>
-    pr-ps-utility-alist]<br/>
-   ["2-up..."<br/>
-    (pr-ps-file-up-ps-print 2 t t)<br/>
-    pr-ps-utility-alist]<br/>
-   ["4-up..."<br/>
-    (pr-ps-file-up-ps-print 4 t t)<br/>
-    pr-ps-utility-alist]<br/>
-   ["Other..."<br/>
-    (pr-ps-file-up-ps-print nil t t)<br/>
-    :keys "\\[pr-ps-file-up-ps-print]" :active pr-ps-utility-alist]<br/>
-   "--"<br/>
-   ["Landscape" pr-toggle-file-landscape-menu :style toggle :selected pr-file-landscape :help "Toggle landscape for PostScript file" :active pr-ps-utility-alist]<br/>
-   ["Duplex" pr-toggle-file-duplex-menu :style toggle :selected pr-file-duplex :help "Toggle duplex for PostScript file" :active pr-ps-utility-alist]<br/>
-   ["Tumble" pr-toggle-file-tumble-menu :style toggle :selected pr-file-tumble :help "Toggle tumble for PostScript file" :active<br/>
-    (and pr-file-duplex pr-ps-utility-alist)])<br/>
-  ["Despool..."<br/>
-   (call-interactively 'pr-despool-ps-print)<br/>
-   :active pr-spool-p :keys "\\[pr-despool-ps-print]" :help "Despool PostScript buffer to printer or file (C-u)"])<br/>
- ["PostScript Printers" pr-update-menus :active pr-ps-printer-alist :included<br/>
-  (pr-visible-p 'postscript)<br/>
-  :help "Select PostScript printer"]<br/>
- "--"<br/>
- ("Printify" :included<br/>
-  (pr-visible-p 'text)<br/>
-  :help "Replace non-printing chars with printable representations."<br/>
-  ["Directory" pr-printify-directory t]<br/>
-  ["Buffer" pr-printify-buffer t]<br/>
-  ["Region" pr-printify-region<br/>
-   (ps-mark-active-p)])<br/>
- ("Print" :included<br/>
-  (pr-visible-p 'text)<br/>
-  :help "Send text to printer"<br/>
-  ["Directory" pr-txt-directory t]<br/>
-  ["Buffer" pr-txt-buffer t]<br/>
-  ["Region" pr-txt-region<br/>
-   (ps-mark-active-p)]<br/>
-  ["Mode" pr-txt-mode<br/>
-   (pr-mode-alist-p)])<br/>
- ["Text Printers" pr-update-menus :active pr-txt-printer-alist :included<br/>
-  (pr-visible-p 'text)<br/>
-  :help "Select text printer"]<br/>
- "--"<br/>
- ["Landscape" pr-toggle-landscape-menu :style toggle :selected ps-landscape-mode :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ["Print Header" pr-toggle-header-menu :style toggle :selected ps-print-header :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ["Print Header Frame" pr-toggle-header-frame-menu :style toggle :selected ps-print-header-frame :active ps-print-header :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ["Line Number" pr-toggle-line-menu :style toggle :selected ps-line-number :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ["Zebra Stripes" pr-toggle-zebra-menu :style toggle :selected ps-zebra-stripes :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ["Duplex" pr-toggle-duplex-menu :style toggle :selected ps-spool-duplex :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ["Tumble" pr-toggle-tumble-menu :style toggle :selected ps-spool-tumble :active ps-spool-duplex :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ["Upside-Down" pr-toggle-upside-down-menu :style toggle :selected ps-print-upside-down :included<br/>
-  (pr-visible-p 'postscript-options)]<br/>
- ("Print All Pages" :included<br/>
-  (pr-visible-p 'postscript-options)<br/>
-  :help "Select odd/even pages/sheets to print"<br/>
-  ["All Pages"<br/>
-   (pr-even-or-odd-pages nil)<br/>
-   :style radio :selected<br/>
-   (eq ps-even-or-odd-pages nil)]<br/>
-  ["Even Pages"<br/>
-   (pr-even-or-odd-pages 'even-page)<br/>
-   :style radio :selected<br/>
-   (eq ps-even-or-odd-pages 'even-page)]<br/>
-  ["Odd Pages"<br/>
-   (pr-even-or-odd-pages 'odd-page)<br/>
-   :style radio :selected<br/>
-   (eq ps-even-or-odd-pages 'odd-page)]<br/>
-  ["Even Sheets"<br/>
-   (pr-even-or-odd-pages 'even-sheet)<br/>
-   :style radio :selected<br/>
-   (eq ps-even-or-odd-pages 'even-sheet)]<br/>
-  ["Odd Sheets"<br/>
-   (pr-even-or-odd-pages 'odd-sheet)<br/>
-   :style radio :selected<br/>
-   (eq ps-even-or-odd-pages 'odd-sheet)])<br/>
- "--"<br/>
- ["Spool Buffer" pr-toggle-spool-menu :style toggle :selected pr-spool-p :included<br/>
-  (pr-visible-p 'postscript-process)<br/>
-  :help "Toggle PostScript spooling"]<br/>
- ["Print with faces" pr-toggle-faces-menu :style toggle :selected pr-faces-p :included<br/>
-  (pr-visible-p 'postscript-process)<br/>
-  :help "Toggle PostScript printing with faces"]<br/>
- ["Print via Ghostscript" pr-toggle-ghostscript-menu :style toggle :selected pr-print-using-ghostscript :included<br/>
-  (pr-visible-p 'postscript-process)<br/>
-  :help "Toggle PostScript generation using ghostscript"]<br/>
- "--"<br/>
- ["Auto Region" pr-toggle-region-menu :style toggle :selected pr-auto-region :included<br/>
-  (pr-visible-p 'printing)]<br/>
- ["Auto Mode" pr-toggle-mode-menu :style toggle :selected pr-auto-mode :included<br/>
-  (pr-visible-p 'printing)]<br/>
- ["Menu Lock" pr-toggle-lock-menu :style toggle :selected pr-menu-lock :included<br/>
-  (pr-visible-p 'printing)]<br/>
- "--"<br/>
- ("Customize" :included<br/>
-  (pr-visible-p 'help)<br/>
-  ["printing" pr-customize t]<br/>
-  ["ps-print" ps-print-customize t]<br/>
-  ["lpr" lpr-customize t])<br/>
- ("Show Settings" :included<br/>
-  (pr-visible-p 'help)<br/>
-  ["printing" pr-show-pr-setup t]<br/>
-  ["ps-print" pr-show-ps-setup t]<br/>
-  ["lpr" pr-show-lpr-setup t])<br/>
- ["Help" pr-help :active t :included<br/>
-  (pr-visible-p 'help)])<br/>
-<br/>
+<strong>pr-menu-spec</strong> is a variable defined in `<code>printing.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(["Printing Interface" pr-interface :help "Use buffer interface instead of menu interface"]
+ "--"
+ ("PostScript Preview" :included
+  (pr-visible-p 'postscript)
+  :help "Preview PostScript instead of sending to printer"
+  ("Directory" :active
+   (not pr-spool-p)
+   ["1-up"
+    (pr-ps-directory-preview 1 nil nil t)
+    t]
+   ["2-up"
+    (pr-ps-directory-preview 2 nil nil t)
+    t]
+   ["4-up"
+    (pr-ps-directory-preview 4 nil nil t)
+    t]
+   ["Other..."
+    (pr-ps-directory-preview nil nil nil t)
+    :keys "\\[pr-ps-buffer-preview]"])
+  ("Buffer" :active
+   (not pr-spool-p)
+   ["1-up"
+    (pr-ps-buffer-preview 1 t)
+    t]
+   ["2-up"
+    (pr-ps-buffer-preview 2 t)
+    t]
+   ["4-up"
+    (pr-ps-buffer-preview 4 t)
+    t]
+   ["Other..."
+    (pr-ps-buffer-preview nil t)
+    :keys "\\[pr-ps-buffer-preview]"])
+  ("Region" :active
+   (and
+    (not pr-spool-p)
+    (ps-mark-active-p))
+   ["1-up"
+    (pr-ps-region-preview 1 t)
+    t]
+   ["2-up"
+    (pr-ps-region-preview 2 t)
+    t]
+   ["4-up"
+    (pr-ps-region-preview 4 t)
+    t]
+   ["Other..."
+    (pr-ps-region-preview nil t)
+    :keys "\\[pr-ps-region-preview]"])
+  ("Mode" :active
+   (and
+    (not pr-spool-p)
+    (pr-mode-alist-p))
+   ["1-up"
+    (pr-ps-mode-preview 1 t)
+    t]
+   ["2-up"
+    (pr-ps-mode-preview 2 t)
+    t]
+   ["4-up"
+    (pr-ps-mode-preview 4 t)
+    t]
+   ["Other..."
+    (pr-ps-mode-preview nil t)
+    :keys "\\[pr-ps-mode-preview]"])
+  ("File"
+   ["No Preprocessing..."
+    (call-interactively 'pr-ps-file-preview)
+    :keys "\\[pr-ps-file-preview]" :help "Preview PostScript file"]
+   "--"
+   ["PostScript Utility" pr-update-menus :active pr-ps-utility-alist :help "Select PostScript utility"]
+   "--"
+   ["1-up..."
+    (pr-ps-file-up-preview 1 t t)
+    pr-ps-utility-alist]
+   ["2-up..."
+    (pr-ps-file-up-preview 2 t t)
+    pr-ps-utility-alist]
+   ["4-up..."
+    (pr-ps-file-up-preview 4 t t)
+    pr-ps-utility-alist]
+   ["Other..."
+    (pr-ps-file-up-preview nil t t)
+    :keys "\\[pr-ps-file-up-preview]" :active pr-ps-utility-alist]
+   "--"
+   ["Landscape" pr-toggle-file-landscape-menu :style toggle :selected pr-file-landscape :help "Toggle landscape for PostScript file" :active pr-ps-utility-alist]
+   ["Duplex" pr-toggle-file-duplex-menu :style toggle :selected pr-file-duplex :help "Toggle duplex for PostScript file" :active pr-ps-utility-alist]
+   ["Tumble" pr-toggle-file-tumble-menu :style toggle :selected pr-file-tumble :help "Toggle tumble for PostScript file" :active
+    (and pr-file-duplex pr-ps-utility-alist)])
+  ["Despool..."
+   (call-interactively 'pr-despool-preview)
+   :active pr-spool-p :keys "\\[pr-despool-preview]" :help "Despool PostScript buffer to printer or file (C-u)"])
+ ("PostScript Print" :included
+  (pr-visible-p 'postscript)
+  :help "Send PostScript to printer or file (C-u)"
+  ("Directory"
+   ["1-up"
+    (pr-ps-directory-ps-print 1 nil nil t)
+    t]
+   ["2-up"
+    (pr-ps-directory-ps-print 2 nil nil t)
+    t]
+   ["4-up"
+    (pr-ps-directory-ps-print 4 nil nil t)
+    t]
+   ["Other..."
+    (pr-ps-directory-ps-print nil nil nil t)
+    :keys "\\[pr-ps-buffer-ps-print]"])
+  ("Buffer"
+   ["1-up"
+    (pr-ps-buffer-ps-print 1 t)
+    t]
+   ["2-up"
+    (pr-ps-buffer-ps-print 2 t)
+    t]
+   ["4-up"
+    (pr-ps-buffer-ps-print 4 t)
+    t]
+   ["Other..."
+    (pr-ps-buffer-ps-print nil t)
+    :keys "\\[pr-ps-buffer-ps-print]"])
+  ("Region" :active
+   (ps-mark-active-p)
+   ["1-up"
+    (pr-ps-region-ps-print 1 t)
+    t]
+   ["2-up"
+    (pr-ps-region-ps-print 2 t)
+    t]
+   ["4-up"
+    (pr-ps-region-ps-print 4 t)
+    t]
+   ["Other..."
+    (pr-ps-region-ps-print nil t)
+    :keys "\\[pr-ps-region-ps-print]"])
+  ("Mode" :active
+   (pr-mode-alist-p)
+   ["1-up"
+    (pr-ps-mode-ps-print 1 t)
+    t]
+   ["2-up"
+    (pr-ps-mode-ps-print 2 t)
+    t]
+   ["4-up"
+    (pr-ps-mode-ps-print 4 t)
+    t]
+   ["Other..."
+    (pr-ps-mode-ps-print nil t)
+    :keys "\\[pr-ps-mode-ps-print]"])
+  ("File"
+   ["No Preprocessing..."
+    (call-interactively 'pr-ps-file-ps-print)
+    :keys "\\[pr-ps-file-ps-print]" :help "Send PostScript file to printer"]
+   "--"
+   ["PostScript Utility" pr-update-menus :active pr-ps-utility-alist :help "Select PostScript utility"]
+   "--"
+   ["1-up..."
+    (pr-ps-file-up-ps-print 1 t t)
+    pr-ps-utility-alist]
+   ["2-up..."
+    (pr-ps-file-up-ps-print 2 t t)
+    pr-ps-utility-alist]
+   ["4-up..."
+    (pr-ps-file-up-ps-print 4 t t)
+    pr-ps-utility-alist]
+   ["Other..."
+    (pr-ps-file-up-ps-print nil t t)
+    :keys "\\[pr-ps-file-up-ps-print]" :active pr-ps-utility-alist]
+   "--"
+   ["Landscape" pr-toggle-file-landscape-menu :style toggle :selected pr-file-landscape :help "Toggle landscape for PostScript file" :active pr-ps-utility-alist]
+   ["Duplex" pr-toggle-file-duplex-menu :style toggle :selected pr-file-duplex :help "Toggle duplex for PostScript file" :active pr-ps-utility-alist]
+   ["Tumble" pr-toggle-file-tumble-menu :style toggle :selected pr-file-tumble :help "Toggle tumble for PostScript file" :active
+    (and pr-file-duplex pr-ps-utility-alist)])
+  ["Despool..."
+   (call-interactively 'pr-despool-ps-print)
+   :active pr-spool-p :keys "\\[pr-despool-ps-print]" :help "Despool PostScript buffer to printer or file (C-u)"])
+ ["PostScript Printers" pr-update-menus :active pr-ps-printer-alist :included
+  (pr-visible-p 'postscript)
+  :help "Select PostScript printer"]
+ "--"
+ ("Printify" :included
+  (pr-visible-p 'text)
+  :help "Replace non-printing chars with printable representations."
+  ["Directory" pr-printify-directory t]
+  ["Buffer" pr-printify-buffer t]
+  ["Region" pr-printify-region
+   (ps-mark-active-p)])
+ ("Print" :included
+  (pr-visible-p 'text)
+  :help "Send text to printer"
+  ["Directory" pr-txt-directory t]
+  ["Buffer" pr-txt-buffer t]
+  ["Region" pr-txt-region
+   (ps-mark-active-p)]
+  ["Mode" pr-txt-mode
+   (pr-mode-alist-p)])
+ ["Text Printers" pr-update-menus :active pr-txt-printer-alist :included
+  (pr-visible-p 'text)
+  :help "Select text printer"]
+ "--"
+ ["Landscape" pr-toggle-landscape-menu :style toggle :selected ps-landscape-mode :included
+  (pr-visible-p 'postscript-options)]
+ ["Print Header" pr-toggle-header-menu :style toggle :selected ps-print-header :included
+  (pr-visible-p 'postscript-options)]
+ ["Print Header Frame" pr-toggle-header-frame-menu :style toggle :selected ps-print-header-frame :active ps-print-header :included
+  (pr-visible-p 'postscript-options)]
+ ["Line Number" pr-toggle-line-menu :style toggle :selected ps-line-number :included
+  (pr-visible-p 'postscript-options)]
+ ["Zebra Stripes" pr-toggle-zebra-menu :style toggle :selected ps-zebra-stripes :included
+  (pr-visible-p 'postscript-options)]
+ ["Duplex" pr-toggle-duplex-menu :style toggle :selected ps-spool-duplex :included
+  (pr-visible-p 'postscript-options)]
+ ["Tumble" pr-toggle-tumble-menu :style toggle :selected ps-spool-tumble :active ps-spool-duplex :included
+  (pr-visible-p 'postscript-options)]
+ ["Upside-Down" pr-toggle-upside-down-menu :style toggle :selected ps-print-upside-down :included
+  (pr-visible-p 'postscript-options)]
+ ("Print All Pages" :included
+  (pr-visible-p 'postscript-options)
+  :help "Select odd/even pages/sheets to print"
+  ["All Pages"
+   (pr-even-or-odd-pages nil)
+   :style radio :selected
+   (eq ps-even-or-odd-pages nil)]
+  ["Even Pages"
+   (pr-even-or-odd-pages 'even-page)
+   :style radio :selected
+   (eq ps-even-or-odd-pages 'even-page)]
+  ["Odd Pages"
+   (pr-even-or-odd-pages 'odd-page)
+   :style radio :selected
+   (eq ps-even-or-odd-pages 'odd-page)]
+  ["Even Sheets"
+   (pr-even-or-odd-pages 'even-sheet)
+   :style radio :selected
+   (eq ps-even-or-odd-pages 'even-sheet)]
+  ["Odd Sheets"
+   (pr-even-or-odd-pages 'odd-sheet)
+   :style radio :selected
+   (eq ps-even-or-odd-pages 'odd-sheet)])
+ "--"
+ ["Spool Buffer" pr-toggle-spool-menu :style toggle :selected pr-spool-p :included
+  (pr-visible-p 'postscript-process)
+  :help "Toggle PostScript spooling"]
+ ["Print with faces" pr-toggle-faces-menu :style toggle :selected pr-faces-p :included
+  (pr-visible-p 'postscript-process)
+  :help "Toggle PostScript printing with faces"]
+ ["Print via Ghostscript" pr-toggle-ghostscript-menu :style toggle :selected pr-print-using-ghostscript :included
+  (pr-visible-p 'postscript-process)
+  :help "Toggle PostScript generation using ghostscript"]
+ "--"
+ ["Auto Region" pr-toggle-region-menu :style toggle :selected pr-auto-region :included
+  (pr-visible-p 'printing)]
+ ["Auto Mode" pr-toggle-mode-menu :style toggle :selected pr-auto-mode :included
+  (pr-visible-p 'printing)]
+ ["Menu Lock" pr-toggle-lock-menu :style toggle :selected pr-menu-lock :included
+  (pr-visible-p 'printing)]
+ "--"
+ ("Customize" :included
+  (pr-visible-p 'help)
+  ["printing" pr-customize t]
+  ["ps-print" ps-print-customize t]
+  ["lpr" lpr-customize t])
+ ("Show Settings" :included
+  (pr-visible-p 'help)
+  ["printing" pr-show-pr-setup t]
+  ["ps-print" pr-show-ps-setup t]
+  ["lpr" pr-show-lpr-setup t])
+ ["Help" pr-help :active t :included
+  (pr-visible-p 'help)])
+</pre></br>

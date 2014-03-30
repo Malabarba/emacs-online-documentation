@@ -1,8 +1,16 @@
-<strong>epa-mail-encrypt</strong> is an interactive autoloaded Lisp function in `<code>epa-mail.el</code>'.<br/>
-<br/>
-(epa-mail-encrypt START END RECIPIENTS SIGN SIGNERS)<br/>
-<br/>
-Encrypt the current buffer.<br/>
-The buffer is expected to contain a mail message.<br/>
-<br/>
-Don't use this command in Lisp programs!
+<strong>epa-mail-encrypt</strong> is an interactive autoloaded Lisp function in `<code>epa-mail.el</code>'.</br>
+</br>
+</br>
+(epa-mail-encrypt &optional <u>RECIPIENTS</u> <u>SIGNERS</u>)</br>
+</br>
+Encrypt the outgoing mail message in the current buffer.</br>
+Takes the recipients from the text in the header in the buffer</br>
+and translates them through `epa-mail-aliases'.</br>
+With prefix argument, asks you to select among them interactively</br>
+and also whether and how to sign.</br>
+</br>
+Called from Lisp, the optional argument <u>RECIPIENTS</u> is a list</br>
+of recipient addresses, t to perform symmetric encryption,</br>
+or nil meaning use the defaults.</br>
+</br>
+<u>SIGNERS</u> is a list of keys to sign the message with.

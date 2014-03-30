@@ -1,17 +1,17 @@
-<strong>antlr-option-location</strong> is a compiled Lisp function in `<code>antlr-mode.el</code>'.<br/>
-<br/>
-(antlr-option-location ORIG MIN-VIS MAX-VIS MIN-AREA MAX-AREA WITHP)<br/>
-<br/>
-Return location for the options area.<br/>
-ORIG is the original position of `point', MIN-VIS is `point-min' and<br/>
-MAX-VIS is `point-max'.  If WITHP is non-nil, there exists an option<br/>
-specification and it starts after the brace at MIN-AREA and stops at<br/>
-MAX-AREA.  If WITHP is nil, there is no area and the region where it<br/>
-could be inserted starts at MIN-AREA and stops at MAX-AREA.<br/>
-<br/>
-The result has the form (AREA . PLACE).  AREA is (MIN-AREA . MAX-AREA)<br/>
-if WITHP is non-nil, and nil otherwise.  PLACE is nil if the area is<br/>
-invisible, (ORIG) if ORIG is inside the area, (MIN-AREA . beginning) for<br/>
-a visible start position and (MAX-AREA . end) for a visible end position<br/>
-where the beginning is preferred if WITHP is nil and the end if WITHP is<br/>
+<strong>antlr-option-location</strong> is a compiled Lisp function in `<code>antlr-mode.el</code>'.</br>
+</br>
+(antlr-option-location <u>ORIG</u> <u>MIN-VIS</u> <u>MAX-VIS</u> <u>MIN-AREA</u> <u>MAX-AREA</u> <u>WITHP</u>)</br>
+</br>
+Return location for the options area.</br>
+<u>ORIG</u> is the original position of `point', <u>MIN-VIS</u> is `point-min' and</br>
+<u>MAX-VIS</u> is `point-max'.  If <u>WITHP</u> is non-nil, there exists an option</br>
+specification and it starts after the brace at <u>MIN-AREA</u> and stops at</br>
+<u>MAX-AREA</u>.  If <u>WITHP</u> is nil, there is no area and the region where it</br>
+could be inserted starts at <u>MIN-AREA</u> and stops at <u>MAX-AREA</u>.</br>
+</br>
+The result has the form (AREA . PLACE).  AREA is (<u>MIN-AREA</u> . <u>MAX-AREA</u>)</br>
+if <u>WITHP</u> is non-nil, and nil otherwise.  PLACE is nil if the area is</br>
+invisible, (<u>ORIG</u>) if <u>ORIG</u> is inside the area, (<u>MIN-AREA</u> . beginning) for</br>
+a visible start position and (<u>MAX-AREA</u> . end) for a visible end position</br>
+where the beginning is preferred if <u>WITHP</u> is nil and the end if <u>WITHP</u> is</br>
 non-nil.

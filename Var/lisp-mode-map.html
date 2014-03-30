@@ -1,36 +1,38 @@
-<strong>lisp-mode-map</strong> is a variable defined in `<code>lisp-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for ordinary Lisp mode.<br/>
-All commands in `lisp-mode-shared-map' are inherited by this map.<br/>
-<br/>
-Value: (keymap<br/>
- (24 keymap<br/>
-     (5 . lisp-eval-last-sexp))<br/>
- (menu-bar keymap<br/>
-	   (lisp "Lisp" keymap<br/>
-		 (ind-sexp menu-item "Indent sexp" indent-sexp :help "Indent each line of the list starting just after point")<br/>
-		 (ev-def menu-item "Eval defun" lisp-eval-defun :help "Send the current defun to the Lisp process made by M-x run-lisp")<br/>
-		 (run-lisp menu-item "Run inferior Lisp" run-lisp :help "Run an inferior Lisp process, input and output via buffer `*inferior-lisp*'")<br/>
-		 "Lisp"))<br/>
- (3 keymap<br/>
-    (22 . lisp-show-variable-documentation)<br/>
-    (6 . lisp-show-function-documentation)<br/>
-    (4 . lisp-describe-sym)<br/>
-    (1 . lisp-show-arglist)<br/>
-    (11 . lisp-compile-file)<br/>
-    (12 . lisp-load-file)<br/>
-    (3 . lisp-compile-defun)<br/>
-    (18 . lisp-eval-region)<br/>
-    (5 . lisp-eval-defun)<br/>
-    (26 . switch-to-lisp))<br/>
- (27 keymap<br/>
-     (24 . lisp-eval-defun))<br/>
- keymap<br/>
- (127 . backward-delete-char-untabify)<br/>
- (27 keymap<br/>
-     (17 . indent-sexp)))<br/>
-<br/>
+<strong>lisp-mode-map</strong> is a variable defined in `<code>lisp-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for ordinary Lisp mode.</br>
+All commands in `lisp-mode-shared-map' are inherited by this map.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (24 keymap
+     (5 . lisp-eval-last-sexp))
+ (menu-bar keymap
+	   (lisp "Lisp" keymap
+		 (ind-sexp menu-item "Indent sexp" indent-sexp :help "Indent each line of the list starting just after point")
+		 (ev-def menu-item "Eval defun" lisp-eval-defun :help "Send the current defun to the Lisp process made by M-x run-lisp")
+		 (run-lisp menu-item "Run inferior Lisp" run-lisp :help "Run an inferior Lisp process, input and output via buffer `*inferior-lisp*'")
+		 "Lisp"))
+ (3 keymap
+    (22 . lisp-show-variable-documentation)
+    (6 . lisp-show-function-documentation)
+    (4 . lisp-describe-sym)
+    (1 . lisp-show-arglist)
+    (11 . lisp-compile-file)
+    (12 . lisp-load-file)
+    (3 . lisp-compile-defun)
+    (18 . lisp-eval-region)
+    (5 . lisp-eval-defun)
+    (26 . switch-to-lisp))
+ (27 keymap
+     (24 . lisp-eval-defun))
+ keymap
+ (127 . backward-delete-char-untabify)
+ (27 keymap
+     (17 . indent-sexp))
+ keymap
+ (27 keymap
+     (17 . prog-indent-sexp)))
+</pre></br>

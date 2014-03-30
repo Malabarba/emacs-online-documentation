@@ -1,18 +1,21 @@
-<strong>message</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(message FORMAT-STRING &rest ARGS)<br/>
-<br/>
-Display a message at the bottom of the screen.<br/>
-The message also goes into the `*Messages*' buffer, if `message-log-max'<br/>
-is non-nil.  (In keyboard macros, that's all it does.)<br/>
-Return the message.<br/>
-<br/>
-The first argument is a format control string, and the rest are data<br/>
-to be formatted under control of the string.  See `format' for details.<br/>
-<br/>
-Note: Use (message "%s" VALUE) to print the value of expressions and<br/>
-variables to avoid accidentally interpreting `%' as format specifiers.<br/>
-<br/>
-If the first argument is nil or the empty string, the function clears<br/>
-any existing message; this lets the minibuffer contents show.  See<br/>
+<strong>message</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(message <u>FORMAT-STRING</u> &rest <u>ARGS</u>)</br>
+</br>
+Display a message at the bottom of the screen.</br>
+The message also goes into the `*Messages*' buffer, if `message-log-max'</br>
+is non-nil.  (In keyboard macros, that's all it does.)</br>
+Return the message.</br>
+</br>
+In batch mode, the message is printed to the standard error stream,</br>
+followed by a newline.</br>
+</br>
+The first argument is a format control string, and the rest are data</br>
+to be formatted under control of the string.  See `format' for details.</br>
+</br>
+Note: Use (message "%s" VALUE) to print the value of expressions and</br>
+variables to avoid accidentally interpreting `%' as format specifiers.</br>
+</br>
+If the first argument is nil or the empty string, the function clears</br>
+any existing message; this lets the minibuffer contents show.  See</br>
 also `current-message'.

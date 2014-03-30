@@ -1,21 +1,19 @@
-<strong>org-open-link-functions</strong> is a variable defined in `<code>org.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Hook for functions finding a plain text link.<br/>
-These functions must take a single argument, the link content.<br/>
-They will be called for links that look like [[link text][description]]<br/>
-when LINK TEXT does not have a protocol like "http:" and does not look<br/>
-like a filename (e.g. "./blue.png").<br/>
-<br/>
-These functions will be called *before* Org attempts to resolve the<br/>
-link by doing text searches in the current buffer - so if you want a<br/>
-link "[[target]]" to still find "<<target>>", your function should<br/>
-handle this as a special case.<br/>
-<br/>
-When the function does handle the link, it must return a non-nil value.<br/>
-If it decides that it is not responsible for this link, it must return<br/>
-nil to indicate that that Org-mode can continue with other options<br/>
+<strong>org-open-link-functions</strong> is a variable defined in `<code>org.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Hook for functions finding a plain text link.</br>
+These functions must take a single argument, the link content.</br>
+They will be called for links that look like [[link text][description]]</br>
+when LINK TEXT does not have a protocol like "http:" and does not look</br>
+like a filename (e.g. "./blue.png").</br>
+</br>
+These functions will be called *before* Org attempts to resolve the</br>
+link by doing text searches in the current buffer - so if you want a</br>
+link "[[target]]" to still find "<<target>>", your function should</br>
+handle this as a special case.</br>
+</br>
+When the function does handle the link, it must return a non-nil value.</br>
+If it decides that it is not responsible for this link, it must return</br>
+nil to indicate that that Org-mode can continue with other options</br>
 like exact and fuzzy text search.

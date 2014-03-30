@@ -1,10 +1,60 @@
-<strong>image-mode-maybe</strong> is an alias for `image-mode' in `<code>image-mode.el</code>'.<br/>
-<br/>
-(image-mode-maybe)<br/>
-<br/>
-This function is obsolete since 23.2;<br/>
-use `image-mode' instead.<br/>
-<br/>
-Major mode for image files.<br/>
-You can use C-c C-c<br/>
-to toggle between display as an image and display as text.
+<strong>image-mode-maybe</strong> is an alias for `<strong><a href="image-mode">image-mode</a></strong>' in `<code>image-mode.el</code>'.</br>
+</br>
+</br>
+(image-mode-maybe)</br>
+</br>
+This function is obsolete since 23.2;</br>
+use `image-mode' instead.</br>
+</br>
+Major mode for image files.</br>
+You can use C-c C-c</br>
+to toggle between display as an image and display as text.</br>
+</br>
+Key bindings:</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+RET		image-toggle-animation</br>
+SPC		image-scroll-up</br>
+-		negative-argument</br>
+0 .. 9		digit-argument</br>
+&lt;		beginning-of-buffer</br>
+>		end-of-buffer</br>
+?		describe-mode</br>
+F		image-goto-frame</br>
+a		Prefix Command</br>
+b		image-previous-frame</br>
+f		image-next-frame</br>
+g		revert-buffer</br>
+h		describe-mode</br>
+n		image-next-file</br>
+p		image-previous-file</br>
+q		quit-window</br>
+DEL		image-scroll-down</br>
+S-SPC		image-scroll-down</br>
+&lt;remap>		Prefix Command</br>
+</br>
+&lt;remap> &lt;backward-char>		image-backward-hscroll</br>
+&lt;remap> &lt;beginning-of-buffer>	image-bob</br>
+&lt;remap> &lt;end-of-buffer>		image-eob</br>
+&lt;remap> &lt;forward-char>		image-forward-hscroll</br>
+&lt;remap> &lt;left-char>		image-backward-hscroll</br>
+&lt;remap> &lt;move-beginning-of-line></br>
+				image-bol</br>
+&lt;remap> &lt;move-end-of-line>	image-eol</br>
+&lt;remap> &lt;next-line>		image-next-line</br>
+&lt;remap> &lt;previous-line>		image-previous-line</br>
+&lt;remap> &lt;right-char>		image-forward-hscroll</br>
+&lt;remap> &lt;scroll-down>		image-scroll-down</br>
+&lt;remap> &lt;scroll-down-command>	image-scroll-down</br>
+&lt;remap> &lt;scroll-up>		image-scroll-up</br>
+&lt;remap> &lt;scroll-up-command>	image-scroll-up</br>
+</br>
+a +		image-increase-speed</br>
+a -		image-decrease-speed</br>
+a 0		image-reset-speed</br>
+a r		image-reverse-speed</br>
+</br>
+C-c C-c		image-toggle-display</br>
+</br>

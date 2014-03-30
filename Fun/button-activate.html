@@ -1,8 +1,14 @@
-<strong>button-activate</strong> is a compiled Lisp function in `<code>button.el</code>'.<br/>
-<br/>
-(button-activate BUTTON &optional USE-MOUSE-ACTION)<br/>
-<br/>
-Call BUTTON's action property.<br/>
-If USE-MOUSE-ACTION is non-nil, invoke the button's mouse-action<br/>
-instead of its normal action; if the button has no mouse-action,<br/>
-the normal action is used instead.
+<strong>button-activate</strong> is a compiled Lisp function in `<code>button.el</code>'.</br>
+</br>
+(button-activate <u>BUTTON</u> &optional <u>USE-MOUSE-ACTION</u>)</br>
+</br>
+Call <u>BUTTON</u>'s action property.</br>
+If <u>USE-MOUSE-ACTION</u> is non-nil, invoke the button's mouse-action</br>
+instead of its normal action; if the button has no mouse-action,</br>
+the normal action is used instead.</br>
+</br>
+The action can either be a marker or a function.  If it's a</br>
+marker then goto it.  Otherwise it it is a function then it is</br>
+called with <u>BUTTON</u> as only argument.  <u>BUTTON</u> is either an</br>
+overlay, a buffer position, or (for buttons in the mode-line or</br>
+header-line) a string.

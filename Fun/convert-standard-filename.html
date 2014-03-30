@@ -1,20 +1,20 @@
-<strong>convert-standard-filename</strong> is a compiled Lisp function in `<code>files.el</code>'.<br/>
-<br/>
-(convert-standard-filename FILENAME)<br/>
-<br/>
-Convert a standard file's name to something suitable for the OS.<br/>
-This means to guarantee valid names and perhaps to canonicalize<br/>
-certain patterns.<br/>
-<br/>
-FILENAME should be an absolute file name since the conversion rules<br/>
-sometimes vary depending on the position in the file name.  E.g. c:/foo<br/>
-is a valid DOS file name, but c:/bar/c:/foo is not.<br/>
-<br/>
-This function's standard definition is trivial; it just returns<br/>
-the argument.  However, on Windows and DOS, replace invalid<br/>
-characters.  On DOS, make sure to obey the 8.3 limitations.<br/>
-In the native Windows build, turn Cygwin names into native names,<br/>
-and also turn slashes into backslashes if the shell requires it (see<br/>
-`w32-shell-dos-semantics').<br/>
-<br/>
+<strong>convert-standard-filename</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(convert-standard-filename <u>FILENAME</u>)</br>
+</br>
+Convert a standard file's name to something suitable for the OS.</br>
+This means to guarantee valid names and perhaps to canonicalize</br>
+certain patterns.</br>
+</br>
+<u>FILENAME</u> should be an absolute file name since the conversion rules</br>
+sometimes vary depending on the position in the file name.  E.g. c:/foo</br>
+is a valid DOS file name, but c:/bar/c:/foo is not.</br>
+</br>
+This function's standard definition is trivial; it just returns</br>
+the argument.  However, on Windows and DOS, replace invalid</br>
+characters.  On DOS, make sure to obey the 8.3 limitations.</br>
+In the native Windows build, turn Cygwin names into native names,</br>
+and also turn slashes into backslashes if the shell requires it (see</br>
+`w32-shell-dos-semantics').</br>
+</br>
 See Info node `(elisp)Standard File Names' for more details.

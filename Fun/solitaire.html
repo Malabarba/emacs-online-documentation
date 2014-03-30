@@ -1,113 +1,114 @@
-<strong>solitaire</strong> is an interactive autoloaded compiled Lisp function in `<code>solitaire.el</code>'.<br/>
-<br/>
-It is bound to <menu-bar> <tools> <games> <solitaire>.<br/>
-<br/>
-(solitaire ARG)<br/>
-<br/>
-Play Solitaire.<br/>
-<br/>
-To play Solitaire, type M-x solitaire.<br/>
-<br/>
-Move around the board using the cursor keys.<br/>
-Move stones using RET followed by a direction key.<br/>
-Undo moves using C-_.<br/>
-Check for possible moves using SPC.<br/>
-(The variable `solitaire-auto-eval' controls whether to automatically<br/>
-check after each move or undo.)<br/>
-<br/>
-What is Solitaire?<br/>
-<br/>
-I don't know who invented this game, but it seems to be rather old and<br/>
-its origin seems to be northern Africa.  Here's how to play:<br/>
-Initially, the board will look similar to this:<br/>
-<br/>
-	Le Solitaire<br/>
-	============<br/>
-<br/>
-		o   o   o<br/>
-<br/>
-		o   o   o<br/>
-<br/>
-	o   o   o   o   o   o   o<br/>
-<br/>
-	o   o   o   .   o   o   o<br/>
-<br/>
-	o   o   o   o   o   o   o<br/>
-<br/>
-		o   o   o<br/>
-<br/>
-		o   o   o<br/>
-<br/>
-Let's call the o's stones and the .'s holes.  One stone fits into one<br/>
-hole.  As you can see, all holes but one are occupied by stones.  The<br/>
-aim of the game is to get rid of all but one stone, leaving that last<br/>
-one in the middle of the board if you're cool.<br/>
-<br/>
-A stone can be moved if there is another stone next to it, and a hole<br/>
-after that one.  Thus there must be three fields in a row, either<br/>
-horizontally or vertically, up, down, left or right, which look like<br/>
-this:  o  o  .<br/>
-<br/>
-Then the first stone is moved to the hole, jumping over the second,<br/>
-which therefore is taken away.  The above thus `evaluates' to:  .  .  o<br/>
-<br/>
-That's all.  Here's the board after two moves:<br/>
-<br/>
-		o   o   o<br/>
-<br/>
-		.   o   o<br/>
-<br/>
-	o   o   .   o   o   o   o<br/>
-<br/>
-	o   .   o   o   o   o   o<br/>
-<br/>
-	o   o   o   o   o   o   o<br/>
-<br/>
-		o   o   o<br/>
-<br/>
-		o   o   o<br/>
-<br/>
-Pick your favorite shortcuts:<br/>
-<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-b		solitaire-left<br/>
-C-f		solitaire-right<br/>
-RET		solitaire-move<br/>
-C-n		solitaire-down<br/>
-C-p		solitaire-up<br/>
-SPC		solitaire-do-check<br/>
--		negative-argument<br/>
-0 .. 9		digit-argument<br/>
-<		beginning-of-buffer<br/>
->		end-of-buffer<br/>
-?		describe-mode<br/>
-g		revert-buffer<br/>
-h		describe-mode<br/>
-q		quit-window<br/>
-s		solitaire-solve<br/>
-DEL		scroll-down-command<br/>
-<S-down>	solitaire-move-down<br/>
-<S-kp-2>	solitaire-move-down<br/>
-<S-kp-4>	solitaire-move-left<br/>
-<S-kp-6>	solitaire-move-right<br/>
-<S-kp-8>	solitaire-move-up<br/>
-<S-left>	solitaire-move-left<br/>
-<S-right>	solitaire-move-right<br/>
-<S-up>		solitaire-move-up<br/>
-<down>		solitaire-down<br/>
-<kp-0>		solitaire-undo<br/>
-<kp-2>		solitaire-down<br/>
-<kp-4>		solitaire-left<br/>
-<kp-5>		solitaire-center-point<br/>
-<kp-6>		solitaire-right<br/>
-<kp-8>		solitaire-up<br/>
-<kp-enter>	solitaire-move<br/>
-<left>		solitaire-left<br/>
-<remap>		Prefix Command<br/>
-<right>		solitaire-right<br/>
-<up>		solitaire-up<br/>
-<br/>
-<remap> <undo>	solitaire-undo<br/>
-<br/>
+<strong>solitaire</strong> is an interactive autoloaded compiled Lisp function in `<code>solitaire.el</code>'.</br>
+</br>
+It is bound to &lt;menu-bar> &lt;tools> &lt;games> &lt;solitaire>.</br>
+</br>
+<code>(solitaire <u>ARG</u></code>)</br>
+</br>
+Play Solitaire.</br>
+</br>
+To play Solitaire, type M-x solitaire.</br>
+</br>
+Move around the board using the cursor keys.</br>
+Move stones using RET followed by a direction key.</br>
+Undo moves using C-_.</br>
+Check for possible moves using SPC.</br>
+(The variable `solitaire-auto-eval' controls whether to automatically</br>
+check after each move or undo.)</br>
+</br>
+What is Solitaire?</br>
+</br>
+I don't know who invented this game, but it seems to be rather old and</br>
+its origin seems to be northern Africa.  Here's how to play:</br>
+Initially, the board will look similar to this:</br>
+</br>
+	Le Solitaire</br>
+	============</br>
+</br>
+		o   o   o</br>
+</br>
+		o   o   o</br>
+</br>
+	o   o   o   o   o   o   o</br>
+</br>
+	o   o   o   .   o   o   o</br>
+</br>
+	o   o   o   o   o   o   o</br>
+</br>
+		o   o   o</br>
+</br>
+		o   o   o</br>
+</br>
+Let's call the o's stones and the .'s holes.  One stone fits into one</br>
+hole.  As you can see, all holes but one are occupied by stones.  The</br>
+aim of the game is to get rid of all but one stone, leaving that last</br>
+one in the middle of the board if you're cool.</br>
+</br>
+A stone can be moved if there is another stone next to it, and a hole</br>
+after that one.  Thus there must be three fields in a row, either</br>
+horizontally or vertically, up, down, left or right, which look like</br>
+this:  o  o  .</br>
+</br>
+Then the first stone is moved to the hole, jumping over the second,</br>
+which therefore is taken away.  The above thus `evaluates' to:  .  .  o</br>
+</br>
+That's all.  Here's the board after two moves:</br>
+</br>
+		o   o   o</br>
+</br>
+		.   o   o</br>
+</br>
+	o   o   .   o   o   o   o</br>
+</br>
+	o   .   o   o   o   o   o</br>
+</br>
+	o   o   o   o   o   o   o</br>
+</br>
+		o   o   o</br>
+</br>
+		o   o   o</br>
+</br>
+Pick your favorite shortcuts:</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-b		solitaire-left</br>
+C-f		solitaire-right</br>
+RET		solitaire-move</br>
+C-n		solitaire-down</br>
+C-p		solitaire-up</br>
+SPC		solitaire-do-check</br>
+-		negative-argument</br>
+0 .. 9		digit-argument</br>
+&lt;		beginning-of-buffer</br>
+>		end-of-buffer</br>
+?		describe-mode</br>
+g		revert-buffer</br>
+h		describe-mode</br>
+q		quit-window</br>
+s		solitaire-solve</br>
+DEL		scroll-down-command</br>
+S-SPC		scroll-down-command</br>
+&lt;S-down>	solitaire-move-down</br>
+&lt;S-kp-2>	solitaire-move-down</br>
+&lt;S-kp-4>	solitaire-move-left</br>
+&lt;S-kp-6>	solitaire-move-right</br>
+&lt;S-kp-8>	solitaire-move-up</br>
+&lt;S-left>	solitaire-move-left</br>
+&lt;S-right>	solitaire-move-right</br>
+&lt;S-up>		solitaire-move-up</br>
+&lt;down>		solitaire-down</br>
+&lt;kp-0>		solitaire-undo</br>
+&lt;kp-2>		solitaire-down</br>
+&lt;kp-4>		solitaire-left</br>
+&lt;kp-5>		solitaire-center-point</br>
+&lt;kp-6>		solitaire-right</br>
+&lt;kp-8>		solitaire-up</br>
+&lt;kp-enter>	solitaire-move</br>
+&lt;left>		solitaire-left</br>
+&lt;remap>		Prefix Command</br>
+&lt;right>		solitaire-right</br>
+&lt;up>		solitaire-up</br>
+</br>
+&lt;remap> &lt;undo>	solitaire-undo</br>
+</br>

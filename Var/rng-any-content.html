@@ -1,18 +1,17 @@
-<strong>rng-any-content</strong> is a variable defined in `<code>rng-pttrn.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-A pattern that matches the attributes and content of any element.<br/>
-<br/>
-Value: (zero-or-more<br/>
- (choice<br/>
-  (text)<br/>
-  (attribute<br/>
-   (any-name)<br/>
-   (text))<br/>
-  (element<br/>
-   (any-name)<br/>
-   (ref #0 "any-content"))))<br/>
-<br/>
+<strong>rng-any-content</strong> is a variable defined in `<code>rng-pttrn.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A pattern that matches the attributes and content of any element.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(zero-or-more
+ (choice
+  (text)
+  (attribute
+   (any-name)
+   (text))
+  (element
+   (any-name)
+   (ref #0 "any-content"))))
+</pre></br>

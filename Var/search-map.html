@@ -1,20 +1,21 @@
-<strong>search-map</strong> is a variable defined in `<code>bindings.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for search related commands.<br/>
-<br/>
-Value: (keymap<br/>
- (95 . isearch-forward-symbol)<br/>
- (119 . isearch-forward-word)<br/>
- (104 keymap<br/>
-      (119 . hi-lock-write-interactive-patterns)<br/>
-      (102 . hi-lock-find-patterns)<br/>
-      (117 . unhighlight-regexp)<br/>
-      (108 . highlight-lines-matching-regexp)<br/>
-      (112 . highlight-phrase)<br/>
-      (114 . highlight-regexp))<br/>
- (111 . occur))<br/>
-<br/>
+<strong>search-map</strong> is a variable defined in `<code>bindings.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for search related commands.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (46 . isearch-forward-symbol-at-point)
+ (95 . isearch-forward-symbol)
+ (119 . isearch-forward-word)
+ (104 keymap
+      (119 . hi-lock-write-interactive-patterns)
+      (102 . hi-lock-find-patterns)
+      (117 . unhighlight-regexp)
+      (46 . highlight-symbol-at-point)
+      (108 . highlight-lines-matching-regexp)
+      (112 . highlight-phrase)
+      (114 . highlight-regexp))
+ (111 . occur))
+</pre></br>

@@ -1,20 +1,27 @@
-<strong>flymake-allowed-file-name-masks</strong> is a variable defined in `<code>flymake.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-Files syntax checking is allowed for.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (("\\.\\(?:c\\(?:pp\\|xx\\|\\+\\+\\)?\\|CC\\)\\'" flymake-simple-make-init)<br/>
- ("\\.xml\\'" flymake-xml-init)<br/>
- ("\\.html?\\'" flymake-xml-init)<br/>
- ("\\.cs\\'" flymake-simple-make-init)<br/>
- ("\\.p[ml]\\'" flymake-perl-init)<br/>
- ("\\.php[345]?\\'" flymake-php-init)<br/>
- ("\\.h\\'" flymake-master-make-header-init flymake-master-cleanup)<br/>
- ("\\.java\\'" flymake-simple-make-java-init flymake-simple-java-cleanup)<br/>
- ("[0-9]+\\.tex\\'" flymake-master-tex-init flymake-master-cleanup)<br/>
- ("\\.tex\\'" flymake-simple-tex-init)<br/>
- ("\\.idl\\'" flymake-simple-make-init))<br/>
-<br/>
+<strong>flymake-allowed-file-name-masks</strong> is a variable defined in `<code>flymake.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Files syntax checking is allowed for.</br>
+This is an alist with elements of the form:</br>
+  REGEXP INIT [CLEANUP [NAME]]</br>
+REGEXP is a regular expression that matches a file name.</br>
+INIT is the init function to use.</br>
+CLEANUP is the cleanup function to use, default `flymake-simple-cleanup'.</br>
+NAME is the file name function to use, default `flymake-get-real-file-name'.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("\\.\\(?:c\\(?:pp\\|xx\\|\\+\\+\\)?\\|CC\\)\\'" flymake-simple-make-init)
+ ("\\.xml\\'" flymake-xml-init)
+ ("\\.html?\\'" flymake-xml-init)
+ ("\\.cs\\'" flymake-simple-make-init)
+ ("\\.p[ml]\\'" flymake-perl-init)
+ ("\\.php[345]?\\'" flymake-php-init)
+ ("\\.h\\'" flymake-master-make-header-init flymake-master-cleanup)
+ ("\\.java\\'" flymake-simple-make-java-init flymake-simple-java-cleanup)
+ ("[0-9]+\\.tex\\'" flymake-master-tex-init flymake-master-cleanup)
+ ("\\.tex\\'" flymake-simple-tex-init)
+ ("\\.idl\\'" flymake-simple-make-init))
+</pre></br>

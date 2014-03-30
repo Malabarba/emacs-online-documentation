@@ -1,9 +1,19 @@
-<strong>indent-rigidly</strong> is an interactive compiled Lisp function in `<code>indent.el</code>'.<br/>
-<br/>
-It is bound to C-x TAB.<br/>
-<br/>
-(indent-rigidly START END ARG)<br/>
-<br/>
-Indent all lines starting in the region sideways by ARG columns.<br/>
-Called from a program, takes three arguments, START, END and ARG.<br/>
-You can remove all indentation from a region by giving a large negative ARG.
+<strong>indent-rigidly</strong> is an interactive compiled Lisp function in `<code>indent.el</code>'.</br>
+</br>
+It is bound to C-x TAB.</br>
+</br>
+<code>(indent-rigidly <u>START</u> <u>END</u> <u>ARG</u> <em>&optional</em> <u>INTERACTIVE</u></code>)</br>
+</br>
+Indent all lines starting in the region.</br>
+If called interactively with no prefix argument, activate a</br>
+transient mode in which the indentation can be adjusted interactively</br>
+by typing &lt;left>, &lt;right>, &lt;S-left>, or &lt;S-right>.</br>
+Typing any other key deactivates the transient mode.</br>
+</br>
+If called from a program, or interactively with prefix <u>ARG</u>,</br>
+indent all lines starting in the region forward by <u>ARG</u> columns.</br>
+If called from a program, <u>START</u> and <u>END</u> specify the beginning and</br>
+end of the text to act on, in place of the region.</br>
+</br>
+Negative values of <u>ARG</u> indent backward, so you can remove all</br>
+indentation by specifying a large negative <u>ARG</u>.

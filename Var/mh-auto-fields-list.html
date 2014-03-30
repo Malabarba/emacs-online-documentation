@@ -1,45 +1,45 @@
-<strong>mh-auto-fields-list</strong> is a variable defined in `<code>mh-e.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-List of recipients for which header lines are automatically inserted.<br/>
-<br/>
-This option can be used to set the identity depending on the<br/>
-recipient. To customize this option, click on the "INS" button and<br/>
-enter a regular expression for the recipient's address. Click on the<br/>
-"INS" button with the "Add at least one item below" label. Then choose<br/>
-one of the items in the "Value Menu".<br/>
-<br/>
-The "Identity" menu item is used to select an identity from those<br/>
-configured in `mh-identity-list'. All of the information for that<br/>
-identity will be added if the recipient matches. The "Fcc Field" menu<br/>
-item is used to select a folder that is used in the "Fcc:" header.<br/>
-When you send the message, MH will put a copy of your message in this<br/>
-folder. The "Mail-Followup-To Field" menu item is used to insert an<br/>
-"Mail-Followup-To:" header field with the recipients you provide. If<br/>
-the recipient's mail user agent supports this header field (as nmh<br/>
-does), then their replies will go to the addresses listed. This is<br/>
-useful if their replies go both to the list and to you and you don't<br/>
-have a mechanism to suppress duplicates. If you reply to someone not<br/>
-on the list, you must either remove the "Mail-Followup-To:" field, or<br/>
-ensure the recipient is also listed there so that he receives replies<br/>
-to your reply. Other header fields may be added using the "Other<br/>
-Field" menu item.<br/>
-<br/>
-These fields can only be added after the recipient is known. Once the<br/>
-header contains one or more recipients, run the<br/>
-M-x mh-insert-auto-fields command or choose the "Identity -> Insert<br/>
-Auto Fields" menu item to insert these fields manually. However, you<br/>
-can just send the message and the fields will be added automatically.<br/>
-You are given a chance to see these fields and to confirm them before<br/>
-the message is actually sent. You can do away with this confirmation<br/>
-by turning off the option `mh-auto-fields-prompt-flag'.<br/>
-<br/>
-You should avoid using the same header field in `mh-auto-fields-list'<br/>
-and `mh-identity-list' definitions that may apply to the same message<br/>
-as the result is undefined.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 7.3 of the MH-E package that is part of Emacs 22.1.<br/>
+<strong>mh-auto-fields-list</strong> is a variable defined in `<code>mh-e.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of recipients for which header lines are automatically inserted.</br>
+</br>
+This option can be used to set the identity depending on the</br>
+recipient. To customize this option, click on the "INS" button and</br>
+enter a regular expression for the recipient's address. Click on the</br>
+"INS" button with the "Add at least one item below" label. Then choose</br>
+one of the items in the "Value Menu".</br>
+</br>
+The "Identity" menu item is used to select an identity from those</br>
+configured in `mh-identity-list'. All of the information for that</br>
+identity will be added if the recipient matches. The "Fcc Field" menu</br>
+item is used to select a folder that is used in the "Fcc:" header.</br>
+When you send the message, MH will put a copy of your message in this</br>
+folder. The "Mail-Followup-To Field" menu item is used to insert an</br>
+"Mail-Followup-To:" header field with the recipients you provide. If</br>
+the recipient's mail user agent supports this header field (as nmh</br>
+does), then their replies will go to the addresses listed. This is</br>
+useful if their replies go both to the list and to you and you don't</br>
+have a mechanism to suppress duplicates. If you reply to someone not</br>
+on the list, you must either remove the "Mail-Followup-To:" field, or</br>
+ensure the recipient is also listed there so that he receives replies</br>
+to your reply. Other header fields may be added using the "Other</br>
+Field" menu item.</br>
+</br>
+These fields can only be added after the recipient is known. Once the</br>
+header contains one or more recipients, run the</br>
+M-x mh-insert-auto-fields command or choose the "Identity -> Insert</br>
+Auto Fields" menu item to insert these fields manually. However, you</br>
+can just send the message and the fields will be added automatically.</br>
+You are given a chance to see these fields and to confirm them before</br>
+the message is actually sent. You can do away with this confirmation</br>
+by turning off the option `mh-auto-fields-prompt-flag'.</br>
+</br>
+You should avoid using the same header field in `mh-auto-fields-list'</br>
+and `mh-identity-list' definitions that may apply to the same message</br>
+as the result is undefined.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 7.3 of the MH-E package that is part of Emacs 22.1.

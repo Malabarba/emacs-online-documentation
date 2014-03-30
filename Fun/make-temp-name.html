@@ -1,19 +1,19 @@
-<strong>make-temp-name</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(make-temp-name PREFIX)<br/>
-<br/>
-Generate temporary file name (string) starting with PREFIX (a string).<br/>
-The Emacs process number forms part of the result,<br/>
-so there is no danger of generating a name being used by another process.<br/>
-<br/>
-In addition, this function makes an attempt to choose a name<br/>
-which has no existing file.  To make this work,<br/>
-PREFIX should be an absolute file name.<br/>
-<br/>
-There is a race condition between calling `make-temp-name' and creating the<br/>
-file which opens all kinds of security holes.  For that reason, you should<br/>
-probably use `make-temp-file' instead, except in three circumstances:<br/>
-<br/>
-* If you are creating the file in the user's home directory.<br/>
-* If you are creating a directory rather than an ordinary file.<br/>
+<strong>make-temp-name</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(make-temp-name <u>PREFIX</u>)</br>
+</br>
+Generate temporary file name (string) starting with <u>PREFIX</u> (a string).</br>
+The Emacs process number forms part of the result,</br>
+so there is no danger of generating a name being used by another process.</br>
+</br>
+In addition, this function makes an attempt to choose a name</br>
+which has no existing file.  To make this work,</br>
+<u>PREFIX</u> should be an absolute file name.</br>
+</br>
+There is a race condition between calling `make-temp-name' and creating the</br>
+file which opens all kinds of security holes.  For that reason, you should</br>
+probably use `make-temp-file' instead, except in three circumstances:</br>
+</br>
+* If you are creating the file in the user's home directory.</br>
+* If you are creating a directory rather than an ordinary file.</br>
 * If you are taking special precautions as `make-temp-file' does.

@@ -1,27 +1,27 @@
-<strong>defvar</strong> is a special form in `<code>C source code</code>'.<br/>
-<br/>
-(defvar SYMBOL &optional INITVALUE DOCSTRING)<br/>
-<br/>
-Define SYMBOL as a variable, and return SYMBOL.<br/>
-You are not required to define a variable in order to use it, but<br/>
-defining it lets you supply an initial value and documentation, which<br/>
-can be referred to by the Emacs help facilities and other programming<br/>
-tools.  The `defvar' form also declares the variable as "special",<br/>
-so that it is always dynamically bound even if `lexical-binding' is t.<br/>
-<br/>
-The optional argument INITVALUE is evaluated, and used to set SYMBOL,<br/>
-only if SYMBOL's value is void.  If SYMBOL is buffer-local, its<br/>
-default value is what is set; buffer-local values are not affected.<br/>
-If INITVALUE is missing, SYMBOL's value is not set.<br/>
-<br/>
-If SYMBOL has a local binding, then this form affects the local<br/>
-binding.  This is usually not what you want.  Thus, if you need to<br/>
-load a file defining variables, with this form or with `defconst' or<br/>
-`defcustom', you should always load that file _outside_ any bindings<br/>
-for these variables.  (`defconst' and `defcustom' behave similarly in<br/>
-this respect.)<br/>
-<br/>
-The optional argument DOCSTRING is a documentation string for the<br/>
-variable.<br/>
-<br/>
+<strong>defvar</strong> is a special form in `<code>C source code</code>'.</br>
+</br>
+(defvar <u>SYMBOL</u> &optional <u>INITVALUE</u> <u>DOCSTRING</u>)</br>
+</br>
+Define <u>SYMBOL</u> as a variable, and return <u>SYMBOL</u>.</br>
+You are not required to define a variable in order to use it, but</br>
+defining it lets you supply an initial value and documentation, which</br>
+can be referred to by the Emacs help facilities and other programming</br>
+tools.  The `defvar' form also declares the variable as "special",</br>
+so that it is always dynamically bound even if `lexical-binding' is t.</br>
+</br>
+The optional argument <u>INITVALUE</u> is evaluated, and used to set <u>SYMBOL</u>,</br>
+only if <u>SYMBOL</u>'s value is void.  If <u>SYMBOL</u> is buffer-local, its</br>
+default value is what is set; buffer-local values are not affected.</br>
+If <u>INITVALUE</u> is missing, <u>SYMBOL</u>'s value is not set.</br>
+</br>
+If <u>SYMBOL</u> has a local binding, then this form affects the local</br>
+binding.  This is usually not what you want.  Thus, if you need to</br>
+load a file defining variables, with this form or with `defconst' or</br>
+`defcustom', you should always load that file _outside_ any bindings</br>
+for these variables.  (`defconst' and `defcustom' behave similarly in</br>
+this respect.)</br>
+</br>
+The optional argument <u>DOCSTRING</u> is a documentation string for the</br>
+variable.</br>
+</br>
 To define a user option, use `defcustom' instead of `defvar'.

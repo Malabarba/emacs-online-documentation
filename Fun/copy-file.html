@@ -1,28 +1,32 @@
-<strong>copy-file</strong> is an interactive built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(copy-file FILE NEWNAME &optional OK-IF-ALREADY-EXISTS KEEP-TIME PRESERVE-UID-GID PRESERVE-SELINUX-CONTEXT)<br/>
-<br/>
-Copy FILE to NEWNAME.  Both args must be strings.<br/>
-If NEWNAME names a directory, copy FILE there.<br/>
-<br/>
-This function always sets the file modes of the output file to match<br/>
-the input file.<br/>
-<br/>
-The optional third argument OK-IF-ALREADY-EXISTS specifies what to do<br/>
-if file NEWNAME already exists.  If OK-IF-ALREADY-EXISTS is nil, we<br/>
-signal a `file-already-exists' error without overwriting.  If<br/>
-OK-IF-ALREADY-EXISTS is a number, we request confirmation from the user<br/>
-about overwriting; this is what happens in interactive use with M-x.<br/>
-Any other value for OK-IF-ALREADY-EXISTS means to overwrite the<br/>
-existing file.<br/>
-<br/>
-Fourth arg KEEP-TIME non-nil means give the output file the same<br/>
-last-modified time as the old one.  (This works on only some systems.)<br/>
-<br/>
-A prefix arg makes KEEP-TIME non-nil.<br/>
-<br/>
-If PRESERVE-UID-GID is non-nil, we try to transfer the<br/>
-uid and gid of FILE to NEWNAME.<br/>
-<br/>
-If PRESERVE-SELINUX-CONTEXT is non-nil and SELinux is enabled<br/>
-on the system, we copy the SELinux context of FILE to NEWNAME.
+<strong>copy-file</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+</br>
+</br>
+(copy-file <u>FILE</u> <u>NEWNAME</u> &optional <u>OK-IF-ALREADY-EXISTS</u> <u>KEEP-TIME</u> <u>PRESERVE-UID-GID</u> <u>PRESERVE-PERMISSIONS</u>)</br>
+</br>
+Copy <u>FILE</u> to <u>NEWNAME</u>.  Both args must be strings.</br>
+If <u>NEWNAME</u> names a directory, copy <u>FILE</u> there.</br>
+</br>
+This function always sets the file modes of the output file to match</br>
+the input file.</br>
+</br>
+The optional third argument <u>OK-IF-ALREADY-EXISTS</u> specifies what to do</br>
+if file <u>NEWNAME</u> already exists.  If <u>OK-IF-ALREADY-EXISTS</u> is nil, we</br>
+signal a `file-already-exists' error without overwriting.  If</br>
+<u>OK-IF-ALREADY-EXISTS</u> is a number, we request confirmation from the user</br>
+about overwriting; this is what happens in interactive use with M-x.</br>
+Any other value for <u>OK-IF-ALREADY-EXISTS</u> means to overwrite the</br>
+existing file.</br>
+</br>
+Fourth arg <u>KEEP-TIME</u> non-nil means give the output file the same</br>
+last-modified time as the old one.  (This works on only some systems.)</br>
+</br>
+A prefix arg makes <u>KEEP-TIME</u> non-nil.</br>
+</br>
+If <u>PRESERVE-UID-GID</u> is non-nil, we try to transfer the</br>
+uid and gid of <u>FILE</u> to <u>NEWNAME</u>.</br>
+</br>
+If <u>PRESERVE-PERMISSIONS</u> is non-nil, copy permissions of <u>FILE</u> to <u>NEWNAME</u>;</br>
+this includes the file modes, along with ACL entries and SELinux</br>
+context if present.  Otherwise, if <u>NEWNAME</u> is created its file</br>
+permission bits are those of <u>FILE</u>, masked by the default file</br>
+permissions.

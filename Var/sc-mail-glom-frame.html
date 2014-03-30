@@ -1,31 +1,30 @@
-<strong>sc-mail-glom-frame</strong> is a variable defined in `<code>supercite.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Regi frame for glomming mail header information.<br/>
-<br/>
-Value: ((begin<br/>
-  (setq sc-mail-headers-start<br/>
-	(point)))<br/>
- ("^From "<br/>
-  (sc-mail-check-from)<br/>
-  nil nil)<br/>
- ("^x-attribution:[ 	]+.*$"<br/>
-  (sc-mail-fetch-field t)<br/>
-  nil t)<br/>
- ("^\\S +:.*$"<br/>
-  (sc-mail-fetch-field)<br/>
-  nil t)<br/>
- ("^$"<br/>
-  (list 'abort<br/>
-	'(step . 0)))<br/>
- ("^[ 	]+"<br/>
-  (sc-mail-append-field))<br/>
- (sc-mail-warn-if-non-rfc822-p<br/>
-  (sc-mail-error-in-mail-field))<br/>
- (end<br/>
-  (setq sc-mail-headers-end<br/>
-	(point))))<br/>
-<br/>
+<strong>sc-mail-glom-frame</strong> is a variable defined in `<code>supercite.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Regi frame for glomming mail header information.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+((begin
+  (setq sc-mail-headers-start
+	(point)))
+ ("^From "
+  (sc-mail-check-from)
+  nil nil)
+ ("^x-attribution:[ 	]+.*$"
+  (sc-mail-fetch-field t)
+  nil t)
+ ("^\\S +:.*$"
+  (sc-mail-fetch-field)
+  nil t)
+ ("^$"
+  (list 'abort
+	'(step . 0)))
+ ("^[ 	]+"
+  (sc-mail-append-field))
+ (sc-mail-warn-if-non-rfc822-p
+  (sc-mail-error-in-mail-field))
+ (end
+  (setq sc-mail-headers-end
+	(point))))
+</pre></br>

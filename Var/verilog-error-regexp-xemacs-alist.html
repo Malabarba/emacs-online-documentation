@@ -1,23 +1,23 @@
-<strong>verilog-error-regexp-xemacs-alist</strong> is a variable defined in `<code>verilog-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-Documentation:<br/>
-List of regexps for Verilog compilers.<br/>
-See `compilation-error-regexp-alist-alist' for the formatting.  For XEmacs.<br/>
-<br/>
-Value:<br/>
-(verilog<br/>
- ("\\(Error\\|Warning\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)<br/>
- ("([WE][0-9A-Z]+)[ 	]+\\([^ 	\n,]+\\)[, 	]+\\(line[ 	]+\\)?\\([0-9]+\\):.*$" 1 3)<br/>
- (".*\\*[WE],[0-9A-Z]+\\([[0-9A-Z_,]+]\\)? (\\([^ 	,]+\\),\\([0-9]+\\)" 2 3)<br/>
- ("[^\n]*\\[\\([^:]+\\):\\([0-9]+\\)\\]" 1 2)<br/>
- ("\\(WARNING\\|ERROR\\|INFO\\)[^:]*: \\([^,]+\\),\\s-+\\(line \\)?\\([0-9]+\\):" 2 4)<br/>
- ("\\([a-zA-Z]?:?[^:( 	\n]+\\)[:(][ 	]*\\([0-9]+\\)\\([) 	]\\|:\\([^0-9\n]\\|\\([0-9]+:\\)\\)\\)" 1 2 5)<br/>
- ("\\(Error\\|Warning\\).*in file (\\([^ 	]+\\) at line *\\([0-9]+\\))" 2 3)<br/>
- ("\\(Error\\|Warning\\):[^(]*(\\([^ 	]+\\) line *\\([0-9]+\\))" 2 3)<br/>
- ("Warning:.*(port.*(\\([^ 	]+\\) line \\([0-9]+\\))" 1 2)<br/>
- ("\\(Error\\|Warning\\):[\n.]*\\([^ 	]+\\) *\\([0-9]+\\):" 2 3)<br/>
- ("syntax error:.*\n\\([^ 	]+\\) *\\([0-9]+\\):" 1 2)<br/>
- ("%?\\(Error\\|Warning\\)\\(-[^:]+\\|\\):[\n ]*\\([^ 	:]+\\):\\([0-9]+\\):" 3 4)<br/>
- ("^In file \\([^ 	]+\\)[ 	]+line[ 	]+\\([0-9]+\\):\n[^\n]*\n[^\n]*\n\\(Warning\\|Error\\|Failure\\)[^\n]*" 1 2))<br/>
-<br/>
+<strong>verilog-error-regexp-xemacs-alist</strong> is a variable defined in `<code>verilog-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+List of regexps for Verilog compilers.</br>
+See `compilation-error-regexp-alist-alist' for the formatting.  For XEmacs.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(verilog
+ ("\\(Error\\|Warning\\)!.*\n?.*\"\\([^\"]+\\)\", \\([0-9]+\\)" 2 3)
+ ("([WE][0-9A-Z]+)[ 	]+\\([^ 	\n,]+\\)[, 	]+\\(line[ 	]+\\)?\\([0-9]+\\):.*$" 1 3)
+ (".*\\*[WE],[0-9A-Z]+\\([[0-9A-Z_,]+]\\)? (\\([^ 	,]+\\),\\([0-9]+\\)" 2 3)
+ ("[^\n]*\\[\\([^:]+\\):\\([0-9]+\\)\\]" 1 2)
+ ("\\(WARNING\\|ERROR\\|INFO\\)[^:]*: \\([^,]+\\),\\s-+\\(line \\)?\\([0-9]+\\):" 2 4)
+ ("\\([a-zA-Z]?:?[^:( 	\n]+\\)[:(][ 	]*\\([0-9]+\\)\\([) 	]\\|:\\([^0-9\n]\\|\\([0-9]+:\\)\\)\\)" 1 2 5)
+ ("\\(Error\\|Warning\\).*in file (\\([^ 	]+\\) at line *\\([0-9]+\\))" 2 3)
+ ("\\(Error\\|Warning\\):[^(]*(\\([^ 	]+\\) line *\\([0-9]+\\))" 2 3)
+ ("Warning:.*(port.*(\\([^ 	]+\\) line \\([0-9]+\\))" 1 2)
+ ("\\(Error\\|Warning\\):[\n.]*\\([^ 	]+\\) *\\([0-9]+\\):" 2 3)
+ ("syntax error:.*\n\\([^ 	]+\\) *\\([0-9]+\\):" 1 2)
+ ("%?\\(Error\\|Warning\\)\\(-[^:]+\\|\\):[\n ]*\\([^ 	:]+\\):\\([0-9]+\\):" 3 4)
+ ("^In file \\([^ 	]+\\)[ 	]+line[ 	]+\\([0-9]+\\):\n[^\n]*\n[^\n]*\n\\(Warning\\|Error\\|Failure\\)[^\n]*" 1 2))
+</pre></br>

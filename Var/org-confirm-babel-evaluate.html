@@ -1,29 +1,28 @@
-<strong>org-confirm-babel-evaluate</strong> is a variable defined in `<code>ob.el</code>'.<br/>
-Its value is t<br/>
-<br/>
-  This variable is safe as a file local variable if its value<br/>
-  satisfies the predicate which is a byte-compiled expression.<br/>
-<br/>
-Documentation:<br/>
-Confirm before evaluation.<br/>
-Require confirmation before interactively evaluating code<br/>
-blocks in Org-mode buffers.  The default value of this variable<br/>
-is t, meaning confirmation is required for any code block<br/>
-evaluation.  This variable can be set to nil to inhibit any<br/>
-future confirmation requests.  This variable can also be set to a<br/>
-function which takes two arguments the language of the code block<br/>
-and the body of the code block.  Such a function should then<br/>
-return a non-nil value if the user should be prompted for<br/>
-execution or nil if no prompt is required.<br/>
-<br/>
-Warning: Disabling confirmation may result in accidental<br/>
-evaluation of potentially harmful code.  It may be advisable<br/>
-remove code block execution from C-c C-c as further protection<br/>
-against accidental code block evaluation.  The<br/>
-`org-babel-no-eval-on-ctrl-c-ctrl-c' variable can be used to<br/>
-remove code block execution from the C-c C-c keybinding.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>org-confirm-babel-evaluate</strong> is a variable defined in `<code>ob-core.el</code>'.</br>
+Its value is <pre>t</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate which is a byte-compiled expression.</br>
+</ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Confirm before evaluation.</br>
+Require confirmation before interactively evaluating code</br>
+blocks in Org-mode buffers.  The default value of this variable</br>
+is t, meaning confirmation is required for any code block</br>
+evaluation.  This variable can be set to nil to inhibit any</br>
+future confirmation requests.  This variable can also be set to a</br>
+function which takes two arguments the language of the code block</br>
+and the body of the code block.  Such a function should then</br>
+return a non-nil value if the user should be prompted for</br>
+execution or nil if no prompt is required.</br>
+</br>
+Warning: Disabling confirmation may result in accidental</br>
+evaluation of potentially harmful code.  It may be advisable</br>
+remove code block execution from C-c C-c as further protection</br>
+against accidental code block evaluation.  The</br>
+`org-babel-no-eval-on-ctrl-c-ctrl-c' variable can be used to</br>
+remove code block execution from the C-c C-c keybinding.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

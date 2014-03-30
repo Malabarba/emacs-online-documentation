@@ -1,54 +1,54 @@
-<strong>feedmail-spray-address-fiddle-plex-list</strong> is a variable defined in `<code>feedmail.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-User-supplied specification for a crude form of mailmerge capability.<br/>
-When spraying is enabled, feedmail composes a list of envelope addresses.<br/>
-In turn, `feedmail-spray-this-address' is temporarily set to each address<br/>
-(stripped of any comments and angle brackets) and a function is called which<br/>
-fiddles message headers according to this variable.  See the documentation for<br/>
-`feedmail-fiddle-plex-blurb', for an overview of fiddle-plex data structures.<br/>
-<br/>
-May be nil, in which case nothing in particular is done about message<br/>
-headers for specific addresses.<br/>
-<br/>
-May be t, in which case a "To:" header is added to the message with<br/>
-the stripped address as the header contents.  The fiddle-plex operator<br/>
-is 'supplement.<br/>
-<br/>
-May be a string, in which case the string is assumed to be the name of<br/>
-a message header field with the stripped address serving as the value.<br/>
-The fiddle-plex operator is 'supplement.<br/>
-<br/>
-May be a function, in which case it is called with no arguments and is<br/>
-expected to return nil, t, a string, another function, or a fiddle-plex.<br/>
-The result is used recursively.  The function may alter the value of the<br/>
-variable feedmail-spray-this-address, perhaps to embellish it with a<br/>
-human name.  It would be logical in such a case to return as a value a<br/>
-string naming a message header like "TO" or an appropriately constructed<br/>
-fiddle-plex.  For an example, see feedmail-spray-via-bbdb.<br/>
-<br/>
-May be a list of any combination of the foregoing and/or<br/>
-fiddle-plexes.  (A value for this variable which consists of a single<br/>
-fiddle-plex must be nested inside another list to avoid ambiguity.)<br/>
-If a list, each item is acted on in turn as described above.<br/>
-<br/>
-For example,<br/>
-<br/>
-  (setq feedmail-spray-address-fiddle-plex-list 'feedmail-spray-via-bbdb)<br/>
-<br/>
-The idea of the example is that, during spray mode, as each message is<br/>
-about to be transmitted to an individual address, the function will be<br/>
-called and will consult `feedmail-spray-this-address' to find the<br/>
-stripped envelope email address (no comments or angle brackets).  The<br/>
-function should return an embellished form of the address.<br/>
-<br/>
-The recipe for sending form letters is:  (1) create a message with all<br/>
-addressees on Bcc: headers; (2) tell feedmail to remove Bcc: headers<br/>
-before sending the message; (3) create a function which will embellish<br/>
-stripped addresses, if desired; (4) define `feedmail-spray-address-fiddle-plex-list'<br/>
-appropriately; (5) send the message with `feedmail-enable-spray' set<br/>
-non-nil; (6) stand back and watch co-workers wonder at how efficient<br/>
-you are at accomplishing inherently inefficient things.<br/>
-<br/>
+<strong>feedmail-spray-address-fiddle-plex-list</strong> is a variable defined in `<code>feedmail.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+User-supplied specification for a crude form of mailmerge capability.</br>
+When spraying is enabled, feedmail composes a list of envelope addresses.</br>
+In turn, `feedmail-spray-this-address' is temporarily set to each address</br>
+(stripped of any comments and angle brackets) and a function is called which</br>
+fiddles message headers according to this variable.  See the documentation for</br>
+`feedmail-fiddle-plex-blurb', for an overview of fiddle-plex data structures.</br>
+</br>
+May be nil, in which case nothing in particular is done about message</br>
+headers for specific addresses.</br>
+</br>
+May be t, in which case a "To:" header is added to the message with</br>
+the stripped address as the header contents.  The fiddle-plex operator</br>
+is 'supplement.</br>
+</br>
+May be a string, in which case the string is assumed to be the name of</br>
+a message header field with the stripped address serving as the value.</br>
+The fiddle-plex operator is 'supplement.</br>
+</br>
+May be a function, in which case it is called with no arguments and is</br>
+expected to return nil, t, a string, another function, or a fiddle-plex.</br>
+The result is used recursively.  The function may alter the value of the</br>
+variable feedmail-spray-this-address, perhaps to embellish it with a</br>
+human name.  It would be logical in such a case to return as a value a</br>
+string naming a message header like "TO" or an appropriately constructed</br>
+fiddle-plex.  For an example, see feedmail-spray-via-bbdb.</br>
+</br>
+May be a list of any combination of the foregoing and/or</br>
+fiddle-plexes.  (A value for this variable which consists of a single</br>
+fiddle-plex must be nested inside another list to avoid ambiguity.)</br>
+If a list, each item is acted on in turn as described above.</br>
+</br>
+For example,</br>
+</br>
+  (setq feedmail-spray-address-fiddle-plex-list 'feedmail-spray-via-bbdb)</br>
+</br>
+The idea of the example is that, during spray mode, as each message is</br>
+about to be transmitted to an individual address, the function will be</br>
+called and will consult `feedmail-spray-this-address' to find the</br>
+stripped envelope email address (no comments or angle brackets).  The</br>
+function should return an embellished form of the address.</br>
+</br>
+The recipe for sending form letters is:  (1) create a message with all</br>
+addressees on Bcc: headers; (2) tell feedmail to remove Bcc: headers</br>
+before sending the message; (3) create a function which will embellish</br>
+stripped addresses, if desired; (4) define `feedmail-spray-address-fiddle-plex-list'</br>
+appropriately; (5) send the message with `feedmail-enable-spray' set</br>
+non-nil; (6) stand back and watch co-workers wonder at how efficient</br>
+you are at accomplishing inherently inefficient things.</br>
+</br>
 You can customize this variable.

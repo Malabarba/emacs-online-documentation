@@ -1,37 +1,37 @@
-<strong>set-fontset-font</strong> is a built-in function in `<code>C source code</code>'.<br/>
-<br/>
-(set-fontset-font NAME TARGET FONT-SPEC &optional FRAME ADD)<br/>
-<br/>
-Modify fontset NAME to use FONT-SPEC for TARGET characters.<br/>
-<br/>
-NAME is a fontset name string, nil for the fontset of FRAME, or t for<br/>
-the default fontset.<br/>
-<br/>
-TARGET may be a cons; (FROM . TO), where FROM and TO are characters.<br/>
-In that case, use FONT-SPEC for all characters in the range FROM and<br/>
-TO (inclusive).<br/>
-<br/>
-TARGET may be a script name symbol.  In that case, use FONT-SPEC for<br/>
-all characters that belong to the script.<br/>
-<br/>
-TARGET may be a charset.  In that case, use FONT-SPEC for all<br/>
-characters in the charset.<br/>
-<br/>
-TARGET may be nil.  In that case, use FONT-SPEC for any characters for<br/>
-that no FONT-SPEC is specified.<br/>
-<br/>
-FONT-SPEC may one of these:<br/>
- * A font-spec object made by the function `font-spec' (which see).<br/>
- * A cons (FAMILY . REGISTRY), where FAMILY is a font family name and<br/>
-   REGISTRY is a font registry name.  FAMILY may contain foundry<br/>
-   name, and REGISTRY may contain encoding name.<br/>
- * A font name string.<br/>
- * nil, which explicitly specifies that there's no font for TARGET.<br/>
-<br/>
-Optional 4th argument FRAME is a frame or nil for the selected frame<br/>
-that is concerned in the case that NAME is nil.<br/>
-<br/>
-Optional 5th argument ADD, if non-nil, specifies how to add FONT-SPEC<br/>
-to the font specifications for TARGET previously set.  If it is<br/>
-`prepend', FONT-SPEC is prepended.  If it is `append', FONT-SPEC is<br/>
-appended.  By default, FONT-SPEC overrides the previous settings.
+<strong>set-fontset-font</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(set-fontset-font <u>NAME</u> <u>TARGET</u> <u>FONT-SPEC</u> &optional <u>FRAME</u> <u>ADD</u>)</br>
+</br>
+Modify fontset <u>NAME</u> to use <u>FONT-SPEC</u> for <u>TARGET</u> characters.</br>
+</br>
+<u>NAME</u> is a fontset name string, nil for the fontset of <u>FRAME</u>, or t for</br>
+the default fontset.</br>
+</br>
+<u>TARGET</u> may be a cons; (FROM . TO), where FROM and TO are characters.</br>
+In that case, use <u>FONT-SPEC</u> for all characters in the range FROM and</br>
+TO (inclusive).</br>
+</br>
+<u>TARGET</u> may be a script name symbol.  In that case, use <u>FONT-SPEC</u> for</br>
+all characters that belong to the script.</br>
+</br>
+<u>TARGET</u> may be a charset.  In that case, use <u>FONT-SPEC</u> for all</br>
+characters in the charset.</br>
+</br>
+<u>TARGET</u> may be nil.  In that case, use <u>FONT-SPEC</u> for any characters for</br>
+that no <u>FONT-SPEC</u> is specified.</br>
+</br>
+<u>FONT-SPEC</u> may one of these:</br>
+ * A font-spec object made by the function `font-spec' (which see).</br>
+ * A cons (FAMILY . REGISTRY), where FAMILY is a font family name and</br>
+   REGISTRY is a font registry name.  FAMILY may contain foundry</br>
+   name, and REGISTRY may contain encoding name.</br>
+ * A font name string.</br>
+ * nil, which explicitly specifies that there's no font for <u>TARGET</u>.</br>
+</br>
+Optional 4th argument <u>FRAME</u> is a frame or nil for the selected frame</br>
+that is concerned in the case that <u>NAME</u> is nil.</br>
+</br>
+Optional 5th argument <u>ADD</u>, if non-nil, specifies how to add <u>FONT-SPEC</u></br>
+to the font specifications for <u>TARGET</u> previously set.  If it is</br>
+`prepend', <u>FONT-SPEC</u> is prepended.  If it is `append', <u>FONT-SPEC</u> is</br>
+appended.  By default, <u>FONT-SPEC</u> overrides the previous settings.

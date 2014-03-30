@@ -1,25 +1,22 @@
-<strong>diary-display-hook</strong> is a variable defined in `<code>diary-lib.el</code>'.<br/>
-Its value is diary-fancy-display<br/>
-<br/>
-  This variable is an alias for `diary-display-function'.<br/>
-  This variable is obsolete since 23.1;<br/>
-  use `diary-display-function' instead.<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Function used to display the diary.<br/>
-The two standard options are `diary-fancy-display' and `diary-simple-display'.<br/>
-<br/>
-For historical reasons, `nil' is the same as `diary-simple-display'<br/>
-(so you must use `ignore' for no display).  Also for historical<br/>
-reasons, this variable can be a list of functions to run.  These<br/>
-uses are not recommended and may be removed at some point.<br/>
-<br/>
-When this function is called, the variable `diary-entries-list'<br/>
-is a list, in order by date, of all relevant diary entries in the<br/>
-form of ((MONTH DAY YEAR) STRING), where string is the diary<br/>
-entry for the given date.  This can be used, for example, to<br/>
-produce a different buffer for display (perhaps combined with<br/>
-holidays), or hard copy output.<br/>
-<br/>
+<strong>diary-display-hook</strong> is a variable defined in `<code>diary-lib.el</code>'.</br>
+Its value is <pre>diary-fancy-display</pre></br>
+<ul>  <li>This variable is an alias for `<strong><a href="diary-display-function">diary-display-function</a></strong>'.</li>
+<li>  <strong>This variable is obsolete since 23.1;</br>
+  use `<a href="diary-display-function">diary-display-function</a>' instead.</strong></li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function used to display the diary.</br>
+The two standard options are `diary-fancy-display' and `diary-simple-display'.</br>
+</br>
+For historical reasons, `nil' is the same as `diary-simple-display'</br>
+(so you must use `ignore' for no display).  Also for historical</br>
+reasons, this variable can be a list of functions to run.  These</br>
+uses are not recommended and may be removed at some point.</br>
+</br>
+When this function is called, the variable `diary-entries-list'</br>
+is a list, in order by date, of all relevant diary entries in the</br>
+form of ((MONTH DAY YEAR) STRING), where string is the diary</br>
+entry for the given date.  This can be used, for example, to</br>
+produce a different buffer for display (perhaps combined with</br>
+holidays), or hard copy output.</br>
+</br>
 You can customize this variable.

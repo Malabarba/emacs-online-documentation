@@ -1,18 +1,17 @@
-<strong>syntax-propertize-function</strong> is a variable defined in `<code>syntax.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Mode-specific function to apply `syntax-table' text properties.<br/>
-The value of this variable is a function to be called by Font<br/>
-Lock mode, prior to performing syntactic fontification on a<br/>
-stretch of text.  It is given two arguments, START and END: the<br/>
-start and end of the text to be fontified.  Major modes can<br/>
-specify a custom function to apply `syntax-table' properties to<br/>
-override the default syntax table in special cases.<br/>
-<br/>
-The specified function may call `syntax-ppss' on any position<br/>
-before END, but it should not call `syntax-ppss-flush-cache',<br/>
-which means that it should not call `syntax-ppss' on some<br/>
+<strong>syntax-propertize-function</strong> is a variable defined in `<code>syntax.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Mode-specific function to apply `syntax-table' text properties.</br>
+It is the work horse of `syntax-propertize', which is called by things like</br>
+Font-Lock and indentation.</br>
+</br>
+It is given two arguments, START and END: the start and end of the text to</br>
+which `syntax-table' might need to be applied.  Major modes can use this to</br>
+override the buffer's syntax table for special syntactic constructs that</br>
+cannot be handled just by the buffer's syntax-table.</br>
+</br>
+The specified function may call `syntax-ppss' on any position</br>
+before END, but it should not call `syntax-ppss-flush-cache',</br>
+which means that it should not call `syntax-ppss' on some</br>
 position and later modify the buffer on some earlier position.

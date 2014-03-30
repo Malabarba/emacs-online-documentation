@@ -1,83 +1,97 @@
-<strong>doc-view-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>doc-view.el</code>'.<br/>
-<br/>
-(doc-view-mode)<br/>
-<br/>
-Major mode in DocView buffers.<br/>
-<br/>
-DocView Mode is an Emacs document viewer.  It displays PDF, PS<br/>
-and DVI files (as PNG images) in Emacs buffers.<br/>
-<br/>
-You can use C-c C-c to<br/>
-toggle between displaying the document or editing it as text.<br/>
-key             binding<br/>
----             -------<br/>
-<br/>
-C-c		Prefix Command<br/>
-RET		image-next-line<br/>
-C-n		doc-view-next-line-or-next-page<br/>
-C-p		doc-view-previous-line-or-previous-page<br/>
-C-r		doc-view-search-backward<br/>
-C-s		doc-view-search<br/>
-C-t		doc-view-show-tooltip<br/>
-ESC		Prefix Command<br/>
-SPC		doc-view-scroll-up-or-next-page<br/>
-+		doc-view-enlarge<br/>
--		doc-view-shrink<br/>
-0 .. 9		digit-argument<br/>
-<		beginning-of-buffer<br/>
->		end-of-buffer<br/>
-?		describe-mode<br/>
-H		doc-view-fit-height-to-window<br/>
-K		doc-view-kill-proc<br/>
-P		doc-view-fit-page-to-window<br/>
-W		doc-view-fit-width-to-window<br/>
-g		doc-view-revert-buffer<br/>
-h		describe-mode<br/>
-k		doc-view-kill-proc-and-buffer<br/>
-n		doc-view-next-page<br/>
-p		doc-view-previous-page<br/>
-q		quit-window<br/>
-r		doc-view-revert-buffer<br/>
-s		Prefix Command<br/>
-DEL		doc-view-scroll-down-or-previous-page<br/>
-<down>		doc-view-next-line-or-next-page<br/>
-<find>		doc-view-search<br/>
-<next>		forward-page<br/>
-<prior>		backward-page<br/>
-<remap>		Prefix Command<br/>
-<up>		doc-view-previous-line-or-previous-page<br/>
-<br/>
-C-c C-c		doc-view-toggle-display<br/>
-C-c C-t		doc-view-open-text<br/>
-<br/>
-s b		doc-view-set-slice-from-bounding-box<br/>
-s m		doc-view-set-slice-using-mouse<br/>
-s r		doc-view-reset-slice<br/>
-s s		doc-view-set-slice<br/>
-<br/>
-M-<		doc-view-first-page<br/>
-M->		doc-view-last-page<br/>
-<br/>
-<remap> <backward-page>		doc-view-previous-page<br/>
-<remap> <forward-page>		doc-view-next-page<br/>
-<remap> <goto-line>		doc-view-goto-page<br/>
-<br/>
-<remap> <backward-char>		image-backward-hscroll<br/>
-<remap> <beginning-of-buffer>	image-bob<br/>
-<remap> <end-of-buffer>		image-eob<br/>
-<remap> <forward-char>		image-forward-hscroll<br/>
-<remap> <left-char>		image-backward-hscroll<br/>
-<remap> <move-beginning-of-line><br/>
-				image-bol<br/>
-<remap> <move-end-of-line>	image-eol<br/>
-<remap> <next-line>		image-next-line<br/>
-<remap> <previous-line>		image-previous-line<br/>
-<remap> <right-char>		image-forward-hscroll<br/>
-<remap> <scroll-down>		image-scroll-down<br/>
-<remap> <scroll-down-command>	image-scroll-down<br/>
-<remap> <scroll-up>		image-scroll-up<br/>
-<remap> <scroll-up-command>	image-scroll-up<br/>
-<br/>
-C-c C-c		image-toggle-display<br/>
-  (that binding is currently shadowed by another mode)<br/>
-<br/>
+<strong>doc-view-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>doc-view.el</code>'.</br>
+</br>
+</br>
+(doc-view-mode)</br>
+</br>
+Major mode in DocView buffers.</br>
+</br>
+DocView Mode is an Emacs document viewer.  It displays PDF, PS</br>
+and DVI files (as PNG images) in Emacs buffers.</br>
+</br>
+You can use C-c C-c to</br>
+toggle between displaying the document or editing it as text.</br>
+key             binding</br>
+---             -------</br>
+</br>
+C-c		Prefix Command</br>
+RET		image-next-line</br>
+C-n		doc-view-next-line-or-next-page</br>
+C-p		doc-view-previous-line-or-previous-page</br>
+C-r		doc-view-search-backward</br>
+C-s		doc-view-search</br>
+C-t		doc-view-show-tooltip</br>
+ESC		Prefix Command</br>
+SPC		doc-view-scroll-up-or-next-page</br>
++		doc-view-enlarge</br>
+-		doc-view-shrink</br>
+0		doc-view-scale-reset</br>
+1 .. 9		digit-argument</br>
+&lt;		beginning-of-buffer</br>
+=		doc-view-enlarge</br>
+>		end-of-buffer</br>
+?		describe-mode</br>
+F		image-goto-frame</br>
+H		doc-view-fit-height-to-window</br>
+K		doc-view-kill-proc</br>
+P		doc-view-fit-page-to-window</br>
+W		doc-view-fit-width-to-window</br>
+a		Prefix Command</br>
+b		image-previous-frame</br>
+f		image-next-frame</br>
+g		doc-view-revert-buffer</br>
+h		describe-mode</br>
+k		doc-view-kill-proc-and-buffer</br>
+n		doc-view-next-page</br>
+p		doc-view-previous-page</br>
+q		quit-window</br>
+r		doc-view-revert-buffer</br>
+s		Prefix Command</br>
+DEL		doc-view-scroll-down-or-previous-page</br>
+S-SPC		doc-view-scroll-down-or-previous-page</br>
+&lt;down>		doc-view-next-line-or-next-page</br>
+&lt;find>		doc-view-search</br>
+&lt;next>		forward-page</br>
+&lt;prior>		backward-page</br>
+&lt;remap>		Prefix Command</br>
+&lt;up>		doc-view-previous-line-or-previous-page</br>
+</br>
+C-c C-c		doc-view-toggle-display</br>
+C-c C-t		doc-view-open-text</br>
+</br>
+s b		doc-view-set-slice-from-bounding-box</br>
+s m		doc-view-set-slice-using-mouse</br>
+s r		doc-view-reset-slice</br>
+s s		doc-view-set-slice</br>
+</br>
+M-&lt;		doc-view-first-page</br>
+M->		doc-view-last-page</br>
+</br>
+&lt;remap> &lt;backward-page>		doc-view-previous-page</br>
+&lt;remap> &lt;forward-page>		doc-view-next-page</br>
+&lt;remap> &lt;goto-line>		doc-view-goto-page</br>
+&lt;remap> &lt;text-scale-adjust>	doc-view-scale-adjust</br>
+</br>
+&lt;remap> &lt;backward-char>		image-backward-hscroll</br>
+&lt;remap> &lt;beginning-of-buffer>	image-bob</br>
+&lt;remap> &lt;end-of-buffer>		image-eob</br>
+&lt;remap> &lt;forward-char>		image-forward-hscroll</br>
+&lt;remap> &lt;left-char>		image-backward-hscroll</br>
+&lt;remap> &lt;move-beginning-of-line></br>
+				image-bol</br>
+&lt;remap> &lt;move-end-of-line>	image-eol</br>
+&lt;remap> &lt;next-line>		image-next-line</br>
+&lt;remap> &lt;previous-line>		image-previous-line</br>
+&lt;remap> &lt;right-char>		image-forward-hscroll</br>
+&lt;remap> &lt;scroll-down>		image-scroll-down</br>
+&lt;remap> &lt;scroll-down-command>	image-scroll-down</br>
+&lt;remap> &lt;scroll-up>		image-scroll-up</br>
+&lt;remap> &lt;scroll-up-command>	image-scroll-up</br>
+</br>
+a +		image-increase-speed</br>
+a -		image-decrease-speed</br>
+a 0		image-reset-speed</br>
+a r		image-reverse-speed</br>
+</br>
+C-c C-c		image-toggle-display</br>
+  (that binding is currently shadowed by another mode)</br>
+</br>

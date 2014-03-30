@@ -1,106 +1,105 @@
-<strong>diff-mode-map</strong> is a variable defined in `<code>diff-mode.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-Keymap for `diff-mode'.  See also `diff-mode-shared-map'.<br/>
-<br/>
-Value: (keymap<br/>
- (menu-bar keymap<br/>
-	   (Diff menu-item "Diff"<br/>
-		 (keymap "Diff"<br/>
-			 (Jump\ to\ Source menu-item "Jump to Source" diff-goto-source :help "Jump to the corresponding source line")<br/>
-			 (Apply\ hunk menu-item "Apply hunk" diff-apply-hunk :help "Apply the current hunk to the source file and go to the next")<br/>
-			 (Test\ applying\ hunk menu-item "Test applying hunk" diff-test-hunk :help "See whether it's possible to apply the current hunk")<br/>
-			 (Apply\ diff\ with\ Ediff menu-item "Apply diff with Ediff" diff-ediff-patch :help "Call `ediff-patch-file' on the current buffer")<br/>
-			 (Create\ Change\ Log\ entries menu-item "Create Change Log entries" diff-add-change-log-entries-other-window :help "Create ChangeLog entries for the changes in the diff buffer")<br/>
-			 (nil menu-item "-----")<br/>
-			 (Reverse\ direction menu-item "Reverse direction" diff-reverse-direction :help "Reverse the direction of the diffs")<br/>
-			 (Context\ ->\ Unified menu-item "Context -> Unified" diff-context->unified :help "Convert context diffs to unified diffs")<br/>
-			 (Unified\ ->\ Context menu-item "Unified -> Context" diff-unified->context :help "Convert unified diffs to context diffs")<br/>
-			 (Remove\ trailing\ whitespace menu-item "Remove trailing whitespace" diff-delete-trailing-whitespace :help "Remove trailing whitespace problems introduced by the diff")<br/>
-			 (Show\ trailing\ whitespace menu-item "Show trailing whitespace" whitespace-mode :button<br/>
-						     (:toggle bound-and-true-p whitespace-mode)<br/>
-						     :help "Show trailing whitespace in modified lines")<br/>
-			 (nil-11 menu-item "-----")<br/>
-			 (Split\ hunk menu-item "Split hunk" diff-split-hunk :enable<br/>
-				      (diff-splittable-p)<br/>
-				      :help "Split the current (unified diff) hunk at point into two hunks")<br/>
-			 (Ignore\ whitespace\ changes menu-item "Ignore whitespace changes" diff-ignore-whitespace-hunk :help "Re-diff the current hunk, ignoring whitespace differences")<br/>
-			 (Highlight\ fine\ changes menu-item "Highlight fine changes" diff-refine-hunk :help "Highlight changes of hunk at point at a finer granularity")<br/>
-			 (Kill\ current\ hunk menu-item "Kill current hunk" diff-hunk-kill :help "Kill current hunk")<br/>
-			 (Kill\ current\ file\'s\ hunks menu-item "Kill current file's hunks" diff-file-kill :help "Kill all current file's hunks")<br/>
-			 (nil-17 menu-item "-----")<br/>
-			 (Previous\ Hunk menu-item "Previous Hunk" diff-hunk-prev :help "Go to the previous count'th hunk")<br/>
-			 (Next\ Hunk menu-item "Next Hunk" diff-hunk-next :help "Go to the next count'th hunk")<br/>
-			 (Previous\ File menu-item "Previous File" diff-file-prev :help "Go to the previous count'th file")<br/>
-			 (Next\ File menu-item "Next File" diff-file-next :help "Go to the next count'th file"))))<br/>
- (24 keymap<br/>
-     (52 keymap<br/>
-	 (65 . diff-add-change-log-entries-other-window)))<br/>
- (3 keymap<br/>
-    (6 . next-error-follow-minor-mode)<br/>
-    (2 . diff-refine-hunk)<br/>
-    (23 . diff-ignore-whitespace-hunk)<br/>
-    (4 . diff-unified->context)<br/>
-    (21 . diff-context->unified)<br/>
-    (18 . diff-reverse-direction)<br/>
-    (20 . diff-test-hunk)<br/>
-    (19 . diff-split-hunk)<br/>
-    (14 . diff-restrict-view)<br/>
-    (5 . diff-ediff-patch)<br/>
-    (1 . diff-apply-hunk)<br/>
-    (3 . diff-goto-source))<br/>
- (27 keymap<br/>
-     (122)<br/>
-     (87)<br/>
-     (113)<br/>
-     (103)<br/>
-     (82)<br/>
-     (114)<br/>
-     (65)<br/>
-     keymap<br/>
-     (remap keymap<br/>
-	    (undo . diff-undo))<br/>
-     (47 . diff-undo)<br/>
-     (82 . diff-reverse-direction)<br/>
-     (114 . diff-restrict-view)<br/>
-     (65 . diff-ediff-patch)<br/>
-     (111 . diff-goto-source)<br/>
-     (87 . widen)<br/>
-     (mouse-2 . diff-goto-source)<br/>
-     (13 . diff-goto-source)<br/>
-     (123 . diff-file-prev)<br/>
-     (125 . diff-file-next)<br/>
-     (75 . diff-file-kill)<br/>
-     (107 . diff-hunk-kill)<br/>
-     (backtab . diff-hunk-prev)<br/>
-     (9 . diff-hunk-next)<br/>
-     (80 . diff-file-prev)<br/>
-     (112 . diff-hunk-prev)<br/>
-     (78 . diff-file-next)<br/>
-     (110 . diff-hunk-next)<br/>
-     keymap<br/>
-     (103 . revert-buffer)<br/>
-     (60 . beginning-of-buffer)<br/>
-     (62 . end-of-buffer)<br/>
-     (104 . describe-mode)<br/>
-     (63 . describe-mode)<br/>
-     (127 . scroll-down-command)<br/>
-     (32 . scroll-up-command)<br/>
-     (113 . quit-window)<br/>
-     (57 . digit-argument)<br/>
-     (56 . digit-argument)<br/>
-     (55 . digit-argument)<br/>
-     (54 . digit-argument)<br/>
-     (53 . digit-argument)<br/>
-     (52 . digit-argument)<br/>
-     (51 . digit-argument)<br/>
-     (50 . digit-argument)<br/>
-     (49 . digit-argument)<br/>
-     (48 . digit-argument)<br/>
-     (45 . negative-argument)<br/>
-     (remap keymap<br/>
-	    (self-insert-command . undefined))))<br/>
-<br/>
+<strong>diff-mode-map</strong> is a variable defined in `<code>diff-mode.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `diff-mode'.  See also `diff-mode-shared-map'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Diff menu-item "Diff"
+		 (keymap "Diff"
+			 (Jump\ to\ Source menu-item "Jump to Source" diff-goto-source :help "Jump to the corresponding source line")
+			 (Apply\ hunk menu-item "Apply hunk" diff-apply-hunk :help "Apply the current hunk to the source file and go to the next")
+			 (Test\ applying\ hunk menu-item "Test applying hunk" diff-test-hunk :help "See whether it's possible to apply the current hunk")
+			 (Apply\ diff\ with\ Ediff menu-item "Apply diff with Ediff" diff-ediff-patch :help "Call `ediff-patch-file' on the current buffer")
+			 (Create\ Change\ Log\ entries menu-item "Create Change Log entries" diff-add-change-log-entries-other-window :help "Create ChangeLog entries for the changes in the diff buffer")
+			 (nil menu-item "-----")
+			 (Reverse\ direction menu-item "Reverse direction" diff-reverse-direction :help "Reverse the direction of the diffs")
+			 (Context\ ->\ Unified menu-item "Context -> Unified" diff-context->unified :help "Convert context diffs to unified diffs")
+			 (Unified\ ->\ Context menu-item "Unified -> Context" diff-unified->context :help "Convert unified diffs to context diffs")
+			 (Remove\ trailing\ whitespace menu-item "Remove trailing whitespace" diff-delete-trailing-whitespace :help "Remove trailing whitespace problems introduced by the diff")
+			 (Show\ trailing\ whitespace menu-item "Show trailing whitespace" whitespace-mode :button
+						     (:toggle bound-and-true-p whitespace-mode)
+						     :help "Show trailing whitespace in modified lines")
+			 (nil-11 menu-item "-----")
+			 (Split\ hunk menu-item "Split hunk" diff-split-hunk :enable
+				      (diff-splittable-p)
+				      :help "Split the current (unified diff) hunk at point into two hunks")
+			 (Ignore\ whitespace\ changes menu-item "Ignore whitespace changes" diff-ignore-whitespace-hunk :help "Re-diff the current hunk, ignoring whitespace differences")
+			 (Highlight\ fine\ changes menu-item "Highlight fine changes" diff-refine-hunk :help "Highlight changes of hunk at point at a finer granularity")
+			 (Kill\ current\ hunk menu-item "Kill current hunk" diff-hunk-kill :help "Kill current hunk")
+			 (Kill\ current\ file\'s\ hunks menu-item "Kill current file's hunks" diff-file-kill :help "Kill all current file's hunks")
+			 (nil-17 menu-item "-----")
+			 (Previous\ Hunk menu-item "Previous Hunk" diff-hunk-prev :help "Go to the previous count'th hunk")
+			 (Next\ Hunk menu-item "Next Hunk" diff-hunk-next :help "Go to the next count'th hunk")
+			 (Previous\ File menu-item "Previous File" diff-file-prev :help "Go to the previous count'th file")
+			 (Next\ File menu-item "Next File" diff-file-next :help "Go to the next count'th file"))))
+ (24 keymap
+     (52 keymap
+	 (65 . diff-add-change-log-entries-other-window)))
+ (3 keymap
+    (6 . next-error-follow-minor-mode)
+    (2 . diff-refine-hunk)
+    (23 . diff-ignore-whitespace-hunk)
+    (4 . diff-unified->context)
+    (21 . diff-context->unified)
+    (18 . diff-reverse-direction)
+    (20 . diff-test-hunk)
+    (19 . diff-split-hunk)
+    (14 . diff-restrict-view)
+    (5 . diff-ediff-patch)
+    (1 . diff-apply-hunk)
+    (3 . diff-goto-source))
+ (27 keymap
+     (122)
+     (87)
+     (113)
+     (103)
+     (82)
+     (114)
+     (65)
+     keymap
+     (remap keymap
+	    (undo . diff-undo))
+     (82 . diff-reverse-direction)
+     (114 . diff-restrict-view)
+     (65 . diff-ediff-patch)
+     (111 . diff-goto-source)
+     (87 . widen)
+     (mouse-2 . diff-goto-source)
+     (13 . diff-goto-source)
+     (123 . diff-file-prev)
+     (125 . diff-file-next)
+     (75 . diff-file-kill)
+     (107 . diff-hunk-kill)
+     (backtab . diff-hunk-prev)
+     (9 . diff-hunk-next)
+     (80 . diff-file-prev)
+     (112 . diff-hunk-prev)
+     (78 . diff-file-next)
+     (110 . diff-hunk-next)
+     keymap
+     (103 . revert-buffer)
+     (60 . beginning-of-buffer)
+     (62 . end-of-buffer)
+     (104 . describe-mode)
+     (63 . describe-mode)
+     (127 . scroll-down-command)
+     (33554464 . scroll-down-command)
+     (32 . scroll-up-command)
+     (113 . quit-window)
+     (57 . digit-argument)
+     (56 . digit-argument)
+     (55 . digit-argument)
+     (54 . digit-argument)
+     (53 . digit-argument)
+     (52 . digit-argument)
+     (51 . digit-argument)
+     (50 . digit-argument)
+     (49 . digit-argument)
+     (48 . digit-argument)
+     (45 . negative-argument)
+     (remap keymap
+	    (self-insert-command . undefined))))
+</pre></br>

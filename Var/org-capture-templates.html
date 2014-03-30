@@ -1,200 +1,204 @@
-<strong>org-capture-templates</strong> is a variable defined in `<code>org-capture.el</code>'.<br/>
-Its value is nil<br/>
-<br/>
-Documentation:<br/>
-Templates for the creation of new entries.<br/>
-<br/>
-Each entry is a list with the following items:<br/>
-<br/>
-keys         The keys that will select the template, as a string, characters<br/>
-             only, for example "a" for a template to be selected with a<br/>
-             single key, or "bt" for selection with two keys.  When using<br/>
-             several keys, keys using the same prefix key must be together<br/>
-             in the list and preceded by a 2-element entry explaining the<br/>
-             prefix key, for example<br/>
-<br/>
-                     ("b" "Templates for marking stuff to buy")<br/>
-<br/>
-             The "C" key is used by default for quick access to the<br/>
-             customization of the template variable.  But if you want to use<br/>
-             that key for a template, you can.<br/>
-<br/>
-description  A short string describing the template, will be shown during<br/>
-             selection.<br/>
-<br/>
-type         The type of entry.  Valid types are:<br/>
-               entry       an Org-mode node, with a headline.  Will be<br/>
-                           filed as the child of the target entry or as<br/>
-                           a top-level entry.<br/>
-               item        a plain list item, will be placed in the<br/>
-                           first plain list at the target<br/>
-                           location.<br/>
-               checkitem   a checkbox item.  This differs from the<br/>
-                           plain list item only is so far as it uses a<br/>
-                           different default template.<br/>
-               table-line  a new line in the first table at target location.<br/>
-               plain       text to be inserted as it is.<br/>
-<br/>
-target       Specification of where the captured item should be placed.<br/>
-             In Org-mode files, targets usually define a node.  Entries will<br/>
-             become children of this node, other types will be added to the<br/>
-             table or list in the body of this node.<br/>
-<br/>
-             Most target specifications contain a file name.  If that file<br/>
-             name is the empty string, it defaults to `org-default-notes-file'.<br/>
-             A file can also be given as a variable, function, or Emacs Lisp<br/>
-             form.<br/>
-<br/>
-             Valid values are:<br/>
-<br/>
-             (file "path/to/file")<br/>
-                 Text will be placed at the beginning or end of that file<br/>
-<br/>
-             (id "id of existing org entry")<br/>
-                 File as child of this entry, or in the body of the entry<br/>
-<br/>
-             (file+headline "path/to/file" "node headline")<br/>
-                 Fast configuration if the target heading is unique in the file<br/>
-<br/>
-             (file+olp "path/to/file" "Level 1 heading" "Level 2" ...)<br/>
-                 For non-unique headings, the full path is safer<br/>
-<br/>
-             (file+regexp  "path/to/file" "regexp to find location")<br/>
-                 File to the entry matching regexp<br/>
-<br/>
-             (file+datetree "path/to/file")<br/>
-                 Will create a heading in a date tree for today's date<br/>
-<br/>
-             (file+datetree+prompt "path/to/file")<br/>
-                 Will create a heading in a date tree, prompts for date<br/>
-<br/>
-             (file+function "path/to/file" function-finding-location)<br/>
-                 A function to find the right location in the file<br/>
-<br/>
-             (clock)<br/>
-                File to the entry that is currently being clocked<br/>
-<br/>
-             (function function-finding-location)<br/>
-                Most general way, write your own function to find both<br/>
-                file and location<br/>
-<br/>
-template     The template for creating the capture item.  If you leave this<br/>
-             empty, an appropriate default template will be used.  See below<br/>
-             for more details.  Instead of a string, this may also be one of<br/>
-<br/>
-                 (file "/path/to/template-file")<br/>
-                 (function function-returning-the-template)<br/>
-<br/>
-             in order to get a template from a file, or dynamically<br/>
-             from a function.<br/>
-<br/>
-The rest of the entry is a property list of additional options.  Recognized<br/>
-properties are:<br/>
-<br/>
- :prepend            Normally newly captured information will be appended at<br/>
-                     the target location (last child, last table line,<br/>
-                     last list item...).  Setting this property will<br/>
-                     change that.<br/>
-<br/>
- :immediate-finish   When set, do not offer to edit the information, just<br/>
-                     file it away immediately.  This makes sense if the<br/>
-                     template only needs information that can be added<br/>
-                     automatically.<br/>
-<br/>
- :empty-lines        Set this to the number of lines the should be inserted<br/>
-                     before and after the new item.  Default 0, only common<br/>
-                     other value is 1.<br/>
-<br/>
- :empty-lines-before Set this to the number of lines the should be inserted<br/>
-                     before the new item.  Overrides :empty-lines for the<br/>
-                     number lines inserted before.<br/>
-<br/>
- :empty-lines-after  Set this to the number of lines the should be inserted<br/>
-                     after the new item.  Overrides :empty-lines for the<br/>
-                     number of lines inserted after.<br/>
-<br/>
- :clock-in           Start the clock in this item.<br/>
-<br/>
- :clock-keep         Keep the clock running when filing the captured entry.<br/>
-<br/>
- :clock-resume       Start the interrupted clock when finishing the capture.<br/>
-                     Note that :clock-keep has precedence over :clock-resume.<br/>
-                     When setting both to `t', the current clock will run and<br/>
-                     the previous one will not be resumed.<br/>
-<br/>
- :unnarrowed         Do not narrow the target buffer, simply show the<br/>
-                     full buffer.  Default is to narrow it so that you<br/>
-                     only see the new stuff.<br/>
-<br/>
- :table-line-pos     Specification of the location in the table where the<br/>
-                     new line should be inserted.  It should be a string like<br/>
-                     "II-3", meaning that the new line should become the<br/>
-                     third line before the second horizontal separator line.<br/>
-<br/>
- :kill-buffer        If the target file was not yet visited by a buffer when<br/>
-                     capture was invoked, kill the buffer again after capture<br/>
-                     is finalized.<br/>
-<br/>
-The template defines the text to be inserted.  Often this is an<br/>
-org-mode entry (so the first line should start with a star) that<br/>
-will be filed as a child of the target headline.  It can also be<br/>
-freely formatted text.  Furthermore, the following %-escapes will<br/>
-be replaced with content and expanded in this order:<br/>
-<br/>
-  %[pathname] Insert the contents of the file given by `pathname'.<br/>
-  %(sexp)     Evaluate elisp `(sexp)' and replace with the result.<br/>
-  %<...>      The result of format-time-string on the ... format specification.<br/>
-  %t          Time stamp, date only.<br/>
-  %T          Time stamp with date and time.<br/>
-  %u, %U      Like the above, but inactive time stamps.<br/>
-  %i          Initial content, copied from the active region.  If %i is<br/>
-              indented, the entire inserted text will be indented as well.<br/>
-  %a          Annotation, normally the link created with `org-store-link'.<br/>
-  %A          Like %a, but prompt for the description part.<br/>
-  %l          Like %a, but only insert the literal link.<br/>
-  %c          Current kill ring head.<br/>
-  %x          Content of the X clipboard.<br/>
-  %k          Title of currently clocked task.<br/>
-  %K          Link to currently clocked task.<br/>
-  %n          User name (taken from `user-full-name').<br/>
-  %f          File visited by current buffer when org-capture was called.<br/>
-  %F          Full path of the file or directory visited by current buffer.<br/>
-  %:keyword   Specific information for certain link types, see below.<br/>
-  %^g         Prompt for tags, with completion on tags in target file.<br/>
-  %^G         Prompt for tags, with completion on all tags in all agenda files.<br/>
-  %^t         Like %t, but prompt for date.  Similarly %^T, %^u, %^U.<br/>
-              You may define a prompt like: %^{Please specify birthday}t<br/>
-  %^C         Interactive selection of which kill or clip to use.<br/>
-  %^L         Like %^C, but insert as link.<br/>
-  %^{prop}p   Prompt the user for a value for property `prop'.<br/>
-  %^{prompt}  Prompt the user for a string and replace this sequence with it.<br/>
-              A default value and a completion table ca be specified like this:<br/>
-              %^{prompt|default|completion2|completion3|...}.<br/>
-  %?          After completing the template, position cursor here.<br/>
-  %\n         Insert the text entered at the nth %^{prompt}, where `n' is<br/>
-              a number, starting from 1.<br/>
-<br/>
-Apart from these general escapes, you can access information specific to<br/>
-the link type that is created.  For example, calling `org-capture' in emails<br/>
-or in Gnus will record the author and the subject of the message, which you<br/>
-can access with "%:from" and "%:subject", respectively.  Here is a<br/>
-complete list of what is recorded for each link type.<br/>
-<br/>
-Link type               |  Available information<br/>
-------------------------+------------------------------------------------------<br/>
-bbdb                    |  %:type %:name %:company<br/>
-vm, wl, mh, mew, rmail, |  %:type %:subject %:message-id<br/>
-gnus                    |  %:from %:fromname %:fromaddress<br/>
-                        |  %:to   %:toname   %:toaddress<br/>
-                        |  %:fromto (either "to NAME" or "from NAME")<br/>
-                        |  %:date %:date-timestamp (as active timestamp)<br/>
-                        |  %:date-timestamp-inactive (as inactive timestamp)<br/>
-gnus                    |  %:group, for messages also all email fields<br/>
-w3, w3m                 |  %:type %:url<br/>
-info                    |  %:type %:file %:node<br/>
-calendar                |  %:type %:date<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-This variable was introduced, or its default value was changed, in<br/>
-version 24.1 of Emacs.<br/>
+<strong>org-capture-templates</strong> is a variable defined in `<code>org-capture.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Templates for the creation of new entries.</br>
+</br>
+Each entry is a list with the following items:</br>
+</br>
+keys         The keys that will select the template, as a string, characters</br>
+             only, for example "a" for a template to be selected with a</br>
+             single key, or "bt" for selection with two keys.  When using</br>
+             several keys, keys using the same prefix key must be together</br>
+             in the list and preceded by a 2-element entry explaining the</br>
+             prefix key, for example</br>
+</br>
+                     ("b" "Templates for marking stuff to buy")</br>
+</br>
+             The "C" key is used by default for quick access to the</br>
+             customization of the template variable.  But if you want to use</br>
+             that key for a template, you can.</br>
+</br>
+description  A short string describing the template, will be shown during</br>
+             selection.</br>
+</br>
+type         The type of entry.  Valid types are:</br>
+               entry       an Org-mode node, with a headline.  Will be</br>
+                           filed as the child of the target entry or as</br>
+                           a top-level entry.</br>
+               item        a plain list item, will be placed in the</br>
+                           first plain list at the target</br>
+                           location.</br>
+               checkitem   a checkbox item.  This differs from the</br>
+                           plain list item only is so far as it uses a</br>
+                           different default template.</br>
+               table-line  a new line in the first table at target location.</br>
+               plain       text to be inserted as it is.</br>
+</br>
+target       Specification of where the captured item should be placed.</br>
+             In Org-mode files, targets usually define a node.  Entries will</br>
+             become children of this node, other types will be added to the</br>
+             table or list in the body of this node.</br>
+</br>
+             Most target specifications contain a file name.  If that file</br>
+             name is the empty string, it defaults to `org-default-notes-file'.</br>
+             A file can also be given as a variable, function, or Emacs Lisp</br>
+             form.</br>
+</br>
+             Valid values are:</br>
+</br>
+             (file "path/to/file")</br>
+                 Text will be placed at the beginning or end of that file</br>
+</br>
+             (id "id of existing org entry")</br>
+                 File as child of this entry, or in the body of the entry</br>
+</br>
+             (file+headline "path/to/file" "node headline")</br>
+                 Fast configuration if the target heading is unique in the file</br>
+</br>
+             (file+olp "path/to/file" "Level 1 heading" "Level 2" ...)</br>
+                 For non-unique headings, the full path is safer</br>
+</br>
+             (file+regexp  "path/to/file" "regexp to find location")</br>
+                 File to the entry matching regexp</br>
+</br>
+             (file+datetree "path/to/file")</br>
+                 Will create a heading in a date tree for today's date</br>
+</br>
+             (file+datetree+prompt "path/to/file")</br>
+                 Will create a heading in a date tree, prompts for date</br>
+</br>
+             (file+function "path/to/file" function-finding-location)</br>
+                 A function to find the right location in the file</br>
+</br>
+             (clock)</br>
+                File to the entry that is currently being clocked</br>
+</br>
+             (function function-finding-location)</br>
+                Most general way, write your own function to find both</br>
+                file and location</br>
+</br>
+template     The template for creating the capture item.  If you leave this</br>
+             empty, an appropriate default template will be used.  See below</br>
+             for more details.  Instead of a string, this may also be one of</br>
+</br>
+                 (file "/path/to/template-file")</br>
+                 (function function-returning-the-template)</br>
+</br>
+             in order to get a template from a file, or dynamically</br>
+             from a function.</br>
+</br>
+The rest of the entry is a property list of additional options.  Recognized</br>
+properties are:</br>
+</br>
+ :prepend            Normally newly captured information will be appended at</br>
+                     the target location (last child, last table line,</br>
+                     last list item...).  Setting this property will</br>
+                     change that.</br>
+</br>
+ :immediate-finish   When set, do not offer to edit the information, just</br>
+                     file it away immediately.  This makes sense if the</br>
+                     template only needs information that can be added</br>
+                     automatically.</br>
+</br>
+ :jump-to-captured   When set, jump to the captured entry when finished.</br>
+</br>
+ :empty-lines        Set this to the number of lines the should be inserted</br>
+                     before and after the new item.  Default 0, only common</br>
+                     other value is 1.</br>
+</br>
+ :empty-lines-before Set this to the number of lines the should be inserted</br>
+                     before the new item.  Overrides :empty-lines for the</br>
+                     number lines inserted before.</br>
+</br>
+ :empty-lines-after  Set this to the number of lines the should be inserted</br>
+                     after the new item.  Overrides :empty-lines for the</br>
+                     number of lines inserted after.</br>
+</br>
+ :clock-in           Start the clock in this item.</br>
+</br>
+ :clock-keep         Keep the clock running when filing the captured entry.</br>
+</br>
+ :clock-resume       Start the interrupted clock when finishing the capture.</br>
+                     Note that :clock-keep has precedence over :clock-resume.</br>
+                     When setting both to `t', the current clock will run and</br>
+                     the previous one will not be resumed.</br>
+</br>
+ :unnarrowed         Do not narrow the target buffer, simply show the</br>
+                     full buffer.  Default is to narrow it so that you</br>
+                     only see the new stuff.</br>
+</br>
+ :table-line-pos     Specification of the location in the table where the</br>
+                     new line should be inserted.  It should be a string like</br>
+                     "II-3", meaning that the new line should become the</br>
+                     third line before the second horizontal separator line.</br>
+</br>
+ :kill-buffer        If the target file was not yet visited by a buffer when</br>
+                     capture was invoked, kill the buffer again after capture</br>
+                     is finalized.</br>
+</br>
+The template defines the text to be inserted.  Often this is an</br>
+org-mode entry (so the first line should start with a star) that</br>
+will be filed as a child of the target headline.  It can also be</br>
+freely formatted text.  Furthermore, the following %-escapes will</br>
+be replaced with content and expanded in this order:</br>
+</br>
+  %[pathname] Insert the contents of the file given by `pathname'.</br>
+  %(sexp)     Evaluate elisp `(sexp)' and replace it with the results.</br>
+              For convenience, %:keyword (see below) placeholders within</br>
+              the expression will be expanded prior to this.</br>
+  %<...>      The result of format-time-string on the ... format specification.</br>
+  %t          Time stamp, date only.</br>
+  %T          Time stamp with date and time.</br>
+  %u, %U      Like the above, but inactive time stamps.</br>
+  %i          Initial content, copied from the active region.  If %i is</br>
+              indented, the entire inserted text will be indented as well.</br>
+  %a          Annotation, normally the link created with `org-store-link'.</br>
+  %A          Like %a, but prompt for the description part.</br>
+  %l          Like %a, but only insert the literal link.</br>
+  %c          Current kill ring head.</br>
+  %x          Content of the X clipboard.</br>
+  %k          Title of currently clocked task.</br>
+  %K          Link to currently clocked task.</br>
+  %n          User name (taken from the variable `user-full-name').</br>
+  %f          File visited by current buffer when org-capture was called.</br>
+  %F          Full path of the file or directory visited by current buffer.</br>
+  %:keyword   Specific information for certain link types, see below.</br>
+  %^g         Prompt for tags, with completion on tags in target file.</br>
+  %^G         Prompt for tags, with completion on all tags in all agenda files.</br>
+  %^t         Like %t, but prompt for date.  Similarly %^T, %^u, %^U.</br>
+              You may define a prompt like: %^{Please specify birthday}t</br>
+  %^C         Interactive selection of which kill or clip to use.</br>
+  %^L         Like %^C, but insert as link.</br>
+  %^{prop}p   Prompt the user for a value for property `prop'.</br>
+  %^{prompt}  Prompt the user for a string and replace this sequence with it.</br>
+              A default value and a completion table ca be specified like this:</br>
+              %^{prompt|default|completion2|completion3|...}.</br>
+  %?          After completing the template, position cursor here.</br>
+  %\n         Insert the text entered at the nth %^{prompt}, where `n' is</br>
+              a number, starting from 1.</br>
+</br>
+Apart from these general escapes, you can access information specific to</br>
+the link type that is created.  For example, calling `org-capture' in emails</br>
+or in Gnus will record the author and the subject of the message, which you</br>
+can access with "%:from" and "%:subject", respectively.  Here is a</br>
+complete list of what is recorded for each link type.</br>
+</br>
+Link type               |  Available information</br>
+------------------------+------------------------------------------------------</br>
+bbdb                    |  %:type %:name %:company</br>
+vm, wl, mh, mew, rmail, |  %:type %:subject %:message-id</br>
+gnus                    |  %:from %:fromname %:fromaddress</br>
+                        |  %:to   %:toname   %:toaddress</br>
+                        |  %:fromto (either "to NAME" or "from NAME")</br>
+                        |  %:date %:date-timestamp (as active timestamp)</br>
+                        |  %:date-timestamp-inactive (as inactive timestamp)</br>
+gnus                    |  %:group, for messages also all email fields</br>
+w3, w3m                 |  %:type %:url</br>
+info                    |  %:type %:file %:node</br>
+calendar                |  %:type %:date</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.1 of Emacs.

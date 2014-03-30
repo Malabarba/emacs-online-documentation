@@ -1,87 +1,86 @@
-<strong>eshell-variable-aliases-list</strong> is a variable defined in `<code>esh-var.el</code>'.<br/>
-Its value is shown below.<br/>
-<br/>
-  This variable may be risky if used as a file-local variable.<br/>
-<br/>
-Documentation:<br/>
-This list provides aliasing for variable references.<br/>
-It is very similar in concept to what `eshell-user-aliases-list' does<br/>
-for commands.  Each member of this defines defines the name of a<br/>
-command, and the Lisp value to return for that variable if it is<br/>
-accessed via the syntax '$NAME'.<br/>
-<br/>
-If the value is a function, that function will be called with two<br/>
-arguments: the list of the indices that was used in the reference, and<br/>
-whether the user is requesting the length of the ultimate element.<br/>
-For example, a reference of '$NAME[10][20]' would result in the<br/>
-function for alias `NAME' being called (assuming it were aliased to a<br/>
-function), and the arguments passed to this function would be the list<br/>
-'(10 20)', and nil.<br/>
-<br/>
-You can customize this variable.<br/>
-<br/>
-Value: (("COLUMNS"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (window-width))<br/>
-  t)<br/>
- ("LINES"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (window-height))<br/>
-  t)<br/>
- ("_"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (if<br/>
-	(not indices)<br/>
-	(car<br/>
-	 (last eshell-last-arguments))<br/>
-      (eshell-apply-indices eshell-last-arguments indices))))<br/>
- ("?" eshell-last-command-status)<br/>
- ("$" eshell-last-command-result)<br/>
- ("0" eshell-command-name)<br/>
- ("1"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 0 eshell-command-arguments)))<br/>
- ("2"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 1 eshell-command-arguments)))<br/>
- ("3"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 2 eshell-command-arguments)))<br/>
- ("4"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 3 eshell-command-arguments)))<br/>
- ("5"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 4 eshell-command-arguments)))<br/>
- ("6"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 5 eshell-command-arguments)))<br/>
- ("7"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 6 eshell-command-arguments)))<br/>
- ("8"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 7 eshell-command-arguments)))<br/>
- ("9"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (nth 8 eshell-command-arguments)))<br/>
- ("*"<br/>
-  (lambda<br/>
-    (indices)<br/>
-    (if<br/>
-	(not indices)<br/>
-	eshell-command-arguments<br/>
-      (eshell-apply-indices eshell-command-arguments indices)))))<br/>
-<br/>
+<strong>eshell-variable-aliases-list</strong> is a variable defined in `<code>esh-var.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+This list provides aliasing for variable references.</br>
+It is very similar in concept to what `eshell-user-aliases-list' does</br>
+for commands.  Each member of this defines the name of a command,</br>
+and the Lisp value to return for that variable if it is accessed</br>
+via the syntax '$NAME'.</br>
+</br>
+If the value is a function, that function will be called with two</br>
+arguments: the list of the indices that was used in the reference, and</br>
+whether the user is requesting the length of the ultimate element.</br>
+For example, a reference of '$NAME[10][20]' would result in the</br>
+function for alias `NAME' being called (assuming it were aliased to a</br>
+function), and the arguments passed to this function would be the list</br>
+'(10 20)', and nil.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("COLUMNS"
+  (lambda
+    (indices)
+    (window-width))
+  t)
+ ("LINES"
+  (lambda
+    (indices)
+    (window-height))
+  t)
+ ("_"
+  (lambda
+    (indices)
+    (if
+	(not indices)
+	(car
+	 (last eshell-last-arguments))
+      (eshell-apply-indices eshell-last-arguments indices))))
+ ("?" eshell-last-command-status)
+ ("$" eshell-last-command-result)
+ ("0" eshell-command-name)
+ ("1"
+  (lambda
+    (indices)
+    (nth 0 eshell-command-arguments)))
+ ("2"
+  (lambda
+    (indices)
+    (nth 1 eshell-command-arguments)))
+ ("3"
+  (lambda
+    (indices)
+    (nth 2 eshell-command-arguments)))
+ ("4"
+  (lambda
+    (indices)
+    (nth 3 eshell-command-arguments)))
+ ("5"
+  (lambda
+    (indices)
+    (nth 4 eshell-command-arguments)))
+ ("6"
+  (lambda
+    (indices)
+    (nth 5 eshell-command-arguments)))
+ ("7"
+  (lambda
+    (indices)
+    (nth 6 eshell-command-arguments)))
+ ("8"
+  (lambda
+    (indices)
+    (nth 7 eshell-command-arguments)))
+ ("9"
+  (lambda
+    (indices)
+    (nth 8 eshell-command-arguments)))
+ ("*"
+  (lambda
+    (indices)
+    (if
+	(not indices)
+	eshell-command-arguments
+      (eshell-apply-indices eshell-command-arguments indices)))))
+</pre></br>

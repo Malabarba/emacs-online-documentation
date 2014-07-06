@@ -1,118 +1,64 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!-- Code for Google Analytics -->
-    <script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+---
+title: ""
+layout: default
+---
+<h2>Now with an Android App!</h2>
+<p>The app is free, and <a href="app.html">available here</a>. It only
+  requires internet permission (for accessing the doc strings in this
+  website), so you should feel safe to use it. If you still don't
+  trust me,
+  <a href="https://github.com/Bruce-Connor/emacs-documentation-android/">
+    here's the source code</a>.</p>
 
-     ga('create', 'UA-42656294-2', 'bruce-connor.github.io');
-     ga('send', 'pageview');
+<h2>What is this?</h2>
+<p>This is <em>not</em> a copy of the Emacs manual, or the
+  elisp reference.</p>
 
-    </script>
+<p>This is a list of all functions, variables and faces defined in
+  the latest Emacs version, with links to their respective
+  built-in documentations. This documentation is the one you
+  get by
+  calling <code>describe-function</code>, <code>describe-variable</code>
+  or <code>describe-face</code>.</p>
 
-    <title>Emacs Online Documentation</title>
-  </head>
+<h2>Wait, so everything in here is already inside Emacs?</h2>          
+<p>Yes, the information contained here is easily accessible
+  from inside Emacs. In fact, it is generated directly from
+  the latest stable version of Emacs.</p>
 
-  <body>
-    <div id="container">
-      <div class="inner">
+<h2>Then what's the point?</h2>
+<p>The point is that this information wasn't available
+  anywhere online. Many functions are documented in the elisp
+  reference, and others are explained in the Emacs manual,
+  but most weren't described anywhere at all.</p>
+<p>By making it available here you can easily link to it from your
+  geeky Emacs blog
+  (see <a href="http://endlessparentheses.com/Checkdoc%252C-Package-Developing%252C-and-Cakes.html">
+    Endless Parentheses</a> or
+  <a href="http://www.lunaryorn.com/2014/03/26/search-based-fontification-with-keywords.html">
+    lunarsite</a>, for instance).</p>
+<p>I frequently missed having this information at hand,
+  because even when I'm away from the computer I'm usualy
+  thinking about Emacs (obsessive, I know). That's why I
+  decided to make it available somewhere outside Emacs.</p>
 
-        <header>
-          <h1>Emacs Online Documentation</h1>
-          <h2>An updated online documentation of <em>ALL</em> Emacs built-in functions and variables.</h2>
-        </header>
+<ul>
+  <li><a href="variables.html#variables">Here are the Variables</a></li>
+  <li><a href="functions.html#functions">Here are the Functions</a></li>
+  <li><a href="faces.html#faces">Here are the Faces</a></li>
+</ul>
 
-        <section id="downloads" class="clearfix">
-          <a href="app.html#main_content" id="android" class="button"><span>App</span></a>
-          <a href="variables.html#variables" id="document" class="button"><span>Variables</span></a>
-          <a href="functions.html#functions" id="document" class="button"><span>Functions</span></a>
-          <a href="faces.html#faces" id="document" class="button"><span>Faces</span></a>
-        </section>
-        <hr>
-        <section id="main_content">
-          <h2>Now with an Android App!</h2>
-          <p>The app is free, and <a href="app.html">available
-              here</a>. As you'll notice, it <strong>requires no
-              permissions</strong> at all, so you should feel safe to
-              use it.</p>
+<h2>Can I borrow this from you?</h2>
+<p>The information contained here is not mine, being a part
+  of Emacs it is available under
+  the <a href="http://www.free-soft.org/gpl_history/emacs_gpl.html">GPL
+    License</a>. I didn't write these documentations, I simply
+  generate the HTML pages and maintain this website.</p>
+<p>If you want to use the HTML files for something, download
+  links are below, but please reference where you got
+  them.</p>
 
-          <h2>What is this?</h2>
-          <p>This is <em>not</em> a copy of the Emacs manual, or the
-          elisp reference.</p>
-          
-          <p>This is a list of all functions, variables and faces defined in
-          the latest Emacs version, with links to their respective
-          built-in documentations. This documentation is the one you
-          get by
-          calling <code>describe-function</code>, <code>describe-variable</code>
-           or <code>describe-face</code>.</p>
+<h2>I found a missing/buggy/outdated page, how do I help?</h2>
+<p>Thanks a lot for the help. Just
+  <a href="https://github.com/Bruce-Connor/emacs-online-documentation/issues/new">open an issue here on github</a>.</p>
 
-          <h2>Wait, so everything in here is already inside Emacs?</h2>          
-          <p>Yes, the information contained here is easily accessible
-          from inside Emacs. In fact, it is generated directly from
-          the latest stable version of Emacs.</p>
-
-          <h2>Then what's the point?</h2>
-          <p>The point is that this information wasn't available
-          anywhere online. Many functions are documented in the elisp
-          reference, and others are explained in the Emacs manual,
-          but most weren't described anywhere at all.</p>
-          <p>By making it available here you can easily link to it
-            from your geeky Emacs blog
-            (see <a href="http://www.lunaryorn.com/2014/03/26/search-based-fontification-with-keywords.html">lunarsite</a>,
-            for instance).</p>
-          <p>I frequently missed having this information at hand,
-          because even when I'm away from the computer I'm usualy
-          thinking about Emacs (obsessive, I know). That's why I
-          decided to make it available somewhere outside Emacs.</p>
-
-          <ul>
-            <li><a href="variables.html#variables">Here are the Variables</a></li>
-            <li><a href="functions.html#functions">Here are the Functions</a></li>
-            <li><a href="faces.html#faces">Here are the Faces</a></li>
-          </ul>
-          
-          <h2>Can I borrow this from you?</h2>
-          <p>The information contained here is not mine, being a part
-          of Emacs it is available under
-          the <a href="http://www.free-soft.org/gpl_history/emacs_gpl.html">GPL
-          License</a>. I didn't write these documentations, I simply
-          generate the HTML pages and maintain this website.</p>
-	      <p>If you want to use the HTML files for something, download
-	      links are below, but please reference where you got
-	      them.</p>
-
-          <h2>I found a missing/buggy/outdated page, how do I help?</h2>
-          <p>Thanks a lot for the help. Just
-            <a href="https://github.com/Bruce-Connor/emacs-online-documentation/issues/new">open an issue here on github</a>.</p>
-        </section>
-        <hr/>
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/Bruce-Connor/emacs-online-documentation/zipball/gh-pages"
-          id="download-zip" class="longbutton button"><span>Download .zip</span></a>
-          <a href="https://github.com/Bruce-Connor/emacs-online-documentation/tarball/gh-pages"
-          id="download-tar-gz" class="longbutton button"><span>Download .tar.gz</span></a>
-          
-        </section>
-        <footer>
-          Emacs Online Documentation is maintained by Artur Malabarba.<br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
-    </div>
-  </body>
-</html>

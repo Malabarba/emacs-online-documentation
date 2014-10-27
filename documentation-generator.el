@@ -46,7 +46,7 @@
 (defconst docgen//version "0.5" "Version of the documentation-generator.el package.")
 (defconst docgen//version-int 3 "Version of the documentation-generator.el package, as an integer.")
 (defun docgen//bug-report ()
-  "Opens github issues page in a web browser. Please send me any bugs you find, and please inclue your emacs and dg versions."
+  "Opens github issues page in a web browser. Please send me any bugs you find, and please include your emacs and dg versions."
   (interactive)
   (browse-url "https://github.com/Bruce-Connor/emacs-online-documentation/issues/new")
   (message "Your docgen//version is: %s, and your emacs version is: %s.\nPlease include this in your report!"

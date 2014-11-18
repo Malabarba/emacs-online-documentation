@@ -366,7 +366,7 @@ Returns the documentation as a string."
 
             ;; Mention if it's an alias.
             (unless (eq alias variable)
-              (insert (format "  <li>This variable is an alias for `<strong><a href=\"%s\">%s</a></strong>'.</li>\n"
+              (insert (format "  <li>This variable is an alias for `<strong><a href=\"%s.html\">%s</a></strong>'.</li>\n"
                               (url-hexify-string (docgen//clean-symbol alias))
                               (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))))
 
@@ -374,7 +374,7 @@ Returns the documentation as a string."
               (insert "<li>  <strong>This variable is obsolete"
                       (if (nth 2 obsolete) (format " since %s" (nth 2 obsolete)) "")
                       (cond ((stringp use) (concat ";</br>\n  " use))
-                            (use (format ";</br>\n  use `<a href=\"%s\">%s</a>' instead."
+                            (use (format ";</br>\n  use `<a href=\"%s.html\">%s</a>' instead."
                                          (url-hexify-string (docgen//clean-symbol (car obsolete)))
                                          (replace-regexp-in-string "<" "&lt;" (symbol-name (car obsolete)))))
                             (t "."))
@@ -473,7 +473,7 @@ variable.</li>"))
          (if aliased
              ;; Aliases are Lisp functions, so we need to check
              ;; aliases before functions.
-             (format "an alias for `<strong><a href=\"%s\">%s</a></strong>'"
+             (format "an alias for `<strong><a href=\"%s.html\">%s</a></strong>'"
                      (url-hexify-string (docgen//clean-symbol real-def))
                      (replace-regexp-in-string
                       "<" "&lt;" (symbol-name real-def)))
@@ -610,11 +610,11 @@ variable.</li>"))
                     (setq face alias)
                     (insert
                      "<ul>"
-                     (format "<li>%s is an alias for the face `<strong><a href=\"%s\">%s</a></strong>'.</li>"
+                     (format "<li>%s is an alias for the face `<strong><a href=\"%s.html\">%s</a></strong>'.</li>"
                              f (url-hexify-string (docgen//clean-symbol alias))
                              (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))
                      (if (setq obsolete (get f 'obsolete-face))
-                         (format "<li>  This face is obsolete%s; use `<strong><a href=\"%s\">%s</a></strong>' instead.</li>"
+                         (format "<li>  This face is obsolete%s; use `<strong><a href=\"%s.html\">%s</a></strong>' instead.</li>"
                                  (if (stringp obsolete) (format " since %s" obsolete) "")
                                  (url-hexify-string (docgen//clean-symbol alias))
                                  (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))
@@ -636,7 +636,7 @@ variable.</li>"))
                             (if (and (eq (car a) :inherit) (not (string= attr "unspecified")))
                                 ;; Make a hyperlink to the parent face.
                                 (format
-                                 "<a href=\"%s\">%s</a>"
+                                 "<a href=\"%s.html\">%s</a>"
                                  (url-hexify-string (docgen//clean-string attr))
                                  (replace-regexp-in-string "<" "&lt;" attr))
                               (replace-regexp-in-string "<" "&lt;" attr))

@@ -102,7 +102,8 @@
   (setq docgen//documentation-template
         (with-temp-buffer
           (insert-file-contents-literally
-           (file-relative-name "documentation-template.htmlt" docgen//dir))))
+           (file-relative-name "documentation-template.htmlt" docgen//dir))
+          (buffer-string)))
   (docgen//log "Generate the doc for functions")
   ;;;;;;;;
   (docgen//log "Create a doc file for each symbol.")

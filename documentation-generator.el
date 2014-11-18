@@ -98,9 +98,12 @@
   ;; (append-to-file (format docgen//sql-create-string "Functions") nil docgen//sql-script-file)
   ;; (append-to-file (format docgen//sql-create-string "Variables") nil docgen//sql-script-file)
   (docgen//log "Generate the doc for functions")
-  (let ((fill-column 1000) ;;This is to avoid artificial line breaks in the description.
-        (docgen//sql-table-name "Functions")
-        (docgen//description 'docgen//describe-function) ;;This tells `docgen//doc-to-html' what describing function to use.
+  ;; Create a doc file for each symbol.
+  (let ((docgen//sql-table-name "Functions")
+        ;;This is to avoid artificial line breaks in the description.
+        (fill-column 1000)
+        ;;This tells `docgen//doc-to-html' what describing function to use.
+        (docgen//description 'docgen//describe-function)
         (docgen//format "Fun/%s.html")
         (docgen//file-list 'docgen//file-list-function))
     (mapc 'docgen//symbol-to-file (docgen//function-list))) ;;This creates a file for each fbound symbol.

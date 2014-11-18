@@ -612,7 +612,13 @@ variable.</li>"))
                 (insert "</u>"))))
           (save-excursion
             (while (search-forward "\n" nil t)
-              (replace-match "</br>\n" nil nil)))))
+              (replace-match "</br>\n" nil nil)))
+          ;; ;; This is a snippet we'll have to improve in order to
+          ;; ;; support in-body links.
+          ;; (save-excursion
+          ;;   (re-search-backward "`\\([^`']+\\)'" nil t)
+          ;;   (help-xref-button 1 'help-function-def function file-name))
+          ))
 
       ;; Return the text.
       (buffer-string))))

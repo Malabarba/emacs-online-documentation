@@ -143,6 +143,42 @@
       (goto-char (point-max))
       (insert-file-contents-literally footer))))
 
+;; (defun docgen//faces-file-create ()
+;;   (docgen//log "First, let's require all built-in features. So we know everything is defined.")
+;;   (mapc
+;;    (lambda (f) (condition-case nil
+;;               (progn (message "%s" f)
+;;                      (require f nil t))
+;;             (error nil))) ;;no-error because some features are obsolete and throw errors.
+;;    (docgen//full-feature-lister))
+;;   ;; These lists will be used to create the functions.html and variables.html files
+;;   (setq docgen//file-list-variable nil
+;;         docgen//file-list-function nil
+;;         docgen//file-list-face nil)
+;;   (let ((docgen//sql-table-name "Faces")
+;;         (docgen//description 'docgen//describe-face)
+;;         (docgen//format "Face/%s.html")
+;;         (fill-column 1000) 
+;;         (docgen//file-list 'docgen//file-list-face)
+;;         (fun    (concat docgen//dir "functions.html"))
+;;         (var    (concat docgen//dir "variables.html"))
+;;         (face   (concat docgen//dir "faces.html"))
+;;         (header (concat docgen//dir "header.htmlt"))
+;;         (footer (concat docgen//dir "footer.htmlt")))
+;;     (mapc
+;;      (lambda (s)
+;;        (let* ((file (format docgen//format (docgen//clean-symbol s)))
+;;               (path (concat docgen//dir file)))
+;;          (add-to-list docgen//file-list (cons (symbol-name s) (url-hexify-string file)))))
+;;      (docgen//face-list))    
+;;     (with-temp-file face
+;;       (insert-file-contents-literally header)
+;;       (goto-char (point-max))
+;;       (insert (docgen//cons-list-to-item-list docgen//file-list-face "Faces"))
+;;       (goto-char (point-max))
+;;       (insert-file-contents-literally footer))))
+
+
 (defun docgen//log (&rest r)
   ""
   (when docgen//verbose

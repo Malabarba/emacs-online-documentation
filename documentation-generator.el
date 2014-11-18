@@ -139,7 +139,7 @@
     (with-temp-file face
       (insert-file-contents-literally header)
       (goto-char (point-max))
-      (insert (docgen//cons-list-to-item-list docgen//file-list-variable "Faces"))
+      (insert (docgen//cons-list-to-item-list docgen//file-list-face "Faces"))
       (goto-char (point-max))
       (insert-file-contents-literally footer))))
 

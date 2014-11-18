@@ -38,8 +38,7 @@
 ;; 0.1 - 20130811 - Created File.
 ;;; Code:
 
-(eval-when-compile (require 'cl-lib))
-(require 'cl-lib)
+(eval-and-compile (require 'cl-lib))
 (load-file "./full-feature-lister.elc")
 (load-file "./htmlize.elc")
 

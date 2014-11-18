@@ -81,7 +81,8 @@
                      (require f nil t))
             (error nil))) ;;no-error because some features are obsolete and throw errors.
    (docgen//full-feature-lister))
-  ;; These lists will be used to create the functions.html and variables.html files
+  ;;;;;;;;
+  (docgen//log "These lists will be used to create the functions.html and variables.html files")
   (setq docgen//file-list-variable nil
         docgen//file-list-function nil
         docgen//file-list-face nil)
@@ -98,7 +99,8 @@
   ;; (append-to-file (format docgen//sql-create-string "Functions") nil docgen//sql-script-file)
   ;; (append-to-file (format docgen//sql-create-string "Variables") nil docgen//sql-script-file)
   (docgen//log "Generate the doc for functions")
-  ;; Create a doc file for each symbol.
+  ;;;;;;;;
+  (docgen//log "Create a doc file for each symbol.")
   (let ((docgen//sql-table-name "Functions")
         ;;This is to avoid artificial line breaks in the description.
         (fill-column 1000)
@@ -106,7 +108,8 @@
         (docgen//description 'docgen//describe-function)
         (docgen//format "Fun/%s.html")
         (docgen//file-list 'docgen//file-list-function))
-    (mapc 'docgen//symbol-to-file (docgen//function-list))) ;;This creates a file for each fbound symbol.
+    ;; This creates a file for each fbound symbol.
+    (mapc 'docgen//symbol-to-file (docgen//function-list))) 
   (docgen//log "Generate the doc for variables")
   (let ((docgen//sql-table-name "Variables")
         (docgen//description 'docgen//describe-variable)
@@ -129,7 +132,7 @@
 
 (defun docgen//create-file-from-list (list file)
   "Convert the cons LIST into a FILE listing all links of the type."
-  (let ((name    (concat docgen//dir (downcase file) ".html"))
+  (let ((name   (concat docgen//dir (downcase file) ".html"))
         (header (concat docgen//dir "header.htmlt"))
         (footer (concat docgen//dir "footer.htmlt")))
     (with-temp-file name

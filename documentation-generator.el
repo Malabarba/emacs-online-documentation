@@ -121,28 +121,21 @@
         (fill-column 1000) 
         (docgen//file-list 'docgen//file-list-face))
     (mapc 'docgen//symbol-to-file (docgen//face-list)))
+  ;; Create a file listing all of the docs.
   (docgen//log "Recreate the index.html")
-  (let ((fun    (concat docgen//dir "functions.html"))
-        (var    (concat docgen//dir "variables.html"))
-        (face   (concat docgen//dir "faces.html"))
+  (docgen//create-file-from-list docgen//file-list-function "Functions")
+  (docgen//create-file-from-list docgen//file-list-variable "Variables")
+  (docgen//create-file-from-list docgen//file-list-face "Faces"))
+
+(defun docgen//create-file-from-list (list file)
+  "Convert the cons LIST into a FILE listing all links of the type."
+  (let ((name    (concat docgen//dir (downcase file) ".html"))
         (header (concat docgen//dir "header.htmlt"))
         (footer (concat docgen//dir "footer.htmlt")))
-    (with-temp-file fun
+    (with-temp-file name
       (insert-file-contents-literally header)
       (goto-char (point-max))
-      (insert (docgen//cons-list-to-item-list docgen//file-list-function "Functions"))
-      (goto-char (point-max))
-      (insert-file-contents-literally footer))
-    (with-temp-file var
-      (insert-file-contents-literally header)
-      (goto-char (point-max))
-      (insert (docgen//cons-list-to-item-list docgen//file-list-variable "Variables"))
-      (goto-char (point-max))
-      (insert-file-contents-literally footer))
-    (with-temp-file face
-      (insert-file-contents-literally header)
-      (goto-char (point-max))
-      (insert (docgen//cons-list-to-item-list docgen//file-list-face "Faces"))
+      (insert (docgen//cons-list-to-item-list docgen//file-list-function file))
       (goto-char (point-max))
       (insert-file-contents-literally footer))))
 

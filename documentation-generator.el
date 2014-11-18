@@ -51,9 +51,10 @@
   (message "Your docgen//version is: %s, and your emacs version is: %s.\nPlease include this in your report!"
            docgen//version emacs-version))
 
-(defcustom docgen//dir (expand-file-name "~/Git-Projects/online-documentation-pages/") "" :type 'directory)
+(defcustom docgen//outdir (expand-file-name "~/Git-Projects/online-documentation-pages/") "" :type 'directory)
+(defcustom docgen//dir (expand-file-name "./") "" :type 'directory)
 
-(defcustom docgen//sql-script-file (concat docgen//dir "renew-tables.sql") "" :type 'file)
+(defcustom docgen//sql-script-file (expand-file-name "renew-tables.sql" docgen//outdir) "" :type 'file)
 (defconst docgen//sql-insert-string "\nINSERT INTO %s(Name, External) VALUES('%s', %s);")
 ;; (defconst docgen//sql-delete-string "\nDROP TABLE IF EXISTS %s;")
 ;; (defconst docgen//sql-create-string "\nCREATE VIRTUAL TABLE %s USING fts4(Name text UNIQUE NOT NULL, External integer);")
@@ -92,11 +93,16 @@
     (error "Can't access sql script file %s" docgen//sql-script-file))
   (with-temp-file docgen//sql-script-file
     (erase-buffer)
-    (insert-file-contents-literally (concat docgen//dir "sql-header.sqlt")))
+    (insert-file-contents-literally
+     (expand-file-name "sql-header.sqlt" docgen//dir)))
   ;; (append-to-file (format docgen//sql-delete-string "Functions") nil docgen//sql-script-file)
   ;; (append-to-file (format docgen//sql-delete-string "Variables") nil docgen//sql-script-file)
   ;; (append-to-file (format docgen//sql-create-string "Functions") nil docgen//sql-script-file)
   ;; (append-to-file (format docgen//sql-create-string "Variables") nil docgen//sql-script-file)
+  (setq docgen//documentation-template
+        (with-temp-buffer
+          (insert-file-contents-literally
+           (file-relative-name "documentation-template.htmlt" docgen//dir))))
   (docgen//log "Generate the doc for functions")
   ;;;;;;;;
   (docgen//log "Create a doc file for each symbol.")
@@ -131,9 +137,9 @@
 
 (defun docgen//create-file-from-list (list file)
   "Convert the cons LIST into a FILE listing all links of the type."
-  (let ((name   (concat docgen//dir (downcase file) ".html"))
-        (header (concat docgen//dir "header.htmlt"))
-        (footer (concat docgen//dir "footer.htmlt")))
+  (let ((name   (concat docgen//outdir (downcase file) ".html"))
+        (header (expand-file-name "header.htmlt" docgen//outdir))
+        (footer (expand-file-name "footer.htmlt" docgen//outdir)))
     (with-temp-file name
       (insert-file-contents-literally header)
       (goto-char (point-max))
@@ -158,15 +164,15 @@
 ;;         (docgen//format "Face/%s.html")
 ;;         (fill-column 1000) 
 ;;         (docgen//file-list 'docgen//file-list-face)
-;;         (fun    (concat docgen//dir "functions.html"))
-;;         (var    (concat docgen//dir "variables.html"))
-;;         (face   (concat docgen//dir "faces.html"))
-;;         (header (concat docgen//dir "header.htmlt"))
-;;         (footer (concat docgen//dir "footer.htmlt")))
+;;         (fun    (concat docgen//outdir "functions.html"))
+;;         (var    (concat docgen//outdir "variables.html"))
+;;         (face   (concat docgen//outdir "faces.html"))
+;;         (header (concat docgen//outdir "header.htmlt"))
+;;         (footer (concat docgen//outdir "footer.htmlt")))
 ;;     (mapc
 ;;      (lambda (s)
 ;;        (let* ((file (format docgen//format (docgen//clean-symbol s)))
-;;               (path (concat docgen//dir file)))
+;;               (path (concat docgen//outdir file)))
 ;;          (add-to-list docgen//file-list (cons (symbol-name s) (url-hexify-string file)))))
 ;;      (docgen//face-list))    
 ;;     (with-temp-file face
@@ -188,6 +194,8 @@
 
 (defvar docgen//sql-table-name nil)
 
+(defvar docgen//documentation-template nil)
+
 (defun docgen//symbol-to-file (s)
   "Takes a symbol, produces an html file with the description.
 
@@ -201,7 +209,7 @@ The symbol name and file name will later be used for creating a
 list of links, so a cons cell like (SYMBOLNAME . FILE) is stored
 in the variable `docgen//file-list'."
   (let* ((file (format docgen//format (docgen//clean-symbol s)))
-         (path (concat docgen//dir file))
+         (path (expand-file-name file docgen//outdir))
          ;; For some reason some symbols which are fbound throw errors
          ;; when calling describe-function (in my case that happened
          ;; with bookmark-map). This is to skip those symbols:
@@ -209,7 +217,8 @@ in the variable `docgen//file-list'."
     (when doc
       (docgen//log "%5d / %d - %s" (setq docgen//count (1+ docgen//count)) docgen//total s)
       (with-temp-file path
-        (insert doc)
+        (insert
+         (format docgen//documentation-template doc))
         (set-buffer-file-coding-system 'no-conversion))
       (push (cons (symbol-name s)
                   (format docgen//format (url-hexify-string (docgen//clean-symbol s))))
@@ -401,7 +410,7 @@ Returns the documentation as a string."
 
             ;; Mention if it's an alias.
             (unless (eq alias variable)
-              (insert (format "  <li>This variable is an alias for `<strong><a href=\"%s.html\">%s</a></strong>'.</li>\n"
+              (insert (format "  <li>This variable is an alias for `<strong><a href=\"/%s\">%s</a></strong>'.</li>\n"
                               (docgen//symbol-to-link alias)
                               (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))))
 
@@ -409,7 +418,7 @@ Returns the documentation as a string."
               (insert "<li>  <strong>This variable is obsolete"
                       (if (nth 2 obsolete) (format " since %s" (nth 2 obsolete)) "")
                       (cond ((stringp use) (concat ";</br>\n  " use))
-                            (use (format ";</br>\n  use `<a href=\"%s.html\">%s</a>' instead."
+                            (use (format ";</br>\n  use `<a href=\"/%s\">%s</a>' instead."
                                          (url-hexify-string (docgen//clean-symbol (car obsolete)))
                                          (replace-regexp-in-string "<" "&lt;" (symbol-name (car obsolete)))))
                             (t "."))
@@ -508,7 +517,7 @@ variable.</li>"))
          (if aliased
              ;; Aliases are Lisp functions, so we need to check
              ;; aliases before functions.
-             (format "an alias for `<strong><a href=\"%s.html\">%s</a></strong>'"
+             (format "an alias for `<strong><a href=\"/%s\">%s</a></strong>'"
                      (docgen//symbol-to-link real-def)
                      (replace-regexp-in-string
                       "<" "&lt;" (symbol-name real-def)))
@@ -646,11 +655,11 @@ variable.</li>"))
                     (setq face alias)
                     (insert
                      "<ul>"
-                     (format "<li>%s is an alias for the face `<strong><a href=\"%s.html\">%s</a></strong>'.</li>"
+                     (format "<li>%s is an alias for the face `<strong><a href=\"/%s\">%s</a></strong>'.</li>"
                              f (docgen//symbol-to-link alias)
                              (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))
                      (if (setq obsolete (get f 'obsolete-face))
-                         (format "<li>  This face is obsolete%s; use `<strong><a href=\"%s.html\">%s</a></strong>' instead.</li>"
+                         (format "<li>  This face is obsolete%s; use `<strong><a href=\"/%s\">%s</a></strong>' instead.</li>"
                                  (if (stringp obsolete) (format " since %s" obsolete) "")
                                  (docgen//symbol-to-link alias)
                                  (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))
@@ -674,7 +683,7 @@ variable.</li>"))
                             (if (and (eq (car a) :inherit) (not (string= attr "unspecified")))
                                 ;; Make a hyperlink to the parent face.
                                 (format
-                                 "<a href=\"%s.html\">%s</a>"
+                                 "<a href=\"/%s\">%s</a>"
                                  (docgen//symbol-to-link attr)
                                  (replace-regexp-in-string "<" "&lt;" attr))
                               (replace-regexp-in-string "<" "&lt;" attr))

@@ -403,7 +403,7 @@ Returns the documentation as a string."
             ;; Mention if it's an alias.
             (unless (eq alias variable)
               (insert (format "  <li>This variable is an alias for `<strong><a href=\"%s.html\">%s</a></strong>'.</li>\n"
-                              (url-hexify-string (docgen//clean-symbol alias))
+                              (docgen//symbol-to-link alias)
                               (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))))
 
             (when obsolete
@@ -441,7 +441,7 @@ variable.</li>"))
             (if (looking-back "<ul>")
                 (replace-match "")
               (insert "</ul>"))
-            
+
             (insert "</br>\n<strong id=\"documentation\">Documentation:</strong></br>\n"
                     (replace-regexp-in-string 
                      "\n" "</br>\n" 
@@ -510,7 +510,7 @@ variable.</li>"))
              ;; Aliases are Lisp functions, so we need to check
              ;; aliases before functions.
              (format "an alias for `<strong><a href=\"%s.html\">%s</a></strong>'"
-                     (url-hexify-string (docgen//clean-symbol real-def))
+                     (docgen//symbol-to-link real-def)
                      (replace-regexp-in-string
                       "<" "&lt;" (symbol-name real-def)))
            (replace-regexp-in-string
@@ -604,7 +604,7 @@ variable.</li>"))
           (save-excursion
             (while (search-forward "\n" nil t)
               (replace-match "</br>\n" nil nil)))))
-      
+
       ;; Return the text.
       (buffer-string))))
 
@@ -642,24 +642,27 @@ variable.</li>"))
                 (insert ")</br>\n")
                 (let ((alias (get f 'face-alias))
                       (face f) obsolete)
+                  ;; Alias or absolete
                   (when alias
                     (setq face alias)
                     (insert
                      "<ul>"
                      (format "<li>%s is an alias for the face `<strong><a href=\"%s.html\">%s</a></strong>'.</li>"
-                             f (url-hexify-string (docgen//clean-symbol alias))
+                             f (docgen//symbol-to-link alias)
                              (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))
                      (if (setq obsolete (get f 'obsolete-face))
                          (format "<li>  This face is obsolete%s; use `<strong><a href=\"%s.html\">%s</a></strong>' instead.</li>"
                                  (if (stringp obsolete) (format " since %s" obsolete) "")
-                                 (url-hexify-string (docgen//clean-symbol alias))
+                                 (docgen//symbol-to-link alias)
                                  (replace-regexp-in-string "<" "&lt;" (symbol-name alias)))
                        "")
                      "</ul>"))
+                  ;; Documentation
                   (insert "</br>\n<strong>Documentation:</strong></br>\n"
                           (or (face-documentation face)
                               "Not documented as a face.")
                           "</br>\n</br>\n"))
+                ;; Where it's defined.
                 (setq file-name (find-lisp-object-file-name f 'defface))
                 (when file-name
                   (insert "Defined in `<code>"
@@ -673,13 +676,22 @@ variable.</li>"))
                                 ;; Make a hyperlink to the parent face.
                                 (format
                                  "<a href=\"%s.html\">%s</a>"
-                                 (url-hexify-string (docgen//clean-string attr))
+                                 (docgen//symbol-to-link attr)
                                  (replace-regexp-in-string "<" "&lt;" attr))
                               (replace-regexp-in-string "<" "&lt;" attr))
                             "</td></tr>\n")))
                 (insert "<table>"))
               (insert "</br>\n"))))))
     (buffer-string)))
+
+(defun docgen//symbol-to-link (symb &optional format)
+  "Convert `shadow' or \"shadow\" to \"Face/shadow\"."
+  (format
+   (or format docgen//format)
+   (url-hexify-string
+    (if (stringp symb)
+        (docgen//clean-string symb)
+      (docgen//clean-symbol symb)))))
 
 (defun docgen//insert-propertize (string face)
   ""
@@ -703,5 +715,3 @@ variable.</li>"))
 (defun docgen//cons-to-item (cell)
   "Convert a cons cell with (NAME . FILE) to an html item with a link."
   (concat "<li><a href=\"" (cdr cell) "\">" (car cell) "</a>"))
-
-

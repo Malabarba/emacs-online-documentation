@@ -203,8 +203,7 @@ in the variable `docgen//file-list'."
          ;; For some reason some symbols which are fbound throw errors
          ;; when calling describe-function (in my case that happened
          ;; with bookmark-map). This is to skip those symbols:
-         (doc (condition-case nil (funcall docgen//description s)
-                (error nil))))
+         (doc (ignore-errors (funcall docgen//description s))))
     (when doc
       (docgen//log "%5d / %d - %s" (setq docgen//count (1+ docgen//count)) docgen//total s)
       (with-temp-file path

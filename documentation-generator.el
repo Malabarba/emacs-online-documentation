@@ -212,7 +212,9 @@ in the variable `docgen//file-list'."
       (with-temp-file path
         (insert doc)
         (set-buffer-file-coding-system 'no-conversion))
-      (add-to-list docgen//file-list (cons (symbol-name s) (url-hexify-string file)))
+      (push (cons (symbol-name s)
+                  (format docgen//format (url-hexify-string (docgen//clean-symbol s))))
+            docgen//file-list)
       (append-to-file
        (docgen//format-sql-command docgen//sql-insert-string
                                    docgen//sql-table-name (symbol-name s) 0)

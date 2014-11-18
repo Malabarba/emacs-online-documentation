@@ -1,4 +1,4 @@
-<strong>vc-dir-tool-bar-map</strong> is a variable defined in `<code>vc-dir.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>vc-dir-tool-bar-map</strong> is a variable defined in `<code>vc-dir.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -13,8 +13,8 @@ Not documented as a variable.</br>
 	    (cond
 	     ((not
 	       (display-color-p))
-	      '((:type pbm :file "new.pbm" :foreground "black" :background "grey75")
-		(:type xbm :file "new.xbm" :foreground "black" :background "grey75")
+	      '((:type pbm :file "new.pbm" :foreground "black")
+		(:type xbm :file "new.xbm" :foreground "black")
 		(:type xpm :file "low-color/new.xpm")
 		(:type xpm :file "new.xpm")))
 	     ((<
@@ -22,12 +22,12 @@ Not documented as a variable.</br>
 	       256)
 	      '((:type xpm :file "low-color/new.xpm")
 		(:type xpm :file "new.xpm")
-		(:type pbm :file "new.pbm" :foreground "black" :background "grey75")
-		(:type xbm :file "new.xbm" :foreground "black" :background "grey75")))
+		(:type pbm :file "new.pbm" :foreground "black")
+		(:type xbm :file "new.xbm" :foreground "black")))
 	     (t
 	      '((:type xpm :file "new.xpm")
-		(:type pbm :file "new.pbm" :foreground "black" :background "grey75")
-		(:type xbm :file "new.xbm" :foreground "black" :background "grey75")))))
+		(:type pbm :file "new.pbm" :foreground "black")
+		(:type xbm :file "new.xbm" :foreground "black")))))
 	   :label "New File" :vert-only t)
  (open-file menu-item "Open File..." menu-find-file-existing :enable
 	    (menu-bar-non-minibuffer-window-p)
@@ -36,8 +36,8 @@ Not documented as a variable.</br>
 	     (cond
 	      ((not
 		(display-color-p))
-	       '((:type pbm :file "open.pbm" :foreground "black" :background "grey75")
-		 (:type xbm :file "open.xbm" :foreground "black" :background "grey75")
+	       '((:type pbm :file "open.pbm" :foreground "black")
+		 (:type xbm :file "open.xbm" :foreground "black")
 		 (:type xpm :file "low-color/open.xpm")
 		 (:type xpm :file "open.xpm")))
 	      ((<
@@ -45,12 +45,12 @@ Not documented as a variable.</br>
 		256)
 	       '((:type xpm :file "low-color/open.xpm")
 		 (:type xpm :file "open.xpm")
-		 (:type pbm :file "open.pbm" :foreground "black" :background "grey75")
-		 (:type xbm :file "open.xbm" :foreground "black" :background "grey75")))
+		 (:type pbm :file "open.pbm" :foreground "black")
+		 (:type xbm :file "open.xbm" :foreground "black")))
 	      (t
 	       '((:type xpm :file "open.xpm")
-		 (:type pbm :file "open.pbm" :foreground "black" :background "grey75")
-		 (:type xbm :file "open.xbm" :foreground "black" :background "grey75")))))
+		 (:type pbm :file "open.pbm" :foreground "black")
+		 (:type xbm :file "open.xbm" :foreground "black")))))
 	    :label "Open" :vert-only t)
  (dired menu-item "Open Directory..." dired :enable
 	(menu-bar-non-minibuffer-window-p)
@@ -59,8 +59,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "diropen.pbm" :foreground "black" :background "grey75")
-	     (:type xbm :file "diropen.xbm" :foreground "black" :background "grey75")
+	   '((:type pbm :file "diropen.pbm" :foreground "black")
+	     (:type xbm :file "diropen.xbm" :foreground "black")
 	     (:type xpm :file "low-color/diropen.xpm")
 	     (:type xpm :file "diropen.xpm")))
 	  ((<
@@ -68,20 +68,20 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/diropen.xpm")
 	     (:type xpm :file "diropen.xpm")
-	     (:type pbm :file "diropen.pbm" :foreground "black" :background "grey75")
-	     (:type xbm :file "diropen.xbm" :foreground "black" :background "grey75")))
+	     (:type pbm :file "diropen.pbm" :foreground "black")
+	     (:type xbm :file "diropen.xbm" :foreground "black")))
 	  (t
 	   '((:type xpm :file "diropen.xpm")
-	     (:type pbm :file "diropen.pbm" :foreground "black" :background "grey75")
-	     (:type xbm :file "diropen.xbm" :foreground "black" :background "grey75")))))
+	     (:type pbm :file "diropen.pbm" :foreground "black")
+	     (:type xbm :file "diropen.xbm" :foreground "black")))))
 	:vert-only t)
  (quit menu-item "Quit" quit-window :help "Quit" :image
        (find-image
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "close.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "close.xbm" :foreground "black" :background "grey75")
+	  '((:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")
 	    (:type xpm :file "low-color/close.xpm")
 	    (:type xpm :file "close.xpm")))
 	 ((<
@@ -89,20 +89,20 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/close.xpm")
 	    (:type xpm :file "close.xpm")
-	    (:type pbm :file "close.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "close.xbm" :foreground "black" :background "grey75")))
+	    (:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")))
 	 (t
 	  '((:type xpm :file "close.xpm")
-	    (:type pbm :file "close.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "close.xbm" :foreground "black" :background "grey75")))))
+	    (:type pbm :file "close.pbm" :foreground "black")
+	    (:type xbm :file "close.xbm" :foreground "black")))))
        :vert-only t)
  (next-action menu-item "Check In/Out" vc-next-action :help "Do the next logical version control operation on the current fileset" :image
 	      (find-image
 	       (cond
 		((not
 		  (display-color-p))
-		 '((:type pbm :file "saveas.pbm" :foreground "black" :background "grey75")
-		   (:type xbm :file "saveas.xbm" :foreground "black" :background "grey75")
+		 '((:type pbm :file "saveas.pbm" :foreground "black")
+		   (:type xbm :file "saveas.xbm" :foreground "black")
 		   (:type xpm :file "low-color/saveas.xpm")
 		   (:type xpm :file "saveas.xpm")))
 		((<
@@ -110,20 +110,20 @@ Not documented as a variable.</br>
 		  256)
 		 '((:type xpm :file "low-color/saveas.xpm")
 		   (:type xpm :file "saveas.xpm")
-		   (:type pbm :file "saveas.pbm" :foreground "black" :background "grey75")
-		   (:type xbm :file "saveas.xbm" :foreground "black" :background "grey75")))
+		   (:type pbm :file "saveas.pbm" :foreground "black")
+		   (:type xbm :file "saveas.xbm" :foreground "black")))
 		(t
 		 '((:type xpm :file "saveas.xpm")
-		   (:type pbm :file "saveas.pbm" :foreground "black" :background "grey75")
-		   (:type xbm :file "saveas.xbm" :foreground "black" :background "grey75")))))
+		   (:type pbm :file "saveas.pbm" :foreground "black")
+		   (:type xbm :file "saveas.xbm" :foreground "black")))))
 	      :label "Commit")
  (log menu-item "Show History" vc-print-log :help "List the change log of the current file set in a window" :image
       (find-image
        (cond
 	((not
 	  (display-color-p))
-	 '((:type pbm :file "info.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "info.xbm" :foreground "black" :background "grey75")
+	 '((:type pbm :file "info.pbm" :foreground "black")
+	   (:type xbm :file "info.xbm" :foreground "black")
 	   (:type xpm :file "low-color/info.xpm")
 	   (:type xpm :file "info.xpm")))
 	((<
@@ -131,12 +131,12 @@ Not documented as a variable.</br>
 	  256)
 	 '((:type xpm :file "low-color/info.xpm")
 	   (:type xpm :file "info.xpm")
-	   (:type pbm :file "info.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "info.xbm" :foreground "black" :background "grey75")))
+	   (:type pbm :file "info.pbm" :foreground "black")
+	   (:type xbm :file "info.xbm" :foreground "black")))
 	(t
 	 '((:type xpm :file "info.xpm")
-	   (:type pbm :file "info.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "info.xbm" :foreground "black" :background "grey75")))))
+	   (:type pbm :file "info.pbm" :foreground "black")
+	   (:type xbm :file "info.xbm" :foreground "black")))))
       :label "Log")
  (separator-1 "--")
  (kill menu-item "Kill Update Command" vc-dir-kill-dir-status-process :enable
@@ -146,8 +146,8 @@ Not documented as a variable.</br>
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "cancel.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "cancel.xbm" :foreground "black" :background "grey75")
+	  '((:type pbm :file "cancel.pbm" :foreground "black")
+	    (:type xbm :file "cancel.xbm" :foreground "black")
 	    (:type xpm :file "low-color/cancel.xpm")
 	    (:type xpm :file "cancel.xpm")))
 	 ((<
@@ -155,12 +155,12 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/cancel.xpm")
 	    (:type xpm :file "cancel.xpm")
-	    (:type pbm :file "cancel.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "cancel.xbm" :foreground "black" :background "grey75")))
+	    (:type pbm :file "cancel.pbm" :foreground "black")
+	    (:type xbm :file "cancel.xbm" :foreground "black")))
 	 (t
 	  '((:type xpm :file "cancel.xpm")
-	    (:type pbm :file "cancel.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "cancel.xbm" :foreground "black" :background "grey75")))))
+	    (:type pbm :file "cancel.pbm" :foreground "black")
+	    (:type xbm :file "cancel.xbm" :foreground "black")))))
        :label "Stop" :vert-only t)
  (refresh menu-item "Refresh" revert-buffer :enable
 	  (not
@@ -170,8 +170,8 @@ Not documented as a variable.</br>
 	   (cond
 	    ((not
 	      (display-color-p))
-	     '((:type pbm :file "refresh.pbm" :foreground "black" :background "grey75")
-	       (:type xbm :file "refresh.xbm" :foreground "black" :background "grey75")
+	     '((:type pbm :file "refresh.pbm" :foreground "black")
+	       (:type xbm :file "refresh.xbm" :foreground "black")
 	       (:type xpm :file "low-color/refresh.xpm")
 	       (:type xpm :file "refresh.xpm")))
 	    ((<
@@ -179,12 +179,12 @@ Not documented as a variable.</br>
 	      256)
 	     '((:type xpm :file "low-color/refresh.xpm")
 	       (:type xpm :file "refresh.xpm")
-	       (:type pbm :file "refresh.pbm" :foreground "black" :background "grey75")
-	       (:type xbm :file "refresh.xbm" :foreground "black" :background "grey75")))
+	       (:type pbm :file "refresh.pbm" :foreground "black")
+	       (:type xbm :file "refresh.xbm" :foreground "black")))
 	    (t
 	     '((:type xpm :file "refresh.xpm")
-	       (:type pbm :file "refresh.pbm" :foreground "black" :background "grey75")
-	       (:type xbm :file "refresh.xbm" :foreground "black" :background "grey75")))))
+	       (:type pbm :file "refresh.pbm" :foreground "black")
+	       (:type xbm :file "refresh.xbm" :foreground "black")))))
 	  :vert-only t)
  (separator-2 "--")
  (cut menu-item "Cut" kill-region :enable
@@ -195,8 +195,8 @@ Not documented as a variable.</br>
        (cond
 	((not
 	  (display-color-p))
-	 '((:type pbm :file "cut.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "cut.xbm" :foreground "black" :background "grey75")
+	 '((:type pbm :file "cut.pbm" :foreground "black")
+	   (:type xbm :file "cut.xbm" :foreground "black")
 	   (:type xpm :file "low-color/cut.xpm")
 	   (:type xpm :file "cut.xpm")))
 	((<
@@ -204,20 +204,20 @@ Not documented as a variable.</br>
 	  256)
 	 '((:type xpm :file "low-color/cut.xpm")
 	   (:type xpm :file "cut.xpm")
-	   (:type pbm :file "cut.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "cut.xbm" :foreground "black" :background "grey75")))
+	   (:type pbm :file "cut.pbm" :foreground "black")
+	   (:type xbm :file "cut.xbm" :foreground "black")))
 	(t
 	 '((:type xpm :file "cut.xpm")
-	   (:type pbm :file "cut.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "cut.xbm" :foreground "black" :background "grey75")))))
+	   (:type pbm :file "cut.pbm" :foreground "black")
+	   (:type xbm :file "cut.xbm" :foreground "black")))))
       :vert-only t)
  (copy menu-item "Copy" kill-ring-save :enable mark-active :help "Copy text in region between mark and current position" :keys "\\[kill-ring-save]" :image
        (find-image
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "copy.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "copy.xbm" :foreground "black" :background "grey75")
+	  '((:type pbm :file "copy.pbm" :foreground "black")
+	    (:type xbm :file "copy.xbm" :foreground "black")
 	    (:type xpm :file "low-color/copy.xpm")
 	    (:type xpm :file "copy.xpm")))
 	 ((<
@@ -225,19 +225,17 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/copy.xpm")
 	    (:type xpm :file "copy.xpm")
-	    (:type pbm :file "copy.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "copy.xbm" :foreground "black" :background "grey75")))
+	    (:type pbm :file "copy.pbm" :foreground "black")
+	    (:type xbm :file "copy.xbm" :foreground "black")))
 	 (t
 	  '((:type xpm :file "copy.xpm")
-	    (:type pbm :file "copy.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "copy.xbm" :foreground "black" :background "grey75")))))
+	    (:type pbm :file "copy.pbm" :foreground "black")
+	    (:type xbm :file "copy.xbm" :foreground "black")))))
        :vert-only t)
  (paste menu-item "Paste" yank :enable
 	(and
 	 (or
-	  (and
-	   (fboundp 'x-selection-exists-p)
-	   (x-selection-exists-p 'CLIPBOARD))
+	  (gui-call gui-selection-exists-p 'CLIPBOARD)
 	  (if
 	      (featurep 'ns)
 	      (cdr yank-menu)
@@ -248,8 +246,8 @@ Not documented as a variable.</br>
 	 (cond
 	  ((not
 	    (display-color-p))
-	   '((:type pbm :file "paste.pbm" :foreground "black" :background "grey75")
-	     (:type xbm :file "paste.xbm" :foreground "black" :background "grey75")
+	   '((:type pbm :file "paste.pbm" :foreground "black")
+	     (:type xbm :file "paste.xbm" :foreground "black")
 	     (:type xpm :file "low-color/paste.xpm")
 	     (:type xpm :file "paste.xpm")))
 	  ((<
@@ -257,12 +255,12 @@ Not documented as a variable.</br>
 	    256)
 	   '((:type xpm :file "low-color/paste.xpm")
 	     (:type xpm :file "paste.xpm")
-	     (:type pbm :file "paste.pbm" :foreground "black" :background "grey75")
-	     (:type xbm :file "paste.xbm" :foreground "black" :background "grey75")))
+	     (:type pbm :file "paste.pbm" :foreground "black")
+	     (:type xbm :file "paste.xbm" :foreground "black")))
 	  (t
 	   '((:type xpm :file "paste.xpm")
-	     (:type pbm :file "paste.pbm" :foreground "black" :background "grey75")
-	     (:type xbm :file "paste.xbm" :foreground "black" :background "grey75")))))
+	     (:type pbm :file "paste.pbm" :foreground "black")
+	     (:type xbm :file "paste.xbm" :foreground "black")))))
 	:vert-only t)
  (separator-3 "--")
  (isearch-forward menu-item "Forward String..." isearch-forward :help "Search forward for a string as you type it" :image
@@ -270,8 +268,8 @@ Not documented as a variable.</br>
 		   (cond
 		    ((not
 		      (display-color-p))
-		     '((:type pbm :file "search.pbm" :foreground "black" :background "grey75")
-		       (:type xbm :file "search.xbm" :foreground "black" :background "grey75")
+		     '((:type pbm :file "search.pbm" :foreground "black")
+		       (:type xbm :file "search.xbm" :foreground "black")
 		       (:type xpm :file "low-color/search.xpm")
 		       (:type xpm :file "search.xpm")))
 		    ((<
@@ -279,11 +277,12 @@ Not documented as a variable.</br>
 		      256)
 		     '((:type xpm :file "low-color/search.xpm")
 		       (:type xpm :file "search.xpm")
-		       (:type pbm :file "search.pbm" :foreground "black" :background "grey75")
-		       (:type xbm :file "search.xbm" :foreground "black" :background "grey75")))
+		       (:type pbm :file "search.pbm" :foreground "black")
+		       (:type xbm :file "search.xbm" :foreground "black")))
 		    (t
 		     '((:type xpm :file "search.xpm")
-		       (:type pbm :file "search.pbm" :foreground "black" :background "grey75")
-		       (:type xbm :file "search.xbm" :foreground "black" :background "grey75")))))
+		       (:type pbm :file "search.pbm" :foreground "black")
+		       (:type xbm :file "search.xbm" :foreground "black")))))
 		  :label "Search" :vert-only t))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

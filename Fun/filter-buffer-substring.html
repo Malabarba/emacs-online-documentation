@@ -1,17 +1,17 @@
-<strong>filter-buffer-substring</strong> is a compiled Lisp function in `<code>simple.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>filter-buffer-substring</strong> is a compiled Lisp function in `<code>simple.el</code>'.</br>
 </br>
 (filter-buffer-substring <u>BEG</u> <u>END</u> &optional <u>DELETE</u>)</br>
 </br>
 Return the buffer substring between <u>BEG</u> and <u>END</u>, after filtering.</br>
-The hook `filter-buffer-substring-function' performs the actual filtering.</br>
-By default, no filtering is done.</br>
+If <u>DELETE</u> is non-nil, delete the text between <u>BEG</u> and <u>END</u> from the buffer.</br>
 </br>
-If <u>DELETE</u> is non-nil, the text between <u>BEG</u> and <u>END</u> is deleted</br>
-from the buffer.</br>
+This calls the function that `filter-buffer-substring-function' specifies</br>
+(passing the same three arguments that it received) to do the work,</br>
+and returns whatever it does.  The default function does no filtering,</br>
+unless a hook has been set.</br>
 </br>
-This function should be used instead of `buffer-substring',</br>
-`buffer-substring-no-properties', or `delete-and-extract-region'</br>
-when you want to allow filtering to take place.  For example,</br>
-major or minor modes can use `filter-buffer-substring-function' to</br>
-extract characters that are special to a buffer, and should not</br>
-be copied into other buffers.
+Use `filter-buffer-substring' instead of `buffer-substring',</br>
+`buffer-substring-no-properties', or `delete-and-extract-region' when</br>
+you want to allow filtering to take place.  For example, major or minor</br>
+modes can use `filter-buffer-substring-function' to extract characters</br>
+that are special to a buffer, and should not be copied into other buffers.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

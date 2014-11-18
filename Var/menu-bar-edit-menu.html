@@ -1,4 +1,4 @@
-<strong>menu-bar-edit-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>menu-bar-edit-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -24,9 +24,7 @@ Not documented as a variable.</br>
  (paste menu-item "Paste" yank :enable
 	(and
 	 (or
-	  (and
-	   (fboundp 'x-selection-exists-p)
-	   (x-selection-exists-p 'CLIPBOARD))
+	  (gui-call gui-selection-exists-p 'CLIPBOARD)
 	  (if
 	      (featurep 'ns)
 	      (cdr yank-menu)
@@ -127,3 +125,4 @@ Not documented as a variable.</br>
  (props menu-item "Text Properties" facemenu-menu)
  "Edit")
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

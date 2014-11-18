@@ -1,6 +1,12 @@
-<strong>org-re-property</strong> is a compiled Lisp function in `<code>org.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-re-property</strong> is a compiled Lisp function in `<code>org.el</code>'.</br>
 </br>
-(org-re-property <u>PROPERTY</u> &optional <u>LITERAL</u>)</br>
+(org-re-property <u>PROPERTY</u> &optional <u>LITERAL</u> <u>ALLOW-NULL</u>)</br>
 </br>
 Return a regexp matching a <u>PROPERTY</u> line.</br>
-Match group 3 will be set to the value if it exists.
+</br>
+When optional argument <u>LITERAL</u> is non-nil, do not quote <u>PROPERTY</u>.</br>
+This is useful when <u>PROPERTY</u> is a regexp.  When <u>ALLOW-NULL</u> is</br>
+non-nil, match properties even without a value.</br>
+</br>
+Match group 3 is set to the value when it exists.  If there is no</br>
+value and <u>ALLOW-NULL</u> is non-nil, it is set to the empty string.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

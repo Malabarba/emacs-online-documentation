@@ -1,4 +1,4 @@
-<strong>object-print</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>object-print</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
 </br>
 (object-print &rest <u>LOCAL-ARGS</u>)</br>
 </br>
@@ -12,7 +12,7 @@ This is a generic function with only primary methods.</br>
 </br>
 Implementations:</br>
 </br>
-`eieio-default-superclass' :PRIMARY (this &rest strings)</br>
+`eieio-default-superclass' :PRIMARY (arg1 &rest rest)</br>
 Pretty printer for object THIS.  Call function `object-name' with STRINGS.</br>
 The default method for printing object THIS is to use the</br>
 function `object-name'.</br>
@@ -24,6 +24,8 @@ Implement this function and specify STRINGS in a call to</br>
 `call-next-method' to provide additional summary information.</br>
 When passing in extra strings from child classes, always remember</br>
 to prepend a space.</br>
+</br>
+<code>(fn THIS <em>&rest</em> STRINGS</code>)</br>
 </br>
 Defined in `eieio.el'</br>
 </br>
@@ -45,3 +47,4 @@ Adds the number of tables in this file to the object print name.</br>
 </br>
 Defined in `db.el'</br>
 </br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

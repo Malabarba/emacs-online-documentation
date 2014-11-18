@@ -1,21 +1,30 @@
-<strong>org-insert-heading</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-insert-heading</strong> is an interactive compiled Lisp function in `<code>org.el</code>'.</br>
 </br>
 </br>
 (org-insert-heading &optional <u>ARG</u> <u>INVISIBLE-OK</u>)</br>
 </br>
-Insert a new heading or item with same depth at point.</br>
-If point is in a plain list and <u>ARG</u> is nil, create a new list item.</br>
-With one universal prefix argument, insert a heading even in lists.</br>
-With two universal prefix arguments, insert the heading at the end</br>
-of the parent subtree.</br>
+Insert a new heading or an item with the same depth at point.</br>
 </br>
-If point is at the beginning of a headline, insert a sibling before</br>
-the current headline.  If point is not at the beginning, split the line</br>
-and create a new headline with the text in the current line after point</br>
-(see `org-M-RET-may-split-line' on how to modify this behavior).</br>
+If point is at the beginning of a heading or a list item, insert</br>
+a new heading or a new item above the current one.  If point is</br>
+at the beginning of a normal line, turn the line into a heading.</br>
 </br>
-If point is at the beginning of a normal line, turn this line into</br>
-a heading.</br>
+If point is in the middle of a headline or a list item, split the</br>
+headline or the item and create a new headline/item with the text</br>
+in the current line after point (see `org-M-RET-may-split-line'</br>
+on how to modify this behavior).</br>
 </br>
-When <u>INVISIBLE-OK</u> is set, stop at invisible headlines when going back.</br>
-This is important for non-interactive uses of the command.
+With one universal prefix argument, set the user option</br>
+`org-insert-heading-respect-content' to t for the duration of</br>
+the command.  This modifies the behavior described above in this</br>
+ways: on list items and at the beginning of normal lines, force</br>
+the insertion of a heading after the current subtree.</br>
+</br>
+With two universal prefix arguments, insert the heading at the</br>
+end of the grandparent subtree.  For example, if point is within</br>
+a 2nd-level heading, then it will insert a 2nd-level heading at</br>
+the end of the 1st-level parent heading.</br>
+</br>
+When <u>INVISIBLE-OK</u> is set, stop at invisible headlines when going</br>
+back.  This is important for non-interactive uses of the</br>
+command.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,4 +1,4 @@
-<strong>window-resize-apply</strong> is a built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>window-resize-apply</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
 (window-resize-apply &optional <u>FRAME</u> <u>HORIZONTAL</u>)</br>
 </br>
@@ -8,10 +8,15 @@ If <u>FRAME</u> is omitted or nil, it defaults to the selected frame.</br>
 Optional argument <u>HORIZONTAL</u> omitted or nil means apply requested</br>
 height values.  <u>HORIZONTAL</u> non-nil means apply requested width values.</br>
 </br>
-This function checks whether the requested values sum up to a valid</br>
-window layout, recursively assigns the new sizes of all child windows</br>
-and calculates and assigns the new start positions of these windows.</br>
+The requested size values are those set by `set-window-new-pixel' and</br>
+`set-window-new-normal'.  This function checks whether the requested</br>
+values sum up to a valid window layout, recursively assigns the new</br>
+sizes of all child windows and calculates and assigns the new start</br>
+positions of these windows.</br>
+</br>
+Return t if the requested values have been applied correctly, nil</br>
+otherwise.</br>
 </br>
 Note: This function does not check any of `window-fixed-size-p',</br>
 `window-min-height' or `window-min-width'.  All these checks have to</br>
-be applied on the Elisp level.
+be applied on the Elisp level.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

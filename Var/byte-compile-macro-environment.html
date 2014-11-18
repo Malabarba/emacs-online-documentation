@@ -1,4 +1,4 @@
-<strong>byte-compile-macro-environment</strong> is a variable defined in `<code>bytecomp.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>byte-compile-macro-environment</strong> is a variable defined in `<code>bytecomp.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -8,23 +8,18 @@ Each element looks like (MACRONAME . DEFINITION).  It is</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
 ((declare-function . byte-compile-macroexpand-declare-function)
- (eval-when-compile lambda
-		    (&rest body)
-		    (list 'quote
-			  (byte-compile-eval
-			   (byte-compile-top-level
-			    (byte-compile-preprocess
-			     (cons 'progn body))))))
- (eval-and-compile lambda
-		   (&rest body)
-		   `(progn ,@(mapcar
-			      (lambda
-				(exp)
-				(let
-				    ((cexp
-				      (byte-compile-top-level
-				       (byte-compile-preprocess exp))))
-				  (eval cexp)
-				  cexp))
-			      body))))
+ (eval-when-compile .
+		    #[128 "\300C\301\302B\303\304\305\306\307!\310\"\311\312%\"\210\313\242D\207"
+			  [nil byte-compile-recurse-toplevel progn make-byte-code 257 "\300\301\302\303!!!\240\207" vconcat vector
+			       [byte-compile-eval byte-compile-top-level byte-compile-preprocess]
+			       6 "\n\n(fn FORM)" quote]
+			  10 "\n\n(fn &rest BODY)"])
+ (eval-and-compile .
+		   #[128 "\300\301B\302\"\207"
+			 [byte-compile-recurse-toplevel progn
+							#[257 "\302\"\303	\"\210\211\207"
+							      [macroexpand-all-environment lexical-binding macroexpand-all eval]
+							      5 "\n\n(fn FORM)"]]
+			 4 "\n\n(fn &rest BODY)"]))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

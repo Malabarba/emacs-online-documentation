@@ -1,4 +1,4 @@
-<strong>org-org-menu</strong> is a variable defined in `<code>org.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-org-menu</strong> is a variable defined in `<code>org.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -18,9 +18,9 @@ Org menu</br>
 			   (Sparse\ Tree\.\.\. menu-item "Sparse Tree..." org-sparse-tree)
 			   (Reveal\ Context menu-item "Reveal Context" org-reveal)
 			   (Show\ All menu-item "Show All" show-all)
-			   (nil menu-item "--")
+			   (nil-7 menu-item "--")
 			   (Subtree\ to\ indirect\ buffer menu-item "Subtree to indirect buffer" org-tree-to-indirect-buffer)))
-	(nil menu-item "--")
+	(nil-7 menu-item "--")
 	(New\ Heading menu-item "New Heading" org-insert-heading)
 	(Navigate\ Headings menu-item "Navigate Headings"
 			    (keymap "Navigate Headings"
@@ -29,18 +29,18 @@ Org menu</br>
 				    (Previous menu-item "Previous" outline-previous-visible-heading)
 				    (Next\ Same\ Level menu-item "Next Same Level" outline-forward-same-level)
 				    (Previous\ Same\ Level menu-item "Previous Same Level" outline-backward-same-level)
-				    (nil menu-item "--")
+				    (nil-7 menu-item "--")
 				    (Jump menu-item "Jump" org-goto)))
 	(Edit\ Structure menu-item "Edit Structure"
 			 (keymap "Edit Structure"
 				 (Refile\ Subtree menu-item "Refile Subtree" org-refile :enable
 						  (org-in-subtree-not-table-p))
-				 (nil menu-item "--")
+				 (nil-7 menu-item "--")
 				 (Move\ Subtree\ Up menu-item "Move Subtree Up" org-shiftmetaup :enable
 						    (org-in-subtree-not-table-p))
 				 (Move\ Subtree\ Down menu-item "Move Subtree Down" org-shiftmetadown :enable
 						      (org-in-subtree-not-table-p))
-				 (nil-4 menu-item "--")
+				 (nil-7-4 menu-item "--")
 				 (Copy\ Subtree menu-item "Copy Subtree" org-copy-special :enable
 						(org-in-subtree-not-table-p))
 				 (Cut\ Subtree menu-item "Cut Subtree" org-cut-special :enable
@@ -48,11 +48,11 @@ Org menu</br>
 				 (Paste\ Subtree menu-item "Paste Subtree" org-paste-special :enable
 						 (not
 						  (org-at-table-p)))
-				 (nil-8 menu-item "--")
+				 (nil-7-8 menu-item "--")
 				 (Clone\ subtree\,\ shift\ time menu-item "Clone subtree, shift time" org-clone-subtree-with-time-shift)
-				 (nil-10 menu-item "--")
+				 (nil-7-10 menu-item "--")
 				 (Copy\ visible\ text menu-item "Copy visible text" org-copy-visible)
-				 (nil-12 menu-item "--")
+				 (nil-7-12 menu-item "--")
 				 (Promote\ Heading menu-item "Promote Heading" org-metaleft :enable
 						   (org-in-subtree-not-table-p))
 				 (Promote\ Subtree menu-item "Promote Subtree" org-shiftmetaleft :enable
@@ -61,45 +61,45 @@ Org menu</br>
 						  (org-in-subtree-not-table-p))
 				 (Demote\ Subtree menu-item "Demote Subtree" org-shiftmetaright :enable
 						  (org-in-subtree-not-table-p))
-				 (nil-17 menu-item "--")
+				 (nil-7-17 menu-item "--")
 				 (Sort\ Region/Children menu-item "Sort Region/Children" org-sort)
-				 (nil-19 menu-item "--")
+				 (nil-7-19 menu-item "--")
 				 (Convert\ to\ odd\ levels menu-item "Convert to odd levels" org-convert-to-odd-levels)
 				 (Convert\ to\ odd/even\ levels menu-item "Convert to odd/even levels" org-convert-to-oddeven-levels)))
 	(Editing menu-item "Editing"
 		 (keymap "Editing"
 			 (Emphasis\.\.\. menu-item "Emphasis..." org-emphasize)
 			 (Edit\ Source\ Example menu-item "Edit Source Example" org-edit-special)
-			 (nil menu-item "--")
+			 (nil-7 menu-item "--")
 			 (Footnote\ new/jump menu-item "Footnote new/jump" org-footnote-action)
-			 (Footnote\ extra menu-item "Footnote extra" menu-function-343 :keys "C-u C-c C-x f")))
+			 (Footnote\ extra menu-item "Footnote extra" menu-function-344 :keys "C-u C-c C-x f")))
 	(Archive menu-item "Archive"
 		 (keymap "Archive"
 			 (Archive\ \(default\ method\) menu-item "Archive (default method)" org-archive-subtree-default :enable
 						       (org-in-subtree-not-table-p))
-			 (nil menu-item "--")
+			 (nil-7 menu-item "--")
 			 (Move\ Subtree\ to\ Archive\ file menu-item "Move Subtree to Archive file" org-advertized-archive-subtree :enable
 							   (org-in-subtree-not-table-p))
 			 (Toggle\ ARCHIVE\ tag menu-item "Toggle ARCHIVE tag" org-toggle-archive-tag :enable
 					       (org-in-subtree-not-table-p))
 			 (Move\ subtree\ to\ Archive\ sibling menu-item "Move subtree to Archive sibling" org-archive-to-archive-sibling :enable
 							      (org-in-subtree-not-table-p))))
-	(nil-7 menu-item "--")
+	(nil-7-7 menu-item "--")
 	(Hyperlinks menu-item "Hyperlinks"
 		    (keymap "Hyperlinks"
 			    (Store\ Link\ \(Global\) menu-item "Store Link (Global)" org-store-link)
 			    (Find\ existing\ link\ to\ here menu-item "Find existing link to here" org-occur-link-in-agenda-files)
 			    (Insert\ Link menu-item "Insert Link" org-insert-link)
 			    (Follow\ Link menu-item "Follow Link" org-open-at-point)
-			    (nil menu-item "--")
+			    (nil-7 menu-item "--")
 			    (Next\ link menu-item "Next link" org-next-link)
 			    (Previous\ link menu-item "Previous link" org-previous-link)
-			    (nil-7 menu-item "--")
+			    (nil-7-7 menu-item "--")
 			    (Descriptive\ Links menu-item "Descriptive Links" org-toggle-link-display :button
 						(:radio . org-descriptive-links))
 			    (Literal\ Links menu-item "Literal Links" org-toggle-link-display :button
 					    (:radio not org-descriptive-links))))
-	(nil-9 menu-item "--")
+	(nil-7-9 menu-item "--")
 	(TODO\ Lists menu-item "TODO Lists"
 		     (keymap "TODO Lists"
 			     (TODO/DONE/- menu-item "TODO/DONE/-" org-todo)
@@ -126,23 +126,23 @@ Org menu</br>
 									       (org-at-heading-p)))))
 			     (Show\ TODO\ Tree menu-item "Show TODO Tree" org-show-todo-tree :keys "C-c / t")
 			     (Global\ TODO\ list menu-item "Global TODO list" org-todo-list :keys "C-c a t")
-			     (nil menu-item "--")
-			     (Enforce\ dependencies menu-item "Enforce dependencies" menu-function-344 :key-sequence nil :button
+			     (nil-7 menu-item "--")
+			     (Enforce\ dependencies menu-item "Enforce dependencies" menu-function-345 :key-sequence nil :button
 						    (:toggle . org-enforce-todo-dependencies))
-			     (nil-6 menu-item "Settings for tree at point")
+			     (nil menu-item "Settings for tree at point")
 			     (Do\ Children\ sequentially menu-item "Do Children sequentially" org-toggle-ordered-property :enable org-enforce-todo-dependencies :keys "C-c C-x o" :button
 							 (:radio org-entry-get nil "ORDERED"))
 			     (Do\ Children\ parallel menu-item "Do Children parallel" org-toggle-ordered-property :enable org-enforce-todo-dependencies :keys "C-c C-x o" :button
 						     (:radio not
 							     (org-entry-get nil "ORDERED")))
-			     (nil-9 menu-item "--")
+			     (nil-7-9 menu-item "--")
 			     (Set\ Priority menu-item "Set Priority" org-priority)
 			     (Priority\ Up menu-item "Priority Up" org-shiftup)
 			     (Priority\ Down menu-item "Priority Down" org-shiftdown)
-			     (nil-13 menu-item "--")
+			     (nil-7-13 menu-item "--")
 			     (Get\ news\ from\ all\ feeds menu-item "Get news from all feeds" org-feed-update-all)
 			     (Go\ to\ the\ inbox\ of\ a\ feed\.\.\. menu-item "Go to the inbox of a feed..." org-feed-goto-inbox)
-			     (Customize\ feeds menu-item "Customize feeds" menu-function-345 :key-sequence nil)))
+			     (Customize\ feeds menu-item "Customize feeds" menu-function-346 :key-sequence nil)))
 	(TAGS\ and\ Properties menu-item "TAGS and Properties"
 			       (keymap "TAGS and Properties"
 				       (Set\ Tags menu-item "Set Tags" org-set-tags-command :enable
@@ -150,7 +150,7 @@ Org menu</br>
 						   (org-before-first-heading-p)))
 				       (Change\ tag\ in\ region menu-item "Change tag in region" org-change-tag-in-region :enable
 								(org-region-active-p))
-				       (nil menu-item "--")
+				       (nil-7 menu-item "--")
 				       (Set\ property menu-item "Set property" org-set-property :enable
 						      (not
 						       (org-before-first-heading-p)))
@@ -181,13 +181,13 @@ Org menu</br>
 					(Deadline menu-item "Deadline" org-deadline :enable
 						  (not
 						   (org-before-first-heading-p)))
-					(nil menu-item "--")
+					(nil-7 menu-item "--")
 					(Custom\ time\ format menu-item "Custom time format" org-toggle-time-stamp-overlays :button
 							      (:radio . org-display-custom-times))
-					(nil-8 menu-item "--")
+					(nil-7-8 menu-item "--")
 					(Goto\ Calendar menu-item "Goto Calendar" org-goto-calendar)
 					(Date\ from\ Calendar menu-item "Date from Calendar" org-date-from-calendar)
-					(nil-11 menu-item "--")
+					(nil-7-11 menu-item "--")
 					(Start/Restart\ Timer menu-item "Start/Restart Timer" org-timer-start)
 					(Pause/Continue\ Timer menu-item "Pause/Continue Timer" org-timer-pause-or-continue)
 					(Stop\ Timer menu-item "Stop Timer" org-timer-pause-or-continue :keys "C-u C-c C-x ,")
@@ -196,20 +196,20 @@ Org menu</br>
 	(Logging\ work menu-item "Logging work"
 		       (keymap "Logging work"
 			       (Clock\ in menu-item "Clock in" org-clock-in :keys "C-c C-x C-i")
-			       (Switch\ task menu-item "Switch task" menu-function-346 :keys "C-u C-c C-x C-i")
+			       (Switch\ task menu-item "Switch task" menu-function-347 :keys "C-u C-c C-x C-i")
 			       (Clock\ out menu-item "Clock out" org-clock-out)
 			       (Clock\ cancel menu-item "Clock cancel" org-clock-cancel)
-			       (nil menu-item "--")
+			       (nil-7 menu-item "--")
 			       (Mark\ as\ default\ task menu-item "Mark as default task" org-clock-mark-default-task)
-			       (Clock\ in\,\ mark\ as\ default menu-item "Clock in, mark as default" menu-function-347 :keys "C-u C-u C-c C-x C-i")
+			       (Clock\ in\,\ mark\ as\ default menu-item "Clock in, mark as default" menu-function-348 :keys "C-u C-u C-c C-x C-i")
 			       (Goto\ running\ clock menu-item "Goto running clock" org-clock-goto)
-			       (nil-8 menu-item "--")
+			       (nil-7-8 menu-item "--")
 			       (Display\ times menu-item "Display times" org-clock-display)
 			       (Create\ clock\ table menu-item "Create clock table" org-clock-report)
-			       (nil-11 menu-item "--")
-			       (Record\ DONE\ time menu-item "Record DONE time" menu-function-348 :key-sequence nil :button
+			       (nil-7-11 menu-item "--")
+			       (Record\ DONE\ time menu-item "Record DONE time" menu-function-349 :key-sequence nil :button
 						   (:toggle . org-log-done))))
-	(nil-14 menu-item "--")
+	(nil-7-14 menu-item "--")
 	(Agenda\ Command\.\.\. menu-item "Agenda Command..." org-agenda)
 	(Set\ Restriction\ Lock menu-item "Set Restriction Lock" org-agenda-set-restriction-lock)
 	(File\ List\ for\ Agenda menu-item "File List for Agenda"
@@ -220,7 +220,7 @@ Org menu</br>
 					       (Check\ Deadlines menu-item "Check Deadlines" org-check-deadlines)
 					       (Timeline menu-item "Timeline" org-timeline)
 					       (Tags/Property\ tree menu-item "Tags/Property tree" org-match-sparse-tree)))
-	(nil-19 menu-item "--")
+	(nil-7-19 menu-item "--")
 	(Export/Publish\.\.\. menu-item "Export/Publish..." org-export-dispatch)
 	(LaTeX menu-item "LaTeX"
 	       (keymap "LaTeX"
@@ -233,17 +233,17 @@ Org menu</br>
 		       (Modify\ math\ symbol menu-item "Modify math symbol" org-cdlatex-math-modify :enable
 					     (org-inside-LaTeX-fragment-p))
 		       (Insert\ citation menu-item "Insert citation" org-reftex-citation)
-		       (nil menu-item "--")
-		       (Template\ for\ BEAMER menu-item "Template for BEAMER" menu-function-349 :key-sequence nil)))
-	(nil-22 menu-item "--")
+		       (nil-7 menu-item "--")
+		       (Template\ for\ BEAMER menu-item "Template for BEAMER" menu-function-350 :key-sequence nil)))
+	(nil-7-22 menu-item "--")
 	(MobileOrg menu-item "MobileOrg"
 		   (keymap "MobileOrg"
 			   (Push\ Files\ and\ Views menu-item "Push Files and Views" org-mobile-push)
 			   (Get\ Captured\ and\ Flagged menu-item "Get Captured and Flagged" org-mobile-pull)
-			   (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-350 :keys "C-c a ?")
-			   (nil menu-item "--")
-			   (Setup menu-item "Setup" menu-function-351 :key-sequence nil)))
-	(nil-24 menu-item "--")
+			   (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-351 :keys "C-c a ?")
+			   (nil-7 menu-item "--")
+			   (Setup menu-item "Setup" menu-function-352 :key-sequence nil)))
+	(nil-7-24 menu-item "--")
 	(Documentation menu-item "Documentation"
 		       (keymap "Documentation"
 			       (Show\ Version menu-item "Show Version" org-version)
@@ -251,14 +251,15 @@ Org menu</br>
 	(Customize menu-item "Customize"
 		   (keymap "Customize"
 			   (Browse\ Org\ Group menu-item "Browse Org Group" org-customize)
-			   (nil menu-item "--")
+			   (nil-7 menu-item "--")
 			   (Expand\ This\ Menu menu-item "Expand This Menu" org-create-customize-menu :enable
 					       (fboundp 'customize-menu-create))))
 	(Send\ bug\ report menu-item "Send bug report" org-submit-bug-report)
-	(nil-28 menu-item "--")
+	(nil-7-28 menu-item "--")
 	(Refresh/Reload menu-item "Refresh/Reload"
 			(keymap "Refresh/Reload"
 				(Refresh\ setup\ current\ buffer menu-item "Refresh setup current buffer" org-mode-restart)
 				(Reload\ Org\ \(after\ update\) menu-item "Reload Org (after update)" org-reload)
-				(Reload\ Org\ uncompiled menu-item "Reload Org uncompiled" menu-function-352 :keys "C-u C-c C-x !"))))
+				(Reload\ Org\ uncompiled menu-item "Reload Org uncompiled" menu-function-353 :keys "C-u C-c C-x !"))))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

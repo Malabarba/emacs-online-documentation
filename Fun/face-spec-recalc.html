@@ -1,7 +1,18 @@
-<strong>face-spec-recalc</strong> is a compiled Lisp function in `<code>faces.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>face-spec-recalc</strong> is a compiled Lisp function in `<code>faces.el</code>'.</br>
 </br>
 (face-spec-recalc <u>FACE</u> <u>FRAME</u>)</br>
 </br>
 Reset the face attributes of <u>FACE</u> on <u>FRAME</u> according to its specs.</br>
-This applies the defface/custom spec first, then the custom theme specs,</br>
-then the override spec.
+The following sources are applied in this order:</br>
+</br>
+  face reset to default values if it's the default face, otherwise set</br>
+  to unspecified (through `face-spec-reset-face')</br>
+   |</br>
+  (theme and user customization)</br>
+    or: if none of the above exist, and none match the current frame or</br>
+        inherited from the defface spec instead of overwriting it</br>
+        entirely, the following is applied instead:</br>
+  (defface default spec)</br>
+  (X resources (if applicable))</br>
+   |</br>
+  defface override spec<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,15 +1,19 @@
-<strong>calendar-mode-line-format</strong> is a variable defined in `<code>calendar.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>calendar-mode-line-format</strong> is a variable defined in `<code>calendar.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
-The mode line of the calendar buffer.</br>
+If non-nil, the mode line of the calendar buffer.</br>
 This is a list of items that evaluate to strings.  The elements</br>
 are evaluated and concatenated, evenly separated by blanks.</br>
 During evaluation, the variable `date' is available as the date</br>
 nearest the cursor (or today's date if that fails).  To update</br>
-the mode-line as the cursor moves, add `calendar-update-mode-line'</br>
-to `calendar-move-hook'.  Here is an example that has the Hebrew date,</br>
-the day number/days remaining in the year, and the ISO week/year numbers:</br>
+the mode-line as the cursor moves, add</br>
+`calendar-update-mode-line' to `calendar-move-hook'.</br>
+</br>
+If nil, do not modify the mode line at all.</br>
+</br>
+Here is an example that has the Hebrew date, the day number/days</br>
+remaining in the year, and the ISO week/year numbers:</br>
 </br>
   (list</br>
    ""</br>
@@ -61,3 +65,4 @@ You can customize this variable.</br>
 		(mouse-1 . calendar-scroll-left)))
     mouse-face mode-line-highlight help-echo "mouse-1: next month")))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

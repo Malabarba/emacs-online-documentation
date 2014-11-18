@@ -1,4 +1,4 @@
-<strong>reftex-mode-map</strong> is a variable defined in `<code>reftex.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-mode-map</strong> is a variable defined in `<code>reftex.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -11,7 +11,7 @@ Keymap for RefTeX mode.</br>
 		(keymap "Ref"
 			(Table\ of\ Contents menu-item "Table of Contents" reftex-toc)
 			(Recenter\ TOC menu-item "Recenter TOC" reftex-toc-recenter)
-			(nil menu-item "--")
+			(nil-7 menu-item "--")
 			(\\label menu-item "\\label" reftex-label)
 			(\\ref menu-item "\\ref" reftex-reference)
 			(\\cite menu-item "\\cite" reftex-citation)
@@ -19,63 +19,63 @@ Keymap for RefTeX mode.</br>
 			 (keymap "\\index"
 				 (\\index menu-item "\\index" reftex-index)
 				 (\\index{THIS} menu-item "\\index{THIS}" reftex-index-selection-or-word)
-				 (nil menu-item "--")
+				 (nil-7 menu-item "--")
 				 (Add\ THIS\ to\ Index\ Phrases menu-item "Add THIS to Index Phrases" reftex-index-phrase-selection-or-word)
 				 (Visit\ Phrase\ Buffer menu-item "Visit Phrase Buffer" reftex-index-visit-phrases-buffer)
 				 (Apply\ Phrases\ to\ Region menu-item "Apply Phrases to Region" reftex-index-phrases-apply-to-region)
-				 (nil-6 menu-item "--")
+				 (nil-7-6 menu-item "--")
 				 (Display\ the\ Index menu-item "Display the Index" reftex-display-index)))
-			(nil-7 menu-item "--")
+			(nil-7-7 menu-item "--")
 			(View\ Crossref menu-item "View Crossref" reftex-view-crossref)
-			(nil-9 menu-item "--")
+			(nil-7-9 menu-item "--")
 			(Parse\ Document menu-item "Parse Document"
 					 (keymap "Parse Document"
 						 (One\ File menu-item "One File" reftex-parse-one :enable reftex-enable-partial-scans)
 						 (Entire\ Document menu-item "Entire Document" reftex-parse-all)
-						 (Save\ to\ File menu-item "Save to File" menu-function-199 :key-sequence nil :enable
+						 (Save\ to\ File menu-item "Save to File" menu-function-200 :key-sequence nil :enable
 								 (>
 								  (length
 								   (symbol-value reftex-docstruct-symbol))
 								  0))
-						 (Restore\ from\ File menu-item "Restore from File" menu-function-200 :key-sequence nil)))
+						 (Restore\ from\ File menu-item "Restore from File" menu-function-201 :key-sequence nil)))
 			(Global\ Actions menu-item "Global Actions"
 					 (keymap "Global Actions"
 						 (Search\ Whole\ Document menu-item "Search Whole Document" reftex-search-document)
 						 (Search\ Again menu-item "Search Again" tags-loop-continue)
 						 (Replace\ in\ Document menu-item "Replace in Document" reftex-query-replace-document)
 						 (Grep\ on\ Document menu-item "Grep on Document" reftex-grep-document)
-						 (nil menu-item "--")
+						 (nil-7 menu-item "--")
 						 (Goto\ Label menu-item "Goto Label" reftex-goto-label)
 						 (Find\ Duplicate\ Labels menu-item "Find Duplicate Labels" reftex-find-duplicate-labels)
 						 (Change\ Label\ and\ Refs menu-item "Change Label and Refs" reftex-change-label)
 						 (Renumber\ Simple\ Labels menu-item "Renumber Simple Labels" reftex-renumber-simple-labels)
-						 (nil-9 menu-item "--")
+						 (nil-7-9 menu-item "--")
 						 (Create\ BibTeX\ File menu-item "Create BibTeX File" reftex-create-bibtex-file)
-						 (nil-11 menu-item "--")
+						 (nil-7-11 menu-item "--")
 						 (Create\ TAGS\ File menu-item "Create TAGS File" reftex-create-tags-file)
-						 (nil-13 menu-item "--")
+						 (nil-7-13 menu-item "--")
 						 (Save\ Document menu-item "Save Document" reftex-save-all-document-buffers)))
-			(nil-12 menu-item "--")
+			(nil-7-12 menu-item "--")
 			(Options menu-item "Options"
 				 (keymap "Options"
 					 (nil menu-item "PARSER")
-					 (Partial\ Scans menu-item "Partial Scans" menu-function-201 :key-sequence nil :button
+					 (Partial\ Scans menu-item "Partial Scans" menu-function-202 :key-sequence nil :button
 							 (:toggle . reftex-enable-partial-scans))
-					 (Auto-Save\ Parse\ Info menu-item "Auto-Save Parse Info" menu-function-202 :key-sequence nil :button
+					 (Auto-Save\ Parse\ Info menu-item "Auto-Save Parse Info" menu-function-203 :key-sequence nil :button
 								 (:toggle . reftex-save-parse-info))
-					 (nil-3 menu-item "--")
+					 (nil-7 menu-item "--")
 					 (nil-4 menu-item "TOC RECENTER")
 					 (Automatic\ Recenter menu-item "Automatic Recenter" reftex-toggle-auto-toc-recenter :button
 							      (:toggle . reftex-toc-auto-recenter-timer))
-					 (nil-6 menu-item "--")
-					 (nil-7 menu-item "CROSSREF INFO")
+					 (nil-7-6 menu-item "--")
+					 (nil-7-7 menu-item "CROSSREF INFO")
 					 (Automatic\ Info menu-item "Automatic Info" reftex-toggle-auto-view-crossref :button
 							  (:toggle . reftex-auto-view-crossref-timer))
-					 (\.\.\.in\ Echo\ Area menu-item "...in Echo Area" menu-function-203 :key-sequence nil :button
+					 (\.\.\.in\ Echo\ Area menu-item "...in Echo Area" menu-function-204 :key-sequence nil :button
 					  (:radio eq reftex-auto-view-crossref t))
-					 (\.\.\.in\ Other\ Window menu-item "...in Other Window" menu-function-204 :key-sequence nil :button
+					 (\.\.\.in\ Other\ Window menu-item "...in Other Window" menu-function-205 :key-sequence nil :button
 					  (:radio eq reftex-auto-view-crossref 'window))
-					 (nil-11 menu-item "--")
+					 (nil-7-11 menu-item "--")
 					 (nil-12 menu-item "MISC")
 					 (AUCTeX\ Interface menu-item "AUCTeX Interface" reftex-toggle-plug-into-AUCTeX :button
 							    (:toggle . reftex-plug-into-AUCTeX))
@@ -83,98 +83,98 @@ Keymap for RefTeX mode.</br>
 								   (:toggle . reftex-isearch-minor-mode))))
 			(Reference\ Style menu-item "Reference Style"
 					  (keymap "Reference Style"
-						  (Default menu-item "Default" menu-function-205 :key-sequence nil :button
+						  (Default menu-item "Default" menu-function-206 :key-sequence nil :button
 						    (:toggle member "Default"
 							     (reftex-ref-style-list)))
-						  (Varioref menu-item "Varioref" menu-function-206 :key-sequence nil :button
+						  (Varioref menu-item "Varioref" menu-function-207 :key-sequence nil :button
 							    (:toggle member "Varioref"
 								     (reftex-ref-style-list)))
-						  (Fancyref menu-item "Fancyref" menu-function-207 :key-sequence nil :button
+						  (Fancyref menu-item "Fancyref" menu-function-208 :key-sequence nil :button
 							    (:toggle member "Fancyref"
 								     (reftex-ref-style-list)))
-						  (Hyperref menu-item "Hyperref" menu-function-208 :key-sequence nil :button
+						  (Hyperref menu-item "Hyperref" menu-function-209 :key-sequence nil :button
 							    (:toggle member "Hyperref"
 								     (reftex-ref-style-list)))
-						  (Cleveref menu-item "Cleveref" menu-function-209 :key-sequence nil :button
+						  (Cleveref menu-item "Cleveref" menu-function-210 :key-sequence nil :button
 							    (:toggle member "Cleveref"
 								     (reftex-ref-style-list)))))
 			(Citation\ Style menu-item "Citation Style"
 					 (keymap "Citation Style"
-						 (Default menu-item "Default" menu-function-210 :key-sequence nil :button
+						 (Default menu-item "Default" menu-function-211 :key-sequence nil :button
 						   (:radio eq
 							   (reftex-get-cite-format)
 							   'default))
-						 (Natbib menu-item "Natbib" menu-function-211 :key-sequence nil :button
+						 (Natbib menu-item "Natbib" menu-function-212 :key-sequence nil :button
 							 (:radio eq
 								 (reftex-get-cite-format)
 								 'natbib))
-						 (Amsrefs menu-item "Amsrefs" menu-function-212 :key-sequence nil :button
+						 (Amsrefs menu-item "Amsrefs" menu-function-213 :key-sequence nil :button
 							  (:radio eq
 								  (reftex-get-cite-format)
 								  'amsrefs))
-						 (Jurabib menu-item "Jurabib" menu-function-213 :key-sequence nil :button
+						 (Jurabib menu-item "Jurabib" menu-function-214 :key-sequence nil :button
 							  (:radio eq
 								  (reftex-get-cite-format)
 								  'jurabib))
-						 (Bibentry menu-item "Bibentry" menu-function-214 :key-sequence nil :button
+						 (Bibentry menu-item "Bibentry" menu-function-215 :key-sequence nil :button
 							   (:radio eq
 								   (reftex-get-cite-format)
 								   'bibentry))
-						 (Harvard menu-item "Harvard" menu-function-215 :key-sequence nil :button
+						 (Harvard menu-item "Harvard" menu-function-216 :key-sequence nil :button
 							  (:radio eq
 								  (reftex-get-cite-format)
 								  'harvard))
-						 (Chicago menu-item "Chicago" menu-function-216 :key-sequence nil :button
+						 (Chicago menu-item "Chicago" menu-function-217 :key-sequence nil :button
 							  (:radio eq
 								  (reftex-get-cite-format)
 								  'chicago))
-						 (Astron menu-item "Astron" menu-function-217 :key-sequence nil :button
+						 (Astron menu-item "Astron" menu-function-218 :key-sequence nil :button
 							 (:radio eq
 								 (reftex-get-cite-format)
 								 'astron))
-						 (Author-Year menu-item "Author-Year" menu-function-218 :key-sequence nil :button
+						 (Author-Year menu-item "Author-Year" menu-function-219 :key-sequence nil :button
 							      (:radio eq
 								      (reftex-get-cite-format)
 								      'author-year))
-						 (Locally menu-item "Locally" menu-function-219 :key-sequence nil :button
+						 (Locally menu-item "Locally" menu-function-220 :key-sequence nil :button
 							  (:radio eq
 								  (reftex-get-cite-format)
 								  'locally))
-						 (Context menu-item "Context" menu-function-220 :key-sequence nil :button
+						 (Context menu-item "Context" menu-function-221 :key-sequence nil :button
 							  (:radio eq
 								  (reftex-get-cite-format)
 								  'context))
-						 (nil menu-item "--")
-						 (nil-12 menu-item "Sort Database Matches")
-						 (Not menu-item "Not" menu-function-221 :key-sequence nil :button
+						 (nil-7 menu-item "--")
+						 (nil menu-item "Sort Database Matches")
+						 (Not menu-item "Not" menu-function-222 :key-sequence nil :button
 						      (:radio eq reftex-sort-bibtex-matches nil))
-						 (by\ Author menu-item "by Author" menu-function-222 :key-sequence nil :button
+						 (by\ Author menu-item "by Author" menu-function-223 :key-sequence nil :button
 							     (:radio eq reftex-sort-bibtex-matches 'author))
-						 (by\ Year menu-item "by Year" menu-function-223 :key-sequence nil :button
+						 (by\ Year menu-item "by Year" menu-function-224 :key-sequence nil :button
 							   (:radio eq reftex-sort-bibtex-matches 'year))
-						 (by\ Year\,\ reversed menu-item "by Year, reversed" menu-function-224 :key-sequence nil :button
+						 (by\ Year\,\ reversed menu-item "by Year, reversed" menu-function-225 :key-sequence nil :button
 								       (:radio eq reftex-sort-bibtex-matches 'reverse-year))))
 			(Index\ Style menu-item "Index Style"
 				      (keymap "Index Style"
-					      (Default menu-item "Default" menu-function-225 :key-sequence nil :button
+					      (Default menu-item "Default" menu-function-226 :key-sequence nil :button
 						(:radio memq 'default
 							(get reftex-docstruct-symbol 'reftex-index-macros-style)))
-					      (Multind menu-item "Multind" menu-function-226 :key-sequence nil :button
+					      (Multind menu-item "Multind" menu-function-227 :key-sequence nil :button
 						       (:radio memq 'multind
 							       (get reftex-docstruct-symbol 'reftex-index-macros-style)))
-					      (Index menu-item "Index" menu-function-227 :key-sequence nil :button
+					      (Index menu-item "Index" menu-function-228 :key-sequence nil :button
 						     (:radio memq 'index
 							     (get reftex-docstruct-symbol 'reftex-index-macros-style)))
-					      (Index-Shortcut menu-item "Index-Shortcut" menu-function-228 :key-sequence nil :button
+					      (Index-Shortcut menu-item "Index-Shortcut" menu-function-229 :key-sequence nil :button
 							      (:radio memq 'Index-Shortcut
 								      (get reftex-docstruct-symbol 'reftex-index-macros-style)))))
-			(nil-17 menu-item "--")
+			(nil-7-17 menu-item "--")
 			(Reset\ RefTeX\ Mode menu-item "Reset RefTeX Mode" reftex-reset-mode)
-			(nil-19 menu-item "--")
+			(nil-7-19 menu-item "--")
 			(Customize menu-item "Customize"
 				   (keymap "Customize"
 					   (Browse\ RefTeX\ Group menu-item "Browse RefTeX Group" reftex-customize)
-					   (nil menu-item "--")
+					   (nil-7 menu-item "--")
 					   (Build\ Full\ Customize\ Menu menu-item "Build Full Customize Menu" reftex-create-customize-menu :enable
 									 (fboundp 'customize-menu-create))))
 			(Documentation menu-item "Documentation"
@@ -195,3 +195,4 @@ Keymap for RefTeX mode.</br>
     (45 . reftex-toc-recenter)
     (61 . reftex-toc)))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

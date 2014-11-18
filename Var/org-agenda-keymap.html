@@ -1,6 +1,6 @@
-<strong>org-agenda-keymap</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-agenda-keymap</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
-<ul>  <li>This variable is an alias for `<strong><a href="org-agenda-mode-map.html">org-agenda-mode-map</a></strong>'.</li>
+<ul>  <li>This variable is an alias for `<strong><a href="/Var/org-agenda-mode-map.html">org-agenda-mode-map</a></strong>'.</li>
 <li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Keymap for `org-agenda-mode'.</br>
@@ -158,7 +158,7 @@ Keymap for `org-agenda-mode'.</br>
 		   (keymap "Agenda"
 			   (Agenda\ Files menu-item "Agenda Files"
 					  (keymap "Agenda Files"))
-			   (nil menu-item "--")
+			   (nil-7 menu-item "--")
 			   (Agenda\ Dates menu-item "Agenda Dates"
 					  (keymap "Agenda Dates"
 						  (Goto\ Today menu-item "Goto Today" org-agenda-goto-today :enable
@@ -169,7 +169,7 @@ Keymap for `org-agenda-mode'.</br>
 								   (org-agenda-check-type nil 'agenda))
 						  (Jump\ to\ date menu-item "Jump to date" org-agenda-goto-date :enable
 								  (org-agenda-check-type nil 'agenda))))
-			   (nil-3 menu-item "--")
+			   (nil-7-3 menu-item "--")
 			   (View menu-item "View"
 				 (keymap "View"
 					 (Day\ View menu-item "Day View" org-agenda-day-view :enable
@@ -192,7 +192,7 @@ Keymap for `org-agenda-mode'.</br>
 						     (org-agenda-check-type nil 'agenda)
 						     :keys "v y" :button
 						     (:radio eq org-agenda-current-span 'year))
-					 (nil menu-item "--")
+					 (nil-7 menu-item "--")
 					 (Include\ Diary menu-item "Include Diary" org-agenda-toggle-diary :enable
 							 (org-agenda-check-type nil 'agenda)
 							 :button
@@ -205,35 +205,35 @@ Keymap for `org-agenda-mode'.</br>
 							  (org-agenda-check-type nil 'agenda)
 							  :button
 							  (:toggle . org-agenda-use-time-grid))
-					 (nil-9 menu-item "--")
+					 (nil-7-9 menu-item "--")
 					 (Show\ clock\ report menu-item "Show clock report" org-agenda-clockreport-mode :enable
 							      (org-agenda-check-type nil 'agenda)
 							      :button
 							      (:toggle . org-agenda-clockreport-mode))
 					 (Show\ some\ entry\ text menu-item "Show some entry text" org-agenda-entry-text-mode :button
 								  (:toggle . org-agenda-entry-text-mode))
-					 (nil-12 menu-item "--")
+					 (nil-7-12 menu-item "--")
 					 (Show\ Logbook\ entries menu-item "Show Logbook entries" org-agenda-log-mode :enable
 								 (org-agenda-check-type nil 'agenda 'timeline)
 								 :keys "v l (or just l)" :button
 								 (:toggle . org-agenda-show-log))
 					 (Include\ archived\ trees menu-item "Include archived trees" org-agenda-archives-mode :keys "v a" :button
 								   (:toggle . org-agenda-archives-mode))
-					 (Include\ archive\ files menu-item "Include archive files" menu-function-357 :keys "v A" :button
+					 (Include\ archive\ files menu-item "Include archive files" menu-function-365 :keys "v A" :button
 								  (:toggle eq org-agenda-archives-mode t))
-					 (nil-16 menu-item "--")
+					 (nil-7-16 menu-item "--")
 					 (Remove\ Restriction menu-item "Remove Restriction" org-agenda-remove-restriction-lock :enable org-agenda-restrict)))
 			   (Write\ view\ to\ file menu-item "Write view to file" org-agenda-write)
 			   (Rebuild\ buffer menu-item "Rebuild buffer" org-agenda-redo)
 			   (Save\ all\ Org-mode\ Buffers menu-item "Save all Org-mode Buffers" org-save-all-org-buffers)
-			   (nil-8 menu-item "--")
+			   (nil-7-8 menu-item "--")
 			   (Show\ original\ entry menu-item "Show original entry" org-agenda-show)
 			   (Go\ To\ \(other\ window\) menu-item "Go To (other window)" org-agenda-goto)
 			   (Go\ To\ \(this\ window\) menu-item "Go To (this window)" org-agenda-switch-to)
 			   (Capture\ with\ cursor\ date menu-item "Capture with cursor date" org-agenda-capture)
 			   (Follow\ Mode menu-item "Follow Mode" org-agenda-follow-mode :button
 					 (:toggle . org-agenda-follow-mode))
-			   (nil-14 menu-item "--")
+			   (nil-7-14 menu-item "--")
 			   (TODO menu-item "TODO"
 				 (keymap "TODO"
 					 (Cycle\ TODO menu-item "Cycle TODO" org-agenda-todo)
@@ -247,9 +247,9 @@ Keymap for `org-agenda-mode'.</br>
 							  (Toggle\ ARCHIVE\ tag menu-item "Toggle ARCHIVE tag" org-agenda-toggle-archive-tag)
 							  (Move\ to\ archive\ sibling menu-item "Move to archive sibling" org-agenda-archive-to-archive-sibling)
 							  (Archive\ subtree menu-item "Archive subtree" org-agenda-archive)
-							  (nil menu-item "--")
-							  (Refile menu-item "Refile" org-agenda-refile)
 							  (nil-7 menu-item "--")
+							  (Refile menu-item "Refile" org-agenda-refile)
+							  (nil-7-7 menu-item "--")
 							  (Delete\ subtree menu-item "Delete subtree" org-agenda-kill)))
 			   (Bulk\ action menu-item "Bulk action"
 					 (keymap "Bulk action"
@@ -261,7 +261,7 @@ Keymap for `org-agenda-mode'.</br>
 						 (Toggle\ all menu-item "Toggle all" org-agenda-bulk-toggle-all)
 						 (Mark\ regexp menu-item "Mark regexp" org-agenda-bulk-mark-regexp)))
 			   (Act\ on\ all\ marked menu-item "Act on all marked" org-agenda-bulk-action)
-			   (nil-19 menu-item "--")
+			   (nil-7-19 menu-item "--")
 			   (Tags\ and\ Properties menu-item "Tags and Properties"
 						  (keymap "Tags and Properties"
 							  (Show\ all\ Tags menu-item "Show all Tags" org-agenda-show-tags)
@@ -270,13 +270,13 @@ Keymap for `org-agenda-mode'.</br>
 										     (org-region-active-p)))
 							  (Change\ tag\ in\ region menu-item "Change tag in region" org-agenda-set-tags :enable
 										   (org-region-active-p))
-							  (nil menu-item "--")
+							  (nil-7 menu-item "--")
 							  (Column\ View menu-item "Column View" org-columns)))
 			   (Deadline/Schedule menu-item "Deadline/Schedule"
 					      (keymap "Deadline/Schedule"
 						      (Schedule menu-item "Schedule" org-agenda-schedule)
 						      (Set\ Deadline menu-item "Set Deadline" org-agenda-deadline)
-						      (nil menu-item "--")
+						      (nil-7 menu-item "--")
 						      (Change\ Date\ +1\ day menu-item "Change Date +1 day" org-agenda-date-later :enable
 									     (org-agenda-check-type nil 'agenda 'timeline))
 						      (Change\ Date\ -1\ day menu-item "Change Date -1 day" org-agenda-date-earlier :enable
@@ -301,7 +301,7 @@ Keymap for `org-agenda-mode'.</br>
 						       (Clock\ out menu-item "Clock out" org-agenda-clock-out)
 						       (Clock\ cancel menu-item "Clock cancel" org-agenda-clock-cancel)
 						       (Goto\ running\ clock menu-item "Goto running clock" org-clock-goto)
-						       (nil menu-item "--")
+						       (nil-7 menu-item "--")
 						       (Set\ Effort menu-item "Set Effort" org-agenda-set-effort)
 						       (Change\ clocked\ effort menu-item "Change clocked effort" org-clock-modify-effort-estimate :enable
 										(org-clock-is-active))))
@@ -325,20 +325,20 @@ Keymap for `org-agenda-mode'.</br>
 							     (org-agenda-check-type nil 'agenda 'timeline))
 						   (Convert menu-item "Convert" org-agenda-convert-date :enable
 							    (org-agenda-check-type nil 'agenda 'timeline))
-						   (nil menu-item "--")
+						   (nil-7 menu-item "--")
 						   (Create\ iCalendar\ File menu-item "Create iCalendar File" org-icalendar-combine-agenda-files)))
-			   (nil-25 menu-item "--")
+			   (nil-7-25 menu-item "--")
 			   (Undo\ Remote\ Editing menu-item "Undo Remote Editing" org-agenda-undo :enable org-agenda-undo-list)
-			   (nil-27 menu-item "--")
+			   (nil-7-27 menu-item "--")
 			   (MobileOrg menu-item "MobileOrg"
 				      (keymap "MobileOrg"
 					      (Push\ Files\ and\ Views menu-item "Push Files and Views" org-mobile-push)
 					      (Get\ Captured\ and\ Flagged menu-item "Get Captured and Flagged" org-mobile-pull)
-					      (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-350 :keys "C-c a ?")
+					      (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-351 :keys "C-c a ?")
 					      (Show\ note\ /\ unflag menu-item "Show note / unflag" org-agenda-show-the-flagging-note)
-					      (nil menu-item "--")
-					      (Setup menu-item "Setup" menu-function-351 :key-sequence nil)))
-			   (nil-29 menu-item "--")
+					      (nil-7 menu-item "--")
+					      (Setup menu-item "Setup" menu-function-352 :key-sequence nil)))
+			   (nil-7-29 menu-item "--")
 			   (Quit menu-item "Quit" org-agenda-quit)
 			   (Exit\ and\ Release\ Buffers menu-item "Exit and Release Buffers" org-agenda-exit)))
 	   (edit keymap
@@ -358,3 +358,4 @@ Keymap for `org-agenda-mode'.</br>
      (23 . org-agenda-write)
      (117 . org-agenda-undo)))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

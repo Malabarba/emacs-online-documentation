@@ -1,6 +1,17 @@
-<strong>reftex-create-bibtex-file</strong> is an interactive autoloaded Lisp function in `<code>reftex-cite.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-create-bibtex-file</strong> is an interactive autoloaded Lisp function in `<code>reftex-cite.el</code>'.</br>
 </br>
 </br>
-[Arg list not available until function definition is loaded.]</br>
+(reftex-create-bibtex-file <u>BIBFILE</u>)</br>
 </br>
-Create a new BibTeX database BIBFILE with all entries referenced in document.
+Create a new BibTeX database <u>BIBFILE</u> with all entries referenced in document.</br>
+The command prompts for a filename and writes the collected</br>
+entries to that file.  Only entries referenced in the current</br>
+document with any \cite-like macros are used.  The sequence in</br>
+the new file is the same as it was in the old database.</br>
+</br>
+Entries referenced from other entries must appear after all</br>
+referencing entries.</br>
+</br>
+You can define strings to be used as header or footer for the</br>
+created files in the variables `reftex-create-bibtex-header' or</br>
+`reftex-create-bibtex-footer' respectively.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

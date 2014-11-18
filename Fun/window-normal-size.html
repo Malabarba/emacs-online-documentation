@@ -1,7 +1,25 @@
-<strong>window-normal-size</strong> is a built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>window-normal-size</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
 (window-normal-size &optional <u>WINDOW</u> <u>HORIZONTAL</u>)</br>
 </br>
 Return the normal height of window <u>WINDOW</u>.</br>
 <u>WINDOW</u> must be a valid window and defaults to the selected one.</br>
-If <u>HORIZONTAL</u> is non-nil, return the normal width of <u>WINDOW</u>.
+If <u>HORIZONTAL</u> is non-nil, return the normal width of <u>WINDOW</u>.</br>
+</br>
+The normal height of a frame's root window or a window that is</br>
+horizontally combined (a window that has a left or right sibling) is</br>
+1.0.  The normal height of a window that is vertically combined (has a</br>
+sibling above or below) is the fraction of the window's height with</br>
+respect to its parent.  The sum of the normal heights of all windows in a</br>
+vertical combination equals 1.0.</br>
+</br>
+Similarly, the normal width of a frame's root window or a window that is</br>
+vertically combined equals 1.0.  The normal width of a window that is</br>
+horizontally combined is the fraction of the window's width with respect</br>
+to its parent.  The sum of the normal widths of all windows in a</br>
+horizontal combination equals 1.0.</br>
+</br>
+The normal sizes of windows are used to restore the proportional sizes</br>
+of windows after they have been shrunk to their minimum sizes; for</br>
+example when a frame is temporarily made very small and afterwards gets</br>
+re-enlarged to its previous size.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

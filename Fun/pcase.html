@@ -1,4 +1,4 @@
-<strong>pcase</strong> is an autoloaded Lisp macro in `<code>pcase.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>pcase</strong> is an autoloaded Lisp macro in `<code>pcase.el</code>'.</br>
 </br>
 (pcase <u>EXP</u> &rest <u>CASES</u>)</br>
 </br>
@@ -11,26 +11,31 @@ UPatterns can take the following forms:</br>
   SYMBOL	matches anything and binds it to SYMBOL.</br>
   (or UPAT...)	matches if any of the patterns matches.</br>
   (and UPAT...)	matches if all the patterns match.</br>
+  'VAL		matches if the object is `equal' to VAL</br>
   `QPAT		matches if the QPattern QPAT matches.</br>
-  (pred PRED)	matches if PRED applied to the object returns non-nil.</br>
+  (pred FUN)	matches if FUN applied to the object returns non-nil.</br>
   (guard BOOLEXP)	matches if BOOLEXP evaluates to non-nil.</br>
   (let UPAT <u>EXP</u>)	matches if <u>EXP</u> matches UPAT.</br>
+  (app FUN UPAT)	matches if FUN applied to the object matches UPAT.</br>
 If a SYMBOL is used twice in the same pattern (i.e. the pattern is</br>
 "non-linear"), then the second occurrence is turned into an `eq'uality test.</br>
 </br>
 QPatterns can take the following forms:</br>
-  (QPAT1 . QPAT2)	matches if QPAT1 matches the car and QPAT2 the cdr.</br>
-  ,UPAT			matches if the UPattern UPAT matches.</br>
-  STRING		matches if the object is `equal' to STRING.</br>
-  ATOM			matches if the object is `eq' to ATOM.</br>
-QPatterns for vectors are not implemented yet.</br>
+  (QPAT1 . QPAT2)       matches if QPAT1 matches the car and QPAT2 the cdr.</br>
+  [QPAT1 QPAT2..QPATn]  matches a vector of length n and QPAT1..QPATn match</br>
+                           its 0..(n-1)th elements, respectively.</br>
+  ,UPAT                 matches if the UPattern UPAT matches.</br>
+  STRING                matches if the object is `equal' to STRING.</br>
+  ATOM                  matches if the object is `eq' to ATOM.</br>
 </br>
-PRED can take the form</br>
-  FUNCTION	     in which case it gets called with one argument.</br>
-  (FUN ARG1 .. ARGN) in which case it gets called with an N+1'th argument</br>
+FUN can take the form</br>
+  SYMBOL or (lambda ARGS BODY)  in which case it's called with one argument.</br>
+  (F ARG1 .. ARGn) in which case F gets called with an n+1'th argument</br>
                         which is the value being matched.</br>
-A PRED of the form FUNCTION is equivalent to one of the form (FUNCTION).</br>
-PRED patterns can refer to variables bound earlier in the pattern.</br>
+So a FUN of the form SYMBOL is equivalent to one of the form (FUN).</br>
+FUN can refer to variables bound earlier in the pattern.</br>
+FUN is assumed to be pure, i.e. it can be dropped if its result is not used,</br>
+and two identical calls can be merged into one.</br>
 E.g. you can match pairs where the cdr is larger than the car with a pattern</br>
 like `(,a . ,(pred (&lt; a))) or, with more checks:</br>
-`(,(and a (pred numberp)) . ,(and (pred numberp) (pred (&lt; a))))
+`(,(and a (pred numberp)) . ,(and (pred numberp) (pred (&lt; a))))<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>python-shell-buffer-substring</strong> is a compiled Lisp function in `<code>python.el</code>'.</br>
+</br>
+(python-shell-buffer-substring <u>START</u> <u>END</u> &optional <u>NOMAIN</u>)</br>
+</br>
+Send buffer substring from <u>START</u> to <u>END</u> formatted for shell.</br>
+This is a wrapper over `buffer-substring' that takes care of</br>
+different transformations for the code sent to be evaluated in</br>
+the python shell:</br>
+  1. When optional argument <u>NOMAIN</u> is non-nil everything under an</br>
+     "if __name__ == '__main__'" block will be removed.</br>
+  2. When a subregion of the buffer is sent, it takes care of</br>
+     appending extra empty lines so tracebacks are correct.</br>
+  3. Wraps indented regions under an "if True:" block so the</br>
+     interpreter evaluates them correctly.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

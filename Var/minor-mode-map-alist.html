@@ -1,4 +1,4 @@
-<strong>minor-mode-map-alist</strong> is a variable defined in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>minor-mode-map-alist</strong> is a variable defined in `<code>C source code</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -109,7 +109,7 @@ in the list takes precedence.</br>
 						 (Insert\ Template menu-item "Insert Template" srecode-insert :help "Insert a template by name.")
 						 (Insert\ Template\ Again menu-item "Insert Template Again" srecode-insert-again :help "Run the same template as last time again.")
 						 (Edit\ Template menu-item "Edit Template" srecode-edit :help "Edit a template for this language by name.")
-						 (nil menu-item "---")
+						 (nil-9 menu-item "---")
 						 (Insert\ \.\.\. menu-item "Insert ..." nil :filter
 								 #[257 "\302\301!\300\"\207"
 								       ["Insert ..." srecode-minor-mode-templates-menu easy-menu-filter-return]
@@ -118,8 +118,8 @@ in the list takes precedence.</br>
 								   #[257 "\302\301!\300\"\207"
 									 ["Generate ..." srecode-minor-mode-generate-menu easy-menu-filter-return]
 									 4 "\n\n(fn MENU)"])
-						 (nil-6 menu-item "---")
-						 (Customize\.\.\. menu-item "Customize..." menu-function-355 :key-sequence nil :help "Customize SRecode options")
+						 (nil-9-6 menu-item "---")
+						 (Customize\.\.\. menu-item "Customize..." menu-function-356 :key-sequence nil :help "Customize SRecode options")
 						 (Debugging\ Tools\.\.\. menu-item "Debugging Tools..."
 									 (keymap "Debugging Tools..."
 										 (Dump\ Template\ MAP menu-item "Dump Template MAP" srecode-get-maps :help "Calculate (if needed) and display the current template file map.")
@@ -160,32 +160,8 @@ in the list takes precedence.</br>
 			    (46 . srecode-insert-again)
 			    (insert . srecode-insert)
 			    (47 . srecode-insert))))
- (superword-mode keymap
-		 (remap keymap
-			(right-word . subword-right)
-			(left-word . subword-left)
-			(downcase-word . subword-downcase)
-			(upcase-word . subword-upcase)
-			(capitalize-word . subword-capitalize)
-			(transpose-words . subword-transpose)
-			(backward-kill-word . subword-backward-kill)
-			(kill-word . subword-kill)
-			(mark-word . subword-mark)
-			(backward-word . subword-backward)
-			(forward-word . subword-forward)))
- (subword-mode keymap
-	       (remap keymap
-		      (right-word . subword-right)
-		      (left-word . subword-left)
-		      (downcase-word . subword-downcase)
-		      (upcase-word . subword-upcase)
-		      (capitalize-word . subword-capitalize)
-		      (transpose-words . subword-transpose)
-		      (backward-kill-word . subword-backward-kill)
-		      (kill-word . subword-kill)
-		      (mark-word . subword-mark)
-		      (backward-word . subword-backward)
-		      (forward-word . subword-forward)))
+ (superword-mode keymap)
+ (subword-mode keymap)
  (org-cdlatex-mode keymap
 		   (3 keymap
 		      (123 . cdlatex-environment))
@@ -211,21 +187,21 @@ in the list takes precedence.</br>
 					     (Hide\ Level menu-item "Hide Level" hs-hide-level :help "Hide all block at levels below the current block")
 					     (Toggle\ Hiding menu-item "Toggle Hiding" hs-toggle-hiding :help "Toggle the hiding state of the current block")
 					     (nil menu-item "----")
-					     (Hide\ comments\ when\ hiding\ all menu-item "Hide comments when hiding all" menu-function-330 :key-sequence nil :button
+					     (Hide\ comments\ when\ hiding\ all menu-item "Hide comments when hiding all" menu-function-331 :key-sequence nil :button
 										(:toggle . hs-hide-comments-when-hiding-all)
 										:help "If t also hide comment blocks when doing `hs-hide-all'")
 					     (Reveal\ on\ isearch menu-item "Reveal on isearch"
 								  (keymap "Reveal on isearch"
-									  (Code\ blocks menu-item "Code blocks" menu-function-331 :key-sequence nil :button
+									  (Code\ blocks menu-item "Code blocks" menu-function-332 :key-sequence nil :button
 											(:radio eq hs-isearch-open 'code)
 											:help "Show hidden code blocks when isearch matches inside them")
-									  (Comment\ blocks menu-item "Comment blocks" menu-function-332 :key-sequence nil :button
+									  (Comment\ blocks menu-item "Comment blocks" menu-function-333 :key-sequence nil :button
 											   (:radio eq hs-isearch-open 'comment)
 											   :help "Show hidden comment blocks when isearch matches inside them")
-									  (Code\ and\ Comment\ blocks menu-item "Code and Comment blocks" menu-function-333 :key-sequence nil :button
+									  (Code\ and\ Comment\ blocks menu-item "Code and Comment blocks" menu-function-334 :key-sequence nil :button
 												      (:radio eq hs-isearch-open t)
 												      :help "Show both hidden code and comment blocks when isearch matches inside them")
-									  (None menu-item "None" menu-function-334 :key-sequence nil :button
+									  (None menu-item "None" menu-function-335 :key-sequence nil :button
 										(:radio eq hs-isearch-open nil)
 										:help "Do not hidden code or comment blocks when isearch matches inside them"))))))
 		(S-mouse-2 . hs-mouse-toggle-hiding)
@@ -384,7 +360,7 @@ in the list takes precedence.</br>
 											   (and tag
 												(semantic-tag-folded-p tag)))
 										  :help "Fold the current tag to one line")
-								       (nil menu-item "---")
+								       (nil-9 menu-item "---")
 								       (About\ This\ Tag menu-item "About This Tag" semantic-describe-tag))
 							       :visible
 							       (progn nil)))
@@ -414,8 +390,8 @@ in the list takes precedence.</br>
 											       (and tag
 												    (semantic-tag-folded-p tag)))
 										      :help "Fold the current tag to one line")
-							       (nil menu-item "---")
-							       (About\ This\ Header\ Line menu-item "About This Header Line" menu-function-247 :key-sequence nil))
+							       (nil-9 menu-item "---")
+							       (About\ This\ Header\ Line menu-item "About This Header Line" menu-function-248 :key-sequence nil))
 						       :visible
 						       (progn nil)))
 			   (header-line keymap
@@ -583,7 +559,7 @@ in the list takes precedence.</br>
 						  (Interactive\ Buffer\ Style\ and\ Spelling\ Check menu-item "Interactive Buffer Style and Spelling Check" checkdoc-ispell)
 						  (Check\ Buffer menu-item "Check Buffer" checkdoc-current-buffer)
 						  (Check\ and\ Spell\ Buffer menu-item "Check and Spell Buffer" checkdoc-ispell-current-buffer)
-						  (nil menu-item "---")
+						  (nil-9 menu-item "---")
 						  (Interactive\ Style\ Check menu-item "Interactive Style Check" checkdoc-interactive)
 						  (Interactive\ Style\ and\ Spelling\ Check menu-item "Interactive Style and Spelling Check" checkdoc-ispell-interactive)
 						  (Find\ First\ Style\ Error menu-item "Find First Style Error" checkdoc-start)
@@ -597,7 +573,7 @@ in the list takes precedence.</br>
 						  (Check\ Comment\ Style menu-item "Check Comment Style" checkdoc-comments :enable buffer-file-name)
 						  (Check\ Comment\ Style\ and\ Spelling menu-item "Check Comment Style and Spelling" checkdoc-ispell-comments :enable buffer-file-name)
 						  (Check\ for\ Rogue\ Spaces menu-item "Check for Rogue Spaces" checkdoc-rogue-spaces)
-						  (nil-18 menu-item "---")
+						  (nil-9-18 menu-item "---")
 						  (Check\ Defun menu-item "Check Defun" checkdoc-defun)
 						  (Check\ and\ Spell\ Defun menu-item "Check and Spell Defun" checkdoc-ispell-defun)
 						  (Check\ and\ Evaluate\ Defun menu-item "Check and Evaluate Defun" checkdoc-eval-defun)
@@ -614,7 +590,7 @@ in the list takes precedence.</br>
 		 (20 .
 		     #[0 "\300\301!\207"
 			 [edebug-set-breakpoint t]
-			 2 "\n\n(fn)" nil])
+			 2 nil nil])
 		 (4 . edebug-unset-breakpoint)
 		 (3 . edebug-go-mode)
 		 (14 . edebug-next-mode)
@@ -712,13 +688,13 @@ in the list takes precedence.</br>
 							 (Edebug\ All\ Forms menu-item "Edebug All Forms" edebug-all-forms :button
 									     (:toggle . edebug-all-forms))
 							 (nil menu-item "----")
-							 (Tracing menu-item "Tracing" menu-function-229 :key-sequence nil :button
+							 (Tracing menu-item "Tracing" menu-function-230 :key-sequence nil :button
 								  (:toggle . edebug-trace))
-							 (Test\ Coverage menu-item "Test Coverage" menu-function-230 :key-sequence nil :button
+							 (Test\ Coverage menu-item "Test Coverage" menu-function-231 :key-sequence nil :button
 									 (:toggle . edebug-test-coverage))
 							 (Save\ Windows menu-item "Save Windows" edebug-toggle-save-windows :button
 									(:toggle . edebug-save-windows))
-							 (Save\ Point menu-item "Save Point" menu-function-231 :key-sequence nil :button
+							 (Save\ Point menu-item "Save Point" menu-function-232 :key-sequence nil :button
 								      (:toggle . edebug-save-displayed-buffer-points))))))
 			(emacs-lisp "Emacs-Lisp" keymap
 				    (indent-line menu-item "Indent Line" lisp-indent-line)
@@ -792,7 +768,7 @@ in the list takes precedence.</br>
 			     (keymap "Ref"
 				     (Table\ of\ Contents menu-item "Table of Contents" reftex-toc)
 				     (Recenter\ TOC menu-item "Recenter TOC" reftex-toc-recenter)
-				     (nil menu-item "--")
+				     (nil-7 menu-item "--")
 				     (\\label menu-item "\\label" reftex-label)
 				     (\\ref menu-item "\\ref" reftex-reference)
 				     (\\cite menu-item "\\cite" reftex-citation)
@@ -800,63 +776,63 @@ in the list takes precedence.</br>
 				      (keymap "\\index"
 					      (\\index menu-item "\\index" reftex-index)
 					      (\\index{THIS} menu-item "\\index{THIS}" reftex-index-selection-or-word)
-					      (nil menu-item "--")
+					      (nil-7 menu-item "--")
 					      (Add\ THIS\ to\ Index\ Phrases menu-item "Add THIS to Index Phrases" reftex-index-phrase-selection-or-word)
 					      (Visit\ Phrase\ Buffer menu-item "Visit Phrase Buffer" reftex-index-visit-phrases-buffer)
 					      (Apply\ Phrases\ to\ Region menu-item "Apply Phrases to Region" reftex-index-phrases-apply-to-region)
-					      (nil-6 menu-item "--")
+					      (nil-7-6 menu-item "--")
 					      (Display\ the\ Index menu-item "Display the Index" reftex-display-index)))
-				     (nil-7 menu-item "--")
+				     (nil-7-7 menu-item "--")
 				     (View\ Crossref menu-item "View Crossref" reftex-view-crossref)
-				     (nil-9 menu-item "--")
+				     (nil-7-9 menu-item "--")
 				     (Parse\ Document menu-item "Parse Document"
 						      (keymap "Parse Document"
 							      (One\ File menu-item "One File" reftex-parse-one :enable reftex-enable-partial-scans)
 							      (Entire\ Document menu-item "Entire Document" reftex-parse-all)
-							      (Save\ to\ File menu-item "Save to File" menu-function-199 :key-sequence nil :enable
+							      (Save\ to\ File menu-item "Save to File" menu-function-200 :key-sequence nil :enable
 									      (>
 									       (length
 										(symbol-value reftex-docstruct-symbol))
 									       0))
-							      (Restore\ from\ File menu-item "Restore from File" menu-function-200 :key-sequence nil)))
+							      (Restore\ from\ File menu-item "Restore from File" menu-function-201 :key-sequence nil)))
 				     (Global\ Actions menu-item "Global Actions"
 						      (keymap "Global Actions"
 							      (Search\ Whole\ Document menu-item "Search Whole Document" reftex-search-document)
 							      (Search\ Again menu-item "Search Again" tags-loop-continue)
 							      (Replace\ in\ Document menu-item "Replace in Document" reftex-query-replace-document)
 							      (Grep\ on\ Document menu-item "Grep on Document" reftex-grep-document)
-							      (nil menu-item "--")
+							      (nil-7 menu-item "--")
 							      (Goto\ Label menu-item "Goto Label" reftex-goto-label)
 							      (Find\ Duplicate\ Labels menu-item "Find Duplicate Labels" reftex-find-duplicate-labels)
 							      (Change\ Label\ and\ Refs menu-item "Change Label and Refs" reftex-change-label)
 							      (Renumber\ Simple\ Labels menu-item "Renumber Simple Labels" reftex-renumber-simple-labels)
-							      (nil-9 menu-item "--")
+							      (nil-7-9 menu-item "--")
 							      (Create\ BibTeX\ File menu-item "Create BibTeX File" reftex-create-bibtex-file)
-							      (nil-11 menu-item "--")
+							      (nil-7-11 menu-item "--")
 							      (Create\ TAGS\ File menu-item "Create TAGS File" reftex-create-tags-file)
-							      (nil-13 menu-item "--")
+							      (nil-7-13 menu-item "--")
 							      (Save\ Document menu-item "Save Document" reftex-save-all-document-buffers)))
-				     (nil-12 menu-item "--")
+				     (nil-7-12 menu-item "--")
 				     (Options menu-item "Options"
 					      (keymap "Options"
 						      (nil menu-item "PARSER")
-						      (Partial\ Scans menu-item "Partial Scans" menu-function-201 :key-sequence nil :button
+						      (Partial\ Scans menu-item "Partial Scans" menu-function-202 :key-sequence nil :button
 								      (:toggle . reftex-enable-partial-scans))
-						      (Auto-Save\ Parse\ Info menu-item "Auto-Save Parse Info" menu-function-202 :key-sequence nil :button
+						      (Auto-Save\ Parse\ Info menu-item "Auto-Save Parse Info" menu-function-203 :key-sequence nil :button
 									      (:toggle . reftex-save-parse-info))
-						      (nil-3 menu-item "--")
+						      (nil-7 menu-item "--")
 						      (nil-4 menu-item "TOC RECENTER")
 						      (Automatic\ Recenter menu-item "Automatic Recenter" reftex-toggle-auto-toc-recenter :button
 									   (:toggle . reftex-toc-auto-recenter-timer))
-						      (nil-6 menu-item "--")
-						      (nil-7 menu-item "CROSSREF INFO")
+						      (nil-7-6 menu-item "--")
+						      (nil-7-7 menu-item "CROSSREF INFO")
 						      (Automatic\ Info menu-item "Automatic Info" reftex-toggle-auto-view-crossref :button
 								       (:toggle . reftex-auto-view-crossref-timer))
-						      (\.\.\.in\ Echo\ Area menu-item "...in Echo Area" menu-function-203 :key-sequence nil :button
+						      (\.\.\.in\ Echo\ Area menu-item "...in Echo Area" menu-function-204 :key-sequence nil :button
 						       (:radio eq reftex-auto-view-crossref t))
-						      (\.\.\.in\ Other\ Window menu-item "...in Other Window" menu-function-204 :key-sequence nil :button
+						      (\.\.\.in\ Other\ Window menu-item "...in Other Window" menu-function-205 :key-sequence nil :button
 						       (:radio eq reftex-auto-view-crossref 'window))
-						      (nil-11 menu-item "--")
+						      (nil-7-11 menu-item "--")
 						      (nil-12 menu-item "MISC")
 						      (AUCTeX\ Interface menu-item "AUCTeX Interface" reftex-toggle-plug-into-AUCTeX :button
 									 (:toggle . reftex-plug-into-AUCTeX))
@@ -864,98 +840,98 @@ in the list takes precedence.</br>
 										(:toggle . reftex-isearch-minor-mode))))
 				     (Reference\ Style menu-item "Reference Style"
 						       (keymap "Reference Style"
-							       (Default menu-item "Default" menu-function-205 :key-sequence nil :button
+							       (Default menu-item "Default" menu-function-206 :key-sequence nil :button
 								 (:toggle member "Default"
 									  (reftex-ref-style-list)))
-							       (Varioref menu-item "Varioref" menu-function-206 :key-sequence nil :button
+							       (Varioref menu-item "Varioref" menu-function-207 :key-sequence nil :button
 									 (:toggle member "Varioref"
 										  (reftex-ref-style-list)))
-							       (Fancyref menu-item "Fancyref" menu-function-207 :key-sequence nil :button
+							       (Fancyref menu-item "Fancyref" menu-function-208 :key-sequence nil :button
 									 (:toggle member "Fancyref"
 										  (reftex-ref-style-list)))
-							       (Hyperref menu-item "Hyperref" menu-function-208 :key-sequence nil :button
+							       (Hyperref menu-item "Hyperref" menu-function-209 :key-sequence nil :button
 									 (:toggle member "Hyperref"
 										  (reftex-ref-style-list)))
-							       (Cleveref menu-item "Cleveref" menu-function-209 :key-sequence nil :button
+							       (Cleveref menu-item "Cleveref" menu-function-210 :key-sequence nil :button
 									 (:toggle member "Cleveref"
 										  (reftex-ref-style-list)))))
 				     (Citation\ Style menu-item "Citation Style"
 						      (keymap "Citation Style"
-							      (Default menu-item "Default" menu-function-210 :key-sequence nil :button
+							      (Default menu-item "Default" menu-function-211 :key-sequence nil :button
 								(:radio eq
 									(reftex-get-cite-format)
 									'default))
-							      (Natbib menu-item "Natbib" menu-function-211 :key-sequence nil :button
+							      (Natbib menu-item "Natbib" menu-function-212 :key-sequence nil :button
 								      (:radio eq
 									      (reftex-get-cite-format)
 									      'natbib))
-							      (Amsrefs menu-item "Amsrefs" menu-function-212 :key-sequence nil :button
+							      (Amsrefs menu-item "Amsrefs" menu-function-213 :key-sequence nil :button
 								       (:radio eq
 									       (reftex-get-cite-format)
 									       'amsrefs))
-							      (Jurabib menu-item "Jurabib" menu-function-213 :key-sequence nil :button
+							      (Jurabib menu-item "Jurabib" menu-function-214 :key-sequence nil :button
 								       (:radio eq
 									       (reftex-get-cite-format)
 									       'jurabib))
-							      (Bibentry menu-item "Bibentry" menu-function-214 :key-sequence nil :button
+							      (Bibentry menu-item "Bibentry" menu-function-215 :key-sequence nil :button
 									(:radio eq
 										(reftex-get-cite-format)
 										'bibentry))
-							      (Harvard menu-item "Harvard" menu-function-215 :key-sequence nil :button
+							      (Harvard menu-item "Harvard" menu-function-216 :key-sequence nil :button
 								       (:radio eq
 									       (reftex-get-cite-format)
 									       'harvard))
-							      (Chicago menu-item "Chicago" menu-function-216 :key-sequence nil :button
+							      (Chicago menu-item "Chicago" menu-function-217 :key-sequence nil :button
 								       (:radio eq
 									       (reftex-get-cite-format)
 									       'chicago))
-							      (Astron menu-item "Astron" menu-function-217 :key-sequence nil :button
+							      (Astron menu-item "Astron" menu-function-218 :key-sequence nil :button
 								      (:radio eq
 									      (reftex-get-cite-format)
 									      'astron))
-							      (Author-Year menu-item "Author-Year" menu-function-218 :key-sequence nil :button
+							      (Author-Year menu-item "Author-Year" menu-function-219 :key-sequence nil :button
 									   (:radio eq
 										   (reftex-get-cite-format)
 										   'author-year))
-							      (Locally menu-item "Locally" menu-function-219 :key-sequence nil :button
+							      (Locally menu-item "Locally" menu-function-220 :key-sequence nil :button
 								       (:radio eq
 									       (reftex-get-cite-format)
 									       'locally))
-							      (Context menu-item "Context" menu-function-220 :key-sequence nil :button
+							      (Context menu-item "Context" menu-function-221 :key-sequence nil :button
 								       (:radio eq
 									       (reftex-get-cite-format)
 									       'context))
-							      (nil menu-item "--")
-							      (nil-12 menu-item "Sort Database Matches")
-							      (Not menu-item "Not" menu-function-221 :key-sequence nil :button
+							      (nil-7 menu-item "--")
+							      (nil menu-item "Sort Database Matches")
+							      (Not menu-item "Not" menu-function-222 :key-sequence nil :button
 								   (:radio eq reftex-sort-bibtex-matches nil))
-							      (by\ Author menu-item "by Author" menu-function-222 :key-sequence nil :button
+							      (by\ Author menu-item "by Author" menu-function-223 :key-sequence nil :button
 									  (:radio eq reftex-sort-bibtex-matches 'author))
-							      (by\ Year menu-item "by Year" menu-function-223 :key-sequence nil :button
+							      (by\ Year menu-item "by Year" menu-function-224 :key-sequence nil :button
 									(:radio eq reftex-sort-bibtex-matches 'year))
-							      (by\ Year\,\ reversed menu-item "by Year, reversed" menu-function-224 :key-sequence nil :button
+							      (by\ Year\,\ reversed menu-item "by Year, reversed" menu-function-225 :key-sequence nil :button
 										    (:radio eq reftex-sort-bibtex-matches 'reverse-year))))
 				     (Index\ Style menu-item "Index Style"
 						   (keymap "Index Style"
-							   (Default menu-item "Default" menu-function-225 :key-sequence nil :button
+							   (Default menu-item "Default" menu-function-226 :key-sequence nil :button
 							     (:radio memq 'default
 								     (get reftex-docstruct-symbol 'reftex-index-macros-style)))
-							   (Multind menu-item "Multind" menu-function-226 :key-sequence nil :button
+							   (Multind menu-item "Multind" menu-function-227 :key-sequence nil :button
 								    (:radio memq 'multind
 									    (get reftex-docstruct-symbol 'reftex-index-macros-style)))
-							   (Index menu-item "Index" menu-function-227 :key-sequence nil :button
+							   (Index menu-item "Index" menu-function-228 :key-sequence nil :button
 								  (:radio memq 'index
 									  (get reftex-docstruct-symbol 'reftex-index-macros-style)))
-							   (Index-Shortcut menu-item "Index-Shortcut" menu-function-228 :key-sequence nil :button
+							   (Index-Shortcut menu-item "Index-Shortcut" menu-function-229 :key-sequence nil :button
 									   (:radio memq 'Index-Shortcut
 										   (get reftex-docstruct-symbol 'reftex-index-macros-style)))))
-				     (nil-17 menu-item "--")
+				     (nil-7-17 menu-item "--")
 				     (Reset\ RefTeX\ Mode menu-item "Reset RefTeX Mode" reftex-reset-mode)
-				     (nil-19 menu-item "--")
+				     (nil-7-19 menu-item "--")
 				     (Customize menu-item "Customize"
 						(keymap "Customize"
 							(Browse\ RefTeX\ Group menu-item "Browse RefTeX Group" reftex-customize)
-							(nil menu-item "--")
+							(nil-7 menu-item "--")
 							(Build\ Full\ Customize\ Menu menu-item "Build Full Customize Menu" reftex-create-customize-menu :enable
 										      (fboundp 'customize-menu-create))))
 				     (Documentation menu-item "Documentation"
@@ -981,7 +957,7 @@ in the list takes precedence.</br>
 				(keymap "SMerge"
 					(Next menu-item "Next" smerge-next :help "Go to next conflict")
 					(Previous menu-item "Previous" smerge-prev :help "Go to previous conflict")
-					(nil menu-item "--")
+					(nil-7 menu-item "--")
 					(Keep\ All menu-item "Keep All" smerge-keep-all :enable
 						   (smerge-check 1)
 						   :help "Keep all three versions")
@@ -992,7 +968,7 @@ in the list takes precedence.</br>
 							 (smerge-get-current)
 							 0))
 						       :help "Use current (at point) version")
-					(nil-5 menu-item "--")
+					(nil-7-5 menu-item "--")
 					(Revert\ to\ Base menu-item "Revert to Base" smerge-keep-base :enable
 							  (smerge-check 2)
 							  :help "Revert to base version")
@@ -1002,7 +978,7 @@ in the list takes precedence.</br>
 					(Keep\ Yours menu-item "Keep Yours" smerge-keep-mine :enable
 						     (smerge-check 1)
 						     :help "Keep your version")
-					(nil-9 menu-item "--")
+					(nil-7-9 menu-item "--")
 					(Diff\ Base/Mine menu-item "Diff Base/Mine" smerge-diff-base-mine :enable
 							 (smerge-check 2)
 							 :help "Diff `base' and `mine' for current conflict")
@@ -1012,7 +988,7 @@ in the list takes precedence.</br>
 					(Diff\ Mine/Other menu-item "Diff Mine/Other" smerge-diff-mine-other :enable
 							  (smerge-check 1)
 							  :help "Diff `mine' and `other' for current conflict")
-					(nil-13 menu-item "--")
+					(nil-7-13 menu-item "--")
 					(Invoke\ Ediff menu-item "Invoke Ediff" smerge-ediff :enable
 						       (smerge-check 1)
 						       :help "Use Ediff to resolve the conflicts")
@@ -1056,7 +1032,7 @@ in the list takes precedence.</br>
 					  (Attach\ File\.\.\. menu-item "Attach File..." mml-attach-file :help "Attach a file at point")
 					  (Attach\ Buffer\.\.\. menu-item "Attach Buffer..." mml-attach-buffer :help "Attach a buffer to the outgoing message")
 					  (Attach\ External\.\.\. menu-item "Attach External..." mml-attach-external :help "Attach reference to an external file")
-					  (Externalize\ Attachments menu-item "Externalize Attachments" menu-function-190 :key-sequence nil :visible
+					  (Externalize\ Attachments menu-item "Externalize Attachments" menu-function-191 :key-sequence nil :visible
 								    (and
 								     (boundp 'gnus-gcc-externalize-attachments)
 								     (memq gnus-gcc-externalize-attachments
@@ -1067,13 +1043,13 @@ in the list takes precedence.</br>
 					  (nil menu-item "----")
 					  (Change\ Security\ Method menu-item "Change Security Method"
 								    (keymap "Change Security Method"
-									    (PGP/MIME menu-item "PGP/MIME" menu-function-191 :key-sequence nil :button
+									    (PGP/MIME menu-item "PGP/MIME" menu-function-192 :key-sequence nil :button
 										      (:radio equal mml-secure-method "pgpmime")
 										      :help "Set Security Method to PGP/MIME")
-									    (S/MIME menu-item "S/MIME" menu-function-192 :key-sequence nil :button
+									    (S/MIME menu-item "S/MIME" menu-function-193 :key-sequence nil :button
 										    (:radio equal mml-secure-method "smime")
 										    :help "Set Security Method to S/MIME")
-									    (Inline\ PGP menu-item "Inline PGP" menu-function-193 :key-sequence nil :button
+									    (Inline\ PGP menu-item "Inline PGP" menu-function-194 :key-sequence nil :button
 											 (:radio equal mml-secure-method "pgp")
 											 :help "Set Security Method to inline PGP")))
 					  (Sign\ Message menu-item "Sign Message" mml-secure-message-sign)
@@ -1093,13 +1069,13 @@ in the list takes precedence.</br>
 					  (Validate\ MML menu-item "Validate MML" mml-validate)
 					  (Preview menu-item "Preview" mml-preview)
 					  (nil-18 menu-item "----")
-					  (Emacs\ MIME\ manual menu-item "Emacs MIME manual" menu-function-194 :key-sequence nil :help "Display the Emacs MIME manual")
-					  (PGG\ manual menu-item "PGG manual" menu-function-195 :key-sequence nil :visible
+					  (Emacs\ MIME\ manual menu-item "Emacs MIME manual" menu-function-195 :key-sequence nil :help "Display the Emacs MIME manual")
+					  (PGG\ manual menu-item "PGG manual" menu-function-196 :key-sequence nil :visible
 						       (and
 							(boundp 'mml2015-use)
 							(equal mml2015-use 'pgg))
 						       :help "Display the PGG manual")
-					  (EasyPG\ manual menu-item "EasyPG manual" menu-function-196 :key-sequence nil :visible
+					  (EasyPG\ manual menu-item "EasyPG manual" menu-function-197 :key-sequence nil :visible
 							  (and
 							   (boundp 'mml2015-use)
 							   (equal mml2015-use 'epg))
@@ -1255,113 +1231,6 @@ in the list takes precedence.</br>
 		       (103 . sc-mail-process-headers)
 		       (102 . sc-mail-field-query)
 		       (99 . sc-cite-region))))
- (crisp-mode keymap
-	     (M-end . end-of-line)
-	     (C-end .
-		    #[nil "\300\301!\207"
-			  [move-to-window-line -1]
-			  2 nil nil])
-	     (end . crisp-end)
-	     (M-home . beginning-of-line)
-	     (C-home .
-		     #[nil "\300\301!\207"
-			   [move-to-window-line 0]
-			   2 nil nil])
-	     (home . crisp-home)
-	     (C-right . forward-word)
-	     (C-left . backward-word)
-	     (S-backspace . backward-kill-word)
-	     (S-delete . kill-word)
-	     (f14 . undo)
-	     (27 keymap
-		 (57 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "9"]
-			   2 nil nil])
-		 (56 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "8"]
-			   2 nil nil])
-		 (55 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "7"]
-			   2 nil nil])
-		 (54 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "6"]
-			   2 nil nil])
-		 (53 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "5"]
-			   2 nil nil])
-		 (52 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "4"]
-			   2 nil nil])
-		 (51 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "3"]
-			   2 nil nil])
-		 (50 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "2"]
-			   2 nil nil])
-		 (49 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "1"]
-			   2 nil nil])
-		 (48 .
-		     #[nil "\300\301!\207"
-			   [bookmark-set "0"]
-			   2 nil nil])
-		 (120 . crisp-meta-x-wrapper)
-		 (119 . save-buffer)
-		 (117 . undo)
-		 (112 . crisp-unbury-buffer)
-		 (110 . bury-buffer)
-		 (109 . set-mark-command)
-		 (108 . crisp-mark-line)
-		 (106 . bookmark-jump)
-		 (105 . overwrite-mode)
-		 (104 . help)
-		 (103 . goto-line)
-		 (101 . find-file)
-		 (100 .
-		      #[nil "\300 \210\301 \207"
-			    [beginning-of-line kill-line]
-			    1 nil nil]))
-	     (6 . fill-paragraph-or-region)
-	     (f18 . crisp-yank-clipboard)
-	     (f20 . crisp-kill-region)
-	     (f16 . crisp-set-clipboard)
-	     (insert . crisp-yank-clipboard)
-	     (f24 . crisp-kill-line)
-	     (kp-subtract . crisp-kill-line)
-	     (kp-add . crisp-copy-line)
-	     (SunF37 . kill-buffer)
-	     (M-f10 . compile)
-	     (f10 . execute-extended-command)
-	     (M-f9 . load-library)
-	     (f9 . find-file)
-	     (M-f8 . save-kbd-macro)
-	     (f8 . call-last-kbd-macro)
-	     (M-f7 . end-kbd-macro)
-	     (f7 . start-kbd-macro)
-	     (f6 . query-replace)
-	     (M-f5 . search-backward-regexp)
-	     (f19 . search-forward-regexp)
-	     (f5 . search-forward-regexp)
-	     (C-f4 . delete-other-windows)
-	     (f4 . delete-window)
-	     (f3 keymap
-		 (right . split-window-right)
-		 (down . split-window-below))
-	     (f2 keymap
-		 (up . shrink-window)
-		 (right . enlarge-window-horizontally)
-		 (left . shrink-window-horizontally)
-		 (down . enlarge-window))
-	     (f1 . other-window))
  (msb-mode keymap
 	   (remap keymap
 		  (mouse-buffer-menu . msb))
@@ -1427,6 +1296,8 @@ in the list takes precedence.</br>
 		     (64 keymap
 			 (23 . hide-ifdef-toggle-shadowing)
 			 (17 . hide-ifdef-toggle-read-only)
+			 (67 . hif-clear-all-ifdef-defined)
+			 (101 . hif-evaluate-macro)
 			 (19 . show-ifdef-block)
 			 (4 . hide-ifdef-block)
 			 (115 . show-ifdefs)
@@ -1439,6 +1310,70 @@ in the list takes precedence.</br>
 		 (3 keymap
 		    (23 . gud-watch))
 		 (menu-bar keymap
+			   (file . undefined)
+			   (edit . undefined)
+			   (options . undefined)
+			   (buffer . undefined)
+			   (tools . undefined)
+			   (print
+			    #("print" 0 5
+			      (face font-lock-doc-face))
+			    . gud-print)
+			   (stop menu-item
+				 #("stop" 0 4
+				   (face font-lock-doc-face))
+				 gud-stop-subjob :visible
+				 (or
+				  (and
+				   (eq gud-minor-mode 'gdbmi)
+				   (gdb-show-stop-p))
+				  (not
+				   (eq gud-minor-mode 'gdbmi))))
+			   (go menu-item
+			       #(" go " 0 4
+				 (face font-lock-doc-face))
+			       gud-go :visible
+			       (and
+				(eq gud-minor-mode 'gdbmi)
+				(gdb-show-run-p)))
+			   (run menu-item
+				#("run" 0 3
+				  (face font-lock-doc-face))
+				gud-run :visible
+				(memq gud-minor-mode
+				      '(gdbmi gdb dbx jdb)))
+			   (cont menu-item
+				 #("cont" 0 4
+				   (face font-lock-doc-face))
+				 gud-cont :visible
+				 (not
+				  (eq gud-minor-mode 'gdbmi)))
+			   (until menu-item
+				  #("until" 0 5
+				    (face font-lock-doc-face))
+				  gud-until :visible
+				  (memq gud-minor-mode
+					'(gdbmi gdb perldb)))
+			   (next
+			    #("next" 0 4
+			      (face font-lock-doc-face))
+			    . gud-next)
+			   (step
+			    #("step" 0 4
+			      (face font-lock-doc-face))
+			    . gud-step)
+			   (finish
+			    #("finish" 0 6
+			      (face font-lock-doc-face))
+			    . gud-finish)
+			   (up
+			    #("up" 0 2
+			      (face font-lock-doc-face))
+			    . gud-up)
+			   (down
+			    #("down" 0 4
+			      (face font-lock-doc-face))
+			    . gud-down)
 			   (debug "Gud" keymap
 				  (mi menu-item "GDB-MI"
 				      (keymap
@@ -1526,7 +1461,7 @@ in the list takes precedence.</br>
 					  (not gud-running)
 					  :visible
 					  (memq gud-minor-mode
-						'(gdbmi gdb xdb jdb pdb)))
+						'(gdbmi gdb guiler xdb jdb pdb)))
 				  (watch menu-item "Watch Expression" gud-watch :enable
 					 (not gud-running)
 					 :visible
@@ -1556,12 +1491,12 @@ in the list takes precedence.</br>
 					(not gud-running)
 					:visible
 					(memq gud-minor-mode
-					      '(gdbmi gdb dbx xdb jdb pdb)))
+					      '(gdbmi gdb guiler dbx xdb jdb pdb)))
 				  (up menu-item "Up Stack" gud-up :enable
 				      (not gud-running)
 				      :visible
 				      (memq gud-minor-mode
-					    '(gdbmi gdb dbx xdb jdb pdb)))
+					    '(gdbmi gdb guiler dbx xdb jdb pdb)))
 				  (break menu-item "Set Breakpoint" gud-break :enable
 					 (not gud-running)
 					 :visible
@@ -1609,7 +1544,7 @@ in the list takes precedence.</br>
 					     (fboundp 'x-show-tip))
 					    :visible
 					    (memq gud-minor-mode
-						  '(gdbmi dbx sdb xdb pdb))
+						  '(gdbmi guiler dbx sdb xdb pdb))
 					    :button
 					    (:toggle . gud-tooltip-mode))
 				  (help "Info (debugger)" . gud-goto-info)
@@ -1723,6 +1658,14 @@ in the list takes precedence.</br>
 	      (S-down-mouse-1 . artist-down-mouse-1)
 	      (down-mouse-1 . artist-down-mouse-1))
  (rectangle-mark-mode keymap
+		      (remap keymap
+			     (previous-line . rectangle-previous-line)
+			     (next-line . rectangle-next-line)
+			     (backward-char . rectangle-backward-char)
+			     (forward-char . rectangle-forward-char)
+			     (left-char . rectangle-left-char)
+			     (right-char . rectangle-right-char)
+			     (exchange-point-and-mark . rectangle-exchange-point-and-mark))
 		      (20 . string-rectangle)
 		      (15 . open-rectangle))
  (autoarg-kp-mode keymap
@@ -2069,3 +2012,4 @@ in the list takes precedence.</br>
 			  (move-beginning-of-line . beginning-of-visual-line)
 			  (kill-line . kill-visual-line))))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

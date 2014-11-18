@@ -1,4 +1,4 @@
-<strong>tramp-methods</strong> is a variable defined in `<code>tramp.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>tramp-methods</strong> is a variable defined in `<code>tramp.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -36,6 +36,9 @@ pair of the form (KEY VALUE).  The following KEYs are defined:</br>
     `tramp-make-tramp-temp-file'.  "%k" indicates the keep-date</br>
     parameter of a program, if exists.  "%c" adds additional</br>
     `tramp-ssh-controlmaster-options' options for the first hop.</br>
+  * `tramp-login-env'</br>
+     A list of environment variables and their values, which will</br>
+     be set when calling `tramp-login-program'.</br>
   * `tramp-async-args'</br>
     When an asynchronous process is started, we know already that</br>
     the connection works.  Therefore, we can pass additional</br>
@@ -43,11 +46,21 @@ pair of the form (KEY VALUE).  The following KEYs are defined:</br>
     tamper the process output.</br>
   * `tramp-copy-program'</br>
     This specifies the name of the program to use for remotely copying</br>
-    the file; this might be the absolute filename of rcp or the name of</br>
-    a workalike program.</br>
+    the file; this might be the absolute filename of scp or the name of</br>
+    a workalike program.  It is always applied on the local host.</br>
   * `tramp-copy-args'</br>
     This specifies the list of parameters to pass to the above mentioned</br>
     program, the hints for `tramp-login-args' also apply here.</br>
+  * `tramp-copy-env'</br>
+     A list of environment variables and their values, which will</br>
+     be set when calling `tramp-copy-program'.</br>
+  * `tramp-remote-copy-program'</br>
+    The listener program to be applied on remote side, if needed.</br>
+  * `tramp-remote-copy-args'</br>
+    The list of parameters to pass to the listener program, the hints</br>
+    for `tramp-login-args' also apply here.  Additionally, "%r" could</br>
+    be used here and in `tramp-copy-args'.  It denotes a randomly</br>
+    chosen port for the remote listener.</br>
   * `tramp-copy-keep-date'</br>
     This specifies whether the copying program when the preserves the</br>
     timestamp of the original file.</br>
@@ -75,7 +88,7 @@ pair of the form (KEY VALUE).  The following KEYs are defined:</br>
 What does all this mean?  Well, you should specify `tramp-login-program'</br>
 for all methods; this program is used to log in to the remote site.  Then,</br>
 there are two ways to actually transfer the files between the local and the</br>
-remote side.  One way is using an additional rcp-like program.  If you want</br>
+remote side.  One way is using an additional scp-like program.  If you want</br>
 to do this, set `tramp-copy-program' in the method.</br>
 </br>
 Another possibility for file transfer is inline transfer, i.e. the</br>
@@ -124,7 +137,12 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
    (("-l" "%u")
     ("-P" "%p")
     ("-ssh")
-    ("%h")))
+    ("-t")
+    ("%h")
+    ("\"")
+    ("env 'TERM=dumb' 'PROMPT_COMMAND=' 'PS1=#$ '")
+    ("/bin/sh")
+    ("\"")))
   (tramp-remote-shell "/bin/sh")
   (tramp-remote-shell-args
    ("-c"))
@@ -144,7 +162,12 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
    (("-l" "%u")
     ("-P" "%p")
     ("-ssh")
-    ("%h")))
+    ("-t")
+    ("%h")
+    ("\"")
+    ("env 'TERM=dumb' 'PROMPT_COMMAND=' 'PS1=#$ '")
+    ("/bin/sh")
+    ("\"")))
   (tramp-remote-shell "/bin/sh")
   (tramp-remote-shell-args
    ("-c"))
@@ -165,8 +188,10 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
    (("-load")
     ("%h")
     ("-t")
+    ("\"")
     ("env 'TERM=dumb' 'PROMPT_COMMAND=' 'PS1=#$ '")
-    ("/bin/sh")))
+    ("/bin/sh")
+    ("\"")))
   (tramp-remote-shell "/bin/sh")
   (tramp-remote-shell-args
    ("-c")))
@@ -176,7 +201,12 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
    (("-l" "%u")
     ("-P" "%p")
     ("-ssh")
-    ("%h")))
+    ("-t")
+    ("%h")
+    ("\"")
+    ("env 'TERM=dumb' 'PROMPT_COMMAND=' 'PS1=#$ '")
+    ("/bin/sh")
+    ("\"")))
   (tramp-remote-shell "/bin/sh")
   (tramp-remote-shell-args
    ("-c"))
@@ -206,6 +236,9 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
     ("-s")
     ("-H")
     ("-p" "Password:")))
+  (tramp-login-env
+   (("SHELL")
+    ("/bin/sh")))
   (tramp-remote-shell "/bin/sh")
   (tramp-remote-shell-args
    ("-c"))
@@ -219,11 +252,32 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
   (tramp-remote-shell-args
    ("-c"))
   (tramp-connection-timeout 10))
+ ("nc"
+  (tramp-login-program "telnet")
+  (tramp-login-args
+   (("%h")
+    ("%p")
+    ("2>/dev/null")))
+  (tramp-remote-shell "/bin/sh")
+  (tramp-remote-shell-args
+   ("-c"))
+  (tramp-copy-program "nc")
+  (tramp-copy-args
+   (("-w" "1")
+    ("-v")
+    ("%h")
+    ("%r")))
+  (tramp-remote-copy-program "nc")
+  (tramp-remote-copy-args
+   (("-l")
+    ("-p" "%r")))
+  (tramp-default-port 23))
  ("telnet"
   (tramp-login-program "telnet")
   (tramp-login-args
    (("%h")
-    ("%p")))
+    ("%p")
+    ("2>/dev/null")))
   (tramp-remote-shell "/bin/sh")
   (tramp-remote-shell-args
    ("-c"))
@@ -305,22 +359,6 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
   (tramp-copy-keep-date t)
   (tramp-copy-keep-tmpfile t)
   (tramp-copy-recursive t))
- ("sftp"
-  (tramp-login-program "ssh")
-  (tramp-login-args
-   (("-l" "%u")
-    ("-p" "%p")
-    ("%c")
-    ("-e" "none")
-    ("%h")))
-  (tramp-async-args
-   (("-q")))
-  (tramp-remote-shell "/bin/sh")
-  (tramp-remote-shell-args
-   ("-c"))
-  (tramp-copy-program "sftp")
-  (tramp-copy-args
-   ("%c")))
  ("scpx"
   (tramp-login-program "ssh")
   (tramp-login-args
@@ -404,6 +442,7 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
   (tramp-copy-keep-date t)
   (tramp-copy-recursive t))
  ("synce")
+ ("sftp")
  ("obex")
  ("davs")
  ("dav")
@@ -411,3 +450,4 @@ useful only in combination with `tramp-default-proxies-alist'.</br>
  ("adb"
   (tramp-tmpdir "/data/local/tmp")))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

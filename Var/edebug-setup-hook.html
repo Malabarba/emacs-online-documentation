@@ -1,4 +1,4 @@
-<strong>edebug-setup-hook</strong> is a variable defined in `<code>edebug.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>edebug-setup-hook</strong> is a variable defined in `<code>edebug.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -22,7 +22,59 @@ You can customize this variable.</br>
  #[nil "\300\301\302\303#\207"
        [put semantic-with-buffer-narrowed-to-context edebug-form-spec
 	    (def-body)]
-       4])
+       4]
+ #[nil "\300\301\302\303#\207"
+       [put semantic-with-buffer-narrowed-to-tag edebug-form-spec
+	    (def-body)]
+       4]
+ #[nil "\300\301\302\303#\207"
+       [put semantic-with-buffer-narrowed-to-current-tag edebug-form-spec
+	    (def-body)]
+       4]
+ #[nil "\300\301\302\303#\210\300\304\302\305#\210\300\306\302\307#\210\300\310\302\311#\210\300\312\302\313#\210\300\314\302\315#\207"
+       [put define-lex edebug-form-spec
+	    (&define name stringp
+		     (&rest symbolp))
+	    define-lex-analyzer
+	    (&define name stringp form def-body)
+	    define-lex-regex-analyzer
+	    (&define name stringp form def-body)
+	    define-lex-simple-regex-analyzer
+	    (&define name stringp form symbolp
+		     [&optional form]
+		     def-body)
+	    define-lex-block-analyzer
+	    (&define name stringp form
+		     (&rest form))
+	    semantic-lex-catch-errors
+	    (symbolp def-body)]
+       4]
+ semantic-fw-add-edebug-spec mode-local-setup-edebug-specs
+ #[nil "\300\301\302\303#\207"
+       [put speedbar-with-writable edebug-form-spec def-body]
+       4]
+ #[0 "\300\301\302\303#\210\300\304\302\305#\210\300\306\302\307#\210\300\310\302\311#\210\300\312\302\313#\210\300\314\302\315#\210\300\316\302\315#\210\300\317\302\315#\210\300\320\302\315#\210\300\321\302\315#\210\300\322\302\323#\210\324\325\326\327#\207"
+     [put defmethod edebug-form-spec
+	  (&define
+	   [&or name
+		("setf" :name setf name)]
+	   [&optional symbolp]
+	   list
+	   [&optional stringp]
+	   def-body)
+	  oref
+	  (form quote)
+	  oref-default
+	  (form quote)
+	  oset
+	  (form quote form)
+	  oset-default
+	  (form quote form)
+	  class-v form class-p eieio-object-p class-constructor generic-p with-slots
+	  (list list def-body)
+	  advice-add edebug-prin1-to-string :around eieio-edebug-prin1-to-string]
+     4])
 </pre></br>
 <strong>Original</strong> value was </br>
 <prenil</pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,7 +1,10 @@
-<strong>replace-regexp</strong> is an interactive compiled Lisp function in `<code>replace.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>replace-regexp</strong> is an interactive compiled Lisp function in `<code>replace.el</code>'.</br>
 </br>
 </br>
 (replace-regexp <u>REGEXP</u> <u>TO-STRING</u> &optional <u>DELIMITED</u> <u>START</u> <u>END</u> <u>BACKWARD</u>)</br>
+</br>
+This function is for interactive use only;</br>
+in Lisp code use `re-search-forward' and `replace-match' instead.</br>
 </br>
 Replace things after point matching <u>REGEXP</u> with <u>TO-STRING</u>.</br>
 Preserve case in each match if `case-replace' and `case-fold-search'</br>
@@ -54,4 +57,4 @@ This function is usually the wrong thing to use in a Lisp program.</br>
 What you probably want is a loop like this:</br>
   (while (re-search-forward <u>REGEXP</u> nil t)</br>
     (replace-match <u>TO-STRING</u> nil nil))</br>
-which will run faster and will not set the mark or print anything.
+which will run faster and will not set the mark or print anything.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

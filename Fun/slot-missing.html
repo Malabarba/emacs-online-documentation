@@ -1,4 +1,4 @@
-<strong>slot-missing</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>slot-missing</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
 </br>
 (slot-missing &rest <u>LOCAL-ARGS</u>)</br>
 </br>
@@ -8,7 +8,7 @@ This is a generic function with only primary methods.</br>
 </br>
 Implementations:</br>
 </br>
-`eieio-default-superclass' :PRIMARY (object slot-name operation &optional new-value)</br>
+`eieio-default-superclass' :PRIMARY (arg1 arg2 arg3 &optional arg4)</br>
 Method invoked when an attempt to access a slot in OBJECT fails.</br>
 SLOT-NAME is the name of the failed slot, OPERATION is the type of access</br>
 that was requested, and optional NEW-VALUE is the value that was desired</br>
@@ -17,9 +17,11 @@ to be set.</br>
 This method is called from `oref', `oset', and other functions which</br>
 directly reference slots in EIEIO objects.</br>
 </br>
+<code>(fn OBJECT SLOT-NAME OPERATION <em>&optional</em> NEW-VALUE</code>)</br>
+</br>
 Defined in `eieio.el'</br>
 </br>
-`eieio-named' :PRIMARY (obj slot-name operation &optional new-value)</br>
+`eieio-named' :PRIMARY (arg1 arg2 arg3 &optional arg4)</br>
 Called when a non-existent slot is accessed.</br>
 For variable `eieio-named', provide an imaginary `object-name' slot.</br>
 Argument OBJ is the named object.</br>
@@ -28,5 +30,8 @@ OPERATION is the type of access, such as `oref' or `oset'.</br>
 NEW-VALUE is the value that was being set into SLOT if OPERATION were</br>
 a set type.</br>
 </br>
+(fn OBJ SLOT-NAME OPERATION &optional NEW-VALUE)</br>
+</br>
 Defined in `eieio-base.el'</br>
 </br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

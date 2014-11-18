@@ -1,4 +1,4 @@
-<strong>ada-mode-menu</strong> is a variable defined in `<code>ada-mode.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ada-mode-menu</strong> is a variable defined in `<code>ada-mode.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -8,41 +8,41 @@ Menu keymap for Ada mode</br>
 (keymap "Ada"
 	(Help menu-item "Help"
 	      (keymap "Help"
-		      (Ada\ Mode menu-item "Ada Mode" menu-function-250 :key-sequence nil)
-		      (GNAT\ User\'s\ Guide menu-item "GNAT User's Guide" menu-function-251 :key-sequence nil :enable
+		      (Ada\ Mode menu-item "Ada Mode" menu-function-251 :key-sequence nil)
+		      (GNAT\ User\'s\ Guide menu-item "GNAT User's Guide" menu-function-252 :key-sequence nil :enable
 					    (eq ada-which-compiler 'gnat))
-		      (GNAT\ Reference\ Manual menu-item "GNAT Reference Manual" menu-function-252 :key-sequence nil :enable
+		      (GNAT\ Reference\ Manual menu-item "GNAT Reference Manual" menu-function-253 :key-sequence nil :enable
 					       (eq ada-which-compiler 'gnat))
-		      (Gcc\ Documentation menu-item "Gcc Documentation" menu-function-253 :key-sequence nil :enable
+		      (Gcc\ Documentation menu-item "Gcc Documentation" menu-function-254 :key-sequence nil :enable
 					  (eq ada-which-compiler 'gnat))
-		      (Gdb\ Documentation menu-item "Gdb Documentation" menu-function-254 :key-sequence nil :enable
+		      (Gdb\ Documentation menu-item "Gdb Documentation" menu-function-255 :key-sequence nil :enable
 					  (eq ada-which-compiler 'gnat))
-		      (Ada95\ Reference\ Manual menu-item "Ada95 Reference Manual" menu-function-255 :key-sequence nil)))
+		      (Ada95\ Reference\ Manual menu-item "Ada95 Reference Manual" menu-function-256 :key-sequence nil)))
 	(Options menu-item "Options"
 		 (keymap "Options"
-			 (Auto\ Casing menu-item "Auto Casing" menu-function-256 :key-sequence nil :button
+			 (Auto\ Casing menu-item "Auto Casing" menu-function-257 :key-sequence nil :button
 				       (:toggle . ada-auto-case))
-			 (Auto\ Indent\ After\ Return menu-item "Auto Indent After Return" menu-function-257 :key-sequence nil :button
+			 (Auto\ Indent\ After\ Return menu-item "Auto Indent After Return" menu-function-258 :key-sequence nil :button
 						      (:toggle . ada-indent-after-return))
-			 (Automatically\ Recompile\ For\ Cross-references menu-item "Automatically Recompile For Cross-references" menu-function-258 :key-sequence nil :visible
+			 (Automatically\ Recompile\ For\ Cross-references menu-item "Automatically Recompile For Cross-references" menu-function-259 :key-sequence nil :visible
 									  (eq ada-which-compiler 'gnat)
 									  :button
 									  (:toggle . ada-xref-create-ali))
-			 (Confirm\ Commands menu-item "Confirm Commands" menu-function-259 :key-sequence nil :visible
+			 (Confirm\ Commands menu-item "Confirm Commands" menu-function-260 :key-sequence nil :visible
 					    (eq ada-which-compiler 'gnat)
 					    :button
 					    (:toggle . ada-xref-confirm-compile))
-			 (Show\ Cross-references\ In\ Other\ Buffer menu-item "Show Cross-references In Other Buffer" menu-function-260 :key-sequence nil :visible
+			 (Show\ Cross-references\ In\ Other\ Buffer menu-item "Show Cross-references In Other Buffer" menu-function-261 :key-sequence nil :visible
 								    (eq ada-which-compiler 'gnat)
 								    :button
 								    (:toggle . ada-xref-other-buffer))
-			 (Tight\ Integration\ With\ GNU\ Visual\ Debugger menu-item "Tight Integration With GNU Visual Debugger" menu-function-261 :key-sequence nil :visible
+			 (Tight\ Integration\ With\ GNU\ Visual\ Debugger menu-item "Tight Integration With GNU Visual Debugger" menu-function-262 :key-sequence nil :visible
 									  (string-match "gvd" ada-prj-default-debugger)
 									  :button
 									  (:toggle . ada-tight-gvd-integration)))
 		 :visible
 		 (derived-mode-p 'ada-mode))
-	(Customize menu-item "Customize" menu-function-263 :key-sequence nil :visible
+	(Customize menu-item "Customize" menu-function-264 :key-sequence nil :visible
 		   (fboundp 'customize-group))
 	(Check\ file menu-item "Check file" ada-check-current)
 	(Compile\ file menu-item "Compile file" ada-compile-current)
@@ -99,7 +99,7 @@ Menu keymap for Ada mode</br>
 		      (Indent\ Line menu-item "Indent Line" ada-indent-current-function)
 		      (Justify\ Current\ Indentation menu-item "Justify Current Indentation" ada-justified-indent-current)
 		      (Indent\ Lines\ in\ Selection menu-item "Indent Lines in Selection" ada-indent-region)
-		      (Indent\ Lines\ in\ File menu-item "Indent Lines in File" menu-function-265 :key-sequence nil)
+		      (Indent\ Lines\ in\ File menu-item "Indent Lines in File" menu-function-266 :key-sequence nil)
 		      (Format\ Parameter\ List menu-item "Format Parameter List" ada-format-paramlist)
 		      (- menu-item "-" nil :enable 'nil)
 		      (Comment\ Selection menu-item "Comment Selection" comment-region)
@@ -163,3 +163,4 @@ Menu keymap for Ada mode</br>
 		   :visible
 		   (derived-mode-p 'ada-mode)))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

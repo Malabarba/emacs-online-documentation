@@ -1,4 +1,4 @@
-<strong>local-function-key-map</strong> is a variable defined in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>local-function-key-map</strong> is a variable defined in `<code>C source code</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -31,506 +31,481 @@ instead.  Initially, `local-function-key-map' is an empty keymap that</br>
 has `function-key-map' as its parent on all terminal devices.</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
-(keymap
- (backspace .
-	    [127])
- (kp-delete .
-	    [deletechar])
- (delete .
-	 [deletechar])
- keymap
- (S-iso-lefttab .
-		[backtab])
- (iso-lefttab .
-	      [backtab])
- (M-escape .
-	   [134217755])
- (M-return .
-	   [134217741])
- (M-clear .
-	  [134217740])
- (M-linefeed .
-	     [134217738])
- (M-tab .
-	[134217737])
- (M-delete .
-	   [134217855])
- (M-backspace .
-	      [134217855])
- keymap
- (right-fringe keymap
-	       (mouse-3 . mouse--strip-first-event)
-	       (mouse-2 . mouse--strip-first-event)
-	       (mouse-1 . mouse--strip-first-event))
- (left-fringe keymap
-	      (mouse-3 . mouse--strip-first-event)
-	      (mouse-2 . mouse--strip-first-event)
-	      (mouse-1 . mouse--strip-first-event))
- (escape .
-	 [27])
- (return .
-	 [13])
- (clear .
-	[12])
- (linefeed .
-	   [10])
- (tab .
-      [9])
- (kp-equal .
-	   [61])
- (kp-separator .
-	       [44])
- (kp-tab .
-	 [9])
- (kp-space .
-	   [32])
- (24 keymap
-     (64 keymap
-	 (99 . event-apply-control-modifier)
-	 (83 . event-apply-shift-modifier)
-	 (97 . event-apply-alt-modifier)
-	 (109 . event-apply-meta-modifier)
-	 (115 . event-apply-super-modifier)
-	 (104 . event-apply-hyper-modifier)))
- (S-tab .
-	[backtab])
- (0 .
-    [67108896])
- (delete .
-	 [127])
- (backspace .
-	    [127])
- (C-M-S-kp-divide .
-		  [234881071])
- (M-S-kp-divide .
-		[167772207])
- (C-S-kp-divide .
-		[100663343])
- (S-kp-divide .
-	      [33554479])
- (C-M-kp-divide .
-		[201326639])
- (M-kp-divide .
-	      [134217775])
- (C-kp-divide .
-	      [67108911])
- (kp-divide .
-	    [47])
- (C-M-S-kp-multiply .
-		    [234881066])
- (M-S-kp-multiply .
-		  [167772202])
- (C-S-kp-multiply .
-		  [100663338])
- (S-kp-multiply .
-		[33554474])
- (C-M-kp-multiply .
-		  [201326634])
- (M-kp-multiply .
-		[134217770])
- (C-kp-multiply .
-		[67108906])
- (kp-multiply .
-	      [42])
- (C-M-S-kp-subtract .
-		    [234881069])
- (M-S-kp-subtract .
-		  [167772205])
- (C-S-kp-subtract .
-		  [100663341])
- (S-kp-subtract .
-		[33554477])
- (C-M-kp-subtract .
-		  [201326637])
- (M-kp-subtract .
-		[134217773])
- (C-kp-subtract .
-		[67108909])
- (kp-subtract .
-	      [45])
- (C-M-S-kp-add .
-	       [234881067])
- (M-S-kp-add .
-	     [167772203])
- (C-S-kp-add .
-	     [100663339])
- (S-kp-add .
-	   [33554475])
- (C-M-kp-add .
-	     [201326635])
- (M-kp-add .
-	   [134217771])
- (C-kp-add .
-	   [67108907])
- (kp-add .
-	 [43])
- (C-M-S-kp-9 .
-	     [234881081])
- (M-S-kp-9 .
-	   [167772217])
- (C-S-kp-9 .
-	   [100663353])
- (S-kp-9 .
-	 [33554489])
- (C-M-kp-9 .
-	   [201326649])
- (M-kp-9 .
-	 [134217785])
- (C-kp-9 .
-	 [67108921])
- (kp-9 .
-       [57])
- (C-M-S-kp-8 .
-	     [234881080])
- (M-S-kp-8 .
-	   [167772216])
- (C-S-kp-8 .
-	   [100663352])
- (S-kp-8 .
-	 [33554488])
- (C-M-kp-8 .
-	   [201326648])
- (M-kp-8 .
-	 [134217784])
- (C-kp-8 .
-	 [67108920])
- (kp-8 .
-       [56])
- (C-M-S-kp-7 .
-	     [234881079])
- (M-S-kp-7 .
-	   [167772215])
- (C-S-kp-7 .
-	   [100663351])
- (S-kp-7 .
-	 [33554487])
- (C-M-kp-7 .
-	   [201326647])
- (M-kp-7 .
-	 [134217783])
- (C-kp-7 .
-	 [67108919])
- (kp-7 .
-       [55])
- (C-M-S-kp-6 .
-	     [234881078])
- (M-S-kp-6 .
-	   [167772214])
- (C-S-kp-6 .
-	   [100663350])
- (S-kp-6 .
-	 [33554486])
- (C-M-kp-6 .
-	   [201326646])
- (M-kp-6 .
-	 [134217782])
- (C-kp-6 .
-	 [67108918])
- (kp-6 .
-       [54])
- (C-M-S-kp-5 .
-	     [234881077])
- (M-S-kp-5 .
-	   [167772213])
- (C-S-kp-5 .
-	   [100663349])
- (S-kp-5 .
-	 [33554485])
- (C-M-kp-5 .
-	   [201326645])
- (M-kp-5 .
-	 [134217781])
- (C-kp-5 .
-	 [67108917])
- (kp-5 .
-       [53])
- (C-M-S-kp-4 .
-	     [234881076])
- (M-S-kp-4 .
-	   [167772212])
- (C-S-kp-4 .
-	   [100663348])
- (S-kp-4 .
-	 [33554484])
- (C-M-kp-4 .
-	   [201326644])
- (M-kp-4 .
-	 [134217780])
- (C-kp-4 .
-	 [67108916])
- (kp-4 .
-       [52])
- (C-M-S-kp-3 .
-	     [234881075])
- (M-S-kp-3 .
-	   [167772211])
- (C-S-kp-3 .
-	   [100663347])
- (S-kp-3 .
-	 [33554483])
- (C-M-kp-3 .
-	   [201326643])
- (M-kp-3 .
-	 [134217779])
- (C-kp-3 .
-	 [67108915])
- (kp-3 .
-       [51])
- (C-M-S-kp-2 .
-	     [234881074])
- (M-S-kp-2 .
-	   [167772210])
- (C-S-kp-2 .
-	   [100663346])
- (S-kp-2 .
-	 [33554482])
- (C-M-kp-2 .
-	   [201326642])
- (M-kp-2 .
-	 [134217778])
- (C-kp-2 .
-	 [67108914])
- (kp-2 .
-       [50])
- (C-M-S-kp-1 .
-	     [234881073])
- (M-S-kp-1 .
-	   [167772209])
- (C-S-kp-1 .
-	   [100663345])
- (S-kp-1 .
-	 [33554481])
- (C-M-kp-1 .
-	   [201326641])
- (M-kp-1 .
-	 [134217777])
- (C-kp-1 .
-	 [67108913])
- (kp-1 .
-       [49])
- (C-M-S-kp-0 .
-	     [234881072])
- (M-S-kp-0 .
-	   [167772208])
- (C-S-kp-0 .
-	   [100663344])
- (S-kp-0 .
-	 [33554480])
- (C-M-kp-0 .
-	   [201326640])
- (M-kp-0 .
-	 [134217776])
- (C-kp-0 .
-	 [67108912])
- (kp-0 .
-       [48])
- (C-M-S-kp-decimal .
-		   [234881070])
- (M-S-kp-decimal .
-		 [167772206])
- (C-S-kp-decimal .
-		 [100663342])
- (S-kp-decimal .
-	       [33554478])
- (C-M-kp-decimal .
-		 [201326638])
- (M-kp-decimal .
-	       [134217774])
- (C-kp-decimal .
-	       [67108910])
- (kp-decimal .
-	     [46])
- (C-M-S-kp-enter .
-		 [C-M-S-enter])
- (M-S-kp-enter .
-	       [M-S-enter])
- (C-S-kp-enter .
-	       [C-S-enter])
- (S-kp-enter .
-	     [S-enter])
- (C-M-kp-enter .
-	       [C-M-enter])
- (M-kp-enter .
-	     [M-enter])
- (C-kp-enter .
-	     [C-enter])
- (kp-enter .
-	   [13])
- (C-M-S-kp-prior .
-		 [C-M-S-prior])
- (M-S-kp-prior .
-	       [M-S-prior])
- (C-S-kp-prior .
-	       [C-S-prior])
- (S-kp-prior .
-	     [S-prior])
- (C-M-kp-prior .
-	       [C-M-prior])
- (M-kp-prior .
-	     [M-prior])
- (C-kp-prior .
-	     [C-prior])
- (kp-prior .
-	   [prior])
- (C-M-S-kp-up .
-	      [C-M-S-up])
- (M-S-kp-up .
-	    [M-S-up])
- (C-S-kp-up .
-	    [C-S-up])
- (S-kp-up .
-	  [S-up])
- (C-M-kp-up .
-	    [C-M-up])
- (M-kp-up .
-	  [M-up])
- (C-kp-up .
-	  [C-up])
- (kp-up .
-	[up])
- (C-M-S-kp-home .
-		[C-M-S-home])
- (M-S-kp-home .
-	      [M-S-home])
- (C-S-kp-home .
-	      [C-S-home])
- (S-kp-home .
-	    [S-home])
- (C-M-kp-home .
-	      [C-M-home])
- (M-kp-home .
-	    [M-home])
- (C-kp-home .
-	    [C-home])
- (kp-home .
-	  [home])
- (C-M-S-kp-right .
-		 [C-M-S-right])
- (M-S-kp-right .
-	       [M-S-right])
- (C-S-kp-right .
-	       [C-S-right])
- (S-kp-right .
-	     [S-right])
- (C-M-kp-right .
-	       [C-M-right])
- (M-kp-right .
-	     [M-right])
- (C-kp-right .
-	     [C-right])
- (kp-right .
-	   [right])
- (C-M-S-kp-begin .
-		 [C-M-S-begin])
- (M-S-kp-begin .
-	       [M-S-begin])
- (C-S-kp-begin .
-	       [C-S-begin])
- (S-kp-begin .
-	     [S-begin])
- (C-M-kp-begin .
-	       [C-M-begin])
- (M-kp-begin .
-	     [M-begin])
- (C-kp-begin .
-	     [C-begin])
- (kp-begin .
-	   [begin])
- (C-M-S-kp-left .
-		[C-M-S-left])
- (M-S-kp-left .
-	      [M-S-left])
- (C-S-kp-left .
-	      [C-S-left])
- (S-kp-left .
-	    [S-left])
- (C-M-kp-left .
-	      [C-M-left])
- (M-kp-left .
-	    [M-left])
- (C-kp-left .
-	    [C-left])
- (kp-left .
-	  [left])
- (C-M-S-kp-next .
-		[C-M-S-next])
- (M-S-kp-next .
-	      [M-S-next])
- (C-S-kp-next .
-	      [C-S-next])
- (S-kp-next .
-	    [S-next])
- (C-M-kp-next .
-	      [C-M-next])
- (M-kp-next .
-	    [M-next])
- (C-kp-next .
-	    [C-next])
- (kp-next .
-	  [next])
- (C-M-S-kp-down .
-		[C-M-S-down])
- (M-S-kp-down .
-	      [M-S-down])
- (C-S-kp-down .
-	      [C-S-down])
- (S-kp-down .
-	    [S-down])
- (C-M-kp-down .
-	      [C-M-down])
- (M-kp-down .
-	    [M-down])
- (C-kp-down .
-	    [C-down])
- (kp-down .
-	  [down])
- (C-M-S-kp-end .
-	       [C-M-S-end])
- (M-S-kp-end .
-	     [M-S-end])
- (C-S-kp-end .
-	     [C-S-end])
- (S-kp-end .
-	   [S-end])
- (C-M-kp-end .
-	     [C-M-end])
- (M-kp-end .
-	   [M-end])
- (C-kp-end .
-	   [C-end])
- (kp-end .
-	 [end])
- (C-M-S-kp-insert .
-		  [C-M-S-insert])
- (M-S-kp-insert .
-		[M-S-insert])
- (C-S-kp-insert .
-		[C-S-insert])
- (S-kp-insert .
-	      [S-insert])
- (C-M-kp-insert .
-		[C-M-insert])
- (M-kp-insert .
-	      [M-insert])
- (C-kp-insert .
-	      [C-insert])
- (kp-insert .
-	    [insert])
- (C-M-S-kp-delete .
-		  [C-M-S-delete])
- (M-S-kp-delete .
-		[M-S-delete])
- (C-S-kp-delete .
-		[C-S-delete])
- (S-kp-delete .
-	      [S-delete])
- (C-M-kp-delete .
-		[C-M-delete])
- (M-kp-delete .
-	      [M-delete])
- (C-kp-delete .
-	      [C-delete])
- (kp-delete .
-	    [127]))
+(keymap keymap
+	(right-fringe keymap
+		      (mouse-3 . mouse--strip-first-event)
+		      (mouse-2 . mouse--strip-first-event)
+		      (mouse-1 . mouse--strip-first-event))
+	(left-fringe keymap
+		     (mouse-3 . mouse--strip-first-event)
+		     (mouse-2 . mouse--strip-first-event)
+		     (mouse-1 . mouse--strip-first-event))
+	(escape .
+		[27])
+	(return .
+		[13])
+	(clear .
+	       [12])
+	(linefeed .
+		  [10])
+	(tab .
+	     [9])
+	(kp-equal .
+		  [61])
+	(kp-separator .
+		      [44])
+	(kp-tab .
+		[9])
+	(kp-space .
+		  [32])
+	(24 keymap
+	    (64 keymap
+		(99 . event-apply-control-modifier)
+		(83 . event-apply-shift-modifier)
+		(97 . event-apply-alt-modifier)
+		(109 . event-apply-meta-modifier)
+		(115 . event-apply-super-modifier)
+		(104 . event-apply-hyper-modifier)))
+	(S-tab .
+	       [backtab])
+	(0 .
+	   [67108896])
+	(delete .
+		[127])
+	(backspace .
+		   [127])
+	(C-M-S-kp-divide .
+			 [234881071])
+	(M-S-kp-divide .
+		       [167772207])
+	(C-S-kp-divide .
+		       [100663343])
+	(S-kp-divide .
+		     [33554479])
+	(C-M-kp-divide .
+		       [201326639])
+	(M-kp-divide .
+		     [134217775])
+	(C-kp-divide .
+		     [67108911])
+	(kp-divide .
+		   [47])
+	(C-M-S-kp-multiply .
+			   [234881066])
+	(M-S-kp-multiply .
+			 [167772202])
+	(C-S-kp-multiply .
+			 [100663338])
+	(S-kp-multiply .
+		       [33554474])
+	(C-M-kp-multiply .
+			 [201326634])
+	(M-kp-multiply .
+		       [134217770])
+	(C-kp-multiply .
+		       [67108906])
+	(kp-multiply .
+		     [42])
+	(C-M-S-kp-subtract .
+			   [234881069])
+	(M-S-kp-subtract .
+			 [167772205])
+	(C-S-kp-subtract .
+			 [100663341])
+	(S-kp-subtract .
+		       [33554477])
+	(C-M-kp-subtract .
+			 [201326637])
+	(M-kp-subtract .
+		       [134217773])
+	(C-kp-subtract .
+		       [67108909])
+	(kp-subtract .
+		     [45])
+	(C-M-S-kp-add .
+		      [234881067])
+	(M-S-kp-add .
+		    [167772203])
+	(C-S-kp-add .
+		    [100663339])
+	(S-kp-add .
+		  [33554475])
+	(C-M-kp-add .
+		    [201326635])
+	(M-kp-add .
+		  [134217771])
+	(C-kp-add .
+		  [67108907])
+	(kp-add .
+		[43])
+	(C-M-S-kp-9 .
+		    [234881081])
+	(M-S-kp-9 .
+		  [167772217])
+	(C-S-kp-9 .
+		  [100663353])
+	(S-kp-9 .
+		[33554489])
+	(C-M-kp-9 .
+		  [201326649])
+	(M-kp-9 .
+		[134217785])
+	(C-kp-9 .
+		[67108921])
+	(kp-9 .
+	      [57])
+	(C-M-S-kp-8 .
+		    [234881080])
+	(M-S-kp-8 .
+		  [167772216])
+	(C-S-kp-8 .
+		  [100663352])
+	(S-kp-8 .
+		[33554488])
+	(C-M-kp-8 .
+		  [201326648])
+	(M-kp-8 .
+		[134217784])
+	(C-kp-8 .
+		[67108920])
+	(kp-8 .
+	      [56])
+	(C-M-S-kp-7 .
+		    [234881079])
+	(M-S-kp-7 .
+		  [167772215])
+	(C-S-kp-7 .
+		  [100663351])
+	(S-kp-7 .
+		[33554487])
+	(C-M-kp-7 .
+		  [201326647])
+	(M-kp-7 .
+		[134217783])
+	(C-kp-7 .
+		[67108919])
+	(kp-7 .
+	      [55])
+	(C-M-S-kp-6 .
+		    [234881078])
+	(M-S-kp-6 .
+		  [167772214])
+	(C-S-kp-6 .
+		  [100663350])
+	(S-kp-6 .
+		[33554486])
+	(C-M-kp-6 .
+		  [201326646])
+	(M-kp-6 .
+		[134217782])
+	(C-kp-6 .
+		[67108918])
+	(kp-6 .
+	      [54])
+	(C-M-S-kp-5 .
+		    [234881077])
+	(M-S-kp-5 .
+		  [167772213])
+	(C-S-kp-5 .
+		  [100663349])
+	(S-kp-5 .
+		[33554485])
+	(C-M-kp-5 .
+		  [201326645])
+	(M-kp-5 .
+		[134217781])
+	(C-kp-5 .
+		[67108917])
+	(kp-5 .
+	      [53])
+	(C-M-S-kp-4 .
+		    [234881076])
+	(M-S-kp-4 .
+		  [167772212])
+	(C-S-kp-4 .
+		  [100663348])
+	(S-kp-4 .
+		[33554484])
+	(C-M-kp-4 .
+		  [201326644])
+	(M-kp-4 .
+		[134217780])
+	(C-kp-4 .
+		[67108916])
+	(kp-4 .
+	      [52])
+	(C-M-S-kp-3 .
+		    [234881075])
+	(M-S-kp-3 .
+		  [167772211])
+	(C-S-kp-3 .
+		  [100663347])
+	(S-kp-3 .
+		[33554483])
+	(C-M-kp-3 .
+		  [201326643])
+	(M-kp-3 .
+		[134217779])
+	(C-kp-3 .
+		[67108915])
+	(kp-3 .
+	      [51])
+	(C-M-S-kp-2 .
+		    [234881074])
+	(M-S-kp-2 .
+		  [167772210])
+	(C-S-kp-2 .
+		  [100663346])
+	(S-kp-2 .
+		[33554482])
+	(C-M-kp-2 .
+		  [201326642])
+	(M-kp-2 .
+		[134217778])
+	(C-kp-2 .
+		[67108914])
+	(kp-2 .
+	      [50])
+	(C-M-S-kp-1 .
+		    [234881073])
+	(M-S-kp-1 .
+		  [167772209])
+	(C-S-kp-1 .
+		  [100663345])
+	(S-kp-1 .
+		[33554481])
+	(C-M-kp-1 .
+		  [201326641])
+	(M-kp-1 .
+		[134217777])
+	(C-kp-1 .
+		[67108913])
+	(kp-1 .
+	      [49])
+	(C-M-S-kp-0 .
+		    [234881072])
+	(M-S-kp-0 .
+		  [167772208])
+	(C-S-kp-0 .
+		  [100663344])
+	(S-kp-0 .
+		[33554480])
+	(C-M-kp-0 .
+		  [201326640])
+	(M-kp-0 .
+		[134217776])
+	(C-kp-0 .
+		[67108912])
+	(kp-0 .
+	      [48])
+	(C-M-S-kp-decimal .
+			  [234881070])
+	(M-S-kp-decimal .
+			[167772206])
+	(C-S-kp-decimal .
+			[100663342])
+	(S-kp-decimal .
+		      [33554478])
+	(C-M-kp-decimal .
+			[201326638])
+	(M-kp-decimal .
+		      [134217774])
+	(C-kp-decimal .
+		      [67108910])
+	(kp-decimal .
+		    [46])
+	(C-M-S-kp-enter .
+			[C-M-S-enter])
+	(M-S-kp-enter .
+		      [M-S-enter])
+	(C-S-kp-enter .
+		      [C-S-enter])
+	(S-kp-enter .
+		    [S-enter])
+	(C-M-kp-enter .
+		      [C-M-enter])
+	(M-kp-enter .
+		    [M-enter])
+	(C-kp-enter .
+		    [C-enter])
+	(kp-enter .
+		  [13])
+	(C-M-S-kp-prior .
+			[C-M-S-prior])
+	(M-S-kp-prior .
+		      [M-S-prior])
+	(C-S-kp-prior .
+		      [C-S-prior])
+	(S-kp-prior .
+		    [S-prior])
+	(C-M-kp-prior .
+		      [C-M-prior])
+	(M-kp-prior .
+		    [M-prior])
+	(C-kp-prior .
+		    [C-prior])
+	(kp-prior .
+		  [prior])
+	(C-M-S-kp-up .
+		     [C-M-S-up])
+	(M-S-kp-up .
+		   [M-S-up])
+	(C-S-kp-up .
+		   [C-S-up])
+	(S-kp-up .
+		 [S-up])
+	(C-M-kp-up .
+		   [C-M-up])
+	(M-kp-up .
+		 [M-up])
+	(C-kp-up .
+		 [C-up])
+	(kp-up .
+	       [up])
+	(C-M-S-kp-home .
+		       [C-M-S-home])
+	(M-S-kp-home .
+		     [M-S-home])
+	(C-S-kp-home .
+		     [C-S-home])
+	(S-kp-home .
+		   [S-home])
+	(C-M-kp-home .
+		     [C-M-home])
+	(M-kp-home .
+		   [M-home])
+	(C-kp-home .
+		   [C-home])
+	(kp-home .
+		 [home])
+	(C-M-S-kp-right .
+			[C-M-S-right])
+	(M-S-kp-right .
+		      [M-S-right])
+	(C-S-kp-right .
+		      [C-S-right])
+	(S-kp-right .
+		    [S-right])
+	(C-M-kp-right .
+		      [C-M-right])
+	(M-kp-right .
+		    [M-right])
+	(C-kp-right .
+		    [C-right])
+	(kp-right .
+		  [right])
+	(C-M-S-kp-begin .
+			[C-M-S-begin])
+	(M-S-kp-begin .
+		      [M-S-begin])
+	(C-S-kp-begin .
+		      [C-S-begin])
+	(S-kp-begin .
+		    [S-begin])
+	(C-M-kp-begin .
+		      [C-M-begin])
+	(M-kp-begin .
+		    [M-begin])
+	(C-kp-begin .
+		    [C-begin])
+	(kp-begin .
+		  [begin])
+	(C-M-S-kp-left .
+		       [C-M-S-left])
+	(M-S-kp-left .
+		     [M-S-left])
+	(C-S-kp-left .
+		     [C-S-left])
+	(S-kp-left .
+		   [S-left])
+	(C-M-kp-left .
+		     [C-M-left])
+	(M-kp-left .
+		   [M-left])
+	(C-kp-left .
+		   [C-left])
+	(kp-left .
+		 [left])
+	(C-M-S-kp-next .
+		       [C-M-S-next])
+	(M-S-kp-next .
+		     [M-S-next])
+	(C-S-kp-next .
+		     [C-S-next])
+	(S-kp-next .
+		   [S-next])
+	(C-M-kp-next .
+		     [C-M-next])
+	(M-kp-next .
+		   [M-next])
+	(C-kp-next .
+		   [C-next])
+	(kp-next .
+		 [next])
+	(C-M-S-kp-down .
+		       [C-M-S-down])
+	(M-S-kp-down .
+		     [M-S-down])
+	(C-S-kp-down .
+		     [C-S-down])
+	(S-kp-down .
+		   [S-down])
+	(C-M-kp-down .
+		     [C-M-down])
+	(M-kp-down .
+		   [M-down])
+	(C-kp-down .
+		   [C-down])
+	(kp-down .
+		 [down])
+	(C-M-S-kp-end .
+		      [C-M-S-end])
+	(M-S-kp-end .
+		    [M-S-end])
+	(C-S-kp-end .
+		    [C-S-end])
+	(S-kp-end .
+		  [S-end])
+	(C-M-kp-end .
+		    [C-M-end])
+	(M-kp-end .
+		  [M-end])
+	(C-kp-end .
+		  [C-end])
+	(kp-end .
+		[end])
+	(C-M-S-kp-insert .
+			 [C-M-S-insert])
+	(M-S-kp-insert .
+		       [M-S-insert])
+	(C-S-kp-insert .
+		       [C-S-insert])
+	(S-kp-insert .
+		     [S-insert])
+	(C-M-kp-insert .
+		       [C-M-insert])
+	(M-kp-insert .
+		     [M-insert])
+	(C-kp-insert .
+		     [C-insert])
+	(kp-insert .
+		   [insert])
+	(C-M-S-kp-delete .
+			 [C-M-S-delete])
+	(M-S-kp-delete .
+		       [M-S-delete])
+	(C-S-kp-delete .
+		       [C-S-delete])
+	(S-kp-delete .
+		     [S-delete])
+	(C-M-kp-delete .
+		       [C-M-delete])
+	(M-kp-delete .
+		     [M-delete])
+	(C-kp-delete .
+		     [C-delete])
+	(kp-delete .
+		   [127]))
 </pre></br>
 It is a terminal-local variable; global value is the same.</br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

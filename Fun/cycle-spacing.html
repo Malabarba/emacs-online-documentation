@@ -1,7 +1,7 @@
-<strong>cycle-spacing</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>cycle-spacing</strong> is an interactive compiled Lisp function in `<code>simple.el</code>'.</br>
 </br>
 </br>
-(cycle-spacing &optional <u>N</u> <u>PRESERVE-NL-BACK</u> <u>SINGLE-SHOT</u>)</br>
+(cycle-spacing &optional <u>N</u> <u>PRESERVE-NL-BACK</u> <u>MODE</u>)</br>
 </br>
 Manipulate whitespace around point in a smart way.</br>
 In interactive use, this function behaves differently in successive</br>
@@ -13,9 +13,14 @@ It deletes all spaces and tabs around point, leaving one space</br>
 it deletes newlines as well, leaving -<u>N</u> spaces.</br>
 (If <u>PRESERVE-NL-BACK</u> is non-nil, it does not delete newlines before point.)</br>
 </br>
-The second call in a sequence (or the first call if the above does</br>
-not result in any changes) deletes all spaces.</br>
+The second call in a sequence deletes all spaces.</br>
 </br>
 The third call in a sequence restores the original whitespace (and point).</br>
 </br>
-If <u>SINGLE-SHOT</u> is non-nil, it only performs the first step in the sequence.
+If <u>MODE</u> is `single-shot', it only performs the first step in the sequence.</br>
+If <u>MODE</u> is `fast' and the first step would not result in any change</br>
+(i.e., there are exactly (abs <u>N</u>) spaces around point),</br>
+the function goes straight to the second step.</br>
+</br>
+Repeatedly calling the function with different values of <u>N</u> starts a</br>
+new sequence each time.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

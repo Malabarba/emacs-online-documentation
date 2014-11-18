@@ -1,0 +1,16 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>python-shell-accept-process-output</strong> is a compiled Lisp function in `<code>python.el</code>'.</br>
+</br>
+(python-shell-accept-process-output <u>PROCESS</u> &optional <u>TIMEOUT</u> <u>REGEXP</u>)</br>
+</br>
+Accept <u>PROCESS</u> output with <u>TIMEOUT</u> until <u>REGEXP</u> is found.</br>
+Optional argument <u>TIMEOUT</u> is the timeout argument to</br>
+`accept-process-output' calls.  Optional argument <u>REGEXP</u></br>
+overrides the regexp to match the end of output, defaults to</br>
+`comint-prompt-regexp.'.  Returns non-nil when output was</br>
+properly captured.</br>
+</br>
+This utility is useful in situations where the output may be</br>
+received in chunks, since `accept-process-output' gives no</br>
+guarantees they will be grabbed in a single call.  An example use</br>
+case for this would be the CPython shell start-up, where the</br>
+banner and the initial prompt are received separately.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

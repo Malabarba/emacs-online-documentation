@@ -1,4 +1,4 @@
-<strong>ibuffer-mode-map</strong> is a variable defined in `<code>ibuffer.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ibuffer-mode-map</strong> is a variable defined in `<code>ibuffer.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -79,7 +79,7 @@ Keymap for `ibuffer-mode'.</br>
 	       (110 . ibuffer-filter-by-name)
 	       (77 . ibuffer-filter-by-derived-mode)
 	       (109 . ibuffer-filter-by-used-mode))
-	      digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil ibuffer-diff-with-file nil describe-mode nil ibuffer-do-view nil nil ibuffer-do-delete ibuffer-do-eval ibuffer-do-shell-command-file nil ibuffer-do-view-other-frame ibuffer-do-query-replace-regexp nil nil nil ibuffer-do-toggle-modified ibuffer-do-shell-command-pipe-replace ibuffer-do-occur ibuffer-do-print ibuffer-do-query-replace ibuffer-do-rename-uniquely ibuffer-do-save ibuffer-do-toggle-read-only ibuffer-do-replace-regexp ibuffer-do-revert ibuffer-do-view-and-eval ibuffer-do-shell-command-pipe nil nil nil nil nil nil nil ibuffer-switch-format nil ibuffer-bury-buffer nil ibuffer-mark-for-delete ibuffer-visit-buffer ibuffer-visit-buffer ibuffer-update describe-mode nil ibuffer-jump-to-buffer ibuffer-do-kill-lines ibuffer-redisplay ibuffer-mark-forward ibuffer-forward-line ibuffer-visit-buffer-other-window ibuffer-backward-line ibuffer-quit nil
+	      digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil ibuffer-diff-with-file nil nil nil ibuffer-do-view nil nil ibuffer-do-delete ibuffer-do-eval ibuffer-do-shell-command-file nil ibuffer-do-view-other-frame ibuffer-do-query-replace-regexp nil nil nil ibuffer-do-toggle-modified ibuffer-do-shell-command-pipe-replace ibuffer-do-occur ibuffer-do-print ibuffer-do-query-replace ibuffer-do-rename-uniquely ibuffer-do-save ibuffer-do-toggle-read-only ibuffer-do-replace-regexp ibuffer-do-revert ibuffer-do-view-and-eval ibuffer-do-shell-command-pipe nil nil nil nil nil nil nil ibuffer-switch-format nil ibuffer-bury-buffer nil ibuffer-mark-for-delete ibuffer-visit-buffer ibuffer-visit-buffer ibuffer-update nil nil ibuffer-jump-to-buffer ibuffer-do-kill-lines ibuffer-redisplay ibuffer-mark-forward ibuffer-forward-line ibuffer-visit-buffer-other-window ibuffer-backward-line nil nil
 	      (keymap
 	       (109 . ibuffer-do-sort-by-major-mode)
 	       (102 . ibuffer-do-sort-by-filename/process)
@@ -162,7 +162,7 @@ Keymap for `ibuffer-mode'.</br>
 			   (110 . ibuffer-filter-by-name)
 			   (77 . ibuffer-filter-by-derived-mode)
 			   (109 . ibuffer-filter-by-used-mode))
-			  digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil ibuffer-diff-with-file nil describe-mode nil ibuffer-do-view nil nil ibuffer-do-delete ibuffer-do-eval ibuffer-do-shell-command-file nil ibuffer-do-view-other-frame ibuffer-do-query-replace-regexp nil nil nil ibuffer-do-toggle-modified ibuffer-do-shell-command-pipe-replace ibuffer-do-occur ibuffer-do-print ibuffer-do-query-replace ibuffer-do-rename-uniquely ibuffer-do-save ibuffer-do-toggle-read-only ibuffer-do-replace-regexp ibuffer-do-revert ibuffer-do-view-and-eval ibuffer-do-shell-command-pipe nil nil nil nil nil nil nil ibuffer-switch-format nil ibuffer-bury-buffer nil ibuffer-mark-for-delete ibuffer-visit-buffer ibuffer-visit-buffer ibuffer-update describe-mode nil ibuffer-jump-to-buffer ibuffer-do-kill-lines ibuffer-redisplay ibuffer-mark-forward ibuffer-forward-line ibuffer-visit-buffer-other-window ibuffer-backward-line ibuffer-quit nil
+			  digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument nil nil nil ibuffer-diff-with-file nil nil nil ibuffer-do-view nil nil ibuffer-do-delete ibuffer-do-eval ibuffer-do-shell-command-file nil ibuffer-do-view-other-frame ibuffer-do-query-replace-regexp nil nil nil ibuffer-do-toggle-modified ibuffer-do-shell-command-pipe-replace ibuffer-do-occur ibuffer-do-print ibuffer-do-query-replace ibuffer-do-rename-uniquely ibuffer-do-save ibuffer-do-toggle-read-only ibuffer-do-replace-regexp ibuffer-do-revert ibuffer-do-view-and-eval ibuffer-do-shell-command-pipe nil nil nil nil nil nil nil ibuffer-switch-format nil ibuffer-bury-buffer nil ibuffer-mark-for-delete ibuffer-visit-buffer ibuffer-visit-buffer ibuffer-update nil nil ibuffer-jump-to-buffer ibuffer-do-kill-lines ibuffer-redisplay ibuffer-mark-forward ibuffer-forward-line ibuffer-visit-buffer-other-window ibuffer-backward-line nil nil
 			  (keymap
 			   (109 . ibuffer-do-sort-by-major-mode)
 			   (102 . ibuffer-do-sort-by-filename/process)
@@ -290,7 +290,9 @@ Keymap for `ibuffer-mode'.</br>
 				(set-filter-groups-by-mode menu-item "Set current filter groups to filter by mode" ibuffer-set-filter-groups-by-mode))
 		 (dashes2 "--")
 		 (diff-with-file menu-item "Diff with file" ibuffer-diff-with-file :help "View the differences between this buffer and its file")
-		 (auto-mode menu-item "Toggle Auto Mode" ibuffer-auto-mode :help "Attempt to automatically update the Ibuffer buffer")
+		 (auto-mode menu-item "Auto Mode" ibuffer-auto-mode :button
+			    (:toggle . ibuffer-auto-mode)
+			    :help "Attempt to automatically update the Ibuffer buffer")
 		 (customize menu-item "Customize Ibuffer" ibuffer-customize :help "Use Custom to customize Ibuffer"))
 	   (mark "Mark" keymap "Mark"
 		 (toggle-marks menu-item "Toggle marks" ibuffer-toggle-marks :help "Unmark marked buffers, and mark unmarked buffers")
@@ -313,3 +315,4 @@ Keymap for `ibuffer-mode'.</br>
 		 (mark-by-file-name-regexp menu-item "Mark by file name (regexp)..." ibuffer-mark-by-file-name-regexp :help "Mark buffers whose file name matches a regexp")))
  (backtab . ibuffer-backward-filter-group))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

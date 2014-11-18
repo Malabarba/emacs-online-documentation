@@ -1,4 +1,4 @@
-<strong>org-agenda-custom-commands-local-options</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-agenda-custom-commands-local-options</strong> is a variable defined in `<code>org-agenda.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -122,37 +122,37 @@ This will be spliced into the custom type of</br>
 			(repeat :inline t :tag "Conditions for skipping"
 				(choice :tag "Condition type"
 					(list :tag "Regexp matches" :inline t
-					      (const :format "" regexp)
+					      (const :format "" 'regexp)
 					      (regexp))
 					(list :tag "Regexp does not match" :inline t
-					      (const :format "" notregexp)
+					      (const :format "" 'notregexp)
 					      (regexp))
 					(list :tag "TODO state is" :inline t
-					      (const todo)
+					      (const 'todo)
 					      (choice
-					       (const :tag "any not-done state" todo)
-					       (const :tag "any done state" done)
-					       (const :tag "any state" any)
+					       (const :tag "Any not-done state" 'todo)
+					       (const :tag "Any done state" 'done)
+					       (const :tag "Any state" 'any)
 					       (list :tag "Keyword list"
 						     (const :format "" quote)
 						     (repeat
 						      (string :tag "Keyword")))))
 					(list :tag "TODO state is not" :inline t
-					      (const nottodo)
+					      (const 'nottodo)
 					      (choice
-					       (const :tag "any not-done state" todo)
-					       (const :tag "any done state" done)
-					       (const :tag "any state" any)
+					       (const :tag "Any not-done state" 'todo)
+					       (const :tag "Any done state" 'done)
+					       (const :tag "Any state" 'any)
 					       (list :tag "Keyword list"
 						     (const :format "" quote)
 						     (repeat
 						      (string :tag "Keyword")))))
-					(const :tag "scheduled" scheduled)
-					(const :tag "not scheduled" notscheduled)
-					(const :tag "deadline" deadline)
-					(const :tag "no deadline" notdeadline)
-					(const :tag "timestamp" timestamp)
-					(const :tag "no timestamp" nottimestamp))))))
+					(const :tag "scheduled" 'scheduled)
+					(const :tag "not scheduled" 'notscheduled)
+					(const :tag "deadline" 'deadline)
+					(const :tag "no deadline" 'notdeadline)
+					(const :tag "timestamp" 'timestamp)
+					(const :tag "no timestamp" 'nottimestamp))))))
 		(list :tag "Non-standard skipping condition" :value
 		      (org-agenda-skip-function)
 		      (const org-agenda-skip-function)
@@ -161,3 +161,4 @@ This will be spliced into the custom type of</br>
 		      (variable :tag "Variable")
 		      (sexp :tag "Value (sexp)"))))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

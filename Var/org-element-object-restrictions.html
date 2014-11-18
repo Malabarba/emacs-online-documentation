@@ -1,4 +1,4 @@
-<strong>org-element-object-restrictions</strong> is a variable defined in `<code>org-element.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-element-object-restrictions</strong> is a variable defined in `<code>org-element.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -9,28 +9,30 @@ a list of successors that will be called within an element or</br>
 object of such type.</br>
 </br>
 For example, in a `radio-target' object, one can only find</br>
-entities, latex-fragments, subscript and superscript.</br>
+entities, latex-fragments, subscript, superscript and text</br>
+markup.</br>
 </br>
 This alist also applies to secondary string.  For example, an</br>
 `headline' type element doesn't directly contain objects, but</br>
 still has an entry since one of its properties (`:title') does.</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
-((bold export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (footnote-reference export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (headline export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (inlinetask export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (italic export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (item export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (keyword export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+((bold link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (footnote-reference link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (headline link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (inlinetask link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (italic link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (item link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (keyword link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
  (link export-snippet inline-babel-call inline-src-block latex-or-entity macro plain-link statistics-cookie sub/superscript text-markup)
- (paragraph export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (radio-target latex-or-entity sub/superscript)
- (strike-through export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (subscript export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (superscript export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (table-cell export-snippet footnote-reference latex-or-entity link macro radio-target sub/superscript target text-markup timestamp)
+ (paragraph link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (radio-target latex-or-entity sub/superscript text-markup)
+ (strike-through link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (subscript link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (superscript link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (table-cell link export-snippet footnote-reference latex-or-entity macro radio-target sub/superscript target text-markup timestamp)
  (table-row table-cell)
- (underline export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
- (verse-block export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break link macro radio-target statistics-cookie sub/superscript target text-markup timestamp))
+ (underline link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp)
+ (verse-block link export-snippet footnote-reference inline-babel-call inline-src-block latex-or-entity line-break macro radio-target statistics-cookie sub/superscript target text-markup timestamp))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,4 +1,4 @@
-<strong>gud-minor-mode-map</strong> is a variable defined in `<code>gud.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>gud-minor-mode-map</strong> is a variable defined in `<code>gud.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -9,6 +9,70 @@ Map used in visited files.</br>
  (3 keymap
     (23 . gud-watch))
  (menu-bar keymap
+	   (file . undefined)
+	   (edit . undefined)
+	   (options . undefined)
+	   (buffer . undefined)
+	   (tools . undefined)
+	   (print
+	    #("print" 0 5
+	      (face font-lock-doc-face))
+	    . gud-print)
+	   (stop menu-item
+		 #("stop" 0 4
+		   (face font-lock-doc-face))
+		 gud-stop-subjob :visible
+		 (or
+		  (and
+		   (eq gud-minor-mode 'gdbmi)
+		   (gdb-show-stop-p))
+		  (not
+		   (eq gud-minor-mode 'gdbmi))))
+	   (go menu-item
+	       #(" go " 0 4
+		 (face font-lock-doc-face))
+	       gud-go :visible
+	       (and
+		(eq gud-minor-mode 'gdbmi)
+		(gdb-show-run-p)))
+	   (run menu-item
+		#("run" 0 3
+		  (face font-lock-doc-face))
+		gud-run :visible
+		(memq gud-minor-mode
+		      '(gdbmi gdb dbx jdb)))
+	   (cont menu-item
+		 #("cont" 0 4
+		   (face font-lock-doc-face))
+		 gud-cont :visible
+		 (not
+		  (eq gud-minor-mode 'gdbmi)))
+	   (until menu-item
+		  #("until" 0 5
+		    (face font-lock-doc-face))
+		  gud-until :visible
+		  (memq gud-minor-mode
+			'(gdbmi gdb perldb)))
+	   (next
+	    #("next" 0 4
+	      (face font-lock-doc-face))
+	    . gud-next)
+	   (step
+	    #("step" 0 4
+	      (face font-lock-doc-face))
+	    . gud-step)
+	   (finish
+	    #("finish" 0 6
+	      (face font-lock-doc-face))
+	    . gud-finish)
+	   (up
+	    #("up" 0 2
+	      (face font-lock-doc-face))
+	    . gud-up)
+	   (down
+	    #("down" 0 4
+	      (face font-lock-doc-face))
+	    . gud-down)
 	   (debug "Gud" keymap
 		  (mi menu-item "GDB-MI"
 		      (keymap
@@ -96,7 +160,7 @@ Map used in visited files.</br>
 			  (not gud-running)
 			  :visible
 			  (memq gud-minor-mode
-				'(gdbmi gdb xdb jdb pdb)))
+				'(gdbmi gdb guiler xdb jdb pdb)))
 		  (watch menu-item "Watch Expression" gud-watch :enable
 			 (not gud-running)
 			 :visible
@@ -126,12 +190,12 @@ Map used in visited files.</br>
 			(not gud-running)
 			:visible
 			(memq gud-minor-mode
-			      '(gdbmi gdb dbx xdb jdb pdb)))
+			      '(gdbmi gdb guiler dbx xdb jdb pdb)))
 		  (up menu-item "Up Stack" gud-up :enable
 		      (not gud-running)
 		      :visible
 		      (memq gud-minor-mode
-			    '(gdbmi gdb dbx xdb jdb pdb)))
+			    '(gdbmi gdb guiler dbx xdb jdb pdb)))
 		  (break menu-item "Set Breakpoint" gud-break :enable
 			 (not gud-running)
 			 :visible
@@ -179,9 +243,10 @@ Map used in visited files.</br>
 			     (fboundp 'x-show-tip))
 			    :visible
 			    (memq gud-minor-mode
-				  '(gdbmi dbx sdb xdb pdb))
+				  '(gdbmi guiler dbx sdb xdb pdb))
 			    :button
 			    (:toggle . gud-tooltip-mode))
 		  (help "Info (debugger)" . gud-goto-info)
 		  "Gud")))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

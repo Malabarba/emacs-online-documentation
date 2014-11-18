@@ -1,15 +1,18 @@
-<strong>url-http</strong> is an autoloaded compiled Lisp function in `<code>url-http.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>url-http</strong> is an autoloaded compiled Lisp function in `<code>url-http.el</code>'.</br>
 </br>
-(url-http <u>URL</u> <u>CALLBACK</u> <u>CBARGS</u> &optional <u>RETRY-BUFFER</u>)</br>
+(url-http <u>URL</u> <u>CALLBACK</u> <u>CBARGS</u> &optional <u>RETRY-BUFFER</u> <u>GATEWAY-METHOD</u>)</br>
 </br>
 Retrieve <u>URL</u> via HTTP asynchronously.</br>
 <u>URL</u> must be a parsed <u>URL</u>.  See `url-generic-parse-url' for details.</br>
 </br>
-When retrieval is completed, execute the function <u>CALLBACK</u>, using</br>
-the arguments listed in <u>CBARGS</u>.  The first element in <u>CBARGS</u></br>
+When retrieval is completed, execute the function <u>CALLBACK</u>, passing it</br>
+an updated value of <u>CBARGS</u> as arguments.  The first element in <u>CBARGS</u></br>
 should be a plist describing what has happened so far during the</br>
 request, as described in the docstring of `url-retrieve' (if in</br>
 doubt, specify nil).</br>
 </br>
 Optional arg <u>RETRY-BUFFER</u>, if non-nil, specifies the buffer of a</br>
-previous `url-http' call, which is being re-attempted.
+previous `url-http' call, which is being re-attempted.</br>
+</br>
+Optional arg <u>GATEWAY-METHOD</u> specifies the gateway to be used,</br>
+overriding the value of `url-gateway-method'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

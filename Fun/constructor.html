@@ -1,4 +1,4 @@
-<strong>constructor</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>constructor</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
 </br>
 (constructor &rest <u>LOCAL-ARGS</u>)</br>
 </br>
@@ -8,7 +8,7 @@ This is a generic function.</br>
 </br>
 Implementations:</br>
 </br>
-`eieio-default-superclass' :STATIC (class newname &rest slots)</br>
+`eieio-default-superclass' :STATIC (arg1 arg2 &rest rest)</br>
 Default constructor for CLASS `eieio-default-superclass'.</br>
 NEWNAME is the name to be given to the constructed object.</br>
 SLOTS are the initialization slots used by `shared-initialize'.</br>
@@ -16,13 +16,18 @@ This static method is called when an object is constructed.</br>
 It allocates the vector used to represent an EIEIO object, and then</br>
 calls `shared-initialize' on that object.</br>
 </br>
+<code>(fn CLASS NEWNAME <em>&rest</em> SLOTS</code>)</br>
+</br>
 Defined in `eieio.el'</br>
 </br>
-`eieio-singleton' :STATIC (class name &rest slots)</br>
+`eieio-singleton' :STATIC (arg1 arg2 &rest rest)</br>
 Constructor for singleton CLASS.</br>
 NAME and SLOTS initialize the new object.</br>
 This constructor guarantees that no matter how many you request,</br>
 only one object ever exists.</br>
 </br>
+(fn CLASS NAME &rest SLOTS)</br>
+</br>
 Defined in `eieio-base.el'</br>
 </br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

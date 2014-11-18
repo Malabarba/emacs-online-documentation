@@ -1,13 +1,22 @@
-<strong>make-backup-file-name-function</strong> is a variable defined in `<code>files.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>make-backup-file-name-function</strong> is a variable defined in `<code>files.el</code>'.</br>
 Its value is <pre>make-backup-file-name--default-function</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
-A function to use instead of the default `make-backup-file-name'.</br>
+A function that `make-backup-file-name' uses to create backup file names.</br>
+The function receives a single argument, the original file name.</br>
 </br>
-This could be buffer-local to do something special for specific</br>
-files.  If you define it, you may need to change `backup-file-name-p'</br>
-and `file-name-sans-versions' too.</br>
+If you change this, you may need to change `backup-file-name-p' and</br>
+`file-name-sans-versions' too.</br>
+</br>
+You could make this buffer-local to do something special for specific files.</br>
+</br>
+For historical reasons, a value of nil means to use the default function.</br>
+This should not be relied upon.</br>
 </br>
 See also `backup-directory-alist'.</br>
 </br>
-You can customize this variable.
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 24.4 of Emacs.
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

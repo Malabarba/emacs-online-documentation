@@ -1,6 +1,14 @@
-<strong>reftex-index-selection-or-word</strong> is an interactive autoloaded Lisp function in `<code>reftex-index.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-index-selection-or-word</strong> is an interactive autoloaded Lisp function in `<code>reftex-index.el</code>'.</br>
 </br>
 </br>
-[Arg list not available until function definition is loaded.]</br>
+(reftex-index-selection-or-word &optional <u>ARG</u> <u>PHRASE</u>)</br>
 </br>
-Put selection or the word near point into the default index macro.
+Put selection or the word near point into the default index macro.</br>
+This uses the information in `reftex-index-default-macro' to make an index</br>
+entry.  The phrase indexed is the current selection or the word near point.</br>
+When called with one `C-u' prefix, let the user have a chance to edit the</br>
+index entry.  When called with 2 `C-u' as prefix, also ask for the index</br>
+macro and other stuff.</br>
+When called inside TeX math mode as determined by the `texmathp.el' library</br>
+which is part of AUCTeX, the string is first processed with the</br>
+`reftex-index-math-format', which see.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

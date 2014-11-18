@@ -1,4 +1,4 @@
-<strong>tildify-ignored-environments-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>tildify-ignored-environments-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -28,34 +28,22 @@ You can customize this variable.</br>
 <strong id="value">Value:</strong> <pre></br>
 ((latex-mode
   ("\\\\\\\\" . "")
-  ("\\\\begin{verbatim}" . "\\\\end{verbatim}")
+  ("\\\\begin{\\(\\(?:displaymath\\|eq\\(?:narray\\*?\\|uation\\)\\|math\\|verbatim\\)\\)}" "\\\\end{" 1 "}")
   ("\\\\verb\\*?\\(.\\)" 1)
-  ("\\$\\$" . "\\$\\$")
-  ("\\$" . "\\$")
+  ("\\$\\$?" 0)
   ("\\\\(" . "\\\\)")
   ("\\\\[[]" . "\\\\[]]")
-  ("\\\\begin{math}" . "\\\\end{math}")
-  ("\\\\begin{displaymath}" . "\\\\end{displaymath}")
-  ("\\\\begin{equation}" . "\\\\end{equation}")
-  ("\\\\begin{eqnarray\\*?}" . "\\\\end{eqnarray\\*?}")
   ("\\\\[a-zA-Z]+\\( +\\|{}\\)[a-zA-Z]*" . "")
   ("%" . "$"))
  (plain-tex-mode . latex-mode)
  (html-mode
-  ("<pre[^>]*>" . "</pre>")
-  ("<dfn>" . "</dfn>")
-  ("<code>" . "</code>")
-  ("<samp>" . "</samp>")
-  ("<kbd>" . "</kbd>")
-  ("<var>" . "</var>")
-  ("<PRE[^>]*>" . "</PRE>")
-  ("<DFN>" . "</DFN>")
-  ("<CODE>" . "</CODE>")
-  ("<SAMP>" . "</SAMP>")
-  ("<KBD>" . "</KBD>")
-  ("<VAR>" . "</VAR>")
+  ("<\\(\\(?:CODE\\|DFN\\|KBD\\|PRE\\|SAMP\\|VAR\\|code\\|dfn\\|kbd\\|pre\\|samp\\|var\\)\\)\\>[^>]*>" "</" 1 ">")
   ("<! *--" . "-- *>")
   ("<" . ">"))
  (sgml-mode . html-mode)
- (t nil))
+ (xml-mode
+  ("<! *--" . "-- *>")
+  ("<" . ">"))
+ (nxml-mode . xml-mode))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,12 +1,12 @@
-<strong>message-citation-line-format</strong> is a variable defined in `<code>message.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>message-citation-line-format</strong> is a variable defined in `<code>message.el</code>'.</br>
 Its value is <pre>"On %a, %b %d %Y, %N wrote:
 "</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
 Format of the "Whomever writes:" line.</br>
 </br>
-The string is formatted using `format-spec'.  The following</br>
-constructs are replaced:</br>
+The string is formatted using `format-spec'.  The following constructs</br>
+are replaced:</br>
 </br>
   %f   The full From, e.g. "John Doe <john.doe@example.invalid>".</br>
   %n   The mail address, e.g. "john.doe@example.invalid".</br>
@@ -14,11 +14,14 @@ constructs are replaced:</br>
        back to the mail address.</br>
   %F   The first name if present, e.g.: "John".</br>
   %L   The last name if present, e.g.: "Doe".</br>
+  %Z, %z   The time zone in the numeric form, e.g.:"+0000".</br>
 </br>
 All other format specifiers are passed to `format-time-string'</br>
-which is called using the date from the article your replying to.</br>
-Extracting the first (%F) and last name (%L) is done</br>
-heuristically, so you should always check it yourself.</br>
+which is called using the date from the article your replying to, but</br>
+the date in the formatted string will be expressed in the author's</br>
+time zone as much as possible.</br>
+Extracting the first (%F) and last name (%L) is done heuristically,</br>
+so you should always check it yourself.</br>
 </br>
 Please also read the note in the documentation of</br>
 `message-citation-line-function'.</br>
@@ -27,3 +30,4 @@ You can customize this variable.</br>
 </br>
 This variable was introduced, or its default value was changed, in
 version 23.1 of Emacs.
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

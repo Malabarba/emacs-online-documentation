@@ -1,8 +1,16 @@
-<strong>line-move-ignore-invisible</strong> is a variable defined in `<code>simple.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>line-move-ignore-invisible</strong> is a variable defined in `<code>simple.el</code>'.</br>
 Its value is <pre>t</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
-Non-nil means C-n and C-p ignore invisible lines.</br>
+Non-nil means commands that move by lines ignore invisible newlines.</br>
+When this option is non-nil, C-n, C-p, C-e, and C-a behave</br>
+as if newlines that are invisible didn't exist, and count</br>
+only visible newlines.  Thus, moving across across 2 newlines</br>
+one of which is invisible will be counted as a one-line move.</br>
+Also, a non-nil value causes invisible text to be ignored when</br>
+counting columns for the purposes of keeping point in the same</br>
+column by C-n and C-p.</br>
+</br>
 Outline mode sets this.</br>
 </br>
-You can customize this variable.
+You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

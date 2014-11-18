@@ -1,12 +1,13 @@
-<strong>font-get-glyphs</strong> is a built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>font-get-glyphs</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
 (font-get-glyphs <u>FONT-OBJECT</u> <u>FROM</u> <u>TO</u> &optional <u>OBJECT</u>)</br>
 </br>
 Return a vector of <u>FONT-OBJECT</u>'s glyphs for the specified characters.</br>
 <u>FROM</u> and <u>TO</u> are positions (integers or markers) specifying a region</br>
-of the current buffer.</br>
-If the optional fourth arg <u>OBJECT</u> is not nil, it is a string or a</br>
-vector containing the target characters.</br>
+of the current buffer, and can be in either order.  If the optional</br>
+fourth arg <u>OBJECT</u> is not nil, it is a string or a vector containing</br>
+the target characters between indices <u>FROM</u> and <u>TO</u>, which are treated</br>
+as in `substring'.</br>
 </br>
 Each element is a vector containing information of a glyph in this format:</br>
   [FROM-IDX TO-IDX C CODE WIDTH LBEARING RBEARING ASCENT DESCENT ADJUSTMENT]</br>
@@ -18,4 +19,4 @@ where</br>
   WIDTH thru DESCENT are the metrics (in pixels) of the glyph.</br>
   ADJUSTMENT is always nil.</br>
 If <u>FONT-OBJECT</u> doesn't have a glyph for a character,</br>
-the corresponding element is nil.
+the corresponding element is nil.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

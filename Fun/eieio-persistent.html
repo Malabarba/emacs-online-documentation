@@ -1,4 +1,4 @@
-eieio-persistent is an  object constructor function in `eieio-base.el'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">eieio-persistent is an  object constructor function in `eieio-base.el'.</br>
 Creates an object of class eieio-persistent.</br>
 You cannot create a new object of type eieio-persistent</br>
 </br>
@@ -39,20 +39,29 @@ Enables auto-choosing nice file names based on name.</br>
 </br>
 Specialized Methods:</br>
 </br>
-`eieio-persistent-save' :PRIMARY (this &optional file)</br>
+`eieio-persistent-save' :PRIMARY (arg1 &optional arg2)</br>
 Save persistent object THIS to disk.</br>
 Optional argument FILE overrides the file name specified in the object</br>
 instance.</br>
 </br>
-`eieio-persistent-path-relative' :PRIMARY (this file)</br>
+<code>(fn THIS <em>&optional</em> FILE</code>)</br>
+</br>
+`eieio-persistent-path-relative' :PRIMARY (arg1 arg2)</br>
 For object THIS, make absolute file name FILE relative.</br>
 </br>
-`eieio-persistent-save-interactive' :PRIMARY (this prompt &optional name)</br>
+(fn THIS FILE)</br>
+</br>
+`eieio-persistent-save-interactive' :PRIMARY (arg1 arg2 &optional arg3)</br>
 Prepare to save THIS.  Use in an `interactive' statement.</br>
 Query user for file name with PROMPT if THIS does not yet specify</br>
 a file.  Optional argument NAME specifies a default file name.</br>
 </br>
-`object-write' :PRIMARY (this &optional comment)</br>
+(fn THIS PROMPT &optional NAME)</br>
+</br>
+`object-write' :PRIMARY (arg1 &optional arg2)</br>
 Write persistent object THIS out to the current stream.</br>
 Optional argument COMMENT is a header line comment.</br>
 </br>
+(fn THIS &optional COMMENT)</br>
+</br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

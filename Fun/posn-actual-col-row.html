@@ -1,10 +1,15 @@
-<strong>posn-actual-col-row</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>posn-actual-col-row</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
 </br>
 (posn-actual-col-row <u>POSITION</u>)</br>
 </br>
-Return the actual column and row in <u>POSITION</u>, measured in characters.</br>
-These are the actual row number in the window and character number in that row.</br>
+Return the window row number in <u>POSITION</u> and character number in that row.</br>
+</br>
 Return nil if <u>POSITION</u> does not contain the actual position; in that case</br>
 `posn-col-row' can be used to get approximate values.</br>
 <u>POSITION</u> should be a list of the form returned by the `event-start'</br>
-and `event-end' functions.
+and `event-end' functions.</br>
+</br>
+This function does not account for the width on display, like the</br>
+number of visual columns taken by a TAB or image.  If you need</br>
+the coordinates of <u>POSITION</u> in character units, you should use</br>
+`posn-col-row', not this function.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

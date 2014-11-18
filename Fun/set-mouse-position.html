@@ -1,4 +1,4 @@
-<strong>set-mouse-position</strong> is a built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>set-mouse-position</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
 (set-mouse-position <u>FRAME</u> <u>X</u> <u>Y</u>)</br>
 </br>
@@ -7,11 +7,12 @@ Coordinates are relative to the frame, not a window,</br>
 so the coordinates of the top left character in the frame</br>
 may be nonzero due to left-hand scroll bars or the menu bar.</br>
 </br>
-The position is given in character cells, where (0, 0) is the</br>
-upper-left corner of the frame, <u>X</u> is the horizontal offset, and <u>Y</u> is</br>
-the vertical offset.</br>
+The position is given in canonical character cells, where (0, 0) is</br>
+the upper-left corner of the frame, <u>X</u> is the horizontal offset, and</br>
+<u>Y</u> is the vertical offset, measured in units of the frame's default</br>
+character size.</br>
 </br>
 This function is a no-op for an <u>X</u> frame that is not visible.</br>
 If you have just created a frame, you must wait for it to become visible</br>
 before calling this function on it, like this.</br>
-  (while (not (frame-visible-p frame)) (sleep-for .5))
+  (while (not (frame-visible-p frame)) (sleep-for .5))<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

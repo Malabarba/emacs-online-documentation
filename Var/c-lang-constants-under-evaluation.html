@@ -1,5 +1,9 @@
-<strong>c-lang-constants-under-evaluation</strong> is a variable defined in `<code>cc-defs.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>c-lang-constants-under-evaluation</strong> is a variable defined in `<code>cc-defs.el</code>'.</br>
 Its value is <pre>nil</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
-Not documented as a variable.
+Alist of constants in the process of being evaluated.</br>
+The `cdr' of each entry indicates how far we've looked in the list</br>
+of definitions, so that the def for var FOO in c-mode can be defined in</br>
+terms of the def for that same var FOO (which will then rely on the</br>
+fallback definition for all modes, to break the cycle).<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

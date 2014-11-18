@@ -1,6 +1,11 @@
-<strong>undo-elt-in-region</strong> is a compiled Lisp function in `<code>simple.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>undo-elt-in-region</strong> is a compiled Lisp function in `<code>simple.el</code>'.</br>
 </br>
 (undo-elt-in-region <u>UNDO-ELT</u> <u>START</u> <u>END</u>)</br>
 </br>
 Determine whether <u>UNDO-ELT</u> falls inside the region <u>START</u> ... <u>END</u>.</br>
-If it crosses the edge, we return nil.
+If it crosses the edge, we return nil.</br>
+</br>
+Generally this function is not useful for determining</br>
+whether (MARKER . ADJUSTMENT) undo elements are in the region,</br>
+because markers can be arbitrarily relocated.  Instead, pass the</br>
+marker adjustment's corresponding (TEXT . POS) element.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

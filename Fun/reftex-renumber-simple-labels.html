@@ -1,6 +1,14 @@
-<strong>reftex-renumber-simple-labels</strong> is an interactive autoloaded Lisp function in `<code>reftex-global.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-renumber-simple-labels</strong> is an interactive autoloaded compiled Lisp function in `<code>reftex-global.el</code>'.</br>
 </br>
 </br>
-[Arg list not available until function definition is loaded.]</br>
+(reftex-renumber-simple-labels)</br>
 </br>
-Renumber all simple labels in the document to make them sequentially.
+Renumber all simple labels in the document to make them sequentially.</br>
+Simple labels are the ones created by RefTeX, consisting only of the</br>
+prefix and a number.  After the command completes, all these labels will</br>
+have sequential numbers throughout the document.  Any references to</br>
+the labels will be changed as well.  For this, RefTeX looks at the</br>
+arguments of any macros which either start or end in the string `ref'.</br>
+This command should be used with care, in particular in multifile</br>
+documents.  You should not use it if another document refers to this</br>
+one with the `xr' package.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

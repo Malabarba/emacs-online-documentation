@@ -1,23 +1,27 @@
-<strong>org-latex-packages-alist</strong> is a variable defined in `<code>org.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-latex-packages-alist</strong> is a variable defined in `<code>org.el</code>'.</br>
 Its value is <pre>nil</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
 Alist of packages to be inserted in every LaTeX header.</br>
 </br>
 These will be inserted after `org-latex-default-packages-alist'.</br>
-Each cell is of the format:</br>
+Each element is either a cell or a string.</br>
 </br>
-    ("options" "package" snippet-flag)</br>
+A cell is of the format:</br>
 </br>
-SNIPPET-FLAG, when t, indicates that this package is also needed</br>
-when turning LaTeX snippets into images for inclusion into</br>
+    ("options" "package" SNIPPET-FLAG)</br>
+</br>
+SNIPPET-FLAG, when non-nil, indicates that this package is also</br>
+needed when turning LaTeX snippets into images for inclusion into</br>
 non-LaTeX output.</br>
+</br>
+A string will be inserted as-is in the header of the document.</br>
 </br>
 Make sure that you only list packages here which:</br>
 </br>
-  - you want in every file</br>
-  - do not conflict with the setup in `org-format-latex-header'.</br>
+  - you want in every file;</br>
+  - do not conflict with the setup in `org-format-latex-header';</br>
   - do not conflict with the default packages in</br>
     `org-latex-default-packages-alist'.</br>
 </br>
-You can customize this variable.
+You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

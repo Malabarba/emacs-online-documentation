@@ -1,4 +1,4 @@
-<strong>calculator-operators</strong> is a variable defined in `<code>calculator.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>calculator-operators</strong> is a variable defined in `<code>calculator.el</code>'.</br>
 Its value is <pre>nil</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -13,20 +13,21 @@ The calculator operators, each a list with:</br>
    versions), `DX' (converted to radians if degrees mode is on), `D'</br>
    (function for converting radians to degrees if deg mode is on), `L'</br>
    (list of saved values), `F' (function for recursive iteration calls)</br>
-   and evaluates to the function value - these variables are capital;</br>
+   and evaluates to the function value -- these variables are capital;</br>
 </br>
 4. The function's arity, optional, one of: 2 => binary, -1 => prefix</br>
-   unary, +1 => postfix unary, 0 => a 0-arg operator func, non-number =></br>
-   postfix/prefix as determined by `calculator-unary-style' (the</br>
-   default);</br>
+   unary, +1 => postfix unary, 0 => a 0-arg operator func (note that</br>
+   using such a function replaces the currently entered number, if any),</br>
+   non-number (the default) => postfix or prefix as determined by</br>
+   `calculator-unary-style';</br>
 </br>
-5. The function's precedence - should be in the range of 1 (lowest) to</br>
+5. The function's precedence -- should be in the range of 1 (lowest) to</br>
    9 (highest) (optional, defaults to 1);</br>
 </br>
 It it possible have a unary prefix version of a binary operator if it</br>
 comes later in this list.  If the list begins with the symbol 'nobind,</br>
-then no key binding will take place - this is only useful for predefined</br>
+then no key binding will take place -- this is only useful for predefined</br>
 keys.</br>
 </br>
 Use `calculator-user-operators' to add operators to this list, see its</br>
-documentation for an example.
+documentation for an example.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

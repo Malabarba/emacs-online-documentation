@@ -1,4 +1,4 @@
-<strong>menu-bar-showhide-scroll-bar-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>menu-bar-showhide-scroll-bar-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -30,5 +30,19 @@ Not documented as a variable.</br>
 		 (assq 'vertical-scroll-bars
 		       (frame-parameters)))
 		'right))
+ (none-horizontal menu-item "None-horizontal" menu-bar-no-horizontal-scroll-bar :help "Turn off horizontal scroll bars" :visible
+		  (horizontal-scroll-bars-available-p)
+		  :button
+		  (:radio not
+			  (cdr
+			   (assq 'horizontal-scroll-bars
+				 (frame-parameters)))))
+ (horizontal menu-item "Horizontal" menu-bar-horizontal-scroll-bar :help "Horizontal scroll bar" :visible
+	     (horizontal-scroll-bars-available-p)
+	     :button
+	     (:radio cdr
+		     (assq 'horizontal-scroll-bars
+			   (frame-parameters))))
  "Scroll-bar")
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

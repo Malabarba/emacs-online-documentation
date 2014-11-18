@@ -1,4 +1,4 @@
-<strong>initialize-instance</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>initialize-instance</strong> is a Lisp function in `<code>eieio.el</code>'.</br>
 </br>
 (initialize-instance &rest <u>LOCAL-ARGS</u>)</br>
 </br>
@@ -8,7 +8,7 @@ This is a generic function.</br>
 </br>
 Implementations:</br>
 </br>
-`eieio-default-superclass' :PRIMARY (this &optional slots)</br>
+`eieio-default-superclass' :PRIMARY (arg1 &optional arg2)</br>
 Construct the new object THIS based on SLOTS.</br>
 SLOTS is a tagged list where odd numbered elements are tags, and</br>
 even numbered elements are the values to store in the tagged slot.</br>
@@ -18,6 +18,8 @@ to have this constructor called automatically.  If these steps are</br>
 not taken, then new objects of your class will not have their values</br>
 dynamically set from SLOTS.</br>
 </br>
+<code>(fn THIS <em>&optional</em> SLOTS</code>)</br>
+</br>
 Defined in `eieio.el'</br>
 </br>
 `srecode-dictionary-compound-variable' :PRIMARY (this &optional fields)</br>
@@ -26,17 +28,19 @@ Makes sure that :value is compiled.</br>
 </br>
 Defined in `dictionary.el'</br>
 </br>
-`chart' :AFTER 385</br>
+`chart' :AFTER (arg1 &rest rest)</br>
 Initialize the chart OBJ being created with FIELDS.</br>
 Make sure the width/height is correct.</br>
 </br>
-<code>(fn OBJ <em>&rest</em> FIELDS</code>)</br>
+(fn OBJ &rest FIELDS)</br>
 </br>
 Defined in `chart.el'</br>
 </br>
-`eieio-instance-tracker' :AFTER (this &rest slots)</br>
+`eieio-instance-tracker' :AFTER (arg1 &rest rest)</br>
 Make sure THIS is in our master list of this class.</br>
 Optional argument SLOTS are the initialization arguments.</br>
+</br>
+(fn THIS &rest SLOTS)</br>
 </br>
 Defined in `eieio-base.el'</br>
 </br>
@@ -46,3 +50,4 @@ Make sure that all ede compiler objects are cached in</br>
 </br>
 Defined in `source.el'</br>
 </br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,6 +1,25 @@
-<strong>reftex-citation</strong> is an interactive autoloaded Lisp function in `<code>reftex-cite.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-citation</strong> is an interactive autoloaded Lisp function in `<code>reftex-cite.el</code>'.</br>
 </br>
 </br>
-[Arg list not available until function definition is loaded.]</br>
+(reftex-citation &optional <u>NO-INSERT</u> <u>FORMAT-KEY</u>)</br>
 </br>
-Make a citation using BibTeX database files.
+Make a citation using BibTeX database files.</br>
+After prompting for a regular expression, scans the buffers with</br>
+bibtex entries (taken from the \bibliography command) and offers the</br>
+matching entries for selection.  The selected entry is formatted according</br>
+to `reftex-cite-format' and inserted into the buffer.</br>
+</br>
+If <u>NO-INSERT</u> is non-nil, nothing is inserted, only the selected key returned.</br>
+</br>
+<u>FORMAT-KEY</u> can be used to pre-select a citation format.</br>
+</br>
+When called with a `C-u' prefix, prompt for optional arguments in</br>
+cite macros.  When called with a numeric prefix, make that many</br>
+citations.  When called with point inside the braces of a `\cite'</br>
+command, it will add another key, ignoring the value of</br>
+`reftex-cite-format'.</br>
+</br>
+The regular expression uses an expanded syntax: && is interpreted as `and'.</br>
+Thus, `aaaa&&bbb' matches entries which contain both `aaaa' and `bbb'.</br>
+While entering the regexp, completion on knows citation keys is possible.</br>
+`=' is a good regular expression to match all entries in all files.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

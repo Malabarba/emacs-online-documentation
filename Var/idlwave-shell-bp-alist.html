@@ -1,0 +1,29 @@
+<strong>idlwave-shell-bp-alist</strong> is a variable defined in `<code>idlw-shell.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of breakpoints.</br>
+A breakpoint is a cons cell ((file line) . ((index module) data))</br>
+</br>
+The car is the `frame' for the breakpoint:</br>
+file - full path file name.</br>
+line - line number of breakpoint - integer.</br>
+</br>
+The first element of the cdr is a list of internal IDL data:</br>
+index - the index number of the breakpoint internal to IDL.</br>
+module - the module for breakpoint internal to IDL.</br>
+</br>
+Remaining elements of the cdr:</br>
+data - Data associated with the breakpoint by idlwave-shell currently</br>
+contains four items:</br>
+</br>
+count - number of times to execute breakpoint.  When count reaches 0</br>
+  the breakpoint is cleared and removed from the alist.</br>
+</br>
+command - command to execute when breakpoint is reached, either a</br>
+  lisp function to be called with `funcall' with no arguments or a</br>
+  list to be evaluated with `eval'.</br>
+</br>
+condition - any condition to apply to the breakpoint.</br>
+</br>
+disabled - whether the bp is disabled.

@@ -1,4 +1,4 @@
-<strong>window-total-size</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>window-total-size</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
 </br>
 (window-total-size &optional <u>WINDOW</u> <u>HORIZONTAL</u> <u>ROUND</u>)</br>
 </br>
@@ -6,8 +6,17 @@ Return the total height or width of <u>WINDOW</u>.</br>
 <u>WINDOW</u> must be a valid window and defaults to the selected one.</br>
 </br>
 If <u>HORIZONTAL</u> is omitted or nil, return the total height of</br>
-<u>WINDOW</u>, in lines, like `window-total-height'.  Otherwise return</br>
-the total width, in columns, like `window-total-width'.</br>
+<u>WINDOW</u>, in lines.  If <u>WINDOW</u> is live, its total height includes,</br>
+in addition to the height of <u>WINDOW</u>'s text, the heights of</br>
+<u>WINDOW</u>'s mode and header line and a bottom divider, if any.</br>
+</br>
+If <u>HORIZONTAL</u> is non-nil, return the total width of <u>WINDOW</u>, in</br>
+columns.  If <u>WINDOW</u> is live, its total width includes, in</br>
+addition to the width of <u>WINDOW</u>'s text, the widths of <u>WINDOW</u>'s</br>
+fringes, margins, scroll bars and its right divider, if any.</br>
+</br>
+If <u>WINDOW</u> is internal, return the respective size of the screen</br>
+areas spanned by its children.</br>
 </br>
 Optional argument <u>ROUND</u> is handled as for `window-total-height'</br>
-and `window-total-width'.
+and `window-total-width'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

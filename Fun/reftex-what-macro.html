@@ -1,5 +1,20 @@
-<strong>reftex-what-macro</strong> is an autoloaded Lisp function in `<code>reftex-parse.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-what-macro</strong> is an autoloaded Lisp function in `<code>reftex-parse.el</code>'.</br>
 </br>
-[Arg list not available until function definition is loaded.]</br>
+(reftex-what-macro <u>WHICH</u> &optional <u>BOUND</u>)</br>
 </br>
-Not documented.
+Find out if point is within the arguments of any TeX-macro.</br>
+The return value is either ("\macro" . (point)) or a list of them.</br>
+</br>
+If <u>WHICH</u> is nil, immediately return nil.</br>
+If <u>WHICH</u> is 1, return innermost enclosing macro.</br>
+If <u>WHICH</u> is t, return list of all macros enclosing point.</br>
+If <u>WHICH</u> is a list of macros, look only for those macros and return the</br>
+  name of the first macro in this list found to enclose point.</br>
+If the optional <u>BOUND</u> is an integer, bound backwards directed</br>
+  searches to this point.  If it is nil, limit to nearest \section -</br>
+  like statement.</br>
+</br>
+This function is pretty stable, but can be fooled if the text contains</br>
+things like \macro{aa}{bb} where \macro is defined to take only one</br>
+argument.  As RefTeX cannot know this, the string "bb" would still be</br>
+considered an argument of macro \macro.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

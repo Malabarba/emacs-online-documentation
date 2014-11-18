@@ -1,15 +1,20 @@
-<strong>set-window-scroll-bars</strong> is a built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>set-window-scroll-bars</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
-(set-window-scroll-bars <u>WINDOW</u> <u>WIDTH</u> &optional <u>VERTICAL-TYPE</u> <u>HORIZONTAL-TYPE</u>)</br>
+(set-window-scroll-bars <u>WINDOW</u> &optional <u>WIDTH</u> <u>VERTICAL-TYPE</u> <u>HEIGHT</u> <u>HORIZONTAL-TYPE</u>)</br>
 </br>
 Set width and type of scroll bars of window <u>WINDOW</u>.</br>
 <u>WINDOW</u> must be a live window and defaults to the selected one.</br>
 </br>
-Second parameter <u>WIDTH</u> specifies the pixel width for the scroll bar.</br>
+Second parameter <u>WIDTH</u> specifies the pixel width for the vertical scroll</br>
+bar.  If <u>WIDTH</u> is nil, use the scroll-bar width of <u>WINDOW</u>'s frame.</br>
 Third parameter <u>VERTICAL-TYPE</u> specifies the type of the vertical scroll</br>
-bar: left, right, or nil.</br>
-If <u>WIDTH</u> is nil, use the frame's scroll-bar width.</br>
-If <u>VERTICAL-TYPE</u> is t, use the frame's scroll-bar type.</br>
-Fourth parameter <u>HORIZONTAL-TYPE</u> is currently unused.</br>
+bar: left, right, or nil.  If <u>VERTICAL-TYPE</u> is t, this means use the</br>
+frame's scroll-bar type.</br>
 </br>
-Return t if scroll bars were actually changed and nil otherwise.
+Fourth parameter <u>HEIGHT</u> specifies the pixel height for the horizontal</br>
+scroll bar.  If <u>HEIGHT</u> is nil, use the scroll-bar height of <u>WINDOW</u>'s</br>
+frame.  Fifth parameter <u>HORIZONTAL-TYPE</u> specifies the type of the</br>
+horizontal scroll bar: nil, bottom, or t.  If <u>HORIZONTAL-TYPE</u> is t, this</br>
+means to use the frame's horizontal scroll-bar type.</br>
+</br>
+Return t if scroll bars were actually changed and nil otherwise.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

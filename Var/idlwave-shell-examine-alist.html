@@ -1,0 +1,25 @@
+<strong>idlwave-shell-examine-alist</strong> is a variable defined in `<code>idlw-shell.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Alist of special examine commands for popup selection.</br>
+The keys are used in the selection popup created by</br>
+`idlwave-shell-examine-select', and the corresponding value is sent as</br>
+a command to the shell, with special sequence `___' replaced by the</br>
+expression being examined.</br>
+</br>
+You can customize this variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(("Print" . "idlwave_print_safe,___,200")
+ ("Help" . "help,___")
+ ("Structure Help" . "help,___,/STRUCTURE")
+ ("Dimensions" . "print,size(___,/DIMENSIONS)")
+ ("Type" . "print,size(___,/TNAME)")
+ ("N_Elements" . "print,n_elements(___)")
+ ("All Size Info" . "help,(__IWsz__=size(___,/STRUCTURE)),/STRUCTURE & print,__IWsz__.DIMENSIONS")
+ ("Ptr Valid" . "print,ptr_valid(___)")
+ ("Arg Present" . "print,arg_present(___)")
+ ("Widget Valid" . "print,widget_info(___,/VALID)")
+ ("Widget Geometry" . "help,widget_info(___,/GEOMETRY)"))
+</pre></br>

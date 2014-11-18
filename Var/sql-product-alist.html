@@ -1,4 +1,4 @@
-<strong>sql-product-alist</strong> is a variable defined in `<code>sql.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>sql-product-alist</strong> is a variable defined in `<code>sql.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -149,5 +149,9 @@ settings.</br>
  (sybase :name "Sybase" :font-lock sql-mode-sybase-font-lock-keywords :sqli-program sql-sybase-program :sqli-options sql-sybase-options :sqli-login sql-sybase-login-params :sqli-comint-func sql-comint-sybase :prompt-regexp "^SQL> " :prompt-length 5 :syntax-alist
 	 ((64 . "_"))
 	 :terminator
-	 ("^go" . "go")))
+	 ("^go" . "go"))
+ (vertica :name "Vertica" :sqli-program sql-vertica-program :sqli-options sql-vertica-options :sqli-login sql-vertica-login-params :sqli-comint-func sql-comint-vertica :list-all
+	  ("\\d" . "\\dS")
+	  :list-table "\\d %s" :prompt-regexp "^\\w*=[#>] " :prompt-length 5 :prompt-cont-regexp "^\\w*[-(][#>] "))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

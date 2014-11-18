@@ -1,9 +1,9 @@
-<strong>filter-buffer-substring-function</strong> is a variable defined in `<code>simple.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>filter-buffer-substring-function</strong> is a variable defined in `<code>simple.el</code>'.</br>
 Its value is <pre>buffer-substring--filter</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Function to perform the filtering in `filter-buffer-substring'.</br>
-The function is called with 3 arguments:</br>
-(BEG END DELETE).  The arguments BEG, END, and DELETE are the same</br>
-as those of `filter-buffer-substring' in each case.</br>
-It should return the buffer substring between BEG and END, after filtering.
+The function is called with the same 3 arguments (BEG END DELETE)</br>
+that `filter-buffer-substring' received.  It should return the</br>
+buffer substring between BEG and END, after filtering.  If DELETE is</br>
+non-nil, it should delete the text between BEG and END from the buffer.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

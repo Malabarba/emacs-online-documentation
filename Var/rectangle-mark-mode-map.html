@@ -1,5 +1,20 @@
-<strong>rectangle-mark-mode-map</strong> is a variable defined in `<code>rect.el</code>'.</br>
-Its value is <pre>(keymap (20 . string-rectangle) (15 . open-rectangle))</pre></br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>rectangle-mark-mode-map</strong> is a variable defined in `<code>rect.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
-Keymap used while marking a rectangular region.
+Keymap used while marking a rectangular region.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (remap keymap
+	(previous-line . rectangle-previous-line)
+	(next-line . rectangle-next-line)
+	(backward-char . rectangle-backward-char)
+	(forward-char . rectangle-forward-char)
+	(left-char . rectangle-left-char)
+	(right-char . rectangle-right-char)
+	(exchange-point-and-mark . rectangle-exchange-point-and-mark))
+ (20 . string-rectangle)
+ (15 . open-rectangle))
+</pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

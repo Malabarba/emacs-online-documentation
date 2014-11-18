@@ -1,4 +1,4 @@
-<strong>image-mode-menu</strong> is a variable defined in `<code>image-mode.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>image-mode-menu</strong> is a variable defined in `<code>image-mode.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -7,8 +7,7 @@ Menu for Image mode.</br>
 <strong id="value">Value:</strong> <pre></br>
 (keymap "Image"
 	(Show\ as\ Text menu-item "Show as Text" image-toggle-display :help "Show image as text")
-	(nil menu-item "--")
-	(Fit\ Frame\ to\ Image menu-item "Fit Frame to Image" image-mode-fit-frame :help "Resize frame to match image")
+	(nil-7 menu-item "--")
 	(Fit\ to\ Window\ Height menu-item "Fit to Window Height" image-transform-fit-to-height :visible
 				 (eq image-type 'imagemagick)
 				 :help "Resize image to match the window height")
@@ -18,11 +17,16 @@ Menu for Image mode.</br>
 	(Rotate\ Image\.\.\. menu-item "Rotate Image..." image-transform-set-rotation :visible
 			     (eq image-type 'imagemagick)
 			     :help "Rotate the image")
-	(nil-6 menu-item "--")
-	(Show\ Thumbnails menu-item "Show Thumbnails" menu-function-117 :key-sequence nil :enable default-directory :help "Show thumbnails for all images in this directory")
+	(Reset\ Transformations menu-item "Reset Transformations" image-transform-reset :visible
+				(eq image-type 'imagemagick)
+				:help "Reset all image transformations")
+	(nil-7-6 menu-item "--")
+	(Show\ Thumbnails menu-item "Show Thumbnails" menu-function-119 :key-sequence nil :enable default-directory :help "Show thumbnails for all images in this directory")
 	(Next\ Image menu-item "Next Image" image-next-file :enable buffer-file-name :help "Move to next image in this directory")
 	(Previous\ Image menu-item "Previous Image" image-previous-file :enable buffer-file-name :help "Move to previous image in this directory")
-	(nil-10 menu-item "--")
+	(nil-7-10 menu-item "--")
+	(Fit\ Frame\ to\ Image menu-item "Fit Frame to Image" image-mode-fit-frame :help "Resize frame to match image")
+	(nil-7-12 menu-item "--")
 	(Animate\ Image menu-item "Animate Image" image-toggle-animation :enable image-multi-frame :button
 			(:toggle let
 				 ((image
@@ -30,7 +34,7 @@ Menu for Image mode.</br>
 				 (and image
 				      (image-animate-timer image)))
 			:help "Toggle image animation")
-	(Loop\ Animation menu-item "Loop Animation" menu-function-118 :key-sequence nil :enable image-multi-frame :button
+	(Loop\ Animation menu-item "Loop Animation" menu-function-120 :key-sequence nil :enable image-multi-frame :button
 			 (:toggle . image-animate-loop)
 			 :help "Animate images once, or forever?")
 	(Reverse\ Animation menu-item "Reverse Animation" image-reverse-speed :enable image-multi-frame :button
@@ -49,3 +53,4 @@ Menu for Image mode.</br>
 	(Previous\ Frame menu-item "Previous Frame" image-previous-frame :enable image-multi-frame :help "Show the previous frame of this image")
 	(Goto\ Frame\.\.\. menu-item "Goto Frame..." image-goto-frame :enable image-multi-frame :help "Show a specific frame of this image"))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

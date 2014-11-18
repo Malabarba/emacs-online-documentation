@@ -1,4 +1,4 @@
-<strong>hide-ifdef-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>hideif.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>hide-ifdef-mode</strong> is an interactive autoloaded compiled Lisp function in `<code>hideif.el</code>'.</br>
 </br>
 </br>
 (hide-ifdef-mode &optional <u>ARG</u>)</br>
@@ -14,27 +14,31 @@ that the C preprocessor would eliminate may be hidden from view.</br>
 Several variables affect how the hiding is done:</br>
 </br>
 `hide-ifdef-env'</br>
-	An association list of defined and undefined symbols for the</br>
-	current buffer.  Initially, the global value of `hide-ifdef-env'</br>
-	is used.</br>
+        An association list of defined and undefined symbols for the</br>
+        current project.  Initially, the global value of `hide-ifdef-env'</br>
+        is used.  This variable was a buffer-local variable, which limits</br>
+        hideif to parse only one C/C++ file at a time.  We've extended</br>
+        hideif to support parsing a C/C++ project containing multiple C/C++</br>
+        source files opened simultaneously in different buffers.  Therefore</br>
+        `hide-ifdef-env' can no longer be buffer local but must be global.</br>
 </br>
 `hide-ifdef-define-alist'</br>
-	An association list of defined symbol lists.</br>
+        An association list of defined symbol lists.</br>
         Use `hide-ifdef-set-define-alist' to save the current `hide-ifdef-env'</br>
         and `hide-ifdef-use-define-alist' to set the current `hide-ifdef-env'</br>
         from one of the lists in `hide-ifdef-define-alist'.</br>
 </br>
 `hide-ifdef-lines'</br>
-	Set to non-nil to not show #if, #ifdef, #ifndef, #else, and</br>
-	#endif lines when hiding.</br>
+        Set to non-nil to not show #if, #ifdef, #ifndef, #else, and</br>
+        #endif lines when hiding.</br>
 </br>
 `hide-ifdef-initially'</br>
-	Indicates whether `hide-ifdefs' should be called when Hide-Ifdef mode</br>
-	is activated.</br>
+        Indicates whether `hide-ifdefs' should be called when Hide-Ifdef mode</br>
+        is activated.</br>
 </br>
 `hide-ifdef-read-only'</br>
-	Set to non-nil if you want to make buffers read only while hiding.</br>
-	After `show-ifdefs', read-only status is restored to previous value.</br>
+        Set to non-nil if you want to make buffers read only while hiding.</br>
+        After `show-ifdefs', read-only status is restored to previous value.</br>
 </br>
 key             binding</br>
 ---             -------</br>
@@ -47,10 +51,13 @@ C-c @ C-d	hide-ifdef-block</br>
 C-c @ C-q	hide-ifdef-toggle-read-only</br>
 C-c @ C-s	show-ifdef-block</br>
 C-c @ C-w	hide-ifdef-toggle-shadowing</br>
+C-c @ C		hif-clear-all-ifdef-defined</br>
 C-c @ D		hide-ifdef-set-define-alist</br>
 C-c @ U		hide-ifdef-use-define-alist</br>
 C-c @ d		hide-ifdef-define</br>
+C-c @ e		hif-evaluate-macro</br>
 C-c @ h		hide-ifdefs</br>
 C-c @ s		show-ifdefs</br>
 C-c @ u		hide-ifdef-undef</br>
 </br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,7 +1,10 @@
-<strong>window-setup-hook</strong> is a variable defined in `<code>startup.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>window-setup-hook</strong> is a variable defined in `<code>startup.el</code>'.</br>
 Its value is <pre>nil</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
-Normal hook run to initialize window system display.</br>
-Emacs runs this hook after processing the command line arguments and loading</br>
-the user's init file.
+Normal hook run after loading init files and handling the command line.</br>
+This is very similar to `emacs-startup-hook'.  The only difference</br>
+is that this hook runs after frame parameters have been set up in</br>
+response to any settings from your init file.  Unless this matters</br>
+to you, use `emacs-startup-hook' instead.  (The name of this hook</br>
+is due to historical reasons, and does not reflect its purpose very well.)<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

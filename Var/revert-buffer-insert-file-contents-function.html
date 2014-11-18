@@ -1,9 +1,12 @@
-<strong>revert-buffer-insert-file-contents-function</strong> is a variable defined in `<code>files.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>revert-buffer-insert-file-contents-function</strong> is a variable defined in `<code>files.el</code>'.</br>
 Its value is <pre>revert-buffer-insert-file-contents--default-function</pre></br>
 <ul>  <li>This variable's value is permanent if it is given a local binding.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Function to use to insert contents when reverting this buffer.</br>
-Gets two args, first the nominal file name to use,</br>
-and second, t if reading the auto-save file.</br>
+The function receives two arguments: the first the nominal file name to use;</br>
+the second is t if reading the auto-save file.</br>
 </br>
-The function you specify is responsible for updating (or preserving) point.
+The function is responsible for updating (or preserving) point.</br>
+</br>
+For historical reasons, a value of nil means to use the default function.</br>
+This should not be relied upon.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

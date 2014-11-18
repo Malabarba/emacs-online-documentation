@@ -1,4 +1,4 @@
-<strong>global-buffers-menu-map</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>global-buffers-menu-map</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -6,39 +6,22 @@ Not documented as a variable.</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
 (keymap "Buffers"
-	[("documentation-generator.el  "
-	  (nil)
-	  lambda nil
-	  (interactive)
-	  (funcall menu-bar-select-buffer-function #<buffer documentation-generator.el>))
-	 ("emacs-online-documentation  %"
-	  (nil)
-	  lambda nil
-	  (interactive)
-	  (funcall menu-bar-select-buffer-function #<buffer emacs-online-documentation>))
-	 ("*GNU Emacs*  %"
-	  (nil)
-	  lambda nil
-	  (interactive)
-	  (funcall menu-bar-select-buffer-function #<buffer *GNU Emacs*>))
-	 ("*scratch*  "
-	  (nil)
-	  lambda nil
+	[("*scratch*  " lambda nil
 	  (interactive)
 	  (funcall menu-bar-select-buffer-function #<buffer *scratch*>))
-	 ("*Messages*  *%"
-	  (nil)
-	  lambda nil
+	 ("*Messages*  *%" lambda nil
 	  (interactive)
 	  (funcall menu-bar-select-buffer-function #<buffer *Messages*>))
-	 ("*Completions*  %"
-	  (nil)
-	  lambda nil
+	 ("loaddefs.el<lisp>  %" lambda nil
 	  (interactive)
-	  (funcall menu-bar-select-buffer-function #<buffer *Completions*>))]
+	  (funcall menu-bar-select-buffer-function #<buffer loaddefs.el<lisp>>))
+	 ("tramp-loaddefs.el  %" lambda nil
+	  (interactive)
+	  (funcall menu-bar-select-buffer-function #<buffer tramp-loaddefs.el>))]
 	(command-separator "--")
 	(next-buffer menu-item "Next Buffer" next-buffer :help "Switch to the \"next\" buffer in a cyclic order")
 	(previous-buffer menu-item "Previous Buffer" previous-buffer :help "Switch to the \"previous\" buffer in a cyclic order")
 	(select-named-buffer menu-item "Select Named Buffer..." switch-to-buffer :help "Prompt for a buffer name, and select that buffer in the current window")
 	(list-all-buffers menu-item "List All Buffers" list-buffers :help "Pop up a window listing all Emacs buffers"))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

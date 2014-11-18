@@ -1,4 +1,4 @@
-<strong>info-tool-bar-map</strong> is a variable defined in `<code>info.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>info-tool-bar-map</strong> is a variable defined in `<code>info.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -11,8 +11,8 @@ Not documented as a variable.</br>
 		     (cond
 		      ((not
 			(display-color-p))
-		       '((:type pbm :file "left-arrow.pbm" :foreground "black" :background "grey75")
-			 (:type xbm :file "left-arrow.xbm" :foreground "black" :background "grey75")
+		       '((:type pbm :file "left-arrow.pbm" :foreground "black")
+			 (:type xbm :file "left-arrow.xbm" :foreground "black")
 			 (:type xpm :file "low-color/left-arrow.xpm")
 			 (:type xpm :file "left-arrow.xpm")))
 		      ((<
@@ -20,20 +20,20 @@ Not documented as a variable.</br>
 			256)
 		       '((:type xpm :file "low-color/left-arrow.xpm")
 			 (:type xpm :file "left-arrow.xpm")
-			 (:type pbm :file "left-arrow.pbm" :foreground "black" :background "grey75")
-			 (:type xbm :file "left-arrow.xbm" :foreground "black" :background "grey75")))
+			 (:type pbm :file "left-arrow.pbm" :foreground "black")
+			 (:type xbm :file "left-arrow.xbm" :foreground "black")))
 		      (t
 		       '((:type xpm :file "left-arrow.xpm")
-			 (:type pbm :file "left-arrow.pbm" :foreground "black" :background "grey75")
-			 (:type xbm :file "left-arrow.xbm" :foreground "black" :background "grey75")))))
+			 (:type pbm :file "left-arrow.pbm" :foreground "black")
+			 (:type xbm :file "left-arrow.xbm" :foreground "black")))))
 		    :rtl "right-arrow" :label "Back" :vert-only t)
  (Forward\ in\ history menu-item "Forward in history" Info-history-forward :enable Info-history-forward :help "Go forward in history" :image
 		       (find-image
 			(cond
 			 ((not
 			   (display-color-p))
-			  '((:type pbm :file "right-arrow.pbm" :foreground "black" :background "grey75")
-			    (:type xbm :file "right-arrow.xbm" :foreground "black" :background "grey75")
+			  '((:type pbm :file "right-arrow.pbm" :foreground "black")
+			    (:type xbm :file "right-arrow.xbm" :foreground "black")
 			    (:type xpm :file "low-color/right-arrow.xpm")
 			    (:type xpm :file "right-arrow.xpm")))
 			 ((<
@@ -41,12 +41,12 @@ Not documented as a variable.</br>
 			   256)
 			  '((:type xpm :file "low-color/right-arrow.xpm")
 			    (:type xpm :file "right-arrow.xpm")
-			    (:type pbm :file "right-arrow.pbm" :foreground "black" :background "grey75")
-			    (:type xbm :file "right-arrow.xbm" :foreground "black" :background "grey75")))
+			    (:type pbm :file "right-arrow.pbm" :foreground "black")
+			    (:type xbm :file "right-arrow.xbm" :foreground "black")))
 			 (t
 			  '((:type xpm :file "right-arrow.xpm")
-			    (:type pbm :file "right-arrow.pbm" :foreground "black" :background "grey75")
-			    (:type xbm :file "right-arrow.xbm" :foreground "black" :background "grey75")))))
+			    (:type pbm :file "right-arrow.pbm" :foreground "black")
+			    (:type xbm :file "right-arrow.xbm" :foreground "black")))))
 		       :rtl "left-arrow" :label "Forward" :vert-only t)
  (separator-1 "--")
  (Previous menu-item "Previous" Info-prev :enable
@@ -56,8 +56,8 @@ Not documented as a variable.</br>
 	    (cond
 	     ((not
 	       (display-color-p))
-	      '((:type pbm :file "prev-node.pbm" :foreground "black" :background "grey75")
-		(:type xbm :file "prev-node.xbm" :foreground "black" :background "grey75")
+	      '((:type pbm :file "prev-node.pbm" :foreground "black")
+		(:type xbm :file "prev-node.xbm" :foreground "black")
 		(:type xpm :file "low-color/prev-node.xpm")
 		(:type xpm :file "prev-node.xpm")))
 	     ((<
@@ -65,12 +65,12 @@ Not documented as a variable.</br>
 	       256)
 	      '((:type xpm :file "low-color/prev-node.xpm")
 		(:type xpm :file "prev-node.xpm")
-		(:type pbm :file "prev-node.pbm" :foreground "black" :background "grey75")
-		(:type xbm :file "prev-node.xbm" :foreground "black" :background "grey75")))
+		(:type pbm :file "prev-node.pbm" :foreground "black")
+		(:type xbm :file "prev-node.xbm" :foreground "black")))
 	     (t
 	      '((:type xpm :file "prev-node.xpm")
-		(:type pbm :file "prev-node.pbm" :foreground "black" :background "grey75")
-		(:type xbm :file "prev-node.xbm" :foreground "black" :background "grey75")))))
+		(:type pbm :file "prev-node.pbm" :foreground "black")
+		(:type xbm :file "prev-node.xbm" :foreground "black")))))
 	   :rtl "next-node")
  (Next menu-item "Next" Info-next :enable
        (Info-check-pointer "next")
@@ -79,8 +79,8 @@ Not documented as a variable.</br>
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "next-node.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "next-node.xbm" :foreground "black" :background "grey75")
+	  '((:type pbm :file "next-node.pbm" :foreground "black")
+	    (:type xbm :file "next-node.xbm" :foreground "black")
 	    (:type xpm :file "low-color/next-node.xpm")
 	    (:type xpm :file "next-node.xpm")))
 	 ((<
@@ -88,12 +88,12 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/next-node.xpm")
 	    (:type xpm :file "next-node.xpm")
-	    (:type pbm :file "next-node.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "next-node.xbm" :foreground "black" :background "grey75")))
+	    (:type pbm :file "next-node.pbm" :foreground "black")
+	    (:type xbm :file "next-node.xbm" :foreground "black")))
 	 (t
 	  '((:type xpm :file "next-node.xpm")
-	    (:type pbm :file "next-node.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "next-node.xbm" :foreground "black" :background "grey75")))))
+	    (:type pbm :file "next-node.pbm" :foreground "black")
+	    (:type xbm :file "next-node.xbm" :foreground "black")))))
        :rtl "prev-node")
  (Up menu-item "Up" Info-up :enable
      (Info-check-pointer "up")
@@ -102,8 +102,8 @@ Not documented as a variable.</br>
       (cond
        ((not
 	 (display-color-p))
-	'((:type pbm :file "up-node.pbm" :foreground "black" :background "grey75")
-	  (:type xbm :file "up-node.xbm" :foreground "black" :background "grey75")
+	'((:type pbm :file "up-node.pbm" :foreground "black")
+	  (:type xbm :file "up-node.xbm" :foreground "black")
 	  (:type xpm :file "low-color/up-node.xpm")
 	  (:type xpm :file "up-node.xpm")))
        ((<
@@ -111,12 +111,12 @@ Not documented as a variable.</br>
 	 256)
 	'((:type xpm :file "low-color/up-node.xpm")
 	  (:type xpm :file "up-node.xpm")
-	  (:type pbm :file "up-node.pbm" :foreground "black" :background "grey75")
-	  (:type xbm :file "up-node.xbm" :foreground "black" :background "grey75")))
+	  (:type pbm :file "up-node.pbm" :foreground "black")
+	  (:type xbm :file "up-node.xbm" :foreground "black")))
        (t
 	'((:type xpm :file "up-node.xpm")
-	  (:type pbm :file "up-node.pbm" :foreground "black" :background "grey75")
-	  (:type xbm :file "up-node.xbm" :foreground "black" :background "grey75")))))
+	  (:type pbm :file "up-node.pbm" :foreground "black")
+	  (:type xbm :file "up-node.xbm" :foreground "black")))))
      :vert-only t)
  (separator-2 "--")
  (Top menu-item "Top" Info-top-node :help "Go to top node of file" :image
@@ -124,8 +124,8 @@ Not documented as a variable.</br>
        (cond
 	((not
 	  (display-color-p))
-	 '((:type pbm :file "home.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "home.xbm" :foreground "black" :background "grey75")
+	 '((:type pbm :file "home.pbm" :foreground "black")
+	   (:type xbm :file "home.xbm" :foreground "black")
 	   (:type xpm :file "low-color/home.xpm")
 	   (:type xpm :file "home.xpm")))
 	((<
@@ -133,20 +133,20 @@ Not documented as a variable.</br>
 	  256)
 	 '((:type xpm :file "low-color/home.xpm")
 	   (:type xpm :file "home.xpm")
-	   (:type pbm :file "home.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "home.xbm" :foreground "black" :background "grey75")))
+	   (:type pbm :file "home.pbm" :foreground "black")
+	   (:type xbm :file "home.xbm" :foreground "black")))
 	(t
 	 '((:type xpm :file "home.xpm")
-	   (:type pbm :file "home.pbm" :foreground "black" :background "grey75")
-	   (:type xbm :file "home.xbm" :foreground "black" :background "grey75")))))
+	   (:type pbm :file "home.pbm" :foreground "black")
+	   (:type xbm :file "home.xbm" :foreground "black")))))
       :vert-only t)
  (Go\ to\ Node\.\.\. menu-item "Go to Node..." Info-goto-node :help "Go to a named node" :image
 		     (find-image
 		      (cond
 		       ((not
 			 (display-color-p))
-			'((:type pbm :file "jump-to.pbm" :foreground "black" :background "grey75")
-			  (:type xbm :file "jump-to.xbm" :foreground "black" :background "grey75")
+			'((:type pbm :file "jump-to.pbm" :foreground "black")
+			  (:type xbm :file "jump-to.xbm" :foreground "black")
 			  (:type xpm :file "low-color/jump-to.xpm")
 			  (:type xpm :file "jump-to.xpm")))
 		       ((<
@@ -154,20 +154,20 @@ Not documented as a variable.</br>
 			 256)
 			'((:type xpm :file "low-color/jump-to.xpm")
 			  (:type xpm :file "jump-to.xpm")
-			  (:type pbm :file "jump-to.pbm" :foreground "black" :background "grey75")
-			  (:type xbm :file "jump-to.xbm" :foreground "black" :background "grey75")))
+			  (:type pbm :file "jump-to.pbm" :foreground "black")
+			  (:type xbm :file "jump-to.xbm" :foreground "black")))
 		       (t
 			'((:type xpm :file "jump-to.xpm")
-			  (:type pbm :file "jump-to.pbm" :foreground "black" :background "grey75")
-			  (:type xbm :file "jump-to.xbm" :foreground "black" :background "grey75"))))))
+			  (:type pbm :file "jump-to.pbm" :foreground "black")
+			  (:type xbm :file "jump-to.xbm" :foreground "black"))))))
  (separator-3 "--")
  (Lookup\ a\ String\.\.\. menu-item "Lookup a String..." Info-index :help "Look for a string in the index items" :image
 			  (find-image
 			   (cond
 			    ((not
 			      (display-color-p))
-			     '((:type pbm :file "index.pbm" :foreground "black" :background "grey75")
-			       (:type xbm :file "index.xbm" :foreground "black" :background "grey75")
+			     '((:type pbm :file "index.pbm" :foreground "black")
+			       (:type xbm :file "index.xbm" :foreground "black")
 			       (:type xpm :file "low-color/index.xpm")
 			       (:type xpm :file "index.xpm")))
 			    ((<
@@ -175,20 +175,20 @@ Not documented as a variable.</br>
 			      256)
 			     '((:type xpm :file "low-color/index.xpm")
 			       (:type xpm :file "index.xpm")
-			       (:type pbm :file "index.pbm" :foreground "black" :background "grey75")
-			       (:type xbm :file "index.xbm" :foreground "black" :background "grey75")))
+			       (:type pbm :file "index.pbm" :foreground "black")
+			       (:type xbm :file "index.xbm" :foreground "black")))
 			    (t
 			     '((:type xpm :file "index.xpm")
-			       (:type pbm :file "index.pbm" :foreground "black" :background "grey75")
-			       (:type xbm :file "index.xbm" :foreground "black" :background "grey75")))))
+			       (:type pbm :file "index.pbm" :foreground "black")
+			       (:type xbm :file "index.xbm" :foreground "black")))))
 			  :label "Index")
  (Search\.\.\. menu-item "Search..." Info-search :help "Search for regular expression in this Info file" :image
 	       (find-image
 		(cond
 		 ((not
 		   (display-color-p))
-		  '((:type pbm :file "search.pbm" :foreground "black" :background "grey75")
-		    (:type xbm :file "search.xbm" :foreground "black" :background "grey75")
+		  '((:type pbm :file "search.pbm" :foreground "black")
+		    (:type xbm :file "search.xbm" :foreground "black")
 		    (:type xpm :file "low-color/search.xpm")
 		    (:type xpm :file "search.xpm")))
 		 ((<
@@ -196,20 +196,20 @@ Not documented as a variable.</br>
 		   256)
 		  '((:type xpm :file "low-color/search.xpm")
 		    (:type xpm :file "search.xpm")
-		    (:type pbm :file "search.pbm" :foreground "black" :background "grey75")
-		    (:type xbm :file "search.xbm" :foreground "black" :background "grey75")))
+		    (:type pbm :file "search.pbm" :foreground "black")
+		    (:type xbm :file "search.xbm" :foreground "black")))
 		 (t
 		  '((:type xpm :file "search.xpm")
-		    (:type pbm :file "search.pbm" :foreground "black" :background "grey75")
-		    (:type xbm :file "search.xbm" :foreground "black" :background "grey75")))))
+		    (:type pbm :file "search.pbm" :foreground "black")
+		    (:type xbm :file "search.xbm" :foreground "black")))))
 	       :vert-only t)
  (Exit menu-item "Exit" Info-exit :help "Stop reading Info" :image
        (find-image
 	(cond
 	 ((not
 	   (display-color-p))
-	  '((:type pbm :file "exit.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "exit.xbm" :foreground "black" :background "grey75")
+	  '((:type pbm :file "exit.pbm" :foreground "black")
+	    (:type xbm :file "exit.xbm" :foreground "black")
 	    (:type xpm :file "low-color/exit.xpm")
 	    (:type xpm :file "exit.xpm")))
 	 ((<
@@ -217,11 +217,12 @@ Not documented as a variable.</br>
 	   256)
 	  '((:type xpm :file "low-color/exit.xpm")
 	    (:type xpm :file "exit.xpm")
-	    (:type pbm :file "exit.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "exit.xbm" :foreground "black" :background "grey75")))
+	    (:type pbm :file "exit.pbm" :foreground "black")
+	    (:type xbm :file "exit.xbm" :foreground "black")))
 	 (t
 	  '((:type xpm :file "exit.xpm")
-	    (:type pbm :file "exit.pbm" :foreground "black" :background "grey75")
-	    (:type xbm :file "exit.xbm" :foreground "black" :background "grey75")))))
+	    (:type pbm :file "exit.pbm" :foreground "black")
+	    (:type xbm :file "exit.xbm" :foreground "black")))))
        :vert-only t))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

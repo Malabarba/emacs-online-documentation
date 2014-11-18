@@ -1,6 +1,19 @@
-<strong>reftex-view-crossref</strong> is an interactive autoloaded Lisp function in `<code>reftex-dcr.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-view-crossref</strong> is an interactive autoloaded Lisp function in `<code>reftex-dcr.el</code>'.</br>
 </br>
 </br>
-[Arg list not available until function definition is loaded.]</br>
+(reftex-view-crossref &optional <u>ARG</u> <u>AUTO-HOW</u> <u>FAIL-QUIETLY</u>)</br>
 </br>
-View cross reference of \ref or \cite macro at point.
+View cross reference of macro at point.  Point must be on the KEY</br>
+argument.  When at a `\ref' macro, show corresponding `\label'</br>
+definition, also in external documents (`xr').  When on a label, show</br>
+a locations where KEY is referenced.  Subsequent calls find additional</br>
+locations.  When on a `\cite', show the associated `\bibitem' macro or</br>
+the BibTeX database entry.  When on a `\bibitem', show a `\cite' macro</br>
+which uses this KEY. When on an `\index', show other locations marked</br>
+by the same index entry.</br>
+To define additional cross referencing items, use the option</br>
+`reftex-view-crossref-extra'.  See also `reftex-view-crossref-from-bibtex'.</br>
+With one or two C-u prefixes, enforce rescanning of the document.</br>
+With argument 2, select the window showing the cross reference.</br>
+<u>AUTO-HOW</u> is only for the automatic crossref display and is handed through</br>
+to the functions `reftex-view-cr-cite' and `reftex-view-cr-ref'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

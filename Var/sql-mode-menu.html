@@ -1,4 +1,4 @@
-<strong>sql-mode-menu</strong> is a variable defined in `<code>sql.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>sql-mode-menu</strong> is a variable defined in `<code>sql.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -15,7 +15,7 @@ Menu for `sql-mode'.</br>
 		      (sql-buffer-live-p sql-buffer))
 	(Send\ String menu-item "Send String" sql-send-string :enable
 		      (sql-buffer-live-p sql-buffer))
-	(nil menu-item "--")
+	(nil-7 menu-item "--")
 	(List\ all\ objects menu-item "List all objects" sql-list-all :enable
 			    (and
 			     (sql-buffer-live-p sql-buffer)
@@ -24,7 +24,7 @@ Menu for `sql-mode'.</br>
 			      (and
 			       (sql-buffer-live-p sql-buffer)
 			       (sql-get-product-feature sql-product :list-table)))
-	(nil-7 menu-item "--")
+	(nil-7-7 menu-item "--")
 	(Start\ SQLi\ session menu-item "Start SQLi session" sql-product-interactive :enable
 			      (sql-get-product-feature sql-product :sqli-comint-func)
 			      :visible
@@ -71,5 +71,8 @@ Menu for `sql-mode'.</br>
 			 (SQLite menu-item "SQLite" sql-highlight-sqlite-keywords :button
 				 (:radio eq sql-product 'sqlite))
 			 (Sybase menu-item "Sybase" sql-highlight-sybase-keywords :button
-				 (:radio eq sql-product 'sybase)))))
+				 (:radio eq sql-product 'sybase))
+			 (Vertica menu-item "Vertica" sql-highlight-vertica-keywords :button
+				  (:radio eq sql-product 'vertica)))))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

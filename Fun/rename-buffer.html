@@ -1,6 +1,15 @@
-<strong>rename-buffer</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>rename-buffer</strong> is an interactive built-in function in `<code>C source code</code>'.</br>
 </br>
 </br>
-(rename-buffer <u>ARG1</u> &optional <u>ARG2</u>)</br>
+(rename-buffer <u>NEWNAME</u> &optional <u>UNIQUE</u>)</br>
 </br>
-:around advice: `uniquify--rename-buffer-advice'
+:around advice: `uniquify--rename-buffer-advice'</br>
+</br>
+Change current buffer's name to <u>NEWNAME</u> (a string).</br>
+If second arg <u>UNIQUE</u> is nil or omitted, it is an error if a</br>
+buffer named <u>NEWNAME</u> already exists.</br>
+If <u>UNIQUE</u> is non-nil, come up with a new name using</br>
+`generate-new-buffer-name'.</br>
+Interactively, you can set <u>UNIQUE</u> with a prefix argument.</br>
+We return the name we actually gave the buffer.</br>
+This does not change the name of the visited file (if any).<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

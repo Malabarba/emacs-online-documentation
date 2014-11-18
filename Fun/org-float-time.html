@@ -1,6 +1,15 @@
-<strong>org-float-time</strong> is a compiled Lisp function in `<code>org-compat.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-float-time</strong> is an alias for `<strong><a href="/Fun/float-time.html">float-time</a></strong>' in `<code>org-compat.el</code>'.</br>
 </br>
-(org-float-time &optional <u>TIME</u>)</br>
+(org-float-time &optional <u>SPECIFIED-TIME</u>)</br>
 </br>
-Convert time value <u>TIME</u> to a floating point number.</br>
-<u>TIME</u> defaults to the current time.
+Return the current time, as a float number of seconds since the epoch.</br>
+If <u>SPECIFIED-TIME</u> is given, it is the time to convert to float</br>
+instead of the current time.  The argument should have the form</br>
+(HIGH LOW) or (HIGH LOW USEC) or (HIGH LOW USEC PSEC).  Thus,</br>
+you can use times from `current-time' and from `file-attributes'.</br>
+<u>SPECIFIED-TIME</u> can also have the form (HIGH . LOW), but this is</br>
+considered obsolete.</br>
+</br>
+WARNING: Since the result is floating point, it may not be exact.</br>
+If precise time stamps are required, use either `current-time',</br>
+or (if you need time as a string) `format-time-string'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

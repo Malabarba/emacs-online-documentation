@@ -1,0 +1,257 @@
+<strong>idlwave-shell-menu-def</strong> is a variable defined in `<code>idlw-shell.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Not documented as a variable.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+("Debug"
+ ["Electric Debug Mode" idlwave-shell-electric-debug-mode :style toggle :selected idlwave-shell-electric-debug-mode :included
+  (derived-mode-p 'idlwave-mode)
+  :keys "C-c C-d C-v"]
+ "--"
+ ("Compile & Run"
+  ["Save and .RUN" idlwave-shell-save-and-run
+   (or
+    (derived-mode-p 'idlwave-mode)
+    idlwave-shell-last-save-and-action-file)]
+  ["Save and .COMPILE" idlwave-shell-save-and-compile
+   (or
+    (derived-mode-p 'idlwave-mode)
+    idlwave-shell-last-save-and-action-file)]
+  ["Save and @Batch" idlwave-shell-save-and-batch
+   (or
+    (derived-mode-p 'idlwave-mode)
+    idlwave-shell-last-save-and-action-file)]
+  "--"
+  ["Goto Next Error" idlwave-shell-goto-next-error t]
+  "--"
+  ["Compile and Run Region" idlwave-shell-run-region
+   (derived-mode-p 'idlwave-mode)]
+  ["Evaluate Region" idlwave-shell-evaluate-region
+   (derived-mode-p 'idlwave-mode)]
+  "--"
+  ["Execute Default Cmd" idlwave-shell-execute-default-command-line t]
+  ["Edit Default Cmd" idlwave-shell-edit-default-command-line t])
+ ("Breakpoints"
+  ["Set Breakpoint" idlwave-shell-break-here :keys "C-c C-d C-b" :active
+   (derived-mode-p 'idlwave-mode)]
+  ("Set Special Breakpoint"
+   ["Set After Count Breakpoint"
+    (progn
+      (let
+	  ((count
+	    (string-to-number
+	     (read-string "Break after count: "))))
+	(if
+	    (integerp count)
+	    (idlwave-shell-break-here count))))
+    :active
+    (derived-mode-p 'idlwave-mode)]
+   ["Set Condition Breakpoint"
+    (idlwave-shell-break-here
+     '(4))
+    :active
+    (derived-mode-p 'idlwave-mode)])
+  ["Break in Module" idlwave-shell-break-in :keys "C-c C-d C-i" :active
+   (derived-mode-p 'idlwave-mode)]
+  ["Break in this Module" idlwave-shell-break-this-module :keys "C-c C-d C-j" :active
+   (derived-mode-p 'idlwave-mode)]
+  ["Clear Breakpoint" idlwave-shell-clear-current-bp t]
+  ["Clear All Breakpoints" idlwave-shell-clear-all-bp t]
+  ["Disable/Enable Breakpoint" idlwave-shell-toggle-enable-current-bp t]
+  ["Goto Previous Breakpoint" idlwave-shell-goto-previous-bp :keys "C-c C-d [" :active
+   (derived-mode-p 'idlwave-mode)]
+  ["Goto Next Breakpoint" idlwave-shell-goto-next-bp :keys "C-c C-d ]" :active
+   (derived-mode-p 'idlwave-mode)]
+  ["List All Breakpoints" idlwave-shell-list-all-bp t]
+  ["Resync Breakpoints" idlwave-shell-bp-query t])
+ ("Continue/Step"
+  ["Step (into)" idlwave-shell-step t]
+  ["Step (over)" idlwave-shell-stepover t]
+  ["Skip One Statement" idlwave-shell-skip t]
+  ["Continue" idlwave-shell-cont t]
+  ["... to End of Block" idlwave-shell-up t]
+  ["... to End of Subprog" idlwave-shell-return t]
+  ["... to End of Subprog+1" idlwave-shell-out t]
+  ["... to Here (Cursor Line)" idlwave-shell-to-here :keys "C-c C-d C-h" :active
+   (derived-mode-p 'idlwave-mode)])
+ ("Examine Expressions"
+  ["Print expression" idlwave-shell-print t]
+  ["Help on expression" idlwave-shell-help-expression t]
+  ("Examine nearby expression with"
+   ["Print"
+    (idlwave-shell-print nil
+			 '("Print" . "idlwave_print_safe,___,200"))
+    t]
+   ["Help"
+    (idlwave-shell-print nil
+			 '("Help" . "help,___"))
+    t]
+   ["Structure Help"
+    (idlwave-shell-print nil
+			 '("Structure Help" . "help,___,/STRUCTURE"))
+    t]
+   ["Dimensions"
+    (idlwave-shell-print nil
+			 '("Dimensions" . "print,size(___,/DIMENSIONS)"))
+    t]
+   ["Type"
+    (idlwave-shell-print nil
+			 '("Type" . "print,size(___,/TNAME)"))
+    t]
+   ["N_Elements"
+    (idlwave-shell-print nil
+			 '("N_Elements" . "print,n_elements(___)"))
+    t]
+   ["All Size Info"
+    (idlwave-shell-print nil
+			 '("All Size Info" . "help,(__IWsz__=size(___,/STRUCTURE)),/STRUCTURE & print,__IWsz__.DIMENSIONS"))
+    t]
+   ["Ptr Valid"
+    (idlwave-shell-print nil
+			 '("Ptr Valid" . "print,ptr_valid(___)"))
+    t]
+   ["Arg Present"
+    (idlwave-shell-print nil
+			 '("Arg Present" . "print,arg_present(___)"))
+    t]
+   ["Widget Valid"
+    (idlwave-shell-print nil
+			 '("Widget Valid" . "print,widget_info(___,/VALID)"))
+    t]
+   ["Widget Geometry"
+    (idlwave-shell-print nil
+			 '("Widget Geometry" . "help,widget_info(___,/GEOMETRY)"))
+    t])
+  ("Examine region with"
+   ["Print"
+    (idlwave-shell-print
+     '(4)
+     '("Print" . "idlwave_print_safe,___,200"))
+    t]
+   ["Help"
+    (idlwave-shell-print
+     '(4)
+     '("Help" . "help,___"))
+    t]
+   ["Structure Help"
+    (idlwave-shell-print
+     '(4)
+     '("Structure Help" . "help,___,/STRUCTURE"))
+    t]
+   ["Dimensions"
+    (idlwave-shell-print
+     '(4)
+     '("Dimensions" . "print,size(___,/DIMENSIONS)"))
+    t]
+   ["Type"
+    (idlwave-shell-print
+     '(4)
+     '("Type" . "print,size(___,/TNAME)"))
+    t]
+   ["N_Elements"
+    (idlwave-shell-print
+     '(4)
+     '("N_Elements" . "print,n_elements(___)"))
+    t]
+   ["All Size Info"
+    (idlwave-shell-print
+     '(4)
+     '("All Size Info" . "help,(__IWsz__=size(___,/STRUCTURE)),/STRUCTURE & print,__IWsz__.DIMENSIONS"))
+    t]
+   ["Ptr Valid"
+    (idlwave-shell-print
+     '(4)
+     '("Ptr Valid" . "print,ptr_valid(___)"))
+    t]
+   ["Arg Present"
+    (idlwave-shell-print
+     '(4)
+     '("Arg Present" . "print,arg_present(___)"))
+    t]
+   ["Widget Valid"
+    (idlwave-shell-print
+     '(4)
+     '("Widget Valid" . "print,widget_info(___,/VALID)"))
+    t]
+   ["Widget Geometry"
+    (idlwave-shell-print
+     '(4)
+     '("Widget Geometry" . "help,widget_info(___,/GEOMETRY)"))
+    t]))
+ ("Call Stack"
+  ["Stack Up" idlwave-shell-stack-up t]
+  ["Stack Down" idlwave-shell-stack-down t]
+  "--"
+  ["Redisplay and Sync" idlwave-shell-redisplay t])
+ ("Show Commands"
+  ["Everything"
+   (if
+       (eq idlwave-shell-show-commands 'everything)
+       (progn
+	 (setq idlwave-shell-show-commands
+	       (get 'idlwave-shell-show-commands 'last-val))
+	 (put 'idlwave-shell-show-commands 'last-val nil))
+     (put 'idlwave-shell-show-commands 'last-val idlwave-shell-show-commands)
+     (setq idlwave-shell-show-commands 'everything))
+   :style toggle :selected
+   (and
+    (not
+     (listp idlwave-shell-show-commands))
+    (eq idlwave-shell-show-commands 'everything))]
+  "--"
+  ["Compiling Commands"
+   (idlwave-shell-add-or-remove-show 'run)
+   :style toggle :selected
+   (not
+    (idlwave-shell-hide-p 'run
+			  (get 'idlwave-shell-show-commands 'last-val)))
+   :active
+   (not
+    (eq idlwave-shell-show-commands 'everything))]
+  ["Breakpoint Commands"
+   (idlwave-shell-add-or-remove-show 'breakpoint)
+   :style toggle :selected
+   (not
+    (idlwave-shell-hide-p 'breakpoint
+			  (get 'idlwave-shell-show-commands 'last-val)))
+   :active
+   (not
+    (eq idlwave-shell-show-commands 'everything))]
+  ["Debug Commands"
+   (idlwave-shell-add-or-remove-show 'debug)
+   :style toggle :selected
+   (not
+    (idlwave-shell-hide-p 'debug
+			  (get 'idlwave-shell-show-commands 'last-val)))
+   :active
+   (not
+    (eq idlwave-shell-show-commands 'everything))]
+  ["Miscellaneous Commands"
+   (idlwave-shell-add-or-remove-show 'misc)
+   :style toggle :selected
+   (not
+    (idlwave-shell-hide-p 'misc
+			  (get 'idlwave-shell-show-commands 'last-val)))
+   :active
+   (not
+    (eq idlwave-shell-show-commands 'everything))])
+ ("Input Mode"
+  ["Send one char" idlwave-shell-send-char t]
+  ["Temporary Character Mode" idlwave-shell-char-mode-loop t]
+  "--"
+  ["Use Input Mode Magic"
+   (setq idlwave-shell-use-input-mode-magic
+	 (not idlwave-shell-use-input-mode-magic))
+   :style toggle :selected idlwave-shell-use-input-mode-magic])
+ "--"
+ ["Update Working Dir" idlwave-shell-resync-dirs t]
+ ["Save Path Info"
+  (idlwave-shell-send-command idlwave-shell-path-query 'idlwave-shell-get-path-info 'hide)
+  t]
+ ["Reset IDL" idlwave-shell-reset t]
+ "--"
+ ["Toggle Toolbar" idlwave-shell-toggle-toolbar t]
+ ["Exit IDL" idlwave-shell-quit t])
+</pre></br>

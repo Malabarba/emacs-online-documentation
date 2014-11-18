@@ -1,17 +1,13 @@
-<strong>ps-mode-font-lock-keywords-2</strong> is a variable defined in `<code>ps-mode.el</code>'.</br>
-Its value is shown <a href="#value">below</a>.</br>
-<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
-<strong id="documentation">Documentation:</strong></br>
-Medium level highlighting for PostScript mode.</br>
-</br>
-<strong id="value">Value:</strong> <pre></br>
-(("\\`%!PS.*" . font-lock-constant-face)
- ("^%%BoundingBox:[ 	]+-?[0-9]+[ 	]+-?[0-9]+[ 	]+-?[0-9]+[ 	]+-?[0-9]+[ 	]*$" . font-lock-constant-face)
- (ps-mode-match-string-or-comment
-  (1 font-lock-comment-face nil t)
-  (2 font-lock-string-face nil t))
- ("([^()\n%]*\\|[^()\n]*)" . font-lock-warning-face)
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ps-mode-font-lock-keywords-2</strong> is a variable defined in `<code>ps-mode.el</code>'.</br>
+Its value is <pre></br>
+(("\\`%!PS.*"
+  (0 font-lock-constant-face t))
+ ("^%%BoundingBox:[ 	]+-?[0-9]+[ 	]+-?[0-9]+[ 	]+-?[0-9]+[ 	]+-?[0-9]+[ 	]*$"
+  (0 font-lock-constant-face t))
  ("[\200-\377]+"
   (0 font-lock-warning-face prepend nil))
- ("\\(^\\|[^/\n]\\)\\<\\(b\\(?:egin\\|ind\\)\\|c\\(?:lear\\(?:tomark\\)?\\|ount\\(?:\\(?:execstac\\|tomar\\)k\\)\\)\\|d\\(?:ef\\|ict\\)\\|e\\(?:nd\\|x\\(?:ec\\(?:stack\\)?\\|it\\)\\)\\|f\\(?:alse\\|or\\(?:all\\)?\\)\\|g\\(?:restore\\(?:all\\)?\\|save\\)\\|if\\(?:else\\)?\\|loop\\|mark\\|null\\|quit\\|re\\(?:peat\\|store\\)\\|s\\(?:ave\\|howpage\\|t\\(?:art\\|op\\(?:ped\\)?\\)\\)\\|true\\)\\>" 2 font-lock-keyword-face))
+ ("\\(^\\|[^/\n]\\)\\_<\\(b\\(?:egin\\|ind\\)\\|c\\(?:lear\\(?:tomark\\)?\\|ount\\(?:\\(?:execstac\\|tomar\\)k\\)\\)\\|d\\(?:ef\\|ict\\)\\|e\\(?:nd\\|x\\(?:ec\\(?:stack\\)?\\|it\\)\\)\\|f\\(?:alse\\|or\\(?:all\\)?\\)\\|g\\(?:restore\\(?:all\\)?\\|save\\)\\|if\\(?:else\\)?\\|loop\\|mark\\|null\\|quit\\|re\\(?:peat\\|store\\)\\|s\\(?:ave\\|howpage\\|t\\(?:art\\|op\\(?:ped\\)?\\)\\)\\|true\\)\\_>" 2 font-lock-keyword-face))
 </pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Medium level highlighting for PostScript mode.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,5 +1,14 @@
-<strong>vhdl-aput</strong> is a compiled Lisp function in `<code>vhdl-mode.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>vhdl-aput</strong> is a compiled Lisp function in `<code>vhdl-mode.el</code>'.</br>
 </br>
 (vhdl-aput <u>ALIST-SYMBOL</u> <u>KEY</u> &optional <u>VALUE</u>)</br>
 </br>
-As `aput', but delete key-value pair if <u>VALUE</u> is nil.
+Insert a key-value pair into an alist.</br>
+The alist is referenced by <u>ALIST-SYMBOL</u>.  The key-value pair is made</br>
+from <u>KEY</u> and optionally, <u>VALUE</u>.  Returns the altered alist.</br>
+</br>
+If the key-value pair referenced by <u>KEY</u> can be found in the alist, and</br>
+<u>VALUE</u> is supplied non-nil, then the value of <u>KEY</u> will be set to <u>VALUE</u>.</br>
+If <u>VALUE</u> is not supplied, or is nil, the key-value pair will not be</br>
+modified, but will be moved to the head of the alist.  If the key-value</br>
+pair cannot be found in the alist, it will be inserted into the head</br>
+of the alist (with value nil if <u>VALUE</u> is nil or not supplied).<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,19 +1,20 @@
-<strong>accept-process-output</strong> is a built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>accept-process-output</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
 (accept-process-output &optional <u>PROCESS</u> <u>SECONDS</u> <u>MILLISEC</u> <u>JUST-THIS-ONE</u>)</br>
 </br>
 Allow any pending output from subprocesses to be read by Emacs.</br>
 It is given to their filter functions.</br>
-Non-nil arg <u>PROCESS</u> means do not return until some output has been received</br>
-from <u>PROCESS</u>.</br>
+Optional argument <u>PROCESS</u> means do not return until output has been</br>
+received from <u>PROCESS</u>.</br>
 </br>
-Non-nil second arg <u>SECONDS</u> and third arg <u>MILLISEC</u> are number of seconds</br>
-and milliseconds to wait; return after that much time whether or not</br>
-there is any subprocess output.  If <u>SECONDS</u> is a floating point number,</br>
+Optional second argument <u>SECONDS</u> and third argument <u>MILLISEC</u></br>
+specify a timeout; return after that much time even if there is</br>
+no subprocess output.  If <u>SECONDS</u> is a floating point number,</br>
 it specifies a fractional number of seconds to wait.</br>
 The <u>MILLISEC</u> argument is obsolete and should be avoided.</br>
 </br>
-If optional fourth arg <u>JUST-THIS-ONE</u> is non-nil, only accept output</br>
-from <u>PROCESS</u>, suspending reading output from other processes.</br>
+If optional fourth argument <u>JUST-THIS-ONE</u> is non-nil, accept output</br>
+from <u>PROCESS</u> only, suspending reading output from other processes.</br>
 If <u>JUST-THIS-ONE</u> is an integer, don't run any timers either.</br>
-Return non-nil if we received any output before the timeout expired.
+Return non-nil if we received any output from <u>PROCESS</u> (or, if <u>PROCESS</u></br>
+is nil, from any process) before the timeout expired.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

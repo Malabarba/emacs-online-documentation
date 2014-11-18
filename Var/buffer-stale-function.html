@@ -1,8 +1,8 @@
-<strong>buffer-stale-function</strong> is a variable defined in `<code>files.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>buffer-stale-function</strong> is a variable defined in `<code>files.el</code>'.</br>
 Its value is <pre>buffer-stale--default-function</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
-Function to check whether a non-file buffer needs reverting.</br>
+Function to check whether a buffer needs reverting.</br>
 This should be a function with one optional argument NOCONFIRM.</br>
 Auto Revert Mode passes t for NOCONFIRM.  The function should return</br>
 non-nil if the buffer should be reverted.  A return value of</br>
@@ -15,5 +15,8 @@ non-nil if the buffer is going to be reverted without asking the</br>
 user.  In such situations, one has to be careful with potentially</br>
 time consuming operations.</br>
 </br>
+For historical reasons, a value of nil means to use the default function.</br>
+This should not be relied upon.</br>
+</br>
 For more information on how this variable is used by Auto Revert mode,</br>
-see Info node `(emacs)Supporting additional buffers'.
+see Info node `(emacs)Supporting additional buffers'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

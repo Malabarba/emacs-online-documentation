@@ -1,5 +1,15 @@
-<strong>revert-buffer--default</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>revert-buffer--default</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
 </br>
 (revert-buffer--default <u>IGNORE-AUTO</u> <u>NOCONFIRM</u>)</br>
 </br>
-Not documented.
+Default function for `revert-buffer'.</br>
+The arguments <u>IGNORE-AUTO</u> and <u>NOCONFIRM</u> are as described for `revert-buffer'.</br>
+Runs the hooks `before-revert-hook' and `after-revert-hook' at the</br>
+start and end.</br>
+</br>
+Calls `revert-buffer-insert-file-contents-function' to reread the</br>
+contents of the visited file, with two arguments: the first is the file</br>
+name, the second is non-nil if reading an auto-save file.</br>
+</br>
+This function only handles buffers that are visiting files.</br>
+Non-file buffers need a custom function.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

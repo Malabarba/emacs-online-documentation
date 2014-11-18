@@ -1,6 +1,6 @@
-<strong>call-process-shell-command</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>call-process-shell-command</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
 </br>
-(call-process-shell-command <u>COMMAND</u> &optional <u>INFILE</u> <u>BUFFER</u> <u>DISPLAY</u> &rest <u>ARGS</u>)</br>
+(call-process-shell-command <u>COMMAND</u> &optional <u>INFILE</u> <u>BUFFER</u> <u>DISPLAY</u>)</br>
 </br>
 Execute the shell command <u>COMMAND</u> synchronously in separate process.</br>
 The remaining arguments are optional.</br>
@@ -14,10 +14,13 @@ STDERR-FILE may be nil (discard standard error output),</br>
 t (mix it with ordinary output), or a file name string.</br>
 </br>
 Fourth arg <u>DISPLAY</u> non-nil means redisplay buffer as output is inserted.</br>
-Remaining arguments are strings passed as additional arguments for <u>COMMAND</u>.</br>
 Wildcards and redirection are handled as usual in the shell.</br>
 </br>
 If <u>BUFFER</u> is 0, `call-process-shell-command' returns immediately with value nil.</br>
 Otherwise it waits for <u>COMMAND</u> to terminate and returns a numeric exit</br>
 status or a signal description string.</br>
-If you quit, the process is killed with SIGINT, or SIGKILL if you quit again.
+If you quit, the process is killed with SIGINT, or SIGKILL if you quit again.</br>
+</br>
+An old calling convention accepted any number of arguments after <u>DISPLAY</u>,</br>
+which were just concatenated to <u>COMMAND</u>.  This is still supported but strongly</br>
+discouraged.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

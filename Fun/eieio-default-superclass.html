@@ -1,4 +1,4 @@
-eieio-default-superclass is an  object constructor function in `eieio.el'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">eieio-default-superclass is an  object constructor function in `eieio.el'.</br>
 Creates an object of class eieio-default-superclass.</br>
 You cannot create a new object of type eieio-default-superclass</br>
 </br>
@@ -14,7 +14,7 @@ Instance Allocated Slots:</br>
 </br>
 Specialized Methods:</br>
 </br>
-`object-print' :PRIMARY (this &rest strings)</br>
+`object-print' :PRIMARY (arg1 &rest rest)</br>
 Pretty printer for object THIS.  Call function `object-name' with STRINGS.</br>
 The default method for printing object THIS is to use the</br>
 function `object-name'.</br>
@@ -27,12 +27,14 @@ Implement this function and specify STRINGS in a call to</br>
 When passing in extra strings from child classes, always remember</br>
 to prepend a space.</br>
 </br>
+<code>(fn THIS <em>&rest</em> STRINGS</code>)</br>
+</br>
 `eieio-custom-widget-insert' :PRIMARY (obj &rest flags)</br>
 Insert the widget used for editing object OBJ in the current buffer.</br>
 Arguments FLAGS are widget compatible flags.</br>
 Must return the created widget.</br>
 </br>
-`slot-unbound' :PRIMARY (object class slot-name fn)</br>
+`slot-unbound' :PRIMARY (arg1 arg2 arg3 arg4)</br>
 Slot unbound is invoked during an attempt to reference an unbound slot.</br>
 OBJECT is the instance of the object being reference.  CLASS is the</br>
 class of OBJECT, and SLOT-NAME is the offending slot.  This function</br>
@@ -43,6 +45,8 @@ Use `slot-boundp' to determine if a slot is bound or not.</br>
 </br>
 In CLOS, the argument list is (CLASS OBJECT SLOT-NAME), but</br>
 EIEIO can only dispatch on the first argument, so the first two are swapped.</br>
+</br>
+(fn OBJECT CLASS SLOT-NAME FN)</br>
 </br>
 `eieio-read-customization-group' :PRIMARY (obj)</br>
 Do a completing read on the name of a customization group in OBJ.</br>
@@ -55,7 +59,7 @@ object widget.</br>
 Optional argument GROUP specifies a subgroup of slots to edit as a symbol.</br>
 These groups are specified with the `:group' slot flag.</br>
 </br>
-`slot-missing' :PRIMARY (object slot-name operation &optional new-value)</br>
+`slot-missing' :PRIMARY (arg1 arg2 arg3 &optional arg4)</br>
 Method invoked when an attempt to access a slot in OBJECT fails.</br>
 SLOT-NAME is the name of the failed slot, OPERATION is the type of access</br>
 that was requested, and optional NEW-VALUE is the value that was desired</br>
@@ -63,6 +67,8 @@ to be set.</br>
 </br>
 This method is called from `oref', `oset', and other functions which</br>
 directly reference slots in EIEIO objects.</br>
+</br>
+(fn OBJECT SLOT-NAME OPERATION &optional NEW-VALUE)</br>
 </br>
 `eieio-custom-object-apply-reset' :PRIMARY (obj)</br>
 Insert an Apply and Reset button into the object editor.</br>
@@ -74,11 +80,13 @@ This method is called by the default widget-edit commands.</br>
 User made commands should also call this method when applying changes.</br>
 Argument OBJ is the object that has been customized.</br>
 </br>
-`shared-initialize' :PRIMARY (obj slots)</br>
+`shared-initialize' :PRIMARY (arg1 arg2)</br>
 Set slots of OBJ with SLOTS which is a list of name/value pairs.</br>
 Called from the constructor routine.</br>
 </br>
-`no-applicable-method' :PRIMARY (object method &rest args)</br>
+(fn OBJ SLOTS)</br>
+</br>
+`no-applicable-method' :PRIMARY (arg1 arg2 &rest rest)</br>
 Called if there are no implementations for OBJECT in METHOD.</br>
 OBJECT is the object which has no method implementation.</br>
 ARGS are the arguments that were passed to METHOD.</br>
@@ -86,17 +94,23 @@ ARGS are the arguments that were passed to METHOD.</br>
 Implement this for a class to block this signal.  The return</br>
 value becomes the return value of the original method call.</br>
 </br>
-`clone' :PRIMARY (obj &rest params)</br>
+(fn OBJECT METHOD &rest ARGS)</br>
+</br>
+`clone' :PRIMARY (arg1 &rest rest)</br>
 Make a copy of OBJ, and then apply PARAMS.</br>
 </br>
-`object-write' :PRIMARY (this &optional comment)</br>
+(fn OBJ &rest PARAMS)</br>
+</br>
+`object-write' :PRIMARY (arg1 &optional arg2)</br>
 Write object THIS out to the current stream.</br>
 This writes out the vector version of this object.  Complex and recursive</br>
 object are discouraged from being written.</br>
   If optional COMMENT is non-nil, include comments when outputting</br>
 this object.</br>
 </br>
-`no-next-method' :PRIMARY (object &rest args)</br>
+(fn THIS &optional COMMENT)</br>
+</br>
+`no-next-method' :PRIMARY (arg1 &rest rest)</br>
 Called from `call-next-method' when no additional methods are available.</br>
 OBJECT is othe object being called on `call-next-method'.</br>
 ARGS are the arguments it is called by.</br>
@@ -104,7 +118,9 @@ This method signals `no-next-method' by default.  Override this</br>
 method to not throw an error, and its return value becomes the</br>
 return value of `call-next-method'.</br>
 </br>
-`constructor' :STATIC (class newname &rest slots)</br>
+(fn OBJECT &rest ARGS)</br>
+</br>
+`constructor' :STATIC (arg1 arg2 &rest rest)</br>
 Default constructor for CLASS `eieio-default-superclass'.</br>
 NEWNAME is the name to be given to the constructed object.</br>
 SLOTS are the initialization slots used by `shared-initialize'.</br>
@@ -112,10 +128,12 @@ This static method is called when an object is constructed.</br>
 It allocates the vector used to represent an EIEIO object, and then</br>
 calls `shared-initialize' on that object.</br>
 </br>
+(fn CLASS NEWNAME &rest SLOTS)</br>
+</br>
 `eieio-customize-object-group' :PRIMARY (obj)</br>
 Create a list of vectors for customizing sections of OBJ.</br>
 </br>
-`initialize-instance' :PRIMARY (this &optional slots)</br>
+`initialize-instance' :PRIMARY (arg1 &optional arg2)</br>
 Construct the new object THIS based on SLOTS.</br>
 SLOTS is a tagged list where odd numbered elements are tags, and</br>
 even numbered elements are the values to store in the tagged slot.</br>
@@ -125,8 +143,13 @@ to have this constructor called automatically.  If these steps are</br>
 not taken, then new objects of your class will not have their values</br>
 dynamically set from SLOTS.</br>
 </br>
-`destructor' :PRIMARY (this &rest params)</br>
+(fn THIS &optional SLOTS)</br>
+</br>
+`destructor' :PRIMARY (arg1 &rest rest)</br>
 Destructor for cleaning up any dynamic links to our object.</br>
 Argument THIS is the object being destroyed.  PARAMS are additional</br>
 ignored parameters.</br>
 </br>
+(fn THIS &rest PARAMS)</br>
+</br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

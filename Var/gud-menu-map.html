@@ -1,4 +1,4 @@
-<strong>gud-menu-map</strong> is a variable defined in `<code>gud.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>gud-menu-map</strong> is a variable defined in `<code>gud.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -92,7 +92,7 @@ Menu for `gud-mode'.</br>
 	 (not gud-running)
 	 :visible
 	 (memq gud-minor-mode
-	       '(gdbmi gdb xdb jdb pdb)))
+	       '(gdbmi gdb guiler xdb jdb pdb)))
  (watch menu-item "Watch Expression" gud-watch :enable
 	(not gud-running)
 	:visible
@@ -122,12 +122,12 @@ Menu for `gud-mode'.</br>
        (not gud-running)
        :visible
        (memq gud-minor-mode
-	     '(gdbmi gdb dbx xdb jdb pdb)))
+	     '(gdbmi gdb guiler dbx xdb jdb pdb)))
  (up menu-item "Up Stack" gud-up :enable
      (not gud-running)
      :visible
      (memq gud-minor-mode
-	   '(gdbmi gdb dbx xdb jdb pdb)))
+	   '(gdbmi gdb guiler dbx xdb jdb pdb)))
  (break menu-item "Set Breakpoint" gud-break :enable
 	(not gud-running)
 	:visible
@@ -175,9 +175,10 @@ Menu for `gud-mode'.</br>
 	    (fboundp 'x-show-tip))
 	   :visible
 	   (memq gud-minor-mode
-		 '(gdbmi dbx sdb xdb pdb))
+		 '(gdbmi guiler dbx sdb xdb pdb))
 	   :button
 	   (:toggle . gud-tooltip-mode))
  (help "Info (debugger)" . gud-goto-info)
  "Gud")
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

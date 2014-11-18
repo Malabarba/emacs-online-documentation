@@ -1,5 +1,17 @@
-<strong>reftex-what-environment</strong> is an autoloaded Lisp function in `<code>reftex-parse.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-what-environment</strong> is an autoloaded Lisp function in `<code>reftex-parse.el</code>'.</br>
 </br>
-[Arg list not available until function definition is loaded.]</br>
+(reftex-what-environment <u>WHICH</u> &optional <u>BOUND</u>)</br>
 </br>
-Not documented.
+Find out if point is inside a LaTeX environment.</br>
+The return value is (e.g.) either ("equation" . (point)) or a list of</br>
+them.</br>
+</br>
+If <u>WHICH</u> is nil, immediately return nil.</br>
+If <u>WHICH</u> is 1, return innermost enclosing environment.</br>
+If <u>WHICH</u> is t, return list of all environments enclosing point.</br>
+If <u>WHICH</u> is a list of environments, look only for those environments and</br>
+  return the name of the first environment in this list found to enclose</br>
+  point.</br>
+</br>
+If the optional <u>BOUND</u> is an integer, bound backwards directed searches to</br>
+this point.  If it is nil, limit to nearest \section - like statement.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

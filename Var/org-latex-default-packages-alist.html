@@ -1,4 +1,4 @@
-<strong>org-latex-default-packages-alist</strong> is a variable defined in `<code>org.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-latex-default-packages-alist</strong> is a variable defined in `<code>org.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -26,10 +26,18 @@ Org mode to function properly:</br>
 Therefore you should not modify this variable unless you know</br>
 what you are doing.  The one reason to change it anyway is that</br>
 you might be loading some other package that conflicts with one</br>
-of the default packages.  Each cell is of the format</br>
-( "options" "package" snippet-flag).  If SNIPPET-FLAG is t,</br>
-the package also needs to be included when compiling LaTeX</br>
-snippets into images for inclusion into non-LaTeX output.</br>
+of the default packages.  Each element is either a cell or</br>
+a string.</br>
+</br>
+A cell is of the format:</br>
+</br>
+  ( "options" "package" SNIPPET-FLAG).</br>
+</br>
+If SNIPPET-FLAG is non-nil, the package also needs to be included</br>
+when compiling LaTeX snippets into images for inclusion into</br>
+non-LaTeX output.</br>
+</br>
+A string will be inserted as-is in the header of the document.</br>
 </br>
 You can customize this variable.</br>
 </br>
@@ -55,3 +63,4 @@ version 24.1 of Emacs.
  ("" "hyperref" nil)
  "\\tolerance=1000")
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

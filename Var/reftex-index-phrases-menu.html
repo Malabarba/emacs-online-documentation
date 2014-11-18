@@ -1,0 +1,47 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-index-phrases-menu</strong> is a variable defined in `<code>reftex-index.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+Menu for Phrases buffer</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap "Phrases"
+	(New\ Phrase menu-item "New Phrase" reftex-index-new-phrase)
+	(Set\ Phrase\ Macro menu-item "Set Phrase Macro" reftex-index-phrases-set-macro-key)
+	(Recreate\ File\ Header menu-item "Recreate File Header" reftex-index-initialize-phrases-buffer)
+	(nil-7 menu-item "--")
+	(Sort\ Phrases menu-item "Sort Phrases"
+		       (keymap "Sort Phrases"
+			       (Sort menu-item "Sort" reftex-index-sort-phrases)
+			       (nil-7 menu-item "--")
+			       (nil menu-item "Sort Options")
+			       (by\ Search\ Phrase menu-item "by Search Phrase" menu-function-358 :key-sequence nil :button
+						   (:radio not reftex-index-phrases-sort-prefers-entry))
+			       (by\ Index\ Entry menu-item "by Index Entry" menu-function-359 :key-sequence nil :button
+						 (:radio . reftex-index-phrases-sort-prefers-entry))
+			       (in\ Blocks menu-item "in Blocks" menu-function-360 :key-sequence nil :button
+					   (:toggle . reftex-index-phrases-sort-in-blocks))))
+	(Describe\ Phrase menu-item "Describe Phrase" reftex-index-phrases-info)
+	(Next\ Phrase\ Conflict menu-item "Next Phrase Conflict" reftex-index-find-next-conflict-phrase)
+	(nil-7-7 menu-item "--")
+	(Find\ and\ Index\ in\ Document menu-item "Find and Index in Document"
+					(keymap "Find and Index in Document"
+						(Current\ Phrase menu-item "Current Phrase" reftex-index-this-phrase)
+						(Next\ Phrase menu-item "Next Phrase" reftex-index-next-phrase)
+						(Current\ and\ Following menu-item "Current and Following" reftex-index-remaining-phrases)
+						(Region\ Phrases menu-item "Region Phrases" reftex-index-region-phrases)
+						(All\ Phrases menu-item "All Phrases" reftex-index-all-phrases)
+						(nil-7 menu-item "--")
+						(nil menu-item "Options")
+						(Match\ Whole\ Words menu-item "Match Whole Words" menu-function-361 :key-sequence nil :button
+								     (:toggle . reftex-index-phrases-search-whole-words))
+						(Case\ Sensitive\ Search menu-item "Case Sensitive Search" menu-function-362 :key-sequence nil :button
+									 (:toggle not reftex-index-phrases-case-fold-search))
+						(Wrap\ Long\ Lines menu-item "Wrap Long Lines" menu-function-363 :key-sequence nil :button
+								   (:toggle . reftex-index-phrases-wrap-long-lines))
+						(Skip\ Indexed\ Matches menu-item "Skip Indexed Matches" menu-function-364 :key-sequence nil :button
+									(:toggle . reftex-index-phrases-skip-indexed-matches))))
+	(nil-7-9 menu-item "--")
+	(Save\ and\ Return menu-item "Save and Return" reftex-index-phrases-save-and-return))
+</pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

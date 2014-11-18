@@ -1,17 +1,19 @@
-<strong>This function no longer exists in emacs 24.4</strong></br></br>
-<strong>python-indent-context</strong> is a compiled Lisp function in `<code>python.el</code>'.<br/>
-<br/>
-(python-indent-context)<br/>
-<br/>
-Get information on indentation context.<br/>
-Context information is returned with a cons with the form:<br/>
-    (STATUS . START)<br/>
-<br/>
-Where status can be any of the following symbols:<br/>
- * inside-paren: If point in between (), {} or []<br/>
- * inside-string: If point is inside a string<br/>
- * after-backslash: Previous line ends in a backslash<br/>
- * after-beginning-of-block: Point is after beginning of block<br/>
- * after-line: Point is after normal line<br/>
- * no-indent: Point is at beginning of buffer or other special case<br/>
-START is the buffer position where the sexp starts.
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>python-indent-context</strong> is a compiled Lisp function in `<code>python.el</code>'.</br>
+</br>
+(python-indent-context)</br>
+</br>
+Get information on indentation context.</br>
+Context information is returned with a cons with the form:</br>
+    (STATUS . START)</br>
+</br>
+Where status can be any of the following symbols:</br>
+</br>
+ * after-comment: When current line might continue a comment block</br>
+ * inside-paren: If point in between (), {} or []</br>
+ * inside-string: If point is inside a string</br>
+ * after-backslash: Previous line ends in a backslash</br>
+ * after-beginning-of-block: Point is after beginning of block</br>
+ * after-line: Point is after normal line</br>
+ * dedenter-statement: Point is on a dedenter statement.</br>
+ * no-indent: Point is at beginning of buffer or other special case</br>
+START is the buffer position where the sexp starts.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

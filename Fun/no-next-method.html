@@ -1,4 +1,4 @@
-<strong>no-next-method</strong> is a compiled Lisp function in `<code>eieio.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>no-next-method</strong> is a compiled Lisp function in `<code>eieio.el</code>'.</br>
 </br>
 (no-next-method &rest <u>LOCAL-ARGS</u>)</br>
 </br>
@@ -8,7 +8,7 @@ This is a generic function with only one primary method.</br>
 </br>
 Implementations:</br>
 </br>
-`eieio-default-superclass' :PRIMARY (object &rest args)</br>
+`eieio-default-superclass' :PRIMARY (arg1 &rest rest)</br>
 Called from `call-next-method' when no additional methods are available.</br>
 OBJECT is othe object being called on `call-next-method'.</br>
 ARGS are the arguments it is called by.</br>
@@ -16,5 +16,8 @@ This method signals `no-next-method' by default.  Override this</br>
 method to not throw an error, and its return value becomes the</br>
 return value of `call-next-method'.</br>
 </br>
+<code>(fn OBJECT <em>&rest</em> ARGS</code>)</br>
+</br>
 Defined in `eieio.el'</br>
 </br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

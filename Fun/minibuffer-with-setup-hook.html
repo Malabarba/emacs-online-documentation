@@ -1,11 +1,14 @@
-<strong>minibuffer-with-setup-hook</strong> is a Lisp macro in `<code>files.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>minibuffer-with-setup-hook</strong> is a Lisp macro in `<code>files.el</code>'.</br>
 </br>
 (minibuffer-with-setup-hook <u>FUN</u> &rest <u>BODY</u>)</br>
 </br>
 Temporarily add <u>FUN</u> to `minibuffer-setup-hook' while executing <u>BODY</u>.</br>
+<u>FUN</u> can also be (:append FUN1), in which case FUN1 is appended to</br>
+`minibuffer-setup-hook'.</br>
+</br>
 <u>BODY</u> should use the minibuffer at most once.</br>
 Recursive uses of the minibuffer are unaffected (<u>FUN</u> is not</br>
 called additional times).</br>
 </br>
 This macro actually adds an auxiliary function that calls <u>FUN</u>,</br>
-rather than <u>FUN</u> itself, to `minibuffer-setup-hook'.
+rather than <u>FUN</u> itself, to `minibuffer-setup-hook'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

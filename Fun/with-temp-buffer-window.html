@@ -1,22 +1,23 @@
-<strong>with-temp-buffer-window</strong> is a Lisp macro in `<code>window.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>with-temp-buffer-window</strong> is a Lisp macro in `<code>window.el</code>'.</br>
 </br>
 (with-temp-buffer-window <u>BUFFER-OR-NAME</u> <u>ACTION</u> <u>QUIT-FUNCTION</u> &rest <u>BODY</u>)</br>
 </br>
-Evaluate <u>BODY</u> in a buffer <u>BUFFER-OR-NAME</u> and show that buffer.</br>
+Bind `standard-output' to <u>BUFFER-OR-NAME</u>, eval <u>BODY</u>, show the buffer.</br>
 <u>BUFFER-OR-NAME</u> must specify either a live buffer, or the name of</br>
 a buffer (if it does not exist, this macro creates it).</br>
 </br>
 Make the buffer specified by <u>BUFFER-OR-NAME</u> empty before running</br>
-<u>BODY</u> and make that buffer current for running the forms in <u>BODY</u>.</br>
-In addition, bind `standard-output' to that buffer, so that</br>
-output generated with `prin1' and similar functions in <u>BODY</u> goes</br>
-into that buffer.</br>
+<u>BODY</u> and bind `standard-output' to that buffer, so that output</br>
+generated with `prin1' and similar functions in <u>BODY</u> goes into</br>
+that buffer.  Do not make that buffer current for running the</br>
+forms in <u>BODY</u>.  Use `with-current-buffer-window' instead if you</br>
+need to run <u>BODY</u> with that buffer current.</br>
 </br>
 At the end of <u>BODY</u>, mark the specified buffer unmodified and</br>
 read-only, and display it in a window (but do not select it).</br>
 The display happens by calling `display-buffer' passing it the</br>
 <u>ACTION</u> argument.  If `temp-buffer-resize-mode' is enabled, the</br>
-corresponding window may shrink automatically.</br>
+corresponding window may be resized automatically.</br>
 </br>
 Return the value returned by <u>BODY</u>, unless <u>QUIT-FUNCTION</u> specifies</br>
 a function.  In that case, run that function with two arguments -</br>
@@ -36,7 +37,6 @@ that buffer temporarily current, and the window that was used to</br>
 display it temporarily selected.</br>
 </br>
 This construct is similar to `with-output-to-temp-buffer' but,</br>
-unlike that, makes <u>BUFFER-OR-NAME</u> current when running <u>BODY</u>.</br>
-Also, it neither runs `temp-buffer-setup-hook' which usually puts</br>
-the buffer in Help mode, nor `temp-buffer-show-function' (the</br>
-<u>ACTION</u> argument replaces this).
+neither runs `temp-buffer-setup-hook' which usually puts the</br>
+buffer in Help mode, nor `temp-buffer-show-function' (the <u>ACTION</u></br>
+argument replaces this).<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

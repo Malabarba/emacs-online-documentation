@@ -1,0 +1,31 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>bidi-resolved-levels</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(bidi-resolved-levels &optional <u>VPOS</u>)</br>
+</br>
+Return the resolved bidirectional levels of characters at <u>VPOS</u>.</br>
+</br>
+The resolved levels are produced by the Emacs bidi reordering engine</br>
+that implements the UBA, the Unicode Bidirectional Algorithm.  Please</br>
+read the Unicode Standard Annex 9 (UAX#9) for background information</br>
+about these levels.</br>
+</br>
+<u>VPOS</u> is the zero-based number of the current window's screen line</br>
+for which to produce the resolved levels.  If <u>VPOS</u> is nil or omitted,</br>
+it defaults to the screen line of point.  If the window displays a</br>
+header line, <u>VPOS</u> of zero will report on the header line, and first</br>
+line of text in the window will have <u>VPOS</u> of 1.</br>
+</br>
+Value is an array of resolved levels, indexed by glyph number.</br>
+Glyphs are numbered from zero starting from the beginning of the</br>
+screen line, i.e. the left edge of the window for left-to-right lines</br>
+and from the right edge for right-to-left lines.  The resolved levels</br>
+are produced only for the window's text area; text in display margins</br>
+is not included.</br>
+</br>
+If the selected window's display is not up-to-date, or if the specified</br>
+screen line does not display text, this function returns nil.  It is</br>
+highly recommended to bind this function to some simple key, like F8,</br>
+in order to avoid these problems.</br>
+</br>
+This function exists mainly for testing the correctness of the</br>
+Emacs UBA implementation, in particular with the test suite.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

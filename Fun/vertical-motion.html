@@ -1,4 +1,4 @@
-<strong>vertical-motion</strong> is a built-in function in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>vertical-motion</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
 (vertical-motion <u>LINES</u> &optional <u>WINDOW</u>)</br>
 </br>
@@ -17,12 +17,15 @@ The optional second argument <u>WINDOW</u> specifies the window to use for</br>
 parameters such as width, horizontal scrolling, and so on.</br>
 The default is to use the selected window's parameters.</br>
 </br>
-<u>LINES</u> can optionally take the form (COLS . <u>LINES</u>), in which case</br>
-the motion will not stop at the start of a screen line but on</br>
-its column COLS (if such exists on that line, that is).</br>
+<u>LINES</u> can optionally take the form (COLS . <u>LINES</u>), in which case the</br>
+motion will not stop at the start of a screen line but COLS column</br>
+from the visual start of the line (if such exists on that line, that</br>
+is).  If the line is scrolled horizontally, COLS is interpreted</br>
+visually, i.e., as addition to the columns of text beyond the left</br>
+edge of the window.</br>
 </br>
 `vertical-motion' always uses the current buffer,</br>
 regardless of which buffer is displayed in <u>WINDOW</u>.</br>
 This is consistent with other cursor motion functions</br>
 and makes it possible to use `vertical-motion' in any buffer,</br>
-whether or not it is currently displayed in some window.
+whether or not it is currently displayed in some window.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

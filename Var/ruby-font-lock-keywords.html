@@ -1,4 +1,4 @@
-<strong>ruby-font-lock-keywords</strong> is a variable defined in `<code>ruby-mode.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ruby-font-lock-keywords</strong> is a variable defined in `<code>ruby-mode.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -8,7 +8,7 @@ Additional expressions to highlight in Ruby mode.</br>
 (("^\\s *def\\s +\\(?:[^( 	\n.]*\\.\\)?\\([^( 	\n]+\\)" 1 font-lock-function-name-face)
  ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(a\\(?:lias\\|nd\\)\\|b\\(?:egin\\|reak\\)\\|c\\(?:ase\\|lass\\)\\|d\\(?:ef\\(?:ined\\?\\)?\\|o\\)\\|e\\(?:ls\\(?:e\\|if\\)\\|n\\(?:d\\|sure\\)\\)\\|f\\(?:ail\\|or\\)\\|i[fn]\\|module\\|n\\(?:\\(?:ex\\|o\\)t\\)\\|or\\|re\\(?:do\\|scue\\|t\\(?:ry\\|urn\\)\\)\\|super\\|then\\|un\\(?:def\\|less\\|til\\)\\|wh\\(?:en\\|ile\\)\\|yield\\)\\_>"
   (1 font-lock-keyword-face))
- ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(a\\(?:lias_method\\|t\\(?:_exit\\|tr\\(?:_\\(?:\\(?:accesso\\|\\(?:read\\|writ\\)e\\)r\\)\\)?\\)\\|utoload\\??\\)\\|catch\\|define_method\\|e\\(?:val\\|x\\(?:ec\\|tend\\)\\)\\|for\\(?:k\\|mat\\)\\|include\\|l\\(?:ambda\\|o\\(?:ad\\|op\\)\\)\\|module_function\\|open\\|p\\(?:r\\(?:epend\\|intf?\\|oc\\)\\|ut[cs]\\)?\\|re\\(?:\\(?:fin\\|quir\\(?:e_relativ\\)?\\)e\\)\\|s\\(?:p\\(?:awn\\|rintf\\)\\|ys\\(?:call\\|tem\\)\\)\\|trap\\|using\\|warn\\)\\_>"
+ ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(a\\(?:lias_method\\|t\\(?:_exit\\|tr\\(?:_\\(?:\\(?:accesso\\|\\(?:read\\|writ\\)e\\)r\\)\\)?\\)\\|utoload\\??\\)\\|catch\\|define_method\\|e\\(?:val\\|x\\(?:ec\\|tend\\)\\)\\|for\\(?:k\\|mat\\)\\|include\\|l\\(?:ambda\\|o\\(?:ad\\|op\\)\\)\\|module_function\\|open\\|p\\(?:r\\(?:epend\\|i\\(?:ntf?\\|vate_c\\(?:lass_method\\|onstant\\)\\)\\|oc\\)\\|u\\(?:blic_c\\(?:lass_method\\|onstant\\)\\|t[cs]\\)\\)?\\|re\\(?:\\(?:fin\\|quir\\(?:e_relativ\\)?\\)e\\)\\|s\\(?:p\\(?:awn\\|rintf\\)\\|ys\\(?:call\\|tem\\)\\)\\|trap\\|using\\|warn\\)\\_>"
   (1
    (unless
        (looking-at " *\\(?:[]|,.)}=]\\|$\\)")
@@ -24,9 +24,9 @@ Additional expressions to highlight in Ruby mode.</br>
  "\\_<\\(?:BEGIN\\|END\\)\\_>\\|^__END__$"
  ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(nil\\|self\\|true\\|false\\)\\_>" 1 font-lock-variable-name-face)
  ("\\_<__\\(?:LINE\\|ENCODING\\|FILE\\)__\\_>"
-  (0 font-lock-variable-name-face))
+  (0 font-lock-builtin-face))
  ("\\(^\\|[^:]\\)\\(:\\([-+~]@?\\|[/%&|^`]\\|\\*\\*?\\|<\\(<\\|=>?\\)?\\|>[>=]?\\|===?\\|=~\\|![~=]?\\|\\[\\]=?\\|@?\\(\\w\\|_\\)+\\([!?=]\\|\\b_*\\)\\|#{[^}\n\\\\]*\\(\\\\.[^}\n\\\\]*\\)*}\\)\\)" 2 font-lock-constant-face)
- ("\\(\\$\\([^a-zA-Z0-9 \n]\\|[0-9]\\)\\)\\W" 1 font-lock-variable-name-face)
+ ("\\$\\(?:[:\"!@;,/\\._><\\$?~=*&`'+0-9]\\|-[0adFiIlpvw]\\|\\(?:ARGV\\|C\\(?:HILD_STATUS\\|LASSPATH\\)\\|DE\\(?:BUG\\|FAULT_\\(?:\\(?:IN\\|OUT\\)PUT\\)\\)\\|E\\(?:NV_JAVA\\|RROR_\\(?:INFO\\|POSITION\\)\\)\\|F\\(?:I\\(?:ELD_SEPARATOR\\|LENAME\\)\\|S\\)\\|I\\(?:GNORECASE\\|NPUT_\\(?:\\(?:LINE_NUMBE\\|RECORD_SEPARATO\\)R\\)\\)\\|JRUBY_\\(?:\\(?:REVI\\|VER\\)SION\\)\\|L\\(?:AST_\\(?:MATCH_INFO\\|PAREN_MATCH\\|READ_LINE\\)\\|OAD\\(?:ED_FEATURES\\|_PATH\\)\\)\\|MATCH\\|NR\\|O\\(?:FS\\|RS\\|UTPUT_\\(?:\\(?:FIEL\\|RECOR\\)D_SEPARATOR\\)\\)\\|P\\(?:ID\\|OSTMATCH\\|R\\(?:EMATCH\\|O\\(?:CESS_ID\\|GRAM_NAME\\)\\)\\)\\|RS\\|SAFE\\|VERBOSE\\|std\\(?:err\\|in\\|out\\)\\)\\_>\\)" 0 font-lock-builtin-face)
  ("\\(\\$\\|@\\|@@\\)\\(\\w\\|_\\)+" 0 font-lock-variable-name-face)
  ("\\(?:\\_<\\|::\\)\\([A-Z]+\\(\\w\\|_\\)*\\)" 1
   (unless
@@ -38,7 +38,7 @@ Additional expressions to highlight in Ruby mode.</br>
  ("\\(?:^\\|[^.@$]\\|\\.\\.\\)\\_<\\(Array\\|Complex\\|Float\\|Hash\\|Integer\\|Rational\\|String\\)\\_>"
   (1 font-lock-builtin-face))
  (ruby-match-expression-expansion 2 font-lock-variable-name-face t)
- ("\\(?:^\\|[^[:alnum:]_]\\)\\(!+\\)[^=]" 1 font-lock-negation-char-face)
+ ("\\(?:^\\|[^[:alnum:]_]\\)\\(!+\\)[^=~]" 1 font-lock-negation-char-face)
  ("\\_<\\?\\\\?\\S " 0 font-lock-string-face)
  ("\\(?:\\s|\\|/\\)\\([imxo]+\\)" 1
   (when
@@ -59,3 +59,4 @@ Additional expressions to highlight in Ruby mode.</br>
 	      (looking-at "%r"))))))
     font-lock-preprocessor-face)))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,4 +1,4 @@
-<strong>doc-view-mode-map</strong> is a variable defined in `<code>doc-view.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>doc-view-mode-map</strong> is a variable defined in `<code>doc-view.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -12,18 +12,18 @@ Keymap used by `doc-view-mode' when displaying a doc as a set of images.</br>
 			    (Toggle\ display menu-item "Toggle display" doc-view-toggle-display)
 			    (Continuous menu-item "Continuous"
 					(keymap "Continuous"
-						(Off menu-item "Off" menu-function-119 :key-sequence nil :button
+						(Off menu-item "Off" menu-function-121 :key-sequence nil :button
 						     (:radio eq doc-view-continuous nil))
-						(On menu-item "On" menu-function-120 :key-sequence nil :button
+						(On menu-item "On" menu-function-122 :key-sequence nil :button
 						    (:radio eq doc-view-continuous t))
-						(nil menu-item "---")
-						(Save\ as\ Default menu-item "Save as Default" menu-function-121 :key-sequence nil)))
-			    (nil menu-item "---")
+						(nil-9 menu-item "---")
+						(Save\ as\ Default menu-item "Save as Default" menu-function-123 :key-sequence nil)))
+			    (nil-9 menu-item "---")
 			    (Set\ Slice menu-item "Set Slice" doc-view-set-slice-using-mouse)
 			    (Set\ Slice\ \(BoundingBox\) menu-item "Set Slice (BoundingBox)" doc-view-set-slice-from-bounding-box)
 			    (Set\ Slice\ \(manual\) menu-item "Set Slice (manual)" doc-view-set-slice)
 			    (Reset\ Slice menu-item "Reset Slice" doc-view-reset-slice)
-			    (nil-7 menu-item "---")
+			    (nil-9-7 menu-item "---")
 			    (Search menu-item "Search" doc-view-search)
 			    (Search\ Backwards menu-item "Search Backwards" doc-view-search-backward))))
  (114 . doc-view-revert-buffer)
@@ -74,8 +74,7 @@ Keymap used by `doc-view-mode' when displaying a doc as a set of images.</br>
 	   (Image menu-item "Image"
 		  (keymap "Image"
 			  (Show\ as\ Text menu-item "Show as Text" image-toggle-display :help "Show image as text")
-			  (nil menu-item "--")
-			  (Fit\ Frame\ to\ Image menu-item "Fit Frame to Image" image-mode-fit-frame :help "Resize frame to match image")
+			  (nil-7 menu-item "--")
 			  (Fit\ to\ Window\ Height menu-item "Fit to Window Height" image-transform-fit-to-height :visible
 						   (eq image-type 'imagemagick)
 						   :help "Resize image to match the window height")
@@ -85,11 +84,16 @@ Keymap used by `doc-view-mode' when displaying a doc as a set of images.</br>
 			  (Rotate\ Image\.\.\. menu-item "Rotate Image..." image-transform-set-rotation :visible
 					       (eq image-type 'imagemagick)
 					       :help "Rotate the image")
-			  (nil-6 menu-item "--")
-			  (Show\ Thumbnails menu-item "Show Thumbnails" menu-function-117 :key-sequence nil :enable default-directory :help "Show thumbnails for all images in this directory")
+			  (Reset\ Transformations menu-item "Reset Transformations" image-transform-reset :visible
+						  (eq image-type 'imagemagick)
+						  :help "Reset all image transformations")
+			  (nil-7-6 menu-item "--")
+			  (Show\ Thumbnails menu-item "Show Thumbnails" menu-function-119 :key-sequence nil :enable default-directory :help "Show thumbnails for all images in this directory")
 			  (Next\ Image menu-item "Next Image" image-next-file :enable buffer-file-name :help "Move to next image in this directory")
 			  (Previous\ Image menu-item "Previous Image" image-previous-file :enable buffer-file-name :help "Move to previous image in this directory")
-			  (nil-10 menu-item "--")
+			  (nil-7-10 menu-item "--")
+			  (Fit\ Frame\ to\ Image menu-item "Fit Frame to Image" image-mode-fit-frame :help "Resize frame to match image")
+			  (nil-7-12 menu-item "--")
 			  (Animate\ Image menu-item "Animate Image" image-toggle-animation :enable image-multi-frame :button
 					  (:toggle let
 						   ((image
@@ -97,7 +101,7 @@ Keymap used by `doc-view-mode' when displaying a doc as a set of images.</br>
 						   (and image
 							(image-animate-timer image)))
 					  :help "Toggle image animation")
-			  (Loop\ Animation menu-item "Loop Animation" menu-function-118 :key-sequence nil :enable image-multi-frame :button
+			  (Loop\ Animation menu-item "Loop Animation" menu-function-120 :key-sequence nil :enable image-multi-frame :button
 					   (:toggle . image-animate-loop)
 					   :help "Animate images once, or forever?")
 			  (Reverse\ Animation menu-item "Reverse Animation" image-reverse-speed :enable image-multi-frame :button
@@ -170,3 +174,4 @@ Keymap used by `doc-view-mode' when displaying a doc as a set of images.</br>
  (remap keymap
 	(self-insert-command . undefined)))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

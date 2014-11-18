@@ -1,21 +1,26 @@
-<strong>uniquify-buffer-name-style</strong> is a variable defined in `<code>uniquify.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>uniquify-buffer-name-style</strong> is a variable defined in `<code>uniquify.el</code>'.</br>
 Its value is <pre>post-forward-angle-brackets</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
-If non-nil, buffer names are uniquified with parts of directory name.</br>
-The value determines the buffer name style and is one of `forward',</br>
-`reverse', `post-forward', or `post-forward-angle-brackets'.</br>
-For example, files `/foo/bar/mumble/name' and `/baz/quux/mumble/name'</br>
+How to construct unique buffer names for files with the same base name.</br>
+The value can be one of: `forward', `reverse', `post-forward',</br>
+`post-forward-angle-brackets', or nil.</br>
+</br>
+For example, the files `/foo/bar/mumble/name' and `/baz/quux/mumble/name'</br>
 would have the following buffer names in the various styles:</br>
-  forward        bar/mumble/name  quux/mumble/name</br>
-  reverse        name\mumble\bar  name\mumble\quux</br>
-  post-forward   name|bar/mumble  name|quux/mumble</br>
-  post-forward-angle-brackets   name<bar/mumble>  name<quux/mumble></br>
-  nil            name  name<2></br>
-Of course, the "mumble" part may be stripped as well, depending on the setting</br>
-of `uniquify-strip-common-suffix'.</br>
+</br>
+  forward                       bar/mumble/name    quux/mumble/name</br>
+  reverse                       name\mumble\bar    name\mumble\quux</br>
+  post-forward                  name|bar/mumble    name|quux/mumble</br>
+  post-forward-angle-brackets   name<bar/mumble>   name<quux/mumble></br>
+  nil                           name               name<2></br>
+</br>
+The "mumble" part may be stripped as well, depending on the</br>
+setting of `uniquify-strip-common-suffix'.  For more options that</br>
+you can set, browse the `uniquify' custom group.</br>
 </br>
 You can customize this variable.</br>
 </br>
 This variable was introduced, or its default value was changed, in
 version 24.4 of Emacs.
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

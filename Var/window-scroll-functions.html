@@ -1,13 +1,16 @@
-<strong>window-scroll-functions</strong> is a variable defined in `<code>C source code</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>window-scroll-functions</strong> is a variable defined in `<code>C source code</code>'.</br>
 Its value is <pre>(follow-avoid-tail-recenter)</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 List of functions to call before redisplaying a window with scrolling.</br>
 Each function is called with two arguments, the window and its new</br>
-display-start position.  Note that these functions are also called by</br>
-`set-window-buffer'.  Also note that the value of `window-end' is not</br>
-valid when these functions are called.</br>
+display-start position.</br>
+These functions are called whenever the `window-start' marker is modified,</br>
+either to point into another buffer (e.g. via `set-window-buffer') or another</br>
+place in the same buffer.</br>
+Note that the value of `window-end' is not valid when these functions are</br>
+called.</br>
 </br>
 Warning: Do not use this feature to alter the way the window</br>
 is scrolled.  It is not designed for that, and such use probably won't</br>
-work.
+work.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

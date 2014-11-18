@@ -1,12 +1,16 @@
-<strong>backward-up-list</strong> is an interactive compiled Lisp function in `<code>lisp.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>backward-up-list</strong> is an interactive compiled Lisp function in `<code>lisp.el</code>'.</br>
 </br>
 It is bound to &lt;C-M-up>, C-M-u, ESC &lt;C-up>.</br>
 </br>
-<code>(backward-up-list <em>&optional</em> <u>ARG</u></code>)</br>
+<code>(backward-up-list <em>&optional</em> <u>ARG</u> <u>ESCAPE-STRINGS</u> <u>NO-SYNTAX-CROSSING</u></code>)</br>
 </br>
 Move backward out of one level of parentheses.</br>
 This command will also work on other parentheses-like expressions</br>
-defined by the current language mode.</br>
-With <u>ARG</u>, do this that many times.</br>
-A negative argument means move forward but still to a less deep spot.</br>
-This command assumes point is not in a string or comment.
+defined by the current language mode.  With <u>ARG</u>, do this that</br>
+many times.  A negative argument means move forward but still to</br>
+a less deep spot.  If <u>ESCAPE-STRINGS</u> is non-nil (as it is</br>
+interactively), move out of enclosing strings as well.  If</br>
+<u>NO-SYNTAX-CROSSING</u> is non-nil (as it is interactively), prefer to</br>
+break out of any enclosing string instead of moving to the start</br>
+of a list broken across multiple strings.  On error, location of</br>
+point is unspecified.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,0 +1,11 @@
+<strong>idlwave-shell-file-line-message</strong> is a variable defined in `<code>idlw-shell.el</code>'.</br>
+Its value is <pre></br>
+"\\(\\$MAIN\\$\\|\\<[a-zA-Z][a-zA-Z0-9_$:]*\\([ 	]*\n[ 	]*[a-zA-Z0-9_$:]+\\)*\\)[ 	\n]+\\([0-9]+\\([ 	]*\n[ 	]*[0-9]+\\)*\\)[ 	\n]+\\([^ 	\n]+\\([ 	]*\n[ 	]*[^ 	\n]+\\)*\\)"</pre></br>
+</br>
+<strong id="documentation">Documentation:</strong></br>
+A regular expression to parse out the file name and line number.</br>
+The 1st group should match the subroutine name.</br>
+The 3rd group is the line number.</br>
+The 5th group is the file name.</br>
+All parts may contain linebreaks surrounded by spaces.  This is important</br>
+in IDL5 which inserts random linebreaks in long module and file names.

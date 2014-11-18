@@ -1,4 +1,4 @@
-<strong>calculator-user-operators</strong> is a variable defined in `<code>calculator.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>calculator-user-operators</strong> is a variable defined in `<code>calculator.el</code>'.</br>
 Its value is <pre>nil</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -21,17 +21,16 @@ Examples:</br>
           ("tF" mt-to-ft (/ X 0.3048)         1)</br>
           ("tM" ft-to-mt (* X 0.3048)         1)))</br>
 </br>
-* Using a function-like form is very simple, X for an argument (Y the</br>
-  second in case of a binary operator), TX is a truncated version of X</br>
-  and F does a recursive call, Here is a [very inefficient] Fibonacci</br>
-  number calculation:</br>
+* Using a function-like form is very simple: use `X' for the argument</br>
+  (`Y' for the second in case of a binary operator), `TX' is a truncated</br>
+  version of `X' and `F' for a recursive call.  Here is a [very</br>
+  inefficient] Fibonacci number calculation:</br>
 </br>
   (add-to-list 'calculator-user-operators</br>
-               '("F" fib (if (<= TX 1)</br>
-                         1</br>
-                         (+ (F (- TX 1)) (F (- TX 2)))) 0))</br>
+               '("F" fib</br>
+                 (if (<= TX 1) 1 (+ (F (- TX 1)) (F (- TX 2))))))</br>
 </br>
   Note that this will be either postfix or prefix, according to</br>
   `calculator-unary-style'.</br>
 </br>
-You can customize this variable.
+You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

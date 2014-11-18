@@ -1,5 +1,14 @@
-<strong>edebug-read-symbol</strong> is a compiled Lisp function in `<code>edebug.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>edebug-read-symbol</strong> is an alias for `<strong><a href="/Fun/read.html">read</a></strong>' in `<code>edebug.el</code>'.</br>
 </br>
-(edebug-read-symbol <u>STREAM</u>)</br>
+(edebug-read-symbol &optional <u>STREAM</u>)</br>
 </br>
-Not documented.
+Read one Lisp expression as text from <u>STREAM</u>, return as Lisp object.</br>
+If <u>STREAM</u> is nil, use the value of `standard-input' (which see).</br>
+<u>STREAM</u> or the value of `standard-input' may be:</br>
+ a buffer (read from point and advance it)</br>
+ a marker (read from where it points and advance it)</br>
+ a function (call it with no arguments for each character,</br>
+     call it with a char as argument to push a char back)</br>
+ a string (takes text from string, starting at the beginning)</br>
+ t (read text line using minibuffer and use it, or read from</br>
+    standard input in batch mode).<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

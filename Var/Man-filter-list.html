@@ -1,4 +1,4 @@
-<strong>Man-filter-list</strong> is a variable defined in `<code>man.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>Man-filter-list</strong> is a variable defined in `<code>man.el</code>'.</br>
 Its value is <pre></br>
 (("sed" "" "-e '/^[-][-]*$/d'" "-e '/[789]/s///g'" "-e '/Reformatting page.  Wait/d'" "-e '/Reformatting entry.  Wait/d'" "-e '/^[ 	]*Hewlett-Packard[ 	]Company[ 	]*-[ 	][0-9]*[ 	]-/d'" "-e '/^[ 	]*Hewlett-Packard[ 	]*-[ 	][0-9]*[ 	]-.*$/d'" "-e '/^[ 	][ 	]*-[ 	][0-9]*[ 	]-[ 	]*Formatted:.*[0-9]$/d'" "-e '/^[ 	]*Page[ 	][0-9]*.*(printed[ 	][0-9\\/]*)$/d'" "-e '/^Printed[ 	][0-9].*[0-9]$/d'" "-e '/^[ 	]*X[ 	]Version[ 	]1[01].*Release[ 	][0-9]/d'" "-e '/^[A-Za-z].*Last[ 	]change:/d'" "-e '/^Sun[ 	]Release[ 	][0-9].*[0-9]$/d'" "-e '/[ 	]*Copyright [0-9]* UNIX System Laboratories, Inc.$/d'" "-e '/^[ 	]*Rev\\..*Page [0-9][0-9]*$/d'")
  ("awk" "'\n" "BEGIN { blankline=0; anonblank=0; }\n" "/^$/ { if (anonblank==0) next; }\n" "{ anonblank=1; }\n" "/^$/ { blankline++; next; }\n" "{ if (blankline>0) { print \"\"; blankline=0; } print $0; }\n" "'"))
@@ -18,4 +18,4 @@ man command is piped through each command filter in the order the</br>
 commands appear in the association list.  The final output is placed in</br>
 the manpage buffer.</br>
 </br>
-You can customize this variable.
+You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

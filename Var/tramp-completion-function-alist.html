@@ -1,4 +1,4 @@
-<strong>tramp-completion-function-alist</strong> is a variable defined in `<code>tramp.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>tramp-completion-function-alist</strong> is a variable defined in `<code>tramp.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -27,6 +27,9 @@ the info pages.</br>
  ("fcp"
   (tramp-parse-shosts "~/.ssh/known_hosts")
   (tramp-parse-sconfig "~/.ssh/config"))
+ ("psftp"
+  (tramp-parse-shosts "~/.ssh/known_hosts")
+  (tramp-parse-sconfig "~/.ssh/config"))
  ("pscp"
   (tramp-parse-shosts "~/.ssh/known_hosts")
   (tramp-parse-sconfig "~/.ssh/config"))
@@ -39,6 +42,8 @@ the info pages.</br>
   (tramp-parse-passwd "/etc/passwd"))
  ("su"
   (tramp-parse-passwd "/etc/passwd"))
+ ("nc"
+  (tramp-parse-hosts "/etc/hosts"))
  ("telnet"
   (tramp-parse-hosts "/etc/hosts"))
  ("sshx"
@@ -48,9 +53,6 @@ the info pages.</br>
   (tramp-parse-shosts "~/.ssh/known_hosts")
   (tramp-parse-sconfig "~/.ssh/config"))
  ("rsync"
-  (tramp-parse-shosts "~/.ssh/known_hosts")
-  (tramp-parse-sconfig "~/.ssh/config"))
- ("sftp"
   (tramp-parse-shosts "~/.ssh/known_hosts")
   (tramp-parse-sconfig "~/.ssh/config"))
  ("scpx"
@@ -64,3 +66,4 @@ the info pages.</br>
  ("adb"
   (tramp-adb-parse-device-names "")))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,4 +1,4 @@
-<strong>woman-mode-map</strong> is a variable defined in `<code>woman.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>woman-mode-map</strong> is a variable defined in `<code>woman.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -10,43 +10,43 @@ Keymap for woman mode.</br>
 	   (WoMan menu-item "WoMan"
 		  (keymap "WoMan"
 			  (WoMan\.\.\. menu-item "WoMan..." woman)
-			  (nil menu-item "--")
+			  (nil-7 menu-item "--")
 			  (Next\ Section menu-item "Next Section" Man-next-section)
 			  (Previous\ Section menu-item "Previous Section" Man-previous-section)
 			  (Goto\ Section\.\.\. menu-item "Goto Section..." Man-goto-section)
 			  (Goto\ See-Also\ Section menu-item "Goto See-Also Section" Man-goto-see-also-section)
 			  (Follow\ Reference\.\.\. menu-item "Follow Reference..." Man-follow-manual-reference)
-			  (nil-7 menu-item "--")
+			  (nil-7-7 menu-item "--")
 			  (Previous\ WoMan\ Buffer menu-item "Previous WoMan Buffer" WoMan-previous-manpage)
 			  (Next\ WoMan\ Buffer menu-item "Next WoMan Buffer" WoMan-next-manpage)
 			  (Bury\ WoMan\ Buffer menu-item "Bury WoMan Buffer" Man-quit)
 			  (Kill\ WoMan\ Buffer menu-item "Kill WoMan Buffer" Man-kill)
-			  (nil-12 menu-item "--")
+			  (nil-7-12 menu-item "--")
 			  (Use\ Full\ Frame\ Width menu-item "Use Full Frame Width" woman-toggle-fill-frame :button
 						   (:toggle . woman-fill-frame))
 			  (Reformat\ Last\ Man\ Page menu-item "Reformat Last Man Page" woman-reformat-last-file)
-			  (Make\ Contents\ Menu menu-item "Make Contents Menu" menu-function-122 :key-sequence nil :enable
+			  (Make\ Contents\ Menu menu-item "Make Contents Menu" menu-function-124 :key-sequence nil :enable
 						(not woman-imenu-done))
-			  (nil-16 menu-item "--")
+			  (nil-7-16 menu-item "--")
 			  (Describe\ \(Wo\)Man\ Mode menu-item "Describe (Wo)Man Mode" describe-mode)
 			  (Mini\ Help menu-item "Mini Help" woman-mini-help)
-			  (Customize\.\.\. menu-item "Customize..." menu-function-123 :key-sequence nil)
-			  (Show\ Version menu-item "Show Version" menu-function-124 :key-sequence nil)
-			  (nil-21 menu-item "--")
+			  (Customize\.\.\. menu-item "Customize..." menu-function-125 :key-sequence nil)
+			  (Show\ Version menu-item "Show Version" menu-function-126 :key-sequence nil)
+			  (nil-7-21 menu-item "--")
 			  (Advanced menu-item "Advanced"
 				    (keymap "Advanced"
-					    (View\ Source menu-item "View Source" menu-function-125 :key-sequence nil :enable woman-last-file-name)
-					    (Show\ Log menu-item "Show Log" menu-function-126 :key-sequence nil)
+					    (View\ Source menu-item "View Source" menu-function-127 :key-sequence nil :enable woman-last-file-name)
+					    (Show\ Log menu-item "Show Log" menu-function-128 :key-sequence nil)
 					    (Extended\ Font menu-item "Extended Font" woman-toggle-use-extended-font :visible woman-font-support :button
 							    (:toggle . woman-use-extended-font))
 					    (Symbol\ Font menu-item "Symbol Font" woman-toggle-use-symbol-font :visible woman-font-support :button
 							  (:toggle . woman-use-symbol-font))
 					    (Font\ Map menu-item "Font Map" woman-display-extended-fonts :enable woman-use-symbol-font :visible woman-font-support)
-					    (nil menu-item "--")
-					    (nil-6 menu-item "Emulation")
-					    (nroff menu-item "nroff" menu-function-127 :key-sequence nil :button
+					    (nil-7 menu-item "--")
+					    (nil menu-item "Emulation")
+					    (nroff menu-item "nroff" menu-function-129 :key-sequence nil :button
 						   (:radio eq woman-emulation 'nroff))
-					    (troff menu-item "troff" menu-function-128 :key-sequence nil :button
+					    (troff menu-item "troff" menu-function-130 :key-sequence nil :button
 						   (:radio eq woman-emulation 'troff)))))))
  (remap keymap
 	(man-follow . woman-follow)
@@ -67,7 +67,7 @@ Keymap for woman mode.</br>
 			(Go\ To\ \"SEE\ ALSO\"\ Section menu-item "Go To \"SEE ALSO\" Section" Man-goto-see-also-section :enable
 							(cl-member Man-see-also-regexp Man--sections :test #'string-match-p))
 			(Follow\ Reference\.\.\. menu-item "Follow Reference..." Man-follow-manual-reference :enable Man--refpages :help "Go to a manpage referred to in the \"SEE ALSO\" section")
-			(nil menu-item "--")
+			(nil-7 menu-item "--")
 			(Next\ Manpage menu-item "Next Manpage" Man-next-manpage :enable
 				       (>
 					(length Man-page-list)
@@ -76,7 +76,7 @@ Keymap for woman mode.</br>
 					   (>
 					    (length Man-page-list)
 					    1))
-			(nil-8 menu-item "--")
+			(nil-7-8 menu-item "--")
 			(Man\.\.\. menu-item "Man..." man)
 			(Kill\ Buffer menu-item "Kill Buffer" Man-kill)
 			(Quit menu-item "Quit" Man-quit))))
@@ -119,3 +119,4 @@ Keymap for woman mode.</br>
      (9 . backward-button))
  (9 . forward-button))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

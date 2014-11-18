@@ -1,4 +1,4 @@
-<strong>auto-mode-alist</strong> is a variable defined in `<code>files.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>auto-mode-alist</strong> is a variable defined in `<code>files.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -25,8 +25,8 @@ and `magic-mode-alist', which determines modes based on file contents.</br>
  ("\\.adb\\'" . ada-mode)
  ("\\.ads\\'" . ada-mode)
  ("\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'" nil epa-file)
- ("\\.\\(?:3fr\\|a\\(?:r[tw]\\|vs\\)\\|bmp[23]?\\|c\\(?:als?\\|myka?\\|r[2w]\\|u[rt]\\)\\|d\\(?:c[mrx]\\|ds\\|ng\\|px\\)\\|exr\\|f\\(?:ax\\|its\\)\\|gif\\(?:87\\)?\\|hrz\\|ic\\(?:on\\|[bo]\\)\\|j\\(?:\\(?:pe\\|[np]\\)g\\)\\|k\\(?:25\\|dc\\)\\|m\\(?:iff\\|ng\\|rw\\|s\\(?:l\\|vg\\)\\|tv\\)\\|nef\\|o\\(?:rf\\|tb\\)\\|p\\(?:bm\\|c\\(?:ds\\|[dltx]\\)\\|db\\|ef\\|gm\\|i\\(?:ct\\|x\\)\\|jpeg\\|n\\(?:g\\(?:24\\|32\\|8\\)\\|[gm]\\)\\|pm\\|sd\\|tif\\|wp\\)\\|r\\(?:a[fs]\\|gb[ao]?\\|l[ae]\\)\\|s\\(?:c[rt]\\|fw\\|gi\\|r[2f]\\|un\\|vgz?\\)\\|t\\(?:ga\\|i\\(?:ff\\(?:64\\)?\\|le\\|m\\)\\|tf\\)\\|uyvy\\|v\\(?:da\\|i\\(?:car\\|d\\|ff\\)\\|st\\)\\|w\\(?:bmp\\|pg\\)\\|x\\(?:3f\\|bm\\|cf\\|pm\\|wd\\|[cv]\\)\\|y\\(?:cbcra?\\|uv\\)\\)\\'" . image-mode)
- ("\\.elc\\'" . emacs-lisp-byte-code-mode)
+ ("\\.\\(?:3fr\\|a\\(?:r[tw]\\|vs\\)\\|bmp[23]?\\|c\\(?:als?\\|myka?\\|r[2w]\\|u[rt]\\)\\|d\\(?:c[mrx]\\|ds\\|ng\\|px\\)\\|f\\(?:ax\\|its\\)\\|gif\\(?:87\\)?\\|hrz\\|ic\\(?:on\\|[bo]\\)\\|j\\(?:2c\\|ng\\|p\\(?:eg\\|[2cg]\\)\\)\\|k\\(?:25\\|dc\\)\\|m\\(?:iff\\|ng\\|rw\\|s\\(?:l\\|vg\\)\\|tv\\)\\|nef\\|o\\(?:rf\\|tb\\)\\|p\\(?:bm\\|c\\(?:ds\\|[dltx]\\)\\|db\\|ef\\|gm\\|i\\(?:ct\\|x\\)\\|jpeg\\|n\\(?:g\\(?:24\\|32\\|8\\)\\|[gm]\\)\\|pm\\|sd\\|tif\\|wp\\)\\|r\\(?:a[fs]\\|gb[ao]?\\|l[ae]\\)\\|s\\(?:c[rt]\\|fw\\|gi\\|r[2f]\\|un\\|vgz?\\)\\|t\\(?:ga\\|i\\(?:ff\\(?:64\\)?\\|le\\|m\\)\\|tf\\)\\|uyvy\\|v\\(?:da\\|i\\(?:car\\|d\\|ff\\)\\|st\\)\\|w\\(?:bmp\\|pg\\)\\|x\\(?:3f\\|bm\\|cf\\|pm\\|wd\\|[cv]\\)\\|y\\(?:cbcra?\\|uv\\)\\)\\'" . image-mode)
+ ("\\.elc\\'" . elisp-byte-code-mode)
  ("\\.dz\\'" nil jka-compr)
  ("\\.xz\\'" nil jka-compr)
  ("\\.lzma\\'" nil jka-compr)
@@ -35,12 +35,10 @@ and `magic-mode-alist', which determines modes based on file contents.</br>
  ("\\.bz2\\'" nil jka-compr)
  ("\\.Z\\'" nil jka-compr)
  ("\\.vr[hi]?\\'" . vera-mode)
- ("\\.tod[tyr]\\'" . todo-filtered-items-mode)
- ("\\.toda\\'" . todo-archive-mode)
- ("\\.todo\\'" . todo-mode)
  ("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . ruby-mode)
  ("\\.re?st\\'" . rst-mode)
  ("\\.py\\'" . python-mode)
+ ("\\.scss\\'" . scss-mode)
  ("\\.awk\\'" . awk-mode)
  ("\\.\\(u?lpc\\|pike\\|pmod\\(\\.in\\)?\\)\\'" . pike-mode)
  ("\\.idl\\'" . idl-mode)
@@ -104,7 +102,7 @@ and `magic-mode-alist', which determines modes based on file contents.</br>
  ("[cC]hange[lL]og[-.][0-9]+\\'" . change-log-mode)
  ("\\$CHANGE_LOG\\$\\.TXT" . change-log-mode)
  ("\\.scm\\.[0-9]*\\'" . scheme-mode)
- ("\\.[ck]?sh\\'\\|\\.shar\\'\\|/\\.z?profile\\'" . sh-mode)
+ ("\\.[ckz]?sh\\'\\|\\.shar\\'\\|/\\.z?profile\\'" . sh-mode)
  ("\\.bash\\'" . sh-mode)
  ("\\(/\\|\\`\\)\\.\\(bash_\\(profile\\|history\\|log\\(in\\|out\\)\\)\\|z?log\\(in\\|out\\)\\)\\'" . sh-mode)
  ("\\(/\\|\\`\\)\\.\\(shrc\\|[kz]shrc\\|bashrc\\|t?cshrc\\|esrc\\)\\'" . sh-mode)
@@ -149,12 +147,12 @@ and `magic-mode-alist', which determines modes based on file contents.</br>
  ("\\.dbk\\'" . xml-mode)
  ("\\.dtd\\'" . sgml-mode)
  ("\\.ds\\(ss\\)?l\\'" . dsssl-mode)
- ("\\.js\\'" . javascript-mode)
+ ("\\.jsm?\\'" . javascript-mode)
  ("\\.json\\'" . javascript-mode)
  ("\\.[ds]?vh?\\'" . verilog-mode)
  ("\\.by\\'" . bovine-grammar-mode)
  ("\\.wy\\'" . wisent-grammar-mode)
- ("[]>:/\\]\\..*\\(emacs\\|gnus\\|viper\\)\\'" . emacs-lisp-mode)
+ ("[:/\\]\\..*\\(emacs\\|gnus\\|viper\\)\\'" . emacs-lisp-mode)
  ("\\`\\..*emacs\\'" . emacs-lisp-mode)
  ("[:/]_emacs\\'" . emacs-lisp-mode)
  ("/crontab\\.X*[0-9]+\\'" . shell-script-mode)
@@ -195,7 +193,7 @@ and `magic-mode-alist', which determines modes based on file contents.</br>
  ("/\\.\\(?:enigma\\|gltron\\|gtk\\|hxplayer\\|net\\|neverball\\|qt/.+\\|realplayer\\|scummvm\\|sversion\\|sylpheed/.+\\|xmp\\)rc\\'" . conf-mode)
  ("/\\.\\(?:gdbtkinit\\|grip\\|orbital/.+txt\\|rhosts\\|tuxracer/options\\)\\'" . conf-mode)
  ("/\\.?X\\(?:default\\|resource\\|re\\)s\\>" . conf-xdefaults-mode)
- ("/X11.+app-defaults/" . conf-xdefaults-mode)
+ ("/X11.+app-defaults/\\|\\.ad\\'" . conf-xdefaults-mode)
  ("/X11.+locale/.+/Compose\\'" . conf-colon-mode)
  ("/X11.+locale/compose\\.dir\\'" . conf-javaprop-mode)
  ("\\.~?[0-9]+\\.[0-9][-.0-9]*~?\\'" nil t)
@@ -206,3 +204,4 @@ and `magic-mode-alist', which determines modes based on file contents.</br>
  ("\\.tbz2?\\'" . tar-mode)
  ("\\.txz\\'" . tar-mode))
 </pre></br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

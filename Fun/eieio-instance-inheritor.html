@@ -1,4 +1,4 @@
-eieio-instance-inheritor is an  object constructor function in `eieio-base.el'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">eieio-instance-inheritor is an  object constructor function in `eieio-base.el'.</br>
 Creates an object of class eieio-instance-inheritor.</br>
 You cannot create a new object of type eieio-instance-inheritor</br>
 </br>
@@ -20,18 +20,25 @@ is checked for a value.</br>
 </br>
 Specialized Methods:</br>
 </br>
-`slot-unbound' :PRIMARY (object class slot-name fn)</br>
+`slot-unbound' :PRIMARY (arg1 arg2 arg3 arg4)</br>
 If a slot OBJECT in this CLASS is unbound, try to inherit, or throw a signal.</br>
 SLOT-NAME is the offending slot.  FN is the function signaling the error.</br>
 </br>
-`eieio-instance-inheritor-slot-boundp' :PRIMARY (object slot)</br>
+<code>(fn OBJECT CLASS SLOT-NAME FN</code>)</br>
+</br>
+`eieio-instance-inheritor-slot-boundp' :PRIMARY (arg1 arg2)</br>
 Return non-nil if the instance inheritor OBJECT's SLOT is bound.</br>
 See `slot-boundp' for details on binding slots.</br>
 The instance inheritor uses unbound slots as a way of cascading cloned</br>
 slot values, so testing for a slot being bound requires extra steps</br>
 for this kind of object.</br>
 </br>
-`clone' :PRIMARY (obj &rest params)</br>
+(fn OBJECT SLOT)</br>
+</br>
+`clone' :PRIMARY (arg1 &rest rest)</br>
 Clone OBJ, initializing `:parent' to OBJ.</br>
 All slots are unbound, except those initialized with PARAMS.</br>
 </br>
+(fn OBJ &rest PARAMS)</br>
+</br>
+<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

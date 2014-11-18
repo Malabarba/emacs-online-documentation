@@ -1,0 +1,31 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>python-imenu-create-flat-index</strong> is a compiled Lisp function in `<code>python.el</code>'.</br>
+</br>
+(python-imenu-create-flat-index &optional <u>ALIST</u> <u>PREFIX</u>)</br>
+</br>
+Return flat outline of the current Python buffer for Imenu.</br>
+Optional argument <u>ALIST</u> is the tree to be flattened; when nil</br>
+`python-imenu-build-index' is used with</br>
+`python-imenu-format-parent-item-jump-label-function'</br>
+`python-imenu-format-parent-item-label-function'</br>
+`python-imenu-format-item-label-function' set to</br>
+  (lambda (type name) name)</br>
+Optional argument <u>PREFIX</u> is used in recursive calls and should</br>
+not be passed explicitly.</br>
+</br>
+Converts this:</br>
+</br>
+    (("Foo" . 103)</br>
+     ("Bar" . 138)</br>
+     ("decorator"</br>
+      ("decorator" . 173)</br>
+      ("wrap"</br>
+       ("wrap" . 353)</br>
+       ("wrapped_f" . 393))))</br>
+</br>
+To this:</br>
+</br>
+    (("Foo" . 103)</br>
+     ("Bar" . 138)</br>
+     ("decorator" . 173)</br>
+     ("decorator.wrap" . 353)</br>
+     ("decorator.wrapped_f" . 393))<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

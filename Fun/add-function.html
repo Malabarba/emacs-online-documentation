@@ -1,4 +1,4 @@
-<strong>add-function</strong> is a Lisp macro in `<code>nadvice.el</code>'.</br>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>add-function</strong> is a Lisp macro in `<code>nadvice.el</code>'.</br>
 </br>
 (add-function <u>WHERE</u> <u>PLACE</u> <u>FUNCTION</u> &optional <u>PROPS</u>)</br>
 </br>
@@ -26,8 +26,9 @@ a special meaning:</br>
   the advice  should be innermost (i.e. at the end of the list),</br>
   whereas a depth of -100 means that the advice should be outermost.</br>
 </br>
-If <u>PLACE</u> is a simple variable, only its global value will be affected.</br>
-Use (local 'VAR) if you want to apply <u>FUNCTION</u> to VAR buffer-locally.</br>
+If <u>PLACE</u> is a symbol, its `default-value' will be affected.</br>
+Use (local 'SYMBOL) if you want to apply <u>FUNCTION</u> to SYMBOL buffer-locally.</br>
+Use (var VAR) if you want to apply <u>FUNCTION</u> to the (lexical) VAR.</br>
 </br>
 If one of <u>FUNCTION</u> or OLDFUN is interactive, then the resulting function</br>
 is also interactive.  There are 3 cases:</br>
@@ -35,4 +36,4 @@ is also interactive.  There are 3 cases:</br>
 - The interactive spec of <u>FUNCTION</u> is itself a function: it should take one</br>
   argument (the interactive spec of OLDFUN, which it can pass to</br>
   `advice-eval-interactive-spec') and return the list of arguments to use.</br>
-- Else, use the interactive spec of <u>FUNCTION</u> and ignore the one of OLDFUN.
+- Else, use the interactive spec of <u>FUNCTION</u> and ignore the one of OLDFUN.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>string-collate-lessp</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(string-collate-lessp <u>S1</u> <u>S2</u> &optional <u>LOCALE</u> <u>IGNORE-CASE</u>)</br>
+</br>
+Return t if first arg string is less than second in collation order.</br>
+Symbols are also allowed; their print names are used instead.</br>
+</br>
+This function obeys the conventions for collation order in your</br>
+locale settings.  For example, punctuation and whitespace characters</br>
+might be considered less significant for sorting:</br>
+</br>
+<code>(sort '("11" "12" "1 1" "1 2" "1.1" "1.2") 'string-collate-lessp</code>)</br>
+  => ("11" "1 1" "1.1" "12" "1 2" "1.2")</br>
+</br>
+The optional argument <u>LOCALE</u>, a string, overrides the setting of your</br>
+current locale identifier for collation.  The value is system</br>
+dependent; a <u>LOCALE</u> "en_US.UTF-8" is applicable on POSIX systems,</br>
+while it would be, e.g., "enu_USA.1252" on MS-Windows systems.</br>
+</br>
+If <u>IGNORE-CASE</u> is non-nil, characters are converted to lower-case</br>
+before comparing them.</br>
+</br>
+To emulate Unicode-compliant collation on MS-Windows systems,</br>
+bind `w32-collate-ignore-punctuation' to a non-nil value, since</br>
+the codeset part of the locale cannot be "UTF-8" on MS-Windows.</br>
+</br>
+If your system does not support a locale environment, this function</br>
+behaves like `string-lessp'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>.</small></body></html>

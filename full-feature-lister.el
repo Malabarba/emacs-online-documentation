@@ -1,9 +1,9 @@
 ;;; full-feature-lister.el --- Parse load-path and list all features available for requiring.
 
-;; Copyright (C) 2013 Artur Malabarba <bruce.connor.am@gmail.com>
+;; Copyright (C) 2013 Artur Malabarba <emacs@endlessparentheses.com>
 
-;; Author: Artur Malabarba <bruce.connor.am@gmail.com>
-;; URL: http://github.com/Bruce-Connor/full-feature-lister
+;; Author: Artur Malabarba <emacs@endlessparentheses.com>
+;; URL: http://github.com/Malabarba/full-feature-lister
 ;; Version: 0.1
 ;; Keywords: convenience
 ;; Separator: //

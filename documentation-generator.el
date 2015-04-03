@@ -1,9 +1,9 @@
 ;;; documentation-generator.el --- Convert the documentation of all built-in functions and variables to html files.
 
-;; Copyright (C) 2013 Artur Malabarba <bruce.connor.am@gmail.com>
+;; Copyright (C) 2013 Artur Malabarba <emacs@endlessparentheses.com>
 
-;; Author: Artur Malabarba <bruce.connor.am@gmail.com>
-;; URL: https://github.com/Bruce-Connor/emacs-online-documentation/
+;; Author: Artur Malabarba <emacs@endlessparentheses.com>
+;; URL: https://github.com/Malabarba/emacs-online-documentation/
 ;; Version: 0.5
 ;; Keywords: 
 ;; ShortName: docgen
@@ -45,7 +45,7 @@
 (defun docgen//bug-report ()
   "Opens github issues page in a web browser. Please send me any bugs you find, and please inclue your emacs and dg versions."
   (interactive)
-  (browse-url "https://github.com/Bruce-Connor/emacs-online-documentation/issues/new")
+  (browse-url "https://github.com/Malabarba/emacs-online-documentation/issues/new")
   (message "Your docgen//version is: %s, and your emacs version is: %s.\nPlease include this in your report!"
            docgen//version emacs-version))
 
@@ -187,7 +187,7 @@ internalize) is far from optimized. But the rest of the script is
 (defun docgen//doc-to-html (doc)
   "This function takes the doc string (using standard unix line breaks), and converts it to an html format.
 Right now it only fixes the line breaks. Improvements are planned here:
-https://github.com/Bruce-Connor/emacs-online-documentation/issues/2"
+https://github.com/Malabarba/emacs-online-documentation/issues/2"
   (replace-regexp-in-string
    "\n" "<br/>\n"
    (with-temp-buffer

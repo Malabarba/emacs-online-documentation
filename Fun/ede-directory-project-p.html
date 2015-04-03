@@ -1,9 +1,16 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ede-directory-project-p</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+---
+title: "ede-directory-project-p"
+layout: doc
+---
+<strong>ede-directory-project-p</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
 </br>
 (ede-directory-project-p <u>DIR</u> &optional <u>FORCE</u>)</br>
 </br>
-Return a project description object if <u>DIR</u> has a project.</br>
+Return a project description object if <u>DIR</u> is in a project.</br>
 Optional argument <u>FORCE</u> means to ignore a hash-hit of 'nomatch.</br>
 This depends on an up to date `ede-project-class-files' variable.</br>
 Any directory that contains the file .ede-ignore will always</br>
-return nil.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+return nil.</br>
+</br>
+Consider using `ede-directory-project-cons' instead if the next</br>
+question you want to ask is where the root of found project is.

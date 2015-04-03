@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">ede-project is an  object constructor function in `base.el'.</br>
+---
+title: "ede-project"
+layout: doc
+---
+ede-project is an  object constructor function in `base.el'.</br>
 Creates an object of class ede-project.</br>
 Create a new object with name NAME of class type ede-project</br>
 </br>
@@ -111,6 +115,19 @@ See `speedbar-make-tag-line' for details.</br>
 </br>
 Specialized Methods:</br>
 </br>
+`ede-system-include-path' :PRIMARY (this)</br>
+Get the system include path used by project THIS.</br>
+</br>
+`eieio-speedbar-description' :PRIMARY (obj)</br>
+Provide a speedbar description for OBJ.</br>
+</br>
+`ede-menu-items-build' :PRIMARY (obj &optional current)</br>
+Return a list of menu items for building project OBJ.</br>
+If optional argument CURRENT is non-nil, return sub-menu code.</br>
+</br>
+`project-make-dist' :PRIMARY (this)</br>
+Build a distribution for the project based on THIS project.</br>
+</br>
 `ede-expand-filename-impl' :PRIMARY (this filename &optional force)</br>
 Return a fully qualified file name based on project THIS.</br>
 FILENAME should be just a filename which occurs in a directory controlled</br>
@@ -118,87 +135,109 @@ by this project.</br>
 Optional argument FORCE forces the default filename to be provided even if it</br>
 doesn't exist.</br>
 </br>
-`project-dist-files' :PRIMARY (this)</br>
-Return a list of files that constitute a distribution of THIS project.</br>
+`ede-source-paths' :PRIMARY (this mode)</br>
+Get the base to all source trees in the current project for MODE.</br>
+For example, &lt;root>/src for sources of c/c++, Java, etc,</br>
+and &lt;root>/doc for doc sources.</br>
 </br>
-`project-rescan' :PRIMARY (this)</br>
-Rescan the EDE project THIS.</br>
+`ede-java-classpath' :PRIMARY (this)</br>
+Return the classpath for this project.</br>
 </br>
-`ede-object-menu' :STATIC (this)</br>
-Retrieves the slot `menu' from an object of class `ede-project'</br>
-</br>
-`project-make-dist' :PRIMARY (this)</br>
-Build a distribution for the project based on THIS project.</br>
-</br>
-`ede-system-include-path' :PRIMARY (this)</br>
-Get the system include path used by project THIS.</br>
-</br>
-`ede-buffer-documentation-files' :PRIMARY (this buffer)</br>
-Return all documentation in project THIS based on BUFFER.</br>
-</br>
-`ede-name' :PRIMARY (this)</br>
-Return a short-name for THIS project file.</br>
-Do this by extracting the lowest directory name.</br>
-</br>
-`ede-map-any-target-p' :PRIMARY (this proc)</br>
-For project THIS, map PROC to all targets and return if any non-nil.</br>
-Return the first non-nil value returned by PROC.</br>
-</br>
-`ede-commit-local-variables' :PRIMARY (proj)</br>
-Commit change to local variables in PROJ.</br>
+`ede-preprocessor-map' :PRIMARY (this)</br>
+Get the pre-processor map for project THIS.</br>
 </br>
 `ede-add-subproject' :PRIMARY (proj-a proj-b)</br>
 Add into PROJ-A, the subproject PROJ-B.</br>
 </br>
-`ede-map-project-buffers' :PRIMARY (this proc)</br>
-For THIS, execute PROC on all buffers belonging to THIS.</br>
+`eieio-speedbar-object-buttonname' :PRIMARY (object)</br>
+Return a string to use as a speedbar button for OBJECT.</br>
 </br>
-`ede-expand-filename-local' :PRIMARY (this filename)</br>
-Expand filename locally to project THIS with filesystem tests.</br>
+`eieio-speedbar-object-children' :PRIMARY (this)</br>
+Return the list of speedbar display children for THIS.</br>
 </br>
-`ede-html-documentation' :PRIMARY (this)</br>
-Return a list of HTML files provided by project THIS.</br>
+`ede-buffer-documentation-files' :PRIMARY (this buffer)</br>
+Return all documentation in project THIS based on BUFFER.</br>
 </br>
-`ede-target-in-project-p' :PRIMARY (proj target)</br>
-Is PROJ the parent of TARGET?</br>
-If TARGET belongs to a subproject, return that project file.</br>
-</br>
-`eieio-speedbar-description' :PRIMARY (obj)</br>
-Provide a speedbar description for OBJ.</br>
-</br>
-`ede-map-all-subprojects' :PRIMARY (this allproc)</br>
-For object THIS, execute PROC on THIS and all subprojects.</br>
-This function also applies PROC to sub-sub projects.</br>
-See also `ede-map-subprojects'.</br>
-</br>
-`project-new-target' :PRIMARY (proj &rest args)</br>
-Create a new target.  It is up to the project PROJ to get the name.</br>
-</br>
-`ede-buffer-header-file' :PRIMARY (this buffer)</br>
-Return nil, projects don't have header files.</br>
+`ede-subproject-p' :PRIMARY (proj)</br>
+Return non-nil if PROJ is a sub project.</br>
 </br>
 `ede-subproject-relative-path' :PRIMARY (proj &optional parent-in)</br>
 Get a path name for PROJ which is relative to the parent project.</br>
 If PARENT is specified, then be relative to the PARENT project.</br>
 Specifying PARENT is useful for sub-sub projects relative to the root project.</br>
 </br>
+`project-interactive-select-target' :PRIMARY (this prompt)</br>
+Interactively query for a target that exists in project THIS.</br>
+Argument PROMPT is the prompt to use when querying the user for a target.</br>
+</br>
+`eieio-speedbar-derive-line-path' :PRIMARY (obj &optional depth)</br>
+Return the path to OBJ.</br>
+Optional DEPTH is the depth we start at.</br>
+</br>
+`ede-set-project-variables' :PRIMARY (project &optional buffer)</br>
+Set variables local to PROJECT in BUFFER.</br>
+</br>
+`ede-html-documentation' :PRIMARY (this)</br>
+Return a list of HTML files provided by project THIS.</br>
+</br>
+`project-compile-project' :PRIMARY (obj &optional command)</br>
+Compile the entire current project OBJ.</br>
+Argument COMMAND is the command to use when compiling.</br>
+</br>
+`ede-object-keybindings' :STATIC (this)</br>
+Retrieves the slot `keybindings' from an object of class `ede-project'</br>
+</br>
+`ede-buffer-header-file' :PRIMARY (this buffer)</br>
+Return nil, projects don't have header files.</br>
+</br>
+`ede-map-targets' :PRIMARY (this proc)</br>
+For object THIS, execute PROC on all targets.</br>
+</br>
+`project-new-target-custom' :PRIMARY (proj)</br>
+Create a new target.  It is up to the project PROJ to get the name.</br>
+</br>
+`ede-map-subprojects' :PRIMARY (this proc)</br>
+For object THIS, execute PROC on all direct subprojects.</br>
+This function does not apply PROC to sub-sub projects.</br>
+See also `ede-map-all-subprojects'.</br>
+</br>
+`ede-find-target' :PRIMARY (proj buffer)</br>
+Fetch the target in PROJ belonging to BUFFER or nil.</br>
+</br>
+`ede-documentation' :PRIMARY (this)</br>
+Return a list of files that provide documentation.</br>
+Documentation is not for object THIS, but is provided by THIS for other</br>
+files in the project.</br>
+</br>
+`ede-object-menu' :STATIC (this)</br>
+Retrieves the slot `menu' from an object of class `ede-project'</br>
+</br>
 `ede-convert-path' :PRIMARY (this path)</br>
 Convert path in a standard way for a given project.</br>
 Default to making it project relative.</br>
 Argument THIS is the project to convert PATH to.</br>
 </br>
-`ede-preprocessor-map' :PRIMARY (this)</br>
-Get the pre-processor map for project THIS.</br>
+`ede-buffer-mine' :PRIMARY (this buffer)</br>
+Return non-nil if object THIS lays claim to the file in BUFFER.</br>
 </br>
-`ede-menu-items-build' :PRIMARY (obj &optional current)</br>
-Return a list of menu items for building project OBJ.</br>
-If optional argument CURRENT is non-nil, return sub-menu code.</br>
+`ede-map-project-buffers' :PRIMARY (this proc)</br>
+For THIS, execute PROC on all buffers belonging to THIS.</br>
 </br>
-`ede-subproject-p' :PRIMARY (proj)</br>
-Return non-nil if PROJ is a sub project.</br>
+`ede-map-all-subprojects' :PRIMARY (this allproc)</br>
+For object THIS, execute PROC on THIS and all subprojects.</br>
+This function also applies PROC to sub-sub projects.</br>
+See also `ede-map-subprojects'.</br>
 </br>
-`ede-find-target' :PRIMARY (proj buffer)</br>
-Fetch the target in PROJ belonging to BUFFER or nil.</br>
+`ede-expand-filename-local' :PRIMARY (this filename)</br>
+Expand filename locally to project THIS with filesystem tests.</br>
+</br>
+`ede-expand-filename-impl-via-subproj' :PRIMARY (this filename)</br>
+Return a fully qualified file name based on project THIS.</br>
+FILENAME should be just a filename which occurs in a directory controlled</br>
+by this project.</br>
+</br>
+`project-rescan' :PRIMARY (this)</br>
+Rescan the EDE project THIS.</br>
 </br>
 `ede-expand-filename' :PRIMARY (this filename &optional force)</br>
 Return a fully qualified file name based on project THIS.</br>
@@ -209,63 +248,28 @@ doesn't exist.</br>
 If FORCE equals 'newfile, then the cache is ignored and a new file in THIS</br>
 is returned.</br>
 </br>
-`project-interactive-select-target' :PRIMARY (this prompt)</br>
-Interactively query for a target that exists in project THIS.</br>
-Argument PROMPT is the prompt to use when querying the user for a target.</br>
+`ede-name' :PRIMARY (this)</br>
+Return a short-name for THIS project file.</br>
+Do this by extracting the lowest directory name.</br>
 </br>
-`ede-map-subprojects' :PRIMARY (this proc)</br>
-For object THIS, execute PROC on all direct subprojects.</br>
-This function does not apply PROC to sub-sub projects.</br>
-See also `ede-map-all-subprojects'.</br>
-</br>
-`project-compile-project' :PRIMARY (obj &optional command)</br>
-Compile the entire current project OBJ.</br>
-Argument COMMAND is the command to use when compiling.</br>
-</br>
-`eieio-speedbar-object-buttonname' :PRIMARY (object)</br>
-Return a string to use as a speedbar button for OBJECT.</br>
-</br>
-`ede-source-paths' :PRIMARY (this mode)</br>
-Get the base to all source trees in the current project for MODE.</br>
-For example, &lt;root>/src for sources of c/c++, Java, etc,</br>
-and &lt;root>/doc for doc sources.</br>
+`project-dist-files' :PRIMARY (this)</br>
+Return a list of files that constitute a distribution of THIS project.</br>
 </br>
 `ede-description' :PRIMARY (this)</br>
 Return a description suitable for the minibuffer about THIS.</br>
 </br>
-`ede-set-project-variables' :PRIMARY (project &optional buffer)</br>
-Set variables local to PROJECT in BUFFER.</br>
-</br>
-`ede-buffer-mine' :PRIMARY (this buffer)</br>
-Return non-nil if object THIS lays claim to the file in BUFFER.</br>
-</br>
-`eieio-speedbar-object-children' :PRIMARY (this)</br>
-Return the list of speedbar display children for THIS.</br>
-</br>
-`ede-java-classpath' :PRIMARY (this)</br>
-Return the classpath for this project.</br>
-</br>
-`project-new-target-custom' :PRIMARY (proj)</br>
+`project-new-target' :PRIMARY (proj &rest args)</br>
 Create a new target.  It is up to the project PROJ to get the name.</br>
 </br>
-`ede-expand-filename-impl-via-subproj' :PRIMARY (this filename)</br>
-Return a fully qualified file name based on project THIS.</br>
-FILENAME should be just a filename which occurs in a directory controlled</br>
-by this project.</br>
+`ede-target-in-project-p' :PRIMARY (proj target)</br>
+Is PROJ the parent of TARGET?</br>
+If TARGET belongs to a subproject, return that project file.</br>
 </br>
-`eieio-speedbar-derive-line-path' :PRIMARY (obj &optional depth)</br>
-Return the path to OBJ.</br>
-Optional DEPTH is the depth we start at.</br>
+`ede-map-any-target-p' :PRIMARY (this proc)</br>
+For project THIS, map PROC to all targets and return if any non-nil.</br>
+Return the first non-nil value returned by PROC.</br>
 </br>
-`ede-map-targets' :PRIMARY (this proc)</br>
-For object THIS, execute PROC on all targets.</br>
+`ede-commit-local-variables' :PRIMARY (proj)</br>
+Commit change to local variables in PROJ.</br>
 </br>
-`ede-documentation' :PRIMARY (this)</br>
-Return a list of files that provide documentation.</br>
-Documentation is not for object THIS, but is provided by THIS for other</br>
-files in the project.</br>
-</br>
-`ede-object-keybindings' :STATIC (this)</br>
-Retrieves the slot `keybindings' from an object of class `ede-project'</br>
-</br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

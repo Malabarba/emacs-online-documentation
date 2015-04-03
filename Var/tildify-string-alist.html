@@ -1,6 +1,11 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>tildify-string-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
-Its value is shown <a href="#value">below</a>.</br>
-</br>
+---
+title: "tildify-string-alist"
+layout: doc
+---
+<strong>tildify-string-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  <strong>This variable is obsolete since 25.1;</br>
+  use `<a href="/tildify-space-string">tildify-space-string</a>' instead.</strong></li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Alist specifying what is a hard space in the current major mode.</br>
 </br>
@@ -13,22 +18,9 @@ MAJOR-MODE defines major mode, for which the item applies.  It can be either:</b
   alist item</br>
 </br>
 STRING defines the hard space, which is inserted at places defined by</br>
-`tildify-pattern-alist'.  For example it can be "~" for TeX or "&nbsp;"</br>
-for SGML.</br>
+`tildify-pattern'.  For example it can be "~" for TeX or "&nbsp;" for SGML.</br>
 </br>
 The form (MAJOR-MODE . SYMBOL) defines alias item for MAJOR-MODE.  For this</br>
 mode, the item for the mode SYMBOL is looked up in the alist instead.</br>
 </br>
-You can customize this variable.</br>
-</br>
-<strong id="value">Value:</strong> <pre></br>
-((latex-mode . "~")
- (tex-mode . latex-mode)
- (plain-tex-mode . latex-mode)
- (sgml-mode . "&nbsp;")
- (html-mode . sgml-mode)
- (xml-mode . "&#160;")
- (nxml-mode . xml-mode)
- (t . " "))
-</pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+You can customize this variable.

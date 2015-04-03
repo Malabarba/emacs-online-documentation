@@ -1,17 +1,17 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ede-project-class-files</strong> is a variable defined in `<code>auto.el</code>'.</br>
-Its value is shown <a href="#value">below</a>.</br>
-<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
-<strong id="documentation">Documentation:</strong></br>
-List of vectors defining how to determine what type of projects exist.</br>
-</br>
-<strong id="value">Value:</strong> <pre></br>
-([object ede-project-autoload "linux" "LINUX ROOT" ede/linux "scripts/ver_linux" "linux[^/]*" ede-linux-project-root nil ede-linux-load ede-linux-project nil nil t]
- [object ede-project-autoload "emacs" "EMACS ROOT" ede/emacs "src/emacs.c" "emacs[^/]*" ede-emacs-project-root nil ede-emacs-load ede-emacs-project nil nil t]
- [object ede-project-autoload "cpp-root" "CPP ROOT" ede/cpp-root ede-cpp-root-project-file-for-dir "" ede-cpp-root-project-root nil ede-cpp-root-load ede-cpp-root-project nil nil t]
- [object ede-project-autoload "edeproject-makefile" "Make" ede/proj "Project.ede" "" unbound nil ede-proj-load ede-proj-project nil t nil]
- [object ede-project-autoload "edeproject-automake" "Automake" ede/proj "Project.ede" "" unbound
+---
+title: "ede-project-class-files"
+layout: doc
+---
+<strong>ede-project-class-files</strong> is a variable defined in `<code>auto.el</code>'.</br>
+Its value is <pre></br>
+([object ede-project-autoload "linux" "LINUX ROOT" ede/linux "scripts/ver_linux" t nil unbound nil ede-linux-load ede-linux-project nil nil t]
+ [object ede-project-autoload "emacs" "EMACS ROOT" ede/emacs "src/emacs.c" t nil unbound nil ede-emacs-load ede-emacs-project nil nil t]
+ [object ede-project-autoload "edeproject-makefile" "Make" ede/proj "Project.ede" nil nil unbound nil ede-proj-load ede-proj-project nil t nil]
+ [object ede-project-autoload "edeproject-automake" "Automake" ede/proj "Project.ede" nil nil unbound
 	 (:makefile-type Makefile\.am)
 	 ede-proj-load ede-proj-project nil t nil]
- [object ede-project-autoload "automake" "automake" ede/project-am "Makefile.am" "" unbound nil project-am-load project-am-makefile nil nil t])
+ [object ede-project-autoload "automake" "automake" ede/project-am "Makefile.am" nil nil unbound nil project-am-load project-am-makefile nil nil t])
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+List of vectors defining how to determine what type of projects exist.

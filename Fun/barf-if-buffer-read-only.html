@@ -1,5 +1,11 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>barf-if-buffer-read-only</strong> is a built-in function in `<code>C source code</code>'.</br>
+---
+title: "barf-if-buffer-read-only"
+layout: doc
+---
+<strong>barf-if-buffer-read-only</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
-(barf-if-buffer-read-only)</br>
+(barf-if-buffer-read-only &optional <u>POS</u>)</br>
 </br>
-Signal a `buffer-read-only' error if the current buffer is read-only.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+Signal a `buffer-read-only' error if the current buffer is read-only.</br>
+If the text under POSITION (which defaults to point) has the</br>
+`inhibit-read-only' text property set, the error will not be raised.

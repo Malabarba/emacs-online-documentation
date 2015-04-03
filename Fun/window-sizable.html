@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>window-sizable</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+---
+title: "window-sizable"
+layout: doc
+---
+<strong>window-sizable</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
 </br>
 (window-sizable <u>WINDOW</u> <u>DELTA</u> &optional <u>HORIZONTAL</u> <u>IGNORE</u> <u>PIXELWISE</u>)</br>
 </br>
@@ -22,13 +26,6 @@ columns.  If <u>WINDOW</u> cannot be shrunk by -<u>DELTA</u> lines or columns,</
 return the minimum value in the range <u>DELTA</u>..0 by which <u>WINDOW</u></br>
 can be shrunk.</br>
 </br>
-Optional argument <u>IGNORE</u> non-nil means ignore restrictions</br>
-imposed by fixed size windows, `window-min-height' or</br>
-`window-min-width' settings.  If <u>IGNORE</u> equals `safe', live</br>
-windows may get as small as `window-safe-min-height' lines and</br>
-`window-safe-min-width' columns.  If <u>IGNORE</u> is a window, ignore</br>
-restrictions for that window only.  Any other non-nil value means</br>
-ignore all of the above restrictions for all windows.</br>
-</br>
-Optional argument <u>PIXELWISE</u> non-nil means interpret <u>DELTA</u> as</br>
-pixels.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+The optional argument <u>IGNORE</u> has the same meaning as for</br>
+`window-resizable'.  Optional argument <u>PIXELWISE</u> non-nil means</br>
+interpret <u>DELTA</u> as pixels.

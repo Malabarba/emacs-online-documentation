@@ -1,0 +1,16 @@
+---
+title: "cconv-analyze-form"
+layout: doc
+---
+<strong>cconv-analyze-form</strong> is a compiled Lisp function in `<code>cconv.el</code>'.</br>
+</br>
+(cconv-analyze-form <u>FORM</u> <u>ENV</u>)</br>
+</br>
+Find mutated variables and variables captured by closure.</br>
+Analyze lambdas if they are suitable for lambda lifting.</br>
+- <u>FORM</u> is a piece of Elisp code after macroexpansion.</br>
+- <u>ENV</u> is an alist mapping each enclosing lexical variable to its info.</br>
+   I.e. each element has the form (VAR . (READ MUTATED CAPTURED CALLED)).</br>
+This function does not return anything but instead fills the</br>
+`cconv-captured+mutated' and `cconv-lambda-candidates' variables</br>
+and updates the data stored in <u>ENV</u>.

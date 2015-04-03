@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">chart is an  object constructor function in `chart.el'.</br>
+---
+title: "chart"
+layout: doc
+---
+chart is an  object constructor function in `chart.el'.</br>
 Creates an object of class chart.</br>
 Create a new object with name NAME of class type chart</br>
 </br>
@@ -22,39 +26,16 @@ Slot: key-label    default = "Key"</br>
 Slot: sequences    default = nil</br>
 Specialized Methods:</br>
 </br>
-`chart-draw-axis' :PRIMARY (arg1)</br>
-Draw axis into the current buffer defined by chart C.</br>
+`chart-sort' :PRIMARY (arg1 arg2)</br>
+Sort the data in chart C using predicate PRED.</br>
+See `chart-sort-matchlist' for more details.</br>
 </br>
-<code>(fn C</code>)</br>
-</br>
-`chart-add-sequence' :PRIMARY (arg1 &optional arg2 arg3)</br>
-Add to chart object C the sequence object SEQ.</br>
-If AXIS-LABEL, then the axis stored in C is updated with the bounds of SEQ,</br>
-or is created with the bounds of SEQ.</br>
-</br>
-(fn C &optional SEQ AXIS-LABEL)</br>
-</br>
-`chart-draw' :PRIMARY (arg1 &optional arg2)</br>
-Start drawing a chart object C in optional BUFF.</br>
-Erases current contents of buffer.</br>
-</br>
-(fn C &optional BUFF)</br>
+<code>(fn C PRED</code>)</br>
 </br>
 `chart-translate-ypos' :PRIMARY (arg1 arg2)</br>
 Translate in chart C the coordinate Y into a screen row.</br>
 </br>
 (fn C Y)</br>
-</br>
-`chart-translate-xpos' :PRIMARY (arg1 arg2)</br>
-Translate in chart C the coordinate X into a screen column.</br>
-</br>
-(fn C X)</br>
-</br>
-`chart-sort' :PRIMARY (arg1 arg2)</br>
-Sort the data in chart C using predicate PRED.</br>
-See `chart-sort-matchlist' for more details.</br>
-</br>
-(fn C PRED)</br>
 </br>
 `chart-translate-namezone' :PRIMARY (arg1 arg2)</br>
 Return a dot-pair representing a positional range for a name.</br>
@@ -68,6 +49,23 @@ Trim all sequences in chart C to be at most MAX elements long.</br>
 </br>
 (fn C MAX)</br>
 </br>
+`chart-add-sequence' :PRIMARY (arg1 &optional arg2 arg3)</br>
+Add to chart object C the sequence object SEQ.</br>
+If AXIS-LABEL, then the axis stored in C is updated with the bounds of SEQ,</br>
+or is created with the bounds of SEQ.</br>
+</br>
+(fn C &optional SEQ AXIS-LABEL)</br>
+</br>
+`chart-draw-axis' :PRIMARY (arg1)</br>
+Draw axis into the current buffer defined by chart C.</br>
+</br>
+(fn C)</br>
+</br>
+`chart-translate-xpos' :PRIMARY (arg1 arg2)</br>
+Translate in chart C the coordinate X into a screen column.</br>
+</br>
+(fn C X)</br>
+</br>
 `chart-size-in-dir' :PRIMARY (arg1 arg2)</br>
 Return the physical size of chart C in direction DIR.</br>
 </br>
@@ -79,4 +77,10 @@ Argument C is the chart object.</br>
 </br>
 (fn C)</br>
 </br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+`chart-draw' :PRIMARY (arg1 &optional arg2)</br>
+Start drawing a chart object C in optional BUFF.</br>
+Erases current contents of buffer.</br>
+</br>
+(fn C &optional BUFF)</br>
+</br>
+

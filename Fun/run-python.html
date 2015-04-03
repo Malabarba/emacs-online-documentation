@@ -1,18 +1,23 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>run-python</strong> is an interactive autoloaded compiled Lisp function in `<code>python.el</code>'.</br>
+---
+title: "run-python"
+layout: doc
+---
+<strong>run-python</strong> is an interactive autoloaded compiled Lisp function in `<code>python.el</code>'.</br>
 </br>
 </br>
-(run-python <u>CMD</u> &optional <u>DEDICATED</u> <u>SHOW</u>)</br>
+(run-python &optional <u>CMD</u> <u>DEDICATED</u> <u>SHOW</u>)</br>
 </br>
 Run an inferior Python process.</br>
 Input and output via buffer named after</br>
 `python-shell-buffer-name'.  If there is a process already</br>
 running in that buffer, just switch to it.</br>
 </br>
-With argument, allows you to define <u>CMD</u> so you can edit the</br>
-command used to call the interpreter and define <u>DEDICATED</u>, so a</br>
-dedicated process for the current buffer is open.  When numeric</br>
-prefix arg is other than 0 or 4 do not <u>SHOW</u>.</br>
+Argument <u>CMD</u> defaults to `python-shell-calculate-command' return</br>
+value.  When called interactively with `prefix-arg', it allows</br>
+the user to edit such value and choose whether the interpreter</br>
+should be <u>DEDICATED</u> for the current buffer.  When numeric prefix</br>
+arg is other than 0 or 4 do not <u>SHOW</u>.</br>
 </br>
 Runs the hook `inferior-python-mode-hook' after</br>
 `comint-mode-hook' is run.  (Type C-h m in the</br>
-process buffer for a list of commands.)<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+process buffer for a list of commands.)

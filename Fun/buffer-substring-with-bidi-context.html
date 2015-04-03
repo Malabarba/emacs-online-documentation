@@ -1,0 +1,21 @@
+---
+title: "buffer-substring-with-bidi-context"
+layout: doc
+---
+<strong>buffer-substring-with-bidi-context</strong> is a compiled Lisp function in `<code>simple.el</code>'.</br>
+</br>
+(buffer-substring-with-bidi-context <u>START</u> <u>END</u> &optional <u>NO-PROPERTIES</u>)</br>
+</br>
+Return portion of current buffer between <u>START</u> and <u>END</u> with bidi context.</br>
+</br>
+This function works similar to `buffer-substring', but it prepends and</br>
+appends to the text bidi directional control characters necessary to</br>
+preserve the visual appearance of the text if it is inserted at another</br>
+place.  This is useful when the buffer substring includes bidirectional</br>
+text and control characters that cause non-trivial reordering on display.</br>
+If copied verbatim, such text can have a very different visual appearance,</br>
+and can also change the visual appearance of the surrounding text at the</br>
+destination of the copy.</br>
+</br>
+Optional argument <u>NO-PROPERTIES</u>, if non-nil, means copy the text without</br>
+the text properties.

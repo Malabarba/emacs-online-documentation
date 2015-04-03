@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">ede-project-placeholder is an  object constructor function in `base.el'.</br>
+---
+title: "ede-project-placeholder"
+layout: doc
+---
+ede-project-placeholder is an  object constructor function in `base.el'.</br>
 Creates an object of class ede-project-placeholder.</br>
 Create a new object with name NAME of class type ede-project-placeholder</br>
 </br>
@@ -55,9 +59,11 @@ Specialized Methods:</br>
 `ede-find-subproject-for-directory' :PRIMARY (proj dir)</br>
 Find a subproject of PROJ that corresponds to DIR.</br>
 </br>
-`ede-project-root' :PRIMARY (this)</br>
-If a project knows its root, return it here.</br>
-Allows for one-project-object-for-a-tree type systems.</br>
+`ede--project-inode' :PRIMARY (proj)</br>
+Get the inode of the directory project PROJ is in.</br>
+</br>
+`project-interactive-select-target' :PRIMARY (this prompt)</br>
+Make sure placeholder THIS is replaced with the real thing, and pass through.</br>
 </br>
 `ede-project-root-directory' :PRIMARY (this &optional file)</br>
 If a project knows its root, return it here.</br>
@@ -65,13 +71,11 @@ Allows for one-project-object-for-a-tree type systems.</br>
 Optional FILE is the file to test.  It is ignored in preference</br>
 of the anchor file for the project.</br>
 </br>
+`ede-project-root' :PRIMARY (this)</br>
+If a project knows its root, return it here.</br>
+Allows for one-project-object-for-a-tree type systems.</br>
+</br>
 `project-add-file' :PRIMARY (this file)</br>
 Make sure placeholder THIS is replaced with the real thing, and pass through.</br>
 </br>
-`ede--project-inode' :PRIMARY (proj)</br>
-Get the inode of the directory project PROJ is in.</br>
-</br>
-`project-interactive-select-target' :PRIMARY (this prompt)</br>
-Make sure placeholder THIS is replaced with the real thing, and pass through.</br>
-</br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

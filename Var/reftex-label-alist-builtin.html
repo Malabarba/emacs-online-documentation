@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-label-alist-builtin</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+---
+title: "reftex-label-alist-builtin"
+layout: doc
+---
+<strong>reftex-label-alist-builtin</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -10,7 +14,7 @@ distribution.  Mixed-case symbols are convenience aliases.</br>
 ((Sideways "Alias for -->rotating"
 	   (rotating))
  (AMSTeX "amsmath with eqref macro"
-	 ((nil 101 nil "~\\eqref{%s}")
+	 ((nil 101 nil "~\\eqref{{ "{%" }}s}")
 	  amsmath))
  (amsmath "AMS-LaTeX math environments"
 	  (("align" 101 nil nil eqnarray-like)
@@ -22,7 +26,7 @@ distribution.  Mixed-case symbols are convenience aliases.</br>
 	   ("xxalignat" 101 nil nil alignat-like)
 	   ("subequations" 101 nil nil t)))
  (endnotes "The \\endnote macro"
-	   (("\\endnote[]{}" 78 "en:" "~\\ref{%s}" 2
+	   (("\\endnote[]{}" 78 "en:" "~\\ref{{ "{%" }}s}" 2
 	     (regexp "endnotes?" "notes?" "Anmerkung\\(en\\)?" "Anm\\."))))
  (fancybox "The Beqnarray environment"
 	   (("Beqnarray" 101 nil nil eqnarray-like)))
@@ -48,32 +52,32 @@ distribution.  Mixed-case symbols are convenience aliases.</br>
  (wrapfig "The wrapfigure environment"
 	  (("wrapfigure" 102 nil nil caption)))
  (ctable "The ctable package"
-	 (("\\ctable[]{}{}{}" 116 "tab:" "~\\ref{%s}" 1
+	 (("\\ctable[]{}{}{}" 116 "tab:" "~\\ref{{ "{%" }}s}" 1
 	   ("table" "Tabelle"))))
  (listings "The listings package"
-	   (("lstlisting" 108 "lst:" "~\\ref{%s}" nil
+	   (("lstlisting" 108 "lst:" "~\\ref{{ "{%" }}s}" nil
 	     (regexp "[Ll]isting"))))
  (minted "The minted package"
-	 (("minted" 108 "lst:" "~\\ref{%s}" nil
+	 (("minted" 108 "lst:" "~\\ref{{ "{%" }}s}" nil
 	   (regexp "[Ll]isting"))))
  (LaTeX "LaTeX default environments"
-	(("section" 115 "%S" "~\\ref{%s}"
+	(("section" 115 "%S" "~\\ref{{ "{%" }}s}"
 	  (nil . t)
 	  (regexp "parts?" "chapters?" "chap\\." "sections?" "sect?\\." "paragraphs?" "par\\." "\\\\S" "\247" "Teile?" "Kapitel" "Kap\\." "Abschnitte?" "appendi\\(x\\|ces\\)" "App\\." "Anh\"?ange?" "Anh\\."))
-	 ("enumerate" 105 "item:" "~\\ref{%s}" item
+	 ("enumerate" 105 "item:" "~\\ref{{ "{%" }}s}" item
 	  (regexp "items?" "Punkte?"))
-	 ("equation" 101 "eq:" "~(\\ref{%s})" t
+	 ("equation" 101 "eq:" "~(\\ref{{ "{%" }}s})" t
 	  (regexp "equations?" "eqs?\\." "eqn\\." "Gleichung\\(en\\)?" "Gl\\."))
 	 ("eqnarray" 101 "eq:" nil eqnarray-like)
-	 ("figure" 102 "fig:" "~\\ref{%s}" caption
+	 ("figure" 102 "fig:" "~\\ref{{ "{%" }}s}" caption
 	  (regexp "figure?[sn]?" "figs?\\." "Abbildung\\(en\\)?" "Abb\\."))
 	 ("figure*" 102 nil nil caption)
-	 ("table" 116 "tab:" "~\\ref{%s}" caption
+	 ("table" 116 "tab:" "~\\ref{{ "{%" }}s}" caption
 	  (regexp "tables?" "tab\\." "Tabellen?"))
 	 ("table*" 116 nil nil caption)
-	 ("\\footnote[]{}" 110 "fn:" "~\\ref{%s}" 2
+	 ("\\footnote[]{}" 110 "fn:" "~\\ref{{ "{%" }}s}" 2
 	  (regexp "footnotes?" "Fussnoten?"))
-	 ("any" 32 " " "~\\ref{%s}" nil)))
+	 ("any" 32 " " "~\\ref{{ "{%" }}s}" nil)))
  (Texinfo "Texinfo default environments" nil))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

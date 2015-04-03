@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>mml-mode-map</strong> is a variable defined in `<code>mml.el</code>'.</br>
+---
+title: "mml-mode-map"
+layout: doc
+---
+<strong>mml-mode-map</strong> is a variable defined in `<code>mml.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -12,7 +16,7 @@ Not documented as a variable.</br>
 				(Attach\ File\.\.\. menu-item "Attach File..." mml-attach-file :help "Attach a file at point")
 				(Attach\ Buffer\.\.\. menu-item "Attach Buffer..." mml-attach-buffer :help "Attach a buffer to the outgoing message")
 				(Attach\ External\.\.\. menu-item "Attach External..." mml-attach-external :help "Attach reference to an external file")
-				(Externalize\ Attachments menu-item "Externalize Attachments" menu-function-191 :key-sequence nil :visible
+				(Externalize\ Attachments menu-item "Externalize Attachments" menu-function-183 :key-sequence nil :visible
 							  (and
 							   (boundp 'gnus-gcc-externalize-attachments)
 							   (memq gnus-gcc-externalize-attachments
@@ -23,13 +27,13 @@ Not documented as a variable.</br>
 				(nil menu-item "----")
 				(Change\ Security\ Method menu-item "Change Security Method"
 							  (keymap "Change Security Method"
-								  (PGP/MIME menu-item "PGP/MIME" menu-function-192 :key-sequence nil :button
+								  (PGP/MIME menu-item "PGP/MIME" menu-function-184 :key-sequence nil :button
 									    (:radio equal mml-secure-method "pgpmime")
 									    :help "Set Security Method to PGP/MIME")
-								  (S/MIME menu-item "S/MIME" menu-function-193 :key-sequence nil :button
+								  (S/MIME menu-item "S/MIME" menu-function-185 :key-sequence nil :button
 									  (:radio equal mml-secure-method "smime")
 									  :help "Set Security Method to S/MIME")
-								  (Inline\ PGP menu-item "Inline PGP" menu-function-194 :key-sequence nil :button
+								  (Inline\ PGP menu-item "Inline PGP" menu-function-186 :key-sequence nil :button
 									       (:radio equal mml-secure-method "pgp")
 									       :help "Set Security Method to inline PGP")))
 				(Sign\ Message menu-item "Sign Message" mml-secure-message-sign)
@@ -49,13 +53,13 @@ Not documented as a variable.</br>
 				(Validate\ MML menu-item "Validate MML" mml-validate)
 				(Preview menu-item "Preview" mml-preview)
 				(nil-18 menu-item "----")
-				(Emacs\ MIME\ manual menu-item "Emacs MIME manual" menu-function-195 :key-sequence nil :help "Display the Emacs MIME manual")
-				(PGG\ manual menu-item "PGG manual" menu-function-196 :key-sequence nil :visible
+				(Emacs\ MIME\ manual menu-item "Emacs MIME manual" menu-function-187 :key-sequence nil :help "Display the Emacs MIME manual")
+				(PGG\ manual menu-item "PGG manual" menu-function-188 :key-sequence nil :visible
 					     (and
 					      (boundp 'mml2015-use)
 					      (equal mml2015-use 'pgg))
 					     :help "Display the PGG manual")
-				(EasyPG\ manual menu-item "EasyPG manual" menu-function-197 :key-sequence nil :visible
+				(EasyPG\ manual menu-item "EasyPG manual" menu-function-189 :key-sequence nil :visible
 						(and
 						 (boundp 'mml2015-use)
 						 (equal mml2015-use 'epg))
@@ -94,4 +98,4 @@ Not documented as a variable.</br>
 	(3 . mml-secure-message-encrypt)
 	(19 . mml-secure-message-sign))))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

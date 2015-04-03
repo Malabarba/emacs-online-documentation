@@ -1,0 +1,23 @@
+---
+title: "tildify-pattern"
+layout: doc
+---
+<strong>tildify-pattern</strong> is a variable defined in `<code>tildify.el</code>'.</br>
+Its value is <pre></br>
+"\\(?:[,:;(][ 	]*[a]\\|\\<[AIKOSUVZikosuvz]\\)\\([ 	]+\\|[ 	]*\n[ 	]*\\)\\(?:\\w\\|[([{\\]\\|<[a-zA-Z]\\)"</pre></br>
+<ul><li>  This variable is safe as a file local variable if its value</br>
+  satisfies the predicate `t'.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A pattern specifying where to insert hard spaces.</br>
+</br>
+`tildify-buffer' function will replace first capturing group of the regexp with</br>
+a hard space (as defined by `tildify-space-string' variable).  (Hint: \(…\)</br>
+non-capturing groups can be used for grouping prior to the part of the regexp</br>
+matching the white space).  The pattern is matched case-sensitive regardless of</br>
+the value of `case-fold-search' setting.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 25.1 of Emacs.
+

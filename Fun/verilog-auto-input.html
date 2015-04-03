@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>verilog-auto-input</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+---
+title: "verilog-auto-input"
+layout: doc
+---
+<strong>verilog-auto-input</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
 </br>
 (verilog-auto-input)</br>
 </br>
@@ -17,6 +21,9 @@ Limitations:</br>
   instantiation, all bets are off.  (For example due to an AUTO_TEMPLATE).</br>
 </br>
   Typedefs must match `verilog-typedef-regexp', which is disabled by default.</br>
+</br>
+  Types are added to declarations if an AUTOLOGIC or</br>
+  `verilog-auto-wire-type' is set to logic.</br>
 </br>
   Signals matching `verilog-auto-input-ignore-regexp' are not included.</br>
 </br>
@@ -49,4 +56,4 @@ You may also provide an optional regular expression, in which case only</br>
 signals matching the regular expression will be included.  For example the</br>
 same expansion will result from only extracting inputs starting with i:</br>
 </br>
-	   /*AUTOINPUT("^i")*/<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+	   /*AUTOINPUT("^i")*/

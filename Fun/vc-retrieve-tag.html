@@ -1,11 +1,19 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>vc-retrieve-tag</strong> is an interactive autoloaded compiled Lisp function in `<code>vc.el</code>'.</br>
+---
+title: "vc-retrieve-tag"
+layout: doc
+---
+<strong>vc-retrieve-tag</strong> is an interactive autoloaded compiled Lisp function in `<code>vc.el</code>'.</br>
 </br>
 It is bound to C-x v r, &lt;menu-bar> &lt;tools> &lt;vc> &lt;vc-retrieve-tag>.</br>
 </br>
 <code>(vc-retrieve-tag <u>DIR</u> <u>NAME</u></code>)</br>
 </br>
-Descending recursively from <u>DIR</u>, retrieve the tag called <u>NAME</u>.</br>
-If <u>NAME</u> is empty, it refers to the latest revisions.</br>
+For each file in or below <u>DIR</u>, retrieve their tagged version <u>NAME</u>.</br>
+<u>NAME</u> can name a branch, in which case this command will switch to the</br>
+named branch in the directory <u>DIR</u>.</br>
+Interactively, prompt for <u>DIR</u> only for VCS that works at file level;</br>
+otherwise use the default directory of the current buffer.</br>
+If <u>NAME</u> is empty, it refers to the latest revisions of the current branch.</br>
 If locking is used for the files in <u>DIR</u>, then there must not be any</br>
 locked files at or below <u>DIR</u> (but if <u>NAME</u> is empty, locked files are</br>
-allowed and simply skipped).<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+allowed and simply skipped).

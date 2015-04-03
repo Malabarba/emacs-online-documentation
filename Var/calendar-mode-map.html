@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>calendar-mode-map</strong> is a variable defined in `<code>calendar.el</code>'.</br>
+---
+title: "calendar-mode-map"
+layout: doc
+---
+<strong>calendar-mode-map</strong> is a variable defined in `<code>calendar.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -245,10 +249,7 @@ Keymap for `calendar-mode'.</br>
 	      nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
 	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
  (vertical-scroll-bar keymap
-		      (drag-mouse-3 . calendar-scroll-right)
-		      (mouse-3 . calendar-scroll-right)
-		      (drag-mouse-1 . calendar-scroll-left)
-		      (mouse-1 . calendar-scroll-left))
+		      (mouse-1 . calendar-scroll-toolkit-scroll))
  (down-mouse-2 menu-item "Calendar"
 	       (keymap "Calendar"
 		       (Scroll\ forward menu-item "Scroll forward" calendar-scroll-left-three-months)
@@ -299,10 +300,10 @@ Keymap for `calendar-mode'.</br>
 			   (Scroll\ Commands menu-item "Scroll Commands" nil :help "Commands that scroll the visible window")
 			   (Forward\ 1\ Month menu-item "Forward 1 Month" calendar-scroll-left)
 			   (Forward\ 3\ Months menu-item "Forward 3 Months" calendar-scroll-left-three-months)
-			   (Forward\ 1\ Year menu-item "Forward 1 Year" menu-function-246 :keys "4 C-v")
+			   (Forward\ 1\ Year menu-item "Forward 1 Year" menu-function-222 :keys "4 C-v")
 			   (Backward\ 1\ Month menu-item "Backward 1 Month" calendar-scroll-right)
 			   (Backward\ 3\ Months menu-item "Backward 3 Months" calendar-scroll-right-three-months)
-			   (Backward\ 1\ Year menu-item "Backward 1 Year" menu-function-247 :keys "4 M-v")
+			   (Backward\ 1\ Year menu-item "Backward 1 Year" menu-function-223 :keys "4 M-v")
 			   (nil-7 menu-item "--")
 			   (Motion\ Commands menu-item "Motion Commands" nil :help "Commands that move point")
 			   (Forward\ 1\ Day menu-item "Forward 1 Day" calendar-forward-day)
@@ -362,52 +363,52 @@ Keymap for `calendar-mode'.</br>
 						    (calendar-date-string
 						     (calendar-current-date)
 						     t t))
-					    menu-function-234 :key-sequence nil)
+					    menu-function-210 :key-sequence nil)
 			     (nil-7 menu-item "--")
 			     (hol-year-0 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year -5))
-					 menu-function-235 :key-sequence nil)
+					 menu-function-211 :key-sequence nil)
 			     (hol-year-1 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year -4))
-					 menu-function-236 :key-sequence nil)
+					 menu-function-212 :key-sequence nil)
 			     (hol-year-2 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year -3))
-					 menu-function-237 :key-sequence nil)
+					 menu-function-213 :key-sequence nil)
 			     (hol-year-3 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year -2))
-					 menu-function-238 :key-sequence nil)
+					 menu-function-214 :key-sequence nil)
 			     (hol-year-4 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year -1))
-					 menu-function-239 :key-sequence nil)
+					 menu-function-215 :key-sequence nil)
 			     (hol-year-5 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year 0))
-					 menu-function-240 :key-sequence nil)
+					 menu-function-216 :key-sequence nil)
 			     (hol-year-6 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year 1))
-					 menu-function-241 :key-sequence nil)
+					 menu-function-217 :key-sequence nil)
 			     (hol-year-7 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year 2))
-					 menu-function-242 :key-sequence nil)
+					 menu-function-218 :key-sequence nil)
 			     (hol-year-8 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year 3))
-					 menu-function-243 :key-sequence nil)
+					 menu-function-219 :key-sequence nil)
 			     (hol-year-9 menu-item
 					 (format "For Year %d"
 						 (+ displayed-year 4))
-					 menu-function-244 :key-sequence nil)
+					 menu-function-220 :key-sequence nil)
 			     (hol-year-10 menu-item
 					  (format "For Year %d"
 						  (+ displayed-year 5))
-					  menu-function-245 :key-sequence nil)
+					  menu-function-221 :key-sequence nil)
 			     (nil-7-15 menu-item "--")
 			     (Unmark\ Calendar menu-item "Unmark Calendar" calendar-unmark)
 			     (Mark\ Holidays menu-item "Mark Holidays" calendar-mark-holidays)))
@@ -476,4 +477,4 @@ Keymap for `calendar-mode'.</br>
 	(narrow-to-region . calendar-not-implemented)
 	(self-insert-command . undefined)))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

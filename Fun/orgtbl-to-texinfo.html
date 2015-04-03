@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>orgtbl-to-texinfo</strong> is an autoloaded Lisp function in `<code>org-table.el</code>'.</br>
+---
+title: "orgtbl-to-texinfo"
+layout: doc
+---
+<strong>orgtbl-to-texinfo</strong> is an autoloaded Lisp function in `<code>org-table.el</code>'.</br>
 </br>
 (orgtbl-to-texinfo <u>TABLE</u> <u>PARAMS</u>)</br>
 </br>
@@ -14,9 +18,9 @@ TeXInfo are:</br>
 </br>
 :fmt fmt           A format to be used to wrap the field, should contain</br>
                    %s for the original field value.  For example, to wrap</br>
-                   everything in @kbd{}, you could use :fmt "@kbd{%s}".</br>
+                   everything in @kbd{}, you could use :fmt "@kbd{{ "{%" }}s}".</br>
                    This may also be a property list with column numbers and</br>
-                   formats.  For example :fmt (2 "@kbd{%s}" 4 "@code{%s}").</br>
+                   formats.  For example :fmt (2 "@kbd{{ "{%" }}s}" 4 "@code{{ "{%" }}s}").</br>
                    Each format also may be a function that formats its one</br>
                    argument.</br>
 </br>
@@ -25,4 +29,4 @@ TeXInfo are:</br>
                    under org-mode.</br>
 </br>
 The general parameters :skip and :skipcols have already been applied when</br>
-this function is called.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+this function is called.

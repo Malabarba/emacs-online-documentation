@@ -1,10 +1,17 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>compare-windows</strong> is an interactive autoloaded compiled Lisp function in `<code>compare-w.el</code>'.</br>
+---
+title: "compare-windows"
+layout: doc
+---
+<strong>compare-windows</strong> is an interactive autoloaded compiled Lisp function in `<code>compare-w.el</code>'.</br>
 </br>
 It is bound to &lt;menu-bar> &lt;tools> &lt;compare> &lt;window>.</br>
 </br>
 <code>(compare-windows <u>IGNORE-WHITESPACE</u></code>)</br>
 </br>
-Compare text in current window with text in next window.</br>
+Compare text in current window with text in another window.</br>
+The option `compare-windows-get-window-function' defines how</br>
+to get another window.</br>
+</br>
 Compares the text starting at point in each window,</br>
 moving over text in each one as far as they match.</br>
 </br>
@@ -27,4 +34,4 @@ If `compare-windows-sync' is non-nil, then successive calls of</br>
 this command work in interlaced mode:</br>
 on first call it advances points to the next difference,</br>
 on second call it synchronizes points by skipping the difference,</br>
-on third call it again advances points to the next difference and so on.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+on third call it again advances points to the next difference and so on.

@@ -1,20 +1,34 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>help-window-select</strong> is a variable defined in `<code>help.el</code>'.</br>
-Its value is <pre>other</pre></br>
+---
+title: "help-window-select"
+layout: doc
+---
+<strong>help-window-select</strong> is a variable defined in `<code>help.el</code>'.</br>
+Its value is <pre>nil</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
 Non-nil means select help window for viewing.</br>
 Choices are:</br>
+</br>
  never (nil) Select help window only if there is no other window</br>
              on its frame.</br>
- other       Select help window unless the selected window is the</br>
-             only other window on the help window's frame.</br>
+</br>
+ other       Select help window if and only if it appears on the</br>
+             previously selected frame, that frame contains at</br>
+             least two other windows and the help window is</br>
+             either new or showed a different buffer before.</br>
+</br>
  always (t)  Always select the help window.</br>
 </br>
+If this option is non-nil and the help window appears on another</br>
+frame, then give that frame input focus too.  Note also that if</br>
+the help window appears on another frame, it may get selected and</br>
+its frame get input focus even if this option is nil.</br>
+</br>
 This option has effect if and only if the help window was created</br>
-by `with-help-window'</br>
+by `with-help-window'.</br>
 </br>
 You can customize this variable.</br>
 </br>
 This variable was introduced, or its default value was changed, in
 version 23.1 of Emacs.
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

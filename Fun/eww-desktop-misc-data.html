@@ -1,0 +1,18 @@
+---
+title: "eww-desktop-misc-data"
+layout: doc
+---
+<strong>eww-desktop-misc-data</strong> is a compiled Lisp function in `<code>eww.el</code>'.</br>
+</br>
+(eww-desktop-misc-data <u>DIRECTORY</u>)</br>
+</br>
+Return a property list with data used to restore eww buffers.</br>
+This list will contain, as :history, the list, whose first element is</br>
+the value of `eww-data', and the tail is `eww-history'.</br>
+</br>
+If `eww-desktop-remove-duplicates' is non-nil, duplicate</br>
+entries (if any) will be removed from the list.</br>
+</br>
+Only the properties listed in `eww-desktop-data-save' are included.</br>
+Generally, the list should not include the (usually overly large)</br>
+:dom, :source and :text properties.

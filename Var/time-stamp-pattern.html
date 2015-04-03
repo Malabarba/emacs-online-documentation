@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>time-stamp-pattern</strong> is a variable defined in `<code>time-stamp.el</code>'.</br>
+---
+title: "time-stamp-pattern"
+layout: doc
+---
+<strong>time-stamp-pattern</strong> is a variable defined in `<code>time-stamp.el</code>'.</br>
 Its value is <pre>nil</pre></br>
 <ul><li>  This variable is safe as a file local variable if its value</br>
   satisfies the predicate `stringp'.</li></ul></br>
@@ -28,10 +32,10 @@ Examples:</br>
 "-10/"</br>
 "-9/^Last modified: %%$"</br>
 "@set Time-stamp: %:b %:d, %:y$"</br>
-"newcommand{\\\\timestamp}{%%}"</br>
+"newcommand{\\\\timestamp}{{ "{%" }}%}"</br>
 </br>
 Do not change `time-stamp-pattern' `time-stamp-line-limit',</br>
 `time-stamp-start', or `time-stamp-end' for yourself or you will be</br>
 incompatible with other people's files!  If you must change them for</br>
 some application, do so only in the local variables section of the</br>
-time-stamped file itself.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+time-stamped file itself.

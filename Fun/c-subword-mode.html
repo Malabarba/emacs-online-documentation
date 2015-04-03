@@ -1,0 +1,39 @@
+---
+title: "c-subword-mode"
+layout: doc
+---
+<strong>c-subword-mode</strong> is an alias for `<strong><a href="/Fun/subword-mode.html">subword-mode</a></strong>' in `<code>subword.el</code>'.</br>
+</br>
+</br>
+(c-subword-mode &optional <u>ARG</u>)</br>
+</br>
+This function is obsolete since 23.2;</br>
+use `subword-mode' instead.</br>
+</br>
+Toggle subword movement and editing (Subword mode).</br>
+With a prefix argument <u>ARG</u>, enable Subword mode if <u>ARG</u> is</br>
+positive, and disable it otherwise.  If called from Lisp, enable</br>
+the mode if <u>ARG</u> is omitted or nil.</br>
+</br>
+Subword mode is a buffer-local minor mode.  Enabling it changes</br>
+the definition of a word so that word-based commands stop inside</br>
+symbols with mixed uppercase and lowercase letters,</br>
+e.g. "GtkWidget", "EmacsFrameClass", "NSGraphicsContext".</br>
+</br>
+Here we call these mixed case symbols `nomenclatures'.  Each</br>
+capitalized (or completely uppercase) part of a nomenclature is</br>
+called a `subword'.  Here are some examples:</br>
+</br>
+  Nomenclature           Subwords</br>
+  ===========================================================</br>
+  GtkWindow          =>  "Gtk" and "Window"</br>
+  EmacsFrameClass    =>  "Emacs", "Frame" and "Class"</br>
+  NSGraphicsContext  =>  "NS", "Graphics" and "Context"</br>
+</br>
+This mode changes the definition of a word so that word commands</br>
+treat nomenclature boundaries as word boundaries.</br>
+</br>
+key             binding</br>
+---             -------</br>
+</br>
+

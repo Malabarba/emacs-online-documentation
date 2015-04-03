@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>define-hmac-function</strong> is a Lisp macro in `<code>hmac-def.el</code>'.</br>
+---
+title: "define-hmac-function"
+layout: doc
+---
+<strong>define-hmac-function</strong> is a Lisp macro in `<code>hmac-def.el</code>'.</br>
 </br>
 (define-hmac-function <u>NAME</u> <u>H</u> <u>B</u> <u>L</u> &optional <u>BIT</u>)</br>
 </br>
@@ -10,4 +14,4 @@ HMAC function is <u>H</u>(KEY XOR opad, <u>H</u>(KEY XOR ipad, TEXT)):</br>
 a string and return a digest of it (in binary form).</br>
 <u>B</u> is a byte-length of a block size of <u>H</u>. (<u>B</u>=64 for both SHA1 and MD5.)</br>
 <u>L</u> is a byte-length of hash outputs. (<u>L</u>=16 for MD5, <u>L</u>=20 for SHA1.)</br>
-If <u>BIT</u> is non-nil, truncate output to specified bits.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+If <u>BIT</u> is non-nil, truncate output to specified bits.

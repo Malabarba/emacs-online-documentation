@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">ede-target is an  object constructor function in `base.el'.</br>
+---
+title: "ede-target"
+layout: doc
+---
+ede-target is an  object constructor function in `base.el'.</br>
 Creates an object of class ede-target.</br>
 Create a new object with name NAME of class type ede-target</br>
 </br>
@@ -62,25 +66,62 @@ to `speedbar-make-tag-line'.</br>
 </br>
 Specialized Methods:</br>
 </br>
-`eieio-speedbar-child-make-tag-lines' :PRIMARY (this depth)</br>
-Create a speedbar tag line for a child of THIS.</br>
-It has depth DEPTH.</br>
-</br>
-`ede-target-name' :PRIMARY (this)</br>
-Return the name of THIS target, suitable for make or debug style commands.</br>
-</br>
-`ede-object-menu' :STATIC (this)</br>
-Retrieves the slot `menu' from an object of class `ede-target'</br>
-</br>
 `ede-system-include-path' :PRIMARY (this)</br>
 Get the system include path used by project THIS.</br>
+</br>
+`eieio-speedbar-description' :PRIMARY (obj)</br>
+Provide a speedbar description for OBJ.</br>
+</br>
+`ede-want-file-source-p' :PRIMARY (this file)</br>
+Return non-nil if THIS target wants FILE.</br>
+</br>
+`ede-target-sourcecode' :PRIMARY (this)</br>
+Return the sourcecode objects which THIS permits.</br>
+</br>
+`project-delete-target' :PRIMARY (ot)</br>
+Delete the current target OT from its parent project.</br>
+</br>
+`ede-menu-items-build' :PRIMARY (obj &optional current)</br>
+Return a list of menu items for building target OBJ.</br>
+If optional argument CURRENT is non-nil, return sub-menu code.</br>
+</br>
+`project-debug-target' :PRIMARY (obj)</br>
+Run the current project target OBJ in a debugger.</br>
+</br>
+`ede-target-buffer-in-sourcelist' :PRIMARY (this buffer source)</br>
+Return non-nil if object THIS is in BUFFER to a SOURCE list.</br>
+Handles complex path issues.</br>
+</br>
+`ede-preprocessor-map' :PRIMARY (this)</br>
+Get the pre-processor map for project THIS.</br>
+</br>
+`eieio-speedbar-object-buttonname' :PRIMARY (object)</br>
+Return a string to use as a speedbar button for OBJECT.</br>
+</br>
+`project-compile-target' :PRIMARY (obj &optional command)</br>
+Compile the current target OBJ.</br>
+Argument COMMAND is the command to use for compiling the target.</br>
+</br>
+`project-edit-file-target' :PRIMARY (ot)</br>
+Edit the target OT associated with this file.</br>
+</br>
+`project-remove-file' :PRIMARY (ot fnnd)</br>
+Remove the current buffer from project target OT.</br>
+Argument FNND is an argument.</br>
+</br>
+`project-run-target' :PRIMARY (obj)</br>
+Run the current project target OBJ.</br>
+</br>
+`eieio-speedbar-object-children' :PRIMARY (this)</br>
+Return the list of speedbar display children for THIS.</br>
 </br>
 `ede-buffer-documentation-files' :PRIMARY (this buffer)</br>
 Check for some documentation files for THIS.</br>
 Also do a quick check to see if there is a Documentation tag in this BUFFER.</br>
 </br>
-`ede-name' :PRIMARY (this)</br>
-Return the name of THIS target.</br>
+`eieio-speedbar-derive-line-path' :PRIMARY (obj &optional depth)</br>
+Return the path to OBJ.</br>
+Optional DEPTH is the depth we start at.</br>
 </br>
 `ede-object-sourcecode' :STATIC (this)</br>
 Retrieves the slot `sourcetype' from an object of class `ede-target'</br>
@@ -89,22 +130,30 @@ Retrieves the slot `sourcetype' from an object of class `ede-target'</br>
 Provide a speedbar description for a plain-child of OBJ.</br>
 A plain child is a child element which is not an EIEIO object.</br>
 </br>
-`project-add-file' :PRIMARY (ot file)</br>
-Add the current buffer into project project target OT.</br>
-Argument FILE is the file to add.</br>
-</br>
-`eieio-speedbar-description' :PRIMARY (obj)</br>
-Provide a speedbar description for OBJ.</br>
-</br>
 `ede-map-target-buffers' :PRIMARY (this proc)</br>
 For THIS, execute PROC on all buffers belonging to THIS.</br>
+</br>
+`ede-want-file-p' :PRIMARY (this file)</br>
+Return non-nil if THIS target wants FILE.</br>
+</br>
+`ede-object-keybindings' :STATIC (this)</br>
+Retrieves the slot `keybindings' from an object of class `ede-target'</br>
 </br>
 `ede-buffer-header-file' :PRIMARY (this buffer)</br>
 There are no default header files in EDE.</br>
 Do a quick check to see if there is a Header tag in this buffer.</br>
 </br>
-`ede-want-file-source-p' :PRIMARY (this file)</br>
-Return non-nil if THIS target wants FILE.</br>
+`ede-documentation' :PRIMARY (this)</br>
+Return a list of files that provide documentation.</br>
+Documentation is not for object THIS, but is provided by THIS for other</br>
+files in the project.</br>
+</br>
+`ede-object-menu' :STATIC (this)</br>
+Retrieves the slot `menu' from an object of class `ede-target'</br>
+</br>
+`eieio-speedbar-child-make-tag-lines' :PRIMARY (this depth)</br>
+Create a speedbar tag line for a child of THIS.</br>
+It has depth DEPTH.</br>
 </br>
 `ede-convert-path' :PRIMARY (this path &optional project)</br>
 Convert path in a standard way for a given project.</br>
@@ -113,15 +162,11 @@ Argument THIS is the project to convert PATH to.</br>
 Optional PROJECT is the project that THIS belongs to.  Associating</br>
 a target to a project is expensive, so using this can speed things up.</br>
 </br>
-`ede-preprocessor-map' :PRIMARY (this)</br>
-Get the pre-processor map for project THIS.</br>
+`ede-buffer-mine' :PRIMARY (this buffer)</br>
+Return non-nil if object THIS lays claim to the file in BUFFER.</br>
 </br>
-`ede-menu-items-build' :PRIMARY (obj &optional current)</br>
-Return a list of menu items for building target OBJ.</br>
-If optional argument CURRENT is non-nil, return sub-menu code.</br>
-</br>
-`project-delete-target' :PRIMARY (ot)</br>
-Delete the current target OT from its parent project.</br>
+`ede-target-name' :PRIMARY (this)</br>
+Return the name of THIS target, suitable for make or debug style commands.</br>
 </br>
 `ede-expand-filename' :PRIMARY (this filename &optional force)</br>
 Return a fully qualified file name based on target THIS.</br>
@@ -129,55 +174,14 @@ FILENAME should be a filename which occurs in a directory in which THIS works.</
 Optional argument FORCE forces the default filename to be provided even if it</br>
 doesn't exist.</br>
 </br>
-`eieio-speedbar-object-buttonname' :PRIMARY (object)</br>
-Return a string to use as a speedbar button for OBJECT.</br>
+`ede-name' :PRIMARY (this)</br>
+Return the name of THIS target.</br>
 </br>
-`project-run-target' :PRIMARY (obj)</br>
-Run the current project target OBJ.</br>
-</br>
-`ede-want-file-p' :PRIMARY (this file)</br>
-Return non-nil if THIS target wants FILE.</br>
+`project-add-file' :PRIMARY (ot file)</br>
+Add the current buffer into project project target OT.</br>
+Argument FILE is the file to add.</br>
 </br>
 `ede-description' :PRIMARY (this)</br>
 Return a description suitable for the minibuffer about THIS.</br>
 </br>
-`ede-buffer-mine' :PRIMARY (this buffer)</br>
-Return non-nil if object THIS lays claim to the file in BUFFER.</br>
-</br>
-`eieio-speedbar-object-children' :PRIMARY (this)</br>
-Return the list of speedbar display children for THIS.</br>
-</br>
-`ede-target-sourcecode' :PRIMARY (this)</br>
-Return the sourcecode objects which THIS permits.</br>
-</br>
-`project-remove-file' :PRIMARY (ot fnnd)</br>
-Remove the current buffer from project target OT.</br>
-Argument FNND is an argument.</br>
-</br>
-`eieio-speedbar-derive-line-path' :PRIMARY (obj &optional depth)</br>
-Return the path to OBJ.</br>
-Optional DEPTH is the depth we start at.</br>
-</br>
-`project-edit-file-target' :PRIMARY (ot)</br>
-Edit the target OT associated with this file.</br>
-</br>
-`ede-documentation' :PRIMARY (this)</br>
-Return a list of files that provide documentation.</br>
-Documentation is not for object THIS, but is provided by THIS for other</br>
-files in the project.</br>
-</br>
-`project-compile-target' :PRIMARY (obj &optional command)</br>
-Compile the current target OBJ.</br>
-Argument COMMAND is the command to use for compiling the target.</br>
-</br>
-`ede-target-buffer-in-sourcelist' :PRIMARY (this buffer source)</br>
-Return non-nil if object THIS is in BUFFER to a SOURCE list.</br>
-Handles complex path issues.</br>
-</br>
-`project-debug-target' :PRIMARY (obj)</br>
-Run the current project target OBJ in a debugger.</br>
-</br>
-`ede-object-keybindings' :STATIC (this)</br>
-Retrieves the slot `keybindings' from an object of class `ede-target'</br>
-</br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

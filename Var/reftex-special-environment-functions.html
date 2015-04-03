@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-special-environment-functions</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+---
+title: "reftex-special-environment-functions"
+layout: doc
+---
+<strong>reftex-special-environment-functions</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
 Its value is <pre>nil</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -38,7 +42,7 @@ And here is the setup for RefTeX:</br>
    \end.  Here we use "linguex" as this name.</br>
 </br>
    (setq reftex-label-alist</br>
-         '(("linguex" ?x "ex:" "~\\ref{%s}" nil ("Example" "Ex."))))</br>
+         '(("linguex" ?x "ex:" "~\\ref{{ "{%" }}s}" nil ("Example" "Ex."))))</br>
 </br>
 2. Write a function to detect the list macros and the determinators as well.</br>
 </br>
@@ -63,4 +67,4 @@ And here is the setup for RefTeX:</br>
 </br>
    (setq reftex-special-environment-functions '(my-detect-linguex-list))</br>
 </br>
-You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+You can customize this variable.

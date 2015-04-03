@@ -1,0 +1,13 @@
+---
+title: "when-let"
+layout: doc
+---
+<strong>when-let</strong> is a Lisp macro in `<code>subr-x.el</code>'.</br>
+</br>
+(when-let <u>BINDINGS</u> &rest <u>BODY</u>)</br>
+</br>
+Process <u>BINDINGS</u> and if all values are non-nil eval <u>BODY</u>.</br>
+Argument <u>BINDINGS</u> is a list of tuples whose car is a symbol to be</br>
+bound and (optionally) used in <u>BODY</u>, and its cadr is a sexp to be</br>
+evalled to set symbol's value.  In the special case you only want</br>
+to bind a single value, <u>BINDINGS</u> can just be a plain tuple.

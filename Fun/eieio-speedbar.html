@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">eieio-speedbar is an  object constructor function in `eieio-speedbar.el'.</br>
+---
+title: "eieio-speedbar"
+layout: doc
+---
+eieio-speedbar is an  object constructor function in `eieio-speedbar.el'.</br>
 Creates an object of class eieio-speedbar.</br>
 You cannot create a new object of type eieio-speedbar</br>
 </br>
@@ -30,23 +34,6 @@ to `speedbar-make-tag-line'.</br>
 </br>
 Specialized Methods:</br>
 </br>
-`eieio-speedbar-child-make-tag-lines' :PRIMARY (object depth)</br>
-Base method for creating tag lines for non-object children.</br>
-</br>
-`eieio-speedbar-child-description' :PRIMARY (obj)</br>
-Return a description for a child of OBJ which is not an object.</br>
-</br>
-`eieio-speedbar-expand' :PRIMARY (object depth)</br>
-Expand OBJECT at indentation DEPTH.</br>
-Inserts a list of new tag lines representing expanded elements within</br>
-OBJECT.</br>
-</br>
-`eieio-speedbar-make-tag-line' :PRIMARY (object depth)</br>
-Insert a tag line into speedbar at point for OBJECT.</br>
-All objects a child of symbol `eieio-speedbar' can be created from</br>
-this method.  Override this if you need non-traditional tag lines.</br>
-Argument DEPTH is the depth at which the tag line is inserted.</br>
-</br>
 `eieio-speedbar-object-children' :PRIMARY (object)</br>
 Return a list of children to be displayed in speedbar.</br>
 If the return value is a list of OBJECTs, then those objects are</br>
@@ -54,4 +41,21 @@ queried for details.  If the return list is made of strings,</br>
 then this object will be queried for the details needed</br>
 to create a speedbar button.</br>
 </br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+`eieio-speedbar-expand' :PRIMARY (object depth)</br>
+Expand OBJECT at indentation DEPTH.</br>
+Inserts a list of new tag lines representing expanded elements within</br>
+OBJECT.</br>
+</br>
+`eieio-speedbar-child-description' :PRIMARY (obj)</br>
+Return a description for a child of OBJ which is not an object.</br>
+</br>
+`eieio-speedbar-make-tag-line' :PRIMARY (object depth)</br>
+Insert a tag line into speedbar at point for OBJECT.</br>
+All objects a child of symbol `eieio-speedbar' can be created from</br>
+this method.  Override this if you need non-traditional tag lines.</br>
+Argument DEPTH is the depth at which the tag line is inserted.</br>
+</br>
+`eieio-speedbar-child-make-tag-lines' :PRIMARY (object depth)</br>
+Base method for creating tag lines for non-object children.</br>
+</br>
+

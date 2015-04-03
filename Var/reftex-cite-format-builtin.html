@@ -1,86 +1,90 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>reftex-cite-format-builtin</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
+---
+title: "reftex-cite-format-builtin"
+layout: doc
+---
+<strong>reftex-cite-format-builtin</strong> is a variable defined in `<code>reftex-vars.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Builtin versions of the citation format.</br>
 The following conventions are valid for all alist entries:</br>
-`?' should always point to a straight \cite{%l} macro.</br>
+`?' should always point to a straight \cite{{ "{%" }}l} macro.</br>
 `?t'    should point to a textual citation (citation as a noun).</br>
 `?p'    should point to a parenthetical citation.</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
-((default "Default macro \\cite{%l}" "\\cite[]{%l}")
+((default "Default macro \\cite{{ "{%" }}l}" "\\cite[]{{ "{%" }}l}")
  (natbib "The Natbib package"
-	 ((13 . "\\cite[][]{%l}")
-	  (116 . "\\citet[][]{%l}")
-	  (84 . "\\citet*[][]{%l}")
-	  (112 . "\\citep[][]{%l}")
-	  (80 . "\\citep*[][]{%l}")
-	  (101 . "\\citep[e.g.][]{%l}")
-	  (115 . "\\citep[see][]{%l}")
-	  (97 . "\\citeauthor{%l}")
-	  (65 . "\\citeauthor*{%l}")
-	  (121 . "\\citeyear{%l}")
-	  (110 . "\\nocite{%l}")))
+	 ((13 . "\\cite[][]{{ "{%" }}l}")
+	  (116 . "\\citet[][]{{ "{%" }}l}")
+	  (84 . "\\citet*[][]{{ "{%" }}l}")
+	  (112 . "\\citep[][]{{ "{%" }}l}")
+	  (80 . "\\citep*[][]{{ "{%" }}l}")
+	  (101 . "\\citep[e.g.][]{{ "{%" }}l}")
+	  (115 . "\\citep[see][]{{ "{%" }}l}")
+	  (97 . "\\citeauthor{{ "{%" }}l}")
+	  (65 . "\\citeauthor*{{ "{%" }}l}")
+	  (121 . "\\citeyear{{ "{%" }}l}")
+	  (110 . "\\nocite{{ "{%" }}l}")))
  (amsrefs "The AMSRefs package"
-	  ((13 . "\\cite{%l}")
-	   (112 . "\\cite{%l}")
-	   (80 . "\\cites{%l}")
-	   (116 . "\\ocite{%l}")
-	   (84 . "\\ocites{%l}")
-	   (121 . "\\ycite{%l}")
-	   (89 . "\\ycites{%l}")
-	   (97 . "\\citeauthor{%l}")
-	   (65 . "\\citeauthory{%l}")
-	   (102 . "\\fullcite{%l}")
-	   (70 . "\\fullocite{%l}")
-	   (110 . "\\nocite{%l}")))
+	  ((13 . "\\cite{{ "{%" }}l}")
+	   (112 . "\\cite{{ "{%" }}l}")
+	   (80 . "\\cites{{ "{%" }}l}")
+	   (116 . "\\ocite{{ "{%" }}l}")
+	   (84 . "\\ocites{{ "{%" }}l}")
+	   (121 . "\\ycite{{ "{%" }}l}")
+	   (89 . "\\ycites{{ "{%" }}l}")
+	   (97 . "\\citeauthor{{ "{%" }}l}")
+	   (65 . "\\citeauthory{{ "{%" }}l}")
+	   (102 . "\\fullcite{{ "{%" }}l}")
+	   (70 . "\\fullocite{{ "{%" }}l}")
+	   (110 . "\\nocite{{ "{%" }}l}")))
  (jurabib "The Jurabib package"
-	  ((13 . "\\cite{%l}")
-	   (99 . "\\cite[][]{%l}")
-	   (116 . "\\citet{%l}")
-	   (112 . "\\citep{%l}")
-	   (101 . "\\citep[e.g.][]{%l}")
-	   (115 . "\\citep[see][]{%l}")
-	   (117 . "\\fullcite{%l}")
-	   (105 . "\\citetitle{%l}")
-	   (97 . "\\citeauthor{%l}")
-	   (101 . "\\citefield{}{%l}")
-	   (121 . "\\citeyear{%l}")
-	   (102 . "\\footcite{%l}")
-	   (70 . "\\footcite[][]{%l}")
-	   (108 . "\\footfullcite{%l}")))
- (bibentry "The Bibentry package" "\\bibentry{%l}")
+	  ((13 . "\\cite{{ "{%" }}l}")
+	   (99 . "\\cite[][]{{ "{%" }}l}")
+	   (116 . "\\citet{{ "{%" }}l}")
+	   (112 . "\\citep{{ "{%" }}l}")
+	   (101 . "\\citep[e.g.][]{{ "{%" }}l}")
+	   (115 . "\\citep[see][]{{ "{%" }}l}")
+	   (117 . "\\fullcite{{ "{%" }}l}")
+	   (105 . "\\citetitle{{ "{%" }}l}")
+	   (97 . "\\citeauthor{{ "{%" }}l}")
+	   (101 . "\\citefield{}{{ "{%" }}l}")
+	   (121 . "\\citeyear{{ "{%" }}l}")
+	   (102 . "\\footcite{{ "{%" }}l}")
+	   (70 . "\\footcite[][]{{ "{%" }}l}")
+	   (108 . "\\footfullcite{{ "{%" }}l}")))
+ (bibentry "The Bibentry package" "\\bibentry{{ "{%" }}l}")
  (harvard "The Harvard package"
-	  ((13 . "\\cite[]{%l}")
-	   (112 . "\\cite[]{%l}")
-	   (116 . "\\citeasnoun{%l}")
-	   (110 . "\\citeasnoun{%l}")
-	   (115 . "\\possessivecite{%l}")
-	   (101 . "\\citeaffixed{%l}{?}")
-	   (121 . "\\citeyear{%l}")
-	   (97 . "\\citename{%l}")))
+	  ((13 . "\\cite[]{{ "{%" }}l}")
+	   (112 . "\\cite[]{{ "{%" }}l}")
+	   (116 . "\\citeasnoun{{ "{%" }}l}")
+	   (110 . "\\citeasnoun{{ "{%" }}l}")
+	   (115 . "\\possessivecite{{ "{%" }}l}")
+	   (101 . "\\citeaffixed{{ "{%" }}l}{?}")
+	   (121 . "\\citeyear{{ "{%" }}l}")
+	   (97 . "\\citename{{ "{%" }}l}")))
  (chicago "The Chicago package"
-	  ((13 . "\\cite[]{%l}")
-	   (116 . "\\citeN[]{%l}")
-	   (84 . "\\shortciteN{%l}")
-	   (112 . "\\cite[]{%l}")
-	   (80 . "\\shortcite{%l}")
-	   (97 . "\\citeA{%l}")
-	   (65 . "\\shortciteA{%l}")
-	   (121 . "\\citeyear{%l}")))
+	  ((13 . "\\cite[]{{ "{%" }}l}")
+	   (116 . "\\citeN[]{{ "{%" }}l}")
+	   (84 . "\\shortciteN{{ "{%" }}l}")
+	   (112 . "\\cite[]{{ "{%" }}l}")
+	   (80 . "\\shortcite{{ "{%" }}l}")
+	   (97 . "\\citeA{{ "{%" }}l}")
+	   (65 . "\\shortciteA{{ "{%" }}l}")
+	   (121 . "\\citeyear{{ "{%" }}l}")))
  (astron "The Astron package"
-	 ((13 . "\\cite[]{%l}")
-	  (112 . "\\cite[]{%l}")
-	  (116 . "%2a (\\cite{%l})")))
+	 ((13 . "\\cite[]{{ "{%" }}l}")
+	  (112 . "\\cite[]{{ "{%" }}l}")
+	  (116 . "%2a (\\cite{{ "{%" }}l})")))
  (author-year "Do-it-yourself Author-year"
-	      ((13 . "\\cite{%l}")
-	       (116 . "%2a (%y)\\nocite{%l}")
-	       (112 . "(%2a %y\\nocite{%l})")))
+	      ((13 . "\\cite{{ "{%" }}l}")
+	       (116 . "%2a (%y)\\nocite{{ "{%" }}l}")
+	       (112 . "(%2a %y\\nocite{{ "{%" }}l})")))
  (locally "Full info in parenthesis" "(%2a %y, %j %v, %P, %e: %b, %u, %s %<)")
  (context "ConTeXt bib module"
 	  ((13 . "\\cite[%l]")
 	   (115 . "\\cite[][%l]")
 	   (110 . "\\nocite[%l]"))))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

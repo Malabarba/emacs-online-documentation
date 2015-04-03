@@ -1,0 +1,20 @@
+---
+title: "thread-first"
+layout: doc
+---
+<strong>thread-first</strong> is a Lisp macro in `<code>subr-x.el</code>'.</br>
+</br>
+(thread-first &rest <u>FORMS</u>)</br>
+</br>
+Thread <u>FORMS</u> elements as the first argument of their successor.</br>
+Example:</br>
+    (thread-first</br>
+      5</br>
+      (+ 20)</br>
+      (/ 25)</br>
+      -</br>
+      (+ 40))</br>
+Is equivalent to:</br>
+    (+ (- (/ (+ 5 20) 25)) 40)</br>
+Note how the single `-' got converted into a list before</br>
+threading.

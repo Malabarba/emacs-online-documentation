@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>global-map</strong> is a variable defined in `<code>subr.el</code>'.</br>
+---
+title: "global-map"
+layout: doc
+---
+<strong>global-map</strong> is a variable defined in `<code>subr.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -38,7 +42,10 @@ global map.</br>
  (mouse-4 . mwheel-scroll)
  (XF86WakeUp . ignore)
  (tool-bar menu-item "tool bar" ignore :filter tool-bar-make-keymap)
+ (C-f10 . buffer-menu-open)
  (f10 . menu-bar-open)
+ (horizontal-scroll-bar keymap
+			(mouse-1 . scroll-bar-toolkit-horizontal-scroll))
  (bottom-divider keymap
 		 (down-mouse-1 . mouse-drag-mode-line))
  (right-divider keymap
@@ -48,11 +55,7 @@ global map.</br>
 		(down-mouse-1 . mouse-drag-vertical-line)
 		(C-mouse-2 . mouse-split-window-vertically))
  (vertical-scroll-bar keymap
-		      (drag-mouse-3 . scroll-bar-scroll-down)
-		      (mouse-3 . scroll-bar-scroll-down)
-		      (down-mouse-2 . scroll-bar-drag)
-		      (drag-mouse-1 . scroll-bar-scroll-up)
-		      (mouse-1 . scroll-bar-scroll-up)
+		      (mouse-1 . scroll-bar-toolkit-scroll)
 		      (C-mouse-2 . mouse-split-window-vertically))
  (header-line keymap
 	      (mouse-1 . mouse-select-window)
@@ -614,13 +617,51 @@ global map.</br>
 		    (showhide-separator "--")
 		    (showhide menu-item "Show/Hide"
 			      (keymap
-			       (showhide-tool-bar menu-item "Tool-bar" toggle-tool-bar-mode-from-frame :help "Turn tool-bar on/off" :visible
-						  (display-graphic-p)
-						  :button
-						  (:toggle menu-bar-positive-p
-							   (frame-parameter
-							    (menu-bar-frame-for-menubar)
-							    'tool-bar-lines)))
+			       (showhide-tool-bar menu-item "Tool-bar"
+						  (keymap
+						   (showhide-tool-bar-none menu-item "None" menu-bar-showhide-tool-bar-menu-customize-disable :help "Turn tool-bar off" :visible
+									   (display-graphic-p)
+									   :button
+									   (:radio eq tool-bar-mode nil))
+						   (showhide-tool-bar-top menu-item "On the Top" menu-bar-showhide-tool-bar-menu-customize-enable-top :help "Tool-bar at the top" :visible
+									  (display-graphic-p)
+									  :button
+									  (:radio and tool-bar-mode
+										  (eq
+										   (frame-parameter
+										    (menu-bar-frame-for-menubar)
+										    'tool-bar-position)
+										   'top)))
+						   (showhide-tool-bar-bottom menu-item "On the Bottom" menu-bar-showhide-tool-bar-menu-customize-enable-bottom :help "Tool-bar at the bottom" :visible
+									     (display-graphic-p)
+									     :button
+									     (:radio and tool-bar-mode
+										     (eq
+										      (frame-parameter
+										       (menu-bar-frame-for-menubar)
+										       'tool-bar-position)
+										      'bottom)))
+						   (showhide-tool-bar-right menu-item "On the Right" menu-bar-showhide-tool-bar-menu-customize-enable-right :help "Tool-bar at the right side" :visible
+									    (display-graphic-p)
+									    :button
+									    (:radio and tool-bar-mode
+										    (eq
+										     (frame-parameter
+										      (menu-bar-frame-for-menubar)
+										      'tool-bar-position)
+										     'right)))
+						   (showhide-tool-bar-left menu-item "On the Left" menu-bar-showhide-tool-bar-menu-customize-enable-left :help "Tool-bar at the left side" :visible
+									   (display-graphic-p)
+									   :button
+									   (:radio and tool-bar-mode
+										   (eq
+										    (frame-parameter
+										     (menu-bar-frame-for-menubar)
+										     'tool-bar-position)
+										    'left)))
+						   "Tool-bar")
+						  :visible
+						  (display-graphic-p))
 			       (menu-bar-mode menu-item "Menu-bar" toggle-menu-bar-mode-from-frame :help "Turn menu-bar on/off" :button
 					      (:toggle menu-bar-positive-p
 						       (frame-parameter
@@ -1167,4 +1208,4 @@ global map.</br>
  (select-window . handle-select-window)
  (switch-frame . handle-switch-frame))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

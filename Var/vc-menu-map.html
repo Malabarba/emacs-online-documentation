@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>vc-menu-map</strong> is a variable defined in `<code>vc-hooks.el</code>'.</br>
+---
+title: "vc-menu-map"
+layout: doc
+---
+<strong>vc-menu-map</strong> is a variable defined in `<code>vc-hooks.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -12,15 +16,6 @@ Not documented as a variable.</br>
  (vc-next-action menu-item "Check In/Out" vc-next-action :help "Do the next logical version control operation on the current fileset")
  (vc-update menu-item "Update to Latest Version" vc-update :help "Update the current fileset's files to their tip revisions")
  (vc-revert menu-item "Revert to Base Version" vc-revert :help "Revert working copies of the selected file set to their repository contents")
- (undo menu-item "Undo Last Check-In" vc-rollback :enable
-       (let
-	   ((backend
-	     (if buffer-file-name
-		 (vc-backend buffer-file-name))))
-	 (or
-	  (not backend)
-	  (vc-find-backend-function backend 'rollback)))
-       :help "Remove the most recent changeset committed to the repository")
  (vc-insert-header menu-item "Insert Header" vc-insert-headers :help "Insert headers into a file for use with a version control system.\n")
  (separator2 "--")
  (vc-print-root-log menu-item "Show Top of the Tree History " vc-print-root-log :help "List the change log for the current tree in a window")
@@ -38,4 +33,4 @@ Not documented as a variable.</br>
  (vc-retrieve-tag menu-item "Retrieve Tag" vc-retrieve-tag :help "Retrieve tagged version or branch")
  "Version Control")
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

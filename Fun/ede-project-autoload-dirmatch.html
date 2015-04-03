@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">ede-project-autoload-dirmatch is an  object constructor function in `auto.el'.</br>
+---
+title: "ede-project-autoload-dirmatch"
+layout: doc
+---
+ede-project-autoload-dirmatch is an  object constructor function in `auto.el'.</br>
 Creates an object of class ede-project-autoload-dirmatch.</br>
 Create a new object with name NAME of class type ede-project-autoload-dirmatch</br>
 </br>
@@ -22,15 +26,20 @@ Slot: configregex    default = nil</br>
 Slot: configregexidx    default = nil</br>
   An index into the match-data of `configregex'.</br>
 </br>
-Slot: configdatastash    default = nil</br>
+Slot: subdir-only    default = t</br>
+  Non-nil means an exact match to the found directory is a non-match.</br>
+This implies projects exist only in subdirectories of the configuration path.</br>
+If `:subdir-only' is nil, then the directory from the configuration file is the project.</br>
+</br>
+Slot: configdatastash</br>
   Save discovered match string.</br>
 </br>
 Specialized Methods:</br>
 </br>
-`ede-dirmatch-installed' :PRIMARY (dirmatch)</br>
-Return non-nil if the tool DIRMATCH might match is installed on the system.</br>
-</br>
 `ede-do-dirmatch' :PRIMARY (dirmatch file)</br>
 Does DIRMATCH match the filename FILE.</br>
 </br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+`ede-dirmatch-installed' :PRIMARY (dirmatch)</br>
+Return non-nil if the tool DIRMATCH might match is installed on the system.</br>
+</br>
+

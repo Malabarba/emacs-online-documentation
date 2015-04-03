@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>verilog-auto-inout-module</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
+---
+title: "verilog-auto-inout-module"
+layout: doc
+---
+<strong>verilog-auto-inout-module</strong> is a compiled Lisp function in `<code>verilog-mode.el</code>'.</br>
 </br>
 (verilog-auto-inout-module &optional <u>COMPLEMENT</u> <u>ALL-IN</u>)</br>
 </br>
@@ -56,15 +60,16 @@ same expansion will result from only extracting signals starting with i:</br>
 </br>
 	   /*AUTOINOUTMODULE("ExampMain","^i")*/</br>
 </br>
-You may also provide an optional second regular expression, in</br>
-which case only signals which have that pin direction and data</br>
-type will be included.  This matches against everything before</br>
-the signal name in the declaration, for example against</br>
-"input" (single bit), "output logic" (direction and type) or</br>
-"output [1:0]" (direction and implicit type).  You also</br>
-probably want to skip spaces in your regexp.</br>
+You may also provide an optional third argument regular</br>
+expression, in which case only signals which have that pin</br>
+direction and data type matching that regular expression will be</br>
+included.  This matches against everything before the signal name</br>
+in the declaration, for example against "input" (single bit),</br>
+"output logic" (direction and type) or "output</br>
+[1:0]" (direction and implicit type).  You also probably want to</br>
+skip spaces in your regexp.</br>
 </br>
 For example, the below will result in matching the output "o"</br>
 against the previous example's module:</br>
 </br>
-	   /*AUTOINOUTMODULE("ExampMain","","^output.*")*/<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+	   /*AUTOINOUTMODULE("ExampMain","","^output.*")*/

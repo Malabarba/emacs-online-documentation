@@ -1,0 +1,20 @@
+---
+title: "file-tree-walk"
+layout: doc
+---
+<strong>file-tree-walk</strong> is a compiled Lisp function in `<code>files.el</code>'.</br>
+</br>
+(file-tree-walk <u>DIR</u> <u>ACTION</u> &rest <u>ARGS</u>)</br>
+</br>
+Walk <u>DIR</u> executing <u>ACTION</u> on each file, with <u>ARGS</u> as additional arguments.</br>
+For each file, the function calls <u>ACTION</u> as follows:</br>
+</br>
+   (<u>ACTION</u> DIRECTORY BASENAME <u>ARGS</u>)</br>
+</br>
+Where DIRECTORY is the leading directory of the file,</br>
+      BASENAME is the basename of the file,</br>
+      and <u>ARGS</u> are as specified in the call to this function, or nil if omitted.</br>
+</br>
+The <u>ACTION</u> is applied to each subdirectory before descending into</br>
+it, and if nil is returned at that point, the descent will be</br>
+prevented.  Directory entries are sorted with string-lessp.

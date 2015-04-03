@@ -1,8 +1,12 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ispell-message-text-end</strong> is a variable defined in `<code>ispell.el</code>'.</br>
+---
+title: "ispell-message-text-end"
+layout: doc
+---
+<strong>ispell-message-text-end</strong> is a variable defined in `<code>ispell.el</code>'.</br>
 Its value is <pre></br>
 "^-- $\\|^#! /bin/[ck]?sh\\|\\(\\(^cd .*\n\\)?diff -c .*\\)?\n\\*\\*\\* .*\n--- .*\n\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\|\\(diff -u .*\\)?\n--- .*\n\\+\\+\\+ .*\n@@ [-+][0-9]+,[0-9]+ [-+][0-9]+,[0-9]+ @@\\|^current state:\n==============\n\\|^\\(- \\)?[-=_]+\\s ?\\(cut here\\|Environment Follows\\)"</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Text beyond which `ispell-message' will not spell-check.</br>
 If it is a string, limit is the first occurrence of that regular expression.</br>
-Otherwise, it must be a function which is called to get the limit.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+Otherwise, it must be a function which is called to get the limit.

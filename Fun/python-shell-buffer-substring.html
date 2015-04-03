@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>python-shell-buffer-substring</strong> is a compiled Lisp function in `<code>python.el</code>'.</br>
+---
+title: "python-shell-buffer-substring"
+layout: doc
+---
+<strong>python-shell-buffer-substring</strong> is a compiled Lisp function in `<code>python.el</code>'.</br>
 </br>
 (python-shell-buffer-substring <u>START</u> <u>END</u> &optional <u>NOMAIN</u>)</br>
 </br>
@@ -10,5 +14,7 @@ the python shell:</br>
      "if __name__ == '__main__'" block will be removed.</br>
   2. When a subregion of the buffer is sent, it takes care of</br>
      appending extra empty lines so tracebacks are correct.</br>
-  3. Wraps indented regions under an "if True:" block so the</br>
-     interpreter evaluates them correctly.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+  3. When the region sent is a substring of the current buffer, a</br>
+     coding cookie is added.</br>
+  4. Wraps indented regions under an "if True:" block so the</br>
+     interpreter evaluates them correctly.

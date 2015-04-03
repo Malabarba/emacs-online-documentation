@@ -1,10 +1,14 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">eieio-default-superclass is an  object constructor function in `eieio.el'.</br>
+---
+title: "eieio-default-superclass"
+layout: doc
+---
+eieio-default-superclass is an  object constructor function in `eieio.el'.</br>
 Creates an object of class eieio-default-superclass.</br>
 You cannot create a new object of type eieio-default-superclass</br>
 </br>
 Class description:</br>
 eieio-default-superclass is an abstract class in `eieio.el'.</br>
- Children `semantic-analyze-context', `semanticdb-abstract-db-cache', `semanticdb-abstract-cache', `semanticdb-abstract-search-index', `semanticdb-abstract-table', `srecode-compile-state', `srecode-dictionary-compound-value', `srecode-dictionary', `srecode-template-table', `ede-project-autoload', `ede-project-autoload-dirmatch', `eieio-named', `eieio-persistent', `eieio-singleton', `eieio-instance-tracker', `eieio-instance-inheritor', `eieio-speedbar', `eieio-widget-test-class', `semanticdb-typecache', `chart-sequece', `chart-axis', `chart', `auth-source-backend'.</br>
+ Children `semantic-analyze-context', `semanticdb-abstract-db-cache', `semanticdb-abstract-cache', `semanticdb-abstract-search-index', `semanticdb-abstract-table', `srecode-compile-state', `srecode-dictionary-compound-value', `srecode-dictionary', `srecode-template-table', `chart-sequece', `chart-axis', `chart', `ede-project-autoload', `ede-project-autoload-dirmatch', `eieio-named', `eieio-persistent', `eieio-singleton', `eieio-instance-tracker', `eieio-instance-inheritor', `eieio-speedbar', `eieio-widget-test-class', `semanticdb-typecache', `xref--xref', `xref-location', `auth-source-backend'.</br>
 </br>
 Default parent class for classes with no specified parent class.</br>
 Its slots are automatically adopted by classes with no specified parents.</br>
@@ -13,26 +17,6 @@ This class is not stored in the `parent' slot of a class vector.</br>
 Instance Allocated Slots:</br>
 </br>
 Specialized Methods:</br>
-</br>
-`object-print' :PRIMARY (arg1 &rest rest)</br>
-Pretty printer for object THIS.  Call function `object-name' with STRINGS.</br>
-The default method for printing object THIS is to use the</br>
-function `object-name'.</br>
-</br>
-It is sometimes useful to put a summary of the object into the</br>
-default #&lt;notation> string when using EIEIO browsing tools.</br>
-</br>
-Implement this function and specify STRINGS in a call to</br>
-`call-next-method' to provide additional summary information.</br>
-When passing in extra strings from child classes, always remember</br>
-to prepend a space.</br>
-</br>
-<code>(fn THIS <em>&rest</em> STRINGS</code>)</br>
-</br>
-`eieio-custom-widget-insert' :PRIMARY (obj &rest flags)</br>
-Insert the widget used for editing object OBJ in the current buffer.</br>
-Arguments FLAGS are widget compatible flags.</br>
-Must return the created widget.</br>
 </br>
 `slot-unbound' :PRIMARY (arg1 arg2 arg3 arg4)</br>
 Slot unbound is invoked during an attempt to reference an unbound slot.</br>
@@ -46,45 +30,7 @@ Use `slot-boundp' to determine if a slot is bound or not.</br>
 In CLOS, the argument list is (CLASS OBJECT SLOT-NAME), but</br>
 EIEIO can only dispatch on the first argument, so the first two are swapped.</br>
 </br>
-(fn OBJECT CLASS SLOT-NAME FN)</br>
-</br>
-`eieio-read-customization-group' :PRIMARY (obj)</br>
-Do a completing read on the name of a customization group in OBJ.</br>
-Return the symbol for the group, or nil</br>
-</br>
-`eieio-customize-object' :PRIMARY (obj &optional group)</br>
-Customize OBJ in a specialized custom buffer.</br>
-To override call the `eieio-custom-widget-insert' to just insert the</br>
-object widget.</br>
-Optional argument GROUP specifies a subgroup of slots to edit as a symbol.</br>
-These groups are specified with the `:group' slot flag.</br>
-</br>
-`slot-missing' :PRIMARY (arg1 arg2 arg3 &optional arg4)</br>
-Method invoked when an attempt to access a slot in OBJECT fails.</br>
-SLOT-NAME is the name of the failed slot, OPERATION is the type of access</br>
-that was requested, and optional NEW-VALUE is the value that was desired</br>
-to be set.</br>
-</br>
-This method is called from `oref', `oset', and other functions which</br>
-directly reference slots in EIEIO objects.</br>
-</br>
-(fn OBJECT SLOT-NAME OPERATION &optional NEW-VALUE)</br>
-</br>
-`eieio-custom-object-apply-reset' :PRIMARY (obj)</br>
-Insert an Apply and Reset button into the object editor.</br>
-Argument OBJ is the object being customized.</br>
-</br>
-`eieio-done-customizing' :PRIMARY (obj)</br>
-When applying change to a widget, call this method.</br>
-This method is called by the default widget-edit commands.</br>
-User made commands should also call this method when applying changes.</br>
-Argument OBJ is the object that has been customized.</br>
-</br>
-`shared-initialize' :PRIMARY (arg1 arg2)</br>
-Set slots of OBJ with SLOTS which is a list of name/value pairs.</br>
-Called from the constructor routine.</br>
-</br>
-(fn OBJ SLOTS)</br>
+<code>(fn OBJECT CLASS SLOT-NAME FN</code>)</br>
 </br>
 `no-applicable-method' :PRIMARY (arg1 arg2 &rest rest)</br>
 Called if there are no implementations for OBJECT in METHOD.</br>
@@ -96,10 +42,12 @@ value becomes the return value of the original method call.</br>
 </br>
 (fn OBJECT METHOD &rest ARGS)</br>
 </br>
-`clone' :PRIMARY (arg1 &rest rest)</br>
-Make a copy of OBJ, and then apply PARAMS.</br>
-</br>
-(fn OBJ &rest PARAMS)</br>
+`eieio-customize-object' :PRIMARY (obj &optional group)</br>
+Customize OBJ in a specialized custom buffer.</br>
+To override call the `eieio-custom-widget-insert' to just insert the</br>
+object widget.</br>
+Optional argument GROUP specifies a subgroup of slots to edit as a symbol.</br>
+These groups are specified with the `:group' slot flag.</br>
 </br>
 `object-write' :PRIMARY (arg1 &optional arg2)</br>
 Write object THIS out to the current stream.</br>
@@ -109,26 +57,6 @@ object are discouraged from being written.</br>
 this object.</br>
 </br>
 (fn THIS &optional COMMENT)</br>
-</br>
-`no-next-method' :PRIMARY (arg1 &rest rest)</br>
-Called from `call-next-method' when no additional methods are available.</br>
-OBJECT is othe object being called on `call-next-method'.</br>
-ARGS are the arguments it is called by.</br>
-This method signals `no-next-method' by default.  Override this</br>
-method to not throw an error, and its return value becomes the</br>
-return value of `call-next-method'.</br>
-</br>
-(fn OBJECT &rest ARGS)</br>
-</br>
-`constructor' :STATIC (arg1 arg2 &rest rest)</br>
-Default constructor for CLASS `eieio-default-superclass'.</br>
-NEWNAME is the name to be given to the constructed object.</br>
-SLOTS are the initialization slots used by `shared-initialize'.</br>
-This static method is called when an object is constructed.</br>
-It allocates the vector used to represent an EIEIO object, and then</br>
-calls `shared-initialize' on that object.</br>
-</br>
-(fn CLASS NEWNAME &rest SLOTS)</br>
 </br>
 `eieio-customize-object-group' :PRIMARY (obj)</br>
 Create a list of vectors for customizing sections of OBJ.</br>
@@ -152,4 +80,80 @@ ignored parameters.</br>
 </br>
 (fn THIS &rest PARAMS)</br>
 </br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+`slot-missing' :PRIMARY (arg1 arg2 arg3 &optional arg4)</br>
+Method invoked when an attempt to access a slot in OBJECT fails.</br>
+SLOT-NAME is the name of the failed slot, OPERATION is the type of access</br>
+that was requested, and optional NEW-VALUE is the value that was desired</br>
+to be set.</br>
+</br>
+This method is called from `oref', `oset', and other functions which</br>
+directly reference slots in EIEIO objects.</br>
+</br>
+(fn OBJECT SLOT-NAME OPERATION &optional NEW-VALUE)</br>
+</br>
+`shared-initialize' :PRIMARY (arg1 arg2)</br>
+Set slots of OBJ with SLOTS which is a list of name/value pairs.</br>
+Called from the constructor routine.</br>
+</br>
+(fn OBJ SLOTS)</br>
+</br>
+`eieio-custom-widget-insert' :PRIMARY (obj &rest flags)</br>
+Insert the widget used for editing object OBJ in the current buffer.</br>
+Arguments FLAGS are widget compatible flags.</br>
+Must return the created widget.</br>
+</br>
+`eieio-read-customization-group' :PRIMARY (obj)</br>
+Do a completing read on the name of a customization group in OBJ.</br>
+Return the symbol for the group, or nil</br>
+</br>
+`object-print' :PRIMARY (arg1 &rest rest)</br>
+Pretty printer for object THIS.  Call function `object-name' with STRINGS.</br>
+The default method for printing object THIS is to use the</br>
+function `object-name'.</br>
+</br>
+It is sometimes useful to put a summary of the object into the</br>
+default #&lt;notation> string when using EIEIO browsing tools.</br>
+</br>
+Implement this function and specify STRINGS in a call to</br>
+`call-next-method' to provide additional summary information.</br>
+When passing in extra strings from child classes, always remember</br>
+to prepend a space.</br>
+</br>
+(fn THIS &rest STRINGS)</br>
+</br>
+`eieio-custom-object-apply-reset' :PRIMARY (obj)</br>
+Insert an Apply and Reset button into the object editor.</br>
+Argument OBJ is the object being customized.</br>
+</br>
+`clone' :PRIMARY (arg1 &rest rest)</br>
+Make a copy of OBJ, and then apply PARAMS.</br>
+</br>
+(fn OBJ &rest PARAMS)</br>
+</br>
+`no-next-method' :PRIMARY (arg1 &rest rest)</br>
+Called from `call-next-method' when no additional methods are available.</br>
+OBJECT is othe object being called on `call-next-method'.</br>
+ARGS are the arguments it is called by.</br>
+This method signals `no-next-method' by default.  Override this</br>
+method to not throw an error, and its return value becomes the</br>
+return value of `call-next-method'.</br>
+</br>
+(fn OBJECT &rest ARGS)</br>
+</br>
+`eieio-done-customizing' :PRIMARY (obj)</br>
+When applying change to a widget, call this method.</br>
+This method is called by the default widget-edit commands.</br>
+User made commands should also call this method when applying changes.</br>
+Argument OBJ is the object that has been customized.</br>
+</br>
+`constructor' :STATIC (arg1 arg2 &rest rest)</br>
+Default constructor for CLASS `eieio-default-superclass'.</br>
+NEWNAME is the name to be given to the constructed object.</br>
+SLOTS are the initialization slots used by `shared-initialize'.</br>
+This static method is called when an object is constructed.</br>
+It allocates the vector used to represent an EIEIO object, and then</br>
+calls `shared-initialize' on that object.</br>
+</br>
+(fn CLASS NEWNAME &rest SLOTS)</br>
+</br>
+

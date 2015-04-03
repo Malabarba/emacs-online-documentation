@@ -1,8 +1,12 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-html-mathjax-template</strong> is a variable defined in `<code>ox-html.el</code>'.</br>
+---
+title: "org-html-mathjax-template"
+layout: doc
+---
+<strong>org-html-mathjax-template</strong> is a variable defined in `<code>ox-html.el</code>'.</br>
 Its value is <pre></br>
 "<script type=\"text/javascript\" src=\"%PATH\"></script>\n<script type=\"text/javascript\">\n<!--/*--><![CDATA[/*><!--*/\n    MathJax.Hub.Config({\n        // Only one of the two following lines, depending on user settings\n        // First allows browser-native MathML display, second forces HTML/CSS\n        :MMLYES: config: [\"MMLorHTML.js\"], jax: [\"input/TeX\"],\n        :MMLNO: jax: [\"input/TeX\", \"output/HTML-CSS\"],\n        extensions: [\"tex2jax.js\",\"TeX/AMSmath.js\",\"TeX/AMSsymbols.js\",\n                     \"TeX/noUndefined.js\"],\n        tex2jax: {\n            inlineMath: [ [\"\\\\(\",\"\\\\)\"] ],\n            displayMath: [ ['$$','$$'], [\"\\\\[\",\"\\\\]\"], [\"\\\\begin{displaymath}\",\"\\\\end{displaymath}\"] ],\n            skipTags: [\"script\",\"noscript\",\"style\",\"textarea\",\"pre\",\"code\"],\n            ignoreClass: \"tex2jax_ignore\",\n            processEscapes: false,\n            processEnvironments: true,\n            preview: \"TeX\"\n        },\n        showProcessingMessages: true,\n        displayAlign: \"%ALIGN\",\n        displayIndent: \"%INDENT\",\n\n        \"HTML-CSS\": {\n             scale: %SCALE,\n             availableFonts: [\"STIX\",\"TeX\"],\n             preferredFont: \"TeX\",\n             webFont: \"TeX\",\n             imageFont: \"TeX\",\n             showMathMenu: true,\n        },\n        MMLorHTML: {\n             prefer: {\n                 MSIE:    \"MML\",\n                 Firefox: \"MML\",\n                 Opera:   \"HTML\",\n                 other:   \"HTML\"\n             }\n        }\n    });\n/*]]>*///-->\n</script>"</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
 The MathJax setup for XHTML files.</br>
 </br>
-You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+You can customize this variable.

@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>c++-mode-map</strong> is a variable defined in `<code>cc-mode.el</code>'.</br>
+---
+title: "c++-mode-map"
+layout: doc
+---
+<strong>c++-mode-map</strong> is a variable defined in `<code>cc-mode.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -51,10 +55,10 @@ Keymap used in c++-mode buffers.</br>
 							     (:toggle . c-auto-newline))
 					      (Hungry\ delete menu-item "Hungry delete" c-toggle-hungry-state :button
 							      (:toggle . c-hungry-delete-key))
-					      (Subword\ mode menu-item "Subword mode" subword-mode :button
+					      (Subword\ mode menu-item "Subword mode" c-subword-mode :button
 							     (:toggle and
-								      (boundp 'subword-mode)
-								      subword-mode)))))))
+								      (boundp 'c-subword-mode)
+								      c-subword-mode)))))))
  (62 . c-electric-lt-gt)
  (60 . c-electric-lt-gt)
  (3 keymap
@@ -74,7 +78,7 @@ Keymap used in c++-mode buffers.</br>
  (127 . c-electric-backspace)
  (4 . c-electric-delete-forward)
  (3 keymap
-    (23 . subword-mode)
+    (23 . c-subword-mode)
     (46 . c-set-style)
     (19 . c-show-syntactic-information)
     (17 . c-indent-defun)
@@ -106,4 +110,4 @@ Keymap used in c++-mode buffers.</br>
      (17 . c-indent-exp)
      (8 . c-mark-function)))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

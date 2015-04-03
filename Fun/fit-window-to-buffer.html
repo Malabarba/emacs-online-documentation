@@ -1,7 +1,11 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>fit-window-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.</br>
+---
+title: "fit-window-to-buffer"
+layout: doc
+---
+<strong>fit-window-to-buffer</strong> is an interactive compiled Lisp function in `<code>window.el</code>'.</br>
 </br>
 </br>
-(fit-window-to-buffer &optional <u>WINDOW</u> <u>MAX-HEIGHT</u> <u>MIN-HEIGHT</u> <u>MAX-WIDTH</u> <u>MIN-WIDTH</u>)</br>
+(fit-window-to-buffer &optional <u>WINDOW</u> <u>MAX-HEIGHT</u> <u>MIN-HEIGHT</u> <u>MAX-WIDTH</u> <u>MIN-WIDTH</u> <u>PRESERVE-SIZE</u>)</br>
 </br>
 Adjust size of <u>WINDOW</u> to display its buffer's contents exactly.</br>
 <u>WINDOW</u> must be a live window and defaults to the selected one.</br>
@@ -26,6 +30,9 @@ and defaults to `window-min-width'.  Both <u>MAX-WIDTH</u> and <u>MIN-WIDTH</u><
 are specified in columns and include fringes, margins, a</br>
 scrollbar and a vertical divider, if any.</br>
 </br>
+If the optional argument `preserve-size' is non-nil, preserve the</br>
+size of <u>WINDOW</u> (see `window-preserve-size').</br>
+</br>
 Fit pixelwise if the option `window-resize-pixelwise' is non-nil.</br>
 If <u>WINDOW</u> is its frame's root window and the option</br>
 `fit-frame-to-buffer' is non-nil, call `fit-frame-to-buffer' to</br>
@@ -35,4 +42,4 @@ Note that even if this function makes <u>WINDOW</u> large enough to show</br>
 _all_ parts of its buffer you might not see the first part when</br>
 <u>WINDOW</u> was scrolled.  If <u>WINDOW</u> is resized horizontally, you will</br>
 not see the top of its buffer unless <u>WINDOW</u> starts at its minimum</br>
-accessible position.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+accessible position.

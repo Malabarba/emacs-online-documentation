@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>fortran-mode-map</strong> is a variable defined in `<code>fortran.el</code>'.</br>
+---
+title: "fortran-mode-map"
+layout: doc
+---
+<strong>fortran-mode-map</strong> is a variable defined in `<code>fortran.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -9,12 +13,12 @@ Keymap used in Fortran mode.</br>
  (menu-bar keymap
 	   (Fortran menu-item "Fortran"
 		    (keymap "Fortran"
-			    (Manual menu-item "Manual" menu-function-302 :key-sequence nil :help "Read the Emacs manual chapter on Fortran mode")
+			    (Manual menu-item "Manual" menu-function-192 :key-sequence nil :help "Read the Emacs manual chapter on Fortran mode")
 			    (Customization menu-item "Customization"
 					   (keymap "Customization"
 						   (Fortran menu-item "Fortran"
 							    (keymap "Fortran"
-								    (Fortran\.\.\. menu-item "Fortran..." menu-function-303 :key-sequence nil)
+								    (Fortran\.\.\. menu-item "Fortran..." menu-function-193 :key-sequence nil)
 								    (nil-7 menu-item "--")
 								    (Fortran\ Indent menu-item "Fortran Indent" nil :filter
 										     #[257 "\302\301!\300\"\207"
@@ -44,20 +48,20 @@ Keymap used in Fortran mode.</br>
 												   menu)))
 											     easy-menu-filter-return]
 											    4 "\n\n(fn MENU)"])
-								    (Fortran\ Check\ All\ Num\ For\ Matching\ Do\.\.\. menu-item "Fortran Check All Num For Matching Do..." menu-function-306 :key-sequence nil :button
+								    (Fortran\ Check\ All\ Num\ For\ Matching\ Do\.\.\. menu-item "Fortran Check All Num For Matching Do..." menu-function-196 :key-sequence nil :button
 														       (:toggle . fortran-check-all-num-for-matching-do))
-								    (Fortran\ Blink\ Matching\ If\.\.\. menu-item "Fortran Blink Matching If..." menu-function-307 :key-sequence nil :button
+								    (Fortran\ Blink\ Matching\ If\.\.\. menu-item "Fortran Blink Matching If..." menu-function-197 :key-sequence nil :button
 													(:toggle . fortran-blink-matching-if))
-								    (Fortran\ Continuation\ String\.\.\. menu-item "Fortran Continuation String..." menu-function-308 :key-sequence nil)
-								    (Fortran\ Electric\ Line\ Number\.\.\. menu-item "Fortran Electric Line Number..." menu-function-309 :key-sequence nil :button
+								    (Fortran\ Continuation\ String\.\.\. menu-item "Fortran Continuation String..." menu-function-198 :key-sequence nil)
+								    (Fortran\ Electric\ Line\ Number\.\.\. menu-item "Fortran Electric Line Number..." menu-function-199 :key-sequence nil :button
 													   (:toggle . fortran-electric-line-number))
-								    (Fortran\ Column\ Ruler\ Fixed\.\.\. menu-item "Fortran Column Ruler Fixed..." menu-function-310 :key-sequence nil)
-								    (Fortran\ Column\ Ruler\ Tab\.\.\. menu-item "Fortran Column Ruler Tab..." menu-function-311 :key-sequence nil)
-								    (Fortran\ Analyze\ Depth\.\.\. menu-item "Fortran Analyze Depth..." menu-function-312 :key-sequence nil)
-								    (Fortran\ Break\ Before\ Delimiters\.\.\. menu-item "Fortran Break Before Delimiters..." menu-function-313 :key-sequence nil :button
+								    (Fortran\ Column\ Ruler\ Fixed\.\.\. menu-item "Fortran Column Ruler Fixed..." menu-function-200 :key-sequence nil)
+								    (Fortran\ Column\ Ruler\ Tab\.\.\. menu-item "Fortran Column Ruler Tab..." menu-function-201 :key-sequence nil)
+								    (Fortran\ Analyze\ Depth\.\.\. menu-item "Fortran Analyze Depth..." menu-function-202 :key-sequence nil)
+								    (Fortran\ Break\ Before\ Delimiters\.\.\. menu-item "Fortran Break Before Delimiters..." menu-function-203 :key-sequence nil :button
 													      (:toggle . fortran-break-before-delimiters))
-								    (Fortran\ Line\ Length\.\.\. menu-item "Fortran Line Length..." menu-function-314 :key-sequence nil)
-								    (Fortran\ Mode\ Hook\.\.\. menu-item "Fortran Mode Hook..." menu-function-315 :key-sequence nil)))
+								    (Fortran\ Line\ Length\.\.\. menu-item "Fortran Line Length..." menu-function-204 :key-sequence nil)
+								    (Fortran\ Mode\ Hook\.\.\. menu-item "Fortran Mode Hook..." menu-function-205 :key-sequence nil)))
 						   (Set menu-item "Set" Custom-set :help "Set current value of all edited settings in the buffer")
 						   (Save menu-item "Save" Custom-save :help "Set and save all edited settings")
 						   (Reset\ to\ Current menu-item "Reset to Current" Custom-reset-current :help "Reset all edited settings to current")
@@ -65,7 +69,7 @@ Keymap used in Fortran mode.</br>
 						   (Reset\ to\ Standard\ Settings menu-item "Reset to Standard Settings" Custom-reset-standard :help "Erase all customizations in buffer")))
 			    (nil-7 menu-item "--")
 			    (Comment\ Region menu-item "Comment Region" fortran-comment-region :enable mark-active)
-			    (Uncomment\ Region menu-item "Uncomment Region" menu-function-316 :key-sequence nil :enable mark-active)
+			    (Uncomment\ Region menu-item "Uncomment Region" menu-function-206 :key-sequence nil :enable mark-active)
 			    (Indent\ Region menu-item "Indent Region" indent-region :enable mark-active)
 			    (Indent\ Subprogram menu-item "Indent Subprogram" fortran-indent-subprogram)
 			    (nil-7-7 menu-item "--")
@@ -82,7 +86,7 @@ Keymap used in Fortran mode.</br>
 			    (nil-7-13 menu-item "--")
 			    (Temporary\ Column\ Ruler menu-item "Temporary Column Ruler" fortran-column-ruler :help "Briefly display Fortran column numbers")
 			    (72-column\ Window menu-item "72-column Window" fortran-window-create :help "Set window width to Fortran line length")
-			    (Full\ Width\ Window menu-item "Full Width Window" menu-function-318 :key-sequence nil :enable
+			    (Full\ Width\ Window menu-item "Full Width Window" menu-function-208 :key-sequence nil :enable
 						 (not
 						  (window-full-width-p))
 						 :help "Make window full width")
@@ -131,4 +135,4 @@ Keymap used in Fortran mode.</br>
     (59 . fortran-comment-region))
  (59 . fortran-abbrev-start))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

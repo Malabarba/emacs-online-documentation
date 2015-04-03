@@ -1,0 +1,24 @@
+---
+title: "nsm-verify-connection"
+layout: doc
+---
+<strong>nsm-verify-connection</strong> is a compiled Lisp function in `<code>nsm.el</code>'.</br>
+</br>
+(nsm-verify-connection <u>PROCESS</u> <u>HOST</u> <u>PORT</u> &optional <u>SAVE-FINGERPRINT</u> <u>WARN-UNENCRYPTED</u>)</br>
+</br>
+Verify the security status of <u>PROCESS</u> that's connected to <u>HOST</u>:<u>PORT</u>.</br>
+If <u>PROCESS</u> is a gnutls connection, the certificate validity will</br>
+be examined.  If it's a non-TLS connection, it may be compared</br>
+against previous connections.  If the function determines that</br>
+there is something odd about the connection, the user will be</br>
+queried about what to do about it.</br>
+</br>
+The process it returned if everything is OK, and otherwise, the</br>
+process will be deleted and nil is returned.</br>
+</br>
+If <u>SAVE-FINGERPRINT</u>, always save the fingerprint of the</br>
+server (if the connection is a TLS connection).  This is useful</br>
+to keep track of the TLS status of STARTTLS servers.</br>
+</br>
+If <u>WARN-UNENCRYPTED</u>, query the user if the connection is</br>
+unencrypted.

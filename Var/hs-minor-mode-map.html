@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>hs-minor-mode-map</strong> is a variable defined in `<code>hideshow.el</code>'.</br>
+---
+title: "hs-minor-mode-map"
+layout: doc
+---
+<strong>hs-minor-mode-map</strong> is a variable defined in `<code>hideshow.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -16,21 +20,21 @@ Keymap for hideshow minor mode.</br>
 			      (Hide\ Level menu-item "Hide Level" hs-hide-level :help "Hide all block at levels below the current block")
 			      (Toggle\ Hiding menu-item "Toggle Hiding" hs-toggle-hiding :help "Toggle the hiding state of the current block")
 			      (nil menu-item "----")
-			      (Hide\ comments\ when\ hiding\ all menu-item "Hide comments when hiding all" menu-function-331 :key-sequence nil :button
+			      (Hide\ comments\ when\ hiding\ all menu-item "Hide comments when hiding all" menu-function-333 :key-sequence nil :button
 								 (:toggle . hs-hide-comments-when-hiding-all)
 								 :help "If t also hide comment blocks when doing `hs-hide-all'")
 			      (Reveal\ on\ isearch menu-item "Reveal on isearch"
 						   (keymap "Reveal on isearch"
-							   (Code\ blocks menu-item "Code blocks" menu-function-332 :key-sequence nil :button
+							   (Code\ blocks menu-item "Code blocks" menu-function-334 :key-sequence nil :button
 									 (:radio eq hs-isearch-open 'code)
 									 :help "Show hidden code blocks when isearch matches inside them")
-							   (Comment\ blocks menu-item "Comment blocks" menu-function-333 :key-sequence nil :button
+							   (Comment\ blocks menu-item "Comment blocks" menu-function-335 :key-sequence nil :button
 									    (:radio eq hs-isearch-open 'comment)
 									    :help "Show hidden comment blocks when isearch matches inside them")
-							   (Code\ and\ Comment\ blocks menu-item "Code and Comment blocks" menu-function-334 :key-sequence nil :button
+							   (Code\ and\ Comment\ blocks menu-item "Code and Comment blocks" menu-function-336 :key-sequence nil :button
 										       (:radio eq hs-isearch-open t)
 										       :help "Show both hidden code and comment blocks when isearch matches inside them")
-							   (None menu-item "None" menu-function-335 :key-sequence nil :button
+							   (None menu-item "None" menu-function-337 :key-sequence nil :button
 								 (:radio eq hs-isearch-open nil)
 								 :help "Do not hidden code or comment blocks when isearch matches inside them"))))))
  (S-mouse-2 . hs-mouse-toggle-hiding)
@@ -44,4 +48,4 @@ Keymap for hideshow minor mode.</br>
 	(19 . hs-show-block)
 	(8 . hs-hide-block))))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

@@ -1,18 +1,21 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>vc-register</strong> is an interactive autoloaded compiled Lisp function in `<code>vc.el</code>'.</br>
+---
+title: "vc-register"
+layout: doc
+---
+<strong>vc-register</strong> is an interactive autoloaded compiled Lisp function in `<code>vc.el</code>'.</br>
 </br>
 It is bound to C-x v i, &lt;menu-bar> &lt;tools> &lt;vc> &lt;vc-register>.</br>
 </br>
-<code>(vc-register <em>&optional</em> <u>SET-REVISION</u> <u>VC-FILESET</u> <u>COMMENT</u></code>)</br>
+<code>(vc-register <em>&optional</em> <u>VC-FILESET</u> <u>COMMENT</u></code>)</br>
 </br>
 Register into a version control system.</br>
 If <u>VC-FILESET</u> is given, register the files in that fileset.</br>
 Otherwise register the current file.</br>
-With prefix argument <u>SET-REVISION</u>, allow user to specify initial revision</br>
-level.  If <u>COMMENT</u> is present, use that as an initial comment.</br>
+If <u>COMMENT</u> is present, use that as an initial comment.</br>
 </br>
 The version control system to use is found by cycling through the list</br>
 `vc-handled-backends'.  The first backend in that list which declares</br>
 itself responsible for the file (usually because other files in that</br>
 directory are already registered under that backend) will be used to</br>
 register the file.  If no backend declares itself responsible, the</br>
-first backend that could register the file is used.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+first backend that could register the file is used.

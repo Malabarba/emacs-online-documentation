@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>mm-uu-type-alist</strong> is a variable defined in `<code>mm-uu.el</code>'.</br>
+---
+title: "mm-uu-type-alist"
+layout: doc
+---
+<strong>mm-uu-type-alist</strong> is a variable defined in `<code>mm-uu.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -38,8 +42,8 @@ You can disable elements from this list by customizing</br>
 		 (lambda nil
 		   (mm-uu-verbatim-marks-extract 0 0))
 		 nil)
- (LaTeX "^\\([\\\\%][^\n]+\n\\)*\\\\documentclass.*[[{%]" "^\\\\end{document}" mm-uu-latex-extract nil mm-uu-latex-test)
+ (LaTeX "^\\([\\\\%][^\n]+\n\\)*\\\\documentclass.*[[{{ "{%" }}]" "^\\\\end{document}" mm-uu-latex-extract nil mm-uu-latex-test)
  (org-src-code-block "^[ 	]*#\\+begin_" "^[ 	]*#\\+end_" mm-uu-org-src-code-block-extract)
  (org-meta-line "^[ 	]*#\\+[[:alpha:]]+: " "$" mm-uu-org-src-code-block-extract))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

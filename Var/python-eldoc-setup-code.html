@@ -1,8 +1,12 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>python-eldoc-setup-code</strong> is a variable defined in `<code>python.el</code>'.</br>
+---
+title: "python-eldoc-setup-code"
+layout: doc
+---
+<strong>python-eldoc-setup-code</strong> is a variable defined in `<code>python.el</code>'.</br>
 Its value is <pre></br>
-"def __PYDOC_get_help(obj):\n    try:\n        import inspect\n        if hasattr(obj, 'startswith'):\n            obj = eval(obj, globals())\n        doc = inspect.getdoc(obj)\n        if not doc and callable(obj):\n            target = None\n            if inspect.isclass(obj) and hasattr(obj, '__init__'):\n                target = obj.__init__\n                objtype = 'class'\n            else:\n                target = obj\n                objtype = 'def'\n            if target:\n                args = inspect.formatargspec(\n                    *inspect.getargspec(target)\n                )\n                name = obj.__name__\n                doc = '{objtype} {name}{args}'.format(\n                    objtype=objtype, name=name, args=args\n                )\n        else:\n            doc = doc.splitlines()[0]\n    except:\n        doc = ''\n    try:\n        exec('print doc')\n    except SyntaxError:\n        print(doc)"</pre></br>
+"def __PYDOC_get_help(obj):\n    try:\n        import inspect\n        try:\n            str_type = basestring\n        except NameError:\n            str_type = str\n        if isinstance(obj, str_type):\n            obj = eval(obj, globals())\n        doc = inspect.getdoc(obj)\n        if not doc and callable(obj):\n            target = None\n            if inspect.isclass(obj) and hasattr(obj, '__init__'):\n                target = obj.__init__\n                objtype = 'class'\n            else:\n                target = obj\n                objtype = 'def'\n            if target:\n                args = inspect.formatargspec(\n                    *inspect.getargspec(target)\n                )\n                name = obj.__name__\n                doc = '{objtype} {name}{args}'.format(\n                    objtype=objtype, name=name, args=args\n                )\n        else:\n            doc = doc.splitlines()[0]\n    except:\n        doc = ''\n    print (doc)"</pre></br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
 Python code to setup documentation retrieval.</br>
 </br>
-You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+You can customize this variable.

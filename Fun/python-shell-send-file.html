@@ -1,9 +1,14 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>python-shell-send-file</strong> is an interactive compiled Lisp function in `<code>python.el</code>'.</br>
+---
+title: "python-shell-send-file"
+layout: doc
+---
+<strong>python-shell-send-file</strong> is an interactive compiled Lisp function in `<code>python.el</code>'.</br>
 </br>
 </br>
 (python-shell-send-file <u>FILE-NAME</u> &optional <u>PROCESS</u> <u>TEMP-FILE-NAME</u> <u>DELETE</u>)</br>
 </br>
 Send <u>FILE-NAME</u> to inferior Python <u>PROCESS</u>.</br>
 If <u>TEMP-FILE-NAME</u> is passed then that file is used for processing</br>
-instead, while internally the shell will continue to use <u>FILE-NAME</u>.</br>
-If <u>DELETE</u> is non-nil, delete the file afterwards.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+instead, while internally the shell will continue to use</br>
+<u>FILE-NAME</u>.  If <u>TEMP-FILE-NAME</u> and <u>DELETE</u> are non-nil, then</br>
+<u>TEMP-FILE-NAME</u> is deleted after evaluation is performed.

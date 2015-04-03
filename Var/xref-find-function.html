@@ -1,0 +1,27 @@
+---
+title: "xref-find-function"
+layout: doc
+---
+<strong>xref-find-function</strong> is a variable defined in `<code>xref.el</code>'.</br>
+Its value is <pre>etags-xref-find</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to look for cross-references.</br>
+It can be called in several ways:</br>
+</br>
+ (definitions IDENTIFIER): Find definitions of IDENTIFIER.  The</br>
+result must be a list of xref objects.  If no definitions can be</br>
+found, return nil.</br>
+</br>
+ (references IDENTIFIER): Find references of IDENTIFIER.  The</br>
+result must be a list of xref objects.  If no references can be</br>
+found, return nil.</br>
+</br>
+ (apropos PATTERN): Find all symbols that match PATTERN.  PATTERN</br>
+is a regexp.</br>
+</br>
+IDENTIFIER can be any string returned by</br>
+`xref-identifier-at-point-function', or from the table returned</br>
+by `xref-identifier-completion-table-function'.</br>
+</br>
+To create an xref object, call `xref-make'.

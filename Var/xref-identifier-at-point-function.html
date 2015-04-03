@@ -1,0 +1,18 @@
+---
+title: "xref-identifier-at-point-function"
+layout: doc
+---
+<strong>xref-identifier-at-point-function</strong> is a variable defined in `<code>xref.el</code>'.</br>
+Its value is <pre>xref-default-identifier-at-point</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Function to get the relevant identifier at point.</br>
+</br>
+The return value must be a string or nil.  nil means no</br>
+identifier at point found.</br>
+</br>
+If it's hard to determine the identifier precisely (e.g., because</br>
+it's a method call on unknown type), the implementation can</br>
+return a simple string (such as symbol at point) marked with a</br>
+special text property which `xref-find-function' would recognize</br>
+and then delegate the work to an external process.

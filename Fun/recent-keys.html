@@ -1,5 +1,11 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>recent-keys</strong> is a built-in function in `<code>C source code</code>'.</br>
+---
+title: "recent-keys"
+layout: doc
+---
+<strong>recent-keys</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
-(recent-keys)</br>
+(recent-keys &optional <u>INCLUDE-CMDS</u>)</br>
 </br>
-Return vector of last 300 events, not counting those from keyboard macros.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+Return vector of last few events, not counting those from keyboard macros.</br>
+If <u>INCLUDE-CMDS</u> is non-nil, include the commands that were run,</br>
+represented as events of the form (nil . COMMAND).

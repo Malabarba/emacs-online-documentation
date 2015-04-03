@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">ede-sourcecode is an  object constructor function in `source.el'.</br>
+---
+title: "ede-sourcecode"
+layout: doc
+---
+ede-sourcecode is an  object constructor function in `source.el'.</br>
 Creates an object of class ede-sourcecode.</br>
 Create a new object with name NAME of class type ede-sourcecode</br>
 </br>
@@ -42,26 +46,26 @@ type directive.</br>
 </br>
 Specialized Methods:</br>
 </br>
-`ede-want-any-auxiliary-files-p' :PRIMARY (this filenames)</br>
-Return non-nil if THIS will accept any aux files in FILENAMES.</br>
+`ede-want-file-source-p' :PRIMARY (this filename)</br>
+Return non-nil if THIS will take FILENAME as an auxiliary .</br>
 </br>
 `ede-want-any-files-p' :PRIMARY (this filenames)</br>
 Return non-nil if THIS will accept any files in FILENAMES.</br>
+</br>
+`ede-want-file-p' :PRIMARY (this filename)</br>
+Return non-nil if sourcecode definition THIS will take FILENAME.</br>
 </br>
 `ede-buffer-header-file' :PRIMARY (this filename)</br>
 Return a list of file names of header files for THIS with FILENAME.</br>
 Used to guess header files, but uses the auxsource regular expression.</br>
 </br>
-`ede-want-file-source-p' :PRIMARY (this filename)</br>
+`ede-want-file-auxiliary-p' :PRIMARY (this filename)</br>
 Return non-nil if THIS will take FILENAME as an auxiliary .</br>
 </br>
 `ede-want-any-source-files-p' :PRIMARY (this filenames)</br>
 Return non-nil if THIS will accept any source files in FILENAMES.</br>
 </br>
-`ede-want-file-p' :PRIMARY (this filename)</br>
-Return non-nil if sourcecode definition THIS will take FILENAME.</br>
+`ede-want-any-auxiliary-files-p' :PRIMARY (this filenames)</br>
+Return non-nil if THIS will accept any aux files in FILENAMES.</br>
 </br>
-`ede-want-file-auxiliary-p' :PRIMARY (this filename)</br>
-Return non-nil if THIS will take FILENAME as an auxiliary .</br>
-</br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

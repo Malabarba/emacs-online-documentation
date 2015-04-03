@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>window-resize</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+---
+title: "window-resize"
+layout: doc
+---
+<strong>window-resize</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
 </br>
 (window-resize <u>WINDOW</u> <u>DELTA</u> &optional <u>HORIZONTAL</u> <u>IGNORE</u> <u>PIXELWISE</u>)</br>
 </br>
@@ -16,13 +20,14 @@ horizontally by <u>DELTA</u> columns.  In this case a positive <u>DELTA</u></br>
 means enlarge <u>WINDOW</u> by <u>DELTA</u> columns.  <u>DELTA</u> negative means</br>
 <u>WINDOW</u> shall be shrunk by -<u>DELTA</u> columns.</br>
 </br>
-Optional argument <u>IGNORE</u> non-nil means ignore restrictions</br>
-imposed by fixed size windows, `window-min-height' or</br>
-`window-min-width' settings.  If <u>IGNORE</u> is a window, ignore</br>
-restrictions for that window only.  If <u>IGNORE</u> equals `safe',</br>
-live windows may get as small as `window-safe-min-height' lines</br>
-and `window-safe-min-width' columns.  Any other non-nil value</br>
-means ignore all of the above restrictions for all windows.</br>
+Optional argument <u>IGNORE</u>, if non-nil, means to ignore restraints</br>
+induced by fixed size windows or the values of the variables</br>
+`window-min-height' and `window-min-width'.  The following values</br>
+have special meanings: `safe' means that in addition live windows</br>
+are allowed to get as small as `window-safe-min-height' lines and</br>
+`window-safe-min-width' columns.  `preserved' means to ignore</br>
+only restrictions induced by `window-preserve-size'.  If <u>IGNORE</u></br>
+is a window, then ignore restrictions for that window only.</br>
 </br>
 Optional argument <u>PIXELWISE</u> non-nil means resize <u>WINDOW</u> by <u>DELTA</u></br>
 pixels.</br>
@@ -30,4 +35,4 @@ pixels.</br>
 This function resizes other windows proportionally and never</br>
 deletes any windows.  If you want to move only the low (right)</br>
 edge of <u>WINDOW</u> consider using `adjust-window-trailing-edge'</br>
-instead.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+instead.

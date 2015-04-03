@@ -1,0 +1,32 @@
+---
+title: "tildify-foreach-region-function"
+layout: doc
+---
+<strong>tildify-foreach-region-function</strong> is a variable defined in `<code>tildify.el</code>'.</br>
+Its value is <pre>tildify--deprecated-ignore-evironments</pre></br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+A function calling a callback on portions of the buffer to tildify.</br>
+</br>
+The function is called from `tildify-buffer' function with three arguments: FUNC</br>
+BEG END.  FUNC is a callback accepting two arguments -- REG-BEG REG-END --</br>
+specifying a portion of buffer to operate on.</br>
+</br>
+The BEG and END arguments may be used to limit portion of the buffer being</br>
+scanned, but the `tildify-foreach-region-function' is not required to make use</br>
+of them.  IT must, however, terminate as soon as FUNC returns nil.</br>
+</br>
+For example, if `tildify-buffer' function should operate on the whole buffer,</br>
+a simple pass through function could be used:</br>
+    (setq-local tildify-foreach-region-function</br>
+                (lambda (cb beg end) (funcall cb beg end)))</br>
+or better still:</br>
+    (setq-local tildify-foreach-region-function 'funcall)</br>
+See `tildify-foreach-ignore-environments' function for other ways to use the</br>
+variable.</br>
+</br>
+You can customize this variable.</br>
+</br>
+This variable was introduced, or its default value was changed, in
+version 25.1 of Emacs.
+

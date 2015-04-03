@@ -1,0 +1,44 @@
+---
+title: "eww-buffers-mode-map"
+layout: doc
+---
+<strong>eww-buffers-mode-map</strong> is a variable defined in `<code>eww.el</code>'.</br>
+Its value is shown <a href="#value">below</a>.</br>
+<ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
+<strong id="documentation">Documentation:</strong></br>
+Keymap for `eww-buffers-mode'.</br>
+</br>
+<strong id="value">Value:</strong> <pre></br>
+(keymap
+ (menu-bar keymap
+	   (Eww\ Buffers menu-item "Eww Buffers"
+			 (keymap "Eww Buffers"
+				 (Exit menu-item "Exit" quit-window)
+				 (Select menu-item "Select" eww-buffer-select :enable
+					 (get-text-property
+					  (line-beginning-position)
+					  'eww-buffer))
+				 (Kill menu-item "Kill" eww-buffer-kill :enable
+				       (get-text-property
+					(line-beginning-position)
+					'eww-buffer)))))
+ (112 . eww-buffer-show-previous)
+ (110 . eww-buffer-show-next)
+ (13 . eww-buffer-select)
+ (11 . eww-buffer-kill)
+ (113 . quit-window)
+ (57 . digit-argument)
+ (56 . digit-argument)
+ (55 . digit-argument)
+ (54 . digit-argument)
+ (53 . digit-argument)
+ (52 . digit-argument)
+ (51 . digit-argument)
+ (50 . digit-argument)
+ (49 . digit-argument)
+ (48 . digit-argument)
+ (45 . negative-argument)
+ (remap keymap
+	(self-insert-command . undefined)))
+</pre></br>
+

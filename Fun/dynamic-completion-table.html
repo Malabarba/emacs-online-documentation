@@ -1,6 +1,10 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>dynamic-completion-table</strong> is an alias for `<strong><a href="/Fun/completion-table-dynamic.html">completion-table-dynamic</a></strong>' in `<code>minibuffer.el</code>'.</br>
+---
+title: "dynamic-completion-table"
+layout: doc
+---
+<strong>dynamic-completion-table</strong> is an alias for `<strong><a href="/Fun/completion-table-dynamic.html">completion-table-dynamic</a></strong>' in `<code>minibuffer.el</code>'.</br>
 </br>
-(dynamic-completion-table <u>FUN</u>)</br>
+(dynamic-completion-table <u>FUN</u> &optional <u>SWITCH-BUFFER</u>)</br>
 </br>
 This function is obsolete since 23.1;</br>
 use `completion-table-dynamic' instead.</br>
@@ -9,11 +13,13 @@ Use function <u>FUN</u> as a dynamic completion table.</br>
 <u>FUN</u> is called with one argument, the string for which completion is required,</br>
 and it should return an alist containing all the intended possible completions.</br>
 This alist may be a full list of possible completions so that <u>FUN</u> can ignore</br>
-the value of its argument.  If completion is performed in the minibuffer,</br>
-<u>FUN</u> will be called in the buffer from which the minibuffer was entered.</br>
+the value of its argument.</br>
+If <u>SWITCH-BUFFER</u> is non-nil and completion is performed in the</br>
+minibuffer, <u>FUN</u> will be called in the buffer from which the minibuffer</br>
+was entered.</br>
 </br>
 The result of the `completion-table-dynamic' form is a function</br>
 that can be used as the COLLECTION argument to `try-completion' and</br>
 `all-completions'.  See Info node `(elisp)Programmed Completion'.</br>
 </br>
-See also the related function `completion-table-with-cache'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+See also the related function `completion-table-with-cache'.

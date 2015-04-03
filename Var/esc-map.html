@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>esc-map</strong> is a variable defined in `<code>subr.el</code>'.</br>
+---
+title: "esc-map"
+layout: doc
+---
+<strong>esc-map</strong> is a variable defined in `<code>subr.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -12,7 +16,7 @@ The normal global definition of the character ESC indirects to this keymap.</br>
 	      (keymap
 	       (58 . eval-expression)
 	       (27 . keyboard-escape-quit))
-	      indent-region nil nil nil just-one-space shell-command nil nil ispell-word query-replace async-shell-command abbrev-prefix-mark insert-parentheses move-past-close-and-reindent pop-tag-mark nil tags-loop-continue negative-argument find-tag dabbrev-expand digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument eval-expression comment-dwim beginning-of-buffer count-words-region end-of-buffer nil mark-word nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil delete-horizontal-space nil delete-indentation nil tmm-menubar backward-sentence backward-word capitalize-word kill-word forward-sentence forward-word
+	      indent-region nil nil nil just-one-space shell-command nil nil ispell-word query-replace async-shell-command abbrev-prefix-mark insert-parentheses move-past-close-and-reindent nil nil xref-pop-marker-stack negative-argument xref-find-definitions dabbrev-expand digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument eval-expression comment-dwim beginning-of-buffer count-words-region end-of-buffer nil mark-word nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil delete-horizontal-space nil delete-indentation nil tmm-menubar backward-sentence backward-word capitalize-word kill-word forward-sentence forward-word
 	      (keymap
 	       (9 . move-to-column)
 	       (112 . previous-error)
@@ -36,6 +40,8 @@ The normal global definition of the character ESC indirects to this keymap.</br>
 		    (108 . highlight-lines-matching-regexp)
 		    (112 . highlight-phrase)
 		    (114 . highlight-regexp))
+	       (27 keymap
+		   (119 . eww-search-words))
 	       (111 . occur))
 	      transpose-words upcase-word scroll-down-command kill-ring-save execute-extended-command yank-pop zap-to-char backward-paragraph shell-command-on-region forward-paragraph not-modified backward-kill-word]
 	#^^[1 0
@@ -44,7 +50,7 @@ The normal global definition of the character ESC indirects to this keymap.</br>
 			  (keymap
 			   (58 . eval-expression)
 			   (27 . keyboard-escape-quit))
-			  indent-region nil nil nil just-one-space shell-command nil nil ispell-word query-replace async-shell-command abbrev-prefix-mark insert-parentheses move-past-close-and-reindent pop-tag-mark nil tags-loop-continue negative-argument find-tag dabbrev-expand digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument eval-expression comment-dwim beginning-of-buffer count-words-region end-of-buffer nil mark-word nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil delete-horizontal-space nil delete-indentation nil tmm-menubar backward-sentence backward-word capitalize-word kill-word forward-sentence forward-word
+			  indent-region nil nil nil just-one-space shell-command nil nil ispell-word query-replace async-shell-command abbrev-prefix-mark insert-parentheses move-past-close-and-reindent nil nil xref-pop-marker-stack negative-argument xref-find-definitions dabbrev-expand digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument digit-argument eval-expression comment-dwim beginning-of-buffer count-words-region end-of-buffer nil mark-word nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil delete-horizontal-space nil delete-indentation nil tmm-menubar backward-sentence backward-word capitalize-word kill-word forward-sentence forward-word
 			  (keymap
 			   (9 . move-to-column)
 			   (112 . previous-error)
@@ -68,6 +74,8 @@ The normal global definition of the character ESC indirects to this keymap.</br>
 				(108 . highlight-lines-matching-regexp)
 				(112 . highlight-phrase)
 				(114 . highlight-regexp))
+			   (27 keymap
+			       (119 . eww-search-words))
 			   (111 . occur))
 			  transpose-words upcase-word scroll-down-command kill-ring-save execute-extended-command yank-pop zap-to-char backward-paragraph shell-command-on-region forward-paragraph not-modified backward-kill-word]
 		    nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
@@ -75,7 +83,7 @@ The normal global definition of the character ESC indirects to this keymap.</br>
 	nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil]
  (67108901 . query-replace-regexp)
  (f10 . toggle-frame-maximized)
- (67108910 . find-tag-regexp)
+ (67108910 . xref-find-apropos)
  (67108911 . dabbrev-completion)
  (C-backspace . backward-kill-sexp)
  (C-delete . backward-kill-sexp)
@@ -106,4 +114,4 @@ The normal global definition of the character ESC indirects to this keymap.</br>
  (67108913 . digit-argument)
  (67108912 . digit-argument))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

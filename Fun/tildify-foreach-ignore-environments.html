@@ -1,0 +1,32 @@
+---
+title: "tildify-foreach-ignore-environments"
+layout: doc
+---
+<strong>tildify-foreach-ignore-environments</strong> is a compiled Lisp function in `<code>tildify.el</code>'.</br>
+</br>
+(tildify-foreach-ignore-environments <u>PAIRS</u> <u>CALLBACK</u> <u>BEG</u> <u>END</u>)</br>
+</br>
+Outside of environments defined by <u>PAIRS</u> call <u>CALLBACK</u>.</br>
+</br>
+<u>PAIRS</u> is a list of (BEG-REGEX . END-REGEX) cons.  BEG-REGEX is a regexp matching</br>
+beginning of a text part to be skipped.  END-REGEX defines end of the</br>
+corresponding text part and can be either:</br>
+- a regexp matching the end of the skipped text part</br>
+- a list of regexps and numbers, which will compose the ending regexp by</br>
+  concatenating themselves, while replacing the numbers with corresponding</br>
+  subexpressions of BEG-REGEX (this is used to solve cases like</br>
+  \\verb&lt;character> in TeX).</br>
+</br>
+<u>CALLBACK</u> is a function accepting two arguments -- REG-BEG and REG-END -- that</br>
+will be called for portions of the buffer outside of the environments defined by</br>
+<u>PAIRS</u> regexes.</br>
+</br>
+The function will return as soon as <u>CALLBACK</u> returns nil or point goes past <u>END</u>.</br>
+<u>CALLBACK</u> may be called on portions of the buffer outside of [<u>BEG</u> <u>END</u>); in fact</br>
+<u>BEG</u> argument is ignored.</br>
+</br>
+This function is meant to be used to set `tildify-foreach-region-function'</br>
+variable.  For example, for an XML file one might use:</br>
+  (setq-local tildify-foreach-region-function</br>
+    (apply-partially 'tildify-foreach-ignore-environments</br>
+                     '(("&lt;! *--" . "-- *>") ("&lt;" . ">"))))

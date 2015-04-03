@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-latex-format-inlinetask-function</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+---
+title: "org-latex-format-inlinetask-function"
+layout: doc
+---
+<strong>org-latex-format-inlinetask-function</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
 Its value is <pre>ignore</pre></br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -15,14 +19,14 @@ The function must accept six parameters:</br>
 The function should return the string to be exported.</br>
 </br>
 For example, the variable could be set to the following function</br>
-in order to mimic default behaviour:</br>
+in order to mimic default behavior:</br>
 </br>
 (defun org-latex-format-inlinetask (todo type priority name tags contents)</br>
 "Format an inline task element for LaTeX export."</br>
   (let ((full-title</br>
 	 (concat</br>
 	  (when todo</br>
-            (format "\\textbf{\\textsf{\\textsc{%s}}} " todo))</br>
+            (format "\\textbf{\\textsf{\\textsc{{ "{%" }}s}}} " todo))</br>
 	  (when priority (format "\\framebox{\\#%c} " priority))</br>
 	  title</br>
 	  (when tags</br>
@@ -38,4 +42,4 @@ in order to mimic default behaviour:</br>
 		    "\\end{center}")</br>
 	    full-title contents))</br>
 </br>
-You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+You can customize this variable.

@@ -1,0 +1,26 @@
+---
+title: "window-preserve-size"
+layout: doc
+---
+<strong>window-preserve-size</strong> is a compiled Lisp function in `<code>window.el</code>'.</br>
+</br>
+(window-preserve-size &optional <u>WINDOW</u> <u>HORIZONTAL</u> <u>PRESERVE</u>)</br>
+</br>
+Preserve height of window <u>WINDOW</u>.</br>
+<u>WINDOW</u> must be a live window and defaults to the selected one.</br>
+Optional argument <u>HORIZONTAL</u> non-nil means preserve the width of</br>
+<u>WINDOW</u>.</br>
+</br>
+<u>PRESERVE</u> t means to preserve the current height/width of <u>WINDOW</u>'s</br>
+body in frame and window resizing operations whenever possible.</br>
+The height/width of <u>WINDOW</u> will change only if Emacs has no other</br>
+choice.  Resizing a window whose height/width is preserved never</br>
+throws an error.</br>
+</br>
+<u>PRESERVE</u> nil means to stop preserving the height/width of <u>WINDOW</u>,</br>
+lifting the respective restraint induced by a previous call of</br>
+`window-preserve-size' for <u>WINDOW</u>.  Calling `enlarge-window',</br>
+`shrink-window', `split-window' or `fit-window-to-buffer' with</br>
+<u>WINDOW</u> as argument also removes the respective restraint.</br>
+</br>
+Other values of <u>PRESERVE</u> are reserved for future use.

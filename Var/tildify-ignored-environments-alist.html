@@ -1,6 +1,11 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>tildify-ignored-environments-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
-Its value is shown <a href="#value">below</a>.</br>
-</br>
+---
+title: "tildify-ignored-environments-alist"
+layout: doc
+---
+<strong>tildify-ignored-environments-alist</strong> is a variable defined in `<code>tildify.el</code>'.</br>
+Its value is <pre>nil</pre></br>
+<ul><li>  <strong>This variable is obsolete since 25.1;</br>
+  use `<a href="/tildify-foreach-region-function">tildify-foreach-region-function</a>' instead.</strong></li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
 Alist specifying ignored structured text environments.</br>
 Parts of text defined in this alist are skipped without performing hard space</br>
@@ -15,35 +20,7 @@ MAJOR-MODE defines major mode, for which the item applies.  It can be either:</b
 - t for default item, this applies to all major modes not defined in another</br>
   alist item</br>
 </br>
-BEG-REGEX is a regexp matching beginning of a text part to be skipped.</br>
-END-REGEX defines end of the corresponding text part and can be either:</br>
-- a regexp matching the end of the skipped text part</br>
-- a list of regexps and numbers, which will compose the ending regexp by</br>
-  concatenating themselves, while replacing the numbers with corresponding</br>
-  subexpressions of BEG-REGEX (this is used to solve cases like</br>
-  \\verb<character> in TeX).</br>
+See `tildify-foreach-ignore-environments' function for description of BEG-REGEX</br>
+and END-REGEX.</br>
 </br>
-You can customize this variable.</br>
-</br>
-<strong id="value">Value:</strong> <pre></br>
-((latex-mode
-  ("\\\\\\\\" . "")
-  ("\\\\begin{\\(\\(?:displaymath\\|eq\\(?:narray\\*?\\|uation\\)\\|math\\|verbatim\\)\\)}" "\\\\end{" 1 "}")
-  ("\\\\verb\\*?\\(.\\)" 1)
-  ("\\$\\$?" 0)
-  ("\\\\(" . "\\\\)")
-  ("\\\\[[]" . "\\\\[]]")
-  ("\\\\[a-zA-Z]+\\( +\\|{}\\)[a-zA-Z]*" . "")
-  ("%" . "$"))
- (plain-tex-mode . latex-mode)
- (html-mode
-  ("<\\(\\(?:CODE\\|DFN\\|KBD\\|PRE\\|SAMP\\|VAR\\|code\\|dfn\\|kbd\\|pre\\|samp\\|var\\)\\)\\>[^>]*>" "</" 1 ">")
-  ("<! *--" . "-- *>")
-  ("<" . ">"))
- (sgml-mode . html-mode)
- (xml-mode
-  ("<! *--" . "-- *>")
-  ("<" . ">"))
- (nxml-mode . xml-mode))
-</pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+You can customize this variable.

@@ -1,5 +1,9 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>package-desc-from-define</strong> is a compiled Lisp function in `<code>package.el</code>'.</br>
+---
+title: "package-desc-from-define"
+layout: doc
+---
+<strong>package-desc-from-define</strong> is a compiled Lisp function in `<code>package.el</code>'.</br>
 </br>
 (package-desc-from-define <u>NAME-STRING</u> <u>VERSION-STRING</u> &optional <u>SUMMARY</u> <u>REQUIREMENTS</u> &rest <u>REST-PLIST</u> &aux (<u>NAME</u> (intern name-string)) (<u>VERSION</u> (version-to-list version-string)) (<u>REQS</u> (mapcar #'(lambda (elt) (list (car elt) (version-to-list (cadr elt)))) (if (eq 'quote (car requirements)) (nth 1 requirements) requirements))) (<u>KIND</u> (plist-get rest-plist :kind)) (<u>ARCHIVE</u> (plist-get rest-plist :archive)) (<u>EXTRAS</u> (let (alist) (while rest-plist (unless (memq (car rest-plist) '(:kind :archive)) (let ((value (cadr rest-plist))) (when value (push (cons (car rest-plist) (if (eq (car-safe value) 'quote) (cadr value) value)) alist)))) (setq rest-plist (cddr rest-plist))) alist)))</br>
 </br>
-Not documented.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+Not documented.

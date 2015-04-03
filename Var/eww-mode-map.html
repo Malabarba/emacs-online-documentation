@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>eww-mode-map</strong> is a variable defined in `<code>eww.el</code>'.</br>
+---
+title: "eww-mode-map"
+layout: doc
+---
+<strong>eww-mode-map</strong> is a variable defined in `<code>eww.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -24,11 +28,15 @@ Keymap for `eww-mode'.</br>
 			(View\ page\ source menu-item "View page source" eww-view-source)
 			(Copy\ page\ URL menu-item "Copy page URL" eww-copy-page-url)
 			(List\ histories menu-item "List histories" eww-list-histories)
+			(List\ buffers menu-item "List buffers" eww-list-buffers)
 			(Add\ bookmark menu-item "Add bookmark" eww-add-bookmark)
 			(List\ bookmarks menu-item "List bookmarks" eww-list-bookmarks)
-			(List\ cookies menu-item "List cookies" url-cookie-list))))
+			(List\ cookies menu-item "List cookies" url-cookie-list)
+			(Character\ Encoding menu-item "Character Encoding" eww-set-character-encoding))))
  (66 . eww-list-bookmarks)
  (98 . eww-add-bookmark)
+ (83 . eww-list-buffers)
+ (69 . eww-set-character-encoding)
  (72 . eww-list-histories)
  (82 . eww-readable)
  (118 . eww-view-source)
@@ -46,11 +54,13 @@ Keymap for `eww-mode'.</br>
  (127 . scroll-down-command)
  (33554464 . scroll-down-command)
  (delete . scroll-down-command)
+ (backtab . shr-previous-link)
  (27 keymap
      (112 . eww-previous-bookmark)
      (110 . eww-next-bookmark)
      (9 . shr-previous-link))
  (9 . shr-next-link)
+ (71 . eww)
  (103 . eww-reload)
  (113 . quit-window)
  (57 . digit-argument)
@@ -67,4 +77,4 @@ Keymap for `eww-mode'.</br>
  (remap keymap
 	(self-insert-command . undefined)))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

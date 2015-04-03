@@ -1,0 +1,20 @@
+---
+title: "thread-last"
+layout: doc
+---
+<strong>thread-last</strong> is a Lisp macro in `<code>subr-x.el</code>'.</br>
+</br>
+(thread-last &rest <u>FORMS</u>)</br>
+</br>
+Thread <u>FORMS</u> elements as the last argument of their successor.</br>
+Example:</br>
+    (thread-last</br>
+      5</br>
+      (+ 20)</br>
+      (/ 25)</br>
+      -</br>
+      (+ 40))</br>
+Is equivalent to:</br>
+    (+ 40 (- (/ 25 (+ 20 5))))</br>
+Note how the single `-' got converted into a list before</br>
+threading.

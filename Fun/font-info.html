@@ -1,11 +1,18 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>font-info</strong> is a built-in function in `<code>C source code</code>'.</br>
+---
+title: "font-info"
+layout: doc
+---
+<strong>font-info</strong> is a built-in function in `<code>C source code</code>'.</br>
 </br>
 (font-info <u>NAME</u> &optional <u>FRAME</u>)</br>
 </br>
 Return information about a font named <u>NAME</u> on frame <u>FRAME</u>.</br>
 If <u>FRAME</u> is omitted or nil, use the selected frame.</br>
-The returned value is a vector of OPENED-NAME, FULL-NAME, SIZE,</br>
-  HEIGHT, BASELINE-OFFSET, RELATIVE-COMPOSE, and DEFAULT-ASCENT,</br>
+</br>
+The returned value is a vector:</br>
+  [ OPENED-NAME FULL-NAME SIZE HEIGHT BASELINE-OFFSET RELATIVE-COMPOSE</br>
+    DEFAULT-ASCENT MAX-WIDTH ASCENT DESCENT SPACE-WIDTH AVERAGE-WIDTH</br>
+    CAPABILITY ]</br>
 where</br>
   OPENED-NAME is the name used for opening the font,</br>
   FULL-NAME is the full name of the font,</br>
@@ -13,5 +20,31 @@ where</br>
   HEIGHT is the pixel-height of the font (i.e., ascent + descent),</br>
   BASELINE-OFFSET is the upward offset pixels from ASCII baseline,</br>
   RELATIVE-COMPOSE and DEFAULT-ASCENT are the numbers controlling</br>
-    how to compose characters.</br>
-If the named font is not yet loaded, return nil.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+    how to compose characters,</br>
+  MAX-WIDTH is the maximum advance width of the font,</br>
+  ASCENT, DESCENT, SPACE-WIDTH, AVERAGE-WIDTH are metrics of the font</br>
+    in pixels,</br>
+  FILENAME is the font file name, a string (or nil if the font backend</br>
+    doesn't provide a file name).</br>
+  CAPABILITY is a list whose first element is a symbol representing the</br>
+    font format, one of x, opentype, truetype, type1, pcf, or bdf.</br>
+    The remaining elements describe the details of the font capabilities,</br>
+    as follows:</br>
+</br>
+      If the font is OpenType font, the form of the list is</br>
+        (opentype GSUB GPOS)</br>
+      where GSUB shows which "GSUB" features the font supports, and GPOS</br>
+      shows which "GPOS" features the font supports.  Both GSUB and GPOS are</br>
+      lists of the form:</br>
+	((SCRIPT (LANGSYS FEATURE ...) ...) ...)</br>
+</br>
+      where</br>
+        SCRIPT is a symbol representing OpenType script tag.</br>
+        LANGSYS is a symbol representing OpenType langsys tag, or nil</br>
+         representing the default langsys.</br>
+        FEATURE is a symbol representing OpenType feature tag.</br>
+</br>
+      If the font is not an OpenType font, there are no elements</br>
+      in CAPABILITY except the font format symbol.</br>
+</br>
+If the named font is not yet loaded, return nil.

@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>term-mode</strong> is an interactive compiled Lisp function in `<code>term.el</code>'.</br>
+---
+title: "term-mode"
+layout: doc
+---
+<strong>term-mode</strong> is an interactive compiled Lisp function in `<code>term.el</code>'.</br>
 </br>
 </br>
 (term-mode)</br>
@@ -211,7 +215,7 @@ C-c M-:		repeat-complex-command</br>
 </br>
 C-c 4 C-f	find-file-other-window</br>
 C-c 4 C-o	display-buffer</br>
-C-c 4 .		find-tag-other-window</br>
+C-c 4 .		xref-find-definitions-other-window</br>
 C-c 4 0		kill-buffer-and-window</br>
 C-c 4 a		add-change-log-entry-other-window</br>
 C-c 4 b		switch-to-buffer-other-window</br>
@@ -223,7 +227,7 @@ C-c 4 r		find-file-read-only-other-window</br>
 </br>
 C-c 5 C-f	find-file-other-frame</br>
 C-c 5 C-o	display-buffer-other-frame</br>
-C-c 5 .		find-tag-other-frame</br>
+C-c 5 .		xref-find-definitions-other-frame</br>
 C-c 5 0		delete-frame</br>
 C-c 5 1		delete-other-frames</br>
 C-c 5 2		make-frame-command</br>
@@ -310,9 +314,9 @@ C-c v G		vc-ignore</br>
 C-c v I		vc-log-incoming</br>
 C-c v L		vc-print-root-log</br>
 C-c v O		vc-log-outgoing</br>
+C-c v [		Prefix Command</br>
 C-c v a		vc-update-change-log</br>
 C-c v b		vc-switch-backend</br>
-C-c v c		vc-rollback</br>
 C-c v d		vc-dir</br>
 C-c v g		vc-annotate</br>
 C-c v h		vc-insert-headers</br>
@@ -329,6 +333,20 @@ C-c a i g	inverse-add-global-abbrev</br>
 C-c a i l	inverse-add-mode-abbrev</br>
 </br>
 C-c r M-w	copy-rectangle-as-kill</br>
+</br>
+C-c v [ d	Prefix Command</br>
+</br>
+C-c v [ d e	Prefix Command</br>
+</br>
+C-c v [ d e l	Prefix Command</br>
+</br>
+C-c v [ d e l e			Prefix Command</br>
+</br>
+C-c v [ d e l e t		Prefix Command</br>
+</br>
+C-c v [ d e l e t e		Prefix Command</br>
+</br>
+C-c v [ d e l e t e ]		vc-delete-file</br>
 </br>
 </br>
 </br>
@@ -370,4 +388,4 @@ A-M-s		term-next-matching-input-from-input</br>
 </br>
 </br>
 </br>
-Entry to this mode runs the hooks on `term-mode-hook'.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+Entry to this mode runs the hooks on `term-mode-hook'.

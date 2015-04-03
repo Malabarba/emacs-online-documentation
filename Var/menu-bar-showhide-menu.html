@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>menu-bar-showhide-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
+---
+title: "menu-bar-showhide-menu"
+layout: doc
+---
+<strong>menu-bar-showhide-menu</strong> is a variable defined in `<code>menu-bar.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -6,13 +10,51 @@ Not documented as a variable.</br>
 </br>
 <strong id="value">Value:</strong> <pre></br>
 (keymap
- (showhide-tool-bar menu-item "Tool-bar" toggle-tool-bar-mode-from-frame :help "Turn tool-bar on/off" :visible
-		    (display-graphic-p)
-		    :button
-		    (:toggle menu-bar-positive-p
-			     (frame-parameter
-			      (menu-bar-frame-for-menubar)
-			      'tool-bar-lines)))
+ (showhide-tool-bar menu-item "Tool-bar"
+		    (keymap
+		     (showhide-tool-bar-none menu-item "None" menu-bar-showhide-tool-bar-menu-customize-disable :help "Turn tool-bar off" :visible
+					     (display-graphic-p)
+					     :button
+					     (:radio eq tool-bar-mode nil))
+		     (showhide-tool-bar-top menu-item "On the Top" menu-bar-showhide-tool-bar-menu-customize-enable-top :help "Tool-bar at the top" :visible
+					    (display-graphic-p)
+					    :button
+					    (:radio and tool-bar-mode
+						    (eq
+						     (frame-parameter
+						      (menu-bar-frame-for-menubar)
+						      'tool-bar-position)
+						     'top)))
+		     (showhide-tool-bar-bottom menu-item "On the Bottom" menu-bar-showhide-tool-bar-menu-customize-enable-bottom :help "Tool-bar at the bottom" :visible
+					       (display-graphic-p)
+					       :button
+					       (:radio and tool-bar-mode
+						       (eq
+							(frame-parameter
+							 (menu-bar-frame-for-menubar)
+							 'tool-bar-position)
+							'bottom)))
+		     (showhide-tool-bar-right menu-item "On the Right" menu-bar-showhide-tool-bar-menu-customize-enable-right :help "Tool-bar at the right side" :visible
+					      (display-graphic-p)
+					      :button
+					      (:radio and tool-bar-mode
+						      (eq
+						       (frame-parameter
+							(menu-bar-frame-for-menubar)
+							'tool-bar-position)
+						       'right)))
+		     (showhide-tool-bar-left menu-item "On the Left" menu-bar-showhide-tool-bar-menu-customize-enable-left :help "Tool-bar at the left side" :visible
+					     (display-graphic-p)
+					     :button
+					     (:radio and tool-bar-mode
+						     (eq
+						      (frame-parameter
+						       (menu-bar-frame-for-menubar)
+						       'tool-bar-position)
+						      'left)))
+		     "Tool-bar")
+		    :visible
+		    (display-graphic-p))
  (menu-bar-mode menu-item "Menu-bar" toggle-menu-bar-mode-from-frame :help "Turn menu-bar on/off" :button
 		(:toggle menu-bar-positive-p
 			 (frame-parameter
@@ -166,4 +208,4 @@ Not documented as a variable.</br>
 			      (default-value 'column-number-mode)))
  "Show/Hide")
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

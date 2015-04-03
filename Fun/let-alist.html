@@ -1,0 +1,35 @@
+---
+title: "let-alist"
+layout: doc
+---
+<strong>let-alist</strong> is an autoloaded Lisp macro in `<code>let-alist.el</code>'.</br>
+</br>
+(let-alist <u>ALIST</u> &rest <u>BODY</u>)</br>
+</br>
+Let-bind dotted symbols to their cdrs in <u>ALIST</u> and execute <u>BODY</u>.</br>
+Dotted symbol is any symbol starting with a `.'.  Only those present</br>
+in <u>BODY</u> are let-bound and this search is done at compile time.</br>
+</br>
+For instance, the following code</br>
+</br>
+  (let-alist alist</br>
+    (if (and .title .body)</br>
+        .body</br>
+      .site</br>
+      .site.contents))</br>
+</br>
+essentially expands to</br>
+</br>
+  (let ((.title (cdr (assq 'title alist)))</br>
+        (.body  (cdr (assq 'body alist)))</br>
+        (.site  (cdr (assq 'site alist)))</br>
+        (.site.contents (cdr (assq 'contents (cdr (assq 'site alist))))))</br>
+    (if (and .title .body)</br>
+        .body</br>
+      .site</br>
+      .site.contents))</br>
+</br>
+If you nest `let-alist' invocations, the inner one can't access</br>
+the variables of the outer one. You can, however, access alists</br>
+inside the original alist by using dots inside the symbol, as</br>
+displayed in the example above.

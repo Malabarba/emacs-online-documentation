@@ -1,5 +1,12 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>package-activate-1</strong> is a compiled Lisp function in `<code>package.el</code>'.</br>
+---
+title: "package-activate-1"
+layout: doc
+---
+<strong>package-activate-1</strong> is a compiled Lisp function in `<code>package.el</code>'.</br>
 </br>
-(package-activate-1 <u>PKG-DESC</u>)</br>
+(package-activate-1 <u>PKG-DESC</u> &optional <u>RELOAD</u>)</br>
 </br>
-Not documented.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+Activate package given by <u>PKG-DESC</u>, even if it was already active.</br>
+If <u>RELOAD</u> is non-nil, also `load' any files inside the package which</br>
+correspond to previously loaded files (those returned by</br>
+`package--list-loaded-files').

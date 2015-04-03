@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>erc-menu</strong> is a variable defined in `<code>erc.el</code>'.</br>
+---
+title: "erc-menu"
+layout: doc
+---
+<strong>erc-menu</strong> is a variable defined in `<code>erc.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 </br>
 <strong id="documentation">Documentation:</strong></br>
@@ -37,32 +41,32 @@ ERC menu</br>
 							  (Change\ mode\.\.\. menu-item "Change mode..." erc-insert-mode-command :enable
 									      (erc-channel-user-op-p
 									       (erc-current-nick)))
-							  (No\ external\ send menu-item "No external send" menu-function-183 :key-sequence nil :enable
+							  (No\ external\ send menu-item "No external send" menu-function-346 :key-sequence nil :enable
 									      (erc-channel-user-op-p
 									       (erc-current-nick))
 									      :button
 									      (:toggle member "n" erc-channel-modes))
-							  (Topic\ set\ by\ channel\ operator menu-item "Topic set by channel operator" menu-function-184 :key-sequence nil :enable
+							  (Topic\ set\ by\ channel\ operator menu-item "Topic set by channel operator" menu-function-347 :key-sequence nil :enable
 											     (erc-channel-user-op-p
 											      (erc-current-nick))
 											     :button
 											     (:toggle member "t" erc-channel-modes))
-							  (Invite\ only menu-item "Invite only" menu-function-185 :key-sequence nil :enable
+							  (Invite\ only menu-item "Invite only" menu-function-348 :key-sequence nil :enable
 									(erc-channel-user-op-p
 									 (erc-current-nick))
 									:button
 									(:toggle member "i" erc-channel-modes))
-							  (Private menu-item "Private" menu-function-186 :key-sequence nil :enable
+							  (Private menu-item "Private" menu-function-349 :key-sequence nil :enable
 								   (erc-channel-user-op-p
 								    (erc-current-nick))
 								   :button
 								   (:toggle member "p" erc-channel-modes))
-							  (Secret menu-item "Secret" menu-function-187 :key-sequence nil :enable
+							  (Secret menu-item "Secret" menu-function-350 :key-sequence nil :enable
 								  (erc-channel-user-op-p
 								   (erc-current-nick))
 								  :button
 								  (:toggle member "s" erc-channel-modes))
-							  (Moderated menu-item "Moderated" menu-function-188 :key-sequence nil :enable
+							  (Moderated menu-item "Moderated" menu-function-351 :key-sequence nil :enable
 								     (erc-channel-user-op-p
 								      (erc-current-nick))
 								     :button
@@ -97,8 +101,8 @@ ERC menu</br>
 	(Truncate\ buffer menu-item "Truncate buffer" erc-truncate-buffer :enable
 			  (fboundp 'erc-truncate-buffer))
 	(nil-16 menu-item "-")
-	(Customize\ ERC menu-item "Customize ERC" menu-function-189 :key-sequence nil)
-	(Enable/Disable\ ERC\ Modules menu-item "Enable/Disable ERC Modules" menu-function-190 :key-sequence nil)
+	(Customize\ ERC menu-item "Customize ERC" menu-function-352 :key-sequence nil)
+	(Enable/Disable\ ERC\ Modules menu-item "Enable/Disable ERC Modules" menu-function-353 :key-sequence nil)
 	(Show\ ERC\ version menu-item "Show ERC version" erc-version))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

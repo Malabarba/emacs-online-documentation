@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;">ede-project-autoload is an  object constructor function in `auto.el'.</br>
+---
+title: "ede-project-autoload"
+layout: doc
+---
+ede-project-autoload is an  object constructor function in `auto.el'.</br>
 Creates an object of class ede-project-autoload.</br>
 Create a new object with name NAME of class type ede-project-autoload</br>
 </br>
@@ -20,10 +24,17 @@ Slot: file</br>
 Slot: proj-file</br>
   Name of a project file of this type.</br>
 </br>
-Slot: proj-root-dirmatch    type = (or string ede-project-autoload-dirmatch)    default = ""</br>
+Slot: root-only    default = t</br>
+  Non-nil if project detection only finds proj-file @ project root.</br>
+</br>
+Slot: proj-root-dirmatch    type = (or null string ede-project-autoload-dirmatch)    default = nil</br>
   To avoid loading a project, check if the directory matches this.</br>
-For projects that use directory name matches, a function would load that project.</br>
-Specifying this matcher will allow EDE to check without loading the project.</br>
+Specifying this matcher object will allow EDE to perform a complex</br>
+check without loading the project.</br>
+</br>
+NOTE: If you use dirmatch, you may need to set :root-only to `nil'.</br>
+While it may be a root based project, all subdirs will happen to return</br>
+true for the dirmatch, so for scanning purposes, set it to `nil'.</br>
 </br>
 Slot: proj-root    type = function</br>
   A function symbol to call for the project root.</br>
@@ -58,23 +69,21 @@ scanning files without loading Lisp code from them.</br>
 </br>
 Specialized Methods:</br>
 </br>
+`ede-project-root-directory' :PRIMARY (this &optional file)</br>
+</br>
+</br>
 `ede-project-root' :PRIMARY (this)</br>
 If a project knows its root, return it here.</br>
 Allows for one-project-object-for-a-tree type systems.</br>
-</br>
-`ede-project-root-directory' :PRIMARY (this &optional file)</br>
-If a project knows its root, return it here.</br>
-Allows for one-project-object-for-a-tree type systems.</br>
-Optional FILE is the file to test.  If there is no FILE, use</br>
-the current buffer.</br>
-</br>
-`ede-dir-to-projectfile' :PRIMARY (this dir)</br>
-Return a full file name of project THIS found in DIR.</br>
-Return nil if the project file does not exist.</br>
 </br>
 `ede-auto-load-project' :PRIMARY (this dir)</br>
 Load in the project associated with THIS project autoload description.</br>
 THIS project description should be valid for DIR, where the project will</br>
 be loaded.</br>
 </br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+NOTE: Do not call this - it should only be called from `ede-load-project-file'.</br>
+</br>
+`ede-auto-detect-in-dir' :PRIMARY (this dir)</br>
+Return non-nil if THIS project autoload is found in DIR.</br>
+</br>
+

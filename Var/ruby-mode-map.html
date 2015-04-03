@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>ruby-mode-map</strong> is a variable defined in `<code>ruby-mode.el</code>'.</br>
+---
+title: "ruby-mode-map"
+layout: doc
+---
+<strong>ruby-mode-map</strong> is a variable defined in `<code>ruby-mode.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -13,20 +17,23 @@ Keymap used in Ruby mode.</br>
 			 (End\ of\ Block menu-item "End of Block" ruby-end-of-block)
 			 (Toggle\ Block menu-item "Toggle Block" ruby-toggle-block)
 			 (nil-7 menu-item "--")
+			 (Toggle\ String\ Quotes menu-item "Toggle String Quotes" ruby-toggle-string-quotes)
+			 (nil-7-5 menu-item "--")
 			 (Backward\ Sexp menu-item "Backward Sexp" ruby-backward-sexp :visible
 					 (not ruby-use-smie))
-			 (Backward\ Sexp-5 menu-item "Backward Sexp" backward-sexp :visible ruby-use-smie)
+			 (Backward\ Sexp-7 menu-item "Backward Sexp" backward-sexp :visible ruby-use-smie)
 			 (Forward\ Sexp menu-item "Forward Sexp" ruby-forward-sexp :visible
 					(not ruby-use-smie))
-			 (Forward\ Sexp-7 menu-item "Forward Sexp" forward-sexp :visible ruby-use-smie)
+			 (Forward\ Sexp-9 menu-item "Forward Sexp" forward-sexp :visible ruby-use-smie)
 			 (Indent\ Sexp menu-item "Indent Sexp" ruby-indent-exp :visible
 				       (not ruby-use-smie))
-			 (Indent\ Sexp-9 menu-item "Indent Sexp" prog-indent-sexp :visible ruby-use-smie))))
+			 (Indent\ Sexp-11 menu-item "Indent Sexp" prog-indent-sexp :visible ruby-use-smie))))
  (3 keymap
+    (39 . ruby-toggle-string-quotes)
     (123 . ruby-toggle-block))
  (27 keymap
      (14 . ruby-end-of-block)
      (16 . ruby-beginning-of-block)
      (4 . smie-down-list)))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

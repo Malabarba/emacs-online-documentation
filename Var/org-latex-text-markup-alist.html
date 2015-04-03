@@ -1,10 +1,14 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-latex-text-markup-alist</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
+---
+title: "org-latex-text-markup-alist"
+layout: doc
+---
+<strong>org-latex-text-markup-alist</strong> is a variable defined in `<code>ox-latex.el</code>'.</br>
 Its value is <pre></br>
-((bold . "\\textbf{%s}")
+((bold . "\\textbf{{ "{%" }}s}")
  (code . verb)
- (italic . "\\emph{%s}")
- (strike-through . "\\sout{%s}")
- (underline . "\\uline{%s}")
+ (italic . "\\emph{{ "{%" }}s}")
+ (strike-through . "\\sout{{ "{%" }}s}")
+ (underline . "\\uline{{ "{%" }}s}")
  (verbatim . protectedtexttt))
 </pre></br>
 </br>
@@ -24,4 +28,4 @@ to typeset and try to protect special characters.</br>
 If no association can be found for a given markup, text will be</br>
 returned as-is.</br>
 </br>
-You can customize this variable.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+You can customize this variable.

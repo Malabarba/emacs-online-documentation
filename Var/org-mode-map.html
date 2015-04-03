@@ -1,4 +1,8 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>org-mode-map</strong> is a variable defined in `<code>org.el</code>'.</br>
+---
+title: "org-mode-map"
+layout: doc
+---
+<strong>org-mode-map</strong> is a variable defined in `<code>org.el</code>'.</br>
 Its value is shown <a href="#value">below</a>.</br>
 <ul><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -79,13 +83,13 @@ Keymap for `org-mode'.</br>
 					 (Edit\ Source\ Example menu-item "Edit Source Example" org-edit-special)
 					 (nil-7 menu-item "--")
 					 (Footnote\ new/jump menu-item "Footnote new/jump" org-footnote-action)
-					 (Footnote\ extra menu-item "Footnote extra" menu-function-344 :keys "C-u C-c C-x f")))
+					 (Footnote\ extra menu-item "Footnote extra" menu-function-257 :keys "C-u C-c C-x f")))
 			(Archive menu-item "Archive"
 				 (keymap "Archive"
 					 (Archive\ \(default\ method\) menu-item "Archive (default method)" org-archive-subtree-default :enable
 								       (org-in-subtree-not-table-p))
 					 (nil-7 menu-item "--")
-					 (Move\ Subtree\ to\ Archive\ file menu-item "Move Subtree to Archive file" org-advertized-archive-subtree :enable
+					 (Move\ Subtree\ to\ Archive\ file menu-item "Move Subtree to Archive file" org-archive-subtree :enable
 									   (org-in-subtree-not-table-p))
 					 (Toggle\ ARCHIVE\ tag menu-item "Toggle ARCHIVE tag" org-toggle-archive-tag :enable
 							       (org-in-subtree-not-table-p))
@@ -134,7 +138,7 @@ Keymap for `org-mode'.</br>
 					     (Show\ TODO\ Tree menu-item "Show TODO Tree" org-show-todo-tree :keys "C-c / t")
 					     (Global\ TODO\ list menu-item "Global TODO list" org-todo-list :keys "C-c a t")
 					     (nil-7 menu-item "--")
-					     (Enforce\ dependencies menu-item "Enforce dependencies" menu-function-345 :key-sequence nil :button
+					     (Enforce\ dependencies menu-item "Enforce dependencies" menu-function-258 :key-sequence nil :button
 								    (:toggle . org-enforce-todo-dependencies))
 					     (nil menu-item "Settings for tree at point")
 					     (Do\ Children\ sequentially menu-item "Do Children sequentially" org-toggle-ordered-property :enable org-enforce-todo-dependencies :keys "C-c C-x o" :button
@@ -149,7 +153,7 @@ Keymap for `org-mode'.</br>
 					     (nil-7-13 menu-item "--")
 					     (Get\ news\ from\ all\ feeds menu-item "Get news from all feeds" org-feed-update-all)
 					     (Go\ to\ the\ inbox\ of\ a\ feed\.\.\. menu-item "Go to the inbox of a feed..." org-feed-goto-inbox)
-					     (Customize\ feeds menu-item "Customize feeds" menu-function-346 :key-sequence nil)))
+					     (Customize\ feeds menu-item "Customize feeds" menu-function-259 :key-sequence nil)))
 			(TAGS\ and\ Properties menu-item "TAGS and Properties"
 					       (keymap "TAGS and Properties"
 						       (Set\ Tags menu-item "Set Tags" org-set-tags-command :enable
@@ -203,18 +207,18 @@ Keymap for `org-mode'.</br>
 			(Logging\ work menu-item "Logging work"
 				       (keymap "Logging work"
 					       (Clock\ in menu-item "Clock in" org-clock-in :keys "C-c C-x C-i")
-					       (Switch\ task menu-item "Switch task" menu-function-347 :keys "C-u C-c C-x C-i")
+					       (Switch\ task menu-item "Switch task" menu-function-260 :keys "C-u C-c C-x C-i")
 					       (Clock\ out menu-item "Clock out" org-clock-out)
 					       (Clock\ cancel menu-item "Clock cancel" org-clock-cancel)
 					       (nil-7 menu-item "--")
 					       (Mark\ as\ default\ task menu-item "Mark as default task" org-clock-mark-default-task)
-					       (Clock\ in\,\ mark\ as\ default menu-item "Clock in, mark as default" menu-function-348 :keys "C-u C-u C-c C-x C-i")
+					       (Clock\ in\,\ mark\ as\ default menu-item "Clock in, mark as default" menu-function-261 :keys "C-u C-u C-c C-x C-i")
 					       (Goto\ running\ clock menu-item "Goto running clock" org-clock-goto)
 					       (nil-7-8 menu-item "--")
 					       (Display\ times menu-item "Display times" org-clock-display)
 					       (Create\ clock\ table menu-item "Create clock table" org-clock-report)
 					       (nil-7-11 menu-item "--")
-					       (Record\ DONE\ time menu-item "Record DONE time" menu-function-349 :key-sequence nil :button
+					       (Record\ DONE\ time menu-item "Record DONE time" menu-function-262 :key-sequence nil :button
 								   (:toggle . org-log-done))))
 			(nil-7-14 menu-item "--")
 			(Agenda\ Command\.\.\. menu-item "Agenda Command..." org-agenda)
@@ -241,15 +245,15 @@ Keymap for `org-mode'.</br>
 							     (org-inside-LaTeX-fragment-p))
 				       (Insert\ citation menu-item "Insert citation" org-reftex-citation)
 				       (nil-7 menu-item "--")
-				       (Template\ for\ BEAMER menu-item "Template for BEAMER" menu-function-350 :key-sequence nil)))
+				       (Template\ for\ BEAMER menu-item "Template for BEAMER" menu-function-263 :key-sequence nil)))
 			(nil-7-22 menu-item "--")
 			(MobileOrg menu-item "MobileOrg"
 				   (keymap "MobileOrg"
 					   (Push\ Files\ and\ Views menu-item "Push Files and Views" org-mobile-push)
 					   (Get\ Captured\ and\ Flagged menu-item "Get Captured and Flagged" org-mobile-pull)
-					   (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-351 :keys "C-c a ?")
+					   (Find\ FLAGGED\ Tasks menu-item "Find FLAGGED Tasks" menu-function-264 :keys "C-c a ?")
 					   (nil-7 menu-item "--")
-					   (Setup menu-item "Setup" menu-function-352 :key-sequence nil)))
+					   (Setup menu-item "Setup" menu-function-265 :key-sequence nil)))
 			(nil-7-24 menu-item "--")
 			(Documentation menu-item "Documentation"
 				       (keymap "Documentation"
@@ -267,7 +271,7 @@ Keymap for `org-mode'.</br>
 					(keymap "Refresh/Reload"
 						(Refresh\ setup\ current\ buffer menu-item "Refresh setup current buffer" org-mode-restart)
 						(Reload\ Org\ \(after\ update\) menu-item "Reload Org (after update)" org-reload)
-						(Reload\ Org\ uncompiled menu-item "Reload Org uncompiled" menu-function-353 :keys "C-u C-c C-x !")))))
+						(Reload\ Org\ uncompiled menu-item "Reload Org uncompiled" menu-function-266 :keys "C-u C-c C-x !")))))
 	   (Tbl menu-item "Tbl"
 		(keymap "Tbl"
 			(Align menu-item "Align" org-ctrl-c-ctrl-c :enable
@@ -326,7 +330,7 @@ Keymap for `org-mode'.</br>
 				   (keymap "Calculate"
 					   (Set\ Column\ Formula menu-item "Set Column Formula" org-table-eval-formula :enable
 								 (org-at-table-p))
-					   (Set\ Field\ Formula menu-item "Set Field Formula" menu-function-341 :enable
+					   (Set\ Field\ Formula menu-item "Set Field Formula" menu-function-254 :enable
 								(org-at-table-p)
 								:keys "C-u C-c =")
 					   (Edit\ Formulas menu-item "Edit Formulas" org-edit-special :enable
@@ -334,10 +338,10 @@ Keymap for `org-mode'.</br>
 					   (nil-7 menu-item "--")
 					   (Recalculate\ line menu-item "Recalculate line" org-table-recalculate :enable
 							      (org-at-table-p))
-					   (Recalculate\ all menu-item "Recalculate all" menu-function-342 :enable
+					   (Recalculate\ all menu-item "Recalculate all" menu-function-255 :enable
 							     (org-at-table-p)
 							     :keys "C-u C-c *")
-					   (Iterate\ all menu-item "Iterate all" menu-function-343 :enable
+					   (Iterate\ all menu-item "Iterate all" menu-function-256 :enable
 							 (org-at-table-p)
 							 :keys "C-u C-u C-c *")
 					   (nil-7-7 menu-item "--")
@@ -581,7 +585,7 @@ Keymap for `org-mode'.</br>
 	(65 . org-archive-to-archive-sibling)
 	(97 . org-toggle-archive-tag)
 	(1 . org-archive-subtree-default)
-	(19 . org-advertized-archive-subtree)
+	(19 . org-archive-subtree)
 	(left . org-shiftcontrolleft)
 	(right . org-shiftcontrolright)
 	(68 . org-shiftmetadown)
@@ -612,4 +616,4 @@ Keymap for `org-mode'.</br>
 	(show-subtree . org-show-subtree)
 	(outline-mark-subtree . org-mark-subtree)))
 </pre></br>
-<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+

@@ -1,6 +1,10 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>kill-buffer-hook</strong> is a variable defined in `<code>files.el</code>'.</br>
+---
+title: "kill-buffer-hook"
+layout: doc
+---
+<strong>kill-buffer-hook</strong> is a variable defined in `<code>files.el</code>'.</br>
 Its value is <pre></br>
-(reftex-kill-buffer-hook erc-kill-buffer-function save-place-to-alist tramp-delete-temp-file-function browse-url-delete-temp-file uniquify-kill-buffer-function vc-kill-buffer-hook)
+(erc-kill-buffer-function reftex-kill-buffer-hook save-place-to-alist tramp-delete-temp-file-function browse-url-delete-temp-file uniquify-kill-buffer-function vc-kill-buffer-hook)
 </pre></br>
 <ul>  <li>This variable's value is permanent if it is given a local binding.</li><li>  This variable may be risky if used as a file-local variable.</li></ul></br>
 <strong id="documentation">Documentation:</strong></br>
@@ -9,4 +13,4 @@ The buffer being killed is current while the hook is running.</br>
 See `kill-buffer'.</br>
 </br>
 Note: Be careful with let-binding this hook considering it is</br>
-frequently used for cleanup.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+frequently used for cleanup.

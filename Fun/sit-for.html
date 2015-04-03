@@ -1,8 +1,12 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><style type="text/css"> @import url('http://www.gnu.org/software/emacs/manual.css');</style></head><body style="padding:1rem;"><strong>sit-for</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
+---
+title: "sit-for"
+layout: doc
+---
+<strong>sit-for</strong> is a compiled Lisp function in `<code>subr.el</code>'.</br>
 </br>
 (sit-for <u>SECONDS</u> &optional <u>NODISP</u>)</br>
 </br>
-Perform redisplay, then wait for <u>SECONDS</u> seconds or until input is available.</br>
+Redisplay, then wait for <u>SECONDS</u> seconds.  Stop when input is available.</br>
 <u>SECONDS</u> may be a floating-point value.</br>
 (On operating systems that do not support waiting for fractions of a</br>
 second, floating-point values are rounded down to the nearest integer.)</br>
@@ -16,4 +20,4 @@ An obsolete, but still supported form is</br>
 (sit-for <u>SECONDS</u> &optional MILLISECONDS <u>NODISP</u>)</br>
 where the optional arg MILLISECONDS specifies an additional wait period,</br>
 in milliseconds; this was useful when Emacs was built without</br>
-floating point support.<br/><br/><br/><br/><small>A courtesy of <a href="http://endlessparentheses.com/">Endless Parentheses</a>. Content under GPL as a part of GNU Emacs.</small></body></html>
+floating point support.

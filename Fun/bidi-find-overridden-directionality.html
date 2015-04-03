@@ -1,0 +1,31 @@
+---
+title: "bidi-find-overridden-directionality"
+layout: doc
+---
+<strong>bidi-find-overridden-directionality</strong> is a built-in function in `<code>C source code</code>'.</br>
+</br>
+(bidi-find-overridden-directionality <u>FROM</u> <u>TO</u> &optional <u>OBJECT</u>)</br>
+</br>
+Return position between <u>FROM</u> and <u>TO</u> where directionality was overridden.</br>
+</br>
+This function returns the first character position in the specified</br>
+region of <u>OBJECT</u> where there is a character whose `bidi-class' property</br>
+is `L', but which was forced to display as `R' by a directional</br>
+override, and likewise with characters whose `bidi-class' is `R'</br>
+or `AL' that were forced to display as `L'.</br>
+</br>
+If no such character is found, the function returns nil.</br>
+</br>
+<u>OBJECT</u> is a Lisp string or buffer to search for overridden</br>
+directionality, and defaults to the current buffer if nil or omitted.</br>
+<u>OBJECT</u> can also be a window, in which case the function will search</br>
+the buffer displayed in that window.  Passing the window instead of</br>
+a buffer is preferable when the buffer is displayed in some window,</br>
+because this function will then be able to correctly account for</br>
+window-specific overlays, which can affect the results.</br>
+</br>
+Strong directional characters `L', `R', and `AL' can have their</br>
+intrinsic directionality overridden by directional override</br>
+control characters RLO (u+202e) and LRO (u+202d).  See the</br>
+function `get-char-code-property' for a way to inquire about</br>
+the `bidi-class' property of a character.

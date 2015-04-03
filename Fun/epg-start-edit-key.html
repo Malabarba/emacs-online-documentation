@@ -1,0 +1,19 @@
+---
+title: "epg-start-edit-key"
+layout: doc
+---
+<strong>epg-start-edit-key</strong> is a compiled Lisp function in `<code>epg.el</code>'.</br>
+</br>
+(epg-start-edit-key <u>CONTEXT</u> <u>KEY</u> <u>EDIT-CALLBACK</u> <u>HANDBACK</u>)</br>
+</br>
+Initiate an edit operation on <u>KEY</u>.</br>
+</br>
+<u>EDIT-CALLBACK</u> is called from process filter and takes 3</br>
+arguments: the context, a status, an argument string, and the</br>
+handback argument.</br>
+</br>
+If you use this function, you will need to wait for the completion of</br>
+`epg-gpg-program' by using `epg-wait-for-completion' and call</br>
+`epg-reset' to clear a temporary output file.</br>
+If you are unsure, use synchronous version of this function</br>
+`epg-edit-key' instead.
